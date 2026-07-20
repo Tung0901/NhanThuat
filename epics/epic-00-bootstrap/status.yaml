@@ -1,0 +1,21 @@
+epic_id: NT-EPIC-00
+status: ready_for_review
+progress: 100
+deliverables:
+  - id: NT-E0-D01
+    title: Repository structure
+    status: review
+  - id: NT-E0-D02
+    title: Python project
+    status: review
+  - id: NT-E0-D03
+    title: YAML and JSON loader
+    status: review
+  - id: NT-E0-D04
+    title: Initial validator and schemas
+    status: review
+  - id: NT-E0-D05
+    title: Automated tests and CI
+    status: review
+blockers: []
+last_reviewed_at: '2026-07-20'

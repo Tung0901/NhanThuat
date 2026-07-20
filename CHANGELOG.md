@@ -1,0 +1,14 @@
+# Changelog
+
+Mọi thay đổi đáng chú ý của dự án được ghi tại đây.
+
+## [Unreleased]
+
+### Added
+
+- Khung repository cho EPIC 0.
+- JSON Schema cho domain và knowledge unit.
+- Loader và validator YAML/JSON.
+- Năm miền tri thức ở trạng thái draft.
+- Test và CI nền tảng.
+

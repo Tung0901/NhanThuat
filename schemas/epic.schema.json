@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Epic Status",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["epic_id", "status", "progress", "deliverables", "blockers", "last_reviewed_at"],
+  "properties": {
+    "epic_id": {"type": "string", "pattern": "^NT-EPIC-[0-9]{2}$"},
+    "status": {"enum": ["not_started", "in_progress", "ready_for_review", "approved", "frozen", "blocked"]},
+    "progress": {"type": "integer", "minimum": 0, "maximum": 100},
+    "deliverables": {"type": "array", "items": {"type": "object", "required": ["id", "title", "status"], "properties": {"id": {"type": "string"}, "title": {"type": "string"}, "status": {"enum": ["backlog", "draft", "review", "approved", "frozen"]}}, "additionalProperties": false}},
+    "blockers": {"type": "array", "items": {"type": "string"}},
+    "last_reviewed_at": {"type": "string", "format": "date"}
+  }
+}

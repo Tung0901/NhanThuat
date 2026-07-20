@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Evidence Record",
+  "type": "object",
+  "required": ["id", "type", "status", "version", "title", "source"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^NT-EVIDENCE-[0-9]{4}$"},
+    "type": {"const": "evidence"},
+    "status": {"enum": ["idea", "draft", "review", "approved", "frozen", "deprecated"]},
+    "version": {"type": "string"},
+    "title": {"type": "string"},
+    "source": {"type": "string"}
+  }
+}
+

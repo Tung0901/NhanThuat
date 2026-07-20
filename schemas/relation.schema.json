@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Knowledge Relation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["source", "type", "target"],
+  "properties": {
+    "source": {"type": "string", "pattern": "^NT-"},
+    "type": {"enum": ["supports", "conflicts_with", "depends_on", "applies_to"]},
+    "target": {"type": "string", "pattern": "^NT-"},
+    "note": {"type": "string"}
+  }
+}
+

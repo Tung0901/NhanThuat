@@ -4,7 +4,7 @@
 | --- | --- | --- |
 | EPIC 0 — Khởi tạo hệ thống | FROZEN | Nền Python, schema, validator, test và CI |
 | EPIC 1 — Hiến chương và nền tảng | READY FOR REVIEW | Chuẩn hóa governance và thuật ngữ nền |
-| EPIC 2 — Kiến trúc tri thức | NOT STARTED | Taxonomy, ontology, registry và knowledge map |
+| EPIC 2 — Kiến trúc tri thức | FROZEN | Taxonomy, ontology, registry và knowledge map |
 | EPIC 3 — Quy luật và nguyên tắc | NOT STARTED | Thư viện tri thức cốt lõi |
 | EPIC 4 — Hệ ứng dụng | NOT STARTED | Chuyển tri thức thành công cụ hành động |
 | EPIC 5 — Knowledge Engine và AI | NOT STARTED | Retrieval, citation, confidence và audit |

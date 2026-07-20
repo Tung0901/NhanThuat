@@ -16,3 +16,11 @@ entries:
     approved_by: Product Owner
     source: epics/epic-01-constitution/status.yaml
     rationale: Product Owner approved EPIC 1 and requested Frozen state.
+  - id: NT-EPIC-02
+    type: epic
+    title: EPIC 2 - Knowledge Architecture
+    status: frozen
+    frozen_at: '2026-07-20'
+    approved_by: Product Owner
+    source: epics/epic-02-knowledge-architecture/status.yaml
+    rationale: Product Owner approved EPIC 2 and requested Frozen state.

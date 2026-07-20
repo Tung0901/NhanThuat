@@ -1,0 +1,27 @@
+epic_id: NT-EPIC-02
+status: frozen
+progress: 100
+deliverables:
+  - id: NT-E2-D01
+    title: Knowledge architecture analysis
+    status: frozen
+  - id: NT-E2-D02
+    title: Knowledge Unit model
+    status: frozen
+  - id: NT-E2-D03
+    title: Taxonomy model
+    status: frozen
+  - id: NT-E2-D04
+    title: Ontology relationship model
+    status: frozen
+  - id: NT-E2-D05
+    title: Knowledge Registry and Catalog
+    status: frozen
+  - id: NT-E2-D06
+    title: Identifier and naming validation
+    status: frozen
+  - id: NT-E2-D07
+    title: Registry loading infrastructure and tests
+    status: frozen
+blockers: []
+last_reviewed_at: '2026-07-20'

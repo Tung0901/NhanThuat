@@ -14,8 +14,12 @@ Mọi thay đổi đáng chú ý của dự án được ghi tại đây.
 - Project Constitution cho EPIC 1.
 - ADR directory và bốn ADR nền tảng ban đầu.
 - EPIC 1 status ở trạng thái Ready for Review.
+- EPIC 2 Knowledge Architecture analysis.
+- Knowledge Unit, Taxonomy, Ontology, Registry, Catalog, identifier, naming, and validation architecture.
+- ADR-0005 through ADR-0008 for EPIC 2 durable architecture decisions.
 
 ### Changed
 
 - EPIC 0 approved by Product Owner and marked Frozen.
 - EPIC 1 approved by Product Owner and marked Frozen.
+- EPIC 2 approved by Product Owner and marked Frozen.

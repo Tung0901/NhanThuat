@@ -9,6 +9,12 @@ from typing import Any, Iterable
 from jsonschema import Draft202012Validator, FormatChecker
 
 from .loader import LoadError, iter_documents, load_document
+from .naming import (
+    validate_filename_contains_id,
+    validate_tag_name,
+    validate_unit_identifier_matches_type,
+)
+from .ontology import known_relation_types
 
 
 @dataclass(frozen=True)
@@ -33,6 +39,7 @@ def validate_repository(root: str | Path) -> list[ValidationIssue]:
     epic_schema = load_document(schema_dir / "epic.schema.json")
     issues: list[ValidationIssue] = []
     records: list[tuple[Path, dict[str, Any]]] = []
+    epic_records: list[tuple[Path, dict[str, Any]]] = []
 
     targets = [
         (repo / "knowledge" / "domains", domain_schema),
@@ -52,9 +59,13 @@ def validate_repository(root: str | Path) -> list[ValidationIssue]:
                 issues.append(ValidationIssue(path, message))
             if directory.name == "units":
                 records.append((path, data))
+            elif directory.name == "epics":
+                epic_records.append((path, data))
 
     issues.extend(_check_unique_ids(records))
     issues.extend(_check_relations(records))
+    issues.extend(_check_architecture_rules(records))
+    issues.extend(_check_frozen_register(repo, epic_records))
     return issues
 
 
@@ -81,3 +92,60 @@ def _check_relations(records: Iterable[tuple[Path, dict[str, Any]]]) -> list[Val
                     issues.append(ValidationIssue(path, f"broken relation {relation}: {target}"))
     return issues
 
+
+def _check_architecture_rules(records: Iterable[tuple[Path, dict[str, Any]]]) -> list[ValidationIssue]:
+    issues: list[ValidationIssue] = []
+    known_relations = set(known_relation_types())
+    for path, data in records:
+        record_id = data.get("id")
+        record_type = data.get("type")
+        if isinstance(record_id, str) and isinstance(record_type, str):
+            message = validate_unit_identifier_matches_type(record_id, record_type)
+            if message:
+                issues.append(ValidationIssue(path, message))
+            message = validate_filename_contains_id(path, record_id)
+            if message:
+                issues.append(ValidationIssue(path, message))
+        primary_domain = data.get("primary_domain")
+        secondary_domains = data.get("secondary_domains", [])
+        if isinstance(primary_domain, str) and primary_domain in secondary_domains:
+            issues.append(ValidationIssue(path, "secondary_domains must not include primary_domain"))
+        for tag in data.get("tags", []):
+            if isinstance(tag, str):
+                message = validate_tag_name(tag)
+                if message:
+                    issues.append(ValidationIssue(path, message))
+        for relation in data.get("relations", {}):
+            if relation not in known_relations:
+                issues.append(ValidationIssue(path, f"unknown relation type: {relation}"))
+    return issues
+
+
+def _check_frozen_register(
+    repo: Path, epic_records: Iterable[tuple[Path, dict[str, Any]]]
+) -> list[ValidationIssue]:
+    register_path = repo / "governance" / "frozen-register.yaml"
+    if not register_path.exists():
+        return []
+    try:
+        register = load_document(register_path)
+    except LoadError as exc:
+        return [ValidationIssue(register_path, str(exc))]
+    epics_by_relative_path = {
+        path.relative_to(repo).as_posix(): data for path, data in epic_records if path.is_relative_to(repo)
+    }
+    issues: list[ValidationIssue] = []
+    for entry in register.get("entries", []):
+        if not isinstance(entry, dict) or entry.get("type") != "epic":
+            continue
+        source = entry.get("source")
+        if not isinstance(source, str):
+            issues.append(ValidationIssue(register_path, "frozen epic entry must declare source"))
+            continue
+        source_data = epics_by_relative_path.get(source)
+        if source_data is None:
+            issues.append(ValidationIssue(register_path, f"frozen source does not exist: {source}"))
+            continue
+        if source_data.get("status") != "frozen":
+            issues.append(ValidationIssue(register_path, f"frozen source is not frozen: {source}"))
+    return issues

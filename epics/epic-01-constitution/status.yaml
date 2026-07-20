@@ -1,0 +1,15 @@
+epic_id: NT-EPIC-01
+status: frozen
+progress: 100
+deliverables:
+  - id: NT-E1-D01
+    title: Project Constitution
+    status: frozen
+  - id: NT-E1-D02
+    title: Initial ADR directory and ADRs
+    status: frozen
+  - id: NT-E1-D03
+    title: Foundation governance alignment
+    status: frozen
+blockers: []
+last_reviewed_at: '2026-07-20'

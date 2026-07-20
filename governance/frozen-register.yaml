@@ -8,3 +8,11 @@ entries:
     approved_by: Product Owner
     source: epics/epic-00-bootstrap/status.yaml
     rationale: Product Owner approved EPIC 0 and requested Frozen state.
+  - id: NT-EPIC-01
+    type: epic
+    title: EPIC 1 - Constitution & Foundation
+    status: frozen
+    frozen_at: '2026-07-20'
+    approved_by: Product Owner
+    source: epics/epic-01-constitution/status.yaml
+    rationale: Product Owner approved EPIC 1 and requested Frozen state.

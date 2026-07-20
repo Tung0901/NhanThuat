@@ -7,8 +7,8 @@ thức; nội dung trong hội thoại chỉ là đầu vào cho quy trình biê
 ## Trạng thái
 
 - Phiên bản: `0.1.0-dev`
-- Giai đoạn: EPIC 0 — Khởi tạo hệ thống
-- Mọi nội dung hiện tại là `draft`, chưa được phê duyệt hoặc Frozen.
+- Giai đoạn: EPIC 1 — Hiến chương và nền tảng
+- EPIC 0 đã được Frozen; EPIC 1 đang ở trạng thái Ready for Review.
 
 ## Bắt đầu nhanh
 
@@ -30,6 +30,6 @@ pytest
 4. Chỉ Product Owner có quyền phê duyệt và quyết định Frozen.
 5. Nội dung Frozen không được sửa trực tiếp.
 
-Xem [ROADMAP.md](ROADMAP.md), [governance/charter.md](governance/charter.md)
-và [governance/approval-process.md](governance/approval-process.md).
-
+Xem [PROJECT_CONSTITUTION.md](PROJECT_CONSTITUTION.md), [ROADMAP.md](ROADMAP.md),
+[governance/charter.md](governance/charter.md) và
+[governance/approval-process.md](governance/approval-process.md).

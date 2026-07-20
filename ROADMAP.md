@@ -2,7 +2,7 @@
 
 | Epic | Trạng thái | Mục tiêu |
 | --- | --- | --- |
-| EPIC 0 — Khởi tạo hệ thống | READY FOR REVIEW | Nền Python, schema, validator, test và CI |
+| EPIC 0 — Khởi tạo hệ thống | FROZEN | Nền Python, schema, validator, test và CI |
 | EPIC 1 — Hiến chương và nền tảng | NOT STARTED | Chuẩn hóa governance và thuật ngữ nền |
 | EPIC 2 — Kiến trúc tri thức | NOT STARTED | Taxonomy, ontology, registry và knowledge map |
 | EPIC 3 — Quy luật và nguyên tắc | NOT STARTED | Thư viện tri thức cốt lõi |

@@ -12,3 +12,6 @@ Mọi thay đổi đáng chú ý của dự án được ghi tại đây.
 - Năm miền tri thức ở trạng thái draft.
 - Test và CI nền tảng.
 
+### Changed
+
+- EPIC 0 approved by Product Owner and marked Frozen.

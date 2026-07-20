@@ -1,0 +1,19 @@
+id: NT-PRINCIPLE-0015
+type: principle
+status: review
+version: 0.1.0
+title: Match accountability with agency
+summary: Hold people accountable for outcomes only to the degree they have the authority, information, and resources to influence them.
+primary_domain: dung-nhan
+secondary_domains: [thanh-su, hop-chung]
+definition: Accountability is credible when it is paired with practical agency over the choices that shape the result.
+mechanism: [Define the outcome, Identify influence over decisions, Align accountability to real agency.]
+conditions: [Outcome depends on controllable decisions, Authority boundaries can be known.]
+exceptions: [Shared outcomes require shared accountability, Stewardship may include raising constraints.]
+applications: {management: [Ask what the person can actually decide.], governance: [Avoid assigning blame outside decision rights.]} 
+risks: [Avoiding accountability by claiming low control, Ignoring influence without formal authority.]
+evidence: {level: provisional, references: []}
+relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0010], applies_to: []}
+tags: [accountability, agency, authority]
+created_at: '2026-07-20'
+updated_at: '2026-07-20'

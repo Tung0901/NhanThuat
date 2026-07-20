@@ -1,0 +1,19 @@
+id: NT-PRINCIPLE-0016
+type: principle
+status: review
+version: 0.1.0
+title: Escalate constraints, not just failures
+summary: Escalate early when authority, resources, information, or capability constraints make an outcome unrealistic.
+primary_domain: thanh-su
+secondary_domains: [dung-nhan, hop-chung]
+definition: Early constraint escalation protects ownership by revealing what must change before failure becomes unavoidable.
+mechanism: [Detect a constraint, Name the impact, Escalate the decision or support needed.]
+conditions: [The constraint threatens the outcome, Someone else controls the needed change.]
+exceptions: [Minor constraints can be solved locally, Excessive escalation slows work.]
+applications: {execution: [Report blocked decisions before deadlines collapse.], management: [Reward early constraint visibility.]} 
+risks: [Escalating responsibility away, Creating noise without proposed options.]
+evidence: {level: provisional, references: []}
+relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0010, NT-LAW-0022], applies_to: []}
+tags: [constraints, escalation, execution]
+created_at: '2026-07-20'
+updated_at: '2026-07-20'

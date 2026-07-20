@@ -5,6 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any
 
+from .evidence import EvidenceRecord, build_traceability
 from .models import KnowledgeRelation, KnowledgeUnit
 from .taxonomy import Taxonomy
 
@@ -13,6 +14,7 @@ from .taxonomy import Taxonomy
 class KnowledgeCatalog:
     taxonomy: Taxonomy
     units: dict[str, KnowledgeUnit]
+    evidence: dict[str, EvidenceRecord]
     relations: tuple[KnowledgeRelation, ...]
 
     def to_mapping(self) -> dict[str, Any]:
@@ -36,12 +38,21 @@ class KnowledgeCatalog:
                 for unit_id, unit in sorted(self.units.items())
             },
             "relations": [relation.to_mapping() for relation in self.relations],
+            "evidence": {
+                evidence_id: {
+                    **evidence.to_mapping(),
+                    "source_path": str(evidence.source_path) if evidence.source_path else None,
+                }
+                for evidence_id, evidence in sorted(self.evidence.items())
+            },
+            "evidence_traceability": self._evidence_traceability(),
             "indexes": {
                 "by_type": self._index_by("type"),
                 "by_status": self._index_by("status"),
                 "by_primary_domain": self._index_by("primary_domain"),
                 "by_evidence_level": self._index_by_evidence_level(),
                 "by_evidence_reference": self._index_by_evidence_reference(),
+                "by_evidence_confidence": self._index_by_evidence_confidence(),
                 "by_tag": self._index_by_tag(),
             },
         }
@@ -75,3 +86,16 @@ class KnowledgeCatalog:
             for reference in unit.evidence.references:
                 index.setdefault(reference, []).append(unit_id)
         return index
+
+    def _index_by_evidence_confidence(self) -> dict[str, list[str]]:
+        index: dict[str, list[str]] = {}
+        for evidence_id, evidence in sorted(self.evidence.items()):
+            index.setdefault(evidence.confidence.level, []).append(evidence_id)
+        return index
+
+    def _evidence_traceability(self) -> dict[str, Any]:
+        traceability = build_traceability(self.evidence.values())
+        return {
+            "by_unit": traceability.by_unit,
+            "by_evidence": traceability.by_evidence,
+        }

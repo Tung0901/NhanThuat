@@ -1,0 +1,21 @@
+id: NT-LAW-0013
+type: law
+status: review
+version: 0.1.0
+title: Measurement changes attention
+summary: What a system measures repeatedly becomes more visible, discussable, and behavior-shaping than what it leaves unmeasured.
+primary_domain: thanh-su
+secondary_domains: [dung-nhan, hop-chung]
+definition: Measurement directs attention by making selected outcomes easier to notice, compare, reward, and manage.
+mechanism: [Select a measure, Review it repeatedly, Shift attention and behavior toward what is visible.]
+conditions: [Measures are reviewed by people with influence, The measured item affects evaluation or decisions.]
+exceptions: [People may ignore measures they distrust, Unmeasured values may still matter culturally.]
+applications:
+  operations: [Measure leading indicators as well as final outcomes.]
+  management: [Audit what current dashboards make invisible.]
+risks: [Optimizing the metric instead of the mission, Crowding out qualitative judgment.]
+evidence: {level: provisional, references: []}
+relations: {supports: [NT-PRINCIPLE-0021, NT-PRINCIPLE-0022], conflicts_with: [], depends_on: [NT-LAW-0002], applies_to: []}
+tags: [measurement, attention, metrics]
+created_at: '2026-07-20'
+updated_at: '2026-07-20'

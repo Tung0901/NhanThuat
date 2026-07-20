@@ -1,0 +1,21 @@
+id: NT-LAW-0005
+type: law
+status: review
+version: 0.1.0
+title: Incentives reveal priorities
+summary: Repeated behavior often follows the rewards, penalties, status signals, and avoidance paths that a system makes real.
+primary_domain: thanh-su
+secondary_domains: [dung-nhan, hop-chung]
+definition: The incentive structure of an environment reveals what people are practically encouraged to prioritize, even when stated values differ.
+mechanism: [Observe available rewards and penalties, Learn what is reinforced, Repeat behavior that protects value or reduces cost.]
+conditions: [Behavior is repeated inside a stable system, Reinforcement is visible or experienced.]
+exceptions: [Strong ethics may resist incentives, External constraints may override local rewards.]
+applications:
+  management: [Audit what the system rewards before correcting behavior.]
+  strategy: [Align measures and recognition with actual priorities.]
+risks: [Assuming all motivation is external, Designing incentives that produce gaming.]
+evidence: {level: provisional, references: []}
+relations: {supports: [NT-PRINCIPLE-0006, NT-PRINCIPLE-0007], conflicts_with: [], depends_on: [NT-LAW-0001], applies_to: []}
+tags: [incentives, priorities, behavior]
+created_at: '2026-07-20'
+updated_at: '2026-07-20'

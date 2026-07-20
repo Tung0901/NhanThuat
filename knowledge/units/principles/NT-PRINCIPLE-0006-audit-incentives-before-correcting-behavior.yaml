@@ -1,0 +1,19 @@
+id: NT-PRINCIPLE-0006
+type: principle
+status: review
+version: 0.1.0
+title: Audit incentives before correcting behavior
+summary: Before correcting repeated behavior, inspect what the system rewards, punishes, ignores, or makes easiest.
+primary_domain: thanh-su
+secondary_domains: [dung-nhan, hop-chung]
+definition: Behavior correction is stronger when it addresses the incentive pattern that keeps reproducing the behavior.
+mechanism: [Identify repeated behavior, Trace reinforcement, Change correction and incentives together.]
+conditions: [The behavior repeats across time or people, The environment shapes payoff.]
+exceptions: [Single misconduct may require direct action, Personal capability may still matter.]
+applications: {management: [Check whether targets reward the behavior being criticized.], operations: [Remove rewards for workarounds that harm the mission.]} 
+risks: [Overlooking personal responsibility, Creating new gaming incentives.]
+evidence: {level: provisional, references: []}
+relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0005], applies_to: []}
+tags: [incentives, behavior, correction]
+created_at: '2026-07-20'
+updated_at: '2026-07-20'

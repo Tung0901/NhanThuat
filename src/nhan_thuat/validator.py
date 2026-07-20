@@ -8,6 +8,7 @@ from typing import Any, Iterable
 
 from jsonschema import Draft202012Validator, FormatChecker
 
+from .evidence import CONFIDENCE_LEVELS, SOURCE_KINDS
 from .loader import LoadError, iter_documents, load_document
 from .naming import (
     validate_filename_contains_id,
@@ -36,14 +37,17 @@ def validate_repository(root: str | Path) -> list[ValidationIssue]:
     schema_dir = repo / "schemas"
     domain_schema = load_document(schema_dir / "domain.schema.json")
     unit_schema = load_document(schema_dir / "knowledge-unit.schema.json")
+    evidence_schema = load_document(schema_dir / "evidence.schema.json")
     epic_schema = load_document(schema_dir / "epic.schema.json")
     issues: list[ValidationIssue] = []
     records: list[tuple[Path, dict[str, Any]]] = []
+    evidence_records: list[tuple[Path, dict[str, Any]]] = []
     epic_records: list[tuple[Path, dict[str, Any]]] = []
 
     targets = [
         (repo / "knowledge" / "domains", domain_schema),
         (repo / "knowledge" / "units", unit_schema),
+        (repo / "knowledge" / "evidence", evidence_schema),
         (repo / "epics", epic_schema),
     ]
     for directory, schema in targets:
@@ -59,11 +63,15 @@ def validate_repository(root: str | Path) -> list[ValidationIssue]:
                 issues.append(ValidationIssue(path, message))
             if directory.name == "units":
                 records.append((path, data))
+            elif directory.name == "evidence":
+                evidence_records.append((path, data))
             elif directory.name == "epics":
                 epic_records.append((path, data))
 
     issues.extend(_check_unique_ids(records))
     issues.extend(_check_relations(records))
+    issues.extend(_check_evidence_records(evidence_records, records))
+    issues.extend(_check_knowledge_evidence_references(records, evidence_records))
     issues.extend(_check_architecture_rules(records))
     issues.extend(_check_frozen_register(repo, epic_records))
     return issues
@@ -90,6 +98,64 @@ def _check_relations(records: Iterable[tuple[Path, dict[str, Any]]]) -> list[Val
             for target in targets:
                 if target not in ids:
                     issues.append(ValidationIssue(path, f"broken relation {relation}: {target}"))
+    return issues
+
+
+def _check_evidence_records(
+    evidence_records: Iterable[tuple[Path, dict[str, Any]]],
+    unit_records: Iterable[tuple[Path, dict[str, Any]]],
+) -> list[ValidationIssue]:
+    materialized = list(evidence_records)
+    unit_ids = {data.get("id") for _, data in unit_records}
+    seen_ids: dict[str, Path] = {}
+    issues: list[ValidationIssue] = []
+    for path, data in materialized:
+        evidence_id = data.get("id")
+        if evidence_id in seen_ids:
+            issues.append(
+                ValidationIssue(path, f"duplicate evidence id {evidence_id}; first seen in {seen_ids[evidence_id]}")
+            )
+        elif isinstance(evidence_id, str):
+            seen_ids[evidence_id] = path
+        if isinstance(evidence_id, str):
+            message = validate_filename_contains_id(path, evidence_id)
+            if message:
+                issues.append(ValidationIssue(path, message))
+        source = data.get("source", {})
+        if isinstance(source, dict) and source.get("kind") not in SOURCE_KINDS:
+            issues.append(ValidationIssue(path, f"unknown evidence source kind: {source.get('kind')}"))
+        confidence = data.get("confidence", {})
+        if isinstance(confidence, dict) and confidence.get("level") not in CONFIDENCE_LEVELS:
+            issues.append(ValidationIssue(path, f"unknown confidence level: {confidence.get('level')}"))
+        citation_ids = {
+            citation.get("id") for citation in data.get("citations", []) if isinstance(citation, dict)
+        }
+        if len(citation_ids) != len(data.get("citations", [])):
+            issues.append(ValidationIssue(path, "citation ids must be unique and present"))
+        for claim in data.get("claims", []):
+            if not isinstance(claim, dict):
+                continue
+            for citation_id in claim.get("citations", []):
+                if citation_id not in citation_ids:
+                    issues.append(ValidationIssue(path, f"claim references unknown citation: {citation_id}"))
+        for link_type in ("supports", "contests", "contextualizes"):
+            for target in data.get(link_type, []):
+                if target not in unit_ids:
+                    issues.append(ValidationIssue(path, f"broken evidence {link_type} reference: {target}"))
+    return issues
+
+
+def _check_knowledge_evidence_references(
+    records: Iterable[tuple[Path, dict[str, Any]]],
+    evidence_records: Iterable[tuple[Path, dict[str, Any]]],
+) -> list[ValidationIssue]:
+    evidence_ids = {data.get("id") for _, data in evidence_records}
+    issues: list[ValidationIssue] = []
+    for path, data in records:
+        references = data.get("evidence", {}).get("references", [])
+        for reference in references:
+            if isinstance(reference, str) and reference.startswith("NT-EVIDENCE-") and reference not in evidence_ids:
+                issues.append(ValidationIssue(path, f"broken evidence reference: {reference}"))
     return issues
 
 

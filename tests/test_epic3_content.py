@@ -14,8 +14,8 @@ def test_epic3_laws_and_principles_are_registered() -> None:
     assert {"NT-PRINCIPLE-0001", "NT-PRINCIPLE-0002", "NT-PRINCIPLE-0003"}.issubset(
         registry.units
     )
-    assert len(registry.units_by_type("law")) == 3
-    assert len(registry.units_by_type("principle")) == 3
+    assert len(registry.units_by_type("law")) >= 3
+    assert len(registry.units_by_type("principle")) >= 3
 
 
 def test_epic3_principles_depend_on_existing_laws() -> None:

@@ -1,0 +1,19 @@
+id: NT-PRINCIPLE-0022
+type: principle
+status: review
+version: 0.1.0
+title: Watch what metrics hide
+summary: For every important metric, ask what it makes invisible, discourages, or tempts people to game.
+primary_domain: thanh-su
+secondary_domains: [tri-nhan, hop-chung]
+definition: Metrics focus attention by excluding other realities, so responsible use requires reviewing hidden costs and distortions.
+mechanism: [Review the metric, Identify ignored values and gaming paths, Add safeguards or balancing signals.]
+conditions: [A metric influences decisions, People can optimize around it.]
+exceptions: [Simple measures may be enough for low-risk work, Too many balancing measures can confuse priorities.]
+applications: {governance: [Pair performance metrics with quality and ethics checks.], management: [Ask how people might game the target.]} 
+risks: [Rejecting useful metrics because they are imperfect, Adding complexity without decisions.]
+evidence: {level: provisional, references: []}
+relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0013, NT-LAW-0005], applies_to: []}
+tags: [metrics, gaming, visibility]
+created_at: '2026-07-20'
+updated_at: '2026-07-20'

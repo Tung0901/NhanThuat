@@ -1,0 +1,19 @@
+id: NT-PRINCIPLE-0041
+type: principle
+status: review
+version: 0.1.0
+title: Make correction safe and clear
+summary: State corrections in a way that protects dignity while leaving no ambiguity about the standard or next action.
+primary_domain: dung-nhan
+secondary_domains: [tri-nhan, thanh-su]
+definition: Learning requires correction that is safe enough to hear and clear enough to act on.
+mechanism: [Name the observed gap, Preserve dignity, State the expected standard and next step.]
+conditions: [A standard was missed, Continued learning matters.]
+exceptions: [Serious misconduct may require formal accountability, Excessive softness can hide the standard.]
+applications: {coaching: [Separate the person from the correction while making the correction concrete.], leadership: [Build a culture where issues can be named early.]} 
+risks: [Vagueness, Avoiding consequences when they are necessary.]
+evidence: {level: provisional, references: []}
+relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0023], applies_to: []}
+tags: [correction, learning, dignity]
+created_at: '2026-07-20'
+updated_at: '2026-07-20'

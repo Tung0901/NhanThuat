@@ -1,0 +1,21 @@
+id: NT-LAW-0011
+type: law
+status: review
+version: 0.1.0
+title: Trust accumulates through consistency
+summary: Trust grows when words, decisions, and follow-through remain consistent across repeated moments that matter.
+primary_domain: hop-chung
+secondary_domains: [dung-nhan, thanh-su]
+definition: People update trust by comparing promises, behavior, competence, and fairness across repeated interactions.
+mechanism: [Observe commitment, Observe follow-through, Update confidence in future behavior.]
+conditions: [Interactions repeat, Behavior is visible enough to judge.]
+exceptions: [One severe breach can outweigh many small positives, Context changes can reset expectations.]
+applications:
+  leadership: [Make fewer promises and keep them visibly.]
+  teamwork: [Use small commitments to rebuild reliability.]
+risks: [Expecting trust without behavioral evidence, Mistaking charisma for reliability.]
+evidence: {level: provisional, references: []}
+relations: {supports: [NT-PRINCIPLE-0017, NT-PRINCIPLE-0018], conflicts_with: [], depends_on: [NT-LAW-0003], applies_to: []}
+tags: [trust, consistency, reliability]
+created_at: '2026-07-20'
+updated_at: '2026-07-20'

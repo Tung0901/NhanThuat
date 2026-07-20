@@ -26,6 +26,7 @@ def test_repository_validation_reports_naming_errors(tmp_path: Path) -> None:
     for schema_name in (
         "domain.schema.json",
         "knowledge-unit.schema.json",
+        "evidence.schema.json",
         "epic.schema.json",
     ):
         source = ROOT / "schemas" / schema_name
@@ -58,6 +59,7 @@ def test_repository_validation_reports_frozen_register_drift(tmp_path: Path) -> 
     for schema_name in (
         "domain.schema.json",
         "knowledge-unit.schema.json",
+        "evidence.schema.json",
         "epic.schema.json",
     ):
         source = ROOT / "schemas" / schema_name

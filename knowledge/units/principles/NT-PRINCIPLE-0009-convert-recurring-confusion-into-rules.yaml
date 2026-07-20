@@ -1,0 +1,19 @@
+id: NT-PRINCIPLE-0009
+type: principle
+status: review
+version: 0.1.0
+title: Convert recurring confusion into rules
+summary: When the same confusion repeats, create a simple rule, standard, or decision path rather than relying on repeated explanation.
+primary_domain: hop-chung
+secondary_domains: [thanh-su, dung-nhan]
+definition: Recurring ambiguity should become an operating rule so people do not keep spending attention on the same coordination question.
+mechanism: [Notice repeated confusion, Identify the missing rule, Publish a simple default.]
+conditions: [The confusion repeats, A stable default would help.]
+exceptions: [Novel work may need judgment more than rules, Too many rules can hide priorities.]
+applications: {operations: [Turn repeated questions into playbook entries.], management: [Clarify decision paths after repeated escalations.]} 
+risks: [Over-standardizing complex judgment, Ignoring training needs.]
+evidence: {level: provisional, references: []}
+relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0006, NT-LAW-0019], applies_to: []}
+tags: [rules, clarity, operations]
+created_at: '2026-07-20'
+updated_at: '2026-07-20'

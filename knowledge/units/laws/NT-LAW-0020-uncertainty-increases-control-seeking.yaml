@@ -1,0 +1,21 @@
+id: NT-LAW-0020
+type: law
+status: review
+version: 0.1.0
+title: Uncertainty increases control seeking
+summary: When uncertainty rises, people tend to seek more control, information, reassurance, or authority over the situation.
+primary_domain: tri-nhan
+secondary_domains: [hop-chung, thanh-su]
+definition: Uncertainty increases perceived exposure, and people respond by trying to reduce ambiguity or regain agency.
+mechanism: [Perceive uncertainty, Feel exposure or risk, Seek information, control, reassurance, or authority.]
+conditions: [The outcome matters, The person lacks confidence in what will happen.]
+exceptions: [High trust can reduce control seeking, Some people tolerate ambiguity better than others.]
+applications:
+  change: [Reduce uncertainty with honest sequencing and decision rules.]
+  management: [Explain what is known, unknown, and being decided.]
+risks: [Offering false certainty, Mistaking control seeking for resistance.]
+evidence: {level: provisional, references: []}
+relations: {supports: [NT-PRINCIPLE-0035, NT-PRINCIPLE-0036], conflicts_with: [], depends_on: [], applies_to: []}
+tags: [uncertainty, control, change]
+created_at: '2026-07-20'
+updated_at: '2026-07-20'

@@ -1,0 +1,19 @@
+id: NT-PRINCIPLE-0034
+type: principle
+status: review
+version: 0.1.0
+title: Remove friction from desired defaults
+summary: Make the preferred behavior easier to start, repeat, and verify than the behavior it is meant to replace.
+primary_domain: thanh-su
+secondary_domains: [tu-than, hop-chung]
+definition: Systems preserve what is easiest to repeat, so durable change often begins by lowering friction around the desired default.
+mechanism: [Identify the desired default, Remove unnecessary steps, Add simple confirmation signals.]
+conditions: [A repeated behavior should become normal, The environment can be adjusted.]
+exceptions: [Some safeguards require intentional friction, Too much ease can reduce thoughtful judgment.]
+applications: {operations: [Move critical templates, checklists, and handoffs into the normal workflow.], management: [Make the expected practice easier than the workaround.]} 
+risks: [Optimizing convenience over quality, Hiding the reason behind the behavior.]
+evidence: {level: provisional, references: []}
+relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0019], applies_to: []}
+tags: [defaults, friction, systems]
+created_at: '2026-07-20'
+updated_at: '2026-07-20'

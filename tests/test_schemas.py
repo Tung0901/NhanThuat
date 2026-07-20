@@ -16,3 +16,10 @@ def test_all_five_domains_exist_and_validate() -> None:
     assert len(paths) == 5
     assert all(validate_document(load_document(path), schema) == [] for path in paths)
 
+
+def test_evidence_records_exist_and_validate() -> None:
+    schema = load_document(ROOT / "schemas" / "evidence.schema.json")
+    paths = iter_documents(ROOT / "knowledge" / "evidence")
+
+    assert len(paths) == 1
+    assert all(validate_document(load_document(path), schema) == [] for path in paths)

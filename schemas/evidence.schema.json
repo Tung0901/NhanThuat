@@ -1,15 +1,122 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Evidence Record",
+  "$id": "https://nhan-thuat.local/schemas/evidence.schema.json",
+  "title": "Nhan Thuat Evidence Record",
   "type": "object",
-  "required": ["id", "type", "status", "version", "title", "source"],
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "type",
+    "status",
+    "version",
+    "title",
+    "summary",
+    "source",
+    "citations",
+    "claims",
+    "confidence",
+    "supports",
+    "contests",
+    "contextualizes",
+    "limitations",
+    "tags",
+    "created_at",
+    "updated_at"
+  ],
   "properties": {
     "id": {"type": "string", "pattern": "^NT-EVIDENCE-[0-9]{4}$"},
     "type": {"const": "evidence"},
     "status": {"enum": ["idea", "draft", "review", "approved", "frozen", "deprecated"]},
-    "version": {"type": "string"},
-    "title": {"type": "string"},
-    "source": {"type": "string"}
+    "version": {"type": "string", "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"},
+    "title": {"type": "string", "minLength": 3},
+    "summary": {"type": "string", "minLength": 20},
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "title"],
+      "properties": {
+        "kind": {
+          "enum": [
+            "book",
+            "article",
+            "paper",
+            "report",
+            "web_page",
+            "case_note",
+            "interview",
+            "dataset",
+            "internal_document",
+            "observation",
+            "derived_analysis"
+          ]
+        },
+        "title": {"type": "string", "minLength": 3},
+        "authors": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "publisher": {"type": "string", "minLength": 1},
+        "published_at": {"type": "string"},
+        "accessed_at": {"type": "string", "format": "date"},
+        "language": {"type": "string", "minLength": 2},
+        "url": {"type": "string", "format": "uri"},
+        "path": {"type": "string", "minLength": 1},
+        "license": {"type": "string", "minLength": 1}
+      }
+    },
+    "citations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "source_locator", "locator_type", "locator", "paraphrase"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^CIT-[0-9]{3}$"},
+          "source_locator": {"type": "string", "minLength": 1},
+          "locator_type": {"enum": ["page", "section", "paragraph", "timestamp", "row", "chapter", "figure", "general"]},
+          "locator": {"type": "string", "minLength": 1},
+          "quote": {"type": "string", "minLength": 1},
+          "paraphrase": {"type": "string", "minLength": 20},
+          "accessed_at": {"type": "string", "format": "date"}
+        }
+      }
+    },
+    "claims": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "summary", "citations"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^CLM-[0-9]{3}$"},
+          "summary": {"type": "string", "minLength": 20},
+          "citations": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^CIT-[0-9]{3}$"}}
+        }
+      }
+    },
+    "confidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["level", "basis", "factors"],
+      "properties": {
+        "level": {"enum": ["hypothesis", "provisional", "supported", "strong", "contested"]},
+        "basis": {"type": "string", "minLength": 20},
+        "factors": {"type": "array", "items": {"type": "string", "minLength": 3}},
+        "reviewed_by": {"type": "string", "minLength": 1},
+        "reviewed_at": {"type": "string", "format": "date"}
+      }
+    },
+    "supports": {"$ref": "#/$defs/unitIdList"},
+    "contests": {"$ref": "#/$defs/unitIdList"},
+    "contextualizes": {"$ref": "#/$defs/unitIdList"},
+    "limitations": {"type": "array", "items": {"type": "string", "minLength": 3}},
+    "tags": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"}},
+    "created_at": {"type": "string", "format": "date"},
+    "updated_at": {"type": "string", "format": "date"}
+  },
+  "$defs": {
+    "unitIdList": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^NT-(LAW|PRINCIPLE|MODEL|STRATEGY|TOOL|CASE|ANTI-PATTERN)-[0-9]{4}$"}
+    }
   }
 }
-

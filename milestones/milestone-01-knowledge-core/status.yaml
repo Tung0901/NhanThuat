@@ -1,0 +1,26 @@
+milestone_id: NT-MILESTONE-01
+title: Milestone 1 - Knowledge Core
+status: frozen
+progress: 100
+frozen_at: '2026-07-20'
+approved_by: Product Owner
+scope:
+  - Frozen EPIC 0 through EPIC 3 foundation
+  - Knowledge Foundation Batch 1
+  - Evidence Layer foundation
+  - Knowledge Factory foundation
+deliverables:
+  - id: NT-M1-D01
+    title: Knowledge Foundation Batch 1 frozen
+    status: frozen
+  - id: NT-M1-D02
+    title: Evidence Layer foundation
+    status: frozen
+  - id: NT-M1-D03
+    title: Knowledge Factory foundation
+    status: frozen
+  - id: NT-M1-D04
+    title: Pilot review report
+    status: frozen
+blockers: []
+last_reviewed_at: '2026-07-20'

@@ -1,0 +1,19 @@
+id: NT-PRINCIPLE-0027
+type: principle
+status: review
+version: 0.1.0
+title: Turn repeated decisions into defaults
+summary: If a good decision repeats often, make it the default path so attention can move to higher-value judgment.
+primary_domain: tu-than
+secondary_domains: [thanh-su, dung-nhan]
+definition: Defaults conserve decision effort by making recurring good behavior easier to repeat.
+mechanism: [Find repeated decision, Define preferred default, Review exceptions rather than every occurrence.]
+conditions: [The decision repeats, A safe default exists.]
+exceptions: [Novel cases require fresh judgment, Bad defaults can scale harm.]
+applications: {operations: [Create defaults for common approvals.], self-management: [Precommit routines for important behavior.]} 
+risks: [Automating stale assumptions, Removing needed discretion.]
+evidence: {level: provisional, references: []}
+relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0016, NT-LAW-0019], applies_to: []}
+tags: [defaults, habit, decision-making]
+created_at: '2026-07-20'
+updated_at: '2026-07-20'

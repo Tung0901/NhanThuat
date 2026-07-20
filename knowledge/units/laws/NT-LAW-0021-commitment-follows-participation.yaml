@@ -1,0 +1,21 @@
+id: NT-LAW-0021
+type: law
+status: review
+version: 0.1.0
+title: Commitment follows participation
+summary: People are more likely to commit to a decision when they helped shape, understand, or meaningfully choose it.
+primary_domain: hop-chung
+secondary_domains: [dung-nhan, thanh-su]
+definition: Participation increases commitment by creating understanding, agency, ownership, and perceived fairness around the decision.
+mechanism: [Participate in framing or choice, Understand tradeoffs, Feel agency and fairness, Commit more fully.]
+conditions: [Participation is meaningful, The decision affects the participant.]
+exceptions: [Urgent decisions may not permit participation, Token participation can reduce trust.]
+applications:
+  leadership: [Invite input where commitment matters and choice is real.]
+  change: [Use participation to build ownership of tradeoffs.]
+risks: [Confusing consultation with consensus, Using fake participation as theater.]
+evidence: {level: provisional, references: []}
+relations: {supports: [NT-PRINCIPLE-0037, NT-PRINCIPLE-0038], conflicts_with: [], depends_on: [NT-LAW-0010], applies_to: []}
+tags: [commitment, participation, ownership]
+created_at: '2026-07-20'
+updated_at: '2026-07-20'

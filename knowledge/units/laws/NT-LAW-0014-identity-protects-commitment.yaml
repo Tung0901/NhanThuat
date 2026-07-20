@@ -1,0 +1,21 @@
+id: NT-LAW-0014
+type: law
+status: review
+version: 0.1.0
+title: Identity protects commitment
+summary: People defend choices more strongly when those choices become tied to identity, status, belonging, or moral self-image.
+primary_domain: tri-nhan
+secondary_domains: [tu-than, hop-chung]
+definition: A commitment becomes harder to revise when changing it threatens how a person sees themselves or expects others to see them.
+mechanism: [Make a choice, Attach identity or status to it, Resist evidence that threatens the attachment.]
+conditions: [The choice is public or self-defining, Revision implies loss of face or belonging.]
+exceptions: [High psychological safety can make revision easier, Strong learning norms can separate identity from ideas.]
+applications:
+  negotiation: [Offer face-saving paths for changed positions.]
+  leadership: [Critique the decision without humiliating the identity.]
+risks: [Escalating commitment through public pressure, Misreading identity defense as pure irrationality.]
+evidence: {level: provisional, references: []}
+relations: {supports: [NT-PRINCIPLE-0023, NT-PRINCIPLE-0024], conflicts_with: [], depends_on: [], applies_to: []}
+tags: [identity, commitment, status]
+created_at: '2026-07-20'
+updated_at: '2026-07-20'

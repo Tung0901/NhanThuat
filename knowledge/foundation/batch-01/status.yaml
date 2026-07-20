@@ -1,0 +1,13 @@
+batch_id: NT-BATCH-001
+status: frozen
+progress: 100
+unit_counts:
+  laws: 20
+  principles: 40
+scope:
+  - production-scale knowledge foundation
+  - law and principle units only
+blockers: []
+last_reviewed_at: '2026-07-20'
+frozen_at: '2026-07-20'
+approved_by: Product Owner

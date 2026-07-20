@@ -1,0 +1,19 @@
+id: NT-PRINCIPLE-0011
+type: principle
+status: review
+version: 0.1.0
+title: Give feedback near the behavior
+summary: Deliver feedback close enough to the observed behavior that the receiver can remember, understand, and apply it.
+primary_domain: dung-nhan
+secondary_domains: [tu-than, thanh-su]
+definition: Feedback becomes more usable when it arrives while the action, context, and next opportunity to improve are still close.
+mechanism: [Observe behavior, State the gap promptly, Connect correction to next action.]
+conditions: [The receiver can act on the feedback, The feedback can be given respectfully.]
+exceptions: [Emotional heat may require a pause, Complex issues may need deeper review.]
+applications: {coaching: [Correct the next repetition, not only the past mistake.], management: [Use timely observations instead of vague annual summaries.]} 
+risks: [Reacting impulsively, Giving feedback without context.]
+evidence: {level: provisional, references: []}
+relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0008], applies_to: []}
+tags: [feedback, coaching, timing]
+created_at: '2026-07-20'
+updated_at: '2026-07-20'

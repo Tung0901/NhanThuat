@@ -8,6 +8,7 @@ from typing import Any
 
 from .catalog import KnowledgeCatalog
 from .loader import iter_documents, load_document
+from .evidence import EvidenceRecord
 from .models import Domain, KnowledgeRelation, KnowledgeUnit
 from .ontology import iter_unit_relations
 from .taxonomy import Taxonomy
@@ -24,6 +25,7 @@ class KnowledgeRegistry:
     root: Path
     domains: dict[str, Domain]
     units: dict[str, KnowledgeUnit]
+    evidence: dict[str, EvidenceRecord]
     relations: tuple[KnowledgeRelation, ...]
 
     @classmethod
@@ -31,10 +33,12 @@ class KnowledgeRegistry:
         repo = Path(root)
         domains = _load_domains(repo)
         units = _load_units(repo)
+        evidence = _load_evidence(repo)
         return cls(
             root=repo,
             domains=domains,
             units=units,
+            evidence=evidence,
             relations=iter_unit_relations(units.values()),
         )
 
@@ -46,6 +50,7 @@ class KnowledgeRegistry:
         return KnowledgeCatalog(
             taxonomy=self.taxonomy,
             units=self.units,
+            evidence=self.evidence,
             relations=self.relations,
         )
 
@@ -64,6 +69,12 @@ class KnowledgeRegistry:
             for unit in self.units.values()
             if unit.primary_domain == domain_slug or domain_slug in unit.secondary_domains
         )
+
+    def get_evidence(self, evidence_id: str) -> EvidenceRecord:
+        try:
+            return self.evidence[evidence_id]
+        except KeyError as exc:
+            raise KeyError(f"Unknown evidence record: {evidence_id}") from exc
 
 
 def load_registry(root: str | Path) -> KnowledgeRegistry:
@@ -92,6 +103,16 @@ def _load_units(repo: Path) -> dict[str, KnowledgeUnit]:
             raise ValueError(f"Duplicate id: {unit.id}")
         units[unit.id] = unit
     return dict(sorted(units.items()))
+
+
+def _load_evidence(repo: Path) -> dict[str, EvidenceRecord]:
+    evidence: dict[str, EvidenceRecord] = {}
+    for source in _iter_sources(repo / "knowledge" / "evidence"):
+        record = EvidenceRecord.from_mapping(source.data, source.path)
+        if record.id in evidence:
+            raise ValueError(f"Duplicate evidence id: {record.id}")
+        evidence[record.id] = record
+    return dict(sorted(evidence.items()))
 
 
 def _iter_sources(directory: Path) -> tuple[RegistrySource, ...]:

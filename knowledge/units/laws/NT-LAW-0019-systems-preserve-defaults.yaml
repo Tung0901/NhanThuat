@@ -1,0 +1,21 @@
+id: NT-LAW-0019
+type: law
+status: review
+version: 0.1.0
+title: Systems preserve defaults
+summary: A system tends to reproduce its default rules, incentives, habits, and constraints until an intervention changes them.
+primary_domain: thanh-su
+secondary_domains: [hop-chung, dung-nhan]
+definition: Repeated outcomes usually persist because underlying defaults keep guiding behavior even after people request different results.
+mechanism: [Default rules shape behavior, Behavior reproduces outcomes, Outcomes persist until defaults change.]
+conditions: [Patterns repeat across people or time, Underlying rules remain stable.]
+exceptions: [Exceptional effort can temporarily override defaults, External shock can reset the system.]
+applications:
+  operations: [Change the default path, not only the instruction.]
+  leadership: [Look for the rule that keeps recreating the problem.]
+risks: [Blaming individuals for systemic defaults, Overengineering simple behavior issues.]
+evidence: {level: provisional, references: []}
+relations: {supports: [NT-PRINCIPLE-0033, NT-PRINCIPLE-0034], conflicts_with: [], depends_on: [NT-LAW-0005], applies_to: []}
+tags: [systems, defaults, operations]
+created_at: '2026-07-20'
+updated_at: '2026-07-20'

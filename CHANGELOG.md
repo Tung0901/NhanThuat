@@ -20,6 +20,11 @@ Mọi thay đổi đáng chú ý của dự án được ghi tại đây.
 - EPIC 3 laws and principles architecture analysis.
 - Initial core laws and principles library.
 - ADR-0009 for the core laws and principles library.
+- Knowledge Foundation Batch 1 with 20 laws and 40 principles.
+- Evidence Layer foundation with standalone evidence records, citations, confidence, and traceability indexes.
+- Knowledge Factory foundation with batch manifests, quality gates, review findings, and freeze eligibility.
+- ADR-0010 through ADR-0013 for Evidence Layer and Knowledge Factory decisions.
+- Milestone 1 Knowledge Core status artifact and pilot review report.
 
 ### Changed
 
@@ -28,3 +33,5 @@ Mọi thay đổi đáng chú ý của dự án được ghi tại đây.
 - EPIC 2 approved by Product Owner and marked Frozen.
 - EPIC 3 moved to Ready for Review.
 - EPIC 3 approved by Product Owner and marked Frozen.
+- Knowledge Foundation Batch 1 approved by Product Owner and marked Frozen.
+- Milestone 1 Knowledge Core approved by Product Owner and marked Frozen.

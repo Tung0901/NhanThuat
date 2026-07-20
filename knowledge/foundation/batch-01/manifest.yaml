@@ -1,0 +1,102 @@
+batch_id: NT-BATCH-001
+title: Knowledge Foundation Batch 1
+status: frozen
+version: 0.1.0
+lifecycle:
+  current_state: frozen
+  stages:
+    - intake
+    - triage
+    - draft
+    - linking
+    - author_self_check
+    - validation
+    - internal_review
+    - ready_for_review
+    - product_owner_approval
+    - freeze
+unit_counts:
+  laws: 20
+  principles: 40
+units:
+  laws:
+    - NT-LAW-0004
+    - NT-LAW-0005
+    - NT-LAW-0006
+    - NT-LAW-0007
+    - NT-LAW-0008
+    - NT-LAW-0009
+    - NT-LAW-0010
+    - NT-LAW-0011
+    - NT-LAW-0012
+    - NT-LAW-0013
+    - NT-LAW-0014
+    - NT-LAW-0015
+    - NT-LAW-0016
+    - NT-LAW-0017
+    - NT-LAW-0018
+    - NT-LAW-0019
+    - NT-LAW-0020
+    - NT-LAW-0021
+    - NT-LAW-0022
+    - NT-LAW-0023
+  principles:
+    - NT-PRINCIPLE-0004
+    - NT-PRINCIPLE-0005
+    - NT-PRINCIPLE-0006
+    - NT-PRINCIPLE-0007
+    - NT-PRINCIPLE-0008
+    - NT-PRINCIPLE-0009
+    - NT-PRINCIPLE-0010
+    - NT-PRINCIPLE-0011
+    - NT-PRINCIPLE-0012
+    - NT-PRINCIPLE-0013
+    - NT-PRINCIPLE-0014
+    - NT-PRINCIPLE-0015
+    - NT-PRINCIPLE-0016
+    - NT-PRINCIPLE-0017
+    - NT-PRINCIPLE-0018
+    - NT-PRINCIPLE-0019
+    - NT-PRINCIPLE-0020
+    - NT-PRINCIPLE-0021
+    - NT-PRINCIPLE-0022
+    - NT-PRINCIPLE-0023
+    - NT-PRINCIPLE-0024
+    - NT-PRINCIPLE-0025
+    - NT-PRINCIPLE-0026
+    - NT-PRINCIPLE-0027
+    - NT-PRINCIPLE-0028
+    - NT-PRINCIPLE-0029
+    - NT-PRINCIPLE-0030
+    - NT-PRINCIPLE-0031
+    - NT-PRINCIPLE-0032
+    - NT-PRINCIPLE-0033
+    - NT-PRINCIPLE-0034
+    - NT-PRINCIPLE-0035
+    - NT-PRINCIPLE-0036
+    - NT-PRINCIPLE-0037
+    - NT-PRINCIPLE-0038
+    - NT-PRINCIPLE-0039
+    - NT-PRINCIPLE-0040
+    - NT-PRINCIPLE-0041
+    - NT-PRINCIPLE-0042
+    - NT-PRINCIPLE-0043
+quality_gates:
+  scope: pass
+  type: pass
+  taxonomy: pass
+  evidence: pass
+  relations: pass
+  duplicates: pass
+  conflicts: pass
+  human_readability: pass
+  ai_readability: pass
+  validation: pass
+  governance: pass
+human_approval:
+  approved_by: Product Owner
+  approved_at: '2026-07-20'
+freeze:
+  eligible: true
+  frozen_at: '2026-07-20'
+  rationale: Product Owner approved Batch 1 as part of Milestone 1 Knowledge Core freeze.

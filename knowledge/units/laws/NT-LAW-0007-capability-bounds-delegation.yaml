@@ -1,0 +1,21 @@
+id: NT-LAW-0007
+type: law
+status: review
+version: 0.1.0
+title: Capability bounds delegation
+summary: Delegation succeeds only within the capability, judgment, authority, and support available to the person receiving responsibility.
+primary_domain: dung-nhan
+secondary_domains: [thanh-su, hop-chung]
+definition: Responsibility cannot be effectively transferred beyond the receiver's current or supported ability to understand, decide, and act.
+mechanism: [Assign responsibility, Compare required judgment with available capability, Performance follows the gap or fit.]
+conditions: [A task has meaningful ownership, Capability and authority materially affect the result.]
+exceptions: [Stretch assignments can work with close support, Crisis may require imperfect delegation.]
+applications:
+  management: [Delegate outcome, authority, and support together.]
+  hiring: [Check whether role demands exceed current judgment.]
+risks: [Delegating blame instead of authority, Underestimating growth potential.]
+evidence: {level: provisional, references: []}
+relations: {supports: [NT-PRINCIPLE-0002, NT-PRINCIPLE-0010], conflicts_with: [], depends_on: [], applies_to: []}
+tags: [delegation, capability, authority]
+created_at: '2026-07-20'
+updated_at: '2026-07-20'

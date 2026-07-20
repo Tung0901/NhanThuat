@@ -1,0 +1,19 @@
+id: NT-PRINCIPLE-0004
+type: principle
+status: review
+version: 0.1.0
+title: Map context before judging behavior
+summary: Before evaluating a person's choice, identify the constraints, incentives, pressures, relationships, and timing that shaped it.
+primary_domain: tri-nhan
+secondary_domains: [tu-than, dung-nhan]
+definition: Fair judgment begins by mapping the context that made an action seem sensible, costly, urgent, or necessary to the actor.
+mechanism: [Name the decision context, Identify constraints and stakes, Judge behavior after context is visible.]
+conditions: [The behavior has meaningful consequence, Context can be reconstructed responsibly.]
+exceptions: [Immediate safety risks may require action before analysis, Context does not erase accountability.]
+applications: {management: [Ask what situation produced the behavior before correcting it.], coaching: [Separate explanation from excuse.]} 
+risks: [Excusing harmful behavior, Ignoring stable patterns.]
+evidence: {level: provisional, references: []}
+relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0004], applies_to: []}
+tags: [context, judgment, behavior]
+created_at: '2026-07-20'
+updated_at: '2026-07-20'

@@ -1,0 +1,21 @@
+id: NT-LAW-0018
+type: law
+status: review
+version: 0.1.0
+title: Roles shape perception
+summary: People interpret situations through the responsibilities, incentives, constraints, and identities attached to their roles.
+primary_domain: dung-nhan
+secondary_domains: [tri-nhan, hop-chung]
+definition: A role filters what a person notices, values, ignores, and defends because it defines expected contribution and exposure.
+mechanism: [Occupy a role, Experience role-specific pressures, Interpret events through role responsibilities.]
+conditions: [The role has expectations and consequences, The person identifies with or depends on the role.]
+exceptions: [Cross-functional exposure can broaden perception, Personal values may override role pressure.]
+applications:
+  management: [Ask what the role makes visible and invisible.]
+  collaboration: [Translate issues across role perspectives.]
+risks: [Assuming bad intent from role-shaped blind spots, Designing roles with conflicting signals.]
+evidence: {level: provisional, references: []}
+relations: {supports: [NT-PRINCIPLE-0031, NT-PRINCIPLE-0032], conflicts_with: [], depends_on: [NT-LAW-0004], applies_to: []}
+tags: [roles, perception, blind-spots]
+created_at: '2026-07-20'
+updated_at: '2026-07-20'

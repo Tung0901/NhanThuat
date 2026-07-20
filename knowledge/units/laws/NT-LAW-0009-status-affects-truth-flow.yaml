@@ -1,0 +1,21 @@
+id: NT-LAW-0009
+type: law
+status: review
+version: 0.1.0
+title: Status affects truth flow
+summary: People filter what they say upward, downward, and sideways according to perceived power, safety, status, and consequence.
+primary_domain: hop-chung
+secondary_domains: [tri-nhan, thanh-su]
+definition: Information flow is shaped by social risk; people reveal or withhold truth based on what they expect will happen after speaking.
+mechanism: [Assess audience and power, Estimate consequence, Share, soften, delay, or hide information.]
+conditions: [Information has social or material consequence, People care about future standing.]
+exceptions: [High trust can increase candor, Formal protection may reduce fear.]
+applications:
+  leadership: [Design channels where bad news can travel safely.]
+  governance: [Treat silence as a possible risk signal.]
+risks: [Punishing truth while asking for transparency, Confusing politeness with alignment.]
+evidence: {level: provisional, references: []}
+relations: {supports: [NT-PRINCIPLE-0013, NT-PRINCIPLE-0014], conflicts_with: [], depends_on: [NT-LAW-0003], applies_to: []}
+tags: [status, truth, communication]
+created_at: '2026-07-20'
+updated_at: '2026-07-20'

@@ -1,0 +1,21 @@
+id: NT-LAW-0004
+type: law
+status: review
+version: 0.1.0
+title: Context shapes judgment
+summary: People judge options through the situation, constraints, incentives, relationships, and timing they perceive around the choice.
+primary_domain: tri-nhan
+secondary_domains: [tu-than, dung-nhan, thanh-su]
+definition: Judgment is influenced by the perceived context surrounding a decision, not only by stable preference or abstract logic.
+mechanism: [Perceive the situation, interpret constraints and stakes, compare options through that frame.]
+conditions: [The person has incomplete information, The context is salient enough to affect interpretation.]
+exceptions: [Deep expertise may reduce context distortion, Explicit criteria may stabilize judgment.]
+applications:
+  management: [Ask what context makes a choice seem reasonable before evaluating the person.]
+  negotiation: [Change the frame before arguing over positions.]
+risks: [Blaming character for contextual pressure, Ignoring durable values and capability.]
+evidence: {level: provisional, references: []}
+relations: {supports: [NT-PRINCIPLE-0004, NT-PRINCIPLE-0005], conflicts_with: [], depends_on: [], applies_to: []}
+tags: [context, judgment, decision-making]
+created_at: '2026-07-20'
+updated_at: '2026-07-20'

@@ -1,0 +1,107 @@
+id: NT-EVIDENCE-0001
+type: evidence
+status: frozen
+version: 0.1.0
+title: Knowledge Foundation Batch 1 pilot review
+summary: Internal review evidence recording Batch 1 validation, relation integrity, and freeze eligibility without external citation claims.
+source:
+  kind: internal_document
+  title: Knowledge Foundation Batch 1 Pilot Review
+  authors:
+    - Codex internal review
+  publisher: Nhan Thuat repository
+  published_at: '2026-07-20'
+  language: en
+  path: docs/reviews/KNOWLEDGE-FOUNDATION-BATCH-01-PILOT-REVIEW.md
+  license: internal project governance
+citations:
+  - id: CIT-001
+    source_locator: docs/reviews/KNOWLEDGE-FOUNDATION-BATCH-01-PILOT-REVIEW.md
+    locator_type: section
+    locator: Freeze Eligibility
+    paraphrase: The pilot review records that Batch 1 passed validation, relation integrity checks, and Product Owner-approved freeze eligibility.
+claims:
+  - id: CLM-001
+    summary: Batch 1 passed internal quality review and is eligible for Milestone 1 freeze under Product Owner approval.
+    citations:
+      - CIT-001
+confidence:
+  level: supported
+  basis: Confidence is supported by repository-local validation and review evidence, not by external behavioral research.
+  factors:
+    - repository-validation
+    - internal-review
+    - product-owner-approval
+  reviewed_by: Codex internal review
+  reviewed_at: '2026-07-20'
+supports: []
+contests: []
+contextualizes:
+  - NT-LAW-0004
+  - NT-LAW-0005
+  - NT-LAW-0006
+  - NT-LAW-0007
+  - NT-LAW-0008
+  - NT-LAW-0009
+  - NT-LAW-0010
+  - NT-LAW-0011
+  - NT-LAW-0012
+  - NT-LAW-0013
+  - NT-LAW-0014
+  - NT-LAW-0015
+  - NT-LAW-0016
+  - NT-LAW-0017
+  - NT-LAW-0018
+  - NT-LAW-0019
+  - NT-LAW-0020
+  - NT-LAW-0021
+  - NT-LAW-0022
+  - NT-LAW-0023
+  - NT-PRINCIPLE-0004
+  - NT-PRINCIPLE-0005
+  - NT-PRINCIPLE-0006
+  - NT-PRINCIPLE-0007
+  - NT-PRINCIPLE-0008
+  - NT-PRINCIPLE-0009
+  - NT-PRINCIPLE-0010
+  - NT-PRINCIPLE-0011
+  - NT-PRINCIPLE-0012
+  - NT-PRINCIPLE-0013
+  - NT-PRINCIPLE-0014
+  - NT-PRINCIPLE-0015
+  - NT-PRINCIPLE-0016
+  - NT-PRINCIPLE-0017
+  - NT-PRINCIPLE-0018
+  - NT-PRINCIPLE-0019
+  - NT-PRINCIPLE-0020
+  - NT-PRINCIPLE-0021
+  - NT-PRINCIPLE-0022
+  - NT-PRINCIPLE-0023
+  - NT-PRINCIPLE-0024
+  - NT-PRINCIPLE-0025
+  - NT-PRINCIPLE-0026
+  - NT-PRINCIPLE-0027
+  - NT-PRINCIPLE-0028
+  - NT-PRINCIPLE-0029
+  - NT-PRINCIPLE-0030
+  - NT-PRINCIPLE-0031
+  - NT-PRINCIPLE-0032
+  - NT-PRINCIPLE-0033
+  - NT-PRINCIPLE-0034
+  - NT-PRINCIPLE-0035
+  - NT-PRINCIPLE-0036
+  - NT-PRINCIPLE-0037
+  - NT-PRINCIPLE-0038
+  - NT-PRINCIPLE-0039
+  - NT-PRINCIPLE-0040
+  - NT-PRINCIPLE-0041
+  - NT-PRINCIPLE-0042
+  - NT-PRINCIPLE-0043
+limitations:
+  - This evidence records internal repository review and does not provide external behavioral citations.
+tags:
+  - pilot-review
+  - traceability
+  - milestone-1
+created_at: '2026-07-20'
+updated_at: '2026-07-20'

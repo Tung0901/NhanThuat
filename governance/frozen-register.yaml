@@ -32,3 +32,19 @@ entries:
     approved_by: Product Owner
     source: epics/epic-03-laws-principles/status.yaml
     rationale: Product Owner approved EPIC 3 and requested Frozen state.
+  - id: NT-BATCH-001
+    type: knowledge_batch
+    title: Knowledge Foundation Batch 1
+    status: frozen
+    frozen_at: '2026-07-20'
+    approved_by: Product Owner
+    source: knowledge/foundation/batch-01/status.yaml
+    rationale: Product Owner approved Batch 1 as part of Milestone 1 Knowledge Core freeze.
+  - id: NT-MILESTONE-01
+    type: milestone
+    title: Milestone 1 - Knowledge Core
+    status: frozen
+    frozen_at: '2026-07-20'
+    approved_by: Product Owner
+    source: milestones/milestone-01-knowledge-core/status.yaml
+    rationale: Product Owner approved and requested Milestone 1 freeze.

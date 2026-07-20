@@ -1,0 +1,21 @@
+id: NT-LAW-0016
+type: law
+status: review
+version: 0.1.0
+title: Habit conserves decision effort
+summary: Repeated routines reduce decision effort by turning frequent choices into default behavior.
+primary_domain: tu-than
+secondary_domains: [dung-nhan, thanh-su]
+definition: Habits conserve attention and willpower by making repeated action automatic, but they also preserve outdated patterns.
+mechanism: [Repeat a cue-action pattern, Reduce conscious choice, Execute the default when the cue returns.]
+conditions: [The situation repeats, The action has a stable trigger.]
+exceptions: [Novel contexts may disrupt habit, Strong interruption can force deliberation.]
+applications:
+  self-management: [Design defaults for important repeated behavior.]
+  operations: [Turn recurring good practice into routines.]
+risks: [Automating the wrong behavior, Ignoring context changes.]
+evidence: {level: provisional, references: []}
+relations: {supports: [NT-PRINCIPLE-0027, NT-PRINCIPLE-0028], conflicts_with: [], depends_on: [], applies_to: []}
+tags: [habit, routines, decision-effort]
+created_at: '2026-07-20'
+updated_at: '2026-07-20'

@@ -1,0 +1,19 @@
+id: NT-PRINCIPLE-0032
+type: principle
+status: review
+version: 0.1.0
+title: Design roles to reduce blind spots
+summary: Design roles so critical information, consequences, and handoffs are visible to the people whose decisions affect them.
+primary_domain: dung-nhan
+secondary_domains: [hop-chung, thanh-su]
+definition: Role design should expose the signals needed for good judgment rather than isolating people inside partial views.
+mechanism: [Identify decision needs, Identify role blind spots, Add exposure, feedback, or shared review.]
+conditions: [Role decisions affect others, Missing visibility causes repeated error.]
+exceptions: [Confidentiality may limit exposure, Too much visibility can overload people.]
+applications: {organization: [Give decision makers feedback from downstream users.], management: [Rotate observation across linked roles.]} 
+risks: [Overloading roles with information, Weakening specialization.]
+evidence: {level: provisional, references: []}
+relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0018, NT-LAW-0008], applies_to: []}
+tags: [role-design, visibility, judgment]
+created_at: '2026-07-20'
+updated_at: '2026-07-20'

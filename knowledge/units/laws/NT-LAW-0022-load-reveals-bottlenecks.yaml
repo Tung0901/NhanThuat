@@ -1,0 +1,21 @@
+id: NT-LAW-0022
+type: law
+status: review
+version: 0.1.0
+title: Load reveals bottlenecks
+summary: Under increased demand, hidden constraints in people, process, authority, or information become visible through delay and failure.
+primary_domain: thanh-su
+secondary_domains: [dung-nhan, hop-chung]
+definition: Load exposes the narrowest constraint in a system because work accumulates where capacity, authority, or information is insufficient.
+mechanism: [Demand rises, Work hits a constraint, Delay, rework, or failure reveals the bottleneck.]
+conditions: [Demand exceeds normal slack, The system has dependent steps.]
+exceptions: [Excess redundancy may hide bottlenecks, One-time accidents may not reveal a stable constraint.]
+applications:
+  operations: [Track where work waits, not only where people are busy.]
+  management: [Treat overload as diagnostic data.]
+risks: [Blaming the visible bottleneck person, Adding capacity before understanding constraint type.]
+evidence: {level: provisional, references: []}
+relations: {supports: [NT-PRINCIPLE-0039, NT-PRINCIPLE-0040], conflicts_with: [], depends_on: [], applies_to: []}
+tags: [bottlenecks, load, operations]
+created_at: '2026-07-20'
+updated_at: '2026-07-20'

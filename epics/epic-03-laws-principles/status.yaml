@@ -1,0 +1,21 @@
+epic_id: NT-EPIC-03
+status: frozen
+progress: 100
+deliverables:
+  - id: NT-E3-D01
+    title: Laws and principles architecture analysis
+    status: frozen
+  - id: NT-E3-D02
+    title: Core law knowledge units
+    status: frozen
+  - id: NT-E3-D03
+    title: Core principle knowledge units
+    status: frozen
+  - id: NT-E3-D04
+    title: Relation and registry coverage
+    status: frozen
+  - id: NT-E3-D05
+    title: Internal implementation review and tests
+    status: frozen
+blockers: []
+last_reviewed_at: '2026-07-20'

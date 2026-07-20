@@ -17,7 +17,7 @@ def test_registry_loads_domains_units_and_relations() -> None:
     registry = load_registry(ROOT)
 
     assert set(registry.domains) == {"tu-than", "tri-nhan", "dung-nhan", "hop-chung", "thanh-su"}
-    assert set(registry.units) == {"NT-LAW-0001"}
+    assert "NT-LAW-0001" in registry.units
     assert registry.get_unit("NT-LAW-0001").primary_domain == "tri-nhan"
     assert registry.taxonomy.has_domain("tri-nhan")
 
@@ -25,7 +25,7 @@ def test_registry_loads_domains_units_and_relations() -> None:
 def test_legacy_build_registry_shape_is_preserved() -> None:
     legacy = build_registry(ROOT)
 
-    assert set(legacy) == {"NT-LAW-0001"}
+    assert "NT-LAW-0001" in legacy
     assert legacy["NT-LAW-0001"]["id"] == "NT-LAW-0001"
     assert "source_path" not in legacy["NT-LAW-0001"]
 
@@ -35,11 +35,11 @@ def test_catalog_contains_deterministic_indexes() -> None:
     data = catalog.to_mapping()
 
     assert isinstance(catalog, KnowledgeCatalog)
-    assert data["indexes"]["by_type"] == {"law": ["NT-LAW-0001"]}
-    assert data["indexes"]["by_primary_domain"] == {"tri-nhan": ["NT-LAW-0001"]}
-    assert data["indexes"]["by_evidence_level"] == {"provisional": ["NT-LAW-0001"]}
+    assert "NT-LAW-0001" in data["indexes"]["by_type"]["law"]
+    assert "NT-LAW-0001" in data["indexes"]["by_primary_domain"]["tri-nhan"]
+    assert "NT-LAW-0001" in data["indexes"]["by_evidence_level"]["provisional"]
     assert data["indexes"]["by_evidence_reference"] == {}
-    assert data["indexes"]["by_tag"]["motivation"] == ["NT-LAW-0001"]
+    assert "NT-LAW-0001" in data["indexes"]["by_tag"]["motivation"]
 
 
 def test_identifier_generation_and_parsing() -> None:

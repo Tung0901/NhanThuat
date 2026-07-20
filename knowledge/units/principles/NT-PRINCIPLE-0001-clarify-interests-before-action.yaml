@@ -1,0 +1,38 @@
+id: NT-PRINCIPLE-0001
+type: principle
+status: frozen
+version: 0.1.0
+title: Clarify interests before designing action
+summary: Before choosing incentives, arguments, or interventions, identify the interests each person believes they are protecting or increasing.
+primary_domain: tri-nhan
+secondary_domains: [dung-nhan, thanh-su]
+definition: Effective action design starts by clarifying perceived interests because behavior often follows what people believe will protect or improve their position.
+mechanism:
+  - Identify the actor and decision context.
+  - Ask what gain, loss, risk, identity, or obligation the actor perceives.
+  - Design action around the perceived interest rather than the stated position alone.
+conditions:
+  - The actor has meaningful choice.
+  - The observer can gather enough context to infer interests responsibly.
+exceptions:
+  - Emergency action may require temporary decisions before full interest mapping.
+  - Coercion, misinformation, or reflex may make interest analysis incomplete.
+applications:
+  negotiation:
+    - Separate declared positions from underlying interests.
+  management:
+    - Align incentives with what team members actually value and fear.
+risks:
+  - Projecting one's own interests onto others.
+  - Treating interests as purely financial or purely rational.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: [NT-LAW-0001]
+  applies_to: []
+tags: [interests, action-design, negotiation, motivation]
+created_at: '2026-07-20'
+updated_at: '2026-07-20'

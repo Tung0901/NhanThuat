@@ -1,0 +1,38 @@
+id: NT-PRINCIPLE-0003
+type: principle
+status: frozen
+version: 0.1.0
+title: Make coordination costs visible
+summary: When cooperation slows down, expose hidden costs such as unclear ownership, missing trust, competing priorities, and repeated handoffs.
+primary_domain: hop-chung
+secondary_domains: [dung-nhan, thanh-su]
+definition: Coordination improves when invisible friction is named, because people can then redesign ownership, communication, trust-building, or decision rights.
+mechanism:
+  - Observe delays, repeated clarification, rework, or defensive checking.
+  - Identify the hidden cost creating friction.
+  - Redesign the coordination pattern to reduce that cost.
+conditions:
+  - Multiple people or roles depend on each other.
+  - Coordination friction can be discussed without excessive blame.
+exceptions:
+  - Some redundancy is necessary in high-risk work.
+  - Temporary friction may be acceptable during learning or transition.
+applications:
+  teamwork:
+    - Review handoffs and decision bottlenecks after repeated delays.
+  management:
+    - Reduce monitoring load by improving trust and explicit ownership.
+risks:
+  - Removing useful safeguards in the name of speed.
+  - Treating all friction as a process problem while ignoring conflict or mistrust.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: [NT-LAW-0002, NT-LAW-0003]
+  applies_to: []
+tags: [coordination, trust, ownership, teamwork]
+created_at: '2026-07-20'
+updated_at: '2026-07-20'

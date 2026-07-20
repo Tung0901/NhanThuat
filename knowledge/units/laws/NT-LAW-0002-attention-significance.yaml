@@ -1,0 +1,38 @@
+id: NT-LAW-0002
+type: law
+status: frozen
+version: 0.1.0
+title: Attention follows perceived significance
+summary: People tend to give attention to signals they perceive as meaningful, urgent, costly, or personally relevant.
+primary_domain: tri-nhan
+secondary_domains: [dung-nhan, hop-chung, thanh-su]
+definition: Attention is allocated toward cues that a person interprets as important for safety, identity, reward, loss, obligation, or future opportunity.
+mechanism:
+  - A cue is noticed in the environment or social field.
+  - The person estimates relevance, urgency, cost, or opportunity.
+  - Attention shifts toward the cue judged most significant.
+conditions:
+  - The person has enough capacity to redirect attention.
+  - The cue is perceived as relevant by the person, not only by an observer.
+exceptions:
+  - Habit, fatigue, overload, or distraction may block attention.
+  - A cue may be ignored when it conflicts with identity or prior commitment.
+applications:
+  management:
+    - Frame priorities by making consequence, ownership, and timing explicit.
+  communication:
+    - Lead with the reason a message matters to the listener.
+risks:
+  - Confusing loudness with significance.
+  - Assuming others notice what the speaker considers important.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: [NT-PRINCIPLE-0003]
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags: [attention, relevance, communication, priority]
+created_at: '2026-07-20'
+updated_at: '2026-07-20'

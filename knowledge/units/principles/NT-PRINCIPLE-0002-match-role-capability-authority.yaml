@@ -1,0 +1,38 @@
+id: NT-PRINCIPLE-0002
+type: principle
+status: frozen
+version: 0.1.0
+title: Match role, capability, and authority
+summary: Assign people to roles only when expected outcomes, required capability, and decision authority are aligned.
+primary_domain: dung-nhan
+secondary_domains: [hop-chung, thanh-su]
+definition: A role becomes workable when the person has enough capability to perform it and enough authority to make the decisions the role requires.
+mechanism:
+  - Define the outcome required from the role.
+  - Identify the capability and judgment needed.
+  - Grant authority and resources that match the expected responsibility.
+conditions:
+  - The role has a defined outcome.
+  - Capability and authority can be assessed before or during assignment.
+exceptions:
+  - Developmental assignments may intentionally stretch capability with support.
+  - Compliance or safety constraints may limit authority despite capability.
+applications:
+  management:
+    - Check role fit before blaming execution failure.
+  hiring:
+    - Evaluate whether candidates can act with the autonomy the role requires.
+risks:
+  - Giving responsibility without authority.
+  - Granting authority to someone without sufficient capability or support.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags: [role-fit, capability, authority, delegation]
+created_at: '2026-07-20'
+updated_at: '2026-07-20'

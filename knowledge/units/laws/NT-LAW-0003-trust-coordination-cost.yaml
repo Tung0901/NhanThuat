@@ -1,0 +1,38 @@
+id: NT-LAW-0003
+type: law
+status: frozen
+version: 0.1.0
+title: Trust reduces coordination cost
+summary: When people trust intent, competence, and follow-through, they need less monitoring, negotiation, and defensive checking to coordinate.
+primary_domain: hop-chung
+secondary_domains: [dung-nhan, thanh-su]
+definition: Trust lowers the perceived cost of joint action by reducing uncertainty about whether others will act competently, honestly, and consistently.
+mechanism:
+  - A person estimates another party's intent, competence, and reliability.
+  - Higher trust reduces perceived need for control and verification.
+  - Lower coordination cost makes cooperation easier to start and sustain.
+conditions:
+  - Parties have repeated signals or credible information about each other.
+  - The task requires some dependence between people.
+exceptions:
+  - High stakes may still require explicit checks even when trust is high.
+  - Trust in intent does not replace competence or capacity.
+applications:
+  management:
+    - Build trust by making commitments visible and following through.
+  teamwork:
+    - Reduce unnecessary control where reliability has already been demonstrated.
+risks:
+  - Treating trust as blind belief rather than calibrated confidence.
+  - Ignoring verification needs in high-risk contexts.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: [NT-PRINCIPLE-0003]
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags: [trust, coordination, cooperation, reliability]
+created_at: '2026-07-20'
+updated_at: '2026-07-20'

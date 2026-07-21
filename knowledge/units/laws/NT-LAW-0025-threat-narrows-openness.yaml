@@ -1,0 +1,19 @@
+id: NT-LAW-0025
+type: law
+status: frozen
+version: 0.1.0
+title: Threat narrows openness
+summary: When people feel threatened, they protect control, status, belonging, or dignity before they fully process new information.
+primary_domain: tri-nhan
+secondary_domains: [tu-than, hop-chung]
+definition: Perceived threat shifts behavior toward defense, making curiosity, candor, and learning harder until enough safety is restored.
+mechanism: [Detect threat, Protect self, Narrow interpretation, Resist exposure.]
+conditions: [The person expects loss, humiliation, punishment, exclusion, or loss of control.]
+exceptions: [High trust can buffer threat, Some trained roles sustain openness under pressure.]
+applications: {review: [Reduce unnecessary threat before asking for honest reflection.], management: [Separate correction from humiliation.]}
+risks: [Avoiding necessary accountability, Treating all discomfort as harm.]
+evidence: {level: provisional, references: []}
+relations: {supports: [NT-LAW-0023, NT-PRINCIPLE-0045, NT-PRINCIPLE-0046, NT-ANTI-PATTERN-0001], conflicts_with: [], depends_on: [], applies_to: []}
+tags: [threat, safety, defense]
+created_at: '2026-07-21'
+updated_at: '2026-07-21'

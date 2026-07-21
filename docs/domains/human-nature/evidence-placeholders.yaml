@@ -1,0 +1,14 @@
+domain_area_id: NT-DA-0001
+slug: human-nature
+status: frozen
+evidence_posture:
+  default_level: provisional
+  external_references_fabricated: false
+  future_evidence_needs:
+    - behavioral science sources for attention, cognitive load, and threat response
+    - organizational research on psychological safety, trust, and coordination
+    - ethics sources on dignity, manipulation, and legitimate influence
+    - learning science sources on feedback, repetition, and adaptation
+notes:
+  - Existing inline evidence fields remain backward-compatible.
+  - Standalone evidence records should be added in a later evidence batch after source review.

@@ -1,0 +1,19 @@
+id: NT-PRINCIPLE-0047
+type: principle
+status: frozen
+version: 0.1.0
+title: Ask what identity is being protected
+summary: When people resist change, ask what identity, competence, belonging, or status the resistance may be protecting.
+primary_domain: tri-nhan
+secondary_domains: [tu-than, hop-chung]
+definition: Resistance often becomes intelligible when the protected self-image or belonging concern is named before the behavior is judged.
+mechanism: [Notice resistance, Identify possible protected identity, Test the hypothesis respectfully, Adjust the approach.]
+conditions: [The change affects self-image, status, belonging, or competence.]
+exceptions: [Resistance may reflect real design problems, identity analysis can become speculation.]
+applications: {change: [Diagnose identity threat before pushing harder.], coaching: [Ask what the person fears the change says about them.]}
+risks: [Over-psychologizing disagreement, avoiding legitimate standards.]
+evidence: {level: provisional, references: []}
+relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0026], applies_to: []}
+tags: [identity, diagnosis, resistance]
+created_at: '2026-07-21'
+updated_at: '2026-07-21'

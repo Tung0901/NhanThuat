@@ -1,0 +1,19 @@
+id: NT-MODEL-0001
+type: model
+status: frozen
+version: 0.1.0
+title: Meaning-attention loop
+summary: A pattern model showing how interpreted meaning directs attention and repeated attention reinforces perceived meaning.
+primary_domain: tri-nhan
+secondary_domains: [tu-than, hop-chung]
+definition: People notice what seems meaningful, then repeated attention makes that meaning feel more real, urgent, or central.
+mechanism: [Interpret meaning, Allocate attention, Reinforce salience, Update future attention.]
+conditions: [Signals repeat, emotional or identity relevance is present.]
+exceptions: [Deliberate reflection can interrupt the loop, external demands can redirect attention.]
+applications: {communication: [Design messages that clarify meaning without inflating urgency.], self-management: [Notice what repeated attention is making larger.]}
+risks: [Rumination, manufactured urgency.]
+evidence: {level: provisional, references: []}
+relations: {supports: [NT-PRINCIPLE-0044], conflicts_with: [], depends_on: [NT-LAW-0002], applies_to: []}
+tags: [pattern, attention, meaning]
+created_at: '2026-07-21'
+updated_at: '2026-07-21'

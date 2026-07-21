@@ -1,0 +1,19 @@
+id: NT-LAW-0028
+type: law
+status: frozen
+version: 0.1.0
+title: Adaptation follows repeated consequence
+summary: People adapt to what is repeatedly rewarded, punished, ignored, made easy, or made costly.
+primary_domain: tri-nhan
+secondary_domains: [tu-than, thanh-su]
+definition: Repeated consequences train attention, habits, expectations, and emotional responses even when no one explicitly teaches them.
+mechanism: [Experience consequence, Update expectation, Repeat behavior, Stabilize adaptation.]
+conditions: [Consequences are repeated or emotionally strong, The person can perceive the pattern.]
+exceptions: [Strong values can resist consequence patterns, hidden consequences may not teach.]
+applications: {culture: [Notice what the system repeatedly rewards.], coaching: [Align repeated feedback with desired adaptation.]}
+risks: [Over-shaping people through pressure, Confusing adaptation with genuine agreement.]
+evidence: {level: provisional, references: []}
+relations: {supports: [NT-PRINCIPLE-0051, NT-MODEL-0003, NT-ANTI-PATTERN-0003], conflicts_with: [], depends_on: [NT-LAW-0008, NT-LAW-0016], applies_to: []}
+tags: [adaptation, consequence, habits]
+created_at: '2026-07-21'
+updated_at: '2026-07-21'

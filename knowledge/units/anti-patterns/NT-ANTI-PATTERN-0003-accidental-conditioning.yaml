@@ -1,0 +1,19 @@
+id: NT-ANTI-PATTERN-0003
+type: anti-pattern
+status: frozen
+version: 0.1.0
+title: Accidental conditioning
+summary: A harmful pattern where repeated rewards and costs train the opposite behavior from the stated value.
+primary_domain: tri-nhan
+secondary_domains: [thanh-su, hop-chung]
+definition: Systems accidentally condition people when official values say one thing but repeated consequences teach another.
+mechanism: [State value, Reward opposite behavior, Repeat inconsistency, Normalize adaptation.]
+conditions: [Stated values and lived consequences diverge.]
+exceptions: [Temporary exceptions may be understood if named and repaired.]
+applications: {culture: [Compare what is praised with what is actually rewarded.], operations: [Look for repeated incentives that contradict stated standards.]}
+risks: [Cynicism, hidden manipulation.]
+evidence: {level: provisional, references: []}
+relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0028], applies_to: []}
+tags: [anti-pattern, adaptation, incentives]
+created_at: '2026-07-21'
+updated_at: '2026-07-21'

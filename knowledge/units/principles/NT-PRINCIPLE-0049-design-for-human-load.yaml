@@ -1,0 +1,19 @@
+id: NT-PRINCIPLE-0049
+type: principle
+status: frozen
+version: 0.1.0
+title: Design for human load
+summary: Design roles, meetings, rules, and decisions around realistic human attention, energy, and emotional capacity.
+primary_domain: tri-nhan
+secondary_domains: [thanh-su, tu-than]
+definition: Systems that ignore load create predictable failures in judgment, patience, follow-through, and learning.
+mechanism: [Estimate load, Remove unnecessary demand, Add recovery and defaults.]
+conditions: [People must sustain judgment or coordination over time.]
+exceptions: [Short-term crisis can require temporary stretch, too much simplification can reduce growth.]
+applications: {operations: [Limit work-in-progress and decision switching.], management: [Protect high-judgment work from avoidable load.]}
+risks: [Underchallenging people, Excusing poor discipline.]
+evidence: {level: provisional, references: []}
+relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0027], applies_to: []}
+tags: [load, design, capacity]
+created_at: '2026-07-21'
+updated_at: '2026-07-21'

@@ -1,0 +1,19 @@
+id: NT-PRINCIPLE-0050
+type: principle
+status: frozen
+version: 0.1.0
+title: Read body signals as load telemetry
+summary: Treat fatigue, tension, agitation, and shutdown as useful signals about load before they become avoidable failures.
+primary_domain: tri-nhan
+secondary_domains: [tu-than, dung-nhan]
+definition: The body often shows load before reasoning fully names it, so somatic signals can provide early warning for recovery, pacing, or support.
+mechanism: [Notice physical signal, Interpret possible load, Check context, Adjust demand or recovery.]
+conditions: [Load may be hidden or normalized, the person can pause long enough to notice signals.]
+exceptions: [Body signals can have medical causes, some roles require acting despite discomfort.]
+applications: {self-management: [Use fatigue or agitation as a prompt to check load before reacting.], leadership: [Treat visible exhaustion or shutdown as data for pacing and support.]}
+risks: [Over-interpreting body signals, ignoring medical or environmental causes.]
+evidence: {level: provisional, references: []}
+relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0027], applies_to: []}
+tags: [load, body-signals, telemetry]
+created_at: '2026-07-21'
+updated_at: '2026-07-21'

@@ -1,0 +1,19 @@
+id: NT-PRINCIPLE-0051
+type: principle
+status: frozen
+version: 0.1.0
+title: Shape repeated consequences deliberately
+summary: Choose repeated rewards, costs, defaults, and responses intentionally because people adapt to the pattern they experience.
+primary_domain: tri-nhan
+secondary_domains: [thanh-su, hop-chung]
+definition: Culture and behavior are trained by repeated consequences, so leaders and systems should align consequences with the desired adaptation.
+mechanism: [Identify repeated consequence, Compare with desired adaptation, Adjust reward, cost, default, or response.]
+conditions: [A behavior pattern is forming, The system can influence consequences.]
+exceptions: [Some adaptation is harmful even if effective, people may resist perceived manipulation.]
+applications: {culture: [Reward truth and repair repeatedly, not just stated values.], operations: [Make desired behaviors reliably easier or more valued.]}
+risks: [Manipulation, Reducing intrinsic motivation.]
+evidence: {level: provisional, references: []}
+relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0028], applies_to: []}
+tags: [adaptation, consequences, culture]
+created_at: '2026-07-21'
+updated_at: '2026-07-21'

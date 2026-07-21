@@ -1,0 +1,19 @@
+id: NT-PRINCIPLE-0044
+type: principle
+status: frozen
+version: 0.1.0
+title: Start with meaning before message
+summary: Before asking for attention, connect the message to what the person can recognize as meaningful, relevant, or consequential.
+primary_domain: tri-nhan
+secondary_domains: [hop-chung, tu-than]
+definition: A message is more likely to be heard when the listener can see why it matters before being asked to process details.
+mechanism: [Identify listener concern, State relevance, Then provide detail.]
+conditions: [Attention is limited, The topic competes with other priorities.]
+exceptions: [Emergency commands may need to precede explanation, False relevance damages trust.]
+applications: {communication: [Open with why the topic matters to the listener.], leadership: [Tie priorities to shared purpose or concrete risk.]}
+risks: [Over-framing, Manipulating perceived importance.]
+evidence: {level: provisional, references: []}
+relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0002], applies_to: []}
+tags: [attention, meaning, communication]
+created_at: '2026-07-21'
+updated_at: '2026-07-21'

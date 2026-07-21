@@ -159,8 +159,12 @@ def test_repository_validation_preserves_non_domain_frozen_register_compatibilit
     repo = _minimal_validation_repo(tmp_path)
     _write_domain_status(repo, status="ready_for_review")
     _copy_epic_statuses(repo)
+    register = load_document(ROOT / "governance" / "frozen-register.yaml")
+    register["entries"] = [
+        entry for entry in register["entries"] if entry.get("type") != "domain_area"
+    ]
     (repo / "governance" / "frozen-register.yaml").write_text(
-        (ROOT / "governance" / "frozen-register.yaml").read_text(encoding="utf-8"),
+        _dump_minimal_yaml(register),
         encoding="utf-8",
     )
 

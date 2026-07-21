@@ -1,0 +1,19 @@
+id: NT-LAW-0024
+type: law
+status: frozen
+version: 0.1.0
+title: Emotion prepares action
+summary: Emotion prepares people for action by prioritizing threat, reward, attachment, loss, or possibility before full deliberation.
+primary_domain: tri-nhan
+secondary_domains: [tu-than, hop-chung]
+definition: Human emotion is not merely after-the-fact feeling; it organizes attention, bodily readiness, interpretation, and likely response.
+mechanism: [Detect significance, Generate feeling, Prepare body and attention, Bias action.]
+conditions: [A situation carries perceived threat, reward, loss, attachment, or uncertainty.]
+exceptions: [Training and reflection can reshape emotional response, some low-salience decisions remain mostly procedural.]
+applications: {communication: [Notice emotional readiness before expecting neutral reasoning.], leadership: [Treat strong emotion as action preparation that needs interpretation, not immediate dismissal.]}
+risks: [Treating emotion as infallible, dismissing reason because emotion is present.]
+evidence: {level: provisional, references: []}
+relations: {supports: [NT-PRINCIPLE-0045, NT-PRINCIPLE-0046, NT-MODEL-0002], conflicts_with: [], depends_on: [], applies_to: []}
+tags: [emotion, action, interpretation]
+created_at: '2026-07-21'
+updated_at: '2026-07-21'

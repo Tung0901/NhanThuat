@@ -53,3 +53,11 @@ entries:
     approved_by: Product Owner
     source: milestones/milestone-01-knowledge-core/status.yaml
     rationale: Product Owner approved and requested Milestone 1 freeze.
+  - id: NT-DA-0001
+    type: domain_area
+    title: Human Nature
+    status: frozen
+    frozen_at: '2026-07-21'
+    approved_by: Product Owner
+    source: docs/domains/human-nature/status.yaml
+    rationale: Product Owner approved Human Nature domain freeze after Domain Freeze Infrastructure was added.

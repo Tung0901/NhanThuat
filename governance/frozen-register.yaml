@@ -1,4 +1,9 @@
-version: 0.1.0
+version: 0.2.0
+supported_entry_types:
+  - epic
+  - knowledge_batch
+  - milestone
+  - domain_area
 entries:
   - id: NT-EPIC-00
     type: epic

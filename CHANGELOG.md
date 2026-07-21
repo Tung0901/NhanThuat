@@ -27,6 +27,7 @@ Mọi thay đổi đáng chú ý của dự án được ghi tại đây.
 - Milestone 1 Knowledge Core status artifact and pilot review report.
 - Milestone 2 Domain Blueprint architecture and ADR-0014 through ADR-0015.
 - Milestone 2 status artifact and ID/slug-only Domain Registry.
+- Domain Freeze governance infrastructure and ADR-0016.
 
 ### Changed
 
@@ -39,3 +40,4 @@ Mọi thay đổi đáng chú ý của dự án được ghi tại đây.
 - Milestone 1 Knowledge Core approved by Product Owner and marked Frozen.
 - Roadmap aligned around Milestone 2 Knowledge Expansion & Domain System, Milestone 3 Intelligence Engine, and Milestone 4 BusinessOS Integration.
 - ADR-0014 and ADR-0015 accepted by Product Owner.
+- Repository validation now supports domain-area Frozen Register entries while preserving existing Epic, Milestone, and Batch records.

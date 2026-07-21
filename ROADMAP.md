@@ -19,4 +19,6 @@ informal estimates.
 | Milestone | Status | Goal |
 | --- | --- | --- |
 | Milestone 1 - Knowledge Core | FROZEN | EPIC 0-3, Knowledge Foundation Batch 1, Evidence Layer foundation, Knowledge Factory foundation |
-| Milestone 2 - Intelligence Engine | NOT STARTED | Search, retrieval, citation runtime, and AI-readiness work after explicit approval |
+| Milestone 2 - Knowledge Expansion & Domain System | IN PROGRESS | Domain catalogue, domain registry, hierarchy, dependency planning, and domain-based execution |
+| Milestone 3 - Intelligence Engine | NOT STARTED | Search, retrieval, citation runtime, confidence runtime, and AI-readiness work after explicit approval |
+| Milestone 4 - BusinessOS Integration | NOT STARTED | BusinessOS product, workflow, API, export, and integration layers after explicit approval |

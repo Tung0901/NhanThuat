@@ -1,0 +1,35 @@
+id: NT-LAW-0034
+type: law
+status: frozen
+version: 0.1.0
+title: Law of Relative Trait Stability
+summary: Personality traits act as relatively stable latent dispositions that function as default tendencies, but they are adaptive, not fixed, and capable of gradual development over time.
+primary_domain: tri-nhan
+secondary_domains: [tu-than]
+definition: Individual differences in temperament, cognitive, and sensory-emotional defaults represent latent tendencies rather than deterministic destiny. While showing rank-order stability across time, traits are adaptive and subject to gradual change and contextual modulation.
+mechanism:
+  - Latent trait establishes default baseline preferences
+  - Situation strength and context modulate trait activation
+  - Trait expression interacts with other factors to produce observed behavior
+conditions:
+  - Long-term behavioral default observation across multiple weak situations.
+exceptions:
+  - Acute trauma, deliberate targeted developmental therapy, and significant lifecycle transitions can accelerate trait change.
+applications:
+  operations: [Expect gradual adaptation in defaults rather than immediate personal transformation.]
+  developmental-coaching: [Map baseline traits to guide incremental habit formation rather than assuming fixed traits.]
+risks:
+  - Pigeonholing individuals into immutable categories (MBTI-style stereotyping).
+  - Confusing defaults with absolute competence bounds.
+evidence:
+  level: provisional
+  references:
+    - "Roberts, B. W., et al. (2006). Patterns of Mean-Level Change in Personality Traits Across the Life Course."
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: [NT-LAW-0001]
+  applies_to: []
+tags: [personality, traits, stability, adaptation]
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

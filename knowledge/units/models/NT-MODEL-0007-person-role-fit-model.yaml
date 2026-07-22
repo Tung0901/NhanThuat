@@ -1,0 +1,36 @@
+id: NT-MODEL-0007
+type: model
+status: frozen
+version: 0.1.0
+title: Person-role fit model
+summary: A diagnostic model mapping the alignment of latent trait defaults with role expectations to estimate potential adaptation costs and self-regulation load.
+primary_domain: tri-nhan
+secondary_domains: [dung-nhan, tu-than]
+definition: Models how the discrepancy between an individual's latent trait defaults and the behavioral demands of their role generates adaptation friction, consuming cognitive/physiological energy.
+mechanism:
+  - Map individual latent trait defaults.
+  - Audit role behavioral expectations and task demands.
+  - Assess situation strength constraints in the work environment.
+  - Calculate gap to estimate adaptation cost and self-regulation load.
+  - Identify target areas for compensatory strategies and environmental support.
+conditions:
+  - Role assignment, leadership placement, or job design analysis is performed.
+exceptions:
+  - Temporary or low-frequency tasks where adaptation costs do not accumulate.
+applications:
+  diagnosis: [Identify high-friction assignments by mapping individual trait defaults against role behavioral demands.]
+  design: [Introduce custom supports or adjust situational strength to lower adaptation load in mismatched roles.]
+risks:
+  - Using fit assessments as predictive performance filters or recruitment screening criteria.
+  - Treating default preferences as absolute limits of competence or capability.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: [NT-PRINCIPLE-0060, NT-PRINCIPLE-0061]
+  conflicts_with: []
+  depends_on: [NT-LAW-0034, NT-LAW-0035]
+  applies_to: []
+tags: [personality, traits, model, person-role-fit, adaptation-cost]
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

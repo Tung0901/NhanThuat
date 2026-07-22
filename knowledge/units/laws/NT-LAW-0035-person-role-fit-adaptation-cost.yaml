@@ -1,0 +1,35 @@
+id: NT-LAW-0035
+type: law
+status: frozen
+version: 0.1.0
+title: Law of Person-Role Fit and Adaptation Cost
+summary: Performance emerges from seven interacting variables, with personality defaults never predicting success alone; rather, misalignment increases adaptation costs.
+primary_domain: tri-nhan
+secondary_domains: [tu-than, thanh-su]
+definition: Person-role fit is diagnostic and probabilistic, modeling the potential cognitive and physiological energy (adaptation cost) required when an individual must self-regulate away from latent defaults. Performance is an emergent outcome of the interaction among personality, skills, motivation, environment, role demands, experience, and deliberate self-regulation.
+mechanism:
+  - Latent trait defaults diverge from role demands
+  - Executive control activates compensatory strategies
+  - Deliberate self-regulation bridges the gap at an adaptation cost
+conditions:
+  - Roles require behavioral expressions that diverge from latent trait defaults.
+exceptions:
+  - High motivation, strong compensatory strategies, or environmental supports can lower the adaptation cost of trait-role mismatch.
+applications:
+  organization-design: [Design roles to allow flexibility in task execution style to minimize adaptation costs.]
+  job-matching: [Use person-role fit diagnostically to plan support and compensatory strategies, never as a hiring filter.]
+risks:
+  - Using fit assessments as exclusion criteria or hiring filters.
+  - Confusing trait mismatch with lack of competence, values, or ethics.
+evidence:
+  level: provisional
+  references:
+    - "Kristof-Brown, A. L., et al. (2005). Consequences of Individuals' Fit at Work: A Meta-Analysis."
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: [NT-LAW-0034]
+  applies_to: []
+tags: [person-role-fit, adaptation-cost, performance, self-regulation]
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

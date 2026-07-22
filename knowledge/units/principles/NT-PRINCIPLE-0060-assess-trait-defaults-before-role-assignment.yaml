@@ -1,0 +1,37 @@
+id: NT-PRINCIPLE-0060
+type: principle
+status: frozen
+version: 0.1.0
+title: Assess trait defaults before role assignment
+summary: Map an individual's relatively stable trait defaults to understand potential adaptation costs rather than using personality to predict performance or filter hiring.
+primary_domain: tri-nhan
+secondary_domains: [tu-than, thanh-su]
+definition: Proactively map latent trait defaults to diagnose fit and estimate the adaptation costs of a role, rather than predicting performance or using fit as a competence filter, exclusion criterion, or hiring gate. Fit is diagnostic and hypothesis-generating.
+mechanism:
+  - Assess latent cognitive, sensory-emotional, and behavioral defaults.
+  - Compare defaults against the behavioral expectations demanded by the role context.
+  - Identify likely areas of high adaptation cost and plan compensatory strategies.
+conditions:
+  - Role assignments require specific, repetitive behavioral default deviations.
+exceptions:
+  - Temporary or short-term roles where masking can be easily absorbed without long-term friction.
+applications:
+  management:
+    - Map team trait profiles to understand cognitive diversity and potential communication blocks.
+  role-design:
+    - Assess default alignment to design supportive environment features that reduce self-regulation load.
+risks:
+  - Utilizing diagnostic fit assessments as strict filters to exclude candidates.
+  - Confusing latent trait defaults with competence, ethics, or absolute limits.
+evidence:
+  level: provisional
+  references:
+    - "Kristof-Brown, A. L., et al. (2005). Consequences of Individuals' Fit at Work: A Meta-Analysis."
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: [NT-LAW-0034, NT-LAW-0035]
+  applies_to: []
+tags: [personality, role-assignment, adaptation-cost, diagnostic]
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

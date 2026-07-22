@@ -1,0 +1,14 @@
+domain_area_id: NT-DA-0003
+slug: personality
+status: frozen
+evidence_posture:
+  default_level: provisional
+  external_references_fabricated: false
+  future_evidence_needs:
+    - Five-Factor Model rank-order stability research
+    - Person-Environment Fit literature and meta-analyses
+    - Situation Strength theory and behavioral adaptation research
+    - Executive function and cognitive load control literature
+notes:
+  - Existing inline evidence fields remain provisional and backward-compatible.
+  - Standalone evidence records will be linked in a future Evidence Layer batch after formal literature review.

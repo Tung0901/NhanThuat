@@ -15,7 +15,7 @@ deliverables:
     status: approved
   - id: NT-M2-D02
     title: Domain Registry with approved domain IDs and slugs
-    status: in_progress
+    status: approved
   - id: NT-M2-D03
     title: Domain-based execution batches
     status: not_started
@@ -23,4 +23,4 @@ deliverables:
     title: Domain review and freeze packages
     status: not_started
 blockers: []
-last_reviewed_at: '2026-07-21'
+last_reviewed_at: '2026-07-22'

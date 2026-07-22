@@ -1,0 +1,34 @@
+id: NT-ANTI-PATTERN-0011
+type: anti-pattern
+status: frozen
+version: 0.1.0
+title: Homogeneity trap
+summary: Assembling teams with identical or highly similar personality profiles to minimize immediate friction, resulting in cognitive blind spots.
+primary_domain: hop-chung
+secondary_domains: [dung-nhan, tri-nhan]
+definition: A composition failure mode where teams lack cognitive diversity, making them highly cohesive but vulnerable to groupthink, confirmation bias, and systemic error.
+mechanism:
+  - Select team members based on cultural or personality alignment.
+  - Minimize debate and immediate communication friction.
+  - Build high cohesion but identical default styles.
+  - Fail to spot risks or alternative approaches due to shared blind spots.
+conditions:
+  - Teams are built to maximize harmony or speed without intentionally introducing cognitive variety.
+exceptions:
+  - Small, temporary task forces where immediate speed is the single dominant success factor.
+applications:
+  team-design: [Deliberately structure teams to include diverse cognitive preferences and trait defaults.]
+  management: [Encourage healthy debate and task conflict to counter the groupthink of homogeneous teams.]
+risks:
+  - Creating destructive interpersonal conflict by failing to build shared communication norms.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: [NT-LAW-0034, NT-PRINCIPLE-0060, NT-PRINCIPLE-0062]
+  applies_to: []
+tags: [personality, traits, anti-pattern, team-building, cognitive-diversity]
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

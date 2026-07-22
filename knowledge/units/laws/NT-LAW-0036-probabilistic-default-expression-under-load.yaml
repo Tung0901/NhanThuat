@@ -1,0 +1,35 @@
+id: NT-LAW-0036
+type: law
+status: frozen
+version: 0.1.0
+title: Law of Probabilistic Default Expression under Load
+summary: Under sustained cognitive, emotional, or physical load, the probability of expressing lower-effort default behavioral patterns increases as executive control is stressed.
+primary_domain: tri-nhan
+secondary_domains: [tu-than]
+definition: Sustained cognitive, emotional, or physical load stresses executive control. Without assuming a literal resource depletion mechanism, this stress increases the statistical probability that an individual's trait expression and observed behavior will fall back onto latent behavioral defaults rather than deliberate adaptations.
+mechanism:
+  - Sustained load increases cognitive demands
+  - Executive control capacity is dynamically prioritized for immediate tasks
+  - Trait expression shifts probabilistically toward low-effort defaults
+conditions:
+  - Sustained high cognitive, emotional, or physical load is present.
+exceptions:
+  - Highly automated habits or strong external situation strength can suppress defaults even under load.
+applications:
+  task-design: [Minimize cognitive load during high-risk operations to ensure compliance with critical behaviors.]
+  leadership: [Expect and plan for default expression under high operational stress rather than expecting continuous masking.]
+risks:
+  - Excusing bad behavior or ethical failures as unavoidable default expression.
+  - Relying on outdated ego depletion theories for cognitive resource planning.
+evidence:
+  level: provisional
+  references:
+    - "Inzlicht, M., & Schmeichel, B. J. (2012). What is Ego Depletion? Toward a Motivation-Control Model of Self-Control."
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: [NT-LAW-0015, NT-LAW-0027, NT-LAW-0034]
+  applies_to: []
+tags: [load, defaults, self-regulation, cognitive-load, executive-control]
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

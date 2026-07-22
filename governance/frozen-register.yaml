@@ -69,3 +69,11 @@ entries:
     approved_by: Product Owner
     source: docs/domains/motivation/status.yaml
     rationale: Product Owner authorized Motivation domain freeze after Chief Architect architecture review approval.
+  - id: NT-DA-0003
+    type: domain_area
+    title: Personality
+    status: frozen
+    frozen_at: '2026-07-22'
+    approved_by: Product Owner
+    source: docs/domains/personality/status.yaml
+    rationale: Product Owner approved Personality domain freeze after Chief Architect architecture review approval.

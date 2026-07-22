@@ -1,0 +1,37 @@
+id: NT-PRINCIPLE-0061
+type: principle
+status: frozen
+version: 0.1.0
+title: Redesign roles before demanding personality change
+summary: When performance is impacted by trait-role mismatch, prioritize adjusting task demands and environmental factors over expecting long-term personality adaptation.
+primary_domain: tri-nhan
+secondary_domains: [tu-than, thanh-su]
+definition: Modify situational strength, role demands, and environmental factors to align with an individual's relatively stable defaults, reducing the high adaptation costs of continuous self-regulation before demanding personal trait changes.
+mechanism:
+  - Identify tasks causing high adaptation cost and self-regulation fatigue.
+  - Adjust situational strength (rules, structure) or task demands to match traits.
+  - Reduce load on executive control, allowing observed behavior to align with defaults.
+conditions:
+  - Performance friction is traceably linked to sustained adaptation cost and trait-role mismatch.
+exceptions:
+  - Core role outcomes are rigid and cannot be restructured without dismantling the business process.
+applications:
+  management:
+    - Evaluate whether a role's situation strength can be customized before demanding behavioral changes.
+  coaching:
+    - Teach compensatory strategies to bridge minor gaps, prioritizing role adjustments first.
+risks:
+  - Excusing a lack of necessary skill or competence as a simple personality mismatch.
+  - Unjustifiably lowering team standards rather than customizing execution styles.
+evidence:
+  level: provisional
+  references:
+    - "Tett, R. P., & Burnett, D. D. (2003). A Personality Trait-Based Interactionist Model of Job Performance."
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: [NT-LAW-0035, NT-LAW-0036]
+  applies_to: []
+tags: [role-redesign, adaptation-cost, self-regulation, situational-strength]
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

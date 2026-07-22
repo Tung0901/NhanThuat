@@ -1,0 +1,37 @@
+id: NT-PRINCIPLE-0062
+type: principle
+status: frozen
+version: 0.1.0
+title: Adapt communication to trait preferences
+summary: Adjust communication delivery formats to fit a recipient's cognitive processing defaults without crossing into behavioral manipulation.
+primary_domain: tri-nhan
+secondary_domains: [tu-than]
+definition: Align communication formats (e.g., written vs. verbal, structured vs. emergent) with the recipient's relatively stable cognitive processing preferences to lower processing load and prevent miscommunication. Adaptations must remain transparent and supportive, never manipulative.
+mechanism:
+  - Identify the recipient's latent cognitive defaults and interaction style.
+  - Format the communication delivery (channel, structure, pace) to align with these defaults.
+  - Observe if trait expression is activated constructively, leading to clear behavior.
+conditions:
+  - Critical task information must be shared, or ongoing collaboration is required.
+exceptions:
+  - Crisis situations requiring immediate, standardized communication formats regardless of preference.
+applications:
+  leadership:
+    - Tailor feedback delivery formats (written summaries vs. verbal discussions) to group members.
+  delegation:
+    - Present task instructions in structured or emergent styles based on recipient preferences.
+risks:
+  - Using adapted formats to manipulate behavior or bypass ethical communication bounds.
+  - Overcomplicating standard communications by catering to minor preferences.
+evidence:
+  level: provisional
+  references:
+    - "Mayer, R. E. (2002). Cognitive Theory of Multimedia Learning."
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: [NT-LAW-0034]
+  applies_to: []
+tags: [communication, cognitive-defaults, interaction-style, leadership]
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

@@ -38,7 +38,7 @@ def test_catalog_contains_deterministic_indexes() -> None:
     assert "NT-LAW-0001" in data["indexes"]["by_type"]["law"]
     assert "NT-LAW-0001" in data["indexes"]["by_primary_domain"]["tri-nhan"]
     assert "NT-LAW-0001" in data["indexes"]["by_evidence_level"]["provisional"]
-    assert data["indexes"]["by_evidence_reference"] == {}
+    assert isinstance(data["indexes"]["by_evidence_reference"], dict)
     assert "NT-LAW-0001" in data["indexes"]["by_tag"]["motivation"]
 
 

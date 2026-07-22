@@ -1,0 +1,19 @@
+id: NT-ANTI-PATTERN-0007
+type: anti-pattern
+status: frozen
+version: 0.1.0
+title: Invisible progress grind
+summary: Requiring continuous high effort without providing visibility into results, feedback on impact, or acknowledgment of milestone completion.
+primary_domain: tu-than
+secondary_domains: [thanh-su, tri-nhan]
+definition: Operating without progress feedback loops, causing workers to feel their efforts vanish into an uninspectable vacuum.
+mechanism: [Demand continuous effort, Omit progress feedback, Induce psychological fatigue, Suffer engagement collapse.]
+conditions: [Long projects operate without milestone demos or regular progress reviews.]
+exceptions: [Self-directed research with long delayed gratification cycles.]
+applications: {workflow-audit: [Ensure teams receive immediate visibility on output milestones.], project-management: [Implement sprint reviews and completed work showcases.]}
+risks: [Creating artificial celebration events that obscure real lack of progress.]
+evidence: {level: provisional, references: []}
+relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0033, NT-PRINCIPLE-0056], applies_to: []}
+tags: [anti-pattern, progress, feedback, demotivation, grind]
+created_at: '2026-07-21'
+updated_at: '2026-07-21'

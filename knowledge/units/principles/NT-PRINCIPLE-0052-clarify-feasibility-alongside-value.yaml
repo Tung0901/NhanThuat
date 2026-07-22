@@ -1,0 +1,19 @@
+id: NT-PRINCIPLE-0052
+type: principle
+status: frozen
+version: 0.1.0
+title: Clarify feasibility alongside value
+summary: To generate commitment, clarify the achievable execution path alongside goal value rather than relying on inspiration alone.
+primary_domain: tu-than
+secondary_domains: [tri-nhan, dung-nhan]
+definition: High goal value generates desire, but clear feasibility generates actual effort; leaders must define manageable steps alongside the vision.
+mechanism: [State high-value goal, Map concrete execution steps, Demonstrate feasibility, Mobilize commitment.]
+conditions: [Goal is ambitious or complex, team members face execution uncertainty.]
+exceptions: [High-autonomy experts may prefer defining their own execution path once goal value is established.]
+applications: {leadership: [Pair vision announcements with immediate 30-day execution clarity.], management: [Provide resources and skill support to match task expectations.]}
+risks: [Micro-managing technical execution under the guise of clarifying feasibility.]
+evidence: {level: provisional, references: []}
+relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0029], applies_to: []}
+tags: [motivation, principle, feasibility, value]
+created_at: '2026-07-21'
+updated_at: '2026-07-21'

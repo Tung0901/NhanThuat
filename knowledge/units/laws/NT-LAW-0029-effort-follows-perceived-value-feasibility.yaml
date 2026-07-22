@@ -1,0 +1,19 @@
+id: NT-LAW-0029
+type: law
+status: frozen
+version: 0.1.0
+title: Effort follows perceived value and feasibility
+summary: People allocate energy and effort when they perceive the goal as valuable and the required action as achievable within acceptable risk and friction.
+primary_domain: tu-than
+secondary_domains: [tri-nhan, dung-nhan]
+definition: Voluntary human effort is a function of expected value multiplied by perceived feasibility minus expected friction and risk.
+mechanism: [Evaluate goal significance, Assess execution feasibility, Estimate required cost and risk, Direct effort.]
+conditions: [An individual possesses decision choice, outcomes are non-random.]
+exceptions: [Crisis panic responses can bypass deliberate feasibility assessment, extreme habit routines trigger low-evaluation execution.]
+applications: {leadership: [Clarify why a goal matters while removing execution ambiguity.], organizational-design: [Reduce operational friction before demanding higher performance.]}
+risks: [Over-promising value without supporting feasibility, over-simplifying execution cost.]
+evidence: {level: provisional, references: []}
+relations: {supports: [NT-PRINCIPLE-0052, NT-PRINCIPLE-0058, NT-MODEL-0004], conflicts_with: [], depends_on: [], applies_to: []}
+tags: [motivation, effort, value, feasibility]
+created_at: '2026-07-21'
+updated_at: '2026-07-21'

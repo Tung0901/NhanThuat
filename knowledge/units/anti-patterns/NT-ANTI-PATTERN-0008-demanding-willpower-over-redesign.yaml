@@ -1,0 +1,19 @@
+id: NT-ANTI-PATTERN-0008
+type: anti-pattern
+status: frozen
+version: 0.1.0
+title: Demanding willpower over redesign
+summary: Blaming individuals for lack of motivation when systemic friction, ambiguous goals, and cognitive overload make execution unnecessarily difficult.
+primary_domain: tu-than
+secondary_domains: [tri-nhan, thanh-su]
+definition: Moralizing operational failures as personal character defects rather than diagnosing and eliminating system friction.
+mechanism: [Encounter execution failure, Attribute failure to poor employee attitude, Demand higher willpower, Ignore underlying workflow friction.]
+conditions: [Systems are inefficient, ambiguous, or overloaded.]
+exceptions: [Cases where an individual genuinely refuses reasonable effort despite friction-free setup.]
+applications: {root-cause-analysis: [Investigate process friction before lecturing teams on commitment.], process-design: [Eliminate technical and administrative hurdles.]}
+risks: [Excusing genuine individual negligence by always blaming systemic friction.]
+evidence: {level: provisional, references: []}
+relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0029, NT-LAW-0027, NT-PRINCIPLE-0058], applies_to: []}
+tags: [anti-pattern, willpower, friction, moralizing, system-failure]
+created_at: '2026-07-21'
+updated_at: '2026-07-21'

@@ -1,0 +1,14 @@
+domain_area_id: NT-DA-0002
+slug: motivation
+status: frozen
+evidence_posture:
+  default_level: provisional
+  external_references_fabricated: false
+  future_evidence_needs:
+    - self-determination theory and intrinsic motivation research
+    - expectancy-value decision science and cognitive load sources
+    - organizational psychology research on goal setting, small wins, and progress feedback
+    - behavioral economics literature on reward crowding-out effects
+notes:
+  - Existing inline evidence fields remain provisional and backward-compatible.
+  - Standalone evidence records will be linked in a future Evidence Layer batch after formal literature review.

@@ -1,0 +1,19 @@
+id: NT-MODEL-0004
+type: model
+status: frozen
+version: 0.1.0
+title: Expectancy-value effort loop
+summary: A diagnostic pattern model showing how motivation builds or collapses based on perceived value, expected success, and immediate effort cost.
+primary_domain: tu-than
+secondary_domains: [tri-nhan, dung-nhan]
+definition: Voluntary effort is determined by the multiplicative interaction between expected success, perceived outcome value, and task cost.
+mechanism: [Evaluate expected success, Gauge outcome value, Weigh task cost and friction, Allocate effort.]
+conditions: [Individuals evaluate a new task or ongoing goal commitment.]
+exceptions: [Habitual routines bypass active expectancy-value calculation.]
+applications: {diagnosis: [Diagnose whether low effort stems from low value, low confidence, or excessive friction.], design: [Optimize task design across expectation, value, and cost.]}
+risks: [Misdiagnosing friction as lack of ambition.]
+evidence: {level: provisional, references: []}
+relations: {supports: [NT-PRINCIPLE-0052, NT-PRINCIPLE-0058], conflicts_with: [], depends_on: [NT-LAW-0029], applies_to: []}
+tags: [model, pattern, expectancy, value, effort]
+created_at: '2026-07-21'
+updated_at: '2026-07-21'

@@ -1,0 +1,19 @@
+id: NT-LAW-0033
+type: law
+status: frozen
+version: 0.1.0
+title: Progress feedback renews motivation
+summary: Visible evidence of meaningful advancement fuels ongoing effort, whereas unmeasured or unacknowledged work accelerates demotivation and burnout.
+primary_domain: tu-than
+secondary_domains: [thanh-su, tri-nhan]
+definition: Perceived movement toward a valued milestone acts as a psychological catalyst, renewing energy and reinforcing task engagement.
+mechanism: [Observe achievement, Experience efficacy, Renew energy, Recommit effort.]
+conditions: [Work is structured into meaningful steps with clear feedback loops.]
+exceptions: [Misleading or artificial progress metrics create cynicism rather than genuine motivation.]
+applications: {project-management: [Break long initiatives into frequent observable milestones.], execution: [Make work completion visible to operational teams.]}
+risks: [Celebrating superficial activity over genuine progress, metric manipulation.]
+evidence: {level: provisional, references: []}
+relations: {supports: [NT-PRINCIPLE-0056, NT-MODEL-0006, NT-ANTI-PATTERN-0007], conflicts_with: [], depends_on: [NT-LAW-0008], applies_to: []}
+tags: [motivation, progress, feedback, momentum]
+created_at: '2026-07-21'
+updated_at: '2026-07-21'

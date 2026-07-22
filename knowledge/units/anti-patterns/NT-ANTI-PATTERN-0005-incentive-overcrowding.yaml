@@ -1,0 +1,19 @@
+id: NT-ANTI-PATTERN-0005
+type: anti-pattern
+status: frozen
+version: 0.1.0
+title: Incentive overcrowding
+summary: Attaching rigid financial rewards or micro-bonuses to every task, which destroys intrinsic satisfaction, fosters gaming, and reduces effort when bonuses are absent.
+primary_domain: tu-than
+secondary_domains: [tri-nhan, thanh-su]
+definition: A transactional management failure mode where extrinsic incentives replace intrinsic ownership, leading to compliance without craft pride.
+mechanism: [Monetize all routine tasks, Erode intrinsic interest, Foster metric gaming, Discontinue effort when bonus stops.]
+conditions: [Management attempts to drive performance exclusively through micro-incentives.]
+exceptions: [High-turnover simple piecework where long-term organizational commitment is not required.]
+applications: {review: [Audit bonus schemes to ensure they do not destroy craft intrinsic motivation.], incentive-design: [Keep base compensation fair and decouple daily craft from micro-bonuses.]}
+risks: [Abruptly removing bonuses without restoring intrinsic purpose.]
+evidence: {level: provisional, references: []}
+relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0030, NT-PRINCIPLE-0053, NT-PRINCIPLE-0057], applies_to: []}
+tags: [anti-pattern, incentives, crowding-out, motivation]
+created_at: '2026-07-21'
+updated_at: '2026-07-21'

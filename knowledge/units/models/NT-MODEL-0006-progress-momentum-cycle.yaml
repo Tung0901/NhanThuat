@@ -1,0 +1,19 @@
+id: NT-MODEL-0006
+type: model
+status: frozen
+version: 0.1.0
+title: Progress momentum cycle
+summary: A dynamic pattern showing how small wins generate positive emotion, reinforce self-efficacy, and sustain energy for complex long-term tasks.
+primary_domain: tu-than
+secondary_domains: [thanh-su, tri-nhan]
+definition: Progress feedback triggers positive affect and perceived efficacy, which in turn mobilizes renewed energy for subsequent task phases.
+mechanism: [Achieve incremental milestone, Receive visible progress feedback, Experience efficacy boost, Mobilize renewed effort.]
+conditions: [Long-horizon work is broken into inspectable stages.]
+exceptions: [False or trivial progress signals lead to cynicism once uncovered.]
+applications: {sprint-planning: [Design work cycles to deliver inspectable increments.], leadership: [Recognize team progress continuously.]}
+risks: [Focusing on minor milestone vanity metrics rather than real value creation.]
+evidence: {level: provisional, references: []}
+relations: {supports: [NT-PRINCIPLE-0056], conflicts_with: [], depends_on: [NT-LAW-0033], applies_to: []}
+tags: [model, pattern, progress, momentum, efficacy]
+created_at: '2026-07-21'
+updated_at: '2026-07-21'

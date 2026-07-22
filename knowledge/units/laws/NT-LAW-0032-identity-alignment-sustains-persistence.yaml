@@ -1,0 +1,19 @@
+id: NT-LAW-0032
+type: law
+status: frozen
+version: 0.1.0
+title: Identity sustains persistent effort
+summary: Effort is significantly more durable when an action is perceived as reflecting who a person is rather than merely what they are commanded to perform.
+primary_domain: tu-than
+secondary_domains: [tri-nhan, dung-nhan]
+definition: Durable persistence increases when sustained action expresses, reinforces, or becomes integrated with a person's self-concept, values, or professional identity.
+mechanism: [Recognize identity fit, Internalize goal relevance, Mobilize identity-consistent effort, Resist external discouragement.]
+conditions: [Individuals hold a stable self-concept and clear personal or professional values.]
+exceptions: [Severe resource exhaustion can temporarily disrupt identity-driven persistence.]
+applications: {role-placement: [Align assignments with personal craft identity and professional standards.], culture-building: [Foster shared group identity that reinforces key operational habits.]}
+risks: [Identity rigidity, defensive rejection of necessary identity-challenging shifts.]
+evidence: {level: provisional, references: []}
+relations: {supports: [NT-PRINCIPLE-0055], conflicts_with: [], depends_on: [NT-LAW-0014, NT-LAW-0026], applies_to: []}
+tags: [motivation, identity, persistence, commitment]
+created_at: '2026-07-21'
+updated_at: '2026-07-22'

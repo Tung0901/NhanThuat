@@ -1,0 +1,19 @@
+id: NT-LAW-0030
+type: law
+status: frozen
+version: 0.1.0
+title: Extrinsic rewards can displace intrinsic drive
+summary: Over-emphasizing external rewards or surveillance for inherently meaningful tasks can crowd out internal interest, autonomy, and voluntary commitment.
+primary_domain: tu-than
+secondary_domains: [tri-nhan, thanh-su]
+definition: Adding heavy extrinsic motivators to intrinsically satisfying activities shifts the locus of control externally, reducing internal ownership when rewards cease.
+mechanism: [Introduce external reward, Shift perception of cause, Reduce felt autonomy, Depend on continued reward.]
+conditions: [The task initially carries baseline intrinsic interest or autonomy.]
+exceptions: [Repetitive low-interest tasks often benefit from clear extrinsic incentives without crowding out intrinsic drive.]
+applications: {incentive-design: [Use extrinsic rewards for baseline fairness rather than forcing compliance on creative work.], leadership: [Protect autonomy and mastery in core professional roles.]}
+risks: [Fostering transactional mindsets, creating reward dependence.]
+evidence: {level: provisional, references: []}
+relations: {supports: [NT-PRINCIPLE-0053, NT-PRINCIPLE-0057, NT-MODEL-0005], conflicts_with: [], depends_on: [], applies_to: []}
+tags: [motivation, intrinsic, extrinsic, crowding-effect]
+created_at: '2026-07-21'
+updated_at: '2026-07-21'

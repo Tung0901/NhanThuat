@@ -61,3 +61,11 @@ entries:
     approved_by: Product Owner
     source: docs/domains/human-nature/status.yaml
     rationale: Product Owner approved Human Nature domain freeze after Domain Freeze Infrastructure was added.
+  - id: NT-DA-0002
+    type: domain_area
+    title: Motivation
+    status: frozen
+    frozen_at: '2026-07-22'
+    approved_by: Product Owner
+    source: docs/domains/motivation/status.yaml
+    rationale: Product Owner authorized Motivation domain freeze after Chief Architect architecture review approval.

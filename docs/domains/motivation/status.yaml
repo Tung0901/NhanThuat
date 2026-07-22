@@ -1,0 +1,53 @@
+domain_area_id: NT-DA-0002
+slug: motivation
+name: Motivation
+status: frozen
+previous_status: ready_for_review
+progress: 100
+approved_by: Product Owner
+frozen_at: '2026-07-22'
+primary_domain: tu-than
+secondary_domains:
+  - tri-nhan
+  - dung-nhan
+review_owner: Product Owner or delegated Motivation domain reviewer
+unit_counts:
+  laws: 5
+  principles: 8
+  models: 3
+  anti_patterns: 4
+blockers: []
+members:
+  laws:
+    - NT-LAW-0029
+    - NT-LAW-0030
+    - NT-LAW-0031
+    - NT-LAW-0032
+    - NT-LAW-0033
+  principles:
+    - NT-PRINCIPLE-0052
+    - NT-PRINCIPLE-0053
+    - NT-PRINCIPLE-0054
+    - NT-PRINCIPLE-0055
+    - NT-PRINCIPLE-0056
+    - NT-PRINCIPLE-0057
+    - NT-PRINCIPLE-0058
+    - NT-PRINCIPLE-0059
+  models:
+    - NT-MODEL-0004
+    - NT-MODEL-0005
+    - NT-MODEL-0006
+  anti_patterns:
+    - NT-ANTI-PATTERN-0005
+    - NT-ANTI-PATTERN-0006
+    - NT-ANTI-PATTERN-0007
+    - NT-ANTI-PATTERN-0008
+artifacts:
+  - docs/domains/motivation/ARCHITECTURE.md
+  - docs/domains/motivation/CONCEPT-MAP.md
+  - docs/domains/motivation/DEPENDENCIES.md
+  - docs/domains/motivation/GLOSSARY.md
+  - docs/domains/motivation/REVIEW-REPORT.md
+  - docs/domains/motivation/evidence-placeholders.yaml
+  - docs/domains/motivation/status.yaml
+last_reviewed_at: '2026-07-22'

@@ -1,0 +1,19 @@
+id: NT-PRINCIPLE-0057
+type: principle
+status: frozen
+version: 0.1.0
+title: Align rewards with internal mastery
+summary: Design incentives and recognition to celebrate skill growth, quality, and autonomy rather than purely transactional short-term quotas.
+primary_domain: tu-than
+secondary_domains: [tri-nhan, thanh-su]
+definition: Rewards that recognize competence and growth strengthen intrinsic motivation, whereas rewards tied solely to crude quotas undermine intrinsic craft focus.
+mechanism: [Focus recognition on mastery and craft, Support skill development, Reinforce intrinsic pride, Sustain quality output.]
+conditions: [Work requires craft quality, high reliability, or long-term capability building.]
+exceptions: [Simple transactional piece-rate tasks may utilize direct output bonuses effectively.]
+applications: {compensation: [Structure rewards around professional progression and mastery.], recognition: [Praise skill improvement and problem-solving thoroughness.]}
+risks: [Subjective evaluation bias in measuring mastery.]
+evidence: {level: provisional, references: []}
+relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0030, NT-LAW-0005], applies_to: []}
+tags: [motivation, principle, rewards, mastery]
+created_at: '2026-07-21'
+updated_at: '2026-07-21'

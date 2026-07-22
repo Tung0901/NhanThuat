@@ -1,0 +1,19 @@
+id: NT-PRINCIPLE-0053
+type: principle
+status: frozen
+version: 0.1.0
+title: Protect autonomy in meaningful work
+summary: Allow individuals discretion over how tasks are accomplished to preserve internal ownership, creative drive, and intrinsic satisfaction.
+primary_domain: tu-than
+secondary_domains: [tri-nhan, dung-nhan]
+definition: When people have choice over methods and problem-solving approaches, their intrinsic motivation and accountability increase.
+mechanism: [Define target outcomes, Provide boundary guardrails, Delegate procedural choice, Maintain internal ownership.]
+conditions: [Task requires judgment, innovation, or high craft engagement.]
+exceptions: [Strict safety, compliance, or regulatory protocols require fixed procedural compliance.]
+applications: {delegation: [Specify outcomes and constraints, leaving method choice to the operator.], management: [Avoid unnecessary micro-monitoring.]}
+risks: [Abandoning necessary operational standards, lack of boundary clarity.]
+evidence: {level: provisional, references: []}
+relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0030, NT-LAW-0010], applies_to: []}
+tags: [motivation, principle, autonomy, intrinsic]
+created_at: '2026-07-21'
+updated_at: '2026-07-21'

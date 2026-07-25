@@ -1,0 +1,35 @@
+id: NT-LAW-0056
+type: law
+status: frozen
+version: 0.1.0
+title: Influence Degradation Under Coercion
+summary: Influence Degradation Under Coercion structural knowledge unit.
+primary_domain: dung-nhan
+secondary_domains:
+- tri-nhan
+definition: Formal definition of Influence Degradation Under Coercion in NhanThuat
+  architecture.
+conditions:
+- Operational governance contexts.
+exceptions:
+- Emergency crisis overrides.
+applications:
+  governance:
+  - Apply Influence Degradation Under Coercion to organizational workflows.
+risks:
+- Misapplication of Influence Degradation Under Coercion leading to suboptimal performance.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0001-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0009
+  applies_to: []
+tags:
+- law
+- dung-nhan
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

@@ -1,0 +1,18 @@
+evidence_needs:
+  - id: EV-REQ-0012-01
+    description: "Empirical studies comparing joint economic outcomes of interest-based negotiation versus positional bargaining in commercial contracts."
+    type: empirical_study
+    priority: high
+    status: placeholder
+
+  - id: EV-REQ-0012-02
+    description: "Longitudinal analysis of agreement stability and breach rates based on objective criteria benchmarking versus power-coerced deals."
+    type: literature_review
+    priority: high
+    status: placeholder
+
+  - id: EV-REQ-0012-03
+    description: "Case studies on AI-assisted BATNA recommendation engines in complex procurement and vendor management."
+    type: case_study
+    priority: medium
+    status: placeholder

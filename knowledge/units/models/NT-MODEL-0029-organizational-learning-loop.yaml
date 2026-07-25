@@ -1,0 +1,43 @@
+id: NT-MODEL-0029
+type: model
+status: frozen
+version: 0.1.0
+title: Organizational Learning Loop
+summary: 'A 4-stage adaptation cycle: Execute -> Telemetry -> Post-Mortem -> Guardrail
+  Update.'
+primary_domain: tri-nhan
+secondary_domains:
+- dung-nhan
+definition: 'The Organizational Learning Loop turns operational experience into capability:
+  Execution, Telemetry, Post-Mortem, Guardrail Update.'
+mechanism:
+- Capture telemetry from execution.
+- Analyze root causes in post-mortem.
+- Update automated guardrails.
+- Execute with upgraded capability.
+conditions:
+- Continuous learning architecture.
+exceptions:
+- None.
+applications:
+  knowledge_engine:
+  - Automatically generate candidate Knowledge Units from post-mortem reports.
+risks:
+- Encoding bad learnings based on small sample sizes.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0018-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0070
+  - NT-LAW-0071
+  applies_to: []
+tags:
+- learning
+- loop
+- adaptation
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

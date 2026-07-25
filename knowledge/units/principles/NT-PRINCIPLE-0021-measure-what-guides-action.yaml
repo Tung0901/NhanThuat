@@ -1,19 +1,47 @@
 id: NT-PRINCIPLE-0021
 type: principle
-status: review
+status: frozen
 version: 0.1.0
 title: Measure what guides action
-summary: Choose measures that help people decide what to do next, not only measures that describe what already happened.
+summary: Choose measures that help people decide what to do next, not only measures
+  that describe what already happened.
 primary_domain: thanh-su
-secondary_domains: [dung-nhan, hop-chung]
-definition: Useful measures guide attention toward decisions that can still change the outcome.
-mechanism: [Identify decision need, Choose leading or diagnostic measure, Review it where action is possible.]
-conditions: [People can act on the measure, The measure is trusted enough to influence attention.]
-exceptions: [Lagging measures are still needed for accountability, Some work needs qualitative review.]
-applications: {operations: [Track flow blockers before final misses.], management: [Use measures to guide coaching, not only scoring.]} 
-risks: [Creating vanity metrics, Ignoring unmeasured judgment.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0013], applies_to: []}
-tags: [measurement, action, indicators]
+secondary_domains:
+- dung-nhan
+- hop-chung
+definition: Useful measures guide attention toward decisions that can still change
+  the outcome.
+mechanism:
+- Identify decision need
+- Choose leading or diagnostic measure
+- Review it where action is possible.
+conditions:
+- People can act on the measure
+- The measure is trusted enough to influence attention.
+exceptions:
+- Lagging measures are still needed for accountability
+- Some work needs qualitative review.
+applications:
+  operations:
+  - Track flow blockers before final misses.
+  management:
+  - Use measures to guide coaching
+  - not only scoring.
+risks:
+- Creating vanity metrics
+- Ignoring unmeasured judgment.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0013
+  applies_to: []
+tags:
+- measurement
+- action
+- indicators
 created_at: '2026-07-20'
 updated_at: '2026-07-20'

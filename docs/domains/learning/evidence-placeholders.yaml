@@ -1,0 +1,6 @@
+evidence_needs:
+  - id: EV-REQ-0018-01
+    description: "Empirical studies on psychological safety and organizational learning rates."
+    type: empirical_study
+    priority: high
+    status: placeholder

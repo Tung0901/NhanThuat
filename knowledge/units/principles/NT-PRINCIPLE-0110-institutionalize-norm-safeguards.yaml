@@ -1,0 +1,37 @@
+id: NT-PRINCIPLE-0110
+type: principle
+status: frozen
+version: 0.1.0
+title: Institutionalize Norm Safeguards
+summary: Build explicit operational checks that catch and correct cultural drift before
+  toxic behaviors become normalized.
+primary_domain: hop-chung
+secondary_domains:
+- tri-nhan
+definition: Establish anonymous feedback channels, regular culture surveys, and peer
+  review mechanisms.
+conditions:
+- Fast-growing organizations undergoing rapid hiring.
+exceptions:
+- Small founding teams under 5 people.
+applications:
+  culture_pulse:
+  - Run monthly anonymous culture pulse checks tracking psychological safety.
+risks:
+- Survey fatigue from over-polling.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0019-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0073
+  applies_to: []
+tags:
+- culture
+- safeguards
+- telemetry
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

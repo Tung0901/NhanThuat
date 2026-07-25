@@ -1,0 +1,18 @@
+evidence_needs:
+  - id: EV-REQ-0015-01
+    description: "Empirical validation that outcome bias systematically distorts organizational learning."
+    type: empirical_study
+    priority: high
+    status: placeholder
+
+  - id: EV-REQ-0015-02
+    description: "Studies on the threshold where further information gathering (analysis) provides diminishing or negative returns relative to opportunity cost."
+    type: literature_review
+    priority: high
+    status: placeholder
+
+  - id: EV-REQ-0015-03
+    description: "Case studies demonstrating the long-term impact of failing to price irreducible uncertainty in strategic choices."
+    type: case_study
+    priority: medium
+    status: placeholder

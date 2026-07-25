@@ -1,0 +1,37 @@
+id: NT-PRINCIPLE-0094
+type: principle
+status: frozen
+version: 0.1.0
+title: Intervene at the Lowest Structural Level
+summary: Resolve conflict directly between primary stakeholders before escalating
+  to executive authority.
+primary_domain: hop-chung
+secondary_domains:
+- tri-nhan
+definition: Premature escalation to higher authority creates dependency and weakens
+  team self-governance.
+conditions:
+- Interpersonal or inter-departmental disputes.
+exceptions:
+- Harassment or ethical breaches requiring immediate formal HR escalation.
+applications:
+  management:
+  - Refuse to mediate a peer dispute until both parties have conducted a direct meeting.
+risks:
+- Forcing junior staff to resolve disputes directly with aggressive superiors.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0011-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0063
+  applies_to: []
+tags:
+- conflict
+- resolution
+- escalation
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

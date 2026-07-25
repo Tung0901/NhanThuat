@@ -1,0 +1,34 @@
+id: NT-LAW-0046
+type: law
+status: frozen
+version: 0.1.0
+title: Transmission Fidelity
+summary: Transmission Fidelity structural knowledge unit.
+primary_domain: tri-nhan
+secondary_domains:
+- hop-chung
+definition: Formal definition of Transmission Fidelity in NhanThuat architecture.
+conditions:
+- Operational governance contexts.
+exceptions:
+- Emergency crisis overrides.
+applications:
+  governance:
+  - Apply Transmission Fidelity to organizational workflows.
+risks:
+- Misapplication of Transmission Fidelity leading to suboptimal performance.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0001-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0008
+  applies_to: []
+tags:
+- law
+- tri-nhan
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

@@ -1,0 +1,34 @@
+id: NT-LAW-0050
+type: law
+status: frozen
+version: 0.1.0
+title: Cognitive Load Exhaustion
+summary: Cognitive Load Exhaustion structural knowledge unit.
+primary_domain: tu-than
+secondary_domains:
+- tri-nhan
+definition: Formal definition of Cognitive Load Exhaustion in NhanThuat architecture.
+conditions:
+- Operational governance contexts.
+exceptions:
+- Emergency crisis overrides.
+applications:
+  governance:
+  - Apply Cognitive Load Exhaustion to organizational workflows.
+risks:
+- Misapplication of Cognitive Load Exhaustion leading to suboptimal performance.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0001-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0022
+  applies_to: []
+tags:
+- law
+- tu-than
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

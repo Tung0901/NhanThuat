@@ -1,0 +1,42 @@
+id: NT-ANTI-PATTERN-0047
+type: anti-pattern
+status: frozen
+version: 0.1.0
+title: Strategic Drift
+summary: The gradual accumulation of uncoordinated tactical distractions that pull
+  organizational execution away from core intent.
+primary_domain: thanh-su
+secondary_domains:
+- dung-nhan
+definition: Strategic drift occurs when teams react to short-term demands without
+  evaluating strategic alignment.
+mechanism:
+- Tactical opportunities accepted.
+- Effort diverted to ad-hoc requests.
+- Core strategy stalls.
+conditions:
+- Weak product governance.
+exceptions:
+- Early pivot phases in pre-product-market-fit startups.
+applications:
+  roadmap_governance:
+  - Audit quarterly execution tasks against core strategic themes.
+risks:
+- Over-rejecting valid customer feedback.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0016-01
+relations:
+  supports: []
+  conflicts_with:
+  - NT-PRINCIPLE-0101
+  depends_on:
+  - NT-LAW-0066
+  applies_to: []
+tags:
+- strategy
+- drift
+- anti-patterns
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

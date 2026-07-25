@@ -1,0 +1,38 @@
+id: NT-PRINCIPLE-0111
+type: principle
+status: frozen
+version: 0.1.0
+title: Embed Ethical Safeguards into Automated Systems
+summary: Encode explicit ethical boundary checks and safety assertions directly into
+  automated BusinessOS workflows.
+primary_domain: tu-than
+secondary_domains:
+- dung-nhan
+definition: Do not rely solely on human goodwill. Build automated hard checks into
+  software code.
+conditions:
+- AI subagent workflows and automated decision software.
+exceptions:
+- Non-automated manual paper procedures.
+applications:
+  ai_safety:
+  - Embed ethical safeguard matrices in AI recommendation engines to block deceptive
+    advice.
+risks:
+- Creating brittle software checks that block legitimate emergency overrides.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0020-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0074
+  applies_to: []
+tags:
+- ethics
+- ai-safety
+- guardrails
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

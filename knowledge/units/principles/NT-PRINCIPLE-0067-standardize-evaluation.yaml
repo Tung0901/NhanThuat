@@ -1,0 +1,34 @@
+id: NT-PRINCIPLE-0067
+type: principle
+status: frozen
+version: 0.1.0
+title: Standardize Evaluation
+summary: Standardize Evaluation structural knowledge unit.
+primary_domain: tri-nhan
+secondary_domains:
+- dung-nhan
+definition: Formal definition of Standardize Evaluation in NhanThuat architecture.
+conditions:
+- Operational governance contexts.
+exceptions:
+- Emergency crisis overrides.
+applications:
+  governance:
+  - Apply Standardize Evaluation to organizational workflows.
+risks:
+- Misapplication of Standardize Evaluation leading to suboptimal performance.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0001-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0040
+  applies_to: []
+tags:
+- principle
+- tri-nhan
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

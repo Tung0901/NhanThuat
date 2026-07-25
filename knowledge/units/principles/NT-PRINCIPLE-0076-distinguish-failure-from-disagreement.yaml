@@ -1,0 +1,35 @@
+id: NT-PRINCIPLE-0076
+type: principle
+status: frozen
+version: 0.1.0
+title: Distinguish Failure from Disagreement
+summary: Distinguish Failure from Disagreement structural knowledge unit.
+primary_domain: tri-nhan
+secondary_domains:
+- hop-chung
+definition: Formal definition of Distinguish Failure from Disagreement in NhanThuat
+  architecture.
+conditions:
+- Operational governance contexts.
+exceptions:
+- Emergency crisis overrides.
+applications:
+  governance:
+  - Apply Distinguish Failure from Disagreement to organizational workflows.
+risks:
+- Misapplication of Distinguish Failure from Disagreement leading to suboptimal performance.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0001-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0047
+  applies_to: []
+tags:
+- principle
+- tri-nhan
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

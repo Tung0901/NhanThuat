@@ -1,0 +1,38 @@
+id: NT-MODEL-0016
+type: model
+status: frozen
+version: 0.1.0
+title: Evidence Risk Matrix
+summary: Evidence Risk Matrix structural knowledge unit.
+primary_domain: tri-nhan
+secondary_domains:
+- dung-nhan
+definition: Formal definition of Evidence Risk Matrix in NhanThuat architecture.
+conditions:
+- Operational governance contexts.
+exceptions:
+- Emergency crisis overrides.
+applications:
+  governance:
+  - Apply Evidence Risk Matrix to organizational workflows.
+risks:
+- Misapplication of Evidence Risk Matrix leading to suboptimal performance.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0001-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0049
+  applies_to: []
+tags:
+- model
+- tri-nhan
+created_at: '2026-07-22'
+updated_at: '2026-07-22'
+mechanism:
+- 'Step 1: Identify Evidence Risk Matrix.'
+- 'Step 2: Analyze parameters.'
+- 'Step 3: Execute model.'

@@ -1,21 +1,49 @@
 id: NT-LAW-0012
 type: law
-status: review
+status: frozen
 version: 0.1.0
 title: Conflict exposes unresolved tradeoffs
-summary: Persistent conflict often signals an unresolved tradeoff between goals, roles, incentives, identities, or resource constraints.
+summary: Persistent conflict often signals an unresolved tradeoff between goals, roles,
+  incentives, identities, or resource constraints.
 primary_domain: hop-chung
-secondary_domains: [tri-nhan, thanh-su]
-definition: Conflict becomes persistent when parties experience a tradeoff that has not been named, decided, or structurally resolved.
-mechanism: [Parties pursue different priorities, Costs collide, Conflict repeats until the tradeoff is addressed.]
-conditions: [Parties are interdependent, Resources, authority, or recognition are constrained.]
-exceptions: [Some conflict is exploratory and temporary, Bad faith can persist despite clear tradeoffs.]
+secondary_domains:
+- tri-nhan
+- thanh-su
+definition: Conflict becomes persistent when parties experience a tradeoff that has
+  not been named, decided, or structurally resolved.
+mechanism:
+- Parties pursue different priorities
+- Costs collide
+- Conflict repeats until the tradeoff is addressed.
+conditions:
+- Parties are interdependent
+- Resources
+- authority
+- or recognition are constrained.
+exceptions:
+- Some conflict is exploratory and temporary
+- Bad faith can persist despite clear tradeoffs.
 applications:
-  leadership: [Name the tradeoff before mediating behavior.]
-  strategy: [Resolve priority conflicts at the level where tradeoffs are owned.]
-risks: [Treating all conflict as personality, Avoiding hard decisions through harmony language.]
-evidence: {level: provisional, references: []}
-relations: {supports: [NT-PRINCIPLE-0019, NT-PRINCIPLE-0020], conflicts_with: [], depends_on: [], applies_to: []}
-tags: [conflict, tradeoffs, priorities]
+  leadership:
+  - Name the tradeoff before mediating behavior.
+  strategy:
+  - Resolve priority conflicts at the level where tradeoffs are owned.
+risks:
+- Treating all conflict as personality
+- Avoiding hard decisions through harmony language.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports:
+  - NT-PRINCIPLE-0019
+  - NT-PRINCIPLE-0020
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- conflict
+- tradeoffs
+- priorities
 created_at: '2026-07-20'
 updated_at: '2026-07-20'

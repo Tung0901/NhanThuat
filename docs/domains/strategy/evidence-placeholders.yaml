@@ -1,0 +1,6 @@
+evidence_needs:
+  - id: EV-REQ-0016-01
+    description: "Empirical studies on strategic focus vs diversification outcomes."
+    type: empirical_study
+    priority: high
+    status: placeholder

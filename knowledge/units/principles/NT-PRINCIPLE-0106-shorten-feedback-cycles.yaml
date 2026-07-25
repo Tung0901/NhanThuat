@@ -1,0 +1,37 @@
+id: NT-PRINCIPLE-0106
+type: principle
+status: frozen
+version: 0.1.0
+title: Shorten Feedback Cycles
+summary: Break down complex initiatives to receive rapid telemetry from real-world
+  execution as early as possible.
+primary_domain: tri-nhan
+secondary_domains:
+- thanh-su
+definition: Build small probes and early releases to gather real customer telemetry
+  before committing massive resources.
+conditions:
+- Product development and strategy testing.
+exceptions:
+- Monolithic capital construction projects.
+applications:
+  mvp_testing:
+  - Release minimal prototype features to test core customer assumptions.
+risks:
+- Releasing unpolished prototypes that damage brand reputation.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0018-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0071
+  applies_to: []
+tags:
+- learning
+- feedback
+- probes
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

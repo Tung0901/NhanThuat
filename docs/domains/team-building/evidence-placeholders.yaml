@@ -1,0 +1,11 @@
+domain_area_id: NT-DA-0006
+slug: team-building
+status: ready_for_review
+evidence_posture:
+  default_level: provisional
+  external_references_fabricated: false
+  future_evidence_needs:
+    - Studies on the performance delta between homogenous and cognitively diverse teams.
+    - Research on the impact of task interdependence on group cohesion.
+notes:
+  - To be expanded in Evidence Layer batch.

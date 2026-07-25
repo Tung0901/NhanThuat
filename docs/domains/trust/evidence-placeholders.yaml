@@ -1,0 +1,18 @@
+evidence_needs:
+  - id: EV-REQ-0010-01
+    description: "Empirical quantitative studies demonstrating the reduction of organizational transaction and coordination costs as a direct function of calibrated structural trust."
+    type: empirical_study
+    priority: high
+    status: placeholder
+
+  - id: EV-REQ-0010-02
+    description: "Comparative organizational analysis of performance outcomes when trust is modeled structurally versus affectively (friendship/loyalty-based)."
+    type: literature_review
+    priority: high
+    status: placeholder
+
+  - id: EV-REQ-0010-03
+    description: "Case studies on the time horizon and verification overhead required to repair structural trust breaches across organizational boundaries."
+    type: case_study
+    priority: medium
+    status: placeholder

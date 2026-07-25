@@ -1,0 +1,37 @@
+id: NT-LAW-0063
+type: law
+status: frozen
+version: 0.1.0
+title: Unresolved Trade-off Escalation
+summary: Suppressed structural trade-offs inevitably escalate into personal interpersonal
+  friction over time.
+primary_domain: hop-chung
+secondary_domains:
+- thanh-su
+definition: When an organization fails to resolve structural trade-offs, tension manifests
+  as interpersonal conflict.
+conditions:
+- Cross-functional team execution under ambiguous priorities.
+exceptions:
+- Fully autonomous teams with non-overlapping resource requirements.
+applications:
+  conflict_resolution:
+  - Resolve underlying resource trade-offs at leadership level.
+risks:
+- Treating structural resource conflicts as individual personality clashes.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0011-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0012
+  applies_to: []
+tags:
+- conflict
+- trade-offs
+- escalation
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

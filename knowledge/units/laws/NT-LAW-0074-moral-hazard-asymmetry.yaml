@@ -1,0 +1,37 @@
+id: NT-LAW-0074
+type: law
+status: frozen
+version: 0.1.0
+title: Moral Hazard Asymmetry
+summary: Decision-makers who capture upside gains while transferring downside risks
+  onto external parties will take catastrophic risks.
+primary_domain: tu-than
+secondary_domains:
+- hop-chung
+definition: 'Skin in the game principle: when an actor benefits from upside performance
+  but is insulated from downside failure, they take extreme risks.'
+conditions:
+- Financial trading, executive compensation, and risk governance.
+exceptions:
+- Non-profit humanitarian relief.
+applications:
+  risk_governance:
+  - Mandate that decision-makers maintain skin in the game for high-risk ventures.
+risks:
+- Insisting on skin in the game for non-decision-making employees.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0020-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0060
+  applies_to: []
+tags:
+- ethics
+- moral-hazard
+- risk
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

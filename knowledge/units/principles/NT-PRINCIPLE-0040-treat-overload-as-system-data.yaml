@@ -1,19 +1,50 @@
 id: NT-PRINCIPLE-0040
 type: principle
-status: review
+status: frozen
 version: 0.1.0
 title: Treat overload as system data
-summary: Read overload as evidence about capacity, constraints, priorities, and design instead of only as an individual resilience issue.
+summary: Read overload as evidence about capacity, constraints, priorities, and design
+  instead of only as an individual resilience issue.
 primary_domain: thanh-su
-secondary_domains: [tu-than, hop-chung]
-definition: Overload shows where demand exceeds capacity or clarity, so it should trigger system diagnosis before moral judgment.
-mechanism: [Identify demand sources, Compare demand to capacity, Decide what to stop, delay, delegate, or redesign.]
-conditions: [People are persistently overloaded, Errors or delays are increasing.]
-exceptions: [Personal skill gaps may still matter, Short-term crises may require temporary stretch.]
-applications: {management: [Review work-in-progress and decision load.], operations: [Use overload signals to rebalance flow.]} 
-risks: [Excusing avoidable underperformance, Normalizing chronic overload.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0022, NT-LAW-0015], applies_to: []}
-tags: [overload, capacity, systems]
+secondary_domains:
+- tu-than
+- hop-chung
+definition: Overload shows where demand exceeds capacity or clarity, so it should
+  trigger system diagnosis before moral judgment.
+mechanism:
+- Identify demand sources
+- Compare demand to capacity
+- Decide what to stop
+- delay
+- delegate
+- or redesign.
+conditions:
+- People are persistently overloaded
+- Errors or delays are increasing.
+exceptions:
+- Personal skill gaps may still matter
+- Short-term crises may require temporary stretch.
+applications:
+  management:
+  - Review work-in-progress and decision load.
+  operations:
+  - Use overload signals to rebalance flow.
+risks:
+- Excusing avoidable underperformance
+- Normalizing chronic overload.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0022
+  - NT-LAW-0015
+  applies_to: []
+tags:
+- overload
+- capacity
+- systems
 created_at: '2026-07-20'
 updated_at: '2026-07-20'

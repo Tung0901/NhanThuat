@@ -1,19 +1,46 @@
 id: NT-PRINCIPLE-0023
 type: principle
-status: review
+status: frozen
 version: 0.1.0
 title: Preserve face when changing positions
-summary: Help people revise commitments by giving them a credible path to change without unnecessary humiliation or identity loss.
+summary: Help people revise commitments by giving them a credible path to change without
+  unnecessary humiliation or identity loss.
 primary_domain: tri-nhan
-secondary_domains: [hop-chung, thanh-su]
-definition: Position change becomes easier when people can preserve dignity, identity, and continuity while updating judgment.
-mechanism: [Recognize identity risk, Offer a face-saving bridge, Reinforce the updated decision.]
-conditions: [The position is identity-linked, Change is desirable and possible.]
-exceptions: [Serious harm may require public accountability, Some actors exploit face-saving to avoid responsibility.]
-applications: {negotiation: [Let others update without declaring defeat.], leadership: [Praise learning rather than reversal.]} 
-risks: [Protecting ego over truth, Avoiding necessary accountability.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0014], applies_to: []}
-tags: [face-saving, identity, change]
+secondary_domains:
+- hop-chung
+- thanh-su
+definition: Position change becomes easier when people can preserve dignity, identity,
+  and continuity while updating judgment.
+mechanism:
+- Recognize identity risk
+- Offer a face-saving bridge
+- Reinforce the updated decision.
+conditions:
+- The position is identity-linked
+- Change is desirable and possible.
+exceptions:
+- Serious harm may require public accountability
+- Some actors exploit face-saving to avoid responsibility.
+applications:
+  negotiation:
+  - Let others update without declaring defeat.
+  leadership:
+  - Praise learning rather than reversal.
+risks:
+- Protecting ego over truth
+- Avoiding necessary accountability.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0014
+  applies_to: []
+tags:
+- face-saving
+- identity
+- change
 created_at: '2026-07-20'
 updated_at: '2026-07-20'

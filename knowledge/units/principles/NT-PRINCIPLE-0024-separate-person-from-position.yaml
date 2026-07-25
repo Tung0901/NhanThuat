@@ -1,19 +1,47 @@
 id: NT-PRINCIPLE-0024
 type: principle
-status: review
+status: frozen
 version: 0.1.0
 title: Separate person from position
-summary: Challenge a position in a way that does not require the person to defend their whole identity.
+summary: Challenge a position in a way that does not require the person to defend
+  their whole identity.
 primary_domain: tri-nhan
-secondary_domains: [hop-chung, tu-than]
-definition: People can reconsider ideas more easily when critique targets the claim, evidence, or tradeoff rather than the person's worth.
-mechanism: [Name the position, Separate it from identity, Evaluate evidence and consequence.]
-conditions: [The issue is discussable, Identity threat would block learning.]
-exceptions: [Role accountability may require direct ownership, Harmful conduct may require firmer naming.]
-applications: {conversation: [Ask what would change the view.], leadership: [Challenge reasoning without status attack.]} 
-risks: [Avoiding hard accountability, Softening truth until it becomes unclear.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0014, NT-LAW-0023], applies_to: []}
-tags: [identity, disagreement, learning]
+secondary_domains:
+- hop-chung
+- tu-than
+definition: People can reconsider ideas more easily when critique targets the claim,
+  evidence, or tradeoff rather than the person's worth.
+mechanism:
+- Name the position
+- Separate it from identity
+- Evaluate evidence and consequence.
+conditions:
+- The issue is discussable
+- Identity threat would block learning.
+exceptions:
+- Role accountability may require direct ownership
+- Harmful conduct may require firmer naming.
+applications:
+  conversation:
+  - Ask what would change the view.
+  leadership:
+  - Challenge reasoning without status attack.
+risks:
+- Avoiding hard accountability
+- Softening truth until it becomes unclear.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0014
+  - NT-LAW-0023
+  applies_to: []
+tags:
+- identity
+- disagreement
+- learning
 created_at: '2026-07-20'
 updated_at: '2026-07-20'

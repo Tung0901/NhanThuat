@@ -1,0 +1,37 @@
+id: NT-PRINCIPLE-0100
+type: principle
+status: frozen
+version: 0.1.0
+title: Explicitly Name Rejected Alternatives
+summary: Force strategic decision-making to document the specific viable options that
+  will not be pursued.
+primary_domain: thanh-su
+secondary_domains:
+- tri-nhan
+definition: A strategy is only real when it articulates what the organization will
+  actively refuse to do.
+conditions:
+- Strategic roadmap approval and annual planning.
+exceptions:
+- Trivial task execution steps.
+applications:
+  roadmap_design:
+  - Include a Rejected Options section in strategy documents.
+risks:
+- Naming rejected options causing political friction.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0016-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0067
+  applies_to: []
+tags:
+- strategy
+- trade-offs
+- alignment
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

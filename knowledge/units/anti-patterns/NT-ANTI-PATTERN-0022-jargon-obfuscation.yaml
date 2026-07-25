@@ -1,0 +1,34 @@
+id: NT-ANTI-PATTERN-0022
+type: anti-pattern
+status: frozen
+version: 0.1.0
+title: Jargon Obfuscation
+summary: Jargon Obfuscation structural knowledge unit.
+primary_domain: tri-nhan
+secondary_domains:
+- dung-nhan
+definition: Formal definition of Jargon Obfuscation in NhanThuat architecture.
+conditions:
+- Operational governance contexts.
+exceptions:
+- Emergency crisis overrides.
+applications:
+  governance:
+  - Apply Jargon Obfuscation to organizational workflows.
+risks:
+- Misapplication of Jargon Obfuscation leading to suboptimal performance.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0001-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0047
+  applies_to: []
+tags:
+- anti-pattern
+- tri-nhan
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

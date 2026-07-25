@@ -1,21 +1,47 @@
 id: NT-LAW-0008
 type: law
-status: review
+status: frozen
 version: 0.1.0
 title: Feedback adjusts behavior
-summary: People adjust behavior more reliably when feedback is timely, specific, credible, and connected to visible consequences.
+summary: People adjust behavior more reliably when feedback is timely, specific, credible,
+  and connected to visible consequences.
 primary_domain: dung-nhan
-secondary_domains: [tu-than, thanh-su]
-definition: Feedback changes behavior when the receiver can understand the gap, trust the signal, and act on the adjustment before the context disappears.
-mechanism: [Notice a performance signal, Interpret the gap, Adjust action when the correction is usable.]
-conditions: [The receiver can change behavior, Feedback is close enough to the action.]
-exceptions: [Threatening feedback may trigger defense, Vague feedback may not guide change.]
+secondary_domains:
+- tu-than
+- thanh-su
+definition: Feedback changes behavior when the receiver can understand the gap, trust
+  the signal, and act on the adjustment before the context disappears.
+mechanism:
+- Notice a performance signal
+- Interpret the gap
+- Adjust action when the correction is usable.
+conditions:
+- The receiver can change behavior
+- Feedback is close enough to the action.
+exceptions:
+- Threatening feedback may trigger defense
+- Vague feedback may not guide change.
 applications:
-  management: [Give feedback close to the observed behavior.]
-  learning: [Connect correction to the next concrete attempt.]
-risks: [Using feedback to vent frustration, Overloading people with too many corrections.]
-evidence: {level: provisional, references: []}
-relations: {supports: [NT-PRINCIPLE-0011, NT-PRINCIPLE-0012], conflicts_with: [], depends_on: [], applies_to: []}
-tags: [feedback, learning, behavior-change]
+  management:
+  - Give feedback close to the observed behavior.
+  learning:
+  - Connect correction to the next concrete attempt.
+risks:
+- Using feedback to vent frustration
+- Overloading people with too many corrections.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports:
+  - NT-PRINCIPLE-0011
+  - NT-PRINCIPLE-0012
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- feedback
+- learning
+- behavior-change
 created_at: '2026-07-20'
 updated_at: '2026-07-20'

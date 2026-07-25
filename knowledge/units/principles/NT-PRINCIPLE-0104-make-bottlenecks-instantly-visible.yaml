@@ -1,0 +1,37 @@
+id: NT-PRINCIPLE-0104
+type: principle
+status: frozen
+version: 0.1.0
+title: Make Bottlenecks Instantly Visible
+summary: Display execution blockages and queue backups on shared visual telemetry
+  boards immediately.
+primary_domain: dung-nhan
+secondary_domains:
+- tri-nhan
+definition: Unseen bottlenecks compound quietly. Systems should visually highlight
+  blocked tasks.
+conditions:
+- Managing delivery pipelines.
+exceptions:
+- Confidential security vulnerability remediation.
+applications:
+  telemetry:
+  - Automatically highlight blocked tasks in red on team dashboards.
+risks:
+- Using visual telemetry to publicly shame slow workers.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0017-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0069
+  applies_to: []
+tags:
+- execution
+- bottleneck
+- telemetry
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

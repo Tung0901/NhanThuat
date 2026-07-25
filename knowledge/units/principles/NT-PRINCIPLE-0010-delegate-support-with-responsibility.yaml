@@ -1,19 +1,47 @@
 id: NT-PRINCIPLE-0010
 type: principle
-status: review
+status: frozen
 version: 0.1.0
 title: Delegate support with responsibility
-summary: When assigning responsibility, include the authority, resources, feedback, and escalation path needed to carry it.
+summary: When assigning responsibility, include the authority, resources, feedback,
+  and escalation path needed to carry it.
 primary_domain: dung-nhan
-secondary_domains: [thanh-su, hop-chung]
-definition: Delegation is complete only when the receiver has enough support and authority to act on the responsibility.
-mechanism: [Define responsibility, Match authority and resources, Create feedback and escalation channels.]
-conditions: [The task has meaningful autonomy, Outcome quality depends on decisions.]
-exceptions: [Training tasks may intentionally limit authority, Regulated work may require tighter controls.]
-applications: {management: [Ask what support is missing before judging ownership.], execution: [Clarify escalation rights before work starts.]} 
-risks: [Over-supporting and removing autonomy, Assigning support without standards.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0007, NT-LAW-0010], applies_to: []}
-tags: [delegation, support, responsibility]
+secondary_domains:
+- thanh-su
+- hop-chung
+definition: Delegation is complete only when the receiver has enough support and authority
+  to act on the responsibility.
+mechanism:
+- Define responsibility
+- Match authority and resources
+- Create feedback and escalation channels.
+conditions:
+- The task has meaningful autonomy
+- Outcome quality depends on decisions.
+exceptions:
+- Training tasks may intentionally limit authority
+- Regulated work may require tighter controls.
+applications:
+  management:
+  - Ask what support is missing before judging ownership.
+  execution:
+  - Clarify escalation rights before work starts.
+risks:
+- Over-supporting and removing autonomy
+- Assigning support without standards.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0007
+  - NT-LAW-0010
+  applies_to: []
+tags:
+- delegation
+- support
+- responsibility
 created_at: '2026-07-20'
 updated_at: '2026-07-20'

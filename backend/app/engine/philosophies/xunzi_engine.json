@@ -1,0 +1,89 @@
+{
+  "metadata": {
+    "philosophy_id": "LENS-XUNZI",
+    "philosophy_name": "Xunzi Lens",
+    "version": "1.1.0",
+    "source_document": "docs/knowledge/05_TUAN_TU_KNOWLEDGE_PACK.md",
+    "supported_domains": [
+      "hiring",
+      "team-building",
+      "delegation",
+      "learning",
+      "culture",
+      "ethics"
+    ],
+    "supported_personas": [
+      "Leadership Coach",
+      "Org Health Agent",
+      "Strategy Agent"
+    ],
+    "preferred_reasoning_modes": [
+      "Analytical",
+      "Diagnostic",
+      "Reflective"
+    ],
+    "compatible_lenses": [
+      "LENS-CONFUCIAN",
+      "LENS-LEGALISM",
+      "LENS-TAOISM"
+    ],
+    "incompatible_lenses": [],
+    "confidence_modifier": 1.0,
+    "governance_status": "frozen",
+    "last_reviewed": "2026-07-23"
+  },
+  "engine_name": "Xunzi Engine",
+  "version": "1.1.0",
+  "description": "Thuyết Tính Ác, Khuyên Học, Dùng Lễ Định Phần, Mô hình Huấn luyện & Sửa đổi Hành vi Nhân sự",
+  "core_principles": [
+    {
+      "id": "XUN-001",
+      "name": "Thuyết Tính Ác & Uốn Nắn (Vĩ)",
+      "rule": "Bản tính tự nhiên ham lợi ham hưởng lạc; phải qua rèn luyện kỷ luật và Lễ nghĩa mới thành người giỏi."
+    },
+    {
+      "id": "XUN-002",
+      "name": "Khuyên Học (Continuous Learning)",
+      "rule": "Học tập liên tục và kèm cặp (Mentorship) là con đường duy nhất nâng cao năng lực."
+    },
+    {
+      "id": "XUN-003",
+      "name": "Dùng Lễ Định Phần (Role Definition)",
+      "rule": "Dùng Lễ nghĩa quy chuẩn để phân định rõ ranh giới quyền hạn, trách nhiệm và vị thế của từng vai trò."
+    }
+  ],
+  "human_training_model": {
+    "stages": [
+      "1. Minh Định Quy Chuẩn (Standard Framing)",
+      "2. Khuyên Học & Huấn Luyện (Exhortation & Mentorship)",
+      "3. Uốn Nắn Kỷ Luật (Discipline & Shaping)",
+      "4. Cố Định Năng Lực (Competency Consolidation)"
+    ],
+    "action_plan": "Xây dựng khung năng lực (Competency Framework) và quy trình Mentorship 1-on-1 bắt buộc."
+  },
+  "behavior_correction_framework": [
+    {
+      "issue_type": "Tranh giành quyền hạn / Giẫm chân vai trò",
+      "root_cause": "Ranh giới vai trò mập mờ (Chưa Định Phần)",
+      "correction_technique": "Dùng Lễ Định Phần",
+      "action": "Tái lập Job Description và Ma trận Quyết định (RACI Matrix) rõ ràng."
+    },
+    {
+      "issue_type": "Tự mãn / Ngừng phát triển năng lực",
+      "root_cause": "Thiếu tinh thần Khuyên Học",
+      "correction_technique": "Khuyên Học & Mentorship",
+      "action": "Giao bài toán thử thách mới và bắt buộc tham gia chương trình rèn luyện."
+    },
+    {
+      "issue_type": "Hành xử cảm tính bản năng",
+      "root_cause": "Bản tính tự nhiên chưa qua uốn nắn (Tính Ác)",
+      "correction_technique": "Kỷ luật uốn nắn (Vĩ)",
+      "action": "Áp dụng phản hồi kỷ luật 1-on-1 kẹp khung quy chuẩn hành vi."
+    }
+  ],
+  "discipline_rubric": {
+    "level_1": "Bản năng / Chưa uốn nắn (Hành xử cảm tính, thiếu kỷ luật)",
+    "level_2": "Đang rèn luyện (Tuân thủ khi được kèm cặp và nhắc nhở)",
+    "level_3": "Thành thục chuẩn mực (Tự giác kỷ luật, hoàn thiện năng lực liên tục)"
+  }
+}

@@ -1,0 +1,43 @@
+id: NT-MODEL-0027
+type: model
+status: frozen
+version: 0.1.0
+title: Strategic Trade-Off Matrix
+summary: A 2x2 model mapping Strategic Focus against Resource Commitment to evaluate
+  strategy integrity.
+primary_domain: thanh-su
+secondary_domains:
+- dung-nhan
+definition: The Strategic Trade-Off Matrix evaluates strategy across Strategic Focus
+  and Resource Commitment.
+mechanism:
+- Assess Strategic Focus.
+- Assess Resource Commitment.
+- Map to Quadrant.
+- Shift toward Coherent Execution.
+conditions:
+- Strategy audits and annual portfolio reviews.
+exceptions:
+- None.
+applications:
+  portfolio_audit:
+  - Audit product portfolios to eliminate Wishful Thinking initiatives.
+risks:
+- Over-concentrating resources in a dying market.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0016-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0066
+  - NT-LAW-0067
+  applies_to: []
+tags:
+- strategy
+- matrix
+- audit
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

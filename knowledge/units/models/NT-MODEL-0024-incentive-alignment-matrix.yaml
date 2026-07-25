@@ -1,0 +1,43 @@
+id: NT-MODEL-0024
+type: model
+status: frozen
+version: 0.1.0
+title: Incentive Alignment Matrix
+summary: A 2x2 framework mapping Metric Congruence against Intrinsic Alignment to
+  categorize organizational reward health.
+primary_domain: tu-than
+secondary_domains:
+- hop-chung
+definition: The Incentive Alignment Matrix plots reward structures across Metric Congruence
+  and Intrinsic Alignment.
+mechanism:
+- Assess Metric Congruence.
+- Assess Intrinsic Alignment.
+- Categorize Quadrant.
+- Shift toward High/High quadrant.
+conditions:
+- Compensation redesign, sales commission planning, or OKR evaluation.
+exceptions:
+- Non-work voluntary charitable endeavors.
+applications:
+  compensation_audit:
+  - Evaluate commission plans to eliminate Toxic Gaming risk.
+risks:
+- Misdiagnosing low employee capability as an incentive matrix flaw.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0009-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0060
+  - NT-LAW-0061
+  applies_to: []
+tags:
+- incentives
+- matrix
+- governance
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

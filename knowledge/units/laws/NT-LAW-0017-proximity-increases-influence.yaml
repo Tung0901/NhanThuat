@@ -1,21 +1,48 @@
 id: NT-LAW-0017
 type: law
-status: review
+status: frozen
 version: 0.1.0
 title: Proximity increases influence
-summary: People are influenced more by signals, people, and consequences that are closer in time, space, relationship, or perceived relevance.
+summary: People are influenced more by signals, people, and consequences that are
+  closer in time, space, relationship, or perceived relevance.
 primary_domain: tri-nhan
-secondary_domains: [hop-chung, thanh-su]
-definition: Nearer cues tend to exert stronger influence because they are easier to notice, feel, and act upon than distant abstractions.
-mechanism: [Encounter a near cue, Feel higher immediacy, Give it more weight than distant concerns.]
-conditions: [Competing cues differ in immediacy, The person lacks a strong counter-system.]
-exceptions: [Strong values or plans can elevate distant goals, Crisis can reorder proximity.]
+secondary_domains:
+- hop-chung
+- thanh-su
+definition: Nearer cues tend to exert stronger influence because they are easier to
+  notice, feel, and act upon than distant abstractions.
+mechanism:
+- Encounter a near cue
+- Feel higher immediacy
+- Give it more weight than distant concerns.
+conditions:
+- Competing cues differ in immediacy
+- The person lacks a strong counter-system.
+exceptions:
+- Strong values or plans can elevate distant goals
+- Crisis can reorder proximity.
 applications:
-  communication: [Connect long-term goals to near consequences.]
-  management: [Place key signals where decisions actually happen.]
-risks: [Overweighting the urgent over the important, Manipulating salience without substance.]
-evidence: {level: provisional, references: []}
-relations: {supports: [NT-PRINCIPLE-0029, NT-PRINCIPLE-0030], conflicts_with: [], depends_on: [NT-LAW-0002], applies_to: []}
-tags: [proximity, influence, salience]
+  communication:
+  - Connect long-term goals to near consequences.
+  management:
+  - Place key signals where decisions actually happen.
+risks:
+- Overweighting the urgent over the important
+- Manipulating salience without substance.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports:
+  - NT-PRINCIPLE-0029
+  - NT-PRINCIPLE-0030
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0002
+  applies_to: []
+tags:
+- proximity
+- influence
+- salience
 created_at: '2026-07-20'
 updated_at: '2026-07-20'

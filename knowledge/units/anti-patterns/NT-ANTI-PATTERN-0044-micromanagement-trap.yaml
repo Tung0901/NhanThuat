@@ -1,0 +1,43 @@
+id: NT-ANTI-PATTERN-0044
+type: anti-pattern
+status: frozen
+version: 0.1.0
+title: Micromanagement Trap
+summary: Retaining micro-approval control over delegated tasks, destroying speed,
+  trust, and employee initiative.
+primary_domain: dung-nhan
+secondary_domains:
+- tri-nhan
+definition: The micromanagement trap occurs when a manager officially delegates a
+  role but continuously demands low-level sign-offs.
+mechanism:
+- Manager delegates task.
+- Manager demands micro-approvals.
+- Employee stops exercising judgment.
+- Speed collapses.
+conditions:
+- Insecure managers operating under high pressure.
+exceptions:
+- Training novices during initial onboarding.
+applications:
+  coaching:
+  - Flag managers who hold high micro-approval rates.
+risks:
+- Confusing necessary quality checks with micromanagement.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0013-01
+relations:
+  supports: []
+  conflicts_with:
+  - NT-PRINCIPLE-0098
+  depends_on:
+  - NT-LAW-0065
+  applies_to: []
+tags:
+- authority
+- micromanagement
+- anti-patterns
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

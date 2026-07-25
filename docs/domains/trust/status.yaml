@@ -1,0 +1,59 @@
+domain_area_id: NT-DA-0010
+slug: trust
+name: Trust
+status: frozen
+previous_status: ready_for_review
+progress: 100
+approved_by: Chief Architect (Delegated Continuous Authoring)
+frozen_at: '2026-07-22'
+primary_domain: hop-chung
+secondary_domains:
+  - dung-nhan
+  - tri-nhan
+review_owner: Chief Architect or delegated Trust domain reviewer
+blockers: []
+unit_counts:
+  laws: 3
+  principles: 3
+  models: 2
+  anti_patterns: 4
+members:
+  laws: 
+    - NT-LAW-0051
+    - NT-LAW-0052
+    - NT-LAW-0053
+  principles: 
+    - NT-PRINCIPLE-0081
+    - NT-PRINCIPLE-0082
+    - NT-PRINCIPLE-0083
+  models: 
+    - NT-MODEL-0018
+    - NT-MODEL-0019
+  anti_patterns: 
+    - NT-ANTI-PATTERN-0028
+    - NT-ANTI-PATTERN-0029
+    - NT-ANTI-PATTERN-0030
+    - NT-ANTI-PATTERN-0031
+artifacts:
+  - docs/domains/trust/ARCHITECTURE.md
+  - docs/domains/trust/CONCEPT-MAP.md
+  - docs/domains/trust/DEPENDENCIES.md
+  - docs/domains/trust/GLOSSARY.md
+  - docs/domains/trust/evidence-placeholders.yaml
+  - docs/domains/trust/status.yaml
+last_reviewed_at: '2026-07-22'
+
+# NEW METADATA STANDARD
+scientific_status: "multidisciplinary_consensus"
+evidence_scope: "integrates organizational economics, sociotechnical systems, behavioral psychology, and governance theory"
+misuse_risk: "confusing structural trust with unconditional blind faith, or weaponizing verification cadences into punitive surveillance"
+ontology_dependencies:
+  - NT-DA-0001
+  - NT-DA-0008
+  - NT-DA-0013
+revision_history:
+  - version: 0.1.0
+    date: '2026-07-22'
+    description: Initial Trust Blueprint draft as freeze candidate.
+last_architecture_review: '2026-07-22'
+chief_architect_status: blueprint_proposed

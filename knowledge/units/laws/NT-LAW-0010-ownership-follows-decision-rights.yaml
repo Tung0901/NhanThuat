@@ -1,21 +1,48 @@
 id: NT-LAW-0010
 type: law
-status: review
+status: frozen
 version: 0.1.0
 title: Ownership follows decision rights
-summary: People take real ownership when they can influence the decisions, resources, and tradeoffs that determine the outcome.
+summary: People take real ownership when they can influence the decisions, resources,
+  and tradeoffs that determine the outcome.
 primary_domain: dung-nhan
-secondary_domains: [hop-chung, thanh-su]
-definition: Ownership weakens when responsibility is assigned without meaningful decision rights over the path to the result.
-mechanism: [Receive responsibility, Evaluate control over choices, Invest ownership in proportion to agency.]
-conditions: [The result depends on judgment and tradeoffs, The person understands expected outcomes.]
-exceptions: [Highly constrained roles may still own execution quality, Shared ownership may distribute rights.]
+secondary_domains:
+- hop-chung
+- thanh-su
+definition: Ownership weakens when responsibility is assigned without meaningful decision
+  rights over the path to the result.
+mechanism:
+- Receive responsibility
+- Evaluate control over choices
+- Invest ownership in proportion to agency.
+conditions:
+- The result depends on judgment and tradeoffs
+- The person understands expected outcomes.
+exceptions:
+- Highly constrained roles may still own execution quality
+- Shared ownership may distribute rights.
 applications:
-  management: [Pair accountability with decision authority.]
-  operations: [Escalate decisions that exceed local rights.]
-risks: [Creating accountability without agency, Confusing consultation with authority.]
-evidence: {level: provisional, references: []}
-relations: {supports: [NT-PRINCIPLE-0015, NT-PRINCIPLE-0016], conflicts_with: [], depends_on: [NT-LAW-0007], applies_to: []}
-tags: [ownership, decision-rights, accountability]
+  management:
+  - Pair accountability with decision authority.
+  operations:
+  - Escalate decisions that exceed local rights.
+risks:
+- Creating accountability without agency
+- Confusing consultation with authority.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports:
+  - NT-PRINCIPLE-0015
+  - NT-PRINCIPLE-0016
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0007
+  applies_to: []
+tags:
+- ownership
+- decision-rights
+- accountability
 created_at: '2026-07-20'
 updated_at: '2026-07-20'

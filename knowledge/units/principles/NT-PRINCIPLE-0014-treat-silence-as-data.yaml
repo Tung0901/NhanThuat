@@ -1,19 +1,46 @@
 id: NT-PRINCIPLE-0014
 type: principle
-status: review
+status: frozen
 version: 0.1.0
 title: Treat silence as data
-summary: When important information is not surfacing, treat silence as a signal about safety, incentives, clarity, or trust.
+summary: When important information is not surfacing, treat silence as a signal about
+  safety, incentives, clarity, or trust.
 primary_domain: hop-chung
-secondary_domains: [tri-nhan, thanh-su]
-definition: Silence may indicate agreement, but it may also reveal fear, confusion, fatigue, or perceived futility.
-mechanism: [Notice missing signal, Ask what makes speaking costly, Change the condition blocking truth.]
-conditions: [Information should exist but is not appearing, People have reason to filter communication.]
-exceptions: [Silence can mean genuine alignment, Some topics require privacy.]
-applications: {leadership: [Investigate repeated quiet around known risks.], teamwork: [Ask what is hard to say before concluding consensus.]} 
-risks: [Interrogating people for silence, Assuming hidden disagreement in every pause.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0009], applies_to: []}
-tags: [silence, truth, trust]
+secondary_domains:
+- tri-nhan
+- thanh-su
+definition: Silence may indicate agreement, but it may also reveal fear, confusion,
+  fatigue, or perceived futility.
+mechanism:
+- Notice missing signal
+- Ask what makes speaking costly
+- Change the condition blocking truth.
+conditions:
+- Information should exist but is not appearing
+- People have reason to filter communication.
+exceptions:
+- Silence can mean genuine alignment
+- Some topics require privacy.
+applications:
+  leadership:
+  - Investigate repeated quiet around known risks.
+  teamwork:
+  - Ask what is hard to say before concluding consensus.
+risks:
+- Interrogating people for silence
+- Assuming hidden disagreement in every pause.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0009
+  applies_to: []
+tags:
+- silence
+- truth
+- trust
 created_at: '2026-07-20'
 updated_at: '2026-07-20'

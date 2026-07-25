@@ -1,19 +1,47 @@
 id: NT-PRINCIPLE-0033
 type: principle
-status: review
+status: frozen
 version: 0.1.0
 title: Change defaults before demanding discipline
-summary: When a poor pattern repeats, redesign the default path before relying on stronger individual discipline.
+summary: When a poor pattern repeats, redesign the default path before relying on
+  stronger individual discipline.
 primary_domain: thanh-su
-secondary_domains: [tu-than, dung-nhan]
-definition: System defaults often overpower intentions, so better defaults make desired behavior easier and less energy-dependent.
-mechanism: [Find repeated failure, Identify the default path, Redesign default toward desired behavior.]
-conditions: [The pattern repeats, The default can be changed.]
-exceptions: [Some issues require direct accountability, Excessive redesign may avoid necessary skill-building.]
-applications: {operations: [Make the safe path the easy path.], management: [Fix recurring process traps before blaming effort.]} 
-risks: [Removing personal responsibility, Creating rigid systems.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0019, NT-LAW-0016], applies_to: []}
-tags: [defaults, discipline, systems]
+secondary_domains:
+- tu-than
+- dung-nhan
+definition: System defaults often overpower intentions, so better defaults make desired
+  behavior easier and less energy-dependent.
+mechanism:
+- Find repeated failure
+- Identify the default path
+- Redesign default toward desired behavior.
+conditions:
+- The pattern repeats
+- The default can be changed.
+exceptions:
+- Some issues require direct accountability
+- Excessive redesign may avoid necessary skill-building.
+applications:
+  operations:
+  - Make the safe path the easy path.
+  management:
+  - Fix recurring process traps before blaming effort.
+risks:
+- Removing personal responsibility
+- Creating rigid systems.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0019
+  - NT-LAW-0016
+  applies_to: []
+tags:
+- defaults
+- discipline
+- systems
 created_at: '2026-07-20'
 updated_at: '2026-07-20'

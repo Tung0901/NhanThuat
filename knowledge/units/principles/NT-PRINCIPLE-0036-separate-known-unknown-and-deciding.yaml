@@ -1,19 +1,48 @@
 id: NT-PRINCIPLE-0036
 type: principle
-status: review
+status: frozen
 version: 0.1.0
 title: Separate known, unknown, and deciding
-summary: Distinguish facts, uncertainties, and choices so ambiguity does not turn into confusion or unnecessary control behavior.
+summary: Distinguish facts, uncertainties, and choices so ambiguity does not turn
+  into confusion or unnecessary control behavior.
 primary_domain: tri-nhan
-secondary_domains: [thanh-su, hop-chung]
-definition: Clear separation between what is known, what is unknown, and what must be decided reduces the psychological pressure of uncertainty.
-mechanism: [List known facts, Name open uncertainties, Identify the decision that remains.]
-conditions: [The group is confused or anxious, Several interpretations are competing.]
-exceptions: [Very urgent situations may need direct action first, Excessive classification can delay obvious moves.]
-applications: {planning: [Use three columns for facts, unknowns, and decisions.], communication: [Do not present uncertainty as failure when it is normal.]} 
-risks: [Creating false precision, Avoiding commitment by endlessly refining unknowns.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0020], applies_to: []}
-tags: [uncertainty, clarity, decisions]
+secondary_domains:
+- thanh-su
+- hop-chung
+definition: Clear separation between what is known, what is unknown, and what must
+  be decided reduces the psychological pressure of uncertainty.
+mechanism:
+- List known facts
+- Name open uncertainties
+- Identify the decision that remains.
+conditions:
+- The group is confused or anxious
+- Several interpretations are competing.
+exceptions:
+- Very urgent situations may need direct action first
+- Excessive classification can delay obvious moves.
+applications:
+  planning:
+  - Use three columns for facts
+  - unknowns
+  - and decisions.
+  communication:
+  - Do not present uncertainty as failure when it is normal.
+risks:
+- Creating false precision
+- Avoiding commitment by endlessly refining unknowns.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0020
+  applies_to: []
+tags:
+- uncertainty
+- clarity
+- decisions
 created_at: '2026-07-20'
 updated_at: '2026-07-20'

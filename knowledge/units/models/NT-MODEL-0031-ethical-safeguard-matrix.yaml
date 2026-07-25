@@ -1,0 +1,42 @@
+id: NT-MODEL-0031
+type: model
+status: frozen
+version: 0.1.0
+title: Ethical Safeguard Matrix
+summary: A 2x2 model evaluating decisions across Risk Asymmetry and Intent Transparency.
+primary_domain: tu-than
+secondary_domains:
+- hop-chung
+definition: 'The Ethical Safeguard Matrix classifies operational choices: Fair Exchange,
+  Predatory Extraction, Opaque Bargaining, Managed Duty of Care.'
+mechanism:
+- Assess Risk Asymmetry.
+- Assess Intent Transparency.
+- Categorize Quadrant.
+- Block Predatory Extraction choices.
+conditions:
+- AI decision audit and business model review.
+exceptions:
+- None.
+applications:
+  ai_audit:
+  - Audit AI recommendation models to block Predatory Extraction behaviors.
+risks:
+- Misclassifying legitimate high-risk investments as predatory extraction.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0020-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0074
+  - NT-LAW-0075
+  applies_to: []
+tags:
+- ethics
+- matrix
+- safeguards
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

@@ -1,0 +1,37 @@
+id: NT-LAW-0060
+type: law
+status: frozen
+version: 0.1.0
+title: Incentive Signal Distortion
+summary: When a metric becomes an explicit incentive target, actors optimize for the
+  metric rather than the underlying organizational outcome.
+primary_domain: tu-than
+secondary_domains:
+- hop-chung
+definition: 'Goodhart''s Law applied to organizational governance: when an indicator
+  is chosen for incentive payoffs, actors optimize the indicator itself.'
+conditions:
+- High-stakes extrinsic rewards tied directly to narrow performance metrics.
+exceptions:
+- Pure deterministic physical tasks where metric output perfectly equals quality.
+applications:
+  incentive_design:
+  - Pair quantitative targets with qualitative quality gates.
+risks:
+- Creating perverse incentives that reward destructive behavior.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0009-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0005
+  applies_to: []
+tags:
+- incentives
+- gaming
+- metrics
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

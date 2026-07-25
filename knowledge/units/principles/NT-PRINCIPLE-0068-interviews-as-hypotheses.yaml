@@ -1,0 +1,34 @@
+id: NT-PRINCIPLE-0068
+type: principle
+status: frozen
+version: 0.1.0
+title: Interviews as Hypotheses
+summary: Interviews as Hypotheses structural knowledge unit.
+primary_domain: tri-nhan
+secondary_domains:
+- thanh-su
+definition: Formal definition of Interviews as Hypotheses in NhanThuat architecture.
+conditions:
+- Operational governance contexts.
+exceptions:
+- Emergency crisis overrides.
+applications:
+  governance:
+  - Apply Interviews as Hypotheses to organizational workflows.
+risks:
+- Misapplication of Interviews as Hypotheses leading to suboptimal performance.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0001-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0041
+  applies_to: []
+tags:
+- principle
+- tri-nhan
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

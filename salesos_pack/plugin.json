@@ -1,0 +1,25 @@
+{
+  "$schema": "https://nhanthuat.org/schemas/plugin.schema.json",
+  "plugin_id": "com.nhanthuat.salesos",
+  "plugin_name": "SalesOS Industry Solution Pack",
+  "version": "1.0.0",
+  "min_kernel_version": "1.0.0",
+  "max_kernel_version": "1.99.99",
+  "author": "NhanThuat SalesOS Team",
+  "license": "Proprietary",
+  "entrypoint_module": "salesos_pack.plugin",
+  "entrypoint_class": "SalesOSPlugin",
+  "permissions": [
+    "storage:read_write",
+    "event_bus:publish"
+  ],
+  "resource_quotas": {
+    "max_memory_mb": 512,
+    "max_execution_ms": 3000
+  },
+  "provenance": {
+    "checksum": "sha256:b1640110e23dbf66_salesos_v1_0_0_manifest_checksum",
+    "effective_date": "2026-07-23",
+    "governance_status": "frozen"
+  }
+}

@@ -1,0 +1,37 @@
+id: NT-PRINCIPLE-0096
+type: principle
+status: frozen
+version: 0.1.0
+title: Match Authority with Accountability
+summary: Ensure that any actor held accountable for an outcome is granted the corresponding
+  formal authority and budget to influence it.
+primary_domain: dung-nhan
+secondary_domains:
+- hop-chung
+definition: Holding an employee accountable for results without giving them authority
+  to control resources creates extreme stress.
+conditions:
+- Delegation design and role definitions.
+exceptions:
+- Matrix management roles requiring influence-based coordination.
+applications:
+  role_design:
+  - Audit manager roles to verify that budget approval rights match performance KPIs.
+risks:
+- Granting authority without establishing accountability safeguards.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0013-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0064
+  applies_to: []
+tags:
+- authority
+- accountability
+- role-design
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

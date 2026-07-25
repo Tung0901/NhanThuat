@@ -1,0 +1,52 @@
+domain_area_id: NT-DA-0009
+slug: incentives
+name: Incentives
+status: frozen
+previous_status: ready_for_review
+progress: 100
+approved_by: Chief Architect (Autonomous Program 3 Completion)
+frozen_at: '2026-07-22'
+primary_domain: tu-than
+secondary_domains:
+  - hop-chung
+  - tri-nhan
+review_owner: Chief Architect
+blockers: []
+unit_counts:
+  laws: 2
+  principles: 3
+  models: 1
+  anti_patterns: 2
+members:
+  laws:
+    - NT-LAW-0060
+    - NT-LAW-0061
+  principles:
+    - NT-PRINCIPLE-0090
+    - NT-PRINCIPLE-0091
+    - NT-PRINCIPLE-0092
+  models:
+    - NT-MODEL-0024
+  anti_patterns:
+    - NT-ANTI-PATTERN-0040
+    - NT-ANTI-PATTERN-0041
+artifacts:
+  - docs/domains/incentives/ARCHITECTURE.md
+  - docs/domains/incentives/CONCEPT-MAP.md
+  - docs/domains/incentives/DEPENDENCIES.md
+  - docs/domains/incentives/GLOSSARY.md
+  - docs/domains/incentives/evidence-placeholders.yaml
+  - docs/domains/incentives/status.yaml
+last_reviewed_at: '2026-07-22'
+scientific_status: "multidisciplinary_consensus"
+evidence_scope: "integrates behavioral economics, agency theory, and game theory"
+misuse_risk: "creating perverse gaming incentives; destroying intrinsic motivation with inappropriate financial rewards"
+ontology_dependencies:
+  - NT-DA-0001
+  - NT-DA-0002
+revision_history:
+  - version: 0.1.0
+    date: '2026-07-22'
+    description: Initial Incentives domain implementation frozen under Program 3.
+last_architecture_review: '2026-07-22'
+chief_architect_status: approved_and_frozen

@@ -1,0 +1,6 @@
+evidence_needs:
+  - id: EV-REQ-0013-01
+    description: "Empirical studies on decision rights clarity and execution speed."
+    type: empirical_study
+    priority: high
+    status: placeholder

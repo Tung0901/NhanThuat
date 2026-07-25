@@ -1,0 +1,37 @@
+id: NT-LAW-0066
+type: law
+status: frozen
+version: 0.1.0
+title: Resource Allocation Primacy
+summary: A strategy does not exist until scarce resources are reallocated to support
+  its choices.
+primary_domain: thanh-su
+secondary_domains:
+- dung-nhan
+definition: Strategy is defined by resource commitments (capital, engineering time,
+  talent), not by mission statements.
+conditions:
+- Strategic planning and annual budget cycles.
+exceptions:
+- Exploration probes with tiny initial resource allocations.
+applications:
+  strategic_audit:
+  - Measure talent and budget shifting across initiatives.
+risks:
+- Declaring strategic shifts without changing budget allocations.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0016-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0048
+  applies_to: []
+tags:
+- strategy
+- resource-allocation
+- commitments
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

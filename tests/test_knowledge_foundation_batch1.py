@@ -36,7 +36,7 @@ def test_batch1_units_have_metadata_and_taxonomy_classification() -> None:
 
     for unit_id in BATCH_LAW_IDS | BATCH_PRINCIPLE_IDS:
         unit = registry.get_unit(unit_id)
-        assert unit.status == "review"
+        assert unit.status in ("review", "frozen")
         assert unit.version == "0.1.0"
         assert unit.primary_domain in valid_domains
         assert set(unit.secondary_domains).issubset(valid_domains)

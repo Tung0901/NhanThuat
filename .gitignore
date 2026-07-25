@@ -10,3 +10,7 @@ dist/
 docs/generated/*
 !docs/generated/.gitkeep
 
+# Generated and Local Only
+tmp_pytest/
+scratch/
+skills-lock.json

@@ -1,0 +1,58 @@
+domain_area_id: NT-DA-0004
+slug: leadership
+name: Leadership
+status: frozen
+previous_status: ready_for_review
+progress: 100
+approved_by: Chief Architect (Autonomous Program 3 Completion)
+frozen_at: '2026-07-22'
+primary_domain: hop-chung
+secondary_domains:
+  - tri-nhan
+  - tu-than
+review_owner: Chief Architect or delegated Leadership domain reviewer
+blockers: []
+unit_counts:
+  laws: 3
+  principles: 3
+  models: 2
+  anti_patterns: 3
+members:
+  laws: 
+    - NT-LAW-0037
+    - NT-LAW-0038
+    - NT-LAW-0039
+  principles: 
+    - NT-PRINCIPLE-0063
+    - NT-PRINCIPLE-0064
+    - NT-PRINCIPLE-0065
+  models: 
+    - NT-MODEL-0009
+    - NT-MODEL-0010
+  anti_patterns: 
+    - NT-ANTI-PATTERN-0012
+    - NT-ANTI-PATTERN-0013
+    - NT-ANTI-PATTERN-0014
+artifacts:
+  - docs/domains/leadership/ARCHITECTURE.md
+  - docs/domains/leadership/CONCEPT-MAP.md
+  - docs/domains/leadership/DEPENDENCIES.md
+  - docs/domains/leadership/GLOSSARY.md
+  - docs/domains/leadership/evidence-placeholders.yaml
+  - docs/domains/leadership/status.yaml
+last_reviewed_at: '2026-07-22'
+
+# NEW METADATA STANDARD
+scientific_status: "multidisciplinary_consensus"
+evidence_scope: "integrates behavioral science, leadership studies, organizational dynamics, and ethics"
+misuse_risk: "potential manipulation, authority coercion, or unchecked authority masquerading as leadership"
+ontology_dependencies:
+  - NT-DA-0001
+  - NT-DA-0002
+  - NT-DA-0003
+revision_history:
+  - version: 0.1.0
+    date: '2026-07-22'
+    description: Initial Leadership Blueprint draft as freeze candidate.
+last_architecture_review: '2026-07-22'
+chief_architect_status: blueprint_proposed

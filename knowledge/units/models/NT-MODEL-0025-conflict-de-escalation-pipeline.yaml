@@ -1,0 +1,42 @@
+id: NT-MODEL-0025
+type: model
+status: frozen
+version: 0.1.0
+title: Conflict De-Escalation Pipeline
+summary: A 4-stage operational model for neutralizing personal threat and restoring
+  task-focused alignment.
+primary_domain: hop-chung
+secondary_domains:
+- tri-nhan
+definition: 'The Conflict De-Escalation Pipeline maps steps to resolve interpersonal
+  friction: Threat Neutralization, Issue Isolation, Interest Mapping, Agreement Commitment.'
+mechanism:
+- 'Stage 1: Reaffirm mutual respect.'
+- 'Stage 2: Isolate objective task facts.'
+- 'Stage 3: Map underlying interests.'
+- 'Stage 4: Agree on action commitments.'
+conditions:
+- Active interpersonal conflict resolution in teams.
+exceptions:
+- Legal disputes involving formal litigation.
+applications:
+  coaching:
+  - Guide managers through de-escalating heated team arguments.
+risks:
+- Moving to Stage 3 before emotional threat is neutralized.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0011-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0062
+  applies_to: []
+tags:
+- conflict
+- pipeline
+- de-escalation
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

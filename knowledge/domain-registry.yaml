@@ -1,42 +1,42 @@
 version: 0.1.0
 domains:
-  - id: NT-DA-0001
-    slug: human-nature
-  - id: NT-DA-0002
-    slug: motivation
-  - id: NT-DA-0003
-    slug: personality
-  - id: NT-DA-0004
-    slug: leadership
-  - id: NT-DA-0005
-    slug: hiring
-  - id: NT-DA-0006
-    slug: team-building
-  - id: NT-DA-0007
-    slug: delegation
-  - id: NT-DA-0008
-    slug: authority
-  - id: NT-DA-0009
-    slug: incentives
-  - id: NT-DA-0010
-    slug: trust
-  - id: NT-DA-0011
-    slug: conflict
-  - id: NT-DA-0012
-    slug: negotiation
-  - id: NT-DA-0013
-    slug: communication
-  - id: NT-DA-0014
-    slug: influence
-  - id: NT-DA-0015
-    slug: decision-making
-  - id: NT-DA-0016
-    slug: strategy
-  - id: NT-DA-0017
-    slug: execution
-  - id: NT-DA-0018
-    slug: learning
-  - id: NT-DA-0019
-    slug: culture
-  - id: NT-DA-0020
-    slug: ethics
+- id: NT-DA-0001
+  slug: human-nature
+- id: NT-DA-0002
+  slug: motivation
+- id: NT-DA-0003
+  slug: personality
+- id: NT-DA-0004
+  slug: leadership
+- id: NT-DA-0005
+  slug: hiring
+- id: NT-DA-0006
+  slug: team-building
+- id: NT-DA-0007
+  slug: delegation
+- id: NT-DA-0008
+  slug: communication
+- id: NT-DA-0009
+  slug: incentives
+- id: NT-DA-0010
+  slug: trust
+- id: NT-DA-0011
+  slug: conflict
+- id: NT-DA-0012
+  slug: negotiation
+- id: NT-DA-0013
+  slug: authority
+- id: NT-DA-0014
+  slug: influence
+- id: NT-DA-0015
+  slug: decision-making
+- id: NT-DA-0016
+  slug: strategy
+- id: NT-DA-0017
+  slug: execution
+- id: NT-DA-0018
+  slug: learning
+- id: NT-DA-0019
+  slug: culture
+- id: NT-DA-0020
+  slug: ethics

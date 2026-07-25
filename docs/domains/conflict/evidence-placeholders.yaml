@@ -1,0 +1,6 @@
+evidence_needs:
+  - id: EV-REQ-0011-01
+    description: "Empirical research on task conflict vs relationship conflict impact on team performance."
+    type: empirical_study
+    priority: high
+    status: placeholder

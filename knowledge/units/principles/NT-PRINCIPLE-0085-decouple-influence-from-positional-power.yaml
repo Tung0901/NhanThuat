@@ -1,0 +1,36 @@
+id: NT-PRINCIPLE-0085
+type: principle
+status: frozen
+version: 0.1.0
+title: Decouple Influence from Positional Power
+summary: Decouple Influence from Positional Power structural knowledge unit.
+primary_domain: dung-nhan
+secondary_domains:
+- tri-nhan
+definition: Formal definition of Decouple Influence from Positional Power in NhanThuat
+  architecture.
+conditions:
+- Operational governance contexts.
+exceptions:
+- Emergency crisis overrides.
+applications:
+  governance:
+  - Apply Decouple Influence from Positional Power to organizational workflows.
+risks:
+- Misapplication of Decouple Influence from Positional Power leading to suboptimal
+  performance.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0001-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0056
+  applies_to: []
+tags:
+- principle
+- dung-nhan
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

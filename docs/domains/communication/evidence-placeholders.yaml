@@ -1,0 +1,11 @@
+domain_area_id: NT-DA-0008
+slug: communication
+status: ready_for_review
+evidence_posture:
+  default_level: provisional
+  external_references_fabricated: false
+  future_evidence_needs:
+    - Information theory applications in organizational behavior.
+    - Research on semantic drift in corporate messaging.
+notes:
+  - To be expanded in Evidence Layer batch.

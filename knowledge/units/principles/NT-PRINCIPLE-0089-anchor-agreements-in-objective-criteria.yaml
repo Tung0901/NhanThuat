@@ -1,0 +1,36 @@
+id: NT-PRINCIPLE-0089
+type: principle
+status: frozen
+version: 0.1.0
+title: Anchor Agreements in Objective Criteria
+summary: Anchor Agreements in Objective Criteria structural knowledge unit.
+primary_domain: thanh-su
+secondary_domains:
+- dung-nhan
+definition: Formal definition of Anchor Agreements in Objective Criteria in NhanThuat
+  architecture.
+conditions:
+- Operational governance contexts.
+exceptions:
+- Emergency crisis overrides.
+applications:
+  governance:
+  - Apply Anchor Agreements in Objective Criteria to organizational workflows.
+risks:
+- Misapplication of Anchor Agreements in Objective Criteria leading to suboptimal
+  performance.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0001-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0059
+  applies_to: []
+tags:
+- principle
+- thanh-su
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

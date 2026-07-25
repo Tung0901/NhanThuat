@@ -1,0 +1,59 @@
+domain_area_id: NT-DA-0014
+slug: influence
+name: Influence
+status: frozen
+previous_status: ready_for_review
+progress: 100
+approved_by: Chief Architect (Delegated Continuous Authoring)
+frozen_at: '2026-07-22'
+primary_domain: tri-nhan
+secondary_domains:
+  - hop-chung
+  - thanh-su
+review_owner: Chief Architect or delegated Influence domain reviewer
+blockers: []
+unit_counts:
+  laws: 3
+  principles: 3
+  models: 2
+  anti_patterns: 4
+members:
+  laws: 
+    - NT-LAW-0054
+    - NT-LAW-0055
+    - NT-LAW-0056
+  principles: 
+    - NT-PRINCIPLE-0084
+    - NT-PRINCIPLE-0085
+    - NT-PRINCIPLE-0086
+  models: 
+    - NT-MODEL-0020
+    - NT-MODEL-0021
+  anti_patterns: 
+    - NT-ANTI-PATTERN-0032
+    - NT-ANTI-PATTERN-0033
+    - NT-ANTI-PATTERN-0034
+    - NT-ANTI-PATTERN-0035
+artifacts:
+  - docs/domains/influence/ARCHITECTURE.md
+  - docs/domains/influence/CONCEPT-MAP.md
+  - docs/domains/influence/DEPENDENCIES.md
+  - docs/domains/influence/GLOSSARY.md
+  - docs/domains/influence/evidence-placeholders.yaml
+  - docs/domains/influence/status.yaml
+last_reviewed_at: '2026-07-22'
+
+# NEW METADATA STANDARD
+scientific_status: "multidisciplinary_consensus"
+evidence_scope: "integrates social psychology, behavioral economics, negotiation theory, and organizational change dynamics"
+misuse_risk: "degrading legitimate influence into subtle manipulation, or disguising coercive pressure as 'persuasion'"
+ontology_dependencies:
+  - NT-DA-0001
+  - NT-DA-0008
+  - NT-DA-0010
+revision_history:
+  - version: 0.1.0
+    date: '2026-07-22'
+    description: Initial Influence Blueprint draft as freeze candidate.
+last_architecture_review: '2026-07-22'
+chief_architect_status: approved_and_frozen

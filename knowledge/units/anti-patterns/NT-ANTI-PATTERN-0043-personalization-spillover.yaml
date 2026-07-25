@@ -1,0 +1,43 @@
+id: NT-ANTI-PATTERN-0043
+type: anti-pattern
+status: frozen
+version: 0.1.0
+title: Personalization Spillover
+summary: Allowing objective task disagreement to degenerate into personal attacks,
+  destroying trust and team cohesion.
+primary_domain: hop-chung
+secondary_domains:
+- tri-nhan
+definition: Personalization spillover occurs when a debate over work facts mutates
+  into questioning a colleague's competence or character.
+mechanism:
+- Task debate becomes intense.
+- Participant attacks character.
+- Discussion shifts to defending self-esteem.
+- Trust collapses.
+conditions:
+- High stress environments without clear meeting rules.
+exceptions:
+- None.
+applications:
+  team_coaching:
+  - Intervene immediately when a team member uses ad hominem language.
+risks:
+- Over-regulating debate language to the point of killing passion.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0011-01
+relations:
+  supports: []
+  conflicts_with:
+  - NT-PRINCIPLE-0093
+  depends_on:
+  - NT-LAW-0062
+  applies_to: []
+tags:
+- conflict
+- personalization
+- anti-patterns
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

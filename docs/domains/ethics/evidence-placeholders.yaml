@@ -1,0 +1,6 @@
+evidence_needs:
+  - id: EV-REQ-0020-01
+    description: "Empirical studies on moral hazard, risk asymmetry, and corporate ethics governance."
+    type: empirical_study
+    priority: high
+    status: placeholder

@@ -1,0 +1,43 @@
+id: NT-ANTI-PATTERN-0049
+type: anti-pattern
+status: frozen
+version: 0.1.0
+title: Thrashing Overhead
+summary: Frequently switching project priorities mid-sprint, consuming team energy
+  in context-switching overhead with zero completed output.
+primary_domain: dung-nhan
+secondary_domains:
+- thanh-su
+definition: Thrashing occurs when reactive leadership changes team priorities every
+  few days.
+mechanism:
+- Leadership introduces new emergency task.
+- Team switches context.
+- New priority arrives next week.
+- Zero tasks finished.
+conditions:
+- Reactive leadership and lack of sprint boundaries.
+exceptions:
+- Real-world critical security breaches.
+applications:
+  sprint_governance:
+  - Protect active sprint backlogs from mid-cycle scope changes.
+risks:
+- Refusing to adjust direction when catastrophic unexpected news arrives.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0017-01
+relations:
+  supports: []
+  conflicts_with:
+  - NT-PRINCIPLE-0102
+  depends_on:
+  - NT-LAW-0069
+  applies_to: []
+tags:
+- execution
+- thrashing
+- anti-patterns
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

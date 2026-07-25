@@ -1,19 +1,47 @@
 id: NT-PRINCIPLE-0042
 type: principle
-status: review
+status: frozen
 version: 0.1.0
 title: Separate learning from blame
-summary: When improvement is the goal, distinguish what must be learned from who may need accountability.
+summary: When improvement is the goal, distinguish what must be learned from who may
+  need accountability.
 primary_domain: tri-nhan
-secondary_domains: [dung-nhan, thanh-su]
-definition: Blame narrows attention toward defense, while learning requires enough safety to expose causes, assumptions, and system conditions.
-mechanism: [Ask what happened, Ask what enabled it, Decide separately whether accountability is required.]
-conditions: [A failure or surprise occurred, Future prevention matters.]
-exceptions: [Intentional harm or negligence may require immediate accountability, Endless analysis can delay repair.]
-applications: {retrospectives: [Begin with causal learning before assigning remedies.], governance: [Keep investigation and sanction processes distinct when possible.]} 
-risks: [Avoiding responsibility, Treating all failures as process issues.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0023, NT-LAW-0009], applies_to: []}
-tags: [learning, blame, accountability]
+secondary_domains:
+- dung-nhan
+- thanh-su
+definition: Blame narrows attention toward defense, while learning requires enough
+  safety to expose causes, assumptions, and system conditions.
+mechanism:
+- Ask what happened
+- Ask what enabled it
+- Decide separately whether accountability is required.
+conditions:
+- A failure or surprise occurred
+- Future prevention matters.
+exceptions:
+- Intentional harm or negligence may require immediate accountability
+- Endless analysis can delay repair.
+applications:
+  retrospectives:
+  - Begin with causal learning before assigning remedies.
+  governance:
+  - Keep investigation and sanction processes distinct when possible.
+risks:
+- Avoiding responsibility
+- Treating all failures as process issues.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0023
+  - NT-LAW-0009
+  applies_to: []
+tags:
+- learning
+- blame
+- accountability
 created_at: '2026-07-20'
 updated_at: '2026-07-20'

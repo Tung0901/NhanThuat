@@ -1,0 +1,38 @@
+id: NT-PRINCIPLE-0112
+type: principle
+status: frozen
+version: 0.1.0
+title: Enforce Asymmetric Risk Protection
+summary: Protect vulnerable stakeholders who bear asymmetric downside risk from executive
+  choices.
+primary_domain: tu-than
+secondary_domains:
+- hop-chung
+definition: Ethical governance requires actively protecting parties who lack structural
+  power or information parity.
+conditions:
+- Customer terms, employee safety, and environmental impact.
+exceptions:
+- Sophisticated institutional counterparties operating with equal information parity.
+applications:
+  consumer_protection:
+  - Audit contract clauses to ensure clear refund and safety protections.
+risks:
+- Over-protecting customers to the point of exposing the firm to fraudulent refund
+  abuse.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0020-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0074
+  applies_to: []
+tags:
+- ethics
+- risk-protection
+- governance
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

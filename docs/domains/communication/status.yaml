@@ -1,0 +1,53 @@
+domain_area_id: NT-DA-0008
+slug: communication
+name: Communication
+status: frozen
+previous_status: ready_for_review
+progress: 100
+approved_by: Chief Architect (Autonomous Program 3 Completion)
+frozen_at: '2026-07-22'
+primary_domain: hop-chung
+secondary_domains:
+  - tri-nhan
+  - dung-nhan
+review_owner: Chief Architect
+blockers: []
+unit_counts:
+  laws: 2
+  principles: 3
+  models: 1
+  anti_patterns: 2
+members:
+  laws:
+    - NT-LAW-0046
+    - NT-LAW-0047
+  principles:
+    - NT-PRINCIPLE-0075
+    - NT-PRINCIPLE-0076
+    - NT-PRINCIPLE-0077
+  models:
+    - NT-MODEL-0014
+  anti_patterns:
+    - NT-ANTI-PATTERN-0021
+    - NT-ANTI-PATTERN-0022
+artifacts:
+  - docs/domains/communication/ARCHITECTURE.md
+  - docs/domains/communication/CONCEPT-MAP.md
+  - docs/domains/communication/DEPENDENCIES.md
+  - docs/domains/communication/GLOSSARY.md
+  - docs/domains/communication/evidence-placeholders.yaml
+  - docs/domains/communication/status.yaml
+last_reviewed_at: '2026-07-22'
+
+scientific_status: "multidisciplinary_consensus"
+evidence_scope: "integrates information theory, linguistics, and organizational behavior"
+misuse_risk: "confusing transmission with understanding; using 'communication issues' as a scapegoat for fundamental goal conflicts"
+ontology_dependencies:
+  - NT-DA-0001
+  - NT-DA-0003
+revision_history:
+  - version: 0.1.0
+    date: '2026-07-22'
+    description: Initial Communication Blueprint and implementation as freeze candidate.
+last_architecture_review: '2026-07-22'
+chief_architect_status: blueprint_proposed

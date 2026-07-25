@@ -1,19 +1,46 @@
 id: NT-PRINCIPLE-0005
 type: principle
-status: review
+status: frozen
 version: 0.1.0
 title: Change the frame before the argument
-summary: When people interpret the same facts differently, clarify or redesign the decision frame before increasing persuasion pressure.
+summary: When people interpret the same facts differently, clarify or redesign the
+  decision frame before increasing persuasion pressure.
 primary_domain: tri-nhan
-secondary_domains: [hop-chung, thanh-su]
-definition: Reframing can change what people notice and value, making argument more useful only after the situation is interpreted more clearly.
-mechanism: [Surface the current frame, Test what it emphasizes, Offer a better frame for the decision.]
-conditions: [Disagreement reflects interpretation, The parties can reconsider assumptions.]
-exceptions: [Bad faith may ignore reframing, Time pressure may require a direct decision.]
-applications: {negotiation: [Name the shared problem before debating options.], strategy: [Reframe tradeoffs around the real objective.]} 
-risks: [Manipulating perception, Avoiding hard facts.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0004], applies_to: []}
-tags: [framing, persuasion, interpretation]
+secondary_domains:
+- hop-chung
+- thanh-su
+definition: Reframing can change what people notice and value, making argument more
+  useful only after the situation is interpreted more clearly.
+mechanism:
+- Surface the current frame
+- Test what it emphasizes
+- Offer a better frame for the decision.
+conditions:
+- Disagreement reflects interpretation
+- The parties can reconsider assumptions.
+exceptions:
+- Bad faith may ignore reframing
+- Time pressure may require a direct decision.
+applications:
+  negotiation:
+  - Name the shared problem before debating options.
+  strategy:
+  - Reframe tradeoffs around the real objective.
+risks:
+- Manipulating perception
+- Avoiding hard facts.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0004
+  applies_to: []
+tags:
+- framing
+- persuasion
+- interpretation
 created_at: '2026-07-20'
 updated_at: '2026-07-20'

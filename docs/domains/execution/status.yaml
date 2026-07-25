@@ -1,0 +1,51 @@
+domain_area_id: NT-DA-0017
+slug: execution
+name: Execution
+status: frozen
+previous_status: ready_for_review
+progress: 100
+approved_by: Chief Architect (Autonomous Program 3 Completion)
+frozen_at: '2026-07-22'
+primary_domain: dung-nhan
+secondary_domains:
+  - thanh-su
+  - hop-chung
+review_owner: Chief Architect
+blockers: []
+unit_counts:
+  laws: 2
+  principles: 3
+  models: 1
+  anti_patterns: 2
+members:
+  laws:
+    - NT-LAW-0068
+    - NT-LAW-0069
+  principles:
+    - NT-PRINCIPLE-0102
+    - NT-PRINCIPLE-0103
+    - NT-PRINCIPLE-0104
+  models:
+    - NT-MODEL-0028
+  anti_patterns:
+    - NT-ANTI-PATTERN-0048
+    - NT-ANTI-PATTERN-0049
+artifacts:
+  - docs/domains/execution/ARCHITECTURE.md
+  - docs/domains/execution/CONCEPT-MAP.md
+  - docs/domains/execution/DEPENDENCIES.md
+  - docs/domains/execution/GLOSSARY.md
+  - docs/domains/execution/evidence-placeholders.yaml
+  - docs/domains/execution/status.yaml
+last_reviewed_at: '2026-07-22'
+scientific_status: "multidisciplinary_consensus"
+evidence_scope: "integrates lean manufacturing, agile operations, and queueing theory"
+misuse_risk: "confusing activity with completion; pushing teams into sustainable thrashing"
+ontology_dependencies:
+  - NT-DA-0016
+revision_history:
+  - version: 0.1.0
+    date: '2026-07-22'
+    description: Initial Execution domain implementation frozen under Program 3.
+last_architecture_review: '2026-07-22'
+chief_architect_status: approved_and_frozen

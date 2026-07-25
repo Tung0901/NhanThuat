@@ -1,0 +1,42 @@
+id: NT-ANTI-PATTERN-0041
+type: anti-pattern
+status: frozen
+version: 0.1.0
+title: Over-Justification Trap
+summary: Slapping cash micro-bonuses onto creative or collaborative teamwork, turning
+  intrinsically motivated professionals into mercenary actors.
+primary_domain: tu-than
+secondary_domains:
+- tri-nhan
+definition: The Over-Justification Trap occurs when leaders offer micro-bonuses for
+  tasks employees previously did out of pride.
+mechanism:
+- Management introduces micro-bonuses.
+- Employees shift frame to cash calculation.
+- Voluntary help ceases.
+conditions:
+- High-skilled knowledge work environments.
+exceptions:
+- Sales commission roles.
+applications:
+  culture_design:
+  - Protect peer-recognition programs from being monetized with cash payouts.
+risks:
+- Underpaying staff under the guise of protecting intrinsic motivation.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0009-01
+relations:
+  supports: []
+  conflicts_with:
+  - NT-PRINCIPLE-0090
+  depends_on:
+  - NT-LAW-0061
+  applies_to: []
+tags:
+- incentives
+- over-justification
+- anti-patterns
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

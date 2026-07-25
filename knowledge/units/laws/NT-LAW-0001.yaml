@@ -1,28 +1,44 @@
 id: NT-LAW-0001
 type: law
-status: draft
+status: frozen
 version: 0.1.0
-title: Quy luật lợi ích chi phối hành vi
-summary: Con người có xu hướng chọn hành vi mà họ nhận thức là bảo vệ hoặc gia tăng lợi ích của mình.
+title: "Quy lu\u1EADt l\u1EE3i \xEDch chi ph\u1ED1i h\xE0nh vi"
+summary: "Con ng\u01B0\u1EDDi c\xF3 xu h\u01B0\u1EDBng ch\u1ECDn h\xE0nh vi m\xE0\
+  \ h\u1ECD nh\u1EADn th\u1EE9c l\xE0 b\u1EA3o v\u1EC7 ho\u1EB7c gia t\u0103ng l\u1EE3\
+  i \xEDch c\u1EE7a m\xECnh."
 primary_domain: tri-nhan
-secondary_domains: [dung-nhan, thanh-su]
-definition: Lợi ích được chủ thể cảm nhận thường tác động đến việc đánh giá và lựa chọn giữa các phương án hành động.
+secondary_domains:
+- dung-nhan
+- thanh-su
+definition: "L\u1EE3i \xEDch \u0111\u01B0\u1EE3c ch\u1EE7 th\u1EC3 c\u1EA3m nh\u1EAD\
+  n th\u01B0\u1EDDng t\xE1c \u0111\u1ED9ng \u0111\u1EBFn vi\u1EC7c \u0111\xE1nh gi\xE1\
+  \ v\xE0 l\u1EF1a ch\u1ECDn gi\u1EEFa c\xE1c ph\u01B0\u01A1ng \xE1n h\xE0nh \u0111\
+  \u1ED9ng."
 mechanism:
-  - Nhận thức một nhu cầu hoặc nguy cơ.
-  - Đánh giá lợi ích và chi phí của các phương án.
-  - Chọn phương án được cảm nhận là có lợi hơn.
+- "Nh\u1EADn th\u1EE9c m\u1ED9t nhu c\u1EA7u ho\u1EB7c nguy c\u01A1."
+- "\u0110\xE1nh gi\xE1 l\u1EE3i \xEDch v\xE0 chi ph\xED c\u1EE7a c\xE1c ph\u01B0\u01A1\
+  ng \xE1n."
+- "Ch\u1ECDn ph\u01B0\u01A1ng \xE1n \u0111\u01B0\u1EE3c c\u1EA3m nh\u1EADn l\xE0 c\xF3\
+  \ l\u1EE3i h\u01A1n."
 conditions:
-  - Chủ thể có khả năng lựa chọn.
-  - Chủ thể nhận thức được ít nhất hai phương án.
+- "Ch\u1EE7 th\u1EC3 c\xF3 kh\u1EA3 n\u0103ng l\u1EF1a ch\u1ECDn."
+- "Ch\u1EE7 th\u1EC3 nh\u1EADn th\u1EE9c \u0111\u01B0\u1EE3c \xEDt nh\u1EA5t hai ph\u01B0\
+  \u01A1ng \xE1n."
 exceptions:
-  - Hành vi do cưỡng ép hoặc phản xạ.
-  - Nhận thức bị chi phối bởi thông tin sai lệch nghiêm trọng.
+- "H\xE0nh vi do c\u01B0\u1EE1ng \xE9p ho\u1EB7c ph\u1EA3n x\u1EA1."
+- "Nh\u1EADn th\u1EE9c b\u1ECB chi ph\u1ED1i b\u1EDFi th\xF4ng tin sai l\u1EC7ch nghi\xEA\
+  m tr\u1ECDng."
 applications:
-  management: [Làm rõ lợi ích mà mỗi bên thực sự nhận thức trước khi thiết kế động lực.]
-  negotiation: [Khám phá lợi ích phía sau vị thế được tuyên bố.]
+  management:
+  - "L\xE0m r\xF5 l\u1EE3i \xEDch m\xE0 m\u1ED7i b\xEAn th\u1EF1c s\u1EF1 nh\u1EAD\
+    n th\u1EE9c tr\u01B0\u1EDBc khi thi\u1EBFt k\u1EBF \u0111\u1ED9ng l\u1EF1c."
+  negotiation:
+  - "Kh\xE1m ph\xE1 l\u1EE3i \xEDch ph\xEDa sau v\u1ECB th\u1EBF \u0111\u01B0\u1EE3\
+    c tuy\xEAn b\u1ED1."
 risks:
-  - Đồng nhất lợi ích với tiền bạc.
-  - Giả định con người luôn hành động hoàn toàn lý trí.
+- "\u0110\u1ED3ng nh\u1EA5t l\u1EE3i \xEDch v\u1EDBi ti\u1EC1n b\u1EA1c."
+- "Gi\u1EA3 \u0111\u1ECBnh con ng\u01B0\u1EDDi lu\xF4n h\xE0nh \u0111\u1ED9ng ho\xE0\
+  n to\xE0n l\xFD tr\xED."
 evidence:
   level: provisional
   references: []
@@ -31,7 +47,9 @@ relations:
   conflicts_with: []
   depends_on: []
   applies_to: []
-tags: [motivation, decision-making, interest]
+tags:
+- motivation
+- decision-making
+- interest
 created_at: '2026-07-20'
 updated_at: '2026-07-20'
-

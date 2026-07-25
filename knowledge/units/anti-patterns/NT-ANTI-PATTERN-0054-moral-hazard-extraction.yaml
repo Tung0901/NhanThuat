@@ -1,0 +1,43 @@
+id: NT-ANTI-PATTERN-0054
+type: anti-pattern
+status: frozen
+version: 0.1.0
+title: Moral Hazard Extraction
+summary: Designing business models or financial products that collect immediate profits
+  while dumping long-term tail risks onto unsuspecting customers.
+primary_domain: tu-than
+secondary_domains:
+- hop-chung
+definition: Moral hazard extraction occurs when leaders profit by taking extreme,
+  hidden risks.
+mechanism:
+- Executive creates product with tail risk.
+- Executive collects bonuses.
+- Tail risk triggers.
+- Executive keeps bonuses.
+conditions:
+- Deregulated financial and lending markets.
+exceptions:
+- Fully disclosed speculative venture capital investments.
+applications:
+  product_governance:
+  - Audit financial and software products for hidden moral hazard structures.
+risks:
+- Restricting legitimate financial innovation.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0020-01
+relations:
+  supports: []
+  conflicts_with:
+  - NT-PRINCIPLE-0112
+  depends_on:
+  - NT-LAW-0074
+  applies_to: []
+tags:
+- ethics
+- moral-hazard
+- anti-patterns
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

@@ -1,19 +1,46 @@
 id: NT-PRINCIPLE-0031
 type: principle
-status: review
+status: frozen
 version: 0.1.0
 title: Translate between role perspectives
-summary: In cross-role work, explicitly translate what each role sees, risks, owns, and cannot see.
+summary: In cross-role work, explicitly translate what each role sees, risks, owns,
+  and cannot see.
 primary_domain: hop-chung
-secondary_domains: [dung-nhan, tri-nhan]
-definition: Translation reduces friction by revealing role-shaped perception before people treat blind spots as bad intent.
-mechanism: [Identify role perspective, Name visible and hidden concerns, Translate constraints across roles.]
-conditions: [Multiple roles collaborate, Each role faces different incentives or information.]
-exceptions: [Simple handoffs may not need translation, Bad faith still requires accountability.]
-applications: {teamwork: [Ask each role what risk they are managing.], management: [Use cross-role reviews for recurring friction.]} 
-risks: [Creating endless perspective-taking, Excusing poor communication.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0018], applies_to: []}
-tags: [roles, translation, collaboration]
+secondary_domains:
+- dung-nhan
+- tri-nhan
+definition: Translation reduces friction by revealing role-shaped perception before
+  people treat blind spots as bad intent.
+mechanism:
+- Identify role perspective
+- Name visible and hidden concerns
+- Translate constraints across roles.
+conditions:
+- Multiple roles collaborate
+- Each role faces different incentives or information.
+exceptions:
+- Simple handoffs may not need translation
+- Bad faith still requires accountability.
+applications:
+  teamwork:
+  - Ask each role what risk they are managing.
+  management:
+  - Use cross-role reviews for recurring friction.
+risks:
+- Creating endless perspective-taking
+- Excusing poor communication.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0018
+  applies_to: []
+tags:
+- roles
+- translation
+- collaboration
 created_at: '2026-07-20'
 updated_at: '2026-07-20'

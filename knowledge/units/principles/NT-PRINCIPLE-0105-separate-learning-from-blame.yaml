@@ -1,0 +1,37 @@
+id: NT-PRINCIPLE-0105
+type: principle
+status: frozen
+version: 0.1.0
+title: Separate Learning from Blame
+summary: Explicitly separate root-cause incident reviews from personal performance
+  management evaluations.
+primary_domain: tri-nhan
+secondary_domains:
+- hop-chung
+definition: If an employee fears an incident review will affect their performance
+  rating, they will withhold critical details.
+conditions:
+- Incident post-mortems and post-project reviews.
+exceptions:
+- Repeat negligence after documented coaching.
+applications:
+  post_mortem_policy:
+  - Mandate that post-mortem notes cannot be referenced in bonus calculations.
+risks:
+- Failing to address repeated individual incompetence.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0018-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0070
+  applies_to: []
+tags:
+- learning
+- post-mortem
+- blame
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

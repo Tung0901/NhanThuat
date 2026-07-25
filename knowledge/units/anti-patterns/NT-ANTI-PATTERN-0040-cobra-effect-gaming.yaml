@@ -1,0 +1,42 @@
+id: NT-ANTI-PATTERN-0040
+type: anti-pattern
+status: frozen
+version: 0.1.0
+title: Cobra Effect Gaming
+summary: Rewarding narrow quantitative metrics without quality safeguards, leading
+  actors to actively generate artificial problems.
+primary_domain: tu-than
+secondary_domains:
+- hop-chung
+definition: The Cobra Effect occurs when an incentive scheme unintentionally pays
+  actors to exacerbate the problem.
+mechanism:
+- Management sets narrow metric.
+- Actors manipulate inputs.
+- Metric rises while quality collapses.
+conditions:
+- High financial rewards tied to simple output counts.
+exceptions:
+- Fully automated verification systems.
+applications:
+  metric_governance:
+  - Audit software bug-fix bonuses for artificial volume generation.
+risks:
+- Adding so many compliance checks that execution slows down.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0009-01
+relations:
+  supports: []
+  conflicts_with:
+  - NT-PRINCIPLE-0090
+  depends_on:
+  - NT-LAW-0060
+  applies_to: []
+tags:
+- incentives
+- gaming
+- anti-patterns
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

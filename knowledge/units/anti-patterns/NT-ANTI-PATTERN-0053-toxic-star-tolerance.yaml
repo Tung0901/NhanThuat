@@ -1,0 +1,43 @@
+id: NT-ANTI-PATTERN-0053
+type: anti-pattern
+status: frozen
+version: 0.1.0
+title: Toxic Star Tolerance
+summary: Tolerating abusive or dishonest behavior from a top revenue generator, destroying
+  team psychological safety.
+primary_domain: hop-chung
+secondary_domains:
+- tri-nhan
+definition: Toxic star tolerance occurs when management excuses abusive conduct from
+  a top sales rep or star engineer.
+mechanism:
+- Top performer acts abusively.
+- Management turns blind eye.
+- Good employees leave.
+- Long-term output drops.
+conditions:
+- Short-term revenue pressure.
+exceptions:
+- None.
+applications:
+  hr_governance:
+  - Enforce zero-tolerance termination policies for abusive behavior.
+risks:
+- Losing short-term revenue when firing a toxic high performer.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0019-01
+relations:
+  supports: []
+  conflicts_with:
+  - NT-PRINCIPLE-0109
+  depends_on:
+  - NT-LAW-0072
+  applies_to: []
+tags:
+- culture
+- toxic-star
+- anti-patterns
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

@@ -1,0 +1,36 @@
+id: NT-PRINCIPLE-0091
+type: principle
+status: frozen
+version: 0.1.0
+title: Audit Extrinsic Payoffs Regularly
+summary: Continuously inspect incentive programs for unexpected behavioral gaming,
+  unintended consequences, and metric drift.
+primary_domain: tu-than
+secondary_domains:
+- tri-nhan
+definition: Incentive systems inevitably generate unexpected edge-case behaviors.
+conditions:
+- Active management of compensation formulas and sales commissions.
+exceptions:
+- Static long-term equity vesting schedules fixed by legal agreement.
+applications:
+  governance:
+  - Conduct quarterly incentive audits analyzing unintended gaming behaviors.
+risks:
+- Changing incentive rules too frequently, causing uncertainty among staff.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0009-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0060
+  applies_to: []
+tags:
+- incentives
+- governance
+- audit
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

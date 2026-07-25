@@ -1,0 +1,107 @@
+{
+  "metadata": {
+    "philosophy_id": "LENS-RHETORIC",
+    "philosophy_name": "Rhetoric Lens",
+    "version": "1.1.0",
+    "source_document": "docs/knowledge/01_THUAT_HUNG_BIEN.md",
+    "supported_domains": [
+      "communication",
+      "influence",
+      "negotiation",
+      "decision-making"
+    ],
+    "supported_personas": [
+      "Sales Agent",
+      "Negotiation Agent",
+      "CRM Agent"
+    ],
+    "preferred_reasoning_modes": [
+      "Reactive",
+      "Analytical",
+      "Collaborative"
+    ],
+    "compatible_lenses": [
+      "LENS-TAOISM",
+      "LENS-CONFUCIAN",
+      "LENS-XUNZI"
+    ],
+    "incompatible_lenses": [],
+    "confidence_modifier": 1.0,
+    "governance_status": "frozen",
+    "last_reviewed": "2026-07-23"
+  },
+  "engine_name": "Rhetoric Engine",
+  "version": "1.1.0",
+  "description": "Ma trận bẻ luận điểm và kịch bản phản hồi xử lý từ chối dựa trên 4 tầng tri thức hùng biện",
+  "logical_principles": [
+    {
+      "id": "RHT-LOG-001",
+      "name": "Luật Đồng Nhất",
+      "rule": "Khái niệm và đối tượng thảo luận phải giữ nguyên ý nghĩa trong suốt quá trình đàm phán."
+    },
+    {
+      "id": "RHT-LOG-002",
+      "name": "Luật Phi Mâu Thuẫn",
+      "rule": "Hai mệnh đề mâu thuẫn không thể cùng đúng."
+    },
+    {
+      "id": "RHT-LOG-003",
+      "name": "Luật Triệt Tam",
+      "rule": "Không có khả năng thứ ba đối với hai mệnh đề mâu thuẫn trực tiếp."
+    },
+    {
+      "id": "RHT-LOG-004",
+      "name": "Luật Lý Do Đầy Đủ",
+      "rule": "Mọi kết luận phải dựa trên tiền đề verified."
+    }
+  ],
+  "refutation_matrix": [
+    {
+      "pattern_id": "REF-001",
+      "pattern_name": "Đánh tráo khái niệm",
+      "detection": "Đối phương thay đổi định nghĩa từ ngữ mid-discussion",
+      "counter_technique": "Rút củi đáy nồi",
+      "action": "Tái định nghĩa khái niệm ban đầu và yêu cầu bám sát ranh giới."
+    },
+    {
+      "pattern_id": "REF-002",
+      "pattern_name": "Ngụy biện mâu thuẫn",
+      "detection": "Lời nói hoặc đề xuất của đối phương tự mâu thuẫn với hành vi/tiền đề trước đó",
+      "counter_technique": "Gậy ông đập lưng ông",
+      "action": "Chỉ ra điểm mâu thuẫn trực tiếp bằng luật Phi mâu thuẫn."
+    },
+    {
+      "pattern_id": "REF-003",
+      "pattern_name": "Quy kết cảm tính",
+      "detection": "Khẳng định không có dữ liệu chứng minh",
+      "counter_technique": "Phản chứng",
+      "action": "Yêu cầu bằng chứng hoặc đưa ra case study thực tế bác bỏ."
+    }
+  ],
+  "objection_scenarios": [
+    {
+      "scenario_id": "OBJ-PRICE-001",
+      "category": "Giá cao",
+      "trigger": "Giá bên em đắt quá / Chi phí vượt ngân sách",
+      "technique": "Rút củi đáy nồi",
+      "response_framework": "Chuyển từ so sánh Giá ban đầu sang Tổng chi phí sở hữu (TCO) và Tỷ suất hoàn vốn (ROI).",
+      "example_script": "Em rất hiểu ngân sách là ưu tiên hàng đầu. Nhưng cho em hỏi anh đang so sánh chi phí mua ban đầu hay tổng chi phí vận hành 3 năm? Dịch vụ bên em giúp tiết kiệm 40% chi phí vận hành, tính ra anh hời 20% tổng chi phí."
+    },
+    {
+      "scenario_id": "OBJ-NEED-002",
+      "category": "Chưa có nhu cầu",
+      "trigger": "Bên anh chưa cần giải pháp này lúc này",
+      "technique": "Mô thức PAS (Problem-Agitate-Solve)",
+      "response_framework": "Chỉ ra chi phí ẩn của việc trì hoãn (Cost of Inaction).",
+      "example_script": "Hiện tại hệ thống anh vẫn chạy được, nhưng việc trì hoãn chuyển đổi đang khiến anh mất 15% năng suất mỗi tháng. 6 tháng nữa chi phí cơ hội bị mất sẽ gấp 3 lần chi phí đầu tư giải pháp này."
+    },
+    {
+      "scenario_id": "OBJ-COMP-003",
+      "category": "Đối thủ rẻ hơn",
+      "trigger": "Bên công ty X báo giá rẻ hơn 30%",
+      "technique": "Phản chứng & Đảo ngược góc nhìn",
+      "response_framework": "Bóc tách phạm vi cam kết (Scope) và SLA chất lượng dịch vụ.",
+      "example_script": "Bên X có mức giá rẻ hơn vì họ cắt giảm SLA hỗ trợ 24/7 và không bảo hành dữ liệu. Nếu hệ thống gián đoạn 1 giờ, thiệt hại của bên anh sẽ lớn hơn rất nhiều con số 30% chênh lệch đó."
+    }
+  ]
+}

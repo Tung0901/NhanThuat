@@ -1,19 +1,47 @@
 id: NT-PRINCIPLE-0029
 type: principle
-status: review
+status: frozen
 version: 0.1.0
 title: Bring distant goals near
-summary: Translate long-term goals into near signals, routines, and consequences that people can notice during daily decisions.
+summary: Translate long-term goals into near signals, routines, and consequences that
+  people can notice during daily decisions.
 primary_domain: thanh-su
-secondary_domains: [tri-nhan, tu-than]
-definition: Distant goals gain influence when they are made visible and actionable in the immediate environment.
-mechanism: [Name long-term goal, Create near cues and checkpoints, Link daily action to future consequence.]
-conditions: [The goal is important but abstract, Daily behavior affects it.]
-exceptions: [Over-shortening can distort strategy, Some outcomes require patience without frequent signal.]
-applications: {strategy: [Create weekly indicators for annual goals.], communication: [Connect purpose to today's tradeoff.]} 
-risks: [Reducing vision to tasks, Creating false urgency.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0017, NT-LAW-0002], applies_to: []}
-tags: [goals, salience, execution]
+secondary_domains:
+- tri-nhan
+- tu-than
+definition: Distant goals gain influence when they are made visible and actionable
+  in the immediate environment.
+mechanism:
+- Name long-term goal
+- Create near cues and checkpoints
+- Link daily action to future consequence.
+conditions:
+- The goal is important but abstract
+- Daily behavior affects it.
+exceptions:
+- Over-shortening can distort strategy
+- Some outcomes require patience without frequent signal.
+applications:
+  strategy:
+  - Create weekly indicators for annual goals.
+  communication:
+  - Connect purpose to today's tradeoff.
+risks:
+- Reducing vision to tasks
+- Creating false urgency.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0017
+  - NT-LAW-0002
+  applies_to: []
+tags:
+- goals
+- salience
+- execution
 created_at: '2026-07-20'
 updated_at: '2026-07-20'

@@ -1,0 +1,43 @@
+id: NT-MODEL-0030
+type: model
+status: frozen
+version: 0.1.0
+title: Culture Formation Engine
+summary: A 4-component loop mapping how Leader Behavior -> Incentive Systems -> Social
+  Artifacts -> Embedded Norms.
+primary_domain: hop-chung
+secondary_domains:
+- tu-than
+definition: 'The Culture Formation Engine explains how culture solidifies: Leader
+  Behavior, Incentive Systems, Social Artifacts, Embedded Norms.'
+mechanism:
+- Leader models behavior.
+- Incentives align rewards.
+- Artifacts embed stories.
+- Norms become automatic.
+conditions:
+- Culture design and transformation.
+exceptions:
+- None.
+applications:
+  culture_transformation:
+  - Guide leadership teams in executing cultural transformation initiatives.
+risks:
+- Focusing on Artifacts while ignoring Leader Behavior.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0019-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0072
+  - NT-LAW-0073
+  applies_to: []
+tags:
+- culture
+- formation
+- model
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

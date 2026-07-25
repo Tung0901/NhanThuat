@@ -1,19 +1,46 @@
 id: NT-PRINCIPLE-0037
 type: principle
-status: review
+status: frozen
 version: 0.1.0
 title: Invite participation where commitment matters
-summary: Ask for real participation when people must carry the consequences of a decision over time.
+summary: Ask for real participation when people must carry the consequences of a decision
+  over time.
 primary_domain: hop-chung
-secondary_domains: [dung-nhan, thanh-su]
-definition: Commitment grows when people participate meaningfully in decisions that affect their work, risk, identity, or standards.
-mechanism: [Identify who must sustain the decision, Invite input before closure, Show how input shaped the outcome.]
-conditions: [Commitment is required after the decision, Stakeholders hold useful local knowledge.]
-exceptions: [Emergency action may require command first, Participation should not be staged when the decision is already fixed.]
-applications: {governance: [Use consultation before durable rule changes.], management: [Include implementers before finalizing operating commitments.]} 
-risks: [Token participation, Slowing urgent decisions unnecessarily.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0021], applies_to: []}
-tags: [participation, commitment, governance]
+secondary_domains:
+- dung-nhan
+- thanh-su
+definition: Commitment grows when people participate meaningfully in decisions that
+  affect their work, risk, identity, or standards.
+mechanism:
+- Identify who must sustain the decision
+- Invite input before closure
+- Show how input shaped the outcome.
+conditions:
+- Commitment is required after the decision
+- Stakeholders hold useful local knowledge.
+exceptions:
+- Emergency action may require command first
+- Participation should not be staged when the decision is already fixed.
+applications:
+  governance:
+  - Use consultation before durable rule changes.
+  management:
+  - Include implementers before finalizing operating commitments.
+risks:
+- Token participation
+- Slowing urgent decisions unnecessarily.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0021
+  applies_to: []
+tags:
+- participation
+- commitment
+- governance
 created_at: '2026-07-20'
 updated_at: '2026-07-20'

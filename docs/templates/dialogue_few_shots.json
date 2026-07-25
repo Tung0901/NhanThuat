@@ -1,0 +1,39 @@
+{
+  "version": "1.0.0",
+  "domain": "businessos_executive_dialogue_templates",
+  "templates": {
+    "material_delay": {
+      "scenario_type": "operational_delay",
+      "primary_lens": "LEGALISM",
+      "position_analysis": "Vụ việc này Nhà cung cấp đang vi phạm cam kết tiến độ hợp đồng. Nếu nể hờn xử lý bằng tình cảm, công trình sẽ bị sụp dây chuyền và dự án chịu phạt tiến độ nặng. Phải lập tức siết kỷ luật pháp lý, dùng điều khoản phạt làm đòn bẩy buộc đối tác dồn lực giao bù trong 24h-48h.",
+      "direct_dialogue": {
+        "step_1_anchor": "Anh [Tên Giám Đốc/Đại Diện NCC], theo Hợp đồng [Số HĐ] và Biên bản chốt tiến độ tuần trước, vật tư phải có mặt tại công trình Nhà Bè muộn nhất 17h00 hôm qua. Việc bên anh giao trễ đã làm ngưng trệ 100% tổ đội công nhân và máy móc hiện trường. Bên em làm việc đúng theo căn cứ hợp đồng ('Hình Danh Tương Phù'), không chấp nhận các lý do khách quan không có xác nhận văn bản.",
+        "step_2_deadline_consequence": "Em yêu cầu bên anh dồn ngay xe hàng giao đủ 100% khối lượng về công trình trước 12h00 trưa mai. Sau mốc này, Ban Quản lý Dự án sẽ lập Biên bản Vi phạm Đơn phương, bắt đầu tính phạt 0.5%/ngày và treo toàn bộ đợt thanh toán Kỳ 2 để cấn trừ chi phí thiệt hại dừng thi công.",
+        "step_3_way_out_plan_b": "Nếu bên anh tập trung xử lý giao đủ trước 17h00 chiều mai và có cam kết tiến độ đợt sau, em sẽ bảo lãnh với Chủ tịch không tính phạt vi phạm đợt này. Nhưng nếu trưa mai hàng không tới, em buộc phải cho kích hoạt Đơn vị dự phòng (Plan B) nhập hàng thế chỗ và trừ thẳng chi phí chênh lệch vào tài khoản bên anh."
+      },
+      "ready_to_send_text": "CÔNG VĂN/TIN NHẮN YÊU CẦU GIAO BÙ VẬT TƯ & THÔNG BÁO CHẾ TÀI HỢP ĐỒNG\n---------------------------------------------------------------\nKính gửi Ban Giám đốc [Tên Nhà Cung Cấp],\n\nCăn cứ Hợp đồng số [Số HĐ/2026] và Biên bản giao nhận tiến độ hiện trường.\nBan Quản lý Dự án chính thức thông báo:\n1. Ghi nhận vi phạm chậm giao vật tư [Tên vật tư] làm ngưng trệ thi công hiện trường.\n2. Yêu cầu Quý công ty hoàn thành giao bù 100% khối lượng trước 12h00 ngày [DD/MM/YYYY].\n3. Quá thời hạn trên, chúng tôi sẽ áp dụng điều khoản phạt chậm tiến độ 0.5%/ngày và giữ thanh toán Đợt 2 để bảo đảm thiệt hại.\n\nRất mong sự hợp tác khẩn trương của Quý công ty.\n[Ban Quản Lý Dự Án BusinessOS]"
+    },
+    "price_objection": {
+      "scenario_type": "sales_objection",
+      "primary_lens": "RHETORIC",
+      "position_analysis": "Khách hàng đang dùng bài 'chê giá cao' để ép chiết khấu. Nếu vội vàng giảm giá, ta tự hạ thấp giá trị giải pháp và đưa dự án vào thế 'làm ráng lấy volume'. Phải lập tức bóc tách khung đối thoại: Chuyển tâm trí khách từ 'Chi phí đầu tư ban đầu' sang 'Dòng tiền và Tiết kiệm chi phí vận hành 3 năm'.",
+      "direct_dialogue": {
+        "step_1_anchor": "Em rất hiểu Anh/Chị luôn đặt tiêu chí tối ưu ngân sách lên hàng đầu. Nhưng nếu so sánh báo giá bên em với các đơn vị giá rẻ trên thị trường, giống như so sánh một hệ thống tự động dài hạn với giải pháp chắp vá tạm thời. Giá trị thực sự không nằm ở 'số tiền chi ra hôm nay', mà nằm ở 'dòng tiền và chi phí vận hành 3 năm tới'.",
+        "step_2_deadline_consequence": "Nếu chọn phương án rẻ hơn 15%, Anh/Chị tiết kiệm được ngay đợt 1, nhưng rủi ro gián đoạn hệ thống và chi phí khắc phục sự cố sau 6 tháng sẽ cao gấp 3 lần số tiền tiết kiệm đó. Anh/Chị có sẵn sàng đánh đổi sự ổn định của toàn bộ hoạt động kinh doanh chỉ vì mức chênh lệch ban đầu này không?",
+        "step_3_way_out_plan_b": "Để Anh/Chị hoàn toàn yên tâm, bên em cam kết bảo hành hiệu năng 100% bằng văn bản. Nếu Anh/Chị duyệt hợp đồng trong tuần này, em xin tặng thêm Gói Bảo trì Chuyên sâu 12 tháng trị giá [X triệu]. Em gửi bản Hợp đồng cập nhật để Anh/Chị chốt luôn nhé."
+      },
+      "ready_to_send_text": "TƯ VẤN THAM MƯU GỬI KHÁCH HÀNG / ĐỐI TÁC\n---------------------------------------\nChào Anh/Chị [Tên Khách Hàng],\n\nEm đã xem xét kỹ mối quan tâm của Anh/Chị về ngân sách đầu tư.\nBên em không cạnh tranh bằng giá thấp nhất, mà cam kết hiệu quả dòng tiền và độ ổn định cao nhất cho hệ thống của Anh/Chị.\n\nEm xin gửi Bảng Phân Tích Tổng Chi Phí Sở Hữu (TCO 3 Năm) để Anh/Chị thấy rõ khoản tiết kiệm vận hành dài hạn [X triệu].\nChiều nay 15h00 em xin phép gọi điện hỗ trợ Anh/Chị chốt phương án tốt nhất nhé!\n\n[Tên Quản Lý Kinh Doanh BusinessOS]"
+    },
+    "strike_labor": {
+      "scenario_type": "labor_dispute",
+      "primary_lens": "LEGALISM",
+      "position_analysis": "Tổ đội thi công đình công đòi tăng lương đột xuất là hành vi tự phát vi phạm quy chế hiện trường. Nếu thỏa hiệp ngay, ta sẽ tạo tiền lệ xấu cho toàn bộ các tổ đội khác. Phải phối hợp Pháp Gia (đối chiếu nội quy/hợp đồng khoán) với Nho Gia (đối thoại trực tiếp giải tỏa vướng mắc).",
+      "direct_dialogue": {
+        "step_1_anchor": "Anh em tổ đội lắng nghe: Mọi quyền lợi và đơn giá thi công đều đã được chốt rõ trong Hợp đồng khoán số [Số HĐ]. Việc anh em tự ý dừng máy ngưng việc hôm nay là vi phạm nội quy công trường và gây thiệt hại trực tiếp cho tiến độ dự án chung.",
+        "step_2_deadline_consequence": "Yêu cầu anh em trở lại vị trí làm việc trước 13h30 chiều nay. Trường hợp cố tình ngưng việc tập thể, Ban Quản lý sẽ lập biên bản chấm dứt hợp đồng khoán, tiến hành chốt khối lượng hiện trạng và thanh lý tổ đội theo quy định.",
+        "step_3_way_out_plan_b": "Nếu anh em trở lại làm việc ngay và đạt định mức tuần này, Ban Quản lý sẽ ngồi lại họp xem xét thưởng tiến độ cho các công đoạn khó. Em luôn mở cửa lắng nghe nhưng phải trên tinh thần tôn trọng kỷ luật công trường."
+      },
+      "ready_to_send_text": "THÔNG BÁO KỶ LUẬT THI CÔNG & TIẾN ĐỘ HIỆN TRƯỜNG\n-----------------------------------------------\nKính gửi: Đội trưởng & Toàn thể Công nhân Tổ đội [Tên Tổ Đội]\n\nBan Quản lý Dự án yêu cầu:\n1. Nghiêm túc trở lại vị trí thi công đúng 13h30 chiều nay theo Hợp đồng khoán đã ký.\n2. Mọi kiến nghị về đơn giá sẽ được Ban Quản lý tiếp nhận và giải quyết sau giờ làm việc.\n3. Các trường hợp cố tình vi phạm kỷ luật ngưng việc sẽ bị xử lý chấm dứt hợp đồng khoán.\n\n[Ban Quản Lý Dự Án BusinessOS]"
+    }
+  }
+}

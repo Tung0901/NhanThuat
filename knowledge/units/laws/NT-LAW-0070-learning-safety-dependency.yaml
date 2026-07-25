@@ -1,0 +1,37 @@
+id: NT-LAW-0070
+type: law
+status: frozen
+version: 0.1.0
+title: Learning-Safety Dependency
+summary: Organizational learning velocity is strictly bounded by the psychological
+  safety of its error reporting channels.
+primary_domain: tri-nhan
+secondary_domains:
+- hop-chung
+definition: When bad news or execution failure is punished, staff hide errors, destroying
+  telemetry required for learning.
+conditions:
+- Incident post-mortems and quality improvement.
+exceptions:
+- Intentional malicious sabotage.
+applications:
+  blameless_reviews:
+  - Conduct blameless incident reviews focusing on system design.
+risks:
+- Confusing psychological safety with lack of performance standards.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0018-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0023
+  applies_to: []
+tags:
+- learning
+- safety
+- error-reporting
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

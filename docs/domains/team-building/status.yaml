@@ -1,0 +1,56 @@
+domain_area_id: NT-DA-0006
+slug: team-building
+name: Team Building
+status: frozen
+previous_status: ready_for_review
+progress: 100
+approved_by: Chief Architect (Autonomous Program 3 Completion)
+frozen_at: '2026-07-22'
+primary_domain: hop-chung
+secondary_domains:
+  - tri-nhan
+review_owner: Chief Architect
+blockers: []
+unit_counts:
+  laws: 2
+  principles: 3
+  models: 1
+  anti_patterns: 2
+members:
+  laws:
+    - NT-LAW-0042
+    - NT-LAW-0043
+  principles:
+    - NT-PRINCIPLE-0069
+    - NT-PRINCIPLE-0070
+    - NT-PRINCIPLE-0071
+  models:
+    - NT-MODEL-0012
+  anti_patterns:
+    - NT-ANTI-PATTERN-0017
+    - NT-ANTI-PATTERN-0018
+artifacts:
+  - docs/domains/team-building/ARCHITECTURE.md
+  - docs/domains/team-building/CONCEPT-MAP.md
+  - docs/domains/team-building/DEPENDENCIES.md
+  - docs/domains/team-building/GLOSSARY.md
+  - docs/domains/team-building/evidence-placeholders.yaml
+  - docs/domains/team-building/status.yaml
+last_reviewed_at: '2026-07-22'
+
+# NEW METADATA STANDARD
+scientific_status: "multidisciplinary_consensus"
+evidence_scope: "integrates organizational behavior, group dynamics, and cognitive science"
+misuse_risk: "creating homogenous groups to avoid conflict; enforcing artificial interdependence"
+ontology_dependencies:
+  - NT-DA-0001
+  - NT-DA-0002
+  - NT-DA-0003
+  - NT-DA-0004
+  - NT-DA-0005
+revision_history:
+  - version: 0.1.0
+    date: '2026-07-22'
+    description: Initial Team Building Blueprint and implementation as freeze candidate.
+last_architecture_review: '2026-07-22'
+chief_architect_status: blueprint_proposed

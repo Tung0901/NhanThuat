@@ -1,0 +1,37 @@
+id: NT-PRINCIPLE-0113
+type: principle
+status: frozen
+version: 0.1.0
+title: Protect Whistleblowers Instantly
+summary: Guarantee total legal, financial, and physical protection to individuals
+  who report internal ethical violations.
+primary_domain: tu-than
+secondary_domains:
+- tri-nhan
+definition: Whistleblowers are the ultimate immune system of an organization. Establish
+  encrypted, anonymous reporting channels.
+conditions:
+- Corporate governance and compliance.
+exceptions:
+- Proven bad-faith false accusations made maliciously.
+applications:
+  whistleblower_hotline:
+  - Deploy zero-knowledge encrypted reporting tools in BusinessOS.
+risks:
+- Managing anonymous false accusations against innocent colleagues.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0020-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0075
+  applies_to: []
+tags:
+- ethics
+- whistleblower
+- protection
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

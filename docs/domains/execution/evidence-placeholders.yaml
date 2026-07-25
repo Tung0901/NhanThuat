@@ -1,0 +1,6 @@
+evidence_needs:
+  - id: EV-REQ-0017-01
+    description: "Empirical studies on WIP limits and lead time reduction in software engineering."
+    type: empirical_study
+    priority: high
+    status: placeholder

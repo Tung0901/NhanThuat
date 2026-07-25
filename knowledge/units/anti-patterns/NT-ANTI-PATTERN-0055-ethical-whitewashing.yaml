@@ -1,0 +1,43 @@
+id: NT-ANTI-PATTERN-0055
+type: anti-pattern
+status: frozen
+version: 0.1.0
+title: Ethical Whitewashing
+summary: Using expensive PR campaigns and virtue-signaling slogans to conceal predatory
+  operational practices.
+primary_domain: tu-than
+secondary_domains:
+- tri-nhan
+definition: Ethical whitewashing occurs when a company spends millions advertising
+  ethical values while mistreating staff.
+mechanism:
+- Company conducts predatory practices.
+- PR launches virtue-signaling campaign.
+- Public is distracted.
+- Practices continue.
+conditions:
+- High corporate PR marketing budgets paired with weak internal governance.
+exceptions:
+- None.
+applications:
+  audit:
+  - Cross-reference marketing ethics claims against internal audit data.
+risks:
+- Demotivating genuine sustainability initiatives.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0020-01
+relations:
+  supports: []
+  conflicts_with:
+  - NT-PRINCIPLE-0111
+  depends_on:
+  - NT-LAW-0075
+  applies_to: []
+tags:
+- ethics
+- whitewashing
+- anti-patterns
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

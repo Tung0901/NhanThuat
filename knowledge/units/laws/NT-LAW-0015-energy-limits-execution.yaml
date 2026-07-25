@@ -1,21 +1,48 @@
 id: NT-LAW-0015
 type: law
-status: review
+status: frozen
 version: 0.1.0
 title: Energy limits execution
-summary: Execution quality declines when cognitive, emotional, or physical energy falls below the demand of the work.
+summary: Execution quality declines when cognitive, emotional, or physical energy
+  falls below the demand of the work.
 primary_domain: tu-than
-secondary_domains: [dung-nhan, thanh-su]
-definition: People cannot sustain judgment, discipline, and responsiveness when the energy required by a task exceeds available capacity for too long.
-mechanism: [Spend energy on decisions and action, Capacity declines under load, Quality falls or avoidance rises.]
-conditions: [The work requires sustained attention or self-control, Recovery is limited.]
-exceptions: [Short bursts can exceed normal limits, Strong systems can reduce individual energy burden.]
+secondary_domains:
+- dung-nhan
+- thanh-su
+definition: People cannot sustain judgment, discipline, and responsiveness when the
+  energy required by a task exceeds available capacity for too long.
+mechanism:
+- Spend energy on decisions and action
+- Capacity declines under load
+- Quality falls or avoidance rises.
+conditions:
+- The work requires sustained attention or self-control
+- Recovery is limited.
+exceptions:
+- Short bursts can exceed normal limits
+- Strong systems can reduce individual energy burden.
 applications:
-  execution: [Plan recovery as part of capacity, not as an afterthought.]
-  management: [Watch for energy constraints before diagnosing attitude problems.]
-risks: [Romanticizing exhaustion, Excusing poor design as personal weakness.]
-evidence: {level: provisional, references: []}
-relations: {supports: [NT-PRINCIPLE-0025, NT-PRINCIPLE-0026], conflicts_with: [], depends_on: [], applies_to: []}
-tags: [energy, execution, capacity]
+  execution:
+  - Plan recovery as part of capacity
+  - not as an afterthought.
+  management:
+  - Watch for energy constraints before diagnosing attitude problems.
+risks:
+- Romanticizing exhaustion
+- Excusing poor design as personal weakness.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports:
+  - NT-PRINCIPLE-0025
+  - NT-PRINCIPLE-0026
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- energy
+- execution
+- capacity
 created_at: '2026-07-20'
 updated_at: '2026-07-20'

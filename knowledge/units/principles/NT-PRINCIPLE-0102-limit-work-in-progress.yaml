@@ -1,0 +1,37 @@
+id: NT-PRINCIPLE-0102
+type: principle
+status: frozen
+version: 0.1.0
+title: Limit Work-in-Progress
+summary: Enforce hard caps on the number of active projects per team to maximize completion
+  velocity.
+primary_domain: dung-nhan
+secondary_domains:
+- thanh-su
+definition: Stop starting, start finishing. Enforce hard limits on active tasks per
+  person/team.
+conditions:
+- Operational project management.
+exceptions:
+- Exploratory research phases.
+applications:
+  kanban:
+  - Set max WIP cap of 2 active tickets per developer.
+risks:
+- Artificially blocking work when dependencies are stalled.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0017-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0069
+  applies_to: []
+tags:
+- execution
+- wip
+- velocity
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

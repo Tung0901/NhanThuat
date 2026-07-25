@@ -1,0 +1,39 @@
+id: NT-LAW-0061
+type: law
+status: frozen
+version: 0.1.0
+title: Extrinsic Motivation Crowding
+summary: Introducing financial rewards for intrinsically motivated complex work reduces
+  internal commitment and creative quality.
+primary_domain: tu-than
+secondary_domains:
+- tri-nhan
+definition: 'Over-justification effect: attaching transactional monetary bonuses replaces
+  internal motivation with external economic calculation.'
+conditions:
+- Tasks requiring creative problem solving, discretionary effort, or ethical judgment.
+exceptions:
+- Routine, repetitive manual labor lacking intrinsic appeal.
+applications:
+  compensation_design:
+  - Use generous baseline salary instead of hyper-fractional commission for R&D engineering
+    teams.
+risks:
+- Destroying intrinsic teamwork and psychological safety with hyper-competitive bonus
+  structures.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0009-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0030
+  applies_to: []
+tags:
+- incentives
+- motivation
+- crowding-out
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

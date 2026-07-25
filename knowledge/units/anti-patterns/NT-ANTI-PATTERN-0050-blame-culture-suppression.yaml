@@ -1,0 +1,43 @@
+id: NT-ANTI-PATTERN-0050
+type: anti-pattern
+status: frozen
+version: 0.1.0
+title: Blame-Culture Suppression
+summary: Punishing individual messengers of bad news, causing employees to hide errors
+  until catastrophic failure occurs.
+primary_domain: tri-nhan
+secondary_domains:
+- hop-chung
+definition: Blame-culture suppression occurs when leadership punishes staff who report
+  bugs or production failures.
+mechanism:
+- An error occurs.
+- Management blames the employee.
+- Staff learn honesty is dangerous.
+- Errors hidden until catastrophe.
+conditions:
+- Fear-based leadership environments.
+exceptions:
+- Deliberate criminal acts.
+applications:
+  culture_audit:
+  - Flag teams where bad news is never reported.
+risks:
+- Failing to discipline repeated gross negligence.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0018-01
+relations:
+  supports: []
+  conflicts_with:
+  - NT-PRINCIPLE-0105
+  depends_on:
+  - NT-LAW-0070
+  applies_to: []
+tags:
+- learning
+- blame
+- anti-patterns
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

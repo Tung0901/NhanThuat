@@ -1,0 +1,117 @@
+{
+  "metadata": {
+    "philosophy_id": "LENS-LEGALISM",
+    "philosophy_name": "Legalism Lens",
+    "version": "1.1.0",
+    "source_document": "docs/knowledge/03_HAN_PHI_TU_KNOWLEDGE_PACK.md",
+    "supported_domains": [
+      "authority",
+      "delegation",
+      "execution",
+      "incentives",
+      "ethics"
+    ],
+    "supported_personas": [
+      "Strategy Agent",
+      "Org Health Agent",
+      "Leadership Coach"
+    ],
+    "preferred_reasoning_modes": [
+      "Analytical",
+      "Diagnostic",
+      "Strategic"
+    ],
+    "compatible_lenses": [
+      "LENS-XUNZI",
+      "LENS-CONFUCIAN"
+    ],
+    "incompatible_lenses": [],
+    "confidence_modifier": 1.0,
+    "governance_status": "frozen",
+    "last_reviewed": "2026-07-23"
+  },
+  "engine_name": "Legalism Engine",
+  "version": "1.1.0",
+  "description": "Bộ ba Quản trị (Pháp-Thế-Thuật), Quy trình Hình Danh Tham Đồng, Nhị Bỉnh và Bộ lọc chống Bát Gian",
+  "governance_triad": {
+    "Phap": "Hệ thống quy định SOP công khai, minh bạch, bình đẳng.",
+    "The": "Uy quyền và vị thế chính thức đi kèm trách nhiệm.",
+    "Thuat": "Quy trình nội bộ kiểm tra thực tế, phát hiện sự thật."
+  },
+  "accreditation_alignment": {
+    "process": [
+      "1. Định Danh: Ghi nhận chính xác cam kết/kế hoạch.",
+      "2. Khảo Hình: Đo lường chính xác kết quả thực tế đầu ra.",
+      "3. Tham Đồng: Phân tích đối chiếu Danh - Hình."
+    ],
+    "rules": [
+      {
+        "condition": "Hình < Danh (Kết quả không đạt cam kết)",
+        "action": "Xử phạt theo quy chế."
+      },
+      {
+        "condition": "Danh vượt quá Hình (Hứa cuội, thổi phồng)",
+        "action": "Xử phạt hành vi thao túng thông tin."
+      },
+      {
+        "condition": "Hình == Danh (Kết quả chuẩn xác như cam kết)",
+        "action": "Khen thưởng công minh."
+      }
+    ]
+  },
+  "two_handles_reward_punishment": {
+    "reward_principles": ["Công minh", "Đúng người", "Đúng việc", "Kịp thời"],
+    "punishment_principles": ["Nghiêm minh", "Dứt khoát", "Không ngoại lệ", "Bình đẳng"],
+    "rule": "Quyền Thưởng - Phạt phải do Lãnh đạo trực tiếp nắm giữ, tuyệt đối không ủy quyền Nhị Bỉnh."
+  },
+  "eight_villainies_detector": [
+    {
+      "id": "8G-001",
+      "name": "Đồng Sàng (Thân cận)",
+      "risk": "Lợi dụng mối quan hệ thân thiết để xin xỏ đặc quyền.",
+      "mitigation": "Thiết lập ranh giới công - tư bạch minh."
+    },
+    {
+      "id": "8G-002",
+      "name": "Tại Trắc (Nịnh bợ)",
+      "risk": "Kẻ cận thần hùa theo tâm lý để thao túng quyết định.",
+      "mitigation": "Chỉ tin vào số liệu thực tế (Hình Danh Tham Đồng)."
+    },
+    {
+      "id": "8G-003",
+      "name": "Phụ Huynh (Người nhà)",
+      "risk": "Lợi dụng quan hệ gia đình can thiệp công việc.",
+      "mitigation": "Nói không với tuyển dụng/ưu ái người thân không đủ năng lực."
+    },
+    {
+      "id": "8G-004",
+      "name": "Dưỡng Tai (Chiều thói xấu)",
+      "risk": "Nuôi dưỡng thói hưởng lạc của lãnh đạo.",
+      "mitigation": "Duy trì kỷ luật bản thân nghiêm ngặt."
+    },
+    {
+      "id": "8G-005",
+      "name": "Dân Hại (Mua lòng người)",
+      "risk": "Dùng của công mua uy tín cá nhân vượt cấp.",
+      "mitigation": "Siết chặt ngân sách và quyền duyệt chi."
+    },
+    {
+      "id": "8G-006",
+      "name": "Đồng Luận (Bè phái)",
+      "risk": "Phe nhóm hùa nhau khen chê thao túng thông tin.",
+      "mitigation": "Thu thập thông tin đa chiều độc lập."
+    },
+    {
+      "id": "8G-007",
+      "name": "U Ám (Giấu tin xấu)",
+      "risk": "Bịt mắt lãnh đạo, chỉ báo tin mừng.",
+      "mitigation": "Bảo vệ kênh báo cáo tin xấu (Bad news protection)."
+    },
+    {
+      "id": "8G-008",
+      "name": "Tị Thế (Mượn thế ngoài)",
+      "risk": "Mượn uy thế đối tác ngoài ép nội bộ.",
+      "mitigation": "Giữ vững nguyên tắc độc lập quyết định."
+    }
+  ]
+}

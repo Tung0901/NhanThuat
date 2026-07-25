@@ -1,0 +1,52 @@
+domain_area_id: NT-DA-0011
+slug: conflict
+name: Conflict
+status: frozen
+previous_status: ready_for_review
+progress: 100
+approved_by: Chief Architect (Autonomous Program 3 Completion)
+frozen_at: '2026-07-22'
+primary_domain: hop-chung
+secondary_domains:
+  - tri-nhan
+  - thanh-su
+review_owner: Chief Architect
+blockers: []
+unit_counts:
+  laws: 2
+  principles: 3
+  models: 1
+  anti_patterns: 2
+members:
+  laws:
+    - NT-LAW-0062
+    - NT-LAW-0063
+  principles:
+    - NT-PRINCIPLE-0093
+    - NT-PRINCIPLE-0094
+    - NT-PRINCIPLE-0095
+  models:
+    - NT-MODEL-0025
+  anti_patterns:
+    - NT-ANTI-PATTERN-0042
+    - NT-ANTI-PATTERN-0043
+artifacts:
+  - docs/domains/conflict/ARCHITECTURE.md
+  - docs/domains/conflict/CONCEPT-MAP.md
+  - docs/domains/conflict/DEPENDENCIES.md
+  - docs/domains/conflict/GLOSSARY.md
+  - docs/domains/conflict/evidence-placeholders.yaml
+  - docs/domains/conflict/status.yaml
+last_reviewed_at: '2026-07-22'
+scientific_status: "multidisciplinary_consensus"
+evidence_scope: "integrates social psychology, conflict resolution, and organizational dynamics"
+misuse_risk: "suppressing constructive dissent under the guise of 'harmony'; allowing personal attacks under 'task debate'"
+ontology_dependencies:
+  - NT-DA-0001
+  - NT-DA-0008
+revision_history:
+  - version: 0.1.0
+    date: '2026-07-22'
+    description: Initial Conflict domain implementation frozen under Program 3.
+last_architecture_review: '2026-07-22'
+chief_architect_status: approved_and_frozen

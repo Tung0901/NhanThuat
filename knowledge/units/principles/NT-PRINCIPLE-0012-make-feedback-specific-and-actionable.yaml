@@ -1,19 +1,47 @@
 id: NT-PRINCIPLE-0012
 type: principle
-status: review
+status: frozen
 version: 0.1.0
 title: Make feedback specific and actionable
-summary: Feedback should identify the behavior, the consequence, and the next adjustment instead of labeling the person.
+summary: Feedback should identify the behavior, the consequence, and the next adjustment
+  instead of labeling the person.
 primary_domain: dung-nhan
-secondary_domains: [tu-than, hop-chung]
-definition: Specific feedback protects learning by focusing attention on changeable behavior and usable next steps.
-mechanism: [Name observed behavior, Explain consequence, Offer or request a concrete adjustment.]
-conditions: [Behavior can be observed or described, A next action exists.]
-exceptions: [Pattern-level feedback may need multiple examples, Values breaches may require stronger framing.]
-applications: {management: [Replace labels with examples and next expectations.], learning: [Turn critique into a practice target.]} 
-risks: [Being specific but unkind, Over-focusing on small behaviors while missing system causes.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0008, NT-LAW-0023], applies_to: []}
-tags: [feedback, specificity, learning]
+secondary_domains:
+- tu-than
+- hop-chung
+definition: Specific feedback protects learning by focusing attention on changeable
+  behavior and usable next steps.
+mechanism:
+- Name observed behavior
+- Explain consequence
+- Offer or request a concrete adjustment.
+conditions:
+- Behavior can be observed or described
+- A next action exists.
+exceptions:
+- Pattern-level feedback may need multiple examples
+- Values breaches may require stronger framing.
+applications:
+  management:
+  - Replace labels with examples and next expectations.
+  learning:
+  - Turn critique into a practice target.
+risks:
+- Being specific but unkind
+- Over-focusing on small behaviors while missing system causes.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0008
+  - NT-LAW-0023
+  applies_to: []
+tags:
+- feedback
+- specificity
+- learning
 created_at: '2026-07-20'
 updated_at: '2026-07-20'

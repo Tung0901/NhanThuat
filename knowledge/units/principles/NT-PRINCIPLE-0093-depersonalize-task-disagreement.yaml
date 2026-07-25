@@ -1,0 +1,37 @@
+id: NT-PRINCIPLE-0093
+type: principle
+status: frozen
+version: 0.1.0
+title: Depersonalize Task Disagreement
+summary: Frame all operational disagreements around objective data, hypotheses, and
+  goals, insulating personal identity.
+primary_domain: hop-chung
+secondary_domains:
+- tri-nhan
+definition: To maintain execution speed, leaders must separate the person from the
+  proposal.
+conditions:
+- Strategic reviews, product debates, and post-mortems.
+exceptions:
+- Performance reviews explicitly evaluating individual conduct.
+applications:
+  meeting_design:
+  - Require dissenters to frame objections as competing hypotheses.
+risks:
+- Over-sanitizing debate to the point where feedback becomes vague.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0011-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0062
+  applies_to: []
+tags:
+- conflict
+- depersonalization
+- debate
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

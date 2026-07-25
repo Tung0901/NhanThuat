@@ -1,0 +1,43 @@
+id: NT-ANTI-PATTERN-0042
+type: anti-pattern
+status: frozen
+version: 0.1.0
+title: Artificial Harmony
+summary: Suppressing honest task disagreement out of fear of conflict, creating fragile
+  consensus and hidden passive-aggressive friction.
+primary_domain: hop-chung
+secondary_domains:
+- tri-nhan
+definition: Artificial harmony occurs when team members nod publicly while harboring
+  deep reservations.
+mechanism:
+- Team encounters controversial decision.
+- Members remain silent to avoid debate.
+- Bad decision approved.
+- Execution fails.
+conditions:
+- Cultures with low psychological safety.
+exceptions:
+- Crisis execution phases requiring immediate unity.
+applications:
+  culture_audit:
+  - Identify teams with zero recorded dissent and low execution velocity.
+risks:
+- Mistaking artificial harmony for genuine organizational alignment.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0011-01
+relations:
+  supports: []
+  conflicts_with:
+  - NT-PRINCIPLE-0095
+  depends_on:
+  - NT-LAW-0062
+  applies_to: []
+tags:
+- conflict
+- harmony
+- anti-patterns
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

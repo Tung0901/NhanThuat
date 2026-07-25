@@ -1,0 +1,36 @@
+id: NT-PRINCIPLE-0103
+type: principle
+status: frozen
+version: 0.1.0
+title: Establish Predictable Execution Rhythms
+summary: Build fixed operational review beats (daily standups, weekly demos) to maintain
+  alignment.
+primary_domain: dung-nhan
+secondary_domains:
+- hop-chung
+definition: Predictable meeting beats reduce ad-hoc coordination overhead.
+conditions:
+- Team execution management.
+exceptions:
+- Solo deep-work research assignments.
+applications:
+  ops_cadence:
+  - Establish 15-minute daily standup focusing on blockers.
+risks:
+- Turning standups into low-value administrative reporting.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0017-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0068
+  applies_to: []
+tags:
+- execution
+- rhythm
+- cadence
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

@@ -1,0 +1,11 @@
+domain_area_id: NT-DA-0005
+slug: hiring
+status: ready_for_review
+evidence_posture:
+  default_level: provisional
+  external_references_fabricated: false
+  future_evidence_needs:
+    - Meta-analyses on the predictive validity of structured vs. unstructured interviews.
+    - Research on cognitive bias in selection processes.
+notes:
+  - To be expanded in Evidence Layer batch.

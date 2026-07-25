@@ -1,0 +1,41 @@
+id: NT-MODEL-0026
+type: model
+status: frozen
+version: 0.1.0
+title: Authority Allocation Framework
+summary: A 4-level delegation model mapping decision rights from Direct Mandate to
+  Full Autonomy.
+primary_domain: dung-nhan
+secondary_domains:
+- hop-chung
+definition: 'The Authority Allocation Framework defines 4 levels of decision agency:
+  Direct Mandate, Recommend & Approval, Decide & Inform, Full Autonomy.'
+mechanism:
+- Assess Competence & Risk.
+- Assign Authority Level.
+- Review and adjust Level over time.
+conditions:
+- Organizational delegation design.
+exceptions:
+- Emergency legal actions.
+applications:
+  delegation_tooling:
+  - Configure BusinessOS task assignment rules with explicit authority levels.
+risks:
+- Misjudging employee readiness and assigning Level 4 prematurely.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0013-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0064
+  applies_to: []
+tags:
+- authority
+- delegation
+- framework
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

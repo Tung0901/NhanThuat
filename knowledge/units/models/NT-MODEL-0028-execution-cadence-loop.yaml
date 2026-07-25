@@ -1,0 +1,41 @@
+id: NT-MODEL-0028
+type: model
+status: frozen
+version: 0.1.0
+title: Execution Cadence Loop
+summary: 'A 4-stage operational cycle: Plan -> Execute -> Review -> Adjust.'
+primary_domain: dung-nhan
+secondary_domains:
+- thanh-su
+definition: 'The Execution Cadence Loop governs short-cycle delivery: Sprint Plan,
+  Execution, Review, Retrospective.'
+mechanism:
+- Plan sprint bounds.
+- Execute work.
+- Review output.
+- Adjust process.
+conditions:
+- Iterative project management.
+exceptions:
+- One-shot static deployments.
+applications:
+  sprint_management:
+  - Structure team iterations around 2-week execution loops.
+risks:
+- Skipping retrospectives and repeating process errors.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0017-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0068
+  applies_to: []
+tags:
+- execution
+- cadence
+- loop
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

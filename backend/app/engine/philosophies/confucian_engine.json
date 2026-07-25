@@ -1,0 +1,88 @@
+{
+  "metadata": {
+    "philosophy_id": "LENS-CONFUCIAN",
+    "philosophy_name": "Confucian Lens",
+    "version": "1.1.0",
+    "source_document": "docs/knowledge/02_TU_THU_KNOWLEDGE_PACK.md",
+    "supported_domains": [
+      "leadership",
+      "team-building",
+      "culture",
+      "ethics",
+      "trust"
+    ],
+    "supported_personas": [
+      "Leadership Coach",
+      "Org Health Agent",
+      "CRM Agent"
+    ],
+    "preferred_reasoning_modes": [
+      "Diagnostic",
+      "Strategic",
+      "Collaborative"
+    ],
+    "compatible_lenses": [
+      "LENS-XUNZI",
+      "LENS-TAOISM",
+      "LENS-LEGALISM"
+    ],
+    "incompatible_lenses": [],
+    "confidence_modifier": 1.0,
+    "governance_status": "frozen",
+    "last_reviewed": "2026-07-23"
+  },
+  "engine_name": "Confucian Engine",
+  "version": "1.1.0",
+  "description": "Hệ quy chuẩn Đạo đức Lãnh đạo Nho gia, Bộ lọc Quân tử vs Tiểu nhân và quy tắc Hòa nhi bất đồng",
+  "principles": [
+    {
+      "id": "CNF-PRN-001",
+      "name": "Tam Cương Lĩnh",
+      "components": ["Minh Minh Đức", "Thân Dân", "Chỉ Ư Chí Thiện"]
+    },
+    {
+      "id": "CNF-PRN-002",
+      "name": "Bát Điều Mục",
+      "steps": ["Cách vật", "Trí tri", "Thành ý", "Chánh tâm", "Tu thân", "Tề gia", "Trị quốc", "Bình thiên hạ"]
+    },
+    {
+      "id": "CNF-PRN-003",
+      "name": "Ngũ Thường",
+      "values": ["Nhân", "Nghĩa", "Lễ", "Trí", "Tín"]
+    }
+  ],
+  "noble_vs_base_filter": {
+    "criteria": [
+      {
+        "dimension": "Motivation",
+        "noble_character": "Hướng về Nghĩa (Giá trị chung, sự chính trực)",
+        "base_character": "Hướng về Lợi (Tư lợi cá nhân, lợi ích ngắn hạn)",
+        "action": "Trao quyền cho Noble; Giám sát chặt chẽ Base."
+      },
+      {
+        "dimension": "Communication",
+        "noble_character": "Hòa nhi bất đồng (Tôn trọng khác biệt, phản biện chân thành)",
+        "base_character": "Đồng nhi bất hòa (Bề ngoài hùa theo, bên trong chia rẽ)",
+        "action": "Khuyến khích Noble; Loại bỏ hành vi nịnh bợ của Base."
+      },
+      {
+        "dimension": "Accountability",
+        "noble_character": "Phản cầu gia chư kỷ (Tự nhìn lại mình khi thất bại)",
+        "base_character": "Oán thiên trách nhân (Đổ lỗi hoàn cảnh và đồng nghiệp)",
+        "action": "Đánh giá cao Noble; Yêu cầu Base chịu trách nhiệm cụ thể."
+      }
+    ]
+  },
+  "harmony_rules": [
+    {
+      "rule_id": "HAR-001",
+      "name": "Khuyến khích tranh luận công việc (Task Conflict)",
+      "guideline": "Bảo vệ các ý kiến phản biện có căn cứ, không coi phản biện là xúc phạm cá nhân."
+    },
+    {
+      "rule_id": "HAR-002",
+      "name": "Ngăn chặn xung đột quan hệ (Relationship Conflict)",
+      "guideline": "Tuyệt đối cấm công kích cá nhân, giữ thái độ hòa nhã tôn trọng đồng nghiệp."
+    }
+  ]
+}

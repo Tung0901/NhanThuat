@@ -1,0 +1,37 @@
+id: NT-LAW-0064
+type: law
+status: frozen
+version: 0.1.0
+title: Decision Right Boundaries
+summary: Ambiguity in formal decision rights increases organizational coordination
+  friction and causes decision paralysis.
+primary_domain: dung-nhan
+secondary_domains:
+- hop-chung
+definition: Clear boundaries defining who holds formal decision rights are necessary
+  to prevent territorial friction and paralysis.
+conditions:
+- Designing management hierarchies and governance structures.
+exceptions:
+- Fluid startup environments operating under informal ad-hoc roles.
+applications:
+  governance:
+  - Publish clear decision-rights matrices for strategic initiatives.
+risks:
+- Over-specifying decision rights to the point of creating rigid silos.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0013-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0010
+  applies_to: []
+tags:
+- authority
+- governance
+- decision-rights
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

@@ -1,0 +1,35 @@
+id: NT-LAW-0045
+type: law
+status: frozen
+version: 0.1.0
+title: Abdication Over-Control Bifurcation
+summary: Abdication Over-Control Bifurcation structural knowledge unit.
+primary_domain: dung-nhan
+secondary_domains:
+- tri-nhan
+definition: Formal definition of Abdication Over-Control Bifurcation in NhanThuat
+  architecture.
+conditions:
+- Operational governance contexts.
+exceptions:
+- Emergency crisis overrides.
+applications:
+  governance:
+  - Apply Abdication Over-Control Bifurcation to organizational workflows.
+risks:
+- Misapplication of Abdication Over-Control Bifurcation leading to suboptimal performance.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0001-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0010
+  applies_to: []
+tags:
+- law
+- dung-nhan
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

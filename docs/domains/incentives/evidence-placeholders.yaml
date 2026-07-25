@@ -1,0 +1,6 @@
+evidence_needs:
+  - id: EV-REQ-0009-01
+    description: "Empirical studies on metric gaming and extrinsic motivation crowding in corporate incentive design."
+    type: empirical_study
+    priority: high
+    status: placeholder

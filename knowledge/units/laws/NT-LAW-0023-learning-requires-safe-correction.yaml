@@ -1,21 +1,49 @@
 id: NT-LAW-0023
 type: law
-status: review
+status: frozen
 version: 0.1.0
 title: Learning requires safe correction
-summary: People learn faster when mistakes can be examined honestly without disproportionate shame, punishment, or identity threat.
+summary: People learn faster when mistakes can be examined honestly without disproportionate
+  shame, punishment, or identity threat.
 primary_domain: tu-than
-secondary_domains: [dung-nhan, hop-chung]
-definition: Learning requires correction, but correction is avoided or distorted when the social cost of admitting error is too high.
-mechanism: [Make an error, Experience correction risk, Either examine the error or defend against it.]
-conditions: [The person receives information about a gap, The environment affects the cost of admitting it.]
-exceptions: [Severe negligence may require consequences, Some learners seek correction despite risk.]
+secondary_domains:
+- dung-nhan
+- hop-chung
+definition: Learning requires correction, but correction is avoided or distorted when
+  the social cost of admitting error is too high.
+mechanism:
+- Make an error
+- Experience correction risk
+- Either examine the error or defend against it.
+conditions:
+- The person receives information about a gap
+- The environment affects the cost of admitting it.
+exceptions:
+- Severe negligence may require consequences
+- Some learners seek correction despite risk.
 applications:
-  learning: [Separate error analysis from humiliation.]
-  management: [Protect candor while preserving standards.]
-risks: [Removing accountability in the name of safety, Using shame as a teaching tool.]
-evidence: {level: provisional, references: []}
-relations: {supports: [NT-PRINCIPLE-0041, NT-PRINCIPLE-0042, NT-PRINCIPLE-0043], conflicts_with: [], depends_on: [NT-LAW-0008], applies_to: []}
-tags: [learning, correction, safety]
+  learning:
+  - Separate error analysis from humiliation.
+  management:
+  - Protect candor while preserving standards.
+risks:
+- Removing accountability in the name of safety
+- Using shame as a teaching tool.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports:
+  - NT-PRINCIPLE-0041
+  - NT-PRINCIPLE-0042
+  - NT-PRINCIPLE-0043
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0008
+  applies_to: []
+tags:
+- learning
+- correction
+- safety
 created_at: '2026-07-20'
 updated_at: '2026-07-20'

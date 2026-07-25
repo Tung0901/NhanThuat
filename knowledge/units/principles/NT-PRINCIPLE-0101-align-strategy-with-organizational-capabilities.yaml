@@ -1,0 +1,37 @@
+id: NT-PRINCIPLE-0101
+type: principle
+status: frozen
+version: 0.1.0
+title: Align Strategy with Organizational Capabilities
+summary: Ensure that chosen strategic directions leverage existing or buildable core
+  capabilities rather than wishful thinking.
+primary_domain: thanh-su
+secondary_domains:
+- dung-nhan
+definition: A strategy that requires capabilities the organization does not possess
+  and cannot acquire is a fantasy.
+conditions:
+- Strategic planning and new market entry.
+exceptions:
+- Moonshot R&D ventures.
+applications:
+  hiring_alignment:
+  - Map strategic roadmap capabilities to current talent inventory.
+risks:
+- Setting goals so conservative that the organization fails to innovate.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0016-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0066
+  applies_to: []
+tags:
+- strategy
+- capabilities
+- alignment
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

@@ -1,0 +1,43 @@
+id: NT-ANTI-PATTERN-0045
+type: anti-pattern
+status: frozen
+version: 0.1.0
+title: Authority Vacuum
+summary: Failing to designate clear decision owners, causing paralysis, endless committee
+  debates, and unowned failures.
+primary_domain: dung-nhan
+secondary_domains:
+- hop-chung
+definition: An authority vacuum occurs when leadership refuses to assign explicit
+  decision rights.
+mechanism:
+- A decision is needed.
+- No single decision owner assigned.
+- Committees debate endlessly.
+- Bad outcome.
+conditions:
+- Consensus-obsessed organizational cultures.
+exceptions:
+- Democratic voting bodies explicitly established by charter.
+applications:
+  governance_audit:
+  - Ensure every strategic initiative has a single named decision owner.
+risks:
+- Assigning autocrats without consultation mechanisms.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0013-01
+relations:
+  supports: []
+  conflicts_with:
+  - NT-PRINCIPLE-0096
+  depends_on:
+  - NT-LAW-0064
+  applies_to: []
+tags:
+- authority
+- vacuum
+- anti-patterns
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

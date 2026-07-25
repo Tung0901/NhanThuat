@@ -1,0 +1,10 @@
+domain_area_id: NT-DA-0007
+slug: delegation
+status: ready_for_review
+evidence_posture:
+  default_level: provisional
+  external_references_fabricated: false
+  future_evidence_needs:
+    - Case studies on the failure rates of asymmetric delegation (responsibility without authority).
+notes:
+  - To be expanded in Evidence Layer batch.

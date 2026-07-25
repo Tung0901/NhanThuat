@@ -1,0 +1,18 @@
+evidence_needs:
+  - id: EV-REQ-0014-01
+    description: "Empirical studies demonstrating the difference in durable commitment between legitimate value reframing and coercive compliance."
+    type: empirical_study
+    priority: high
+    status: placeholder
+
+  - id: EV-REQ-0014-02
+    description: "Comparative analysis of conversion rates and trust decay when sales/coaching processes use manipulative framing versus transparent intent."
+    type: literature_review
+    priority: high
+    status: placeholder
+
+  - id: EV-REQ-0014-03
+    description: "Field case studies on the effectiveness of influence as a bridge between trust and execution velocity in cross-functional change initiatives."
+    type: case_study
+    priority: medium
+    status: placeholder

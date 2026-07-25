@@ -1,0 +1,38 @@
+id: NT-MODEL-0022
+type: model
+status: frozen
+version: 0.1.0
+title: Negotiation Flow Pipeline
+summary: Negotiation Flow Pipeline structural knowledge unit.
+primary_domain: thanh-su
+secondary_domains:
+- tri-nhan
+definition: Formal definition of Negotiation Flow Pipeline in NhanThuat architecture.
+conditions:
+- Operational governance contexts.
+exceptions:
+- Emergency crisis overrides.
+applications:
+  governance:
+  - Apply Negotiation Flow Pipeline to organizational workflows.
+risks:
+- Misapplication of Negotiation Flow Pipeline leading to suboptimal performance.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0001-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0057
+  applies_to: []
+tags:
+- model
+- thanh-su
+created_at: '2026-07-22'
+updated_at: '2026-07-22'
+mechanism:
+- 'Step 1: Identify Negotiation Flow Pipeline.'
+- 'Step 2: Analyze parameters.'
+- 'Step 3: Execute model.'

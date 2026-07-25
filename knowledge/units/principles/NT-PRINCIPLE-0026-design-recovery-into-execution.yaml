@@ -1,19 +1,47 @@
 id: NT-PRINCIPLE-0026
 type: principle
-status: review
+status: frozen
 version: 0.1.0
 title: Design recovery into execution
-summary: Treat recovery, slack, and reset moments as part of execution capacity, not as optional comfort.
+summary: Treat recovery, slack, and reset moments as part of execution capacity, not
+  as optional comfort.
 primary_domain: thanh-su
-secondary_domains: [tu-than, dung-nhan]
-definition: Sustainable execution requires planned restoration so quality does not depend on continuous overextension.
-mechanism: [Estimate load, Add recovery and slack, Protect quality over repeated cycles.]
-conditions: [Work is sustained or repeated, Overload would degrade judgment or reliability.]
-exceptions: [Short emergencies may consume reserves, Too much slack can reduce urgency.]
-applications: {operations: [Plan capacity with recovery buffers.], leadership: [Avoid making heroics the normal operating model.]} 
-risks: [Using recovery language to avoid hard work, Ignoring urgent constraints.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0015, NT-LAW-0022], applies_to: []}
-tags: [recovery, execution, sustainability]
+secondary_domains:
+- tu-than
+- dung-nhan
+definition: Sustainable execution requires planned restoration so quality does not
+  depend on continuous overextension.
+mechanism:
+- Estimate load
+- Add recovery and slack
+- Protect quality over repeated cycles.
+conditions:
+- Work is sustained or repeated
+- Overload would degrade judgment or reliability.
+exceptions:
+- Short emergencies may consume reserves
+- Too much slack can reduce urgency.
+applications:
+  operations:
+  - Plan capacity with recovery buffers.
+  leadership:
+  - Avoid making heroics the normal operating model.
+risks:
+- Using recovery language to avoid hard work
+- Ignoring urgent constraints.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0015
+  - NT-LAW-0022
+  applies_to: []
+tags:
+- recovery
+- execution
+- sustainability
 created_at: '2026-07-20'
 updated_at: '2026-07-20'

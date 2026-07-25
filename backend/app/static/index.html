@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BusinessOS & Nhân Thuật - Executive AI Platform</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        },
+                        emerald: {
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & Inter & Space Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+            background-color: #090D16;
+            color: #F8FAFC;
+            font-size: 15px;
+            line-height: 1.65;
+        }
+        .font-space { font-family: 'Space Grotesk', sans-serif; }
+        .glass-panel {
+            background-color: #131C2E;
+            backdrop-filter: blur(16px);
+            border: 1px solid #1E293B;
+        }
+        .glass-memo {
+            background-color: #0B111D;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            box-shadow: 0 10px 30px -10px rgba(245, 158, 11, 0.12);
+        }
+        .lens-LEGALISM { background: rgba(239, 68, 68, 0.2); border: 1px solid rgba(239, 68, 68, 0.5); color: #fca5a5; }
+        .lens-RHETORIC { background: rgba(99, 102, 241, 0.2); border: 1px solid rgba(99, 102, 241, 0.5); color: #c7d2fe; }
+        .lens-XUNZI { background: rgba(245, 158, 11, 0.2); border: 1px solid rgba(245, 158, 11, 0.5); color: #fde68a; }
+        .lens-CONFUCIAN { background: rgba(16, 185, 129, 0.2); border: 1px solid rgba(16, 185, 129, 0.5); color: #6ee7b7; }
+        .lens-TAOISM { background: rgba(6, 182, 212, 0.2); border: 1px solid rgba(6, 182, 212, 0.5); color: #67e8f9; }
+        .nav-tab-active { background-color: rgba(245, 158, 11, 0.15); border-color: rgba(245, 158, 11, 0.4); color: #fbbf24; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased">
+
+    <!-- Top Header & Module Navigation -->
+    <header class="border-b border-slate-800 bg-[#090D16]/90 sticky top-0 z-50 backdrop-blur-md px-8 py-4 flex flex-col md:flex-row items-center justify-between gap-4 shadow-lg">
+        <div class="flex items-center space-x-4">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/15 border border-amber-500/40 flex items-center justify-center text-amber-400 font-bold text-2xl font-space shadow-sm">
+                N
+            </div>
+            <div>
+                <h1 class="text-xl font-bold font-space text-slate-50 flex items-center gap-3">
+                    BUSINESSOS EXECUTIVE PLATFORM
+                    <span class="px-2.5 py-0.5 text-xs rounded-full bg-amber-500/15 text-amber-400 border border-amber-500/30 font-sans font-semibold">M16 Universal AI</span>
+                </h1>
+                <p class="text-xs text-slate-400">Senior Executive Co-Pilot • 5 Digital Books Library • SalesOS & CPQ Engine</p>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <nav class="flex items-center space-x-2 bg-slate-900/90 p-1.5 rounded-xl border border-slate-800 text-xs font-bold">
+            <button id="tabBtnBrain" onclick="switchTab('brain')" class="px-4 py-2 rounded-lg nav-tab-active border transition flex items-center gap-2">
+                <i data-lucide="brain" class="w-4 h-4 text-amber-400"></i>
+                <span>Bộ Não Tham Mưu Core</span>
+            </button>
+            <button id="tabBtnSales" onclick="switchTab('sales')" class="px-4 py-2 rounded-lg text-slate-400 hover:text-slate-200 border border-transparent transition flex items-center gap-2">
+                <i data-lucide="bar-chart-3" class="w-4 h-4 text-emerald-400"></i>
+                <span>SalesOS & Pipeline</span>
+            </button>
+            <button id="tabBtnCPQ" onclick="switchTab('cpq')" class="px-4 py-2 rounded-lg text-slate-400 hover:text-slate-200 border border-transparent transition flex items-center gap-2">
+                <i data-lucide="file-text" class="w-4 h-4 text-indigo-400"></i>
+                <span>Báo Giá CPQ & Xuất PDF</span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- MODULE TAB 1: BỘ NÃO THAM MƯU CORE -->
+    <main id="tabContentBrain" class="flex-1 grid grid-cols-12 gap-6 p-8 max-w-[1800px] mx-auto w-full">
+
+        <!-- COLUMN 1: SIDEBAR & 5 DIGITAL BOOKS LIBRARY (3 Cols) -->
+        <aside class="col-span-12 lg:col-span-3 space-y-6">
+            
+            <!-- 5 Digital Books Library Card -->
+            <div class="glass-panel rounded-2xl p-5 space-y-4 shadow-md">
+                <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                    <div class="flex items-center space-x-2.5 text-slate-100 font-bold text-base">
+                        <i data-lucide="book-open" class="w-5 h-5 text-amber-400"></i>
+                        <span>5 Bộ Sách Tri Thức Nhân Thuật</span>
+                    </div>
+                </div>
+                <div class="space-y-2.5 text-xs">
+                    <button onclick="openBookReader('01_THUAT_HUNG_BIEN.md')" class="w-full text-left p-3 rounded-xl bg-[#090D16] hover:bg-slate-900 border border-indigo-500/30 text-indigo-300 font-semibold transition flex items-center justify-between group shadow-sm">
+                        <span class="flex items-center gap-2">📖 Cuốn 1: Thuật Hùng Biện</span>
+                        <i data-lucide="chevron-right" class="w-4 h-4 opacity-50 group-hover:opacity-100"></i>
+                    </button>
+                    <button onclick="openBookReader('02_TU_THU_KNOWLEDGE_PACK.md')" class="w-full text-left p-3 rounded-xl bg-[#090D16] hover:bg-slate-900 border border-emerald-500/30 text-emerald-300 font-semibold transition flex items-center justify-between group shadow-sm">
+                        <span class="flex items-center gap-2">📖 Cuốn 2: Nho Gia & Thu Phục</span>
+                        <i data-lucide="chevron-right" class="w-4 h-4 opacity-50 group-hover:opacity-100"></i>
+                    </button>
+                    <button onclick="openBookReader('03_HAN_PHI_TU_KNOWLEDGE_PACK.md')" class="w-full text-left p-3 rounded-xl bg-[#090D16] hover:bg-slate-900 border border-red-500/30 text-red-300 font-semibold transition flex items-center justify-between group shadow-sm">
+                        <span class="flex items-center gap-2">📖 Cuốn 3: Pháp Gia & Thống Trị</span>
+                        <i data-lucide="chevron-right" class="w-4 h-4 opacity-50 group-hover:opacity-100"></i>
+                    </button>
+                    <button onclick="openBookReader('04_TRANG_TU_KNOWLEDGE_PACK.md')" class="w-full text-left p-3 rounded-xl bg-[#090D16] hover:bg-slate-900 border border-cyan-500/30 text-cyan-300 font-semibold transition flex items-center justify-between group shadow-sm">
+                        <span class="flex items-center gap-2">📖 Cuốn 4: Đạo Gia & Bất Tranh</span>
+                        <i data-lucide="chevron-right" class="w-4 h-4 opacity-50 group-hover:opacity-100"></i>
+                    </button>
+                    <button onclick="openBookReader('05_TUAN_TU_KNOWLEDGE_PACK.md')" class="w-full text-left p-3 rounded-xl bg-[#090D16] hover:bg-slate-900 border border-amber-500/30 text-amber-300 font-semibold transition flex items-center justify-between group shadow-sm">
+                        <span class="flex items-center gap-2">📖 Cuốn 5: Tuân Tử Quản Trị</span>
+                        <i data-lucide="chevron-right" class="w-4 h-4 opacity-50 group-hover:opacity-100"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 274 Knowledge Units Summary Card -->
+            <div class="glass-panel rounded-2xl p-5 space-y-4 shadow-md">
+                <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                    <div class="flex items-center space-x-2.5 text-slate-100 font-bold text-base">
+                        <i data-lucide="layers" class="w-5 h-5 text-amber-500"></i>
+                        <span>Kho Tri Thức Nhân Thuật</span>
+                    </div>
+                    <span class="px-2.5 py-1 text-xs font-extrabold rounded-md bg-amber-500/20 text-amber-400 border border-amber-500/30">274 Units</span>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 text-xs">
+                    <div class="bg-[#090D16] p-3 rounded-xl border border-slate-800">
+                        <div class="text-slate-400 font-medium">Quy luật (Laws)</div>
+                        <div class="text-xl font-bold text-slate-50 font-space mt-1">75</div>
+                    </div>
+                    <div class="bg-[#090D16] p-3 rounded-xl border border-slate-800">
+                        <div class="text-slate-400 font-medium">Nguyên lý (Principles)</div>
+                        <div class="text-xl font-bold text-slate-50 font-space mt-1">113</div>
+                    </div>
+                    <div class="bg-[#090D16] p-3 rounded-xl border border-slate-800">
+                        <div class="text-slate-400 font-medium">Mô hình (Models)</div>
+                        <div class="text-xl font-bold text-slate-50 font-space mt-1">31</div>
+                    </div>
+                    <div class="bg-[#090D16] p-3 rounded-xl border border-slate-800">
+                        <div class="text-slate-400 font-medium">Chống mô thức (Anti-P)</div>
+                        <div class="text-xl font-bold text-slate-50 font-space mt-1">55</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- System Configuration -->
+            <div class="glass-panel rounded-2xl p-5 space-y-3 text-xs shadow-md">
+                <div class="flex justify-between items-center py-1 border-b border-slate-800/60">
+                    <span class="text-slate-400">AI Temperature</span>
+                    <span class="font-mono font-bold text-slate-100">0.1 (Nhất quán)</span>
+                </div>
+                <div class="flex justify-between items-center py-1 border-b border-slate-800/60">
+                    <span class="text-slate-400">RAG Pipeline</span>
+                    <span class="font-bold text-emerald-400">Auto Ingestion</span>
+                </div>
+                <div class="flex justify-between items-center py-1">
+                    <span class="text-slate-400">Boundaries</span>
+                    <span class="font-semibold text-emerald-400">100% Isolated</span>
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- COLUMN 2: MAIN WORKSPACE - INPUT & EXECUTIVE ACTION MEMO (6 Cols) -->
+        <section class="col-span-12 lg:col-span-6 space-y-6">
+
+            <!-- Universal Clean Input Box (Zero Presets) -->
+            <div class="glass-panel rounded-2xl p-6 space-y-4 shadow-lg">
+                <div class="flex items-center justify-between">
+                    <label for="scenarioInput" class="text-base font-bold text-slate-100 flex items-center gap-2.5">
+                        <i data-lucide="message-square-plus" class="w-5 h-5 text-amber-500"></i>
+                        Nhập Tình Huống / Câu Hỏi Cần Trợ Lý Tham Mưu
+                    </label>
+                    <span class="text-xs text-slate-400 font-semibold">Tự do gõ mọi tình huống</span>
+                </div>
+
+                <textarea id="scenarioInput" rows="4" class="w-full bg-[#090D16] border border-slate-700/90 rounded-xl p-4 text-base text-slate-100 placeholder-slate-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition leading-relaxed shadow-inner" placeholder="Nhập tình huống thực tế của Chủ tịch (Ví dụ: Công trình chậm tiến độ, đàm phán giá đắt, xử lý xung đột nhân sự, hay chiến lược giao tiếp)..."></textarea>
+
+                <div class="flex justify-end pt-1">
+                    <button id="analyzeBtn" onclick="runAnalysis()" class="px-7 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-extrabold text-base shadow-xl shadow-amber-500/25 transition flex items-center gap-2.5">
+                        <i data-lucide="zap" class="w-5 h-5"></i>
+                        <span>Phân Tích & Phán Quyết</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Ambiguity Warning Alert Banner -->
+            <div id="warningBanner" class="hidden glass-panel rounded-2xl p-5 bg-amber-500/15 border-amber-500/40 text-amber-100 space-y-2 animate-fadeIn shadow-md">
+                <div class="flex items-center space-x-2 font-bold text-amber-400 text-base">
+                    <i data-lucide="alert-triangle" class="w-5 h-5"></i>
+                    <span>CẢNH BẢO THIẾU BỐI CẢNH (AMBIGUOUS CONTEXT WARNING)</span>
+                </div>
+                <p id="warningBody" class="text-sm text-amber-200/95 whitespace-pre-line leading-relaxed font-medium"></p>
+            </div>
+
+            <!-- High-Contrast Velvet Executive Action Script Memo -->
+            <div class="glass-memo rounded-2xl p-6 space-y-6">
+                <div class="flex items-center justify-between border-b border-slate-800/90 pb-4">
+                    <div class="flex items-center space-x-3">
+                        <i data-lucide="file-text" class="w-6 h-6 text-amber-400"></i>
+                        <h2 class="font-extrabold text-slate-50 font-space text-lg">Văn Bản Tham Mưu & Kịch Bản Thực Thi Chi Tiết</h2>
+                    </div>
+
+                    <button id="copyBtn" onclick="copyActionScript()" class="px-4 py-2 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/40 text-amber-300 text-xs font-bold transition flex items-center gap-2 shadow-sm">
+                        <i data-lucide="copy" class="w-4 h-4"></i>
+                        <span id="copyBtnText">Sao Chép Kịch Bản & Lời Thoại</span>
+                    </button>
+                </div>
+
+                <!-- BLOCK 1: 🔹 PHẦN 1: ĐÁNH GIÁ VỊ THẾ & ĐIỂM TỰA TƯ TƯỞNG -->
+                <div class="space-y-3">
+                    <h3 class="text-xs font-extrabold text-amber-400 uppercase tracking-widest flex items-center gap-2">
+                        <i data-lucide="shield" class="w-4 h-4 text-amber-400"></i>
+                        1. 🔹 ĐÁNH GIÁ VỊ THẾ & ĐIỂM TỰA TƯ TƯỞNG (EXECUTIVE RATIONALE)
+                    </h3>
+                    <p id="positionAnalysisText" class="text-sm text-slate-100 bg-[#090D16] p-4 rounded-xl border border-slate-800 leading-relaxed font-medium"></p>
+                </div>
+
+                <!-- BLOCK 2: 🔹 PHẦN 2: KỊCH BẢN LỜI THOẠI ĐÀM PHÁN -->
+                <div class="space-y-4 pt-2 border-t border-slate-800/90">
+                    <h3 class="text-xs font-extrabold text-amber-400 uppercase tracking-widest flex items-center gap-2">
+                        <i data-lucide="message-square" class="w-4 h-4 text-indigo-400"></i>
+                        2. 🔹 KỊCH BẢN LỜI THOẠI ĐÀM PHÁN (VERBATIM DIALOGUE SCRIPT)
+                    </h3>
+                    
+                    <div id="step1Container" class="space-y-2"></div>
+                    <div id="step2Container" class="space-y-2"></div>
+                    <div id="step3Container" class="space-y-2"></div>
+                </div>
+
+                <!-- BLOCK 3: 🔹 PHẦN 3: DRAFT CÔNG VĂN / TIN NHẮN TỰ ĐỘNG -->
+                <div class="space-y-3 pt-3 border-t border-slate-800/90">
+                    <h3 class="text-xs font-extrabold text-amber-400 uppercase tracking-widest flex items-center gap-2">
+                        <i data-lucide="mail" class="w-4 h-4 text-emerald-400"></i>
+                        3. 🔹 DRAFT CÔNG VĂN / TIN NHẮN TỰ ĐỘNG (READY-TO-SEND TEXT)
+                    </h3>
+                    <div class="relative">
+                        <pre id="draftCommBlock" class="bg-[#050811] border border-slate-800 rounded-xl p-4 text-emerald-400 font-mono text-sm overflow-x-auto whitespace-pre-wrap leading-relaxed max-h-72 shadow-inner"></pre>
+                    </div>
+                </div>
+
+                <!-- BLOCK 4: ĐỊNH HƯỚNG TÀI CHÍNH & VẬN HÀNH -->
+                <div class="space-y-3 pt-3 border-t border-slate-800/90">
+                    <h3 class="text-xs font-extrabold text-amber-400 uppercase tracking-widest flex items-center gap-2">
+                        <i data-lucide="dollar-sign" class="w-4 h-4 text-amber-400"></i>
+                        4. 💰 ĐỊNH HƯỚNG TÀI CHÍNH & VẬN HÀNH (EXECUTIVE DIRECTIVES)
+                    </h3>
+                    <div id="financialDirectivesContainer" class="space-y-2 text-sm text-slate-100 font-medium"></div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- COLUMN 3: ANALYTICS, PROVENANCE & KNOWLEDGE UNITS EVIDENCE (3 Cols) -->
+        <aside class="col-span-12 lg:col-span-3 space-y-6">
+
+            <!-- Philosophy Router Activation Card -->
+            <div class="glass-panel rounded-2xl p-5 space-y-4 shadow-md">
+                <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                    <div class="flex items-center space-x-2.5 text-slate-100 font-bold text-base">
+                        <i data-lucide="pie-chart" class="w-5 h-5 text-amber-500"></i>
+                        <span>Lăng Kính Triết Học Kích Hoạt</span>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="text-xs text-slate-400 uppercase font-semibold mb-1.5">Primary Lens</div>
+                    <div id="primaryLensBadge" class="lens-badge lens-LEGALISM text-center font-extrabold text-sm w-full py-2 rounded-xl shadow-sm">LEGALISM</div>
+                </div>
+
+                <div>
+                    <div class="text-xs text-slate-400 uppercase font-semibold mb-2.5">Lens Composition Weights</div>
+                    <div id="weightsContainer" class="space-y-2.5"></div>
+                </div>
+
+                <div>
+                    <div class="text-xs text-slate-400 uppercase font-semibold mb-1.5">Định Hướng Tư Tưởng</div>
+                    <p id="explanationText" class="text-xs text-slate-200 bg-[#090D16] p-3 rounded-xl border border-slate-800 leading-relaxed font-medium"></p>
+                </div>
+            </div>
+
+            <!-- Verified Knowledge Units & Custom RAG Docs Evidence Card -->
+            <div class="glass-panel rounded-2xl p-5 space-y-4 shadow-md">
+                <div class="flex items-center space-x-2.5 text-slate-100 font-bold text-base border-b border-slate-800 pb-3">
+                    <i data-lucide="shield-check" class="w-5 h-5 text-emerald-400"></i>
+                    <span>Căn Cứ Tri Thức & RAG Tài Liệu</span>
+                </div>
+
+                <!-- Verified Knowledge Units -->
+                <div id="unitsContainer" class="space-y-3"></div>
+
+                <!-- Custom RAG Company Documents -->
+                <div id="customDocsSection" class="pt-2 border-t border-slate-800 space-y-2">
+                    <div class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Tài Liệu Quy Chế & SOP Đối Chiếu (RAG)</div>
+                    <div id="customDocsContainer" class="space-y-2"></div>
+                </div>
+            </div>
+
+            <!-- Audit Provenance Card -->
+            <div class="glass-panel rounded-2xl p-5 space-y-3 text-xs shadow-md">
+                <div class="flex items-center justify-between text-slate-300 border-b border-slate-800 pb-2.5">
+                    <span class="flex items-center gap-2 font-semibold"><i data-lucide="fingerprint" class="w-4 h-4 text-slate-400"></i> Provenance Trace</span>
+                    <span class="font-mono text-xs text-slate-400" id="correlationIdText">CORR-WEB-00000000</span>
+                </div>
+                <div class="text-slate-400 text-xs leading-relaxed pt-1">
+                    Mọi phán quyết đều được mã hóa vết nguyên nhân (Causal Provenance) và lưu giữ lịch sử kiểm toán.
+                </div>
+            </div>
+
+        </aside>
+
+    </main>
+
+    <!-- MODULE TAB 2: SALESOS & PIPELINE -->
+    <main id="tabContentSales" class="hidden flex-1 p-8 max-w-[1800px] mx-auto w-full space-y-6">
+        <div class="glass-panel rounded-2xl p-6 space-y-6">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                <div class="flex items-center space-x-3">
+                    <i data-lucide="bar-chart-3" class="w-6 h-6 text-emerald-400"></i>
+                    <div>
+                        <h2 class="font-extrabold text-slate-50 font-space text-lg">SalesOS Lead Management & Project Pipeline</h2>
+                        <p class="text-xs text-slate-400">Danh sách Dự án & Công trình thương mại đang đàm phán</p>
+                    </div>
+                </div>
+                <button onclick="loadSalesLeads()" class="px-4 py-2 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-500/40 text-emerald-300 text-xs font-bold transition flex items-center gap-2">
+                    <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+                    <span>Tải Lại Pipeline</span>
+                </button>
+            </div>
+
+            <div id="salesLeadsContainer" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+        </div>
+    </main>
+
+    <!-- MODULE TAB 3: BÁO GIÁ CPQ & XUẤT PDF -->
+    <main id="tabContentCPQ" class="hidden flex-1 p-8 max-w-[1800px] mx-auto w-full space-y-6">
+        <div class="glass-panel rounded-2xl p-6 space-y-6">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                <div class="flex items-center space-x-3">
+                    <i data-lucide="file-text" class="w-6 h-6 text-indigo-400"></i>
+                    <div>
+                        <h2 class="font-extrabold text-slate-50 font-space text-lg">CPQ Quote Generator & Interactive Reframing Engine</h2>
+                        <p class="text-xs text-slate-400">Tính toán báo giá dự toán tự động & nhúng Trợ lý Hùng biện bẻ gãy từ chối giá đắt</p>
+                    </div>
+                </div>
+                <button onclick="exportCPQPdf()" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-extrabold text-xs shadow-lg shadow-indigo-600/30 transition flex items-center gap-2">
+                    <i data-lucide="printer" class="w-4 h-4"></i>
+                    <span>Xuất Báo Giá PDF</span>
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                <!-- Left CPQ Form -->
+                <div class="lg:col-span-7 space-y-4 bg-[#090D16] p-5 rounded-xl border border-slate-800">
+                    <h3 class="font-bold text-slate-200 text-sm flex items-center gap-2">
+                        <i data-lucide="edit-3" class="w-4 h-4 text-indigo-400"></i> Thông Tin Báo Giá Dự Án
+                    </h3>
+                    <div class="grid grid-cols-2 gap-4 text-xs">
+                        <div>
+                            <label class="text-slate-400 font-medium">Tên Khách Hàng / Đơn Vị</label>
+                            <input id="cpqClientName" type="text" value="Công ty Cổ phần Đầu tư Xây dựng Nam Sài Gòn" class="w-full mt-1 bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-slate-100">
+                        </div>
+                        <div>
+                            <label class="text-slate-400 font-medium">Tên Công Trình / Dự Án</label>
+                            <input id="cpqProjectName" type="text" value="Dự án Công trình Nhà Bè (Giai đoạn 2)" class="w-full mt-1 bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-slate-100">
+                        </div>
+                    </div>
+
+                    <div class="space-y-2 pt-2">
+                        <div class="flex justify-between items-center text-xs font-bold text-slate-300">
+                            <span>Danh Mục Vật Tư / Công Việc</span>
+                            <span>Đơn Giá & Số Lượng</span>
+                        </div>
+                        <div class="space-y-2 text-xs">
+                            <div class="grid grid-cols-12 gap-2">
+                                <input type="text" value="Vật tư bê tông chịu lực M300" class="col-span-6 bg-slate-900 border border-slate-800 rounded p-2 text-slate-200">
+                                <input type="number" value="500" class="col-span-2 bg-slate-900 border border-slate-800 rounded p-2 text-slate-200 text-center">
+                                <input type="number" value="1450000" class="col-span-4 bg-slate-900 border border-slate-800 rounded p-2 text-slate-200 text-right">
+                            </div>
+                            <div class="grid grid-cols-12 gap-2">
+                                <input type="text" value="Tổ đội thi công lắp dựng khung thép" class="col-span-6 bg-slate-900 border border-slate-800 rounded p-2 text-slate-200">
+                                <input type="number" value="1" class="col-span-2 bg-slate-900 border border-slate-800 rounded p-2 text-slate-200 text-center">
+                                <input type="number" value="250000000" class="col-span-4 bg-slate-900 border border-slate-800 rounded p-2 text-slate-200 text-right">
+                            </div>
+                            <div class="grid grid-cols-12 gap-2">
+                                <input type="text" value="Gói bảo trì & Giám sát chất lượng 12 tháng" class="col-span-6 bg-slate-900 border border-slate-800 rounded p-2 text-slate-200">
+                                <input type="number" value="1" class="col-span-2 bg-slate-900 border border-slate-800 rounded p-2 text-slate-200 text-center">
+                                <input type="number" value="85000000" class="col-span-4 bg-slate-900 border border-slate-800 rounded p-2 text-slate-200 text-right">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between pt-2 border-t border-slate-800 text-xs">
+                        <span class="text-slate-400">Tỷ lệ Chiết khấu duyệt trước (%):</span>
+                        <input id="cpqDiscountPct" type="number" value="3.0" class="w-20 bg-slate-900 border border-slate-700 rounded p-1.5 text-center text-amber-400 font-bold">
+                    </div>
+
+                    <button onclick="calculateCPQQuote()" class="w-full py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-indigo-600 hover:from-indigo-600 hover:to-indigo-700 text-white font-extrabold text-sm shadow-md transition flex items-center justify-center gap-2">
+                        <i data-lucide="calculator" class="w-4 h-4"></i>
+                        <span>Tính Toán Báo Giá & Tổng Giá Trị</span>
+                    </button>
+                </div>
+
+                <!-- Right CPQ Result & Rhetoric Reframing -->
+                <div class="lg:col-span-5 space-y-4">
+                    <div class="bg-[#090D16] p-5 rounded-xl border border-indigo-500/30 space-y-3">
+                        <div class="flex justify-between items-center text-xs text-slate-400 border-b border-slate-800 pb-2">
+                            <span>Mã Báo Giá Generated</span>
+                            <span id="cpqQuoteId" class="font-mono text-amber-400 font-bold">CPQ-QUOTE-READY</span>
+                        </div>
+                        <div class="space-y-2 text-sm text-slate-200">
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Tổng cộng (chưa VAT):</span>
+                                <span id="cpqSubtotal" class="font-mono font-bold text-slate-100">1,060,000,000 VNĐ</span>
+                            </div>
+                            <div class="flex justify-between text-xs text-amber-400">
+                                <span>Chiết khấu ưu đãi:</span>
+                                <span id="cpqDiscountAmount" class="font-mono">-31,800,000 VNĐ</span>
+                            </div>
+                            <div class="flex justify-between text-xs text-slate-400">
+                                <span>Thuế VAT (8%):</span>
+                                <span id="cpqVatAmount" class="font-mono">+82,256,000 VNĐ</span>
+                            </div>
+                            <div class="flex justify-between text-base font-extrabold text-emerald-400 border-t border-slate-800 pt-2">
+                                <span>Tổng Thanh Toán:</span>
+                                <span id="cpqTotalAmount">1,110,456,000 VNĐ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 5 DIGITAL BOOKS READER MODAL -->
+    <div id="bookReaderModal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 md:p-8">
+        <div class="bg-[#0D1526] border border-amber-500/40 rounded-2xl max-w-4xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
+            <!-- Modal Header -->
+            <div class="p-6 border-b border-slate-800 flex items-center justify-between bg-slate-900/90">
+                <div class="flex items-center space-x-3">
+                    <i data-lucide="book-open" class="w-6 h-6 text-amber-400"></i>
+                    <div>
+                        <h2 id="bookModalTitle" class="font-bold text-slate-100 font-space text-lg">Đang đọc sách...</h2>
+                        <span id="bookModalFilename" class="text-xs font-mono text-slate-400">book.md</span>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <button onclick="exportCurrentBookPdf()" class="px-4 py-2 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/40 text-amber-300 text-xs font-bold transition flex items-center gap-2">
+                        <i data-lucide="download" class="w-4 h-4"></i>
+                        <span>📥 Xuất Sách Ra File PDF</span>
+                    </button>
+                    <button onclick="closeBookReader()" class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 transition">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Modal Content Body -->
+            <div class="p-6 overflow-y-auto flex-1 font-mono text-sm text-slate-200 leading-relaxed whitespace-pre-wrap bg-[#050811] shadow-inner" id="bookModalContent"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-[#090D16] py-4 px-8 text-center text-xs text-slate-400 font-medium">
+        BusinessOS Executive Platform • Senior Executive Co-Pilot System • Single Source of Truth Provenance
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        let currentActionScriptData = null;
+        let currentOpenedBookFilename = null;
+
+        function switchTab(tab) {
+            document.getElementById('tabContentBrain').classList.add('hidden');
+            document.getElementById('tabContentSales').classList.add('hidden');
+            document.getElementById('tabContentCPQ').classList.add('hidden');
+
+            document.getElementById('tabBtnBrain').className = "px-4 py-2 rounded-lg text-slate-400 hover:text-slate-200 border border-transparent transition flex items-center gap-2";
+            document.getElementById('tabBtnSales').className = "px-4 py-2 rounded-lg text-slate-400 hover:text-slate-200 border border-transparent transition flex items-center gap-2";
+            document.getElementById('tabBtnCPQ').className = "px-4 py-2 rounded-lg text-slate-400 hover:text-slate-200 border border-transparent transition flex items-center gap-2";
+
+            if (tab === 'brain') {
+                document.getElementById('tabContentBrain').classList.remove('hidden');
+                document.getElementById('tabBtnBrain').className = "px-4 py-2 rounded-lg nav-tab-active border transition flex items-center gap-2";
+            } else if (tab === 'sales') {
+                document.getElementById('tabContentSales').classList.remove('hidden');
+                document.getElementById('tabBtnSales').className = "px-4 py-2 rounded-lg nav-tab-active border transition flex items-center gap-2";
+                loadSalesLeads();
+            } else if (tab === 'cpq') {
+                document.getElementById('tabContentCPQ').classList.remove('hidden');
+                document.getElementById('tabBtnCPQ').className = "px-4 py-2 rounded-lg nav-tab-active border transition flex items-center gap-2";
+                calculateCPQQuote();
+            }
+            lucide.createIcons();
+        }
+
+        async function openBookReader(filename) {
+            currentOpenedBookFilename = filename;
+            const modal = document.getElementById('bookReaderModal');
+            const titleEl = document.getElementById('bookModalTitle');
+            const fileEl = document.getElementById('bookModalFilename');
+            const contentEl = document.getElementById('bookModalContent');
+
+            contentEl.innerText = "Đang nạp sách...";
+            modal.classList.remove('hidden');
+
+            try {
+                const res = await fetch(`/api/v1/knowledge/books/${filename}`);
+                const data = await res.json();
+                if (data.status === 'success') {
+                    titleEl.innerText = data.title;
+                    fileEl.innerText = data.book_name;
+                    contentEl.innerText = data.content;
+                } else {
+                    contentEl.innerText = "Lỗi: " + data.message;
+                }
+            } catch (err) {
+                contentEl.innerText = "Lỗi kết nối Server: " + err;
+            }
+        }
+
+        function closeBookReader() {
+            document.getElementById('bookReaderModal').classList.add('hidden');
+        }
+
+        function exportCurrentBookPdf() {
+            if (!currentOpenedBookFilename) return;
+            window.open(`/api/v1/knowledge/books/${currentOpenedBookFilename}/export-pdf`, '_blank');
+        }
+
+        async function runAnalysis() {
+            const text = document.getElementById('scenarioInput').value.trim();
+            if (!text) return;
+
+            const btn = document.getElementById('analyzeBtn');
+            btn.innerHTML = `<i data-lucide="loader" class="w-5 h-5 animate-spin"></i><span>Đang phân tích...</span>`;
+            btn.disabled = true;
+            lucide.createIcons();
+
+            try {
+                const response = await fetch('/api/v1/nhan-thuat/analyze', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ scenario_text: text, scenario_type: "general" })
+                });
+
+                const data = await response.json();
+                renderDashboard(data);
+            } catch (err) {
+                alert("Lỗi kết nối Server API: " + err);
+            } finally {
+                btn.innerHTML = `<i data-lucide="zap" class="w-5 h-5"></i><span>Phân Tích & Phán Quyết</span>`;
+                btn.disabled = false;
+                lucide.createIcons();
+            }
+        }
+
+        function renderDashboard(data) {
+            currentActionScriptData = data;
+
+            // 1. Ambiguity Warning
+            const banner = document.getElementById('warningBanner');
+            if (data.is_ambiguous) {
+                document.getElementById('warningBody').innerText = data.ambiguity_warning;
+                banner.classList.remove('hidden');
+            } else {
+                banner.classList.add('hidden');
+            }
+
+            // 2. Primary Lens Badge
+            const primary = data.philosophy_routing.primary_philosophy || "NONE";
+            const badge = document.getElementById('primaryLensBadge');
+            badge.innerText = primary;
+            badge.className = `lens-badge lens-${primary} text-center font-extrabold text-sm w-full py-2 rounded-xl shadow-sm`;
+
+            // 3. Weights Progress Bars
+            const weights = data.philosophy_routing.lens_weights || {};
+            let weightsHtml = "";
+            for (const [lens, val] of Object.entries(weights)) {
+                const pct = Math.round(val * 100);
+                weightsHtml += `
+                    <div class="space-y-1">
+                        <div class="flex justify-between text-xs font-semibold">
+                            <span class="text-slate-200">${lens.toUpperCase()}</span>
+                            <span class="text-slate-400 font-mono">${pct}%</span>
+                        </div>
+                        <div class="h-2 w-full bg-[#090D16] rounded-full overflow-hidden border border-slate-800">
+                            <div class="h-full bg-gradient-to-r from-amber-500 to-indigo-500 rounded-full" style="width: ${pct}%;"></div>
+                        </div>
+                    </div>
+                `;
+            }
+            document.getElementById('weightsContainer').innerHTML = weightsHtml;
+            document.getElementById('explanationText').innerText = data.philosophy_routing.explanation || "";
+
+            // 4. Knowledge Units Cards
+            const units = data.matched_knowledge_units || [];
+            let unitsHtml = "";
+            units.forEach(u => {
+                unitsHtml += `
+                    <div class="bg-[#090D16] border border-slate-800 p-3.5 rounded-xl space-y-1.5 shadow-sm">
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="font-mono font-extrabold text-amber-400">${u.unit_id}</span>
+                            <span class="font-mono text-[10px] text-slate-400 bg-slate-950 px-2 py-0.5 rounded border border-slate-800">${u.checksum.substring(0, 14)}...</span>
+                        </div>
+                        <div class="font-bold text-slate-100 text-sm">${u.title}</div>
+                        <div class="text-xs text-slate-300 leading-relaxed line-clamp-2">${u.summary}</div>
+                    </div>
+                `;
+            });
+            document.getElementById('unitsContainer').innerHTML = unitsHtml;
+
+            // Render Custom RAG Company Documents
+            const cdocs = data.matched_custom_docs || [];
+            let cdocsHtml = "";
+            if (cdocs.length > 0) {
+                cdocs.forEach(d => {
+                    cdocsHtml += `
+                        <div class="bg-[#090D16] border border-emerald-500/30 p-3 rounded-xl space-y-1 text-xs">
+                            <div class="flex items-center justify-between font-bold text-emerald-400">
+                                <span>📄 ${d.doc_id}</span>
+                                <span class="font-mono text-[10px] text-slate-400">${d.checksum.substring(0, 12)}...</span>
+                            </div>
+                            <div class="font-semibold text-slate-200">${d.title}</div>
+                        </div>
+                    `;
+                });
+            } else {
+                cdocsHtml = `<div class="text-xs text-slate-400 italic">Không có file quy chế tùy chỉnh trùng khớp.</div>`;
+            }
+            document.getElementById('customDocsContainer').innerHTML = cdocsHtml;
+
+            // 5. Render 3 MANDATORY EXECUTIVE BLOCKS
+            const script = data.action_script || {};
+            
+            document.getElementById('positionAnalysisText').innerText = script.position_analysis || "Chưa có nhận định vị thế.";
+
+            const renderStep = (stepObj, stepNum) => {
+                if (!stepObj) return "";
+                return `
+                    <div class="space-y-2 bg-[#090D16] p-4 rounded-xl border border-slate-800 shadow-sm">
+                        <div class="text-xs font-extrabold text-amber-400 flex items-center gap-2">
+                            <span class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center text-xs font-mono font-bold">0${stepNum}</span>
+                            <span>${stepObj.title}</span>
+                        </div>
+                        <blockquote class="border-l-4 border-amber-500 bg-slate-950 text-slate-100 p-4 rounded-r-xl font-medium text-sm leading-relaxed tracking-wide shadow-inner">
+                            ${stepObj.verbatim}
+                        </blockquote>
+                    </div>
+                `;
+            };
+
+            // BLOCK 1: 💬 KỊCH BẢN LỜI THOẠI ĐÀM PHÁN
+            document.getElementById('step1Container').innerHTML = renderStep(script.step_1_anchor, 1);
+            document.getElementById('step2Container').innerHTML = renderStep(script.step_2_deadline_consequence, 2);
+            document.getElementById('step3Container').innerHTML = renderStep(script.step_3_way_out_plan_b, 3);
+
+            // BLOCK 2: 📝 DRAFT VĂN BẢN / TIN NHẮN CHÍNH THỨC
+            document.getElementById('draftCommBlock').innerText = script.draft_official_communication || "Không có mẫu công văn.";
+
+            // BLOCK 3: 💰 ĐỊNH HƯỚNG TÀI CHÍNH & VẬN HÀNH
+            const finDirectives = script.financial_and_operational_directives || [];
+            let finHtml = "";
+            finDirectives.forEach(d => {
+                finHtml += `
+                    <div class="p-3 bg-[#090D16] border border-amber-500/30 rounded-xl leading-relaxed text-slate-100">
+                        ${d}
+                    </div>
+                `;
+            });
+            document.getElementById('financialDirectivesContainer').innerHTML = finHtml;
+
+            document.getElementById('correlationIdText').innerText = data.correlation_id;
+
+            lucide.createIcons();
+        }
+
+        async function loadSalesLeads() {
+            const container = document.getElementById('salesLeadsContainer');
+            container.innerHTML = `<div class="text-slate-400 text-xs">Đang tải danh sách Lead...</div>`;
+
+            try {
+                const res = await fetch('/api/v1/salesos/leads');
+                const data = await res.json();
+                const leads = data.leads || [];
+
+                let html = "";
+                leads.forEach(l => {
+                    html += `
+                        <div class="bg-[#090D16] border border-slate-800 p-5 rounded-2xl space-y-3 shadow-md hover:border-slate-700 transition">
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="font-mono font-bold text-amber-400">${l.lead_id}</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold text-[10px]">${l.status}</span>
+                            </div>
+                            <h3 class="font-extrabold text-slate-100 text-base">${l.project_name}</h3>
+                            <div class="text-xs text-slate-300 font-medium">${l.client_name}</div>
+                            <div class="text-sm font-extrabold text-emerald-400 font-mono">${l.contract_value_est}</div>
+                            <div class="p-3 bg-slate-900 rounded-xl text-xs space-y-1 border border-slate-800">
+                                <div class="text-slate-400 font-semibold">Mâu thuẫn chính:</div>
+                                <div class="text-slate-200">${l.primary_issue}</div>
+                                <div class="text-amber-400 font-bold pt-1">Đề xuất: ${l.rhetoric_recommended}</div>
+                            </div>
+                            <button onclick="document.getElementById('scenarioInput').value='${l.primary_issue}'; switchTab('brain'); runAnalysis();" class="w-full py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-400 font-bold text-xs transition border border-slate-700">
+                                Tham Mưu Xử Lý Lead Này
+                            </button>
+                        </div>
+                    `;
+                });
+                container.innerHTML = html;
+                lucide.createIcons();
+            } catch (err) {
+                container.innerHTML = `<div class="text-red-400 text-xs">Lỗi nạp leads: ${err}</div>`;
+            }
+        }
+
+        async function calculateCPQQuote() {
+            const clientName = document.getElementById('cpqClientName').value;
+            const projectName = document.getElementById('cpqProjectName').value;
+            const discountPct = parseFloat(document.getElementById('cpqDiscountPct').value) || 3.0;
+
+            try {
+                const res = await fetch('/api/v1/salesos/cpq/generate-quote', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        client_name: clientName,
+                        project_name: projectName,
+                        discount_pct: discountPct
+                    })
+                });
+                const data = await res.json();
+
+                document.getElementById('cpqQuoteId').innerText = data.quote_id;
+                document.getElementById('cpqSubtotal').innerText = data.subtotal.toLocaleString('vi-VN') + ' VNĐ';
+                document.getElementById('cpqDiscountAmount').innerText = '-' + data.discount_amount.toLocaleString('vi-VN') + ' VNĐ';
+                document.getElementById('cpqVatAmount').innerText = '+' + data.vat_amount.toLocaleString('vi-VN') + ' VNĐ';
+                document.getElementById('cpqTotalAmount').innerText = data.total_amount.toLocaleString('vi-VN') + ' VNĐ';
+            } catch (err) {
+                console.error("Lỗi tính CPQ:", err);
+            }
+        }
+
+        async function exportCPQPdf() {
+            const clientName = document.getElementById('cpqClientName').value;
+            const projectName = document.getElementById('cpqProjectName').value;
+
+            const res = await fetch('/api/v1/salesos/cpq/export-pdf', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    quote_id: "CPQ-QUOTE-EXECUTIVE",
+                    client_name: clientName,
+                    project_name: projectName
+                })
+            });
+
+            const html = await res.text();
+            const win = window.open("", "_blank");
+            win.document.write(html);
+            win.document.close();
+        }
+
+        function copyActionScript() {
+            if (!currentActionScriptData || !currentActionScriptData.action_script) return;
+
+            const s = currentActionScriptData.action_script;
+            const fullText = 
+`================================================================================
+VĂN BẢN THAM MƯU LÃNH ĐẠO THỰC CHIẾN - THAM MƯU TRƯỞNG BUSINESSOS
+Tình huống: "${currentActionScriptData.scenario_text}"
+Lăng kính: ${s.primary_lens} | AI Temperature: 0.1 | Seed: 42
+Correlation ID: ${currentActionScriptData.correlation_id}
+================================================================================
+
+1. 🔹 ĐÁNH GIÁ VỊ THẾ & ĐIỂM TỰA TƯ TƯỞNG (EXECUTIVE RATIONALE):
+${s.position_analysis}
+
+================================================================================
+2. 🔹 KỊCH BẢN LỜI THOẠI ĐÀM PHÁN (DIRECT VERBATIM DIALOGUE SCRIPT):
+
+${s.step_1_anchor.title}
+Lời thoại trực tiếp:
+${s.step_1_anchor.verbatim}
+
+${s.step_2_deadline_consequence.title}
+Lời thoại trực tiếp:
+${s.step_2_deadline_consequence.verbatim}
+
+${s.step_3_way_out_plan_b.title}
+Lời thoại trực tiếp:
+${s.step_3_way_out_plan_b.verbatim}
+
+================================================================================
+3. 🔹 DRAFT CÔNG VĂN / TIN NHẮN TỰ ĐỘNG (READY-TO-SEND TEXT):
+
+${s.draft_official_communication}
+
+================================================================================
+4. 💰 ĐỊNH HƯỚNG TÀI CHÍNH & VẬN HÀNH (EXECUTIVE DIRECTIVES):
+${(s.financial_and_operational_directives || []).map(d => "- " + d).join('\n')}
+================================================================================`;
+
+            navigator.clipboard.writeText(fullText).then(() => {
+                const btnText = document.getElementById('copyBtnText');
+                btnText.innerText = "Đã Sao Chép 100%!";
+                setTimeout(() => { btnText.innerText = "Sao Chép Kịch Bản & Lời Thoại"; }, 2000);
+            });
+        }
+
+        // Auto run initial scenario on load
+        window.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('scenarioInput').value = 'Công trình ở Nhà Bè bị chậm tiến độ do Nhà cung cấp giao vật tư trễ';
+            runAnalysis();
+        });
+    </script>
+</body>
+</html>

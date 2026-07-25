@@ -1,0 +1,36 @@
+id: NT-PRINCIPLE-0095
+type: principle
+status: frozen
+version: 0.1.0
+title: Protect Constructive Friction
+summary: Deliberately foster an environment where rigorous task dissent is protected
+  as a safeguard against groupthink.
+primary_domain: hop-chung
+secondary_domains:
+- tri-nhan
+definition: A team without task conflict is suffering from artificial harmony or fear.
+conditions:
+- High-stakes strategic decision-making.
+exceptions:
+- Emergency execution phases where consensus has already been reached.
+applications:
+  culture:
+  - Assign a rotating Devil's Advocate in major strategy reviews.
+risks:
+- Allowing friction to stall progress after a decision has been finalized.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0011-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0062
+  applies_to: []
+tags:
+- conflict
+- friction
+- groupthink
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

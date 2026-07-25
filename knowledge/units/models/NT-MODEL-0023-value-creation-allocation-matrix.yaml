@@ -1,0 +1,38 @@
+id: NT-MODEL-0023
+type: model
+status: frozen
+version: 0.1.0
+title: Value Creation Allocation Matrix
+summary: Value Creation Allocation Matrix structural knowledge unit.
+primary_domain: thanh-su
+secondary_domains:
+- hop-chung
+definition: Formal definition of Value Creation Allocation Matrix in NhanThuat architecture.
+conditions:
+- Operational governance contexts.
+exceptions:
+- Emergency crisis overrides.
+applications:
+  governance:
+  - Apply Value Creation Allocation Matrix to organizational workflows.
+risks:
+- Misapplication of Value Creation Allocation Matrix leading to suboptimal performance.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0001-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0058
+  applies_to: []
+tags:
+- model
+- thanh-su
+created_at: '2026-07-22'
+updated_at: '2026-07-22'
+mechanism:
+- 'Step 1: Identify Value Creation Allocation Matrix.'
+- 'Step 2: Analyze parameters.'
+- 'Step 3: Execute model.'

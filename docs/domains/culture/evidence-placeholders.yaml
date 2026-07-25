@@ -1,0 +1,6 @@
+evidence_needs:
+  - id: EV-REQ-0019-01
+    description: "Empirical research on organizational culture alignment and long-term firm financial performance."
+    type: empirical_study
+    priority: high
+    status: placeholder

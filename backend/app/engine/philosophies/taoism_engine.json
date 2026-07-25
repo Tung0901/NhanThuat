@@ -1,0 +1,94 @@
+{
+  "metadata": {
+    "philosophy_id": "LENS-TAOISM",
+    "philosophy_name": "Taoism Lens",
+    "version": "1.1.0",
+    "source_document": "docs/knowledge/04_TRANG_TU_KNOWLEDGE_PACK.md",
+    "supported_domains": [
+      "conflict",
+      "strategy",
+      "learning",
+      "negotiation",
+      "culture"
+    ],
+    "supported_personas": [
+      "Negotiation Agent",
+      "Leadership Coach",
+      "Sales Agent"
+    ],
+    "preferred_reasoning_modes": [
+      "Diagnostic",
+      "Strategic",
+      "Reflective"
+    ],
+    "compatible_lenses": [
+      "LENS-RHETORIC",
+      "LENS-CONFUCIAN",
+      "LENS-XUNZI"
+    ],
+    "incompatible_lenses": [],
+    "confidence_modifier": 1.0,
+    "governance_status": "frozen",
+    "last_reviewed": "2026-07-23"
+  },
+  "engine_name": "Taoism Engine",
+  "version": "1.1.0",
+  "description": "Tư duy bứt phá Tiêu Dao Du, Tề Vật Luận, Vô Vi, Thuật Dụng Vô Dụng và quy trình xử lý khủng hoảng Tâm Trai",
+  "core_concepts": [
+    {
+      "id": "TAO-001",
+      "name": "Tiêu Dao Du",
+      "meaning": "Tư duy bứt phá, vượt thoát rào cản chật hẹp, mở rộng tầm nhìn chiến lược."
+    },
+    {
+      "id": "TAO-002",
+      "name": "Tề Vật Luận",
+      "meaning": "Góc nhìn đa chiều, xóa bỏ định kiến cá nhân, lắng nghe khách quan."
+    },
+    {
+      "id": "TAO-003",
+      "name": "Vô Vi",
+      "meaning": "Quản trị thuận tự nhiên, tối ưu dòng chảy hệ thống, giảm can thiệp thô bạo."
+    },
+    {
+      "id": "TAO-004",
+      "name": "Dụng Vô Dụng",
+      "meaning": "Khai thác giá trị độc đáo từ những tài nguyên/nhân sự dường như vô dụng."
+    }
+  ],
+  "crisis_management_mind_fasting": {
+    "method": "Tâm Trai & Tọa Vọng",
+    "steps": [
+      "1. Pause: Ngừng phản ứng cảm tính lập tức khi sự cố xảy ra.",
+      "2. Mind Fasting: Rửa sạch tâm trí khỏi định kiến, sự hoảng loạn hay cái tôi hiếu thắng.",
+      "3. System View: Quan sát bức tranh toàn cảnh hệ thống dưới góc nhìn Tề Vật.",
+      "4. Surgical Intervention: Can thiệp nhẹ nhàng đúng huyệt điểm theo tinh thần Vô Vi."
+    ]
+  },
+  "empathic_negotiation_rules": [
+    {
+      "rule_id": "NEG-TAO-001",
+      "name": "Buông bỏ cái tôi (Tọa Vọng)",
+      "action": "Không cố giành phần thắng lời nói; tập trung thấu hiểu nhu cầu thực sự của đối phương."
+    },
+    {
+      "rule_id": "NEG-TAO-002",
+      "name": "Biến điểm yếu thành điểm mạnh (Dụng Vô Dụng)",
+      "action": "Tận dụng các hạn chế hiện tại làm lợi thế đàm phán hoặc lý do kiến tạo thỏa thuận mới."
+    }
+  ],
+  "useless_utility_matrix": [
+    {
+      "case": "Nhân sự lệch chuẩn / Tính cách khác biệt",
+      "traditional_view": "Vô dụng / Khó quản lý",
+      "taoist_view": "Đặt vào đúng vị trí sáng tạo / phản biện độc lập (Dụng Vô Dụng)",
+      "action": "Chuyển giao nhiệm vụ phát triển sản phẩm mới hoặc tìm kẽ hở hệ thống."
+    },
+    {
+      "case": "Dự án thất bại / Rủi ro xảy ra",
+      "traditional_view": "Tổn thất toàn bộ",
+      "taoist_view": "Dữ liệu bài học đắt giá để cải tiến hệ thống (Tâm Trai)",
+      "action": "Chuyển hóa bài học thành quy định tự động bảo vệ hệ thống."
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+id: NT-ANTI-PATTERN-0051
+type: anti-pattern
+status: frozen
+version: 0.1.0
+title: Uncollected Telemetry
+summary: Shipping products or executing strategy without logging outcome telemetry,
+  rendering institutional learning impossible.
+primary_domain: tri-nhan
+secondary_domains:
+- thanh-su
+definition: Uncollected telemetry occurs when teams launch features without instrumentation
+  or performance logs.
+mechanism:
+- Team launches major initiative.
+- No telemetry logging configured.
+- Outcome cannot be evaluated.
+- Mistakes repeated.
+conditions:
+- Rushed delivery schedules omitting logging infrastructure.
+exceptions:
+- Non-technical verbal brainstorming probes.
+applications:
+  launch_checklist:
+  - Require telemetry logging validation before authorizing any release.
+risks:
+- Collecting mountains of useless telemetry data.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0018-01
+relations:
+  supports: []
+  conflicts_with:
+  - NT-PRINCIPLE-0106
+  depends_on:
+  - NT-LAW-0071
+  applies_to: []
+tags:
+- learning
+- telemetry
+- anti-patterns
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

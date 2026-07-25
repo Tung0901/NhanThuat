@@ -1,0 +1,43 @@
+id: NT-ANTI-PATTERN-0048
+type: anti-pattern
+status: frozen
+version: 0.1.0
+title: Heroic Firefighting
+summary: Relying on individual heroics and overtime chaos to ship software rather
+  than building sustainable execution processes.
+primary_domain: dung-nhan
+secondary_domains:
+- tri-nhan
+definition: Heroic firefighting occurs when management relies on star performers pulling
+  all-nighters.
+mechanism:
+- Poor planning creates crisis.
+- Star employees work overtime.
+- Management praises heroics.
+- Burnout surges.
+conditions:
+- Immature operational processes.
+exceptions:
+- True unexpected black-swan outages.
+applications:
+  retrospective:
+  - Audit overtime bursts to fix underlying process flaws.
+risks:
+- Demotivating star employees by failing to recognize genuine crisis heroics.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0017-01
+relations:
+  supports: []
+  conflicts_with:
+  - NT-PRINCIPLE-0103
+  depends_on:
+  - NT-LAW-0068
+  applies_to: []
+tags:
+- execution
+- firefighting
+- anti-patterns
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

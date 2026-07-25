@@ -1,0 +1,42 @@
+id: NT-ANTI-PATTERN-0046
+type: anti-pattern
+status: frozen
+version: 0.1.0
+title: Everything-is-a-Priority Fallacy
+summary: Declaring dozens of top priorities without making hard trade-offs, leading
+  to resource dilution and team burnout.
+primary_domain: thanh-su
+secondary_domains:
+- dung-nhan
+definition: The Everything-is-a-Priority fallacy occurs when leadership refuses to
+  make tough choices.
+mechanism:
+- Leadership adds new goals without deprioritizing.
+- Resources split.
+- Progress stalls.
+conditions:
+- Indecisive executive leadership.
+exceptions:
+- Large corporate conglomerates with independent funding.
+applications:
+  executive_coaching:
+  - Limit executive teams to max 3 top strategic priorities.
+risks:
+- Failing to track secondary operational health metrics.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0016-01
+relations:
+  supports: []
+  conflicts_with:
+  - NT-PRINCIPLE-0099
+  depends_on:
+  - NT-LAW-0067
+  applies_to: []
+tags:
+- strategy
+- priority
+- anti-patterns
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

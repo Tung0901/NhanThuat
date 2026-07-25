@@ -1,0 +1,43 @@
+id: NT-ANTI-PATTERN-0052
+type: anti-pattern
+status: frozen
+version: 0.1.0
+title: Hypocrisy Gap
+summary: Prominently displaying corporate core values while leadership routinely violates
+  them in daily operational choices.
+primary_domain: hop-chung
+secondary_domains:
+- tu-than
+definition: The hypocrisy gap occurs when leadership preaches ethical values on posters
+  but acts selfishly in private decisions.
+mechanism:
+- Management publishes corporate values.
+- Management acts in direct contradiction.
+- Employees lose trust.
+- Culture degrades.
+conditions:
+- Marketing-driven corporate PR without internal alignment.
+exceptions:
+- None.
+applications:
+  culture_audit:
+  - Identify disconnects between employee survey feedback and executive PR claims.
+risks:
+- Demotivating staff by highlighting unresolvable executive hypocrisy.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0019-01
+relations:
+  supports: []
+  conflicts_with:
+  - NT-PRINCIPLE-0108
+  depends_on:
+  - NT-LAW-0072
+  applies_to: []
+tags:
+- culture
+- hypocrisy
+- anti-patterns
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

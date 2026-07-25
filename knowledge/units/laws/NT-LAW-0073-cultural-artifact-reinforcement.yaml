@@ -1,0 +1,38 @@
+id: NT-LAW-0073
+type: law
+status: frozen
+version: 0.1.0
+title: Cultural Artifact Reinforcement
+summary: Shared rituals, stories, and physical/digital workplace artifacts continuously
+  reinforce and anchor cultural norms.
+primary_domain: hop-chung
+secondary_domains:
+- dung-nhan
+definition: Culture requires physical or digital artifacts (celebrations, promotion
+  stories, post-mortems) to anchor shared identity.
+conditions:
+- Onboarding and remote team alignment.
+exceptions:
+- Extremely short-term temporary task forces.
+applications:
+  onboarding:
+  - Incorporate historical post-mortem stories and victory rituals into onboarding
+    packages.
+risks:
+- Maintaining empty rituals that have lost their meaning.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0019-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0072
+  applies_to: []
+tags:
+- culture
+- artifacts
+- rituals
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

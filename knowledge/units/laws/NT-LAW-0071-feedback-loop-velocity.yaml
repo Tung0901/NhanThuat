@@ -1,0 +1,38 @@
+id: NT-LAW-0071
+type: law
+status: frozen
+version: 0.1.0
+title: Feedback Loop Velocity
+summary: The rate of organizational adaptation is proportional to the speed at which
+  telemetry from actions is processed into updated mental models.
+primary_domain: tri-nhan
+secondary_domains:
+- thanh-su
+definition: Long feedback delays between action and consequence prevent learning.
+  Shortening feedback loops speeds up iteration.
+conditions:
+- System design and product development.
+exceptions:
+- Long-horizon multi-year strategic investments.
+applications:
+  ci_cd:
+  - Implement automated unit testing pipelines that give developers instantaneous
+    bug feedback.
+risks:
+- Over-reacting to short-term noise in rapid feedback loops.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0018-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0008
+  applies_to: []
+tags:
+- learning
+- feedback
+- velocity
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

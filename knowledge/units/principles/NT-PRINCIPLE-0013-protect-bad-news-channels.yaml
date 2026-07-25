@@ -1,19 +1,47 @@
 id: NT-PRINCIPLE-0013
 type: principle
-status: review
+status: frozen
 version: 0.1.0
 title: Protect bad-news channels
-summary: Create channels where risks, errors, and dissent can travel without disproportionate punishment or status loss.
+summary: Create channels where risks, errors, and dissent can travel without disproportionate
+  punishment or status loss.
 primary_domain: hop-chung
-secondary_domains: [thanh-su, dung-nhan]
-definition: Truth reaches decision makers only when people believe that reporting problems will be handled fairly and usefully.
-mechanism: [Create a safe channel, Reward early signal, Respond constructively to bad news.]
-conditions: [Bad news affects decisions, People fear consequence for speaking.]
-exceptions: [Malicious reporting still requires accountability, Confidentiality limits may apply.]
-applications: {leadership: [Thank early risk reports before solving them.], governance: [Separate reporting errors from hiding errors.]} 
-risks: [Creating channels no one trusts, Protecting careless behavior rather than candor.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0009, NT-LAW-0023], applies_to: []}
-tags: [truth, risk, candor]
+secondary_domains:
+- thanh-su
+- dung-nhan
+definition: Truth reaches decision makers only when people believe that reporting
+  problems will be handled fairly and usefully.
+mechanism:
+- Create a safe channel
+- Reward early signal
+- Respond constructively to bad news.
+conditions:
+- Bad news affects decisions
+- People fear consequence for speaking.
+exceptions:
+- Malicious reporting still requires accountability
+- Confidentiality limits may apply.
+applications:
+  leadership:
+  - Thank early risk reports before solving them.
+  governance:
+  - Separate reporting errors from hiding errors.
+risks:
+- Creating channels no one trusts
+- Protecting careless behavior rather than candor.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0009
+  - NT-LAW-0023
+  applies_to: []
+tags:
+- truth
+- risk
+- candor
 created_at: '2026-07-20'
 updated_at: '2026-07-20'

@@ -1,19 +1,46 @@
 id: NT-PRINCIPLE-0019
 type: principle
-status: review
+status: frozen
 version: 0.1.0
 title: Name the tradeoff
-summary: In persistent conflict, explicitly name what cannot be maximized at the same time before debating solutions.
+summary: In persistent conflict, explicitly name what cannot be maximized at the same
+  time before debating solutions.
 primary_domain: hop-chung
-secondary_domains: [thanh-su, tri-nhan]
-definition: Naming the tradeoff turns conflict from personal opposition into a decision about priorities and costs.
-mechanism: [Identify recurring conflict, Name competing goods, Decide or redesign the tradeoff.]
-conditions: [The conflict repeats, Parties are defending different costs or values.]
-exceptions: [Bad faith may not respond to clarity, Some conflicts are about facts first.]
-applications: {strategy: [State which priority wins under constraint.], mediation: [Move from blame to competing goods.]} 
-risks: [Oversimplifying moral issues, Naming tradeoffs without deciding them.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0012], applies_to: []}
-tags: [tradeoffs, conflict, priorities]
+secondary_domains:
+- thanh-su
+- tri-nhan
+definition: Naming the tradeoff turns conflict from personal opposition into a decision
+  about priorities and costs.
+mechanism:
+- Identify recurring conflict
+- Name competing goods
+- Decide or redesign the tradeoff.
+conditions:
+- The conflict repeats
+- Parties are defending different costs or values.
+exceptions:
+- Bad faith may not respond to clarity
+- Some conflicts are about facts first.
+applications:
+  strategy:
+  - State which priority wins under constraint.
+  mediation:
+  - Move from blame to competing goods.
+risks:
+- Oversimplifying moral issues
+- Naming tradeoffs without deciding them.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0012
+  applies_to: []
+tags:
+- tradeoffs
+- conflict
+- priorities
 created_at: '2026-07-20'
 updated_at: '2026-07-20'

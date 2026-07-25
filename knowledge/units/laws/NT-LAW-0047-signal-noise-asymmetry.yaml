@@ -1,0 +1,34 @@
+id: NT-LAW-0047
+type: law
+status: frozen
+version: 0.1.0
+title: Signal Noise Asymmetry
+summary: Signal Noise Asymmetry structural knowledge unit.
+primary_domain: tri-nhan
+secondary_domains:
+- dung-nhan
+definition: Formal definition of Signal Noise Asymmetry in NhanThuat architecture.
+conditions:
+- Operational governance contexts.
+exceptions:
+- Emergency crisis overrides.
+applications:
+  governance:
+  - Apply Signal Noise Asymmetry to organizational workflows.
+risks:
+- Misapplication of Signal Noise Asymmetry leading to suboptimal performance.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0001-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0008
+  applies_to: []
+tags:
+- law
+- tri-nhan
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

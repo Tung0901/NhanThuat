@@ -1,0 +1,34 @@
+id: NT-ANTI-PATTERN-0019
+type: anti-pattern
+status: frozen
+version: 0.1.0
+title: Abdication Trap
+summary: Abdication Trap structural knowledge unit.
+primary_domain: dung-nhan
+secondary_domains:
+- tri-nhan
+definition: Formal definition of Abdication Trap in NhanThuat architecture.
+conditions:
+- Operational governance contexts.
+exceptions:
+- Emergency crisis overrides.
+applications:
+  governance:
+  - Apply Abdication Trap to organizational workflows.
+risks:
+- Misapplication of Abdication Trap leading to suboptimal performance.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0001-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0045
+  applies_to: []
+tags:
+- anti-pattern
+- dung-nhan
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

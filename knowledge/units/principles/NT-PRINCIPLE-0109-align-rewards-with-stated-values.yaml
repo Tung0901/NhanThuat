@@ -1,0 +1,37 @@
+id: NT-PRINCIPLE-0109
+type: principle
+status: frozen
+version: 0.1.0
+title: Align Rewards with Stated Values
+summary: Ensure promotions, bonuses, and public recognition actively celebrate behaviors
+  aligned with cultural principles.
+primary_domain: hop-chung
+secondary_domains:
+- dung-nhan
+definition: Do not promote actors who breach cultural values. Promoting a high-performing
+  toxic manager signals values are meaningless.
+conditions:
+- Performance review and promotion calibration sessions.
+exceptions:
+- None.
+applications:
+  promotion_calibration:
+  - Require a Cultural Values Compliance sign-off before approving promotions.
+risks:
+- Subjective application of values compliance.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0019-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0072
+  applies_to: []
+tags:
+- culture
+- rewards
+- promotions
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

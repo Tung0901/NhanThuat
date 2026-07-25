@@ -1,19 +1,49 @@
 id: NT-PRINCIPLE-0035
 type: principle
-status: review
+status: frozen
 version: 0.1.0
 title: Reduce uncertainty with decision rules
-summary: Use simple decision rules to lower anxiety, reduce control seeking, and make action possible under incomplete information.
+summary: Use simple decision rules to lower anxiety, reduce control seeking, and make
+  action possible under incomplete information.
 primary_domain: thanh-su
-secondary_domains: [tu-than, hop-chung]
-definition: When uncertainty rises, people seek control; explicit decision rules provide enough structure for responsible movement.
-mechanism: [State the decision threshold, Define who decides, Define when the rule is revisited.]
-conditions: [Information is incomplete, Waiting has a cost.]
-exceptions: [Novel risks may require deeper analysis, Rigid rules can fail when context shifts.]
-applications: {operations: [Set thresholds for escalation, retry, pause, or proceed.], leadership: [Replace vague reassurance with usable decision constraints.]} 
-risks: [Overconfidence, Treating rules as substitutes for judgment.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0020], applies_to: []}
-tags: [uncertainty, decisions, control]
+secondary_domains:
+- tu-than
+- hop-chung
+definition: When uncertainty rises, people seek control; explicit decision rules provide
+  enough structure for responsible movement.
+mechanism:
+- State the decision threshold
+- Define who decides
+- Define when the rule is revisited.
+conditions:
+- Information is incomplete
+- Waiting has a cost.
+exceptions:
+- Novel risks may require deeper analysis
+- Rigid rules can fail when context shifts.
+applications:
+  operations:
+  - Set thresholds for escalation
+  - retry
+  - pause
+  - or proceed.
+  leadership:
+  - Replace vague reassurance with usable decision constraints.
+risks:
+- Overconfidence
+- Treating rules as substitutes for judgment.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0020
+  applies_to: []
+tags:
+- uncertainty
+- decisions
+- control
 created_at: '2026-07-20'
 updated_at: '2026-07-20'

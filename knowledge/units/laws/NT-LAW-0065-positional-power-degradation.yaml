@@ -1,0 +1,37 @@
+id: NT-LAW-0065
+type: law
+status: frozen
+version: 0.1.0
+title: Positional Power Degradation
+summary: Over-reliance on formal authority to compel execution degrades trust, innovation,
+  and voluntary commitment.
+primary_domain: dung-nhan
+secondary_domains:
+- tri-nhan
+definition: Formal authority can compel physical compliance, but it cannot mandate
+  creative effort or intrinsic commitment.
+conditions:
+- Knowledge work environments requiring high discretionary effort.
+exceptions:
+- Military command or emergency crisis response.
+applications:
+  leadership:
+  - Train managers to reserve positional mandates for rare deadlock resolution.
+risks:
+- Failing to use authority when compliance is legally required.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0013-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0009
+  applies_to: []
+tags:
+- authority
+- leadership
+- trust
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

@@ -1,0 +1,34 @@
+id: NT-ANTI-PATTERN-0036
+type: anti-pattern
+status: frozen
+version: 0.1.0
+title: Positional Bargaining Lock
+summary: Positional Bargaining Lock structural knowledge unit.
+primary_domain: thanh-su
+secondary_domains:
+- tri-nhan
+definition: Formal definition of Positional Bargaining Lock in NhanThuat architecture.
+conditions:
+- Operational governance contexts.
+exceptions:
+- Emergency crisis overrides.
+applications:
+  governance:
+  - Apply Positional Bargaining Lock to organizational workflows.
+risks:
+- Misapplication of Positional Bargaining Lock leading to suboptimal performance.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0001-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0057
+  applies_to: []
+tags:
+- anti-pattern
+- thanh-su
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

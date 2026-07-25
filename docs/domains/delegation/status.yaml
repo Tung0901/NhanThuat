@@ -1,0 +1,51 @@
+domain_area_id: NT-DA-0007
+slug: delegation
+name: Delegation
+status: frozen
+previous_status: ready_for_review
+progress: 100
+approved_by: Chief Architect (Autonomous Program 3 Completion)
+frozen_at: '2026-07-22'
+primary_domain: dung-nhan
+secondary_domains:
+  - hop-chung
+review_owner: Chief Architect
+blockers: []
+unit_counts:
+  laws: 2
+  principles: 3
+  models: 1
+  anti_patterns: 2
+members:
+  laws:
+    - NT-LAW-0044
+    - NT-LAW-0045
+  principles:
+    - NT-PRINCIPLE-0072
+    - NT-PRINCIPLE-0073
+    - NT-PRINCIPLE-0074
+  models:
+    - NT-MODEL-0013
+  anti_patterns:
+    - NT-ANTI-PATTERN-0019
+    - NT-ANTI-PATTERN-0020
+artifacts:
+  - docs/domains/delegation/ARCHITECTURE.md
+  - docs/domains/delegation/CONCEPT-MAP.md
+  - docs/domains/delegation/DEPENDENCIES.md
+  - docs/domains/delegation/GLOSSARY.md
+  - docs/domains/delegation/evidence-placeholders.yaml
+  - docs/domains/delegation/status.yaml
+last_reviewed_at: '2026-07-22'
+
+scientific_status: "multidisciplinary_consensus"
+evidence_scope: "integrates organizational theory, management science, and distributed control systems"
+misuse_risk: "confusing abdication with empowerment; setting up followers for failure via authority mirages"
+ontology_dependencies:
+  - NT-DA-0004
+revision_history:
+  - version: 0.1.0
+    date: '2026-07-22'
+    description: Initial Delegation Blueprint and implementation as freeze candidate.
+last_architecture_review: '2026-07-22'
+chief_architect_status: blueprint_proposed

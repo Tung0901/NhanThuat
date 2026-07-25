@@ -1,0 +1,39 @@
+id: NT-MODEL-0019
+type: model
+status: frozen
+version: 0.1.0
+title: Reliability Verification Cadence Model
+summary: Reliability Verification Cadence Model structural knowledge unit.
+primary_domain: dung-nhan
+secondary_domains:
+- hop-chung
+definition: Formal definition of Reliability Verification Cadence Model in NhanThuat
+  architecture.
+conditions:
+- Operational governance contexts.
+exceptions:
+- Emergency crisis overrides.
+applications:
+  governance:
+  - Apply Reliability Verification Cadence Model to organizational workflows.
+risks:
+- Misapplication of Reliability Verification Cadence Model leading to suboptimal performance.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0001-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0052
+  applies_to: []
+tags:
+- model
+- dung-nhan
+created_at: '2026-07-22'
+updated_at: '2026-07-22'
+mechanism:
+- 'Step 1: Identify Reliability Verification Cadence Model.'
+- 'Step 2: Analyze parameters.'
+- 'Step 3: Execute model.'

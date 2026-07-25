@@ -1,0 +1,37 @@
+id: NT-PRINCIPLE-0097
+type: principle
+status: frozen
+version: 0.1.0
+title: Define Clear Escalation Triggers
+summary: Specify explicit threshold triggers that mandate escalating a decision to
+  higher authority, leaving routine choices fully autonomous.
+primary_domain: dung-nhan
+secondary_domains:
+- thanh-su
+definition: To prevent bottlenecking, establish explicit financial, risk, or strategic
+  thresholds that require executive escalation.
+conditions:
+- Delegated financial and operational workflows.
+exceptions:
+- Unprecedented ethical crises lacking pre-defined thresholds.
+applications:
+  workflow:
+  - Implement automated spending escalation rules in BusinessOS approval chains.
+risks:
+- Setting escalation thresholds too low, overwhelming executives.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0013-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0064
+  applies_to: []
+tags:
+- authority
+- escalation
+- triggers
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

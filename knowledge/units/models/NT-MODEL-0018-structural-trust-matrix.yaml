@@ -1,0 +1,38 @@
+id: NT-MODEL-0018
+type: model
+status: frozen
+version: 0.1.0
+title: Structural Trust Matrix
+summary: Structural Trust Matrix structural knowledge unit.
+primary_domain: hop-chung
+secondary_domains:
+- dung-nhan
+definition: Formal definition of Structural Trust Matrix in NhanThuat architecture.
+conditions:
+- Operational governance contexts.
+exceptions:
+- Emergency crisis overrides.
+applications:
+  governance:
+  - Apply Structural Trust Matrix to organizational workflows.
+risks:
+- Misapplication of Structural Trust Matrix leading to suboptimal performance.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0001-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0051
+  applies_to: []
+tags:
+- model
+- hop-chung
+created_at: '2026-07-22'
+updated_at: '2026-07-22'
+mechanism:
+- 'Step 1: Identify Structural Trust Matrix.'
+- 'Step 2: Analyze parameters.'
+- 'Step 3: Execute model.'

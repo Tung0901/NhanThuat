@@ -1,19 +1,46 @@
 id: NT-PRINCIPLE-0025
 type: principle
-status: review
+status: frozen
 version: 0.1.0
 title: Protect energy for high-judgment work
-summary: Reserve people's best cognitive and emotional energy for decisions and interactions where judgment matters most.
+summary: Reserve people's best cognitive and emotional energy for decisions and interactions
+  where judgment matters most.
 primary_domain: tu-than
-secondary_domains: [dung-nhan, thanh-su]
-definition: High-judgment work should be scheduled and designed around real human capacity, not treated as infinitely available effort.
-mechanism: [Identify high-judgment work, Reserve energy and focus, Reduce low-value drain.]
-conditions: [The work requires judgment, Energy limits can affect quality.]
-exceptions: [Urgency may override ideal timing, Some routine work must still happen.]
-applications: {execution: [Place complex decisions before avoidable drain.], management: [Reduce meeting load around critical judgment periods.]} 
-risks: [Overprotecting people from necessary workload, Treating energy as the only constraint.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0015], applies_to: []}
-tags: [energy, judgment, capacity]
+secondary_domains:
+- dung-nhan
+- thanh-su
+definition: High-judgment work should be scheduled and designed around real human
+  capacity, not treated as infinitely available effort.
+mechanism:
+- Identify high-judgment work
+- Reserve energy and focus
+- Reduce low-value drain.
+conditions:
+- The work requires judgment
+- Energy limits can affect quality.
+exceptions:
+- Urgency may override ideal timing
+- Some routine work must still happen.
+applications:
+  execution:
+  - Place complex decisions before avoidable drain.
+  management:
+  - Reduce meeting load around critical judgment periods.
+risks:
+- Overprotecting people from necessary workload
+- Treating energy as the only constraint.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0015
+  applies_to: []
+tags:
+- energy
+- judgment
+- capacity
 created_at: '2026-07-20'
 updated_at: '2026-07-20'

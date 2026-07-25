@@ -1,19 +1,47 @@
 id: NT-PRINCIPLE-0018
 type: principle
-status: review
+status: frozen
 version: 0.1.0
 title: Repair breaches before demanding trust
-summary: When trust has been damaged, acknowledge the breach, explain the cause, and change behavior before asking others to trust again.
+summary: When trust has been damaged, acknowledge the breach, explain the cause, and
+  change behavior before asking others to trust again.
 primary_domain: hop-chung
-secondary_domains: [tri-nhan, thanh-su]
-definition: Trust repair requires visible accountability and changed patterns, not requests for confidence without evidence.
-mechanism: [Name the breach, Own the impact, Demonstrate changed behavior over time.]
-conditions: [A trust breach occurred, Future cooperation still matters.]
-exceptions: [Some breaches end the relationship, Legal or safety issues may limit disclosure.]
-applications: {leadership: [Explain what will be different after a broken commitment.], teamwork: [Rebuild through evidence, not pressure.]} 
-risks: [Performative apology, Demanding immediate forgiveness.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0011], applies_to: []}
-tags: [trust-repair, accountability, reliability]
+secondary_domains:
+- tri-nhan
+- thanh-su
+definition: Trust repair requires visible accountability and changed patterns, not
+  requests for confidence without evidence.
+mechanism:
+- Name the breach
+- Own the impact
+- Demonstrate changed behavior over time.
+conditions:
+- A trust breach occurred
+- Future cooperation still matters.
+exceptions:
+- Some breaches end the relationship
+- Legal or safety issues may limit disclosure.
+applications:
+  leadership:
+  - Explain what will be different after a broken commitment.
+  teamwork:
+  - Rebuild through evidence
+  - not pressure.
+risks:
+- Performative apology
+- Demanding immediate forgiveness.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0011
+  applies_to: []
+tags:
+- trust-repair
+- accountability
+- reliability
 created_at: '2026-07-20'
 updated_at: '2026-07-20'

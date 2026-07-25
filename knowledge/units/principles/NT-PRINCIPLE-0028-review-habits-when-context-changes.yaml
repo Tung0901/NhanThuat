@@ -1,19 +1,49 @@
 id: NT-PRINCIPLE-0028
 type: principle
-status: review
+status: frozen
 version: 0.1.0
 title: Review habits when context changes
-summary: When context changes, inspect old routines before assuming they still serve the goal.
+summary: When context changes, inspect old routines before assuming they still serve
+  the goal.
 primary_domain: tu-than
-secondary_domains: [thanh-su, dung-nhan]
-definition: Habits that once conserved effort can become invisible liabilities when the surrounding context changes.
-mechanism: [Notice context shift, Review default behavior, Keep, adapt, or retire the habit.]
-conditions: [A routine persists, The environment or objective has changed.]
-exceptions: [Core disciplines may remain useful, Too much review can destabilize good routines.]
-applications: {change: [Audit routines after strategy shifts.], operations: [Retire defaults that no longer match risk.]} 
-risks: [Changing routines for novelty, Ignoring tacit knowledge embedded in habits.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0016, NT-LAW-0004], applies_to: []}
-tags: [habits, context, adaptation]
+secondary_domains:
+- thanh-su
+- dung-nhan
+definition: Habits that once conserved effort can become invisible liabilities when
+  the surrounding context changes.
+mechanism:
+- Notice context shift
+- Review default behavior
+- Keep
+- adapt
+- or retire the habit.
+conditions:
+- A routine persists
+- The environment or objective has changed.
+exceptions:
+- Core disciplines may remain useful
+- Too much review can destabilize good routines.
+applications:
+  change:
+  - Audit routines after strategy shifts.
+  operations:
+  - Retire defaults that no longer match risk.
+risks:
+- Changing routines for novelty
+- Ignoring tacit knowledge embedded in habits.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0016
+  - NT-LAW-0004
+  applies_to: []
+tags:
+- habits
+- context
+- adaptation
 created_at: '2026-07-20'
 updated_at: '2026-07-20'

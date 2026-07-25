@@ -1,0 +1,37 @@
+id: NT-PRINCIPLE-0092
+type: principle
+status: frozen
+version: 0.1.0
+title: Balance Short-Term Metrics with Long-Term Alignment
+summary: Pair short-term operational targets with long-term clawback provisions and
+  quality thresholds to preserve institutional health.
+primary_domain: tu-than
+secondary_domains:
+- hop-chung
+definition: Short-term performance payoffs must be counter-balanced with long-term
+  retention gates.
+conditions:
+- Executive compensation and high-volume sales deal structuring.
+exceptions:
+- Short-term spot bonuses for single emergency interventions.
+applications:
+  executive_pay:
+  - Require 3-year vesting and performance clawbacks.
+risks:
+- Reducing short-term motivation by deferring rewards too far into the future.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0009-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0060
+  applies_to: []
+tags:
+- incentives
+- short-term
+- long-term
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

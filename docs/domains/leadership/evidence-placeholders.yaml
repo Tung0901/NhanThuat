@@ -1,0 +1,13 @@
+domain_area_id: NT-DA-0004
+slug: leadership
+status: ready_for_review
+evidence_posture:
+  default_level: provisional
+  external_references_fabricated: false
+  future_evidence_needs:
+    - Research on adaptive leadership frameworks (e.g. Heifetz)
+    - Distinctions between personal credibility and role power
+    - Ethical guardrails against manipulation and coercion
+    - Dynamics of trust-building versus obedience
+notes:
+  - Standalone evidence records will be linked in a future Evidence Layer batch after formal literature review.

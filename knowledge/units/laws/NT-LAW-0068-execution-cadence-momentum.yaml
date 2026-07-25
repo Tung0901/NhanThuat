@@ -1,0 +1,37 @@
+id: NT-LAW-0068
+type: law
+status: frozen
+version: 0.1.0
+title: Execution Cadence Momentum
+summary: Operational momentum accumulates through short, predictable delivery cadences
+  rather than massive delayed releases.
+primary_domain: dung-nhan
+secondary_domains:
+- thanh-su
+definition: Shipping small working increments on a predictable rhythm establishes
+  psychological momentum.
+conditions:
+- Software development, project management, and product shipping.
+exceptions:
+- Heavy infrastructure projects.
+applications:
+  agile_delivery:
+  - Enforce strict 2-week shipping cycles to maintain delivery telemetry.
+risks:
+- Shipping incomplete code under cadence pressure.
+evidence:
+  level: supported
+  references:
+  - EV-REQ-0017-01
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0015
+  applies_to: []
+tags:
+- execution
+- cadence
+- momentum
+created_at: '2026-07-22'
+updated_at: '2026-07-22'

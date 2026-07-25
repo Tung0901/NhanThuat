@@ -31,11 +31,14 @@ from urllib.parse import parse_qs, urlparse
 from backend.app.engine.nhan_thuat_api import process_nhan_thuat_analysis
 from backend.app.engine.runtime import BusinessOSRuntimeOrchestrator, RuntimeRequestPayload
 from nhan_thuat.knowledge_engine import FALLBACK_INSUFFICIENT_KNOWLEDGE, KnowledgeEngine
+from nhan_thuat.public.v1.adapter import KnowledgeEngineAdapterV1
+from nhan_thuat.public.v1.contracts import KnowledgeQuery
 from salesos_pack.plugin import SalesOSPlugin
 
 # Global Engine & Plugin Instances
 runtime_orchestrator = BusinessOSRuntimeOrchestrator()
 knowledge_engine = KnowledgeEngine()
+nhan_thuat_public_v1 = KnowledgeEngineAdapterV1(knowledge_engine)
 salesos_plugin = SalesOSPlugin()
 
 # Execution History Store for Provenance Lookup
@@ -185,6 +188,43 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
                 "status": "success",
                 "total_leads": len(leads_data),
                 "leads": leads_data,
+            })
+            return
+
+        # NhanThuat Public Contract V1 Endpoints
+        if path.startswith("/api/v1/knowledge/units/"):
+            unit_id = path.split("/api/v1/knowledge/units/")[1]
+            unit_res = nhan_thuat_public_v1.get_unit(unit_id)
+            if unit_res:
+                self._send_json_response(200, {"status": "success", "unit": unit_res})
+            else:
+                self._send_json_response(404, {"status": "error", "message": "Unit not found"})
+            return
+
+        if path.startswith("/api/v1/knowledge/domains/"):
+            domain_slug = path.split("/api/v1/knowledge/domains/")[1]
+            units = nhan_thuat_public_v1.list_domain_units(domain_slug)
+            self._send_json_response(200, {
+                "status": "success",
+                "domain": domain_slug,
+                "count": len(units),
+                "units": [u.__dict__ for u in units],
+            })
+            return
+
+        if path == "/api/v1/capabilities":
+            capabilities = nhan_thuat_public_v1.list_capabilities()
+            self._send_json_response(200, {
+                "status": "success",
+                "capabilities": [c.__dict__ for c in capabilities],
+            })
+            return
+
+        if path == "/api/v1/contract":
+            contract = nhan_thuat_public_v1.get_contract_metadata()
+            self._send_json_response(200, {
+                "status": "success",
+                "contract_version": contract.__dict__,
             })
             return
 
@@ -374,6 +414,43 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
 </body>
 </html>"""
             self._send_html_response(200, html_doc)
+            return
+
+        # NhanThuat Public Contract V1 POST Endpoints
+        if path == "/api/v1/knowledge/query":
+            q_domain = payload.get("domain")
+            q_type = payload.get("unit_type")
+            q_tag = payload.get("tag")
+            q_status = payload.get("status")
+            q_limit = payload.get("limit", 100)
+            query = KnowledgeQuery(domain_slug=q_domain, unit_type=q_type, tag=q_tag, status=q_status, limit=q_limit)
+            result = nhan_thuat_public_v1.query_knowledge(query)
+            # Serialize dataclass manually since json default doesn't handle all nested dataclasses perfectly
+            self._send_json_response(200, {
+                "status": "success",
+                "query_filter": result.query_filter,
+                "total_matches": result.total_matches,
+                "units": [u.__dict__ for u in result.units],
+                "contract_version": result.contract_version.__dict__,
+            })
+            return
+
+        if path == "/api/v1/reason":
+            from nhan_thuat.public.v1.contracts import ReasoningRequest
+            from nhan_thuat.public.v1.errors import PublicError
+            req = ReasoningRequest(
+                session_id=payload.get("session_id", ""),
+                correlation_id=payload.get("correlation_id", ""),
+                intent_action=payload.get("intent_action", ""),
+                scenario_type=payload.get("scenario_type", ""),
+                context_stack=payload.get("context_stack", {}),
+                requested_knowledge_ids=payload.get("requested_knowledge_ids", [])
+            )
+            try:
+                res = nhan_thuat_public_v1.reason(req)
+                self._send_json_response(200, res.__dict__)
+            except PublicError as e:
+                self._send_json_response(501, {"status": "error", "error_code": e.error_code, "message": e.message})
             return
 
         # 3. Knowledge Query: POST /knowledge/query

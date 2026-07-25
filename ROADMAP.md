@@ -20,4 +20,4 @@ Status is confirmed by `status.yaml`, validation, and tests; it is not based on 
 | Milestone 1 - Knowledge Core | FROZEN | EPIC 0-3, Knowledge Foundation Batch 1, Evidence Layer foundation, Knowledge Factory foundation |
 | Milestone 2 - Knowledge Expansion & Domain System | FROZEN | Domain catalogue, domain registry, hierarchy, dependency planning, and domain-based execution |
 | Milestone 3 - Intelligence Engine | COMPLETED | Five Philosophy Lens System (Rhetoric, Confucianism, Legalism, Taoism, Xunzi) Single source of truth docs, JSON engines, and Multi-Lens Router |
-| Milestone 4 - BusinessOS Integration | IN PROGRESS | BusinessOS product, workflow, API, export, and context router integration |
+| Milestone 4 - BusinessOS Integration | FROZEN | BusinessOS product, workflow, API, export, and context router integration |

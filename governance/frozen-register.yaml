@@ -234,3 +234,15 @@ entries:
   source: docs/domains/ethics/status.yaml
   rationale: Chief Architect authorized Ethics domain freeze under Autonomous Program
     3 Completion.
+- id: NT-MILESTONE-04
+  type: milestone
+  title: Milestone 4 - BusinessOS Integration
+  status: frozen
+  frozen_at: '2026-07-25'
+  approved_by: Product Owner
+  source: docs/reports/M4_PUBLIC_INTEGRATION_LAYER_COMPLETION_REPORT.md
+  rationale: >
+    Product Owner approved Milestone 4 freeze. 
+    Final test count: 117. 
+    Canonical validation status: PASS. 
+    Closure commit: b9d4a44 (prior to freeze).

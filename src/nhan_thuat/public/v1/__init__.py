@@ -14,6 +14,8 @@ from .capabilities import CapabilityDescriptor
 from .provenance import ProvenanceRecord
 from .compatibility import CompatibilityMetadata
 from .provider import NhanThuatProviderV1
+from .registry import ContractRegistry, registry
+from .serializers import serialize_contract
 
 __all__ = [
     "KnowledgeQuery",
@@ -28,4 +30,7 @@ __all__ = [
     "ProvenanceRecord",
     "CompatibilityMetadata",
     "NhanThuatProviderV1",
+    "ContractRegistry",
+    "registry",
+    "serialize_contract",
 ]

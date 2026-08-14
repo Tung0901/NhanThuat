@@ -1,0 +1,14 @@
+domain_area_id: NT-DA-0023
+slug: cognitive-bias
+status: review
+evidence_posture:
+  default_level: provisional
+  external_references_fabricated: false
+  future_evidence_needs:
+    - Literature review for NT-ANTI-PATTERN-2301 (Sunk Cost Fallacy)
+    - Literature review for NT-LAW-2301 (Law of Anchoring)
+    - Literature review for NT-MODEL-2301 (The Cynefin Framework)
+    - Literature review for NT-PRINCIPLE-2301 (Red Teaming)
+notes:
+  - Existing inline evidence fields remain provisional and backward-compatible.
+  - Standalone evidence records will be linked in a future Evidence Layer batch after formal literature review.

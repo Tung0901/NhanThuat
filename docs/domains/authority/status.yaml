@@ -8,8 +8,8 @@ approved_by: Chief Architect (Autonomous Program 3 Completion)
 frozen_at: '2026-07-22'
 primary_domain: dung-nhan
 secondary_domains:
-  - hop-chung
-  - thanh-su
+- hop-chung
+- thanh-su
 review_owner: Chief Architect
 blockers: []
 unit_counts:
@@ -19,33 +19,34 @@ unit_counts:
   anti_patterns: 2
 members:
   laws:
-    - NT-LAW-0064
-    - NT-LAW-0065
+  - NT-LAW-0064
+  - NT-LAW-0065
   principles:
-    - NT-PRINCIPLE-0096
-    - NT-PRINCIPLE-0097
-    - NT-PRINCIPLE-0098
+  - NT-PRINCIPLE-0096
+  - NT-PRINCIPLE-0097
+  - NT-PRINCIPLE-0098
   models:
-    - NT-MODEL-0026
+  - NT-MODEL-0026
   anti_patterns:
-    - NT-ANTI-PATTERN-0044
-    - NT-ANTI-PATTERN-0045
+  - NT-ANTI-PATTERN-0044
+  - NT-ANTI-PATTERN-0045
 artifacts:
-  - docs/domains/authority/ARCHITECTURE.md
-  - docs/domains/authority/CONCEPT-MAP.md
-  - docs/domains/authority/DEPENDENCIES.md
-  - docs/domains/authority/GLOSSARY.md
-  - docs/domains/authority/evidence-placeholders.yaml
-  - docs/domains/authority/status.yaml
+- docs/domains/authority/ARCHITECTURE.md
+- docs/domains/authority/CONCEPT-MAP.md
+- docs/domains/authority/DEPENDENCIES.md
+- docs/domains/authority/GLOSSARY.md
+- docs/domains/authority/evidence-placeholders.yaml
+- docs/domains/authority/status.yaml
 last_reviewed_at: '2026-07-22'
-scientific_status: "multidisciplinary_consensus"
-evidence_scope: "integrates management science, organizational governance, and administrative law"
-misuse_risk: "creating rigid bureaucratic paralysis; autocratic overreach"
+scientific_status: multidisciplinary_consensus
+evidence_scope: integrates management science, organizational governance, and administrative
+  law
+misuse_risk: creating rigid bureaucratic paralysis; autocratic overreach
 ontology_dependencies:
-  - NT-DA-0004
+- NT-DA-0004
 revision_history:
-  - version: 0.1.0
-    date: '2026-07-22'
-    description: Initial Authority domain implementation frozen under Program 3.
+- version: 0.1.0
+  date: '2026-07-22'
+  description: Initial Authority domain implementation frozen under Program 3.
 last_architecture_review: '2026-07-22'
 chief_architect_status: approved_and_frozen

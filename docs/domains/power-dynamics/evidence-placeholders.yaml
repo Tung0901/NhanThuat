@@ -1,0 +1,14 @@
+domain_area_id: NT-DA-0022
+slug: power-dynamics
+status: review
+evidence_posture:
+  default_level: provisional
+  external_references_fabricated: false
+  future_evidence_needs:
+    - Literature review for NT-ANTI-PATTERN-2201 (Information Hoarding)
+    - Literature review for NT-LAW-2201 (Law of Power Asymmetry)
+    - Literature review for NT-MODEL-2201 (The Power Matrix)
+    - Literature review for NT-PRINCIPLE-2201 (Currency of Exchange)
+notes:
+  - Existing inline evidence fields remain provisional and backward-compatible.
+  - Standalone evidence records will be linked in a future Evidence Layer batch after formal literature review.

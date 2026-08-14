@@ -8,8 +8,8 @@ approved_by: Chief Architect (Delegated Continuous Authoring)
 frozen_at: '2026-07-22'
 primary_domain: thanh-su
 secondary_domains:
-  - hop-chung
-  - tri-nhan
+- hop-chung
+- tri-nhan
 review_owner: Chief Architect or delegated Negotiation domain reviewer
 blockers: []
 unit_counts:
@@ -18,42 +18,42 @@ unit_counts:
   models: 2
   anti_patterns: 4
 members:
-  laws: 
-    - NT-LAW-0057
-    - NT-LAW-0058
-    - NT-LAW-0059
-  principles: 
-    - NT-PRINCIPLE-0087
-    - NT-PRINCIPLE-0088
-    - NT-PRINCIPLE-0089
-  models: 
-    - NT-MODEL-0022
-    - NT-MODEL-0023
-  anti_patterns: 
-    - NT-ANTI-PATTERN-0036
-    - NT-ANTI-PATTERN-0037
-    - NT-ANTI-PATTERN-0038
-    - NT-ANTI-PATTERN-0039
+  laws:
+  - NT-LAW-0057
+  - NT-LAW-0058
+  - NT-LAW-0059
+  principles:
+  - NT-PRINCIPLE-0087
+  - NT-PRINCIPLE-0088
+  - NT-PRINCIPLE-0089
+  models:
+  - NT-MODEL-0022
+  - NT-MODEL-0023
+  anti_patterns:
+  - NT-ANTI-PATTERN-0036
+  - NT-ANTI-PATTERN-0037
+  - NT-ANTI-PATTERN-0038
+  - NT-ANTI-PATTERN-0039
 artifacts:
-  - docs/domains/negotiation/ARCHITECTURE.md
-  - docs/domains/negotiation/CONCEPT-MAP.md
-  - docs/domains/negotiation/DEPENDENCIES.md
-  - docs/domains/negotiation/GLOSSARY.md
-  - docs/domains/negotiation/evidence-placeholders.yaml
-  - docs/domains/negotiation/status.yaml
+- docs/domains/negotiation/ARCHITECTURE.md
+- docs/domains/negotiation/CONCEPT-MAP.md
+- docs/domains/negotiation/DEPENDENCIES.md
+- docs/domains/negotiation/GLOSSARY.md
+- docs/domains/negotiation/evidence-placeholders.yaml
+- docs/domains/negotiation/status.yaml
 last_reviewed_at: '2026-07-22'
-
-# NEW METADATA STANDARD
-scientific_status: "multidisciplinary_consensus"
-evidence_scope: "integrates game theory, behavioral economics, interest-based bargaining, and contract governance"
-misuse_risk: "using interest-based negotiation terminology to mask ruthless zero-sum extraction, or over-sharing critical BATNA details"
+scientific_status: multidisciplinary_consensus
+evidence_scope: integrates game theory, behavioral economics, interest-based bargaining,
+  and contract governance
+misuse_risk: using interest-based negotiation terminology to mask ruthless zero-sum
+  extraction, or over-sharing critical BATNA details
 ontology_dependencies:
-  - NT-DA-0008
-  - NT-DA-0010
-  - NT-DA-0014
+- NT-DA-0008
+- NT-DA-0010
+- NT-DA-0014
 revision_history:
-  - version: 0.1.0
-    date: '2026-07-22'
-    description: Initial Negotiation Blueprint draft as freeze candidate.
+- version: 0.1.0
+  date: '2026-07-22'
+  description: Initial Negotiation Blueprint draft as freeze candidate.
 last_architecture_review: '2026-07-22'
 chief_architect_status: approved_and_frozen

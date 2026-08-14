@@ -1,0 +1,30 @@
+domain_area_id: NT-DA-0025
+slug: innovation-management
+name: Innovation Management
+status: review
+previous_status: draft
+progress: 100
+approved_by: Pending
+primary_domain: thanh-su
+secondary_domains:
+- tri-nhan
+- hop-chung
+review_owner: Product Owner
+unit_counts:
+  laws: 1
+  principles: 1
+  models: 1
+  anti_patterns: 1
+blockers: []
+members:
+  laws:
+  - NT-LAW-2501
+  principles:
+  - NT-PRINCIPLE-2501
+  models:
+  - NT-MODEL-2501
+  anti_patterns:
+  - NT-ANTI-PATTERN-2501
+artifacts:
+- docs/domains/innovation-management/status.yaml
+last_reviewed_at: '2026-08-12'

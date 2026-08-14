@@ -1,0 +1,14 @@
+domain_area_id: NT-DA-0021
+slug: crisis-management
+status: review
+evidence_posture:
+  default_level: provisional
+  external_references_fabricated: false
+  future_evidence_needs:
+    - Literature review for NT-ANTI-PATTERN-2101 (The Ostrich Strategy)
+    - Literature review for NT-LAW-2101 (Law of Entropy in Crisis)
+    - Literature review for NT-MODEL-2101 (Crisis Response Triangle)
+    - Literature review for NT-PRINCIPLE-2101 (Over-communicate to Anchor Trust)
+notes:
+  - Existing inline evidence fields remain provisional and backward-compatible.
+  - Standalone evidence records will be linked in a future Evidence Layer batch after formal literature review.

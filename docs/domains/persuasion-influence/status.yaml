@@ -1,0 +1,37 @@
+domain_area_id: NT-DA-0030
+slug: persuasion-influence
+name: Persuasion & Influence
+status: review
+previous_status: draft
+progress: 100
+approved_by: Pending
+primary_domain: tri-nhan
+secondary_domains: []
+review_owner: Product Owner
+unit_counts:
+  principles: 2
+  models: 2
+  phenomena: 11
+blockers: []
+members:
+  principles:
+  - NT-PRINCIPLE-3401
+  - NT-PRINCIPLE-3402
+  models:
+  - NT-MODEL-3401
+  - NT-MODEL-3402
+  phenomena:
+  - NT-PHENOMENON-3401
+  - NT-PHENOMENON-3402
+  - NT-PHENOMENON-3403
+  - NT-PHENOMENON-3404
+  - NT-PHENOMENON-3405
+  - NT-PHENOMENON-3406
+  - NT-PHENOMENON-3407
+  - NT-PHENOMENON-3408
+  - NT-PHENOMENON-3409
+  - NT-PHENOMENON-3410
+  - NT-PHENOMENON-3411
+artifacts:
+- docs/domains/persuasion-influence/status.yaml
+last_reviewed_at: '2026-08-13'

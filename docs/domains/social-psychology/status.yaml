@@ -1,0 +1,37 @@
+domain_area_id: NT-DA-0029
+slug: social-psychology
+name: Social Psychology
+status: review
+previous_status: draft
+progress: 100
+approved_by: Pending
+primary_domain: tri-nhan
+secondary_domains: []
+review_owner: Product Owner
+unit_counts:
+  principles: 2
+  models: 1
+  phenomena: 12
+blockers: []
+members:
+  principles:
+  - NT-PRINCIPLE-3301
+  - NT-PRINCIPLE-3302
+  models:
+  - NT-MODEL-3301
+  phenomena:
+  - NT-PHENOMENON-3301
+  - NT-PHENOMENON-3302
+  - NT-PHENOMENON-3303
+  - NT-PHENOMENON-3304
+  - NT-PHENOMENON-3305
+  - NT-PHENOMENON-3306
+  - NT-PHENOMENON-3307
+  - NT-PHENOMENON-3308
+  - NT-PHENOMENON-3309
+  - NT-PHENOMENON-3310
+  - NT-PHENOMENON-3311
+  - NT-PHENOMENON-3312
+artifacts:
+- docs/domains/social-psychology/status.yaml
+last_reviewed_at: '2026-08-13'

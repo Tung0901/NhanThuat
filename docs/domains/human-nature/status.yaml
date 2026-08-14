@@ -8,47 +8,46 @@ approved_by: Product Owner
 frozen_at: '2026-07-21'
 primary_domain: tri-nhan
 secondary_domains:
-  - tu-than
-  - hop-chung
+- tu-than
+- hop-chung
 review_owner: Product Owner or delegated Human Nature domain reviewer
 unit_counts:
   laws: 5
   principles: 8
   models: 3
   anti_patterns: 4
-blockers:
-  []
+blockers: []
 members:
   laws:
-    - NT-LAW-0024
-    - NT-LAW-0025
-    - NT-LAW-0026
-    - NT-LAW-0027
-    - NT-LAW-0028
+  - NT-LAW-0024
+  - NT-LAW-0025
+  - NT-LAW-0026
+  - NT-LAW-0027
+  - NT-LAW-0028
   principles:
-    - NT-PRINCIPLE-0044
-    - NT-PRINCIPLE-0045
-    - NT-PRINCIPLE-0046
-    - NT-PRINCIPLE-0047
-    - NT-PRINCIPLE-0048
-    - NT-PRINCIPLE-0049
-    - NT-PRINCIPLE-0050
-    - NT-PRINCIPLE-0051
+  - NT-PRINCIPLE-0044
+  - NT-PRINCIPLE-0045
+  - NT-PRINCIPLE-0046
+  - NT-PRINCIPLE-0047
+  - NT-PRINCIPLE-0048
+  - NT-PRINCIPLE-0049
+  - NT-PRINCIPLE-0050
+  - NT-PRINCIPLE-0051
   models:
-    - NT-MODEL-0001
-    - NT-MODEL-0002
-    - NT-MODEL-0003
+  - NT-MODEL-0001
+  - NT-MODEL-0002
+  - NT-MODEL-0003
   anti_patterns:
-    - NT-ANTI-PATTERN-0001
-    - NT-ANTI-PATTERN-0002
-    - NT-ANTI-PATTERN-0003
-    - NT-ANTI-PATTERN-0004
+  - NT-ANTI-PATTERN-0001
+  - NT-ANTI-PATTERN-0002
+  - NT-ANTI-PATTERN-0003
+  - NT-ANTI-PATTERN-0004
 artifacts:
-  - docs/domains/human-nature/ARCHITECTURE.md
-  - docs/domains/human-nature/CONCEPT-MAP.md
-  - docs/domains/human-nature/DEPENDENCIES.md
-  - docs/domains/human-nature/GLOSSARY.md
-  - docs/domains/human-nature/REVIEW-REPORT.md
-  - docs/domains/human-nature/evidence-placeholders.yaml
-  - docs/domains/human-nature/status.yaml
+- docs/domains/human-nature/ARCHITECTURE.md
+- docs/domains/human-nature/CONCEPT-MAP.md
+- docs/domains/human-nature/DEPENDENCIES.md
+- docs/domains/human-nature/GLOSSARY.md
+- docs/domains/human-nature/REVIEW-REPORT.md
+- docs/domains/human-nature/evidence-placeholders.yaml
+- docs/domains/human-nature/status.yaml
 last_reviewed_at: '2026-07-21'

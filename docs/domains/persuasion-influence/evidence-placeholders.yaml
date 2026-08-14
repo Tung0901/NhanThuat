@@ -1,0 +1,9 @@
+domain_area_id: NT-DA-0030
+slug: persuasion-influence
+status: review
+evidence_posture:
+  default_level: provisional
+  external_references_fabricated: false
+notes:
+  - Existing inline evidence fields remain provisional and backward-compatible.
+  - Standalone evidence records will be linked in a future Evidence Layer batch after formal literature review.

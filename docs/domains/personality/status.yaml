@@ -8,8 +8,8 @@ approved_by: Product Owner
 frozen_at: '2026-07-22'
 primary_domain: tri-nhan
 secondary_domains:
-  - dung-nhan
-  - tu-than
+- dung-nhan
+- tu-than
 review_owner: Product Owner or delegated Personality domain reviewer
 unit_counts:
   laws: 3
@@ -19,26 +19,26 @@ unit_counts:
 blockers: []
 members:
   laws:
-    - NT-LAW-0034
-    - NT-LAW-0035
-    - NT-LAW-0036
+  - NT-LAW-0034
+  - NT-LAW-0035
+  - NT-LAW-0036
   principles:
-    - NT-PRINCIPLE-0060
-    - NT-PRINCIPLE-0061
-    - NT-PRINCIPLE-0062
+  - NT-PRINCIPLE-0060
+  - NT-PRINCIPLE-0061
+  - NT-PRINCIPLE-0062
   models:
-    - NT-MODEL-0007
-    - NT-MODEL-0008
+  - NT-MODEL-0007
+  - NT-MODEL-0008
   anti_patterns:
-    - NT-ANTI-PATTERN-0009
-    - NT-ANTI-PATTERN-0010
-    - NT-ANTI-PATTERN-0011
+  - NT-ANTI-PATTERN-0009
+  - NT-ANTI-PATTERN-0010
+  - NT-ANTI-PATTERN-0011
 artifacts:
-  - docs/domains/personality/ARCHITECTURE.md
-  - docs/domains/personality/CONCEPT-MAP.md
-  - docs/domains/personality/DEPENDENCIES.md
-  - docs/domains/personality/GLOSSARY.md
-  - docs/domains/personality/REVIEW-REPORT.md
-  - docs/domains/personality/evidence-placeholders.yaml
-  - docs/domains/personality/status.yaml
+- docs/domains/personality/ARCHITECTURE.md
+- docs/domains/personality/CONCEPT-MAP.md
+- docs/domains/personality/DEPENDENCIES.md
+- docs/domains/personality/GLOSSARY.md
+- docs/domains/personality/REVIEW-REPORT.md
+- docs/domains/personality/evidence-placeholders.yaml
+- docs/domains/personality/status.yaml
 last_reviewed_at: '2026-07-22'

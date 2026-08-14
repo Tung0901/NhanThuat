@@ -8,8 +8,8 @@ approved_by: Chief Architect (Autonomous Program 3 Completion)
 frozen_at: '2026-07-22'
 primary_domain: tri-nhan
 secondary_domains:
-  - hop-chung
-  - thanh-su
+- hop-chung
+- thanh-su
 review_owner: Chief Architect
 blockers: []
 unit_counts:
@@ -19,33 +19,34 @@ unit_counts:
   anti_patterns: 2
 members:
   laws:
-    - NT-LAW-0070
-    - NT-LAW-0071
+  - NT-LAW-0070
+  - NT-LAW-0071
   principles:
-    - NT-PRINCIPLE-0105
-    - NT-PRINCIPLE-0106
-    - NT-PRINCIPLE-0107
+  - NT-PRINCIPLE-0105
+  - NT-PRINCIPLE-0106
+  - NT-PRINCIPLE-0107
   models:
-    - NT-MODEL-0029
+  - NT-MODEL-0029
   anti_patterns:
-    - NT-ANTI-PATTERN-0050
-    - NT-ANTI-PATTERN-0051
+  - NT-ANTI-PATTERN-0050
+  - NT-ANTI-PATTERN-0051
 artifacts:
-  - docs/domains/learning/ARCHITECTURE.md
-  - docs/domains/learning/CONCEPT-MAP.md
-  - docs/domains/learning/DEPENDENCIES.md
-  - docs/domains/learning/GLOSSARY.md
-  - docs/domains/learning/evidence-placeholders.yaml
-  - docs/domains/learning/status.yaml
+- docs/domains/learning/ARCHITECTURE.md
+- docs/domains/learning/CONCEPT-MAP.md
+- docs/domains/learning/DEPENDENCIES.md
+- docs/domains/learning/GLOSSARY.md
+- docs/domains/learning/evidence-placeholders.yaml
+- docs/domains/learning/status.yaml
 last_reviewed_at: '2026-07-22'
-scientific_status: "multidisciplinary_consensus"
-evidence_scope: "integrates organizational learning, cognitive science, and safety engineering"
-misuse_risk: "using 'learning' to excuse repeated gross negligence"
+scientific_status: multidisciplinary_consensus
+evidence_scope: integrates organizational learning, cognitive science, and safety
+  engineering
+misuse_risk: using 'learning' to excuse repeated gross negligence
 ontology_dependencies:
-  - NT-DA-0017
+- NT-DA-0017
 revision_history:
-  - version: 0.1.0
-    date: '2026-07-22'
-    description: Initial Learning domain implementation frozen under Program 3.
+- version: 0.1.0
+  date: '2026-07-22'
+  description: Initial Learning domain implementation frozen under Program 3.
 last_architecture_review: '2026-07-22'
 chief_architect_status: approved_and_frozen

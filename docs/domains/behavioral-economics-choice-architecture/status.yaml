@@ -1,0 +1,37 @@
+domain_area_id: NT-DA-0027
+slug: behavioral-economics-choice-architecture
+name: Behavioral Economics & Choice Architecture
+status: review
+previous_status: draft
+progress: 100
+approved_by: Pending
+primary_domain: tri-nhan
+secondary_domains: []
+review_owner: Product Owner
+unit_counts:
+  principles: 3
+  models: 1
+  phenomena: 11
+blockers: []
+members:
+  principles:
+  - NT-PRINCIPLE-3101
+  - NT-PRINCIPLE-3102
+  - NT-PRINCIPLE-3103
+  models:
+  - NT-MODEL-3101
+  phenomena:
+  - NT-PHENOMENON-3101
+  - NT-PHENOMENON-3102
+  - NT-PHENOMENON-3103
+  - NT-PHENOMENON-3104
+  - NT-PHENOMENON-3105
+  - NT-PHENOMENON-3106
+  - NT-PHENOMENON-3107
+  - NT-PHENOMENON-3108
+  - NT-PHENOMENON-3109
+  - NT-PHENOMENON-3110
+  - NT-PHENOMENON-3111
+artifacts:
+- docs/domains/behavioral-economics-choice-architecture/status.yaml
+last_reviewed_at: '2026-08-13'

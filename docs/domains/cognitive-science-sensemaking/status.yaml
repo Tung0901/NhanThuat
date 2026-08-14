@@ -1,0 +1,43 @@
+domain_area_id: NT-DA-0026
+slug: cognitive-science-sensemaking
+name: Cognitive Science & Sensemaking
+status: review
+previous_status: draft
+progress: 100
+approved_by: Pending
+primary_domain: tri-nhan
+secondary_domains:
+- tu-than
+- thanh-su
+- hop-chung
+review_owner: Product Owner
+unit_counts:
+  laws: 2
+  principles: 4
+  models: 3
+  phenomena: 7
+blockers: []
+members:
+  laws:
+  - NT-LAW-3002
+  - NT-LAW-3003
+  principles:
+  - NT-PRINCIPLE-3001
+  - NT-PRINCIPLE-3002
+  - NT-PRINCIPLE-3003
+  - NT-PRINCIPLE-3004
+  models:
+  - NT-MODEL-3001
+  - NT-MODEL-3002
+  - NT-MODEL-3003
+  phenomena:
+  - NT-PHENOMENON-3001
+  - NT-PHENOMENON-3002
+  - NT-PHENOMENON-3003
+  - NT-PHENOMENON-3004
+  - NT-PHENOMENON-3005
+  - NT-PHENOMENON-3006
+  - NT-PHENOMENON-3007
+artifacts:
+- docs/domains/cognitive-science-sensemaking/status.yaml
+last_reviewed_at: '2026-08-13'

@@ -8,8 +8,8 @@ approved_by: Chief Architect (Delegated Continuous Authoring)
 frozen_at: '2026-07-22'
 primary_domain: thanh-su
 secondary_domains:
-  - tri-nhan
-  - tu-than
+- tri-nhan
+- tu-than
 review_owner: Chief Architect or delegated Decision Making domain reviewer
 blockers: []
 unit_counts:
@@ -18,44 +18,44 @@ unit_counts:
   models: 3
   anti_patterns: 5
 members:
-  laws: 
-    - NT-LAW-0048
-    - NT-LAW-0049
-    - NT-LAW-0050
-  principles: 
-    - NT-PRINCIPLE-0078
-    - NT-PRINCIPLE-0079
-    - NT-PRINCIPLE-0080
-  models: 
-    - NT-MODEL-0015
-    - NT-MODEL-0016
-    - NT-MODEL-0017
-  anti_patterns: 
-    - NT-ANTI-PATTERN-0023
-    - NT-ANTI-PATTERN-0024
-    - NT-ANTI-PATTERN-0025
-    - NT-ANTI-PATTERN-0026
-    - NT-ANTI-PATTERN-0027
+  laws:
+  - NT-LAW-0048
+  - NT-LAW-0049
+  - NT-LAW-0050
+  principles:
+  - NT-PRINCIPLE-0078
+  - NT-PRINCIPLE-0079
+  - NT-PRINCIPLE-0080
+  models:
+  - NT-MODEL-0015
+  - NT-MODEL-0016
+  - NT-MODEL-0017
+  anti_patterns:
+  - NT-ANTI-PATTERN-0023
+  - NT-ANTI-PATTERN-0024
+  - NT-ANTI-PATTERN-0025
+  - NT-ANTI-PATTERN-0026
+  - NT-ANTI-PATTERN-0027
 artifacts:
-  - docs/domains/decision-making/ARCHITECTURE.md
-  - docs/domains/decision-making/CONCEPT-MAP.md
-  - docs/domains/decision-making/DEPENDENCIES.md
-  - docs/domains/decision-making/GLOSSARY.md
-  - docs/domains/decision-making/evidence-placeholders.yaml
-  - docs/domains/decision-making/status.yaml
+- docs/domains/decision-making/ARCHITECTURE.md
+- docs/domains/decision-making/CONCEPT-MAP.md
+- docs/domains/decision-making/DEPENDENCIES.md
+- docs/domains/decision-making/GLOSSARY.md
+- docs/domains/decision-making/evidence-placeholders.yaml
+- docs/domains/decision-making/status.yaml
 last_reviewed_at: '2026-07-22'
-
-# NEW METADATA STANDARD
-scientific_status: "multidisciplinary_consensus"
-evidence_scope: "integrates cognitive psychology, behavioral economics, and decision theory"
-misuse_risk: "creating overly bureaucratic processes to feign rigor; paralyzing teams by demanding absolute certainty"
+scientific_status: multidisciplinary_consensus
+evidence_scope: integrates cognitive psychology, behavioral economics, and decision
+  theory
+misuse_risk: creating overly bureaucratic processes to feign rigor; paralyzing teams
+  by demanding absolute certainty
 ontology_dependencies:
-  - NT-DA-0001
-  - NT-DA-0008
-  - NT-DA-0013
+- NT-DA-0001
+- NT-DA-0008
+- NT-DA-0013
 revision_history:
-  - version: 0.1.0
-    date: '2026-07-22'
-    description: Initial Decision Making Blueprint draft as freeze candidate.
+- version: 0.1.0
+  date: '2026-07-22'
+  description: Initial Decision Making Blueprint draft as freeze candidate.
 last_architecture_review: '2026-07-22'
 chief_architect_status: blueprint_proposed

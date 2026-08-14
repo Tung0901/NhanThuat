@@ -1,0 +1,37 @@
+domain_area_id: NT-DA-0028
+slug: behavioral-design
+name: Behavioral Design
+status: review
+previous_status: draft
+progress: 100
+approved_by: Pending
+primary_domain: tri-nhan
+secondary_domains: []
+review_owner: Product Owner
+unit_counts:
+  principles: 5
+  models: 2
+  phenomena: 8
+blockers: []
+members:
+  principles:
+  - NT-PRINCIPLE-3201
+  - NT-PRINCIPLE-3202
+  - NT-PRINCIPLE-3203
+  - NT-PRINCIPLE-3204
+  - NT-PRINCIPLE-3205
+  models:
+  - NT-MODEL-3201
+  - NT-MODEL-3202
+  phenomena:
+  - NT-PHENOMENON-3201
+  - NT-PHENOMENON-3202
+  - NT-PHENOMENON-3203
+  - NT-PHENOMENON-3204
+  - NT-PHENOMENON-3205
+  - NT-PHENOMENON-3206
+  - NT-PHENOMENON-3207
+  - NT-PHENOMENON-3208
+artifacts:
+- docs/domains/behavioral-design/status.yaml
+last_reviewed_at: '2026-08-13'

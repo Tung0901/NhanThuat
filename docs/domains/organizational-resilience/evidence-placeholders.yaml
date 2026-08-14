@@ -1,0 +1,14 @@
+domain_area_id: NT-DA-0024
+slug: organizational-resilience
+status: review
+evidence_posture:
+  default_level: provisional
+  external_references_fabricated: false
+  future_evidence_needs:
+    - Literature review for NT-ANTI-PATTERN-2401 (Single Point of Failure)
+    - Literature review for NT-LAW-2401 (Law of System Redundancy)
+    - Literature review for NT-MODEL-2401 (The Adaptive Cycle)
+    - Literature review for NT-PRINCIPLE-2401 (Fail Gracefully)
+notes:
+  - Existing inline evidence fields remain provisional and backward-compatible.
+  - Standalone evidence records will be linked in a future Evidence Layer batch after formal literature review.

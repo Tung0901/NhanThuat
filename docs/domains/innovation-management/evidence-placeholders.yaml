@@ -1,0 +1,14 @@
+domain_area_id: NT-DA-0025
+slug: innovation-management
+status: review
+evidence_posture:
+  default_level: provisional
+  external_references_fabricated: false
+  future_evidence_needs:
+    - Literature review for NT-ANTI-PATTERN-2501 (Innovation Theater)
+    - Literature review for NT-LAW-2501 (Law of the Innovator's Dilemma)
+    - Literature review for NT-MODEL-2501 (Three Horizons of Growth)
+    - Literature review for NT-PRINCIPLE-2501 (Separation of Exploration and Exploitation)
+notes:
+  - Existing inline evidence fields remain provisional and backward-compatible.
+  - Standalone evidence records will be linked in a future Evidence Layer batch after formal literature review.

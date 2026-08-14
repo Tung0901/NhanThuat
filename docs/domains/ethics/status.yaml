@@ -8,8 +8,8 @@ approved_by: Chief Architect (Autonomous Program 3 Completion)
 frozen_at: '2026-07-22'
 primary_domain: tu-than
 secondary_domains:
-  - hop-chung
-  - tri-nhan
+- hop-chung
+- tri-nhan
 review_owner: Chief Architect
 blockers: []
 unit_counts:
@@ -19,34 +19,35 @@ unit_counts:
   anti_patterns: 2
 members:
   laws:
-    - NT-LAW-0074
-    - NT-LAW-0075
+  - NT-LAW-0074
+  - NT-LAW-0075
   principles:
-    - NT-PRINCIPLE-0111
-    - NT-PRINCIPLE-0112
-    - NT-PRINCIPLE-0113
+  - NT-PRINCIPLE-0111
+  - NT-PRINCIPLE-0112
+  - NT-PRINCIPLE-0113
   models:
-    - NT-MODEL-0031
+  - NT-MODEL-0031
   anti_patterns:
-    - NT-ANTI-PATTERN-0054
-    - NT-ANTI-PATTERN-0055
+  - NT-ANTI-PATTERN-0054
+  - NT-ANTI-PATTERN-0055
 artifacts:
-  - docs/domains/ethics/ARCHITECTURE.md
-  - docs/domains/ethics/CONCEPT-MAP.md
-  - docs/domains/ethics/DEPENDENCIES.md
-  - docs/domains/ethics/GLOSSARY.md
-  - docs/domains/ethics/evidence-placeholders.yaml
-  - docs/domains/ethics/status.yaml
+- docs/domains/ethics/ARCHITECTURE.md
+- docs/domains/ethics/CONCEPT-MAP.md
+- docs/domains/ethics/DEPENDENCIES.md
+- docs/domains/ethics/GLOSSARY.md
+- docs/domains/ethics/evidence-placeholders.yaml
+- docs/domains/ethics/status.yaml
 last_reviewed_at: '2026-07-22'
-scientific_status: "multidisciplinary_consensus"
-evidence_scope: "integrates moral philosophy, behavioral ethics, agency theory, and AI safety"
-misuse_risk: "using ethics as rigid moralizing to stifle legitimate business innovation"
+scientific_status: multidisciplinary_consensus
+evidence_scope: integrates moral philosophy, behavioral ethics, agency theory, and
+  AI safety
+misuse_risk: using ethics as rigid moralizing to stifle legitimate business innovation
 ontology_dependencies:
-  - NT-DA-0001
-  - NT-DA-0013
+- NT-DA-0001
+- NT-DA-0013
 revision_history:
-  - version: 0.1.0
-    date: '2026-07-22'
-    description: Initial Ethics domain implementation frozen under Program 3.
+- version: 0.1.0
+  date: '2026-07-22'
+  description: Initial Ethics domain implementation frozen under Program 3.
 last_architecture_review: '2026-07-22'
 chief_architect_status: approved_and_frozen

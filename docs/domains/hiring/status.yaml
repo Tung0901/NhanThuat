@@ -8,7 +8,7 @@ approved_by: Chief Architect (Autonomous Program 3 Completion)
 frozen_at: '2026-07-22'
 primary_domain: tri-nhan
 secondary_domains:
-  - dung-nhan
+- dung-nhan
 review_owner: Chief Architect
 blockers: []
 unit_counts:
@@ -18,38 +18,38 @@ unit_counts:
   anti_patterns: 2
 members:
   laws:
-    - NT-LAW-0040
-    - NT-LAW-0041
+  - NT-LAW-0040
+  - NT-LAW-0041
   principles:
-    - NT-PRINCIPLE-0066
-    - NT-PRINCIPLE-0067
-    - NT-PRINCIPLE-0068
+  - NT-PRINCIPLE-0066
+  - NT-PRINCIPLE-0067
+  - NT-PRINCIPLE-0068
   models:
-    - NT-MODEL-0011
+  - NT-MODEL-0011
   anti_patterns:
-    - NT-ANTI-PATTERN-0015
-    - NT-ANTI-PATTERN-0016
+  - NT-ANTI-PATTERN-0015
+  - NT-ANTI-PATTERN-0016
 artifacts:
-  - docs/domains/hiring/ARCHITECTURE.md
-  - docs/domains/hiring/CONCEPT-MAP.md
-  - docs/domains/hiring/DEPENDENCIES.md
-  - docs/domains/hiring/GLOSSARY.md
-  - docs/domains/hiring/evidence-placeholders.yaml
-  - docs/domains/hiring/status.yaml
+- docs/domains/hiring/ARCHITECTURE.md
+- docs/domains/hiring/CONCEPT-MAP.md
+- docs/domains/hiring/DEPENDENCIES.md
+- docs/domains/hiring/GLOSSARY.md
+- docs/domains/hiring/evidence-placeholders.yaml
+- docs/domains/hiring/status.yaml
 last_reviewed_at: '2026-07-22'
-
-# NEW METADATA STANDARD
-scientific_status: "multidisciplinary_consensus"
-evidence_scope: "integrates behavioral economics, psychometrics, and organizational behavior"
-misuse_risk: "algorithmic bias, cultural homogenization, false precision in predictive hiring"
+scientific_status: multidisciplinary_consensus
+evidence_scope: integrates behavioral economics, psychometrics, and organizational
+  behavior
+misuse_risk: algorithmic bias, cultural homogenization, false precision in predictive
+  hiring
 ontology_dependencies:
-  - NT-DA-0001
-  - NT-DA-0002
-  - NT-DA-0003
-  - NT-DA-0004
+- NT-DA-0001
+- NT-DA-0002
+- NT-DA-0003
+- NT-DA-0004
 revision_history:
-  - version: 0.1.0
-    date: '2026-07-22'
-    description: Initial Hiring Blueprint and implementation as freeze candidate.
+- version: 0.1.0
+  date: '2026-07-22'
+  description: Initial Hiring Blueprint and implementation as freeze candidate.
 last_architecture_review: '2026-07-22'
 chief_architect_status: blueprint_proposed

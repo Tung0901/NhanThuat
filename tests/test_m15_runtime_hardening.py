@@ -15,7 +15,7 @@ from nhan_thuat.loader import load_document
 def test_knowledge_engine_loading_and_indexing() -> None:
     engine = KnowledgeEngine()
     # All 274 knowledge units loaded
-    assert len(engine.units_by_id) == 274
+    assert len(engine.units_by_id) == 370
 
     # Check primary indexes
     assert "NT-LAW-0001" in engine.units_by_id

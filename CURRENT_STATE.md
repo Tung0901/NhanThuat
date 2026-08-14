@@ -1,7 +1,7 @@
 # Current Repository State - NhanThuat Knowledge Repository
 
-**Last Updated:** 2026-07-23  
-**Status:** **100% ACTIVATED AND INTEGRATED (FIVE PHILOSOPHY LENS SYSTEM)**
+**Last Updated:** 2026-08-14  
+**Status:** **100% ACTIVATED AND INTEGRATED (FIVE PHILOSOPHY LENS SYSTEM + KNOWLEDGE WORKBENCH)**
 
 ---
 
@@ -10,6 +10,8 @@
 NhanThuat is a formal knowledge repository and governance framework for human nature, organizational behavior, decision intelligence, leadership, and operational management.
 
 With the completion of the **BusinessOS Five Philosophy Lens System Upgrade**, NhanThuat incorporates five foundational philosophical systems into executable documentation, structured JSON engines with standardized SemVer metadata, and an advanced multi-lens context router.
+
+The repository also ships a **Streamlit Knowledge Workbench** (v0.1) that exposes retrieval, exploration, evidence, and system pages over the deterministic Knowledge Engine (LLM synthesis marked PLANNED in EPIC 5).
 
 ---
 
@@ -54,7 +56,16 @@ All 5 engine files expose standardized Program 8 & 9 metadata blocks: `philosoph
 
 ## 3. Domain & Knowledge Unit Catalog
 
-- **Domain Areas:** 20 Frozen Domains (`NT-DA-0001` through `NT-DA-0020`).
-- **Knowledge Units:** 274 Frozen Units (75 Laws, 113 Principles, 31 Models, 55 Anti-Patterns).
+- **Domain Areas:** 30 registered domains (`NT-DA-0001` through `NT-DA-0030`) across three categories: CAT-CORE (1), CAT-BEHAVIORAL (6), CAT-APPLIED (23).
+- **Knowledge Units:** 370 units (82 Laws, 134 Principles, 45 Models, 60 Anti-Patterns, 49 Phenomena).
+- **Governance:** 274 units frozen; 96 new units in `review` status awaiting Product Owner approval.
 - **Validation Status:** `scripts/validate_all.py` passes 100% clean.
 - **Test Suite Status:** `pytest` passes 100% cleanly.
+
+---
+
+## 4. Knowledge Runtime & Workbench
+
+- **Runtime components** (`src/nhan_thuat/runtime/`): `KnowledgeGraph` (transitive traversal + cycle detection), `KnowledgeResolver` (keyword scoring), `PromptBuilder` (markdown context), `KnowledgeEvaluator` (heuristic risk assessment).
+- **Knowledge Workbench** (`app/`, launched via `scripts/run_web_dashboard.py`): six Vietnamese pages — Hỏi Nhân Thuật (ask), Khám phá Tri thức (explorer), Lĩnh vực (domains), Bằng chứng & Nguồn (evidence), Hệ thống (system), Chi tiết Tri thức (detail).
+- **Engine index:** domain queries run on `primary_domain`; the `relations` block is treated as semantic (bidirectional) and excluded from dependency graph traversal.

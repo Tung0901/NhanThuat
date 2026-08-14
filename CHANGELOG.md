@@ -30,6 +30,12 @@ Mọi thay đổi đáng chú ý của dự án được ghi tại đây.
 - Domain Freeze governance infrastructure and ADR-0016.
 - Human Nature domain foundation with laws, principles, patterns, anti-patterns, glossary, concept map, dependencies, evidence placeholders, and review report.
 - Motivation domain foundation with laws, principles, models, anti-patterns, glossary, concept map, dependencies, evidence placeholders, and review report.
+- Ten new domain areas (NT-DA-0021 through NT-DA-0030) with 96 knowledge units (laws, principles, models, anti-patterns, phenomena).
+- Phenomena knowledge type and `domain_area` metadata added to the unit schema, identifiers, and validator.
+- Domain registry categories (CAT-CORE, CAT-BEHAVIORAL, CAT-APPLIED) and category mapping for all domains.
+- Knowledge runtime components: graph traversal, keyword resolver, prompt builder, and heuristic evaluator.
+- Streamlit Knowledge Workbench with six pages and Vietnamese localization layer.
+- Domain blueprint documentation (ARCHITECTURE, CONCEPT-MAP, DEPENDENCIES, GLOSSARY, evidence-placeholders) for the ten new domain areas.
 
 ### Changed
 
@@ -45,3 +51,7 @@ Mọi thay đổi đáng chú ý của dự án được ghi tại đây.
 - Repository validation now supports domain-area Frozen Register entries while preserving existing Epic, Milestone, and Batch records.
 - Human Nature domain approved by Product Owner and marked Frozen.
 - Motivation domain approved by Product Owner and marked Frozen.
+- Engine indexes `primary_domain` instead of the unused `domain` field, fixing domain query and filtering.
+- Twenty frozen domain status files reformatted to block YAML style without semantic changes (documented in the M16 review package).
+- Knowledge engine now loads 370 units; tests and runtime assertions updated from 274 to 370.
+- New units set to `review` status pending Product Owner approval; auto-frozen states reverted per governance.

@@ -156,7 +156,7 @@ class KnowledgeEngine:
                 # Extract fields
                 unit_type = data.get("type", "unknown")
                 title = data.get("title", "")
-                domain = data.get("domain", "unassigned")
+                domain = data.get("primary_domain") or data.get("domain", "unassigned")
                 version = str(data.get("version", "1.0.0"))
                 status = data.get("status", "draft")
                 tags = [str(t) for t in data.get("tags", [])]

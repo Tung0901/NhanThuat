@@ -1,5 +1,5 @@
 """
-CHƯƠNG TRÌNH KHỞI CHẠY GIAO DIỆN WEB DASHBOARD BUSINESSOS & NHÂN THUẬT (M16)
+CHƯƠNG TRÌNH KHỞI CHẠY GIAO DIỆN WEB DASHBOARD NHÂN THUẬT KNOWLEDGE WORKBENCH
 
 Cách chạy:
     python scripts/run_web_dashboard.py
@@ -8,58 +8,49 @@ Sau khi chạy, mở trình duyệt web tại địa chỉ:
     http://localhost:8000
 """
 
+import os
 import sys
 import subprocess
-import webbrowser
 from pathlib import Path
 
-repo_root = Path(__file__).resolve().parent.parent
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
 
-# Auto-switch to project virtual environment .venv if running under global python
-try:
-    import yaml
-    import jsonschema
-except ImportError:
-    venv_python = repo_root / ".venv" / "Scripts" / "python.exe"
-    if venv_python.exists() and str(venv_python) != sys.executable:
-        res = subprocess.run([str(venv_python)] + sys.argv, check=False)
-        sys.exit(res.returncode)
-
-# Ensure src and backend are accessible in sys.path
-src_path = repo_root / "src"
-if str(src_path) not in sys.path:
-    sys.path.insert(0, str(src_path))
-if str(repo_root) not in sys.path:
-    sys.path.insert(0, str(repo_root))
-
-from backend.app.main import create_app_server
-
+REPO_ROOT = Path(__file__).resolve().parent.parent
+VENV_PYTHON = REPO_ROOT / ".venv" / "Scripts" / "python.exe"
+APP_SCRIPT = REPO_ROOT / "app" / "streamlit_app.py"
 
 def main() -> None:
     host = "127.0.0.1"
-    port = 8000
+    port = "8000"
     url = f"http://{host}:{port}"
 
     print("=" * 80)
-    print("  KÍCH HOẠT DỰNG WEB APP DASHBOARD BUSINESSOS & NHÂN THUẬT (MILESTONE M16)")
+    print("  KÍCH HOẠT NHÂN THUẬT KNOWLEDGE WORKBENCH (STREAMLIT)")
     print("=" * 80)
-    print(f"✓ Web Server đang lắng nghe tại: {url}")
-    print("✓ Tự động mở trình duyệt web trong giây lát...")
+    print(f"✓ Web Server sẽ lắng nghe tại: {url}")
     print("  (Bấm Ctrl + C tại Terminal nếu muốn dừng Web Server)")
     print("=" * 80)
 
+    python_cmd = str(VENV_PYTHON) if VENV_PYTHON.exists() else sys.executable
+    cmd = [
+        python_cmd,
+        "-m",
+        "streamlit",
+        "run",
+        str(APP_SCRIPT),
+        "--server.port",
+        port,
+        "--browser.gatherUsageStats",
+        "false",
+        "--theme.base",
+        "light"
+    ]
+    
     try:
-        webbrowser.open(url)
-    except Exception:
-        pass
-
-    server = create_app_server(host=host, port=port)
-    try:
-        server.serve_forever()
+        subprocess.run(cmd, cwd=str(REPO_ROOT))
     except KeyboardInterrupt:
-        print("\n[STOPPED] Đã dừng Web Server BusinessOS.")
-        server.server_close()
-
+        print("\n[STOPPED] Đã dừng Web Server.")
 
 if __name__ == "__main__":
     main()

@@ -13,6 +13,9 @@ import uuid
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+
 repo_root = Path(__file__).resolve().parent.parent
 
 # Auto-switch to project virtual environment .venv if running under global python

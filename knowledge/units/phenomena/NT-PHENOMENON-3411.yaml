@@ -1,0 +1,45 @@
+id: NT-PHENOMENON-3411
+type: phenomenon
+title: Paradox of Choice (Choice Overload)
+summary: While some choice is better than none, an abundance of options leads to decision
+  paralysis, anxiety, and lower post-decision satisfaction.
+primary_domain: tri-nhan
+domain_area: NT-DA-0030
+definition: The phenomenon where increasing the number of choices available to a consumer
+  beyond a certain threshold decreases their likelihood to purchase and increases
+  regret.
+mechanism:
+- The individual is presented with dozens of options.
+- The cognitive load of comparing all variables overwhelms executive function.
+- The anticipated regret of making the 'wrong' choice spikes.
+- The individual defaults to making no choice at all (status quo bias).
+conditions:
+- Environments with complex variables, similar options, and lack of clear categorization.
+exceptions:
+- Extreme domain experts who know exactly what they want and enjoy sifting through
+  massive inventories.
+applications:
+  product_design:
+  - Limit pricing tiers to 3 options (e.g., Basic, Pro, Enterprise) rather than offering
+    15 highly customizable plans.
+risks:
+- Losing niche customers by over-simplifying a product line that inherently requires
+  high customization.
+evidence:
+  level: strong
+  references:
+  - 'Iyengar, S. S., & Lepper, M. R. (2000). ''When choice is demotivating: Can one
+    desire too much of a good thing?''. Journal of Personality and Social Psychology.'
+  - Schwartz, B. (2004). 'The Paradox of Choice'.
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- choice
+- overload
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

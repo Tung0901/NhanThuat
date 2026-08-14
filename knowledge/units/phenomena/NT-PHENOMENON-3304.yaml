@@ -1,0 +1,46 @@
+id: NT-PHENOMENON-3304
+type: phenomenon
+title: Groupthink
+summary: A psychological phenomenon that occurs within a group of people in which
+  the desire for harmony or conformity results in an irrational or dysfunctional decision-making
+  outcome.
+primary_domain: tri-nhan
+domain_area: NT-DA-0029
+definition: A mode of thinking that people engage in when they are deeply involved
+  in a cohesive in-group, when the members' strivings for unanimity override their
+  motivation to realistically appraise alternative courses of action.
+mechanism:
+- A highly cohesive group faces a complex decision.
+- To maintain group harmony and avoid conflict, dissenting opinions are self-censored
+  or actively suppressed.
+- The group creates illusions of invulnerability and unanimity, leading to catastrophic
+  miscalculations.
+conditions:
+- Highly cohesive, insulated groups led by a strong, directive leader under high stress.
+exceptions:
+- Groups that utilize formal 'red teaming' or designated devil's advocates.
+applications:
+  decision_making:
+  - Leaders should withhold their own opinions until the end of the meeting to prevent
+    anchoring the group.
+risks:
+- Continuing with disastrous product launches or investments despite internal knowledge
+  that it will fail.
+evidence:
+  level: strong
+  references:
+  - 'Janis, I. L. (1972). ''Victims of Groupthink: A psychological study of foreign-policy
+    decisions and fiascoes''. Houghton Mifflin.'
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-PHENOMENON-3301
+  applies_to: []
+tags:
+- groupthink
+- decision-making
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

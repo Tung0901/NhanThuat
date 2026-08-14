@@ -1,0 +1,45 @@
+id: NT-PHENOMENON-3410
+type: phenomenon
+title: Message Framing (Gain vs. Loss)
+summary: The way a choice is presented (framed) as either a gain or a loss drastically
+  alters the likelihood of persuasion, even if the objective outcomes are identical.
+primary_domain: tri-nhan
+domain_area: NT-DA-0030
+definition: The application of Prospect Theory to persuasive communication, dictating
+  that people are risk-averse when presented with gains, but risk-seeking when presented
+  with losses.
+mechanism:
+- Determine if the desired behavior is perceived as safe or risky by the target.
+- If safe (e.g., wearing sunscreen), use a Gain Frame ('Use sunscreen to maintain
+  healthy skin').
+- If risky (e.g., getting a mammogram that might find cancer), use a Loss Frame ('Failing
+  to get a mammogram can cost you your life').
+conditions:
+- Healthcare communication, financial advising, and high-stakes sales.
+exceptions:
+- When the target is in a highly analytical, 'System 2' state and actively translates
+  the probabilities.
+applications:
+  marketing:
+  - Selling insurance requires loss framing; selling vacation packages requires gain
+    framing.
+risks:
+- Overusing loss framing can induce anxiety and cause the target to completely avoid
+  the message (defensive avoidance).
+evidence:
+  level: strong
+  references:
+  - 'Rothman, A. J., & Salovey, P. (1997). ''Shaping perceptions to motivate healthy
+    behavior: the role of message framing''. Psychological Bulletin.'
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- framing
+- communication
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

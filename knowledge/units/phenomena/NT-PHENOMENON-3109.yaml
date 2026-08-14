@@ -1,0 +1,43 @@
+id: NT-PHENOMENON-3109
+type: phenomenon
+title: Decoy Effect (Asymmetric Dominance)
+summary: Preferences between two options change significantly when a third, clearly
+  inferior option (the decoy) is introduced.
+primary_domain: tri-nhan
+domain_area: NT-DA-0027
+definition: A cognitive bias where the presence of an asymmetrically dominated option
+  increases the attractiveness of the dominating option, violating the independence
+  of irrelevant alternatives.
+mechanism:
+- Decision-makers struggle to compare options with conflicting attributes.
+- A decoy is introduced that is similar but strictly worse than Option A.
+- The decoy provides a clear baseline for comparison, making Option A look superior.
+conditions:
+- Choices involving multiple attributes (e.g., price and quality) where trade-offs
+  are hard to calculate.
+exceptions:
+- When the decision-maker has strict, pre-calculated valuation algorithms.
+applications:
+  pricing:
+  - Presenting three pricing tiers where the middle tier pushes buyers to the premium
+    tier.
+risks:
+- Being manipulated by vendor pricing structures into over-purchasing.
+evidence:
+  level: strong
+  references:
+  - Huber, J., Payne, J. W., & Puto, C. (1982). 'Adding asymmetrically dominated alternatives'.
+    Journal of Consumer Research.
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- pricing
+- options
+- decoy
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

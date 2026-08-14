@@ -1,0 +1,37 @@
+id: NT-MODEL-2401
+type: model
+status: review
+version: 1.0.0
+title: The Adaptive Cycle
+summary: Tăng trưởng, Bảo tồn, Sụp đổ, Tái cấu trúc.
+primary_domain: hop-chung
+domain_area: NT-DA-0024
+secondary_domains:
+- thanh-su
+definition: Sự sụp đổ là sự giải phóng nguồn lực bị kẹt, dọn đường cho tái cấu trúc
+  và thích ứng mới.
+mechanism:
+- Nhận thức tổ chức ở giai đoạn nào.
+- Khuyến khích sự sụp đổ nhỏ.
+conditions:
+- Chiến lược dài hạn.
+exceptions:
+- Tổ chức trong thị trường hoàn toàn ổn định.
+applications:
+  management:
+  - Quản trị sự thay đổi
+risks:
+- Sụp đổ quá mạnh không thể hồi phục
+evidence:
+  level: supported
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- framework
+- life-cycle
+created_at: '2026-08-12'
+updated_at: '2026-08-12'

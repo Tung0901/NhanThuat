@@ -1,0 +1,38 @@
+id: NT-PHENOMENON-3202
+type: phenomenon
+title: Zeigarnik Effect
+summary: People remember uncompleted or interrupted tasks better than completed tasks.
+primary_domain: tri-nhan
+domain_area: NT-DA-0028
+definition: A cognitive phenomenon where incomplete tasks create task-specific tension
+  that keeps the task active in working memory until resolution.
+mechanism:
+- Initiating a task creates a psychic tension.
+- Interrupting the task prevents the tension from resolving.
+- The unresolved tension keeps the memory of the task highly accessible.
+conditions:
+- Tasks that the individual genuinely intends to complete.
+exceptions:
+- Tasks interrupted due to absolute failure or explicit abandonment.
+applications:
+  marketing:
+  - Use cliffhangers or progress bars to induce completion tension.
+risks:
+- Burnout caused by leaving too many 'open loops' at the end of the workday.
+evidence:
+  level: strong
+  references:
+  - Zeigarnik, B. (1927). 'On finished and unfinished tasks'. Psychological Research.
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- memory
+- tasks
+- completion
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

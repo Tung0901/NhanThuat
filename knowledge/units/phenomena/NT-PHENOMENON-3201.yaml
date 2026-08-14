@@ -1,0 +1,39 @@
+id: NT-PHENOMENON-3201
+type: phenomenon
+title: Goal Gradient Effect
+summary: As people get closer to a goal, their efforts accelerate.
+primary_domain: tri-nhan
+domain_area: NT-DA-0028
+definition: A motivational phenomenon where the physical or psychological proximity
+  to a reward increases the intensity of the behavior required to achieve it.
+mechanism:
+- A goal is established.
+- As progress is made, the perceived distance to the goal decreases.
+- Motivation scales inversely with the perceived remaining distance.
+conditions:
+- Clear, measurable goals with a definitive finish line.
+exceptions:
+- Infinite or ambiguous goals (e.g., 'be healthy').
+applications:
+  gamification:
+  - Provide artificial initial progress (e.g., a coffee punch card with 2 free punches
+    out of 12) to artificially shorten the perceived starting distance.
+risks:
+- 'Post-goal depression: motivation plummets immediately after the goal is achieved.'
+evidence:
+  level: strong
+  references:
+  - Hull, C. L. (1932). 'The goal-gradient hypothesis and maze learning'. Psychological
+    Review.
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- goals
+- motivation
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

@@ -1,0 +1,43 @@
+id: NT-PHENOMENON-3404
+type: phenomenon
+title: Commitment and Consistency
+summary: Once we make a choice or take a stand, we face personal and interpersonal
+  pressures to behave consistently with that commitment.
+primary_domain: tri-nhan
+domain_area: NT-DA-0030
+definition: The psychological drive to align future behavior with past statements
+  or actions to maintain a self-image of rationality and reliability.
+mechanism:
+- An individual is prompted to make a small, voluntary, public commitment.
+- The individual's self-image shifts slightly to align with this commitment.
+- When a larger, related request is made later, the individual complies to remain
+  consistent with their new self-image.
+conditions:
+- The initial commitment must be active, public, and seemingly voluntary (uncoerced).
+exceptions:
+- When the initial commitment was forced under severe duress or obvious manipulation.
+applications:
+  management:
+  - Having employees write down their own goals rather than dictating them increases
+    follow-through dramatically.
+risks:
+- 'Sunk cost fallacy: continuing a failing strategy just to remain consistent with
+  past public statements.'
+evidence:
+  level: strong
+  references:
+  - Festinger, L. (1957). 'A Theory of Cognitive Dissonance'.
+  - Cialdini, R. B. (1984). 'Influence'.
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-PHENOMENON-3312
+  applies_to: []
+tags:
+- consistency
+- commitment
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

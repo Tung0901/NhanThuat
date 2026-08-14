@@ -1,0 +1,37 @@
+id: NT-PRINCIPLE-2401
+type: principle
+status: review
+version: 1.0.0
+title: Fail Gracefully
+summary: Thiết kế hệ thống sao cho một lỗi cục bộ không kéo theo sự sụp đổ toàn bộ.
+primary_domain: hop-chung
+domain_area: NT-DA-0024
+secondary_domains:
+- thanh-su
+definition: Xây dựng hệ thống có thể hấp thụ lỗi và tiếp tục hoạt động ở mức độ suy
+  giảm.
+mechanism:
+- Áp dụng nguyên lý vách ngăn.
+- Phân tán quyền quyết định.
+conditions:
+- Hệ thống phức tạp.
+exceptions:
+- Hệ thống đơn giản, ít rủi ro.
+applications:
+  management:
+  - Thiết kế tổ chức linh hoạt
+risks:
+- Chi phí vận hành tăng vọt
+evidence:
+  level: supported
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- system-design
+- resilience
+created_at: '2026-08-12'
+updated_at: '2026-08-12'

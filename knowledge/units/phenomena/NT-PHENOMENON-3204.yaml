@@ -1,0 +1,42 @@
+id: NT-PHENOMENON-3204
+type: phenomenon
+title: Temptation Bundling
+summary: Combining a behavior that is good for you in the long run with a behavior
+  that feels good in the short run.
+primary_domain: tri-nhan
+domain_area: NT-DA-0028
+definition: A behavioral intervention strategy designed to solve present bias by coupling
+  an instantly gratifying activity (want-to-do) with a delayed-gratification activity
+  (should-do).
+mechanism:
+- Identify a 'should-do' task that lacks immediate reward.
+- Identify a 'want-to-do' task that provides instant gratification.
+- Strictly restrict the 'want-to-do' task so it can only be done concurrently with
+  the 'should-do' task.
+conditions:
+- Tasks that can physically or cognitively be done simultaneously (e.g., running on
+  a treadmill and listening to an audiobook).
+exceptions:
+- Tasks requiring deep focus cannot be bundled with highly distracting rewards.
+applications:
+  habit_formation:
+  - Only allow watching a favorite show while doing administrative expense reports.
+risks:
+- The rule breaks down if the individual lacks the self-control to maintain the restriction.
+evidence:
+  level: strong
+  references:
+  - Milkman, K. L., Minson, J. A., & Volpp, K. G. (2014). 'Holding the Hunger Games
+    Hostage at the Gym'. Management Science.
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- habits
+- bundling
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

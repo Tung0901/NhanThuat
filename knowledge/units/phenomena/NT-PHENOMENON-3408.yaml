@@ -1,0 +1,45 @@
+id: NT-PHENOMENON-3408
+type: phenomenon
+title: Ben Franklin Effect
+summary: A person who has performed a favor for someone is more likely to do another
+  favor for them than they would be if they had received a favor from that person.
+primary_domain: tri-nhan
+domain_area: NT-DA-0030
+definition: A specific application of cognitive dissonance where an individual rationalizes
+  their own helpful behavior by unconsciously convincing themselves that they must
+  like the person they helped.
+mechanism:
+- Person A asks Person B for a small, reasonable favor.
+- Person B complies.
+- 'Person B experiences dissonance: ''Why am I helping this person? I must actually
+  like them.'''
+- Person B's attitude toward Person A becomes highly positive.
+conditions:
+- The favor must be personal, uncoerced, and unrewarded (no payment).
+exceptions:
+- Asking for a favor that is highly burdensome, offensive, or inappropriate for the
+  power dynamic.
+applications:
+  relationship_building:
+  - Asking a hostile colleague for a small piece of advice to neutralize their hostility
+    and build rapport.
+risks:
+- Appearing incompetent or needy if overused.
+evidence:
+  level: strong
+  references:
+  - Jecker, J., & Landy, D. (1969). 'Liking a person as a function of doing him a
+    favor'. Human Relations.
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-PHENOMENON-3312
+  applies_to: []
+tags:
+- rapport
+- dissonance
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

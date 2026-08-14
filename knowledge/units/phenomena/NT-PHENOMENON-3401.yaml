@@ -1,0 +1,43 @@
+id: NT-PHENOMENON-3401
+type: phenomenon
+title: Scarcity Principle
+summary: Opportunities seem more valuable to us when their availability is limited.
+primary_domain: tri-nhan
+domain_area: NT-DA-0030
+definition: An evolutionary heuristic where humans perceive rare, fleeting, or restricted
+  resources as inherently superior to abundant ones, triggering urgent acquisition
+  behavior.
+mechanism:
+- An item or opportunity is presented as limited by time (deadline) or quantity.
+- This threatens the individual's freedom of choice (psychological reactance).
+- To restore freedom and avoid missing out, the individual rapidly acquires the item,
+  bypassing logical valuation.
+conditions:
+- When the scarcity is perceived as genuine and the item has baseline utility.
+exceptions:
+- When the scarcity is clearly recognized as a manipulative, artificial marketing
+  gimmick (leads to backlash).
+applications:
+  sales:
+  - '''Only 2 seats left at this price'' significantly outperforms ''Buy a seat at
+    this price''.'
+risks:
+- Creating a panic-buying environment that ruins customer trust (e.g., ticket scalping
+  algorithms).
+evidence:
+  level: strong
+  references:
+  - 'Cialdini, R. B. (1984). ''Influence: The Psychology of Persuasion''.'
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- scarcity
+- fomo
+- influence
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

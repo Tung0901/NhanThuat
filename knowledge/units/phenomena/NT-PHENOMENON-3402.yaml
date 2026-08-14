@@ -1,0 +1,42 @@
+id: NT-PHENOMENON-3402
+type: phenomenon
+title: Authority Principle
+summary: A deep-seated sense of duty to authority causes individuals to blindly comply
+  with requests from perceived experts or leaders.
+primary_domain: tri-nhan
+domain_area: NT-DA-0030
+definition: The psychological shortcut where the mere symbols of authority (titles,
+  uniforms, credentials) bypass critical thinking and compel obedience.
+mechanism:
+- An individual encounters a person displaying symbols of authority.
+- The individual assumes the authority possesses superior knowledge and power.
+- The individual defaults to compliance without assessing the logic of the request.
+conditions:
+- Situations of high uncertainty where expert guidance is highly valued.
+exceptions:
+- When the authority is operating completely outside their domain of expertise (though
+  the halo effect sometimes overrides this).
+applications:
+  marketing:
+  - Using doctors in white coats to sell toothpaste, regardless of the actual medical
+    data.
+risks:
+- 'Blind obedience leading to catastrophic organizational failures or unethical behavior
+  (see: Milgram experiments).'
+evidence:
+  level: strong
+  references:
+  - 'Cialdini, R. B. (1984). ''Influence: The Psychology of Persuasion''.'
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-PHENOMENON-3311
+  applies_to: []
+tags:
+- authority
+- compliance
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

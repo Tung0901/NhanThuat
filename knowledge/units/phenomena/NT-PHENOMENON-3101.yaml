@@ -1,0 +1,42 @@
+id: NT-PHENOMENON-3101
+type: phenomenon
+title: Reference Dependence
+summary: Outcomes are evaluated not on their absolute value, but as positive or negative
+  deviations (gains or losses) from a subjective reference point.
+primary_domain: tri-nhan
+domain_area: NT-DA-0027
+definition: The core psychological mechanism of Prospect Theory where the baseline
+  status quo (or expectation) dictates whether an outcome is perceived as a success
+  or failure.
+mechanism:
+- A baseline reference point is established (e.g., current salary).
+- New outcomes are compared strictly against this baseline.
+- The absolute level of wealth matters less than the delta from the reference.
+conditions:
+- Situations where expectations or status quo are highly salient.
+exceptions:
+- Basic survival needs where absolute thresholds matter more than relative changes.
+applications:
+  negotiation:
+  - Manage expectations early to anchor the reference point favorably.
+risks:
+- Employee dissatisfaction despite high absolute compensation, if the reference point
+  (e.g., a peer's salary) is higher.
+evidence:
+  level: strong
+  references:
+  - 'Tversky, A., & Kahneman, D. (1991). ''Loss Aversion in Riskless Choice: A Reference-Dependent
+    Model''. Quarterly Journal of Economics.'
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-MODEL-3101
+  applies_to: []
+tags:
+- reference-point
+- expectations
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

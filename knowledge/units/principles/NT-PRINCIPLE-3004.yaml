@@ -1,0 +1,36 @@
+id: NT-PRINCIPLE-3004
+type: principle
+status: review
+version: 0.1.0
+title: De-bias through Structured Evaluation
+summary: Do not rely on willpower or awareness to overcome cognitive bias; instead, build structured environments and checklists that force objective evaluation.
+primary_domain: tri-nhan
+domain_area: NT-DA-0026
+secondary_domains: [thanh-su]
+definition: The practice of externalizing cognitive discipline into the environment, recognizing that human working memory cannot simultaneously execute a task and consciously defend against all known biases.
+mechanism:
+  - Recognize that bias operates below conscious awareness.
+  - Create a structural tool (rubric, checklist, blind evaluation protocol).
+  - Force the decision-maker to use the tool, decoupling the decision from subjective intuition.
+  - The tool catches errors the unaided mind would gloss over.
+conditions:
+  - High-stakes evaluations (hiring, investing, strategic commitments).
+exceptions:
+  - Low-stakes, reversible decisions where speed is paramount.
+applications:
+  hiring:
+    - Use blind resume reviews and standardized interview scoring rubrics.
+risks:
+  - Creating overly rigid bureaucratic processes that stifle necessary expert intuition.
+evidence:
+  level: strong
+  references:
+    - "Kahneman, D., Lovallo, D., & Sibony, O. (2011). 'Before You Make That Big Decision...'. Harvard Business Review."
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: [NT-PHENOMENON-3006, NT-PHENOMENON-3002]
+  applies_to: []
+tags: [bias, structure, decision-making, evaluation]
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

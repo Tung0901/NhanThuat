@@ -1,0 +1,39 @@
+id: NT-MODEL-2301
+type: model
+status: review
+version: 1.0.0
+title: The Cynefin Framework
+summary: Khung nhận thức giúp phân loại vấn đề (Rõ ràng, Phức tạp, Rối rắm, Hỗn loạn).
+primary_domain: tri-nhan
+domain_area: NT-DA-0023
+secondary_domains:
+- thanh-su
+definition: Cynefin giúp phân loại vấn đề và đưa ra hành động tương ứng tránh thiên
+  kiến.
+mechanism:
+- 'Clear: Best practices.'
+- 'Complicated: Good practices.'
+- 'Complex: Emergent practices.'
+- 'Chaotic: Novel practices.'
+conditions:
+- Chẩn đoán vấn đề.
+exceptions:
+- Vấn đề cực kỳ đơn giản.
+applications:
+  management:
+  - Xác định cách tiếp cận vấn đề
+risks:
+- Nhầm lẫn giữa Phức tạp và Rõ ràng
+evidence:
+  level: supported
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- framework
+- sensemaking
+created_at: '2026-08-12'
+updated_at: '2026-08-12'

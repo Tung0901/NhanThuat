@@ -1,0 +1,43 @@
+id: NT-PHENOMENON-3110
+type: phenomenon
+title: Peak-End Rule
+summary: People judge an experience largely based on how they felt at its peak (most
+  intense point) and at its end, rather than based on the total sum or average of
+  every moment.
+primary_domain: tri-nhan
+domain_area: NT-DA-0027
+definition: A psychological heuristic where memory of an event is disproportionately
+  weighted by its emotional climax and its conclusion, ignoring the duration of the
+  event.
+mechanism:
+- The event unfolds over time.
+- The brain selectively encodes the most emotionally salient moment (peak) and the
+  final moments (end).
+- Future decisions about repeating the event are based only on these two memory snapshots.
+conditions:
+- Temporally extended experiences (e.g., medical procedures, vacations, user onboarding).
+exceptions:
+- Short, uniform experiences with no variance in emotional intensity.
+applications:
+  ux_design:
+  - Always end a user journey or offboarding process on a positive, rewarding note.
+risks:
+- Investing heavily in improving the 'average' experience while ignoring a frustrating
+  ending, leading to negative retention.
+evidence:
+  level: strong
+  references:
+  - 'Kahneman, D., Fredrickson, B. L., Schreiber, C. A., & Redelmeier, D. A. (1993).
+    ''When more pain is preferred to less: Adding a better end''. Psychological Science.'
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- memory
+- experience
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

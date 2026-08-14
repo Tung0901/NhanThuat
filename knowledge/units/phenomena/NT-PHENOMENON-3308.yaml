@@ -1,0 +1,45 @@
+id: NT-PHENOMENON-3308
+type: phenomenon
+title: Self-Fulfilling Prophecy (Pygmalion Effect)
+summary: Higher expectations lead to an increase in performance, while lower expectations
+  lead to a decrease.
+primary_domain: tri-nhan
+domain_area: NT-DA-0029
+definition: A socio-psychological phenomenon where a leader's or manager's expectations
+  of a subordinate unconsciously alter the leader's behavior toward them, which in
+  turn causes the subordinate to fulfill those expectations.
+mechanism:
+- Leader forms an expectation (positive or negative) about an individual.
+- Leader unconsciously alters their coaching, feedback, and body language based on
+  this expectation.
+- The individual internalizes these cues, altering their own self-efficacy and effort,
+  fulfilling the original expectation.
+conditions:
+- Strong power dynamics (teacher/student, manager/employee) where the subordinate
+  looks to the authority for validation.
+exceptions:
+- When the subordinate has an unshakable, independent locus of self-worth.
+applications:
+  leadership:
+  - Adopt a default stance of high expectations and capability for all new hires to
+    systematically boost their performance.
+risks:
+- Writing off an employee as a 'low performer' early on, effectively guaranteeing
+  they will fail due to lack of support (The Golem Effect).
+evidence:
+  level: strong
+  references:
+  - Rosenthal, R., & Jacobson, L. (1968). 'Pygmalion in the classroom'. The Urban
+    Review.
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- expectations
+- performance
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

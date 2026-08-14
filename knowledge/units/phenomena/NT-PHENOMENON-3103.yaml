@@ -1,0 +1,42 @@
+id: NT-PHENOMENON-3103
+type: phenomenon
+title: Endowment Effect
+summary: Individuals ascribe higher value to items merely because they own them.
+primary_domain: tri-nhan
+domain_area: NT-DA-0027
+definition: A direct consequence of loss aversion where the minimum compensation demanded
+  for a good a person owns is strictly greater than the maximum price they would be
+  willing to pay to acquire it.
+mechanism:
+- Ownership is established (even momentarily).
+- The item becomes integrated into the reference point.
+- Giving it up is perceived as a loss, triggering loss aversion.
+conditions:
+- Items that are not purely functional exchange goods (like money).
+exceptions:
+- Tokens, currencies, or items intended purely for resale.
+applications:
+  product_design:
+  - Free trials create psychological ownership, increasing retention when the trial
+    ends.
+risks:
+- Overvaluing legacy systems or internal tools simply because the organization built
+  them.
+evidence:
+  level: strong
+  references:
+  - Thaler, R. (1980). 'Toward a positive theory of consumer choice'. Journal of Economic
+    Behavior & Organization.
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-PHENOMENON-3102
+  applies_to: []
+tags:
+- ownership
+- valuation
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

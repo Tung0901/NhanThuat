@@ -1,0 +1,39 @@
+id: NT-MODEL-3001
+type: model
+status: review
+version: 0.1.0
+title: Information Processing Pipeline
+summary: A structural model of how humans perceive, filter, process, and act upon environmental information.
+primary_domain: tri-nhan
+domain_area: NT-DA-0026
+secondary_domains: [tu-than]
+definition: A model demonstrating that human cognition operates as a constrained pipeline—moving from sensory input, through attentional filters and working memory, into long-term storage or immediate action.
+mechanism:
+  - Sensory input arrives in high volume.
+  - Attentional filters discard irrelevant signals.
+  - Working memory processes a small subset.
+  - Meaning is constructed via pattern matching against mental models.
+  - Output translates into physical action, communication, or stored memory.
+conditions:
+  - Individual or group processing novel or complex information.
+exceptions:
+  - Highly practiced habits bypass working memory constraints.
+applications:
+  design:
+    - Reduce extraneous cognitive load in user interfaces.
+  communication:
+    - Transmit information in chunks that fit working memory limits.
+risks:
+  - Assuming information sent equals information received and processed.
+evidence:
+  level: supported
+  references:
+    - "Atkinson, R. C., & Shiffrin, R. M. (1968). 'Human memory: A proposed system and its control processes'."
+relations:
+  supports: [NT-PRINCIPLE-3001]
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags: [cognition, information-processing, sensemaking]
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

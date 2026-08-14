@@ -1,0 +1,42 @@
+id: NT-PHENOMENON-3205
+type: phenomenon
+title: Decision Fatigue (Ego Depletion)
+summary: The deteriorating quality of decisions made by an individual after a long
+  session of decision making.
+primary_domain: tri-nhan
+domain_area: NT-DA-0028
+definition: A state of mental exhaustion caused by continuous cognitive effort, leading
+  to impulsive choices or absolute decision avoidance (status quo bias).
+mechanism:
+- Willpower and executive function rely on a finite metabolic or cognitive resource.
+- Repeated active choices drain this resource.
+- As depletion occurs, the brain defaults to System 1 heuristics, choosing the easiest
+  option or doing nothing.
+conditions:
+- High-frequency, high-stakes, or highly complex choices over a sustained period.
+exceptions:
+- Routine habits that run on automaticity do not drain executive function.
+applications:
+  process_design:
+  - Schedule critical strategic decisions for the morning; use defaults for afternoon
+    decisions.
+risks:
+- Judges or doctors making systematically worse, harsher, or risk-averse decisions
+  at the end of a shift.
+evidence:
+  level: strong
+  references:
+  - 'Baumeister, R. F., et al. (1998). ''Ego depletion: Is the active self a limited
+    resource?''. Journal of Personality and Social Psychology.'
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- fatigue
+- willpower
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

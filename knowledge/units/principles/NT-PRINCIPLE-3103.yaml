@@ -1,0 +1,41 @@
+id: NT-PRINCIPLE-3103
+type: principle
+title: Friction Addition for High-Risk Decisions
+summary: Intentionally introduce cognitive or physical friction to slow down automatic
+  processing (System 1) before irreversible or high-risk actions.
+primary_domain: tri-nhan
+domain_area: NT-DA-0027
+definition: 'The inverse of nudging: using choice architecture to deliberately make
+  an action harder to perform, forcing metacognitive reflection.'
+mechanism:
+- Identify a catastrophic failure path often taken via automatic habit.
+- Insert a procedural roadblock (e.g., typing the name of the repo to delete it).
+- The roadblock breaks automaticity and forces System 2 engagement.
+conditions:
+- Irreversible, high-cost, or highly secure operations.
+exceptions:
+- High-frequency, low-risk operational tasks where friction causes fatigue.
+applications:
+  devops:
+  - Require secondary manual approval for production deployments on Friday afternoons.
+risks:
+- Alarm fatigue—if there is too much friction everywhere, users will automate bypassing
+  it.
+evidence:
+  level: strong
+  references:
+  - Kahneman, D. (2011). 'Thinking, Fast and Slow'. Farrar, Straus and Giroux.
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-PRINCIPLE-3101
+  applies_to: []
+tags:
+- friction
+- security
+- system2
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

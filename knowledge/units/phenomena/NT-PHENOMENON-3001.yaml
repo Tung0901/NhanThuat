@@ -1,0 +1,38 @@
+id: NT-PHENOMENON-3001
+type: phenomenon
+status: review
+version: 0.1.0
+title: Illusion of Explanatory Depth
+summary: The false belief that one understands a complex system deeply, which collapses only when forced to explain the mechanics step-by-step.
+primary_domain: tri-nhan
+domain_area: NT-DA-0026
+secondary_domains: [tu-than]
+definition: An anti-pattern where individuals overestimate their comprehension of causality, confusing familiarity with a concept for actual mastery of its mechanics.
+mechanism:
+  - An individual is familiar with a system or concept.
+  - They feel a high degree of confidence in their understanding.
+  - When asked to explain the causal mechanism in detail, they cannot.
+  - Only then does their confidence drop to match their actual knowledge.
+conditions:
+  - Complex systems or phenomena with hidden mechanics.
+exceptions:
+  - True domain experts who have built and debugged the system themselves.
+  - "Consequences: Overconfident, flawed decision-making based on superficial understanding; Dismissal of actual experts."
+  - "Recognition Signal: High confidence in proposing solutions to complex problems, paired with an inability to draw a block diagram of how the solution works."
+applications:
+  management:
+    - Ask for a step-by-step mechanical explanation before approving a risky plan.
+risks:
+  - Using this to humiliate peers rather than to calibrate confidence.
+evidence:
+  level: strong
+  references:
+    - "Rozenblit, L., & Keil, F. (2002). 'The misunderstood limits of folk science: an illusion of explanatory depth'. Cognitive Science."
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags: [overconfidence, knowledge, metacognition]
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

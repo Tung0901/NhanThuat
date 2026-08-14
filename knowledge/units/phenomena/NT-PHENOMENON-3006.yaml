@@ -1,0 +1,38 @@
+id: NT-PHENOMENON-3006
+type: phenomenon
+status: review
+version: 0.1.0
+title: Anchoring Effect
+summary: The first piece of information offered in a decision context exerts a disproportionate influence on all subsequent judgments and estimates.
+primary_domain: tri-nhan
+domain_area: NT-DA-0026
+secondary_domains: [thanh-su]
+definition: A structural cognitive bias where decision-makers implicitly rely too heavily on an initial reference point (the anchor) when estimating value, probability, or magnitude, adjusting insufficiently from that anchor.
+mechanism:
+  - An initial number, concept, or frame is introduced to the environment.
+  - The brain uses this anchor as a starting point for evaluation.
+  - The brain searches for reasons the anchor might be plausible.
+  - Adjustments away from the anchor end prematurely as soon as a plausible boundary is reached.
+conditions:
+  - High uncertainty or ambiguity about objective value or truth.
+exceptions:
+  - The decision-maker has unshakeable, empirically verified knowledge of the true value.
+applications:
+  negotiation:
+    - Set the initial anchor thoughtfully to shape the zone of possible agreement.
+  estimation:
+    - Require independent estimates before discussing numbers as a group to prevent anchoring.
+risks:
+  - Being manipulated by arbitrary numbers set by adversaries.
+evidence:
+  level: strong
+  references:
+    - "Tversky, A., & Kahneman, D. (1974). 'Judgment under Uncertainty: Heuristics and Biases'. Science."
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags: [heuristics, anchoring, negotiation, bias]
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

@@ -1,0 +1,36 @@
+id: NT-PHENOMENON-3007
+type: phenomenon
+status: review
+version: 0.1.0
+title: Metacognitive Incompetence Illusion
+summary: Humans are inherently poor at accurately evaluating their own incompetence, because the skills required to perform a task are the exact same skills required to evaluate performance on that task.
+primary_domain: tri-nhan
+domain_area: NT-DA-0026
+secondary_domains: [thanh-su]
+definition: A structural limitation where low-ability individuals cannot recognize their low ability, leading to inflated self-assessments.
+mechanism:
+  - The actor attempts a task in a domain where they lack expertise.
+  - The actor performs poorly.
+  - Because they lack expertise, they cannot perceive the difference between their performance and expert performance.
+  - They confidently conclude they performed well.
+conditions:
+  - Domains requiring specialized knowledge or nuanced judgment.
+exceptions:
+  - Tasks with immediate, undeniable, and binary physical feedback.
+applications:
+  hiring:
+    - Use structural behavioral testing rather than self-reported skill assessments.
+risks:
+  - Promoting confident incompetence while ignoring cautious competence.
+evidence:
+  level: strong
+  references:
+    - "Kruger, J., & Dunning, D. (1999). 'Unskilled and unaware of it: How difficulties in recognizing one's own incompetence lead to inflated self-assessments'. Journal of Personality and Social Psychology."
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags: [metacognition, confidence, bias, assessment]
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

@@ -1,0 +1,41 @@
+id: NT-PRINCIPLE-3102
+type: principle
+title: Default Configuration Leverage
+summary: Set the default option to the most socially or systemically optimal choice,
+  as a majority of users will never change it.
+primary_domain: tri-nhan
+domain_area: NT-DA-0027
+definition: Applying the status quo bias prescriptively by pre-selecting the recommended
+  option in any decision system.
+mechanism:
+- The default is perceived as the implicit recommendation of the choice architect.
+- Changing the default requires cognitive effort and induces fear of making a mistake.
+- Therefore, the default acts as a powerful behavioral magnet.
+conditions:
+- Complex decisions where users lack strong pre-existing preferences or expertise.
+exceptions:
+- Highly consequential, irreversible decisions that demand explicit consent (e.g.,
+  deleting a database).
+applications:
+  security:
+  - Make privacy-preserving and secure configurations the default out-of-the-box experience.
+risks:
+- Setting harmful defaults that exploit user laziness.
+evidence:
+  level: strong
+  references:
+  - Johnson, E. J., & Goldstein, D. (2003). 'Do Defaults Save Lives?'. Science.
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-PHENOMENON-3106
+  - NT-PRINCIPLE-3101
+  applies_to: []
+tags:
+- defaults
+- status-quo
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

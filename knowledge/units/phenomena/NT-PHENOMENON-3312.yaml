@@ -1,0 +1,42 @@
+id: NT-PHENOMENON-3312
+type: phenomenon
+title: Cognitive Dissonance
+summary: The mental discomfort experienced by someone holding two or more contradictory
+  beliefs, ideas, or values, especially when their behavior conflicts with their beliefs.
+primary_domain: tri-nhan
+domain_area: NT-DA-0029
+definition: A psychological stress state that drives individuals to resolve contradictions,
+  usually by irrationalizing their beliefs rather than changing their past behavior.
+mechanism:
+- A conflict arises between a belief and an action (e.g., 'I am a smart manager' vs
+  'I hired a terrible employee').
+- This creates uncomfortable psychological tension.
+- To relieve the tension, the individual alters the belief (e.g., 'The employee isn't
+  terrible, they just need more time') to justify the action.
+conditions:
+- When an individual's self-concept or ego is heavily tied to the contradictory behavior.
+exceptions:
+- When the individual is highly self-aware and trained in metacognitive reflection.
+applications:
+  persuasion:
+  - Getting someone to make a small, public commitment forces them to align their
+    internal beliefs to justify their action (the Ben Franklin effect).
+risks:
+- Doubling down on catastrophic business strategies to avoid admitting failure.
+evidence:
+  level: strong
+  references:
+  - Festinger, L. (1957). 'A Theory of Cognitive Dissonance'. Stanford University
+    Press.
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- dissonance
+- belief
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

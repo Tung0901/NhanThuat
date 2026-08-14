@@ -1,0 +1,37 @@
+id: NT-ANTI-PATTERN-2101
+type: anti-pattern
+status: review
+version: 1.0.0
+title: The Ostrich Strategy
+summary: Phớt lờ khủng hoảng với hy vọng nó sẽ tự qua đi hoặc không ai chú ý.
+primary_domain: thanh-su
+domain_area: NT-DA-0021
+secondary_domains:
+- tu-than
+definition: Phản xạ tâm lý phòng thủ khi đối mặt với rủi ro lớn, từ chối thừa nhận
+  mức độ nghiêm trọng.
+mechanism:
+- Trì hoãn thu thập dữ liệu.
+- Đổ lỗi cho ngoại cảnh.
+conditions:
+- Văn hóa tổ chức có chỉ số an toàn tâm lý thấp.
+exceptions:
+- Rủi ro thực sự không tồn tại.
+applications:
+  management:
+  - Loại bỏ tư duy này trong ban điều hành
+risks:
+- Khủng hoảng phình to không thể kiểm soát
+evidence:
+  level: supported
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- denial
+- leadership-failure
+created_at: '2026-08-12'
+updated_at: '2026-08-12'

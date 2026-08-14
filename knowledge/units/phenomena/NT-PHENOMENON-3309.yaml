@@ -1,0 +1,43 @@
+id: NT-PHENOMENON-3309
+type: phenomenon
+title: Social Comparison Theory
+summary: Individuals determine their own social and personal worth based on how they
+  stack up against others.
+primary_domain: tri-nhan
+domain_area: NT-DA-0029
+definition: The drive within individuals to gain accurate self-evaluations by comparing
+  themselves to others, utilizing upward comparison (for motivation) or downward comparison
+  (for ego defense).
+mechanism:
+- Objective metrics for self-worth are absent.
+- The individual identifies a peer reference group.
+- The individual evaluates their own traits, wealth, or success relative to this specific
+  group.
+conditions:
+- Situations lacking objective standards, heavily prevalent in status hierarchies
+  and compensation negotiations.
+exceptions:
+- Individuals who have adopted strict intrinsic, stoic, or absolute mastery-based
+  evaluation frameworks.
+applications:
+  motivation:
+  - Publishing a team leaderboard can drive performance via upward social comparison.
+risks:
+- Employees becoming severely demotivated upon discovering a peer earns slightly more,
+  regardless of their own absolute wealth.
+evidence:
+  level: strong
+  references:
+  - Festinger, L. (1954). 'A Theory of Social Comparison Processes'. Human Relations.
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- comparison
+- status
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

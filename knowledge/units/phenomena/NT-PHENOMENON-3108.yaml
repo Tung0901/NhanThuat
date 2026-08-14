@@ -1,0 +1,41 @@
+id: NT-PHENOMENON-3108
+type: phenomenon
+title: Sunk Cost Fallacy
+summary: Continuing an endeavor as a result of previously invested resources (time,
+  money, or effort), despite evidence that it is no longer profitable.
+primary_domain: tri-nhan
+domain_area: NT-DA-0027
+definition: The irrational incorporation of irrecoverable past costs into future decision-making,
+  driven by a desire not to appear wasteful or admit failure.
+mechanism:
+- Resources are invested in a failing course of action.
+- Abandoning the action forces the realization of a loss.
+- To avoid the psychological pain of this loss, more resources are invested to 'turn
+  it around'.
+conditions:
+- High personal responsibility for the initial investment.
+exceptions:
+- When decisions are handed over to a completely new manager with no ties to the past.
+applications:
+  project_management:
+  - Implement strict milestone-based kill criteria before a project begins.
+risks:
+- Throwing good money after bad in doomed technical rewrites.
+evidence:
+  level: strong
+  references:
+  - Arkes, H. R., & Blumer, C. (1985). 'The psychology of sunk cost'. Organizational
+    Behavior and Human Decision Processes.
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-PHENOMENON-3102
+  applies_to: []
+tags:
+- sunk-cost
+- escalation
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

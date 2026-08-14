@@ -1,0 +1,38 @@
+id: NT-PHENOMENON-3004
+type: phenomenon
+status: review
+version: 0.1.0
+title: Overconfidence Illusion
+summary: The structural tendency for individuals to be more confident in their judgments and predictions than their objective accuracy warrants.
+primary_domain: tri-nhan
+domain_area: NT-DA-0026
+secondary_domains: [tu-than]
+definition: An anti-pattern where subjective certainty outpaces objective correctness, often driven by the fluency of internal processing rather than actual evidentiary support.
+mechanism:
+  - The brain processes a judgment easily (high fluency).
+  - High fluency is interpreted as high accuracy.
+  - The actor expresses high certainty.
+  - Objective measurement reveals a significant gap between certainty and accuracy.
+conditions:
+  - Tasks of moderate to high difficulty where feedback is delayed or ambiguous.
+exceptions:
+  - Highly repetitive tasks with immediate, objective feedback.
+  - "Consequences: Catastrophic bets on unproven strategies; Failure to build necessary safety margins or contingencies."
+  - "Recognition Signal: Point estimates (e.g., 'It will take 3 days') instead of confidence intervals ('3 to 7 days')."
+applications:
+  decision-making:
+    - Require confidence intervals rather than absolute predictions.
+risks:
+  - Confusing the social utility of projecting confidence (leadership signaling) with epistemological accuracy.
+evidence:
+  level: strong
+  references:
+    - "Moore, D. A., & Healy, P. J. (2008). 'The trouble with overconfidence'. Psychological Review."
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags: [heuristics, confidence, bias, prediction]
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

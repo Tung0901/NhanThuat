@@ -1,0 +1,49 @@
+id: NT-MODEL-3101
+type: model
+title: Prospect Theory Framework
+summary: A formal descriptive model of decision-making under risk, demonstrating that
+  humans value gains and losses differently, evaluating outcomes relative to a reference
+  point rather than final wealth states.
+primary_domain: tri-nhan
+domain_area: NT-DA-0027
+definition: A behavioral economic model that replaces Expected Utility Theory. It
+  incorporates an asymmetric value function (steeper for losses than gains) and a
+  non-linear probability weighting function (overweighting small probabilities).
+mechanism:
+- 'Editing Phase: Decision options are framed and simplified relative to a neutral
+  reference point.'
+- 'Evaluation Phase: Value is assigned based on potential changes from the reference
+  point.'
+- 'Loss aversion: The pain of losing $100 is psychologically more intense than the
+  joy of gaining $100.'
+- 'Probability weighting: Very low probabilities are over-weighted; moderate/high
+  probabilities are under-weighted.'
+conditions:
+- Decisions involving explicit risk, probability, and distinct potential gains or
+  losses.
+exceptions:
+- Decisions where the stakes are incredibly small or routine.
+applications:
+  risk_communication:
+  - Frame probabilities in absolute numbers rather than percentages to reduce weighting
+    distortion.
+risks:
+- Assuming rational expected utility maximization in financial or strategic models.
+evidence:
+  level: strong
+  references:
+  - 'Kahneman, D., & Tversky, A. (1979). ''Prospect Theory: An Analysis of Decision
+    under Risk''. Econometrica.'
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- behavioral-economics
+- decision-making
+- risk
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

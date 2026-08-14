@@ -1,0 +1,44 @@
+id: NT-PHENOMENON-3207
+type: phenomenon
+title: Overjustification Effect (Extrinsic Crowding-Out)
+summary: Providing an external reward for an activity that was already intrinsically
+  rewarding decreases a person's intrinsic motivation to perform it.
+primary_domain: tri-nhan
+domain_area: NT-DA-0028
+definition: A phenomenon where expected external incentives such as money or prizes
+  decrease a person's intrinsic motivation to perform a task.
+mechanism:
+- An individual enjoys a task for its own sake.
+- An external reward is introduced for doing the task.
+- The brain shifts the attribution of the behavior from 'I do this because I like
+  it' to 'I do this because I am paid'.
+- When the reward is removed, the behavior stops.
+conditions:
+- Tasks that already possess high intrinsic motivation and interest.
+exceptions:
+- Routine, boring, or mechanical tasks where intrinsic motivation is zero (external
+  rewards work well here).
+applications:
+  management:
+  - Do not offer financial bonuses for highly creative, self-directed exploration
+    unless absolutely necessary.
+risks:
+- Accidentally destroying a passionate open-source or volunteer community by trying
+  to commercialize or pay them.
+evidence:
+  level: strong
+  references:
+  - Lepper, M. R., Greene, D., & Nisbett, R. E. (1973). 'Undermining children's intrinsic
+    interest with extrinsic reward'. Journal of Personality and Social Psychology.
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- motivation
+- rewards
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

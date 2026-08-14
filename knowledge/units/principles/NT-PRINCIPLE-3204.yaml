@@ -1,0 +1,42 @@
+id: NT-PRINCIPLE-3204
+type: principle
+title: Minimum Viable Routine (Tiny Habits)
+summary: Scaling down a desired new behavior to an absurdly small, easily executable
+  version to guarantee consistency.
+primary_domain: tri-nhan
+domain_area: NT-DA-0028
+definition: A behavioral design strategy that bypasses the need for high motivation
+  by making the target behavior so small it requires virtually zero ability or effort.
+mechanism:
+- Define the target habit (e.g., read a book a week).
+- Scale it down to the absolute minimum viable action (e.g., read one sentence).
+- Execute consistently.
+- Once the neural pathway is established, naturally expand the behavior.
+conditions:
+- When trying to build a completely new habit from scratch in a busy life.
+exceptions:
+- When a deadline requires immediate, massive volume (e.g., cramming for an exam).
+applications:
+  onboarding:
+  - Ask new users to complete only one ultra-simple profile field rather than a massive
+    10-step wizard.
+risks:
+- Stagnating at the tiny version and never scaling up to the actual goal.
+evidence:
+  level: strong
+  references:
+  - 'Fogg, B. J. (2019). ''Tiny Habits: The Small Changes That Change Everything''.
+    Houghton Mifflin Harcourt.'
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-MODEL-3202
+  applies_to: []
+tags:
+- habits
+- consistency
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

@@ -1,0 +1,37 @@
+id: NT-LAW-2401
+type: law
+status: review
+version: 1.0.0
+title: Law of System Redundancy
+summary: Sự bền bỉ yêu cầu một mức độ dư thừa có tính toán thay vì tối ưu hóa hoàn
+  toàn cho sự hiệu quả.
+primary_domain: hop-chung
+domain_area: NT-DA-0024
+secondary_domains:
+- thanh-su
+definition: Biên độ an toàn và sự dư thừa là tấm nệm hấp thụ các cú sốc.
+mechanism:
+- Xác định chức năng trọng yếu.
+- Xây dựng backup.
+conditions:
+- Môi trường vĩ mô biến động mạnh.
+exceptions:
+- Startup giai đoạn sống còn.
+applications:
+  management:
+  - Quản trị rủi ro chuỗi cung ứng
+risks:
+- Dư thừa sai chỗ trở thành lãng phí
+evidence:
+  level: supported
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- resilience
+- redundancy
+created_at: '2026-08-12'
+updated_at: '2026-08-12'

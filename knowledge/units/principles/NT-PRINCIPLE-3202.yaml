@@ -1,0 +1,41 @@
+id: NT-PRINCIPLE-3202
+type: principle
+title: Goal Shielding
+summary: Actively inhibiting alternative goals or distractions to protect the focal
+  goal.
+primary_domain: tri-nhan
+domain_area: NT-DA-0028
+definition: The cognitive and environmental practice of deactivating competing goals
+  to ensure sufficient attention and resources are dedicated to the primary objective.
+mechanism:
+- A primary goal is activated.
+- Alternative goals are cognitively suppressed or physically removed from the environment.
+- Focus is maintained without requiring continuous willpower to resist the alternatives.
+conditions:
+- Environments with high distractibility or multiple conflicting priorities.
+exceptions:
+- Brainstorming or exploratory phases where divergent thinking is required.
+applications:
+  productivity:
+  - Blocking all social media sites via software during deep work blocks.
+risks:
+- Tunnel vision—ignoring critical new information because it doesn't align with the
+  shielded goal.
+evidence:
+  level: strong
+  references:
+  - 'Shah, J. Y., Friedman, R., & Kruglanski, A. W. (2002). ''Forgetting all else:
+    on the antecedents and consequences of goal shielding''. Journal of Personality
+    and Social Psychology.'
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- focus
+- goals
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

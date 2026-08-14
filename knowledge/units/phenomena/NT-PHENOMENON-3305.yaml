@@ -1,0 +1,39 @@
+id: NT-PHENOMENON-3305
+type: phenomenon
+title: Ingroup Bias
+summary: The tendency to favor one's own group over outgroup members.
+primary_domain: tri-nhan
+domain_area: NT-DA-0029
+definition: A pattern of favoring members of one's in-group over out-group members,
+  manifesting in evaluation, allocation of resources, and perception of competence.
+mechanism:
+- Individuals categorize themselves and others into groups.
+- Self-esteem becomes tied to the status of the in-group (Social Identity Theory).
+- To boost self-esteem, individuals elevate the in-group and derogate the out-group.
+conditions:
+- Even minimal, arbitrary groupings (e.g., flipping a coin to assign teams) can trigger
+  this bias.
+exceptions:
+- When a superordinate goal requires the strict cooperation of both groups to survive.
+applications:
+  team_building:
+  - Create a strong, shared team identity to foster internal loyalty and cooperation.
+risks:
+- Silo mentality, inter-departmental warfare, and failure to share resources across
+  an organization.
+evidence:
+  level: strong
+  references:
+  - Tajfel, H. (1970). 'Experiments in Intergroup Discrimination'. Scientific American.
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- bias
+- identity
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

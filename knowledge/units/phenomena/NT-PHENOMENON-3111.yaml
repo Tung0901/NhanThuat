@@ -1,0 +1,40 @@
+id: NT-PHENOMENON-3111
+type: phenomenon
+title: Base Rate Neglect
+summary: The tendency to ignore general statistical information (base rates) in favor
+  of specific, often irrelevant, individuating information.
+primary_domain: tri-nhan
+domain_area: NT-DA-0027
+definition: A cognitive fallacy where decision-makers fail to integrate the prior
+  probability of an event when evaluating new, descriptive evidence.
+mechanism:
+- The decision-maker receives a compelling, specific narrative about an entity.
+- They receive the general statistical probability of the entity's category.
+- The narrative overrides the statistics in their mental model.
+conditions:
+- When descriptive information is highly stereotypic or emotionally salient.
+exceptions:
+- When the base rate is presented causally rather than purely statistically.
+applications:
+  forecasting:
+  - Force the explicit presentation of the 'outside view' (base rate of failure) before
+    predicting a project's success.
+risks:
+- Overestimating the likelihood of rare events or the success rate of standard initiatives.
+evidence:
+  level: strong
+  references:
+  - Kahneman, D., & Tversky, A. (1973). 'On the psychology of prediction'. Psychological
+    Review.
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- statistics
+- probability
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

@@ -1,0 +1,44 @@
+id: NT-PHENOMENON-3311
+type: phenomenon
+title: Obedience to Authority
+summary: The deep-seated tendency to comply with instructions from an authority figure,
+  even when those instructions conflict with personal conscience.
+primary_domain: tri-nhan
+domain_area: NT-DA-0029
+definition: A behavioral trait where individuals abdicate their personal agency and
+  moral responsibility to a perceived legitimate authority figure.
+mechanism:
+- An authority figure issues a command.
+- The individual experiences an 'agentic shift', viewing themselves merely as an instrument
+  for carrying out the authority's wishes.
+- Moral responsibility is transferred to the authority.
+conditions:
+- The authority figure is perceived as legitimate, authoritative, and willing to accept
+  responsibility for the outcome.
+exceptions:
+- When there are conflicting authority figures, or when the individual is physically
+  separated from the authority.
+applications:
+  security:
+  - Social engineering attacks heavily leverage the illusion of authority (e.g., posing
+    as the CEO) to bypass security protocols.
+risks:
+- Employees executing illegal or unethical corporate directives without question ('I
+  was just following orders').
+evidence:
+  level: strong
+  references:
+  - Milgram, S. (1963). 'Behavioral Study of Obedience'. Journal of Abnormal and Social
+    Psychology.
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- authority
+- obedience
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

@@ -1,0 +1,48 @@
+id: NT-PHENOMENON-3407
+type: phenomenon
+title: Foot-in-the-Door Technique
+summary: Getting a person to agree to a large request by first having them agree to
+  a modest request.
+primary_domain: tri-nhan
+domain_area: NT-DA-0030
+definition: A sequential compliance tactic utilizing the principle of consistency,
+  where a small initial agreement permanently alters the target's self-image to be
+  favorable to the persuader's cause.
+mechanism:
+- Make a trivially small request that almost anyone would accept (e.g., signing a
+  petition).
+- The target complies.
+- The target's self-image subtly shifts ('I am the type of person who supports this
+  cause').
+- Later, a large request is made (e.g., a large donation).
+- Target complies to remain consistent with their new identity.
+conditions:
+- The initial request must be related in theme to the ultimate request, and must be
+  completely voluntary.
+exceptions:
+- When the initial request is heavily rewarded with money, shifting the attribution
+  from internal identity to external reward.
+applications:
+  ux_design:
+  - Free trials or asking for just an email address before asking for a credit card.
+risks:
+- Alienating the user if the escalation from small to large request is too rapid or
+  aggressive.
+evidence:
+  level: strong
+  references:
+  - 'Freedman, J. L., & Fraser, S. C. (1966). ''Compliance without pressure: the foot-in-the-door
+    technique''. Journal of Personality and Social Psychology.'
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-PHENOMENON-3404
+  applies_to: []
+tags:
+- compliance
+- consistency
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

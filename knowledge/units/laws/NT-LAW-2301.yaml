@@ -1,0 +1,38 @@
+id: NT-LAW-2301
+type: law
+status: review
+version: 1.0.0
+title: Law of Anchoring
+summary: Con người có xu hướng bám víu quá mức vào mẩu thông tin đầu tiên họ nhận
+  được.
+primary_domain: tri-nhan
+domain_area: NT-DA-0023
+secondary_domains:
+- thanh-su
+definition: Bộ não sử dụng thông tin ban đầu làm điểm chuẩn để so sánh và điều chỉnh,
+  dẫn đến kết luận bị lệch.
+mechanism:
+- Nhận diện mỏ neo.
+- Thiết lập mỏ neo có lợi.
+conditions:
+- Đàm phán, dự báo.
+exceptions:
+- Chuyên gia có kinh nghiệm sâu.
+applications:
+  negotiation:
+  - Đưa ra con số đầu tiên
+risks:
+- Bị thao túng bởi mỏ neo của đối thủ
+evidence:
+  level: supported
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- bias
+- psychology
+created_at: '2026-08-12'
+updated_at: '2026-08-12'

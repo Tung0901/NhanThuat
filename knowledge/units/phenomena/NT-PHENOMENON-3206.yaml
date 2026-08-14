@@ -1,0 +1,42 @@
+id: NT-PHENOMENON-3206
+type: phenomenon
+title: Implementation Intentions
+summary: A self-regulatory strategy in the form of an 'if-then' plan that leads to
+  better goal attainment.
+primary_domain: tri-nhan
+domain_area: NT-DA-0028
+definition: The psychological effect where explicitly defining the situational cue
+  and the planned response significantly increases the probability of executing a
+  behavior.
+mechanism:
+- 'An explicit plan is formed: ''If situation X arises, I will perform behavior Y.'''
+- The situational cue (X) becomes highly cognitively accessible.
+- When X occurs, the response (Y) is triggered automatically, bypassing conscious
+  deliberation.
+conditions:
+- Specific, executable behaviors rather than abstract outcomes.
+exceptions:
+- Situations that are entirely unpredictable or outside the individual's control.
+applications:
+  goal_setting:
+  - Replace 'I will exercise more' with 'If it is 7:00 AM on Tuesday, I will put on
+    my running shoes'.
+risks:
+- Over-planning for edge cases, leading to a brittle routine.
+evidence:
+  level: strong
+  references:
+  - 'Gollwitzer, P. M. (1999). ''Implementation intentions: Strong effects of simple
+    plans''. American Psychologist.'
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- planning
+- goals
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

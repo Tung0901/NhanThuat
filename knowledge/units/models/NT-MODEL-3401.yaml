@@ -1,0 +1,44 @@
+id: NT-MODEL-3401
+type: model
+title: Elaboration Likelihood Model (ELM)
+summary: 'A dual-process theory describing the change of attitudes, identifying two
+  distinct routes to persuasion: central (logical) and peripheral (superficial).'
+primary_domain: tri-nhan
+domain_area: NT-DA-0030
+definition: A comprehensive framework for understanding how likely people are to cognitively
+  elaborate on a persuasive message, predicting which persuasion techniques will be
+  most effective.
+mechanism:
+- 'Central Route: User is highly motivated and able to process. Persuasion requires
+  strong, logical arguments and data. Creates lasting attitude change.'
+- 'Peripheral Route: User has low motivation or ability. Persuasion occurs via superficial
+  cues (attractiveness, authority, heuristics). Creates temporary attitude change.'
+- The persuader must diagnose the audience's state and select the matching route.
+conditions:
+- Any persuasive communication, advertising, or debate.
+exceptions:
+- Individuals acting purely on automatic reflex without any processing whatsoever.
+applications:
+  marketing:
+  - Use detailed spec sheets (central) for B2B enterprise software; use celebrity
+    endorsements (peripheral) for consumer energy drinks.
+risks:
+- Attempting to use complex data to persuade a tired, distracted audience (resulting
+  in immediate tune-out).
+evidence:
+  level: strong
+  references:
+  - Petty, R. E., & Cacioppo, J. T. (1986). 'The elaboration likelihood model of persuasion'.
+    Advances in experimental social psychology.
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- persuasion
+- cognition
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

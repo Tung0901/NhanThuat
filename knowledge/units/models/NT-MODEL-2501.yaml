@@ -1,0 +1,37 @@
+id: NT-MODEL-2501
+type: model
+status: review
+version: 1.0.0
+title: Three Horizons of Growth
+summary: 'Quy hoạch đổi mới qua 3 đường chân trời: Core, Adjacent, Transformative.'
+primary_domain: tu-than
+domain_area: NT-DA-0025
+secondary_domains:
+- thanh-su
+definition: Phân bổ nguồn lực và tư duy qua 3 đường chân trời để tăng trưởng bền vững.
+mechanism:
+- 'H1: Core.'
+- 'H2: Adjacent.'
+- 'H3: Transformative.'
+conditions:
+- Quy hoạch chiến lược dài hạn.
+exceptions:
+- Giai đoạn sinh tồn.
+applications:
+  management:
+  - Xây dựng danh mục đổi mới
+risks:
+- Dồn 100% nguồn lực vào H1
+evidence:
+  level: supported
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- framework
+- growth
+created_at: '2026-08-12'
+updated_at: '2026-08-12'

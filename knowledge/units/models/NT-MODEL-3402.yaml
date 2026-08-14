@@ -1,0 +1,44 @@
+id: NT-MODEL-3402
+type: model
+title: Inoculation Theory
+summary: People can be immunized against persuasive attacks and misinformation by
+  preemptively exposing them to a weakened version of the argument.
+primary_domain: tri-nhan
+domain_area: NT-DA-0030
+definition: 'A psychological model of resistance to persuasion, operating identically
+  to biological vaccination: small doses of an opposing argument trigger the cognitive
+  immune system to build defenses.'
+mechanism:
+- Introduce a weakened, easily refutable version of the opponent's argument (the 'virus').
+- Provide the counter-arguments (the 'antibodies').
+- When the audience encounters the full-strength opponent argument later, they instinctively
+  reject it using the prepared defenses.
+conditions:
+- When defending a brand, ideology, or group against anticipated aggressive attacks.
+exceptions:
+- When the initial 'weak' argument is presented too convincingly, accidentally persuading
+  the audience instead of inoculating them.
+applications:
+  politics:
+  - '''Our opponents will tell you that this policy increases taxes. What they won''t
+    tell you is that it completely abolishes hidden fees, saving you money overall.'''
+risks:
+- 'Backfire effect: giving a platform to dangerous misinformation that the audience
+  had not previously considered.'
+evidence:
+  level: strong
+  references:
+  - McGuire, W. J. (1961). 'The effectiveness of supportive and behavioral defenses
+    in immunizing against persuasion'. Sociometry.
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- resistance
+- persuasion
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

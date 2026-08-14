@@ -1,0 +1,45 @@
+id: NT-PHENOMENON-3406
+type: phenomenon
+title: Door-in-the-Face Technique
+summary: Making an extreme request that is guaranteed to be rejected, followed immediately
+  by a smaller, reasonable request.
+primary_domain: tri-nhan
+domain_area: NT-DA-0030
+definition: A sequential compliance strategy leveraging perceptual contrast and the
+  reciprocity norm to increase the acceptance rate of a target request.
+mechanism:
+- Persuader makes a massive request.
+- Target refuses.
+- Persuader makes a 'concession' by retreating to a smaller request.
+- Target feels psychological pressure (reciprocity) to make a concession in return,
+  and agrees to the smaller request.
+conditions:
+- The second request must be made immediately by the same person, and the first request
+  cannot be so absurd that it ruins credibility.
+exceptions:
+- When the target recognizes the sequence as a hostile negotiation tactic.
+applications:
+  sales:
+  - Ask a client to buy the ultra-premium $10,000 package. When they refuse, ask them
+    to buy the $2,000 standard package (which was the actual goal).
+risks:
+- Damaging trust if the initial anchor is insulting or purely manipulative.
+evidence:
+  level: strong
+  references:
+  - 'Cialdini, R. B., et al. (1975). ''Reciprocal concessions procedure for inducing
+    compliance: The door-in-the-face technique''. Journal of Personality and Social
+    Psychology.'
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-PHENOMENON-3306
+  applies_to: []
+tags:
+- negotiation
+- compliance
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

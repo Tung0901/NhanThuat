@@ -1,0 +1,38 @@
+id: NT-LAW-2201
+type: law
+status: review
+version: 1.0.0
+title: Law of Power Asymmetry
+summary: Quyền lực luôn phân bổ không đồng đều và tự nhiên chảy về nơi kiểm soát các
+  nguồn lực thiết yếu.
+primary_domain: dung-nhan
+domain_area: NT-DA-0022
+secondary_domains:
+- hop-chung
+definition: Quyền lực thực sự nằm ở sự bất đối xứng về sự phụ thuộc giữa các bên trong
+  tổ chức.
+mechanism:
+- Phân tích chuỗi giá trị.
+- Đánh giá sự phụ thuộc.
+conditions:
+- Tổ chức phức tạp.
+exceptions:
+- Tổ chức phi tập trung hoàn toàn.
+applications:
+  management:
+  - Tái cấu trúc để phá vỡ silos
+risks:
+- Xung đột ngầm giữa quyền lực chính thức và phi chính thức
+evidence:
+  level: supported
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- power
+- dependency
+created_at: '2026-08-12'
+updated_at: '2026-08-12'

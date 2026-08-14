@@ -1,0 +1,45 @@
+id: NT-PHENOMENON-3307
+type: phenomenon
+title: Social Loafing (Ringelmann Effect)
+summary: The phenomenon of a person exerting less effort to achieve a goal when they
+  work in a group than when they work alone.
+primary_domain: tri-nhan
+domain_area: NT-DA-0029
+definition: A reduction in individual effort and motivation that occurs when people
+  work in groups compared to when they work individually, scaling with the size of
+  the group.
+mechanism:
+- Individual contributions to the group outcome cannot be easily measured or identified.
+- The individual realizes their lack of effort will go unnoticed.
+- Motivation drops, and they 'coast' on the effort of others.
+conditions:
+- Additive tasks (where the outcome is the sum of all efforts) without individual
+  performance tracking.
+exceptions:
+- When the task is highly engaging, meaningful, or when individual outputs are publicly
+  displayed.
+applications:
+  team_structure:
+  - Keep project teams small (e.g., 'Two Pizza Teams') to maintain high visibility
+    of individual contributions.
+risks:
+- Bloated teams achieving less total output than smaller, leaner teams.
+evidence:
+  level: strong
+  references:
+  - Ringelmann, M. (1913). 'Recherches sur les moteurs animés'.
+  - 'Latané, B., Williams, K., & Harkins, S. (1979). ''Many hands make light the work:
+    The causes and consequences of social loafing''.'
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- teams
+- effort
+- loafing
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

@@ -1,0 +1,40 @@
+id: NT-PRINCIPLE-3205
+type: principle
+title: Action Prompting (Contextual Triggers)
+summary: Anchoring a new habit to an existing, reliable habit rather than relying
+  on time or memory.
+primary_domain: tri-nhan
+domain_area: NT-DA-0028
+definition: The practical application of the cue phase of the habit loop, utilizing
+  existing automatic behaviors as the launchpad for new behaviors.
+mechanism:
+- Identify a habit that happens reliably every day without fail (e.g., brushing teeth).
+- Attach the new 'tiny habit' immediately after the existing habit.
+- The completion of the old habit serves as the automatic prompt for the new one.
+conditions:
+- The anchor habit must be truly reliable and match the frequency desired for the
+  new habit.
+exceptions:
+- When the anchor habit is easily disrupted by travel or weekend schedules.
+applications:
+  habit_stacking:
+  - '''After I pour my morning coffee, I will write one line of code.'''
+risks:
+- Stacking too many new habits onto one anchor, causing the entire sequence to collapse.
+evidence:
+  level: strong
+  references:
+  - Fogg, B. J. (2019). 'Tiny Habits'.
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-MODEL-3201
+  applies_to: []
+tags:
+- habits
+- triggers
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

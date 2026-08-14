@@ -1,0 +1,37 @@
+id: NT-PHENOMENON-3005
+type: phenomenon
+status: review
+version: 0.1.0
+title: Ambiguity Aversion
+summary: Humans consistently prefer known risks over unknown uncertainties, often choosing inferior options to avoid ambiguity.
+primary_domain: tri-nhan
+domain_area: NT-DA-0026
+secondary_domains: [thanh-su]
+definition: When faced with a choice between a known probability and an unknown probability, decision-makers structurally favor the known, even if the expected value is lower.
+mechanism:
+  - The actor encounters an option with missing information or undefined probabilities.
+  - The brain processes ambiguity as a potential threat.
+  - Aversive response triggers a preference for options with calculable risk.
+conditions:
+  - Choices involve varying degrees of missing information.
+exceptions:
+  - Individuals with high risk-seeking traits or in desperate situations may seek ambiguity.
+applications:
+  negotiation:
+    - Reduce ambiguity for the counterparty to make agreements more acceptable.
+  change-management:
+    - The status quo is often preferred simply because its risks are known.
+risks:
+  - Over-indexing on measurable metrics while ignoring high-potential ambiguous opportunities.
+evidence:
+  level: supported
+  references:
+    - "Ellsberg, D. (1961). 'Risk, Ambiguity, and the Savage Axioms'. The Quarterly Journal of Economics."
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags: [ambiguity, uncertainty, decision-making, risk]
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

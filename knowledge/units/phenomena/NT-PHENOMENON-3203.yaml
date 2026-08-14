@@ -1,0 +1,40 @@
+id: NT-PHENOMENON-3203
+type: phenomenon
+title: Variable Reward Schedule
+summary: Rewards delivered on an unpredictable, variable ratio schedule are highly
+  effective at maintaining continuous behavior.
+primary_domain: tri-nhan
+domain_area: NT-DA-0028
+definition: An operant conditioning phenomenon where behaviors reinforced unpredictably
+  are more resistant to extinction than behaviors reinforced every time.
+mechanism:
+- An action is performed.
+- A reward is delivered only some of the time, or the magnitude of the reward varies.
+- The uncertainty triggers heightened dopamine anticipation, driving compulsive repetition.
+conditions:
+- Behaviors where the user has agency to repeatedly trigger the routine (e.g., pulling
+  a slot machine lever, pulling down to refresh a feed).
+exceptions:
+- Fixed-salary employment; predictable utility software.
+applications:
+  engagement:
+  - Introduce variability in the content or timing of notifications to increase engagement.
+risks:
+- Can easily cross into unethical, addictive design ('sludge').
+evidence:
+  level: strong
+  references:
+  - Skinner, B. F. (1953). 'Science and Human Behavior'. Macmillan.
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-MODEL-3201
+  applies_to: []
+tags:
+- rewards
+- dopamine
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

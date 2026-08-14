@@ -1,0 +1,35 @@
+id: NT-PRINCIPLE-3003
+type: principle
+status: review
+version: 0.1.0
+title: Foster Metacognitive Reflection
+summary: Design workflows to include mandatory structural pauses that force teams and individuals to step out of execution and evaluate their cognitive approach.
+primary_domain: tri-nhan
+domain_area: NT-DA-0026
+secondary_domains: [hop-chung]
+definition: A practice of breaking the continuous flow of execution to activate the metacognitive layer, ensuring the strategy itself is sound before more effort is expended.
+mechanism:
+  - Execution is paused at a predefined structural boundary.
+  - The team shifts focus from "What are we doing?" to "How are we thinking about this?"
+  - Faulty assumptions or failing strategies are identified and corrected.
+conditions:
+  - Long-running, complex projects with high ambiguity.
+exceptions:
+  - Crisis moments requiring uninterrupted tactical execution of a known plan.
+applications:
+  project-management:
+    - Institutionalize the "pre-mortem" and "post-mortem" as mandatory structural reflection points.
+risks:
+  - "Over-processing: interrupting flow states with unnecessary meta-analysis."
+evidence:
+  level: supported
+  references:
+    - "Flavell, J. H. (1979). 'Metacognition and cognitive monitoring'. American Psychologist."
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: [NT-MODEL-3003, NT-PHENOMENON-3007]
+  applies_to: []
+tags: [metacognition, reflection, process, strategy]
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

@@ -1,0 +1,43 @@
+id: NT-PRINCIPLE-3302
+type: principle
+title: Norm Activation (Descriptive vs Injunctive)
+summary: When trying to change behavior, never publicize that the bad behavior is
+  widespread; instead, highlight the desired behavior as the social norm.
+primary_domain: tri-nhan
+domain_area: NT-DA-0029
+definition: The strategic use of descriptive norms (what people actually do) and injunctive
+  norms (what people ought to do) to leverage conformity for positive outcomes.
+mechanism:
+- People naturally conform to descriptive norms.
+- If a sign says 'Many people steal from this forest, please don't', it unintentionally
+  normalizes stealing.
+- Effective messaging must align the descriptive norm ('Most people protect the forest')
+  with the injunctive norm ('You should protect it too').
+conditions:
+- Public messaging, signage, and corporate compliance training.
+exceptions:
+- When attempting to spark a rebellion against an established authority.
+applications:
+  compliance:
+  - Instead of 'Many employees fail to complete security training', use '95% of your
+    peers have already completed their training'.
+risks:
+- Inadvertently increasing negative behavior by popularizing its occurrence.
+evidence:
+  level: strong
+  references:
+  - Cialdini, R. B. (2003). 'Crafting normative messages to protect the environment'.
+    Current Directions in Psychological Science.
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-PHENOMENON-3301
+  applies_to: []
+tags:
+- norms
+- messaging
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

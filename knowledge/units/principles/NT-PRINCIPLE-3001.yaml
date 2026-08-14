@@ -1,0 +1,38 @@
+id: NT-PRINCIPLE-3001
+type: principle
+status: review
+version: 0.1.0
+title: Optimize Cognitive Load
+summary: Design environments, communications, and processes to minimize extraneous cognitive load, freeing capacity for intrinsic problem-solving.
+primary_domain: tri-nhan
+domain_area: NT-DA-0026
+secondary_domains: [thanh-su]
+definition: The practice of structuring information and workflows so that working memory is not exhausted by navigating the format, allowing full capacity to be directed at the actual task.
+mechanism:
+  - Identify the core task.
+  - Identify the structural friction or unclear formatting.
+  - Remove extraneous load through better design, defaults, or chunking.
+  - Working memory capacity is freed for actual problem-solving.
+conditions:
+  - Complex tasks requiring sustained attention and working memory.
+exceptions:
+  - When learning a new interface or tool, extraneous load is temporarily unavoidable.
+applications:
+  communication:
+    - Use clear headings, bullet points, and active voice to reduce the effort of parsing text.
+  design:
+    - Standardize repetitive choices so they become automatic.
+risks:
+  - Oversimplifying a complex problem to reduce load, losing essential nuance.
+evidence:
+  level: supported
+  references:
+    - "Sweller, J. (1988). 'Cognitive load during problem solving: Effects on learning'. Cognitive Science."
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: [NT-LAW-0050]
+  applies_to: []
+tags: [cognitive-load, design, communication, efficiency]
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

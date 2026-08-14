@@ -1,0 +1,45 @@
+id: NT-PHENOMENON-3409
+type: phenomenon
+title: Identifiable Victim Effect
+summary: People are far more willing to offer aid to a specific, identifiable individual
+  in hardship than to a large, vaguely defined group with the same need.
+primary_domain: tri-nhan
+domain_area: NT-DA-0030
+definition: A cognitive bias in charitable giving and resource allocation where emotional
+  empathy (System 1) is massively triggered by a single face and story, but shut down
+  by statistics and scale.
+mechanism:
+- A story of a single, named individual is presented.
+- High emotional arousal and empathy are triggered.
+- Action (donating/helping) immediately follows.
+- Conversely, presenting statistics of millions dying triggers abstract, emotionless
+  processing, resulting in inaction.
+conditions:
+- Fundraising, charitable campaigns, and political narratives.
+exceptions:
+- When the 'identifiable victim' is perceived as highly culpable for their own situation.
+applications:
+  communication:
+  - Never use statistics to open a pitch. Open with the story of one specific customer
+    whose life was ruined by the problem you solve.
+risks:
+- Systemic resource misallocation, where massive amounts of money are spent to save
+  one person while thousands die silently elsewhere.
+evidence:
+  level: strong
+  references:
+  - 'Small, D. A., Loewenstein, G., & Slovic, P. (2007). ''Sympathy and callousness:
+    The impact of deliberative thought on donations to identifiable and statistical
+    victims''.'
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- empathy
+- bias
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

@@ -1,0 +1,39 @@
+id: NT-LAW-3003
+type: law
+status: review
+version: 0.1.0
+title: Memory Reconstruction
+summary: Memory is not a recording retrieved from storage, but a narrative reconstructed at the moment of recall, heavily influenced by present context and emotion.
+primary_domain: tri-nhan
+domain_area: NT-DA-0026
+secondary_domains: [thanh-su]
+definition: The process of remembering involves assembling fragments of stored data into a coherent story that makes sense in the current environment, making memory inherently malleable and prone to distortion.
+mechanism:
+  - An event is encoded with missing details due to attention limits.
+  - Upon recall, the brain retrieves available fragments.
+  - The brain fills in the gaps using current beliefs, logic, or suggestions (confabulation).
+  - The newly constructed memory is saved over the old one.
+conditions:
+  - Time has passed since the original event.
+exceptions:
+  - Immediate short-term recall of simple facts before interference occurs.
+applications:
+  leadership:
+    - Document decisions and rationales immediately, rather than relying on future recall.
+  conflict-resolution:
+    - Recognize that conflicting accounts of an event are often products of different reconstructions, not intentional deception.
+risks:
+  - Treating memory as infallible objective truth.
+evidence:
+  level: strong
+  references:
+    - "Bartlett, F. C. (1932). 'Remembering: A Study in Experimental and Social Psychology'."
+    - "Loftus, E. F. (2005). 'Planting misinformation in the human mind'. Learning & Memory."
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags: [memory, truth, narrative, cognitive-bias]
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

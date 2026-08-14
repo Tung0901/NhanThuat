@@ -1,0 +1,38 @@
+id: NT-PRINCIPLE-2201
+type: principle
+status: review
+version: 1.0.0
+title: Currency of Exchange
+summary: Để ảnh hưởng, bạn phải biết đối phương định giá loại tiền tệ vô hình nào.
+primary_domain: dung-nhan
+domain_area: NT-DA-0022
+secondary_domains:
+- tri-nhan
+definition: Sử dụng mệnh lệnh là không đủ. Lãnh đạo phải trao đổi giá trị mà các bên
+  cho là quan trọng.
+mechanism:
+- Xác định nhu cầu cốt lõi.
+- Tích lũy tiền tệ vô hình.
+- Trao đổi chiến lược.
+conditions:
+- Dẫn dắt các dự án cross-functional.
+exceptions:
+- Trong quân đội khi có lệnh trực tiếp.
+applications:
+  negotiation:
+  - Đàm phán nội bộ
+risks:
+- Giao dịch quá sòng phẳng
+evidence:
+  level: supported
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- influence
+- exchange
+created_at: '2026-08-12'
+updated_at: '2026-08-12'

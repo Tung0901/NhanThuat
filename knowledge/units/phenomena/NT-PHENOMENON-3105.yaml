@@ -1,0 +1,41 @@
+id: NT-PHENOMENON-3105
+type: phenomenon
+title: Present Bias (Hyperbolic Discounting)
+summary: The tendency to disproportionately prefer smaller, immediate rewards over
+  larger, later rewards.
+primary_domain: tri-nhan
+domain_area: NT-DA-0027
+definition: A time-inconsistent model of discounting where the discount rate falls
+  rapidly for small delay periods and falls slowly for longer delay periods.
+mechanism:
+- Immediate rewards trigger the limbic system (dopamine).
+- Future rewards require abstract processing in the prefrontal cortex.
+- The subjective value of the future reward is heavily discounted relative to the
+  immediate sensation.
+conditions:
+- When an immediate reward is tangibly available right now.
+exceptions:
+- When individuals use commitment devices to bind their future selves.
+applications:
+  incentives:
+  - Provide immediate, small recognition rather than solely relying on year-end bonuses.
+risks:
+- Sacrificing long-term strategic architecture for short-term feature delivery.
+evidence:
+  level: strong
+  references:
+  - Laibson, D. (1997). 'Golden eggs and hyperbolic discounting'. Quarterly Journal
+    of Economics.
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- time
+- discounting
+- impulse
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

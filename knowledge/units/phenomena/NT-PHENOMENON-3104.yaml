@@ -1,0 +1,40 @@
+id: NT-PHENOMENON-3104
+type: phenomenon
+title: Framing Effect
+summary: Drawing different conclusions from the same exact information depending on
+  how it is presented.
+primary_domain: tri-nhan
+domain_area: NT-DA-0027
+definition: A cognitive bias where choices are heavily influenced by whether options
+  are presented with positive or negative connotations (e.g., '90% survival' vs '10%
+  mortality').
+mechanism:
+- Information is received with a specific semantic frame.
+- The frame shifts the subjective reference point.
+- Decisions reverse depending on whether the frame induces a gain or loss perspective.
+conditions:
+- Complex or statistical information presented to non-experts.
+exceptions:
+- When audiences possess strong, pre-existing explicit mental models of the subject.
+applications:
+  communication:
+  - Frame feedback positively to encourage risk-taking, or negatively to enforce compliance.
+risks:
+- Unintentional manipulation of stakeholders through biased reporting.
+evidence:
+  level: strong
+  references:
+  - Tversky, A., & Kahneman, D. (1981). 'The framing of decisions and the psychology
+    of choice'. Science.
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- framing
+- communication
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

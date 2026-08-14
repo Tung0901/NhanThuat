@@ -1,0 +1,38 @@
+id: NT-PHENOMENON-3002
+type: phenomenon
+status: review
+version: 0.1.0
+title: Confirmation Bias Trap
+summary: The tendency to eagerly accept information that confirms prior beliefs while rigidly scrutinizing or ignoring disconfirming evidence.
+primary_domain: tri-nhan
+domain_area: NT-DA-0026
+secondary_domains: [tu-than]
+definition: A structural flaw in information processing where the brain applies asymmetric standards of evidence depending on whether the information aligns with or threatens existing identity or models.
+mechanism:
+  - The actor holds a prior belief or model.
+  - New information enters the environment.
+  - If it confirms the belief, it is accepted with minimal scrutiny.
+  - If it disconfirms the belief, it is subjected to hyper-critical analysis or ignored entirely.
+conditions:
+  - The belief is tied to identity, status, or significant prior investment.
+exceptions:
+  - Information that signals an immediate, undeniable physical threat.
+  - "Consequences: Persistent strategic drift despite overwhelming evidence of failure; Increasing polarization in groups."
+  - "Recognition Signal: Rapid dismissal of opposing data using nitpicking, while accepting friendly data based on headlines alone."
+applications:
+  leadership:
+    - Institutionalize "red teams" whose formal role is to build the best possible case against the prevailing view.
+risks:
+  - Assuming awareness of the bias makes one immune to it.
+evidence:
+  level: strong
+  references:
+    - "Nickerson, R. S. (1998). 'Confirmation bias: A ubiquitous phenomenon in many guises'. Review of General Psychology."
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags: [heuristics, bias, belief, confirmation]
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

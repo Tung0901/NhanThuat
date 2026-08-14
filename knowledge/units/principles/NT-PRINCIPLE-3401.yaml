@@ -1,0 +1,45 @@
+id: NT-PRINCIPLE-3401
+type: principle
+title: Perceptual Contrast
+summary: Always present the most expensive, extreme, or difficult option first to
+  alter the anchor point, making subsequent options appear significantly smaller or
+  cheaper.
+primary_domain: tri-nhan
+domain_area: NT-DA-0030
+definition: A foundational psychophysical principle applied to sales and negotiation,
+  stating that human perception is relative; the subjective weight of an item is judged
+  heavily against the item that immediately preceded it.
+mechanism:
+- Present a highly priced item ($2,000 suit).
+- Target acclimates to the high anchor.
+- Present a moderately priced accessory ($150 tie).
+- In the shadow of $2,000, the $150 tie feels subjectively cheap and insignificant,
+  driving the purchase.
+conditions:
+- The presentation must be sequential (one after another) and immediate.
+exceptions:
+- If the first option is so astronomically high it breaks trust or is perceived as
+  a joke.
+applications:
+  sales:
+  - Real estate agents showing a completely overpriced, terrible 'setup' house before
+    showing the target house, which suddenly looks like a phenomenal deal.
+risks:
+- Scaring away price-sensitive customers immediately before they see the real options.
+evidence:
+  level: strong
+  references:
+  - 'Cialdini, R. B. (1984). ''Influence: The Psychology of Persuasion''.'
+relations:
+  supports:
+  - NT-PHENOMENON-3406
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- contrast
+- perception
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

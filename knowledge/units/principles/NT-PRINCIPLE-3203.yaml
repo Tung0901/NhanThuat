@@ -1,0 +1,41 @@
+id: NT-PRINCIPLE-3203
+type: principle
+title: Environment Design for Habituation
+summary: Modifying physical or digital spaces to make good behaviors obvious and easy,
+  and bad behaviors invisible and difficult.
+primary_domain: tri-nhan
+domain_area: NT-DA-0028
+definition: The architectural approach to habit formation that relies on altering
+  the external context rather than relying on internal willpower.
+mechanism:
+- Analyze the physical/digital layout.
+- Reduce friction (distance, steps, visibility) for desired routines.
+- Increase friction for undesired routines.
+- Willpower is preserved because the default path leads to the right behavior.
+conditions:
+- Spaces under the direct control of the user or designer.
+exceptions:
+- Nomadic or highly fluid contexts where the environment cannot be stabilized.
+applications:
+  office_design:
+  - Placing healthy snacks at eye level and hiding junk food in opaque containers
+    in the break room.
+risks:
+- Over-optimizing a space for one specific workflow, making it hostile to collaboration
+  or change.
+evidence:
+  level: strong
+  references:
+  - Clear, J. (2018). 'Atomic Habits'. Avery.
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- environment
+- friction
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

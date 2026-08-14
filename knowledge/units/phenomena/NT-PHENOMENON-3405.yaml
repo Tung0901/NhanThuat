@@ -1,0 +1,42 @@
+id: NT-PHENOMENON-3405
+type: phenomenon
+title: Unity Principle
+summary: We are heavily influenced by people who share a fundamental identity with
+  us—the 'We' connection.
+primary_domain: tri-nhan
+domain_area: NT-DA-0030
+definition: The 7th principle of influence, distinct from 'Liking', representing a
+  shared identity (kinship, nationality, deep organizational culture) that merges
+  the self with the other.
+mechanism:
+- A shared, immutable or deep-seated identity is invoked.
+- The boundary between 'self' and 'other' blurs.
+- The target acts in the interest of the persuader as if they were acting in their
+  own self-interest.
+conditions:
+- When appealing to family, deep tribal affiliations, or shared existential struggles.
+exceptions:
+- Superficial similarities (which trigger Liking, but not Unity).
+applications:
+  marketing:
+  - Invoking a shared identity ('As fellow engineers, we know...') bypasses standard
+    defensive skepticism.
+risks:
+- Can be weaponized to create dangerous cult-like compliance.
+evidence:
+  level: strong
+  references:
+  - 'Cialdini, R. B. (2016). ''Pre-Suasion: A Revolutionary Way to Influence and Persuade''.'
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-MODEL-3301
+  applies_to: []
+tags:
+- unity
+- identity
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

@@ -1,0 +1,43 @@
+id: NT-MODEL-3202
+type: model
+title: Fogg Behavior Model (B=MAP)
+summary: 'Behavior (B) happens when three elements converge at the same moment: Motivation
+  (M), Ability (A), and a Prompt (P).'
+primary_domain: tri-nhan
+domain_area: NT-DA-0028
+definition: A systematic framework for understanding and designing human behavior,
+  asserting that if any one of the three elements is missing or insufficient, the
+  target behavior will not occur.
+mechanism:
+- Motivation determines the desire to do the behavior.
+- Ability defines how easy the behavior is to do.
+- A Prompt triggers the behavior.
+- If motivation is low, ability must be incredibly high (easy). If ability is low
+  (hard), motivation must be incredibly high.
+conditions:
+- Designing interactions, products, or new organizational routines.
+exceptions:
+- Involuntary physiological reflexes.
+applications:
+  product_design:
+  - Always optimize Ability (make it easier) before attempting to artificially inflate
+    Motivation.
+risks:
+- Relying exclusively on 'Motivation' speeches while ignoring the friction (Ability)
+  preventing the behavior.
+evidence:
+  level: strong
+  references:
+  - Fogg, B. J. (2009). 'A behavior model for persuasive design'. Persuasive Technology.
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- behavior-model
+- design
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

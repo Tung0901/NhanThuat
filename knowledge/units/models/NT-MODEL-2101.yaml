@@ -1,0 +1,39 @@
+id: NT-MODEL-2101
+type: model
+status: review
+version: 1.0.0
+title: Crisis Response Triangle
+summary: 'Mô hình ba trụ cột để đánh giá và xử lý khủng hoảng: Containment, Communication,
+  và Correction.'
+primary_domain: thanh-su
+domain_area: NT-DA-0021
+secondary_domains:
+- dung-nhan
+definition: Mô hình giúp đội ngũ lãnh đạo không bỏ sót các khía cạnh quan trọng khi
+  xử lý khủng hoảng.
+mechanism:
+- 'Containment: Khoanh vùng.'
+- 'Communication: Truyền thông.'
+- 'Correction: Khắc phục.'
+conditions:
+- Áp dụng cho mọi loại khủng hoảng.
+exceptions:
+- Sự cố kỹ thuật nhỏ.
+applications:
+  management:
+  - Định tuyến task force
+risks:
+- Quá tập trung vào Correction mà bỏ quên Communication
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- framework
+- response
+created_at: '2026-08-12'
+updated_at: '2026-08-12'

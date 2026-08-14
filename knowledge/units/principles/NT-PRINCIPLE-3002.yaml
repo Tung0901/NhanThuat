@@ -1,0 +1,39 @@
+id: NT-PRINCIPLE-3002
+type: principle
+status: review
+version: 0.1.0
+title: Explicit Mental Modeling
+summary: Require individuals and teams to make their underlying assumptions and mental models explicit before making strategic decisions or resolving conflicts.
+primary_domain: tri-nhan
+domain_area: NT-DA-0026
+secondary_domains: [hop-chung, thanh-su]
+definition: The practice of surfacing the invisible frameworks people use to interpret reality, ensuring that disagreements are fought over actual models rather than surface-level conclusions.
+mechanism:
+  - A disagreement or complex decision arises.
+  - Participants pause debate on the conclusion.
+  - Each participant articulates the causal map (if X then Y) driving their view.
+  - The group compares models, finding where the divergence actually occurs.
+conditions:
+  - High-stakes decisions or chronic, unresolved conflicts.
+exceptions:
+  - Routine, low-stakes operational tasks where shared mental models are already established.
+applications:
+  strategy:
+    - Map the competitive landscape visually to expose differing assumptions.
+  team-building:
+    - Onboard new members by explicitly teaching the team's operational mental models.
+risks:
+  - Over-intellectualizing simple execution problems.
+evidence:
+  level: supported
+  references:
+    - "Craik, K. J. W. (1943). 'The Nature of Explanation'. Cambridge University Press."
+    - "Johnson-Laird, P. N. (1983). 'Mental Models'."
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: [NT-LAW-3003]
+  applies_to: []
+tags: [mental-models, communication, conflict, alignment]
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

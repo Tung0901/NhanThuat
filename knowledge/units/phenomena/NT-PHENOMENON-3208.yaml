@@ -1,0 +1,40 @@
+id: NT-PHENOMENON-3208
+type: phenomenon
+title: Pre-commitment
+summary: Making a binding decision in advance when in a cold, rational state to prevent
+  acting irrationally in a future hot state.
+primary_domain: tri-nhan
+domain_area: NT-DA-0028
+definition: The psychological mechanism behind commitment devices, rooted in the awareness
+  of one's own time-inconsistent preferences.
+mechanism:
+- The individual foresees a future self-control failure.
+- They alter the choice architecture of their future environment.
+- The future self is forced to execute the rational plan.
+conditions:
+- High metacognitive awareness of personal flaws.
+exceptions:
+- When the future state is highly unpredictable.
+applications:
+  health:
+  - Buying annual gym memberships; deleting food delivery apps.
+risks:
+- Resentment toward the past self when the constraint is triggered.
+evidence:
+  level: strong
+  references:
+  - 'Ariely, D., & Wertenbroch, K. (2002). ''Procrastination, deadlines, and performance:
+    Self-control by precommitment''. Psychological Science.'
+relations:
+  supports:
+  - NT-PRINCIPLE-3201
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- willpower
+- planning
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

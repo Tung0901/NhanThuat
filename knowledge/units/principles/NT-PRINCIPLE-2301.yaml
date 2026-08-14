@@ -1,0 +1,37 @@
+id: NT-PRINCIPLE-2301
+type: principle
+status: review
+version: 1.0.0
+title: Red Teaming
+summary: Xây dựng đội ngũ chuyên đóng vai phản biện để chống lại thiên kiến xác nhận.
+primary_domain: tri-nhan
+domain_area: NT-DA-0023
+secondary_domains:
+- thanh-su
+definition: Thể chế hóa việc phản biện giúp tổ chức giảm thiểu rủi ro từ sự mù quáng
+  tập thể.
+mechanism:
+- Chỉ định nhóm độc lập.
+- Khuyến khích tìm lỗ hổng.
+conditions:
+- Quyết định chiến lược có rủi ro cao.
+exceptions:
+- Vận hành hàng ngày.
+applications:
+  management:
+  - Tích hợp Red Team vào duyệt dự án
+risks:
+- Gây mâu thuẫn cá nhân nếu văn hóa yếu
+evidence:
+  level: supported
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- critical-thinking
+- risk-mitigation
+created_at: '2026-08-12'
+updated_at: '2026-08-12'

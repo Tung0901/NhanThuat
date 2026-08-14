@@ -1,0 +1,41 @@
+id: NT-MODEL-3201
+type: model
+title: Habit Loop (Cue-Routine-Reward)
+summary: A neurological loop that governs any habit, consisting of a cue that triggers
+  the brain, a routine (the behavior itself), and a reward.
+primary_domain: tri-nhan
+domain_area: NT-DA-0028
+definition: The foundational model of habit formation describing how behaviors become
+  automatic through a three-step operant conditioning feedback loop.
+mechanism:
+- 'Cue: A trigger tells the brain to go into automatic mode.'
+- 'Routine: The physical, mental, or emotional behavior.'
+- 'Reward: The positive reinforcement that tells the brain the loop is worth remembering.'
+- Over time, the cue and reward become intertwined until a sense of craving emerges.
+conditions:
+- Behaviors repeated frequently in stable contexts.
+exceptions:
+- Highly novel, complex, or dangerous tasks that require continuous System 2 attention.
+applications:
+  behavior_change:
+  - To change a habit, keep the old cue, deliver the old reward, but insert a new
+    routine.
+risks:
+- Accidentally building destructive organizational habits (like silencing dissent)
+  because they provide immediate emotional rewards (reduced conflict).
+evidence:
+  level: strong
+  references:
+  - Duhigg, C. (2012). 'The Power of Habit'. Random House.
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- habit
+- behavior
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

@@ -1,0 +1,38 @@
+id: NT-LAW-3002
+type: law
+status: review
+version: 0.1.0
+title: Attention is Finite and Directional
+summary: Attention is a strictly limited resource that can only be directed sequentially, making multitasking a myth of rapid context-switching with high switching costs.
+primary_domain: tri-nhan
+domain_area: NT-DA-0026
+secondary_domains: [tu-than]
+definition: The human brain processes conscious attention serially. Attempts to divide attention across multiple complex tasks result in rapid switching, degrading performance and increasing cognitive fatigue.
+mechanism:
+  - The brain focuses on Task A.
+  - A stimulus from Task B interrupts.
+  - The brain disengages from A, reorients, and engages B.
+  - Accuracy and speed drop significantly compared to sequential focus.
+conditions:
+  - Tasks require conscious working memory.
+exceptions:
+  - Combining a highly automated physical task with a cognitive task.
+applications:
+  management:
+    - Limit the number of simultaneous active projects per person.
+  environment:
+    - Design workspaces that protect against frequent interruptions.
+risks:
+  - Mistaking rapid switching for high productivity.
+evidence:
+  level: strong
+  references:
+    - "Kahneman, D. (1973). 'Attention and Effort'. Prentice-Hall."
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags: [attention, focus, multitasking, limits]
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

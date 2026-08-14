@@ -1,0 +1,41 @@
+id: NT-MODEL-3002
+type: model
+status: review
+version: 0.1.0
+title: Sensemaking Loop
+summary: The iterative process by which individuals and groups structure the unknown to enable action.
+primary_domain: tri-nhan
+domain_area: NT-DA-0026
+secondary_domains: [hop-chung]
+definition: Sensemaking is the continuous loop of extracting cues from an ambiguous environment, framing them into plausible narratives, and taking action to test those narratives.
+mechanism:
+  - Environment presents ambiguous or unexpected cues.
+  - Actor notices specific cues.
+  - Actor maps cues to existing mental models.
+  - Actor constructs a plausible story to explain the anomaly.
+  - Actor acts based on the story, generating new cues.
+conditions:
+  - High ambiguity, uncertainty, or novelty.
+  - Routine expectations are broken.
+exceptions:
+  - Routine operations where standard operating procedures apply without ambiguity.
+applications:
+  leadership:
+    - Provide a plausible frame, not just raw data, during crises.
+  strategy:
+    - Use small, safe-to-fail probes to generate better cues in complex domains.
+risks:
+  - Locking onto an early, incorrect narrative (confirmation bias).
+evidence:
+  level: supported
+  references:
+    - "Weick, K. E. (1995). 'Sensemaking in Organizations'. Sage Publications."
+    - "Pirolli, P., & Card, S. (2005). 'The sensemaking process and leverage points for analyst technology'."
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags: [sensemaking, ambiguity, narrative, crisis]
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

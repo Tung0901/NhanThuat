@@ -1,0 +1,36 @@
+id: NT-MODEL-3003
+type: model
+status: review
+version: 0.1.0
+title: Metacognitive Regulation Loop
+summary: The structural model of how humans monitor, evaluate, and adjust their own cognitive processes and strategies during complex tasks.
+primary_domain: tri-nhan
+domain_area: NT-DA-0026
+secondary_domains: [tu-than]
+definition: "Metacognition involves two distinct layers: the primary layer where cognition happens (task execution), and the meta-layer where the actor observes and directs the primary cognition (self-regulation)."
+mechanism:
+  - Actor selects a cognitive strategy before the task (Planning).
+  - Actor observes their own progress and comprehension during the task (Monitoring).
+  - Actor compares current state against the goal (Evaluating).
+  - Actor adjusts strategy, slows down, or changes focus if off-track (Regulating).
+conditions:
+  - High cognitive load or novel, non-routine challenges.
+exceptions:
+  - Routine, fully automated tasks do not trigger the meta-layer.
+applications:
+  learning:
+    - Train individuals not just in the skill, but in how to monitor their acquisition of the skill.
+risks:
+  - Cognitive overload causing the meta-layer to shut down, trapping the actor in a failing strategy.
+evidence:
+  level: supported
+  references:
+    - "Nelson, T. O., & Narens, L. (1990). 'Metamemory: A theoretical framework and new findings'. The Psychology of Learning and Motivation."
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags: [metacognition, learning, self-regulation, model]
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

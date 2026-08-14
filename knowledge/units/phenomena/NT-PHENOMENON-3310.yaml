@@ -1,0 +1,43 @@
+id: NT-PHENOMENON-3310
+type: phenomenon
+title: Pluralistic Ignorance
+summary: A situation where a majority of group members privately reject a norm, but
+  incorrectly assume that most others accept it, and therefore go along with it.
+primary_domain: tri-nhan
+domain_area: NT-DA-0029
+definition: A cognitive illusion of unanimity where individuals mask their true beliefs
+  out of fear of social isolation, perpetuating a norm that nobody actually supports.
+mechanism:
+- Individuals hold a private belief contrary to the perceived public norm.
+- Because everyone is hiding their private belief, the public norm appears unanimously
+  supported.
+- No one speaks up, solidifying the false norm.
+conditions:
+- Environments with low psychological safety and high social consequences for dissent.
+exceptions:
+- When a single, vocal dissenter breaks the illusion, often causing the rapid collapse
+  of the norm.
+applications:
+  culture:
+  - Anonymous surveys are critical for unearthing pluralistic ignorance regarding
+    toxic company policies.
+risks:
+- The 'Abilene Paradox'—a group collectively deciding on a course of action that is
+  counter to the preferences of every single individual in the group.
+evidence:
+  level: strong
+  references:
+  - Katz, D., & Allport, F. H. (1931). 'Students' Attitudes'. Craftsman.
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-PHENOMENON-3301
+  applies_to: []
+tags:
+- norms
+- ignorance
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

@@ -1,0 +1,44 @@
+id: NT-PHENOMENON-3302
+type: phenomenon
+title: Bystander Effect (Diffusion of Responsibility)
+summary: The probability of an individual intervening in an emergency or taking ownership
+  of a problem is inversely related to the number of people present.
+primary_domain: tri-nhan
+domain_area: NT-DA-0029
+definition: A social phenomenon where the presence of others creates a diffusion of
+  responsibility, causing individuals to assume someone else will take action.
+mechanism:
+- An issue or emergency arises.
+- An individual notices the issue but also notices others are present.
+- The individual unconsciously divides their personal responsibility by the number
+  of bystanders.
+- The threshold for action is not met by any single individual.
+conditions:
+- Unstructured groups without clearly defined roles or designated leaders.
+exceptions:
+- When an individual is explicitly singled out and assigned responsibility ('You,
+  in the red shirt, call 911!').
+applications:
+  management:
+  - Never assign a task to 'the team'. Always assign it to a single Directly Responsible
+    Individual (DRI).
+risks:
+- Critical system failures being ignored because 'surely the devops team saw that
+  alert too'.
+evidence:
+  level: strong
+  references:
+  - 'Darley, J. M., & Latané, B. (1968). ''Bystander intervention in emergencies:
+    Diffusion of responsibility''. Journal of Personality and Social Psychology.'
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- bystander
+- responsibility
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

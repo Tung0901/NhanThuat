@@ -1,0 +1,44 @@
+id: NT-PRINCIPLE-3101
+type: principle
+title: Choice Architecture Design
+summary: Actively structure the environment in which decisions are made to guide behavior
+  toward optimal outcomes without restricting freedom of choice.
+primary_domain: tri-nhan
+domain_area: NT-DA-0027
+definition: The deliberate design of different ways choices can be presented to decision-makers,
+  recognizing that there is no neutral architecture.
+mechanism:
+- Identify the desired behavioral outcome.
+- Map the cognitive biases affecting the current decision.
+- Redesign the physical, digital, or procedural environment to make the desired choice
+  the path of least resistance.
+conditions:
+- When users are prone to cognitive overload, present bias, or status quo bias.
+exceptions:
+- When enforcing hard constraints or security policies is strictly required (do not
+  use nudges for compliance).
+applications:
+  system_design:
+  - Organize complex menus so that the most heavily utilized or safest features are
+    visually prominent.
+risks:
+- '''Sludge'' — using choice architecture to intentionally mislead or extract value
+  from users (dark patterns).'
+evidence:
+  level: strong
+  references:
+  - 'Thaler, R. H., & Sunstein, C. R. (2008). ''Nudge: Improving Decisions about Health,
+    Wealth, and Happiness''. Yale University Press.'
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- architecture
+- nudge
+- design
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

@@ -1,0 +1,43 @@
+id: NT-PRINCIPLE-3201
+type: principle
+title: Commitment Devices
+summary: Voluntarily constraining future choices to prevent oneself from acting against
+  long-term interests.
+primary_domain: tri-nhan
+domain_area: NT-DA-0028
+definition: An arrangement entered into in the present that restricts one's future
+  actions to mitigate the effects of expected present bias or temptation.
+mechanism:
+- Acknowledge future weakness (present bias).
+- Establish a binding constraint or penalty (financial, social, or physical) while
+  in a cold, rational state.
+- When the future temptation arises, the cost of yielding is artificially raised by
+  the device, forcing compliance.
+conditions:
+- When present bias is strong and the individual has self-awareness of it.
+exceptions:
+- Environments where flexibility is strategically necessary to survive black swan
+  events.
+applications:
+  savings:
+  - Automatically routing 10% of a paycheck to a locked account before it touches
+    a checking account.
+risks:
+- Over-constraining oneself and being unable to access resources in genuine emergencies.
+evidence:
+  level: strong
+  references:
+  - Thaler, R. H., & Benartzi, S. (2004). 'Save More Tomorrow'. Journal of Political
+    Economy.
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- commitment
+- willpower
+status: review
+version: 0.1.0
+created_at: '2026-08-13'
+updated_at: '2026-08-13'

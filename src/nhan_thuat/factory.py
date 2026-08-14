@@ -220,7 +220,7 @@ def _build_quality_gates(
     unit_ids = {unit.id for unit in units}
     gates = [
         QualityGateResult("scope", "pass", f"{len(units)} units reviewed in approved batch scope."),
-        QualityGateResult("type", "pass", "Reviewed units use existing law/principle types."),
+        QualityGateResult("type", "pass", "Reviewed units use existing standard knowledge types."),
         QualityGateResult("taxonomy", "pass", "Repository validation covers domain references."),
         QualityGateResult("evidence", "pass", _evidence_status(units)),
         QualityGateResult("relations", "pass" if not validation_issues else "fail", "Relation targets resolve."),

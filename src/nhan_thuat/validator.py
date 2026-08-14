@@ -47,6 +47,7 @@ DOMAIN_MEMBER_GROUP_TYPES = {
     "evidence_units": "evidence",
     "anti_patterns": "anti-pattern",
     "anti-patterns": "anti-pattern",
+    "phenomena": "phenomenon",
 }
 
 

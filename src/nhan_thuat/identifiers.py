@@ -19,6 +19,7 @@ UNIT_TYPE_PREFIXES = {
     "case": "CASE",
     "evidence": "EVIDENCE",
     "anti-pattern": "ANTI-PATTERN",
+    "phenomenon": "PHENOMENON",
 }
 
 

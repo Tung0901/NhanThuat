@@ -1,6 +1,6 @@
 id: NT-PHENOMENON-3004
 type: phenomenon
-status: review
+status: frozen
 version: 0.1.0
 title: Overconfidence Illusion
 summary: The structural tendency for individuals to be more confident in their judgments and predictions than their objective accuracy warrants.
@@ -35,4 +35,4 @@ relations:
   applies_to: []
 tags: [heuristics, confidence, bias, prediction]
 created_at: '2026-08-13'
-updated_at: '2026-08-13'
+updated_at: '2026-08-14'

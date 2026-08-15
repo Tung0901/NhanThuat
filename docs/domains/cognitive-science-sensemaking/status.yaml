@@ -1,10 +1,11 @@
 domain_area_id: NT-DA-0026
 slug: cognitive-science-sensemaking
 name: Cognitive Science & Sensemaking
-status: review
-previous_status: draft
+status: frozen
+previous_status: ready_for_review
 progress: 100
-approved_by: Pending
+approved_by: Product Owner
+frozen_at: '2026-08-14'
 primary_domain: tri-nhan
 secondary_domains:
 - tu-than
@@ -40,4 +41,9 @@ members:
   - NT-PHENOMENON-3007
 artifacts:
 - docs/domains/cognitive-science-sensemaking/status.yaml
+- docs/domains/cognitive-science-sensemaking/ARCHITECTURE.md
+- docs/domains/cognitive-science-sensemaking/CONCEPT-MAP.md
+- docs/domains/cognitive-science-sensemaking/DEPENDENCIES.md
+- docs/domains/cognitive-science-sensemaking/GLOSSARY.md
+- docs/domains/cognitive-science-sensemaking/evidence-placeholders.yaml
 last_reviewed_at: '2026-08-13'

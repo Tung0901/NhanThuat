@@ -246,3 +246,93 @@ entries:
     Final test count: 117. 
     Canonical validation status: PASS. 
     Closure commit: b9d4a44 (prior to freeze).
+- id: NT-BATCH-002
+  type: knowledge_batch
+  title: M16 Knowledge Expansion Batch (NT-DA-0021..0030)
+  status: frozen
+  frozen_at: '2026-08-14'
+  approved_by: Product Owner
+  source: docs/reports/M16_REVIEW_PACKAGE.md
+  rationale: >
+    Product Owner approved M16 knowledge expansion (10 domain areas, 96 units)
+    via review package approval on 2026-08-14.
+- id: NT-DA-0021
+  type: domain_area
+  title: Crisis Management
+  status: frozen
+  frozen_at: '2026-08-14'
+  approved_by: Product Owner
+  source: docs/domains/crisis-management/status.yaml
+  rationale: Product Owner approved M16 knowledge expansion freeze.
+- id: NT-DA-0022
+  type: domain_area
+  title: Power Dynamics
+  status: frozen
+  frozen_at: '2026-08-14'
+  approved_by: Product Owner
+  source: docs/domains/power-dynamics/status.yaml
+  rationale: Product Owner approved M16 knowledge expansion freeze.
+- id: NT-DA-0023
+  type: domain_area
+  title: Cognitive Bias
+  status: frozen
+  frozen_at: '2026-08-14'
+  approved_by: Product Owner
+  source: docs/domains/cognitive-bias/status.yaml
+  rationale: Product Owner approved M16 knowledge expansion freeze.
+- id: NT-DA-0024
+  type: domain_area
+  title: Organizational Resilience
+  status: frozen
+  frozen_at: '2026-08-14'
+  approved_by: Product Owner
+  source: docs/domains/organizational-resilience/status.yaml
+  rationale: Product Owner approved M16 knowledge expansion freeze.
+- id: NT-DA-0025
+  type: domain_area
+  title: Innovation Management
+  status: frozen
+  frozen_at: '2026-08-14'
+  approved_by: Product Owner
+  source: docs/domains/innovation-management/status.yaml
+  rationale: Product Owner approved M16 knowledge expansion freeze.
+- id: NT-DA-0026
+  type: domain_area
+  title: Cognitive Science & Sensemaking
+  status: frozen
+  frozen_at: '2026-08-14'
+  approved_by: Product Owner
+  source: docs/domains/cognitive-science-sensemaking/status.yaml
+  rationale: Product Owner approved M16 knowledge expansion freeze.
+- id: NT-DA-0027
+  type: domain_area
+  title: Behavioral Economics & Choice Architecture
+  status: frozen
+  frozen_at: '2026-08-14'
+  approved_by: Product Owner
+  source: docs/domains/behavioral-economics-choice-architecture/status.yaml
+  rationale: Product Owner approved M16 knowledge expansion freeze.
+- id: NT-DA-0028
+  type: domain_area
+  title: Behavioral Design
+  status: frozen
+  frozen_at: '2026-08-14'
+  approved_by: Product Owner
+  source: docs/domains/behavioral-design/status.yaml
+  rationale: Product Owner approved M16 knowledge expansion freeze.
+- id: NT-DA-0029
+  type: domain_area
+  title: Social Psychology
+  status: frozen
+  frozen_at: '2026-08-14'
+  approved_by: Product Owner
+  source: docs/domains/social-psychology/status.yaml
+  rationale: Product Owner approved M16 knowledge expansion freeze.
+- id: NT-DA-0030
+  type: domain_area
+  title: Persuasion & Influence
+  status: frozen
+  frozen_at: '2026-08-14'
+  approved_by: Product Owner
+  source: docs/domains/persuasion-influence/status.yaml
+  rationale: Product Owner approved M16 knowledge expansion freeze.

@@ -1,10 +1,11 @@
 domain_area_id: NT-DA-0022
 slug: power-dynamics
 name: Power Dynamics
-status: review
-previous_status: draft
+status: frozen
+previous_status: ready_for_review
 progress: 100
-approved_by: Pending
+approved_by: Product Owner
+frozen_at: '2026-08-14'
 primary_domain: thanh-su
 secondary_domains:
 - tri-nhan
@@ -27,4 +28,9 @@ members:
   - NT-ANTI-PATTERN-2201
 artifacts:
 - docs/domains/power-dynamics/status.yaml
+- docs/domains/power-dynamics/ARCHITECTURE.md
+- docs/domains/power-dynamics/CONCEPT-MAP.md
+- docs/domains/power-dynamics/DEPENDENCIES.md
+- docs/domains/power-dynamics/GLOSSARY.md
+- docs/domains/power-dynamics/evidence-placeholders.yaml
 last_reviewed_at: '2026-08-12'

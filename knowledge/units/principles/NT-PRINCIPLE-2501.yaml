@@ -1,6 +1,6 @@
 id: NT-PRINCIPLE-2501
 type: principle
-status: review
+status: frozen
 version: 1.0.0
 title: Separation of Exploration and Exploitation
 summary: Khám phá và Khai thác yêu cầu KPIs và văn hóa khác nhau, không thể trộn lẫn.
@@ -33,4 +33,4 @@ tags:
 - ambidexterity
 - innovation
 created_at: '2026-08-12'
-updated_at: '2026-08-12'
+updated_at: '2026-08-14'

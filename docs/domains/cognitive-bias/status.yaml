@@ -1,10 +1,11 @@
 domain_area_id: NT-DA-0023
 slug: cognitive-bias
 name: Cognitive Bias
-status: review
-previous_status: draft
+status: frozen
+previous_status: ready_for_review
 progress: 100
-approved_by: Pending
+approved_by: Product Owner
+frozen_at: '2026-08-14'
 primary_domain: thanh-su
 secondary_domains:
 - tri-nhan
@@ -27,4 +28,9 @@ members:
   - NT-ANTI-PATTERN-2301
 artifacts:
 - docs/domains/cognitive-bias/status.yaml
+- docs/domains/cognitive-bias/ARCHITECTURE.md
+- docs/domains/cognitive-bias/CONCEPT-MAP.md
+- docs/domains/cognitive-bias/DEPENDENCIES.md
+- docs/domains/cognitive-bias/GLOSSARY.md
+- docs/domains/cognitive-bias/evidence-placeholders.yaml
 last_reviewed_at: '2026-08-12'

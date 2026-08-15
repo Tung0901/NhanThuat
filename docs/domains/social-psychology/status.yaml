@@ -1,10 +1,11 @@
 domain_area_id: NT-DA-0029
 slug: social-psychology
 name: Social Psychology
-status: review
-previous_status: draft
+status: frozen
+previous_status: ready_for_review
 progress: 100
-approved_by: Pending
+approved_by: Product Owner
+frozen_at: '2026-08-14'
 primary_domain: tri-nhan
 secondary_domains: []
 review_owner: Product Owner
@@ -34,4 +35,9 @@ members:
   - NT-PHENOMENON-3312
 artifacts:
 - docs/domains/social-psychology/status.yaml
+- docs/domains/social-psychology/ARCHITECTURE.md
+- docs/domains/social-psychology/CONCEPT-MAP.md
+- docs/domains/social-psychology/DEPENDENCIES.md
+- docs/domains/social-psychology/GLOSSARY.md
+- docs/domains/social-psychology/evidence-placeholders.yaml
 last_reviewed_at: '2026-08-13'

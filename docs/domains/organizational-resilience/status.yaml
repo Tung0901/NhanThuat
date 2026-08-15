@@ -1,10 +1,11 @@
 domain_area_id: NT-DA-0024
 slug: organizational-resilience
 name: Organizational Resilience
-status: review
-previous_status: draft
+status: frozen
+previous_status: ready_for_review
 progress: 100
-approved_by: Pending
+approved_by: Product Owner
+frozen_at: '2026-08-14'
 primary_domain: thanh-su
 secondary_domains:
 - tri-nhan
@@ -27,4 +28,9 @@ members:
   - NT-ANTI-PATTERN-2401
 artifacts:
 - docs/domains/organizational-resilience/status.yaml
+- docs/domains/organizational-resilience/ARCHITECTURE.md
+- docs/domains/organizational-resilience/CONCEPT-MAP.md
+- docs/domains/organizational-resilience/DEPENDENCIES.md
+- docs/domains/organizational-resilience/GLOSSARY.md
+- docs/domains/organizational-resilience/evidence-placeholders.yaml
 last_reviewed_at: '2026-08-12'

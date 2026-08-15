@@ -1,6 +1,6 @@
 id: NT-PHENOMENON-3001
 type: phenomenon
-status: review
+status: frozen
 version: 0.1.0
 title: Illusion of Explanatory Depth
 summary: The false belief that one understands a complex system deeply, which collapses only when forced to explain the mechanics step-by-step.
@@ -35,4 +35,4 @@ relations:
   applies_to: []
 tags: [overconfidence, knowledge, metacognition]
 created_at: '2026-08-13'
-updated_at: '2026-08-13'
+updated_at: '2026-08-14'

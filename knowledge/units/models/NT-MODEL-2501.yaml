@@ -1,6 +1,6 @@
 id: NT-MODEL-2501
 type: model
-status: review
+status: frozen
 version: 1.0.0
 title: Three Horizons of Growth
 summary: 'Quy hoạch đổi mới qua 3 đường chân trời: Core, Adjacent, Transformative.'
@@ -34,4 +34,4 @@ tags:
 - framework
 - growth
 created_at: '2026-08-12'
-updated_at: '2026-08-12'
+updated_at: '2026-08-14'

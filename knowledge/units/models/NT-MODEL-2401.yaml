@@ -1,6 +1,6 @@
 id: NT-MODEL-2401
 type: model
-status: review
+status: frozen
 version: 1.0.0
 title: The Adaptive Cycle
 summary: Tăng trưởng, Bảo tồn, Sụp đổ, Tái cấu trúc.
@@ -34,4 +34,4 @@ tags:
 - framework
 - life-cycle
 created_at: '2026-08-12'
-updated_at: '2026-08-12'
+updated_at: '2026-08-14'

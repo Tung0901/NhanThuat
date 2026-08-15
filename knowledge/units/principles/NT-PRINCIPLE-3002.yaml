@@ -1,6 +1,6 @@
 id: NT-PRINCIPLE-3002
 type: principle
-status: review
+status: frozen
 version: 0.1.0
 title: Explicit Mental Modeling
 summary: Require individuals and teams to make their underlying assumptions and mental models explicit before making strategic decisions or resolving conflicts.
@@ -36,4 +36,4 @@ relations:
   applies_to: []
 tags: [mental-models, communication, conflict, alignment]
 created_at: '2026-08-13'
-updated_at: '2026-08-13'
+updated_at: '2026-08-14'

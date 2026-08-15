@@ -1,6 +1,6 @@
 id: NT-ANTI-PATTERN-2101
 type: anti-pattern
-status: review
+status: frozen
 version: 1.0.0
 title: The Ostrich Strategy
 summary: Phớt lờ khủng hoảng với hy vọng nó sẽ tự qua đi hoặc không ai chú ý.
@@ -34,4 +34,4 @@ tags:
 - denial
 - leadership-failure
 created_at: '2026-08-12'
-updated_at: '2026-08-12'
+updated_at: '2026-08-14'

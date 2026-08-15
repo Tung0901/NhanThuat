@@ -1,6 +1,6 @@
 id: NT-ANTI-PATTERN-2501
 type: anti-pattern
-status: review
+status: frozen
 version: 1.0.0
 title: Innovation Theater
 summary: Hoạt động đổi mới hình thức nhưng không có cam kết triển khai.
@@ -33,4 +33,4 @@ tags:
 - fake-innovation
 - toxic
 created_at: '2026-08-12'
-updated_at: '2026-08-12'
+updated_at: '2026-08-14'

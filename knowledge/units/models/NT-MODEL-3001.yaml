@@ -1,6 +1,6 @@
 id: NT-MODEL-3001
 type: model
-status: review
+status: frozen
 version: 0.1.0
 title: Information Processing Pipeline
 summary: A structural model of how humans perceive, filter, process, and act upon environmental information.
@@ -36,4 +36,4 @@ relations:
   applies_to: []
 tags: [cognition, information-processing, sensemaking]
 created_at: '2026-08-13'
-updated_at: '2026-08-13'
+updated_at: '2026-08-14'

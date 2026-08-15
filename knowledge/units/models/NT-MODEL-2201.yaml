@@ -1,6 +1,6 @@
 id: NT-MODEL-2201
 type: model
-status: review
+status: frozen
 version: 1.0.0
 title: The Power Matrix
 summary: 'Phân loại 5 nguồn gốc quyền lực cơ bản: Chuyên gia, Vị trí, Phần thưởng,
@@ -34,4 +34,4 @@ tags:
 - leadership
 - power-bases
 created_at: '2026-08-12'
-updated_at: '2026-08-12'
+updated_at: '2026-08-14'

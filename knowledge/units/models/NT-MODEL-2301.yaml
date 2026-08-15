@@ -1,6 +1,6 @@
 id: NT-MODEL-2301
 type: model
-status: review
+status: frozen
 version: 1.0.0
 title: The Cynefin Framework
 summary: Khung nhận thức giúp phân loại vấn đề (Rõ ràng, Phức tạp, Rối rắm, Hỗn loạn).
@@ -36,4 +36,4 @@ tags:
 - framework
 - sensemaking
 created_at: '2026-08-12'
-updated_at: '2026-08-12'
+updated_at: '2026-08-14'

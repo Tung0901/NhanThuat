@@ -1,6 +1,6 @@
 id: NT-PRINCIPLE-2301
 type: principle
-status: review
+status: frozen
 version: 1.0.0
 title: Red Teaming
 summary: Xây dựng đội ngũ chuyên đóng vai phản biện để chống lại thiên kiến xác nhận.
@@ -34,4 +34,4 @@ tags:
 - critical-thinking
 - risk-mitigation
 created_at: '2026-08-12'
-updated_at: '2026-08-12'
+updated_at: '2026-08-14'

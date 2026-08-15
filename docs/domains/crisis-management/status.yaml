@@ -1,10 +1,11 @@
 domain_area_id: NT-DA-0021
 slug: crisis-management
 name: Crisis Management
-status: review
-previous_status: draft
+status: frozen
+previous_status: ready_for_review
 progress: 100
-approved_by: Pending
+approved_by: Product Owner
+frozen_at: '2026-08-14'
 primary_domain: thanh-su
 secondary_domains:
 - tri-nhan
@@ -27,4 +28,9 @@ members:
   - NT-ANTI-PATTERN-2101
 artifacts:
 - docs/domains/crisis-management/status.yaml
+- docs/domains/crisis-management/ARCHITECTURE.md
+- docs/domains/crisis-management/CONCEPT-MAP.md
+- docs/domains/crisis-management/DEPENDENCIES.md
+- docs/domains/crisis-management/GLOSSARY.md
+- docs/domains/crisis-management/evidence-placeholders.yaml
 last_reviewed_at: '2026-08-12'

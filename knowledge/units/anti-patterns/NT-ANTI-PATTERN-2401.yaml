@@ -1,6 +1,6 @@
 id: NT-ANTI-PATTERN-2401
 type: anti-pattern
-status: review
+status: frozen
 version: 1.0.0
 title: Single Point of Failure
 summary: Phụ thuộc toàn bộ vào một nhân sự hoặc quy trình duy nhất.
@@ -33,4 +33,4 @@ tags:
 - risk
 - dependency
 created_at: '2026-08-12'
-updated_at: '2026-08-12'
+updated_at: '2026-08-14'

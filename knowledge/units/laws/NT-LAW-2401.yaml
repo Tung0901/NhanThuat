@@ -1,6 +1,6 @@
 id: NT-LAW-2401
 type: law
-status: review
+status: frozen
 version: 1.0.0
 title: Law of System Redundancy
 summary: Sự bền bỉ yêu cầu một mức độ dư thừa có tính toán thay vì tối ưu hóa hoàn
@@ -34,4 +34,4 @@ tags:
 - resilience
 - redundancy
 created_at: '2026-08-12'
-updated_at: '2026-08-12'
+updated_at: '2026-08-14'

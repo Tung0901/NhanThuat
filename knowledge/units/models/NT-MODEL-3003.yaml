@@ -1,6 +1,6 @@
 id: NT-MODEL-3003
 type: model
-status: review
+status: frozen
 version: 0.1.0
 title: Metacognitive Regulation Loop
 summary: The structural model of how humans monitor, evaluate, and adjust their own cognitive processes and strategies during complex tasks.
@@ -33,4 +33,4 @@ relations:
   applies_to: []
 tags: [metacognition, learning, self-regulation, model]
 created_at: '2026-08-13'
-updated_at: '2026-08-13'
+updated_at: '2026-08-14'

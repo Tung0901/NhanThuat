@@ -1,6 +1,6 @@
 id: NT-LAW-2201
 type: law
-status: review
+status: frozen
 version: 1.0.0
 title: Law of Power Asymmetry
 summary: Quyền lực luôn phân bổ không đồng đều và tự nhiên chảy về nơi kiểm soát các
@@ -35,4 +35,4 @@ tags:
 - power
 - dependency
 created_at: '2026-08-12'
-updated_at: '2026-08-12'
+updated_at: '2026-08-14'

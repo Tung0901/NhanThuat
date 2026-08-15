@@ -1,6 +1,6 @@
 id: NT-ANTI-PATTERN-2201
 type: anti-pattern
-status: review
+status: frozen
 version: 1.0.0
 title: Information Hoarding
 summary: Cố tình che giấu thông tin để duy trì độc quyền và quyền lực cá nhân.
@@ -34,4 +34,4 @@ tags:
 - toxic
 - silo
 created_at: '2026-08-12'
-updated_at: '2026-08-12'
+updated_at: '2026-08-14'

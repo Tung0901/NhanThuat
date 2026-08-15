@@ -1,10 +1,11 @@
 domain_area_id: NT-DA-0028
 slug: behavioral-design
 name: Behavioral Design
-status: review
-previous_status: draft
+status: frozen
+previous_status: ready_for_review
 progress: 100
-approved_by: Pending
+approved_by: Product Owner
+frozen_at: '2026-08-14'
 primary_domain: tri-nhan
 secondary_domains: []
 review_owner: Product Owner
@@ -34,4 +35,9 @@ members:
   - NT-PHENOMENON-3208
 artifacts:
 - docs/domains/behavioral-design/status.yaml
+- docs/domains/behavioral-design/ARCHITECTURE.md
+- docs/domains/behavioral-design/CONCEPT-MAP.md
+- docs/domains/behavioral-design/DEPENDENCIES.md
+- docs/domains/behavioral-design/GLOSSARY.md
+- docs/domains/behavioral-design/evidence-placeholders.yaml
 last_reviewed_at: '2026-08-13'

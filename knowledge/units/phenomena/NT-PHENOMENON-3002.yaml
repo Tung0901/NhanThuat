@@ -1,6 +1,6 @@
 id: NT-PHENOMENON-3002
 type: phenomenon
-status: review
+status: frozen
 version: 0.1.0
 title: Confirmation Bias Trap
 summary: The tendency to eagerly accept information that confirms prior beliefs while rigidly scrutinizing or ignoring disconfirming evidence.
@@ -35,4 +35,4 @@ relations:
   applies_to: []
 tags: [heuristics, bias, belief, confirmation]
 created_at: '2026-08-13'
-updated_at: '2026-08-13'
+updated_at: '2026-08-14'

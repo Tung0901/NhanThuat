@@ -1,6 +1,6 @@
 id: NT-PRINCIPLE-2401
 type: principle
-status: review
+status: frozen
 version: 1.0.0
 title: Fail Gracefully
 summary: Thiết kế hệ thống sao cho một lỗi cục bộ không kéo theo sự sụp đổ toàn bộ.
@@ -34,4 +34,4 @@ tags:
 - system-design
 - resilience
 created_at: '2026-08-12'
-updated_at: '2026-08-12'
+updated_at: '2026-08-14'

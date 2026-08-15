@@ -1,6 +1,6 @@
 id: NT-PRINCIPLE-3004
 type: principle
-status: review
+status: frozen
 version: 0.1.0
 title: De-bias through Structured Evaluation
 summary: Do not rely on willpower or awareness to overcome cognitive bias; instead, build structured environments and checklists that force objective evaluation.
@@ -33,4 +33,4 @@ relations:
   applies_to: []
 tags: [bias, structure, decision-making, evaluation]
 created_at: '2026-08-13'
-updated_at: '2026-08-13'
+updated_at: '2026-08-14'

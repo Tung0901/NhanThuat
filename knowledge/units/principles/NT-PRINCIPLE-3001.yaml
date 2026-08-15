@@ -1,6 +1,6 @@
 id: NT-PRINCIPLE-3001
 type: principle
-status: review
+status: frozen
 version: 0.1.0
 title: Optimize Cognitive Load
 summary: Design environments, communications, and processes to minimize extraneous cognitive load, freeing capacity for intrinsic problem-solving.
@@ -35,4 +35,4 @@ relations:
   applies_to: []
 tags: [cognitive-load, design, communication, efficiency]
 created_at: '2026-08-13'
-updated_at: '2026-08-13'
+updated_at: '2026-08-14'

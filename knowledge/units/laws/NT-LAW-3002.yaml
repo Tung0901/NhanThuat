@@ -1,6 +1,6 @@
 id: NT-LAW-3002
 type: law
-status: review
+status: frozen
 version: 0.1.0
 title: Attention is Finite and Directional
 summary: Attention is a strictly limited resource that can only be directed sequentially, making multitasking a myth of rapid context-switching with high switching costs.
@@ -35,4 +35,4 @@ relations:
   applies_to: []
 tags: [attention, focus, multitasking, limits]
 created_at: '2026-08-13'
-updated_at: '2026-08-13'
+updated_at: '2026-08-14'

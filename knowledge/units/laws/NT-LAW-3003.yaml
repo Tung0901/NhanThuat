@@ -1,6 +1,6 @@
 id: NT-LAW-3003
 type: law
-status: review
+status: frozen
 version: 0.1.0
 title: Memory Reconstruction
 summary: Memory is not a recording retrieved from storage, but a narrative reconstructed at the moment of recall, heavily influenced by present context and emotion.
@@ -36,4 +36,4 @@ relations:
   applies_to: []
 tags: [memory, truth, narrative, cognitive-bias]
 created_at: '2026-08-13'
-updated_at: '2026-08-13'
+updated_at: '2026-08-14'

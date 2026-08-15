@@ -1,6 +1,6 @@
 id: NT-LAW-2301
 type: law
-status: review
+status: frozen
 version: 1.0.0
 title: Law of Anchoring
 summary: Con người có xu hướng bám víu quá mức vào mẩu thông tin đầu tiên họ nhận
@@ -35,4 +35,4 @@ tags:
 - bias
 - psychology
 created_at: '2026-08-12'
-updated_at: '2026-08-12'
+updated_at: '2026-08-14'

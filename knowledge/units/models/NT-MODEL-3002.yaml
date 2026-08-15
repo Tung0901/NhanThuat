@@ -1,6 +1,6 @@
 id: NT-MODEL-3002
 type: model
-status: review
+status: frozen
 version: 0.1.0
 title: Sensemaking Loop
 summary: The iterative process by which individuals and groups structure the unknown to enable action.
@@ -38,4 +38,4 @@ relations:
   applies_to: []
 tags: [sensemaking, ambiguity, narrative, crisis]
 created_at: '2026-08-13'
-updated_at: '2026-08-13'
+updated_at: '2026-08-14'

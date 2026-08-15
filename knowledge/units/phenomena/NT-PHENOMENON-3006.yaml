@@ -1,6 +1,6 @@
 id: NT-PHENOMENON-3006
 type: phenomenon
-status: review
+status: frozen
 version: 0.1.0
 title: Anchoring Effect
 summary: The first piece of information offered in a decision context exerts a disproportionate influence on all subsequent judgments and estimates.
@@ -35,4 +35,4 @@ relations:
   applies_to: []
 tags: [heuristics, anchoring, negotiation, bias]
 created_at: '2026-08-13'
-updated_at: '2026-08-13'
+updated_at: '2026-08-14'

@@ -1,6 +1,6 @@
 id: NT-MODEL-2101
 type: model
-status: review
+status: frozen
 version: 1.0.0
 title: Crisis Response Triangle
 summary: 'Mô hình ba trụ cột để đánh giá và xử lý khủng hoảng: Containment, Communication,
@@ -36,4 +36,4 @@ tags:
 - framework
 - response
 created_at: '2026-08-12'
-updated_at: '2026-08-12'
+updated_at: '2026-08-14'

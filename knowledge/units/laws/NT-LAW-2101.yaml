@@ -1,6 +1,6 @@
 id: NT-LAW-2101
 type: law
-status: review
+status: frozen
 version: 1.0.0
 title: Law of Entropy in Crisis
 summary: Trong khủng hoảng, thiếu thông tin và độ trễ phản hồi sẽ luôn làm khuếch
@@ -37,4 +37,4 @@ tags:
 - crisis-management
 - decision-making
 created_at: '2026-08-12'
-updated_at: '2026-08-12'
+updated_at: '2026-08-14'

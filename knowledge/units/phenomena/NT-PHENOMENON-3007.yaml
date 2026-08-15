@@ -1,6 +1,6 @@
 id: NT-PHENOMENON-3007
 type: phenomenon
-status: review
+status: frozen
 version: 0.1.0
 title: Metacognitive Incompetence Illusion
 summary: Humans are inherently poor at accurately evaluating their own incompetence, because the skills required to perform a task are the exact same skills required to evaluate performance on that task.
@@ -33,4 +33,4 @@ relations:
   applies_to: []
 tags: [metacognition, confidence, bias, assessment]
 created_at: '2026-08-13'
-updated_at: '2026-08-13'
+updated_at: '2026-08-14'

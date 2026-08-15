@@ -1,6 +1,6 @@
 id: NT-PRINCIPLE-2201
 type: principle
-status: review
+status: frozen
 version: 1.0.0
 title: Currency of Exchange
 summary: Để ảnh hưởng, bạn phải biết đối phương định giá loại tiền tệ vô hình nào.
@@ -35,4 +35,4 @@ tags:
 - influence
 - exchange
 created_at: '2026-08-12'
-updated_at: '2026-08-12'
+updated_at: '2026-08-14'

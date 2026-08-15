@@ -26,7 +26,7 @@ GEMINI_MODEL = "gemini-2.5-flash"
 
 
 def _api_key() -> str:
-    return os.environ.get("OPENAI_API_KEY") or os.environ.get("NHAN_THUAT_OPENAI_API_KEY", "")
+    return (os.environ.get("OPENAI_API_KEY") or os.environ.get("NHAN_THUAT_OPENAI_API_KEY", "")).strip()
 
 
 def _is_gemini_key(key: str) -> bool:
@@ -35,16 +35,18 @@ def _is_gemini_key(key: str) -> bool:
 
 
 def _base_url() -> str:
-    if os.environ.get("OPENAI_BASE_URL"):
-        return os.environ["OPENAI_BASE_URL"]
+    explicit = os.environ.get("OPENAI_BASE_URL", "").strip().rstrip("/")
+    if explicit:
+        return explicit
     if _is_gemini_key(_api_key()):
         return GEMINI_BASE_URL
     return DEFAULT_BASE_URL
 
 
 def _model() -> str:
-    if os.environ.get("NHAN_THUAT_LLM_MODEL"):
-        return os.environ["NHAN_THUAT_LLM_MODEL"]
+    explicit = os.environ.get("NHAN_THUAT_LLM_MODEL", "").strip()
+    if explicit:
+        return explicit
     if _is_gemini_key(_api_key()):
         return GEMINI_MODEL
     return DEFAULT_MODEL
@@ -141,7 +143,10 @@ class KnowledgeSynthesizer:
                     "prompt": prompt,
                     "error": str(exc),
                 },
-                "warning": f"Lỗi khi gọi LLM provider ({exc}); đã chuyển sang dòng truy xuất deterministic.",
+                "warning": (
+                    f"Lỗi khi gọi LLM provider ({exc}); đã chuyển sang dòng truy xuất deterministic. "
+                    f"Đã thử: {_base_url()}/chat/completions | Mô hình: {_model()}."
+                ),
             }
 
     def _build_prompt(self, query: str, units: Iterable[KnowledgeUnit]) -> str:

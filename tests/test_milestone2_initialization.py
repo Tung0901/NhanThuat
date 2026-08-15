@@ -18,12 +18,12 @@ def test_domain_registry_contains_only_approved_ids_and_slugs() -> None:
     registry = load_document(ROOT / "knowledge" / "domain-registry.yaml")
     domains = registry["domains"]
 
-    assert len(domains) == 30
+    assert len(domains) == 31
     assert set().union(*(domain.keys() for domain in domains)) == {"id", "slug", "category_id"}
     assert domains[0] == {"id": "NT-DA-0001", "slug": "human-nature", "category_id": "CAT-CORE"}
-    assert domains[-1] == {"id": "NT-DA-0030", "slug": "persuasion-influence", "category_id": "CAT-BEHAVIORAL"}
-    assert len({domain["id"] for domain in domains}) == 30
-    assert len({domain["slug"] for domain in domains}) == 30
+    assert domains[-1] == {"id": "NT-DA-0031", "slug": "consumer-psychology", "category_id": "CAT-APPLIED"}
+    assert len({domain["id"] for domain in domains}) == 31
+    assert len({domain["slug"] for domain in domains}) == 31
 
 
 def test_approved_domain_blueprint_adrs_are_accepted() -> None:

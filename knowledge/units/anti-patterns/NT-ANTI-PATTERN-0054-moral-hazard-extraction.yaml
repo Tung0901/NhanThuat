@@ -2,28 +2,26 @@ id: NT-ANTI-PATTERN-0054
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Moral Hazard Extraction
-summary: Designing business models or financial products that collect immediate profits
-  while dumping long-term tail risks onto unsuspecting customers.
+title: Trục lợi từ rủi ro đạo đức
+summary: Thiết kế các mô hình kinh doanh hoặc sản phẩm tài chính nhằm thu lợi nhuận tức thì trong khi đẩy các rủi ro đuôi dài hạn sang cho những khách hàng không hề hay biết.
 primary_domain: tu-than
 secondary_domains:
 - hop-chung
-definition: Moral hazard extraction occurs when leaders profit by taking extreme,
-  hidden risks.
+definition: Sự trục lợi từ rủi ro đạo đức xảy ra khi các nhà lãnh đạo kiếm lợi bằng cách chấp nhận những rủi ro cực đoan và bị che giấu.
 mechanism:
-- Executive creates product with tail risk.
-- Executive collects bonuses.
-- Tail risk triggers.
-- Executive keeps bonuses.
+- Cấp quản lý tạo ra sản phẩm chứa rủi ro đuôi (tail risk).
+- Cấp quản lý nhận các khoản tiền thưởng.
+- Rủi ro đuôi xảy ra.
+- Cấp quản lý vẫn giữ lại các khoản tiền thưởng.
 conditions:
-- Deregulated financial and lending markets.
+- Thị trường tài chính và cho vay thiếu sự kiểm soát hoặc bị nới lỏng quy chế.
 exceptions:
-- Fully disclosed speculative venture capital investments.
+- Các khoản đầu tư mạo hiểm mang tính đầu cơ đã được công bố thông tin đầy đủ.
 applications:
   product_governance:
-  - Audit financial and software products for hidden moral hazard structures.
+  - Kiểm toán các sản phẩm tài chính và phần mềm để phát hiện các cấu trúc rủi ro đạo đức tiềm ẩn.
 risks:
-- Restricting legitimate financial innovation.
+- Hạn chế các hoạt động đổi mới sáng tạo tài chính hợp pháp.
 evidence:
   level: supported
   references:
@@ -39,5 +37,9 @@ tags:
 - ethics
 - moral-hazard
 - anti-patterns
+- tail-risk
+- financial-ethics
+- corporate-governance
+- risk-shifting
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'

@@ -1,29 +1,23 @@
 id: NT-PHENOMENON-3401
 type: phenomenon
-title: Scarcity Principle
-summary: Opportunities seem more valuable to us when their availability is limited.
+title: Nguyên tắc khan hiếm
+summary: Các cơ hội dường như trở nên giá trị hơn với chúng ta khi khả năng tiếp cận bị giới hạn.
 primary_domain: tri-nhan
 domain_area: NT-DA-0030
-definition: An evolutionary heuristic where humans perceive rare, fleeting, or restricted
-  resources as inherently superior to abundant ones, triggering urgent acquisition
-  behavior.
+definition: Một lối tư duy theo thói quen tiến hóa, khiến con người nhận định những nguồn lực hiếm hoi, thoáng qua hoặc bị giới hạn là vượt trội hơn những nguồn lực dồi dào, từ đó thúc đẩy hành vi thu nhận khẩn cấp.
 mechanism:
-- An item or opportunity is presented as limited by time (deadline) or quantity.
-- This threatens the individual's freedom of choice (psychological reactance).
-- To restore freedom and avoid missing out, the individual rapidly acquires the item,
-  bypassing logical valuation.
+- Một vật phẩm hoặc cơ hội được trình bày với giới hạn về thời gian (hạn chót) hoặc số lượng.
+- Điều này đe dọa quyền tự do lựa chọn của cá nhân (phản kháng tâm lý).
+- Để khôi phục quyền tự do và tránh bỏ lỡ, cá nhân nhanh chóng thu nhận vật phẩm, bỏ qua việc định giá trị một cách logic.
 conditions:
-- When the scarcity is perceived as genuine and the item has baseline utility.
+- Khi sự khan hiếm được nhận thức là thật và vật phẩm có giá trị sử dụng cơ bản.
 exceptions:
-- When the scarcity is clearly recognized as a manipulative, artificial marketing
-  gimmick (leads to backlash).
+- Khi sự khan hiếm rõ ràng bị nhận diện là chiêu trò tiếp thị giả tạo, mang tính thao túng (dẫn đến phản ứng ngược).
 applications:
   sales:
-  - '''Only 2 seats left at this price'' significantly outperforms ''Buy a seat at
-    this price''.'
+  - '''Chỉ còn 2 chỗ trống với mức giá này'' vượt trội đáng kể so với ''Mua một chỗ ngồi với mức giá này''.'
 risks:
-- Creating a panic-buying environment that ruins customer trust (e.g., ticket scalping
-  algorithms).
+- 'Tạo ra môi trường mua sắm hoảng loạn làm hủy hoại niềm tin của khách hàng (ví dụ: các thuật toán đầu cơ vé).'
 evidence:
   level: strong
   references:
@@ -37,7 +31,9 @@ tags:
 - scarcity
 - fomo
 - influence
+- urgency
+- reactance
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

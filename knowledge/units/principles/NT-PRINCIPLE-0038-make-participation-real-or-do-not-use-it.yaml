@@ -2,33 +2,31 @@ id: NT-PRINCIPLE-0038
 type: principle
 status: frozen
 version: 0.1.0
-title: Make participation real or do not use it
-summary: Do not ask people to participate unless their input can genuinely affect
-  understanding, design, or execution.
+title: Làm cho sự tham gia thực chất hoặc đừng sử dụng nó
+summary: Đừng yêu cầu mọi người tham gia trừ khi góp ý của họ thực sự có thể ảnh hưởng đến hiểu biết, thiết kế hoặc thực thi.
 primary_domain: dung-nhan
 secondary_domains:
 - hop-chung
 - tri-nhan
-definition: Participation creates commitment only when it is real; symbolic participation
-  damages trust and teaches people that input is performative.
+definition: Tham gia chỉ tạo ra cam kết khi nó thực chất; tham gia tượng trưng làm tổn hại niềm tin và dạy mọi người rằng góp ý chỉ là diễn.
 mechanism:
-- Clarify what is open
-- Clarify what is fixed
-- Report the effect of participation.
+- Làm rõ điều gì còn mở
+- Làm rõ điều gì đã cố định
+- Báo cáo ảnh hưởng của sự tham gia.
 conditions:
-- Participation is being requested
-- Decision boundaries can be stated.
+- Sự tham gia đang được yêu cầu
+- Ranh giới quyết định có thể được nêu rõ.
 exceptions:
-- Information gathering may be valid without shared authority if labeled honestly
-- Legal or safety constraints may limit influence.
+- Thu thập thông tin có thể hợp lệ mà không cần chia sẻ quyền quyết định nếu được dán nhãn trung thực
+- Ràng buộc pháp lý hoặc an toàn có thể giới hạn ảnh hưởng.
 applications:
   leadership:
-  - Separate consultation from consent.
+  - Tách bạch tham vấn khỏi đồng thuận.
   governance:
-  - Publish the decision space before review cycles.
+  - Công bố phạm vi quyết định trước các chu kỳ xem xét.
 risks:
-- Manipulation
-- Consultation fatigue.
+- Thao túng
+- Mệt mỏi vì tham vấn.
 evidence:
   level: provisional
   references: []
@@ -43,5 +41,8 @@ tags:
 - participation
 - trust
 - commitment
+- authenticity
+- consultation
+- decision-space
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

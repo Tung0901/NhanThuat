@@ -2,21 +2,21 @@ id: NT-ANTI-PATTERN-0017
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Clone Factory
-summary: Clone Factory structural knowledge unit.
+title: Nhà máy rập khuôn
+summary: Đơn vị kiến thức cấu trúc về mẫu chống hình Nhà máy rập khuôn (Clone Factory).
 primary_domain: hop-chung
 secondary_domains:
 - tri-nhan
-definition: Formal definition of Clone Factory in NhanThuat architecture.
+definition: Định nghĩa chính thức về mẫu chống hình Nhà máy rập khuôn trong kiến trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Các bối cảnh quản trị vận hành.
 exceptions:
-- Emergency crisis overrides.
+- Các trường hợp ghi đè quyền hạn trong khủng hoảng khẩn cấp.
 applications:
   governance:
-  - Apply Clone Factory to organizational workflows.
+  - Áp dụng nhận diện Nhà máy rập khuôn vào quy trình làm việc của tổ chức.
 risks:
-- Misapplication of Clone Factory leading to suboptimal performance.
+- Áp dụng sai hoặc xử lý không đúng Nhà máy rập khuôn dẫn đến hiệu suất kém tối ưu.
 evidence:
   level: supported
   references:
@@ -30,5 +30,10 @@ relations:
 tags:
 - anti-pattern
 - hop-chung
+- clone-factory
+- nhan-thuat
+- process-duplication
+- organizational-design
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

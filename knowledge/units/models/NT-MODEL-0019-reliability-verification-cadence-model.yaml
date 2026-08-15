@@ -2,22 +2,21 @@ id: NT-MODEL-0019
 type: model
 status: frozen
 version: 0.1.0
-title: Reliability Verification Cadence Model
-summary: Reliability Verification Cadence Model structural knowledge unit.
+title: Mô hình nhịp độ xác minh độ tin cậy
+summary: Đơn vị tri thức cấu trúc về Mô hình nhịp độ xác minh độ tin cậy.
 primary_domain: dung-nhan
 secondary_domains:
 - hop-chung
-definition: Formal definition of Reliability Verification Cadence Model in NhanThuat
-  architecture.
+definition: Định nghĩa chính thức về Mô hình nhịp độ xác minh độ tin cậy trong kiến trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Các bối cảnh quản trị vận hành tổ chức.
 exceptions:
-- Emergency crisis overrides.
+- Các tình huống ghi đè do khủng hoảng khẩn cấp.
 applications:
   governance:
-  - Apply Reliability Verification Cadence Model to organizational workflows.
+  - Áp dụng Mô hình nhịp độ xác minh độ tin cậy vào các quy trình làm việc của tổ chức.
 risks:
-- Misapplication of Reliability Verification Cadence Model leading to suboptimal performance.
+- Việc áp dụng sai Mô hình nhịp độ xác minh độ tin cậy dẫn đến hiệu suất không tối ưu.
 evidence:
   level: supported
   references:
@@ -31,9 +30,13 @@ relations:
 tags:
 - model
 - dung-nhan
+- reliability-verification
+- verification-cadence
+- reliability-model
+- audit-cadence
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
 mechanism:
-- 'Step 1: Identify Reliability Verification Cadence Model.'
-- 'Step 2: Analyze parameters.'
-- 'Step 3: Execute model.'
+- 'Bước 1: Xác định Mô hình nhịp độ xác minh độ tin cậy.'
+- 'Bước 2: Phân tích các thông số vận hành.'
+- 'Bước 3: Thực thi mô hình kiểm chứng.'

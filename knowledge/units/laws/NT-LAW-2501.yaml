@@ -2,25 +2,24 @@ id: NT-LAW-2501
 type: law
 status: frozen
 version: 1.0.0
-title: Law of the Innovator's Dilemma
-summary: Quản lý quá tốt các khách hàng hiện tại và bỏ qua công nghệ đột phá dẫn đến
-  thất bại.
+title: Quy luật Thế lưỡng nan của Nhà đổi mới
+summary: Việc tập trung quá mức vào quản lý khách hàng hiện tại và bỏ qua các công nghệ mang tính đột phá sẽ dẫn đến thất bại của tổ chức.
 primary_domain: tu-than
 domain_area: NT-DA-0025
 secondary_domains:
 - thanh-su
-definition: Tổ chức lớn tránh các thị trường đột phá vì biên lợi nhuận mỏng.
+definition: Các tổ chức lớn thường có xu hướng né tránh các thị trường mới nổi mang tính đột phá do biên lợi nhuận ban đầu quá mỏng và quy mô thị trường nhỏ.
 mechanism:
-- Tổ chức bị trói buộc bởi hệ sinh thái giá trị hiện tại.
+- Tổ chức bị ràng buộc chặt chẽ bởi hệ sinh thái giá trị và cơ cấu lợi nhuận hiện tại.
 conditions:
-- Sự thay đổi công nghệ nhanh.
+- Sự thay đổi và phát triển nhanh chóng của công nghệ.
 exceptions:
-- Thị trường độc quyền tự nhiên.
+- Thị trường có tính chất độc quyền tự nhiên hoặc rào cản gia nhập quá lớn.
 applications:
   management:
-  - Tạo ra các spin-off
+  - Thành lập các công ty con hoặc đơn vị độc lập (spin-off) để tự do thử nghiệm.
 risks:
-- Mù lòa trước đối thủ nhỏ bé
+- Trở nên mù quáng và mất cảnh giác trước các đối thủ cạnh tranh nhỏ hơn nhưng linh hoạt hơn.
 evidence:
   level: supported
   references: []
@@ -32,5 +31,9 @@ relations:
 tags:
 - innovation
 - strategy
+- innovators-dilemma
+- disruptive-innovation
+- organizational-inertia
+- market-disruption
 created_at: '2026-08-12'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

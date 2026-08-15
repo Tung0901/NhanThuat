@@ -2,21 +2,21 @@ id: NT-ANTI-PATTERN-0028
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Blind Faith Delegation
-summary: Blind Faith Delegation structural knowledge unit.
+title: Ủy Quyền Mù Quáng
+summary: Ủy quyền mù quáng là hành vi giao quyền hạn hoặc nhiệm vụ cho cấp dưới nhưng hoàn toàn thiếu sự giám sát, đối chiếu và cơ chế kiểm soát rủi ro kèm theo.
 primary_domain: hop-chung
 secondary_domains:
 - dung-nhan
-definition: Formal definition of Blind Faith Delegation in NhanThuat architecture.
+definition: Định nghĩa chính thức về Ủy quyền mù quáng trong kiến trúc NhanThuat, thể hiện việc từ bỏ trách nhiệm quản lý dưới danh nghĩa ủy quyền, dẫn đến mất kiểm soát vận hành.
 conditions:
-- Operational governance contexts.
+- Các bối cảnh quản trị vận hành và phân quyền tổ chức.
 exceptions:
-- Emergency crisis overrides.
+- Các tình huống ứng phó khủng hoảng đòi hỏi sự chủ động tuyệt đối của cấp dưới.
 applications:
   governance:
-  - Apply Blind Faith Delegation to organizational workflows.
+  - Áp dụng việc phòng ngừa Ủy quyền mù quáng vào thiết kế quy trình phân quyền và thiết lập cơ chế kiểm soát nội bộ.
 risks:
-- Misapplication of Blind Faith Delegation leading to suboptimal performance.
+- Khắc phục sai Ủy quyền mù quáng có thể dẫn đến hành vi quản lý vi mô quá mức, làm triệt tiêu sự chủ động của nhân sự.
 evidence:
   level: supported
   references:
@@ -30,5 +30,11 @@ relations:
 tags:
 - anti-pattern
 - hop-chung
+- blind-faith-delegation
+- abdication-of-responsibility
+- lack-of-oversight
+- governance-failure
+- delegation-risk
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

@@ -2,18 +2,50 @@ id: NT-MODEL-0001
 type: model
 status: frozen
 version: 0.1.0
-title: Meaning-attention loop
-summary: A pattern model showing how interpreted meaning directs attention and repeated attention reinforces perceived meaning.
+title: Vòng lặp ý nghĩa - chú ý
+summary: Một mô hình mẫu chỉ ra cách thức ý nghĩa được diễn giải định hướng cho sự chú ý, và sự chú ý lặp đi lặp lại sẽ củng cố ý nghĩa được nhận thức.
 primary_domain: tri-nhan
-secondary_domains: [tu-than, hop-chung]
-definition: People notice what seems meaningful, then repeated attention makes that meaning feel more real, urgent, or central.
-mechanism: [Interpret meaning, Allocate attention, Reinforce salience, Update future attention.]
-conditions: [Signals repeat, emotional or identity relevance is present.]
-exceptions: [Deliberate reflection can interrupt the loop, external demands can redirect attention.]
-applications: {communication: [Design messages that clarify meaning without inflating urgency.], self-management: [Notice what repeated attention is making larger.]}
-risks: [Rumination, manufactured urgency.]
-evidence: {level: provisional, references: []}
-relations: {supports: [NT-PRINCIPLE-0044], conflicts_with: [], depends_on: [NT-LAW-0002], applies_to: []}
-tags: [pattern, attention, meaning]
+secondary_domains:
+- tu-than
+- hop-chung
+definition: Con người có xu hướng chú ý đến những gì có vẻ có ý nghĩa, sau đó sự chú ý lặp đi lặp lại làm cho ý nghĩa đó cảm giác như có thật hơn, khẩn cấp hơn hoặc mang tính trung tâm hơn.
+mechanism:
+- Diễn giải ý nghĩa
+- Phân bổ sự chú ý
+- Củng cố tính nổi bật
+- Cập nhật sự chú ý trong tương lai.
+conditions:
+- Các tín hiệu lặp lại
+- Có sự hiện diện của mối liên hệ cảm xúc hoặc bản sắc cá nhân.
+exceptions:
+- Sự suy ngẫm có chủ ý có thể làm gián đoạn vòng lặp
+- Các yêu cầu từ bên ngoài có thể chuyển hướng sự chú ý.
+applications:
+  communication:
+  - Thiết kế các thông điệp làm rõ ý nghĩa mà không phóng đại mức độ khẩn cấp.
+  self-management:
+  - Nhận biết những gì đang trở nên lớn hơn do sự chú ý lặp đi lặp lại của bản thân.
+risks:
+- Sự nghiền ngẫm tiêu cực
+- Sự khẩn cấp giả tạo.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports:
+  - NT-PRINCIPLE-0044
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0002
+  applies_to: []
+tags:
+- pattern
+- attention
+- meaning
+- meaning-attention-loop
+- selective-attention
+- salience-bias
+- cognitive-loop
+- attention-allocation
 created_at: '2026-07-21'
-updated_at: '2026-07-21'
+updated_at: '2026-08-15'

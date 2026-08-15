@@ -2,21 +2,21 @@ id: NT-ANTI-PATTERN-0012
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Charismatic Trap
-summary: Charismatic Trap structural knowledge unit.
+title: Bẫy sức hút cá nhân
+summary: Đơn vị tri thức cấu trúc về Bẫy sức hút cá nhân trong quản trị và lãnh đạo tổ chức.
 primary_domain: tri-nhan
 secondary_domains:
 - dung-nhan
-definition: Formal definition of Charismatic Trap in NhanThuat architecture.
+definition: Định nghĩa chính thức về Bẫy sức hút cá nhân (Charismatic Trap) trong kiến trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Bối cảnh quản trị vận hành.
 exceptions:
-- Emergency crisis overrides.
+- Các trường hợp đè quyền trong khủng hoảng khẩn cấp.
 applications:
   governance:
-  - Apply Charismatic Trap to organizational workflows.
+  - Áp dụng Bẫy sức hút cá nhân vào quy trình làm việc của tổ chức.
 risks:
-- Misapplication of Charismatic Trap leading to suboptimal performance.
+- Áp dụng sai Bẫy sức hút cá nhân dẫn đến hiệu suất không đạt mức tối ưu.
 evidence:
   level: supported
   references:
@@ -30,5 +30,10 @@ relations:
 tags:
 - anti-pattern
 - tri-nhan
+- charismatic-trap
+- leadership-bias
+- charisma-overreliance
+- governance-failure
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

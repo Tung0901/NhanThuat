@@ -2,33 +2,31 @@ id: NT-LAW-0023
 type: law
 status: frozen
 version: 0.1.0
-title: Learning requires safe correction
-summary: People learn faster when mistakes can be examined honestly without disproportionate
-  shame, punishment, or identity threat.
+title: Học hỏi đòi hỏi sự sửa sai an toàn
+summary: Mọi người học hỏi nhanh hơn khi các sai lầm được xem xét một cách trung thực mà không phải đối mặt với sự xấu hổ, hình phạt quá mức hoặc sự đe dọa về lòng tự trọng.
 primary_domain: tu-than
 secondary_domains:
 - dung-nhan
 - hop-chung
-definition: Learning requires correction, but correction is avoided or distorted when
-  the social cost of admitting error is too high.
+definition: Việc học hỏi đòi hỏi phải có sự sửa sai, nhưng việc sửa sai thường bị né tránh hoặc bóp méo khi cái giá về mặt xã hội cho việc thừa nhận sai lầm là quá lớn.
 mechanism:
-- Make an error
-- Experience correction risk
-- Either examine the error or defend against it.
+- Phát sinh sai sót
+- Đối mặt với rủi ro khi sửa sai
+- Lựa chọn phân tích sai sót hoặc tự vệ để né tránh.
 conditions:
-- The person receives information about a gap
-- The environment affects the cost of admitting it.
+- Cá nhân nhận được thông tin phản hồi về khoảng cách năng lực
+- Môi trường xung quanh ảnh hưởng đến cái giá của việc thừa nhận sai sót.
 exceptions:
-- Severe negligence may require consequences
-- Some learners seek correction despite risk.
+- Sự cẩu thả nghiêm trọng vẫn đòi hỏi phải có biện pháp xử lý
+- Một số người học vẫn chủ động tìm kiếm sự sửa sai bất chấp rủi ro.
 applications:
   learning:
-  - Separate error analysis from humiliation.
+  - Tách biệt việc phân tích sai sót khỏi sự hạ thấp danh dự.
   management:
-  - Protect candor while preserving standards.
+  - Bảo vệ sự thẳng thắn trong khi vẫn duy trì các tiêu chuẩn công việc.
 risks:
-- Removing accountability in the name of safety
-- Using shame as a teaching tool.
+- Xóa bỏ trách nhiệm giải trình dưới danh nghĩa tạo sự an toàn
+- Sử dụng sự xấu hổ như một công cụ để dạy dỗ.
 evidence:
   level: provisional
   references: []
@@ -45,5 +43,10 @@ tags:
 - learning
 - correction
 - safety
+- psychological-safety
+- learning-culture
+- error-correction
+- blame-free
+- organizational-learning
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

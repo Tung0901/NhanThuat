@@ -2,18 +2,46 @@ id: NT-PRINCIPLE-0046
 type: principle
 status: frozen
 version: 0.1.0
-title: Separate feeling from fact before response
-summary: When emotion is strong, separate felt meaning from observed fact before choosing a response.
+title: Tách cảm xúc khỏi sự kiện trước khi phản hồi
+summary: Khi cảm xúc mạnh, hãy tách ý nghĩa cảm nhận khỏi sự kiện quan sát được trước khi chọn cách phản hồi.
 primary_domain: tri-nhan
-secondary_domains: [dung-nhan, hop-chung]
-definition: Emotion prepares action quickly, so separating feeling, interpretation, and observable fact creates room for judgment without denying emotion.
-mechanism: [Name the feeling, Name the interpretation, Identify observable facts, Choose response.]
-conditions: [Emotion is shaping attention or action, The situation allows a pause.]
-exceptions: [Immediate danger may require action first, over-analysis can suppress useful emotional signals.]
-applications: {self-management: [Pause before treating felt meaning as full reality.], leadership: [Help groups distinguish emotional signal from verified fact.]}
-risks: [Dismissing emotion, delaying necessary action.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0024], applies_to: []}
-tags: [emotion, judgment, response]
+secondary_domains:
+- dung-nhan
+- hop-chung
+definition: Cảm xúc chuẩn bị hành động nhanh chóng, nên việc tách cảm xúc, cách diễn giải và sự kiện quan sát được tạo ra không gian cho phán đoán mà không phủ nhận cảm xúc.
+mechanism:
+- Gọi tên cảm xúc
+- Gọi tên cách diễn giải
+- Xác định sự kiện quan sát được
+- Chọn cách phản hồi.
+conditions:
+- Cảm xúc đang định hình sự chú ý hoặc hành động
+- Tình huống cho phép tạm dừng.
+exceptions:
+- Nguy hiểm tức thời có thể cần hành động trước
+- phân tích quá mức có thể át đi các tín hiệu cảm xúc hữu ích.
+applications:
+  self-management:
+  - Tạm dừng trước khi coi ý nghĩa cảm nhận là toàn bộ thực tế.
+  leadership:
+  - Giúp nhóm phân biệt tín hiệu cảm xúc với sự kiện đã kiểm chứng.
+risks:
+- Gạt bỏ cảm xúc
+- trì hoãn hành động cần thiết.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0024
+  applies_to: []
+tags:
+- emotion
+- judgment
+- response
+- self-management
+- fact-checking
 created_at: '2026-07-21'
-updated_at: '2026-07-21'
+updated_at: '2026-08-15'

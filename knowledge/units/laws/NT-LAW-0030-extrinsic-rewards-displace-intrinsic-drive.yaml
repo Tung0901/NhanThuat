@@ -2,18 +2,49 @@ id: NT-LAW-0030
 type: law
 status: frozen
 version: 0.1.0
-title: Extrinsic rewards can displace intrinsic drive
-summary: Over-emphasizing external rewards or surveillance for inherently meaningful tasks can crowd out internal interest, autonomy, and voluntary commitment.
+title: Phần thưởng ngoại sinh có thể lấn át động lực nội sinh
+summary: Việc quá nhấn mạnh vào phần thưởng bên ngoài hoặc sự giám sát đối với các công việc vốn có ý nghĩa có thể làm triệt tiêu sự hứng thú nội tại, quyền tự chủ và sự cam kết tự nguyện.
 primary_domain: tu-than
-secondary_domains: [tri-nhan, thanh-su]
-definition: Adding heavy extrinsic motivators to intrinsically satisfying activities shifts the locus of control externally, reducing internal ownership when rewards cease.
-mechanism: [Introduce external reward, Shift perception of cause, Reduce felt autonomy, Depend on continued reward.]
-conditions: [The task initially carries baseline intrinsic interest or autonomy.]
-exceptions: [Repetitive low-interest tasks often benefit from clear extrinsic incentives without crowding out intrinsic drive.]
-applications: {incentive-design: [Use extrinsic rewards for baseline fairness rather than forcing compliance on creative work.], leadership: [Protect autonomy and mastery in core professional roles.]}
-risks: [Fostering transactional mindsets, creating reward dependence.]
-evidence: {level: provisional, references: []}
-relations: {supports: [NT-PRINCIPLE-0053, NT-PRINCIPLE-0057, NT-MODEL-0005], conflicts_with: [], depends_on: [], applies_to: []}
-tags: [motivation, intrinsic, extrinsic, crowding-effect]
+secondary_domains:
+- tri-nhan
+- thanh-su
+definition: Việc bổ sung các yếu tố thúc đẩy ngoại sinh mạnh mẽ vào các hoạt động vốn đã mang lại sự thỏa mãn nội tại sẽ chuyển dịch điểm kiểm soát ra bên ngoài, làm suy giảm quyền làm chủ nội tâm khi phần thưởng chấm dứt.
+mechanism:
+- Đưa vào phần thưởng bên ngoài
+- Chuyển dịch nhận thức về nguyên nhân hành động
+- Làm suy giảm cảm giác tự chủ
+- Trở nên phụ thuộc vào phần thưởng liên tục.
+conditions:
+- Nhiệm vụ ban đầu vốn đã có mức độ hứng thú nội sinh hoặc quyền tự chủ nền tảng.
+exceptions:
+- Các nhiệm vụ lặp đi lặp lại, ít gây hứng thú thường hưởng lợi từ các biện pháp khuyến khích ngoại sinh rõ ràng mà không làm triệt tiêu động lực nội sinh.
+applications:
+  incentive-design:
+  - Sử dụng phần thưởng ngoại sinh để đảm bảo sự công bằng cơ bản thay vì ép buộc sự tuân thủ đối với công việc mang tính sáng tạo.
+  leadership:
+  - Bảo vệ quyền tự chủ và cơ hội phát triển chuyên môn trong các vai trò nòng cốt.
+risks:
+- Thúc đẩy tư duy vụ lợi, thuần túy giao dịch
+- Tạo ra sự phụ thuộc vào phần thưởng.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports:
+  - NT-PRINCIPLE-0053
+  - NT-PRINCIPLE-0057
+  - NT-MODEL-0005
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- motivation
+- intrinsic
+- extrinsic
+- crowding-effect
+- overjustification-effect
+- extrinsic-motivation
+- intrinsic-drive
+- crowding-out-effect
 created_at: '2026-07-21'
-updated_at: '2026-07-21'
+updated_at: '2026-08-15'

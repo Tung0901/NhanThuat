@@ -2,34 +2,31 @@ id: NT-PRINCIPLE-0011
 type: principle
 status: frozen
 version: 0.1.0
-title: Give feedback near the behavior
-summary: Deliver feedback close enough to the observed behavior that the receiver
-  can remember, understand, and apply it.
+title: Đưa phản hồi sát với hành vi
+summary: Truyền đạt phản hồi đủ gần với hành vi quan sát được để người nhận có thể nhớ, hiểu và áp dụng nó.
 primary_domain: dung-nhan
 secondary_domains:
 - tu-than
 - thanh-su
-definition: Feedback becomes more usable when it arrives while the action, context,
-  and next opportunity to improve are still close.
+definition: Phản hồi trở nên hữu dụng hơn khi nó đến trong lúc hành động, bối cảnh và cơ hội cải thiện tiếp theo vẫn còn gần.
 mechanism:
-- Observe behavior
-- State the gap promptly
-- Connect correction to next action.
+- Quan sát hành vi.
+- Nêu khoảng cách sai lệch một cách kịp thời.
+- Kết nối việc sửa chữa với hành động tiếp theo.
 conditions:
-- The receiver can act on the feedback
-- The feedback can be given respectfully.
+- Người nhận có thể hành động theo phản hồi.
+- Phản hồi có thể được đưa ra một cách tôn trọng.
 exceptions:
-- Emotional heat may require a pause
-- Complex issues may need deeper review.
+- Cảm xúc nóng nảy có thể đòi hỏi tạm dừng.
+- Vấn đề phức tạp có thể cần rà soát sâu hơn.
 applications:
   coaching:
-  - Correct the next repetition
-  - not only the past mistake.
+  - Sửa chữa lần lặp tiếp theo, không chỉ lỗi trong quá khứ.
   management:
-  - Use timely observations instead of vague annual summaries.
+  - Dùng quan sát kịp thời thay vì bản tổng kết năm mơ hồ.
 risks:
-- Reacting impulsively
-- Giving feedback without context.
+- Phản ứng bốc đồng.
+- Đưa phản hồi mà không có bối cảnh.
 evidence:
   level: provisional
   references: []
@@ -43,5 +40,7 @@ tags:
 - feedback
 - coaching
 - timing
+- timeliness
+- performance
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

@@ -2,33 +2,31 @@ id: NT-PRINCIPLE-0030
 type: principle
 status: frozen
 version: 0.1.0
-title: Place signals where decisions happen
-summary: Put the most important cues, standards, and constraints at the point where
-  people actually choose.
+title: Đặt tín hiệu nơi quyết định xảy ra
+summary: Đặt những tín hiệu, tiêu chuẩn và ràng buộc quan trọng nhất tại điểm con người thực sự lựa chọn.
 primary_domain: thanh-su
 secondary_domains:
 - dung-nhan
 - tri-nhan
-definition: Guidance works better when it is visible at the moment of decision rather
-  than stored far from action.
+definition: Sự dẫn dắt hoạt động tốt hơn khi nó hiện diện ngay khoảnh khắc ra quyết định thay vì được cất ở nơi xa hành động.
 mechanism:
-- Locate decision point
-- Identify needed signal
-- Place cue or standard there.
+- Xác định điểm ra quyết định.
+- Xác định tín hiệu cần thiết.
+- Đặt tín hiệu hoặc tiêu chuẩn tại đó.
 conditions:
-- Decisions repeat
-- People may forget or overlook distant guidance.
+- Quyết định lặp lại.
+- Con người có thể quên hoặc bỏ qua sự dẫn dắt ở xa.
 exceptions:
-- Sensitive decisions may need private preparation
-- Too many signals can create noise.
+- Quyết định nhạy cảm có thể cần chuẩn bị riêng tư.
+- Quá nhiều tín hiệu có thể tạo ra tiếng ồn.
 applications:
   operations:
-  - Put quality checks at handoff points.
+  - Đặt kiểm tra chất lượng tại các điểm bàn giao.
   management:
-  - Make standards visible in workflow.
+  - Làm cho tiêu chuẩn hiện hữu trong quy trình làm việc.
 risks:
-- Cluttering work with reminders
-- Treating signage as training.
+- Làm bừa bộn công việc với các lời nhắc.
+- Coi biển báo là đào tạo.
 evidence:
   level: provisional
   references: []
@@ -43,5 +41,7 @@ tags:
 - signals
 - decisions
 - workflow
+- nudges
+- guidance
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

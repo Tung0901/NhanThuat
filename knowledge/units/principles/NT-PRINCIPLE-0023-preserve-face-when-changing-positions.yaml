@@ -2,33 +2,31 @@ id: NT-PRINCIPLE-0023
 type: principle
 status: frozen
 version: 0.1.0
-title: Preserve face when changing positions
-summary: Help people revise commitments by giving them a credible path to change without
-  unnecessary humiliation or identity loss.
+title: Gìn giữ thể diện khi thay đổi lập trường
+summary: Giúp con người điều chỉnh cam kết bằng cách trao cho họ một con đường đáng tin để thay đổi mà không bị sỉ nhục hay mất bản sắc không cần thiết.
 primary_domain: tri-nhan
 secondary_domains:
 - hop-chung
 - thanh-su
-definition: Position change becomes easier when people can preserve dignity, identity,
-  and continuity while updating judgment.
+definition: Việc thay đổi lập trường trở nên dễ dàng hơn khi con người có thể giữ được phẩm giá, bản sắc và tính liên tục trong khi cập nhật phán đoán.
 mechanism:
-- Recognize identity risk
-- Offer a face-saving bridge
-- Reinforce the updated decision.
+- Nhận diện rủi ro về bản sắc.
+- Đưa ra cầu nối gìn giữ thể diện.
+- Củng cố quyết định đã được cập nhật.
 conditions:
-- The position is identity-linked
-- Change is desirable and possible.
+- Lập trường gắn liền với bản sắc.
+- Việc thay đổi là đáng mong muốn và khả thi.
 exceptions:
-- Serious harm may require public accountability
-- Some actors exploit face-saving to avoid responsibility.
+- Tác hại nghiêm trọng có thể đòi hỏi trách nhiệm giải trình công khai.
+- Một số người lợi dụng việc gìn giữ thể diện để trốn tránh trách nhiệm.
 applications:
   negotiation:
-  - Let others update without declaring defeat.
+  - Cho phép người khác cập nhật mà không cần tuyên bố thất bại.
   leadership:
-  - Praise learning rather than reversal.
+  - Khen ngợi việc học hỏi thay vì việc đảo ngược.
 risks:
-- Protecting ego over truth
-- Avoiding necessary accountability.
+- Bảo vệ cái tôi hơn sự thật.
+- Trốn tránh trách nhiệm giải trình cần thiết.
 evidence:
   level: provisional
   references: []
@@ -42,5 +40,7 @@ tags:
 - face-saving
 - identity
 - change
+- negotiation
+- dignity
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

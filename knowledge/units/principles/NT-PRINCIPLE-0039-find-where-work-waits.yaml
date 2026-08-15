@@ -2,33 +2,31 @@ id: NT-PRINCIPLE-0039
 type: principle
 status: frozen
 version: 0.1.0
-title: Find where work waits
-summary: Locate the place where work accumulates, waits, or returns, because load
-  reveals the real bottleneck.
+title: Tìm nơi công việc chờ đợi
+summary: Xác định nơi công việc tích tụ, chờ đợi hoặc quay lại, vì tải trọng bộc lộ nút thắt thực sự.
 primary_domain: thanh-su
 secondary_domains:
 - hop-chung
 - tri-nhan
-definition: Bottlenecks become visible under load through queues, rework, waiting,
-  escalation, and repeated dependency on the same scarce resource.
+definition: Nút thắt trở nên nhìn thấy dưới tải trọng qua hàng đợi, làm lại, chờ đợi, leo thang và sự phụ thuộc lặp lại vào cùng một nguồn lực khan hiếm.
 mechanism:
-- Trace waiting points
-- Count rework loops
-- Identify the constrained role or decision.
+- Theo dõi các điểm chờ đợi
+- Đếm các vòng lặp làm lại
+- Xác định vai trò hoặc quyết định bị ràng buộc.
 conditions:
-- Execution is slowing
-- More effort is not improving throughput.
+- Việc thực thi đang chậm lại
+- Thêm nỗ lực không cải thiện thông lượng.
 exceptions:
-- Temporary surges may not indicate structural bottlenecks
-- Some waiting is intentional quality control.
+- Sự dâng cao tạm thời có thể không biểu thị nút thắt cấu trúc
+- Một số chờ đợi là kiểm soát chất lượng có chủ đích.
 applications:
   operations:
-  - Map queues before adding more work.
+  - Vẽ bản đồ hàng đợi trước khi bổ sung thêm việc.
   management:
-  - Protect constrained specialists from low-value interruptions.
+  - Bảo vệ chuyên gia bị ràng buộc khỏi gián đoạn giá trị thấp.
 risks:
-- Blaming the bottleneck owner
-- Optimizing one point while moving the bottleneck elsewhere.
+- Đổ lỗi cho người sở hữu nút thắt
+- Tối ưu một điểm trong khi dịch chuyển nút thắt sang nơi khác.
 evidence:
   level: provisional
   references: []
@@ -42,5 +40,9 @@ tags:
 - bottlenecks
 - load
 - execution
+- queues
+- throughput
+- workflow
+- capacity
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

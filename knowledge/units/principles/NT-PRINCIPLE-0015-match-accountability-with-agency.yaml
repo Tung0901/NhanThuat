@@ -2,33 +2,31 @@ id: NT-PRINCIPLE-0015
 type: principle
 status: frozen
 version: 0.1.0
-title: Match accountability with agency
-summary: Hold people accountable for outcomes only to the degree they have the authority,
-  information, and resources to influence them.
+title: Khớp trách nhiệm giải trình với quyền hành động
+summary: Yêu cầu con người chịu trách nhiệm về kết quả chỉ ở mức độ họ có quyền hạn, thông tin và nguồn lực để tác động đến kết quả đó.
 primary_domain: dung-nhan
 secondary_domains:
 - thanh-su
 - hop-chung
-definition: Accountability is credible when it is paired with practical agency over
-  the choices that shape the result.
+definition: Trách nhiệm giải trình đáng tin cậy khi nó đi kèm với quyền hành động thực tế đối với các lựa chọn định hình nên kết quả.
 mechanism:
-- Define the outcome
-- Identify influence over decisions
-- Align accountability to real agency.
+- Xác định kết quả.
+- Xác định mức ảnh hưởng lên các quyết định.
+- Căn chỉnh trách nhiệm giải trình với quyền hành động thực tế.
 conditions:
-- Outcome depends on controllable decisions
-- Authority boundaries can be known.
+- Kết quả phụ thuộc vào các quyết định có thể kiểm soát.
+- Ranh giới quyền hạn có thể được biết rõ.
 exceptions:
-- Shared outcomes require shared accountability
-- Stewardship may include raising constraints.
+- Kết quả chung đòi hỏi trách nhiệm giải trình chung.
+- Quản trị có thể bao gồm việc nêu lên các ràng buộc.
 applications:
   management:
-  - Ask what the person can actually decide.
+  - Hỏi xem người đó thực sự có thể quyết định điều gì.
   governance:
-  - Avoid assigning blame outside decision rights.
+  - Tránh quy lỗi ngoài phạm vi quyền ra quyết định.
 risks:
-- Avoiding accountability by claiming low control
-- Ignoring influence without formal authority.
+- Trốn tránh trách nhiệm giải trình bằng cách viện dẫn kiểm soát thấp.
+- Phớt lờ ảnh hưởng của người không có quyền hạn chính thức.
 evidence:
   level: provisional
   references: []
@@ -42,5 +40,7 @@ tags:
 - accountability
 - agency
 - authority
+- decision-rights
+- responsibility
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

@@ -2,21 +2,21 @@ id: NT-LAW-0054
 type: law
 status: frozen
 version: 0.1.0
-title: Frame Alignment Reception
-summary: Frame Alignment Reception structural knowledge unit.
+title: Tiếp nhận đồng bộ khung nhận thức
+summary: Đơn vị tri thức cấu trúc về Tiếp nhận đồng bộ khung nhận thức trong hệ thống.
 primary_domain: tri-nhan
 secondary_domains:
 - dung-nhan
-definition: Formal definition of Frame Alignment Reception in NhanThuat architecture.
+definition: Định nghĩa chính thức về Tiếp nhận đồng bộ khung nhận thức trong kiến trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Bối cảnh quản trị vận hành tổ chức.
 exceptions:
-- Emergency crisis overrides.
+- Các trường hợp can thiệp ưu tiên trong khủng hoảng khẩn cấp.
 applications:
   governance:
-  - Apply Frame Alignment Reception to organizational workflows.
+  - Áp dụng Tiếp nhận đồng bộ khung nhận thức vào các quy trình làm việc của tổ chức.
 risks:
-- Misapplication of Frame Alignment Reception leading to suboptimal performance.
+- Áp dụng sai Tiếp nhận đồng bộ khung nhận thức dẫn đến hiệu suất dưới mức tối ưu.
 evidence:
   level: supported
   references:
@@ -30,5 +30,10 @@ relations:
 tags:
 - law
 - tri-nhan
+- frame-alignment
+- reception-mechanism
+- cognitive-framing
+- governance-alignment
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

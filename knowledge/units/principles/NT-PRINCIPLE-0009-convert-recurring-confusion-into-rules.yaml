@@ -2,33 +2,31 @@ id: NT-PRINCIPLE-0009
 type: principle
 status: frozen
 version: 0.1.0
-title: Convert recurring confusion into rules
-summary: When the same confusion repeats, create a simple rule, standard, or decision
-  path rather than relying on repeated explanation.
+title: Chuyển sự mơ hồ lặp lại thành quy tắc
+summary: Khi cùng một sự nhầm lẫn tái diễn, hãy tạo ra một quy tắc, tiêu chuẩn hoặc lộ trình quyết định đơn giản thay vì dựa vào việc giải thích lặp đi lặp lại.
 primary_domain: hop-chung
 secondary_domains:
 - thanh-su
 - dung-nhan
-definition: Recurring ambiguity should become an operating rule so people do not keep
-  spending attention on the same coordination question.
+definition: Sự mơ hồ tái diễn nên trở thành quy tắc vận hành để con người không tiếp tục dành sự chú ý cho cùng một câu hỏi phối hợp.
 mechanism:
-- Notice repeated confusion
-- Identify the missing rule
-- Publish a simple default.
+- Nhận ra sự nhầm lẫn lặp lại.
+- Xác định quy tắc còn thiếu.
+- Công bố một mặc định đơn giản.
 conditions:
-- The confusion repeats
-- A stable default would help.
+- Sự nhầm lẫn tái diễn.
+- Một mặc định ổn định sẽ hữu ích.
 exceptions:
-- Novel work may need judgment more than rules
-- Too many rules can hide priorities.
+- Công việc mới có thể cần phán đoán hơn là quy tắc.
+- Quá nhiều quy tắc có thể che khuất các ưu tiên.
 applications:
   operations:
-  - Turn repeated questions into playbook entries.
+  - Biến các câu hỏi lặp lại thành các mục trong sổ tay vận hành.
   management:
-  - Clarify decision paths after repeated escalations.
+  - Làm rõ lộ trình quyết định sau nhiều lần leo thang lặp lại.
 risks:
-- Over-standardizing complex judgment
-- Ignoring training needs.
+- Chuẩn hóa quá mức phán đoán phức tạp.
+- Bỏ qua nhu cầu đào tạo.
 evidence:
   level: provisional
   references: []
@@ -43,5 +41,7 @@ tags:
 - rules
 - clarity
 - operations
+- defaults
+- decision-path
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

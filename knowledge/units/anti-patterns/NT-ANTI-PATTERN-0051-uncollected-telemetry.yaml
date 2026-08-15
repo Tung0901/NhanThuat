@@ -2,28 +2,26 @@ id: NT-ANTI-PATTERN-0051
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Uncollected Telemetry
-summary: Shipping products or executing strategy without logging outcome telemetry,
-  rendering institutional learning impossible.
+title: Bỏ qua thu thập dữ liệu vận hành
+summary: Phát hành sản phẩm hoặc thực thi chiến lược mà không ghi lại dữ liệu kết quả, khiến tổ chức không thể học hỏi và cải tiến.
 primary_domain: tri-nhan
 secondary_domains:
 - thanh-su
-definition: Uncollected telemetry occurs when teams launch features without instrumentation
-  or performance logs.
+definition: Tình trạng bỏ qua thu thập dữ liệu vận hành xảy ra khi các đội nhóm ra mắt tính năng mà không cài đặt công cụ đo lường hoặc nhật ký hiệu suất.
 mechanism:
-- Team launches major initiative.
-- No telemetry logging configured.
-- Outcome cannot be evaluated.
-- Mistakes repeated.
+- Đội nhóm triển khai một sáng kiến lớn.
+- Không cấu hình ghi dữ liệu đo lường vận hành.
+- Không thể đánh giá được kết quả thực tế.
+- Các sai lầm tiếp tục bị lặp lại.
 conditions:
-- Rushed delivery schedules omitting logging infrastructure.
+- Tiến độ bàn giao gấp giáp dẫn đến việc bỏ qua hạ tầng ghi dữ liệu.
 exceptions:
-- Non-technical verbal brainstorming probes.
+- Các buổi thảo luận ý tưởng trực tiếp không mang tính kỹ thuật.
 applications:
   launch_checklist:
-  - Require telemetry logging validation before authorizing any release.
+  - Yêu cầu kiểm tra việc ghi dữ liệu vận hành trước khi phê duyệt bất kỳ bản phát hành nào.
 risks:
-- Collecting mountains of useless telemetry data.
+- Thu thập vô số dữ liệu đo lường vô giá trị.
 evidence:
   level: supported
   references:
@@ -39,5 +37,10 @@ tags:
 - learning
 - telemetry
 - anti-patterns
+- uncollected-telemetry
+- metrics-logging
+- observability
+- data-driven
+- feedback-loop
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'

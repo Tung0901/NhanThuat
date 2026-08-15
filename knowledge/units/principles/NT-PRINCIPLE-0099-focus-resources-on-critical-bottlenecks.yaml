@@ -2,23 +2,21 @@ id: NT-PRINCIPLE-0099
 type: principle
 status: frozen
 version: 0.1.0
-title: Focus Resources on Critical Bottlenecks
-summary: Concentrate organizational energy on unlocking the single most restrictive
-  constraint limiting overall progress.
+title: Tập trung nguồn lực vào các nút thắt trọng yếu
+summary: Dồn sức lực của tổ chức vào việc giải phóng ràng buộc hạn chế nhất đang kìm hãm tiến độ tổng thể.
 primary_domain: thanh-su
 secondary_domains:
 - dung-nhan
-definition: Effective strategy identifies the pivotal bottleneck holding back performance
-  and mobilizes effort to break it.
+definition: Chiến lược hiệu quả xác định nút thắt then chốt đang kìm hãm hiệu suất và huy động nỗ lực để phá vỡ nó.
 conditions:
-- Strategic planning and resource allocation.
+- Lập kế hoạch chiến lược và phân bổ nguồn lực.
 exceptions:
-- Diversified venture portfolios.
+- Danh mục đầu tư kinh doanh đa dạng hóa.
 applications:
   execution_triage:
-  - Identify primary operational constraint before authorizing secondary work.
+  - Xác định ràng buộc vận hành chính trước khi cho phép triển khai các công việc thứ yếu.
 risks:
-- Misidentifying the bottleneck.
+- Xác định sai nút thắt.
 evidence:
   level: supported
   references:
@@ -33,5 +31,9 @@ tags:
 - strategy
 - bottleneck
 - focus
+- constraints
+- resource-allocation
+- execution
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

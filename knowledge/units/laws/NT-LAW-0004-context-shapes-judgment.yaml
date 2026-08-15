@@ -2,34 +2,32 @@ id: NT-LAW-0004
 type: law
 status: frozen
 version: 0.1.0
-title: Context shapes judgment
-summary: People judge options through the situation, constraints, incentives, relationships,
-  and timing they perceive around the choice.
+title: Bối cảnh định hình phán đoán
+summary: Con người đánh giá các lựa chọn thông qua tình huống, các ràng buộc, động lực thúc đẩy, các mối quan hệ và thời điểm mà họ nhận thức được xung quanh quyết định đó.
 primary_domain: tri-nhan
 secondary_domains:
 - tu-than
 - dung-nhan
 - thanh-su
-definition: Judgment is influenced by the perceived context surrounding a decision,
-  not only by stable preference or abstract logic.
+definition: Phán đoán bị ảnh hưởng bởi bối cảnh được nhận thức xung quanh một quyết định, chứ không chỉ bởi sở thích ổn định hay logic trừu tượng.
 mechanism:
-- Perceive the situation
-- interpret constraints and stakes
-- compare options through that frame.
+- Nhận thức tình huống
+- Diễn giải các ràng buộc và lợi ích liên quan
+- So sánh các lựa chọn thông qua khung nhận thức đó.
 conditions:
-- The person has incomplete information
-- The context is salient enough to affect interpretation.
+- Cá nhân có thông tin không đầy đủ
+- Bối cảnh đủ nổi bật để ảnh hưởng đến cách diễn giải.
 exceptions:
-- Deep expertise may reduce context distortion
-- Explicit criteria may stabilize judgment.
+- Chuyên môn sâu có thể làm giảm sự bóp méo do bối cảnh
+- Các tiêu chí rõ ràng có thể giúp ổn định phán đoán.
 applications:
   management:
-  - Ask what context makes a choice seem reasonable before evaluating the person.
+  - Tìm hiểu bối cảnh nào khiến một lựa chọn trở nên hợp lý trước khi đánh giá cá nhân đó.
   negotiation:
-  - Change the frame before arguing over positions.
+  - Thay đổi khung nhận thức trước khi tranh luận về các lập trường.
 risks:
-- Blaming character for contextual pressure
-- Ignoring durable values and capability.
+- Đổ lỗi cho tính cách thay vì áp lực từ bối cảnh
+- Bỏ qua các giá trị bền vững và năng lực thực tế.
 evidence:
   level: provisional
   references: []
@@ -44,5 +42,8 @@ tags:
 - context
 - judgment
 - decision-making
+- contextual-judgment
+- cognitive-framing
+- situational-influence
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

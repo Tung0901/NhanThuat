@@ -2,18 +2,55 @@ id: NT-LAW-0024
 type: law
 status: frozen
 version: 0.1.0
-title: Emotion prepares action
-summary: Emotion prepares people for action by prioritizing threat, reward, attachment, loss, or possibility before full deliberation.
+title: Cảm xúc chuẩn bị cho hành động
+summary: Cảm xúc chuẩn bị cho con người hành động bằng cách ưu tiên các yếu tố đe dọa, phần thưởng, sự gắn bó, mất mát hoặc cơ hội trước khi có sự suy xét thấu đáo.
 primary_domain: tri-nhan
-secondary_domains: [tu-than, hop-chung]
-definition: Human emotion is not merely after-the-fact feeling; it organizes attention, bodily readiness, interpretation, and likely response.
-mechanism: [Detect significance, Generate feeling, Prepare body and attention, Bias action.]
-conditions: [A situation carries perceived threat, reward, loss, attachment, or uncertainty.]
-exceptions: [Training and reflection can reshape emotional response, some low-salience decisions remain mostly procedural.]
-applications: {communication: [Notice emotional readiness before expecting neutral reasoning.], leadership: [Treat strong emotion as action preparation that needs interpretation, not immediate dismissal.]}
-risks: [Treating emotion as infallible, dismissing reason because emotion is present.]
-evidence: {level: provisional, references: []}
-relations: {supports: [NT-PRINCIPLE-0045, NT-PRINCIPLE-0046, NT-MODEL-0002], conflicts_with: [], depends_on: [], applies_to: []}
-tags: [emotion, action, interpretation]
+secondary_domains:
+- tu-than
+- hop-chung
+definition: Cảm xúc của con người không đơn thuần là cảm giác xảy ra sau sự việc; nó tổ chức sự chú ý, sự sẵn sàng của cơ thể, cách diễn giải và phản ứng có khả năng xảy ra.
+mechanism:
+- Phát hiện tầm quan trọng
+- Tạo ra cảm xúc
+- Chuẩn bị cơ thể và sự chú ý
+- Định hướng hành động.
+conditions:
+- Tình huống chứa đựng mối đe dọa được nhận thức
+- phần thưởng
+- mất mát
+- sự gắn bó
+- hoặc sự không chắc chắn.
+exceptions:
+- Việc đào tạo và phản tỉnh có thể tái định hình phản ứng cảm xúc
+- một số quyết định ít nổi bật vẫn mang tính quy trình là chủ yếu.
+applications:
+  communication:
+  - Nhận biết sự sẵn sàng về mặt cảm xúc trước khi kỳ vọng vào lập luận khách quan.
+  leadership:
+  - Coi cảm xúc mạnh mẽ là sự chuẩn bị cho hành động cần được diễn giải
+  - chứ không phải để bác bỏ ngay lập tức.
+risks:
+- Coi cảm xúc là luôn đúng
+- bác bỏ lý trí chỉ vì có sự hiện diện của cảm xúc.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports:
+  - NT-PRINCIPLE-0045
+  - NT-PRINCIPLE-0046
+  - NT-MODEL-0002
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- emotion
+- action
+- interpretation
+- emotion-and-action
+- emotional-readiness
+- behavioral-bias
+- affective-science
+- decision-making
 created_at: '2026-07-21'
-updated_at: '2026-07-21'
+updated_at: '2026-08-15'

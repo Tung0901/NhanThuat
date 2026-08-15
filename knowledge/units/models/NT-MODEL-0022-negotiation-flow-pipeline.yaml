@@ -2,21 +2,21 @@ id: NT-MODEL-0022
 type: model
 status: frozen
 version: 0.1.0
-title: Negotiation Flow Pipeline
-summary: Negotiation Flow Pipeline structural knowledge unit.
+title: Đường ống quy trình đàm phán
+summary: Đơn vị tri thức cấu trúc về Đường ống quy trình đàm phán trong kiến trúc Nhân Thuật.
 primary_domain: thanh-su
 secondary_domains:
 - tri-nhan
-definition: Formal definition of Negotiation Flow Pipeline in NhanThuat architecture.
+definition: Định nghĩa chính thức về Đường ống quy trình đàm phán trong kiến trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Các bối cảnh quản trị vận hành.
 exceptions:
-- Emergency crisis overrides.
+- Bị ghi đè trong các tình huống khủng hoảng khẩn cấp.
 applications:
   governance:
-  - Apply Negotiation Flow Pipeline to organizational workflows.
+  - Áp dụng Đường ống quy trình đàm phán vào các quy trình công việc của tổ chức.
 risks:
-- Misapplication of Negotiation Flow Pipeline leading to suboptimal performance.
+- Áp dụng sai Đường ống quy trình đàm phán dẫn đến hiệu suất kém tối ưu.
 evidence:
   level: supported
   references:
@@ -30,9 +30,14 @@ relations:
 tags:
 - model
 - thanh-su
+- negotiation-flow-pipeline
+- negotiation
+- pipeline
+- negotiation-model
+- process-model
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
 mechanism:
-- 'Step 1: Identify Negotiation Flow Pipeline.'
-- 'Step 2: Analyze parameters.'
-- 'Step 3: Execute model.'
+- 'Bước 1: Nhận diện Đường ống quy trình đàm phán.'
+- 'Bước 2: Phân tích các tham số.'
+- 'Bước 3: Thực thi mô hình.'

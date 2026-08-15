@@ -17,13 +17,13 @@ def test_app_imports_and_engine_integration(adapter: EngineAdapter):
     
 def test_query_flow_multiple_results(adapter: EngineAdapter):
     """Test a broad query that should return multiple units."""
-    results = adapter.resolve_query("social", limit=5)
+    results = adapter.resolve_query("xã hội", limit=5)
     assert len(results) > 1
     assert isinstance(results[0], KnowledgeUnit)
     
 def test_query_flow_one_result(adapter: EngineAdapter):
     """Test a very specific query that should return the exact model."""
-    results = adapter.resolve_query("Elaboration Likelihood Model", limit=1)
+    results = adapter.resolve_query("Mô hình Khả năng Xử lý Kỹ lưỡng", limit=1)
     assert len(results) == 1
     assert results[0].id == "NT-MODEL-3401"
     
@@ -55,8 +55,8 @@ def test_evaluator_output(adapter: EngineAdapter):
     """Test evaluator processing."""
     # Force retrieve groupthink phenomenon
     units = [adapter.resolver.resolve_by_id("NT-PHENOMENON-3304")]
-    # It has a risk: "Continuing with disastrous product launches or investments despite internal knowledge that it will fail."
-    query = "Continuing with disastrous product launches or investments despite internal knowledge that it will fail."
+    # It has a risk: "Tiếp tục các chiến dịch ra mắt sản phẩm hoặc khoản đầu tư thảm họa dù nội bộ biết rõ rằng chúng sẽ thất bại."
+    query = "Tiếp tục các chiến dịch ra mắt sản phẩm hoặc khoản đầu tư thảm họa dù nội bộ biết rõ rằng chúng sẽ thất bại."
     
     result = adapter.evaluate_content(query, units)
     assert "score" in result

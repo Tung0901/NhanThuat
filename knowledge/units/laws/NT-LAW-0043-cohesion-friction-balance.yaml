@@ -2,21 +2,21 @@ id: NT-LAW-0043
 type: law
 status: frozen
 version: 0.1.0
-title: Cohesion Friction Balance
-summary: Cohesion Friction Balance structural knowledge unit.
+title: Cân Bằng Gắn Kết và Ma Sát
+summary: Đơn vị tri thức cấu trúc về Cân Bằng Gắn Kết và Ma Sát.
 primary_domain: hop-chung
 secondary_domains:
 - tri-nhan
-definition: Formal definition of Cohesion Friction Balance in NhanThuat architecture.
+definition: Định nghĩa chuẩn mực về Cân Bằng Gắn Kết và Ma Sát trong cấu trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Các bối cảnh quản trị vận hành.
 exceptions:
-- Emergency crisis overrides.
+- Các trường hợp can thiệp ưu tiên trong khủng hoảng khẩn cấp.
 applications:
   governance:
-  - Apply Cohesion Friction Balance to organizational workflows.
+  - Áp dụng Cân Bằng Gắn Kết và Ma Sát vào các luồng công việc tổ chức.
 risks:
-- Misapplication of Cohesion Friction Balance leading to suboptimal performance.
+- Áp dụng sai Cân Bằng Gắn Kết và Ma Sát dẫn đến hiệu suất dưới mức tối ưu.
 evidence:
   level: supported
   references:
@@ -30,5 +30,10 @@ relations:
 tags:
 - law
 - hop-chung
+- cohesion-friction-balance
+- team-cohesion
+- constructive-friction
+- organizational-dynamics
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

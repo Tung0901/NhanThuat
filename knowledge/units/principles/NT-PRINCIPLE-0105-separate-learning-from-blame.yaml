@@ -2,23 +2,21 @@ id: NT-PRINCIPLE-0105
 type: principle
 status: frozen
 version: 0.1.0
-title: Separate Learning from Blame
-summary: Explicitly separate root-cause incident reviews from personal performance
-  management evaluations.
+title: Tách biệt học hỏi khỏi quy trách nhiệm
+summary: Tách bạch rõ ràng các buổi rà soát sự cố tìm nguyên nhân gốc rễ khỏi các buổi đánh giá quản lý hiệu suất cá nhân.
 primary_domain: tri-nhan
 secondary_domains:
 - hop-chung
-definition: If an employee fears an incident review will affect their performance
-  rating, they will withhold critical details.
+definition: Nếu nhân viên lo sợ buổi rà soát sự cố sẽ ảnh hưởng đến xếp hạng hiệu suất của họ, họ sẽ giấu đi các chi tiết quan trọng.
 conditions:
-- Incident post-mortems and post-project reviews.
+- Họp sau sự cố (post-mortem) và rà soát sau dự án.
 exceptions:
-- Repeat negligence after documented coaching.
+- Sơ suất lặp lại sau khi đã được kèm cặp và ghi nhận bằng tài liệu.
 applications:
   post_mortem_policy:
-  - Mandate that post-mortem notes cannot be referenced in bonus calculations.
+  - Quy định ghi chú post-mortem không được dùng làm căn cứ tính thưởng.
 risks:
-- Failing to address repeated individual incompetence.
+- Không xử lý tình trạng năng lực cá nhân yếu lặp lại.
 evidence:
   level: supported
   references:
@@ -33,5 +31,9 @@ tags:
 - learning
 - post-mortem
 - blame
+- psychological-safety
+- incident-review
+- no-blame-culture
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

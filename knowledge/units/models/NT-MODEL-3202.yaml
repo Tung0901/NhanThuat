@@ -1,30 +1,24 @@
 id: NT-MODEL-3202
 type: model
-title: Fogg Behavior Model (B=MAP)
-summary: 'Behavior (B) happens when three elements converge at the same moment: Motivation
-  (M), Ability (A), and a Prompt (P).'
+title: Mô hình hành vi Fogg (B=MAP)
+summary: 'Hành vi (B) xảy ra khi ba yếu tố hội tụ cùng một thời điểm: Động lực (M), Khả năng (A) và Lời nhắc (P).'
 primary_domain: tri-nhan
 domain_area: NT-DA-0028
-definition: A systematic framework for understanding and designing human behavior,
-  asserting that if any one of the three elements is missing or insufficient, the
-  target behavior will not occur.
+definition: Khung tham chiếu có hệ thống nhằm thấu hiểu và thiết kế hành vi của con người, khẳng định rằng nếu thiếu hoặc không đủ bất kỳ yếu tố nào trong ba yếu tố trên thì hành vi mục tiêu sẽ không xảy ra.
 mechanism:
-- Motivation determines the desire to do the behavior.
-- Ability defines how easy the behavior is to do.
-- A Prompt triggers the behavior.
-- If motivation is low, ability must be incredibly high (easy). If ability is low
-  (hard), motivation must be incredibly high.
+- Động lực quyết định mức độ mong muốn thực hiện hành vi.
+- Khả năng xác định mức độ dễ dàng để thực hiện hành vi đó.
+- Lời nhắc đóng vai trò kích hoạt hành vi.
+- Nếu động lực thấp, khả năng thực hiện phải cực kỳ cao (dễ làm). Nếu khả năng thực hiện thấp (khó làm), động lực phải cực kỳ cao.
 conditions:
-- Designing interactions, products, or new organizational routines.
+- Thiết kế tương tác, sản phẩm hoặc các quy trình vận hành mới trong tổ chức.
 exceptions:
-- Involuntary physiological reflexes.
+- Các phản xạ sinh lý không tự chủ.
 applications:
   product_design:
-  - Always optimize Ability (make it easier) before attempting to artificially inflate
-    Motivation.
+  - Luôn tối ưu hóa Khả năng (làm cho việc thực hiện dễ dàng hơn) trước khi cố gắng gia tăng Động lực một cách gượng ép.
 risks:
-- Relying exclusively on 'Motivation' speeches while ignoring the friction (Ability)
-  preventing the behavior.
+- Chỉ phụ thuộc vào các bài phát biểu truyền 'Động lực' mà bỏ qua rào cản cản trở hành vi (Khả năng thực hiện).
 evidence:
   level: strong
   references:
@@ -37,7 +31,12 @@ relations:
 tags:
 - behavior-model
 - design
+- fogg-behavior-model
+- behavioral-design
+- motivation-ability-prompt
+- habit-formation
+- user-engagement
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

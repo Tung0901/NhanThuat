@@ -2,21 +2,21 @@ id: NT-ANTI-PATTERN-0029
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Punitive Surveillance
-summary: Punitive Surveillance structural knowledge unit.
+title: Giám sát mang tính trừng phạt
+summary: Đơn vị tri thức cấu trúc về Giám sát mang tính trừng phạt trong quản trị tổ chức.
 primary_domain: dung-nhan
 secondary_domains:
 - tri-nhan
-definition: Formal definition of Punitive Surveillance in NhanThuat architecture.
+definition: Định nghĩa chính thức về Giám sát mang tính trừng phạt (Punitive Surveillance) trong kiến trúc Nhân Thuật, phản ánh mô hình quản lý theo dõi chặt chẽ nhằm mục đích bắt lỗi và trừng phạt thay vì hỗ trợ phát triển.
 conditions:
-- Operational governance contexts.
+- Bối cảnh quản trị vận hành tổ chức.
 exceptions:
-- Emergency crisis overrides.
+- Trường hợp ghi đè trong khủng hoảng khẩn cấp.
 applications:
   governance:
-  - Apply Punitive Surveillance to organizational workflows.
+  - Áp dụng nhận diện Giám sát mang tính trừng phạt vào quy trình làm việc của tổ chức.
 risks:
-- Misapplication of Punitive Surveillance leading to suboptimal performance.
+- Áp dụng sai hoặc không kiểm soát được Giám sát mang tính trừng phạt dẫn đến hiệu suất kém và triệt tiêu động lực làm việc.
 evidence:
   level: supported
   references:
@@ -30,5 +30,10 @@ relations:
 tags:
 - anti-pattern
 - dung-nhan
+- punitive-surveillance
+- micromanagement
+- fear-based-management
+- workplace-monitoring
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

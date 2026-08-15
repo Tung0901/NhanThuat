@@ -2,18 +2,48 @@ id: NT-PRINCIPLE-0053
 type: principle
 status: frozen
 version: 0.1.0
-title: Protect autonomy in meaningful work
-summary: Allow individuals discretion over how tasks are accomplished to preserve internal ownership, creative drive, and intrinsic satisfaction.
+title: Bảo vệ quyền tự chủ trong công việc có ý nghĩa
+summary: Cho phép cá nhân tự quyết cách thức hoàn thành nhiệm vụ để giữ quyền sở hữu nội tại, sức sáng tạo và sự hài lòng nội tại.
 primary_domain: tu-than
-secondary_domains: [tri-nhan, dung-nhan]
-definition: When people have choice over methods and problem-solving approaches, their intrinsic motivation and accountability increase.
-mechanism: [Define target outcomes, Provide boundary guardrails, Delegate procedural choice, Maintain internal ownership.]
-conditions: [Task requires judgment, innovation, or high craft engagement.]
-exceptions: [Strict safety, compliance, or regulatory protocols require fixed procedural compliance.]
-applications: {delegation: [Specify outcomes and constraints, leaving method choice to the operator.], management: [Avoid unnecessary micro-monitoring.]}
-risks: [Abandoning necessary operational standards, lack of boundary clarity.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0030, NT-LAW-0010], applies_to: []}
-tags: [motivation, principle, autonomy, intrinsic]
+secondary_domains:
+- tri-nhan
+- dung-nhan
+definition: Khi con người có lựa chọn về phương pháp và cách tiếp cận giải quyết vấn đề, động lực nội tại và trách nhiệm giải trình của họ tăng lên.
+mechanism:
+- Xác định kết quả mục tiêu
+- Cung cấp rào cản ranh giới
+- Ủy quyền lựa chọn quy trình
+- Duy trì quyền sở hữu nội tại.
+conditions:
+- Nhiệm vụ đòi hỏi phán đoán, đổi mới hoặc mức độ tham gia thủ công cao.
+exceptions:
+- An toàn nghiêm ngặt, tuân thủ hoặc quy định bắt buộc đòi hỏi tuân thủ quy trình cố định.
+applications:
+  delegation:
+  - Xác định kết quả và ràng buộc, để lại lựa chọn phương pháp cho người thực hiện.
+  management:
+  - Tránh giám sát vi mô không cần thiết.
+risks:
+- Từ bỏ chuẩn mực vận hành cần thiết
+- thiếu rõ ràng về ranh giới.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0030
+  - NT-LAW-0010
+  applies_to: []
+tags:
+- motivation
+- principle
+- autonomy
+- intrinsic
+- intrinsic-motivation
+- delegation
+- ownership
+- meaningful-work
 created_at: '2026-07-21'
-updated_at: '2026-07-21'
+updated_at: '2026-08-15'

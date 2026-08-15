@@ -2,28 +2,26 @@ id: NT-ANTI-PATTERN-0050
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Blame-Culture Suppression
-summary: Punishing individual messengers of bad news, causing employees to hide errors
-  until catastrophic failure occurs.
+title: Trấn áp bằng văn hóa đổ lỗi
+summary: Trừng phạt cá nhân báo tin xấu, khiến nhân viên che giấu sai sót cho đến khi sự cố nghiêm trọng xảy ra.
 primary_domain: tri-nhan
 secondary_domains:
 - hop-chung
-definition: Blame-culture suppression occurs when leadership punishes staff who report
-  bugs or production failures.
+definition: Trấn áp bằng văn hóa đổ lỗi xảy ra khi ban lãnh đạo trừng phạt những nhân viên báo cáo lỗi kỹ thuật hoặc sự cố vận hành.
 mechanism:
-- An error occurs.
-- Management blames the employee.
-- Staff learn honesty is dangerous.
-- Errors hidden until catastrophe.
+- Một sự cố xảy ra.
+- Ban quản lý đổ lỗi cho nhân viên.
+- Nhân viên nhận ra sự trung thực là mạo hiểm.
+- Các lỗi bị che giấu cho đến khi thảm họa xảy ra.
 conditions:
-- Fear-based leadership environments.
+- Môi trường lãnh đạo dựa trên sự sợ hãi.
 exceptions:
-- Deliberate criminal acts.
+- Các hành vi vi phạm pháp luật cố ý.
 applications:
   culture_audit:
-  - Flag teams where bad news is never reported.
+  - Đánh dấu các đội nhóm không bao giờ báo cáo tin xấu.
 risks:
-- Failing to discipline repeated gross negligence.
+- Bỏ qua việc kỷ luật hành vi lơ là nghiêm trọng lặp đi lặp lại.
 evidence:
   level: supported
   references:
@@ -39,5 +37,10 @@ tags:
 - learning
 - blame
 - anti-patterns
+- blame-culture
+- psychological-safety
+- fear-management
+- error-hiding
+- incident-response
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'

@@ -2,37 +2,46 @@ id: NT-PHENOMENON-3003
 type: phenomenon
 status: frozen
 version: 0.1.0
-title: Availability Heuristic Fallacy
-summary: Estimating the frequency or probability of an event based on how easily examples come to mind, leading to massive risk miscalculation.
+title: Ngụy biện Heuristic Khả dụng
+summary: Đánh giá tần suất hoặc xác suất của một sự kiện dựa trên mức độ dễ dàng khi nhớ lại các ví dụ, dẫn đến việc tính toán sai lầm trầm trọng về rủi ro.
 primary_domain: tri-nhan
 domain_area: NT-DA-0026
-secondary_domains: [thanh-su]
-definition: A cognitive shortcut where the brain substitutes "ease of recall" for "statistical frequency," causing vivid, emotional, or recent events to be perceived as much more common than they actually are.
+secondary_domains:
+- thanh-su
+definition: Một lối tắt nhận thức trong đó bộ não thay thế "độ dễ nhớ" bằng "tần suất thống kê", khiến các sự kiện sống động, mang tính cảm xúc hoặc mới xảy ra bị coi là phổ biến hơn nhiều so với thực tế.
 mechanism:
-  - A question of frequency or risk arises.
-  - The brain searches memory for examples.
-  - Vivid, recent, or highly publicized examples are retrieved instantly.
-  - The brain concludes the event is highly probable.
+- Một câu hỏi về tần suất hoặc rủi ro xuất hiện.
+- Bộ não tìm kiếm các ví dụ trong trí nhớ.
+- Các ví dụ sống động, gần đây hoặc được quảng bá rầm rộ được truy xuất ngay lập tức.
+- Bộ não kết luận rằng sự kiện đó có xác suất xảy ra rất cao.
 conditions:
-  - Time pressure or lack of immediate access to statistical base rates.
+- Áp lực thời gian hoặc thiếu quyền truy cập ngay lập tức vào dữ liệu tỷ lệ cơ sở thống kê.
 exceptions:
-  - Domains where the actor has internalized accurate base rates through long experience.
-  - "Consequences: Over-allocating resources to defend against dramatic but rare risks; Under-allocating resources for boring, common risks."
-  - "Recognition Signal: Policy changes driven entirely by a single recent, vivid failure rather than trend data."
+- Các lĩnh vực mà tác giả đã nội tâm hóa các tỷ lệ cơ sở chính xác thông qua kinh nghiệm lâu năm.
+- 'Hậu quả: Phân bổ quá mức tài nguyên để phòng ngừa các rủi ro kịch tính nhưng hiếm gặp; Phân bổ quá ít tài nguyên cho các rủi ro nhàm chán, phổ biến.'
+- 'Dấu hiệu nhận biết: Các thay đổi chính sách hoàn toàn được thúc đẩy bởi một thất bại rõ ràng, gần đây thay vì dữ liệu xu hướng.'
 applications:
   management:
-    - Force the use of base rates (historical averages) when evaluating the likelihood of an outcome.
+  - Buộc phải sử dụng tỷ lệ cơ sở (mức trung bình lịch sử) khi đánh giá xác suất của một kết quả.
 risks:
-  - Paralysis by ignoring valid intuitive warnings in favor of flawed datasets.
+- Tê liệt do bỏ qua các cảnh báo trực quan hợp lệ để ưu tiên cho các tập dữ liệu có lỗi.
 evidence:
   level: strong
   references:
-    - "Tversky, A., & Kahneman, D. (1973). 'Availability: A heuristic for judging frequency and probability'. Cognitive Psychology."
+  - 'Tversky, A., & Kahneman, D. (1973). ''Availability: A heuristic for judging frequency and probability''. Cognitive Psychology.'
 relations:
   supports: []
   conflicts_with: []
   depends_on: []
   applies_to: []
-tags: [heuristics, risk, bias, memory]
+tags:
+- heuristics
+- risk
+- bias
+- memory
+- availability-heuristic
+- cognitive-bias
+- risk-miscalculation
+- probability-estimation
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

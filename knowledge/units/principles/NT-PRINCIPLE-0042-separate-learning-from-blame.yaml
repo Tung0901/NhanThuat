@@ -2,33 +2,31 @@ id: NT-PRINCIPLE-0042
 type: principle
 status: frozen
 version: 0.1.0
-title: Separate learning from blame
-summary: When improvement is the goal, distinguish what must be learned from who may
-  need accountability.
+title: Tách việc học hỏi khỏi đổ lỗi
+summary: Khi cải thiện là mục tiêu, hãy phân biệt điều cần học với người có thể cần trách nhiệm giải trình.
 primary_domain: tri-nhan
 secondary_domains:
 - dung-nhan
 - thanh-su
-definition: Blame narrows attention toward defense, while learning requires enough
-  safety to expose causes, assumptions, and system conditions.
+definition: Đổ lỗi thu hẹp sự chú ý về phòng thủ, trong khi học hỏi cần đủ an toàn để phơi bày nguyên nhân, giả định và điều kiện hệ thống.
 mechanism:
-- Ask what happened
-- Ask what enabled it
-- Decide separately whether accountability is required.
+- Hỏi điều gì đã xảy ra
+- Hỏi điều gì đã tạo điều kiện cho nó
+- Quyết định riêng rẽ liệu có cần trách nhiệm giải trình.
 conditions:
-- A failure or surprise occurred
-- Future prevention matters.
+- Một thất bại hoặc bất ngờ xảy ra
+- Phòng ngừa tương lai có ý nghĩa.
 exceptions:
-- Intentional harm or negligence may require immediate accountability
-- Endless analysis can delay repair.
+- Tổn hại cố ý hoặc cẩu thả có thể cần trách nhiệm giải trình ngay lập tức
+- Phân tích vô tận có thể trì hoãn việc sửa chữa.
 applications:
   retrospectives:
-  - Begin with causal learning before assigning remedies.
+  - Bắt đầu bằng học hỏi nhân quả trước khi giao biện pháp khắc phục.
   governance:
-  - Keep investigation and sanction processes distinct when possible.
+  - Giữ quy trình điều tra và xử lý tách biệt khi có thể.
 risks:
-- Avoiding responsibility
-- Treating all failures as process issues.
+- Tránh né trách nhiệm
+- Coi mọi thất bại là vấn đề quy trình.
 evidence:
   level: provisional
   references: []
@@ -43,5 +41,7 @@ tags:
 - learning
 - blame
 - accountability
+- retrospectives
+- no-blame
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

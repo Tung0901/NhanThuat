@@ -2,23 +2,21 @@ id: NT-PRINCIPLE-0078
 type: principle
 status: frozen
 version: 0.1.0
-title: Evaluate Decisions by Process Not Outcome
-summary: Evaluate Decisions by Process Not Outcome structural knowledge unit.
+title: Đánh giá quyết định theo quy trình, không theo kết quả
+summary: Đánh giá quyết định theo quy trình, không theo kết quả là một đơn vị tri thức cấu trúc trong kho tri thức Nhân Thuật.
 primary_domain: tri-nhan
 secondary_domains:
 - dung-nhan
-definition: Formal definition of Evaluate Decisions by Process Not Outcome in NhanThuat
-  architecture.
+definition: Định nghĩa chính thức của Nguyên tắc Đánh giá quyết định theo quy trình, không theo kết quả trong kiến trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Các bối cảnh quản trị vận hành.
 exceptions:
-- Emergency crisis overrides.
+- Các tình huống khẩn cấp yêu cầu vượt quyền ưu tiên.
 applications:
   governance:
-  - Apply Evaluate Decisions by Process Not Outcome to organizational workflows.
+  - Áp dụng Nguyên tắc Đánh giá quyết định theo quy trình, không theo kết quả vào các quy trình vận hành của tổ chức.
 risks:
-- Misapplication of Evaluate Decisions by Process Not Outcome leading to suboptimal
-  performance.
+- Áp dụng sai Nguyên tắc Đánh giá quyết định theo quy trình, không theo kết quả dẫn đến hiệu suất dưới mức tối ưu.
 evidence:
   level: supported
   references:
@@ -32,5 +30,10 @@ relations:
 tags:
 - principle
 - tri-nhan
+- decision-process
+- outcome-bias
+- hindsight-bias
+- process-evaluation
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

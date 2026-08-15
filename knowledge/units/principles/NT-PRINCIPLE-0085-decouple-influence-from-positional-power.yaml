@@ -2,23 +2,21 @@ id: NT-PRINCIPLE-0085
 type: principle
 status: frozen
 version: 0.1.0
-title: Decouple Influence from Positional Power
-summary: Decouple Influence from Positional Power structural knowledge unit.
+title: Tách ảnh hưởng khỏi quyền lực vị trí
+summary: Tách ảnh hưởng khỏi quyền lực vị trí là một đơn vị tri thức cấu trúc trong kho tri thức Nhân Thuật.
 primary_domain: dung-nhan
 secondary_domains:
 - tri-nhan
-definition: Formal definition of Decouple Influence from Positional Power in NhanThuat
-  architecture.
+definition: Định nghĩa chính thức của Nguyên tắc Tách ảnh hưởng khỏi quyền lực vị trí trong kiến trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Các bối cảnh quản trị vận hành.
 exceptions:
-- Emergency crisis overrides.
+- Các tình huống khẩn cấp yêu cầu vượt quyền ưu tiên.
 applications:
   governance:
-  - Apply Decouple Influence from Positional Power to organizational workflows.
+  - Áp dụng Nguyên tắc Tách ảnh hưởng khỏi quyền lực vị trí vào các quy trình vận hành của tổ chức.
 risks:
-- Misapplication of Decouple Influence from Positional Power leading to suboptimal
-  performance.
+- Áp dụng sai Nguyên tắc Tách ảnh hưởng khỏi quyền lực vị trí dẫn đến hiệu suất dưới mức tối ưu.
 evidence:
   level: supported
   references:
@@ -32,5 +30,10 @@ relations:
 tags:
 - principle
 - dung-nhan
+- influence
+- positional-power
+- authority
+- meritocracy
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

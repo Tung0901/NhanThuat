@@ -2,26 +2,25 @@ id: NT-LAW-2401
 type: law
 status: frozen
 version: 1.0.0
-title: Law of System Redundancy
-summary: Sự bền bỉ yêu cầu một mức độ dư thừa có tính toán thay vì tối ưu hóa hoàn
-  toàn cho sự hiệu quả.
+title: Quy luật Dư thừa Hệ thống
+summary: Sự bền bỉ và khả năng chống chịu của hệ thống đòi hỏi một mức độ dư thừa có tính toán thay vì tối ưu hóa hiệu suất một cách cực đoan.
 primary_domain: hop-chung
 domain_area: NT-DA-0024
 secondary_domains:
 - thanh-su
-definition: Biên độ an toàn và sự dư thừa là tấm nệm hấp thụ các cú sốc.
+definition: Biên độ an toàn và các nguồn lực dự phòng đóng vai trò như một tấm đệm giảm chấn giúp hấp thụ các cú sốc và biến động ngoài dự kiến.
 mechanism:
-- Xác định chức năng trọng yếu.
-- Xây dựng backup.
+- Xác định các chức năng và điểm nghẽn trọng yếu trong hệ thống.
+- Xây dựng các phương án và nguồn lực dự phòng tương ứng.
 conditions:
-- Môi trường vĩ mô biến động mạnh.
+- Môi trường vĩ mô và thị trường có mức độ biến động và rủi ro cao.
 exceptions:
-- Startup giai đoạn sống còn.
+- Các doanh nghiệp khởi nghiệp trong giai đoạn sinh tồn cần tối ưu chi phí tối đa.
 applications:
   management:
-  - Quản trị rủi ro chuỗi cung ứng
+  - Quản trị rủi ro chuỗi cung ứng và vận hành doanh nghiệp
 risks:
-- Dư thừa sai chỗ trở thành lãng phí
+- Sự dư thừa không hợp lý dẫn đến lãng phí nguồn lực và giảm năng lực cạnh tranh
 evidence:
   level: supported
   references: []
@@ -33,5 +32,9 @@ relations:
 tags:
 - resilience
 - redundancy
+- system-redundancy
+- risk-management
+- buffer-capacity
+- operations-strategy
 created_at: '2026-08-12'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

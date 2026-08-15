@@ -1,31 +1,27 @@
 id: NT-PHENOMENON-3111
 type: phenomenon
-title: Base Rate Neglect
-summary: The tendency to ignore general statistical information (base rates) in favor
-  of specific, often irrelevant, individuating information.
+title: Bỏ qua tỷ lệ nền
+summary: Xu hướng bỏ qua thông tin thống kê chung (tỷ lệ nền) để ưu tiên thông tin riêng lẻ cụ thể, thường không liên quan.
 primary_domain: tri-nhan
 domain_area: NT-DA-0027
-definition: A cognitive fallacy where decision-makers fail to integrate the prior
-  probability of an event when evaluating new, descriptive evidence.
+definition: Một ngụy biện nhận thức, trong đó người ra quyết định không tích hợp xác suất tiên nghiệm của một sự kiện khi đánh giá các bằng chứng mô tả mới.
 mechanism:
-- The decision-maker receives a compelling, specific narrative about an entity.
-- They receive the general statistical probability of the entity's category.
-- The narrative overrides the statistics in their mental model.
+- Người ra quyết định nhận được một câu chuyện cụ thể, thuyết phục về một thực thể.
+- Họ nhận được xác suất thống kê chung của loại thực thể đó.
+- Câu chuyện lấn át số liệu thống kê trong mô hình nhận thức của họ.
 conditions:
-- When descriptive information is highly stereotypic or emotionally salient.
+- Khi thông tin mô tả mang tính khuôn mẫu cao hoặc nổi bật về mặt cảm xúc.
 exceptions:
-- When the base rate is presented causally rather than purely statistically.
+- Khi tỷ lệ nền được trình bày theo cách nhân quả thay vì thuần túy thống kê.
 applications:
   forecasting:
-  - Force the explicit presentation of the 'outside view' (base rate of failure) before
-    predicting a project's success.
+  - Ép buộc trình bày tường minh 'góc nhìn bên ngoài' (tỷ lệ thất bại nền) trước khi dự đoán sự thành công của một dự án.
 risks:
-- Overestimating the likelihood of rare events or the success rate of standard initiatives.
+- Đánh giá quá cao khả năng xảy ra của các sự kiện hiếm gặp hoặc tỷ lệ thành công của các sáng kiến thông thường.
 evidence:
   level: strong
   references:
-  - Kahneman, D., & Tversky, A. (1973). 'On the psychology of prediction'. Psychological
-    Review.
+  - Kahneman, D., & Tversky, A. (1973). 'On the psychology of prediction'. Psychological Review.
 relations:
   supports: []
   conflicts_with: []
@@ -34,7 +30,10 @@ relations:
 tags:
 - statistics
 - probability
+- base-rate-neglect
+- base-rate
+- representativeness
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

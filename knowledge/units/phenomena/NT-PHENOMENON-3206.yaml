@@ -1,33 +1,27 @@
 id: NT-PHENOMENON-3206
 type: phenomenon
-title: Implementation Intentions
-summary: A self-regulatory strategy in the form of an 'if-then' plan that leads to
-  better goal attainment.
+title: Ý định thực hiện (Kế hoạch nếu-thì)
+summary: Chiến lược tự điều chỉnh dưới dạng một kế hoạch dạng "nếu-thì" giúp đạt được mục tiêu tốt hơn.
 primary_domain: tri-nhan
 domain_area: NT-DA-0028
-definition: The psychological effect where explicitly defining the situational cue
-  and the planned response significantly increases the probability of executing a
-  behavior.
+definition: Hiệu ứng tâm lý trong đó việc xác định rõ ràng tín hiệu tình huống và phản ứng đã được lên kế hoạch giúp gia tăng đáng kể xác suất thực hiện một hành vi.
 mechanism:
-- 'An explicit plan is formed: ''If situation X arises, I will perform behavior Y.'''
-- The situational cue (X) becomes highly cognitively accessible.
-- When X occurs, the response (Y) is triggered automatically, bypassing conscious
-  deliberation.
+- 'Hình thành một kế hoạch tường minh: "Nếu tình huống X xảy ra, tôi sẽ thực hiện hành vi Y."'
+- Tín hiệu tình huống (X) trở nên dễ truy cập về mặt nhận thức.
+- Khi X xảy ra, phản ứng (Y) được kích hoạt một cách tự động, bỏ qua sự cân nhắc có ý thức.
 conditions:
-- Specific, executable behaviors rather than abstract outcomes.
+- Các hành vi cụ thể, khả thi thay vì các kết quả trừu tượng.
 exceptions:
-- Situations that are entirely unpredictable or outside the individual's control.
+- Những tình huống hoàn toàn khó dự đoán hoặc nằm ngoài tầm kiểm soát của cá nhân.
 applications:
   goal_setting:
-  - Replace 'I will exercise more' with 'If it is 7:00 AM on Tuesday, I will put on
-    my running shoes'.
+  - Thay câu "Tôi sẽ tập thể dục nhiều hơn" bằng "Nếu lúc 7:00 sáng thứ Ba, tôi sẽ đi giày chạy bộ".
 risks:
-- Over-planning for edge cases, leading to a brittle routine.
+- Lên kế hoạch quá mức cho các tình huống ngoại lệ, dẫn đến một thói quen giòn dễ vỡ.
 evidence:
   level: strong
   references:
-  - 'Gollwitzer, P. M. (1999). ''Implementation intentions: Strong effects of simple
-    plans''. American Psychologist.'
+  - 'Gollwitzer, P. M. (1999). ''Implementation intentions: Strong effects of simple plans''. American Psychologist.'
 relations:
   supports: []
   conflicts_with: []
@@ -36,7 +30,11 @@ relations:
 tags:
 - planning
 - goals
+- implementation-intentions
+- if-then-plans
+- goal-attainment
+- self-regulation
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

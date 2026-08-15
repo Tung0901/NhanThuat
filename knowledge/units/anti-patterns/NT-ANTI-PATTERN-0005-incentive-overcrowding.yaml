@@ -2,18 +2,48 @@ id: NT-ANTI-PATTERN-0005
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Incentive overcrowding
-summary: Attaching rigid financial rewards or micro-bonuses to every task, which destroys intrinsic satisfaction, fosters gaming, and reduces effort when bonuses are absent.
+title: Chồng chất thưởng vi mô
+summary: Gắn tiền thưởng cứng nhắc hoặc phần thưởng vi mô vào mọi công việc, làm triệt tiêu niềm yêu thích nội tại, khuyến khích hành vi thao túng chỉ số và làm giảm nỗ lực khi tiền thưởng bị ngưng.
 primary_domain: tu-than
-secondary_domains: [tri-nhan, thanh-su]
-definition: A transactional management failure mode where extrinsic incentives replace intrinsic ownership, leading to compliance without craft pride.
-mechanism: [Monetize all routine tasks, Erode intrinsic interest, Foster metric gaming, Discontinue effort when bonus stops.]
-conditions: [Management attempts to drive performance exclusively through micro-incentives.]
-exceptions: [High-turnover simple piecework where long-term organizational commitment is not required.]
-applications: {review: [Audit bonus schemes to ensure they do not destroy craft intrinsic motivation.], incentive-design: [Keep base compensation fair and decouple daily craft from micro-bonuses.]}
-risks: [Abruptly removing bonuses without restoring intrinsic purpose.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0030, NT-PRINCIPLE-0053, NT-PRINCIPLE-0057], applies_to: []}
-tags: [anti-pattern, incentives, crowding-out, motivation]
+secondary_domains:
+- tri-nhan
+- thanh-su
+definition: Một thất bại trong quản trị mang tính giao dịch, nơi các động lực ngoại tại thay thế tinh thần làm chủ nội tại, dẫn đến sự tuân thủ thiếu lòng tự hào về chuyên môn.
+mechanism:
+- Tiền tệ hóa mọi công việc thường nhật
+- Làm xói mòn sự hứng thú nội tại
+- Khuyến khích hành vi thao túng chỉ số
+- Ngừng nỗ lực khi tiền thưởng bị dừng.
+conditions:
+- Ban quản lý cố gắng thúc đẩy hiệu suất hoàn toàn bằng các khoản thưởng vi mô.
+exceptions:
+- Công việc khoán đơn giản có tỷ lệ nghỉ việc cao, nơi không yêu cầu cam kết dài hạn với tổ chức.
+applications:
+  review:
+  - Kiểm toán các chương trình thưởng để đảm bảo chúng không phá hủy động lực nội tại với công việc.
+  incentive-design:
+  - Duy trì mức lương cơ bản công bằng và tách biệt công việc hàng ngày khỏi các khoản thưởng vi mô.
+risks:
+- Cắt giảm đột ngột tiền thưởng mà không khôi phục lại ý nghĩa và mục đích nội tại.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0030
+  - NT-PRINCIPLE-0053
+  - NT-PRINCIPLE-0057
+  applies_to: []
+tags:
+- anti-pattern
+- incentives
+- crowding-out
+- motivation
+- incentive-overcrowding
+- extrinsic-motivation
+- overjustification-effect
+- bonus-gaming
 created_at: '2026-07-21'
-updated_at: '2026-07-21'
+updated_at: '2026-08-15'

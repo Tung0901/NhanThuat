@@ -2,18 +2,46 @@ id: NT-PRINCIPLE-0054
 type: principle
 status: frozen
 version: 0.1.0
-title: Avoid using threat for creative work
-summary: Do not rely on fear, pressure, or insecurity to motivate tasks that require innovation, problem solving, or open collaboration.
+title: Tránh dùng mối đe dọa cho công việc sáng tạo
+summary: Đừng dựa vào sợ hãi, áp lực hoặc bất an để tạo động lực cho các nhiệm vụ cần đổi mới, giải quyết vấn đề hoặc hợp tác cởi mở.
 primary_domain: tu-than
-secondary_domains: [tri-nhan, hop-chung]
-definition: Threat narrows cognitive focus to self-defense, blocking the cognitive flexibility necessary for creative problem solving.
-mechanism: [Remove threat signals, Establish safety for experimentation, Enable exploratory focus, Generate innovative solutions.]
-conditions: [Work involves complex problem-solving, novel design, or systemic risk analysis.]
-exceptions: [Enforcing ethical boundaries or zero-tolerance safety rules may require firm consequence warnings.]
-applications: {leadership: [Distinguish high standards from fear-inducing pressure.], culture: [Protect psychological safety during exploratory phases.]}
-risks: [Lowering performance standards under the pretense of removing pressure.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0031, NT-LAW-0025], applies_to: []}
-tags: [motivation, principle, threat, creativity, safety]
+secondary_domains:
+- tri-nhan
+- hop-chung
+definition: Mối đe dọa thu hẹp sự tập trung nhận thức về tự vệ, chặn đứng sự linh hoạt nhận thức cần thiết cho việc giải quyết vấn đề sáng tạo.
+mechanism:
+- Loại bỏ tín hiệu đe dọa
+- Thiết lập an toàn cho thử nghiệm
+- Kích hoạt sự tập trung khám phá
+- Tạo ra giải pháp đổi mới.
+conditions:
+- Công việc liên quan đến giải quyết vấn đề phức tạp, thiết kế mới hoặc phân tích rủi ro hệ thống.
+exceptions:
+- Thực thi ranh giới đạo đức hoặc quy tắc an toàn không khoan nhượng có thể cần cảnh báo hậu quả nghiêm khắc.
+applications:
+  leadership:
+  - Phân biệt chuẩn mực cao với áp lực gây sợ hãi.
+  culture:
+  - Bảo vệ an toàn tâm lý trong các giai đoạn khám phá.
+risks:
+- Hạ thấp chuẩn mực hiệu suất dưới chiêu bài loại bỏ áp lực.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0031
+  - NT-LAW-0025
+  applies_to: []
+tags:
+- motivation
+- principle
+- threat
+- creativity
+- safety
+- psychological-safety
+- innovation
 created_at: '2026-07-21'
-updated_at: '2026-07-21'
+updated_at: '2026-08-15'

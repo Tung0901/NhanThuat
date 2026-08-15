@@ -1,33 +1,27 @@
 id: NT-PHENOMENON-3312
 type: phenomenon
-title: Cognitive Dissonance
-summary: The mental discomfort experienced by someone holding two or more contradictory
-  beliefs, ideas, or values, especially when their behavior conflicts with their beliefs.
+title: Bất hòa nhận thức
+summary: Sự khó chịu về tinh thần trải nghiệm bởi người đang giữ hai hoặc nhiều niềm tin, ý tưởng hoặc giá trị mâu thuẫn nhau, đặc biệt khi hành vi của họ xung đột với niềm tin của họ.
 primary_domain: tri-nhan
 domain_area: NT-DA-0029
-definition: A psychological stress state that drives individuals to resolve contradictions,
-  usually by irrationalizing their beliefs rather than changing their past behavior.
+definition: Một trạng thái căng thẳng tâm lý thúc đẩy cá nhân giải quyết các mâu thuẫn, thường bằng cách hợp lý hóa niềm tin thay vì thay đổi hành vi trong quá khứ.
 mechanism:
-- A conflict arises between a belief and an action (e.g., 'I am a smart manager' vs
-  'I hired a terrible employee').
-- This creates uncomfortable psychological tension.
-- To relieve the tension, the individual alters the belief (e.g., 'The employee isn't
-  terrible, they just need more time') to justify the action.
+- 'Một xung đột nảy sinh giữa một niềm tin và một hành động (ví dụ: "Tôi là một người quản lý thông minh" so với "Tôi đã tuyển một nhân viên tệ hại").'
+- Điều này tạo ra một căng thẳng tâm lý khó chịu.
+- 'Để giải tỏa căng thẳng, cá nhân thay đổi niềm tin (ví dụ: "Nhân viên này không tệ, họ chỉ cần thêm thời gian") để biện minh cho hành động.'
 conditions:
-- When an individual's self-concept or ego is heavily tied to the contradictory behavior.
+- Khi khái niệm bản thân hoặc cái tôi của cá nhân gắn chặt với hành vi mâu thuẫn.
 exceptions:
-- When the individual is highly self-aware and trained in metacognitive reflection.
+- Khi cá nhân có mức độ tự nhận thức cao và được rèn luyện trong khả năng phản tư siêu nhận thức.
 applications:
   persuasion:
-  - Getting someone to make a small, public commitment forces them to align their
-    internal beliefs to justify their action (the Ben Franklin effect).
+  - Để một người đưa ra một cam kết công khai nhỏ buộc họ điều chỉnh niềm tin nội bộ để biện minh cho hành động của mình (hiệu ứng Ben Franklin).
 risks:
-- Doubling down on catastrophic business strategies to avoid admitting failure.
+- Càng đầu tư vào những chiến lược kinh doanh thảm khốc để tránh thừa nhận thất bại.
 evidence:
   level: strong
   references:
-  - Festinger, L. (1957). 'A Theory of Cognitive Dissonance'. Stanford University
-    Press.
+  - Festinger, L. (1957). 'A Theory of Cognitive Dissonance'. Stanford University Press.
 relations:
   supports: []
   conflicts_with: []
@@ -36,7 +30,12 @@ relations:
 tags:
 - dissonance
 - belief
+- cognitive-dissonance
+- belief-justification
+- ben-franklin-effect
+- rationalization
+- self-consistency
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

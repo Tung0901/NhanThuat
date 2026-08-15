@@ -2,33 +2,31 @@ id: NT-LAW-0008
 type: law
 status: frozen
 version: 0.1.0
-title: Feedback adjusts behavior
-summary: People adjust behavior more reliably when feedback is timely, specific, credible,
-  and connected to visible consequences.
+title: Phản hồi điều chỉnh hành vi
+summary: Mọi người điều chỉnh hành vi một cách đáng tin cậy hơn khi nhận được phản hồi kịp thời, cụ thể, đáng tin cậy và gắn liền với những hệ quả rõ ràng.
 primary_domain: dung-nhan
 secondary_domains:
 - tu-than
 - thanh-su
-definition: Feedback changes behavior when the receiver can understand the gap, trust
-  the signal, and act on the adjustment before the context disappears.
+definition: Phản hồi làm thay đổi hành vi khi người nhận có thể hiểu được khoảng cách năng lực, tin tưởng vào tín hiệu phản hồi và thực hiện điều chỉnh trước khi bối cảnh đó qua đi.
 mechanism:
-- Notice a performance signal
-- Interpret the gap
-- Adjust action when the correction is usable.
+- Nhận biết tín hiệu về hiệu suất
+- Lý giải khoảng cách năng lực
+- Điều chỉnh hành động khi phương án khắc phục có thể áp dụng được.
 conditions:
-- The receiver can change behavior
-- Feedback is close enough to the action.
+- Người nhận có khả năng thay đổi hành vi
+- Phản hồi được đưa ra đủ gần với thời điểm thực hiện hành động.
 exceptions:
-- Threatening feedback may trigger defense
-- Vague feedback may not guide change.
+- Phản hồi mang tính đe dọa có thể kích hoạt cơ chế tự vệ
+- Phản hồi mơ hồ có thể không định hướng được sự thay đổi.
 applications:
   management:
-  - Give feedback close to the observed behavior.
+  - Đưa ra phản hồi ngay sát thời điểm quan sát thấy hành vi.
   learning:
-  - Connect correction to the next concrete attempt.
+  - Liên kết việc sửa lỗi với nỗ lực cụ thể tiếp theo.
 risks:
-- Using feedback to vent frustration
-- Overloading people with too many corrections.
+- Sử dụng phản hồi như một công cụ để trút giận
+- Gây quá tải cho nhân sự bằng quá nhiều yêu cầu điều chỉnh.
 evidence:
   level: provisional
   references: []
@@ -43,5 +41,9 @@ tags:
 - feedback
 - learning
 - behavior-change
+- feedback-loop
+- performance-management
+- timely-feedback
+- actionable-feedback
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

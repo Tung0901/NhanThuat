@@ -2,18 +2,53 @@ id: NT-LAW-0028
 type: law
 status: frozen
 version: 0.1.0
-title: Adaptation follows repeated consequence
-summary: People adapt to what is repeatedly rewarded, punished, ignored, made easy, or made costly.
+title: Sự thích nghi hình thành từ hệ quả lặp lại
+summary: Con người thích nghi với những gì được khen thưởng, xử phạt, phớt lờ, tạo điều kiện thuận lợi hoặc gây tốn kém một cách lặp đi lặp lại.
 primary_domain: tri-nhan
-secondary_domains: [tu-than, thanh-su]
-definition: Repeated consequences train attention, habits, expectations, and emotional responses even when no one explicitly teaches them.
-mechanism: [Experience consequence, Update expectation, Repeat behavior, Stabilize adaptation.]
-conditions: [Consequences are repeated or emotionally strong, The person can perceive the pattern.]
-exceptions: [Strong values can resist consequence patterns, hidden consequences may not teach.]
-applications: {culture: [Notice what the system repeatedly rewards.], coaching: [Align repeated feedback with desired adaptation.]}
-risks: [Over-shaping people through pressure, Confusing adaptation with genuine agreement.]
-evidence: {level: provisional, references: []}
-relations: {supports: [NT-PRINCIPLE-0051, NT-MODEL-0003, NT-ANTI-PATTERN-0003], conflicts_with: [], depends_on: [NT-LAW-0008, NT-LAW-0016], applies_to: []}
-tags: [adaptation, consequence, habits]
+secondary_domains:
+- tu-than
+- thanh-su
+definition: Các hệ quả lặp lại rèn luyện sự chú ý, thói quen, kỳ vọng và phản ứng cảm xúc ngay cả khi không có ai trực tiếp giảng dạy.
+mechanism:
+- Trải nghiệm hệ quả
+- Cập nhật kỳ vọng
+- Lặp lại hành vi
+- Ổn định hóa sự thích nghi
+conditions:
+- Hệ quả diễn ra lặp lại hoặc có tác động cảm xúc mạnh mẽ
+- Cá nhân có khả năng nhận biết được quy luật của hệ quả
+exceptions:
+- Hệ giá trị cá nhân vững chắc có thể kháng cự lại các mô thức hệ quả
+- Những hệ quả bị che giấu có thể không mang lại bài học thích nghi
+applications:
+  culture:
+  - Nhận diện những hành vi mà hệ thống đang liên tục tưởng thưởng trong thực tế.
+  coaching:
+  - Đồng bộ hóa các phản hồi định kỳ với mục tiêu thích nghi mong muốn.
+risks:
+- Uốn nắn và kiểm soát con người quá mức thông qua áp lực
+- Nhầm lẫn giữa sự thích nghi mang tính đối phó với sự đồng thuận thực chất
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports:
+  - NT-PRINCIPLE-0051
+  - NT-MODEL-0003
+  - NT-ANTI-PATTERN-0003
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0008
+  - NT-LAW-0016
+  applies_to: []
+tags:
+- adaptation
+- consequence
+- habits
+- behavioral-adaptation
+- reinforcement-learning
+- consequence-pattern
+- operant-conditioning
+- habit-formation
 created_at: '2026-07-21'
-updated_at: '2026-07-21'
+updated_at: '2026-08-15'

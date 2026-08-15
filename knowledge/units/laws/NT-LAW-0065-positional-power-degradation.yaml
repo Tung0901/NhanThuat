@@ -2,23 +2,21 @@ id: NT-LAW-0065
 type: law
 status: frozen
 version: 0.1.0
-title: Positional Power Degradation
-summary: Over-reliance on formal authority to compel execution degrades trust, innovation,
-  and voluntary commitment.
+title: Sự Suy giảm Quyền lực Vị trí
+summary: Việc quá phụ thuộc vào quyền lực chính thức để ép buộc thực thi sẽ làm suy giảm lòng tin, khả năng đổi mới sáng tạo và sự cam kết tự nguyện.
 primary_domain: dung-nhan
 secondary_domains:
 - tri-nhan
-definition: Formal authority can compel physical compliance, but it cannot mandate
-  creative effort or intrinsic commitment.
+definition: Quyền lực chính thức có thể ép buộc sự tuân thủ về mặt hành vi, nhưng không thể bắt buộc nỗ lực sáng tạo hay sự cam kết tự thân.
 conditions:
-- Knowledge work environments requiring high discretionary effort.
+- Môi trường làm việc tri thức đòi hỏi nỗ lực tự nguyện cao.
 exceptions:
-- Military command or emergency crisis response.
+- Chỉ huy quân sự hoặc ứng phó khủng hoảng khẩn cấp.
 applications:
   leadership:
-  - Train managers to reserve positional mandates for rare deadlock resolution.
+  - Đào tạo các nhà quản lý chỉ sử dụng mệnh lệnh hành chính trong những trường hợp hiếm hoi để giải quyết bế tắc.
 risks:
-- Failing to use authority when compliance is legally required.
+- Không sử dụng quyền lực khi sự tuân thủ được yêu cầu về mặt pháp lý.
 evidence:
   level: supported
   references:
@@ -33,5 +31,10 @@ tags:
 - authority
 - leadership
 - trust
+- positional-power
+- formal-authority
+- intrinsic-motivation
+- leadership-trust
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

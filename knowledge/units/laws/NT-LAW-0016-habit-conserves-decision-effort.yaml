@@ -2,33 +2,31 @@ id: NT-LAW-0016
 type: law
 status: frozen
 version: 0.1.0
-title: Habit conserves decision effort
-summary: Repeated routines reduce decision effort by turning frequent choices into
-  default behavior.
+title: Thói quen tiết kiệm nỗ lực ra quyết định
+summary: Các thói quen lặp đi lặp lại giúp giảm bớt nỗ lực ra quyết định bằng cách biến những lựa chọn thường xuyên thành hành vi mặc định.
 primary_domain: tu-than
 secondary_domains:
 - dung-nhan
 - thanh-su
-definition: Habits conserve attention and willpower by making repeated action automatic,
-  but they also preserve outdated patterns.
+definition: Thói quen giúp bảo tồn sự chú ý và ý chí bằng cách tự động hóa các hành động lặp lại, nhưng chúng cũng có thể duy trì các khuôn mẫu đã lỗi thời.
 mechanism:
-- Repeat a cue-action pattern
-- Reduce conscious choice
-- Execute the default when the cue returns.
+- Lặp lại một mô hình gợi ý - hành động
+- Giảm bớt sự lựa chọn có ý thức
+- Thực thi hành vi mặc định khi tín hiệu gợi ý xuất hiện trở lại.
 conditions:
-- The situation repeats
-- The action has a stable trigger.
+- Tình huống có tính lặp đi lặp lại
+- Hành động có một tác nhân kích hoạt ổn định.
 exceptions:
-- Novel contexts may disrupt habit
-- Strong interruption can force deliberation.
+- Bối cảnh mới lạ có thể phá vỡ thói quen
+- Sự gián đoạn mạnh mẽ có thể buộc phải cân nhắc kỹ lưỡng.
 applications:
   self-management:
-  - Design defaults for important repeated behavior.
+  - Thiết kế các thiết lập mặc định cho những hành vi lặp lại quan trọng.
   operations:
-  - Turn recurring good practice into routines.
+  - Biến các thực hành tốt mang tính định kỳ thành các thói quen.
 risks:
-- Automating the wrong behavior
-- Ignoring context changes.
+- Tự động hóa sai hành vi
+- Bỏ qua những thay đổi của bối cảnh.
 evidence:
   level: provisional
   references: []
@@ -43,5 +41,9 @@ tags:
 - habit
 - routines
 - decision-effort
+- habit-formation
+- decision-fatigue
+- behavioral-default
+- cognitive-load
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

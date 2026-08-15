@@ -2,33 +2,31 @@ id: NT-LAW-0011
 type: law
 status: frozen
 version: 0.1.0
-title: Trust accumulates through consistency
-summary: Trust grows when words, decisions, and follow-through remain consistent across
-  repeated moments that matter.
+title: Niềm tin tích lũy qua sự nhất quán
+summary: Niềm tin sẽ tăng lên khi lời nói, quyết định và hành động thực hiện luôn nhất quán qua những thời điểm quan trọng được lặp đi lặp lại.
 primary_domain: hop-chung
 secondary_domains:
 - dung-nhan
 - thanh-su
-definition: People update trust by comparing promises, behavior, competence, and fairness
-  across repeated interactions.
+definition: Mọi người cập nhật mức độ tin cậy bằng cách so sánh giữa lời hứa, hành vi, năng lực và sự công bằng qua các tương tác lặp đi lặp lại.
 mechanism:
-- Observe commitment
-- Observe follow-through
-- Update confidence in future behavior.
+- Quan sát cam kết
+- Quan sát quá trình thực hiện
+- Cập nhật mức độ tin tưởng vào hành vi trong tương lai.
 conditions:
-- Interactions repeat
-- Behavior is visible enough to judge.
+- Các tương tác được lặp lại
+- Hành vi đủ rõ ràng để có thể đánh giá.
 exceptions:
-- One severe breach can outweigh many small positives
-- Context changes can reset expectations.
+- Một lần vi phạm nghiêm trọng có thể xóa bỏ nhiều điểm tích cực nhỏ
+- Sự thay đổi bối cảnh có thể thiết lập lại các kỳ vọng.
 applications:
   leadership:
-  - Make fewer promises and keep them visibly.
+  - Đưa ra ít lời hứa hơn và thực hiện chúng một cách rõ ràng.
   teamwork:
-  - Use small commitments to rebuild reliability.
+  - Sử dụng các cam kết nhỏ để xây dựng lại sự tin cậy.
 risks:
-- Expecting trust without behavioral evidence
-- Mistaking charisma for reliability.
+- Kỳ vọng có được niềm tin mà không có bằng chứng từ hành vi
+- Nhầm lẫn giữa sức hút cá nhân và sự đáng tin cậy.
 evidence:
   level: provisional
   references: []
@@ -44,5 +42,8 @@ tags:
 - trust
 - consistency
 - reliability
+- trust-building
+- credibility
+- interpersonal-trust
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

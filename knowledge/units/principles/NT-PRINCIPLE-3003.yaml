@@ -2,34 +2,43 @@ id: NT-PRINCIPLE-3003
 type: principle
 status: frozen
 version: 0.1.0
-title: Foster Metacognitive Reflection
-summary: Design workflows to include mandatory structural pauses that force teams and individuals to step out of execution and evaluate their cognitive approach.
+title: Thúc đẩy phản tư siêu nhận thức
+summary: Thiết kế quy trình làm việc có các điểm dừng cấu trúc bắt buộc, buộc đội ngũ và cá nhân thoát khỏi vòng thực thi để đánh giá lại cách tiếp cận nhận thức của họ.
 primary_domain: tri-nhan
 domain_area: NT-DA-0026
-secondary_domains: [hop-chung]
-definition: A practice of breaking the continuous flow of execution to activate the metacognitive layer, ensuring the strategy itself is sound before more effort is expended.
+secondary_domains:
+- hop-chung
+definition: Một hoạt động thực hành phá vỡ dòng chảy liên tục của quá trình thực thi nhằm kích hoạt lớp siêu nhận thức, đảm bảo bản thân chiến lược là đúng đắn trước khi tiêu tốn thêm công sức.
 mechanism:
-  - Execution is paused at a predefined structural boundary.
-  - The team shifts focus from "What are we doing?" to "How are we thinking about this?"
-  - Faulty assumptions or failing strategies are identified and corrected.
+- Việc thực thi được tạm dừng tại một ranh giới cấu trúc được xác định trước.
+- Đội ngũ chuyển trọng tâm từ "Chúng ta đang làm gì?" sang "Chúng ta đang suy nghĩ về việc này như thế nào?".
+- Các giả định sai lầm hoặc chiến lược đang thất bại được xác định và điều chỉnh.
 conditions:
-  - Long-running, complex projects with high ambiguity.
+- Các dự án phức tạp, kéo dài với mức độ mơ hồ cao.
 exceptions:
-  - Crisis moments requiring uninterrupted tactical execution of a known plan.
+- Các khoảnh khắc khủng hoảng đòi hỏi thực thi chiến thuật không bị gián đoạn theo một kế hoạch đã biết.
 applications:
   project-management:
-    - Institutionalize the "pre-mortem" and "post-mortem" as mandatory structural reflection points.
+  - Thể chế hóa "pre-mortem" (khảo sát rủi ro trước thực thi) và "post-mortem" (rút kinh nghiệm sau thực thi) thành các điểm phản tư cấu trúc bắt buộc.
 risks:
-  - "Over-processing: interrupting flow states with unnecessary meta-analysis."
+- 'Xử lý quá mức: làm gián đoạn trạng thái dòng chảy bằng phân tích siêu mức không cần thiết.'
 evidence:
   level: supported
   references:
-    - "Flavell, J. H. (1979). 'Metacognition and cognitive monitoring'. American Psychologist."
+  - Flavell, J. H. (1979). 'Metacognition and cognitive monitoring'. American Psychologist.
 relations:
   supports: []
   conflicts_with: []
-  depends_on: [NT-MODEL-3003, NT-PHENOMENON-3007]
+  depends_on:
+  - NT-MODEL-3003
+  - NT-PHENOMENON-3007
   applies_to: []
-tags: [metacognition, reflection, process, strategy]
+tags:
+- metacognition
+- reflection
+- process
+- strategy
+- workflow
+- review
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

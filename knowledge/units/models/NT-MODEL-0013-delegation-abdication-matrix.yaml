@@ -2,21 +2,21 @@ id: NT-MODEL-0013
 type: model
 status: frozen
 version: 0.1.0
-title: Delegation Abdication Matrix
-summary: Delegation Abdication Matrix structural knowledge unit.
+title: Ma trận Ủy quyền và Thoái thác
+summary: Đơn vị tri thức cấu trúc về Ma trận Ủy quyền và Thoái thác trong quản lý.
 primary_domain: dung-nhan
 secondary_domains:
 - tri-nhan
-definition: Formal definition of Delegation Abdication Matrix in NhanThuat architecture.
+definition: Định nghĩa chính thức về Ma trận Ủy quyền và Thoái thác trong hệ thống kiến trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Các bối cảnh quản trị vận hành tổ chức.
 exceptions:
-- Emergency crisis overrides.
+- Các trường hợp khẩn cấp ghi đè cơ chế thông thường.
 applications:
   governance:
-  - Apply Delegation Abdication Matrix to organizational workflows.
+  - Áp dụng Ma trận Ủy quyền và Thoái thác vào quy trình làm việc của tổ chức.
 risks:
-- Misapplication of Delegation Abdication Matrix leading to suboptimal performance.
+- Áp dụng sai lệch Ma trận Ủy quyền và Thoái thác dẫn đến hiệu suất kém tối ưu.
 evidence:
   level: supported
   references:
@@ -30,9 +30,14 @@ relations:
 tags:
 - model
 - dung-nhan
+- delegation-abdication-matrix
+- delegation-vs-abdication
+- leadership-matrix
+- nhanthuat-architecture
+- governance-framework
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
 mechanism:
-- 'Step 1: Identify Delegation Abdication Matrix.'
-- 'Step 2: Analyze parameters.'
-- 'Step 3: Execute model.'
+- 'Bước 1: Xác định Ma trận Ủy quyền và Thoái thác.'
+- 'Bước 2: Phân tích các tham số liên quan.'
+- 'Bước 3: Thực thi mô hình trong thực tế.'

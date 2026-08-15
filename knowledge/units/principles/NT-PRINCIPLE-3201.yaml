@@ -1,34 +1,27 @@
 id: NT-PRINCIPLE-3201
 type: principle
-title: Commitment Devices
-summary: Voluntarily constraining future choices to prevent oneself from acting against
-  long-term interests.
+title: Công cụ ràng buộc cam kết
+summary: Chủ động giới hạn các lựa chọn trong tương lai để ngăn bản thân hành động trái với lợi ích dài hạn.
 primary_domain: tri-nhan
 domain_area: NT-DA-0028
-definition: An arrangement entered into in the present that restricts one's future
-  actions to mitigate the effects of expected present bias or temptation.
+definition: Một thỏa thuận được thiết lập ở hiện tại nhằm hạn chế các hành động trong tương lai của bản thân để giảm thiểu tác động của thiên kiến hiện tại hoặc cám dỗ được dự báo trước.
 mechanism:
-- Acknowledge future weakness (present bias).
-- Establish a binding constraint or penalty (financial, social, or physical) while
-  in a cold, rational state.
-- When the future temptation arises, the cost of yielding is artificially raised by
-  the device, forcing compliance.
+- Thừa nhận điểm yếu trong tương lai (thiên kiến hiện tại).
+- Thiết lập một ràng buộc hoặc hình phạt cố định (tài chính, xã hội hoặc vật lý) trong trạng thái tỉnh táo, lý trí.
+- Khi cám dỗ xuất hiện trong tương lai, công cụ nâng cái giá của việc khuất phục lên một cách giả tạo, buộc phải tuân thủ.
 conditions:
-- When present bias is strong and the individual has self-awareness of it.
+- Khi thiên kiến hiện tại mạnh và cá nhân có nhận thức về nó.
 exceptions:
-- Environments where flexibility is strategically necessary to survive black swan
-  events.
+- Các môi trường nơi tính linh hoạt là cần thiết về mặt chiến lược để sống sót qua các sự kiện thiên nga đen.
 applications:
   savings:
-  - Automatically routing 10% of a paycheck to a locked account before it touches
-    a checking account.
+  - Tự động chuyển 10% tiền lương vào một tài khoản bị khóa trước khi nó chạm vào tài khoản vãng lai.
 risks:
-- Over-constraining oneself and being unable to access resources in genuine emergencies.
+- Tự ràng buộc quá mức và không thể tiếp cận nguồn lực trong những trường hợp khẩn cấp thực sự.
 evidence:
   level: strong
   references:
-  - Thaler, R. H., & Benartzi, S. (2004). 'Save More Tomorrow'. Journal of Political
-    Economy.
+  - Thaler, R. H., & Benartzi, S. (2004). 'Save More Tomorrow'. Journal of Political Economy.
 relations:
   supports: []
   conflicts_with: []
@@ -37,7 +30,11 @@ relations:
 tags:
 - commitment
 - willpower
+- present-bias
+- savings
+- self-control
+- constraints
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

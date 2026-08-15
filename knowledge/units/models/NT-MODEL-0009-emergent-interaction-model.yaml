@@ -2,21 +2,21 @@ id: NT-MODEL-0009
 type: model
 status: frozen
 version: 0.1.0
-title: Emergent Interaction Model
-summary: Emergent Interaction Model structural knowledge unit.
+title: Mô hình tương tác phát sinh
+summary: Đơn vị tri thức cấu trúc về Mô hình tương tác phát sinh.
 primary_domain: tri-nhan
 secondary_domains:
 - hop-chung
-definition: Formal definition of Emergent Interaction Model in NhanThuat architecture.
+definition: Định nghĩa chính thức về Mô hình tương tác phát sinh trong kiến trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Các bối cảnh quản trị vận hành.
 exceptions:
-- Emergency crisis overrides.
+- Các trường hợp ghi đè khẩn cấp khi có khủng hoảng.
 applications:
   governance:
-  - Apply Emergent Interaction Model to organizational workflows.
+  - Áp dụng Mô hình tương tác phát sinh vào các quy trình làm việc của tổ chức.
 risks:
-- Misapplication of Emergent Interaction Model leading to suboptimal performance.
+- Việc áp dụng sai Mô hình tương tác phát sinh dẫn đến hiệu suất dưới mức tối ưu.
 evidence:
   level: supported
   references:
@@ -30,9 +30,13 @@ relations:
 tags:
 - model
 - tri-nhan
+- emergent-interaction
+- organizational-governance
+- interaction-model
+- workflow-optimization
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
 mechanism:
-- 'Step 1: Identify Emergent Interaction Model.'
-- 'Step 2: Analyze parameters.'
-- 'Step 3: Execute model.'
+- 'Bước 1: Xác định Mô hình tương tác phát sinh.'
+- 'Bước 2: Phân tích các tham số.'
+- 'Bước 3: Thực thi mô hình.'

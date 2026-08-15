@@ -2,37 +2,49 @@ id: NT-LAW-0002
 type: law
 status: frozen
 version: 0.1.0
-title: Attention follows perceived significance
-summary: People tend to give attention to signals they perceive as meaningful, urgent, costly, or personally relevant.
+title: Sự chú ý hướng theo tầm quan trọng được nhận thức
+summary: Mọi người có xu hướng dành sự chú ý cho các tín hiệu mà họ nhận thức là có ý nghĩa, khẩn cấp, tốn kém hoặc có liên quan trực tiếp đến cá nhân họ.
 primary_domain: tri-nhan
-secondary_domains: [dung-nhan, hop-chung, thanh-su]
-definition: Attention is allocated toward cues that a person interprets as important for safety, identity, reward, loss, obligation, or future opportunity.
+secondary_domains:
+- dung-nhan
+- hop-chung
+- thanh-su
+definition: Sự chú ý được phân bổ cho các manh mối mà một người diễn giải là quan trọng đối với sự an toàn, danh tính, phần thưởng, mất mát, nghĩa vụ hoặc cơ hội trong tương lai.
 mechanism:
-  - A cue is noticed in the environment or social field.
-  - The person estimates relevance, urgency, cost, or opportunity.
-  - Attention shifts toward the cue judged most significant.
+- Một manh mối được chú ý trong môi trường hoặc bối cảnh xã hội.
+- Cá nhân đó đánh giá mức độ liên quan, tính khẩn cấp, chi phí hoặc cơ hội.
+- Sự chú ý chuyển dịch về phía manh mối được đánh giá là quan trọng nhất.
 conditions:
-  - The person has enough capacity to redirect attention.
-  - The cue is perceived as relevant by the person, not only by an observer.
+- Cá nhân có đủ khả năng để chuyển hướng sự chú ý.
+- Manh mối được chính cá nhân đó nhận thức là có liên quan, chứ không chỉ bởi một người quan sát bên ngoài.
 exceptions:
-  - Habit, fatigue, overload, or distraction may block attention.
-  - A cue may be ignored when it conflicts with identity or prior commitment.
+- Thói quen, sự mệt mỏi, quá tải hoặc xao nhãng có thể cản trở sự chú ý.
+- Một manh mối có thể bị bỏ qua khi nó xung đột với danh tính hoặc cam kết trước đó.
 applications:
   management:
-    - Frame priorities by making consequence, ownership, and timing explicit.
+  - Định hình các ưu tiên bằng cách làm rõ hậu quả, trách nhiệm sở hữu và thời gian thực hiện.
   communication:
-    - Lead with the reason a message matters to the listener.
+  - Bắt đầu bằng lý do tại sao thông điệp đó lại quan trọng đối với người nghe.
 risks:
-  - Confusing loudness with significance.
-  - Assuming others notice what the speaker considers important.
+- Nhầm lẫn giữa sự ồn ào bề nổi với tầm quan trọng thực sự.
+- Giả định rằng người khác cũng chú ý đến những gì người nói cho là quan trọng.
 evidence:
   level: provisional
   references: []
 relations:
-  supports: [NT-PRINCIPLE-0003]
+  supports:
+  - NT-PRINCIPLE-0003
   conflicts_with: []
   depends_on: []
   applies_to: []
-tags: [attention, relevance, communication, priority]
+tags:
+- attention
+- relevance
+- communication
+- priority
+- attention-allocation
+- perceived-significance
+- cognitive-bias
+- communication-strategy
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

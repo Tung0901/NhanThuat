@@ -2,22 +2,21 @@ id: NT-LAW-0072
 type: law
 status: frozen
 version: 0.1.0
-title: Behavior Modeling Congruence
-summary: Organizational culture is shaped by the behavior leaders tolerate and model
-  under stress, not by written core value statements.
+title: Sự nhất quán trong hành vi làm gương
+summary: Văn hóa tổ chức được định hình bởi những hành vi mà các nhà lãnh đạo dung thứ và làm gương khi chịu áp lực, chứ không phải bởi các tuyên bố giá trị cốt lõi bằng văn bản.
 primary_domain: hop-chung
 secondary_domains:
 - tu-than
-definition: Employees judge real culture by observing executive actions during crisis.
+definition: Nhân viên đánh giá văn hóa thực tế của tổ chức bằng cách quan sát hành động của ban điều hành trong các giai đoạn khủng hoảng.
 conditions:
-- Cultural evolution and crisis leadership.
+- Sự phát triển văn hóa và năng lực lãnh đạo trong khủng hoảng.
 exceptions:
-- None.
+- Không có.
 applications:
   culture_audit:
-  - Audit leadership stress behaviors to identify true cultural signaling.
+  - Kiểm toán các hành vi của ban lãnh đạo khi chịu áp lực để xác định các tín hiệu văn hóa thực tế.
 risks:
-- Assuming written value statements create culture without leader modeling.
+- Giả định rằng các tuyên bố giá trị bằng văn bản có thể tạo ra văn hóa mà không cần đến hành vi làm gương của người lãnh đạo.
 evidence:
   level: supported
   references:
@@ -32,5 +31,10 @@ tags:
 - culture
 - modeling
 - leadership
+- behavior-modeling
+- leadership-congruence
+- crisis-leadership
+- organizational-culture
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

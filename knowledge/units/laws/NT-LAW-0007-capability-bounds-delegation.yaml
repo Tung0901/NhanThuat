@@ -2,35 +2,33 @@ id: NT-LAW-0007
 type: law
 status: frozen
 version: 0.1.0
-title: Capability bounds delegation
-summary: Delegation succeeds only within the capability, judgment, authority, and
-  support available to the person receiving responsibility.
+title: Năng lực giới hạn sự ủy quyền
+summary: Sự ủy quyền chỉ thành công trong phạm vi năng lực, khả năng phán đoán, thẩm quyền và sự hỗ trợ sẵn có dành cho người nhận trách nhiệm.
 primary_domain: dung-nhan
 secondary_domains:
 - thanh-su
 - hop-chung
-definition: Responsibility cannot be effectively transferred beyond the receiver's
-  current or supported ability to understand, decide, and act.
+definition: Trách nhiệm không thể được chuyển giao một cách hiệu quả vượt quá khả năng hiện tại hoặc khả năng được hỗ trợ của người nhận trong việc thấu hiểu, quyết định và hành động.
 mechanism:
-- Assign responsibility
-- Compare required judgment with available capability
-- Performance follows the gap or fit.
+- Giao phó trách nhiệm
+- So sánh khả năng phán đoán được yêu cầu với năng lực sẵn có
+- Hiệu suất công việc sẽ phụ thuộc vào khoảng cách hoặc mức độ phù hợp này.
 conditions:
-- A task has meaningful ownership
-- Capability and authority materially affect the result.
+- Công việc đòi hỏi quyền sở hữu thực chất
+- Năng lực và thẩm quyền ảnh hưởng trực tiếp đến kết quả.
 exceptions:
-- Stretch assignments can work with close support
-- Crisis may require imperfect delegation.
+- Các nhiệm vụ thử thách có thể hiệu quả nếu có sự hỗ trợ sát sao
+- Tình huống khủng hoảng có thể đòi hỏi sự ủy quyền không hoàn hảo.
 applications:
   management:
-  - Delegate outcome
-  - authority
-  - and support together.
+  - Ủy quyền kết quả
+  - thẩm quyền
+  - và sự hỗ trợ đi kèm với nhau.
   hiring:
-  - Check whether role demands exceed current judgment.
+  - Kiểm tra xem các yêu cầu của vai trò có vượt quá khả năng phán đoán hiện tại hay không.
 risks:
-- Delegating blame instead of authority
-- Underestimating growth potential.
+- Ủy quyền đổ lỗi thay vì ủy quyền thẩm quyền
+- Đánh giá thấp tiềm năng phát triển.
 evidence:
   level: provisional
   references: []
@@ -45,5 +43,9 @@ tags:
 - delegation
 - capability
 - authority
+- capability-bounds
+- empowerment
+- accountability
+- leadership-support
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

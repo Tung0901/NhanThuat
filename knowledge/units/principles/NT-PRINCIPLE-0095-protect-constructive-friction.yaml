@@ -2,22 +2,21 @@ id: NT-PRINCIPLE-0095
 type: principle
 status: frozen
 version: 0.1.0
-title: Protect Constructive Friction
-summary: Deliberately foster an environment where rigorous task dissent is protected
-  as a safeguard against groupthink.
+title: Bảo vệ ma sát mang tính xây dựng
+summary: Chủ động nuôi dưỡng môi trường trong đó sự phản biện nghiêm túc về nhiệm vụ được bảo vệ như một lá chắn chống lại tư duy bầy đàn.
 primary_domain: hop-chung
 secondary_domains:
 - tri-nhan
-definition: A team without task conflict is suffering from artificial harmony or fear.
+definition: Một đội ngũ không có xung đột về nhiệm vụ đang phải chịu sự hòa hợp giả tạo hoặc sự sợ hãi.
 conditions:
-- High-stakes strategic decision-making.
+- Ra quyết định chiến lược có rủi ro cao.
 exceptions:
-- Emergency execution phases where consensus has already been reached.
+- Các giai đoạn thực thi khẩn cấp khi sự đồng thuận đã đạt được.
 applications:
   culture:
-  - Assign a rotating Devil's Advocate in major strategy reviews.
+  - Bố trí luân phiên vai trò Người phản biện (Devil's Advocate) trong các buổi rà soát chiến lược lớn.
 risks:
-- Allowing friction to stall progress after a decision has been finalized.
+- Để ma sát kéo dài làm chậm tiến độ sau khi quyết định đã được chốt.
 evidence:
   level: supported
   references:
@@ -32,5 +31,9 @@ tags:
 - conflict
 - friction
 - groupthink
+- dissent
+- psychological-safety
+- culture
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

@@ -2,23 +2,21 @@ id: NT-PRINCIPLE-0107
 type: principle
 status: frozen
 version: 0.1.0
-title: Institutionalize Post-Mortem Insights
-summary: Convert every major operational failure into explicit updates to system architecture,
-  guardrails, or checklists.
+title: Thể chế hóa các bài học từ post-mortem
+summary: Chuyển mọi thất bại vận hành lớn thành các cập nhật tường minh cho kiến trúc hệ thống, các rào chắn hoặc danh sách kiểm tra.
 primary_domain: tri-nhan
 secondary_domains:
 - dung-nhan
-definition: Learning has not occurred until system rules or automated checks change.
+definition: Việc học chỉ thực sự diễn ra khi các quy tắc hệ thống hoặc kiểm tra tự động được thay đổi.
 conditions:
-- Post-incident remediation.
+- Khắc phục sau sự cố.
 exceptions:
-- One-off un-repeatable external anomalies.
+- Các bất thường bên ngoài riêng lẻ, không thể tái diễn.
 applications:
   architecture_updates:
-  - Require every high-severity incident post-mortem to yield at least one automated
-    validator check.
+  - Yêu cầu mọi post-mortem của sự cố mức độ nghiêm trọng cao phải tạo ra ít nhất một kiểm tra xác thực tự động.
 risks:
-- Accumulating overly restrictive checklists that choke execution velocity.
+- Tích lũy quá nhiều danh sách kiểm tra quá khắt khe làm nghẽn tốc độ thực thi.
 evidence:
   level: supported
   references:
@@ -33,5 +31,9 @@ tags:
 - learning
 - post-mortem
 - guardrails
+- automation
+- incident-response
+- continuous-improvement
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

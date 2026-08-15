@@ -2,24 +2,21 @@ id: NT-LAW-0071
 type: law
 status: frozen
 version: 0.1.0
-title: Feedback Loop Velocity
-summary: The rate of organizational adaptation is proportional to the speed at which
-  telemetry from actions is processed into updated mental models.
+title: Tốc độ Vòng lặp Phản hồi
+summary: Tốc độ thích ứng của tổ chức tỷ lệ thuận với tốc độ xử lý dữ liệu đo lường từ các hành động thành các mô hình tư duy cập nhật.
 primary_domain: tri-nhan
 secondary_domains:
 - thanh-su
-definition: Long feedback delays between action and consequence prevent learning.
-  Shortening feedback loops speeds up iteration.
+definition: Sự chậm trễ kéo dài của phản hồi giữa hành động và hệ quả sẽ cản trở việc học hỏi. Rút ngắn các vòng lặp phản hồi giúp tăng tốc độ cải tiến.
 conditions:
-- System design and product development.
+- Thiết kế hệ thống và phát triển sản phẩm.
 exceptions:
-- Long-horizon multi-year strategic investments.
+- Các khoản đầu tư chiến lược dài hạn kéo dài nhiều năm.
 applications:
   ci_cd:
-  - Implement automated unit testing pipelines that give developers instantaneous
-    bug feedback.
+  - Triển khai các đường ống kiểm thử đơn vị tự động để cung cấp phản hồi tức thì về lỗi cho lập trình viên.
 risks:
-- Over-reacting to short-term noise in rapid feedback loops.
+- Phản ứng thái quá trước những nhiễu loạn ngắn hạn trong các vòng lặp phản hồi nhanh.
 evidence:
   level: supported
   references:
@@ -34,5 +31,10 @@ tags:
 - learning
 - feedback
 - velocity
+- feedback-loop
+- organizational-adaptation
+- agile-iteration
+- telemetry-processing
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

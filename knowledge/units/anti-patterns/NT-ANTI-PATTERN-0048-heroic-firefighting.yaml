@@ -2,28 +2,26 @@ id: NT-ANTI-PATTERN-0048
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Heroic Firefighting
-summary: Relying on individual heroics and overtime chaos to ship software rather
-  than building sustainable execution processes.
+title: Chữa cháy anh hùng
+summary: Việc phụ thuộc vào nỗ lực anh hùng cá nhân và sự hỗn loạn của việc làm thêm giờ để bàn giao phần mềm thay vì xây dựng các quy trình thực thi bền vững.
 primary_domain: dung-nhan
 secondary_domains:
 - tri-nhan
-definition: Heroic firefighting occurs when management relies on star performers pulling
-  all-nighters.
+definition: Hiện tượng chữa cháy anh hùng xảy ra khi ban quản lý dựa dẫm vào các nhân sự chủ chốt thức đêm làm việc để giải quyết sự cố.
 mechanism:
-- Poor planning creates crisis.
-- Star employees work overtime.
-- Management praises heroics.
-- Burnout surges.
+- Lập kế hoạch kém dẫn đến khủng hoảng.
+- Các nhân sự chủ chốt phải làm thêm giờ.
+- Ban quản lý khen ngợi hành vi anh hùng cá nhân.
+- Tình trạng kiệt sức gia tăng nhanh chóng.
 conditions:
-- Immature operational processes.
+- Quy trình vận hành chưa trưởng thành.
 exceptions:
-- True unexpected black-swan outages.
+- Các sự cố gián đoạn hệ thống thực sự bất ngờ thuộc dạng thiên nga đen.
 applications:
   retrospective:
-  - Audit overtime bursts to fix underlying process flaws.
+  - Kiểm toán các đợt tăng ca đột biến để khắc phục những lỗ hổng quy trình cốt lõi.
 risks:
-- Demotivating star employees by failing to recognize genuine crisis heroics.
+- Làm mất động lực của nhân sự chủ chốt khi không ghi nhận đúng mức nỗ lực xử lý khủng hoảng thực sự.
 evidence:
   level: supported
   references:
@@ -39,5 +37,10 @@ tags:
 - execution
 - firefighting
 - anti-patterns
+- heroic-firefighting
+- hero-culture
+- burnout
+- process-maturity
+- overtime-chaos
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'

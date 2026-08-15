@@ -2,21 +2,21 @@ id: NT-MODEL-0016
 type: model
 status: frozen
 version: 0.1.0
-title: Evidence Risk Matrix
-summary: Evidence Risk Matrix structural knowledge unit.
+title: Ma trận Rủi ro Bằng chứng
+summary: Đơn vị tri thức cấu trúc về Ma trận Rủi ro Bằng chứng trong quản trị vận hành.
 primary_domain: tri-nhan
 secondary_domains:
 - dung-nhan
-definition: Formal definition of Evidence Risk Matrix in NhanThuat architecture.
+definition: Định nghĩa chính thức về Ma trận Rủi ro Bằng chứng trong kiến trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Các bối cảnh quản trị vận hành tổ chức.
 exceptions:
-- Emergency crisis overrides.
+- Trường hợp khẩn cấp kích hoạt cơ chế ghi đè xử lý khủng hoảng.
 applications:
   governance:
-  - Apply Evidence Risk Matrix to organizational workflows.
+  - Áp dụng Ma trận Rủi ro Bằng chứng vào các quy trình làm việc của tổ chức.
 risks:
-- Misapplication of Evidence Risk Matrix leading to suboptimal performance.
+- Áp dụng sai lệch Ma trận Rủi ro Bằng chứng dẫn đến hiệu suất hoạt động kém tối ưu.
 evidence:
   level: supported
   references:
@@ -30,9 +30,14 @@ relations:
 tags:
 - model
 - tri-nhan
+- evidence-risk-matrix
+- risk-assessment
+- evidence-evaluation
+- governance-model
+- decision-framework
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
 mechanism:
-- 'Step 1: Identify Evidence Risk Matrix.'
-- 'Step 2: Analyze parameters.'
-- 'Step 3: Execute model.'
+- 'Bước 1: Xác định Ma trận Rủi ro Bằng chứng.'
+- 'Bước 2: Phân tích các tham số liên quan.'
+- 'Bước 3: Tiến hành thực thi mô hình.'

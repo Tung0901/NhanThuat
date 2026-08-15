@@ -2,33 +2,31 @@ id: NT-LAW-0010
 type: law
 status: frozen
 version: 0.1.0
-title: Ownership follows decision rights
-summary: People take real ownership when they can influence the decisions, resources,
-  and tradeoffs that determine the outcome.
+title: Tinh thần làm chủ đi liền với quyền quyết định
+summary: Mọi người chỉ thực sự nhận trách nhiệm làm chủ khi họ có thể tác động đến các quyết định, nguồn lực và sự đánh đổi quyết định kết quả.
 primary_domain: dung-nhan
 secondary_domains:
 - hop-chung
 - thanh-su
-definition: Ownership weakens when responsibility is assigned without meaningful decision
-  rights over the path to the result.
+definition: Tinh thần làm chủ sẽ suy giảm khi trách nhiệm được giao mà không đi kèm với quyền quyết định thực chất đối với lộ trình đạt được kết quả.
 mechanism:
-- Receive responsibility
-- Evaluate control over choices
-- Invest ownership in proportion to agency.
+- Nhận trách nhiệm
+- Đánh giá mức độ kiểm soát đối với các lựa chọn
+- Đầu tư tinh thần làm chủ tương xứng với quyền tự quyết.
 conditions:
-- The result depends on judgment and tradeoffs
-- The person understands expected outcomes.
+- Kết quả phụ thuộc vào sự phán đoán và các quyết định đánh đổi
+- Cá nhân hiểu rõ các kết quả kỳ vọng.
 exceptions:
-- Highly constrained roles may still own execution quality
-- Shared ownership may distribute rights.
+- Các vai trò bị giới hạn nghiêm ngặt vẫn có thể chịu trách nhiệm về chất lượng thực thi
+- Trách nhiệm làm chủ chung có thể phân bổ quyền quyết định.
 applications:
   management:
-  - Pair accountability with decision authority.
+  - Gắn liền trách nhiệm giải trình với thẩm quyền quyết định.
   operations:
-  - Escalate decisions that exceed local rights.
+  - Báo cáo lên cấp trên các quyết định vượt quá thẩm quyền cục bộ.
 risks:
-- Creating accountability without agency
-- Confusing consultation with authority.
+- Tạo ra trách nhiệm giải trình mà không trao quyền tự quyết
+- Nhầm lẫn giữa việc tham vấn ý kiến và thẩm quyền quyết định.
 evidence:
   level: provisional
   references: []
@@ -44,5 +42,7 @@ tags:
 - ownership
 - decision-rights
 - accountability
+- agency
+- empowerment
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

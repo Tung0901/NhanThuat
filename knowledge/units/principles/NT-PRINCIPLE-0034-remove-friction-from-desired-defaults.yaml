@@ -2,35 +2,33 @@ id: NT-PRINCIPLE-0034
 type: principle
 status: frozen
 version: 0.1.0
-title: Remove friction from desired defaults
-summary: Make the preferred behavior easier to start, repeat, and verify than the
-  behavior it is meant to replace.
+title: Loại bỏ ma sát khỏi mặc định mong muốn
+summary: Làm cho hành vi ưu tiên dễ bắt đầu, lặp lại và kiểm chứng hơn hành vi mà nó thay thế.
 primary_domain: thanh-su
 secondary_domains:
 - tu-than
 - hop-chung
-definition: Systems preserve what is easiest to repeat, so durable change often begins
-  by lowering friction around the desired default.
+definition: Hệ thống giữ lại điều dễ lặp lại nhất, nên thay đổi bền vững thường bắt đầu bằng việc giảm ma sát quanh mặc định mong muốn.
 mechanism:
-- Identify the desired default
-- Remove unnecessary steps
-- Add simple confirmation signals.
+- Xác định mặc định mong muốn
+- Loại bỏ các bước không cần thiết
+- Bổ sung tín hiệu xác nhận đơn giản.
 conditions:
-- A repeated behavior should become normal
-- The environment can be adjusted.
+- Hành vi lặp lại nên trở thành điều bình thường
+- Môi trường có thể được điều chỉnh.
 exceptions:
-- Some safeguards require intentional friction
-- Too much ease can reduce thoughtful judgment.
+- Một số rào cản an toàn cần ma sát có chủ đích
+- Quá dễ dàng có thể làm giảm phán đoán thấu đáo.
 applications:
   operations:
-  - Move critical templates
-  - checklists
-  - and handoffs into the normal workflow.
+  - Đưa mẫu biểu quan trọng
+  - danh sách kiểm tra
+  - và bàn giao vào quy trình làm việc thông thường.
   management:
-  - Make the expected practice easier than the workaround.
+  - Làm cho thực hành kỳ vọng dễ dàng hơn lối tắt.
 risks:
-- Optimizing convenience over quality
-- Hiding the reason behind the behavior.
+- Tối ưu sự tiện lợi hơn chất lượng
+- Che giấu lý do đằng sau hành vi.
 evidence:
   level: provisional
   references: []
@@ -44,5 +42,7 @@ tags:
 - defaults
 - friction
 - systems
+- desired-behavior
+- workflow
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

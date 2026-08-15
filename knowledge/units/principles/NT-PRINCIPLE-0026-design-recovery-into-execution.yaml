@@ -2,33 +2,31 @@ id: NT-PRINCIPLE-0026
 type: principle
 status: frozen
 version: 0.1.0
-title: Design recovery into execution
-summary: Treat recovery, slack, and reset moments as part of execution capacity, not
-  as optional comfort.
+title: Thiết kế sự phục hồi vào trong quá trình thực thi
+summary: Coi việc phục hồi, dư địa và các khoảnh khắc khởi động lại là một phần của năng lực thực thi, không phải sự tiện nghi tùy chọn.
 primary_domain: thanh-su
 secondary_domains:
 - tu-than
 - dung-nhan
-definition: Sustainable execution requires planned restoration so quality does not
-  depend on continuous overextension.
+definition: Thực thi bền vững đòi hỏi sự phục hồi được hoạch định để chất lượng không phụ thuộc vào việc gắng sức liên tục.
 mechanism:
-- Estimate load
-- Add recovery and slack
-- Protect quality over repeated cycles.
+- Ước tính tải.
+- Thêm phục hồi và dư địa.
+- Bảo vệ chất lượng qua nhiều chu kỳ lặp lại.
 conditions:
-- Work is sustained or repeated
-- Overload would degrade judgment or reliability.
+- Công việc kéo dài hoặc lặp lại.
+- Quá tải sẽ làm suy giảm phán đoán hoặc độ tin cậy.
 exceptions:
-- Short emergencies may consume reserves
-- Too much slack can reduce urgency.
+- Tình huống khẩn cấp ngắn có thể tiêu thụ dự trữ.
+- Quá nhiều dư địa có thể làm giảm tính khẩn trương.
 applications:
   operations:
-  - Plan capacity with recovery buffers.
+  - Hoạch định năng lực với bộ đệm phục hồi.
   leadership:
-  - Avoid making heroics the normal operating model.
+  - Tránh biến sự anh hùng thành mô hình vận hành thường nhật.
 risks:
-- Using recovery language to avoid hard work
-- Ignoring urgent constraints.
+- Dùng ngôn ngữ phục hồi để né tránh việc chăm chỉ.
+- Phớt lờ các ràng buộc khẩn cấp.
 evidence:
   level: provisional
   references: []
@@ -43,5 +41,7 @@ tags:
 - recovery
 - execution
 - sustainability
+- rest
+- capacity
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

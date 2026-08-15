@@ -2,21 +2,21 @@ id: NT-LAW-0055
 type: law
 status: frozen
 version: 0.1.0
-title: Reframing Commitment Shift
-summary: Reframing Commitment Shift structural knowledge unit.
+title: Chuyển hóa cam kết tái định khung
+summary: Đơn vị tri thức cấu trúc về Chuyển hóa cam kết tái định khung trong hệ thống.
 primary_domain: tri-nhan
 secondary_domains:
 - hop-chung
-definition: Formal definition of Reframing Commitment Shift in NhanThuat architecture.
+definition: Định nghĩa chính thức về Chuyển hóa cam kết tái định khung trong kiến trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Bối cảnh quản trị vận hành tổ chức.
 exceptions:
-- Emergency crisis overrides.
+- Các trường hợp can thiệp ưu tiên trong khủng hoảng khẩn cấp.
 applications:
   governance:
-  - Apply Reframing Commitment Shift to organizational workflows.
+  - Áp dụng Chuyển hóa cam kết tái định khung vào các quy trình làm việc của tổ chức.
 risks:
-- Misapplication of Reframing Commitment Shift leading to suboptimal performance.
+- Áp dụng sai Chuyển hóa cam kết tái định khung dẫn đến hiệu suất dưới mức tối ưu.
 evidence:
   level: supported
   references:
@@ -30,5 +30,10 @@ relations:
 tags:
 - law
 - tri-nhan
+- reframing-commitment
+- commitment-shift
+- behavioral-change
+- organizational-reframing
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

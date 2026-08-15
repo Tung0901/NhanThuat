@@ -2,34 +2,31 @@ id: NT-PRINCIPLE-0018
 type: principle
 status: frozen
 version: 0.1.0
-title: Repair breaches before demanding trust
-summary: When trust has been damaged, acknowledge the breach, explain the cause, and
-  change behavior before asking others to trust again.
+title: Sửa chữa vi phạm trước khi đòi hỏi niềm tin
+summary: Khi niềm tin bị tổn hại, hãy thừa nhận vi phạm, giải thích nguyên nhân và thay đổi hành vi trước khi yêu cầu người khác tin tưởng trở lại.
 primary_domain: hop-chung
 secondary_domains:
 - tri-nhan
 - thanh-su
-definition: Trust repair requires visible accountability and changed patterns, not
-  requests for confidence without evidence.
+definition: Sửa chữa niềm tin đòi hỏi trách nhiệm giải trình rõ ràng và những khuôn mẫu đã thay đổi, không phải yêu cầu sự tin cậy mà không có bằng chứng.
 mechanism:
-- Name the breach
-- Own the impact
-- Demonstrate changed behavior over time.
+- Nêu tên vi phạm.
+- Nhận lấy tác động.
+- Chứng minh hành vi đã thay đổi theo thời gian.
 conditions:
-- A trust breach occurred
-- Future cooperation still matters.
+- Đã xảy ra vi phạm niềm tin.
+- Sự hợp tác trong tương lai vẫn quan trọng.
 exceptions:
-- Some breaches end the relationship
-- Legal or safety issues may limit disclosure.
+- Một số vi phạm chấm dứt mối quan hệ.
+- Vấn đề pháp lý hoặc an toàn có thể hạn chế việc công khai.
 applications:
   leadership:
-  - Explain what will be different after a broken commitment.
+  - Giải thích điều gì sẽ khác đi sau một cam kết bị phá vỡ.
   teamwork:
-  - Rebuild through evidence
-  - not pressure.
+  - Tái dựng thông qua bằng chứng, không phải áp lực.
 risks:
-- Performative apology
-- Demanding immediate forgiveness.
+- Xin lỗi mang tính trình diễn.
+- Đòi hỏi sự tha thứ tức thời.
 evidence:
   level: provisional
   references: []
@@ -43,5 +40,7 @@ tags:
 - trust-repair
 - accountability
 - reliability
+- reconciliation
+- apology
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

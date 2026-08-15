@@ -2,21 +2,21 @@ id: NT-LAW-0046
 type: law
 status: frozen
 version: 0.1.0
-title: Transmission Fidelity
-summary: Transmission Fidelity structural knowledge unit.
+title: Độ trung thực truyền tải
+summary: Đơn vị tri thức cấu trúc về Độ trung thực truyền tải.
 primary_domain: tri-nhan
 secondary_domains:
 - hop-chung
-definition: Formal definition of Transmission Fidelity in NhanThuat architecture.
+definition: Định nghĩa chính thức về Độ trung thực truyền tải trong kiến trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Bối cảnh quản trị vận hành.
 exceptions:
-- Emergency crisis overrides.
+- Các can thiệp ghi đè trong tình huống khủng hoảng khẩn cấp.
 applications:
   governance:
-  - Apply Transmission Fidelity to organizational workflows.
+  - Áp dụng Độ trung thực truyền tải vào các quy trình làm việc của tổ chức.
 risks:
-- Misapplication of Transmission Fidelity leading to suboptimal performance.
+- Áp dụng sai Độ trung thực truyền tải dẫn đến hiệu suất dưới mức tối ưu.
 evidence:
   level: supported
   references:
@@ -30,5 +30,11 @@ relations:
 tags:
 - law
 - tri-nhan
+- transmission-fidelity
+- communication-accuracy
+- signal-integrity
+- information-flow
+- organizational-governance
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

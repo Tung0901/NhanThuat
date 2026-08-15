@@ -2,33 +2,48 @@ id: NT-ANTI-PATTERN-0010
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Tyranny of simplistic typology
-summary: Using branded, binary personality profiles as rigid, deterministic labels to exclude, select, or make absolute placement decisions.
+title: Sự độc tài của hệ phân loại đơn giản hóa
+summary: Sử dụng các hồ sơ tính cách nhị nguyên thương mại như những nhãn dán cứng nhắc, ấn định để loại trừ, tuyển chọn hoặc đưa ra quyết định bổ nhiệm tuyệt đối.
 primary_domain: tri-nhan
-secondary_domains: [dung-nhan]
-definition: The misuse of personality assessments to label individuals permanently, ignoring the context-dependence of behavior, compensatory skills, and gradual trait development.
+secondary_domains:
+- dung-nhan
+definition: Việc sử dụng sai lệch các bài đánh giá tính cách để dán nhãn vĩnh viễn cho cá nhân, bỏ qua sự phụ thuộc vào bối cảnh của hành vi, các kỹ năng bù đắp và sự phát triển đặc tính theo thời gian.
 mechanism:
-  - Apply binary classification test (e.g. MBTI, DISC).
-  - Label individuals as fixed, immutable types.
-  - Make deterministic hiring, delegation, or promotion decisions based on type matching.
-  - Block growth and development opportunities based on type stereotypes.
+- Áp dụng các bài kiểm tra phân loại nhị nguyên (như MBTI, DISC).
+- Dán nhãn cá nhân theo các kiểu tính cách cố định, không thể thay đổi.
+- Đưa ra quyết định tuyển dụng, giao việc hoặc thăng tiến mang tính ấn định dựa trên việc khớp kiểu tính cách.
+- Cản trở cơ hội phát triển và trưởng thành dựa trên định kiến về kiểu tính cách.
 conditions:
-  - Organizations rely on trademarked psychometric tests to filter candidates or assign responsibilities automatically.
+- Tổ chức phụ thuộc vào các bài kiểm tra tâm lý đo lường mang thương hiệu để tự động lọc ứng viên hoặc phân công trách nhiệm.
 exceptions:
-  - Using general trait terms as non-binding, shared vocabulary to discuss communication styles.
+- Sử dụng các thuật ngữ đặc tính chung như một từ vựng chung không ràng buộc để thảo luận về phong cách giao tiếp.
 applications:
-  governance: [Prohibit using personality typologies as screening filters or gatekeepers in recruitment and assignment.]
-  coaching: [Focus development on skills, self-regulation strategies, and context sensitivity rather than rigid profiles.]
+  governance:
+  - Cấm sử dụng phân loại tính cách làm bộ lọc sàng lọc hoặc rào cản trong tuyển dụng và phân công việc.
+  coaching:
+  - Tập trung phát triển vào các kỹ năng
+  - Các chiến lược tự điều chỉnh
+  - Và khả năng nhạy bén với bối cảnh thay vì các hồ sơ cứng nhắc.
 risks:
-  - Restricting team development by ignoring individual agency and learning capacity.
+- Hạn chế sự phát triển của đội ngũ do bỏ qua tính chủ động và khả năng học hỏi của cá nhân.
 evidence:
   level: provisional
   references: []
 relations:
   supports: []
   conflicts_with: []
-  depends_on: [NT-LAW-0034, NT-PRINCIPLE-0060]
+  depends_on:
+  - NT-LAW-0034
+  - NT-PRINCIPLE-0060
   applies_to: []
-tags: [personality, traits, anti-pattern, typology, stereotyping]
+tags:
+- personality
+- traits
+- anti-pattern
+- typology
+- stereotyping
+- personality-typing
+- mbti-misuse
+- disc-assessment
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'

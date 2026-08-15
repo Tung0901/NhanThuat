@@ -2,35 +2,33 @@ id: NT-LAW-0012
 type: law
 status: frozen
 version: 0.1.0
-title: Conflict exposes unresolved tradeoffs
-summary: Persistent conflict often signals an unresolved tradeoff between goals, roles,
-  incentives, identities, or resource constraints.
+title: Xung đột bộc lộ các đánh đổi chưa được giải quyết
+summary: Xung đột kéo dài thường là dấu hiệu của một sự đánh đổi chưa được giải quyết giữa các mục tiêu, vai trò, lợi ích, bản sắc hoặc các hạn chế về nguồn lực.
 primary_domain: hop-chung
 secondary_domains:
 - tri-nhan
 - thanh-su
-definition: Conflict becomes persistent when parties experience a tradeoff that has
-  not been named, decided, or structurally resolved.
+definition: Xung đột trở nên dai dẳng khi các bên trải qua một sự đánh đổi chưa được gọi tên, quyết định hoặc giải quyết một cách có cấu trúc.
 mechanism:
-- Parties pursue different priorities
-- Costs collide
-- Conflict repeats until the tradeoff is addressed.
+- Các bên theo đuổi các ưu tiên khác nhau
+- Các chi phí và hệ quả xung đột lẫn nhau
+- Xung đột lặp đi lặp lại cho đến khi sự đánh đổi được giải quyết.
 conditions:
-- Parties are interdependent
-- Resources
-- authority
-- or recognition are constrained.
+- Các bên có sự phụ thuộc lẫn nhau
+- Nguồn lực
+- quyền hạn
+- hoặc sự công nhận bị hạn chế.
 exceptions:
-- Some conflict is exploratory and temporary
-- Bad faith can persist despite clear tradeoffs.
+- Một số xung đột mang tính khám phá và chỉ là tạm thời
+- Sự bất hợp tác hoặc ác ý có thể kéo dài bất chấp các đánh đổi đã rõ ràng.
 applications:
   leadership:
-  - Name the tradeoff before mediating behavior.
+  - Gọi tên sự đánh đổi trước khi điều hòa hành vi.
   strategy:
-  - Resolve priority conflicts at the level where tradeoffs are owned.
+  - Giải quyết các xung đột ưu tiên ở cấp độ mà sự đánh đổi đó được làm chủ.
 risks:
-- Treating all conflict as personality
-- Avoiding hard decisions through harmony language.
+- Coi mọi xung đột đều xuất phát từ tính cách cá nhân
+- Né tránh các quyết định khó khăn bằng cách sử dụng ngôn từ dĩ hòa vi quý.
 evidence:
   level: provisional
   references: []
@@ -45,5 +43,10 @@ tags:
 - conflict
 - tradeoffs
 - priorities
+- conflict-resolution
+- tradeoff-analysis
+- organizational-conflict
+- goal-alignment
+- structural-conflict
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

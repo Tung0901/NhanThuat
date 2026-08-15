@@ -2,33 +2,31 @@ id: NT-PRINCIPLE-0017
 type: principle
 status: frozen
 version: 0.1.0
-title: Build trust with small commitments
-summary: Use visible, repeated, kept commitments to build or rebuild trust before
-  relying on larger dependency.
+title: Xây dựng niềm tin bằng những cam kết nhỏ
+summary: Dùng các cam kết được thực hiện rõ ràng, lặp lại và giữ trọn để xây dựng hoặc tái dựng niềm tin trước khi dựa vào sự phụ thuộc lớn hơn.
 primary_domain: hop-chung
 secondary_domains:
 - dung-nhan
 - thanh-su
-definition: Small commitments create evidence of reliability that can support larger
-  cooperation later.
+definition: Cam kết nhỏ tạo ra bằng chứng về độ tin cậy có thể nâng đỡ sự hợp tác lớn hơn sau này.
 mechanism:
-- Make a specific commitment
-- Follow through visibly
-- Let confidence accumulate.
+- Đưa ra một cam kết cụ thể.
+- Thực hiện cam kết một cách rõ ràng.
+- Để niềm tin tích lũy dần.
 conditions:
-- People will interact again
-- Reliability is uncertain or damaged.
+- Con người sẽ tương tác lại với nhau.
+- Độ tin cậy đang không chắc chắn hoặc bị tổn hại.
 exceptions:
-- Some relationships require immediate high-stakes trust
-- Severe breaches may need repair beyond small promises.
+- Một số mối quan hệ đòi hỏi niềm tin rủi ro cao tức thời.
+- Vi phạm nghiêm trọng có thể cần sửa chữa vượt quá những lời hứa nhỏ.
 applications:
   teamwork:
-  - Start rebuilding reliability with short-cycle commitments.
+  - Bắt đầu tái dựng độ tin cậy bằng các cam kết chu kỳ ngắn.
   leadership:
-  - Make commitments trackable.
+  - Làm cho các cam kết có thể theo dõi được.
 risks:
-- Using small promises to hide large unreliability
-- Over-promising to look trustworthy.
+- Dùng lời hứa nhỏ để che giấu sự thiếu tin cậy lớn.
+- Hứa quá nhiều để trông đáng tin.
 evidence:
   level: provisional
   references: []
@@ -42,5 +40,7 @@ tags:
 - trust
 - commitments
 - reliability
+- credibility
+- cooperation
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

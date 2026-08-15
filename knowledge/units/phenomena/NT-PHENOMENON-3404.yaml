@@ -1,28 +1,23 @@
 id: NT-PHENOMENON-3404
 type: phenomenon
-title: Commitment and Consistency
-summary: Once we make a choice or take a stand, we face personal and interpersonal
-  pressures to behave consistently with that commitment.
+title: Cam kết và nhất quán
+summary: Một khi chúng ta đưa ra lựa chọn hoặc đứng về một phía, chúng ta phải đối mặt với áp lực cá nhân và xã hội để cư xử nhất quán với cam kết đó.
 primary_domain: tri-nhan
 domain_area: NT-DA-0030
-definition: The psychological drive to align future behavior with past statements
-  or actions to maintain a self-image of rationality and reliability.
+definition: Động lực tâm lý thúc đẩy hành vi tương lai khớp với những tuyên bố hoặc hành động trong quá khứ nhằm duy trì hình ảnh bản thân là người lý trí và đáng tin cậy.
 mechanism:
-- An individual is prompted to make a small, voluntary, public commitment.
-- The individual's self-image shifts slightly to align with this commitment.
-- When a larger, related request is made later, the individual complies to remain
-  consistent with their new self-image.
+- Một cá nhân được khuyến khích thực hiện một cam kết nhỏ, tự nguyện và công khai.
+- Hình ảnh bản thân của cá nhân dịch chuyển nhẹ để khớp với cam kết này.
+- Khi một yêu cầu lớn hơn, có liên quan được đưa ra sau đó, cá nhân tuân theo để duy trì sự nhất quán với hình ảnh bản thân mới.
 conditions:
-- The initial commitment must be active, public, and seemingly voluntary (uncoerced).
+- Cam kết ban đầu phải mang tính chủ động, công khai và có vẻ tự nguyện (không bị ép buộc).
 exceptions:
-- When the initial commitment was forced under severe duress or obvious manipulation.
+- Khi cam kết ban đầu bị ép buộc dưới sức ép nghiêm trọng hoặc thao túng rõ ràng.
 applications:
   management:
-  - Having employees write down their own goals rather than dictating them increases
-    follow-through dramatically.
+  - Để nhân viên tự viết ra mục tiêu của họ thay vì áp đặt sẽ giúp tăng đáng kể tỷ lệ thực hiện.
 risks:
-- 'Sunk cost fallacy: continuing a failing strategy just to remain consistent with
-  past public statements.'
+- 'Ngụy biện chi phí chìm: tiếp tục một chiến lược thất bại chỉ để giữ sự nhất quán với những tuyên bố công khai trong quá khứ.'
 evidence:
   level: strong
   references:
@@ -37,7 +32,10 @@ relations:
 tags:
 - consistency
 - commitment
+- self-image
+- sunk-cost
+- influence
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

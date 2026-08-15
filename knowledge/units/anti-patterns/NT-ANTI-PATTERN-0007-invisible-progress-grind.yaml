@@ -2,18 +2,47 @@ id: NT-ANTI-PATTERN-0007
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Invisible progress grind
-summary: Requiring continuous high effort without providing visibility into results, feedback on impact, or acknowledgment of milestone completion.
+title: Guồng quay tiến độ vô hình
+summary: Đòi hỏi nỗ lực cao liên tục nhưng không hiển thị rõ ràng kết quả, thiếu phản hồi về tác động hoặc không công nhận việc hoàn thành các cột mốc.
 primary_domain: tu-than
-secondary_domains: [thanh-su, tri-nhan]
-definition: Operating without progress feedback loops, causing workers to feel their efforts vanish into an uninspectable vacuum.
-mechanism: [Demand continuous effort, Omit progress feedback, Induce psychological fatigue, Suffer engagement collapse.]
-conditions: [Long projects operate without milestone demos or regular progress reviews.]
-exceptions: [Self-directed research with long delayed gratification cycles.]
-applications: {workflow-audit: [Ensure teams receive immediate visibility on output milestones.], project-management: [Implement sprint reviews and completed work showcases.]}
-risks: [Creating artificial celebration events that obscure real lack of progress.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0033, NT-PRINCIPLE-0056], applies_to: []}
-tags: [anti-pattern, progress, feedback, demotivation, grind]
+secondary_domains:
+- thanh-su
+- tri-nhan
+definition: Vận hành thiếu các vòng phản hồi tiến độ, khiến người lao động cảm thấy nỗ lực của họ biến mất vào một khoảng không vô định không thể kiểm chứng.
+mechanism:
+- Yêu cầu nỗ lực liên tục
+- Bỏ qua phản hồi về tiến độ
+- Gây ra sự mệt mỏi về tâm lý
+- Gánh chịu sự sụp đổ về mức độ gắn kết.
+conditions:
+- Các dự án kéo dài vận hành mà không có buổi demo cột mốc hoặc đánh giá tiến độ định kỳ.
+exceptions:
+- Nghiên cứu tự định hướng với chu kỳ ghi nhận kết quả bị trì hoãn dài hạn.
+applications:
+  workflow-audit:
+  - Đảm bảo các đội ngũ nhận được sự hiển thị tức thì về các cột mốc đầu ra.
+  project-management:
+  - Triển khai các buổi đánh giá sprint và trưng bày sản phẩm hoàn thành.
+risks:
+- Tạo ra các sự kiện ăn mừng giả tạo nhằm che giấu việc thiếu tiến độ thực sự.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0033
+  - NT-PRINCIPLE-0056
+  applies_to: []
+tags:
+- anti-pattern
+- progress
+- feedback
+- demotivation
+- grind
+- invisible-progress-grind
+- feedback-loops
+- progress-principle
 created_at: '2026-07-21'
-updated_at: '2026-07-21'
+updated_at: '2026-08-15'

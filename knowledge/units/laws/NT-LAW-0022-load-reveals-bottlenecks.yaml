@@ -2,36 +2,34 @@ id: NT-LAW-0022
 type: law
 status: frozen
 version: 0.1.0
-title: Load reveals bottlenecks
-summary: Under increased demand, hidden constraints in people, process, authority,
-  or information become visible through delay and failure.
+title: Áp lực công việc bộc lộ điểm nghẽn
+summary: Khi nhu cầu tăng cao, các hạn chế tiềm ẩn về con người, quy trình, thẩm quyền hoặc thông tin sẽ lộ rõ thông qua sự chậm trễ và thất bại.
 primary_domain: thanh-su
 secondary_domains:
 - dung-nhan
 - hop-chung
-definition: Load exposes the narrowest constraint in a system because work accumulates
-  where capacity, authority, or information is insufficient.
+definition: Tải lượng công việc làm lộ ra điểm hạn chế hẹp nhất trong hệ thống vì công việc sẽ tích tụ tại nơi mà năng lực, thẩm quyền hoặc thông tin không đủ đáp ứng.
 mechanism:
-- Demand rises
-- Work hits a constraint
-- Delay
-- rework
-- or failure reveals the bottleneck.
+- Nhu cầu tăng cao
+- Công việc chạm tới giới hạn hạn chế
+- Sự chậm trễ xảy ra
+- Phải làm lại công việc
+- Hoặc sự thất bại làm lộ rõ điểm nghẽn.
 conditions:
-- Demand exceeds normal slack
-- The system has dependent steps.
+- Nhu cầu vượt quá mức dự phòng thông thường
+- Hệ thống có các bước phụ thuộc lẫn nhau.
 exceptions:
-- Excess redundancy may hide bottlenecks
-- One-time accidents may not reveal a stable constraint.
+- Sự dư thừa nguồn lực quá mức có thể che giấu các điểm nghẽn
+- Các sự cố xảy ra một lần có thể không phản ánh đúng một hạn chế mang tính hệ thống.
 applications:
   operations:
-  - Track where work waits
-  - not only where people are busy.
+  - Theo dõi nơi công việc bị trì hoãn
+  - Chứ không chỉ nơi mọi người đang bận rộn.
   management:
-  - Treat overload as diagnostic data.
+  - Coi tình trạng quá tải như dữ liệu chẩn đoán hệ thống.
 risks:
-- Blaming the visible bottleneck person
-- Adding capacity before understanding constraint type.
+- Đổ lỗi cho cá nhân ở vị trí điểm nghẽn dễ thấy
+- Tăng thêm năng lực trước khi hiểu rõ bản chất của hạn chế.
 evidence:
   level: provisional
   references: []
@@ -46,5 +44,10 @@ tags:
 - bottlenecks
 - load
 - operations
+- bottleneck-detection
+- system-load
+- capacity-constraint
+- operational-efficiency
+- process-bottleneck
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

@@ -2,37 +2,46 @@ id: NT-PHENOMENON-3006
 type: phenomenon
 status: frozen
 version: 0.1.0
-title: Anchoring Effect
-summary: The first piece of information offered in a decision context exerts a disproportionate influence on all subsequent judgments and estimates.
+title: Hiệu ứngỏm (Neo thông tin)
+summary: Thông tin đầu tiên xuất hiện trong bối cảnh quyết định tạo ra ảnh hưởng lớn đến tất cả các đánh giá và ước tính tiếp theo.
 primary_domain: tri-nhan
 domain_area: NT-DA-0026
-secondary_domains: [thanh-su]
-definition: A structural cognitive bias where decision-makers implicitly rely too heavily on an initial reference point (the anchor) when estimating value, probability, or magnitude, adjusting insufficiently from that anchor.
+secondary_domains:
+- thanh-su
+definition: Một loại sai lệch nhận thức có cấu trúc, trong đó người ra quyết định vô thức phụ thuộc quá nhiều vào điểm tham chiếu ban đầu (điểm neo) khi ước tính giá trị, xác suất hoặc quy mô, và điều chỉnh không đủ từ điểm neo đó.
 mechanism:
-  - An initial number, concept, or frame is introduced to the environment.
-  - The brain uses this anchor as a starting point for evaluation.
-  - The brain searches for reasons the anchor might be plausible.
-  - Adjustments away from the anchor end prematurely as soon as a plausible boundary is reached.
+- Một con số, khái niệm hoặc khung tham chiếu ban đầu được giới thiệu vào môi trường.
+- Bộ não sử dụng điểm neo này làm điểm khởi đầu cho việc đánh giá.
+- Bộ não tìm kiếm lý do tại sao điểm neo có thể hợp lý.
+- Quá trình điều chỉnh rời khỏi điểm neo kết thúc sớm ngay khi đạt đến ranh giới hợp lý.
 conditions:
-  - High uncertainty or ambiguity about objective value or truth.
+- Sự bất định hoặc mơ hồ cao về giá trị khách quan hoặc tính chân thực.
 exceptions:
-  - The decision-maker has unshakeable, empirically verified knowledge of the true value.
+- Người ra quyết định có kiến thức vững chắc, đã được kiểm chứng thực nghiệm về giá trị thực tế.
 applications:
   negotiation:
-    - Set the initial anchor thoughtfully to shape the zone of possible agreement.
+  - Thiết lập điểm neo ban đầu một cách có cân nhắc để định hình vùng thỏa thuận khả thi.
   estimation:
-    - Require independent estimates before discussing numbers as a group to prevent anchoring.
+  - Yêu cầu các ước tính độc lập trước khi thảo luận về các con số theo nhóm nhằm ngăn chặn hiệu ứng neo.
 risks:
-  - Being manipulated by arbitrary numbers set by adversaries.
+- Bị thao túng bởi các con số tùy ý do đối thủ đặt ra.
 evidence:
   level: strong
   references:
-    - "Tversky, A., & Kahneman, D. (1974). 'Judgment under Uncertainty: Heuristics and Biases'. Science."
+  - 'Tversky, A., & Kahneman, D. (1974). ''Judgment under Uncertainty: Heuristics and Biases''. Science.'
 relations:
   supports: []
   conflicts_with: []
   depends_on: []
   applies_to: []
-tags: [heuristics, anchoring, negotiation, bias]
+tags:
+- heuristics
+- anchoring
+- negotiation
+- bias
+- anchoring-effect
+- cognitive-bias
+- estimation
+- pricing-strategy
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

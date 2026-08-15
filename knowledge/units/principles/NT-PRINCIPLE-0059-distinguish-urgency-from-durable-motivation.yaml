@@ -2,18 +2,45 @@ id: NT-PRINCIPLE-0059
 type: principle
 status: frozen
 version: 0.1.0
-title: Distinguish urgency from durable motivation
-summary: Avoid confusing short-term crisis-driven bursts of effort with healthy, sustainable motivation when planning organizational commitments.
+title: Phân biệt sự cấp bách với động lực bền vững
+summary: Tránh nhầm lẫn các đợt nỗ lực ngắn hạn do khủng hoảng với động lực lành mạnh, bền vững khi lập kế hoạch cam kết của tổ chức.
 primary_domain: tu-than
-secondary_domains: [tri-nhan, dung-nhan]
-definition: Short-term urgency consumes reserves; relying on perpetual crisis mode leads to systemic exhaustion rather than true engagement.
-mechanism: [Identify motivation source, Separate crisis spike from baseline drive, Build sustainable cadence, Protect long-term energy.]
-conditions: [Teams frequently encounter deadline pressure or emergency escalations.]
-exceptions: [Genuine strategic emergencies require short-term urgency mobilization.]
-applications: {planning: [Schedule recovery periods after intense deadline sprints.], leadership: [Refuse to operate in permanent emergency mode.]}
-risks: [Failing to respond quickly when true emergencies arise.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0031, NT-LAW-0015], applies_to: []}
-tags: [motivation, principle, urgency, sustainability]
+secondary_domains:
+- tri-nhan
+- dung-nhan
+definition: Sự cấp bách ngắn hạn tiêu hao nguồn dự trữ; dựa vào chế độ khủng hoảng vĩnh viễn dẫn đến kiệt sức hệ thống thay vì sự gắn kết thực sự.
+mechanism:
+- Xác định nguồn động lực
+- Tách đợt khủng hoảng khỏi mức nền
+- Xây dựng nhịp bền vững
+- Bảo vệ năng lượng dài hạn.
+conditions:
+- Nhóm thường xuyên đối mặt với áp lực hạn chót hoặc leo thang khẩn cấp.
+exceptions:
+- Tình huống khẩn cấp chiến lược thực sự cần huy động sự cấp bách ngắn hạn.
+applications:
+  planning:
+  - Lên lịch giai đoạn phục hồi sau các đợt chạy nước rút hạn chót căng thẳng.
+  leadership:
+  - Từ chối vận hành ở chế độ khẩn cấp vĩnh viễn.
+risks:
+- Không phản hồi nhanh khi tình huống khẩn cấp thực sự xảy ra.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0031
+  - NT-LAW-0015
+  applies_to: []
+tags:
+- motivation
+- principle
+- urgency
+- sustainability
+- burnout
+- planning
 created_at: '2026-07-21'
-updated_at: '2026-07-21'
+updated_at: '2026-08-15'

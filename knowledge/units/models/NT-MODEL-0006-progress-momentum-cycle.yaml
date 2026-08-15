@@ -2,18 +2,47 @@ id: NT-MODEL-0006
 type: model
 status: frozen
 version: 0.1.0
-title: Progress momentum cycle
-summary: A dynamic pattern showing how small wins generate positive emotion, reinforce self-efficacy, and sustain energy for complex long-term tasks.
+title: Chu kỳ tạo đà tiến độ
+summary: Một mô hình động mô tả cách các chiến thắng nhỏ tạo ra cảm xúc tích cực, củng cố niềm tin vào năng lực bản thân và duy trì năng lượng cho các nhiệm vụ dài hạn phức tạp.
 primary_domain: tu-than
-secondary_domains: [thanh-su, tri-nhan]
-definition: Progress feedback triggers positive affect and perceived efficacy, which in turn mobilizes renewed energy for subsequent task phases.
-mechanism: [Achieve incremental milestone, Receive visible progress feedback, Experience efficacy boost, Mobilize renewed effort.]
-conditions: [Long-horizon work is broken into inspectable stages.]
-exceptions: [False or trivial progress signals lead to cynicism once uncovered.]
-applications: {sprint-planning: [Design work cycles to deliver inspectable increments.], leadership: [Recognize team progress continuously.]}
-risks: [Focusing on minor milestone vanity metrics rather than real value creation.]
-evidence: {level: provisional, references: []}
-relations: {supports: [NT-PRINCIPLE-0056], conflicts_with: [], depends_on: [NT-LAW-0033], applies_to: []}
-tags: [model, pattern, progress, momentum, efficacy]
+secondary_domains:
+- thanh-su
+- tri-nhan
+definition: Phản hồi về tiến độ kích hoạt cảm xúc tích cực và nhận thức về năng lực bản thân, từ đó huy động nguồn năng lượng mới cho các giai đoạn tiếp theo của nhiệm vụ.
+mechanism:
+- Đạt được cột mốc lũy tiến
+- Nhận phản hồi rõ ràng về tiến độ
+- Trải nghiệm sự gia tăng niềm tin vào năng lực bản thân
+- Huy động nỗ lực mới.
+conditions:
+- Công việc dài hạn được chia nhỏ thành các giai đoạn có thể kiểm tra được.
+exceptions:
+- Các tín hiệu tiến độ giả tạo hoặc tầm thường sẽ dẫn đến sự hoài nghi khi bị phát hiện.
+applications:
+  sprint-planning:
+  - Thiết kế các chu kỳ công việc để bàn giao các phần tăng trưởng có thể kiểm tra được.
+  leadership:
+  - Ghi nhận tiến độ của đội ngũ một cách liên tục.
+risks:
+- Tập trung vào các chỉ số ảo của các cột mốc nhỏ thay vì tạo ra giá trị thực tế.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports:
+  - NT-PRINCIPLE-0056
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0033
+  applies_to: []
+tags:
+- model
+- pattern
+- progress
+- momentum
+- efficacy
+- progress-principle
+- momentum-effect
+- small-wins
 created_at: '2026-07-21'
-updated_at: '2026-07-21'
+updated_at: '2026-08-15'

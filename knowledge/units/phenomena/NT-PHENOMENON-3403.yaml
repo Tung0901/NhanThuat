@@ -1,26 +1,23 @@
 id: NT-PHENOMENON-3403
 type: phenomenon
-title: Liking Principle
-summary: People prefer to say yes to individuals they know and like.
+title: Nguyên tắc thiện cảm
+summary: Con người có xu hướng đồng ý với những cá nhân mà họ quen biết và yêu mến.
 primary_domain: tri-nhan
 domain_area: NT-DA-0030
-definition: A persuasion mechanism where compliance is drastically increased by physical
-  attractiveness, similarity, compliments, and cooperative endeavors.
+definition: Một cơ chế thuyết phục trong đó khả năng tuân theo tăng mạnh nhờ ngoại hình hấp dẫn, sự tương đồng, lời khen ngợi và những nỗ lực hợp tác chung.
 mechanism:
-- A persuader establishes rapport by highlighting similarities, offering genuine praise,
-  or simply being physically attractive.
-- The target develops a positive affective response (liking).
-- The target equates saying 'yes' to the request with maintaining the positive relationship.
+- Người thuyết phục thiết lập sự thân thiết bằng cách nhấn mạnh những điểm tương đồng, dành những lời khen chân thành, hoặc đơn giản là có ngoại hình hấp dẫn.
+- Đối tượng nảy sinh phản ứng cảm xúc tích cực (thiện cảm).
+- Đối tượng đồng nhất việc nói 'đồng ý' với yêu cầu và việc duy trì mối quan hệ tích cực.
 conditions:
-- Interpersonal sales, negotiations, and leadership.
+- Bán hàng giữa các cá nhân, đàm phán và lãnh đạo.
 exceptions:
-- Highly transactional, automated, or anonymized environments.
+- Các môi trường mang tính giao dịch cao, tự động hóa hoặc ẩn danh.
 applications:
   negotiation:
-  - Spending 5 minutes before a negotiation finding a shared hobby increases the likelihood
-    of a cooperative outcome by over 30%.
+  - Dành 5 phút trước một cuộc đàm phán để tìm ra sở thích chung làm tăng khả năng đạt kết quả hợp tác lên hơn 30%.
 risks:
-- Nepotism and cronyism in corporate hiring and promotion.
+- Chủ nghĩa gia đình trị và chủ nghĩa thân hữu trong tuyển dụng và thăng tiến nội bộ doanh nghiệp.
 evidence:
   level: strong
   references:
@@ -34,7 +31,10 @@ relations:
 tags:
 - liking
 - rapport
+- similarity
+- influence
+- persuasion
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

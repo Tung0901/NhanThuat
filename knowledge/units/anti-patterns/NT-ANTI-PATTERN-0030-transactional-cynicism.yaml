@@ -2,21 +2,21 @@ id: NT-ANTI-PATTERN-0030
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Transactional Cynicism
-summary: Transactional Cynicism structural knowledge unit.
+title: Thái độ hoài nghi mang tính giao dịch
+summary: Đơn vị tri thức cấu trúc về Thái độ hoài nghi mang tính giao dịch trong quản trị hành vi.
 primary_domain: hop-chung
 secondary_domains:
 - tri-nhan
-definition: Formal definition of Transactional Cynicism in NhanThuat architecture.
+definition: Định nghĩa chính thức về Thái độ hoài nghi mang tính giao dịch (Transactional Cynicism) trong kiến trúc Nhân Thuật, chỉ trạng thái các mối quan hệ trong tổ chức bị thương mại hóa thuần túy, thiếu vắng lòng tin và sự cam kết lâu dài.
 conditions:
-- Operational governance contexts.
+- Bối cảnh quản trị vận hành tổ chức.
 exceptions:
-- Emergency crisis overrides.
+- Trường hợp ghi đè trong khủng hoảng khẩn cấp.
 applications:
   governance:
-  - Apply Transactional Cynicism to organizational workflows.
+  - Áp dụng phân tích Thái độ hoài nghi mang tính giao dịch vào quy trình làm việc tổ chức.
 risks:
-- Misapplication of Transactional Cynicism leading to suboptimal performance.
+- Sự xuất hiện hoặc áp dụng sai Thái độ hoài nghi mang tính giao dịch dẫn đến làm suy yếu văn hóa tổ chức và giảm hiệu suất.
 evidence:
   level: supported
   references:
@@ -30,5 +30,10 @@ relations:
 tags:
 - anti-pattern
 - hop-chung
+- transactional-cynicism
+- low-trust-culture
+- employee-disengagement
+- organizational-cynicism
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

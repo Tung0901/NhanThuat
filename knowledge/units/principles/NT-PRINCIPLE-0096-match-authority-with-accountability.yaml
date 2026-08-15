@@ -2,23 +2,21 @@ id: NT-PRINCIPLE-0096
 type: principle
 status: frozen
 version: 0.1.0
-title: Match Authority with Accountability
-summary: Ensure that any actor held accountable for an outcome is granted the corresponding
-  formal authority and budget to influence it.
+title: Khớp quyền hạn với trách nhiệm giải trình
+summary: Đảm bảo bất kỳ ai chịu trách nhiệm giải trình cho một kết quả đều được trao quyền hạn chính thức và ngân sách tương ứng để tác động lên kết quả đó.
 primary_domain: dung-nhan
 secondary_domains:
 - hop-chung
-definition: Holding an employee accountable for results without giving them authority
-  to control resources creates extreme stress.
+definition: Giao trách nhiệm giải trình về kết quả cho nhân viên mà không trao quyền kiểm soát nguồn lực sẽ tạo ra căng thẳng cực độ.
 conditions:
-- Delegation design and role definitions.
+- Thiết kế ủy quyền và định nghĩa vai trò.
 exceptions:
-- Matrix management roles requiring influence-based coordination.
+- Các vai trò quản lý ma trận đòi hỏi phối hợp dựa trên ảnh hưởng.
 applications:
   role_design:
-  - Audit manager roles to verify that budget approval rights match performance KPIs.
+  - Rà soát vai trò quản lý để xác minh quyền phê duyệt ngân sách khớp với các KPI về hiệu suất.
 risks:
-- Granting authority without establishing accountability safeguards.
+- Trao quyền hạn mà không thiết lập các rào chắn trách nhiệm giải trình.
 evidence:
   level: supported
   references:
@@ -33,5 +31,8 @@ tags:
 - authority
 - accountability
 - role-design
+- delegation
+- resources
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

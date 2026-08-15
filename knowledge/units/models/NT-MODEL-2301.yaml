@@ -2,28 +2,27 @@ id: NT-MODEL-2301
 type: model
 status: frozen
 version: 1.0.0
-title: The Cynefin Framework
-summary: Khung nhận thức giúp phân loại vấn đề (Rõ ràng, Phức tạp, Rối rắm, Hỗn loạn).
+title: Mô hình Cynefin
+summary: 'Khung nhận thức hỗ trợ phân loại bối cảnh và vấn đề thành bốn miền: Rõ ràng, Phức tạp, Rối ren và Hỗn loạn để ra quyết định phù hợp.'
 primary_domain: tri-nhan
 domain_area: NT-DA-0023
 secondary_domains:
 - thanh-su
-definition: Cynefin giúp phân loại vấn đề và đưa ra hành động tương ứng tránh thiên
-  kiến.
+definition: Mô hình Cynefin giúp người ra quyết định nhận diện bản chất của bối cảnh, từ đó lựa chọn phương thức hành động tương ứng nhằm tránh thiên kiến và áp dụng sai giải pháp.
 mechanism:
-- 'Clear: Best practices.'
-- 'Complicated: Good practices.'
-- 'Complex: Emergent practices.'
-- 'Chaotic: Novel practices.'
+- 'Miền Rõ ràng (Clear): Cảm nhận - Phân loại - Phản hồi, áp dụng thực hành tốt nhất (Best practices).'
+- 'Miền Phức tạp (Complicated): Cảm nhận - Phân tích - Phản hồi, áp dụng thực hành tốt (Good practices).'
+- 'Miền Rối ren (Complex): Thử nghiệm - Cảm nhận - Phản hồi, áp dụng thực hành mới nổi (Emergent practices).'
+- 'Miền Hỗn loạn (Chaotic): Hành động - Cảm nhận - Phản hồi, áp dụng thực hành mới lạ (Novel practices).'
 conditions:
-- Chẩn đoán vấn đề.
+- Khi cần chẩn đoán bản chất của vấn đề hoặc bối cảnh trước khi ra quyết định chiến lược.
 exceptions:
-- Vấn đề cực kỳ đơn giản.
+- Các tình huống xử lý quy trình vận hành thuần túy đã được tự động hóa hoàn toàn.
 applications:
   management:
-  - Xác định cách tiếp cận vấn đề
+  - Xác định phương pháp tiếp cận và phong cách lãnh đạo phù hợp cho từng dạng thách thức
 risks:
-- Nhầm lẫn giữa Phức tạp và Rõ ràng
+- Nhầm lẫn giữa miền Phức tạp và Rối ren, dẫn đến việc lạm dụng phân tích cho các hệ thống phi tuyến tính
 evidence:
   level: supported
   references: []
@@ -35,5 +34,10 @@ relations:
 tags:
 - framework
 - sensemaking
+- cynefin-framework
+- decision-making
+- sense-making
+- complexity-theory
+- problem-classification
 created_at: '2026-08-12'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

@@ -2,37 +2,46 @@ id: NT-PHENOMENON-3004
 type: phenomenon
 status: frozen
 version: 0.1.0
-title: Overconfidence Illusion
-summary: The structural tendency for individuals to be more confident in their judgments and predictions than their objective accuracy warrants.
+title: Ảo tưởng Tự tin Thái quá
+summary: Xu hướng cấu trúc khiến các cá nhân tự tin hơn vào các phán đoán và dự đoán của họ so với mức độ chính xác khách quan thực tế.
 primary_domain: tri-nhan
 domain_area: NT-DA-0026
-secondary_domains: [tu-than]
-definition: An anti-pattern where subjective certainty outpaces objective correctness, often driven by the fluency of internal processing rather than actual evidentiary support.
+secondary_domains:
+- tu-than
+definition: Một mẫu chống (anti-pattern) trong đó độ chắc chắn chủ quan vượt qua độ chính xác khách quan, thường được thúc đẩy bởi sự trôi chảy của quá trình xử lý nội bộ thay vì sự hỗ trợ thực tế từ bằng chứng.
 mechanism:
-  - The brain processes a judgment easily (high fluency).
-  - High fluency is interpreted as high accuracy.
-  - The actor expresses high certainty.
-  - Objective measurement reveals a significant gap between certainty and accuracy.
+- Bộ não xử lý một phán đoán một cách dễ dàng (độ trôi chảy cao).
+- Độ trôi chảy cao được diễn giải thành độ chính xác cao.
+- Tác nhân thể hiện mức độ chắc chắn cao.
+- Phép đo khách quan cho thấy khoảng cách đáng kể giữa độ chắc chắn và độ chính xác.
 conditions:
-  - Tasks of moderate to high difficulty where feedback is delayed or ambiguous.
+- Các nhiệm vụ có độ khó từ trung bình đến cao, nơi phản hồi bị trì hoãn hoặc mơ hồ.
 exceptions:
-  - Highly repetitive tasks with immediate, objective feedback.
-  - "Consequences: Catastrophic bets on unproven strategies; Failure to build necessary safety margins or contingencies."
-  - "Recognition Signal: Point estimates (e.g., 'It will take 3 days') instead of confidence intervals ('3 to 7 days')."
+- Các nhiệm vụ có tính lặp lại cao với phản hồi khách quan ngay lập tức.
+- 'Hậu quả: Các khoản đặt cược thảm khốc vào các chiến lược chưa được kiểm chứng; Thất bại trong việc xây dựng các biên an toàn hoặc phương án dự phòng cần thiết.'
+- 'Dấu hiệu nhận biết: Ước tính điểm (ví dụ: ''Sẽ mất 3 ngày'') thay vì khoảng tin cậy (''3 đến 7 ngày'').'
 applications:
   decision-making:
-    - Require confidence intervals rather than absolute predictions.
+  - Yêu cầu các khoảng tin cậy thay vì các dự đoán tuyệt đối.
 risks:
-  - Confusing the social utility of projecting confidence (leadership signaling) with epistemological accuracy.
+- Nhầm lẫn tiện ích xã hội của việc thể hiện sự tự tin (tín hiệu lãnh đạo) với độ chính xác nhận thức luận.
 evidence:
   level: strong
   references:
-    - "Moore, D. A., & Healy, P. J. (2008). 'The trouble with overconfidence'. Psychological Review."
+  - Moore, D. A., & Healy, P. J. (2008). 'The trouble with overconfidence'. Psychological Review.
 relations:
   supports: []
   conflicts_with: []
   depends_on: []
   applies_to: []
-tags: [heuristics, confidence, bias, prediction]
+tags:
+- heuristics
+- confidence
+- bias
+- prediction
+- overconfidence-illusion
+- cognitive-bias
+- confidence-gap
+- epistemic-accuracy
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

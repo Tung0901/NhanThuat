@@ -2,36 +2,45 @@ id: NT-PRINCIPLE-0061
 type: principle
 status: frozen
 version: 0.1.0
-title: Redesign roles before demanding personality change
-summary: When performance is impacted by trait-role mismatch, prioritize adjusting task demands and environmental factors over expecting long-term personality adaptation.
+title: Thiết kế lại vai trò trước khi yêu cầu thay đổi tính cách
+summary: Khi hiệu suất bị ảnh hưởng do lệch khớp giữa đặc tính và vai trò, hãy ưu tiên điều chỉnh yêu cầu nhiệm vụ và các yếu tố môi trường thay vì kỳ vọng thích ứng tính cách lâu dài.
 primary_domain: tri-nhan
-secondary_domains: [tu-than, thanh-su]
-definition: Modify situational strength, role demands, and environmental factors to align with an individual's relatively stable defaults, reducing the high adaptation costs of continuous self-regulation before demanding personal trait changes.
+secondary_domains:
+- tu-than
+- thanh-su
+definition: Điều chỉnh cường độ tình huống, yêu cầu vai trò và các yếu tố môi trường để khớp với các mặc định tương đối ổn định của cá nhân, giảm chi phí thích ứng cao do tự điều chỉnh liên tục trước khi yêu cầu thay đổi đặc tính cá nhân.
 mechanism:
-  - Identify tasks causing high adaptation cost and self-regulation fatigue.
-  - Adjust situational strength (rules, structure) or task demands to match traits.
-  - Reduce load on executive control, allowing observed behavior to align with defaults.
+- Xác định các nhiệm vụ gây chi phí thích ứng cao và tình trạng mệt mỏi do tự điều chỉnh.
+- Điều chỉnh cường độ tình huống (quy tắc, cấu trúc) hoặc yêu cầu nhiệm vụ cho khớp với đặc tính.
+- Giảm tải cho kiểm soát điều hành, giúp hành vi quan sát được khớp với các mặc định.
 conditions:
-  - Performance friction is traceably linked to sustained adaptation cost and trait-role mismatch.
+- Ma sát về hiệu suất có thể truy vết liên kết với chi phí thích ứng kéo dài và sự lệch khớp giữa đặc tính và vai trò.
 exceptions:
-  - Core role outcomes are rigid and cannot be restructured without dismantling the business process.
+- Các kết quả cốt lõi của vai trò cứng nhắc và không thể tái cấu trúc nếu không phá vỡ quy trình kinh doanh.
 applications:
   management:
-    - Evaluate whether a role's situation strength can be customized before demanding behavioral changes.
+  - Đánh giá xem cường độ tình huống của vai trò có thể được tùy chỉnh trước khi yêu cầu thay đổi hành vi hay không.
   coaching:
-    - Teach compensatory strategies to bridge minor gaps, prioritizing role adjustments first.
+  - Hướng dẫn các chiến lược bù đắp để thu hẹp các khoảng trống nhỏ, ưu tiên điều chỉnh vai trò trước.
 risks:
-  - Excusing a lack of necessary skill or competence as a simple personality mismatch.
-  - Unjustifiably lowering team standards rather than customizing execution styles.
+- Bào chữa cho sự thiếu hụt kỹ năng hoặc năng lực cần thiết như thể chỉ là lệch khớp tính cách đơn thuần.
+- Hạ thấp tiêu chuẩn của đội nhóm một cách bất hợp lý thay vì tùy chỉnh phong cách thực thi.
 evidence:
   level: provisional
   references:
-    - "Tett, R. P., & Burnett, D. D. (2003). A Personality Trait-Based Interactionist Model of Job Performance."
+  - Tett, R. P., & Burnett, D. D. (2003). A Personality Trait-Based Interactionist Model of Job Performance.
 relations:
   supports: []
   conflicts_with: []
-  depends_on: [NT-LAW-0035, NT-LAW-0036]
+  depends_on:
+  - NT-LAW-0035
+  - NT-LAW-0036
   applies_to: []
-tags: [role-redesign, adaptation-cost, self-regulation, situational-strength]
+tags:
+- role-redesign
+- adaptation-cost
+- self-regulation
+- situational-strength
+- trait-role-mismatch
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'

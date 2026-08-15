@@ -2,28 +2,26 @@ id: NT-ANTI-PATTERN-0049
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Thrashing Overhead
-summary: Frequently switching project priorities mid-sprint, consuming team energy
-  in context-switching overhead with zero completed output.
+title: Lãng phí do xoay chuyển liên tục
+summary: Việc thay đổi ưu tiên dự án liên tục giữa sprint, tiêu tốn năng lượng của đội ngũ vào chi phí chuyển đổi bối cảnh mà không hoàn thành được kết quả nào.
 primary_domain: dung-nhan
 secondary_domains:
 - thanh-su
-definition: Thrashing occurs when reactive leadership changes team priorities every
-  few days.
+definition: Hiện tượng xoay chuyển liên tục xảy ra khi ban lãnh đạo mang tính phản ứng thay đổi các ưu tiên của đội ngũ vài ngày một lần.
 mechanism:
-- Leadership introduces new emergency task.
-- Team switches context.
-- New priority arrives next week.
-- Zero tasks finished.
+- Lãnh đạo đưa vào một nhiệm vụ khẩn cấp mới.
+- Đội ngũ phải chuyển đổi bối cảnh công việc.
+- Ưu tiên mới lại xuất hiện vào tuần tiếp theo.
+- Không có nhiệm vụ nào được hoàn thành.
 conditions:
-- Reactive leadership and lack of sprint boundaries.
+- Lãnh đạo mang tính phản ứng và thiếu ranh giới bảo vệ sprint.
 exceptions:
-- Real-world critical security breaches.
+- Các sự cố vi phạm bảo mật nghiêm trọng trong thực tế.
 applications:
   sprint_governance:
-  - Protect active sprint backlogs from mid-cycle scope changes.
+  - Bảo vệ backlog sprint đang chạy khỏi những thay đổi phạm vi giữa chu kỳ.
 risks:
-- Refusing to adjust direction when catastrophic unexpected news arrives.
+- Từ chối điều chỉnh hướng đi khi có thông tin bất ngờ mang tính thảm họa xảy ra.
 evidence:
   level: supported
   references:
@@ -39,5 +37,10 @@ tags:
 - execution
 - thrashing
 - anti-patterns
+- thrashing-overhead
+- context-switching
+- sprint-governance
+- priority-shifting
+- reactive-leadership
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'

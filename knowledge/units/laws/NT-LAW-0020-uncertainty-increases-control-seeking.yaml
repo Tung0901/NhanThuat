@@ -2,38 +2,36 @@ id: NT-LAW-0020
 type: law
 status: frozen
 version: 0.1.0
-title: Uncertainty increases control seeking
-summary: When uncertainty rises, people tend to seek more control, information, reassurance,
-  or authority over the situation.
+title: Sự bất định làm tăng nhu cầu kiểm soát
+summary: Khi sự bất định gia tăng, con người có xu hướng tìm kiếm thêm sự kiểm soát, thông tin, sự trấn an hoặc quyền lực đối với tình huống.
 primary_domain: tri-nhan
 secondary_domains:
 - hop-chung
 - thanh-su
-definition: Uncertainty increases perceived exposure, and people respond by trying
-  to reduce ambiguity or regain agency.
+definition: Sự bất định làm tăng cảm giác bị tổn thương hoặc rủi ro, và mọi người phản ứng bằng cách cố gắng giảm bớt sự mơ hồ hoặc giành lại quyền chủ động.
 mechanism:
-- Perceive uncertainty
-- Feel exposure or risk
-- Seek information
-- control
-- reassurance
-- or authority.
+- Nhận thức được sự bất định
+- Cảm thấy bị ảnh hưởng hoặc gặp rủi ro
+- Tìm kiếm thông tin
+- Sự kiểm soát
+- Sự trấn an
+- Hoặc quyền lực.
 conditions:
-- The outcome matters
-- The person lacks confidence in what will happen.
+- Kết quả có tầm ảnh hưởng quan trọng
+- Cá nhân thiếu tự tin vào những gì sẽ xảy ra.
 exceptions:
-- High trust can reduce control seeking
-- Some people tolerate ambiguity better than others.
+- Lòng tin cao có thể làm giảm nhu cầu kiểm soát
+- Một số người có khả năng chịu đựng sự mơ hồ tốt hơn những người khác.
 applications:
   change:
-  - Reduce uncertainty with honest sequencing and decision rules.
+  - Giảm bớt sự bất định bằng cách sắp xếp trình tự trung thực và thiết lập các quy tắc ra quyết định rõ ràng.
   management:
-  - Explain what is known
-  - unknown
-  - and being decided.
+  - Giải thích những gì đã biết
+  - Những gì chưa biết
+  - Và những gì đang được quyết định.
 risks:
-- Offering false certainty
-- Mistaking control seeking for resistance.
+- Đưa ra sự chắc chắn giả tạo
+- Nhầm lẫn nhu cầu kiểm soát với sự phản kháng.
 evidence:
   level: provisional
   references: []
@@ -48,5 +46,9 @@ tags:
 - uncertainty
 - control
 - change
+- control-seeking
+- ambiguity-tolerance
+- risk-perception
+- change-management
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

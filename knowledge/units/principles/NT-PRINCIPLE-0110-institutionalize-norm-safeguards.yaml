@@ -2,23 +2,21 @@ id: NT-PRINCIPLE-0110
 type: principle
 status: frozen
 version: 0.1.0
-title: Institutionalize Norm Safeguards
-summary: Build explicit operational checks that catch and correct cultural drift before
-  toxic behaviors become normalized.
+title: Thể chế hóa các rào chắn chuẩn mực
+summary: Xây dựng các kiểm tra vận hành tường minh nhằm phát hiện và điều chỉnh sự trôi dạt văn hóa trước khi hành vi độc hại trở thành lẽ thường.
 primary_domain: hop-chung
 secondary_domains:
 - tri-nhan
-definition: Establish anonymous feedback channels, regular culture surveys, and peer
-  review mechanisms.
+definition: Thiết lập các kênh phản hồi ẩn danh, khảo sát văn hóa định kỳ và cơ chế đánh giá đồng nghiệp.
 conditions:
-- Fast-growing organizations undergoing rapid hiring.
+- Các tổ chức tăng trưởng nhanh đang tuyển dụng ồ ạt.
 exceptions:
-- Small founding teams under 5 people.
+- Các đội ngũ sáng lập nhỏ dưới 5 người.
 applications:
   culture_pulse:
-  - Run monthly anonymous culture pulse checks tracking psychological safety.
+  - Chạy khảo sát mạch văn hóa ẩn danh hằng tháng để theo dõi mức an toàn tâm lý.
 risks:
-- Survey fatigue from over-polling.
+- Kiệt sức vì khảo sát quá nhiều (survey fatigue).
 evidence:
   level: supported
   references:
@@ -33,5 +31,9 @@ tags:
 - culture
 - safeguards
 - telemetry
+- survey
+- psychological-safety
+- organizational-health
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

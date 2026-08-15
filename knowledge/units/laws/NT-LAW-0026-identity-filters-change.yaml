@@ -2,18 +2,53 @@ id: NT-LAW-0026
 type: law
 status: frozen
 version: 0.1.0
-title: Identity filters change
-summary: People judge change partly by whether it threatens or preserves who they believe they are and where they belong.
+title: Bản sắc định hình sự thay đổi
+summary: Mọi người đánh giá sự thay đổi một phần dựa trên việc liệu nó đe dọa hay bảo vệ bản sắc cá nhân và vị trí thuộc về của họ.
 primary_domain: tri-nhan
-secondary_domains: [tu-than, hop-chung]
-definition: Change is easier to consider when it can be integrated into a person's identity, role, and belonging rather than experienced as self-erasure.
-mechanism: [Compare change to self-image, Protect belonging, Accept or reject interpretation.]
-conditions: [A request affects role, status, values, competence, or group membership.]
-exceptions: [Urgent survival pressure may override identity concerns, Mature reflection can loosen identity defense.]
-applications: {change: [Frame change as continuity with values where truthful.], coaching: [Protect dignity while inviting a new behavior.]}
-risks: [Manipulating identity, Preserving harmful self-concepts.]
-evidence: {level: provisional, references: []}
-relations: {supports: [NT-PRINCIPLE-0047, NT-PRINCIPLE-0048, NT-MODEL-0002], conflicts_with: [], depends_on: [NT-LAW-0014], applies_to: []}
-tags: [identity, change, belonging]
+secondary_domains:
+- tu-than
+- hop-chung
+definition: Sự thay đổi sẽ dễ được đón nhận hơn khi nó có thể hòa nhập vào bản sắc, vai trò và cảm giác thuộc về của một người, thay vì bị xem như sự xóa bỏ chính mình.
+mechanism:
+- So sánh sự thay đổi với hình ảnh bản thân
+- Bảo vệ cảm giác thuộc về
+- Chấp nhận hoặc từ chối cách diễn giải.
+conditions:
+- Một yêu cầu tác động đến vai trò
+- địa vị
+- các giá trị
+- năng lực
+- hoặc tư cách thành viên nhóm.
+exceptions:
+- Áp lực sinh tồn khẩn cấp có thể vượt qua những bận tâm về bản sắc
+- Sự tự chiêm nghiệm chín chắn có thể nới lỏng cơ chế phòng vệ bản sắc.
+applications:
+  change:
+  - Định hình sự thay đổi như một sự tiếp nối các giá trị cốt lõi khi có cơ sở thực tế.
+  coaching:
+  - Bảo vệ lòng tự trọng trong khi khuyến khích hành vi mới.
+risks:
+- Thao túng bản sắc cá nhân
+- Duy trì những quan niệm sai lệch hoặc có hại về bản thân.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports:
+  - NT-PRINCIPLE-0047
+  - NT-PRINCIPLE-0048
+  - NT-MODEL-0002
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0014
+  applies_to: []
+tags:
+- identity
+- change
+- belonging
+- identity-protection
+- social-identity-theory
+- change-resistance
+- self-concept
 created_at: '2026-07-21'
-updated_at: '2026-07-21'
+updated_at: '2026-08-15'

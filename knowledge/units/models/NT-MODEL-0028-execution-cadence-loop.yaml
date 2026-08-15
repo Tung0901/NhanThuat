@@ -2,27 +2,26 @@ id: NT-MODEL-0028
 type: model
 status: frozen
 version: 0.1.0
-title: Execution Cadence Loop
-summary: 'A 4-stage operational cycle: Plan -> Execute -> Review -> Adjust.'
+title: Vòng lặp nhịp độ thực thi
+summary: 'Chu trình vận hành 4 giai đoạn: Lập kế hoạch -> Thực thi -> Đánh giá -> Điều chỉnh.'
 primary_domain: dung-nhan
 secondary_domains:
 - thanh-su
-definition: 'The Execution Cadence Loop governs short-cycle delivery: Sprint Plan,
-  Execution, Review, Retrospective.'
+definition: 'Vòng lặp nhịp độ thực thi định hình quy trình bàn giao theo chu kỳ ngắn: Lập kế hoạch Sprint, Thực thi, Đánh giá và Cải tiến quy trình.'
 mechanism:
-- Plan sprint bounds.
-- Execute work.
-- Review output.
-- Adjust process.
+- Xác định phạm vi và lập kế hoạch sprint.
+- Tiến hành thực thi công việc.
+- Đánh giá và nghiệm thu kết quả đầu ra.
+- Điều chỉnh và tối ưu hóa quy trình.
 conditions:
-- Iterative project management.
+- Áp dụng trong quản lý dự án lặp (iterative).
 exceptions:
-- One-shot static deployments.
+- Các dự án triển khai tĩnh một lần duy nhất.
 applications:
   sprint_management:
-  - Structure team iterations around 2-week execution loops.
+  - Cấu trúc các chu kỳ làm việc của nhóm xoay quanh vòng lặp thực thi 2 tuần.
 risks:
-- Skipping retrospectives and repeating process errors.
+- Bỏ qua bước họp cải tiến dẫn đến việc lặp lại các sai sót trong quy trình.
 evidence:
   level: supported
   references:
@@ -37,5 +36,10 @@ tags:
 - execution
 - cadence
 - loop
+- execution-cadence
+- sprint-cycle
+- iterative-delivery
+- pdca-loop
+- continuous-improvement
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'

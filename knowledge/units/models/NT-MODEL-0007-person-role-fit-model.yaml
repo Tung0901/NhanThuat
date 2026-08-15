@@ -2,35 +2,51 @@ id: NT-MODEL-0007
 type: model
 status: frozen
 version: 0.1.0
-title: Person-role fit model
-summary: A diagnostic model mapping the alignment of latent trait defaults with role expectations to estimate potential adaptation costs and self-regulation load.
+title: Mô hình tương thích cá nhân - vai trò
+summary: Một mô hình chẩn đoán ánh xạ sự liên kết giữa các thiên hướng tính cách tiềm ẩn mặc định với các kỳ vọng của vai trò để ước tính chi phí thích ứng tiềm ẩn và gánh nặng tự điều chỉnh.
 primary_domain: tri-nhan
-secondary_domains: [dung-nhan, tu-than]
-definition: Models how the discrepancy between an individual's latent trait defaults and the behavioral demands of their role generates adaptation friction, consuming cognitive/physiological energy.
+secondary_domains:
+- dung-nhan
+- tu-than
+definition: Mô hình hóa cách thức sự sai lệch giữa thiên hướng tính cách tiềm ẩn mặc định của một cá nhân và các yêu cầu hành vi của vai trò tạo ra sự ma sát thích ứng, tiêu hao năng lượng nhận thức và sinh lý.
 mechanism:
-  - Map individual latent trait defaults.
-  - Audit role behavioral expectations and task demands.
-  - Assess situation strength constraints in the work environment.
-  - Calculate gap to estimate adaptation cost and self-regulation load.
-  - Identify target areas for compensatory strategies and environmental support.
+- Ánh xạ các thiên hướng tính cách tiềm ẩn mặc định của cá nhân.
+- Kiểm định các kỳ vọng hành vi của vai trò và yêu cầu nhiệm vụ.
+- Đánh giá các ràng buộc về sức mạnh tình huống trong môi trường làm việc.
+- Tính toán khoảng cách để ước tính chi phí thích ứng và gánh nặng tự điều chỉnh.
+- Xác định các khu vực mục tiêu cho các chiến lược bù đắp và hỗ trợ từ môi trường.
 conditions:
-  - Role assignment, leadership placement, or job design analysis is performed.
+- Phân tích phân công vai trò, sắp xếp nhân sự lãnh đạo hoặc thiết kế công việc được thực hiện.
 exceptions:
-  - Temporary or low-frequency tasks where adaptation costs do not accumulate.
+- Các nhiệm vụ tạm thời hoặc có tần suất thấp nơi chi phí thích ứng không bị tích lũy.
 applications:
-  diagnosis: [Identify high-friction assignments by mapping individual trait defaults against role behavioral demands.]
-  design: [Introduce custom supports or adjust situational strength to lower adaptation load in mismatched roles.]
+  diagnosis:
+  - Xác định các phân công công việc có độ ma sát cao bằng cách ánh xạ các thiên hướng mặc định của cá nhân với các yêu cầu hành vi của vai trò.
+  design:
+  - Đưa vào các hỗ trợ tùy chỉnh hoặc điều chỉnh sức mạnh tình huống để giảm gánh nặng thích ứng trong các vai trò không tương thích.
 risks:
-  - Using fit assessments as predictive performance filters or recruitment screening criteria.
-  - Treating default preferences as absolute limits of competence or capability.
+- Sử dụng các đánh giá mức độ tương thích làm bộ lọc dự đoán hiệu suất hoặc tiêu chí sàng lọc tuyển dụng.
+- Coi các thiên hướng mặc định là giới hạn tuyệt đối của năng lực hoặc khả năng.
 evidence:
   level: provisional
   references: []
 relations:
-  supports: [NT-PRINCIPLE-0060, NT-PRINCIPLE-0061]
+  supports:
+  - NT-PRINCIPLE-0060
+  - NT-PRINCIPLE-0061
   conflicts_with: []
-  depends_on: [NT-LAW-0034, NT-LAW-0035]
+  depends_on:
+  - NT-LAW-0034
+  - NT-LAW-0035
   applies_to: []
-tags: [personality, traits, model, person-role-fit, adaptation-cost]
+tags:
+- personality
+- traits
+- model
+- person-role-fit
+- adaptation-cost
+- self-regulation
+- trait-activation
+- job-design
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'

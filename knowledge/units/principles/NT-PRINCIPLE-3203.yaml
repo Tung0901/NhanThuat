@@ -1,28 +1,24 @@
 id: NT-PRINCIPLE-3203
 type: principle
-title: Environment Design for Habituation
-summary: Modifying physical or digital spaces to make good behaviors obvious and easy,
-  and bad behaviors invisible and difficult.
+title: Thiết kế môi trường cho việc hình thành thói quen
+summary: Điều chỉnh không gian vật lý hoặc kỹ thuật số để khiến hành vi tốt trở nên rõ ràng và dễ thực hiện, còn hành vi xấu trở nên vô hình và khó thực hiện.
 primary_domain: tri-nhan
 domain_area: NT-DA-0028
-definition: The architectural approach to habit formation that relies on altering
-  the external context rather than relying on internal willpower.
+definition: Cách tiếp cận kiến trúc đối với việc hình thành thói quen, dựa vào việc thay đổi bối cảnh bên ngoài thay vì dựa vào ý chí bên trong.
 mechanism:
-- Analyze the physical/digital layout.
-- Reduce friction (distance, steps, visibility) for desired routines.
-- Increase friction for undesired routines.
-- Willpower is preserved because the default path leads to the right behavior.
+- Phân tích bố cục vật lý/kỹ thuật số.
+- Giảm ma sát (khoảng cách, số bước, khả năng nhìn thấy) cho các thói quen mong muốn.
+- Tăng ma sát cho các thói quen không mong muốn.
+- Ý chí được bảo toàn vì con đường mặc định dẫn tới hành vi đúng.
 conditions:
-- Spaces under the direct control of the user or designer.
+- Các không gian nằm trong tầm kiểm soát trực tiếp của người dùng hoặc người thiết kế.
 exceptions:
-- Nomadic or highly fluid contexts where the environment cannot be stabilized.
+- Các bối cảnh du cư hoặc biến động cao, nơi môi trường không thể ổn định được.
 applications:
   office_design:
-  - Placing healthy snacks at eye level and hiding junk food in opaque containers
-    in the break room.
+  - Đặt đồ ăn vặt lành mạnh ngang tầm mắt và giấu đồ ăn không lành mạnh trong hộp đục ở phòng nghỉ.
 risks:
-- Over-optimizing a space for one specific workflow, making it hostile to collaboration
-  or change.
+- Tối ưu hóa quá mức một không gian cho một quy trình cụ thể, khiến nó trở nên khó khăn cho sự cộng tác hoặc thay đổi.
 evidence:
   level: strong
   references:
@@ -35,7 +31,11 @@ relations:
 tags:
 - environment
 - friction
+- habits
+- design
+- willpower
+- context
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

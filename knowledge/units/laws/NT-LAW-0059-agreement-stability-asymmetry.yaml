@@ -2,21 +2,21 @@ id: NT-LAW-0059
 type: law
 status: frozen
 version: 0.1.0
-title: Agreement Stability Asymmetry
-summary: Agreement Stability Asymmetry structural knowledge unit.
+title: Sự Bất Đối Xứng về Độ Ổn Định của Thỏa Thuận
+summary: Đơn vị tri thức cấu trúc về Sự Bất Đối Xứng về Độ Ổn Định của Thỏa Thuận.
 primary_domain: thanh-su
 secondary_domains:
 - dung-nhan
-definition: Formal definition of Agreement Stability Asymmetry in NhanThuat architecture.
+definition: Định nghĩa chính thức về Sự Bất Đối Xứng về Độ Ổn Định của Thỏa Thuận trong cấu trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Các bối cảnh quản trị vận hành.
 exceptions:
-- Emergency crisis overrides.
+- Các trường hợp khẩn cấp ghi đè do khủng hoảng.
 applications:
   governance:
-  - Apply Agreement Stability Asymmetry to organizational workflows.
+  - Áp dụng Sự Bất Đối Xứng về Độ Ổn Định của Thỏa Thuận vào quy trình làm việc của tổ chức.
 risks:
-- Misapplication of Agreement Stability Asymmetry leading to suboptimal performance.
+- Việc áp dụng sai lệch Sự Bất Đối Xứng về Độ Ổn Định của Thỏa Thuận dẫn đến hiệu suất kém tối ưu.
 evidence:
   level: supported
   references:
@@ -30,5 +30,10 @@ relations:
 tags:
 - law
 - thanh-su
+- agreement-stability
+- stability-asymmetry
+- contract-stability
+- negotiation-asymmetry
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

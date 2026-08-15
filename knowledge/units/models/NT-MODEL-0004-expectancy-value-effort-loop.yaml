@@ -2,18 +2,52 @@ id: NT-MODEL-0004
 type: model
 status: frozen
 version: 0.1.0
-title: Expectancy-value effort loop
-summary: A diagnostic pattern model showing how motivation builds or collapses based on perceived value, expected success, and immediate effort cost.
+title: Vòng lặp nỗ lực kỳ vọng - giá trị
+summary: Mô hình mẫu chẩn đoán chỉ ra cách động lực được xây dựng hoặc sụp đổ dựa trên giá trị nhận thức, khả năng thành công kỳ vọng và chi phí nỗ lực tức thời.
 primary_domain: tu-than
-secondary_domains: [tri-nhan, dung-nhan]
-definition: Voluntary effort is determined by the multiplicative interaction between expected success, perceived outcome value, and task cost.
-mechanism: [Evaluate expected success, Gauge outcome value, Weigh task cost and friction, Allocate effort.]
-conditions: [Individuals evaluate a new task or ongoing goal commitment.]
-exceptions: [Habitual routines bypass active expectancy-value calculation.]
-applications: {diagnosis: [Diagnose whether low effort stems from low value, low confidence, or excessive friction.], design: [Optimize task design across expectation, value, and cost.]}
-risks: [Misdiagnosing friction as lack of ambition.]
-evidence: {level: provisional, references: []}
-relations: {supports: [NT-PRINCIPLE-0052, NT-PRINCIPLE-0058], conflicts_with: [], depends_on: [NT-LAW-0029], applies_to: []}
-tags: [model, pattern, expectancy, value, effort]
+secondary_domains:
+- tri-nhan
+- dung-nhan
+definition: Nỗ lực tự nguyện được xác định bởi sự tương tác mang tính nhân giữa khả năng thành công kỳ vọng, giá trị kết quả nhận thức và chi phí thực hiện nhiệm vụ.
+mechanism:
+- Đánh giá khả năng thành công kỳ vọng
+- Đo lường giá trị của kết quả
+- Cân nhắc chi phí và lực cản của nhiệm vụ
+- Phân bổ nguồn lực nỗ lực.
+conditions:
+- Cá nhân đánh giá một nhiệm vụ mới hoặc một cam kết mục tiêu đang diễn ra.
+exceptions:
+- Các thói quen định kỳ bỏ qua việc tính toán chủ động về kỳ vọng và giá trị.
+applications:
+  diagnosis:
+  - Chẩn đoán xem nỗ lực thấp bắt nguồn từ việc đánh giá giá trị thấp
+  - sự tự tin thấp
+  - hay do lực cản quá lớn.
+  design:
+  - Tối ưu hóa thiết kế nhiệm vụ dựa trên kỳ vọng
+  - giá trị
+  - và chi phí.
+risks:
+- Chẩn đoán sai lực cản thực hiện thành sự thiếu tham vọng.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports:
+  - NT-PRINCIPLE-0052
+  - NT-PRINCIPLE-0058
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0029
+  applies_to: []
+tags:
+- model
+- pattern
+- expectancy
+- value
+- effort
+- expectancy-value-theory
+- effort-loop
+- motivation-model
 created_at: '2026-07-21'
-updated_at: '2026-07-21'
+updated_at: '2026-08-15'

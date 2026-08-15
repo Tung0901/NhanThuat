@@ -2,37 +2,46 @@ id: NT-LAW-3002
 type: law
 status: frozen
 version: 0.1.0
-title: Attention is Finite and Directional
-summary: Attention is a strictly limited resource that can only be directed sequentially, making multitasking a myth of rapid context-switching with high switching costs.
+title: Sự chú ý là Hữu hạn và Có hướng
+summary: Sự chú ý là một nguồn lực bị giới hạn nghiêm ngặt và chỉ có thể được định hướng một cách tuần tự, khiến cho việc đa nhiệm thực chất chỉ là ảo tưởng về sự chuyển đổi ngữ cảnh nhanh chóng với chi phí chuyển đổi rất cao.
 primary_domain: tri-nhan
 domain_area: NT-DA-0026
-secondary_domains: [tu-than]
-definition: The human brain processes conscious attention serially. Attempts to divide attention across multiple complex tasks result in rapid switching, degrading performance and increasing cognitive fatigue.
+secondary_domains:
+- tu-than
+definition: Não bộ con người xử lý sự chú ý có ý thức theo phương thức nối tiếp. Mọi nỗ lực phân chia sự chú ý cho nhiều tác vụ phức tạp cùng lúc đều dẫn đến việc chuyển đổi nhanh chóng giữa các tác vụ, làm giảm hiệu suất và gia tăng sự mệt mỏi về mặt nhận thức.
 mechanism:
-  - The brain focuses on Task A.
-  - A stimulus from Task B interrupts.
-  - The brain disengages from A, reorients, and engages B.
-  - Accuracy and speed drop significantly compared to sequential focus.
+- Não bộ tập trung hoàn toàn vào Tác vụ A.
+- Một kích thích hoặc tín hiệu từ Tác vụ B gây gián đoạn.
+- Não bộ ngắt kết nối khỏi Tác vụ A, định hướng lại và bắt đầu xử lý Tác vụ B.
+- Độ chính xác và tốc độ xử lý giảm mạnh so với việc tập trung tuần tự.
 conditions:
-  - Tasks require conscious working memory.
+- Các tác vụ đòi hỏi phải sử dụng bộ nhớ làm việc có ý thức.
 exceptions:
-  - Combining a highly automated physical task with a cognitive task.
+- Kết hợp một tác vụ vật lý đã được tự động hóa cao với một tác vụ nhận thức.
 applications:
   management:
-    - Limit the number of simultaneous active projects per person.
+  - Giới hạn số lượng dự án hoạt động đồng thời của mỗi cá nhân.
   environment:
-    - Design workspaces that protect against frequent interruptions.
+  - Thiết kế không gian làm việc giúp bảo vệ nhân viên khỏi các tác nhân gây gián đoạn thường xuyên.
 risks:
-  - Mistaking rapid switching for high productivity.
+- Nhầm lẫn giữa việc chuyển đổi tác vụ nhanh chóng với năng suất làm việc cao.
 evidence:
   level: strong
   references:
-    - "Kahneman, D. (1973). 'Attention and Effort'. Prentice-Hall."
+  - Kahneman, D. (1973). 'Attention and Effort'. Prentice-Hall.
 relations:
   supports: []
   conflicts_with: []
   depends_on: []
   applies_to: []
-tags: [attention, focus, multitasking, limits]
+tags:
+- attention
+- focus
+- multitasking
+- limits
+- cognitive-load
+- attention-span
+- multitasking-myth
+- context-switching
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

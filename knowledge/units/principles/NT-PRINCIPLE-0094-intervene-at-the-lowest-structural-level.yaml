@@ -2,23 +2,21 @@ id: NT-PRINCIPLE-0094
 type: principle
 status: frozen
 version: 0.1.0
-title: Intervene at the Lowest Structural Level
-summary: Resolve conflict directly between primary stakeholders before escalating
-  to executive authority.
+title: Can thiệp ở cấp cấu trúc thấp nhất
+summary: Giải quyết xung đột trực tiếp giữa các bên liên quan chính trước khi leo thang lên cấp lãnh đạo điều hành.
 primary_domain: hop-chung
 secondary_domains:
 - tri-nhan
-definition: Premature escalation to higher authority creates dependency and weakens
-  team self-governance.
+definition: Leo thang sớm lên cấp quyền lực cao hơn tạo ra sự phụ thuộc và làm suy yếu khả năng tự quản của đội ngũ.
 conditions:
-- Interpersonal or inter-departmental disputes.
+- Các tranh chấp giữa cá nhân hoặc giữa các phòng ban.
 exceptions:
-- Harassment or ethical breaches requiring immediate formal HR escalation.
+- Quấy rối hoặc vi phạm đạo đức đòi hỏi phải leo thang tới bộ phận nhân sự ngay lập tức.
 applications:
   management:
-  - Refuse to mediate a peer dispute until both parties have conducted a direct meeting.
+  - Từ chối hòa giải tranh chấp giữa hai bên ngang hàng cho đến khi cả hai đã tổ chức buổi gặp trực tiếp.
 risks:
-- Forcing junior staff to resolve disputes directly with aggressive superiors.
+- Buộc nhân viên cấp thấp phải trực tiếp giải quyết tranh chấp với cấp trên quá khắt khe.
 evidence:
   level: supported
   references:
@@ -33,5 +31,8 @@ tags:
 - conflict
 - resolution
 - escalation
+- self-governance
+- decentralization
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

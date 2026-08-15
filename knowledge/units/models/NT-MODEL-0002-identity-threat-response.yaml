@@ -2,18 +2,55 @@ id: NT-MODEL-0002
 type: model
 status: frozen
 version: 0.1.0
-title: Identity-threat response
-summary: A pattern model for diagnosing when resistance is driven by perceived threat to identity, dignity, status, or belonging.
+title: Phản ứng tự vệ khi bản sắc bị đe dọa
+summary: Mô hình khuôn mẫu giúp chẩn đoán thời điểm sự kháng cự bị thúc đẩy bởi mối đe dọa nhận thức đối với bản sắc, lòng tự trọng, địa vị hoặc cảm giác thuộc về.
 primary_domain: tri-nhan
-secondary_domains: [tu-than, hop-chung]
-definition: Resistance may reflect protection of identity rather than rejection of the request, especially when change implies shame, loss, or exclusion.
-mechanism: [Perceive identity threat, Defend self-image, Narrow interpretation, Resist or conceal.]
-conditions: [Feedback, change, or evaluation touches status, competence, values, or belonging.]
-exceptions: [Resistance may also reflect poor design or genuine disagreement.]
-applications: {coaching: [Diagnose what identity is being protected.], change: [Separate the requested behavior from personal worth.]}
-risks: [Over-psychologizing disagreement, avoiding hard standards.]
-evidence: {level: provisional, references: []}
-relations: {supports: [NT-PRINCIPLE-0047, NT-PRINCIPLE-0048], conflicts_with: [], depends_on: [NT-LAW-0025, NT-LAW-0026], applies_to: []}
-tags: [pattern, identity, threat]
+secondary_domains:
+- tu-than
+- hop-chung
+definition: Sự kháng cự có thể phản ánh nỗ lực bảo vệ bản sắc cá nhân thay vì từ chối yêu cầu, đặc biệt là khi sự thay đổi gợi lên cảm giác xấu hổ, mất mát hoặc bị loại trừ.
+mechanism:
+- Nhận thức mối đe dọa đối với bản sắc
+- Bảo vệ hình ảnh bản thân
+- Thu hẹp phạm vi diễn giải
+- Kháng cự hoặc che giấu.
+conditions:
+- Phản hồi
+- sự thay đổi
+- hoặc đánh giá chạm đến địa vị
+- năng lực
+- giá trị
+- hoặc cảm giác thuộc về.
+exceptions:
+- Sự kháng cự cũng có thể phản ánh thiết kế kém hiệu quả hoặc sự bất đồng quan điểm thực sự.
+applications:
+  coaching:
+  - Chẩn đoán xem khía cạnh bản sắc nào đang được bảo vệ.
+  change:
+  - Tách biệt hành vi được yêu cầu ra khỏi giá trị cá nhân.
+risks:
+- Tâm lý hóa quá mức sự bất đồng
+- tránh né các tiêu chuẩn cứng rắn.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports:
+  - NT-PRINCIPLE-0047
+  - NT-PRINCIPLE-0048
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0025
+  - NT-LAW-0026
+  applies_to: []
+tags:
+- pattern
+- identity
+- threat
+- identity-threat
+- resistance-to-change
+- self-defense
+- psychological-safety
+- status-threat
 created_at: '2026-07-21'
-updated_at: '2026-07-21'
+updated_at: '2026-08-15'

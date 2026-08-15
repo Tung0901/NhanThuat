@@ -2,34 +2,31 @@ id: NT-PRINCIPLE-0021
 type: principle
 status: frozen
 version: 0.1.0
-title: Measure what guides action
-summary: Choose measures that help people decide what to do next, not only measures
-  that describe what already happened.
+title: Đo lường những gì dẫn dắt hành động
+summary: Chọn thước đo giúp con người quyết định làm gì tiếp theo, không chỉ những thước đo mô tả những gì đã xảy ra.
 primary_domain: thanh-su
 secondary_domains:
 - dung-nhan
 - hop-chung
-definition: Useful measures guide attention toward decisions that can still change
-  the outcome.
+definition: Thước đo hữu ích định hướng sự chú ý đến các quyết định vẫn có thể thay đổi kết quả.
 mechanism:
-- Identify decision need
-- Choose leading or diagnostic measure
-- Review it where action is possible.
+- Xác định nhu cầu ra quyết định.
+- Chọn thước đo dẫn dắt hoặc chẩn đoán.
+- Rà soát nó tại nơi có thể hành động.
 conditions:
-- People can act on the measure
-- The measure is trusted enough to influence attention.
+- Con người có thể hành động theo thước đo.
+- Thước đo đủ đáng tin cậy để định hướng sự chú ý.
 exceptions:
-- Lagging measures are still needed for accountability
-- Some work needs qualitative review.
+- Thước đo kết quả vẫn cần thiết cho trách nhiệm giải trình.
+- Một số công việc cần rà soát định tính.
 applications:
   operations:
-  - Track flow blockers before final misses.
+  - Theo dõi các điểm nghẽn luồng trước khi lỡ hạn cuối.
   management:
-  - Use measures to guide coaching
-  - not only scoring.
+  - Dùng thước đo để dẫn dắt kèm cặp, không chỉ chấm điểm.
 risks:
-- Creating vanity metrics
-- Ignoring unmeasured judgment.
+- Tạo ra chỉ số trang trí.
+- Phớt lờ phán đoán không được đo lường.
 evidence:
   level: provisional
   references: []
@@ -43,5 +40,7 @@ tags:
 - measurement
 - action
 - indicators
+- leading-indicators
+- decision-making
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

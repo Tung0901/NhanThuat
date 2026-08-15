@@ -2,23 +2,21 @@ id: NT-PRINCIPLE-0097
 type: principle
 status: frozen
 version: 0.1.0
-title: Define Clear Escalation Triggers
-summary: Specify explicit threshold triggers that mandate escalating a decision to
-  higher authority, leaving routine choices fully autonomous.
+title: Xác định rõ các ngưỡng leo thang
+summary: Quy định các ngưỡng kích hoạt cụ thể buộc phải leo thang một quyết định lên cấp cao hơn, để các lựa chọn thông thường hoàn toàn tự chủ.
 primary_domain: dung-nhan
 secondary_domains:
 - thanh-su
-definition: To prevent bottlenecking, establish explicit financial, risk, or strategic
-  thresholds that require executive escalation.
+definition: Để tránh tắc nghẽn, hãy thiết lập các ngưỡng tài chính, rủi ro hoặc chiến lược rõ ràng yêu cầu leo thang lên cấp điều hành.
 conditions:
-- Delegated financial and operational workflows.
+- Các quy trình tài chính và vận hành đã được ủy quyền.
 exceptions:
-- Unprecedented ethical crises lacking pre-defined thresholds.
+- Các khủng hoảng đạo đức chưa từng có tiền lệ, thiếu ngưỡng xác định trước.
 applications:
   workflow:
-  - Implement automated spending escalation rules in BusinessOS approval chains.
+  - Triển khai quy tắc leo thang chi tiêu tự động trong các chuỗi phê duyệt của BusinessOS.
 risks:
-- Setting escalation thresholds too low, overwhelming executives.
+- Đặt ngưỡng leo thang quá thấp khiến cấp điều hành bị quá tải.
 evidence:
   level: supported
   references:
@@ -33,5 +31,9 @@ tags:
 - authority
 - escalation
 - triggers
+- thresholds
+- delegation
+- workflow
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

@@ -1,33 +1,27 @@
 id: NT-MODEL-3301
 type: model
-title: Social Identity Theory
-summary: A person's sense of who they are is based on their group membership(s), driving
-  ingroup favoritism and intergroup discrimination.
+title: Thuyết bản sắc xã hội
+summary: Cảm nhận của một cá nhân về bản thân dựa trên nhóm mà họ thuộc về, từ đó thúc đẩy sự thiên vị nhóm trong và phân biệt đối xử với nhóm ngoài.
 primary_domain: tri-nhan
 domain_area: NT-DA-0029
-definition: A foundational framework in social psychology explaining how the cognitive
-  process of self-categorization leads to the emotional necessity of elevating one's
-  group over others.
+definition: Khung lý thuyết nền tảng trong tâm lý học xã hội giải thích cách quá trình tự phân loại nhận thức dẫn đến nhu cầu cảm xúc muốn đề cao nhóm của mình hơn các nhóm khác.
 mechanism:
-- 'Categorization: We categorize objects and people to understand them.'
-- 'Social Identification: We adopt the identity of the group we have categorized ourselves
-  as belonging to.'
-- 'Social Comparison: We compare our group with other groups to maintain self-esteem.'
+- 'Phân loại: Chúng ta phân loại các đối tượng và con người để thấu hiểu họ.'
+- 'Định danh xã hội: Chúng ta tiếp nhận bản sắc của nhóm mà mình tự xếp bản thân vào.'
+- 'So sánh xã hội: Chúng ta so sánh nhóm của mình với các nhóm khác nhằm duy trì lòng tự trọng.'
 conditions:
-- Any environment containing multiple distinct sub-groups (e.g., Engineering vs Sales).
+- 'Bất kỳ môi trường nào tồn tại nhiều phân nhóm riêng biệt (ví dụ: Đội ngũ Kỹ thuật vs Đội ngũ Kinh doanh).'
 exceptions:
-- Individuals with extremely high trait individualism who resist all group categorization.
+- Những cá nhân có tính chủ nghĩa cá nhân cực kỳ cao và kháng cự mọi sự phân loại nhóm.
 applications:
   organizational_design:
-  - Rotate employees through different departments to broaden their social identity
-    to the entire company, reducing inter-departmental conflict.
+  - Luân chuyển nhân viên qua các phòng ban khác nhau nhằm mở rộng bản sắc xã hội của họ gắn liền với toàn bộ công ty, giúp giảm thiểu xung đột giữa các phòng ban.
 risks:
-- Creating 'us vs them' dynamics that spiral into toxic tribalism.
+- Tạo ra tâm lý 'chúng ta đối đầu với họ' dẫn đến chủ nghĩa bè phái độc hại.
 evidence:
   level: strong
   references:
-  - Tajfel, H., & Turner, J. C. (1979). 'An integrative theory of intergroup conflict'.
-    The social psychology of intergroup relations.
+  - Tajfel, H., & Turner, J. C. (1979). 'An integrative theory of intergroup conflict'. The social psychology of intergroup relations.
 relations:
   supports: []
   conflicts_with: []
@@ -36,7 +30,12 @@ relations:
 tags:
 - identity
 - groups
+- social-identity-theory
+- ingroup-favoritism
+- intergroup-conflict
+- social-categorization
+- team-dynamics
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

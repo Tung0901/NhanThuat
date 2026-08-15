@@ -2,18 +2,50 @@ id: NT-ANTI-PATTERN-0001
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Truth under threat
-summary: A harmful pattern where people are asked for honesty while the environment punishes exposure, doubt, or bad news.
+title: Sự thật bị đe dọa
+summary: Một mô hình độc hại trong đó nhân sự được yêu cầu trung thực, nhưng môi trường tổ chức lại trừng phạt sự bộc bạch, thái độ nghi vấn hoặc tin tức bất lợi.
 primary_domain: tri-nhan
-secondary_domains: [hop-chung, dung-nhan]
-definition: Truth-seeking fails when the social or organizational context makes truth feel unsafe to speak.
-mechanism: [Ask for truth, Signal punishment, People conceal, Leaders misread silence.]
-conditions: [Power imbalance exists, bad news is costly, prior candor was punished.]
-exceptions: [Formal investigations may require constrained disclosure, some risks require protected channels.]
-applications: {review: [Audit whether bad news has been punished.], leadership: [Create protected channels before demanding candor.]}
-risks: [Rewarding irresponsibility, confusing anonymous complaint with verified truth.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0025], applies_to: []}
-tags: [anti-pattern, truth, threat]
+secondary_domains:
+- hop-chung
+- dung-nhan
+definition: Nỗ lực tìm kiếm sự thật sẽ thất bại khi bối cảnh xã hội hoặc tổ chức khiến con người cảm thấy không an toàn khi nói ra sự thật.
+mechanism:
+- Kêu gọi sự trung thực
+- Phát đi tín hiệu sẽ trừng phạt
+- Nhân sự bắt đầu che giấu
+- Lãnh đạo hiểu sai về sự im lặng
+conditions:
+- Tồn tại sự mất cân bằng quyền lực
+- Tin tức bất lợi mang lại hậu quả đắt giá
+- Sự thẳng thắn trong quá khứ từng bị trừng phạt
+exceptions:
+- Các cuộc điều tra chính thức có thể yêu cầu tiết lộ thông tin có kiểm soát
+- Một số rủi ro nhất định đòi hỏi các kênh báo cáo được bảo vệ
+applications:
+  review:
+  - Kiểm toán xem liệu các tin tức bất lợi trước đây có từng bị trừng phạt hay không.
+  leadership:
+  - Xây dựng các kênh bảo mật thông tin trước khi yêu cầu sự thẳng thắn.
+risks:
+- Vô tình dung túng cho hành vi thiếu trách nhiệm
+- Đánh đồng tin khiếu nại ẩn danh với sự thật đã được kiểm chứng
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0025
+  applies_to: []
+tags:
+- anti-pattern
+- truth
+- threat
+- truth-under-threat
+- psychological-safety
+- candor
+- fear-culture
+- speaking-truth-to-power
 created_at: '2026-07-21'
-updated_at: '2026-07-21'
+updated_at: '2026-08-15'

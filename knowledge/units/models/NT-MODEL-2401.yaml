@@ -2,26 +2,25 @@ id: NT-MODEL-2401
 type: model
 status: frozen
 version: 1.0.0
-title: The Adaptive Cycle
-summary: Tăng trưởng, Bảo tồn, Sụp đổ, Tái cấu trúc.
+title: Chu kỳ Thích ứng
+summary: 'Mô hình bốn giai đoạn mô tả sự biến chuyển của hệ sinh thái và tổ chức: Khai thác, Bảo tồn, Giải phóng và Tái tổ chức.'
 primary_domain: hop-chung
 domain_area: NT-DA-0024
 secondary_domains:
 - thanh-su
-definition: Sự sụp đổ là sự giải phóng nguồn lực bị kẹt, dọn đường cho tái cấu trúc
-  và thích ứng mới.
+definition: Chu kỳ Thích ứng xem sự sụp đổ là quá trình giải phóng các nguồn lực bị tắc nghẽn, tạo tiền đề cho hoạt động tái cấu trúc và đổi mới thích nghi của tổ chức.
 mechanism:
-- Nhận thức tổ chức ở giai đoạn nào.
-- Khuyến khích sự sụp đổ nhỏ.
+- Định vị chính xác tổ chức đang nằm ở giai đoạn nào trong chu kỳ thích ứng.
+- Chủ động kích hoạt những biến động hoặc sụp đổ nhỏ có kiểm soát để tái phân bổ nguồn lực.
 conditions:
-- Chiến lược dài hạn.
+- Hoạch định chiến lược chuyển đổi dài hạn và phát triển năng lực kiên cường của tổ chức.
 exceptions:
-- Tổ chức trong thị trường hoàn toàn ổn định.
+- Các mô hình hoạt động trong môi trường độc quyền hoặc ổn định tuyệt đối không chịu áp lực thay đổi.
 applications:
   management:
-  - Quản trị sự thay đổi
+  - Quản trị sự thay đổi và thúc đẩy đổi mới sáng tạo mang tính chu kỳ trong tổ chức
 risks:
-- Sụp đổ quá mạnh không thể hồi phục
+- Để giai đoạn sụp đổ vượt khỏi tầm kiểm soát dẫn đến tổn thất nghiêm trọng không thể phục hồi
 evidence:
   level: supported
   references: []
@@ -33,5 +32,10 @@ relations:
 tags:
 - framework
 - life-cycle
+- adaptive-cycle
+- panarchy
+- organizational-resilience
+- change-management
+- systems-thinking
 created_at: '2026-08-12'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

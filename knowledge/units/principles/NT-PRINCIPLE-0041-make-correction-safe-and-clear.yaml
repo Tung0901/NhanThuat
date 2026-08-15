@@ -2,33 +2,31 @@ id: NT-PRINCIPLE-0041
 type: principle
 status: frozen
 version: 0.1.0
-title: Make correction safe and clear
-summary: State corrections in a way that protects dignity while leaving no ambiguity
-  about the standard or next action.
+title: Làm cho việc sửa chữa an toàn và rõ ràng
+summary: Nêu việc sửa chữa theo cách bảo vệ phẩm giá đồng thời không để mơ hồ về chuẩn mực hoặc hành động tiếp theo.
 primary_domain: dung-nhan
 secondary_domains:
 - tri-nhan
 - thanh-su
-definition: Learning requires correction that is safe enough to hear and clear enough
-  to act on.
+definition: Học hỏi cần việc sửa chữa đủ an toàn để nghe và đủ rõ ràng để hành động.
 mechanism:
-- Name the observed gap
-- Preserve dignity
-- State the expected standard and next step.
+- Gọi tên khoảng cách quan sát được
+- Giữ gìn phẩm giá
+- Nêu chuẩn mực kỳ vọng và bước tiếp theo.
 conditions:
-- A standard was missed
-- Continued learning matters.
+- Một chuẩn mực bị bỏ lỡ
+- Việc tiếp tục học hỏi có ý nghĩa.
 exceptions:
-- Serious misconduct may require formal accountability
-- Excessive softness can hide the standard.
+- Hành vi sai trái nghiêm trọng có thể cần trách nhiệm giải trình chính thức
+- Sự mềm mỏng quá mức có thể che giấu chuẩn mực.
 applications:
   coaching:
-  - Separate the person from the correction while making the correction concrete.
+  - Tách con người khỏi việc sửa chữa đồng thời làm cho việc sửa chữa cụ thể.
   leadership:
-  - Build a culture where issues can be named early.
+  - Xây dựng văn hóa nơi vấn đề có thể được nêu sớm.
 risks:
-- Vagueness
-- Avoiding consequences when they are necessary.
+- Mơ hồ
+- Tránh né hậu quả khi chúng cần thiết.
 evidence:
   level: provisional
   references: []
@@ -42,5 +40,7 @@ tags:
 - correction
 - learning
 - dignity
+- feedback
+- coaching
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

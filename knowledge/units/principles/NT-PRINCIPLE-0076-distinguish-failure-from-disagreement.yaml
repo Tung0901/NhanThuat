@@ -2,22 +2,21 @@ id: NT-PRINCIPLE-0076
 type: principle
 status: frozen
 version: 0.1.0
-title: Distinguish Failure from Disagreement
-summary: Distinguish Failure from Disagreement structural knowledge unit.
+title: Phân biệt thất bại với bất đồng
+summary: Phân biệt thất bại với bất đồng là một đơn vị tri thức cấu trúc trong kho tri thức Nhân Thuật.
 primary_domain: tri-nhan
 secondary_domains:
 - hop-chung
-definition: Formal definition of Distinguish Failure from Disagreement in NhanThuat
-  architecture.
+definition: Định nghĩa chính thức của Nguyên tắc Phân biệt thất bại với bất đồng trong kiến trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Các bối cảnh quản trị vận hành.
 exceptions:
-- Emergency crisis overrides.
+- Các tình huống khẩn cấp yêu cầu vượt quyền ưu tiên.
 applications:
   governance:
-  - Apply Distinguish Failure from Disagreement to organizational workflows.
+  - Áp dụng Nguyên tắc Phân biệt thất bại với bất đồng vào các quy trình vận hành của tổ chức.
 risks:
-- Misapplication of Distinguish Failure from Disagreement leading to suboptimal performance.
+- Áp dụng sai Nguyên tắc Phân biệt thất bại với bất đồng dẫn đến hiệu suất dưới mức tối ưu.
 evidence:
   level: supported
   references:
@@ -31,5 +30,10 @@ relations:
 tags:
 - principle
 - tri-nhan
+- failure-analysis
+- disagreement
+- error-blame
+- evaluation
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

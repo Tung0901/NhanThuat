@@ -2,28 +2,26 @@ id: NT-ANTI-PATTERN-0044
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Micromanagement Trap
-summary: Retaining micro-approval control over delegated tasks, destroying speed,
-  trust, and employee initiative.
+title: Bẫy quản lý vi mô
+summary: Duy trì quyền kiểm soát phê duyệt vi mô đối với các công việc đã ủy quyền, làm triệt tiêu tốc độ, lòng tin và sự chủ động của nhân viên.
 primary_domain: dung-nhan
 secondary_domains:
 - tri-nhan
-definition: The micromanagement trap occurs when a manager officially delegates a
-  role but continuously demands low-level sign-offs.
+definition: Bẫy quản lý vi mô xảy ra khi cấp quản lý giao việc trên danh nghĩa nhưng lại liên tục yêu cầu phê duyệt từng chi tiết nhỏ.
 mechanism:
-- Manager delegates task.
-- Manager demands micro-approvals.
-- Employee stops exercising judgment.
-- Speed collapses.
+- Cấp quản lý giao việc.
+- Cấp quản lý yêu cầu phê duyệt từng chi tiết nhỏ.
+- Nhân viên ngừng đưa ra phán đoán độc lập.
+- Tốc độ thực thi sụt giảm nghiêm trọng.
 conditions:
-- Insecure managers operating under high pressure.
+- Các quản lý thiếu tự tin làm việc trong môi trường áp lực cao.
 exceptions:
-- Training novices during initial onboarding.
+- Đào tạo nhân sự mới trong giai đoạn hòa nhập ban đầu.
 applications:
   coaching:
-  - Flag managers who hold high micro-approval rates.
+  - Cảnh báo những quản lý có tỷ lệ yêu cầu phê duyệt vi mô quá cao.
 risks:
-- Confusing necessary quality checks with micromanagement.
+- Nhầm lẫn giữa kiểm tra chất lượng cần thiết và quản lý vi mô.
 evidence:
   level: supported
   references:
@@ -39,5 +37,9 @@ tags:
 - authority
 - micromanagement
 - anti-patterns
+- delegation-failure
+- trust-issues
+- control-freak
+- employee-autonomy
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'

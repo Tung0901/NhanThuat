@@ -1,31 +1,27 @@
 id: NT-PHENOMENON-3104
 type: phenomenon
-title: Framing Effect
-summary: Drawing different conclusions from the same exact information depending on
-  how it is presented.
+title: Hiệu ứng đóng khung
+summary: Rút ra những kết luận khác nhau từ cùng một thông tin, tùy thuộc vào cách thông tin đó được trình bày.
 primary_domain: tri-nhan
 domain_area: NT-DA-0027
-definition: A cognitive bias where choices are heavily influenced by whether options
-  are presented with positive or negative connotations (e.g., '90% survival' vs '10%
-  mortality').
+definition: 'Một thiên kiến nhận thức, trong đó các lựa chọn bị ảnh hưởng mạnh bởi việc các phương án được trình bày với hàm ý tích cực hay tiêu cực (ví dụ: ''sống sót 90%'' so với ''tử vong 10%'').'
 mechanism:
-- Information is received with a specific semantic frame.
-- The frame shifts the subjective reference point.
-- Decisions reverse depending on whether the frame induces a gain or loss perspective.
+- Thông tin được tiếp nhận với một khung ngữ nghĩa cụ thể.
+- Khung đó dịch chuyển điểm tham chiếu chủ quan.
+- Các quyết định bị đảo ngược tùy thuộc vào việc khung mang lại góc nhìn thắng hay mất.
 conditions:
-- Complex or statistical information presented to non-experts.
+- Thông tin phức tạp hoặc thống kê được trình bày cho những người không chuyên.
 exceptions:
-- When audiences possess strong, pre-existing explicit mental models of the subject.
+- Khi khán giả có sẵn các mô hình nhận thức tường minh vững chắc về chủ đề.
 applications:
   communication:
-  - Frame feedback positively to encourage risk-taking, or negatively to enforce compliance.
+  - Đóng khung phản hồi theo hướng tích cực để khuyến khích chấp nhận rủi ro, hoặc tiêu cực để thúc ép sự tuân thủ.
 risks:
-- Unintentional manipulation of stakeholders through biased reporting.
+- Thao túng không chủ ý các bên liên quan thông qua báo cáo thiên lệch.
 evidence:
   level: strong
   references:
-  - Tversky, A., & Kahneman, D. (1981). 'The framing of decisions and the psychology
-    of choice'. Science.
+  - Tversky, A., & Kahneman, D. (1981). 'The framing of decisions and the psychology of choice'. Science.
 relations:
   supports: []
   conflicts_with: []
@@ -34,7 +30,9 @@ relations:
 tags:
 - framing
 - communication
+- framing-effect
+- presentation-bias
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

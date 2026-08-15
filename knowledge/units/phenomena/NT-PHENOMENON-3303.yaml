@@ -1,35 +1,27 @@
 id: NT-PHENOMENON-3303
 type: phenomenon
-title: Halo Effect
-summary: The tendency for positive impressions of a person, company, brand or product
-  in one area to positively influence one's opinion or feelings in other areas.
+title: Hiệu ứng hào quang
+summary: Xu hướng những ấn tượng tích cực về một người, công ty, thương hiệu hoặc sản phẩm ở một lĩnh vực ảnh hưởng tích cực đến ý kiến hoặc cảm xúc của ta ở các lĩnh vực khác.
 primary_domain: tri-nhan
 domain_area: NT-DA-0029
-definition: A cognitive bias where a single positive trait (e.g., physical attractiveness,
-  charisma, or past success) creates a generalized positive aura that biases the evaluation
-  of unrelated traits (e.g., intelligence, competence).
+definition: 'Một thiên kiến nhận thức trong đó một đặc điểm tích cực đơn lẻ (ví dụ: ngoại hình ưa nhìn, sức hút cá nhân hoặc thành công trong quá khứ) tạo ra một luồng hào quang tích cực bao trùm, làm sai lệch việc đánh giá các đặc điểm không liên quan (ví dụ: trí thông minh, năng lực).'
 mechanism:
-- An individual exhibits an outstanding positive trait.
-- The observer forms a strong positive affective response.
-- This affective response bleeds into all subsequent evaluations of the individual,
-  overriding objective data.
+- Một cá nhân thể hiện một đặc điểm tích cực nổi bật.
+- Người quan sát hình thành một phản ứng cảm xúc tích cực mạnh mẽ.
+- Phản ứng cảm xúc này lan sang mọi đánh giá sau đó về cá nhân, lấn át các dữ liệu khách quan.
 conditions:
-- Subjective evaluations, especially in hiring, performance reviews, or political
-  elections.
+- Các đánh giá chủ quan, đặc biệt trong tuyển dụng, đánh giá hiệu suất hoặc bầu cử chính trị.
 exceptions:
-- When evaluation criteria are strictly quantified and anonymized (e.g., blind coding
-  tests).
+- 'Khi các tiêu chí đánh giá được định lượng chặt chẽ và ẩn danh (ví dụ: bài kiểm tra mã nguồn mù).'
 applications:
   leadership:
-  - Building early credibility through a quick, visible win to secure trust for future,
-    harder initiatives.
+  - Xây dựng uy tín ban đầu thông qua một chiến thắng nhanh, dễ thấy để giành được niềm tin cho những sáng kiến khó khăn hơn về sau.
 risks:
-- Promoting a charismatic but incompetent employee to leadership (The Peter Principle).
+- Thăng chức một nhân viên lôi cuốn nhưng kém năng lực lên vị trí lãnh đạo (Nguyên tắc Peter).
 evidence:
   level: strong
   references:
-  - Thorndike, E. L. (1920). 'A constant error in psychological ratings'. Journal
-    of Applied Psychology.
+  - Thorndike, E. L. (1920). 'A constant error in psychological ratings'. Journal of Applied Psychology.
 relations:
   supports: []
   conflicts_with: []
@@ -38,7 +30,11 @@ relations:
 tags:
 - bias
 - perception
+- halo-effect
+- cognitive-bias
+- first-impression
+- evaluation-bias
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

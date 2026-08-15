@@ -2,25 +2,21 @@ id: NT-LAW-0061
 type: law
 status: frozen
 version: 0.1.0
-title: Extrinsic Motivation Crowding
-summary: Introducing financial rewards for intrinsically motivated complex work reduces
-  internal commitment and creative quality.
+title: Sự lấn át động lực nội tại
+summary: Việc áp dụng các phần thưởng tài chính cho những công việc phức tạp vốn có động lực nội tại sẽ làm giảm cam kết bên trong và chất lượng sáng tạo.
 primary_domain: tu-than
 secondary_domains:
 - tri-nhan
-definition: 'Over-justification effect: attaching transactional monetary bonuses replaces
-  internal motivation with external economic calculation.'
+definition: 'Hiệu ứng biện minh quá mức (Over-justification effect): việc gắn các khoản tiền thưởng mang tính giao dịch sẽ thay thế động lực nội tại bằng sự tính toán kinh tế bên ngoài.'
 conditions:
-- Tasks requiring creative problem solving, discretionary effort, or ethical judgment.
+- Các công việc đòi hỏi giải quyết vấn đề sáng tạo, nỗ lực tự nguyện hoặc đánh giá đạo đức.
 exceptions:
-- Routine, repetitive manual labor lacking intrinsic appeal.
+- Các công việc chân tay lặp đi lặp lại, mang tính rập khuôn và thiếu đi sức hút nội tại.
 applications:
   compensation_design:
-  - Use generous baseline salary instead of hyper-fractional commission for R&D engineering
-    teams.
+  - Sử dụng mức lương cơ bản hậu hĩnh thay vì cơ chế hoa hồng chia nhỏ cho các đội ngũ kỹ sư nghiên cứu và phát triển (R&D).
 risks:
-- Destroying intrinsic teamwork and psychological safety with hyper-competitive bonus
-  structures.
+- Phá hủy tinh thần làm việc nhóm tự nguyện và sự an toàn tâm lý bằng các cấu trúc tiền thưởng cạnh tranh cực đoan.
 evidence:
   level: supported
   references:
@@ -35,5 +31,11 @@ tags:
 - incentives
 - motivation
 - crowding-out
+- crowding-out-effect
+- intrinsic-motivation
+- extrinsic-rewards
+- overjustification-effect
+- compensation-design
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

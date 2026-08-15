@@ -2,22 +2,21 @@ id: NT-PRINCIPLE-0091
 type: principle
 status: frozen
 version: 0.1.0
-title: Audit Extrinsic Payoffs Regularly
-summary: Continuously inspect incentive programs for unexpected behavioral gaming,
-  unintended consequences, and metric drift.
+title: Kiểm toán định kỳ các khoản khuyến khích ngoại sinh
+summary: Liên tục rà soát các chương trình khuyến khích nhằm phát hiện các hành vi lách luật bất ngờ, hệ quả ngoài ý muốn và sự trôi dạt của chỉ số.
 primary_domain: tu-than
 secondary_domains:
 - tri-nhan
-definition: Incentive systems inevitably generate unexpected edge-case behaviors.
+definition: Hệ thống khuyến khích chắc chắn sẽ tạo ra những hành vi ở vùng biên mà ta không lường trước được.
 conditions:
-- Active management of compensation formulas and sales commissions.
+- Quản lý tích cực các công thức tính lương thưởng và hoa hồng bán hàng.
 exceptions:
-- Static long-term equity vesting schedules fixed by legal agreement.
+- Lịch trình trao quyền cổ phần dài hạn cố định theo thỏa thuận pháp lý.
 applications:
   governance:
-  - Conduct quarterly incentive audits analyzing unintended gaming behaviors.
+  - Tiến hành kiểm toán khuyến khích theo quý nhằm phân tích các hành vi lách luật ngoài ý muốn.
 risks:
-- Changing incentive rules too frequently, causing uncertainty among staff.
+- Thay đổi quy tắc khuyến khích quá thường xuyên gây bất ổn cho nhân viên.
 evidence:
   level: supported
   references:
@@ -32,5 +31,9 @@ tags:
 - incentives
 - governance
 - audit
+- compensation
+- metric-drift
+- behavioral-gaming
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

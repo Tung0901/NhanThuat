@@ -1,34 +1,27 @@
 id: NT-PRINCIPLE-3101
 type: principle
-title: Choice Architecture Design
-summary: Actively structure the environment in which decisions are made to guide behavior
-  toward optimal outcomes without restricting freedom of choice.
+title: Thiết kế kiến trúc lựa chọn
+summary: Chủ động cấu trúc môi trường nơi diễn ra các quyết định nhằm dẫn dắt hành vi hướng tới kết quả tối ưu mà không hạn chế quyền tự do lựa chọn.
 primary_domain: tri-nhan
 domain_area: NT-DA-0027
-definition: The deliberate design of different ways choices can be presented to decision-makers,
-  recognizing that there is no neutral architecture.
+definition: Việc thiết kế có chủ đích các cách trình bày lựa chọn khác nhau cho người ra quyết định, thừa nhận rằng không tồn tại kiến trúc trung lập.
 mechanism:
-- Identify the desired behavioral outcome.
-- Map the cognitive biases affecting the current decision.
-- Redesign the physical, digital, or procedural environment to make the desired choice
-  the path of least resistance.
+- Xác định kết quả hành vi mong muốn.
+- Lập bản đồ các thiên kiến nhận thức đang ảnh hưởng đến quyết định hiện tại.
+- Thiết kế lại môi trường vật lý, kỹ thuật số hoặc quy trình để lựa chọn mong muốn trở thành con đường ít trở ngại nhất.
 conditions:
-- When users are prone to cognitive overload, present bias, or status quo bias.
+- Khi người dùng dễ gặp quá tải nhận thức, thiên kiến hiện tại hoặc thiên kiến hiện trạng.
 exceptions:
-- When enforcing hard constraints or security policies is strictly required (do not
-  use nudges for compliance).
+- Khi việc áp đặt các ràng buộc cứng hoặc chính sách bảo mật là bắt buộc nghiêm ngặt (không dùng cú huých cho mục đích tuân thủ).
 applications:
   system_design:
-  - Organize complex menus so that the most heavily utilized or safest features are
-    visually prominent.
+  - Sắp xếp các menu phức tạp sao cho các tính năng được sử dụng nhiều nhất hoặc an toàn nhất nổi bật về mặt thị giác.
 risks:
-- '''Sludge'' — using choice architecture to intentionally mislead or extract value
-  from users (dark patterns).'
+- '"Bùn lầy" — sử dụng kiến trúc lựa chọn để cố ý gây hiểu lầm hoặc khai thác giá trị từ người dùng (các mẫu thiết kế đen tối).'
 evidence:
   level: strong
   references:
-  - 'Thaler, R. H., & Sunstein, C. R. (2008). ''Nudge: Improving Decisions about Health,
-    Wealth, and Happiness''. Yale University Press.'
+  - 'Thaler, R. H., & Sunstein, C. R. (2008). ''Nudge: Improving Decisions about Health, Wealth, and Happiness''. Yale University Press.'
 relations:
   supports: []
   conflicts_with: []
@@ -38,7 +31,11 @@ tags:
 - architecture
 - nudge
 - design
+- choice-architecture
+- defaults
+- decision
+- behavior
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

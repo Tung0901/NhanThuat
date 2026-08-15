@@ -2,33 +2,31 @@ id: NT-PRINCIPLE-0005
 type: principle
 status: frozen
 version: 0.1.0
-title: Change the frame before the argument
-summary: When people interpret the same facts differently, clarify or redesign the
-  decision frame before increasing persuasion pressure.
+title: Thay đổi khung diễn giải trước khi tranh luận
+summary: Khi mọi người diễn giải cùng một sự kiện theo cách khác nhau, hãy làm rõ hoặc thiết kế lại khung ra quyết định trước khi gia tăng áp lực thuyết phục.
 primary_domain: tri-nhan
 secondary_domains:
 - hop-chung
 - thanh-su
-definition: Reframing can change what people notice and value, making argument more
-  useful only after the situation is interpreted more clearly.
+definition: Đóng khung lại có thể thay đổi những gì con người chú ý và coi trọng, khiến việc tranh luận chỉ trở nên hữu ích sau khi tình huống được diễn giải rõ ràng hơn.
 mechanism:
-- Surface the current frame
-- Test what it emphasizes
-- Offer a better frame for the decision.
+- Phơi bày khung diễn giải hiện tại.
+- Kiểm tra xem nó nhấn mạnh điều gì.
+- Đưa ra một khung diễn giải tốt hơn cho quyết định.
 conditions:
-- Disagreement reflects interpretation
-- The parties can reconsider assumptions.
+- Bất đồng phản ánh sự khác biệt trong diễn giải.
+- Các bên có thể xem xét lại các giả định.
 exceptions:
-- Bad faith may ignore reframing
-- Time pressure may require a direct decision.
+- Ý định xấu có thể phớt lờ việc đóng khung lại.
+- Áp lực thời gian có thể đòi hỏi quyết định trực tiếp.
 applications:
   negotiation:
-  - Name the shared problem before debating options.
+  - Nêu rõ vấn đề chung trước khi tranh luận về các phương án.
   strategy:
-  - Reframe tradeoffs around the real objective.
+  - Đóng khung lại các đánh đổi xoay quanh mục tiêu thực sự.
 risks:
-- Manipulating perception
-- Avoiding hard facts.
+- Thao túng nhận thức.
+- Tránh né các sự thật khó.
 evidence:
   level: provisional
   references: []
@@ -42,5 +40,7 @@ tags:
 - framing
 - persuasion
 - interpretation
+- reframing
+- decision-frame
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

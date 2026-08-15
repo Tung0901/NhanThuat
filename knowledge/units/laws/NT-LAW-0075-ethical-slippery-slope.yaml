@@ -2,24 +2,21 @@ id: NT-LAW-0075
 type: law
 status: frozen
 version: 0.1.0
-title: Ethical Slippery Slope
-summary: Uncorrected minor ethical compromises lower cognitive resistance to major
-  fraud and systemic malfeasance over time.
+title: Hiệu ứng dốc trượt đạo đức
+summary: Những thỏa hiệp đạo đức nhỏ không được chấn chỉnh kịp thời sẽ làm giảm khả năng kháng cự nhận thức đối với các hành vi gian lận lớn và sai phạm mang tính hệ thống theo thời gian.
 primary_domain: tu-than
 secondary_domains:
 - tri-nhan
-definition: 'Incremental rationalization: small ethical shortcuts desensitize actors
-  to moral boundaries.'
+definition: 'Sự hợp lý hóa tăng dần: những lối tắt đạo đức nhỏ làm giảm sự nhạy cảm của các tác nhân đối với các ranh giới đạo đức.'
 conditions:
-- Accounting, sales reporting, and compliance.
+- Kế toán, báo cáo doanh số và tuân thủ.
 exceptions:
-- None.
+- Không có.
 applications:
   compliance_audit:
-  - Intervene aggressively on minor ethical compromises to prevent escalation.
+  - Can thiệp quyết liệt vào các thỏa hiệp đạo đức nhỏ để ngăn chặn sự leo thang.
 risks:
-- Creating a hyper-punitive culture that turns tiny honest mistakes into career-ending
-  events.
+- Tạo ra một văn hóa trừng phạt quá mức, biến những sai sót nhỏ vô ý thành những sự kiện chấm dứt sự nghiệp.
 evidence:
   level: supported
   references:
@@ -34,5 +31,10 @@ tags:
 - ethics
 - rationalization
 - compliance
+- ethical-slippery-slope
+- moral-compromise
+- incremental-rationalization
+- organizational-ethics
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

@@ -2,21 +2,21 @@ id: NT-LAW-0048
 type: law
 status: frozen
 version: 0.1.0
-title: Decision Quality Independence
-summary: Decision Quality Independence structural knowledge unit.
+title: Tính độc lập của chất lượng quyết định
+summary: Đơn vị tri thức cấu trúc về Tính độc lập của chất lượng quyết định.
 primary_domain: tri-nhan
 secondary_domains:
 - dung-nhan
-definition: Formal definition of Decision Quality Independence in NhanThuat architecture.
+definition: Định nghĩa chính thức về Tính độc lập của chất lượng quyết định trong kiến trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Bối cảnh quản trị vận hành.
 exceptions:
-- Emergency crisis overrides.
+- Các can thiệp ghi đè trong tình huống khủng hoảng khẩn cấp.
 applications:
   governance:
-  - Apply Decision Quality Independence to organizational workflows.
+  - Áp dụng Tính độc lập của chất lượng quyết định vào các quy trình làm việc của tổ chức.
 risks:
-- Misapplication of Decision Quality Independence leading to suboptimal performance.
+- Áp dụng sai Tính độc lập của chất lượng quyết định dẫn đến hiệu suất dưới mức tối ưu.
 evidence:
   level: supported
   references:
@@ -30,5 +30,10 @@ relations:
 tags:
 - law
 - tri-nhan
+- decision-quality-independence
+- decision-making
+- governance-framework
+- operational-governance
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

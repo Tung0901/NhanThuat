@@ -2,18 +2,44 @@ id: NT-PRINCIPLE-0049
 type: principle
 status: frozen
 version: 0.1.0
-title: Design for human load
-summary: Design roles, meetings, rules, and decisions around realistic human attention, energy, and emotional capacity.
+title: Thiết kế theo tải trọng con người
+summary: Thiết kế vai trò, cuộc họp, quy tắc và quyết định dựa trên năng lực chú ý, năng lượng và cảm xúc thực tế của con người.
 primary_domain: tri-nhan
-secondary_domains: [thanh-su, tu-than]
-definition: Systems that ignore load create predictable failures in judgment, patience, follow-through, and learning.
-mechanism: [Estimate load, Remove unnecessary demand, Add recovery and defaults.]
-conditions: [People must sustain judgment or coordination over time.]
-exceptions: [Short-term crisis can require temporary stretch, too much simplification can reduce growth.]
-applications: {operations: [Limit work-in-progress and decision switching.], management: [Protect high-judgment work from avoidable load.]}
-risks: [Underchallenging people, Excusing poor discipline.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0027], applies_to: []}
-tags: [load, design, capacity]
+secondary_domains:
+- thanh-su
+- tu-than
+definition: Hệ thống bỏ qua tải trọng tạo ra thất bại có thể dự đoán trong phán đoán, kiên nhẫn, theo đuổi đến cùng và học hỏi.
+mechanism:
+- Ước lượng tải trọng
+- Loại bỏ nhu cầu không cần thiết
+- Bổ sung phục hồi và mặc định.
+conditions:
+- Con người phải duy trì phán đoán hoặc phối hợp theo thời gian.
+exceptions:
+- Khủng hoảng ngắn hạn có thể cần vượt sức tạm thời
+- quá đơn giản hóa có thể làm giảm sự phát triển.
+applications:
+  operations:
+  - Giới hạn công việc đang tiến hành và việc chuyển đổi quyết định.
+  management:
+  - Bảo vệ công việc đòi hỏi phán đoán cao khỏi tải trọng có thể tránh.
+risks:
+- Thử thách con người dưới mức
+- bào chữa cho kỷ luật kém.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0027
+  applies_to: []
+tags:
+- load
+- design
+- capacity
+- cognitive-load
+- attention
 created_at: '2026-07-21'
-updated_at: '2026-07-21'
+updated_at: '2026-08-15'

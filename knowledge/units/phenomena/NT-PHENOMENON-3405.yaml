@@ -1,28 +1,23 @@
 id: NT-PHENOMENON-3405
 type: phenomenon
-title: Unity Principle
-summary: We are heavily influenced by people who share a fundamental identity with
-  us—the 'We' connection.
+title: Nguyên tắc đồng nhất
+summary: Chúng ta bị ảnh hưởng mạnh mẽ bởi những người chia sẻ bản sắc nền tảng với mình—mối liên kết 'Chúng ta'.
 primary_domain: tri-nhan
 domain_area: NT-DA-0030
-definition: The 7th principle of influence, distinct from 'Liking', representing a
-  shared identity (kinship, nationality, deep organizational culture) that merges
-  the self with the other.
+definition: Nguyên tắc ảnh hưởng thứ 7, khác biệt với 'Thiện cảm', đại diện cho một bản sắc chung (huyết thống, quốc tịch, văn hóa tổ chức sâu sắc) làm hòa trộn bản thân với người khác.
 mechanism:
-- A shared, immutable or deep-seated identity is invoked.
-- The boundary between 'self' and 'other' blurs.
-- The target acts in the interest of the persuader as if they were acting in their
-  own self-interest.
+- Một bản sắc chung, không thể thay đổi hoặc ăn sâu được khơi gợi.
+- Ranh giới giữa 'bản thân' và 'người khác' bị xóa nhòa.
+- Đối tượng hành động vì lợi ích của người thuyết phục như thể họ đang hành động vì lợi ích của chính mình.
 conditions:
-- When appealing to family, deep tribal affiliations, or shared existential struggles.
+- Khi kêu gọi đến gia đình, các liên kết bộ tộc sâu sắc, hoặc những cuộc đấu tranh sinh tồn chung.
 exceptions:
-- Superficial similarities (which trigger Liking, but not Unity).
+- Những điểm tương đồng bề nổi (chúng chỉ kích hoạt Thiện cảm, chứ không phải Đồng nhất).
 applications:
   marketing:
-  - Invoking a shared identity ('As fellow engineers, we know...') bypasses standard
-    defensive skepticism.
+  - Khơi gợi một bản sắc chung ('Là những kỹ sư đồng nghiệp, chúng ta biết rằng...') vượt qua thái độ hoài nghi phòng vệ thông thường.
 risks:
-- Can be weaponized to create dangerous cult-like compliance.
+- Có thể bị lợi dụng để tạo ra sự phục tùng nguy hiểm mang tính giáo phái.
 evidence:
   level: strong
   references:
@@ -36,7 +31,10 @@ relations:
 tags:
 - unity
 - identity
+- influence
+- kinship
+- pre-suasion
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

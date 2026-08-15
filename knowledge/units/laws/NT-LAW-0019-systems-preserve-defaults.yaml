@@ -2,34 +2,32 @@ id: NT-LAW-0019
 type: law
 status: frozen
 version: 0.1.0
-title: Systems preserve defaults
-summary: A system tends to reproduce its default rules, incentives, habits, and constraints
-  until an intervention changes them.
+title: Hệ thống bảo toàn các thiết lập mặc định
+summary: Một hệ thống có xu hướng tái tạo các quy tắc, động lực, thói quen và rào cản mặc định của nó cho đến khi có một sự can thiệp làm thay đổi chúng.
 primary_domain: thanh-su
 secondary_domains:
 - hop-chung
 - dung-nhan
-definition: Repeated outcomes usually persist because underlying defaults keep guiding
-  behavior even after people request different results.
+definition: Các kết quả lặp đi lặp lại thường tồn tại dai dẳng vì các thiết lập mặc định cốt lõi vẫn tiếp tục định hướng hành vi ngay cả khi mọi người yêu cầu kết quả khác đi.
 mechanism:
-- Default rules shape behavior
-- Behavior reproduces outcomes
-- Outcomes persist until defaults change.
+- Các quy tắc mặc định định hình hành vi
+- Hành vi tái tạo các kết quả
+- Các kết quả tiếp tục duy trì cho đến khi các thiết lập mặc định thay đổi.
 conditions:
-- Patterns repeat across people or time
-- Underlying rules remain stable.
+- Các khuôn mẫu lặp lại ở nhiều người hoặc qua thời gian
+- Các quy tắc cốt lõi bên dưới vẫn giữ nguyên sự ổn định.
 exceptions:
-- Exceptional effort can temporarily override defaults
-- External shock can reset the system.
+- Nỗ lực phi thường có thể tạm thời vượt qua các thiết lập mặc định
+- Một cú sốc từ bên ngoài có thể tái thiết lập hệ thống.
 applications:
   operations:
-  - Change the default path
-  - not only the instruction.
+  - Thay đổi lộ trình mặc định
+  - chứ không chỉ thay đổi hướng dẫn.
   leadership:
-  - Look for the rule that keeps recreating the problem.
+  - Tìm kiếm quy tắc liên tục tái tạo ra vấn đề đó.
 risks:
-- Blaming individuals for systemic defaults
-- Overengineering simple behavior issues.
+- Đổ lỗi cho các cá nhân về những lỗi mặc định mang tính hệ thống
+- Phức tạp hóa quá mức các vấn đề hành vi đơn giản.
 evidence:
   level: provisional
   references: []
@@ -45,5 +43,10 @@ tags:
 - systems
 - defaults
 - operations
+- systemic-defaults
+- status-quo-bias
+- organizational-inertia
+- system-dynamics
+- behavioral-nudges
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

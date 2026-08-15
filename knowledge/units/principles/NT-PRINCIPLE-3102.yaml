@@ -1,26 +1,23 @@
 id: NT-PRINCIPLE-3102
 type: principle
-title: Default Configuration Leverage
-summary: Set the default option to the most socially or systemically optimal choice,
-  as a majority of users will never change it.
+title: Tận dụng cấu hình mặc định
+summary: Đặt tùy chọn mặc định là lựa chọn tối ưu nhất về mặt xã hội hoặc hệ thống, vì phần lớn người dùng sẽ không bao giờ thay đổi nó.
 primary_domain: tri-nhan
 domain_area: NT-DA-0027
-definition: Applying the status quo bias prescriptively by pre-selecting the recommended
-  option in any decision system.
+definition: Vận dụng thiên kiến hiện trạng theo hướng chỉ định bằng cách chọn sẵn tùy chọn được khuyến nghị trong bất kỳ hệ thống ra quyết định nào.
 mechanism:
-- The default is perceived as the implicit recommendation of the choice architect.
-- Changing the default requires cognitive effort and induces fear of making a mistake.
-- Therefore, the default acts as a powerful behavioral magnet.
+- Giá trị mặc định được coi là khuyến nghị ngầm từ người thiết kế kiến trúc lựa chọn.
+- Việc thay đổi giá trị mặc định đòi hỏi nỗ lực nhận thức và gợi ra nỗi sợ mắc sai lầm.
+- Do đó, giá trị mặc định hoạt động như một nam châm hành vi mạnh mẽ.
 conditions:
-- Complex decisions where users lack strong pre-existing preferences or expertise.
+- Các quyết định phức tạp khi người dùng thiếu sở thích hoặc chuyên môn vững chắc đã có từ trước.
 exceptions:
-- Highly consequential, irreversible decisions that demand explicit consent (e.g.,
-  deleting a database).
+- 'Các quyết định có hệ quả lớn, không thể đảo ngược, đòi hỏi sự đồng ý rõ ràng (ví dụ: xóa cơ sở dữ liệu).'
 applications:
   security:
-  - Make privacy-preserving and secure configurations the default out-of-the-box experience.
+  - Đặt cấu hình bảo vệ quyền riêng tư và bảo mật làm trải nghiệm mặc định ngay khi sử dụng.
 risks:
-- Setting harmful defaults that exploit user laziness.
+- Đặt các giá trị mặc định có hại khai thác sự lười biếng của người dùng.
 evidence:
   level: strong
   references:
@@ -35,7 +32,11 @@ relations:
 tags:
 - defaults
 - status-quo
+- nudge
+- choice-architecture
+- privacy
+- configuration
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

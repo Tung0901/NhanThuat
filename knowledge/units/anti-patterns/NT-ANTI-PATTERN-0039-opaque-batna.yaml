@@ -2,21 +2,21 @@ id: NT-ANTI-PATTERN-0039
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Opaque BATNA
-summary: Opaque BATNA structural knowledge unit.
+title: BATNA Mù mờ
+summary: Đơn vị tri thức cấu trúc về BATNA mù mờ trong đàm phán và quản trị tổ chức.
 primary_domain: thanh-su
 secondary_domains:
 - tri-nhan
-definition: Formal definition of Opaque BATNA in NhanThuat architecture.
+definition: Định nghĩa chính thức về BATNA mù mờ (Opaque BATNA) trong kiến trúc Nhân Thuật, chỉ trạng thái không rõ ràng hoặc che giấu phương án thay thế tốt nhất khi thỏa thuận thất bại.
 conditions:
-- Operational governance contexts.
+- Bối cảnh quản trị vận hành tổ chức.
 exceptions:
-- Emergency crisis overrides.
+- Các trường hợp ghi đè trong khủng hoảng khẩn cấp.
 applications:
   governance:
-  - Apply Opaque BATNA to organizational workflows.
+  - Ánh xạ và đánh giá hiện tượng BATNA mù mờ trong các quy trình vận hành tổ chức.
 risks:
-- Misapplication of Opaque BATNA leading to suboptimal performance.
+- Nhận diện sai hoặc đánh giá lệch lạc về BATNA mù mờ dẫn đến hiệu suất không đạt mức tối ưu.
 evidence:
   level: supported
   references:
@@ -30,5 +30,10 @@ relations:
 tags:
 - anti-pattern
 - thanh-su
+- opaque-batna
+- hidden-alternatives
+- negotiation-strategy
+- governance-anti-pattern
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

@@ -2,21 +2,21 @@ id: NT-ANTI-PATTERN-0025
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: HIPPO Bias
-summary: HIPPO Bias structural knowledge unit.
+title: Định kiến HIPPO
+summary: Đơn vị kiến thức cấu trúc về Định kiến HIPPO (Ý kiến người nhận lương cao nhất) trong tổ chức.
 primary_domain: dung-nhan
 secondary_domains:
 - tri-nhan
-definition: Formal definition of HIPPO Bias in NhanThuat architecture.
+definition: Định nghĩa chính thức về Định kiến HIPPO trong kiến trúc Nhân Thuật, mô tả thiên kiến phục tùng hoặc ưu tiên ý kiến của cá nhân có mức lương hoặc chức vụ cao nhất, làm lấp liếm dữ liệu và sự đóng góp tập thể.
 conditions:
-- Operational governance contexts.
+- Trong các bối cảnh quản trị vận hành tổ chức.
 exceptions:
-- Emergency crisis overrides.
+- Các trường hợp ghi đè trong tình huống khủng hoảng khẩn cấp.
 applications:
   governance:
-  - Apply HIPPO Bias to organizational workflows.
+  - Nhận diện và giảm thiểu Định kiến HIPPO trong quy trình làm việc của tổ chức.
 risks:
-- Misapplication of HIPPO Bias leading to suboptimal performance.
+- Xử lý không đúng Định kiến HIPPO dẫn đến việc ra quyết định sai lầm và giảm hiệu suất tổ chức.
 evidence:
   level: supported
   references:
@@ -30,5 +30,10 @@ relations:
 tags:
 - anti-pattern
 - dung-nhan
+- hippo-bias
+- highest-paid-person-opinion
+- authority-bias
+- governance
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

@@ -2,27 +2,25 @@ id: NT-MODEL-0026
 type: model
 status: frozen
 version: 0.1.0
-title: Authority Allocation Framework
-summary: A 4-level delegation model mapping decision rights from Direct Mandate to
-  Full Autonomy.
+title: Khung phân bổ thẩm quyền
+summary: Mô hình ủy quyền 4 cấp độ phân định quyền ra quyết định từ Chỉ đạo trực tiếp đến Tự chủ hoàn toàn.
 primary_domain: dung-nhan
 secondary_domains:
 - hop-chung
-definition: 'The Authority Allocation Framework defines 4 levels of decision agency:
-  Direct Mandate, Recommend & Approval, Decide & Inform, Full Autonomy.'
+definition: 'Khung phân bổ thẩm quyền xác định 4 cấp độ đại diện ra quyết định: Chỉ đạo trực tiếp, Đề xuất & Phê duyệt, Quyết định & Báo cáo, Tự chủ hoàn toàn.'
 mechanism:
-- Assess Competence & Risk.
-- Assign Authority Level.
-- Review and adjust Level over time.
+- Đánh giá năng lực và rủi ro.
+- Gán cấp độ thẩm quyền phù hợp.
+- Đánh giá và điều chỉnh cấp độ theo thời gian.
 conditions:
-- Organizational delegation design.
+- Thiết kế cơ chế ủy quyền trong tổ chức.
 exceptions:
-- Emergency legal actions.
+- Các hành động pháp lý khẩn cấp.
 applications:
   delegation_tooling:
-  - Configure BusinessOS task assignment rules with explicit authority levels.
+  - Cấu hình các quy tắc phân công nhiệm vụ trên BusinessOS với các cấp độ thẩm quyền rõ ràng.
 risks:
-- Misjudging employee readiness and assigning Level 4 prematurely.
+- Đánh giá sai mức độ sẵn sàng của nhân viên và giao Cấp độ 4 quá sớm.
 evidence:
   level: supported
   references:
@@ -37,5 +35,10 @@ tags:
 - authority
 - delegation
 - framework
+- authority-allocation
+- delegation-model
+- decision-rights
+- autonomy-levels
+- organizational-design
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'

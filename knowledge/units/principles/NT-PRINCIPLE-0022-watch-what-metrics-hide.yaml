@@ -2,33 +2,31 @@ id: NT-PRINCIPLE-0022
 type: principle
 status: frozen
 version: 0.1.0
-title: Watch what metrics hide
-summary: For every important metric, ask what it makes invisible, discourages, or
-  tempts people to game.
+title: Theo dõi những gì chỉ số che khuất
+summary: Đối với mỗi chỉ số quan trọng, hãy hỏi nó khiến điều gì trở nên vô hình, không khuyến khích điều gì hoặc cám dỗ con người chơi khăm.
 primary_domain: thanh-su
 secondary_domains:
 - tri-nhan
 - hop-chung
-definition: Metrics focus attention by excluding other realities, so responsible use
-  requires reviewing hidden costs and distortions.
+definition: Chỉ số định hướng sự chú ý bằng cách loại trừ các thực tế khác, nên việc sử dụng có trách nhiệm đòi hỏi rà soát các chi phí ẩn và sự bóp méo.
 mechanism:
-- Review the metric
-- Identify ignored values and gaming paths
-- Add safeguards or balancing signals.
+- Rà soát chỉ số.
+- Xác định các giá trị bị bỏ qua và các lối chơi khăm.
+- Thêm rào chắn an toàn hoặc tín hiệu cân bằng.
 conditions:
-- A metric influences decisions
-- People can optimize around it.
+- Chỉ số ảnh hưởng đến quyết định.
+- Con người có thể tối ưu hóa xoay quanh chỉ số.
 exceptions:
-- Simple measures may be enough for low-risk work
-- Too many balancing measures can confuse priorities.
+- Thước đo đơn giản có thể đủ cho công việc rủi ro thấp.
+- Quá nhiều thước đo cân bằng có thể làm rối ưu tiên.
 applications:
   governance:
-  - Pair performance metrics with quality and ethics checks.
+  - Kết hợp chỉ số hiệu suất với kiểm tra chất lượng và đạo đức.
   management:
-  - Ask how people might game the target.
+  - Hỏi xem mọi người có thể chơi khăm mục tiêu như thế nào.
 risks:
-- Rejecting useful metrics because they are imperfect
-- Adding complexity without decisions.
+- Từ chối chỉ số hữu ích vì chúng không hoàn hảo.
+- Thêm phức tạp mà không gắn với quyết định.
 evidence:
   level: provisional
   references: []
@@ -43,5 +41,7 @@ tags:
 - metrics
 - gaming
 - visibility
+- unintended-consequences
+- measurement
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

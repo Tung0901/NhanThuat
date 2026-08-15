@@ -1,32 +1,28 @@
 id: NT-PRINCIPLE-3204
 type: principle
-title: Minimum Viable Routine (Tiny Habits)
-summary: Scaling down a desired new behavior to an absurdly small, easily executable
-  version to guarantee consistency.
+title: Thói quen khả thi tối thiểu (Thói quen nhỏ)
+summary: Thu nhỏ một hành vi mới mong muốn xuống phiên bản nhỏ đến mức phi lý, dễ thực hiện để đảm bảo sự kiên định.
 primary_domain: tri-nhan
 domain_area: NT-DA-0028
-definition: A behavioral design strategy that bypasses the need for high motivation
-  by making the target behavior so small it requires virtually zero ability or effort.
+definition: Một chiến lược thiết kế hành vi bỏ qua nhu cầu động lực cao bằng cách làm cho hành vi mục tiêu nhỏ đến mức gần như không đòi hỏi năng lực hay nỗ lực nào.
 mechanism:
-- Define the target habit (e.g., read a book a week).
-- Scale it down to the absolute minimum viable action (e.g., read one sentence).
-- Execute consistently.
-- Once the neural pathway is established, naturally expand the behavior.
+- 'Xác định thói quen mục tiêu (ví dụ: đọc một cuốn sách mỗi tuần).'
+- 'Thu nhỏ nó xuống hành động khả thi tối thiểu tuyệt đối (ví dụ: đọc một câu).'
+- Thực hiện một cách kiên định.
+- Một khi đường dẫn thần kinh được thiết lập, tự nhiên mở rộng hành vi.
 conditions:
-- When trying to build a completely new habit from scratch in a busy life.
+- Khi muốn xây dựng một thói quen hoàn toàn mới từ con số không trong cuộc sống bận rộn.
 exceptions:
-- When a deadline requires immediate, massive volume (e.g., cramming for an exam).
+- 'Khi một hạn chót đòi hỏi khối lượng lớn ngay lập tức (ví dụ: nhồi nhét cho kỳ thi).'
 applications:
   onboarding:
-  - Ask new users to complete only one ultra-simple profile field rather than a massive
-    10-step wizard.
+  - Yêu cầu người dùng mới chỉ hoàn thành một trường hồ sơ cực kỳ đơn giản thay vì một trình hướng dẫn 10 bước đồ sộ.
 risks:
-- Stagnating at the tiny version and never scaling up to the actual goal.
+- Dậm chân tại chỗ ở phiên bản nhỏ và không bao giờ mở rộng lên mục tiêu thực sự.
 evidence:
   level: strong
   references:
-  - 'Fogg, B. J. (2019). ''Tiny Habits: The Small Changes That Change Everything''.
-    Houghton Mifflin Harcourt.'
+  - 'Fogg, B. J. (2019). ''Tiny Habits: The Small Changes That Change Everything''. Houghton Mifflin Harcourt.'
 relations:
   supports: []
   conflicts_with: []
@@ -36,7 +32,11 @@ relations:
 tags:
 - habits
 - consistency
+- tiny-habits
+- onboarding
+- motivation
+- routine
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

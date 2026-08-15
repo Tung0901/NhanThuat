@@ -2,28 +2,26 @@ id: NT-MODEL-0030
 type: model
 status: frozen
 version: 0.1.0
-title: Culture Formation Engine
-summary: A 4-component loop mapping how Leader Behavior -> Incentive Systems -> Social
-  Artifacts -> Embedded Norms.
+title: Động cơ Hình thành Văn hóa
+summary: Vòng lặp 4 thành phần mô tả tiến trình từ Hành vi Lãnh đạo -> Hệ thống Đãi ngộ -> Biểu trưng Xã hội -> Chuẩn mực Định hình.
 primary_domain: hop-chung
 secondary_domains:
 - tu-than
-definition: 'The Culture Formation Engine explains how culture solidifies: Leader
-  Behavior, Incentive Systems, Social Artifacts, Embedded Norms.'
+definition: 'Động cơ Hình thành Văn hóa giải thích cách thức văn hóa được củng cố vững chắc: Hành vi Lãnh đạo, Hệ thống Đãi ngộ, Biểu trưng Xã hội, Chuẩn mực Định hình.'
 mechanism:
-- Leader models behavior.
-- Incentives align rewards.
-- Artifacts embed stories.
-- Norms become automatic.
+- Lãnh đạo làm gương bằng hành vi chuẩn mực.
+- Hệ thống đãi ngộ gắn kết và điều chỉnh phần thưởng.
+- Các biểu trưng văn hóa khắc sâu những câu chuyện cốt lõi.
+- Các chuẩn mực dần trở thành phản xạ hành vi tự nhiên.
 conditions:
-- Culture design and transformation.
+- Thiết kế và chuyển đổi văn hóa tổ chức.
 exceptions:
-- None.
+- Không có.
 applications:
   culture_transformation:
-  - Guide leadership teams in executing cultural transformation initiatives.
+  - Định hướng cho đội ngũ lãnh đạo trong việc thực thi các sáng kiến chuyển đổi văn hóa.
 risks:
-- Focusing on Artifacts while ignoring Leader Behavior.
+- Chỉ tập trung vào Biểu trưng mà phớt lờ vai trò Hành vi của Lãnh đạo.
 evidence:
   level: supported
   references:
@@ -39,5 +37,10 @@ tags:
 - culture
 - formation
 - model
+- culture-formation-engine
+- organizational-culture
+- leader-behavior
+- cultural-transformation
+- incentive-systems
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'

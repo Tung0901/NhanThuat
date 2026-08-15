@@ -2,23 +2,21 @@ id: NT-LAW-0067
 type: law
 status: frozen
 version: 0.1.0
-title: Strategic Trade-off Inevitability
-summary: Achieving superior performance in one dimension requires accepting deliberate
-  underperformance in another.
+title: Tính tất yếu của sự đánh đổi chiến lược
+summary: Để đạt được hiệu suất vượt trội ở một khía cạnh đòi hỏi phải chấp nhận sự kém hiệu quả một cách có chủ đích ở một khía cạnh khác.
 primary_domain: thanh-su
 secondary_domains:
 - tri-nhan
-definition: Trade-offs are the core of strategy. Superior strategic positioning requires
-  explicitly deciding what not to optimize.
+definition: Sự đánh đổi là cốt lõi của chiến lược. Định vị chiến lược vượt trội đòi hỏi phải quyết định rõ ràng những gì không cần tối ưu hóa.
 conditions:
-- Competitive positioning and product strategy choices.
+- Định vị cạnh tranh và các lựa chọn chiến lược sản phẩm.
 exceptions:
-- Removing operational waste before reaching efficiency frontier.
+- Loại bỏ lãng phí vận hành trước khi đạt đến giới hạn hiệu quả.
 applications:
   positioning:
-  - Define explicit non-goals for product releases.
+  - Xác định rõ ràng các mục tiêu không ưu tiên (non-goals) cho các đợt phát hành sản phẩm.
 risks:
-- Attempting to be all things to all customers.
+- Cố gắng trở thành mọi thứ đối với mọi khách hàng.
 evidence:
   level: supported
   references:
@@ -33,5 +31,10 @@ tags:
 - strategy
 - trade-offs
 - positioning
+- strategic-tradeoffs
+- competitive-positioning
+- opportunity-cost
+- product-strategy
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

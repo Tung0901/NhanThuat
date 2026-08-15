@@ -2,21 +2,21 @@ id: NT-LAW-0050
 type: law
 status: frozen
 version: 0.1.0
-title: Cognitive Load Exhaustion
-summary: Cognitive Load Exhaustion structural knowledge unit.
+title: Kiệt quệ do quá tải nhận thức
+summary: Đơn vị tri thức cấu trúc về hiện tượng kiệt quệ do quá tải nhận thức trong tổ chức.
 primary_domain: tu-than
 secondary_domains:
 - tri-nhan
-definition: Formal definition of Cognitive Load Exhaustion in NhanThuat architecture.
+definition: Định nghĩa chuẩn tắc về sự kiệt quệ do quá tải nhận thức trong cấu trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Bối cảnh quản trị vận hành tổ chức.
 exceptions:
-- Emergency crisis overrides.
+- Cơ chế can thiệp ưu tiên trong tình trạng khủng hoảng khẩn cấp.
 applications:
   governance:
-  - Apply Cognitive Load Exhaustion to organizational workflows.
+  - Ứng dụng nguyên lý kiệt quệ tải nhận thức vào việc tối ưu hóa quy trình làm việc tổ chức.
 risks:
-- Misapplication of Cognitive Load Exhaustion leading to suboptimal performance.
+- Áp dụng sai nguyên lý kiệt quệ tải nhận thức dẫn đến suy giảm hiệu suất hoạt động.
 evidence:
   level: supported
   references:
@@ -30,5 +30,11 @@ relations:
 tags:
 - law
 - tu-than
+- cognitive-load
+- decision-fatigue
+- mental-exhaustion
+- cognitive-capacity
+- workflow-overload
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

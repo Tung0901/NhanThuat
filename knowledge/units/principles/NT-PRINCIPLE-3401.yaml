@@ -1,31 +1,24 @@
 id: NT-PRINCIPLE-3401
 type: principle
-title: Perceptual Contrast
-summary: Always present the most expensive, extreme, or difficult option first to
-  alter the anchor point, making subsequent options appear significantly smaller or
-  cheaper.
+title: Tương phản nhận thức
+summary: Luôn trình bày tùy chọn đắt nhất, cực đoan nhất hoặc khó nhất trước để thay đổi điểm neo, khiến các tùy chọn tiếp theo có vẻ nhỏ hơn hoặc rẻ hơn đáng kể.
 primary_domain: tri-nhan
 domain_area: NT-DA-0030
-definition: A foundational psychophysical principle applied to sales and negotiation,
-  stating that human perception is relative; the subjective weight of an item is judged
-  heavily against the item that immediately preceded it.
+definition: Một nguyên tắc tâm lý-vật lý nền tảng được áp dụng trong bán hàng và đàm phán, khẳng định rằng nhận thức của con người mang tính tương đối; trọng lượng chủ quan của một mặt hàng được đánh giá mạnh mẽ dựa trên mặt hàng ngay trước nó.
 mechanism:
-- Present a highly priced item ($2,000 suit).
-- Target acclimates to the high anchor.
-- Present a moderately priced accessory ($150 tie).
-- In the shadow of $2,000, the $150 tie feels subjectively cheap and insignificant,
-  driving the purchase.
+- Trình bày một mặt hàng có giá cao (bộ vest 2.000 USD).
+- Đối tượng mục tiêu thích nghi với điểm neo cao.
+- Trình bày một phụ kiện có giá vừa phải (cà vạt 150 USD).
+- Trong cái bóng của 2.000 USD, cà vạt 150 USD có vẻ rẻ và nhỏ bé theo cảm nhận chủ quan, thúc đẩy việc mua hàng.
 conditions:
-- The presentation must be sequential (one after another) and immediate.
+- Việc trình bày phải tuần tự (lần lượt từng cái) và ngay lập tức.
 exceptions:
-- If the first option is so astronomically high it breaks trust or is perceived as
-  a joke.
+- Nếu tùy chọn đầu tiên cao đến mức thiên văn khiến phá vỡ niềm tin hoặc bị coi như một trò đùa.
 applications:
   sales:
-  - Real estate agents showing a completely overpriced, terrible 'setup' house before
-    showing the target house, which suddenly looks like a phenomenal deal.
+  - Môi giới bất động sản cho xem một căn nhà "dàn dựng" tệ hại, giá trên trời trước khi cho xem căn nhà mục tiêu, khiến căn nhà này bỗng dưng trông như một món hời phi thường.
 risks:
-- Scaring away price-sensitive customers immediately before they see the real options.
+- Làm những khách hàng nhạy cảm về giá sợ hãi ngay trước khi họ nhìn thấy các lựa chọn thực sự.
 evidence:
   level: strong
   references:
@@ -39,7 +32,11 @@ relations:
 tags:
 - contrast
 - perception
+- anchoring
+- negotiation
+- sales
+- framing
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

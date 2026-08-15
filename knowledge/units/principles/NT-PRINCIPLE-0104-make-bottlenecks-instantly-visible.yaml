@@ -2,23 +2,21 @@ id: NT-PRINCIPLE-0104
 type: principle
 status: frozen
 version: 0.1.0
-title: Make Bottlenecks Instantly Visible
-summary: Display execution blockages and queue backups on shared visual telemetry
-  boards immediately.
+title: Làm cho nút thắt hiển thị tức thì
+summary: Hiển thị ngay các điểm tắc nghẽn thực thi và hàng đợi dồn ứ trên các bảng giám sát trực quan dùng chung.
 primary_domain: dung-nhan
 secondary_domains:
 - tri-nhan
-definition: Unseen bottlenecks compound quietly. Systems should visually highlight
-  blocked tasks.
+definition: Các nút thắt không được nhìn thấy sẽ âm thầm tích tụ. Hệ thống nên làm nổi bật trực quan các nhiệm vụ đang bị chặn.
 conditions:
-- Managing delivery pipelines.
+- Quản lý các đường ống bàn giao (delivery pipelines).
 exceptions:
-- Confidential security vulnerability remediation.
+- Quy trình khắc phục lỗ hổng bảo mật thuộc diện tuyệt mật.
 applications:
   telemetry:
-  - Automatically highlight blocked tasks in red on team dashboards.
+  - Tự động làm nổi bật các nhiệm vụ bị chặn bằng màu đỏ trên bảng điều khiển của đội ngũ.
 risks:
-- Using visual telemetry to publicly shame slow workers.
+- Dùng giám sát trực quan để công khai chỉ trích những nhân viên làm việc chậm.
 evidence:
   level: supported
   references:
@@ -33,5 +31,9 @@ tags:
 - execution
 - bottleneck
 - telemetry
+- visibility
+- dashboards
+- flow
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

@@ -2,23 +2,21 @@ id: NT-LAW-0060
 type: law
 status: frozen
 version: 0.1.0
-title: Incentive Signal Distortion
-summary: When a metric becomes an explicit incentive target, actors optimize for the
-  metric rather than the underlying organizational outcome.
+title: Sự bóp méo tín hiệu khuyến khích
+summary: Khi một chỉ số đo lường trở thành mục tiêu khuyến khích rõ ràng, các tác nhân sẽ tối ưu hóa chỉ số đó thay vì kết quả thực tế mà tổ chức hướng tới.
 primary_domain: tu-than
 secondary_domains:
 - hop-chung
-definition: 'Goodhart''s Law applied to organizational governance: when an indicator
-  is chosen for incentive payoffs, actors optimize the indicator itself.'
+definition: 'Định luật Goodhart áp dụng vào quản trị tổ chức: khi một chỉ số được chọn để chi trả các khoản thưởng khuyến khích, các tác nhân sẽ tối ưu hóa chính chỉ số đó.'
 conditions:
-- High-stakes extrinsic rewards tied directly to narrow performance metrics.
+- Các phần thưởng bên ngoài có giá trị cao gắn liền trực tiếp với các chỉ số hiệu suất hạn hẹp.
 exceptions:
-- Pure deterministic physical tasks where metric output perfectly equals quality.
+- Các công việc vật lý mang tính định hình thuần túy, nơi sản lượng đo lường được phản ánh hoàn hảo chất lượng.
 applications:
   incentive_design:
-  - Pair quantitative targets with qualitative quality gates.
+  - Kết hợp các mục tiêu định lượng với các rào cản chất lượng mang tính định tính.
 risks:
-- Creating perverse incentives that reward destructive behavior.
+- Tạo ra các động lực ngược chiều vô tình dung túng cho các hành vi gây hại.
 evidence:
   level: supported
   references:
@@ -33,5 +31,11 @@ tags:
 - incentives
 - gaming
 - metrics
+- goodharts-law
+- incentive-distortion
+- performance-metrics
+- organizational-governance
+- perverse-incentives
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

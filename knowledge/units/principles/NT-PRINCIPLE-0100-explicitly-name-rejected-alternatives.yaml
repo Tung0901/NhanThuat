@@ -2,23 +2,21 @@ id: NT-PRINCIPLE-0100
 type: principle
 status: frozen
 version: 0.1.0
-title: Explicitly Name Rejected Alternatives
-summary: Force strategic decision-making to document the specific viable options that
-  will not be pursued.
+title: Nêu rõ tên các phương án bị bác bỏ
+summary: Buộc quá trình ra quyết định chiến lược ghi lại các phương án khả thi cụ thể sẽ không được theo đuổi.
 primary_domain: thanh-su
 secondary_domains:
 - tri-nhan
-definition: A strategy is only real when it articulates what the organization will
-  actively refuse to do.
+definition: Một chiến lược chỉ thực sự có giá trị khi nó nêu rõ những điều tổ chức sẽ chủ động từ chối làm.
 conditions:
-- Strategic roadmap approval and annual planning.
+- Phê duyệt lộ trình chiến lược và lập kế hoạch năm.
 exceptions:
-- Trivial task execution steps.
+- Các bước thực thi nhiệm vụ tầm thường.
 applications:
   roadmap_design:
-  - Include a Rejected Options section in strategy documents.
+  - Đưa mục Phương án bị bác bỏ (Rejected Options) vào các tài liệu chiến lược.
 risks:
-- Naming rejected options causing political friction.
+- Việc nêu tên các phương án bị bác bỏ gây ra ma sát chính trị.
 evidence:
   level: supported
   references:
@@ -33,5 +31,8 @@ tags:
 - strategy
 - trade-offs
 - alignment
+- decision-making
+- roadmap
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

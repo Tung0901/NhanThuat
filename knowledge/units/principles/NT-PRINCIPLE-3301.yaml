@@ -1,33 +1,27 @@
 id: NT-PRINCIPLE-3301
 type: principle
-title: Psychological Safety Design
-summary: Systematically removing the interpersonal risks of speaking up to prevent
-  pluralistic ignorance and groupthink.
+title: Thiết kế an toàn tâm lý
+summary: Loại bỏ một cách có hệ thống các rủi ro liên cá nhân khi lên tiếng để ngăn chặn sự thiếu hiểu biết lan truyền và tư duy bầy đàn.
 primary_domain: tri-nhan
 domain_area: NT-DA-0029
-definition: The architectural requirement to build team environments where members
-  feel safe to take risks, voice dissenting opinions, and admit mistakes without fear
-  of punishment.
+definition: Yêu cầu mang tính kiến trúc nhằm xây dựng môi trường đội ngũ nơi các thành viên cảm thấy an toàn để chấp nhận rủi ro, nêu ý kiến bất đồng và thừa nhận sai lầm mà không sợ bị trừng phạt.
 mechanism:
-- Leaders explicitly model vulnerability and admit their own errors.
-- Failures are framed as systemic learning opportunities rather than individual incompetence.
-- The social cost of dissenting is artificially lowered.
+- Nhà lãnh đạo làm mẫu một cách tường minh về sự dễ tổn thương và thừa nhận sai lầm của chính họ.
+- Những thất bại được đóng khung là cơ hội học tập mang tính hệ thống thay vì sự kém năng lực của cá nhân.
+- Cái giá xã hội của việc bất đồng được hạ xuống một cách giả tạo.
 conditions:
-- Knowledge work and complex problem-solving environments where innovation and error-detection
-  are critical.
+- Các môi trường công việc tri thức và giải quyết vấn đề phức tạp, nơi sự đổi mới và phát hiện lỗi là yếu tố quyết định.
 exceptions:
-- Strict execution-only environments where absolute compliance to a known safe procedure
-  is required (e.g., a surgical checklist).
+- 'Các môi trường thực thi nghiêm ngặt, nơi đòi hỏi tuân thủ tuyệt đối một quy trình an toàn đã biết (ví dụ: danh sách kiểm tra phẫu thuật).'
 applications:
   culture:
-  - Implementing blameless post-mortems for critical system outages.
+  - Triển khai các cuộc họp rút kinh nghiệm không đổ lỗi (blameless post-mortems) cho các sự cố hệ thống nghiêm trọng.
 risks:
-- Confusing psychological safety with 'being nice' or lowering performance standards.
+- Nhầm lẫn an toàn tâm lý với "tử tế" hoặc hạ thấp tiêu chuẩn hiệu suất.
 evidence:
   level: strong
   references:
-  - Edmondson, A. (1999). 'Psychological Safety and Learning Behavior in Work Teams'.
-    Administrative Science Quarterly.
+  - Edmondson, A. (1999). 'Psychological Safety and Learning Behavior in Work Teams'. Administrative Science Quarterly.
 relations:
   supports: []
   conflicts_with: []
@@ -38,7 +32,12 @@ relations:
 tags:
 - safety
 - culture
+- psychological-safety
+- groupthink
+- dissent
+- leadership
+- learning
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

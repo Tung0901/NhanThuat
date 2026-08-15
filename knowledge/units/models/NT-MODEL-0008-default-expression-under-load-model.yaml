@@ -2,33 +2,48 @@ id: NT-MODEL-0008
 type: model
 status: frozen
 version: 0.1.0
-title: Default expression under load model
-summary: A diagnostic model mapping cognitive, emotional, and physical load to predict the statistical probability of behavioral defaults overriding deliberate adaptations.
+title: Mô hình biểu hiện mặc định khi quá tải
+summary: Một mô hình chẩn đoán ánh xạ tải lượng nhận thức, cảm xúc và thể chất để dự báo xác suất thống kê của việc các hành vi mặc định ghi đè lên các thích ứng có chủ ý.
 primary_domain: tri-nhan
-secondary_domains: [tu-than]
-definition: Explains how sustained load stresses cognitive resources (executive control), leading to a higher probability that observed behavior will fall back onto stable latent defaults.
+secondary_domains:
+- tu-than
+definition: Giải thích cách thức tải lượng kéo dài gây áp lực lên các nguồn lực nhận thức (kiểm soát điều hành), dẫn đến xác suất cao hơn là hành vi quan sát được sẽ quay trở lại các thói quen mặc định tiềm ẩn ổn định.
 mechanism:
-  - Measure sustained cognitive, emotional, or physical demands.
-  - Monitor executive control resource allocation and prioritization.
-  - Observe subsequent reduction in deliberate adaptive self-regulation.
-  - Record probabilistic shift of behavioral expression toward automatic latent defaults.
+- Đo lường các yêu cầu kéo dài về nhận thức, cảm xúc hoặc thể chất.
+- Giám sát việc phân bổ và ưu tiên nguồn lực kiểm soát điều hành.
+- Quan sát sự suy giảm sau đó trong khả năng tự điều chỉnh thích ứng có chủ ý.
+- Ghi nhận sự chuyển dịch mang tính xác suất của biểu hiện hành vi hướng về các mặc định tiềm ẩn tự động.
 conditions:
-  - Individuals operate under high stress, fatigue, distraction, or cognitive load.
+- Các cá nhân hoạt động dưới mức độ căng thẳng, mệt mỏi, xao nhãng hoặc tải lượng nhận thức cao.
 exceptions:
-  - Highly automated habits or strong external situation strength cues can temporarily suppress defaults even under load.
+- Các thói quen tự động hóa cao hoặc các tín hiệu bối cảnh bên ngoài mạnh mẽ có thể tạm thời chế ngự các hành vi mặc định ngay cả khi đang quá tải.
 applications:
-  diagnosis: [Determine if performance drops or protocol slips under stress are due to cognitive overload triggering behavioral defaults.]
-  design: [Reduce task load or introduce cognitive aids during high-stress operations to protect critical adaptive behaviors.]
+  diagnosis:
+  - Xác định xem sự sụt giảm hiệu suất hoặc vi phạm quy trình dưới áp lực là do quá tải nhận thức kích hoạt các hành vi mặc định hay không.
+  design:
+  - Giảm tải lượng nhiệm vụ hoặc đưa vào các công cụ hỗ trợ nhận thức trong các hoạt động căng thẳng cao để bảo vệ các hành vi thích ứng quan trọng.
 risks:
-  - Excusing deliberate misconduct, negligence, or ethical failures as unavoidable default expression.
+- Việc ngụy biện cho các hành vi sai trái cố ý, sự cẩu thả hoặc các thất bại đạo đức như là biểu hiện mặc định không thể tránh khỏi.
 evidence:
   level: provisional
   references: []
 relations:
-  supports: [NT-PRINCIPLE-0061, NT-PRINCIPLE-0062]
+  supports:
+  - NT-PRINCIPLE-0061
+  - NT-PRINCIPLE-0062
   conflicts_with: []
-  depends_on: [NT-LAW-0034, NT-LAW-0036]
+  depends_on:
+  - NT-LAW-0034
+  - NT-LAW-0036
   applies_to: []
-tags: [personality, traits, model, load, behavioral-defaults, self-regulation]
+tags:
+- personality
+- traits
+- model
+- load
+- behavioral-defaults
+- self-regulation
+- cognitive-load
+- executive-control
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'

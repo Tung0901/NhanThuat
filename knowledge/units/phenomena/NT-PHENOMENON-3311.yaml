@@ -1,35 +1,27 @@
 id: NT-PHENOMENON-3311
 type: phenomenon
-title: Obedience to Authority
-summary: The deep-seated tendency to comply with instructions from an authority figure,
-  even when those instructions conflict with personal conscience.
+title: Sự tuân phục quyền uy
+summary: Xu hướng ăn sâu trong việc tuân thủ chỉ thị từ một nhân vật quyền lực, ngay cả khi những chỉ thị đó mâu thuẫn với lương tâm cá nhân.
 primary_domain: tri-nhan
 domain_area: NT-DA-0029
-definition: A behavioral trait where individuals abdicate their personal agency and
-  moral responsibility to a perceived legitimate authority figure.
+definition: Một đặc điểm hành vi trong đó các cá nhân nhường lại quyền hành động cá nhân và trách nhiệm đạo đức của mình cho một nhân vật quyền lực được nhận thức là hợp pháp.
 mechanism:
-- An authority figure issues a command.
-- The individual experiences an 'agentic shift', viewing themselves merely as an instrument
-  for carrying out the authority's wishes.
-- Moral responsibility is transferred to the authority.
+- Một nhân vật quyền lực đưa ra mệnh lệnh.
+- Cá nhân trải qua "sự chuyển dịch quyền chủ thể", tự xem mình chỉ là một công cụ thực hiện mong muốn của người có quyền lực.
+- Trách nhiệm đạo đức được chuyển giao cho nhân vật quyền lực.
 conditions:
-- The authority figure is perceived as legitimate, authoritative, and willing to accept
-  responsibility for the outcome.
+- Nhân vật quyền lực được nhận thức là hợp pháp, có thẩm quyền và sẵn sàng chịu trách nhiệm về kết quả.
 exceptions:
-- When there are conflicting authority figures, or when the individual is physically
-  separated from the authority.
+- Khi có các nhân vật quyền lực mâu thuẫn nhau, hoặc khi cá nhân bị tách rời về mặt thể chất khỏi nhân vật quyền lực.
 applications:
   security:
-  - Social engineering attacks heavily leverage the illusion of authority (e.g., posing
-    as the CEO) to bypass security protocols.
+  - 'Các cuộc tấn công kỹ thuật xã hội khai thác mạnh mẽ ảo tưởng về quyền uy (ví dụ: giả danh CEO) để vượt qua các quy trình bảo mật.'
 risks:
-- Employees executing illegal or unethical corporate directives without question ('I
-  was just following orders').
+- Nhân viên thực thi các chỉ thị doanh nghiệp bất hợp pháp hoặc phi đạo đức mà không thắc mắc ("Tôi chỉ làm theo lệnh").
 evidence:
   level: strong
   references:
-  - Milgram, S. (1963). 'Behavioral Study of Obedience'. Journal of Abnormal and Social
-    Psychology.
+  - Milgram, S. (1963). 'Behavioral Study of Obedience'. Journal of Abnormal and Social Psychology.
 relations:
   supports: []
   conflicts_with: []
@@ -38,7 +30,12 @@ relations:
 tags:
 - authority
 - obedience
+- obedience-to-authority
+- milgram-experiment
+- authority-figure
+- agentic-shift
+- social-engineering
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

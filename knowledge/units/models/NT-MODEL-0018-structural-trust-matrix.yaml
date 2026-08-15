@@ -2,21 +2,21 @@ id: NT-MODEL-0018
 type: model
 status: frozen
 version: 0.1.0
-title: Structural Trust Matrix
-summary: Structural Trust Matrix structural knowledge unit.
+title: Ma trận niềm tin cấu trúc
+summary: Đơn vị tri thức cấu trúc về Ma trận niềm tin cấu trúc trong tổ chức.
 primary_domain: hop-chung
 secondary_domains:
 - dung-nhan
-definition: Formal definition of Structural Trust Matrix in NhanThuat architecture.
+definition: Định nghĩa chính thức về Ma trận niềm tin cấu trúc trong kiến trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Các bối cảnh quản trị vận hành tổ chức.
 exceptions:
-- Emergency crisis overrides.
+- Các tình huống ghi đè do khủng hoảng khẩn cấp.
 applications:
   governance:
-  - Apply Structural Trust Matrix to organizational workflows.
+  - Áp dụng Ma trận niềm tin cấu trúc vào các quy trình làm việc của tổ chức.
 risks:
-- Misapplication of Structural Trust Matrix leading to suboptimal performance.
+- Việc áp dụng sai Ma trận niềm tin cấu trúc dẫn đến hiệu suất không tối ưu.
 evidence:
   level: supported
   references:
@@ -30,9 +30,13 @@ relations:
 tags:
 - model
 - hop-chung
+- structural-trust-matrix
+- organizational-trust
+- trust-framework
+- governance-model
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
 mechanism:
-- 'Step 1: Identify Structural Trust Matrix.'
-- 'Step 2: Analyze parameters.'
-- 'Step 3: Execute model.'
+- 'Bước 1: Xác định Ma trận niềm tin cấu trúc.'
+- 'Bước 2: Phân tích các tham số liên quan.'
+- 'Bước 3: Thực thi mô hình trong thực tế.'

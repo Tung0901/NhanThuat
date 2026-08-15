@@ -1,26 +1,23 @@
 id: NT-PHENOMENON-3305
 type: phenomenon
-title: Ingroup Bias
-summary: The tendency to favor one's own group over outgroup members.
+title: Thiên kiến nội nhóm
+summary: Xu hướng ưu ái nhóm của mình hơn các thành viên ngoài nhóm.
 primary_domain: tri-nhan
 domain_area: NT-DA-0029
-definition: A pattern of favoring members of one's in-group over out-group members,
-  manifesting in evaluation, allocation of resources, and perception of competence.
+definition: Một khuôn mẫu ưu ái các thành viên của nhóm nội bộ hơn các thành viên ngoài nhóm, biểu hiện trong đánh giá, phân bổ nguồn lực và nhận thức về năng lực.
 mechanism:
-- Individuals categorize themselves and others into groups.
-- Self-esteem becomes tied to the status of the in-group (Social Identity Theory).
-- To boost self-esteem, individuals elevate the in-group and derogate the out-group.
+- Cá nhân phân loại chính mình và người khác vào các nhóm.
+- Lòng tự trọng gắn liền với vị thế của nhóm nội bộ (Lý thuyết Bản sắc Xã hội).
+- Để nâng cao lòng tự trọng, cá nhân đề cao nhóm nội bộ và hạ thấp nhóm ngoài.
 conditions:
-- Even minimal, arbitrary groupings (e.g., flipping a coin to assign teams) can trigger
-  this bias.
+- 'Ngay cả những nhóm phân chia tối thiểu, tùy ý (ví dụ: tung đồng xu để chia đội) cũng có thể kích hoạt thiên kiến này.'
 exceptions:
-- When a superordinate goal requires the strict cooperation of both groups to survive.
+- Khi một mục tiêu cấp trên đòi hỏi sự hợp tác chặt chẽ của cả hai nhóm để cùng tồn tại.
 applications:
   team_building:
-  - Create a strong, shared team identity to foster internal loyalty and cooperation.
+  - Tạo dựng một bản sắc nhóm chung, mạnh mẽ để nuôi dưỡng lòng trung thành và sự hợp tác nội bộ.
 risks:
-- Silo mentality, inter-departmental warfare, and failure to share resources across
-  an organization.
+- Tâm lý bè phái, sự xung khắc giữa các phòng ban và thất bại trong việc chia sẻ nguồn lực trong toàn tổ chức.
 evidence:
   level: strong
   references:
@@ -33,7 +30,12 @@ relations:
 tags:
 - bias
 - identity
+- ingroup-bias
+- social-identity
+- outgroup-derogation
+- favoritism
+- group-dynamics
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

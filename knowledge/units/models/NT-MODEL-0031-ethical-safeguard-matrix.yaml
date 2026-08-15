@@ -2,27 +2,26 @@ id: NT-MODEL-0031
 type: model
 status: frozen
 version: 0.1.0
-title: Ethical Safeguard Matrix
-summary: A 2x2 model evaluating decisions across Risk Asymmetry and Intent Transparency.
+title: Ma trận Rào chắn Đạo đức
+summary: Mô hình 2x2 đánh giá các quyết định dựa trên mức độ Bất đối xứng Rủi ro và Tính minh bạch về Ý định.
 primary_domain: tu-than
 secondary_domains:
 - hop-chung
-definition: 'The Ethical Safeguard Matrix classifies operational choices: Fair Exchange,
-  Predatory Extraction, Opaque Bargaining, Managed Duty of Care.'
+definition: 'Ma trận Rào chắn Đạo đức phân loại các lựa chọn vận hành: Trao đổi Công bằng, Bóc lột Trục lợi, Đàm phán Mập mờ, Nghĩa vụ Chăm sóc có Kiểm soát.'
 mechanism:
-- Assess Risk Asymmetry.
-- Assess Intent Transparency.
-- Categorize Quadrant.
-- Block Predatory Extraction choices.
+- Đánh giá mức độ Bất đối xứng Rủi ro.
+- Đánh giá Tính minh bạch về Ý định.
+- Phân loại vào góc phần tư tương ứng.
+- Ngăn chặn các lựa chọn mang tính Bóc lột Trục lợi.
 conditions:
-- AI decision audit and business model review.
+- Kiểm toán quyết định từ AI và rà soát mô hình kinh doanh.
 exceptions:
-- None.
+- Không có.
 applications:
   ai_audit:
-  - Audit AI recommendation models to block Predatory Extraction behaviors.
+  - Kiểm toán các mô hình gợi ý của AI nhằm ngăn chặn các hành vi mang tính bóc lột trục lợi.
 risks:
-- Misclassifying legitimate high-risk investments as predatory extraction.
+- Phân loại nhầm các khoản đầu tư rủi ro cao hợp pháp thành hành vi bóc lột trục lợi.
 evidence:
   level: supported
   references:
@@ -38,5 +37,10 @@ tags:
 - ethics
 - matrix
 - safeguards
+- ethical-safeguard-matrix
+- risk-asymmetry
+- intent-transparency
+- ai-decision-audit
+- business-ethics
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'

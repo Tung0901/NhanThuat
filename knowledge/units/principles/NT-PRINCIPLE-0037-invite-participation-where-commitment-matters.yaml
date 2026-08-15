@@ -2,33 +2,31 @@ id: NT-PRINCIPLE-0037
 type: principle
 status: frozen
 version: 0.1.0
-title: Invite participation where commitment matters
-summary: Ask for real participation when people must carry the consequences of a decision
-  over time.
+title: Mời tham gia nơi cam kết có ý nghĩa
+summary: Yêu cầu tham gia thực sự khi con người phải gánh chịu hệ quả của một quyết định theo thời gian.
 primary_domain: hop-chung
 secondary_domains:
 - dung-nhan
 - thanh-su
-definition: Commitment grows when people participate meaningfully in decisions that
-  affect their work, risk, identity, or standards.
+definition: Cam kết lớn lên khi con người tham gia một cách ý nghĩa vào các quyết định ảnh hưởng đến công việc, rủi ro, bản sắc hoặc chuẩn mực của họ.
 mechanism:
-- Identify who must sustain the decision
-- Invite input before closure
-- Show how input shaped the outcome.
+- Xác định ai phải duy trì quyết định
+- Mời góp ý trước khi chốt phương án
+- Cho thấy góp ý đã định hình kết quả ra sao.
 conditions:
-- Commitment is required after the decision
-- Stakeholders hold useful local knowledge.
+- Cam kết cần thiết sau quyết định
+- Các bên liên quan nắm giữ kiến thức địa phương hữu ích.
 exceptions:
-- Emergency action may require command first
-- Participation should not be staged when the decision is already fixed.
+- Hành động khẩn cấp có thể cần ra lệnh trước
+- Không nên sắp đặt sự tham gia khi quyết định đã cố định.
 applications:
   governance:
-  - Use consultation before durable rule changes.
+  - Tổ chức tham vấn trước các thay đổi quy tắc bền vững.
   management:
-  - Include implementers before finalizing operating commitments.
+  - Gồm cả người thực thi trước khi chốt các cam kết vận hành.
 risks:
-- Token participation
-- Slowing urgent decisions unnecessarily.
+- Tham gia mang tính tượng trưng
+- Làm chậm quyết định khẩn cấp không cần thiết.
 evidence:
   level: provisional
   references: []
@@ -42,5 +40,7 @@ tags:
 - participation
 - commitment
 - governance
+- consultation
+- stakeholders
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

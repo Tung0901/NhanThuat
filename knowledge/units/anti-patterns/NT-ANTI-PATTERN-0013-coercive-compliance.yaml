@@ -2,21 +2,21 @@ id: NT-ANTI-PATTERN-0013
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Coercive Compliance
-summary: Coercive Compliance structural knowledge unit.
+title: Sự tuân thủ cưỡng ép
+summary: Đơn vị tri thức cấu trúc về Sự tuân thủ cưỡng ép trong quản trị và hành vi tổ chức.
 primary_domain: dung-nhan
 secondary_domains:
 - tri-nhan
-definition: Formal definition of Coercive Compliance in NhanThuat architecture.
+definition: Định nghĩa chính thức về Sự tuân thủ cưỡng ép (Coercive Compliance) trong kiến trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Bối cảnh quản trị vận hành.
 exceptions:
-- Emergency crisis overrides.
+- Các trường hợp đè quyền trong khủng hoảng khẩn cấp.
 applications:
   governance:
-  - Apply Coercive Compliance to organizational workflows.
+  - Áp dụng Sự tuân thủ cưỡng ép vào quy trình làm việc của tổ chức.
 risks:
-- Misapplication of Coercive Compliance leading to suboptimal performance.
+- Áp dụng sai Sự tuân thủ cưỡng ép dẫn đến hiệu suất không đạt mức tối ưu.
 evidence:
   level: supported
   references:
@@ -30,5 +30,10 @@ relations:
 tags:
 - anti-pattern
 - dung-nhan
+- coercive-compliance
+- forced-conformity
+- authoritarian-control
+- organizational-governance
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

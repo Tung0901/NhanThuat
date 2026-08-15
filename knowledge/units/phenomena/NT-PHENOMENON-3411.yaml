@@ -1,35 +1,28 @@
 id: NT-PHENOMENON-3411
 type: phenomenon
-title: Paradox of Choice (Choice Overload)
-summary: While some choice is better than none, an abundance of options leads to decision
-  paralysis, anxiety, and lower post-decision satisfaction.
+title: Nghịch lý của sự lựa chọn (Quá tải lựa chọn)
+summary: Trong khi có lựa chọn vẫn tốt hơn không có lựa chọn nào, thì sự dư thừa các phương án lại dẫn đến tê liệt quyết định, lo âu và mức độ hài lòng thấp hơn sau khi ra quyết định.
 primary_domain: tri-nhan
 domain_area: NT-DA-0030
-definition: The phenomenon where increasing the number of choices available to a consumer
-  beyond a certain threshold decreases their likelihood to purchase and increases
-  regret.
+definition: Hiện tượng khi tăng số lượng lựa chọn dành cho người tiêu dùng vượt quá một ngưỡng nhất định sẽ làm giảm khả năng mua hàng và làm tăng sự hối tiếc.
 mechanism:
-- The individual is presented with dozens of options.
-- The cognitive load of comparing all variables overwhelms executive function.
-- The anticipated regret of making the 'wrong' choice spikes.
-- The individual defaults to making no choice at all (status quo bias).
+- Cá nhân được trình bày hàng chục phương án.
+- Tải nhận thức khi so sánh mọi biến số làm quá tải chức năng điều hành.
+- Sự hối tiếc dự kiến khi đưa ra lựa chọn 'sai' tăng vọt.
+- Cá nhân mặc định không đưa ra lựa chọn nào cả (thiên kiến hiện trạng).
 conditions:
-- Environments with complex variables, similar options, and lack of clear categorization.
+- Các môi trường có nhiều biến số phức tạp, các phương án tương tự nhau và thiếu sự phân loại rõ ràng.
 exceptions:
-- Extreme domain experts who know exactly what they want and enjoy sifting through
-  massive inventories.
+- Các chuyên gia cực kỳ sâu về lĩnh vực, những người biết chính xác họ muốn gì và thích sàng lọc qua hàng loạt kho hàng khổng lồ.
 applications:
   product_design:
-  - Limit pricing tiers to 3 options (e.g., Basic, Pro, Enterprise) rather than offering
-    15 highly customizable plans.
+  - 'Giới hạn các gói giá ở 3 mức (ví dụ: Cơ bản, Chuyên nghiệp, Doanh nghiệp) thay vì cung cấp 15 gói có khả năng tùy chỉnh cao.'
 risks:
-- Losing niche customers by over-simplifying a product line that inherently requires
-  high customization.
+- Mất khách hàng ngách do đơn giản hóa quá mức một dòng sản phẩm vốn đòi hỏi khả năng tùy chỉnh cao.
 evidence:
   level: strong
   references:
-  - 'Iyengar, S. S., & Lepper, M. R. (2000). ''When choice is demotivating: Can one
-    desire too much of a good thing?''. Journal of Personality and Social Psychology.'
+  - 'Iyengar, S. S., & Lepper, M. R. (2000). ''When choice is demotivating: Can one desire too much of a good thing?''. Journal of Personality and Social Psychology.'
   - Schwartz, B. (2004). 'The Paradox of Choice'.
 relations:
   supports: []
@@ -39,7 +32,12 @@ relations:
 tags:
 - choice
 - overload
+- paradox-of-choice
+- choice-overload
+- decision-paralysis
+- status-quo
+- regret
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

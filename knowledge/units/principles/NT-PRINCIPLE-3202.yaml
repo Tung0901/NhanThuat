@@ -1,32 +1,27 @@
 id: NT-PRINCIPLE-3202
 type: principle
-title: Goal Shielding
-summary: Actively inhibiting alternative goals or distractions to protect the focal
-  goal.
+title: Che chắn mục tiêu
+summary: Chủ động ức chế các mục tiêu hoặc yếu tố gây xao nhãng khác để bảo vệ mục tiêu trọng tâm.
 primary_domain: tri-nhan
 domain_area: NT-DA-0028
-definition: The cognitive and environmental practice of deactivating competing goals
-  to ensure sufficient attention and resources are dedicated to the primary objective.
+definition: Hoạt động thực hành về nhận thức và môi trường nhằm vô hiệu hóa các mục tiêu cạnh tranh để đảm bảo sự chú ý và nguồn lực đủ dành cho mục tiêu chính.
 mechanism:
-- A primary goal is activated.
-- Alternative goals are cognitively suppressed or physically removed from the environment.
-- Focus is maintained without requiring continuous willpower to resist the alternatives.
+- Một mục tiêu chính được kích hoạt.
+- Các mục tiêu thay thế bị ức chế về mặt nhận thức hoặc bị loại bỏ về mặt vật lý khỏi môi trường.
+- Sự tập trung được duy trì mà không cần ý chí liên tục để chống lại các lựa chọn thay thế.
 conditions:
-- Environments with high distractibility or multiple conflicting priorities.
+- Các môi trường có mức độ dễ bị xao nhãng cao hoặc có nhiều ưu tiên xung đột.
 exceptions:
-- Brainstorming or exploratory phases where divergent thinking is required.
+- Các giai đoạn động não hoặc khám phá nơi cần tư duy phân kỳ.
 applications:
   productivity:
-  - Blocking all social media sites via software during deep work blocks.
+  - Chặn mọi trang mạng xã hội bằng phần mềm trong các khối làm việc sâu.
 risks:
-- Tunnel vision—ignoring critical new information because it doesn't align with the
-  shielded goal.
+- Tầm nhìn hẹp — bỏ qua thông tin mới quan trọng vì nó không khớp với mục tiêu đang được che chắn.
 evidence:
   level: strong
   references:
-  - 'Shah, J. Y., Friedman, R., & Kruglanski, A. W. (2002). ''Forgetting all else:
-    on the antecedents and consequences of goal shielding''. Journal of Personality
-    and Social Psychology.'
+  - 'Shah, J. Y., Friedman, R., & Kruglanski, A. W. (2002). ''Forgetting all else: on the antecedents and consequences of goal shielding''. Journal of Personality and Social Psychology.'
 relations:
   supports: []
   conflicts_with: []
@@ -35,7 +30,11 @@ relations:
 tags:
 - focus
 - goals
+- distractions
+- attention
+- productivity
+- willpower
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

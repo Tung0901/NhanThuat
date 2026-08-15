@@ -2,27 +2,25 @@ id: NT-ANTI-PATTERN-0047
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Strategic Drift
-summary: The gradual accumulation of uncoordinated tactical distractions that pull
-  organizational execution away from core intent.
+title: Chệch hướng chiến lược
+summary: Sự tích tụ dần dần của các xao nhãng tác thuật không được phối hợp, khiến việc thực thi của tổ chức rời xa ý định cốt lõi.
 primary_domain: thanh-su
 secondary_domains:
 - dung-nhan
-definition: Strategic drift occurs when teams react to short-term demands without
-  evaluating strategic alignment.
+definition: Chệch hướng chiến lược xảy ra khi các đội ngũ phản ứng với những yêu cầu ngắn hạn mà không đánh giá sự phù hợp với chiến lược tổng thể.
 mechanism:
-- Tactical opportunities accepted.
-- Effort diverted to ad-hoc requests.
-- Core strategy stalls.
+- Chấp nhận các cơ hội tác thuật ngắn hạn.
+- Nguồn lực bị phân tán vào các yêu cầu phát sinh đột xuất.
+- Chiến lược cốt lõi bị đình trệ.
 conditions:
-- Weak product governance.
+- Quản trị sản phẩm yếu kém.
 exceptions:
-- Early pivot phases in pre-product-market-fit startups.
+- Các giai đoạn chuyển hướng (pivot) ban đầu ở startup chưa đạt mức phù hợp sản phẩm - thị trường.
 applications:
   roadmap_governance:
-  - Audit quarterly execution tasks against core strategic themes.
+  - Kiểm toán các nhiệm vụ thực thi hằng quý so với các chủ đề chiến lược cốt lõi.
 risks:
-- Over-rejecting valid customer feedback.
+- Từ chối quá mức các phản hồi hợp lý từ phía khách hàng.
 evidence:
   level: supported
   references:
@@ -38,5 +36,10 @@ tags:
 - strategy
 - drift
 - anti-patterns
+- strategic-drift
+- tactical-distraction
+- product-governance
+- strategic-alignment
+- execution-drift
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'

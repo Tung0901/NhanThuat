@@ -2,23 +2,21 @@ id: NT-LAW-0062
 type: law
 status: frozen
 version: 0.1.0
-title: Task vs Relationship Conflict Divergence
-summary: Task conflict improves decision quality, whereas relationship conflict degrades
-  psychological safety and performance.
+title: Sự phân tách giữa xung đột công việc và xung đột quan hệ
+summary: Xung đột công việc giúp cải thiện chất lượng ra quyết định, trong khi xung đột quan hệ làm suy giảm an toàn tâm lý và hiệu suất làm việc.
 primary_domain: hop-chung
 secondary_domains:
 - tri-nhan
-definition: Cognitive task disagreement improves choice quality by exposing flawed
-  assumptions.
+definition: Sự bất đồng nhận thức về mặt công việc giúp nâng cao chất lượng lựa chọn bằng cách vạch rõ những giả định sai lầm.
 conditions:
-- Team decision-making and strategic debates.
+- Quá trình ra quyết định nhóm và các cuộc tranh luận chiến lược.
 exceptions:
-- High-stress crisis environments.
+- Môi trường khủng hoảng có mức độ căng thẳng cao.
 applications:
   team_governance:
-  - Establish ground rules that focus debate on data and hypotheses.
+  - Thiết lập các quy tắc cơ bản nhằm tập trung cuộc tranh luận vào dữ liệu và các giả thuyết.
 risks:
-- Allowing relationship conflict to masquerade as task debate.
+- Để xung đột quan hệ ngụy trang dưới danh nghĩa tranh luận công việc.
 evidence:
   level: supported
   references:
@@ -33,5 +31,9 @@ tags:
 - conflict
 - task-conflict
 - relationship-conflict
+- psychological-safety
+- decision-making
+- team-dynamics
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

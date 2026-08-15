@@ -2,25 +2,25 @@ id: NT-ANTI-PATTERN-2501
 type: anti-pattern
 status: frozen
 version: 1.0.0
-title: Innovation Theater
-summary: Hoạt động đổi mới hình thức nhưng không có cam kết triển khai.
+title: Đổi mới mang tính trình diễn
+summary: Các hoạt động đổi mới sáng tạo chỉ mang tính hình thức, nhằm mục đích quảng bá mà không có cam kết thực hiện hay ứng dụng thực tế.
 primary_domain: tu-than
 domain_area: NT-DA-0025
 secondary_domains:
 - thanh-su
-definition: Tạo vỏ bọc đổi mới để PR nhưng thiếu cấu trúc hỗ trợ thực tế.
+definition: Hiện tượng tổ chức tạo ra vỏ bọc đổi mới sáng tạo để phục vụ quan hệ công chúng (PR) nhưng lại thiếu hụt nghiêm trọng cơ chế hỗ trợ và nguồn lực thực tế.
 mechanism:
-- Thi cuộc thi ý tưởng không ngân sách.
-- Nhóm R&D không quyền lực.
+- Tổ chức các cuộc thi ý tưởng rầm rộ nhưng không cấp ngân sách hoặc lộ trình triển khai thực tế.
+- Thành lập các bộ phận nghiên cứu và phát triển (R&D) hoặc phòng lab nhưng không trao quyền quyết định và nguồn lực.
 conditions:
-- Tập đoàn truyền thống.
+- Các tập đoàn hoặc tổ chức truyền thống đang chịu áp lực phải chuyển đổi số nhưng ngại thay đổi cốt lõi.
 exceptions:
-- Đổi mới thực sự được tài trợ.
+- Các dự án thử nghiệm (pilot) được cấp ngân sách độc lập và có cơ chế bảo vệ để phát triển thành sản phẩm thực tế.
 applications:
   management:
-  - Đánh giá tính thực tiễn của Lab
+  - Đánh giá hiệu quả thực tế của các phòng nghiên cứu (Lab) dựa trên tỷ lệ thương mại hóa sản phẩm.
 risks:
-- Bào mòn lòng tin nhân tài
+- Lãng phí nguồn lực tài chính và bào mòn lòng tin cũng như nhiệt huyết của các nhân sự tài năng.
 evidence:
   level: supported
   references: []
@@ -32,5 +32,10 @@ relations:
 tags:
 - fake-innovation
 - toxic
+- innovation-theater
+- corporate-innovation
+- performative-culture
+- organizational-change
+- r-and-d-effectiveness
 created_at: '2026-08-12'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

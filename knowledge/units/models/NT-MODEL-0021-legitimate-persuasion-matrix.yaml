@@ -2,21 +2,21 @@ id: NT-MODEL-0021
 type: model
 status: frozen
 version: 0.1.0
-title: Legitimate Persuasion Matrix
-summary: Legitimate Persuasion Matrix structural knowledge unit.
+title: Ma Trận Thuyết Phục Chính Danh
+summary: Đơn vị tri thức cấu trúc về Ma Trận Thuyết Phục Chính Danh trong điều hành tổ chức.
 primary_domain: tri-nhan
 secondary_domains:
 - hop-chung
-definition: Formal definition of Legitimate Persuasion Matrix in NhanThuat architecture.
+definition: Định nghĩa chuẩn tắc về Ma Trận Thuyết Phục Chính Danh trong cấu trúc kiến trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Bối cảnh quản trị và điều hành tổ chức.
 exceptions:
-- Emergency crisis overrides.
+- Các tình huống khủng hoảng khẩn cấp cần quyền can thiệp đặc biệt.
 applications:
   governance:
-  - Apply Legitimate Persuasion Matrix to organizational workflows.
+  - Ứng dụng Ma Trận Thuyết Phục Chính Danh vào các quy trình làm việc của tổ chức.
 risks:
-- Misapplication of Legitimate Persuasion Matrix leading to suboptimal performance.
+- Áp dụng sai lệch Ma Trận Thuyết Phục Chính Danh dẫn đến giảm sút hiệu suất hoạt động.
 evidence:
   level: supported
   references:
@@ -30,9 +30,14 @@ relations:
 tags:
 - model
 - tri-nhan
+- legitimate-persuasion-matrix
+- legitimate-persuasion
+- ethical-influence
+- persuasion-matrix
+- governance-decision-making
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
 mechanism:
-- 'Step 1: Identify Legitimate Persuasion Matrix.'
-- 'Step 2: Analyze parameters.'
-- 'Step 3: Execute model.'
+- 'Bước 1: Xác định Ma Trận Thuyết Phục Chính Danh.'
+- 'Bước 2: Phân tích các tham số ảnh hưởng.'
+- 'Bước 3: Tiến hành thực thi mô hình.'

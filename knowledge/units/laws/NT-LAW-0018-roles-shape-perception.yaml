@@ -2,33 +2,31 @@ id: NT-LAW-0018
 type: law
 status: frozen
 version: 0.1.0
-title: Roles shape perception
-summary: People interpret situations through the responsibilities, incentives, constraints,
-  and identities attached to their roles.
+title: Vai trò định hình nhận thức
+summary: Con người diễn giải các tình huống thông qua trách nhiệm, động lực, rào cản và bản sắc gắn liền với vai trò của họ.
 primary_domain: dung-nhan
 secondary_domains:
 - tri-nhan
 - hop-chung
-definition: A role filters what a person notices, values, ignores, and defends because
-  it defines expected contribution and exposure.
+definition: Một vai trò sẽ sàng lọc những gì một cá nhân chú ý, coi trọng, bỏ qua và bảo vệ vì nó xác định đóng góp kỳ vọng và mức độ ảnh hưởng của họ.
 mechanism:
-- Occupy a role
-- Experience role-specific pressures
-- Interpret events through role responsibilities.
+- Đảm nhận một vai trò
+- Trải nghiệm các áp lực đặc thù của vai trò đó
+- Diễn giải các sự kiện thông qua trách nhiệm của vai trò.
 conditions:
-- The role has expectations and consequences
-- The person identifies with or depends on the role.
+- Vai trò đó đi kèm với các kỳ vọng và hệ quả rõ ràng
+- Cá nhân tự đồng nhất mình với vai trò hoặc phụ thuộc vào vai trò đó.
 exceptions:
-- Cross-functional exposure can broaden perception
-- Personal values may override role pressure.
+- Sự tiếp xúc liên chức năng có thể mở rộng nhận thức
+- Các giá trị cá nhân có thể vượt lên trên áp lực từ vai trò.
 applications:
   management:
-  - Ask what the role makes visible and invisible.
+  - Đặt câu hỏi về những gì vai trò đó làm nổi bật hoặc che khuất.
   collaboration:
-  - Translate issues across role perspectives.
+  - Chuyển dịch các vấn đề qua lăng kính của các vai trò khác nhau.
 risks:
-- Assuming bad intent from role-shaped blind spots
-- Designing roles with conflicting signals.
+- Quy kết ý đồ xấu từ những điểm mù do vai trò định hình
+- Thiết kế các vai trò có các tín hiệu hoặc thông điệp mâu thuẫn nhau.
 evidence:
   level: provisional
   references: []
@@ -44,5 +42,10 @@ tags:
 - roles
 - perception
 - blind-spots
+- role-perception
+- cognitive-bias
+- organizational-behavior
+- role-theory
+- perspective-taking
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

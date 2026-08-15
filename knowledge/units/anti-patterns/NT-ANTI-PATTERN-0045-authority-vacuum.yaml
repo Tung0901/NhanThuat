@@ -2,28 +2,26 @@ id: NT-ANTI-PATTERN-0045
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Authority Vacuum
-summary: Failing to designate clear decision owners, causing paralysis, endless committee
-  debates, and unowned failures.
+title: Khoảng trống thẩm quyền
+summary: Không chỉ định rõ người chịu trách nhiệm quyết định, dẫn đến sự đình trệ, các cuộc tranh luận vô hồi kết của hội đồng và thất bại không ai nhận trách nhiệm.
 primary_domain: dung-nhan
 secondary_domains:
 - hop-chung
-definition: An authority vacuum occurs when leadership refuses to assign explicit
-  decision rights.
+definition: Khoảng trống thẩm quyền xảy ra khi ban lãnh đạo từ chối giao quyền quyết định rõ ràng cho một cá nhân cụ thể.
 mechanism:
-- A decision is needed.
-- No single decision owner assigned.
-- Committees debate endlessly.
-- Bad outcome.
+- Cần phải đưa ra một quyết định.
+- Không có cá nhân nào được giao quyền quyết định chính.
+- Các hội đồng tranh luận kéo dài không hồi kết.
+- Dẫn đến kết quả tồi tệ và thất bại.
 conditions:
-- Consensus-obsessed organizational cultures.
+- Văn hóa tổ chức quá ám ảnh bởi sự đồng thuận tập thể.
 exceptions:
-- Democratic voting bodies explicitly established by charter.
+- Các cơ quan bỏ phiếu dân chủ được thành lập rõ ràng theo điều lệ.
 applications:
   governance_audit:
-  - Ensure every strategic initiative has a single named decision owner.
+  - Đảm bảo mỗi sáng kiến chiến lược đều có duy nhất một người đứng tên chịu trách nhiệm quyết định.
 risks:
-- Assigning autocrats without consultation mechanisms.
+- Giao quyền cho kẻ độc tài mà thiếu các cơ chế tham vấn cần thiết.
 evidence:
   level: supported
   references:
@@ -39,5 +37,10 @@ tags:
 - authority
 - vacuum
 - anti-patterns
+- authority-vacuum
+- decision-making
+- lack-of-ownership
+- governance
+- committee-paralysis
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'

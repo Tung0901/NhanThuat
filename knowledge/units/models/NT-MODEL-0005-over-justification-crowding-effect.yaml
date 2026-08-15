@@ -2,18 +2,48 @@ id: NT-MODEL-0005
 type: model
 status: frozen
 version: 0.1.0
-title: Over-justification crowding effect
-summary: A structural pattern showing how adding heavy external rewards or tight monitoring to intrinsically motivated activities shifts focus to compliance and reduces voluntary effort when rewards cease.
+title: Hiệu ứng lấn át do biện minh quá mức
+summary: Mô hình cấu trúc chỉ ra cách việc áp dụng các phần thưởng bên ngoài quá lớn hoặc giám sát chặt chẽ vào các hoạt động vốn có động lực nội tại sẽ chuyển trọng tâm sang sự tuân thủ và làm giảm nỗ lực tự nguyện khi phần thưởng chấm dứt.
 primary_domain: tu-than
-secondary_domains: [tri-nhan, thanh-su]
-definition: Heavy external rewards undermine internal locus of control, leading individuals to attribute their effort solely to the external reward.
-mechanism: [Observe intrinsic task interest, Introduce heavy extrinsic reward, Re-attribute motive externally, Erode voluntary drive upon reward removal.]
-conditions: [Initial activity possesses baseline intrinsic interest.]
-exceptions: [Purely mechanical or unpleasant tasks where intrinsic interest is naturally zero.]
-applications: {compensation-design: [Decouple creative problem solving from micro-bonus schemes.], management: [Maintain intrinsic craft pride alongside fair baseline pay.]}
-risks: [Unintentionally destroying organizational passion through excessive transactional incentives.]
-evidence: {level: provisional, references: []}
-relations: {supports: [NT-PRINCIPLE-0053, NT-PRINCIPLE-0057], conflicts_with: [], depends_on: [NT-LAW-0030], applies_to: []}
-tags: [model, pattern, intrinsic, crowding-effect, reward]
+secondary_domains:
+- tri-nhan
+- thanh-su
+definition: Phần thưởng bên ngoài quá lớn làm suy yếu điểm kiểm soát nội tại, khiến các cá nhân quy kết nỗ lực của họ hoàn toàn là do phần thưởng bên ngoài đó.
+mechanism:
+- Quan sát sự hứng thú nội tại đối với nhiệm vụ
+- Đưa vào phần thưởng ngoại tại quá lớn
+- Tái quy kết động cơ sang các yếu tố bên ngoài
+- Làm xói mòn động lực tự nguyện khi phần thưởng bị loại bỏ.
+conditions:
+- Hoạt động ban đầu phải có mức độ hứng thú nội tại cơ bản.
+exceptions:
+- Các nhiệm vụ thuần túy cơ học hoặc gây khó chịu mà sự hứng thú nội tại vốn dĩ bằng không.
+applications:
+  compensation-design:
+  - Tách biệt việc giải quyết vấn đề sáng tạo khỏi các cơ chế thưởng nhỏ.
+  management:
+  - Duy trì niềm tự hào nghề nghiệp nội tại bên cạnh mức lương cơ bản công bằng.
+risks:
+- Vô tình hủy hoại nhiệt huyết của tổ chức thông qua các khuyến khích mang tính giao dịch quá mức.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports:
+  - NT-PRINCIPLE-0053
+  - NT-PRINCIPLE-0057
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0030
+  applies_to: []
+tags:
+- model
+- pattern
+- intrinsic
+- crowding-effect
+- reward
+- overjustification-effect
+- crowding-out
+- intrinsic-motivation
 created_at: '2026-07-21'
-updated_at: '2026-07-21'
+updated_at: '2026-08-15'

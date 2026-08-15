@@ -2,22 +2,21 @@ id: NT-PRINCIPLE-0108
 type: principle
 status: frozen
 version: 0.1.0
-title: Model Desired Culture at Leadership Level
-summary: Require senior leaders to exemplify target cultural behaviors in daily operational
-  decisions.
+title: Làm gương cho văn hóa mong muốn ở cấp lãnh đạo
+summary: Yêu cầu các nhà lãnh đạo cấp cao thể hiện các hành vi văn hóa mục tiêu trong các quyết định vận hành hằng ngày.
 primary_domain: hop-chung
 secondary_domains:
 - tu-than
-definition: Leaders must actively live the cultural norms they demand from others.
+definition: Lãnh đạo phải chủ động sống theo các chuẩn mực văn hóa mà họ đòi hỏi ở người khác.
 conditions:
-- Cultural transformation programs.
+- Các chương trình chuyển đổi văn hóa.
 exceptions:
-- None.
+- Không có.
 applications:
   exec_coaching:
-  - Evaluate executive performance on cultural modeling metrics.
+  - Đánh giá hiệu suất của cấp điều hành dựa trên các chỉ số làm gương văn hóa.
 risks:
-- Expecting leaders to be infallible.
+- Kỳ vọng lãnh đạo luôn luôn hoàn hảo.
 evidence:
   level: supported
   references:
@@ -32,5 +31,9 @@ tags:
 - culture
 - leadership
 - modeling
+- role-modeling
+- values
+- tone-from-top
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

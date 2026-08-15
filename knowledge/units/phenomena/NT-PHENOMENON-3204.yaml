@@ -1,33 +1,27 @@
 id: NT-PHENOMENON-3204
 type: phenomenon
-title: Temptation Bundling
-summary: Combining a behavior that is good for you in the long run with a behavior
-  that feels good in the short run.
+title: Gói ghép cám dỗ
+summary: Kết hợp một hành vi tốt cho bạn về lâu dài với một hành vi mang lại cảm giác dễ chịu trong ngắn hạn.
 primary_domain: tri-nhan
 domain_area: NT-DA-0028
-definition: A behavioral intervention strategy designed to solve present bias by coupling
-  an instantly gratifying activity (want-to-do) with a delayed-gratification activity
-  (should-do).
+definition: Một chiến lược can thiệp hành vi được thiết kế để giải quyết thiên kiến hiện tại bằng cách gắn kết một hoạt động mang lại khoái cảm tức thì (muốn làm) với một hoạt động có sự trì hoãn phần thưởng (nên làm).
 mechanism:
-- Identify a 'should-do' task that lacks immediate reward.
-- Identify a 'want-to-do' task that provides instant gratification.
-- Strictly restrict the 'want-to-do' task so it can only be done concurrently with
-  the 'should-do' task.
+- Xác định một nhiệm vụ 'nên làm' thiếu phần thưởng tức thì.
+- Xác định một nhiệm vụ 'muốn làm' mang lại khoái cảm tức thì.
+- Hạn chế nghiêm ngặt nhiệm vụ 'muốn làm' để nó chỉ có thể thực hiện đồng thời với nhiệm vụ 'nên làm'.
 conditions:
-- Tasks that can physically or cognitively be done simultaneously (e.g., running on
-  a treadmill and listening to an audiobook).
+- 'Các nhiệm vụ có thể thực hiện đồng thời về mặt thể chất hoặc nhận thức (ví dụ: chạy trên máy chạy bộ và nghe sách nói).'
 exceptions:
-- Tasks requiring deep focus cannot be bundled with highly distracting rewards.
+- Các nhiệm vụ đòi hỏi sự tập trung sâu không thể ghép với những phần thưởng gây mất tập trung cao độ.
 applications:
   habit_formation:
-  - Only allow watching a favorite show while doing administrative expense reports.
+  - Chỉ cho phép xem một chương trình yêu thích khi đang làm báo cáo chi phí hành chính.
 risks:
-- The rule breaks down if the individual lacks the self-control to maintain the restriction.
+- Quy tắc sụp đổ nếu cá nhân thiếu ý chí tự chủ để duy trì sự hạn chế.
 evidence:
   level: strong
   references:
-  - Milkman, K. L., Minson, J. A., & Volpp, K. G. (2014). 'Holding the Hunger Games
-    Hostage at the Gym'. Management Science.
+  - Milkman, K. L., Minson, J. A., & Volpp, K. G. (2014). 'Holding the Hunger Games Hostage at the Gym'. Management Science.
 relations:
   supports: []
   conflicts_with: []
@@ -36,7 +30,11 @@ relations:
 tags:
 - habits
 - bundling
+- temptation-bundling
+- habit-formation
+- self-control
+- present-bias
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

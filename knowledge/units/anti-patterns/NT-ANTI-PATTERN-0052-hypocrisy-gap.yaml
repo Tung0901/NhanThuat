@@ -2,28 +2,26 @@ id: NT-ANTI-PATTERN-0052
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Hypocrisy Gap
-summary: Prominently displaying corporate core values while leadership routinely violates
-  them in daily operational choices.
+title: Khoảng cách giữa lời nói và hành động
+summary: Truyền thông rầm rộ về các giá trị cốt lõi của doanh nghiệp nhưng lãnh đạo lại thường xuyên vi phạm trong các quyết định vận hành hàng ngày.
 primary_domain: hop-chung
 secondary_domains:
 - tu-than
-definition: The hypocrisy gap occurs when leadership preaches ethical values on posters
-  but acts selfishly in private decisions.
+definition: Khoảng cách giữa lời nói và hành động xuất hiện khi ban lãnh đạo tuyên truyền các giá trị đạo đức trên áp phích nhưng lại hành xử vị kỷ trong các quyết định nội bộ.
 mechanism:
-- Management publishes corporate values.
-- Management acts in direct contradiction.
-- Employees lose trust.
-- Culture degrades.
+- Ban quản lý công bố các giá trị doanh nghiệp.
+- Ban quản lý hành động trái ngược hoàn toàn.
+- Nhân viên mất đi niềm tin.
+- Văn hóa tổ chức bị xói mòn.
 conditions:
-- Marketing-driven corporate PR without internal alignment.
+- Hoạt động truyền thông doanh nghiệp chạy theo quảng bá mà thiếu sự đồng bộ nội bộ.
 exceptions:
-- None.
+- Không có.
 applications:
   culture_audit:
-  - Identify disconnects between employee survey feedback and executive PR claims.
+  - Xác định sự lệch pha giữa phản hồi từ khảo sát nhân viên và các tuyên bố truyền thông của ban điều hành.
 risks:
-- Demotivating staff by highlighting unresolvable executive hypocrisy.
+- Làm nhân viên nản lòng khi chỉ ra sự mâu thuẫn kéo dài không thể khắc phục của ban điều hành.
 evidence:
   level: supported
   references:
@@ -39,5 +37,10 @@ tags:
 - culture
 - hypocrisy
 - anti-patterns
+- hypocrisy-gap
+- leadership-trust
+- corporate-values
+- culture-alignment
+- organizational-integrity
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'

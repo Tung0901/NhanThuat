@@ -2,26 +2,26 @@ id: NT-MODEL-2501
 type: model
 status: frozen
 version: 1.0.0
-title: Three Horizons of Growth
-summary: 'Quy hoạch đổi mới qua 3 đường chân trời: Core, Adjacent, Transformative.'
+title: Mô hình Ba Chân trời Tăng trưởng
+summary: 'Quy hoạch và phân bổ đổi mới qua ba đường chân trời: Cốt lõi, Liền kề và Chuyển dịch đột phá.'
 primary_domain: tu-than
 domain_area: NT-DA-0025
 secondary_domains:
 - thanh-su
-definition: Phân bổ nguồn lực và tư duy qua 3 đường chân trời để tăng trưởng bền vững.
+definition: Khung chiến lược phân bổ nguồn lực và tư duy qua ba đường chân trời thời gian nhằm đảm bảo tăng trưởng bền vững.
 mechanism:
-- 'H1: Core.'
-- 'H2: Adjacent.'
-- 'H3: Transformative.'
+- 'Chân trời 1 (H1): Duy trì và mở rộng hoạt động kinh doanh cốt lõi hiện tại.'
+- 'Chân trời 2 (H2): Nuôi dưỡng các cơ hội kinh doanh mới nổi và thị trường liền kề.'
+- 'Chân trời 3 (H3): Tạo dựng các phương án đột phá định hình tương lai dài hạn.'
 conditions:
-- Quy hoạch chiến lược dài hạn.
+- Áp dụng trong quy hoạch chiến lược và quản trị danh mục đổi mới dài hạn.
 exceptions:
-- Giai đoạn sinh tồn.
+- Doanh nghiệp đang trong giai đoạn khủng hoảng hoặc phải ưu tiên sinh tồn ngắn hạn.
 applications:
   management:
-  - Xây dựng danh mục đổi mới
+  - Xây dựng và cân đối danh mục đầu tư đổi mới sáng tạo toàn diện.
 risks:
-- Dồn 100% nguồn lực vào H1
+- Dồn toàn bộ 100% nguồn lực vào H1 khiến tổ chức mất khả năng thích ứng trong tương lai.
 evidence:
   level: supported
   references: []
@@ -33,5 +33,10 @@ relations:
 tags:
 - framework
 - growth
+- three-horizons-of-growth
+- innovation-portfolio
+- strategic-planning
+- growth-strategy
+- horizon-model
 created_at: '2026-08-12'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

@@ -1,36 +1,28 @@
 id: NT-PHENOMENON-3409
 type: phenomenon
-title: Identifiable Victim Effect
-summary: People are far more willing to offer aid to a specific, identifiable individual
-  in hardship than to a large, vaguely defined group with the same need.
+title: Hiệu ứng nạn nhân dễ nhận diện
+summary: Con người sẵn sàng giúp đỡ một cá nhân cụ thể, có thể nhận diện được đang gặp khó khăn hơn nhiều so với một nhóm lớn, mơ hồ với cùng nhu cầu đó.
 primary_domain: tri-nhan
 domain_area: NT-DA-0030
-definition: A cognitive bias in charitable giving and resource allocation where emotional
-  empathy (System 1) is massively triggered by a single face and story, but shut down
-  by statistics and scale.
+definition: Một thiên kiến nhận thức trong quyên góp từ thiện và phân bổ nguồn lực, trong đó sự đồng cảm cảm xúc (Hệ thống 1) bị kích hoạt mạnh mẽ bởi một khuôn mặt và câu chuyện đơn lẻ, nhưng lại bị dập tắt bởi số liệu thống kê và quy mô.
 mechanism:
-- A story of a single, named individual is presented.
-- High emotional arousal and empathy are triggered.
-- Action (donating/helping) immediately follows.
-- Conversely, presenting statistics of millions dying triggers abstract, emotionless
-  processing, resulting in inaction.
+- Câu chuyện về một cá nhân đơn lẻ, được nêu tên được trình bày.
+- Cảm xúc dâng trào và sự đồng cảm được kích hoạt mạnh.
+- Hành động (quyên góp/giúp đỡ) diễn ra ngay lập tức.
+- Ngược lại, trình bày số liệu thống kê về hàng triệu người chết kích hoạt quá trình xử lý trừu tượng, vô cảm, dẫn đến không hành động.
 conditions:
-- Fundraising, charitable campaigns, and political narratives.
+- Gây quỹ, các chiến dịch từ thiện và các diễn ngôn chính trị.
 exceptions:
-- When the 'identifiable victim' is perceived as highly culpable for their own situation.
+- Khi 'nạn nhân dễ nhận diện' bị nhận định là rất đáng trách vì hoàn cảnh của chính họ.
 applications:
   communication:
-  - Never use statistics to open a pitch. Open with the story of one specific customer
-    whose life was ruined by the problem you solve.
+  - Không bao giờ dùng số liệu thống kê để mở đầu bài thuyết trình. Hãy mở đầu bằng câu chuyện của một khách hàng cụ thể có cuộc đời bị hủy hoại bởi vấn đề mà bạn giải quyết.
 risks:
-- Systemic resource misallocation, where massive amounts of money are spent to save
-  one person while thousands die silently elsewhere.
+- Phân bổ nguồn lực sai lệch mang tính hệ thống, khi số tiền khổng lồ được chi để cứu một người trong khi hàng nghìn người khác chết thầm lặng ở nơi khác.
 evidence:
   level: strong
   references:
-  - 'Small, D. A., Loewenstein, G., & Slovic, P. (2007). ''Sympathy and callousness:
-    The impact of deliberative thought on donations to identifiable and statistical
-    victims''.'
+  - 'Small, D. A., Loewenstein, G., & Slovic, P. (2007). ''Sympathy and callousness: The impact of deliberative thought on donations to identifiable and statistical victims''.'
 relations:
   supports: []
   conflicts_with: []
@@ -39,7 +31,10 @@ relations:
 tags:
 - empathy
 - bias
+- identifiable-victim
+- statistics
+- donation
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

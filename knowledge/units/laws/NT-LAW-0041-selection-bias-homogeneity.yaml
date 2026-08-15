@@ -2,21 +2,21 @@ id: NT-LAW-0041
 type: law
 status: frozen
 version: 0.1.0
-title: Selection Bias Homogeneity
-summary: Selection Bias Homogeneity structural knowledge unit.
+title: Tính Đồng nhất do Thiên kiến Lựa chọn
+summary: Đơn vị tri thức cấu trúc về hiện tượng đồng nhất hóa bắt nguồn từ thiên kiến lựa chọn.
 primary_domain: tri-nhan
 secondary_domains:
 - hop-chung
-definition: Formal definition of Selection Bias Homogeneity in NhanThuat architecture.
+definition: Định nghĩa chính thức về Tính Đồng nhất do Thiên kiến Lựa chọn trong cấu trúc kiến trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Các bối cảnh quản trị vận hành.
 exceptions:
-- Emergency crisis overrides.
+- Các trường hợp ưu tiên xử lý khủng hoảng khẩn cấp.
 applications:
   governance:
-  - Apply Selection Bias Homogeneity to organizational workflows.
+  - Áp dụng nguyên lý Tính Đồng nhất do Thiên kiến Lựa chọn vào các quy trình làm việc của tổ chức.
 risks:
-- Misapplication of Selection Bias Homogeneity leading to suboptimal performance.
+- Áp dụng sai nguyên lý Tính Đồng nhất do Thiên kiến Lựa chọn dẫn đến hiệu suất dưới mức tối ưu.
 evidence:
   level: supported
   references:
@@ -30,5 +30,11 @@ relations:
 tags:
 - law
 - tri-nhan
+- selection-bias
+- homogeneity-bias
+- hiring-bias
+- groupthink-risk
+- workforce-diversity
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

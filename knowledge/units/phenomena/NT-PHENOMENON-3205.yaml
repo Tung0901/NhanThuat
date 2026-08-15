@@ -1,33 +1,27 @@
 id: NT-PHENOMENON-3205
 type: phenomenon
-title: Decision Fatigue (Ego Depletion)
-summary: The deteriorating quality of decisions made by an individual after a long
-  session of decision making.
+title: Mệt mỏi quyết định (Cạn kiệt bản ngã)
+summary: Chất lượng các quyết định của một cá nhân suy giảm sau một chuỗi dài các lần ra quyết định.
 primary_domain: tri-nhan
 domain_area: NT-DA-0028
-definition: A state of mental exhaustion caused by continuous cognitive effort, leading
-  to impulsive choices or absolute decision avoidance (status quo bias).
+definition: Trạng thái kiệt quệ tinh thần do nỗ lực nhận thức liên tục gây ra, dẫn đến những lựa chọn bốc đồng hoặc hoàn toàn né tránh việc ra quyết định (thiên kiến hiện trạng).
 mechanism:
-- Willpower and executive function rely on a finite metabolic or cognitive resource.
-- Repeated active choices drain this resource.
-- As depletion occurs, the brain defaults to System 1 heuristics, choosing the easiest
-  option or doing nothing.
+- Ý chí và chức năng điều hành dựa vào một nguồn tài nguyên chuyển hóa hoặc nhận thức có hạn.
+- Việc liên tục đưa ra những lựa chọn chủ động làm cạn kiệt nguồn tài nguyên này.
+- Khi nguồn lực cạn kiệt, não bộ mặc định chuyển sang các lối tắt của Hệ thống 1, chọn phương án dễ nhất hoặc không làm gì cả.
 conditions:
-- High-frequency, high-stakes, or highly complex choices over a sustained period.
+- Những lựa chọn có tần suất cao, rủi ro lớn hoặc mức độ phức tạp cao kéo dài trong một khoảng thời gian liên tục.
 exceptions:
-- Routine habits that run on automaticity do not drain executive function.
+- Các thói quen mang tính lặp đi lặp lại vận hành theo cơ chế tự động không làm cạn kiệt chức năng điều hành.
 applications:
   process_design:
-  - Schedule critical strategic decisions for the morning; use defaults for afternoon
-    decisions.
+  - Lên lịch các quyết định chiến lược quan trọng vào buổi sáng; dùng các lựa chọn mặc định cho các quyết định vào buổi chiều.
 risks:
-- Judges or doctors making systematically worse, harsher, or risk-averse decisions
-  at the end of a shift.
+- Các thẩm phán hoặc bác sĩ đưa ra những quyết định tồi tệ hơn, khắc nghiệt hơn hoặc thận trọng hơn một cách có hệ thống vào cuối ca làm việc.
 evidence:
   level: strong
   references:
-  - 'Baumeister, R. F., et al. (1998). ''Ego depletion: Is the active self a limited
-    resource?''. Journal of Personality and Social Psychology.'
+  - 'Baumeister, R. F., et al. (1998). ''Ego depletion: Is the active self a limited resource?''. Journal of Personality and Social Psychology.'
 relations:
   supports: []
   conflicts_with: []
@@ -36,7 +30,11 @@ relations:
 tags:
 - fatigue
 - willpower
+- decision-fatigue
+- ego-depletion
+- status-quo-bias
+- system-1
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

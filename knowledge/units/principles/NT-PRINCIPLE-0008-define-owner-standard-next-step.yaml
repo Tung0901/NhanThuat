@@ -2,33 +2,31 @@ id: NT-PRINCIPLE-0008
 type: principle
 status: frozen
 version: 0.1.0
-title: Define owner, standard, and next step
-summary: For every important handoff, make the owner, expected standard, and next
-  visible step explicit.
+title: Xác định chủ sở hữu, tiêu chuẩn và bước tiếp theo
+summary: Đối với mọi lần bàn giao quan trọng, hãy làm rõ chủ sở hữu, tiêu chuẩn kỳ vọng và bước tiếp theo có thể thấy được.
 primary_domain: hop-chung
 secondary_domains:
 - dung-nhan
 - thanh-su
-definition: Coordination improves when people know who owns the outcome, what good
-  means, and what happens next.
+definition: Phối hợp cải thiện khi con người biết ai sở hữu kết quả, thế nào là tốt và điều gì xảy ra tiếp theo.
 mechanism:
-- Assign owner
-- Define standard
-- Confirm next step and timing.
+- Chỉ định chủ sở hữu.
+- Xác định tiêu chuẩn.
+- Xác nhận bước tiếp theo và thời điểm.
 conditions:
-- Work crosses people or roles
-- Misalignment would create rework or delay.
+- Công việc đi qua nhiều người hoặc nhiều vai trò.
+- Sự lệch nhịp sẽ tạo ra làm lại việc hoặc chậm trễ.
 exceptions:
-- Exploratory work may need looser ownership
-- Over-specific standards may reduce adaptability.
+- Công việc thăm dò có thể cần quyền sở hữu lỏng hơn.
+- Tiêu chuẩn quá cụ thể có thể giảm khả năng thích ứng.
 applications:
   teamwork:
-  - End meetings with owner and next action.
+  - Kết thúc cuộc họp bằng chủ sở hữu và hành động tiếp theo.
   operations:
-  - Use handoff checklists for recurring work.
+  - Dùng bảng kiểm bàn giao cho công việc lặp lại.
 risks:
-- Creating bureaucracy
-- Assigning ownership without authority.
+- Tạo ra thủ tục hành chính cồng kềnh.
+- Chỉ định quyền sở hữu mà không có quyền hạn.
 evidence:
   level: provisional
   references: []
@@ -43,5 +41,7 @@ tags:
 - ownership
 - clarity
 - handoffs
+- accountability
+- standards
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

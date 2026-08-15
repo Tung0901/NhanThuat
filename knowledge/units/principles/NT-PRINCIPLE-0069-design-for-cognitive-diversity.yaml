@@ -2,21 +2,21 @@ id: NT-PRINCIPLE-0069
 type: principle
 status: frozen
 version: 0.1.0
-title: Design for Cognitive Diversity
-summary: Design for Cognitive Diversity structural knowledge unit.
+title: Thiết kế cho đa dạng nhận thức
+summary: Thiết kế cho đa dạng nhận thức là một đơn vị tri thức cấu trúc trong kho tri thức Nhân Thuật.
 primary_domain: hop-chung
 secondary_domains:
 - tri-nhan
-definition: Formal definition of Design for Cognitive Diversity in NhanThuat architecture.
+definition: Định nghĩa chính thức của Nguyên tắc Thiết kế cho đa dạng nhận thức trong kiến trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Các bối cảnh quản trị vận hành.
 exceptions:
-- Emergency crisis overrides.
+- Các tình huống khẩn cấp yêu cầu vượt quyền ưu tiên.
 applications:
   governance:
-  - Apply Design for Cognitive Diversity to organizational workflows.
+  - Áp dụng Nguyên tắc Thiết kế cho đa dạng nhận thức vào các quy trình vận hành của tổ chức.
 risks:
-- Misapplication of Design for Cognitive Diversity leading to suboptimal performance.
+- Áp dụng sai Nguyên tắc Thiết kế cho đa dạng nhận thức dẫn đến hiệu suất dưới mức tối ưu.
 evidence:
   level: supported
   references:
@@ -30,5 +30,10 @@ relations:
 tags:
 - principle
 - hop-chung
+- cognitive-diversity
+- team-design
+- group-cognition
+- collective-intelligence
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

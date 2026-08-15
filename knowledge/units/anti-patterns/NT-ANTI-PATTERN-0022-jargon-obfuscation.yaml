@@ -2,21 +2,21 @@ id: NT-ANTI-PATTERN-0022
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Jargon Obfuscation
-summary: Jargon Obfuscation structural knowledge unit.
+title: Làm mờ bằng thuật ngữ
+summary: Đơn vị kiến thức cấu trúc về Làm mờ bằng thuật ngữ (Jargon Obfuscation) trong giao tiếp quản trị.
 primary_domain: tri-nhan
 secondary_domains:
 - dung-nhan
-definition: Formal definition of Jargon Obfuscation in NhanThuat architecture.
+definition: Định nghĩa chính thức về Làm mờ bằng thuật ngữ trong kiến trúc Nhân Thuật, mô tả hành vi sử dụng quá mức thuật ngữ chuyên ngành phức tạp để che đậy sự thiếu rõ ràng hoặc né tránh trách nhiệm.
 conditions:
-- Operational governance contexts.
+- Các bối cảnh quản trị vận hành tổ chức.
 exceptions:
-- Emergency crisis overrides.
+- Các trường hợp ưu tiên đè thẩm quyền trong khủng hoảng khẩn cấp.
 applications:
   governance:
-  - Apply Jargon Obfuscation to organizational workflows.
+  - Áp dụng nhận diện Làm mờ bằng thuật ngữ vào quy trình làm việc của tổ chức.
 risks:
-- Misapplication of Jargon Obfuscation leading to suboptimal performance.
+- Áp dụng sai hoặc không nhận diện được Làm mờ bằng thuật ngữ dẫn đến sai lệch thông tin và hiệu suất không đạt tối ưu.
 evidence:
   level: supported
   references:
@@ -30,5 +30,10 @@ relations:
 tags:
 - anti-pattern
 - tri-nhan
+- jargon-obfuscation
+- communication-barrier
+- governance
+- clarity-in-leadership
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

@@ -2,34 +2,48 @@ id: NT-LAW-0036
 type: law
 status: frozen
 version: 0.1.0
-title: Law of Probabilistic Default Expression under Load
-summary: Under sustained cognitive, emotional, or physical load, the probability of expressing lower-effort default behavioral patterns increases as executive control is stressed.
+title: Quy Luật Biểu Hiện Mặc Định Xác Suất Dưới Tải Trọng
+summary: Dưới áp lực nhận thức, cảm xúc hoặc thể chất kéo dài, xác suất biểu hiện các mẫu hành vi mặc định ít tốn công sức hơn sẽ tăng lên do sự kiểm soát điều hành bị căng thẳng.
 primary_domain: tri-nhan
-secondary_domains: [tu-than]
-definition: Sustained cognitive, emotional, or physical load stresses executive control. Without assuming a literal resource depletion mechanism, this stress increases the statistical probability that an individual's trait expression and observed behavior will fall back onto latent behavioral defaults rather than deliberate adaptations.
+secondary_domains:
+- tu-than
+definition: Tải trọng nhận thức, cảm xúc hoặc thể chất kéo dài làm căng thẳng khả năng kiểm soát điều hành. Mà không giả định một cơ chế cạn kiệt tài nguyên theo nghĩa đen, áp lực này làm tăng xác suất thống kê rằng sự biểu hiện đặc điểm và hành vi quan sát được của một cá nhân sẽ rơi trở lại các hành vi mặc định tiềm ẩn thay vì các sự thích ứng có chủ ý.
 mechanism:
-  - Sustained load increases cognitive demands
-  - Executive control capacity is dynamically prioritized for immediate tasks
-  - Trait expression shifts probabilistically toward low-effort defaults
+- Tải trọng kéo dài làm tăng các yêu cầu về nhận thức
+- Năng lực kiểm soát điều hành được ưu tiên động cho các nhiệm vụ trước mắt
+- Sự biểu hiện đặc điểm dịch chuyển theo xác suất hướng tới các mặc định ít tốn công sức
 conditions:
-  - Sustained high cognitive, emotional, or physical load is present.
+- Tải trọng nhận thức, cảm xúc hoặc thể chất cao và kéo dài đang hiện diện.
 exceptions:
-  - Highly automated habits or strong external situation strength can suppress defaults even under load.
+- Các thói quen được tự động hóa cao hoặc sức mạnh tình huống bên ngoài lớn có thể kìm hãm các hành vi mặc định ngay cả khi chịu tải.
 applications:
-  task-design: [Minimize cognitive load during high-risk operations to ensure compliance with critical behaviors.]
-  leadership: [Expect and plan for default expression under high operational stress rather than expecting continuous masking.]
+  task-design:
+  - Giảm thiểu tải trọng nhận thức trong các hoạt động rủi ro cao để đảm bảo tuân thủ các hành vi quan trọng.
+  leadership:
+  - Dự đoán và lên kế hoạch cho sự biểu hiện mặc định dướiσ áp lực vận hành cao thay vì kỳ vọng sự che giấu liên tục.
 risks:
-  - Excusing bad behavior or ethical failures as unavoidable default expression.
-  - Relying on outdated ego depletion theories for cognitive resource planning.
+- Biện minh cho hành vi xấu hoặc sai lầm đạo đức là sự biểu hiện mặc định không thể tránh khỏi.
+- Dựa vào các lý thuyết cạn kiệt cái tôi lỗi thời để lập kế hoạch tài nguyên nhận thức.
 evidence:
   level: provisional
   references:
-    - "Inzlicht, M., & Schmeichel, B. J. (2012). What is Ego Depletion? Toward a Motivation-Control Model of Self-Control."
+  - Inzlicht, M., & Schmeichel, B. J. (2012). What is Ego Depletion? Toward a Motivation-Control Model of Self-Control.
 relations:
   supports: []
   conflicts_with: []
-  depends_on: [NT-LAW-0015, NT-LAW-0027, NT-LAW-0034]
+  depends_on:
+  - NT-LAW-0015
+  - NT-LAW-0027
+  - NT-LAW-0034
   applies_to: []
-tags: [load, defaults, self-regulation, cognitive-load, executive-control]
+tags:
+- load
+- defaults
+- self-regulation
+- cognitive-load
+- executive-control
+- probabilistic-default
+- behavioral-fallback
+- stress-response
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'

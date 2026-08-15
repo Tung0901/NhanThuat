@@ -2,23 +2,21 @@ id: NT-PRINCIPLE-0092
 type: principle
 status: frozen
 version: 0.1.0
-title: Balance Short-Term Metrics with Long-Term Alignment
-summary: Pair short-term operational targets with long-term clawback provisions and
-  quality thresholds to preserve institutional health.
+title: Cân bằng chỉ số ngắn hạn với định hướng dài hạn
+summary: Kết hợp các mục tiêu vận hành ngắn hạn với điều khoản thu hồi thưởng dài hạn và các ngưỡng chất lượng để bảo vệ sự lành mạnh của tổ chức.
 primary_domain: tu-than
 secondary_domains:
 - hop-chung
-definition: Short-term performance payoffs must be counter-balanced with long-term
-  retention gates.
+definition: Các khoản thưởng theo kết quả ngắn hạn phải được cân bằng với các cơ chế giữ chân gắn với kết quả dài hạn.
 conditions:
-- Executive compensation and high-volume sales deal structuring.
+- Cấu trúc lương thưởng điều hành và cơ cấu hợp đồng bán hàng khối lượng lớn.
 exceptions:
-- Short-term spot bonuses for single emergency interventions.
+- Thưởng điểm đột xuất ngắn hạn cho các can thiệp khẩn cấp chỉ xảy ra một lần.
 applications:
   executive_pay:
-  - Require 3-year vesting and performance clawbacks.
+  - Yêu cầu thời gian trao quyền cổ phần 3 năm và cơ chế thu hồi thưởng theo kết quả.
 risks:
-- Reducing short-term motivation by deferring rewards too far into the future.
+- Giảm động lực ngắn hạn khi hoãn thưởng quá xa về tương lai.
 evidence:
   level: supported
   references:
@@ -33,5 +31,9 @@ tags:
 - incentives
 - short-term
 - long-term
+- clawback
+- executive-pay
+- vesting
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

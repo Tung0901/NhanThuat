@@ -2,33 +2,31 @@ id: NT-PRINCIPLE-0033
 type: principle
 status: frozen
 version: 0.1.0
-title: Change defaults before demanding discipline
-summary: When a poor pattern repeats, redesign the default path before relying on
-  stronger individual discipline.
+title: Thay đổi mặc định trước khi đòi hỏi kỷ luật
+summary: Khi một khuôn mẫu xấu lặp lại, hãy thiết kế lại con đường mặc định trước khi dựa vào kỷ luật cá nhân mạnh hơn.
 primary_domain: thanh-su
 secondary_domains:
 - tu-than
 - dung-nhan
-definition: System defaults often overpower intentions, so better defaults make desired
-  behavior easier and less energy-dependent.
+definition: Mặc định của hệ thống thường lấn át ý định, nên mặc định tốt hơn khiến hành vi mong muốn dễ thực hiện và ít phụ thuộc năng lượng hơn.
 mechanism:
-- Find repeated failure
-- Identify the default path
-- Redesign default toward desired behavior.
+- Tìm thất bại lặp lại
+- Xác định con đường mặc định
+- Thiết kế lại mặc định theo hướng hành vi mong muốn.
 conditions:
-- The pattern repeats
-- The default can be changed.
+- Khuôn mẫu lặp lại
+- Mặc định có thể được thay đổi.
 exceptions:
-- Some issues require direct accountability
-- Excessive redesign may avoid necessary skill-building.
+- Một số vấn đề cần trách nhiệm giải trình trực tiếp
+- Thiết kế lại quá mức có thể tránh né việc rèn luyện kỹ năng cần thiết.
 applications:
   operations:
-  - Make the safe path the easy path.
+  - Làm cho con đường an toàn trở thành con đường dễ dàng.
   management:
-  - Fix recurring process traps before blaming effort.
+  - Khắc phục bẫy quy trình lặp lại trước khi đổ lỗi cho nỗ lực.
 risks:
-- Removing personal responsibility
-- Creating rigid systems.
+- Loại bỏ trách nhiệm cá nhân
+- Tạo ra hệ thống cứng nhắc.
 evidence:
   level: provisional
   references: []
@@ -43,5 +41,8 @@ tags:
 - defaults
 - discipline
 - systems
+- systems-design
+- behavior-change
+- recurring-patterns
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

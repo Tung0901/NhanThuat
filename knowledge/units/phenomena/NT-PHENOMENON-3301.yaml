@@ -1,33 +1,27 @@
 id: NT-PHENOMENON-3301
 type: phenomenon
-title: Social Proof and Conformity
-summary: Individuals look to the behavior of others to determine the correct behavior
-  for themselves, particularly in ambiguous situations.
+title: Bằng chứng xã hội và sự tuân thủ
+summary: Cá nhân nhìn vào hành vi của người khác để xác định hành vi đúng cho chính mình, đặc biệt trong những tình huống mơ hồ.
 primary_domain: tri-nhan
 domain_area: NT-DA-0029
-definition: The psychological tendency to adopt the opinions, behaviors, and actions
-  of the majority (or peers) as a heuristic for what is correct or appropriate.
+definition: Xu hướng tâm lý áp dụng ý kiến, hành vi và hành động của số đông (hoặc nhóm đồng trang lứa) như một lối tắt cho điều gì là đúng đắn hoặc phù hợp.
 mechanism:
-- An individual encounters an ambiguous or high-pressure situation.
-- They observe the actions or stated beliefs of the surrounding group.
-- They align their own behavior to match, assuming the group possesses superior knowledge
-  or to avoid social ostracization.
+- Một cá nhân đối mặt với một tình huống mơ hồ hoặc áp lực cao.
+- Họ quan sát hành động hoặc niềm tin đã được phát biểu của nhóm xung quanh.
+- Họ điều chỉnh hành vi của mình cho khớp, cho rằng nhóm sở hữu kiến thức vượt trội hoặc để tránh bị xã hội xa lánh.
 conditions:
-- High uncertainty, ambiguity, or a strong desire for group acceptance.
+- Mức độ không chắc chắn hoặc mơ hồ cao, hoặc mong muốn mạnh mẽ được nhóm chấp nhận.
 exceptions:
-- When the individual has overwhelming domain expertise and absolute certainty.
+- Khi cá nhân có chuyên môn vượt trội và độ chắc chắn tuyệt đối.
 applications:
   marketing:
-  - Highlighting that '90% of your peers use this product' is more effective than
-    highlighting the product's features.
+  - Nhấn mạnh rằng "90% bạn bè của bạn dùng sản phẩm này" hiệu quả hơn việc nhấn mạnh các tính năng của sản phẩm.
 risks:
-- Asch conformity—agreeing with an obviously wrong answer just to fit in, leading
-  to disastrous strategic errors.
+- Sự tuân thủ Asch—đồng tình với một đáp án rõ ràng sai chỉ để hòa nhập, dẫn đến những sai lầm chiến lược thảm khốc.
 evidence:
   level: strong
   references:
-  - Asch, S. E. (1951). 'Effects of group pressure upon the modification and distortion
-    of judgments'.
+  - Asch, S. E. (1951). 'Effects of group pressure upon the modification and distortion of judgments'.
   - 'Cialdini, R. B. (1984). ''Influence: The Psychology of Persuasion''.'
 relations:
   supports: []
@@ -38,7 +32,10 @@ tags:
 - social-proof
 - conformity
 - group-dynamics
+- group-influence
+- majority-influence
+- herd-behavior
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

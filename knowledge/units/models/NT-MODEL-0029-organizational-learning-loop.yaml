@@ -2,28 +2,26 @@ id: NT-MODEL-0029
 type: model
 status: frozen
 version: 0.1.0
-title: Organizational Learning Loop
-summary: 'A 4-stage adaptation cycle: Execute -> Telemetry -> Post-Mortem -> Guardrail
-  Update.'
+title: Vòng lặp học tập tổ chức
+summary: 'Chu trình thích ứng 4 giai đoạn: Thực thi -> Đo từ xa -> Phân tích hồi cứu -> Cập nhật rào chắn.'
 primary_domain: tri-nhan
 secondary_domains:
 - dung-nhan
-definition: 'The Organizational Learning Loop turns operational experience into capability:
-  Execution, Telemetry, Post-Mortem, Guardrail Update.'
+definition: 'Vòng lặp học tập tổ chức chuyển hóa kinh nghiệm vận hành thành năng lực: Thực thi, Thu thập dữ liệu đo xa, Phân tích sự cố và Cập nhật rào chắn bảo vệ.'
 mechanism:
-- Capture telemetry from execution.
-- Analyze root causes in post-mortem.
-- Update automated guardrails.
-- Execute with upgraded capability.
+- Thu thập dữ liệu đo từ xa từ quá trình thực thi.
+- Phân tích nguyên nhân gốc rễ trong các buổi đánh giá sự cố.
+- Cập nhật các rào chắn kiểm soát tự động.
+- Thực thi với hệ thống năng lực đã được nâng cấp.
 conditions:
-- Continuous learning architecture.
+- Tổ chức có kiến trúc học tập và cải tiến liên tục.
 exceptions:
-- None.
+- Không có.
 applications:
   knowledge_engine:
-  - Automatically generate candidate Knowledge Units from post-mortem reports.
+  - Tự động tạo các Đơn vị Tri thức đề xuất từ báo cáo phân tích sự cố.
 risks:
-- Encoding bad learnings based on small sample sizes.
+- Thiết lập các bài học sai lệch do dựa trên tập mẫu dữ liệu quá nhỏ.
 evidence:
   level: supported
   references:
@@ -39,5 +37,10 @@ tags:
 - learning
 - loop
 - adaptation
+- organizational-learning
+- post-mortem-analysis
+- telemetry-feedback
+- guardrail-update
+- knowledge-management
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'

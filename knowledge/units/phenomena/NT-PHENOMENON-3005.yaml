@@ -2,36 +2,44 @@ id: NT-PHENOMENON-3005
 type: phenomenon
 status: frozen
 version: 0.1.0
-title: Ambiguity Aversion
-summary: Humans consistently prefer known risks over unknown uncertainties, often choosing inferior options to avoid ambiguity.
+title: Sự ác cảm với mơ hồ
+summary: Con người luôn ưu tiên rủi ro đã biết hơn sự bất định chưa rõ, thường chọn phương án kém hơn để tránh sự mơ hồ.
 primary_domain: tri-nhan
 domain_area: NT-DA-0026
-secondary_domains: [thanh-su]
-definition: When faced with a choice between a known probability and an unknown probability, decision-makers structurally favor the known, even if the expected value is lower.
+secondary_domains:
+- thanh-su
+definition: Khi đối mặt với sự lựa chọn giữa xác suất đã biết và xác suất chưa biết, những người ra quyết định có xu hướng cấu trúc ưu tiên phương án đã biết, ngay cả khi giá trị kỳ vọng thấp hơn.
 mechanism:
-  - The actor encounters an option with missing information or undefined probabilities.
-  - The brain processes ambiguity as a potential threat.
-  - Aversive response triggers a preference for options with calculable risk.
+- Tác nhân gặp phải một tùy chọn bị thiếu thông tin hoặc có xác suất chưa được xác định rõ.
+- Bộ não xử lý sự mơ hồ như một mối đe dọa tiềm ẩn.
+- Phản ứng né tránh kích hoạt sở thích đối với các lựa chọn có rủi ro tính toán được.
 conditions:
-  - Choices involve varying degrees of missing information.
+- Các lựa chọn bao gồm các mức độ thiếu thông tin khác nhau.
 exceptions:
-  - Individuals with high risk-seeking traits or in desperate situations may seek ambiguity.
+- Những cá nhân có đặc điểm thích rủi ro cao hoặc ở trong hoàn cảnh tuyệt vọng có thể tìm kiếm sự mơ hồ.
 applications:
   negotiation:
-    - Reduce ambiguity for the counterparty to make agreements more acceptable.
+  - Giảm bớt sự mơ hồ cho đối, tác để làm cho các thỏa thuận trở nên dễ chấp nhận hơn.
   change-management:
-    - The status quo is often preferred simply because its risks are known.
+  - Trạng thái hiện tại thường được ưa chuộng đơn giản vì những rủi ro của nó đã được biết rõ.
 risks:
-  - Over-indexing on measurable metrics while ignoring high-potential ambiguous opportunities.
+- Quá tập trung vào các số liệu đo lường được trong khi bỏ qua các cơ hội mơ hồ nhưng có tiềm năng cao.
 evidence:
   level: supported
   references:
-    - "Ellsberg, D. (1961). 'Risk, Ambiguity, and the Savage Axioms'. The Quarterly Journal of Economics."
+  - Ellsberg, D. (1961). 'Risk, Ambiguity, and the Savage Axioms'. The Quarterly Journal of Economics.
 relations:
   supports: []
   conflicts_with: []
   depends_on: []
   applies_to: []
-tags: [ambiguity, uncertainty, decision-making, risk]
+tags:
+- ambiguity
+- uncertainty
+- decision-making
+- risk
+- ambiguity-aversion
+- risk-preference
+- cognitive-bias
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

@@ -1,28 +1,23 @@
 id: NT-PHENOMENON-3402
 type: phenomenon
-title: Authority Principle
-summary: A deep-seated sense of duty to authority causes individuals to blindly comply
-  with requests from perceived experts or leaders.
+title: Nguyên tắc quyền uy
+summary: Ý thức tuân phục sâu xa đối với quyền uy khiến con người tuân theo một cách mù quáng những yêu cầu từ các chuyên gia hoặc nhà lãnh đạo được công nhận.
 primary_domain: tri-nhan
 domain_area: NT-DA-0030
-definition: The psychological shortcut where the mere symbols of authority (titles,
-  uniforms, credentials) bypass critical thinking and compel obedience.
+definition: Lối tắt tâm lý trong đó chỉ riêng những biểu tượng của quyền uy (chức danh, đồng phục, chứng chỉ) đã bỏ qua tư duy phản biện và buộc con người phải phục tùng.
 mechanism:
-- An individual encounters a person displaying symbols of authority.
-- The individual assumes the authority possesses superior knowledge and power.
-- The individual defaults to compliance without assessing the logic of the request.
+- Một cá nhân gặp gỡ một người thể hiện các biểu tượng của quyền uy.
+- Cá nhân đó giả định rằng người có quyền uy sở hữu kiến thức và quyền lực vượt trội.
+- Cá nhân mặc định tuân phục mà không đánh giá tính logic của yêu cầu.
 conditions:
-- Situations of high uncertainty where expert guidance is highly valued.
+- Các tình huống có độ bất định cao, nơi lời khuyên của chuyên gia được coi trọng.
 exceptions:
-- When the authority is operating completely outside their domain of expertise (though
-  the halo effect sometimes overrides this).
+- Khi người có quyền uy hoạt động hoàn toàn ngoài lĩnh vực chuyên môn của họ (dù hiệu ứng hào quang đôi khi lấn át điều này).
 applications:
   marketing:
-  - Using doctors in white coats to sell toothpaste, regardless of the actual medical
-    data.
+  - Sử dụng bác sĩ mặc áo blouse trắng để bán kem đánh răng, bất kể dữ liệu y khoa thực tế.
 risks:
-- 'Blind obedience leading to catastrophic organizational failures or unethical behavior
-  (see: Milgram experiments).'
+- 'Sự phục tùng mù quáng dẫn đến những thất bại tổ chức thảm khốc hoặc hành vi phi đạo đức (xem: thí nghiệm Milgram).'
 evidence:
   level: strong
   references:
@@ -36,7 +31,10 @@ relations:
 tags:
 - authority
 - compliance
+- obedience
+- influence
+- expertise
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

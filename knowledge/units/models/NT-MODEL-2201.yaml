@@ -2,26 +2,25 @@ id: NT-MODEL-2201
 type: model
 status: frozen
 version: 1.0.0
-title: The Power Matrix
-summary: 'Phân loại 5 nguồn gốc quyền lực cơ bản: Chuyên gia, Vị trí, Phần thưởng,
-  Trừng phạt, Tham chiếu.'
+title: Ma Trận Quyền Lực
+summary: 'Phân loại năm nguồn gốc quyền lực cơ bản trong tổ chức: Chuyên gia, Vị trí, Phần thưởng, Trừng phạt và Tham chiếu.'
 primary_domain: dung-nhan
 domain_area: NT-DA-0022
 secondary_domains:
 - tu-than
-definition: Giúp lãnh đạo nhận diện loại quyền lực đang sử dụng và loại cần phát triển.
+definition: Công cụ phân tích giúp nhà lãnh đạo nhận diện loại quyền lực họ đang sở hữu và xác định các nguồn lực cần phát triển thêm.
 mechanism:
-- Sử dụng Expert power.
-- Sử dụng Referent power.
+- Sử dụng quyền lực chuyên gia dựa trên tri thức và năng lực thực tế.
+- Sử dụng quyền lực tham chiếu dựa trên sự uy tín và lòng kính trọng.
 conditions:
-- Tùy vào độ trưởng thành của nhân viên.
+- Tùy thuộc vào mức độ trưởng thành và văn hóa làm việc của nhân viên.
 exceptions:
-- Tổ chức phi lợi nhuận (ít coercive power).
+- Các tổ chức phi lợi nhuận có cấu trúc phẳng (thường hạn chế quyền lực cưỡng bức).
 applications:
   management:
-  - Xây dựng tầm ảnh hưởng
+  - Xây dựng tầm ảnh hưởng cá nhân và tổ chức
 risks:
-- Lạm dụng Coercive Power gây bất mãn
+- Lạm dụng quyền lực cưỡng phạt gây tâm lý bất mãn và chống đối.
 evidence:
   level: supported
   references: []
@@ -33,5 +32,10 @@ relations:
 tags:
 - leadership
 - power-bases
+- power-matrix
+- leadership-power
+- expert-power
+- referent-power
+- influence
 created_at: '2026-08-12'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

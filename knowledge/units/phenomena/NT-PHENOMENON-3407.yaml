@@ -1,38 +1,29 @@
 id: NT-PHENOMENON-3407
 type: phenomenon
-title: Foot-in-the-Door Technique
-summary: Getting a person to agree to a large request by first having them agree to
-  a modest request.
+title: Kỹ thuật đặt chân vào cửa
+summary: Để khiến một người đồng ý với một yêu cầu lớn, trước hết hãy khiến họ đồng ý với một yêu cầu khiêm tốn.
 primary_domain: tri-nhan
 domain_area: NT-DA-0030
-definition: A sequential compliance tactic utilizing the principle of consistency,
-  where a small initial agreement permanently alters the target's self-image to be
-  favorable to the persuader's cause.
+definition: Một thủ thuật tuân phục theo trình tự vận dụng nguyên tắc nhất quán, trong đó sự đồng ý ban đầu nhỏ bé làm thay đổi vĩnh viễn hình ảnh bản thân của đối tượng theo hướng có lợi cho mục tiêu của người thuyết phục.
 mechanism:
-- Make a trivially small request that almost anyone would accept (e.g., signing a
-  petition).
-- The target complies.
-- The target's self-image subtly shifts ('I am the type of person who supports this
-  cause').
-- Later, a large request is made (e.g., a large donation).
-- Target complies to remain consistent with their new identity.
+- 'Đưa ra một yêu cầu cực nhỏ mà hầu như ai cũng chấp nhận (ví dụ: ký tên vào một bản kiến nghị).'
+- Đối tượng tuân theo.
+- Hình ảnh bản thân của đối tượng dịch chuyển tinh tế ('Tôi là kiểu người ủng hộ mục tiêu này').
+- 'Sau đó, một yêu cầu lớn được đưa ra (ví dụ: một khoản quyên góp lớn).'
+- Đối tượng tuân theo để duy trì sự nhất quán với bản sắc mới.
 conditions:
-- The initial request must be related in theme to the ultimate request, and must be
-  completely voluntary.
+- Yêu cầu ban đầu phải cùng chủ đề với yêu cầu cuối cùng và phải hoàn toàn tự nguyện.
 exceptions:
-- When the initial request is heavily rewarded with money, shifting the attribution
-  from internal identity to external reward.
+- Khi yêu cầu ban đầu được đền bù bằng tiền hậu hĩnh, làm chuyển sự quy kết từ bản sắc nội tại sang phần thưởng bên ngoài.
 applications:
   ux_design:
-  - Free trials or asking for just an email address before asking for a credit card.
+  - Dùng thử miễn phí hoặc chỉ yêu cầu một địa chỉ email trước khi yêu cầu số thẻ tín dụng.
 risks:
-- Alienating the user if the escalation from small to large request is too rapid or
-  aggressive.
+- Làm mất lòng người dùng nếu sự leo thang từ yêu cầu nhỏ lên lớn diễn ra quá nhanh hoặc quá gay gắt.
 evidence:
   level: strong
   references:
-  - 'Freedman, J. L., & Fraser, S. C. (1966). ''Compliance without pressure: the foot-in-the-door
-    technique''. Journal of Personality and Social Psychology.'
+  - 'Freedman, J. L., & Fraser, S. C. (1966). ''Compliance without pressure: the foot-in-the-door technique''. Journal of Personality and Social Psychology.'
 relations:
   supports: []
   conflicts_with: []
@@ -42,7 +33,10 @@ relations:
 tags:
 - compliance
 - consistency
+- foot-in-the-door
+- escalation
+- self-image
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

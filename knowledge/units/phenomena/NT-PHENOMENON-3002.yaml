@@ -2,37 +2,46 @@ id: NT-PHENOMENON-3002
 type: phenomenon
 status: frozen
 version: 0.1.0
-title: Confirmation Bias Trap
-summary: The tendency to eagerly accept information that confirms prior beliefs while rigidly scrutinizing or ignoring disconfirming evidence.
+title: Bẫy thiên kiến xác nhận
+summary: Xu hướng hào hứng tiếp nhận thông tin củng cố niềm tin có sẵn trong khi soi xét gắt gao hoặc phớt lờ các bằng chứng phủ định.
 primary_domain: tri-nhan
 domain_area: NT-DA-0026
-secondary_domains: [tu-than]
-definition: A structural flaw in information processing where the brain applies asymmetric standards of evidence depending on whether the information aligns with or threatens existing identity or models.
+secondary_domains:
+- tu-than
+definition: Một lỗ hổng cấu trúc trong quá trình xử lý thông tin, nơi não bộ áp dụng các tiêu chuẩn bằng chứng bất đối xứng tùy thuộc vào việc thông tin đó phù hợp hay đe dọa đến bản sắc hoặc mô hình hiện có.
 mechanism:
-  - The actor holds a prior belief or model.
-  - New information enters the environment.
-  - If it confirms the belief, it is accepted with minimal scrutiny.
-  - If it disconfirms the belief, it is subjected to hyper-critical analysis or ignored entirely.
+- Tác nhân nắm giữ một niềm tin hoặc một mô hình có từ trước đó.
+- Thông tin mới bắt đầu thâm nhập vào môi trường xung quanh.
+- Nếu thông tin củng cố niềm tin, nó sẽ được chấp nhận với sự kiểm duyệt tối thiểu.
+- Nếu thông tin bác bỏ niềm tin, nó sẽ bị đưa vào phân tích cực kỳ khắt khe hoặc bị phớt lờ hoàn toàn.
 conditions:
-  - The belief is tied to identity, status, or significant prior investment.
+- Niềm tin gắn liền với bản sắc, địa vị hoặc các khoản đầu tư đáng kể trong quá khứ.
 exceptions:
-  - Information that signals an immediate, undeniable physical threat.
-  - "Consequences: Persistent strategic drift despite overwhelming evidence of failure; Increasing polarization in groups."
-  - "Recognition Signal: Rapid dismissal of opposing data using nitpicking, while accepting friendly data based on headlines alone."
+- Thông tin báo hiệu một mối đe dọa vật chất ngay lập tức và không thể chối cãi.
+- 'Hậu quả: Sự lệch hướng chiến lược liên tục mặc cho có nhiều bằng chứng thất bại áp đảo; Sự phân cực ngày càng tăng trong các nhóm.'
+- 'Dấu hiệu nhận biết: Nhanh chóng bác bỏ dữ liệu đối lập bằng cách bới lông tìm vết, trong khi vẫn chấp nhận dữ liệu thuận lợi chỉ dựa vào tiêu đề.'
 applications:
   leadership:
-    - Institutionalize "red teams" whose formal role is to build the best possible case against the prevailing view.
+  - Thể chế hóa các "đội ngũ phản biện" với vai trò chính thức là xây dựng luận án tốt nhất có thể nhằm chống lại quan điểm đang chiếm ưu thế.
 risks:
-  - Assuming awareness of the bias makes one immune to it.
+- Cho rằng việc nhận thức được thiên kiến sẽ giúp một người miễn dịch hoàn toàn với nó.
 evidence:
   level: strong
   references:
-    - "Nickerson, R. S. (1998). 'Confirmation bias: A ubiquitous phenomenon in many guises'. Review of General Psychology."
+  - 'Nickerson, R. S. (1998). ''Confirmation bias: A ubiquitous phenomenon in many guises''. Review of General Psychology.'
 relations:
   supports: []
   conflicts_with: []
   depends_on: []
   applies_to: []
-tags: [heuristics, bias, belief, confirmation]
+tags:
+- heuristics
+- bias
+- belief
+- confirmation
+- confirmation-bias
+- confirmation-trap
+- cognitive-flaw
+- information-processing
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

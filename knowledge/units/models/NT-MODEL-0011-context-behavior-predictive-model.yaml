@@ -2,21 +2,21 @@ id: NT-MODEL-0011
 type: model
 status: frozen
 version: 0.1.0
-title: Context Behavior Predictive Model
-summary: Context Behavior Predictive Model structural knowledge unit.
+title: Mô hình Dự báo Hành vi theo Bối cảnh
+summary: Đơn vị tri thức cấu trúc về Mô hình Dự báo Hành vi theo Bối cảnh trong phân tích nhân sự.
 primary_domain: tri-nhan
 secondary_domains:
 - dung-nhan
-definition: Formal definition of Context Behavior Predictive Model in NhanThuat architecture.
+definition: Định nghĩa chính thức về Mô hình Dự báo Hành vi theo Bối cảnh trong cấu trúc Nhân Thuật, giúp dự đoán phản ứng và xu hướng hành vi của cá nhân dựa trên môi trường xung quanh.
 conditions:
-- Operational governance contexts.
+- Áp dụng trong các bối cảnh quản trị vận hành và đánh giá nhân sự định kỳ.
 exceptions:
-- Emergency crisis overrides.
+- Các tình huống khủng hoảng bất ngờ hoặc hành vi bất thường vượt ngoài các kịch bản dự báo thông thường.
 applications:
   governance:
-  - Apply Context Behavior Predictive Model to organizational workflows.
+  - Áp dụng Mô hình Dự báo Hành vi theo Bối cảnh vào quy trình làm việc, tuyển dụng và quản trị nhân sự của tổ chức.
 risks:
-- Misapplication of Context Behavior Predictive Model leading to suboptimal performance.
+- Việc áp dụng sai lệch Mô hình Dự báo Hành vi theo Bối cảnh có thể dẫn đến các quyết định nhân sự thiếu chính xác và làm giảm hiệu suất chung.
 evidence:
   level: supported
   references:
@@ -30,9 +30,13 @@ relations:
 tags:
 - model
 - tri-nhan
+- behavior-prediction
+- contextual-analysis
+- predictive-modeling
+- organizational-behavior
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
 mechanism:
-- 'Step 1: Identify Context Behavior Predictive Model.'
-- 'Step 2: Analyze parameters.'
-- 'Step 3: Execute model.'
+- 'Bước 1: Xác định các biến số môi trường và bối cảnh trong Mô hình Dự báo Hành vi.'
+- 'Bước 2: Phân tích các tham số hành vi cá nhân và dữ liệu bối cảnh lịch sử.'
+- 'Bước 3: Chạy mô hình dự báo để đưa ra các kịch bản hành vi tiềm năng của nhân sự.'

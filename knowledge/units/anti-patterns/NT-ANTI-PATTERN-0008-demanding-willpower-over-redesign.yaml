@@ -2,18 +2,50 @@ id: NT-ANTI-PATTERN-0008
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Demanding willpower over redesign
-summary: Blaming individuals for lack of motivation when systemic friction, ambiguous goals, and cognitive overload make execution unnecessarily difficult.
+title: Đòi hỏi ý chí thay vì tái thiết kế hệ thống
+summary: Đổ lỗi cho cá nhân thiếu động lực khi ma sát hệ thống, mục tiêu mơ hồ và quá tải nhận thức khiến việc thực thi trở nên khó khăn không cần thiết.
 primary_domain: tu-than
-secondary_domains: [tri-nhan, thanh-su]
-definition: Moralizing operational failures as personal character defects rather than diagnosing and eliminating system friction.
-mechanism: [Encounter execution failure, Attribute failure to poor employee attitude, Demand higher willpower, Ignore underlying workflow friction.]
-conditions: [Systems are inefficient, ambiguous, or overloaded.]
-exceptions: [Cases where an individual genuinely refuses reasonable effort despite friction-free setup.]
-applications: {root-cause-analysis: [Investigate process friction before lecturing teams on commitment.], process-design: [Eliminate technical and administrative hurdles.]}
-risks: [Excusing genuine individual negligence by always blaming systemic friction.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0029, NT-LAW-0027, NT-PRINCIPLE-0058], applies_to: []}
-tags: [anti-pattern, willpower, friction, moralizing, system-failure]
+secondary_domains:
+- tri-nhan
+- thanh-su
+definition: Biến các thất bại vận hành thành sự phán xét về phẩm chất cá nhân thay vì chẩn đoán và loại bỏ lực ma sát trong hệ thống.
+mechanism:
+- Gặp thất bại trong thực thi
+- Quy thất bại cho thái độ kém của nhân viên
+- Đòi hỏi nỗ lực ý chí cao hơn
+- Bỏ qua lực ma sát cốt lõi trong quy trình làm việc
+conditions:
+- Hệ thống làm việc kém hiệu quả
+- Mục tiêu mơ hồ
+- Hoặc bị quá tải
+exceptions:
+- Trường hợp cá nhân thực sự từ chối nỗ lực hợp lý dù môi trường làm việc đã tối ưu và không có ma sát.
+applications:
+  root-cause-analysis:
+  - Điều tra ma sát quy trình trước khi lên lớp đội ngũ về sự cam kết.
+  process-design:
+  - Loại bỏ các rào cản kỹ thuật và hành chính.
+risks:
+- Bào chữa cho sự cẩu thả thực sự của cá nhân bằng cách luôn đổ lỗi cho ma sát hệ thống.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0029
+  - NT-LAW-0027
+  - NT-PRINCIPLE-0058
+  applies_to: []
+tags:
+- anti-pattern
+- willpower
+- friction
+- moralizing
+- system-failure
+- willpower-over-redesign
+- systemic-friction
+- operational-failure
 created_at: '2026-07-21'
-updated_at: '2026-07-21'
+updated_at: '2026-08-15'

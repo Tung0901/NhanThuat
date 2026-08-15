@@ -2,18 +2,52 @@ id: NT-LAW-0031
 type: law
 status: frozen
 version: 0.1.0
-title: Fear drives short-term urgency over long-term commitment
-summary: Threat and fear evoke rapid compliance and narrow focus, but erode long-term initiative, creative risk-taking, and durable organizational engagement.
+title: Nỗi sợ hãi thúc đẩy tính cấp bách ngắn hạn hơn là cam kết dài hạn
+summary: Mối đe dọa và sự sợ hãi khơi dậy sự tuân thủ nhanh chóng cùng sự tập trung hạn hẹp, nhưng lại bào mòn sự chủ động dài hạn, khả năng chấp nhận rủi ro sáng tạo và sự gắn kết bền vững với tổ chức.
 primary_domain: tu-than
-secondary_domains: [tri-nhan, hop-chung]
-definition: Perceived threat triggers defensive urgency that mobilizes immediate avoidance or compliance, but suppresses high-judgment exploration and long-term loyalty.
-mechanism: [Perceive threat, Mobilize defensive urgency, Narrow cognitive field, Erode long-term commitment.]
-conditions: [High pressure, threat of punishment, or social insecurity is present.]
-exceptions: [Immediate physical hazard defense requires short-term emergency threat signals.]
-applications: {leadership: [Avoid using fear to drive complex or innovation-heavy initiatives.], risk-management: [Separate safety urgency from daily motivational culture.]}
-risks: [Mistaking short-term compliance for long-term motivation, inducing chronic anxiety.]
-evidence: {level: provisional, references: []}
-relations: {supports: [NT-PRINCIPLE-0054, NT-PRINCIPLE-0059, NT-ANTI-PATTERN-0006], conflicts_with: [], depends_on: [NT-LAW-0025], applies_to: []}
-tags: [motivation, fear, urgency, commitment]
+secondary_domains:
+- tri-nhan
+- hop-chung
+definition: Mối đe dọa được nhận thức sẽ kích hoạt tâm lý phòng thủ cấp bách nhằm huy động sự né tránh hoặc tuân thủ tức thời, nhưng lại ức chế tư duy khám phá đòi hỏi phán đoán cao và lòng trung thành dài hạn.
+mechanism:
+- Nhận thức mối đe dọa
+- Kích hoạt tính cấp bách mang tính phòng thủ
+- Thu hẹp phạm vi nhận thức
+- Bào mòn sự cam kết dài hạn.
+conditions:
+- Áp lực cao
+- nguy cơ bị trừng phạt
+- hoặc sự bất an về mặt xã hội đang hiện hữu.
+exceptions:
+- Việc phòng vệ trước các nguy cơ vật lý tức thời đòi hỏi các tín hiệu cảnh báo đe dọa khẩn cấp trong ngắn hạn.
+applications:
+  leadership:
+  - Tránh sử dụng nỗi sợ để thúc đẩy các sáng kiến phức tạp hoặc đòi hỏi nhiều sáng tạo.
+  risk-management:
+  - Tách biệt tính cấp bách về an toàn khỏi văn hóa tạo động lực hàng ngày.
+risks:
+- Nhầm lẫn giữa sự tuân thủ ngắn hạn với động lực dài hạn
+- Gây ra tình trạng lo âu mạn tính.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports:
+  - NT-PRINCIPLE-0054
+  - NT-PRINCIPLE-0059
+  - NT-ANTI-PATTERN-0006
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0025
+  applies_to: []
+tags:
+- motivation
+- fear
+- urgency
+- commitment
+- fear-based-management
+- threat-rigidity
+- short-term-urgency
+- employee-engagement
 created_at: '2026-07-21'
-updated_at: '2026-07-21'
+updated_at: '2026-08-15'

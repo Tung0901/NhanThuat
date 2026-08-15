@@ -2,21 +2,21 @@ id: NT-MODEL-0023
 type: model
 status: frozen
 version: 0.1.0
-title: Value Creation Allocation Matrix
-summary: Value Creation Allocation Matrix structural knowledge unit.
+title: Ma trận tạo giá trị và phân bổ
+summary: Đơn vị tri thức cấu trúc về Ma trận tạo giá trị và phân bổ trong kiến trúc Nhân Thuật.
 primary_domain: thanh-su
 secondary_domains:
 - hop-chung
-definition: Formal definition of Value Creation Allocation Matrix in NhanThuat architecture.
+definition: Định nghĩa chính thức về Ma trận tạo giá trị và phân bổ trong kiến trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Các bối cảnh quản trị vận hành.
 exceptions:
-- Emergency crisis overrides.
+- Bị ghi đè trong các tình huống khủng hoảng khẩn cấp.
 applications:
   governance:
-  - Apply Value Creation Allocation Matrix to organizational workflows.
+  - Áp dụng Ma trận tạo giá trị và phân bổ vào các quy trình công việc của tổ chức.
 risks:
-- Misapplication of Value Creation Allocation Matrix leading to suboptimal performance.
+- Áp dụng sai Ma trận tạo giá trị và phân bổ dẫn đến hiệu suất kém tối ưu.
 evidence:
   level: supported
   references:
@@ -30,9 +30,14 @@ relations:
 tags:
 - model
 - thanh-su
+- value-creation-allocation-matrix
+- value-creation
+- allocation
+- matrix
+- resource-allocation
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
 mechanism:
-- 'Step 1: Identify Value Creation Allocation Matrix.'
-- 'Step 2: Analyze parameters.'
-- 'Step 3: Execute model.'
+- 'Bước 1: Nhận diện Ma trận tạo giá trị và phân bổ.'
+- 'Bước 2: Phân tích các tham số.'
+- 'Bước 3: Thực thi mô hình.'

@@ -2,18 +2,51 @@ id: NT-LAW-0029
 type: law
 status: frozen
 version: 0.1.0
-title: Effort follows perceived value and feasibility
-summary: People allocate energy and effort when they perceive the goal as valuable and the required action as achievable within acceptable risk and friction.
+title: Nỗ lực đi theo giá trị nhận thức và tính khả thi
+summary: Con người phân bổ năng lượng và nỗ lực khi họ nhận thấy mục tiêu có giá trị và hành động đòi hỏi có tính khả thi trong mức độ rủi ro và rào cản chấp nhận được.
 primary_domain: tu-than
-secondary_domains: [tri-nhan, dung-nhan]
-definition: Voluntary human effort is a function of expected value multiplied by perceived feasibility minus expected friction and risk.
-mechanism: [Evaluate goal significance, Assess execution feasibility, Estimate required cost and risk, Direct effort.]
-conditions: [An individual possesses decision choice, outcomes are non-random.]
-exceptions: [Crisis panic responses can bypass deliberate feasibility assessment, extreme habit routines trigger low-evaluation execution.]
-applications: {leadership: [Clarify why a goal matters while removing execution ambiguity.], organizational-design: [Reduce operational friction before demanding higher performance.]}
-risks: [Over-promising value without supporting feasibility, over-simplifying execution cost.]
-evidence: {level: provisional, references: []}
-relations: {supports: [NT-PRINCIPLE-0052, NT-PRINCIPLE-0058, NT-MODEL-0004], conflicts_with: [], depends_on: [], applies_to: []}
-tags: [motivation, effort, value, feasibility]
+secondary_domains:
+- tri-nhan
+- dung-nhan
+definition: Nỗ lực tự nguyện của con người là một hàm số của giá trị kỳ vọng nhân với tính khả thi cảm nhận được trừ đi rào cản và rủi ro dự kiến.
+mechanism:
+- Đánh giá tầm quan trọng của mục tiêu
+- Đánh giá tính khả thi trong việc thực thi
+- Ước tính chi phí và rủi ro cần thiết
+- Định hướng và phân bổ nỗ lực
+conditions:
+- Cá nhân có quyền tự chủ trong việc ra quyết định
+- Kết quả đạt được không mang tính ngẫu nhiên
+exceptions:
+- Phản ứng hoảng loạn trong khủng hoảng có thể bỏ qua việc đánh giá tính khả thi có chủ đích
+- Các thói quen ăn sâu có thể kích hoạt hành động mà không cần quá trình đánh giá kỹ lưỡng
+applications:
+  leadership:
+  - Làm rõ lý do mục tiêu mang tính quan trọng song song với việc loại bỏ sự mơ hồ trong thực thi.
+  organizational-design:
+  - Giảm thiểu rào cản và ma sát vận hành trước khi đòi hỏi hiệu suất cao hơn.
+risks:
+- Hứa hẹn giá trị quá mức mà không hỗ trợ các điều kiện đảm bảo tính khả thi
+- Đơn giản hóa quá mức chi phí và rủi ro thực tế trong quá trình thực thi
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports:
+  - NT-PRINCIPLE-0052
+  - NT-PRINCIPLE-0058
+  - NT-MODEL-0004
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- motivation
+- effort
+- value
+- feasibility
+- expectancy-theory
+- effort-allocation
+- perceived-feasibility
+- goal-pursuit
 created_at: '2026-07-21'
-updated_at: '2026-07-21'
+updated_at: '2026-08-15'

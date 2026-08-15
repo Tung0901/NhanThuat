@@ -2,8 +2,8 @@ id: NT-PRINCIPLE-2501
 type: principle
 status: frozen
 version: 1.0.0
-title: Separation of Exploration and Exploitation
-summary: Khám phá và Khai thác yêu cầu KPIs và văn hóa khác nhau, không thể trộn lẫn.
+title: Tách bạch Khám phá và Khai thác
+summary: Khám phá và Khai thác yêu cầu các KPIs và văn hóa khác nhau, không thể trộn lẫn.
 primary_domain: tu-than
 domain_area: NT-DA-0025
 secondary_domains:
@@ -32,5 +32,9 @@ relations:
 tags:
 - ambidexterity
 - innovation
+- exploration
+- exploitation
+- organizational-learning
+- dual-organization
 created_at: '2026-08-12'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

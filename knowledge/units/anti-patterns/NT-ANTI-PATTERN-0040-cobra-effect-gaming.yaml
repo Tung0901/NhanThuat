@@ -2,27 +2,25 @@ id: NT-ANTI-PATTERN-0040
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Cobra Effect Gaming
-summary: Rewarding narrow quantitative metrics without quality safeguards, leading
-  actors to actively generate artificial problems.
+title: Trục lợi Hiệu ứng Con Rắn
+summary: Khen thưởng dựa trên các chỉ số định lượng hẹp mà thiếu cơ chế kiểm soát chất lượng, khiến các bên liên quan cố tình tạo ra sự cố giả nhằm lấy thành tích.
 primary_domain: tu-than
 secondary_domains:
 - hop-chung
-definition: The Cobra Effect occurs when an incentive scheme unintentionally pays
-  actors to exacerbate the problem.
+definition: Hiệu ứng Con Rắn (Cobra Effect) xảy ra khi một cơ chế khuyến khích vô tình chi trả thưởng cho các đối tượng làm trầm trọng thêm chính vấn đề cần giải quyết.
 mechanism:
-- Management sets narrow metric.
-- Actors manipulate inputs.
-- Metric rises while quality collapses.
+- Ban quản lý thiết lập chỉ số định lượng quá hẹp.
+- Các bên liên quan thao túng dữ liệu đầu vào hoặc cố tình tạo sự cố.
+- Chỉ số báo cáo tăng vọt trong khi chất lượng thực tế sụp đổ.
 conditions:
-- High financial rewards tied to simple output counts.
+- Khoản thưởng tài chính cao gắn liền với việc đếm số lượng đầu ra đơn thuần.
 exceptions:
-- Fully automated verification systems.
+- Hệ thống xác minh và kiểm định hoàn toàn tự động.
 applications:
   metric_governance:
-  - Audit software bug-fix bonuses for artificial volume generation.
+  - Kiểm toán cơ chế thưởng sửa lỗi phần mềm để ngăn chặn việc cố tình tạo thêm lỗi nhân tạo.
 risks:
-- Adding so many compliance checks that execution slows down.
+- Bổ sung quá nhiều bước kiểm tra tuân thủ làm trì trệ tốc độ thực thi công việc.
 evidence:
   level: supported
   references:
@@ -38,5 +36,10 @@ tags:
 - incentives
 - gaming
 - anti-patterns
+- cobra-effect
+- perverse-incentives
+- metric-gaming
+- goodhart-law
+- incentive-design
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'

@@ -2,23 +2,21 @@ id: NT-PRINCIPLE-0102
 type: principle
 status: frozen
 version: 0.1.0
-title: Limit Work-in-Progress
-summary: Enforce hard caps on the number of active projects per team to maximize completion
-  velocity.
+title: Giới hạn khối lượng công việc đang triển khai
+summary: Áp đặt giới hạn cứng về số dự án đang hoạt động của mỗi đội ngũ để tối đa hóa tốc độ hoàn thành.
 primary_domain: dung-nhan
 secondary_domains:
 - thanh-su
-definition: Stop starting, start finishing. Enforce hard limits on active tasks per
-  person/team.
+definition: Ngừng bắt đầu việc mới, hãy hoàn thành việc đã bắt đầu. Áp đặt giới hạn cứng về số nhiệm vụ đang xử lý của mỗi cá nhân và đội ngũ.
 conditions:
-- Operational project management.
+- Quản lý dự án vận hành.
 exceptions:
-- Exploratory research phases.
+- Các giai đoạn nghiên cứu thăm dò.
 applications:
   kanban:
-  - Set max WIP cap of 2 active tickets per developer.
+  - Đặt giới hạn WIP tối đa là 2 ticket đang xử lý cho mỗi lập trình viên.
 risks:
-- Artificially blocking work when dependencies are stalled.
+- Chặn công việc một cách giả tạo khi các phụ thuộc đang bị đình trệ.
 evidence:
   level: supported
   references:
@@ -33,5 +31,9 @@ tags:
 - execution
 - wip
 - velocity
+- kanban
+- throughput
+- lean
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

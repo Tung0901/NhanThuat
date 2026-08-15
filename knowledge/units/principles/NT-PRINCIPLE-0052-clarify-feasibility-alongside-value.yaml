@@ -2,18 +2,46 @@ id: NT-PRINCIPLE-0052
 type: principle
 status: frozen
 version: 0.1.0
-title: Clarify feasibility alongside value
-summary: To generate commitment, clarify the achievable execution path alongside goal value rather than relying on inspiration alone.
+title: Làm rõ tính khả thi song song với giá trị
+summary: Để tạo ra cam kết, hãy làm rõ con đường thực thi khả thi cùng với giá trị của mục tiêu thay vì chỉ dựa vào cảm hứng.
 primary_domain: tu-than
-secondary_domains: [tri-nhan, dung-nhan]
-definition: High goal value generates desire, but clear feasibility generates actual effort; leaders must define manageable steps alongside the vision.
-mechanism: [State high-value goal, Map concrete execution steps, Demonstrate feasibility, Mobilize commitment.]
-conditions: [Goal is ambitious or complex, team members face execution uncertainty.]
-exceptions: [High-autonomy experts may prefer defining their own execution path once goal value is established.]
-applications: {leadership: [Pair vision announcements with immediate 30-day execution clarity.], management: [Provide resources and skill support to match task expectations.]}
-risks: [Micro-managing technical execution under the guise of clarifying feasibility.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0029], applies_to: []}
-tags: [motivation, principle, feasibility, value]
+secondary_domains:
+- tri-nhan
+- dung-nhan
+definition: Giá trị mục tiêu cao tạo ra khát khao, nhưng tính khả thi rõ ràng tạo ra nỗ lực thực sự; lãnh đạo phải định nghĩa các bước quản lý được bên cạnh tầm nhìn.
+mechanism:
+- Nêu mục tiêu giá trị cao
+- Vẽ bản đồ các bước thực thi cụ thể
+- Chứng minh tính khả thi
+- Huy động cam kết.
+conditions:
+- Mục tiêu tham vọng hoặc phức tạp
+- thành viên nhóm đối mặt với sự không chắc chắn về thực thi.
+exceptions:
+- Chuyên gia có quyền tự chủ cao có thể thích tự định nghĩa con đường thực thi khi giá trị mục tiêu đã được xác lập.
+applications:
+  leadership:
+  - Đi kèm công bố tầm nhìn với sự rõ ràng thực thi 30 ngày ngay lập tức.
+  management:
+  - Cung cấp nguồn lực và hỗ trợ kỹ năng khớp với kỳ vọng công việc.
+risks:
+- Vi quản lý việc thực thi kỹ thuật dưới vỏ bọc làm rõ tính khả thi.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0029
+  applies_to: []
+tags:
+- motivation
+- principle
+- feasibility
+- value
+- goal-setting
+- execution
+- commitment
 created_at: '2026-07-21'
-updated_at: '2026-07-21'
+updated_at: '2026-08-15'

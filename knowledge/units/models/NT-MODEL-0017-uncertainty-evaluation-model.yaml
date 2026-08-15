@@ -2,21 +2,21 @@ id: NT-MODEL-0017
 type: model
 status: frozen
 version: 0.1.0
-title: Uncertainty Evaluation Model
-summary: Uncertainty Evaluation Model structural knowledge unit.
+title: Mô hình Đánh giá Độ bất định
+summary: Đơn vị tri thức cấu trúc về Mô hình Đánh giá Độ bất định trong quản trị tổ chức.
 primary_domain: tri-nhan
 secondary_domains:
 - thanh-su
-definition: Formal definition of Uncertainty Evaluation Model in NhanThuat architecture.
+definition: Định nghĩa chính thức về Mô hình Đánh giá Độ bất định trong kiến trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Các bối cảnh quản trị vận hành tổ chức.
 exceptions:
-- Emergency crisis overrides.
+- Trường hợp khẩn cấp kích hoạt cơ chế ghi đè xử lý khủng hoảng.
 applications:
   governance:
-  - Apply Uncertainty Evaluation Model to organizational workflows.
+  - Áp dụng Mô hình Đánh giá Độ bất định vào các quy trình làm việc của tổ chức.
 risks:
-- Misapplication of Uncertainty Evaluation Model leading to suboptimal performance.
+- Áp dụng sai lệch Mô hình Đánh giá Độ bất định dẫn đến hiệu suất hoạt động kém tối ưu.
 evidence:
   level: supported
   references:
@@ -30,9 +30,14 @@ relations:
 tags:
 - model
 - tri-nhan
+- uncertainty-evaluation-model
+- uncertainty-assessment
+- risk-management
+- governance-framework
+- decision-making
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
 mechanism:
-- 'Step 1: Identify Uncertainty Evaluation Model.'
-- 'Step 2: Analyze parameters.'
-- 'Step 3: Execute model.'
+- 'Bước 1: Xác định Mô hình Đánh giá Độ bất định.'
+- 'Bước 2: Phân tích các tham số liên quan.'
+- 'Bước 3: Tiến hành thực thi mô hình.'

@@ -2,21 +2,21 @@ id: NT-ANTI-PATTERN-0024
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Analysis Paralysis
-summary: Analysis Paralysis structural knowledge unit.
+title: Tê liệt Phân tích
+summary: Đơn vị kiến thức cấu trúc về Tê liệt Phân tích (Analysis Paralysis) trong quản trị và ra quyết định.
 primary_domain: tri-nhan
 secondary_domains:
 - thanh-su
-definition: Formal definition of Analysis Paralysis in NhanThuat architecture.
+definition: Định nghĩa chính thức về Tê liệt Phân tích trong kiến trúc Nhân Thuật, chỉ trạng thái tư duy hoặc phân tích quá mức khiến việc đưa ra quyết định hay hành động bị trì hoãn vô thời hạn.
 conditions:
-- Operational governance contexts.
+- Trong các bối cảnh quản trị vận hành tổ chức.
 exceptions:
-- Emergency crisis overrides.
+- Các trường hợp ghi đè trong tình huống khủng hoảng khẩn cấp.
 applications:
   governance:
-  - Apply Analysis Paralysis to organizational workflows.
+  - Xử lý và ngăn chặn Tê liệt Phân tích trong quy trình làm việc của tổ chức.
 risks:
-- Misapplication of Analysis Paralysis leading to suboptimal performance.
+- Nhận diện hoặc can thiệp không đúng trạng thái Tê liệt Phân tích dẫn đến làm giảm hiệu suất hoạt động.
 evidence:
   level: supported
   references:
@@ -30,5 +30,10 @@ relations:
 tags:
 - anti-pattern
 - tri-nhan
+- analysis-paralysis
+- overthinking
+- decision-fatigue
+- governance
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

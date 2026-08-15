@@ -1,35 +1,28 @@
 id: NT-PHENOMENON-3408
 type: phenomenon
-title: Ben Franklin Effect
-summary: A person who has performed a favor for someone is more likely to do another
-  favor for them than they would be if they had received a favor from that person.
+title: Hiệu ứng Ben Franklin
+summary: Một người đã giúp đỡ ai đó có xu hướng giúp đỡ người đó lần nữa nhiều hơn so với khi họ đã nhận được sự giúp đỡ từ người đó.
 primary_domain: tri-nhan
 domain_area: NT-DA-0030
-definition: A specific application of cognitive dissonance where an individual rationalizes
-  their own helpful behavior by unconsciously convincing themselves that they must
-  like the person they helped.
+definition: Một ứng dụng cụ thể của bất hòa nhận thức, trong đó một cá nhân hợp lý hóa hành vi giúp đỡ của chính mình bằng cách vô thức tự thuyết phục rằng chắc hẳn họ phải quý mến người mà họ đã giúp.
 mechanism:
-- Person A asks Person B for a small, reasonable favor.
-- Person B complies.
-- 'Person B experiences dissonance: ''Why am I helping this person? I must actually
-  like them.'''
-- Person B's attitude toward Person A becomes highly positive.
+- Người A nhờ Người B một việc nhỏ, hợp lý.
+- Người B đồng ý.
+- 'Người B trải qua sự bất hòa: ''Tại sao tôi lại giúp người này? Chắc tôi thực sự quý họ.'''
+- Thái độ của Người B đối với Người A trở nên rất tích cực.
 conditions:
-- The favor must be personal, uncoerced, and unrewarded (no payment).
+- Việc giúp đỡ phải mang tính cá nhân, không bị ép buộc và không được đền đáp (không có thanh toán).
 exceptions:
-- Asking for a favor that is highly burdensome, offensive, or inappropriate for the
-  power dynamic.
+- Nhờ một việc quá nặng nề, xúc phạm hoặc không phù hợp với sự chênh lệch quyền lực.
 applications:
   relationship_building:
-  - Asking a hostile colleague for a small piece of advice to neutralize their hostility
-    and build rapport.
+  - Nhờ một đồng nghiệp có thái độ thù địch một lời khuyên nhỏ để hóa giải sự thù địch và xây dựng sự thân thiết.
 risks:
-- Appearing incompetent or needy if overused.
+- Trông có vẻ kém năng lực hoặc hay phiền hà nếu lạm dụng.
 evidence:
   level: strong
   references:
-  - Jecker, J., & Landy, D. (1969). 'Liking a person as a function of doing him a
-    favor'. Human Relations.
+  - Jecker, J., & Landy, D. (1969). 'Liking a person as a function of doing him a favor'. Human Relations.
 relations:
   supports: []
   conflicts_with: []
@@ -39,7 +32,10 @@ relations:
 tags:
 - rapport
 - dissonance
+- ben-franklin-effect
+- favor
+- attitude
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

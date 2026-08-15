@@ -1,36 +1,27 @@
 id: NT-PHENOMENON-3308
 type: phenomenon
-title: Self-Fulfilling Prophecy (Pygmalion Effect)
-summary: Higher expectations lead to an increase in performance, while lower expectations
-  lead to a decrease.
+title: Lời tiên tri tự ứng nghiệm (Hiệu ứng Pygmalion)
+summary: Kỳ vọng cao hơn dẫn đến hiệu suất tăng, trong khi kỳ vọng thấp hơn dẫn đến hiệu suất giảm.
 primary_domain: tri-nhan
 domain_area: NT-DA-0029
-definition: A socio-psychological phenomenon where a leader's or manager's expectations
-  of a subordinate unconsciously alter the leader's behavior toward them, which in
-  turn causes the subordinate to fulfill those expectations.
+definition: Hiện tượng tâm lý xã hội trong đó kỳ vọng của nhà lãnh đạo hoặc người quản lý đối với cấp dưới vô thức thay đổi hành vi của họ đối với cấp dưới, từ đó khiến cấp dưới thực hiện đúng những kỳ vọng đó.
 mechanism:
-- Leader forms an expectation (positive or negative) about an individual.
-- Leader unconsciously alters their coaching, feedback, and body language based on
-  this expectation.
-- The individual internalizes these cues, altering their own self-efficacy and effort,
-  fulfilling the original expectation.
+- Nhà lãnh đạo hình thành một kỳ vọng (tích cực hoặc tiêu cực) về một cá nhân.
+- Nhà lãnh đạo vô thức thay đổi cách huấn luyện, phản hồi và ngôn ngữ cơ thể dựa trên kỳ vọng này.
+- Cá nhân nội hóa những tín hiệu này, thay đổi hiệu quả tự nhận thức và nỗ lực của chính mình, hoàn thành kỳ vọng ban đầu.
 conditions:
-- Strong power dynamics (teacher/student, manager/employee) where the subordinate
-  looks to the authority for validation.
+- Động lực quyền lực mạnh mẽ (thầy/trò, quản lý/nhân viên) khi cấp dưới trông chờ sự thừa nhận từ người có thẩm quyền.
 exceptions:
-- When the subordinate has an unshakable, independent locus of self-worth.
+- Khi cấp dưới có một nguồn giá trị bản thân độc lập, không thể lung lay.
 applications:
   leadership:
-  - Adopt a default stance of high expectations and capability for all new hires to
-    systematically boost their performance.
+  - Áp dụng lập trường mặc định là kỳ vọng cao và tin vào năng lực cho mọi nhân viên mới để nâng hiệu suất của họ một cách có hệ thống.
 risks:
-- Writing off an employee as a 'low performer' early on, effectively guaranteeing
-  they will fail due to lack of support (The Golem Effect).
+- Gắn mác một nhân viên là "người hiệu suất thấp" ngay từ đầu, gần như đảm bảo họ sẽ thất bại do thiếu sự hỗ trợ (Hiệu ứng Golem).
 evidence:
   level: strong
   references:
-  - Rosenthal, R., & Jacobson, L. (1968). 'Pygmalion in the classroom'. The Urban
-    Review.
+  - Rosenthal, R., & Jacobson, L. (1968). 'Pygmalion in the classroom'. The Urban Review.
 relations:
   supports: []
   conflicts_with: []
@@ -39,7 +30,10 @@ relations:
 tags:
 - expectations
 - performance
+- self-fulfilling-prophecy
+- pygmalion-effect
+- golem-effect
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

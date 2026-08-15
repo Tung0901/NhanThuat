@@ -2,21 +2,21 @@ id: NT-MODEL-0012
 type: model
 status: frozen
 version: 0.1.0
-title: Cohesion Friction Curve
-summary: Cohesion Friction Curve structural knowledge unit.
+title: Đường cong Ma sát Sự gắn kết
+summary: Đơn vị tri thức cấu trúc về Đường cong Ma sát Sự gắn kết trong quản trị tổ chức.
 primary_domain: hop-chung
 secondary_domains:
 - tri-nhan
-definition: Formal definition of Cohesion Friction Curve in NhanThuat architecture.
+definition: Định nghĩa chính thức về Đường cong Ma sát Sự gắn kết trong hệ thống kiến trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Các bối cảnh quản trị vận hành tổ chức.
 exceptions:
-- Emergency crisis overrides.
+- Các trường hợp khẩn cấp ghi đè cơ chế thông thường.
 applications:
   governance:
-  - Apply Cohesion Friction Curve to organizational workflows.
+  - Áp dụng Đường cong Ma sát Sự gắn kết vào quy trình làm việc của tổ chức.
 risks:
-- Misapplication of Cohesion Friction Curve leading to suboptimal performance.
+- Áp dụng sai lệch Đường cong Ma sát Sự gắn kết dẫn đến hiệu suất kém tối ưu.
 evidence:
   level: supported
   references:
@@ -30,9 +30,14 @@ relations:
 tags:
 - model
 - hop-chung
+- cohesion-friction-curve
+- organizational-cohesion
+- friction-model
+- nhanthuat-architecture
+- governance-dynamics
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
 mechanism:
-- 'Step 1: Identify Cohesion Friction Curve.'
-- 'Step 2: Analyze parameters.'
-- 'Step 3: Execute model.'
+- 'Bước 1: Xác định Đường cong Ma sát Sự gắn kết.'
+- 'Bước 2: Phân tích các tham số liên quan.'
+- 'Bước 3: Thực thi mô hình trong thực tế.'

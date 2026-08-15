@@ -2,23 +2,21 @@ id: NT-LAW-0069
 type: law
 status: frozen
 version: 0.1.0
-title: Work-in-Progress Congestion
-summary: As active Work-in-Progress (WIP) exceeds system throughput capacity, lead
-  times expand non-linearly.
+title: Tắc nghẽn công việc đang xử lý
+summary: Khi lượng công việc đang xử lý (WIP) vượt quá năng suất của hệ thống, thời gian hoàn thành (lead time) sẽ tăng lên theo cấp số nhân phi tuyến tính.
 primary_domain: dung-nhan
 secondary_domains:
 - thanh-su
-definition: 'Little''s Law in operations: context-switching overhead increases exponentially
-  as WIP increases.'
+definition: 'Định luật Little trong vận hành: chi phí chuyển đổi ngữ cảnh tăng theo cấp số nhân khi lượng công việc đang xử lý (WIP) tăng lên.'
 conditions:
-- Multi-tasking teams under high project load.
+- Các đội ngũ đa nhiệm chịu tải lượng dự án cao.
 exceptions:
-- Fully automated parallel compute workers.
+- Các tiến trình tính toán song song được tự động hóa hoàn toàn.
 applications:
   workflow_management:
-  - Set strict WIP limits on Kanban boards.
+  - Thiết lập giới hạn WIP nghiêm ngặt trên bảng Kanban.
 risks:
-- Setting WIP limits too low, leaving staff idle.
+- Thiết lập giới hạn WIP quá thấp dẫn đến việc nhân viên bị nhàn rỗi.
 evidence:
   level: supported
   references:
@@ -33,5 +31,11 @@ tags:
 - execution
 - wip
 - queueing
+- work-in-progress
+- wip-limit
+- littles-law
+- context-switching
+- workflow-congestion
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

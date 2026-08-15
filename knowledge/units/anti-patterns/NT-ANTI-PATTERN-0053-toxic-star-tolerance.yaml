@@ -2,28 +2,26 @@ id: NT-ANTI-PATTERN-0053
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Toxic Star Tolerance
-summary: Tolerating abusive or dishonest behavior from a top revenue generator, destroying
-  team psychological safety.
+title: Dung túng ngôi sao độc hại
+summary: Dung túng hành vi lạm dụng hoặc không trung thực từ một nhân sự tạo doanh thu hàng đầu, làm hủy hoại sự an toàn tâm lý của cả đội ngũ.
 primary_domain: hop-chung
 secondary_domains:
 - tri-nhan
-definition: Toxic star tolerance occurs when management excuses abusive conduct from
-  a top sales rep or star engineer.
+definition: Sự dung túng ngôi sao độc hại xảy ra khi ban quản lý bỏ qua hoặc biện hộ cho hành vi lạm dụng của một nhân viên bán hàng xuất sắc hoặc một kỹ sư ngôi sao.
 mechanism:
-- Top performer acts abusively.
-- Management turns blind eye.
-- Good employees leave.
-- Long-term output drops.
+- Nhân sự xuất sắc có hành vi lạm dụng.
+- Ban quản lý nhắm mắt làm ngơ.
+- Các nhân viên giỏi rời bỏ tổ chức.
+- Hiệu suất dài hạn của tổ chức sụt giảm.
 conditions:
-- Short-term revenue pressure.
+- Áp lực doanh thu trong ngắn hạn.
 exceptions:
-- None.
+- Không có.
 applications:
   hr_governance:
-  - Enforce zero-tolerance termination policies for abusive behavior.
+  - Áp dụng nghiêm ngặt chính sách sa thải không khoan nhượng đối với các hành vi lạm dụng.
 risks:
-- Losing short-term revenue when firing a toxic high performer.
+- Mất đi nguồn doanh thu ngắn hạn khi sa thải một nhân sự xuất sắc nhưng độc hại.
 evidence:
   level: supported
   references:
@@ -39,5 +37,10 @@ tags:
 - culture
 - toxic-star
 - anti-patterns
+- toxic-employee
+- star-performer
+- psychological-safety
+- toxic-culture
+- management-failure
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'

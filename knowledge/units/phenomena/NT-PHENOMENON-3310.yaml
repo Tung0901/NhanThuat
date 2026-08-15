@@ -1,29 +1,23 @@
 id: NT-PHENOMENON-3310
 type: phenomenon
-title: Pluralistic Ignorance
-summary: A situation where a majority of group members privately reject a norm, but
-  incorrectly assume that most others accept it, and therefore go along with it.
+title: Sự thiếu hiểu biết tập thể
+summary: Tình huống trong đó đa số thành viên trong nhóm riêng tư bác bỏ một chuẩn mực, nhưng lại lầm tưởng rằng hầu hết người khác chấp nhận nó, và vì vậy xuôi theo chuẩn mực đó.
 primary_domain: tri-nhan
 domain_area: NT-DA-0029
-definition: A cognitive illusion of unanimity where individuals mask their true beliefs
-  out of fear of social isolation, perpetuating a norm that nobody actually supports.
+definition: Một ảo tưởng nhận thức về sự nhất trí trong đó các cá nhân che giấu niềm tin thật của mình vì sợ bị xã hội cô lập, duy trì một chuẩn mực mà thực ra không ai ủng hộ.
 mechanism:
-- Individuals hold a private belief contrary to the perceived public norm.
-- Because everyone is hiding their private belief, the public norm appears unanimously
-  supported.
-- No one speaks up, solidifying the false norm.
+- Các cá nhân giữ một niềm tin riêng tư trái ngược với chuẩn mực công khai được nhận thức.
+- Vì ai cũng che giấu niềm tin riêng tư của mình, chuẩn mực công khai có vẻ được ủng hộ nhất trí.
+- Không ai lên tiếng, càng củng cố chuẩn mực sai lầm.
 conditions:
-- Environments with low psychological safety and high social consequences for dissent.
+- Các môi trường có an toàn tâm lý thấp và hậu quả xã hội cao cho sự bất đồng.
 exceptions:
-- When a single, vocal dissenter breaks the illusion, often causing the rapid collapse
-  of the norm.
+- Khi một người bất đồng duy nhất, lên tiếng rõ ràng phá vỡ ảo tưởng, thường khiến chuẩn mực sụp đổ nhanh chóng.
 applications:
   culture:
-  - Anonymous surveys are critical for unearthing pluralistic ignorance regarding
-    toxic company policies.
+  - Các khảo sát ẩn danh là yếu tố then chốt để phơi bày sự thiếu hiểu biết tập thể xung quanh những chính sách công ty độc hại.
 risks:
-- The 'Abilene Paradox'—a group collectively deciding on a course of action that is
-  counter to the preferences of every single individual in the group.
+- Nghịch lý Abilene—một nhóm cùng quyết định một đường hướng hành động đi ngược lại sở thích của từng cá nhân trong nhóm.
 evidence:
   level: strong
   references:
@@ -37,7 +31,12 @@ relations:
 tags:
 - norms
 - ignorance
+- pluralistic-ignorance
+- false-consensus
+- norm-illusion
+- silent-majority
+- abilene-paradox
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

@@ -2,33 +2,31 @@ id: NT-PRINCIPLE-0024
 type: principle
 status: frozen
 version: 0.1.0
-title: Separate person from position
-summary: Challenge a position in a way that does not require the person to defend
-  their whole identity.
+title: Tách con người khỏi lập trường
+summary: Thách thức một lập trường theo cách không buộc người đó phải bảo vệ toàn bộ bản sắc của mình.
 primary_domain: tri-nhan
 secondary_domains:
 - hop-chung
 - tu-than
-definition: People can reconsider ideas more easily when critique targets the claim,
-  evidence, or tradeoff rather than the person's worth.
+definition: Con người dễ xem lại ý tưởng hơn khi lời phê bình nhắm vào luận điểm, bằng chứng hoặc sự đánh đổi thay vì giá trị của bản thân họ.
 mechanism:
-- Name the position
-- Separate it from identity
-- Evaluate evidence and consequence.
+- Nêu tên lập trường.
+- Tách nó khỏi bản sắc.
+- Đánh giá bằng chứng và hệ quả.
 conditions:
-- The issue is discussable
-- Identity threat would block learning.
+- Vấn đề có thể thảo luận được.
+- Mối đe dọa về bản sắc sẽ chặn việc học hỏi.
 exceptions:
-- Role accountability may require direct ownership
-- Harmful conduct may require firmer naming.
+- Trách nhiệm giải trình theo vai trò có thể đòi hỏi nhận lỗi trực tiếp.
+- Hành vi gây hại có thể cần được nêu tên mạnh mẽ hơn.
 applications:
   conversation:
-  - Ask what would change the view.
+  - Hỏi điều gì sẽ làm thay đổi quan điểm.
   leadership:
-  - Challenge reasoning without status attack.
+  - Thách thức suy luận mà không tấn công địa vị.
 risks:
-- Avoiding hard accountability
-- Softening truth until it becomes unclear.
+- Tránh né trách nhiệm giải trình khó khăn.
+- Làm mềm sự thật đến mức mơ hồ.
 evidence:
   level: provisional
   references: []
@@ -43,5 +41,7 @@ tags:
 - identity
 - disagreement
 - learning
+- critique
+- respect
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

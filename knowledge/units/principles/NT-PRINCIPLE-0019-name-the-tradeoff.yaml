@@ -2,33 +2,31 @@ id: NT-PRINCIPLE-0019
 type: principle
 status: frozen
 version: 0.1.0
-title: Name the tradeoff
-summary: In persistent conflict, explicitly name what cannot be maximized at the same
-  time before debating solutions.
+title: Nêu tên sự đánh đổi
+summary: Trong xung đột dai dẳng, hãy nêu rõ ràng những gì không thể được tối đa hóa cùng lúc trước khi tranh luận về giải pháp.
 primary_domain: hop-chung
 secondary_domains:
 - thanh-su
 - tri-nhan
-definition: Naming the tradeoff turns conflict from personal opposition into a decision
-  about priorities and costs.
+definition: Nêu tên sự đánh đổi biến xung đột từ đối kháng cá nhân thành một quyết định về ưu tiên và chi phí.
 mechanism:
-- Identify recurring conflict
-- Name competing goods
-- Decide or redesign the tradeoff.
+- Xác định xung đột tái diễn.
+- Nêu tên các lợi ích cạnh tranh.
+- Quyết định hoặc tái thiết kế sự đánh đổi.
 conditions:
-- The conflict repeats
-- Parties are defending different costs or values.
+- Xung đột tái diễn.
+- Các bên đang bảo vệ những chi phí hoặc giá trị khác nhau.
 exceptions:
-- Bad faith may not respond to clarity
-- Some conflicts are about facts first.
+- Ý định xấu có thể không phản ứng với sự rõ ràng.
+- Một số xung đột trước hết là về sự kiện.
 applications:
   strategy:
-  - State which priority wins under constraint.
+  - Nêu rõ ưu tiên nào thắng thế trong điều kiện ràng buộc.
   mediation:
-  - Move from blame to competing goods.
+  - Chuyển từ đổ lỗi sang các lợi ích cạnh tranh.
 risks:
-- Oversimplifying moral issues
-- Naming tradeoffs without deciding them.
+- Đơn giản hóa quá mức các vấn đề đạo đức.
+- Nêu tên sự đánh đổi mà không quyết định chúng.
 evidence:
   level: provisional
   references: []
@@ -42,5 +40,7 @@ tags:
 - tradeoffs
 - conflict
 - priorities
+- decision-making
+- mediation
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

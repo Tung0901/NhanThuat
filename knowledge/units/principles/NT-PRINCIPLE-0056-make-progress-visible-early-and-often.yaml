@@ -2,18 +2,44 @@ id: NT-PRINCIPLE-0056
 type: principle
 status: frozen
 version: 0.1.0
-title: Make progress visible early and often
-summary: Structure long initiatives into observable intermediate milestones so teams experience frequent, tangible confirmation of achievement.
+title: Làm cho tiến độ nhìn thấy sớm và thường xuyên
+summary: Cấu trúc các sáng kiến dài hạn thành các cột mốc trung gian quan sát được để nhóm trải nghiệm sự xác nhận thành tựu thường xuyên và hữu hình.
 primary_domain: tu-than
-secondary_domains: [thanh-su, tri-nhan]
-definition: Regular visibility into incremental progress maintains momentum and prevents the demotivation caused by long periods of unacknowledged effort.
-mechanism: [Decompose long goal, Create short-horizon feedback, Celebrate milestone completion, Renew effort energy.]
-conditions: [Projects span extended time horizons or contain high ambiguity.]
-exceptions: [Over-frequent reporting overhead can consume more energy than it generates.]
-applications: {project-design: [Design bi-weekly incremental deliverables.], management: [Acknowledge operational wins promptly.]}
-risks: [Tracking activity volume rather than genuine progress.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0033], applies_to: []}
-tags: [motivation, principle, progress, momentum]
+secondary_domains:
+- thanh-su
+- tri-nhan
+definition: Tầm nhìn thường xuyên vào tiến độ gia tăng duy trì đà tiến và ngăn ngừa sự mất động lực do những giai đoạn dài nỗ lực không được công nhận.
+mechanism:
+- Phân rã mục tiêu dài hạn
+- Tạo phản hồi tầm ngắn
+- Ăn mừng hoàn thành cột mốc
+- Làm mới năng lượng nỗ lực.
+conditions:
+- Dự án kéo dài nhiều thời gian hoặc chứa độ mơ hồ cao.
+exceptions:
+- Chi phí báo cáo quá thường xuyên có thể tiêu tốn nhiều năng lượng hơn nó tạo ra.
+applications:
+  project-design:
+  - Thiết kế sản phẩm bàn giao gia tăng hai tuần một lần.
+  management:
+  - Ghi nhận thắng lợi vận hành kịp thời.
+risks:
+- Theo dõi khối lượng hoạt động thay vì tiến độ thực sự.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0033
+  applies_to: []
+tags:
+- motivation
+- principle
+- progress
+- momentum
+- milestones
+- feedback
 created_at: '2026-07-21'
-updated_at: '2026-07-21'
+updated_at: '2026-08-15'

@@ -2,34 +2,32 @@ id: NT-LAW-0021
 type: law
 status: frozen
 version: 0.1.0
-title: Commitment follows participation
-summary: People are more likely to commit to a decision when they helped shape, understand,
-  or meaningfully choose it.
+title: Sự cam kết đến từ sự tham gia
+summary: Mọi người có nhiều khả năng cam kết thực hiện một quyết định hơn khi họ được cùng định hình, thấu hiểu hoặc lựa chọn quyết định đó một cách có ý nghĩa.
 primary_domain: hop-chung
 secondary_domains:
 - dung-nhan
 - thanh-su
-definition: Participation increases commitment by creating understanding, agency,
-  ownership, and perceived fairness around the decision.
+definition: Sự tham gia làm tăng mức độ cam kết bằng cách tạo ra sự thấu hiểu, quyền chủ động, tinh thần làm chủ và cảm giác công bằng xung quanh quyết định.
 mechanism:
-- Participate in framing or choice
-- Understand tradeoffs
-- Feel agency and fairness
-- Commit more fully.
+- Tham gia vào việc định hình hoặc lựa chọn
+- Thấu hiểu các sự đánh đổi
+- Cảm nhận được quyền chủ động và sự công bằng
+- Cam kết một cách trọn vẹn hơn.
 conditions:
-- Participation is meaningful
-- The decision affects the participant.
+- Sự tham gia phải có ý nghĩa thực chất
+- Quyết định có ảnh hưởng trực tiếp đến người tham gia.
 exceptions:
-- Urgent decisions may not permit participation
-- Token participation can reduce trust.
+- Các quyết định khẩn cấp có thể không cho phép sự tham gia
+- Sự tham gia mang tính hình thức có thể làm giảm lòng tin.
 applications:
   leadership:
-  - Invite input where commitment matters and choice is real.
+  - Khuyến khích đóng góp ý kiến khi sự cam kết là quan trọng và quyền lựa chọn là có thực.
   change:
-  - Use participation to build ownership of tradeoffs.
+  - Sử dụng sự tham gia để xây dựng tinh thần làm chủ đối với các sự đánh đổi.
 risks:
-- Confusing consultation with consensus
-- Using fake participation as theater.
+- Nhầm lẫn giữa việc tham vấn ý kiến với sự đồng thuận
+- Sử dụng sự tham gia giả tạo như một màn diễn kịch.
 evidence:
   level: provisional
   references: []
@@ -45,5 +43,8 @@ tags:
 - commitment
 - participation
 - ownership
+- employee-participation
+- decision-making
+- change-leadership
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

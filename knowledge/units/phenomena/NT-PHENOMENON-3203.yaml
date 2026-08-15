@@ -1,26 +1,23 @@
 id: NT-PHENOMENON-3203
 type: phenomenon
-title: Variable Reward Schedule
-summary: Rewards delivered on an unpredictable, variable ratio schedule are highly
-  effective at maintaining continuous behavior.
+title: Lịch trình phần thưởng biến đổi
+summary: Phần thưởng được trao theo lịch trình tỷ lệ biến đổi không thể đoán trước rất hiệu quả trong việc duy trì hành vi liên tục.
 primary_domain: tri-nhan
 domain_area: NT-DA-0028
-definition: An operant conditioning phenomenon where behaviors reinforced unpredictably
-  are more resistant to extinction than behaviors reinforced every time.
+definition: Một hiện tượng điều kiện hóa bằng phản xạ, trong đó các hành vi được củng cố một cách không thể đoán trước có khả năng chống lại sự tắt (extinction) cao hơn các hành vi được củng cố mỗi lần.
 mechanism:
-- An action is performed.
-- A reward is delivered only some of the time, or the magnitude of the reward varies.
-- The uncertainty triggers heightened dopamine anticipation, driving compulsive repetition.
+- Một hành động được thực hiện.
+- Phần thưởng chỉ được trao trong một số lần, hoặc độ lớn của phần thưởng biến thiên.
+- Sự không chắc chắn kích hoạt sự mong đợi dopamine tăng cao, thúc đẩy sự lặp lại mang tính cưỡng bách.
 conditions:
-- Behaviors where the user has agency to repeatedly trigger the routine (e.g., pulling
-  a slot machine lever, pulling down to refresh a feed).
+- 'Các hành vi mà người dùng có quyền chủ động kích hoạt lặp lại quy trình (ví dụ: kéo cần máy đánh bạc, kéo xuống để làm mới bảng tin).'
 exceptions:
-- Fixed-salary employment; predictable utility software.
+- Việc làm hưởng lương cố định; phần mềm tiện ích có thể dự đoán được.
 applications:
   engagement:
-  - Introduce variability in the content or timing of notifications to increase engagement.
+  - Đưa sự biến đổi vào nội dung hoặc thời điểm gửi thông báo để tăng mức độ tương tác.
 risks:
-- Can easily cross into unethical, addictive design ('sludge').
+- Có thể dễ dàng rơi vào thiết kế gây nghiện, phi đạo đức ('sludge').
 evidence:
   level: strong
   references:
@@ -34,7 +31,11 @@ relations:
 tags:
 - rewards
 - dopamine
+- variable-reward
+- operant-conditioning
+- engagement
+- addiction
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

@@ -2,21 +2,21 @@ id: NT-MODEL-0015
 type: model
 status: frozen
 version: 0.1.0
-title: Decision Quality Model
-summary: Decision Quality Model structural knowledge unit.
+title: Mô hình Chất lượng Quyết định
+summary: Đơn vị tri thức cấu trúc về Mô hình Chất lượng Quyết định.
 primary_domain: tri-nhan
 secondary_domains:
 - dung-nhan
-definition: Formal definition of Decision Quality Model in NhanThuat architecture.
+definition: Định nghĩa chính thức về Mô hình Chất lượng Quyết định trong kiến trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Các bối cảnh quản trị vận hành.
 exceptions:
-- Emergency crisis overrides.
+- Các trường hợp khẩn cấp ghi đè do khủng hoảng.
 applications:
   governance:
-  - Apply Decision Quality Model to organizational workflows.
+  - Áp dụng Mô hình Chất lượng Quyết định vào quy trình làm việc của tổ chức.
 risks:
-- Misapplication of Decision Quality Model leading to suboptimal performance.
+- Áp dụng sai Mô hình Chất lượng Quyết định dẫn đến hiệu suất không tối ưu.
 evidence:
   level: supported
   references:
@@ -30,9 +30,13 @@ relations:
 tags:
 - model
 - tri-nhan
+- decision-quality
+- decision-making
+- governance-model
+- quality-assurance
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
 mechanism:
-- 'Step 1: Identify Decision Quality Model.'
-- 'Step 2: Analyze parameters.'
-- 'Step 3: Execute model.'
+- 'Bước 1: Xác định Mô hình Chất lượng Quyết định.'
+- 'Bước 2: Phân tích các tham số.'
+- 'Bước 3: Thực thi mô hình.'

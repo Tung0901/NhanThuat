@@ -29,7 +29,7 @@ def test_ui_engine_adapter_integration():
     assert len(domains) > 0, "Expected at least 1 domain"
     
     # Test query resolution
-    results = adapter.resolve_query("test query", limit=3)
+    results = adapter.resolve_query("hiện tượng", limit=3)
     assert len(results) > 0, "Resolve query should return results"
     
     # Ensure phenomenon is searchable

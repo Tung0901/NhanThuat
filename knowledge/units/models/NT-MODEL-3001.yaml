@@ -2,38 +2,48 @@ id: NT-MODEL-3001
 type: model
 status: frozen
 version: 0.1.0
-title: Information Processing Pipeline
-summary: A structural model of how humans perceive, filter, process, and act upon environmental information.
+title: Quy trình Xử lý Thông tin
+summary: Mô hình cấu trúc mô tả cách con người tiếp nhận, sàng lọc, xử lý và hành động dựa trên thông tin từ môi trường.
 primary_domain: tri-nhan
 domain_area: NT-DA-0026
-secondary_domains: [tu-than]
-definition: A model demonstrating that human cognition operates as a constrained pipeline—moving from sensory input, through attentional filters and working memory, into long-term storage or immediate action.
+secondary_domains:
+- tu-than
+definition: Mô hình chỉ ra rằng nhận thức của con người vận hành như một đường ống xử lý có giới hạn—từ đầu vào giác quan, qua bộ lọc chú ý và trí nhớ làm việc, đến lưu trữ dài hạn hoặc hành động tức thì.
 mechanism:
-  - Sensory input arrives in high volume.
-  - Attentional filters discard irrelevant signals.
-  - Working memory processes a small subset.
-  - Meaning is constructed via pattern matching against mental models.
-  - Output translates into physical action, communication, or stored memory.
+- Thông tin đầu vào từ giác quan được tiếp nhận với lưu lượng và khối lượng lớn.
+- Bộ lọc chú ý chủ động loại bỏ các tín hiệu và thông tin không liên quan.
+- Trí nhớ làm việc chỉ tiếp nhận và xử lý một tập hợp con nhỏ các dữ liệu đã chọn lọc.
+- Ý nghĩa thông tin được kiến tạo thông qua đối chiếu mẫu với các mô hình tư duy sẵn có.
+- Đầu ra chuyển hóa thành hành động thể chất, giao tiếp hoặc lưu trữ vào trí nhớ dài hạn.
 conditions:
-  - Individual or group processing novel or complex information.
+- Cá nhân hoặc nhóm tiếp nhận và xử lý thông tin mới hoặc có độ phức tạp cao.
 exceptions:
-  - Highly practiced habits bypass working memory constraints.
+- Các thói quen được rèn luyện thuần thục sẽ bỏ qua các ràng buộc của trí nhớ làm việc.
 applications:
   design:
-    - Reduce extraneous cognitive load in user interfaces.
+  - Giảm thiểu tải nhận thức ngoại lai trong thiết kế giao diện người dùng.
   communication:
-    - Transmit information in chunks that fit working memory limits.
+  - Truyền tải thông tin theo từng khối phân đoạn phù hợp với dung lượng trí nhớ làm việc.
 risks:
-  - Assuming information sent equals information received and processed.
+- Ngộ nhận rằng thông tin được gửi đi đồng nghĩa với việc đối phương đã tiếp nhận và xử lý trọn vẹn.
 evidence:
   level: supported
   references:
-    - "Atkinson, R. C., & Shiffrin, R. M. (1968). 'Human memory: A proposed system and its control processes'."
+  - 'Atkinson, R. C., & Shiffrin, R. M. (1968). ''Human memory: A proposed system and its control processes''.'
 relations:
-  supports: [NT-PRINCIPLE-3001]
+  supports:
+  - NT-PRINCIPLE-3001
   conflicts_with: []
   depends_on: []
   applies_to: []
-tags: [cognition, information-processing, sensemaking]
+tags:
+- cognition
+- information-processing
+- sensemaking
+- cognitive-load
+- working-memory
+- sensory-input
+- attention-filter
+- mental-models
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

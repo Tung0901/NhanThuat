@@ -2,35 +2,44 @@ id: NT-PRINCIPLE-3004
 type: principle
 status: frozen
 version: 0.1.0
-title: De-bias through Structured Evaluation
-summary: Do not rely on willpower or awareness to overcome cognitive bias; instead, build structured environments and checklists that force objective evaluation.
+title: Giảm thiên kiến bằng đánh giá có cấu trúc
+summary: Đừng dựa vào ý chí hay nhận thức để vượt qua thiên kiến nhận thức; thay vào đó, hãy xây dựng môi trường có cấu trúc và các bảng kiểm tra buộc phải đánh giá khách quan.
 primary_domain: tri-nhan
 domain_area: NT-DA-0026
-secondary_domains: [thanh-su]
-definition: The practice of externalizing cognitive discipline into the environment, recognizing that human working memory cannot simultaneously execute a task and consciously defend against all known biases.
+secondary_domains:
+- thanh-su
+definition: Hoạt động thực hành ngoại hóa kỷ luật nhận thức ra môi trường bên ngoài, thừa nhận rằng trí nhớ làm việc của con người không thể đồng thời thực thi nhiệm vụ và chủ động phòng vệ trước mọi thiên kiến đã biết.
 mechanism:
-  - Recognize that bias operates below conscious awareness.
-  - Create a structural tool (rubric, checklist, blind evaluation protocol).
-  - Force the decision-maker to use the tool, decoupling the decision from subjective intuition.
-  - The tool catches errors the unaided mind would gloss over.
+- Nhận thức rằng thiên kiến hoạt động dưới mức nhận thức có ý thức.
+- Tạo ra một công cụ cấu trúc (bảng tiêu chí, bảng kiểm tra, quy trình đánh giá mù).
+- Buộc người ra quyết định phải sử dụng công cụ, tách quyết định khỏi trực giác chủ quan.
+- Công cụ phát hiện các sai sót mà tâm trí không được hỗ trợ sẽ bỏ qua.
 conditions:
-  - High-stakes evaluations (hiring, investing, strategic commitments).
+- Các đánh giá có mức độ hệ trọng cao (tuyển dụng, đầu tư, cam kết chiến lược).
 exceptions:
-  - Low-stakes, reversible decisions where speed is paramount.
+- Các quyết định ít rủi ro, có thể đảo ngược, nơi tốc độ là yếu tố tối quan trọng.
 applications:
   hiring:
-    - Use blind resume reviews and standardized interview scoring rubrics.
+  - Sử dụng đánh giá hồ sơ mù và bảng điểm phỏng vấn chuẩn hóa.
 risks:
-  - Creating overly rigid bureaucratic processes that stifle necessary expert intuition.
+- Tạo ra các quy trình quan liêu quá cứng nhắc kìm hãm trực giác chuyên môn cần thiết.
 evidence:
   level: strong
   references:
-    - "Kahneman, D., Lovallo, D., & Sibony, O. (2011). 'Before You Make That Big Decision...'. Harvard Business Review."
+  - Kahneman, D., Lovallo, D., & Sibony, O. (2011). 'Before You Make That Big Decision...'. Harvard Business Review.
 relations:
   supports: []
   conflicts_with: []
-  depends_on: [NT-PHENOMENON-3006, NT-PHENOMENON-3002]
+  depends_on:
+  - NT-PHENOMENON-3006
+  - NT-PHENOMENON-3002
   applies_to: []
-tags: [bias, structure, decision-making, evaluation]
+tags:
+- bias
+- structure
+- decision-making
+- evaluation
+- checklists
+- objectivity
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

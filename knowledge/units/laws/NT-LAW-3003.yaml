@@ -2,38 +2,47 @@ id: NT-LAW-3003
 type: law
 status: frozen
 version: 0.1.0
-title: Memory Reconstruction
-summary: Memory is not a recording retrieved from storage, but a narrative reconstructed at the moment of recall, heavily influenced by present context and emotion.
+title: Sự tái dựng ký ức
+summary: Ký ức không phải là một bản ghi được truy xuất từ kho lưu trữ, mà là một câu chuyện được tái dựng ngay tại thời điểm hồi tưởng, chịu ảnh hưởng mạnh mẽ bởi bối cảnh và cảm xúc hiện tại.
 primary_domain: tri-nhan
 domain_area: NT-DA-0026
-secondary_domains: [thanh-su]
-definition: The process of remembering involves assembling fragments of stored data into a coherent story that makes sense in the current environment, making memory inherently malleable and prone to distortion.
+secondary_domains:
+- thanh-su
+definition: Quá trình ghi nhớ bao gồm việc lắp ghép các mảnh dữ liệu được lưu trữ thành một câu chuyện mạch lạc và hợp lý trong môi trường hiện tại, khiến ký ức vốn dĩ dễ bị uốn nắn và sai lệch.
 mechanism:
-  - An event is encoded with missing details due to attention limits.
-  - Upon recall, the brain retrieves available fragments.
-  - The brain fills in the gaps using current beliefs, logic, or suggestions (confabulation).
-  - The newly constructed memory is saved over the old one.
+- Một sự kiện được mã hóa thiếu chi tiết do giới hạn của sự chú ý.
+- Khi hồi tưởng, não bộ sẽ truy xuất các mảnh ký ức sẵn có.
+- Não bộ lấp đầy các khoảng trống bằng cách sử dụng niềm tin, logic hoặc gợi ý hiện tại (hiện tượng bịa đặt ký ức).
+- Ký ức mới được tái dựng sẽ ghi đè lên ký ức cũ.
 conditions:
-  - Time has passed since the original event.
+- Một khoảng thời gian đã trôi qua kể từ sự kiện ban đầu.
 exceptions:
-  - Immediate short-term recall of simple facts before interference occurs.
+- Việc hồi tưởng ngắn hạn ngay lập tức các sự thật đơn giản trước khi xảy ra sự can thiệp.
 applications:
   leadership:
-    - Document decisions and rationales immediately, rather than relying on future recall.
+  - Ghi chép lại các quyết định và lý do căn bản ngay lập tức, thay vì dựa vào việc hồi tưởng trong tương lai.
   conflict-resolution:
-    - Recognize that conflicting accounts of an event are often products of different reconstructions, not intentional deception.
+  - Nhận thức được rằng các lời kể mâu thuẫn về cùng một sự kiện thường là sản phẩm của những sự tái dựng khác nhau, chứ không phải là sự lừa dối cố ý.
 risks:
-  - Treating memory as infallible objective truth.
+- Coi ký ức là sự thật khách quan không thể sai lầm.
 evidence:
   level: strong
   references:
-    - "Bartlett, F. C. (1932). 'Remembering: A Study in Experimental and Social Psychology'."
-    - "Loftus, E. F. (2005). 'Planting misinformation in the human mind'. Learning & Memory."
+  - 'Bartlett, F. C. (1932). ''Remembering: A Study in Experimental and Social Psychology''.'
+  - Loftus, E. F. (2005). 'Planting misinformation in the human mind'. Learning & Memory.
 relations:
   supports: []
   conflicts_with: []
   depends_on: []
   applies_to: []
-tags: [memory, truth, narrative, cognitive-bias]
+tags:
+- memory
+- truth
+- narrative
+- cognitive-bias
+- memory-reconstruction
+- false-memory
+- recall-bias
+- confabulation
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

@@ -2,28 +2,26 @@ id: NT-MODEL-0024
 type: model
 status: frozen
 version: 0.1.0
-title: Incentive Alignment Matrix
-summary: A 2x2 framework mapping Metric Congruence against Intrinsic Alignment to
-  categorize organizational reward health.
+title: Ma trận căn chỉnh động lực khuyến khích
+summary: Một khung phân tích 2x2 lập bản đồ giữa Độ tương thích của chỉ số và Sự gắn kết nội tại nhằm phân loại tình trạng sức khỏe của hệ thống đãi ngộ trong tổ chức.
 primary_domain: tu-than
 secondary_domains:
 - hop-chung
-definition: The Incentive Alignment Matrix plots reward structures across Metric Congruence
-  and Intrinsic Alignment.
+definition: 'Ma trận căn chỉnh động lực khuyến khích biểu diễn các cấu trúc khen thưởng theo hai trục: Độ tương thích của chỉ số và Sự gắn kết nội tại.'
 mechanism:
-- Assess Metric Congruence.
-- Assess Intrinsic Alignment.
-- Categorize Quadrant.
-- Shift toward High/High quadrant.
+- Đánh giá độ tương thích của chỉ số (Metric Congruence).
+- Đánh giá sự gắn kết động lực nội tại (Intrinsic Alignment).
+- Phân loại góc phần tư tương ứng.
+- Chuyển dịch hướng tới góc phần tư Cao/Cao.
 conditions:
-- Compensation redesign, sales commission planning, or OKR evaluation.
+- Thiết kế lại cơ cấu đãi ngộ, lập kế hoạch hoa hồng bán hàng hoặc đánh giá OKR.
 exceptions:
-- Non-work voluntary charitable endeavors.
+- Các hoạt động thiện nguyện tự nguyện phi công việc.
 applications:
   compensation_audit:
-  - Evaluate commission plans to eliminate Toxic Gaming risk.
+  - Đánh giá các kế hoạch hoa hồng để loại bỏ nguy cơ lách luật tiêu cực (Toxic Gaming).
 risks:
-- Misdiagnosing low employee capability as an incentive matrix flaw.
+- Chẩn đoán sai năng lực kém của nhân viên thành lỗi sai cấu trúc trong ma trận khuyến khích.
 evidence:
   level: supported
   references:
@@ -39,5 +37,10 @@ tags:
 - incentives
 - matrix
 - governance
+- incentive-alignment
+- metric-congruence
+- intrinsic-motivation
+- reward-health
+- compensation-structure
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'

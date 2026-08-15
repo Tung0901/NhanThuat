@@ -2,33 +2,31 @@ id: NT-PRINCIPLE-0020
 type: principle
 status: frozen
 version: 0.1.0
-title: Resolve conflict at the right level
-summary: Solve conflicts at the level where the tradeoff can actually be decided,
-  resourced, or redesigned.
+title: Giải quyết xung đột ở đúng cấp độ
+summary: Giải quyết xung đột ở cấp độ nơi sự đánh đổi thực sự có thể được quyết định, cấp nguồn lực hoặc tái thiết kế.
 primary_domain: thanh-su
 secondary_domains:
 - hop-chung
 - dung-nhan
-definition: Conflict persists when people are asked to resolve a tradeoff they do
-  not have authority or resources to settle.
+definition: Xung đột kéo dài khi con người được yêu cầu giải quyết một sự đánh đổi mà họ không có quyền hạn hoặc nguồn lực để phân định.
 mechanism:
-- Locate the unresolved tradeoff
-- Identify decision authority
-- Move the decision to the right level.
+- Xác định sự đánh đổi chưa được phân định.
+- Xác định quyền ra quyết định.
+- Chuyển quyết định đến đúng cấp độ.
 conditions:
-- Conflict depends on constraints beyond the parties
-- Authority is distributed.
+- Xung đột phụ thuộc vào các ràng buộc ngoài tầm của các bên.
+- Quyền hạn được phân tán.
 exceptions:
-- Interpersonal repair may still be needed
-- Local teams can resolve some tradeoffs themselves.
+- Sửa chữa giữa các cá nhân vẫn có thể cần thiết.
+- Nhóm địa phương có thể tự giải quyết một số đánh đổi.
 applications:
   management:
-  - Escalate priority conflicts that teams cannot settle.
+  - Leo thang các xung đột ưu tiên mà nhóm không thể phân định.
   operations:
-  - Change resource rules when handoff conflict repeats.
+  - Thay đổi quy tắc nguồn lực khi xung đột bàn giao tái diễn.
 risks:
-- Escalating every disagreement
-- Avoiding interpersonal responsibility.
+- Leo thang mọi bất đồng.
+- Trốn tránh trách nhiệm giữa các cá nhân.
 evidence:
   level: provisional
   references: []
@@ -43,5 +41,7 @@ tags:
 - conflict-resolution
 - authority
 - tradeoffs
+- escalation
+- decision-rights
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

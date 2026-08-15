@@ -2,28 +2,26 @@ id: NT-ANTI-PATTERN-0055
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Ethical Whitewashing
-summary: Using expensive PR campaigns and virtue-signaling slogans to conceal predatory
-  operational practices.
+title: Tẩy trắng đạo đức
+summary: Sử dụng các chiến dịch PR tốn kém và các khẩu hiệu phô trương đạo đức để che đậy các hoạt động vận hành mang tính bóc lột.
 primary_domain: tu-than
 secondary_domains:
 - tri-nhan
-definition: Ethical whitewashing occurs when a company spends millions advertising
-  ethical values while mistreating staff.
+definition: Tẩy trắng đạo đức xảy ra khi một doanh nghiệp chi hàng triệu đô la để quảng cáo các giá trị đạo đức trong khi vẫn ngược đãi nhân viên của mình.
 mechanism:
-- Company conducts predatory practices.
-- PR launches virtue-signaling campaign.
-- Public is distracted.
-- Practices continue.
+- Doanh nghiệp thực hiện các hành vi mang tính bóc lột.
+- Bộ phận PR tung ra chiến dịch phô trương đạo đức.
+- Công chúng bị đánh lạc hướng.
+- Các hành vi sai trái vẫn tiếp tục diễn ra.
 conditions:
-- High corporate PR marketing budgets paired with weak internal governance.
+- Ngân sách tiếp thị PR của doanh nghiệp lớn đi kèm với hệ thống quản trị nội bộ yếu kém.
 exceptions:
-- None.
+- Không có.
 applications:
   audit:
-  - Cross-reference marketing ethics claims against internal audit data.
+  - Đối chiếu các tuyên bố đạo đức tiếp thị với dữ liệu kiểm toán nội bộ.
 risks:
-- Demotivating genuine sustainability initiatives.
+- Làm giảm động lực của các sáng kiến phát triển bền vững thực chất.
 evidence:
   level: supported
   references:
@@ -39,5 +37,10 @@ tags:
 - ethics
 - whitewashing
 - anti-patterns
+- ethical-whitewashing
+- corporate-social-responsibility
+- pr-spin
+- virtue-signaling
+- predatory-practices
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'

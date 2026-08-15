@@ -2,33 +2,31 @@ id: NT-PRINCIPLE-0007
 type: principle
 status: frozen
 version: 0.1.0
-title: Align measures with values
-summary: If a value matters, ensure the system's measures, rewards, and review rhythms
-  do not teach people to neglect it.
+title: Căn chỉnh thước đo với giá trị
+summary: Nếu một giá trị quan trọng, hãy đảm bảo các thước đo, phần thưởng và nhịp đánh giá của hệ thống không khiến con người xao nhãng giá trị đó.
 primary_domain: thanh-su
 secondary_domains:
 - hop-chung
 - dung-nhan
-definition: Values become operational when measures and reinforcement make them visible
-  in recurring decisions.
+definition: Giá trị trở nên vận hành được khi thước đo và sự củng cố làm cho chúng hiện hữu trong các quyết định lặp lại.
 mechanism:
-- Name the value
-- Compare it with measures and rewards
-- Adjust reinforcement to support the value.
+- Nêu tên giá trị.
+- So sánh giá trị đó với thước đo và phần thưởng.
+- Điều chỉnh sự củng cố để ủng hộ giá trị.
 conditions:
-- The value affects repeated work
-- Measures influence decisions.
+- Giá trị ảnh hưởng đến công việc lặp lại.
+- Thước đo tác động đến quyết định.
 exceptions:
-- Some values resist simple measurement
-- Over-measurement can distort judgment.
+- Một số giá trị kháng lại việc đo lường đơn giản.
+- Đo lường quá mức có thể bóp méo phán đoán.
 applications:
   governance:
-  - Review whether metrics contradict stated principles.
+  - Rà soát xem chỉ số có mâu thuẫn với các nguyên tắc đã công bố hay không.
   leadership:
-  - Recognize behavior that protects non-obvious values.
+  - Ghi nhận hành vi bảo vệ các giá trị không dễ thấy.
 risks:
-- Reducing values to metrics
-- Rewarding performance theater.
+- Quy giản giá trị thành chỉ số.
+- Khen thưởng sự trình diễn hiệu quả.
 evidence:
   level: provisional
   references: []
@@ -43,5 +41,7 @@ tags:
 - values
 - metrics
 - incentives
+- governance
+- reinforcement
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

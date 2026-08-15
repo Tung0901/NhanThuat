@@ -2,38 +2,47 @@ id: NT-PRINCIPLE-3002
 type: principle
 status: frozen
 version: 0.1.0
-title: Explicit Mental Modeling
-summary: Require individuals and teams to make their underlying assumptions and mental models explicit before making strategic decisions or resolving conflicts.
+title: Mô hình hóa tinh thần tường minh
+summary: Yêu cầu cá nhân và đội ngũ làm rõ các giả định và mô hình tinh thần nền tảng của họ trước khi đưa ra quyết định chiến lược hoặc giải quyết xung đột.
 primary_domain: tri-nhan
 domain_area: NT-DA-0026
-secondary_domains: [hop-chung, thanh-su]
-definition: The practice of surfacing the invisible frameworks people use to interpret reality, ensuring that disagreements are fought over actual models rather than surface-level conclusions.
+secondary_domains:
+- hop-chung
+- thanh-su
+definition: Việc đưa ra bề mặt các khuôn khổ vô hình mà con người dùng để diễn giải thực tại, đảm bảo các bất đồng được tranh luận trên các mô hình thực tế thay vì trên các kết luận bề nổi.
 mechanism:
-  - A disagreement or complex decision arises.
-  - Participants pause debate on the conclusion.
-  - Each participant articulates the causal map (if X then Y) driving their view.
-  - The group compares models, finding where the divergence actually occurs.
+- Một bất đồng hoặc quyết định phức tạp nảy sinh.
+- Người tham gia tạm dừng tranh luận về kết luận.
+- Mỗi người tham gia trình bày bản đồ nhân quả (nếu X thì Y) chi phối quan điểm của mình.
+- Nhóm so sánh các mô hình để tìm ra điểm phân kỳ thực sự.
 conditions:
-  - High-stakes decisions or chronic, unresolved conflicts.
+- Các quyết định rủi ro cao hoặc các xung đột mãn tính chưa được giải quyết.
 exceptions:
-  - Routine, low-stakes operational tasks where shared mental models are already established.
+- Các nhiệm vụ vận hành thông thường, rủi ro thấp khi các mô hình tinh thần chung đã được thiết lập.
 applications:
   strategy:
-    - Map the competitive landscape visually to expose differing assumptions.
+  - Phác họa bức tranh cạnh tranh bằng hình ảnh để bộc lộ các giả định khác nhau.
   team-building:
-    - Onboard new members by explicitly teaching the team's operational mental models.
+  - Đào tạo thành viên mới bằng cách giảng dạy tường minh các mô hình tinh thần vận hành của đội ngũ.
 risks:
-  - Over-intellectualizing simple execution problems.
+- Trí thức hóa quá mức các vấn đề thực thi đơn giản.
 evidence:
   level: supported
   references:
-    - "Craik, K. J. W. (1943). 'The Nature of Explanation'. Cambridge University Press."
-    - "Johnson-Laird, P. N. (1983). 'Mental Models'."
+  - Craik, K. J. W. (1943). 'The Nature of Explanation'. Cambridge University Press.
+  - Johnson-Laird, P. N. (1983). 'Mental Models'.
 relations:
   supports: []
   conflicts_with: []
-  depends_on: [NT-LAW-3003]
+  depends_on:
+  - NT-LAW-3003
   applies_to: []
-tags: [mental-models, communication, conflict, alignment]
+tags:
+- mental-models
+- communication
+- conflict
+- alignment
+- assumptions
+- causal-mapping
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

@@ -2,27 +2,25 @@ id: NT-ANTI-PATTERN-0046
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Everything-is-a-Priority Fallacy
-summary: Declaring dozens of top priorities without making hard trade-offs, leading
-  to resource dilution and team burnout.
+title: Ngụy biện Mọi thứ đều ưu tiên
+summary: Tuyên bố hàng tá ưu tiên hàng đầu mà không đưa ra sự đánh đổi kiên quyết, dẫn đến pha loãng nguồn lực và kiệt sức ở đội ngũ.
 primary_domain: thanh-su
 secondary_domains:
 - dung-nhan
-definition: The Everything-is-a-Priority fallacy occurs when leadership refuses to
-  make tough choices.
+definition: Ngụy biện Mọi thứ đều ưu tiên xảy ra khi ban lãnh đạo từ chối đưa ra những lựa chọn và đánh đổi khó khăn.
 mechanism:
-- Leadership adds new goals without deprioritizing.
-- Resources split.
-- Progress stalls.
+- Ban lãnh đạo bổ sung mục tiêu mới mà không loại bỏ bớt mục tiêu cũ.
+- Nguồn lực bị phân tán manh mún.
+- Tiến độ công việc bị đình trệ.
 conditions:
-- Indecisive executive leadership.
+- Ban điều hành thiếu quyết đoán.
 exceptions:
-- Large corporate conglomerates with independent funding.
+- Các tập đoàn đa ngành lớn có dòng vốn và ngân sách độc lập.
 applications:
   executive_coaching:
-  - Limit executive teams to max 3 top strategic priorities.
+  - Giới hạn ban điều hành chỉ tập trung tối đa 3 ưu tiên chiến lược hàng đầu.
 risks:
-- Failing to track secondary operational health metrics.
+- Bỏ qua việc theo dõi các chỉ số sức khỏe vận hành phụ.
 evidence:
   level: supported
   references:
@@ -38,5 +36,10 @@ tags:
 - strategy
 - priority
 - anti-patterns
+- priority-dilution
+- everything-is-priority
+- focus-loss
+- resource-allocation
+- burnout
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'

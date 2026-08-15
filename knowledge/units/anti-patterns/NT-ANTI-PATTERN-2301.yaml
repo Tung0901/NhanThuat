@@ -2,26 +2,25 @@ id: NT-ANTI-PATTERN-2301
 type: anti-pattern
 status: frozen
 version: 1.0.0
-title: Sunk Cost Fallacy
-summary: Tiếp tục đầu tư vào nỗ lực thất bại vì đã đầu tư quá nhiều trước đó.
+title: Ngụy biện chi phí chìm
+summary: Xu hướng tiếp tục đổ thêm nguồn lực vào một dự án hoặc quyết định thất bại chỉ vì đã đầu tư quá nhiều trước đó.
 primary_domain: tri-nhan
 domain_area: NT-DA-0023
 secondary_domains:
 - thanh-su
-definition: Bị trói buộc bởi những chi phí không thể thu hồi thay vì giá trị tương
-  lai.
+definition: Một bẫy nhận thức khi các quyết định hiện tại bị chi phối bởi những chi phí không thể thu hồi trong quá khứ, thay vì đánh giá giá trị thực tế trong tương lai.
 mechanism:
-- Bỏ qua tín hiệu cảnh báo.
-- Tăng gấp đôi ngân sách.
+- Phớt lờ các tín hiệu cảnh báo rõ ràng về sự thất bại của dự án.
+- Tiếp tục tăng ngân sách và nhân sự với hy vọng xoay chuyển tình thế thay vì cắt lỗ.
 conditions:
-- Dự án kéo dài.
+- Các dự án có quy mô lớn, kéo dài và đã tiêu tốn một lượng ngân sách đáng kể.
 exceptions:
-- Khi chi phí dừng lớn hơn chi phí tiếp tục.
+- Khi chi phí để chấm dứt hoặc hủy bỏ dự án thực tế lớn hơn chi phí để hoàn thành nó.
 applications:
   management:
-  - Sử dụng tiêu chí khách quan để kill dự án
+  - Thiết lập các tiêu chí đánh giá độc lập và khách quan để quyết định dừng dự án kịp thời.
 risks:
-- Lãng phí nguồn lực khổng lồ
+- Gây lãng phí nghiêm trọng về nguồn lực tài chính, thời gian và cơ hội của tổ chức.
 evidence:
   level: supported
   references: []
@@ -33,5 +32,9 @@ relations:
 tags:
 - fallacy
 - decision-making
+- sunk-cost-fallacy
+- cognitive-bias
+- project-management
+- loss-aversion
 created_at: '2026-08-12'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

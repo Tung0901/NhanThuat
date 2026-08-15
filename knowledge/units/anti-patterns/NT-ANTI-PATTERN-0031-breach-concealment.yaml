@@ -2,21 +2,21 @@ id: NT-ANTI-PATTERN-0031
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Breach Concealment
-summary: Breach Concealment structural knowledge unit.
+title: Hành vi che giấu vi phạm
+summary: Đơn vị tri thức cấu trúc về Hành vi che giấu vi phạm trong quản trị và tuân thủ tổ chức.
 primary_domain: tri-nhan
 secondary_domains:
 - hop-chung
-definition: Formal definition of Breach Concealment in NhanThuat architecture.
+definition: Định nghĩa chính thức về Hành vi che giấu vi phạm (Breach Concealment) trong kiến trúc Nhân Thuật, miêu tả hành động cố tình không báo cáo hoặc lấp liếm các sai sót, sự cố quy trình và vi phạm chính sách.
 conditions:
-- Operational governance contexts.
+- Bối cảnh quản trị vận hành tổ chức.
 exceptions:
-- Emergency crisis overrides.
+- Trường hợp ghi đè trong khủng hoảng khẩn cấp.
 applications:
   governance:
-  - Apply Breach Concealment to organizational workflows.
+  - Áp dụng nhận diện và ngăn chặn Hành vi che giấu vi phạm vào quy trình làm việc tổ chức.
 risks:
-- Misapplication of Breach Concealment leading to suboptimal performance.
+- Việc để xảy ra Hành vi che giấu vi phạm dẫn đến rủi ro hệ thống bùng phát và giảm hiệu suất tổ chức.
 evidence:
   level: supported
   references:
@@ -30,5 +30,10 @@ relations:
 tags:
 - anti-pattern
 - tri-nhan
+- breach-concealment
+- incident-hiding
+- governance-failure
+- risk-management
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

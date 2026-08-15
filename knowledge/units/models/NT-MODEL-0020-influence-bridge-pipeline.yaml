@@ -2,21 +2,21 @@ id: NT-MODEL-0020
 type: model
 status: frozen
 version: 0.1.0
-title: Influence Bridge Pipeline
-summary: Influence Bridge Pipeline structural knowledge unit.
+title: Tuyến Cầu Nối Sức Ảnh Hưởng
+summary: Đơn vị tri thức cấu trúc về Tuyến Cầu Nối Sức Ảnh Hưởng trong quản trị tổ chức.
 primary_domain: tri-nhan
 secondary_domains:
 - dung-nhan
-definition: Formal definition of Influence Bridge Pipeline in NhanThuat architecture.
+definition: Định nghĩa chuẩn tắc về Tuyến Cầu Nối Sức Ảnh Hưởng trong cấu trúc kiến trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Bối cảnh quản trị và điều hành tổ chức.
 exceptions:
-- Emergency crisis overrides.
+- Các tình huống khủng hoảng khẩn cấp cần quyền can thiệp đặc biệt.
 applications:
   governance:
-  - Apply Influence Bridge Pipeline to organizational workflows.
+  - Áp dụng Tuyến Cầu Nối Sức Ảnh Hưởng vào các quy trình làm việc của tổ chức.
 risks:
-- Misapplication of Influence Bridge Pipeline leading to suboptimal performance.
+- Áp dụng sai lệch Tuyến Cầu Nối Sức Ảnh Hưởng dẫn đến hiệu suất vận hành kém tối ưu.
 evidence:
   level: supported
   references:
@@ -30,9 +30,14 @@ relations:
 tags:
 - model
 - tri-nhan
+- influence-bridge-pipeline
+- influence-bridge
+- stakeholder-engagement
+- persuasion-pipeline
+- governance-flow
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
 mechanism:
-- 'Step 1: Identify Influence Bridge Pipeline.'
-- 'Step 2: Analyze parameters.'
-- 'Step 3: Execute model.'
+- 'Bước 1: Xác định Tuyến Cầu Nối Sức Ảnh Hưởng.'
+- 'Bước 2: Phân tích các tham số vận hành.'
+- 'Bước 3: Thực thi mô hình trong thực tế.'

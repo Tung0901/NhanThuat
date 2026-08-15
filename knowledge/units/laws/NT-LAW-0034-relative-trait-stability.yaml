@@ -2,34 +2,46 @@ id: NT-LAW-0034
 type: law
 status: frozen
 version: 0.1.0
-title: Law of Relative Trait Stability
-summary: Personality traits act as relatively stable latent dispositions that function as default tendencies, but they are adaptive, not fixed, and capable of gradual development over time.
+title: Quy luật về Tính ổn định Tương đối của Nét tính cách
+summary: Các nét tính cách đóng vai trò như những khuynh hướng tiềm ẩn tương đối ổn định và hoạt động như thiên hướng mặc định; tuy nhiên chúng mang tính thích ứng chứ không cố định và có khả năng phát triển dần theo thời gian.
 primary_domain: tri-nhan
-secondary_domains: [tu-than]
-definition: Individual differences in temperament, cognitive, and sensory-emotional defaults represent latent tendencies rather than deterministic destiny. While showing rank-order stability across time, traits are adaptive and subject to gradual change and contextual modulation.
+secondary_domains:
+- tu-than
+definition: Sự khác biệt cá nhân về khí chất, nhận thức và thiên hướng cảm xúc - giác quan thể hiện các xu hướng tiềm ẩn hơn là số phận tất định. Dù thể hiện tính ổn định về thứ bậc theo thời gian, các nét tính cách vẫn mang tính thích ứng, chịu sự biến đổi dần dần và được điều chỉnh theo ngữ cảnh.
 mechanism:
-  - Latent trait establishes default baseline preferences
-  - Situation strength and context modulate trait activation
-  - Trait expression interacts with other factors to produce observed behavior
+- Nét tính cách tiềm ẩn thiết lập các ưu tiên mặc định ban đầu
+- Độ mạnh của tình huống và ngữ cảnh điều chỉnh mức độ kích hoạt nét tính cách
+- Sự biểu hiện của nét tính cách tương tác với các yếu tố khác để tạo ra hành vi quan sát được
 conditions:
-  - Long-term behavioral default observation across multiple weak situations.
+- Quan sát thiên hướng hành vi mặc định dài hạn qua nhiều tình huống có tính ràng buộc yếu (weak situations).
 exceptions:
-  - Acute trauma, deliberate targeted developmental therapy, and significant lifecycle transitions can accelerate trait change.
+- Sang chấn cấp tính, trị liệu phát triển có chủ đích và các bước chuyển giao quan trọng trong vòng đời có thể thúc đẩy nhanh sự biến đổi của nét tính cách.
 applications:
-  operations: [Expect gradual adaptation in defaults rather than immediate personal transformation.]
-  developmental-coaching: [Map baseline traits to guide incremental habit formation rather than assuming fixed traits.]
+  operations:
+  - Kỳ vọng sự thích ứng dần dần trong các thiên hướng mặc định thay vì đòi hỏi sự chuyển hóa cá nhân ngay lập tức.
+  developmental-coaching:
+  - Lập bản đồ các nét tính cách nền tảng để định hướng hình thành thói quen từng bước thay vì mặc định các nét tính cách là bất biến.
 risks:
-  - Pigeonholing individuals into immutable categories (MBTI-style stereotyping).
-  - Confusing defaults with absolute competence bounds.
+- Gắn mác cá nhân vào các nhóm cố định (rập khuôn theo kiểu MBTI).
+- Nhầm lẫn giữa thiên hướng mặc định với giới hạn năng lực tuyệt đối.
 evidence:
   level: provisional
   references:
-    - "Roberts, B. W., et al. (2006). Patterns of Mean-Level Change in Personality Traits Across the Life Course."
+  - Roberts, B. W., et al. (2006). Patterns of Mean-Level Change in Personality Traits Across the Life Course.
 relations:
   supports: []
   conflicts_with: []
-  depends_on: [NT-LAW-0001]
+  depends_on:
+  - NT-LAW-0001
   applies_to: []
-tags: [personality, traits, stability, adaptation]
+tags:
+- personality
+- traits
+- stability
+- adaptation
+- trait-stability
+- personality-traits
+- behavioral-defaults
+- temperament-change
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'

@@ -2,23 +2,21 @@ id: NT-LAW-0064
 type: law
 status: frozen
 version: 0.1.0
-title: Decision Right Boundaries
-summary: Ambiguity in formal decision rights increases organizational coordination
-  friction and causes decision paralysis.
+title: Ranh giới Quyền Quyết định
+summary: Sự mơ hồ trong quyền quyết định chính thức làm gia tăng ma sát phối hợp trong tổ chức và gây ra tình trạng tê liệt quyết định.
 primary_domain: dung-nhan
 secondary_domains:
 - hop-chung
-definition: Clear boundaries defining who holds formal decision rights are necessary
-  to prevent territorial friction and paralysis.
+definition: Các ranh giới rõ ràng xác định ai là người nắm giữ quyền quyết định chính thức là cần thiết để ngăn ngừa xung đột ranh giới quyền lực và sự tê liệt trong vận hành.
 conditions:
-- Designing management hierarchies and governance structures.
+- Thiết kế các cấp bậc quản lý và cấu trúc quản trị.
 exceptions:
-- Fluid startup environments operating under informal ad-hoc roles.
+- Môi trường khởi nghiệp linh hoạt hoạt động dựa trên các vai trò không chính thức và mang tính ứng phó.
 applications:
   governance:
-  - Publish clear decision-rights matrices for strategic initiatives.
+  - Công bố ma trận quyền quyết định rõ ràng cho các sáng kiến chiến lược.
 risks:
-- Over-specifying decision rights to the point of creating rigid silos.
+- Quy định quá chi tiết quyền quyết định đến mức tạo ra các rào cản phòng ban cứng nhắc.
 evidence:
   level: supported
   references:
@@ -33,5 +31,9 @@ tags:
 - authority
 - governance
 - decision-rights
+- organizational-boundaries
+- governance-structure
+- role-clarity
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

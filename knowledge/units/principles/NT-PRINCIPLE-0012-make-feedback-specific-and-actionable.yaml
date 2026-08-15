@@ -2,33 +2,31 @@ id: NT-PRINCIPLE-0012
 type: principle
 status: frozen
 version: 0.1.0
-title: Make feedback specific and actionable
-summary: Feedback should identify the behavior, the consequence, and the next adjustment
-  instead of labeling the person.
+title: Làm cho phản hồi cụ thể và khả thi
+summary: Phản hồi nên xác định hành vi, hệ quả và điều chỉnh tiếp theo thay vì gán nhãn cho con người.
 primary_domain: dung-nhan
 secondary_domains:
 - tu-than
 - hop-chung
-definition: Specific feedback protects learning by focusing attention on changeable
-  behavior and usable next steps.
+definition: Phản hồi cụ thể bảo vệ việc học bằng cách tập trung chú ý vào hành vi có thể thay đổi và các bước tiếp theo khả dụng.
 mechanism:
-- Name observed behavior
-- Explain consequence
-- Offer or request a concrete adjustment.
+- Nêu hành vi quan sát được.
+- Giải thích hệ quả.
+- Đề xuất hoặc yêu cầu một điều chỉnh cụ thể.
 conditions:
-- Behavior can be observed or described
-- A next action exists.
+- Hành vi có thể được quan sát hoặc mô tả.
+- Tồn tại một hành động tiếp theo.
 exceptions:
-- Pattern-level feedback may need multiple examples
-- Values breaches may require stronger framing.
+- Phản hồi cấp độ khuôn mẫu có thể cần nhiều ví dụ.
+- Vi phạm giá trị có thể cần đóng khung mạnh hơn.
 applications:
   management:
-  - Replace labels with examples and next expectations.
+  - Thay nhãn dán bằng ví dụ và kỳ vọng tiếp theo.
   learning:
-  - Turn critique into a practice target.
+  - Biến phê bình thành mục tiêu thực hành.
 risks:
-- Being specific but unkind
-- Over-focusing on small behaviors while missing system causes.
+- Cụ thể nhưng thiếu tử tế.
+- Tập trung quá mức vào hành vi nhỏ trong khi bỏ qua nguyên nhân hệ thống.
 evidence:
   level: provisional
   references: []
@@ -43,5 +41,7 @@ tags:
 - feedback
 - specificity
 - learning
+- actionability
+- coaching
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

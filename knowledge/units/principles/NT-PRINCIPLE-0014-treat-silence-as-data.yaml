@@ -2,33 +2,31 @@ id: NT-PRINCIPLE-0014
 type: principle
 status: frozen
 version: 0.1.0
-title: Treat silence as data
-summary: When important information is not surfacing, treat silence as a signal about
-  safety, incentives, clarity, or trust.
+title: Coi sự im lặng là dữ liệu
+summary: Khi thông tin quan trọng không được đưa lên, hãy coi sự im lặng là tín hiệu về an toàn, động lực, sự rõ ràng hoặc niềm tin.
 primary_domain: hop-chung
 secondary_domains:
 - tri-nhan
 - thanh-su
-definition: Silence may indicate agreement, but it may also reveal fear, confusion,
-  fatigue, or perceived futility.
+definition: Sự im lặng có thể biểu thị sự đồng thuận, nhưng cũng có thể hé lộ nỗi sợ, sự bối rối, mệt mỏi hoặc cảm giác vô ích.
 mechanism:
-- Notice missing signal
-- Ask what makes speaking costly
-- Change the condition blocking truth.
+- Nhận ra tín hiệu bị thiếu.
+- Hỏi điều gì khiến việc lên tiếng trở nên tốn kém.
+- Thay đổi điều kiện đang chặn sự thật.
 conditions:
-- Information should exist but is not appearing
-- People have reason to filter communication.
+- Thông tin lẽ ra phải tồn tại nhưng không xuất hiện.
+- Con người có lý do để lọc giao tiếp.
 exceptions:
-- Silence can mean genuine alignment
-- Some topics require privacy.
+- Sự im lặng có thể nghĩa là đồng thuận thực sự.
+- Một số chủ đề cần sự riêng tư.
 applications:
   leadership:
-  - Investigate repeated quiet around known risks.
+  - Điều tra sự im lặng lặp lại quanh các rủi ro đã biết.
   teamwork:
-  - Ask what is hard to say before concluding consensus.
+  - Hỏi điều gì khó nói trước khi kết luận về sự đồng thuận.
 risks:
-- Interrogating people for silence
-- Assuming hidden disagreement in every pause.
+- Tra hỏi con người vì họ im lặng.
+- Giả định có bất đồng ẩn giấu trong mỗi khoảng lặng.
 evidence:
   level: provisional
   references: []
@@ -42,5 +40,7 @@ tags:
 - silence
 - truth
 - trust
+- signals
+- communication
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

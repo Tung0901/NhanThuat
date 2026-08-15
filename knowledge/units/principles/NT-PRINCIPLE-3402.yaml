@@ -1,36 +1,27 @@
 id: NT-PRINCIPLE-3402
 type: principle
-title: Reason-Respecting Tendency ('Because' Heuristic)
-summary: People are highly likely to comply with a request if a reason is provided,
-  even if that reason is completely meaningless.
+title: Xu hướng tôn trọng lý do (Heuristic "Bởi vì")
+summary: Mọi người rất có khả năng tuân thủ một yêu cầu nếu có lý do được đưa ra, ngay cả khi lý do đó hoàn toàn vô nghĩa.
 primary_domain: tri-nhan
 domain_area: NT-DA-0030
-definition: A principle of automatic influence where the structural presence of the
-  word 'because' acts as a trigger feature, causing mindless compliance for small
-  to moderate requests.
+definition: Một nguyên tắc ảnh hưởng tự động trong đó sự hiện diện về mặt cấu trúc của từ "bởi vì" đóng vai trò là đặc điểm kích hoạt, gây ra sự tuân thủ vô thức cho các yêu cầu nhỏ đến trung bình.
 mechanism:
-- A request is made.
-- The word 'because' is appended, followed by a clause.
-- For small requests, the brain's automatic processing (System 1) recognizes the syntax
-  of a justified request and complies without actually evaluating the logic of the
-  clause.
+- Một yêu cầu được đưa ra.
+- Từ "bởi vì" được thêm vào, theo sau là một mệnh đề.
+- Đối với các yêu cầu nhỏ, quá trình xử lý tự động của não (Hệ thống 1) nhận diện cú pháp của một yêu cầu có lý do và tuân thủ mà không thực sự đánh giá logic của mệnh đề.
 conditions:
-- Small, low-stakes requests where cognitive elaboration is low.
+- Các yêu cầu nhỏ, rủi ro thấp, nơi sự suy luận nhận thức ở mức thấp.
 exceptions:
-- High-stakes requests (e.g., asking for $10,000). In these cases, the brain shifts
-  to the Central Route (ELM) and evaluates the actual quality of the reason.
+- 'Các yêu cầu có giá trị lớn (ví dụ: xin 10.000 USD). Trong những trường hợp này, não chuyển sang Tuyến trung tâm (ELM) và đánh giá chất lượng thực sự của lý do.'
 applications:
   communication:
-  - '''Excuse me, I have 5 pages. May I use the Xerox machine because I have to make
-    some copies?'' (Resulted in 93% compliance despite the reason being tautological).'
+  - '"Xin lỗi, tôi có 5 trang. Tôi dùng máy Xerox được không vì tôi cần sao vài bản?" (Kết quả là 93% tuân thủ dù lý do là sáo rỗng).'
 risks:
-- Sounding insulting or manipulative if used repeatedly in close proximity.
+- Nghe có vẻ xúc phạm hoặc thao túng nếu dùng lặp đi lặp lại trong khoảng thời gian gần nhau.
 evidence:
   level: strong
   references:
-  - 'Langer, E. J., Blank, A., & Chanowitz, B. (1978). ''The mindlessness of ostensibly
-    thoughtful action: The role of ''placebic'' information in interpersonal interaction''.
-    Journal of Personality and Social Psychology.'
+  - 'Langer, E. J., Blank, A., & Chanowitz, B. (1978). ''The mindlessness of ostensibly thoughtful action: The role of ''placebic'' information in interpersonal interaction''. Journal of Personality and Social Psychology.'
 relations:
   supports: []
   conflicts_with: []
@@ -39,7 +30,11 @@ relations:
 tags:
 - heuristic
 - compliance
+- influence
+- because
+- system1
+- persuasion
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

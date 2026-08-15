@@ -2,33 +2,31 @@ id: NT-LAW-0013
 type: law
 status: frozen
 version: 0.1.0
-title: Measurement changes attention
-summary: What a system measures repeatedly becomes more visible, discussable, and
-  behavior-shaping than what it leaves unmeasured.
+title: Việc đo lường làm thay đổi sự chú ý
+summary: Những gì một hệ thống đo lường lặp đi lặp lại sẽ trở nên dễ thấy hơn, dễ thảo luận hơn và định hình hành vi mạnh mẽ hơn những gì không được đo lường.
 primary_domain: thanh-su
 secondary_domains:
 - dung-nhan
 - hop-chung
-definition: Measurement directs attention by making selected outcomes easier to notice,
-  compare, reward, and manage.
+definition: Đo lường định hướng sự chú ý bằng cách làm cho các kết quả được lựa chọn trở nên dễ nhận biết, so sánh, khen thưởng và quản lý hơn.
 mechanism:
-- Select a measure
-- Review it repeatedly
-- Shift attention and behavior toward what is visible.
+- Lựa chọn một chỉ số đo lường
+- Đánh giá chỉ số đó một cách lặp đi lặp lại
+- Chuyển dịch sự chú ý và hành vi hướng về những gì hiển hiện.
 conditions:
-- Measures are reviewed by people with influence
-- The measured item affects evaluation or decisions.
+- Các chỉ số đo lường được xem xét bởi những người có tầm ảnh hưởng
+- Yếu tố được đo lường có ảnh hưởng đến việc đánh giá hoặc ra quyết định.
 exceptions:
-- People may ignore measures they distrust
-- Unmeasured values may still matter culturally.
+- Mọi người có thể phớt lờ các chỉ số đo lường mà họ không tin tưởng
+- Các giá trị không được đo lường vẫn có thể đóng vai trò quan trọng về mặt văn hóa.
 applications:
   operations:
-  - Measure leading indicators as well as final outcomes.
+  - Đo lường các chỉ số dẫn dắt cũng như các kết quả cuối cùng.
   management:
-  - Audit what current dashboards make invisible.
+  - Kiểm toán những gì mà các bảng điều khiển hiện tại đang che khuất.
 risks:
-- Optimizing the metric instead of the mission
-- Crowding out qualitative judgment.
+- Tối ưu hóa chỉ số đo lường thay vì tập trung vào sứ mệnh
+- Triệt tiêu các đánh giá mang tính định tính.
 evidence:
   level: provisional
   references: []
@@ -44,5 +42,10 @@ tags:
 - measurement
 - attention
 - metrics
+- measurement-bias
+- attention-direction
+- performance-metrics
+- goodharts-law
+- behavioral-alignment
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

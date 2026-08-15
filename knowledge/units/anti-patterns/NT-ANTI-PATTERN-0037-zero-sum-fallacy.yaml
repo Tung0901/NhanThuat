@@ -2,21 +2,21 @@ id: NT-ANTI-PATTERN-0037
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Zero Sum Fallacy
-summary: Zero Sum Fallacy structural knowledge unit.
+title: Ngụy biện tổng bằng không
+summary: Đơn vị kiến thức cấu trúc về Ngụy biện tổng bằng không trong tư duy chiến lược.
 primary_domain: thanh-su
 secondary_domains:
 - hop-chung
-definition: Formal definition of Zero Sum Fallacy in NhanThuat architecture.
+definition: Định nghĩa chính thức về Ngụy biện tổng bằng không trong kiến trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Các ngữ cảnh quản trị và vận hành tổ chức.
 exceptions:
-- Emergency crisis overrides.
+- Trường hợp đè quyền ưu tiên khi ứng phó với khủng hoảng khẩn cấp.
 applications:
   governance:
-  - Apply Zero Sum Fallacy to organizational workflows.
+  - Áp dụng nhận diện Ngụy biện tổng bằng không vào quy trình làm việc của tổ chức.
 risks:
-- Misapplication of Zero Sum Fallacy leading to suboptimal performance.
+- Áp dụng không đúng Ngụy biện tổng bằng không dẫn đến hiệu suất tổ chức không đạt mức tối ưu.
 evidence:
   level: supported
   references:
@@ -30,5 +30,11 @@ relations:
 tags:
 - anti-pattern
 - thanh-su
+- zero-sum-fallacy
+- win-lose-thinking
+- fixed-pie-bias
+- scarcity-mindset
+- zero-sum-game
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

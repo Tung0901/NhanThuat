@@ -2,33 +2,31 @@ id: NT-PRINCIPLE-0010
 type: principle
 status: frozen
 version: 0.1.0
-title: Delegate support with responsibility
-summary: When assigning responsibility, include the authority, resources, feedback,
-  and escalation path needed to carry it.
+title: Ủy quyền hỗ trợ cùng với trách nhiệm
+summary: Khi giao trách nhiệm, hãy bao gồm quyền hạn, nguồn lực, phản hồi và lộ trình leo thang cần thiết để thực hiện trách nhiệm đó.
 primary_domain: dung-nhan
 secondary_domains:
 - thanh-su
 - hop-chung
-definition: Delegation is complete only when the receiver has enough support and authority
-  to act on the responsibility.
+definition: Việc ủy quyền chỉ trọn vẹn khi người nhận có đủ hỗ trợ và quyền hạn để hành động theo trách nhiệm.
 mechanism:
-- Define responsibility
-- Match authority and resources
-- Create feedback and escalation channels.
+- Xác định trách nhiệm.
+- Khớp quyền hạn và nguồn lực.
+- Tạo kênh phản hồi và leo thang.
 conditions:
-- The task has meaningful autonomy
-- Outcome quality depends on decisions.
+- Nhiệm vụ có quyền tự chủ đáng kể.
+- Chất lượng kết quả phụ thuộc vào các quyết định.
 exceptions:
-- Training tasks may intentionally limit authority
-- Regulated work may require tighter controls.
+- Nhiệm vụ đào tạo có thể cố ý hạn chế quyền hạn.
+- Công việc bị điều tiết có thể cần kiểm soát chặt chẽ hơn.
 applications:
   management:
-  - Ask what support is missing before judging ownership.
+  - Hỏi xem thiếu sự hỗ trợ nào trước khi phán xét quyền sở hữu.
   execution:
-  - Clarify escalation rights before work starts.
+  - Làm rõ quyền leo thang trước khi công việc bắt đầu.
 risks:
-- Over-supporting and removing autonomy
-- Assigning support without standards.
+- Hỗ trợ quá mức và gỡ bỏ quyền tự chủ.
+- Giao hỗ trợ mà không có tiêu chuẩn.
 evidence:
   level: provisional
   references: []
@@ -43,5 +41,7 @@ tags:
 - delegation
 - support
 - responsibility
+- authority
+- escalation
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

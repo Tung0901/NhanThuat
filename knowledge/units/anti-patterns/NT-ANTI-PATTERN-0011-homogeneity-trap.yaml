@@ -2,33 +2,48 @@ id: NT-ANTI-PATTERN-0011
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Homogeneity trap
-summary: Assembling teams with identical or highly similar personality profiles to minimize immediate friction, resulting in cognitive blind spots.
+title: Bẫy đồng nhất
+summary: Xây dựng các đội ngũ có hồ sơ tính cách giống hệt hoặc cực kỳ tương đồng nhằm giảm thiểu xung đột ngắn hạn, dẫn đến các điểm mù trong nhận thức.
 primary_domain: hop-chung
-secondary_domains: [dung-nhan, tri-nhan]
-definition: A composition failure mode where teams lack cognitive diversity, making them highly cohesive but vulnerable to groupthink, confirmation bias, and systemic error.
+secondary_domains:
+- dung-nhan
+- tri-nhan
+definition: Dạng thất bại trong cấu trúc nhân sự khi đội ngũ thiếu sự đa dạng về nhận thức, khiến họ có tính gắn kết cao nhưng lại dễ rơi vào tư duy tập thể, thiên kiến xác nhận và sai sót có tính hệ thống.
 mechanism:
-  - Select team members based on cultural or personality alignment.
-  - Minimize debate and immediate communication friction.
-  - Build high cohesion but identical default styles.
-  - Fail to spot risks or alternative approaches due to shared blind spots.
+- Tuyển chọn thành viên đội ngũ dựa trên sự hòa hợp về văn hóa hoặc tính cách.
+- Giảm thiểu tranh luận và sự ma sát trong giao tiếp ban đầu.
+- Xây dựng sự gắn kết cao nhưng lại tạo ra phong cách mặc định giống hệt nhau.
+- Không phát hiện được các rủi ro hoặc các phương pháp thay thế do có chung điểm mù.
 conditions:
-  - Teams are built to maximize harmony or speed without intentionally introducing cognitive variety.
+- Đội ngũ được thành lập nhằm tối đa hóa sự hòa hợp hoặc tốc độ mà không cố ý đưa vào sự đa dạng về nhận thức.
 exceptions:
-  - Small, temporary task forces where immediate speed is the single dominant success factor.
+- Các nhóm công tác nhỏ, tạm thời, nơi tốc độ tức thì là yếu tố quyết định thành công duy nhất.
 applications:
-  team-design: [Deliberately structure teams to include diverse cognitive preferences and trait defaults.]
-  management: [Encourage healthy debate and task conflict to counter the groupthink of homogeneous teams.]
+  team-design:
+  - Cố ý cấu trúc đội ngũ để bao gồm các ưu tiên nhận thức và đặc điểm mặc định đa dạng.
+  management:
+  - Khuyến khích tranh luận lành mạnh và xung đột nhiệm vụ để đối phó với tư duy tập thể của các đội ngũ đồng nhất.
 risks:
-  - Creating destructive interpersonal conflict by failing to build shared communication norms.
+- Tạo ra xung đột cá nhân mang tính phá hoại do không xây dựng được các quy chuẩn giao tiếp chung.
 evidence:
   level: provisional
   references: []
 relations:
   supports: []
   conflicts_with: []
-  depends_on: [NT-LAW-0034, NT-PRINCIPLE-0060, NT-PRINCIPLE-0062]
+  depends_on:
+  - NT-LAW-0034
+  - NT-PRINCIPLE-0060
+  - NT-PRINCIPLE-0062
   applies_to: []
-tags: [personality, traits, anti-pattern, team-building, cognitive-diversity]
+tags:
+- personality
+- traits
+- anti-pattern
+- team-building
+- cognitive-diversity
+- homogeneity-trap
+- groupthink
+- team-composition
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'

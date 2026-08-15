@@ -2,40 +2,49 @@ id: NT-MODEL-3002
 type: model
 status: frozen
 version: 0.1.0
-title: Sensemaking Loop
-summary: The iterative process by which individuals and groups structure the unknown to enable action.
+title: Vòng lặp Kiến tạo Ý nghĩa
+summary: Quy trình lặp đi lặp lại giúp các cá nhân và tập thể định hình những yếu tố chưa biết nhằm thúc đẩy hành động.
 primary_domain: tri-nhan
 domain_area: NT-DA-0026
-secondary_domains: [hop-chung]
-definition: Sensemaking is the continuous loop of extracting cues from an ambiguous environment, framing them into plausible narratives, and taking action to test those narratives.
+secondary_domains:
+- hop-chung
+definition: Kiến tạo ý nghĩa (Sensemaking) là một vòng lặp liên tục gồm việc trích xuất các dấu hiệu từ môi trường mơ hồ, đóng khung chúng thành những câu chuyện hợp lý và thực hiện hành động để kiểm chứng các câu chuyện đó.
 mechanism:
-  - Environment presents ambiguous or unexpected cues.
-  - Actor notices specific cues.
-  - Actor maps cues to existing mental models.
-  - Actor constructs a plausible story to explain the anomaly.
-  - Actor acts based on the story, generating new cues.
+- Môi trường xuất hiện các dấu hiệu mơ hồ hoặc bất ngờ.
+- Chủ thể nhận thấy các dấu hiệu cụ thể.
+- Chủ thể ánh xạ các dấu hiệu này vào các mô hình tư duy hiện có.
+- Chủ thể xây dựng một câu chuyện hợp lý để giải thích sự bất thường.
+- Chủ thể hành động dựa trên câu chuyện đó, từ đó tạo ra các dấu hiệu mới.
 conditions:
-  - High ambiguity, uncertainty, or novelty.
-  - Routine expectations are broken.
+- Mức độ mơ hồ, bất định hoặc tính mới mẻ cao.
+- Các kỳ vọng mang tính thường lệ bị phá vỡ.
 exceptions:
-  - Routine operations where standard operating procedures apply without ambiguity.
+- Các hoạt động thường quy nơi quy trình vận hành tiêu chuẩn được áp dụng mà không có sự mơ hồ.
 applications:
   leadership:
-    - Provide a plausible frame, not just raw data, during crises.
+  - Cung cấp một khung nhận thức hợp lý thay vì chỉ dữ liệu thô trong các cuộc khủng hoảng.
   strategy:
-    - Use small, safe-to-fail probes to generate better cues in complex domains.
+  - Sử dụng các phép thử nhỏ, an toàn để thất bại nhằm tạo ra các dấu hiệu tốt hơn trong các lĩnh vực phức tạp.
 risks:
-  - Locking onto an early, incorrect narrative (confirmation bias).
+- Bị khóa chặt vào một câu chuyện sai lệch ban đầu (thiên kiến xác nhận).
 evidence:
   level: supported
   references:
-    - "Weick, K. E. (1995). 'Sensemaking in Organizations'. Sage Publications."
-    - "Pirolli, P., & Card, S. (2005). 'The sensemaking process and leverage points for analyst technology'."
+  - Weick, K. E. (1995). 'Sensemaking in Organizations'. Sage Publications.
+  - Pirolli, P., & Card, S. (2005). 'The sensemaking process and leverage points for analyst technology'.
 relations:
   supports: []
   conflicts_with: []
   depends_on: []
   applies_to: []
-tags: [sensemaking, ambiguity, narrative, crisis]
+tags:
+- sensemaking
+- ambiguity
+- narrative
+- crisis
+- sensemaking-loop
+- ambiguity-reduction
+- cognitive-framing
+- karl-weick
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

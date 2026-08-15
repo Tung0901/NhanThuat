@@ -1,30 +1,23 @@
 id: NT-PHENOMENON-3309
 type: phenomenon
-title: Social Comparison Theory
-summary: Individuals determine their own social and personal worth based on how they
-  stack up against others.
+title: Lý thuyết so sánh xã hội
+summary: Cá nhân xác định giá trị xã hội và giá trị cá nhân của chính mình dựa trên cách họ đứng vững so với người khác.
 primary_domain: tri-nhan
 domain_area: NT-DA-0029
-definition: The drive within individuals to gain accurate self-evaluations by comparing
-  themselves to others, utilizing upward comparison (for motivation) or downward comparison
-  (for ego defense).
+definition: Động lực bên trong các cá nhân nhằm đạt được sự tự đánh giá chính xác bằng cách so sánh mình với người khác, sử dụng so sánh đi lên (để tạo động lực) hoặc so sánh đi xuống (để bảo vệ cái tôi).
 mechanism:
-- Objective metrics for self-worth are absent.
-- The individual identifies a peer reference group.
-- The individual evaluates their own traits, wealth, or success relative to this specific
-  group.
+- Các thước đo khách quan cho giá trị bản thân không tồn tại.
+- Cá nhân xác định một nhóm tham chiếu đồng trang lứa.
+- Cá nhân đánh giá đặc điểm, của cải hoặc thành công của mình so với nhóm cụ thể này.
 conditions:
-- Situations lacking objective standards, heavily prevalent in status hierarchies
-  and compensation negotiations.
+- Các tình huống thiếu tiêu chuẩn khách quan, rất phổ biến trong các thứ bậc địa vị và đàm phán lương thưởng.
 exceptions:
-- Individuals who have adopted strict intrinsic, stoic, or absolute mastery-based
-  evaluation frameworks.
+- Các cá nhân đã áp dụng các khuôn khổ đánh giá nội tại nghiêm ngặt, khắc kỷ (stoic) hoặc dựa trên sự thuần thục tuyệt đối.
 applications:
   motivation:
-  - Publishing a team leaderboard can drive performance via upward social comparison.
+  - Công bố bảng xếp hạng của nhóm có thể thúc đẩy hiệu suất thông qua so sánh xã hội đi lên.
 risks:
-- Employees becoming severely demotivated upon discovering a peer earns slightly more,
-  regardless of their own absolute wealth.
+- Nhân viên mất động lực nghiêm trọng khi phát hiện một đồng nghiệp kiếm được nhiều hơn dù chỉ một chút, bất kể mức thu nhập tuyệt đối của chính họ.
 evidence:
   level: strong
   references:
@@ -37,7 +30,11 @@ relations:
 tags:
 - comparison
 - status
+- social-comparison
+- upward-comparison
+- downward-comparison
+- reference-group
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

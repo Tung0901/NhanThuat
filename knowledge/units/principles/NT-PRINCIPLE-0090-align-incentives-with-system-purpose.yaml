@@ -2,23 +2,21 @@ id: NT-PRINCIPLE-0090
 type: principle
 status: frozen
 version: 0.1.0
-title: Align Incentives with System Purpose
-summary: Structure variable rewards to reinforce systemic outcomes and shared goals
-  rather than isolated departmental siloes.
+title: Căn chỉnh động lực với mục đích của hệ thống
+summary: Thiết kế phần thưởng biến đổi để củng cố các kết quả toàn hệ thống và mục tiêu chung thay vì các bộ phận cô lập.
 primary_domain: tu-than
 secondary_domains:
 - hop-chung
-definition: To prevent cross-functional warfare, incentive structures must reward
-  holistic system performance.
+definition: Để ngăn chặn xung đột liên phòng ban, các cấu trúc khuyến khích phải khen thưởng hiệu suất toàn diện của hệ thống.
 conditions:
-- Designing company-wide bonus pools and OKR payoff links.
+- Thiết kế quỹ thưởng toàn công ty và liên kết chi trả theo OKR.
 exceptions:
-- Completely independent business units operating under portfolio holding structures.
+- Các đơn vị kinh doanh hoàn toàn độc lập hoạt động trong cấu trúc công ty mẹ nắm giữ danh mục.
 applications:
   compensation:
-  - Tie executive bonuses to cross-departmental customer lifetime value.
+  - Gắn thưởng điều hành với giá trị vòng đời khách hàng xuyên phòng ban.
 risks:
-- Diffusing individual accountability by over-indexing on group metrics.
+- Làm mờ trách nhiệm giải trình cá nhân do quá nhấn mạnh vào các chỉ số nhóm.
 evidence:
   level: supported
   references:
@@ -33,5 +31,10 @@ tags:
 - incentives
 - alignment
 - systems
+- system-alignment
+- cross-functional
+- reward-design
+- okr
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

@@ -2,35 +2,31 @@ id: NT-PRINCIPLE-0028
 type: principle
 status: frozen
 version: 0.1.0
-title: Review habits when context changes
-summary: When context changes, inspect old routines before assuming they still serve
-  the goal.
+title: Rà soát thói quen khi bối cảnh thay đổi
+summary: Khi bối cảnh thay đổi, hãy xem xét các thói quen cũ trước khi giả định chúng vẫn phục vụ mục tiêu.
 primary_domain: tu-than
 secondary_domains:
 - thanh-su
 - dung-nhan
-definition: Habits that once conserved effort can become invisible liabilities when
-  the surrounding context changes.
+definition: Thói quen từng tiết kiệm nỗ lực có thể trở thành gánh nặng vô hình khi bối cảnh xung quanh thay đổi.
 mechanism:
-- Notice context shift
-- Review default behavior
-- Keep
-- adapt
-- or retire the habit.
+- Nhận ra sự dịch chuyển bối cảnh.
+- Rà soát hành vi mặc định.
+- Giữ, thích ứng hoặc ngừng thói quen.
 conditions:
-- A routine persists
-- The environment or objective has changed.
+- Một thói quen tồn tại dai dẳng.
+- Môi trường hoặc mục tiêu đã thay đổi.
 exceptions:
-- Core disciplines may remain useful
-- Too much review can destabilize good routines.
+- Các kỷ luật cốt lõi có thể vẫn hữu ích.
+- Rà soát quá nhiều có thể làm mất ổn định các thói quen tốt.
 applications:
   change:
-  - Audit routines after strategy shifts.
+  - Kiểm toán thói quen sau các thay đổi chiến lược.
   operations:
-  - Retire defaults that no longer match risk.
+  - Ngừng các mặc định không còn phù hợp với rủi ro.
 risks:
-- Changing routines for novelty
-- Ignoring tacit knowledge embedded in habits.
+- Thay đổi thói quen vì sự mới lạ.
+- Phớt lờ tri thức ngầm gắn trong thói quen.
 evidence:
   level: provisional
   references: []
@@ -45,5 +41,7 @@ tags:
 - habits
 - context
 - adaptation
+- change
+- routines
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

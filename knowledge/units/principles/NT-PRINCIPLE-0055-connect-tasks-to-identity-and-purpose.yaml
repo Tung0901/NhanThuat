@@ -2,18 +2,44 @@ id: NT-PRINCIPLE-0055
 type: principle
 status: frozen
 version: 0.1.0
-title: Connect tasks to identity and purpose
-summary: Frame responsibilities so individuals understand how their work reflects their professional standards, personal values, and contribution to a larger purpose.
+title: Kết nối nhiệm vụ với bản sắc và mục đích
+summary: Đóng khung trách nhiệm để cá nhân hiểu cách công việc của họ phản ánh chuẩn mực nghề nghiệp, giá trị cá nhân và đóng góp cho một mục đích lớn hơn.
 primary_domain: tu-than
-secondary_domains: [tri-nhan, dung-nhan]
-definition: People sustain effort through difficult challenges when they perceive their work as meaningful expression of their identity and commitments.
-mechanism: [Identify core identity and values, Frame task relevance, Reinforce alignment, Sustain durable effort.]
-conditions: [Tasks are repetitive, demanding, or require long-term persistence.]
-exceptions: [Purely transactional temporary engagements may not require deep identity alignment.]
-applications: {onboarding: [Help new hires connect role expectations to personal professional growth.], communication: [Highlight the human impact of organizational outcomes.]}
-risks: [Artificial or manipulative purpose statements that lack operational reality.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0032], applies_to: []}
-tags: [motivation, principle, identity, purpose]
+secondary_domains:
+- tri-nhan
+- dung-nhan
+definition: Con người duy trì nỗ lực qua những thách thức khó khăn khi họ nhận thấy công việc của mình là biểu hiện có ý nghĩa của bản sắc và cam kết.
+mechanism:
+- Xác định bản sắc và giá trị cốt lõi
+- Đóng khung tính liên quan của nhiệm vụ
+- Củng cố sự đồng nhất
+- Duy trì nỗ lực bền vững.
+conditions:
+- Nhiệm vụ lặp lại, đòi hỏi hoặc cần sự bền bỉ lâu dài.
+exceptions:
+- Việc tạm thời thuần giao dịch có thể không cần sự đồng nhất bản sắc sâu.
+applications:
+  onboarding:
+  - Giúp nhân viên mới kết nối kỳ vọng vai trò với sự phát triển nghề nghiệp cá nhân.
+  communication:
+  - Nêu bật tác động con người của các kết quả tổ chức.
+risks:
+- Tuyên bố mục đích giả tạo hoặc thao túng thiếu thực tế vận hành.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0032
+  applies_to: []
+tags:
+- motivation
+- principle
+- identity
+- purpose
+- meaningful-work
+- values
 created_at: '2026-07-21'
-updated_at: '2026-07-21'
+updated_at: '2026-08-15'

@@ -2,18 +2,46 @@ id: NT-PRINCIPLE-0050
 type: principle
 status: frozen
 version: 0.1.0
-title: Read body signals as load telemetry
-summary: Treat fatigue, tension, agitation, and shutdown as useful signals about load before they become avoidable failures.
+title: Đọc tín hiệu cơ thể như dữ liệu tải trọng từ xa
+summary: Coi mệt mỏi, căng thẳng, kích động và đóng băng là tín hiệu hữu ích về tải trọng trước khi chúng trở thành thất bại có thể tránh.
 primary_domain: tri-nhan
-secondary_domains: [tu-than, dung-nhan]
-definition: The body often shows load before reasoning fully names it, so somatic signals can provide early warning for recovery, pacing, or support.
-mechanism: [Notice physical signal, Interpret possible load, Check context, Adjust demand or recovery.]
-conditions: [Load may be hidden or normalized, the person can pause long enough to notice signals.]
-exceptions: [Body signals can have medical causes, some roles require acting despite discomfort.]
-applications: {self-management: [Use fatigue or agitation as a prompt to check load before reacting.], leadership: [Treat visible exhaustion or shutdown as data for pacing and support.]}
-risks: [Over-interpreting body signals, ignoring medical or environmental causes.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0027], applies_to: []}
-tags: [load, body-signals, telemetry]
+secondary_domains:
+- tu-than
+- dung-nhan
+definition: Cơ thể thường cho thấy tải trọng trước khi suy luận gọi tên đầy đủ, nên tín hiệu cơ thể có thể là cảnh báo sớm cho việc phục hồi, điều chỉnh nhịp hoặc hỗ trợ.
+mechanism:
+- Nhận thấy tín hiệu cơ thể
+- Diễn giải tải trọng khả dĩ
+- Kiểm tra bối cảnh
+- Điều chỉnh nhu cầu hoặc phục hồi.
+conditions:
+- Tải trọng có thể bị che giấu hoặc được bình thường hóa
+- người đó có thể tạm dừng đủ lâu để nhận thấy tín hiệu.
+exceptions:
+- Tín hiệu cơ thể có thể có nguyên nhân y khoa
+- một số vai trò đòi hỏi hành động dù không thoải mái.
+applications:
+  self-management:
+  - Dùng mệt mỏi hoặc kích động làm tín hiệu kiểm tra tải trọng trước khi phản ứng.
+  leadership:
+  - Coi sự kiệt sức hoặc đóng băng nhìn thấy được là dữ liệu để điều chỉnh nhịp và hỗ trợ.
+risks:
+- Diễn giải quá mức tín hiệu cơ thể
+- bỏ qua nguyên nhân y khoa hoặc môi trường.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0027
+  applies_to: []
+tags:
+- load
+- body-signals
+- telemetry
+- fatigue
+- wellbeing
 created_at: '2026-07-21'
-updated_at: '2026-07-21'
+updated_at: '2026-08-15'

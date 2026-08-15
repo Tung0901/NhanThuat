@@ -1,34 +1,27 @@
 id: NT-PHENOMENON-3110
 type: phenomenon
-title: Peak-End Rule
-summary: People judge an experience largely based on how they felt at its peak (most
-  intense point) and at its end, rather than based on the total sum or average of
-  every moment.
+title: Quy tắc đỉnh–cuối
+summary: Con người đánh giá một trải nghiệm phần lớn dựa trên cảm xúc của họ tại đỉnh điểm (thời điểm mãnh liệt nhất) và ở cuối trải nghiệm, thay vì dựa trên tổng số hoặc trung bình của mọi khoảnh khắc.
 primary_domain: tri-nhan
 domain_area: NT-DA-0027
-definition: A psychological heuristic where memory of an event is disproportionately
-  weighted by its emotional climax and its conclusion, ignoring the duration of the
-  event.
+definition: Một lối tắt tâm lý, trong đó ký ức về một sự kiện bị quyết định chủ yếu bởi cao trào cảm xúc và phần kết của nó, bỏ qua thời lượng của sự kiện.
 mechanism:
-- The event unfolds over time.
-- The brain selectively encodes the most emotionally salient moment (peak) and the
-  final moments (end).
-- Future decisions about repeating the event are based only on these two memory snapshots.
+- Sự kiện diễn ra theo thời gian.
+- Bộ não mã hóa có chọn lọc khoảnh khắc nổi bật nhất về mặt cảm xúc (đỉnh) và những khoảnh khắc cuối cùng (kết thúc).
+- Các quyết định tương lai về việc lặp lại sự kiện chỉ dựa trên hai khung ký ức này.
 conditions:
-- Temporally extended experiences (e.g., medical procedures, vacations, user onboarding).
+- 'Các trải nghiệm kéo dài theo thời gian (ví dụ: thủ thuật y tế, kỳ nghỉ, quá trình giới thiệu người dùng).'
 exceptions:
-- Short, uniform experiences with no variance in emotional intensity.
+- Các trải nghiệm ngắn, đồng nhất, không có sự biến thiên về cường độ cảm xúc.
 applications:
   ux_design:
-  - Always end a user journey or offboarding process on a positive, rewarding note.
+  - Luôn kết thúc hành trình người dùng hoặc quá trình thoát khỏi dịch vụ bằng một nốt tích cực, mang lại cảm giác được đền đáp.
 risks:
-- Investing heavily in improving the 'average' experience while ignoring a frustrating
-  ending, leading to negative retention.
+- Đầu tư nhiều vào việc cải thiện trải nghiệm 'trung bình' trong khi bỏ qua một phần kết gây khó chịu, dẫn đến tỷ lệ giữ chân tiêu cực.
 evidence:
   level: strong
   references:
-  - 'Kahneman, D., Fredrickson, B. L., Schreiber, C. A., & Redelmeier, D. A. (1993).
-    ''When more pain is preferred to less: Adding a better end''. Psychological Science.'
+  - 'Kahneman, D., Fredrickson, B. L., Schreiber, C. A., & Redelmeier, D. A. (1993). ''When more pain is preferred to less: Adding a better end''. Psychological Science.'
 relations:
   supports: []
   conflicts_with: []
@@ -37,7 +30,10 @@ relations:
 tags:
 - memory
 - experience
+- peak-end-rule
+- experience-design
+- ux
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

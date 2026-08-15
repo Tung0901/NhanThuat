@@ -2,21 +2,21 @@ id: NT-ANTI-PATTERN-0016
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Intuition Fallacy
-summary: Intuition Fallacy structural knowledge unit.
+title: Ngụy biện Trực giác
+summary: Đơn vị kiến thức cấu trúc về Ngụy biện Trực giác (Intuition Fallacy) trong ra quyết định quản trị.
 primary_domain: tri-nhan
 secondary_domains:
 - dung-nhan
-definition: Formal definition of Intuition Fallacy in NhanThuat architecture.
+definition: Định nghĩa chính thức về Ngụy biện Trực giác trong kiến trúc Nhân Thuật, chỉ hiện tượng phụ thuộc quá mức vào cảm tính cá nhân thay vì dựa trên dữ liệu, bằng chứng và phân tích hệ thống.
 conditions:
-- Operational governance contexts.
+- Bối cảnh quản trị vận hành tổ chức.
 exceptions:
-- Emergency crisis overrides.
+- Trường hợp ghi đè trong khủng hoảng khẩn cấp.
 applications:
   governance:
-  - Apply Intuition Fallacy to organizational workflows.
+  - Áp dụng nhận diện Ngụy biện Trực giác vào quy trình làm việc tổ chức.
 risks:
-- Misapplication of Intuition Fallacy leading to suboptimal performance.
+- Áp dụng sai Ngụy biện Trực giác dẫn đến hiệu suất không đạt tối ưu.
 evidence:
   level: supported
   references:
@@ -30,5 +30,10 @@ relations:
 tags:
 - anti-pattern
 - tri-nhan
+- intuition-fallacy
+- cognitive-bias
+- decision-making
+- data-driven-governance
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

@@ -2,37 +2,45 @@ id: NT-PHENOMENON-3001
 type: phenomenon
 status: frozen
 version: 0.1.0
-title: Illusion of Explanatory Depth
-summary: The false belief that one understands a complex system deeply, which collapses only when forced to explain the mechanics step-by-step.
+title: Ảo tưởng về mức độ thấu hiểu
+summary: Niềm tin sai lầm rằng bản thân hiểu sâu sắc một hệ thống phức tạp, và ảo tưởng này chỉ sụp đổ khi bắt buộc phải giải thích cơ chế từng bước một.
 primary_domain: tri-nhan
 domain_area: NT-DA-0026
-secondary_domains: [tu-than]
-definition: An anti-pattern where individuals overestimate their comprehension of causality, confusing familiarity with a concept for actual mastery of its mechanics.
+secondary_domains:
+- tu-than
+definition: Một mẫu hình sai lầm trong đó cá nhân đánh giá quá cao mức độ hiểu biết của mình về tính nhân quả, nhầm lẫn sự quen thuộc với một khái niệm với việc nắm vững thực sự cơ chế hoạt động của nó.
 mechanism:
-  - An individual is familiar with a system or concept.
-  - They feel a high degree of confidence in their understanding.
-  - When asked to explain the causal mechanism in detail, they cannot.
-  - Only then does their confidence drop to match their actual knowledge.
+- Một cá nhân đã quen thuộc với một hệ thống hoặc một khái niệm cụ thể.
+- Họ cảm thấy mức độ tự tin rất cao đối với sự hiểu biết của chính mình.
+- Khi được yêu cầu giải thích chi tiết cơ chế nhân quả, họ không thể thực hiện được.
+- Chỉ khi đó, mức độ tự tin của họ mới giảm xuống để phù hợp với kiến thức thực tế.
 conditions:
-  - Complex systems or phenomena with hidden mechanics.
+- Các hệ thống hoặc hiện tượng phức tạp có chứa các cơ chế ẩn giấu bên trong.
 exceptions:
-  - True domain experts who have built and debugged the system themselves.
-  - "Consequences: Overconfident, flawed decision-making based on superficial understanding; Dismissal of actual experts."
-  - "Recognition Signal: High confidence in proposing solutions to complex problems, paired with an inability to draw a block diagram of how the solution works."
+- Các chuyên gia thực thụ trong lĩnh vực, những người đã trực tiếp xây dựng và gỡ lỗi hệ thống.
+- 'Hậu quả: Ra quyết định sai lầm và quá tự tin dựa trên sự hiểu biết hời hợt; Bác bỏ ý kiến của các chuyên gia thực sự.'
+- 'Dấu hiệu nhận biết: Độ tự tin cao khi đề xuất giải pháp cho các vấn đề phức tạp, nhưng lại không thể phác thảo sơ đồ khối về cách thức hoạt động của giải pháp đó.'
 applications:
   management:
-    - Ask for a step-by-step mechanical explanation before approving a risky plan.
+  - Yêu cầu giải thích cơ chế từng bước một trước khi phê duyệt một kế hoạch mang tính rủi ro cao.
 risks:
-  - Using this to humiliate peers rather than to calibrate confidence.
+- Sử dụng hiện tượng này để hạ nhục đồng nghiệp thay vì dùng để hiệu chuẩn mức độ tự tin.
 evidence:
   level: strong
   references:
-    - "Rozenblit, L., & Keil, F. (2002). 'The misunderstood limits of folk science: an illusion of explanatory depth'. Cognitive Science."
+  - 'Rozenblit, L., & Keil, F. (2002). ''The misunderstood limits of folk science: an illusion of explanatory depth''. Cognitive Science.'
 relations:
   supports: []
   conflicts_with: []
   depends_on: []
   applies_to: []
-tags: [overconfidence, knowledge, metacognition]
+tags:
+- overconfidence
+- knowledge
+- metacognition
+- illusion-of-explanatory-depth
+- explanatory-depth
+- cognitive-bias
+- causal-mechanism
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

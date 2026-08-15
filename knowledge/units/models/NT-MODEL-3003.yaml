@@ -2,35 +2,44 @@ id: NT-MODEL-3003
 type: model
 status: frozen
 version: 0.1.0
-title: Metacognitive Regulation Loop
-summary: The structural model of how humans monitor, evaluate, and adjust their own cognitive processes and strategies during complex tasks.
+title: Vòng lặp Điều hòa Siêu nhận thức
+summary: Mô hình cấu trúc về cách con người giám sát, đánh giá và điều chỉnh các quá trình cùng chiến lược nhận thức của chính mình trong các nhiệm vụ phức tạp.
 primary_domain: tri-nhan
 domain_area: NT-DA-0026
-secondary_domains: [tu-than]
-definition: "Metacognition involves two distinct layers: the primary layer where cognition happens (task execution), and the meta-layer where the actor observes and directs the primary cognition (self-regulation)."
+secondary_domains:
+- tu-than
+definition: 'Siêu nhận thức bao gồm hai tầng riêng biệt: tầng sơ cấp nơi nhận thức diễn ra (thực thi nhiệm vụ) và tầng siêu cấp nơi chủ thể quan sát và định hướng nhận thức sơ cấp (tự điều hòa).'
 mechanism:
-  - Actor selects a cognitive strategy before the task (Planning).
-  - Actor observes their own progress and comprehension during the task (Monitoring).
-  - Actor compares current state against the goal (Evaluating).
-  - Actor adjusts strategy, slows down, or changes focus if off-track (Regulating).
+- Chủ thể lựa chọn chiến lược nhận thức trước khi thực hiện nhiệm vụ (Lập kế hoạch).
+- Chủ thể quan sát tiến độ và mức độ thấu hiểu của chính mình trong quá trình thực hiện nhiệm vụ (Giám sát).
+- Chủ thể so sánh trạng thái hiện tại với mục tiêu đề ra (Đánh giá).
+- Chủ thể điều chỉnh chiến lược, giảm tốc độ hoặc chuyển đổi trọng tâm nếu đi chệch hướng (Điều hòa).
 conditions:
-  - High cognitive load or novel, non-routine challenges.
+- Tải lượng nhận thức cao hoặc xuất hiện các thách thức mới lạ, phi thường quy.
 exceptions:
-  - Routine, fully automated tasks do not trigger the meta-layer.
+- Các nhiệm vụ thường nhật, hoàn toàn tự động hóa không kích hoạt tầng siêu cấp.
 applications:
   learning:
-    - Train individuals not just in the skill, but in how to monitor their acquisition of the skill.
+  - Đào tạo cá nhân không chỉ về kỹ năng mà còn về cách họ tự giám sát quá trình tiếp thu kỹ năng đó.
 risks:
-  - Cognitive overload causing the meta-layer to shut down, trapping the actor in a failing strategy.
+- Quá tải nhận thức khiến tầng siêu cấp ngừng hoạt động, giam cầm chủ thể trong một chiến lược thất bại.
 evidence:
   level: supported
   references:
-    - "Nelson, T. O., & Narens, L. (1990). 'Metamemory: A theoretical framework and new findings'. The Psychology of Learning and Motivation."
+  - 'Nelson, T. O., & Narens, L. (1990). ''Metamemory: A theoretical framework and new findings''. The Psychology of Learning and Motivation.'
 relations:
   supports: []
   conflicts_with: []
   depends_on: []
   applies_to: []
-tags: [metacognition, learning, self-regulation, model]
+tags:
+- metacognition
+- learning
+- self-regulation
+- model
+- metacognitive-regulation
+- self-regulated-learning
+- cognitive-monitoring
+- executive-function
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

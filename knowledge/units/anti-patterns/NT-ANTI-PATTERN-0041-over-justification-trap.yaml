@@ -2,27 +2,25 @@ id: NT-ANTI-PATTERN-0041
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Over-Justification Trap
-summary: Slapping cash micro-bonuses onto creative or collaborative teamwork, turning
-  intrinsically motivated professionals into mercenary actors.
+title: Bẫy Biện Minh Thừa
+summary: Gắn các khoản tiền thưởng nhỏ vào công việc sáng tạo hoặc hợp tác nhóm, biến những nhân sự có động lực nội tại thành những kẻ hành động vì tiền.
 primary_domain: tu-than
 secondary_domains:
 - tri-nhan
-definition: The Over-Justification Trap occurs when leaders offer micro-bonuses for
-  tasks employees previously did out of pride.
+definition: Bẫy Biện Minh Thừa xảy ra khi các nhà lãnh đạo đưa ra các khoản tiền thưởng nhỏ cho những công việc mà nhân viên trước đây từng làm vì niềm tự hào.
 mechanism:
-- Management introduces micro-bonuses.
-- Employees shift frame to cash calculation.
-- Voluntary help ceases.
+- Ban quản lý đưa ra các khoản tiền thưởng nhỏ.
+- Nhân viên chuyển góc nhìn sang việc tính toán lợi ích tiền bạc.
+- Hành vi tự nguyện giúp đỡ dừng lại.
 conditions:
-- High-skilled knowledge work environments.
+- Môi trường làm việc tri thức trình độ cao.
 exceptions:
-- Sales commission roles.
+- Các vị trí hưởng hoa hồng kinh doanh.
 applications:
   culture_design:
-  - Protect peer-recognition programs from being monetized with cash payouts.
+  - Bảo vệ các chương trình ghi nhận lẫn nhau giữa đồng nghiệp khỏi bị thương mại hóa bằng tiền mặt.
 risks:
-- Underpaying staff under the guise of protecting intrinsic motivation.
+- Trả lương thấp cho nhân viên dưới cái mác bảo vệ động lực nội tại.
 evidence:
   level: supported
   references:
@@ -38,5 +36,10 @@ tags:
 - incentives
 - over-justification
 - anti-patterns
+- overjustification-effect
+- intrinsic-motivation
+- micro-bonuses
+- extrinsic-rewards
+- incentive-trap
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'

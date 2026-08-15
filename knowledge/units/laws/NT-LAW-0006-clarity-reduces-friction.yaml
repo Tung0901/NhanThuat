@@ -2,35 +2,33 @@ id: NT-LAW-0006
 type: law
 status: frozen
 version: 0.1.0
-title: Clarity reduces friction
-summary: Shared clarity about purpose, ownership, standards, and next steps reduces
-  coordination cost and avoidable conflict.
+title: Sự rõ ràng giảm thiểu ma sát
+summary: Sự rõ ràng chung về mục tiêu, quyền sở hữu, tiêu chuẩn và các bước tiếp theo giúp giảm chi phí phối hợp và các xung đột có thể tránh được.
 primary_domain: hop-chung
 secondary_domains:
 - dung-nhan
 - thanh-su
-definition: When people understand what matters, who owns what, and how decisions
-  are made, they spend less effort guessing, checking, and repairing misunderstandings.
+definition: Khi mọi người hiểu rõ điều gì là quan trọng, ai chịu trách nhiệm cho việc gì và các quyết định được đưa ra như thế nào, họ sẽ tốn ít công sức hơn cho việc phỏng đoán, kiểm tra và khắc phục những hiểu lầm.
 mechanism:
-- Define intent and ownership
-- Reduce ambiguity
-- Lower the need for repeated clarification.
+- Xác định rõ ý định và quyền sở hữu
+- Giảm thiểu sự mơ hồ
+- Giảm nhu cầu phải làm rõ lại nhiều lần.
 conditions:
-- People need to coordinate
-- The work has dependencies or handoffs.
+- Mọi người cần phải phối hợp với nhau
+- Công việc có các mối quan hệ phụ thuộc hoặc bàn giao.
 exceptions:
-- Ambiguity may be useful during exploration
-- Excessive detail can slow action.
+- Sự mơ hồ có thể hữu ích trong giai đoạn khám phá
+- Chi tiết quá mức có thể làm chậm hành động.
 applications:
   teamwork:
-  - Clarify owner
-  - standard
-  - and next step at every handoff.
+  - Làm rõ người chịu trách nhiệm
+  - tiêu chuẩn
+  - và bước tiếp theo tại mỗi điểm bàn giao.
   execution:
-  - Turn recurring confusion into explicit operating rules.
+  - Chuyển những bối rối lặp đi lặp lại thành các quy tắc vận hành rõ ràng.
 risks:
-- Mistaking documentation for understanding
-- Over-controlling creative work.
+- Nhầm lẫn giữa việc có tài liệu với việc thực sự thấu hiểu
+- Kiểm soát quá mức công việc sáng tạo.
 evidence:
   level: provisional
   references: []
@@ -46,5 +44,9 @@ tags:
 - clarity
 - coordination
 - ownership
+- friction-reduction
+- coordination-cost
+- role-definition
+- alignment
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

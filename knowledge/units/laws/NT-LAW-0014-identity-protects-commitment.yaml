@@ -2,33 +2,31 @@ id: NT-LAW-0014
 type: law
 status: frozen
 version: 0.1.0
-title: Identity protects commitment
-summary: People defend choices more strongly when those choices become tied to identity,
-  status, belonging, or moral self-image.
+title: Danh tính bảo vệ cam kết
+summary: Mọi người sẽ bảo vệ các lựa chọn của mình một cách mạnh mẽ hơn khi những lựa chọn đó gắn liền với danh tính, địa vị, cảm giác thuộc về hoặc hình ảnh đạo đức cá nhân.
 primary_domain: tri-nhan
 secondary_domains:
 - tu-than
 - hop-chung
-definition: A commitment becomes harder to revise when changing it threatens how a
-  person sees themselves or expects others to see them.
+definition: Một cam kết trở nên khó thay đổi hơn khi việc điều chỉnh nó đe dọa đến cách một người tự nhìn nhận bản thân hoặc cách họ mong đợi người khác nhìn nhận về mình.
 mechanism:
-- Make a choice
-- Attach identity or status to it
-- Resist evidence that threatens the attachment.
+- Đưa ra một lựa chọn
+- Gắn liền danh tính hoặc địa vị với lựa chọn đó
+- Kháng cự lại những bằng chứng đe dọa đến sự gắn kết này.
 conditions:
-- The choice is public or self-defining
-- Revision implies loss of face or belonging.
+- Lựa chọn mang tính công khai hoặc định hình bản thân
+- Việc thay đổi đồng nghĩa với việc mất mặt hoặc mất đi cảm giác thuộc về.
 exceptions:
-- High psychological safety can make revision easier
-- Strong learning norms can separate identity from ideas.
+- Môi trường có độ an toàn tâm lý cao có thể giúp việc thay đổi trở nên dễ dàng hơn
+- Các chuẩn mực học tập mạnh mẽ có thể tách biệt danh tính cá nhân ra khỏi các ý tưởng.
 applications:
   negotiation:
-  - Offer face-saving paths for changed positions.
+  - Đưa ra các giải pháp giữ thể diện khi đối phương thay đổi lập trường.
   leadership:
-  - Critique the decision without humiliating the identity.
+  - Phê bình quyết định mà không làm tổn hại đến danh tính hay lòng tự trọng của cá nhân.
 risks:
-- Escalating commitment through public pressure
-- Misreading identity defense as pure irrationality.
+- Gia tăng cam kết một cách mù quáng do áp lực từ dư luận
+- Đánh giá sai lệch việc bảo vệ danh tính là sự phi lý trí thuần túy.
 evidence:
   level: provisional
   references: []
@@ -43,5 +41,10 @@ tags:
 - identity
 - commitment
 - status
+- identity-protection
+- commitment-bias
+- escalation-of-commitment
+- self-image
+- psychological-safety
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

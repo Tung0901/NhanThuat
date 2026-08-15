@@ -1,30 +1,27 @@
 id: NT-PHENOMENON-3106
 type: phenomenon
-title: Status Quo Bias
-summary: An emotional preference for the current state of affairs, taking any change
-  from the baseline as a loss.
+title: Thiên kiến hiện trạng
+summary: Một sở thích mang tính cảm xúc dành cho trạng thái hiện tại, coi bất kỳ sự thay đổi nào so với nền tảng là một mất mát.
 primary_domain: tri-nhan
 domain_area: NT-DA-0027
-definition: The irrational preference to maintain the current state, even when the
-  transition costs to a objectively superior state are negligible.
+definition: Sở thích phi lý trong việc duy trì trạng thái hiện tại, ngay cả khi chi phí chuyển đổi sang một trạng thái khách quan vượt trội là không đáng kể.
 mechanism:
-- The current state serves as the reference point.
-- Change involves uncertainty and potential losses.
-- Due to loss aversion, the potential losses of changing outweigh the potential gains.
+- Trạng thái hiện tại đóng vai trò là điểm tham chiếu.
+- Sự thay đổi kéo theo sự không chắc chắn và những mất mát tiềm ẩn.
+- Do ác cảm mất mát, những mất mát tiềm ẩn của việc thay đổi lớn hơn những lợi ích tiềm ẩn.
 conditions:
-- When a default option is explicitly provided or historically established.
+- Khi một lựa chọn mặc định được cung cấp tường minh hoặc được thiết lập trong lịch sử.
 exceptions:
-- When the status quo is perceived as imminently dangerous or failing.
+- Khi hiện trạng được nhìn nhận là nguy hiểm hoặc sắp thất bại.
 applications:
   product_design:
-  - Leverage defaults carefully, as users will rarely change them.
+  - Tận dụng các lựa chọn mặc định một cách cẩn trọng, vì người dùng hiếm khi thay đổi chúng.
 risks:
-- Organizational stagnation and failure to adopt superior tooling.
+- Sự trì trệ của tổ chức và không áp dụng được các công cụ vượt trội.
 evidence:
   level: strong
   references:
-  - Samuelson, W., & Zeckhauser, R. (1988). 'Status quo bias in decision making'.
-    Journal of Risk and Uncertainty.
+  - Samuelson, W., & Zeckhauser, R. (1988). 'Status quo bias in decision making'. Journal of Risk and Uncertainty.
 relations:
   supports: []
   conflicts_with: []
@@ -35,7 +32,10 @@ relations:
 tags:
 - status-quo
 - defaults
+- status-quo-bias
+- inertia
+- change-resistance
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

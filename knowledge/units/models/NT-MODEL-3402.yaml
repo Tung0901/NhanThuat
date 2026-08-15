@@ -1,35 +1,27 @@
 id: NT-MODEL-3402
 type: model
-title: Inoculation Theory
-summary: People can be immunized against persuasive attacks and misinformation by
-  preemptively exposing them to a weakened version of the argument.
+title: Thuyết Tiêm chủng Tâm lý
+summary: Con người có thể được tạo miễn dịch trước các đòn tấn công thuyết phục và tin giả bằng cách chủ động tiếp xúc trước với phiên bản suy yếu của luận điểm đối lập.
 primary_domain: tri-nhan
 domain_area: NT-DA-0030
-definition: 'A psychological model of resistance to persuasion, operating identically
-  to biological vaccination: small doses of an opposing argument trigger the cognitive
-  immune system to build defenses.'
+definition: 'Mô hình tâm lý học về khả năng kháng cự sự thuyết phục, vận hành tương tự cơ chế vắc-xin sinh học: việc tiếp xúc với liều lượng nhỏ của luận điểm đối lập sẽ kích hoạt hệ miễn dịch nhận thức xây dựng các cơ chế phòng thủ.'
 mechanism:
-- Introduce a weakened, easily refutable version of the opponent's argument (the 'virus').
-- Provide the counter-arguments (the 'antibodies').
-- When the audience encounters the full-strength opponent argument later, they instinctively
-  reject it using the prepared defenses.
+- Đưa ra một phiên bản suy yếu, dễ bị phản bác của lập luận phía đối thủ (đóng vai trò như 'vi-rút').
+- Cung cấp sẵn các luận điểm phản bác sắc bén (đóng vai trò như 'kháng thể').
+- Khi đối tượng tiếp xúc với luận điểm hoàn chỉnh của đối thủ về sau, họ sẽ phản xạ bác bỏ luận điểm đó dựa trên hệ thống phòng thủ đã chuẩn bị.
 conditions:
-- When defending a brand, ideology, or group against anticipated aggressive attacks.
+- Khi cần bảo vệ thương hiệu, hệ tư tưởng hoặc tổ chức trước các cuộc tấn công truyền thông dữ dội đã được dự báo trước.
 exceptions:
-- When the initial 'weak' argument is presented too convincingly, accidentally persuading
-  the audience instead of inoculating them.
+- Khi luận điểm 'suy yếu' ban đầu được trình bày quá mức thuyết phục, vô tình khiến đối tượng bị thuyết phục thay vì được tạo miễn dịch.
 applications:
   politics:
-  - '''Our opponents will tell you that this policy increases taxes. What they won''t
-    tell you is that it completely abolishes hidden fees, saving you money overall.'''
+  - '''Đối thủ sẽ nói với quý vị rằng chính sách này làm tăng thuế. Nhưng điều họ không nói là chính sách này xóa bỏ hoàn toàn các loại phí ẩn, giúp quý vị tiết kiệm tiền về tổng thể.'''
 risks:
-- 'Backfire effect: giving a platform to dangerous misinformation that the audience
-  had not previously considered.'
+- 'Hiệu ứng phản tác dụng: vô tình tạo diễn đàn lan truyền các thông tin sai lệch nguy hiểm mà đối tượng mục tiêu trước đó chưa từng biết đến.'
 evidence:
   level: strong
   references:
-  - McGuire, W. J. (1961). 'The effectiveness of supportive and behavioral defenses
-    in immunizing against persuasion'. Sociometry.
+  - McGuire, W. J. (1961). 'The effectiveness of supportive and behavioral defenses in immunizing against persuasion'. Sociometry.
 relations:
   supports: []
   conflicts_with: []
@@ -38,7 +30,12 @@ relations:
 tags:
 - resistance
 - persuasion
+- inoculation-theory
+- persuasion-resistance
+- misinformation-defense
+- prebunking
+- cognitive-defense
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

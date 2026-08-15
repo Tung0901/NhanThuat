@@ -2,37 +2,45 @@ id: NT-PRINCIPLE-0001
 type: principle
 status: frozen
 version: 0.1.0
-title: Clarify interests before designing action
-summary: Before choosing incentives, arguments, or interventions, identify the interests each person believes they are protecting or increasing.
+title: Làm rõ lợi ích trước khi thiết kế hành động
+summary: Trước khi lựa chọn động lực, lập luận hoặc can thiệp, hãy xác định những lợi ích mà mỗi người tin rằng họ đang bảo vệ hoặc gia tăng.
 primary_domain: tri-nhan
-secondary_domains: [dung-nhan, thanh-su]
-definition: Effective action design starts by clarifying perceived interests because behavior often follows what people believe will protect or improve their position.
+secondary_domains:
+- dung-nhan
+- thanh-su
+definition: Thiết kế hành động hiệu quả bắt đầu bằng việc làm rõ lợi ích được nhận thức, vì hành vi thường đi theo những gì con người tin sẽ bảo vệ hoặc cải thiện vị thế của mình.
 mechanism:
-  - Identify the actor and decision context.
-  - Ask what gain, loss, risk, identity, or obligation the actor perceives.
-  - Design action around the perceived interest rather than the stated position alone.
+- Xác định chủ thể hành động và bối cảnh ra quyết định.
+- Hỏi xem chủ thể nhận thức được lợi ích, mất mát, rủi ro, bản sắc hay nghĩa vụ nào.
+- Thiết kế hành động xoay quanh lợi ích được nhận thức thay vì chỉ dựa vào lập trường đã công bố.
 conditions:
-  - The actor has meaningful choice.
-  - The observer can gather enough context to infer interests responsibly.
+- Chủ thể có quyền lựa chọn thực chất.
+- Người quan sát có thể thu thập đủ bối cảnh để suy đoán lợi ích một cách có trách nhiệm.
 exceptions:
-  - Emergency action may require temporary decisions before full interest mapping.
-  - Coercion, misinformation, or reflex may make interest analysis incomplete.
+- Hành động khẩn cấp có thể cần quyết định tạm thời trước khi lập bản đồ lợi ích đầy đủ.
+- Cưỡng ép, thông tin sai lệch hoặc phản xạ có thể khiến việc phân tích lợi ích không trọn vẹn.
 applications:
   negotiation:
-    - Separate declared positions from underlying interests.
+  - Tách biệt lập trường đã công bố khỏi lợi ích nền tảng.
   management:
-    - Align incentives with what team members actually value and fear.
+  - Căn chỉnh động lực với những gì thành viên trong nhóm thực sự coi trọng và lo ngại.
 risks:
-  - Projecting one's own interests onto others.
-  - Treating interests as purely financial or purely rational.
+- Gán ghép lợi ích của bản thân lên người khác.
+- Coi lợi ích thuần túy là tài chính hoặc thuần túy duy lý.
 evidence:
   level: provisional
   references: []
 relations:
   supports: []
   conflicts_with: []
-  depends_on: [NT-LAW-0001]
+  depends_on:
+  - NT-LAW-0001
   applies_to: []
-tags: [interests, action-design, negotiation, motivation]
+tags:
+- interests
+- action-design
+- negotiation
+- motivation
+- perceived-interests
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

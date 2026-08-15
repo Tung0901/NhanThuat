@@ -1,39 +1,28 @@
 id: NT-MODEL-3101
 type: model
-title: Prospect Theory Framework
-summary: A formal descriptive model of decision-making under risk, demonstrating that
-  humans value gains and losses differently, evaluating outcomes relative to a reference
-  point rather than final wealth states.
+title: Khung Lý thuyết Triển vọng
+summary: Mô hình mô tả chuẩn tắc về quá trình ra quyết định dưới điều kiện rủi ro, chứng minh rằng con người định giá các khoản lãi và lỗ khác nhau, đánh giá kết quả so với một điểm tham chiếu thay vì trạng thái tài sản cuối cùng.
 primary_domain: tri-nhan
 domain_area: NT-DA-0027
-definition: A behavioral economic model that replaces Expected Utility Theory. It
-  incorporates an asymmetric value function (steeper for losses than gains) and a
-  non-linear probability weighting function (overweighting small probabilities).
+definition: Mô hình kinh tế học hành vi thay thế cho Lý thuyết Hữu dụng Kỳ vọng. Mô hình này tích hợp hàm giá trị bất đối xứng (độ dốc của tổn thất lớn hơn lợi nhuận) và hàm trọng số xác suất phi tuyến (đánh giá quá cao các xác suất nhỏ).
 mechanism:
-- 'Editing Phase: Decision options are framed and simplified relative to a neutral
-  reference point.'
-- 'Evaluation Phase: Value is assigned based on potential changes from the reference
-  point.'
-- 'Loss aversion: The pain of losing $100 is psychologically more intense than the
-  joy of gaining $100.'
-- 'Probability weighting: Very low probabilities are over-weighted; moderate/high
-  probabilities are under-weighted.'
+- 'Giai đoạn hiệu chỉnh: Các phương án quyết định được đóng khung và đơn giản hóa tương đối so với một điểm tham chiếu trung lập.'
+- 'Giai đoạn đánh giá: Giá trị được xác định dựa trên những biến đổi tiềm năng so với điểm tham chiếu.'
+- 'Tâm lý sợ tổn thất: Nỗi đau khi mất 100 đô la có tác động tâm lý mạnh hơn niềm vui khi nhận được 100 đô la.'
+- 'Trọng số xác suất: Các xác suất rất thấp bị phóng đại quá mức; các xác suất trung bình và cao bị đánh giá thấp hơn thực tế.'
 conditions:
-- Decisions involving explicit risk, probability, and distinct potential gains or
-  losses.
+- Các quyết định liên quan đến rủi ro rõ ràng, xác suất cụ thể và các khoản lãi hoặc lỗ tiềm năng tách biệt.
 exceptions:
-- Decisions where the stakes are incredibly small or routine.
+- Các quyết định mà rủi ro hoặc lợi ích mang lại cực kỳ nhỏ hoặc mang tính thói quen thường nhật.
 applications:
   risk_communication:
-  - Frame probabilities in absolute numbers rather than percentages to reduce weighting
-    distortion.
+  - Đóng khung xác suất bằng các con số tuyệt đối thay vì tỷ lệ phần trăm để giảm thiểu sự sai lệch do trọng số xác suất.
 risks:
-- Assuming rational expected utility maximization in financial or strategic models.
+- Mặc định sự tối đa hóa hữu dụng kỳ vọng duy lý trong các mô hình tài chính hoặc hoạch định chiến lược.
 evidence:
   level: strong
   references:
-  - 'Kahneman, D., & Tversky, A. (1979). ''Prospect Theory: An Analysis of Decision
-    under Risk''. Econometrica.'
+  - 'Kahneman, D., & Tversky, A. (1979). ''Prospect Theory: An Analysis of Decision under Risk''. Econometrica.'
 relations:
   supports: []
   conflicts_with: []
@@ -43,7 +32,10 @@ tags:
 - behavioral-economics
 - decision-making
 - risk
+- prospect-theory
+- loss-aversion
+- probability-weighting
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

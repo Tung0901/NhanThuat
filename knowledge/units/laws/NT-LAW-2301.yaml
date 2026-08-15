@@ -2,27 +2,25 @@ id: NT-LAW-2301
 type: law
 status: frozen
 version: 1.0.0
-title: Law of Anchoring
-summary: Con người có xu hướng bám víu quá mức vào mẩu thông tin đầu tiên họ nhận
-  được.
+title: Quy luật Mỏ neo
+summary: Con người có xu hướng phụ thuộc quá mức vào thông tin đầu tiên nhận được khi đưa ra quyết định.
 primary_domain: tri-nhan
 domain_area: NT-DA-0023
 secondary_domains:
 - thanh-su
-definition: Bộ não sử dụng thông tin ban đầu làm điểm chuẩn để so sánh và điều chỉnh,
-  dẫn đến kết luận bị lệch.
+definition: Não bộ sử dụng thông tin ban đầu làm điểm tham chiếu để so sánh và điều chỉnh các ước tính tiếp theo, dẫn đến các quyết định bị thiên lệch.
 mechanism:
-- Nhận diện mỏ neo.
-- Thiết lập mỏ neo có lợi.
+- Nhận diện thông tin mang tính chất mỏ neo.
+- Thiết lập một mỏ neo có lợi cho vị thế của mình.
 conditions:
-- Đàm phán, dự báo.
+- Các tình huống đàm phán, định giá và dự báo.
 exceptions:
-- Chuyên gia có kinh nghiệm sâu.
+- Những chuyên gia có kinh nghiệm sâu sắc và thông tin đầy đủ.
 applications:
   negotiation:
-  - Đưa ra con số đầu tiên
+  - Chủ động đưa ra con số đầu tiên để thiết lập mỏ neo
 risks:
-- Bị thao túng bởi mỏ neo của đối thủ
+- Bị thao túng và giới hạn quyết định bởi mỏ neo do đối phương thiết lập
 evidence:
   level: supported
   references: []
@@ -34,5 +32,10 @@ relations:
 tags:
 - bias
 - psychology
+- anchoring-effect
+- cognitive-bias
+- negotiation-strategy
+- decision-making
+- heuristic
 created_at: '2026-08-12'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

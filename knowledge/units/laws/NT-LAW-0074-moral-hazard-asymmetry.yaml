@@ -2,23 +2,21 @@ id: NT-LAW-0074
 type: law
 status: frozen
 version: 0.1.0
-title: Moral Hazard Asymmetry
-summary: Decision-makers who capture upside gains while transferring downside risks
-  onto external parties will take catastrophic risks.
+title: Bất đối xứng rủi ro đạo đức
+summary: Những người ra quyết định được hưởng lợi ích gia tăng trong khi chuyển giao rủi ro tổn thất cho các bên bên ngoài sẽ có xu hướng chấp nhận những rủi ro mang tính thảm họa.
 primary_domain: tu-than
 secondary_domains:
 - hop-chung
-definition: 'Skin in the game principle: when an actor benefits from upside performance
-  but is insulated from downside failure, they take extreme risks.'
+definition: 'Nguyên lý gắn liền quyền lợi với trách nhiệm (skin in the game): khi một tác nhân được hưởng lợi từ kết quả tích cực nhưng lại được bảo vệ khỏi thất bại tiêu cực, họ sẽ chấp nhận những rủi ro cực đoan.'
 conditions:
-- Financial trading, executive compensation, and risk governance.
+- Giao dịch tài chính, chế độ đãi ngộ cho ban điều hành và quản trị rủi ro.
 exceptions:
-- Non-profit humanitarian relief.
+- Cứu trợ nhân đạo phi lợi nhuận.
 applications:
   risk_governance:
-  - Mandate that decision-makers maintain skin in the game for high-risk ventures.
+  - Bắt buộc những người ra quyết định phải cùng chịu trách nhiệm thực tế (skin in the game) đối với các liên doanh có rủi ro cao.
 risks:
-- Insisting on skin in the game for non-decision-making employees.
+- Yêu cầu nhân viên không có quyền ra quyết định phải cùng chịu trách nhiệm thực tế.
 evidence:
   level: supported
   references:
@@ -33,5 +31,10 @@ tags:
 - ethics
 - moral-hazard
 - risk
+- skin-in-the-game
+- asymmetric-risk
+- risk-governance
+- incentive-alignment
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

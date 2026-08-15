@@ -2,23 +2,21 @@ id: NT-PRINCIPLE-0093
 type: principle
 status: frozen
 version: 0.1.0
-title: Depersonalize Task Disagreement
-summary: Frame all operational disagreements around objective data, hypotheses, and
-  goals, insulating personal identity.
+title: Phi cá nhân hóa bất đồng về nhiệm vụ
+summary: Đóng khung mọi bất đồng trong công việc dựa trên dữ liệu khách quan, giả thuyết và mục tiêu, nhờ đó tránh để bất đồng chạm tới danh tính cá nhân.
 primary_domain: hop-chung
 secondary_domains:
 - tri-nhan
-definition: To maintain execution speed, leaders must separate the person from the
-  proposal.
+definition: Để duy trì tốc độ thực thi, lãnh đạo phải tách bạch con người khỏi đề xuất được đưa ra.
 conditions:
-- Strategic reviews, product debates, and post-mortems.
+- Các buổi rà soát chiến lược, tranh luận sản phẩm và họp sau sự cố.
 exceptions:
-- Performance reviews explicitly evaluating individual conduct.
+- Các buổi đánh giá hiệu suất chuyên đánh giá hành vi ứng xử của từng cá nhân.
 applications:
   meeting_design:
-  - Require dissenters to frame objections as competing hypotheses.
+  - Yêu cầu người phản biện trình bày ý kiến phản đối dưới dạng các giả thuyết cạnh tranh.
 risks:
-- Over-sanitizing debate to the point where feedback becomes vague.
+- Làm sạch tranh luận quá mức đến mức phản hồi trở nên chung chung.
 evidence:
   level: supported
   references:
@@ -33,5 +31,9 @@ tags:
 - conflict
 - depersonalization
 - debate
+- objectivity
+- feedback
+- hypotheses
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

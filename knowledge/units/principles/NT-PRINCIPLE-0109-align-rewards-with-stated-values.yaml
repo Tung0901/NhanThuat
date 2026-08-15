@@ -2,23 +2,21 @@ id: NT-PRINCIPLE-0109
 type: principle
 status: frozen
 version: 0.1.0
-title: Align Rewards with Stated Values
-summary: Ensure promotions, bonuses, and public recognition actively celebrate behaviors
-  aligned with cultural principles.
+title: Căn chỉnh phần thưởng với các giá trị đã công bố
+summary: Đảm bảo thăng tiến, thưởng và sự công nhận công khai thực sự tôn vinh các hành vi phù hợp với các nguyên tắc văn hóa.
 primary_domain: hop-chung
 secondary_domains:
 - dung-nhan
-definition: Do not promote actors who breach cultural values. Promoting a high-performing
-  toxic manager signals values are meaningless.
+definition: Đừng thăng chức những người vi phạm giá trị văn hóa. Thăng chức một quản lý độc hại dù có hiệu suất cao sẽ khiến các giá trị trở nên vô nghĩa.
 conditions:
-- Performance review and promotion calibration sessions.
+- Các phiên đánh giá hiệu suất và hiệu chuẩn thăng tiến.
 exceptions:
-- None.
+- Không có.
 applications:
   promotion_calibration:
-  - Require a Cultural Values Compliance sign-off before approving promotions.
+  - Yêu cầu xác nhận Tuân thủ Giá trị Văn hóa trước khi phê duyệt thăng tiến.
 risks:
-- Subjective application of values compliance.
+- Áp dụng tuân thủ giá trị một cách chủ quan.
 evidence:
   level: supported
   references:
@@ -33,5 +31,9 @@ tags:
 - culture
 - rewards
 - promotions
+- values
+- recognition
+- leadership
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

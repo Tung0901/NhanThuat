@@ -1,33 +1,27 @@
 id: NT-PHENOMENON-3306
 type: phenomenon
-title: Reciprocity Norm
-summary: The powerful social rule that we should try to repay, in kind, what another
-  person has provided us.
+title: Quy tắc tương hỗ
+summary: Quy tắc xã hội mạnh mẽ rằng chúng ta nên cố gắng đền đáp, một cách tương xứng, những gì người khác đã mang lại cho mình.
 primary_domain: tri-nhan
 domain_area: NT-DA-0029
-definition: A fundamental sociological and psychological mechanism where receiving
-  a favor, gift, or concession creates a strong sense of indebtedness that demands
-  repayment.
+definition: Một cơ chế xã hội học và tâm lý học nền tảng trong đó việc nhận một sự giúp đỡ, món quà hoặc nhượng bộ tạo ra cảm giác mắc nợ mạnh mẽ, đòi hỏi phải được đền đáp.
 mechanism:
-- Person A provides value, assistance, or a concession to Person B.
-- Person B experiences psychological discomfort (indebtedness).
-- Person B actively seeks to provide value back to Person A to resolve the tension.
+- Người A mang lại giá trị, sự hỗ trợ hoặc một nhượng bộ cho người B.
+- Người B trải qua sự khó chịu về tâm lý (cảm giác mắc nợ).
+- Người B chủ động tìm cách mang lại giá trị cho người A để giải tỏa sự căng thẳng này.
 conditions:
-- The initial favor must be perceived as genuine, unprompted, or personalized.
+- Sự giúp đỡ ban đầu phải được nhận thức là chân thành, không vụ lợi hoặc mang tính cá nhân hóa.
 exceptions:
-- When the 'favor' is explicitly recognized as a manipulative sales tactic.
+- Khi "sự giúp đỡ" được nhận ra rõ ràng là một chiêu thức bán hàng thao túng.
 applications:
   negotiation:
-  - Making an intentional, visible concession early in a negotiation to trigger a
-    reciprocal concession from the counterpart.
+  - Thực hiện một nhượng bộ có chủ đích, dễ thấy ở giai đoạn đầu của cuộc đàm phán để kích hoạt một nhượng bộ có tính tương hỗ từ phía đối tác.
 risks:
-- Bribery or conflict of interest where small gifts influence massive corporate purchasing
-  decisions.
+- Hối lộ hoặc xung đột lợi ích khi những món quà nhỏ chi phối những quyết định mua sắm doanh nghiệp khổng lồ.
 evidence:
   level: strong
   references:
-  - 'Gouldner, A. W. (1960). ''The norm of reciprocity: A preliminary statement''.
-    American Sociological Review.'
+  - 'Gouldner, A. W. (1960). ''The norm of reciprocity: A preliminary statement''. American Sociological Review.'
   - Cialdini, R. B. (1984). 'Influence'.
 relations:
   supports: []
@@ -37,7 +31,12 @@ relations:
 tags:
 - reciprocity
 - influence
+- reciprocity-norm
+- reciprocal-concession
+- social-influence
+- indebtedness
+- negotiation
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

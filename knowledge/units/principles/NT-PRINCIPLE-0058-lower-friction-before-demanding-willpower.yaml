@@ -2,18 +2,46 @@ id: NT-PRINCIPLE-0058
 type: principle
 status: frozen
 version: 0.1.0
-title: Lower friction before demanding willpower
-summary: Reduce procedural, technical, and cognitive obstacles before expecting individuals to overcome demotivation through increased willpower.
+title: Giảm ma sát trước khi đòi hỏi ý chí
+summary: Giảm trở ngại về quy trình, kỹ thuật và nhận thức trước khi kỳ vọng cá nhân vượt qua sự mất động lực bằng ý chí gia tăng.
 primary_domain: tu-than
-secondary_domains: [thanh-su, tri-nhan]
-definition: System friction consumes cognitive energy; removing friction increases effective motivation without increasing human strain.
-mechanism: [Identify execution bottlenecks, Simplify workflow steps, Reduce cognitive load, Enable smooth effort flow.]
-conditions: [Work environment contains high administrative or technical friction.]
-exceptions: [Deliberate friction can be useful to prevent accidental high-risk errors.]
-applications: {process-improvement: [Eliminate redundant approvals and tool friction.], leadership: [Audit workflow pain points before blaming employee engagement.]}
-risks: [Removing necessary validation steps in pursuit of zero friction.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0029, NT-LAW-0027], applies_to: []}
-tags: [motivation, principle, friction, willpower, load]
+secondary_domains:
+- thanh-su
+- tri-nhan
+definition: Ma sát hệ thống tiêu tốn năng lượng nhận thức; loại bỏ ma sát làm tăng động lực hiệu quả mà không gia tăng sức ép con người.
+mechanism:
+- Xác định nút thắt thực thi
+- Đơn giản hóa các bước quy trình
+- Giảm tải nhận thức
+- Kích hoạt dòng nỗ lực trôi chảy.
+conditions:
+- Môi trường làm việc chứa nhiều ma sát hành chính hoặc kỹ thuật.
+exceptions:
+- Ma sát có chủ đích có thể hữu ích để ngăn lỗi rủi ro cao vô tình.
+applications:
+  process-improvement:
+  - Loại bỏ phê duyệt thừa và ma sát công cụ.
+  leadership:
+  - Rà soát điểm đau quy trình trước khi đổ lỗi cho sự gắn kết của nhân viên.
+risks:
+- Loại bỏ bước kiểm chứng cần thiết để theo đuổi ma sát bằng không.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0029
+  - NT-LAW-0027
+  applies_to: []
+tags:
+- motivation
+- principle
+- friction
+- willpower
+- load
+- cognitive-load
+- process-improvement
 created_at: '2026-07-21'
-updated_at: '2026-07-21'
+updated_at: '2026-08-15'

@@ -1,33 +1,27 @@
 id: NT-PRINCIPLE-3302
 type: principle
-title: Norm Activation (Descriptive vs Injunctive)
-summary: When trying to change behavior, never publicize that the bad behavior is
-  widespread; instead, highlight the desired behavior as the social norm.
+title: Kích hoạt chuẩn mực (Mô tả so với Mệnh lệnh)
+summary: Khi cố gắng thay đổi hành vi, không bao giờ công khai rằng hành vi xấu đang phổ biến; thay vào đó, hãy nêu bật hành vi mong muốn như chuẩn mực xã hội.
 primary_domain: tri-nhan
 domain_area: NT-DA-0029
-definition: The strategic use of descriptive norms (what people actually do) and injunctive
-  norms (what people ought to do) to leverage conformity for positive outcomes.
+definition: Việc sử dụng chiến lược các chuẩn mực mô tả (điều mọi người thực sự làm) và chuẩn mực mệnh lệnh (điều mọi người nên làm) để tận dụng sự tuân thủ cho các kết quả tích cực.
 mechanism:
-- People naturally conform to descriptive norms.
-- If a sign says 'Many people steal from this forest, please don't', it unintentionally
-  normalizes stealing.
-- Effective messaging must align the descriptive norm ('Most people protect the forest')
-  with the injunctive norm ('You should protect it too').
+- Con người tự nhiên tuân theo các chuẩn mực mô tả.
+- Nếu một tấm biển ghi "Nhiều người trộm cắp trong khu rừng này, xin đừng làm vậy", nó vô tình chuẩn hóa hành vi trộm cắp.
+- Thông điệp hiệu quả phải liên kết chuẩn mực mô tả ("Hầu hết mọi người bảo vệ khu rừng") với chuẩn mực mệnh lệnh ("Bạn cũng nên bảo vệ nó").
 conditions:
-- Public messaging, signage, and corporate compliance training.
+- Thông điệp công khai, biển báo và đào tạo tuân thủ doanh nghiệp.
 exceptions:
-- When attempting to spark a rebellion against an established authority.
+- Khi đang cố gắng khơi mào một cuộc nổi dậy chống lại một quyền lực đã được thiết lập.
 applications:
   compliance:
-  - Instead of 'Many employees fail to complete security training', use '95% of your
-    peers have already completed their training'.
+  - Thay vì "Nhiều nhân viên không hoàn thành đào tạo bảo mật", hãy dùng "95% đồng nghiệp của bạn đã hoàn thành đào tạo".
 risks:
-- Inadvertently increasing negative behavior by popularizing its occurrence.
+- Vô tình gia tăng hành vi tiêu cực bằng cách phổ biến sự tồn tại của nó.
 evidence:
   level: strong
   references:
-  - Cialdini, R. B. (2003). 'Crafting normative messages to protect the environment'.
-    Current Directions in Psychological Science.
+  - Cialdini, R. B. (2003). 'Crafting normative messages to protect the environment'. Current Directions in Psychological Science.
 relations:
   supports: []
   conflicts_with: []
@@ -37,7 +31,11 @@ relations:
 tags:
 - norms
 - messaging
+- conformity
+- compliance
+- descriptive-norms
+- social-proof
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

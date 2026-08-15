@@ -2,37 +2,47 @@ id: NT-PRINCIPLE-0003
 type: principle
 status: frozen
 version: 0.1.0
-title: Make coordination costs visible
-summary: When cooperation slows down, expose hidden costs such as unclear ownership, missing trust, competing priorities, and repeated handoffs.
+title: Làm lộ chi phí phối hợp
+summary: Khi hợp tác chậm lại, hãy phơi bày các chi phí ẩn như quyền sở hữu mơ hồ, thiếu niềm tin, ưu tiên cạnh tranh và việc bàn giao lặp đi lặp lại.
 primary_domain: hop-chung
-secondary_domains: [dung-nhan, thanh-su]
-definition: Coordination improves when invisible friction is named, because people can then redesign ownership, communication, trust-building, or decision rights.
+secondary_domains:
+- dung-nhan
+- thanh-su
+definition: Phối hợp cải thiện khi những trở ngại vô hình được nêu tên, vì khi đó con người có thể tái thiết kế quyền sở hữu, giao tiếp, xây dựng niềm tin hoặc quyền ra quyết định.
 mechanism:
-  - Observe delays, repeated clarification, rework, or defensive checking.
-  - Identify the hidden cost creating friction.
-  - Redesign the coordination pattern to reduce that cost.
+- Quan sát sự chậm trễ, các lần làm rõ lặp lại, làm lại việc hoặc kiểm tra phòng thủ.
+- Xác định chi phí ẩn đang tạo ra trở ngại.
+- Tái thiết kế mô hình phối hợp để giảm chi phí đó.
 conditions:
-  - Multiple people or roles depend on each other.
-  - Coordination friction can be discussed without excessive blame.
+- Nhiều người hoặc vai trò phụ thuộc lẫn nhau.
+- Trở ngại phối hợp có thể được thảo luận mà không đổ lỗi quá mức.
 exceptions:
-  - Some redundancy is necessary in high-risk work.
-  - Temporary friction may be acceptable during learning or transition.
+- Một số dự phòng là cần thiết trong công việc rủi ro cao.
+- Trở ngại tạm thời có thể chấp nhận được trong giai đoạn học tập hoặc chuyển đổi.
 applications:
   teamwork:
-    - Review handoffs and decision bottlenecks after repeated delays.
+  - Rà soát điểm bàn giao và nút thắt quyết định sau nhiều lần chậm trễ.
   management:
-    - Reduce monitoring load by improving trust and explicit ownership.
+  - Giảm tải giám sát bằng cách cải thiện niềm tin và quyền sở hữu rõ ràng.
 risks:
-  - Removing useful safeguards in the name of speed.
-  - Treating all friction as a process problem while ignoring conflict or mistrust.
+- Gỡ bỏ các rào cản an toàn hữu ích nhân danh tốc độ.
+- Coi mọi trở ngại là vấn đề quy trình trong khi bỏ qua xung đột hoặc thiếu niềm tin.
 evidence:
   level: provisional
   references: []
 relations:
   supports: []
   conflicts_with: []
-  depends_on: [NT-LAW-0002, NT-LAW-0003]
+  depends_on:
+  - NT-LAW-0002
+  - NT-LAW-0003
   applies_to: []
-tags: [coordination, trust, ownership, teamwork]
+tags:
+- coordination
+- trust
+- ownership
+- teamwork
+- friction
+- handoffs
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

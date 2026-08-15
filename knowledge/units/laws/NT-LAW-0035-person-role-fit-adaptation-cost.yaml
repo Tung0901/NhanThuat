@@ -2,34 +2,46 @@ id: NT-LAW-0035
 type: law
 status: frozen
 version: 0.1.0
-title: Law of Person-Role Fit and Adaptation Cost
-summary: Performance emerges from seven interacting variables, with personality defaults never predicting success alone; rather, misalignment increases adaptation costs.
+title: Quy luật Tương thích Cá nhân - Vai trò và Chi phí Thích ứng
+summary: Hiệu suất là kết quả từ sự tương tác của bảy biến số; thiên hướng tính cách đơn lẻ không bao giờ dự đoán được thành công, mà sự bất tương thích chỉ làm gia tăng chi phí thích ứng.
 primary_domain: tri-nhan
-secondary_domains: [tu-than, thanh-su]
-definition: Person-role fit is diagnostic and probabilistic, modeling the potential cognitive and physiological energy (adaptation cost) required when an individual must self-regulate away from latent defaults. Performance is an emergent outcome of the interaction among personality, skills, motivation, environment, role demands, experience, and deliberate self-regulation.
+secondary_domains:
+- tu-than
+- thanh-su
+definition: Độ tương thích cá nhân - vai trò mang tính chẩn đoán và xác suất, mô hình hóa năng lượng nhận thức và sinh lý tiềm tàng (chi phí thích ứng) cần thiết khi một cá nhân phải tự điều chỉnh thoát khỏi các thiên hướng tiềm ẩn. Hiệu suất là kết quả nảy sinh từ tương tác giữa tính cách, kỹ năng, động lực, môi trường, yêu cầu vai trò, kinh nghiệm và sự tự điều chỉnh có chủ đích.
 mechanism:
-  - Latent trait defaults diverge from role demands
-  - Executive control activates compensatory strategies
-  - Deliberate self-regulation bridges the gap at an adaptation cost
+- Thiên hướng tính cách tiềm ẩn lệch khỏi các yêu cầu của vai trò
+- Hệ thống kiểm soát điều hành kích hoạt các chiến lược bù trừ
+- Sự tự điều chỉnh có chủ đích thu hẹp khoảng cách này nhưng phải trả giá bằng chi phí thích ứng
 conditions:
-  - Roles require behavioral expressions that diverge from latent trait defaults.
+- Các vai trò đòi hỏi những biểu hiện hành vi khác biệt so với các thiên hướng tính cách tiềm ẩn mặc định.
 exceptions:
-  - High motivation, strong compensatory strategies, or environmental supports can lower the adaptation cost of trait-role mismatch.
+- Động lực cao, các chiến lược bù trừ vững chắc hoặc sự hỗ trợ từ môi trường có thể làm giảm chi phí thích ứng khi có sự bất tương thích giữa nét tính cách và vai trò.
 applications:
-  organization-design: [Design roles to allow flexibility in task execution style to minimize adaptation costs.]
-  job-matching: [Use person-role fit diagnostically to plan support and compensatory strategies, never as a hiring filter.]
+  organization-design:
+  - Thiết kế vai trò cho phép sự linh hoạt trong phong cách thực thi nhiệm vụ nhằm giảm thiểu chi phí thích ứng.
+  job-matching:
+  - Sử dụng độ tương thích cá nhân - vai trò cho mục đích chẩn đoán để lập kế hoạch hỗ trợ và xây dựng chiến lược bù trừ
+  - tuyệt đối không dùng làm bộ lọc tuyển dụng.
 risks:
-  - Using fit assessments as exclusion criteria or hiring filters.
-  - Confusing trait mismatch with lack of competence, values, or ethics.
+- Sử dụng đánh giá độ tương thích làm tiêu chí loại trừ hoặc bộ lọc tuyển dụng.
+- Nhầm lẫn giữa sự bất tương thích nét tính cách với việc thiếu năng lực, giá trị hay đạo đức.
 evidence:
   level: provisional
   references:
-    - "Kristof-Brown, A. L., et al. (2005). Consequences of Individuals' Fit at Work: A Meta-Analysis."
+  - 'Kristof-Brown, A. L., et al. (2005). Consequences of Individuals'' Fit at Work: A Meta-Analysis.'
 relations:
   supports: []
   conflicts_with: []
-  depends_on: [NT-LAW-0034]
+  depends_on:
+  - NT-LAW-0034
   applies_to: []
-tags: [person-role-fit, adaptation-cost, performance, self-regulation]
+tags:
+- person-role-fit
+- adaptation-cost
+- performance
+- self-regulation
+- job-matching
+- role-misalignment
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'

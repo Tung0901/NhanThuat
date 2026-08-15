@@ -2,28 +2,26 @@ id: NT-MODEL-0027
 type: model
 status: frozen
 version: 0.1.0
-title: Strategic Trade-Off Matrix
-summary: A 2x2 model mapping Strategic Focus against Resource Commitment to evaluate
-  strategy integrity.
+title: Ma trận đánh đổi chiến lược
+summary: Mô hình 2x2 đối chiếu Trọng tâm chiến lược với Mức độ cam kết nguồn lực để đánh giá tính toàn vẹn của chiến lược.
 primary_domain: thanh-su
 secondary_domains:
 - dung-nhan
-definition: The Strategic Trade-Off Matrix evaluates strategy across Strategic Focus
-  and Resource Commitment.
+definition: 'Ma trận đánh đổi chiến lược đánh giá chiến lược dựa trên hai trục: Trọng tâm chiến lược và Cam kết nguồn lực.'
 mechanism:
-- Assess Strategic Focus.
-- Assess Resource Commitment.
-- Map to Quadrant.
-- Shift toward Coherent Execution.
+- Đánh giá trọng tâm chiến lược.
+- Đánh giá mức độ cam kết nguồn lực.
+- Xác định vị trí trên góc phần tư.
+- Chuyển dịch hướng tới Thực thi nhất quán.
 conditions:
-- Strategy audits and annual portfolio reviews.
+- Kiểm toán chiến lược và rà soát danh mục định kỳ hàng năm.
 exceptions:
-- None.
+- Không có.
 applications:
   portfolio_audit:
-  - Audit product portfolios to eliminate Wishful Thinking initiatives.
+  - Kiểm toán danh mục sản phẩm để loại bỏ các sáng kiến mang tính kỳ vọng viển vông.
 risks:
-- Over-concentrating resources in a dying market.
+- Tập trung quá mức nguồn lực vào một thị trường đang suy thoái.
 evidence:
   level: supported
   references:
@@ -39,5 +37,10 @@ tags:
 - strategy
 - matrix
 - audit
+- strategic-trade-off
+- strategy-matrix
+- resource-commitment
+- strategic-focus
+- portfolio-review
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'

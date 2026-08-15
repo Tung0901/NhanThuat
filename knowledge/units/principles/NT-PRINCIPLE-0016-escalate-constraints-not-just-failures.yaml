@@ -2,33 +2,31 @@ id: NT-PRINCIPLE-0016
 type: principle
 status: frozen
 version: 0.1.0
-title: Escalate constraints, not just failures
-summary: Escalate early when authority, resources, information, or capability constraints
-  make an outcome unrealistic.
+title: Leo thang các ràng buộc, không chỉ thất bại
+summary: Leo thang sớm khi các ràng buộc về quyền hạn, nguồn lực, thông tin hoặc năng lực khiến một kết quả trở nên bất khả thi.
 primary_domain: thanh-su
 secondary_domains:
 - dung-nhan
 - hop-chung
-definition: Early constraint escalation protects ownership by revealing what must
-  change before failure becomes unavoidable.
+definition: Việc leo thang ràng buộc sớm bảo vệ quyền sở hữu bằng cách hé lộ điều phải thay đổi trước khi thất bại trở nên không thể tránh khỏi.
 mechanism:
-- Detect a constraint
-- Name the impact
-- Escalate the decision or support needed.
+- Phát hiện một ràng buộc.
+- Nêu rõ tác động.
+- Leo thang quyết định hoặc sự hỗ trợ cần thiết.
 conditions:
-- The constraint threatens the outcome
-- Someone else controls the needed change.
+- Ràng buộc đe dọa kết quả.
+- Người khác kiểm soát thay đổi cần thiết.
 exceptions:
-- Minor constraints can be solved locally
-- Excessive escalation slows work.
+- Ràng buộc nhỏ có thể được giải quyết tại chỗ.
+- Leo thang quá mức làm chậm công việc.
 applications:
   execution:
-  - Report blocked decisions before deadlines collapse.
+  - Báo cáo các quyết định bị chặn trước khi hạn chót sụp đổ.
   management:
-  - Reward early constraint visibility.
+  - Khen thưởng việc phơi bày ràng buộc sớm.
 risks:
-- Escalating responsibility away
-- Creating noise without proposed options.
+- Leo thang để đẩy trách nhiệm đi nơi khác.
+- Tạo ra ồn ào mà không kèm phương án đề xuất.
 evidence:
   level: provisional
   references: []
@@ -43,5 +41,7 @@ tags:
 - constraints
 - escalation
 - execution
+- risk-management
+- transparency
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

@@ -2,36 +2,45 @@ id: NT-PRINCIPLE-0062
 type: principle
 status: frozen
 version: 0.1.0
-title: Adapt communication to trait preferences
-summary: Adjust communication delivery formats to fit a recipient's cognitive processing defaults without crossing into behavioral manipulation.
+title: Thích ứng cách truyền đạt theo sở thích đặc tính
+summary: Điều chỉnh định dạng truyền đạt cho phù hợp với mặc định xử lý nhận thức của người nhận mà không vượt qua ranh giới thành thao túng hành vi.
 primary_domain: tri-nhan
-secondary_domains: [tu-than]
-definition: Align communication formats (e.g., written vs. verbal, structured vs. emergent) with the recipient's relatively stable cognitive processing preferences to lower processing load and prevent miscommunication. Adaptations must remain transparent and supportive, never manipulative.
+secondary_domains:
+- tu-than
+definition: 'Căn chỉnh định dạng truyền đạt (ví dụ: văn bản so với lời nói, có cấu trúc so với tự phát) với sở thích xử lý nhận thức tương đối ổn định của người nhận để giảm tải xử lý và ngăn ngừa hiểu lầm. Các thích ứng phải minh bạch và mang tính hỗ trợ, không bao giờ thao túng.'
 mechanism:
-  - Identify the recipient's latent cognitive defaults and interaction style.
-  - Format the communication delivery (channel, structure, pace) to align with these defaults.
-  - Observe if trait expression is activated constructively, leading to clear behavior.
+- Xác định các mặc định nhận thức tiềm ẩn và phong cách tương tác của người nhận.
+- Định dạng việc truyền đạt (kênh, cấu trúc, nhịp độ) để khớp với các mặc định này.
+- Quan sát xem biểu hiện đặc tính có được kích hoạt một cách tích cực, dẫn đến hành vi rõ ràng hay không.
 conditions:
-  - Critical task information must be shared, or ongoing collaboration is required.
+- Thông tin nhiệm vụ quan trọng cần được chia sẻ hoặc cần có sự hợp tác liên tục.
 exceptions:
-  - Crisis situations requiring immediate, standardized communication formats regardless of preference.
+- Các tình huống khủng hoảng đòi hỏi định dạng truyền đạt tiêu chuẩn, tức thì bất kể sở thích cá nhân.
 applications:
   leadership:
-    - Tailor feedback delivery formats (written summaries vs. verbal discussions) to group members.
+  - Điều chỉnh định dạng phản hồi (tóm tắt văn bản so với thảo luận trực tiếp) cho phù hợp với từng thành viên nhóm.
   delegation:
-    - Present task instructions in structured or emergent styles based on recipient preferences.
+  - Trình bày hướng dẫn nhiệm vụ theo phong cách có cấu trúc hoặc tự phát dựa trên sở thích của người nhận.
 risks:
-  - Using adapted formats to manipulate behavior or bypass ethical communication bounds.
-  - Overcomplicating standard communications by catering to minor preferences.
+- Dùng định dạng thích ứng để thao túng hành vi hoặc vượt qua các giới hạn truyền đạt đạo đức.
+- Làm phức tạp hóa các truyền đạt chuẩn bằng cách chiều theo những sở thích nhỏ.
 evidence:
   level: provisional
   references:
-    - "Mayer, R. E. (2002). Cognitive Theory of Multimedia Learning."
+  - Mayer, R. E. (2002). Cognitive Theory of Multimedia Learning.
 relations:
   supports: []
   conflicts_with: []
-  depends_on: [NT-LAW-0034]
+  depends_on:
+  - NT-LAW-0034
   applies_to: []
-tags: [communication, cognitive-defaults, interaction-style, leadership]
+tags:
+- communication
+- cognitive-defaults
+- interaction-style
+- leadership
+- communication-adaptation
+- trait-preferences
+- processing-load
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'

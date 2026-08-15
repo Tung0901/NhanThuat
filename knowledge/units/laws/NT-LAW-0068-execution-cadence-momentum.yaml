@@ -2,23 +2,21 @@ id: NT-LAW-0068
 type: law
 status: frozen
 version: 0.1.0
-title: Execution Cadence Momentum
-summary: Operational momentum accumulates through short, predictable delivery cadences
-  rather than massive delayed releases.
+title: Động lực từ nhịp độ thực thi
+summary: Đà vận hành được tích lũy thông qua các nhịp độ bàn giao ngắn và có thể dự đoán được, thay vì các đợt phát hành lớn bị trì hoãn.
 primary_domain: dung-nhan
 secondary_domains:
 - thanh-su
-definition: Shipping small working increments on a predictable rhythm establishes
-  psychological momentum.
+definition: Việc bàn giao các phần tăng trưởng nhỏ hoạt động được theo một nhịp điệu có thể dự đoán trước sẽ thiết lập đà tâm lý tích cực.
 conditions:
-- Software development, project management, and product shipping.
+- Phát triển phần mềm, quản lý dự án và bàn giao sản phẩm.
 exceptions:
-- Heavy infrastructure projects.
+- Các dự án cơ sở hạ tầng hạng nặng.
 applications:
   agile_delivery:
-  - Enforce strict 2-week shipping cycles to maintain delivery telemetry.
+  - Áp dụng nghiêm ngặt chu kỳ bàn giao 2 tuần để duy trì các chỉ số đo lường bàn giao.
 risks:
-- Shipping incomplete code under cadence pressure.
+- Bàn giao mã nguồn chưa hoàn thiện dưới áp lực của nhịp độ.
 evidence:
   level: supported
   references:
@@ -33,5 +31,10 @@ tags:
 - execution
 - cadence
 - momentum
+- execution-cadence
+- agile-delivery
+- operational-momentum
+- delivery-cycle
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

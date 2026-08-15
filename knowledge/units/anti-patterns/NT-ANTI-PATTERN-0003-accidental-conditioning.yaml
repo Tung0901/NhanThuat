@@ -2,18 +2,47 @@ id: NT-ANTI-PATTERN-0003
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Accidental conditioning
-summary: A harmful pattern where repeated rewards and costs train the opposite behavior from the stated value.
+title: Điều kiện hóa vô tình
+summary: Một mô hình độc hại trong đó việc khen thưởng và xử phạt lặp đi lặp lại vô tình rèn luyện hành vi đi ngược lại với giá trị đã tuyên bố.
 primary_domain: tri-nhan
-secondary_domains: [thanh-su, hop-chung]
-definition: Systems accidentally condition people when official values say one thing but repeated consequences teach another.
-mechanism: [State value, Reward opposite behavior, Repeat inconsistency, Normalize adaptation.]
-conditions: [Stated values and lived consequences diverge.]
-exceptions: [Temporary exceptions may be understood if named and repaired.]
-applications: {culture: [Compare what is praised with what is actually rewarded.], operations: [Look for repeated incentives that contradict stated standards.]}
-risks: [Cynicism, hidden manipulation.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0028], applies_to: []}
-tags: [anti-pattern, adaptation, incentives]
+secondary_domains:
+- thanh-su
+- hop-chung
+definition: Các hệ thống vô tình điều kiện hóa con người khi các giá trị chính thức tuyên bố một đằng nhưng hệ quả thực tế lặp đi lặp lại lại dạy một nẻo.
+mechanism:
+- Tuyên bố giá trị
+- Khen thưởng hành vi trái ngược
+- Lặp lại sự mâu thuẫn
+- Bình thường hóa sự thích nghi
+conditions:
+- Giá trị tuyên bố và hệ quả thực tế tồn tại sự mâu thuẫn.
+exceptions:
+- Ngoại lệ tạm thời có thể được chấp nhận nếu được chỉ rõ và khắc phục kịp thời.
+applications:
+  culture:
+  - So sánh những gì được biểu dương với những gì thực sự được tưởng thưởng.
+  operations:
+  - Tìm kiếm các cơ chế khuyến khích lặp đi lặp lại mâu thuẫn với các tiêu chuẩn đã tuyên bố.
+risks:
+- Sự hoài nghi tiêu cực
+- Thao túng ngầm
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0028
+  applies_to: []
+tags:
+- anti-pattern
+- adaptation
+- incentives
+- accidental-conditioning
+- incentive-misalignment
+- culture-drift
+- perverse-incentives
+- organizational-behavior
 created_at: '2026-07-21'
-updated_at: '2026-07-21'
+updated_at: '2026-08-15'

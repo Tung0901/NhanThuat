@@ -2,33 +2,31 @@ id: NT-PRINCIPLE-0013
 type: principle
 status: frozen
 version: 0.1.0
-title: Protect bad-news channels
-summary: Create channels where risks, errors, and dissent can travel without disproportionate
-  punishment or status loss.
+title: Bảo vệ kênh tin xấu
+summary: Tạo ra các kênh để rủi ro, sai sót và bất đồng có thể lan truyền mà không bị trừng phạt không cân xứng hay mất vị thế.
 primary_domain: hop-chung
 secondary_domains:
 - thanh-su
 - dung-nhan
-definition: Truth reaches decision makers only when people believe that reporting
-  problems will be handled fairly and usefully.
+definition: Sự thật chỉ đến được tay người ra quyết định khi con người tin rằng việc báo cáo vấn đề sẽ được xử lý công bằng và hữu ích.
 mechanism:
-- Create a safe channel
-- Reward early signal
-- Respond constructively to bad news.
+- Tạo kênh an toàn.
+- Khen thưởng tín hiệu sớm.
+- Phản hồi mang tính xây dựng với tin xấu.
 conditions:
-- Bad news affects decisions
-- People fear consequence for speaking.
+- Tin xấu ảnh hưởng đến quyết định.
+- Con người sợ hậu quả khi lên tiếng.
 exceptions:
-- Malicious reporting still requires accountability
-- Confidentiality limits may apply.
+- Báo cáo ác ý vẫn cần trách nhiệm giải trình.
+- Giới hạn bảo mật có thể được áp dụng.
 applications:
   leadership:
-  - Thank early risk reports before solving them.
+  - Cảm ơn các báo cáo rủi ro sớm trước khi giải quyết chúng.
   governance:
-  - Separate reporting errors from hiding errors.
+  - Tách biệt việc báo cáo sai sót khỏi việc che giấu sai sót.
 risks:
-- Creating channels no one trusts
-- Protecting careless behavior rather than candor.
+- Tạo ra các kênh không ai tin tưởng.
+- Bảo vệ hành vi bất cẩn thay vì sự thẳng thắn.
 evidence:
   level: provisional
   references: []
@@ -43,5 +41,7 @@ tags:
 - truth
 - risk
 - candor
+- psychological-safety
+- reporting
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

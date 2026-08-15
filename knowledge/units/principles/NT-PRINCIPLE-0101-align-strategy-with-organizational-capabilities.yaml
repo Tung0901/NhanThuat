@@ -2,23 +2,21 @@ id: NT-PRINCIPLE-0101
 type: principle
 status: frozen
 version: 0.1.0
-title: Align Strategy with Organizational Capabilities
-summary: Ensure that chosen strategic directions leverage existing or buildable core
-  capabilities rather than wishful thinking.
+title: Căn chỉnh chiến lược với năng lực của tổ chức
+summary: Đảm bảo các hướng chiến lược được chọn khai thác năng lực cốt lõi hiện có hoặc có thể xây dựng, thay vì dựa vào mơ tưởng.
 primary_domain: thanh-su
 secondary_domains:
 - dung-nhan
-definition: A strategy that requires capabilities the organization does not possess
-  and cannot acquire is a fantasy.
+definition: Một chiến lược đòi hỏi những năng lực mà tổ chức không có và không thể có được chính là ảo tưởng.
 conditions:
-- Strategic planning and new market entry.
+- Lập kế hoạch chiến lược và thâm nhập thị trường mới.
 exceptions:
-- Moonshot R&D ventures.
+- Các dự án R&D táo bạo kiểu moonshot.
 applications:
   hiring_alignment:
-  - Map strategic roadmap capabilities to current talent inventory.
+  - Đối chiếu năng lực trong lộ trình chiến lược với tồn kho nhân tài hiện tại.
 risks:
-- Setting goals so conservative that the organization fails to innovate.
+- Đặt mục tiêu quá thận trọng khiến tổ chức không thể đổi mới.
 evidence:
   level: supported
   references:
@@ -33,5 +31,8 @@ tags:
 - strategy
 - capabilities
 - alignment
+- planning
+- talent
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

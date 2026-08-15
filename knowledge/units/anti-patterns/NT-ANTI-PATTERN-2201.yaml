@@ -2,26 +2,25 @@ id: NT-ANTI-PATTERN-2201
 type: anti-pattern
 status: frozen
 version: 1.0.0
-title: Information Hoarding
-summary: Cố tình che giấu thông tin để duy trì độc quyền và quyền lực cá nhân.
+title: Tích trữ thông tin
+summary: Hành vi cố tình che giấu hoặc hạn chế chia sẻ thông tin nhằm duy trì vị thế độc quyền và quyền lực cá nhân trong tổ chức.
 primary_domain: dung-nhan
 domain_area: NT-DA-0022
 secondary_domains:
 - hop-chung
-definition: Tạo ra các điểm nghẽn nhân tạo để khiến tổ chức phải phụ thuộc vào cá
-  nhân.
+definition: Việc cố ý tạo ra các điểm nghẽn tri thức nhân tạo nhằm khiến tổ chức bị phụ thuộc vào một cá nhân duy nhất.
 mechanism:
-- Không viết tài liệu bàn giao.
-- Giữ kín liên hệ quan trọng.
+- Cố tình không viết tài liệu hướng dẫn hoặc quy trình bàn giao công việc.
+- Hạn chế chia sẻ các đầu mối liên hệ và mối quan hệ đối tác quan trọng.
 conditions:
-- Hệ thống khen thưởng khuyến khích cá nhân.
+- Môi trường làm việc thiếu cơ chế chia sẻ tri thức và hệ thống khen thưởng chỉ tập trung vào thành tích cá nhân.
 exceptions:
-- Bảo mật thông tin hợp pháp.
+- Yêu cầu bảo mật thông tin hợp pháp theo quy định pháp luật hoặc thỏa thuận bảo mật (NDA).
 applications:
   management:
-  - Đánh giá hiệu suất bao gồm chia sẻ tri thức
+  - Tích hợp tiêu chí chia sẻ tri thức và tài liệu hóa quy trình vào hệ thống đánh giá hiệu suất (KPI/OKR).
 risks:
-- Tạo điểm nghẽn Single Point of Failure
+- Tạo ra điểm nghẽn đơn lẻ (Single Point of Failure), gây rủi ro gián đoạn vận hành nghiêm trọng khi nhân sự nghỉ việc.
 evidence:
   level: supported
   references: []
@@ -33,5 +32,10 @@ relations:
 tags:
 - toxic
 - silo
+- information-hoarding
+- knowledge-silo
+- organizational-bottleneck
+- knowledge-sharing
+- single-point-of-failure
 created_at: '2026-08-12'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

@@ -1,35 +1,28 @@
 id: NT-PHENOMENON-3406
 type: phenomenon
-title: Door-in-the-Face Technique
-summary: Making an extreme request that is guaranteed to be rejected, followed immediately
-  by a smaller, reasonable request.
+title: Kỹ thuật đóng sầm cửa trước mặt
+summary: Đưa ra một yêu cầu cực đoan chắc chắn sẽ bị từ chối, ngay sau đó là một yêu cầu nhỏ hơn, hợp lý hơn.
 primary_domain: tri-nhan
 domain_area: NT-DA-0030
-definition: A sequential compliance strategy leveraging perceptual contrast and the
-  reciprocity norm to increase the acceptance rate of a target request.
+definition: Một chiến lược tuân phục theo trình tự tận dụng sự tương phản về nhận thức và quy chuẩn tương hỗ để tăng tỷ lệ chấp nhận một yêu cầu mục tiêu.
 mechanism:
-- Persuader makes a massive request.
-- Target refuses.
-- Persuader makes a 'concession' by retreating to a smaller request.
-- Target feels psychological pressure (reciprocity) to make a concession in return,
-  and agrees to the smaller request.
+- Người thuyết phục đưa ra một yêu cầu khổng lồ.
+- Đối tượng từ chối.
+- Người thuyết phục 'nhượng bộ' bằng cách lùi về một yêu cầu nhỏ hơn.
+- Đối tượng cảm thấy áp lực tâm lý (tương hỗ) phải nhượng bộ đáp lại, và đồng ý với yêu cầu nhỏ hơn.
 conditions:
-- The second request must be made immediately by the same person, and the first request
-  cannot be so absurd that it ruins credibility.
+- Yêu cầu thứ hai phải được cùng một người đưa ra ngay lập tức, và yêu cầu thứ nhất không được phi lý đến mức làm mất uy tín.
 exceptions:
-- When the target recognizes the sequence as a hostile negotiation tactic.
+- Khi đối tượng nhận ra chuỗi yêu cầu này là một chiến thuật đàm phán thù địch.
 applications:
   sales:
-  - Ask a client to buy the ultra-premium $10,000 package. When they refuse, ask them
-    to buy the $2,000 standard package (which was the actual goal).
+  - Hãy đề nghị khách hàng mua gói cao cấp 10.000 đô la. Khi họ từ chối, hãy đề nghị mua gói tiêu chuẩn 2.000 đô la (vốn là mục tiêu thực sự).
 risks:
-- Damaging trust if the initial anchor is insulting or purely manipulative.
+- Làm tổn hại niềm tin nếu điểm neo ban đầu mang tính xúc phạm hoặc hoàn toàn thao túng.
 evidence:
   level: strong
   references:
-  - 'Cialdini, R. B., et al. (1975). ''Reciprocal concessions procedure for inducing
-    compliance: The door-in-the-face technique''. Journal of Personality and Social
-    Psychology.'
+  - 'Cialdini, R. B., et al. (1975). ''Reciprocal concessions procedure for inducing compliance: The door-in-the-face technique''. Journal of Personality and Social Psychology.'
 relations:
   supports: []
   conflicts_with: []
@@ -39,7 +32,10 @@ relations:
 tags:
 - negotiation
 - compliance
+- door-in-the-face
+- reciprocity
+- anchoring
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

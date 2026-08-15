@@ -1,32 +1,27 @@
 id: NT-PHENOMENON-3102
 type: phenomenon
-title: Loss Aversion
-summary: The psychological impact of losing something is roughly twice as powerful
-  as the impact of gaining the equivalent thing.
+title: Ác cảm mất mát
+summary: Tác động tâm lý của việc mất đi một thứ gì đó mạnh gần gấp đôi tác động của việc đạt được thứ tương đương.
 primary_domain: tri-nhan
 domain_area: NT-DA-0027
-definition: A robust cognitive phenomenon where individuals prefer avoiding losses
-  over acquiring equivalent gains, driving risk-seeking behavior in loss domains and
-  risk-averse behavior in gain domains.
+definition: Một hiện tượng nhận thức vững chắc, trong đó con người ưa thích tránh mất mát hơn là đạt được lợi ích tương đương, thúc đẩy hành vi chấp nhận rủi ro trong vùng mất và hành vi né tránh rủi ro trong vùng được.
 mechanism:
-- An outcome is framed as a loss.
-- The amygdala and insula trigger strong negative emotional responses.
-- The individual exhibits disproportionate effort to avoid realizing the loss.
+- Một kết quả được diễn giải như một sự mất mát.
+- Hạch hạnh nhân và vỏ đảo kích hoạt các phản ứng cảm xúc tiêu cực mạnh mẽ.
+- Cá nhân nỗ lực một cách không cân xứng để tránh hiện thực hóa sự mất mát.
 conditions:
-- Clear visibility of what might be lost.
+- Khả năng nhìn thấy rõ những gì có thể mất.
 exceptions:
-- When trading routine commodities (e.g., spending money to buy coffee).
+- 'Khi giao dịch các loại hàng hóa thông thường (ví dụ: tiêu tiền để mua cà phê).'
 applications:
   change_management:
-  - Frame the cost of not changing (losses) rather than just the benefits of changing
-    (gains).
+  - Diễn giải chi phí của việc không thay đổi (mất mát) thay vì chỉ nêu lợi ích của việc thay đổi (thắng lợi).
 risks:
-- Refusal to cut losses on failing projects (escalation of commitment).
+- Từ chối cắt lỗ đối với các dự án đang thất bại (leo thang cam kết).
 evidence:
   level: strong
   references:
-  - 'Kahneman, D., & Tversky, A. (1979). ''Prospect Theory: An Analysis of Decision
-    under Risk''.'
+  - 'Kahneman, D., & Tversky, A. (1979). ''Prospect Theory: An Analysis of Decision under Risk''.'
 relations:
   supports: []
   conflicts_with: []
@@ -36,7 +31,9 @@ relations:
 tags:
 - loss-aversion
 - risk
+- prospect-theory
+- gains-and-losses
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

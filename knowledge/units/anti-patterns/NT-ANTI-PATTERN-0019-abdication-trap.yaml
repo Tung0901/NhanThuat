@@ -2,21 +2,21 @@ id: NT-ANTI-PATTERN-0019
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Abdication Trap
-summary: Abdication Trap structural knowledge unit.
+title: Bẫy buông bỏ trách nhiệm
+summary: Đơn vị kiến thức cấu trúc về mẫu chống hình Bẫy buông bỏ trách nhiệm (Abdication Trap).
 primary_domain: dung-nhan
 secondary_domains:
 - tri-nhan
-definition: Formal definition of Abdication Trap in NhanThuat architecture.
+definition: Định nghĩa chính thức về mẫu chống hình Bẫy buông bỏ trách nhiệm trong kiến trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Các bối cảnh quản trị vận hành.
 exceptions:
-- Emergency crisis overrides.
+- Các trường hợp ghi đè quyền hạn trong khủng hoảng khẩn cấp.
 applications:
   governance:
-  - Apply Abdication Trap to organizational workflows.
+  - Áp dụng nhận diện Bẫy buông bỏ trách nhiệm vào quy trình làm việc của tổ chức.
 risks:
-- Misapplication of Abdication Trap leading to suboptimal performance.
+- Áp dụng sai hoặc xử lý không đúng Bẫy buông bỏ trách nhiệm dẫn đến hiệu suất kém tối ưu.
 evidence:
   level: supported
   references:
@@ -30,5 +30,10 @@ relations:
 tags:
 - anti-pattern
 - dung-nhan
+- abdication-trap
+- delegation-failure
+- leadership-trap
+- accountability-evasion
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

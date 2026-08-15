@@ -1,24 +1,23 @@
 id: NT-PHENOMENON-3202
 type: phenomenon
-title: Zeigarnik Effect
-summary: People remember uncompleted or interrupted tasks better than completed tasks.
+title: Hiệu ứng Zeigarnik
+summary: Con người nhớ những nhiệm vụ chưa hoàn thành hoặc bị gián đoạn tốt hơn những nhiệm vụ đã hoàn thành.
 primary_domain: tri-nhan
 domain_area: NT-DA-0028
-definition: A cognitive phenomenon where incomplete tasks create task-specific tension
-  that keeps the task active in working memory until resolution.
+definition: Một hiện tượng nhận thức, trong đó các nhiệm vụ chưa hoàn thành tạo ra một sức căng đặc thù khiến nhiệm vụ vẫn hoạt động trong bộ nhớ làm việc cho đến khi được giải quyết.
 mechanism:
-- Initiating a task creates a psychic tension.
-- Interrupting the task prevents the tension from resolving.
-- The unresolved tension keeps the memory of the task highly accessible.
+- Bắt đầu một nhiệm vụ tạo ra một sức căng tâm lý.
+- Việc gián đoạn nhiệm vụ ngăn cản sức căng được giải tỏa.
+- Sức căng chưa được giải quyết giữ ký ức về nhiệm vụ ở trạng thái dễ truy xuất cao.
 conditions:
-- Tasks that the individual genuinely intends to complete.
+- Các nhiệm vụ mà cá nhân thực sự có ý định hoàn thành.
 exceptions:
-- Tasks interrupted due to absolute failure or explicit abandonment.
+- Các nhiệm vụ bị gián đoạn do thất bại hoàn toàn hoặc bị chủ động từ bỏ.
 applications:
   marketing:
-  - Use cliffhangers or progress bars to induce completion tension.
+  - Sử dụng các tình tiết hồi hộp hoặc thanh tiến trình để tạo sức căng hoàn thành.
 risks:
-- Burnout caused by leaving too many 'open loops' at the end of the workday.
+- Kiệt sức do để lại quá nhiều 'vòng lặp mở' vào cuối ngày làm việc.
 evidence:
   level: strong
   references:
@@ -32,7 +31,10 @@ tags:
 - memory
 - tasks
 - completion
+- zeigarnik-effect
+- task-completion
+- interrupted-tasks
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

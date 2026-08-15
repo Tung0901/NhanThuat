@@ -2,24 +2,21 @@ id: NT-PRINCIPLE-0112
 type: principle
 status: frozen
 version: 0.1.0
-title: Enforce Asymmetric Risk Protection
-summary: Protect vulnerable stakeholders who bear asymmetric downside risk from executive
-  choices.
+title: Thực thi bảo vệ rủi ro bất đối xứng
+summary: Bảo vệ các bên liên quan dễ bị tổn thương, những người gánh chịu rủi ro chiều giảm bất đối xứng từ các quyết định của cấp điều hành.
 primary_domain: tu-than
 secondary_domains:
 - hop-chung
-definition: Ethical governance requires actively protecting parties who lack structural
-  power or information parity.
+definition: Quản trị có đạo đức đòi hỏi chủ động bảo vệ những bên thiếu quyền lực cấu trúc hoặc thiếu cân bằng thông tin.
 conditions:
-- Customer terms, employee safety, and environmental impact.
+- Điều khoản khách hàng, an toàn nhân viên và tác động môi trường.
 exceptions:
-- Sophisticated institutional counterparties operating with equal information parity.
+- Các đối tác tổ chức tinh vi hoạt động với mức cân bằng thông tin ngang nhau.
 applications:
   consumer_protection:
-  - Audit contract clauses to ensure clear refund and safety protections.
+  - Rà soát các điều khoản hợp đồng để đảm bảo có cơ chế hoàn tiền và bảo vệ an toàn rõ ràng.
 risks:
-- Over-protecting customers to the point of exposing the firm to fraudulent refund
-  abuse.
+- Bảo vệ khách hàng quá mức đến mức khiến công ty phải đối mặt với lạm dụng hoàn tiền gian lận.
 evidence:
   level: supported
   references:
@@ -34,5 +31,9 @@ tags:
 - ethics
 - risk-protection
 - governance
+- stakeholder-protection
+- consumer-protection
+- fairness
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

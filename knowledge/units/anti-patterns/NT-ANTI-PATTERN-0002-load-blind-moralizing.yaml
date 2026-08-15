@@ -2,18 +2,52 @@ id: NT-ANTI-PATTERN-0002
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Load-blind moralizing
-summary: A harmful pattern where degraded behavior under overload is immediately treated as laziness, disloyalty, or weak character.
+title: Đạo đức hóa bất chấp quá tải
+summary: Một mô hình độc hại trong đó hành vi suy giảm do quá tải ngay lập tức bị quy chụp là lười biếng, bất trung hoặc yếu kém về phẩm chất.
 primary_domain: tri-nhan
-secondary_domains: [tu-than, dung-nhan]
-definition: Load-blind moralizing skips diagnosis of capacity and system pressure, making repair and learning harder.
-mechanism: [Observe failure, Ignore load, Assign moral blame, Increase pressure.]
-conditions: [People are overloaded, leaders lack visibility into work or emotional demand.]
-exceptions: [Clear misconduct may require immediate accountability, repeated failure after load repair may reveal another issue.]
-applications: {management: [Check workload and decision pressure before moral conclusions.], coaching: [Separate load, skill, will, and values.]}
-risks: [Excusing harmful conduct, over-correcting into low standards.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0027], applies_to: []}
-tags: [anti-pattern, load, blame]
+secondary_domains:
+- tu-than
+- dung-nhan
+definition: Mô hình đạo đức hóa bất chấp quá tải bỏ qua việc chẩn đoán năng lực và áp lực hệ thống, khiến việc khắc phục và học hỏi trở nên khó khăn hơn.
+mechanism:
+- Quan sát thất bại
+- Bỏ qua áp lực tải
+- Gán tội về mặt đạo đức
+- Tăng thêm áp lực
+conditions:
+- Nhân sự đang trong tình trạng bị quá tải
+- Lãnh đạo thiếu góc nhìn toàn diện về khối lượng công việc hoặc áp lực cảm xúc.
+exceptions:
+- Hành vi sai trái rõ ràng có thể đòi hỏi trách nhiệm giải trình ngay lập tức
+- Thất bại lặp lại sau khi đã điều chỉnh tình trạng quá tải có thể phản ánh một vấn đề khác.
+applications:
+  management:
+  - Kiểm tra khối lượng công việc và áp lực ra quyết định trước khi đưa ra kết luận về mặt đạo đức.
+  coaching:
+  - Phân biệt rõ yếu tố tải công việc
+  - Kỹ năng
+  - Ý chí
+  - Và các giá trị.
+risks:
+- Bào chữa cho hành vi gây hại
+- Điều chỉnh quá đà dẫn đến việc hạ thấp các tiêu chuẩn.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0027
+  applies_to: []
+tags:
+- anti-pattern
+- load
+- blame
+- load-blind
+- moralizing
+- overload
+- blame-culture
+- capacity-diagnosis
 created_at: '2026-07-21'
-updated_at: '2026-07-21'
+updated_at: '2026-08-15'

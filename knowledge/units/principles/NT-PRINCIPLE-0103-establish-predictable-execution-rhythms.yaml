@@ -2,22 +2,21 @@ id: NT-PRINCIPLE-0103
 type: principle
 status: frozen
 version: 0.1.0
-title: Establish Predictable Execution Rhythms
-summary: Build fixed operational review beats (daily standups, weekly demos) to maintain
-  alignment.
+title: Thiết lập nhịp thực thi ổn định
+summary: Xây dựng các nhịp rà soát vận hành cố định (họp ngắn hằng ngày, demo hằng tuần) để duy trì sự thống nhất.
 primary_domain: dung-nhan
 secondary_domains:
 - hop-chung
-definition: Predictable meeting beats reduce ad-hoc coordination overhead.
+definition: Các nhịp họp có thể dự đoán trước giúp giảm chi phí phối hợp phát sinh ngoài kế hoạch.
 conditions:
-- Team execution management.
+- Quản lý thực thi của đội ngũ.
 exceptions:
-- Solo deep-work research assignments.
+- Các nhiệm vụ nghiên cứu cá nhân cần tập trung sâu.
 applications:
   ops_cadence:
-  - Establish 15-minute daily standup focusing on blockers.
+  - Thiết lập họp ngắn 15 phút mỗi ngày tập trung vào các điểm tắc nghẽn.
 risks:
-- Turning standups into low-value administrative reporting.
+- Biến họp ngắn thành các buổi báo cáo hành chính giá trị thấp.
 evidence:
   level: supported
   references:
@@ -32,5 +31,9 @@ tags:
 - execution
 - rhythm
 - cadence
+- standup
+- coordination
+- team-management
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

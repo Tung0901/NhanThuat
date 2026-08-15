@@ -1,26 +1,23 @@
 id: NT-PRINCIPLE-3205
 type: principle
-title: Action Prompting (Contextual Triggers)
-summary: Anchoring a new habit to an existing, reliable habit rather than relying
-  on time or memory.
+title: Mồi hành động (Tác nhân kích hoạt theo bối cảnh)
+summary: Gắn một thói quen mới vào một thói quen hiện có, đáng tin cậy thay vì dựa vào thời gian hoặc trí nhớ.
 primary_domain: tri-nhan
 domain_area: NT-DA-0028
-definition: The practical application of the cue phase of the habit loop, utilizing
-  existing automatic behaviors as the launchpad for new behaviors.
+definition: Sự vận dụng thực tiễn của giai đoạn tín hiệu trong vòng lặp thói quen, tận dụng các hành vi tự động hiện có làm bàn đạp cho các hành vi mới.
 mechanism:
-- Identify a habit that happens reliably every day without fail (e.g., brushing teeth).
-- Attach the new 'tiny habit' immediately after the existing habit.
-- The completion of the old habit serves as the automatic prompt for the new one.
+- 'Xác định một thói quen diễn ra đáng tin cậy mỗi ngày không trượt (ví dụ: đánh răng).'
+- Gắn "thói quen nhỏ" mới ngay sau thói quen hiện có.
+- Việc hoàn thành thói quen cũ đóng vai trò là tín hiệu tự động cho thói quen mới.
 conditions:
-- The anchor habit must be truly reliable and match the frequency desired for the
-  new habit.
+- Thói quen neo phải thực sự đáng tin cậy và khớp với tần suất mong muốn cho thói quen mới.
 exceptions:
-- When the anchor habit is easily disrupted by travel or weekend schedules.
+- Khi thói quen neo dễ bị gián đoạn bởi việc đi lại hoặc lịch trình cuối tuần.
 applications:
   habit_stacking:
-  - '''After I pour my morning coffee, I will write one line of code.'''
+  - '"Sau khi tôi rót cà phê buổi sáng, tôi sẽ viết một dòng mã."'
 risks:
-- Stacking too many new habits onto one anchor, causing the entire sequence to collapse.
+- Xếp chồng quá nhiều thói quen mới lên một thói quen neo, khiến toàn bộ chuỗi sụp đổ.
 evidence:
   level: strong
   references:
@@ -34,7 +31,11 @@ relations:
 tags:
 - habits
 - triggers
+- habit-stacking
+- cues
+- routine
+- anchoring
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

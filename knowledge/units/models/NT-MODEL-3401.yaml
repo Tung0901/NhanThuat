@@ -1,35 +1,27 @@
 id: NT-MODEL-3401
 type: model
-title: Elaboration Likelihood Model (ELM)
-summary: 'A dual-process theory describing the change of attitudes, identifying two
-  distinct routes to persuasion: central (logical) and peripheral (superficial).'
+title: Mô hình Khả năng Xử lý Kỹ lưỡng (ELM)
+summary: 'Lý thuyết quá trình kép mô tả sự thay đổi thái độ, xác định hai con đường thuyết phục riêng biệt: trung tâm (dựa trên logic) và ngoại vi (dựa trên bề nổi).'
 primary_domain: tri-nhan
 domain_area: NT-DA-0030
-definition: A comprehensive framework for understanding how likely people are to cognitively
-  elaborate on a persuasive message, predicting which persuasion techniques will be
-  most effective.
+definition: Khung lý thuyết toàn diện giúp hiểu mức độ người tiếp nhận có khả năng suy ngẫm sâu về một thông điệp thuyết phục, từ đó dự đoán kỹ thuật thuyết phục nào sẽ đạt hiệu quả cao nhất.
 mechanism:
-- 'Central Route: User is highly motivated and able to process. Persuasion requires
-  strong, logical arguments and data. Creates lasting attitude change.'
-- 'Peripheral Route: User has low motivation or ability. Persuasion occurs via superficial
-  cues (attractiveness, authority, heuristics). Creates temporary attitude change.'
-- The persuader must diagnose the audience's state and select the matching route.
+- 'Con đường trung tâm: Người tiếp nhận có động lực và khả năng xử lý thông tin cao. Quá trình thuyết phục đòi hỏi lập luận logic vững chắc cùng dữ liệu xác thực, tạo ra sự thay đổi thái độ bền vững.'
+- 'Con đường ngoại vi: Người tiếp nhận có động lực hoặc khả năng xử lý thấp. Quá trình thuyết phục diễn ra thông qua các tín hiệu bề nổi (sự hấp dẫn, uy quyền, lối tắt tư duy), tạo ra sự thay đổi thái độ tạm thời.'
+- Người thuyết phục cần đánh giá chính xác trạng thái tâm lý của đối tượng để lựa chọn con đường tiếp cận tương ứng.
 conditions:
-- Any persuasive communication, advertising, or debate.
+- Áp dụng trong mọi bối cảnh giao tiếp thuyết phục, chiến dịch quảng cáo hoặc tranh luận.
 exceptions:
-- Individuals acting purely on automatic reflex without any processing whatsoever.
+- Những cá nhân hành động hoàn toàn theo phản xạ tự động mà không trải qua bất kỳ quá trình xử lý nhận thức nào.
 applications:
   marketing:
-  - Use detailed spec sheets (central) for B2B enterprise software; use celebrity
-    endorsements (peripheral) for consumer energy drinks.
+  - Sử dụng bảng thông số kỹ thuật chi tiết (con đường trung tâm) cho phần mềm doanh nghiệp B2B; sử dụng hình ảnh người nổi tiếng (con đường ngoại vi) cho sản phẩm nước tăng lực đại trà.
 risks:
-- Attempting to use complex data to persuade a tired, distracted audience (resulting
-  in immediate tune-out).
+- Cố gắng dùng dữ liệu phức tạp để thuyết phục một nhóm đối tượng đang mệt mỏi, phân tâm (dẫn đến việc họ lập tức ngắt kết nối và bỏ qua thông điệp).
 evidence:
   level: strong
   references:
-  - Petty, R. E., & Cacioppo, J. T. (1986). 'The elaboration likelihood model of persuasion'.
-    Advances in experimental social psychology.
+  - Petty, R. E., & Cacioppo, J. T. (1986). 'The elaboration likelihood model of persuasion'. Advances in experimental social psychology.
 relations:
   supports: []
   conflicts_with: []
@@ -38,7 +30,12 @@ relations:
 tags:
 - persuasion
 - cognition
+- elaboration-likelihood-model
+- persuasion-routes
+- central-route
+- peripheral-route
+- attitude-change
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

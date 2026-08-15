@@ -2,29 +2,31 @@ id: NT-PRINCIPLE-0002
 type: principle
 status: frozen
 version: 0.1.0
-title: Match role, capability, and authority
-summary: Assign people to roles only when expected outcomes, required capability, and decision authority are aligned.
+title: Khớp vai trò, năng lực và quyền hạn
+summary: Giao việc cho người chỉ khi kết quả kỳ vọng, năng lực cần thiết và quyền ra quyết định được căn chỉnh với nhau.
 primary_domain: dung-nhan
-secondary_domains: [hop-chung, thanh-su]
-definition: A role becomes workable when the person has enough capability to perform it and enough authority to make the decisions the role requires.
+secondary_domains:
+- hop-chung
+- thanh-su
+definition: Một vai trò trở nên khả thi khi người đảm nhiệm có đủ năng lực để thực hiện và đủ quyền hạn để đưa ra các quyết định mà vai trò đòi hỏi.
 mechanism:
-  - Define the outcome required from the role.
-  - Identify the capability and judgment needed.
-  - Grant authority and resources that match the expected responsibility.
+- Xác định kết quả cần đạt từ vai trò.
+- Xác định năng lực và khả năng phán đoán cần thiết.
+- Trao quyền hạn và nguồn lực tương xứng với trách nhiệm kỳ vọng.
 conditions:
-  - The role has a defined outcome.
-  - Capability and authority can be assessed before or during assignment.
+- Vai trò có kết quả được định nghĩa rõ.
+- Năng lực và quyền hạn có thể được đánh giá trước hoặc trong khi giao việc.
 exceptions:
-  - Developmental assignments may intentionally stretch capability with support.
-  - Compliance or safety constraints may limit authority despite capability.
+- Nhiệm vụ phát triển có thể cố ý kéo dãn năng lực kèm hỗ trợ.
+- Ràng buộc tuân thủ hoặc an toàn có thể hạn chế quyền hạn dù có năng lực.
 applications:
   management:
-    - Check role fit before blaming execution failure.
+  - Kiểm tra độ phù hợp của vai trò trước khi đổ lỗi cho lỗi thực thi.
   hiring:
-    - Evaluate whether candidates can act with the autonomy the role requires.
+  - Đánh giá liệu ứng viên có thể hành động với quyền tự chủ mà vai trò yêu cầu hay không.
 risks:
-  - Giving responsibility without authority.
-  - Granting authority to someone without sufficient capability or support.
+- Trao trách nhiệm mà không có quyền hạn.
+- Trao quyền hạn cho người thiếu năng lực hoặc thiếu hỗ trợ.
 evidence:
   level: provisional
   references: []
@@ -33,6 +35,11 @@ relations:
   conflicts_with: []
   depends_on: []
   applies_to: []
-tags: [role-fit, capability, authority, delegation]
+tags:
+- role-fit
+- capability
+- authority
+- delegation
+- role-design
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

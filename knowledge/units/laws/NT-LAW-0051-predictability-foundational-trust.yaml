@@ -2,21 +2,21 @@ id: NT-LAW-0051
 type: law
 status: frozen
 version: 0.1.0
-title: Predictability Foundational Trust
-summary: Predictability Foundational Trust structural knowledge unit.
+title: Niềm tin nền tảng từ tính khả đoán
+summary: Đơn vị tri thức cấu trúc về niềm tin nền tảng được thiết lập dựa trên tính nhất quán và khả đoán.
 primary_domain: hop-chung
 secondary_domains:
 - tri-nhan
-definition: Formal definition of Predictability Foundational Trust in NhanThuat architecture.
+definition: Định nghĩa chuẩn tắc về niềm tin nền tảng từ tính khả đoán trong cấu trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Bối cảnh quản trị vận hành tổ chức.
 exceptions:
-- Emergency crisis overrides.
+- Cơ chế can thiệp ưu tiên trong tình trạng khủng hoảng khẩn cấp.
 applications:
   governance:
-  - Apply Predictability Foundational Trust to organizational workflows.
+  - Ứng dụng nguyên lý niềm tin nền tảng từ tính khả đoán vào quy trình làm việc tổ chức.
 risks:
-- Misapplication of Predictability Foundational Trust leading to suboptimal performance.
+- Áp dụng sai nguyên lý niềm tin nền tảng từ tính khả đoán dẫn đến suy giảm hiệu suất tổ chức.
 evidence:
   level: supported
   references:
@@ -30,5 +30,11 @@ relations:
 tags:
 - law
 - hop-chung
+- foundational-trust
+- predictability
+- organizational-trust
+- behavioral-consistency
+- trust-building
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

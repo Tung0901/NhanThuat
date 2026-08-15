@@ -2,33 +2,31 @@ id: NT-PRINCIPLE-0006
 type: principle
 status: frozen
 version: 0.1.0
-title: Audit incentives before correcting behavior
-summary: Before correcting repeated behavior, inspect what the system rewards, punishes,
-  ignores, or makes easiest.
+title: Rà soát động lực trước khi sửa chữa hành vi
+summary: Trước khi sửa chữa hành vi lặp lại, hãy kiểm tra xem hệ thống đang khen thưởng, trừng phạt, phớt lờ hoặc làm dễ dàng điều gì.
 primary_domain: thanh-su
 secondary_domains:
 - dung-nhan
 - hop-chung
-definition: Behavior correction is stronger when it addresses the incentive pattern
-  that keeps reproducing the behavior.
+definition: Việc sửa chữa hành vi mạnh mẽ hơn khi nó nhắm vào khuôn mẫu động lực vốn không ngừng tái tạo ra hành vi đó.
 mechanism:
-- Identify repeated behavior
-- Trace reinforcement
-- Change correction and incentives together.
+- Xác định hành vi lặp lại.
+- Truy vết cơ chế củng cố.
+- Thay đổi việc sửa chữa và động lực cùng lúc.
 conditions:
-- The behavior repeats across time or people
-- The environment shapes payoff.
+- Hành vi lặp lại theo thời gian hoặc giữa nhiều người.
+- Môi trường định hình lợi ích nhận được.
 exceptions:
-- Single misconduct may require direct action
-- Personal capability may still matter.
+- Hành vi sai trái đơn lẻ có thể cần xử lý trực tiếp.
+- Năng lực cá nhân vẫn có thể đóng vai trò.
 applications:
   management:
-  - Check whether targets reward the behavior being criticized.
+  - Kiểm tra xem mục tiêu có đang khen thưởng hành vi bị chỉ trích hay không.
   operations:
-  - Remove rewards for workarounds that harm the mission.
+  - Loại bỏ phần thưởng cho các lối tắt gây hại cho sứ mệnh.
 risks:
-- Overlooking personal responsibility
-- Creating new gaming incentives.
+- Bỏ qua trách nhiệm cá nhân.
+- Tạo ra các động lực chơi khăm mới.
 evidence:
   level: provisional
   references: []
@@ -42,5 +40,7 @@ tags:
 - incentives
 - behavior
 - correction
+- reinforcement
+- systems-thinking
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

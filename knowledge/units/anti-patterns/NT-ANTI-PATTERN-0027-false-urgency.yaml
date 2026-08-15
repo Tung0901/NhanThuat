@@ -2,21 +2,21 @@ id: NT-ANTI-PATTERN-0027
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: False Urgency
-summary: False Urgency structural knowledge unit.
+title: Sự Khẩn Cấp Giả Tạo
+summary: Sự khẩn cấp giả tạo là tình trạng tổ chức liên tục tạo ra áp lực thời gian không cần thiết, biến mọi tác vụ thành báo động đỏ gây kiệt sức và giảm chất lượng quyết định.
 primary_domain: dung-nhan
 secondary_domains:
 - tri-nhan
-definition: Formal definition of False Urgency in NhanThuat architecture.
+definition: Định nghĩa chính thức về Sự khẩn cấp giả tạo trong kiến trúc NhanThuat, chỉ văn bản hóa hoặc thói quen quản lý coi mọi công việc đều là ưu tiên đột xuất mà không dựa trên căn cứ chiến lược thực tế.
 conditions:
-- Operational governance contexts.
+- Các bối cảnh quản trị vận hành và quản lý tiến độ công việc.
 exceptions:
-- Emergency crisis overrides.
+- Các trường hợp xử lý sự cố thực sự hoặc khủng hoảng khẩn cấp.
 applications:
   governance:
-  - Apply False Urgency to organizational workflows.
+  - Áp dụng việc loại bỏ Sự khẩn cấp giả tạo vào quy trình sắp xếp thứ tự ưu tiên và quản lý dòng công việc.
 risks:
-- Misapplication of False Urgency leading to suboptimal performance.
+- Khắc phục sai Sự khẩn cấp giả tạo có thể dẫn đến tâm lý chủ quan và phản ứng chậm chạp trước các rủi ro thực sự.
 evidence:
   level: supported
   references:
@@ -30,5 +30,11 @@ relations:
 tags:
 - anti-pattern
 - dung-nhan
+- false-urgency
+- artificial-deadlines
+- priority-mismanagement
+- organizational-stress
+- time-management-anti-pattern
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

@@ -1,32 +1,27 @@
 id: NT-PHENOMENON-3101
 type: phenomenon
-title: Reference Dependence
-summary: Outcomes are evaluated not on their absolute value, but as positive or negative
-  deviations (gains or losses) from a subjective reference point.
+title: Phụ thuộc điểm tham chiếu
+summary: Kết quả không được đánh giá theo giá trị tuyệt đối, mà theo độ lệch tích cực hoặc tiêu cực (thắng hoặc thua) so với một điểm tham chiếu chủ quan.
 primary_domain: tri-nhan
 domain_area: NT-DA-0027
-definition: The core psychological mechanism of Prospect Theory where the baseline
-  status quo (or expectation) dictates whether an outcome is perceived as a success
-  or failure.
+definition: Cơ chế tâm lý cốt lõi của Lý thuyết triển vọng, trong đó hiện trạng (hoặc kỳ vọng) nền tảng quyết định liệu một kết quả được nhìn nhận là thành công hay thất bại.
 mechanism:
-- A baseline reference point is established (e.g., current salary).
-- New outcomes are compared strictly against this baseline.
-- The absolute level of wealth matters less than the delta from the reference.
+- 'Một điểm tham chiếu nền tảng được thiết lập (ví dụ: mức lương hiện tại).'
+- Các kết quả mới được so sánh nghiêm ngặt với điểm tham chiếu này.
+- Mức tài sản tuyệt đối ít quan trọng hơn độ lệch so với điểm tham chiếu.
 conditions:
-- Situations where expectations or status quo are highly salient.
+- Các tình huống mà kỳ vọng hoặc hiện trạng nổi bật rõ rệt.
 exceptions:
-- Basic survival needs where absolute thresholds matter more than relative changes.
+- Các nhu cầu sinh tồn cơ bản, nơi các ngưỡng tuyệt đối quan trọng hơn các thay đổi tương đối.
 applications:
   negotiation:
-  - Manage expectations early to anchor the reference point favorably.
+  - Quản lý kỳ vọng sớm để neo điểm tham chiếu theo hướng có lợi.
 risks:
-- Employee dissatisfaction despite high absolute compensation, if the reference point
-  (e.g., a peer's salary) is higher.
+- 'Nhân viên bất mãn dù có mức đãi ngộ tuyệt đối cao, nếu điểm tham chiếu (ví dụ: lương của đồng nghiệp) cao hơn.'
 evidence:
   level: strong
   references:
-  - 'Tversky, A., & Kahneman, D. (1991). ''Loss Aversion in Riskless Choice: A Reference-Dependent
-    Model''. Quarterly Journal of Economics.'
+  - 'Tversky, A., & Kahneman, D. (1991). ''Loss Aversion in Riskless Choice: A Reference-Dependent Model''. Quarterly Journal of Economics.'
 relations:
   supports: []
   conflicts_with: []
@@ -36,7 +31,10 @@ relations:
 tags:
 - reference-point
 - expectations
+- reference-dependence
+- prospect-theory
+- anchoring
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

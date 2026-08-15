@@ -2,21 +2,21 @@ id: NT-ANTI-PATTERN-0033
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Positional Forcing
-summary: Positional Forcing structural knowledge unit.
+title: Ép buộc dựa trên vị thế
+summary: Đơn vị kiến thức cấu trúc về Ép buộc dựa trên vị thế (Positional Forcing) trong quản trị hành vi và đàm phán.
 primary_domain: dung-nhan
 secondary_domains:
 - tri-nhan
-definition: Formal definition of Positional Forcing in NhanThuat architecture.
+definition: Định nghĩa chính thức về Ép buộc dựa trên vị thế trong kiến trúc Nhân Thuật, chỉ việc lạm dụng quyền lực, địa vị hoặc lợi thế sẵn có để áp đặt quyết định lên bên yếu thế hơn mà không dựa trên sự đồng thuận hay lý lẽ khách quan.
 conditions:
-- Operational governance contexts.
+- Các bối cảnh quản trị vận hành tổ chức.
 exceptions:
-- Emergency crisis overrides.
+- Các trường hợp ghi đè trong tình huống khủng hoảng khẩn cấp.
 applications:
   governance:
-  - Apply Positional Forcing to organizational workflows.
+  - Nhận diện và xử lý hành vi ép buộc dựa trên vị thế trong quy trình làm việc tổ chức.
 risks:
-- Misapplication of Positional Forcing leading to suboptimal performance.
+- Việc áp dụng sai hoặc lạm dụng ép buộc dựa trên vị thế dẫn đến sự bất mãn và giảm hiệu suất làm việc.
 evidence:
   level: supported
   references:
@@ -30,5 +30,10 @@ relations:
 tags:
 - anti-pattern
 - dung-nhan
+- positional-forcing
+- power-abuse
+- coercive-power
+- negotiation-risk
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

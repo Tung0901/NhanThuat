@@ -2,34 +2,32 @@ id: NT-PRINCIPLE-0043
 type: principle
 status: frozen
 version: 0.1.0
-title: Preserve standards while protecting candor
-summary: Keep standards explicit while making it safe for people to report gaps, risks,
-  and mistakes early.
+title: Giữ chuẩn mực đồng thời bảo vệ sự thẳng thắn
+summary: Giữ chuẩn mực minh bạch đồng thời làm cho mọi người an toàn khi báo cáo khoảng trống, rủi ro và sai lầm sớm.
 primary_domain: hop-chung
 secondary_domains:
 - dung-nhan
 - thanh-su
-definition: High standards and candor support each other when reporting problems is
-  treated as responsibility rather than disloyalty or incompetence.
+definition: Chuẩn mực cao và sự thẳng thắn hỗ trợ lẫn nhau khi việc báo cáo vấn đề được coi là trách nhiệm thay vì không trung thành hay bất tài.
 mechanism:
-- Affirm the standard
-- Reward early reporting
-- Close the loop with corrective action.
+- Khẳng định chuẩn mực
+- Khen thưởng báo cáo sớm
+- Khép kín vòng lặp bằng hành động khắc phục.
 conditions:
-- Quality or trust depends on early truth
-- People may hide problems.
+- Chất lượng hoặc niềm tin phụ thuộc vào sự thật sớm
+- Mọi người có thể che giấu vấn đề.
 exceptions:
-- Repeated concealment may require accountability
-- Confidential constraints may limit disclosure.
+- Che giấu lặp lại có thể cần trách nhiệm giải trình
+- Ràng buộc bảo mật có thể giới hạn việc tiết lộ.
 applications:
   operations:
-  - Recognize early risk signals before celebrating outcomes.
+  - Nhận diện tín hiệu rủi ro sớm trước khi ăn mừng kết quả.
   leadership:
-  - Make truth-telling part of the standard
-  - not an exception to it.
+  - Làm cho việc nói sự thật thành một phần của chuẩn mực
+  - không phải ngoại lệ của nó.
 risks:
-- Lowering standards in the name of safety
-- Punishing candor indirectly.
+- Hạ thấp chuẩn mực nhân danh an toàn
+- Trừng phạt sự thẳng thắn một cách gián tiếp.
 evidence:
   level: provisional
   references: []
@@ -44,5 +42,7 @@ tags:
 - candor
 - standards
 - learning
+- psychological-safety
+- risk-reporting
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

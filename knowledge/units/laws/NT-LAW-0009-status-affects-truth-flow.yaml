@@ -2,36 +2,34 @@ id: NT-LAW-0009
 type: law
 status: frozen
 version: 0.1.0
-title: Status affects truth flow
-summary: People filter what they say upward, downward, and sideways according to perceived
-  power, safety, status, and consequence.
+title: Địa vị ảnh hưởng đến dòng chảy thông tin
+summary: Mọi người thường chọn lọc những gì họ nói lên trên, xuống dưới và sang ngang dựa trên nhận thức về quyền lực, sự an toàn, địa vị và hệ quả đi kèm.
 primary_domain: hop-chung
 secondary_domains:
 - tri-nhan
 - thanh-su
-definition: Information flow is shaped by social risk; people reveal or withhold truth
-  based on what they expect will happen after speaking.
+definition: Dòng chảy thông tin được định hình bởi rủi ro xã hội; mọi người tiết lộ hoặc che giấu sự thật dựa trên những gì họ dự đoán sẽ xảy ra sau khi lên tiếng.
 mechanism:
-- Assess audience and power
-- Estimate consequence
-- Share
-- soften
-- delay
-- or hide information.
+- Đánh giá đối tượng người nghe và quyền lực
+- Ước tính hệ quả
+- Chia sẻ
+- giảm nhẹ
+- trì hoãn
+- hoặc che giấu thông tin.
 conditions:
-- Information has social or material consequence
-- People care about future standing.
+- Thông tin có sức ảnh hưởng đến xã hội hoặc lợi ích vật chất
+- Mọi người quan tâm đến vị thế tương lai của mình.
 exceptions:
-- High trust can increase candor
-- Formal protection may reduce fear.
+- Sự tin tưởng cao có thể thúc đẩy sự thẳng thắn
+- Các cơ chế bảo vệ chính thức có thể làm giảm nỗi sợ hãi.
 applications:
   leadership:
-  - Design channels where bad news can travel safely.
+  - Thiết kế các kênh thông tin giúp tin xấu có thể được báo cáo một cách an toàn.
   governance:
-  - Treat silence as a possible risk signal.
+  - Coi sự im lặng là một tín hiệu rủi ro tiềm ẩn.
 risks:
-- Punishing truth while asking for transparency
-- Confusing politeness with alignment.
+- Trừng phạt sự thật trong khi vẫn yêu cầu sự minh bạch
+- Nhầm lẫn giữa sự lịch thiệp xã giao với sự đồng thuận thực chất.
 evidence:
   level: provisional
   references: []
@@ -47,5 +45,10 @@ tags:
 - status
 - truth
 - communication
+- status-bias
+- psychological-safety
+- information-flow
+- organizational-silence
+- truth-to-power
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

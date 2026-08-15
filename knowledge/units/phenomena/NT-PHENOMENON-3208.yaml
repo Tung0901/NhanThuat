@@ -1,30 +1,27 @@
 id: NT-PHENOMENON-3208
 type: phenomenon
-title: Pre-commitment
-summary: Making a binding decision in advance when in a cold, rational state to prevent
-  acting irrationally in a future hot state.
+title: Cam kết trước
+summary: Đưa ra một quyết định ràng buộc từ trước khi ở trạng thái lý trí, điềm tĩnh nhằm ngăn chặn hành động thiếu lý trí ở trạng thái bốc đồng trong tương lai.
 primary_domain: tri-nhan
 domain_area: NT-DA-0028
-definition: The psychological mechanism behind commitment devices, rooted in the awareness
-  of one's own time-inconsistent preferences.
+definition: Cơ chế tâm lý nền tảng của các công cụ cam kết, bắt nguồn từ nhận thức về sở thích không nhất quán theo thời gian của chính mình.
 mechanism:
-- The individual foresees a future self-control failure.
-- They alter the choice architecture of their future environment.
-- The future self is forced to execute the rational plan.
+- Cá nhân dự đoán trước một lần thất bại trong tự kiểm soát trong tương lai.
+- Họ thay đổi kiến trúc lựa chọn của môi trường tương lai.
+- Bản thân trong tương lai bị buộc phải thực hiện kế hoạch hợp lý.
 conditions:
-- High metacognitive awareness of personal flaws.
+- Nhận thức siêu nhận thức cao về những điểm yếu của bản thân.
 exceptions:
-- When the future state is highly unpredictable.
+- Khi trạng thái tương lai khó dự đoán ở mức cao.
 applications:
   health:
-  - Buying annual gym memberships; deleting food delivery apps.
+  - Mua thẻ hội viên phòng gym theo năm; xóa các ứng dụng giao đồ ăn.
 risks:
-- Resentment toward the past self when the constraint is triggered.
+- Sự bực bội hướng về bản thân trong quá khứ khi ràng buộc bị kích hoạt.
 evidence:
   level: strong
   references:
-  - 'Ariely, D., & Wertenbroch, K. (2002). ''Procrastination, deadlines, and performance:
-    Self-control by precommitment''. Psychological Science.'
+  - 'Ariely, D., & Wertenbroch, K. (2002). ''Procrastination, deadlines, and performance: Self-control by precommitment''. Psychological Science.'
 relations:
   supports:
   - NT-PRINCIPLE-3201
@@ -34,7 +31,12 @@ relations:
 tags:
 - willpower
 - planning
+- pre-commitment
+- commitment-devices
+- self-control
+- time-inconsistency
+- choice-architecture
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

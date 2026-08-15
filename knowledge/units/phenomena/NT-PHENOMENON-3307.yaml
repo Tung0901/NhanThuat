@@ -1,35 +1,28 @@
 id: NT-PHENOMENON-3307
 type: phenomenon
-title: Social Loafing (Ringelmann Effect)
-summary: The phenomenon of a person exerting less effort to achieve a goal when they
-  work in a group than when they work alone.
+title: Ỷ lại xã hội (Hiệu ứng Ringelmann)
+summary: Hiện tượng một người nỗ lực ít hơn để đạt được mục tiêu khi làm việc trong nhóm so với khi làm việc một mình.
 primary_domain: tri-nhan
 domain_area: NT-DA-0029
-definition: A reduction in individual effort and motivation that occurs when people
-  work in groups compared to when they work individually, scaling with the size of
-  the group.
+definition: Sự sụt giảm nỗ lực và động lực của từng cá nhân xảy ra khi con người làm việc theo nhóm so với khi làm việc độc lập, tỉ lệ thuận với quy mô của nhóm.
 mechanism:
-- Individual contributions to the group outcome cannot be easily measured or identified.
-- The individual realizes their lack of effort will go unnoticed.
-- Motivation drops, and they 'coast' on the effort of others.
+- Đóng góp của từng cá nhân cho kết quả của nhóm khó được đo lường hoặc nhận diện.
+- Cá nhân nhận ra rằng sự thiếu nỗ lực của mình sẽ không bị chú ý.
+- Động lực suy giảm, và họ "thảnh thơi" dựa vào công sức của người khác.
 conditions:
-- Additive tasks (where the outcome is the sum of all efforts) without individual
-  performance tracking.
+- Các nhiệm vụ cộng gộp (nơi kết quả là tổng của mọi nỗ lực) mà không có theo dõi hiệu suất từng cá nhân.
 exceptions:
-- When the task is highly engaging, meaningful, or when individual outputs are publicly
-  displayed.
+- Khi nhiệm vụ hấp dẫn, ý nghĩa ở mức cao hoặc khi kết quả của từng cá nhân được công khai.
 applications:
   team_structure:
-  - Keep project teams small (e.g., 'Two Pizza Teams') to maintain high visibility
-    of individual contributions.
+  - 'Giữ các nhóm dự án nhỏ (ví dụ: "Nhóm hai chiếc bánh pizza") để duy trì khả năng quan sát cao đối với đóng góp của từng cá nhân.'
 risks:
-- Bloated teams achieving less total output than smaller, leaner teams.
+- Các nhóm phình to đạt tổng sản lượng thấp hơn so với các nhóm nhỏ, gọn gàng hơn.
 evidence:
   level: strong
   references:
   - Ringelmann, M. (1913). 'Recherches sur les moteurs animés'.
-  - 'Latané, B., Williams, K., & Harkins, S. (1979). ''Many hands make light the work:
-    The causes and consequences of social loafing''.'
+  - 'Latané, B., Williams, K., & Harkins, S. (1979). ''Many hands make light the work: The causes and consequences of social loafing''.'
 relations:
   supports: []
   conflicts_with: []
@@ -39,7 +32,12 @@ tags:
 - teams
 - effort
 - loafing
+- social-loafing
+- ringelmann-effect
+- team-effort
+- free-riding
+- group-productivity
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

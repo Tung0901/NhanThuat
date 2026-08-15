@@ -2,33 +2,31 @@ id: NT-LAW-0017
 type: law
 status: frozen
 version: 0.1.0
-title: Proximity increases influence
-summary: People are influenced more by signals, people, and consequences that are
-  closer in time, space, relationship, or perceived relevance.
+title: Sự gần gũi làm tăng mức độ ảnh hưởng
+summary: Con người dễ bị ảnh hưởng hơn bởi các tín hiệu, con người và hệ quả có sự gần gũi hơn về mặt thời gian, không gian, mối quan hệ hoặc mức độ liên quan được nhận thức.
 primary_domain: tri-nhan
 secondary_domains:
 - hop-chung
 - thanh-su
-definition: Nearer cues tend to exert stronger influence because they are easier to
-  notice, feel, and act upon than distant abstractions.
+definition: Các tín hiệu gần hơn có xu hướng tạo ra ảnh hưởng mạnh mẽ hơn vì chúng dễ được chú ý, cảm nhận và hành động hơn so với những khái niệm trừu tượng xa xôi.
 mechanism:
-- Encounter a near cue
-- Feel higher immediacy
-- Give it more weight than distant concerns.
+- Bắt gặp một tín hiệu gần gũi
+- Cảm nhận mức độ cấp thiết cao hơn
+- Coi trọng nó hơn so với những mối bận tâm xa xôi.
 conditions:
-- Competing cues differ in immediacy
-- The person lacks a strong counter-system.
+- Các tín hiệu cạnh tranh có mức độ cấp thiết khác nhau
+- Cá nhân thiếu một hệ thống đối trọng mạnh mẽ.
 exceptions:
-- Strong values or plans can elevate distant goals
-- Crisis can reorder proximity.
+- Các giá trị hoặc kế hoạch mạnh mẽ có thể nâng cao tầm quan trọng của các mục tiêu xa
+- Khủng hoảng có thể sắp xếp lại thứ tự ưu tiên của sự gần gũi.
 applications:
   communication:
-  - Connect long-term goals to near consequences.
+  - Kết nối các mục tiêu dài hạn với các hệ quả trước mắt.
   management:
-  - Place key signals where decisions actually happen.
+  - Đặt các tín hiệu then chốt tại nơi các quyết định thực sự diễn ra.
 risks:
-- Overweighting the urgent over the important
-- Manipulating salience without substance.
+- Coi trọng việc khẩn cấp hơn việc quan trọng
+- Thao túng tính nổi bật mà không có thực chất.
 evidence:
   level: provisional
   references: []
@@ -44,5 +42,10 @@ tags:
 - proximity
 - influence
 - salience
+- proximity-bias
+- temporal-discounting
+- salience-effect
+- influence-tactics
+- decision-making
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

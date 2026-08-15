@@ -2,23 +2,21 @@ id: NT-PRINCIPLE-0106
 type: principle
 status: frozen
 version: 0.1.0
-title: Shorten Feedback Cycles
-summary: Break down complex initiatives to receive rapid telemetry from real-world
-  execution as early as possible.
+title: Rút ngắn chu kỳ phản hồi
+summary: Chia nhỏ các sáng kiến phức tạp để nhận dữ liệu giám sát từ thực thi thực tế sớm nhất có thể.
 primary_domain: tri-nhan
 secondary_domains:
 - thanh-su
-definition: Build small probes and early releases to gather real customer telemetry
-  before committing massive resources.
+definition: Xây dựng các phép thử nhỏ và phát hành sớm để thu thập dữ liệu giám sát thực tế từ khách hàng trước khi đầu tư nguồn lực khổng lồ.
 conditions:
-- Product development and strategy testing.
+- Phát triển sản phẩm và thử nghiệm chiến lược.
 exceptions:
-- Monolithic capital construction projects.
+- Các dự án xây dựng vốn lớn không thể chia nhỏ.
 applications:
   mvp_testing:
-  - Release minimal prototype features to test core customer assumptions.
+  - Phát hành các tính năng nguyên mẫu tối thiểu để kiểm chứng các giả định cốt lõi về khách hàng.
 risks:
-- Releasing unpolished prototypes that damage brand reputation.
+- Phát hành nguyên mẫu chưa trau chuốt làm tổn hại danh tiếng thương hiệu.
 evidence:
   level: supported
   references:
@@ -33,5 +31,9 @@ tags:
 - learning
 - feedback
 - probes
+- mvp
+- iteration
+- telemetry
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

@@ -2,33 +2,31 @@ id: NT-PRINCIPLE-0004
 type: principle
 status: frozen
 version: 0.1.0
-title: Map context before judging behavior
-summary: Before evaluating a person's choice, identify the constraints, incentives,
-  pressures, relationships, and timing that shaped it.
+title: Lập bản đồ bối cảnh trước khi đánh giá hành vi
+summary: Trước khi đánh giá lựa chọn của một người, hãy xác định các ràng buộc, động lực, áp lực, mối quan hệ và thời điểm đã định hình nên lựa chọn đó.
 primary_domain: tri-nhan
 secondary_domains:
 - tu-than
 - dung-nhan
-definition: Fair judgment begins by mapping the context that made an action seem sensible,
-  costly, urgent, or necessary to the actor.
+definition: Đánh giá công bằng bắt đầu bằng việc lập bản đồ bối cảnh khiến một hành động trở nên hợp lý, tốn kém, khẩn cấp hoặc cần thiết trong mắt chủ thể hành động.
 mechanism:
-- Name the decision context
-- Identify constraints and stakes
-- Judge behavior after context is visible.
+- Nêu rõ bối cảnh ra quyết định.
+- Xác định các ràng buộc và mức độ hệ trọng.
+- Đánh giá hành vi sau khi bối cảnh đã rõ ràng.
 conditions:
-- The behavior has meaningful consequence
-- Context can be reconstructed responsibly.
+- Hành vi có hệ quả đáng kể.
+- Bối cảnh có thể được tái dựng một cách có trách nhiệm.
 exceptions:
-- Immediate safety risks may require action before analysis
-- Context does not erase accountability.
+- Rủi ro an toàn tức thời có thể đòi hỏi hành động trước khi phân tích.
+- Bối cảnh không xóa bỏ trách nhiệm giải trình.
 applications:
   management:
-  - Ask what situation produced the behavior before correcting it.
+  - Hỏi điều gì trong tình huống đã tạo ra hành vi trước khi sửa chữa nó.
   coaching:
-  - Separate explanation from excuse.
+  - Tách biệt lời giải thích khỏi lời biện minh.
 risks:
-- Excusing harmful behavior
-- Ignoring stable patterns.
+- Biện minh cho hành vi có hại.
+- Bỏ qua các khuôn mẫu ổn định.
 evidence:
   level: provisional
   references: []
@@ -42,5 +40,7 @@ tags:
 - context
 - judgment
 - behavior
+- situational-analysis
+- fairness
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

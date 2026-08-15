@@ -2,28 +2,26 @@ id: NT-ANTI-PATTERN-0042
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Artificial Harmony
-summary: Suppressing honest task disagreement out of fear of conflict, creating fragile
-  consensus and hidden passive-aggressive friction.
+title: Sự Hòa Hợp Giả Tạo
+summary: Kìm hãm sự bất đồng chính đáng về công việc vì sợ xung đột, tạo ra sự đồng thuận mong manh và ma sát ngầm mang tính chống đối thụ động.
 primary_domain: hop-chung
 secondary_domains:
 - tri-nhan
-definition: Artificial harmony occurs when team members nod publicly while harboring
-  deep reservations.
+definition: Sự hòa hợp giả tạo xảy ra khi các thành viên trong đội ngũ gật đầu công khai nhưng lại mang trong mình những hoài nghi sâu sắc.
 mechanism:
-- Team encounters controversial decision.
-- Members remain silent to avoid debate.
-- Bad decision approved.
-- Execution fails.
+- Đội ngũ gặp phải một quyết định gây tranh cãi.
+- Các thành viên giữ im lặng để tránh tranh luận.
+- Quyết định tồi tệ được thông qua.
+- Quá trình thực thi thất bại.
 conditions:
-- Cultures with low psychological safety.
+- Văn hóa tổ chức có mức độ an toàn tâm lý thấp.
 exceptions:
-- Crisis execution phases requiring immediate unity.
+- Giai đoạn thực thi trong khủng hoảng đòi hỏi sự thống nhất ngay lập tức.
 applications:
   culture_audit:
-  - Identify teams with zero recorded dissent and low execution velocity.
+  - Nhận diện các đội ngũ không ghi nhận bất kỳ sự phản biện nào nhưng lại có tốc độ thực thi thấp.
 risks:
-- Mistaking artificial harmony for genuine organizational alignment.
+- Nhầm lẫn sự hòa hợp giả tạo với sự đồng lòng thực sự trong tổ chức.
 evidence:
   level: supported
   references:
@@ -39,5 +37,10 @@ tags:
 - conflict
 - harmony
 - anti-patterns
+- artificial-harmony
+- psychological-safety
+- conflict-avoidance
+- passive-aggression
+- groupthink
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'

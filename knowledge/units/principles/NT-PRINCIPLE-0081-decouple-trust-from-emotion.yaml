@@ -2,21 +2,21 @@ id: NT-PRINCIPLE-0081
 type: principle
 status: frozen
 version: 0.1.0
-title: Decouple Trust from Emotion
-summary: Decouple Trust from Emotion structural knowledge unit.
+title: Tách niềm tin khỏi cảm xúc
+summary: Tách niềm tin khỏi cảm xúc là một đơn vị tri thức cấu trúc trong kho tri thức Nhân Thuật.
 primary_domain: hop-chung
 secondary_domains:
 - tri-nhan
-definition: Formal definition of Decouple Trust from Emotion in NhanThuat architecture.
+definition: Định nghĩa chính thức của Nguyên tắc Tách niềm tin khỏi cảm xúc trong kiến trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Các bối cảnh quản trị vận hành.
 exceptions:
-- Emergency crisis overrides.
+- Các tình huống khẩn cấp yêu cầu vượt quyền ưu tiên.
 applications:
   governance:
-  - Apply Decouple Trust from Emotion to organizational workflows.
+  - Áp dụng Nguyên tắc Tách niềm tin khỏi cảm xúc vào các quy trình vận hành của tổ chức.
 risks:
-- Misapplication of Decouple Trust from Emotion leading to suboptimal performance.
+- Áp dụng sai Nguyên tắc Tách niềm tin khỏi cảm xúc dẫn đến hiệu suất dưới mức tối ưu.
 evidence:
   level: supported
   references:
@@ -30,5 +30,10 @@ relations:
 tags:
 - principle
 - hop-chung
+- trust
+- emotion
+- reliability
+- interpersonal-trust
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

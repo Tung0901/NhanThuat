@@ -2,21 +2,21 @@ id: NT-ANTI-PATTERN-0036
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Positional Bargaining Lock
-summary: Positional Bargaining Lock structural knowledge unit.
+title: Bế tắc thương lượng theo vị thế
+summary: Đơn vị kiến thức cấu trúc về Bế tắc thương lượng theo vị thế trong đàm phán tổ chức.
 primary_domain: thanh-su
 secondary_domains:
 - tri-nhan
-definition: Formal definition of Positional Bargaining Lock in NhanThuat architecture.
+definition: Định nghĩa chính thức về Bế tắc thương lượng theo vị thế trong kiến trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Các ngữ cảnh quản trị và vận hành tổ chức.
 exceptions:
-- Emergency crisis overrides.
+- Trường hợp đè quyền ưu tiên khi ứng phó với khủng hoảng khẩn cấp.
 applications:
   governance:
-  - Apply Positional Bargaining Lock to organizational workflows.
+  - Áp dụng nhận diện Bế tắc thương lượng theo vị thế vào quy trình làm việc của tổ chức.
 risks:
-- Misapplication of Positional Bargaining Lock leading to suboptimal performance.
+- Áp dụng không đúng Bế tắc thương lượng theo vị thế dẫn đến hiệu suất tổ chức không đạt mức tối ưu.
 evidence:
   level: supported
   references:
@@ -30,5 +30,11 @@ relations:
 tags:
 - anti-pattern
 - thanh-su
+- positional-bargaining
+- negotiation-deadlock
+- anchoring-bias
+- bargaining-lock
+- stubborn-positions
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

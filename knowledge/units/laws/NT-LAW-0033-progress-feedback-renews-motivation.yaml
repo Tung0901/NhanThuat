@@ -2,18 +2,50 @@ id: NT-LAW-0033
 type: law
 status: frozen
 version: 0.1.0
-title: Progress feedback renews motivation
-summary: Visible evidence of meaningful advancement fuels ongoing effort, whereas unmeasured or unacknowledged work accelerates demotivation and burnout.
+title: Phản hồi về tiến độ tái tạo động lực
+summary: Bằng chứng rõ ràng về sự tiến bộ có ý nghĩa sẽ tiếp thêm năng lượng cho nỗ lực không ngừng, trong khi công việc không được đo lường hoặc không được ghi nhận sẽ đẩy nhanh sự mất động lực và kiệt sức.
 primary_domain: tu-than
-secondary_domains: [thanh-su, tri-nhan]
-definition: Perceived movement toward a valued milestone acts as a psychological catalyst, renewing energy and reinforcing task engagement.
-mechanism: [Observe achievement, Experience efficacy, Renew energy, Recommit effort.]
-conditions: [Work is structured into meaningful steps with clear feedback loops.]
-exceptions: [Misleading or artificial progress metrics create cynicism rather than genuine motivation.]
-applications: {project-management: [Break long initiatives into frequent observable milestones.], execution: [Make work completion visible to operational teams.]}
-risks: [Celebrating superficial activity over genuine progress, metric manipulation.]
-evidence: {level: provisional, references: []}
-relations: {supports: [NT-PRINCIPLE-0056, NT-MODEL-0006, NT-ANTI-PATTERN-0007], conflicts_with: [], depends_on: [NT-LAW-0008], applies_to: []}
-tags: [motivation, progress, feedback, momentum]
+secondary_domains:
+- thanh-su
+- tri-nhan
+definition: Sự tiến triển cảm nhận được hướng tới một cột mốc giá trị đóng vai trò như chất xúc tác tâm lý, tái tạo năng lượng và củng cố sự gắn kết với nhiệm vụ.
+mechanism:
+- Quan sát thành quả
+- Cảm nhận tính hiệu quả
+- Tái tạo năng lượng
+- Tái cam kết nỗ lực.
+conditions:
+- Công việc được cấu trúc thành các bước có ý nghĩa với chu trình phản hồi rõ ràng.
+exceptions:
+- Các chỉ số tiến độ sai lệch hoặc giả tạo sẽ tạo ra sự hoài nghi thay vì động lực thực sự.
+applications:
+  project-management:
+  - Chia nhỏ các sáng kiến dài hạn thành những cột mốc định kỳ có thể quan sát được.
+  execution:
+  - Làm cho mức độ hoàn thành công việc hiển thị rõ ràng đối với các đội ngũ vận hành.
+risks:
+- Tôn vinh hoạt động bề nổi thay vì tiến độ thực chất
+- Thao túng số liệu đo lường.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports:
+  - NT-PRINCIPLE-0056
+  - NT-MODEL-0006
+  - NT-ANTI-PATTERN-0007
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0008
+  applies_to: []
+tags:
+- motivation
+- progress
+- feedback
+- momentum
+- progress-feedback
+- motivation-renewal
+- progress-principle
+- milestone-tracking
 created_at: '2026-07-21'
-updated_at: '2026-07-21'
+updated_at: '2026-08-15'

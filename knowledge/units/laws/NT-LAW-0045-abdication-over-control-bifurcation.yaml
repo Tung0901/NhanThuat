@@ -2,22 +2,21 @@ id: NT-LAW-0045
 type: law
 status: frozen
 version: 0.1.0
-title: Abdication Over-Control Bifurcation
-summary: Abdication Over-Control Bifurcation structural knowledge unit.
+title: Phân nhánh Thoái thác - Kiểm soát Quá mức
+summary: Đơn vị tri thức cấu trúc về Sự phân nhánh giữa Thoái thác và Kiểm soát Quá mức.
 primary_domain: dung-nhan
 secondary_domains:
 - tri-nhan
-definition: Formal definition of Abdication Over-Control Bifurcation in NhanThuat
-  architecture.
+definition: Định nghĩa chính thức về Phân nhánh Thoái thác - Kiểm soát Quá mức trong cấu trúc kiến trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Các bối cảnh quản trị và vận hành tổ chức.
 exceptions:
-- Emergency crisis overrides.
+- Các trường hợp can thiệp khẩn cấp khi xảy ra khủng hoảng.
 applications:
   governance:
-  - Apply Abdication Over-Control Bifurcation to organizational workflows.
+  - Áp dụng Phân nhánh Thoái thác - Kiểm soát Quá mức vào các luồng quy trình công việc của tổ chức.
 risks:
-- Misapplication of Abdication Over-Control Bifurcation leading to suboptimal performance.
+- Việc áp dụng sai Phân nhánh Thoái thác - Kiểm soát Quá mức dẫn đến hiệu suất vận hành kém tối ưu.
 evidence:
   level: supported
   references:
@@ -31,5 +30,11 @@ relations:
 tags:
 - law
 - dung-nhan
+- abdication-over-control
+- bifurcation-dilemma
+- micromanagement
+- leadership-balance
+- governance-extremes
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

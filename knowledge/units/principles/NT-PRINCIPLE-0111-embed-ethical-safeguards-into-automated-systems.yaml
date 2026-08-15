@@ -2,24 +2,21 @@ id: NT-PRINCIPLE-0111
 type: principle
 status: frozen
 version: 0.1.0
-title: Embed Ethical Safeguards into Automated Systems
-summary: Encode explicit ethical boundary checks and safety assertions directly into
-  automated BusinessOS workflows.
+title: Nhúng các rào chắn đạo đức vào hệ thống tự động
+summary: Mã hóa các kiểm tra ranh giới đạo đức và khẳng định an toàn trực tiếp vào các quy trình tự động của BusinessOS.
 primary_domain: tu-than
 secondary_domains:
 - dung-nhan
-definition: Do not rely solely on human goodwill. Build automated hard checks into
-  software code.
+definition: Đừng chỉ dựa vào thiện chí của con người. Hãy xây dựng các kiểm tra cứng tự động trong mã nguồn phần mềm.
 conditions:
-- AI subagent workflows and automated decision software.
+- Các quy trình làm việc của tiểu tác tử AI và phần mềm ra quyết định tự động.
 exceptions:
-- Non-automated manual paper procedures.
+- Các quy trình giấy tờ thủ công, không tự động.
 applications:
   ai_safety:
-  - Embed ethical safeguard matrices in AI recommendation engines to block deceptive
-    advice.
+  - Nhúng ma trận rào chắn đạo đức vào các công cụ đề xuất AI để chặn những lời khuyên lừa dối.
 risks:
-- Creating brittle software checks that block legitimate emergency overrides.
+- Tạo ra các kiểm tra phần mềm cứng nhắc chặn cả các phá lệ khẩn cấp hợp lệ.
 evidence:
   level: supported
   references:
@@ -34,5 +31,9 @@ tags:
 - ethics
 - ai-safety
 - guardrails
+- automation
+- automated-decision-making
+- safeguards
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

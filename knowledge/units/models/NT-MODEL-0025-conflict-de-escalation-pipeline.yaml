@@ -2,28 +2,26 @@ id: NT-MODEL-0025
 type: model
 status: frozen
 version: 0.1.0
-title: Conflict De-Escalation Pipeline
-summary: A 4-stage operational model for neutralizing personal threat and restoring
-  task-focused alignment.
+title: Quy trình hạ nhiệt xung đột
+summary: Mô hình vận hành 4 giai đoạn nhằm vô hiệu hóa cảm giác bị đe dọa cá nhân và tái lập sự gắn kết tập trung vào nhiệm vụ.
 primary_domain: hop-chung
 secondary_domains:
 - tri-nhan
-definition: 'The Conflict De-Escalation Pipeline maps steps to resolve interpersonal
-  friction: Threat Neutralization, Issue Isolation, Interest Mapping, Agreement Commitment.'
+definition: 'Quy trình hạ nhiệt xung đột vạch ra các bước giải quyết mâu thuẫn giữa các cá nhân: Vô hiệu hóa mối đe dọa, Cô lập vấn đề, Lập bản đồ lợi ích, Cam kết thỏa thuận.'
 mechanism:
-- 'Stage 1: Reaffirm mutual respect.'
-- 'Stage 2: Isolate objective task facts.'
-- 'Stage 3: Map underlying interests.'
-- 'Stage 4: Agree on action commitments.'
+- 'Giai đoạn 1: Tái khẳng định sự tôn trọng lẫn nhau.'
+- 'Giai đoạn 2: Tách biệt và cô lập các sự kiện khách quan của nhiệm vụ.'
+- 'Giai đoạn 3: Lập bản đồ các lợi ích cốt lõi tiềm ẩn.'
+- 'Giai đoạn 4: Thống nhất các cam kết hành động.'
 conditions:
-- Active interpersonal conflict resolution in teams.
+- Giải quyết các xung đột giữa các cá nhân đang diễn ra trong đội nhóm.
 exceptions:
-- Legal disputes involving formal litigation.
+- Các tranh chấp pháp lý liên quan đến tố tụng chính thức.
 applications:
   coaching:
-  - Guide managers through de-escalating heated team arguments.
+  - Hướng dẫn các nhà quản lý cách xoa dịu những cuộc tranh cãi gay gắt trong nội bộ nhóm.
 risks:
-- Moving to Stage 3 before emotional threat is neutralized.
+- Chuyển sang Giai đoạn 3 trước khi mối đe dọa về mặt cảm xúc được vô hiệu hóa hoàn toàn.
 evidence:
   level: supported
   references:
@@ -38,5 +36,10 @@ tags:
 - conflict
 - pipeline
 - de-escalation
+- conflict-de-escalation
+- interpersonal-conflict
+- conflict-resolution
+- threat-neutralization
+- team-alignment
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'

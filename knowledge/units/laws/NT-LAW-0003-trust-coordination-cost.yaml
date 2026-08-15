@@ -2,37 +2,48 @@ id: NT-LAW-0003
 type: law
 status: frozen
 version: 0.1.0
-title: Trust reduces coordination cost
-summary: When people trust intent, competence, and follow-through, they need less monitoring, negotiation, and defensive checking to coordinate.
+title: Niềm tin làm giảm chi phí phối hợp
+summary: Khi mọi người tin tưởng vào ý định, năng lực và sự nhất quán trong hành động của nhau, họ sẽ cần ít sự giám sát, thương lượng và kiểm tra phòng vệ hơn để phối hợp.
 primary_domain: hop-chung
-secondary_domains: [dung-nhan, thanh-su]
-definition: Trust lowers the perceived cost of joint action by reducing uncertainty about whether others will act competently, honestly, and consistently.
+secondary_domains:
+- dung-nhan
+- thanh-su
+definition: Niềm tin làm giảm chi phí nhận thức của hành động chung bằng cách giảm bớt sự không chắc chắn về việc liệu những người khác có hành động một cách có năng lực, trung thực và nhất quán hay không.
 mechanism:
-  - A person estimates another party's intent, competence, and reliability.
-  - Higher trust reduces perceived need for control and verification.
-  - Lower coordination cost makes cooperation easier to start and sustain.
+- Một cá nhân đánh giá ý định, năng lực và độ tin cậy của bên kia.
+- Niềm tin cao hơn làm giảm nhu cầu kiểm soát và xác minh trong nhận thức.
+- Chi phí phối hợp thấp hơn giúp việc hợp tác dễ dàng bắt đầu và duy trì hơn.
 conditions:
-  - Parties have repeated signals or credible information about each other.
-  - The task requires some dependence between people.
+- Các bên có các tín hiệu lặp đi lặp lại hoặc thông tin đáng tin cậy về nhau.
+- Nhiệm vụ đòi hỏi sự phụ thuộc lẫn nhau nhất định giữa mọi người.
 exceptions:
-  - High stakes may still require explicit checks even when trust is high.
-  - Trust in intent does not replace competence or capacity.
+- Những tình huống có rủi ro cao vẫn có thể yêu cầu kiểm tra rõ ràng ngay cả khi niềm tin ở mức cao.
+- Niềm tin vào ý định không thể thay thế cho năng lực hoặc khả năng thực tế.
 applications:
   management:
-    - Build trust by making commitments visible and following through.
+  - Xây dựng niềm tin bằng cách làm cho các cam kết trở nên rõ ràng và thực hiện chúng một cách nhất quán.
   teamwork:
-    - Reduce unnecessary control where reliability has already been demonstrated.
+  - Giảm bớt sự kiểm soát không cần thiết ở những nơi mà độ tin cậy đã được chứng minh.
 risks:
-  - Treating trust as blind belief rather than calibrated confidence.
-  - Ignoring verification needs in high-risk contexts.
+- Coi niềm tin là sự tin tưởng mù quáng thay vì sự tự tin có cơ sở và được hiệu chuẩn.
+- Bỏ qua nhu cầu xác minh trong các bối cảnh có rủi ro cao.
 evidence:
   level: provisional
   references: []
 relations:
-  supports: [NT-PRINCIPLE-0003]
+  supports:
+  - NT-PRINCIPLE-0003
   conflicts_with: []
   depends_on: []
   applies_to: []
-tags: [trust, coordination, cooperation, reliability]
+tags:
+- trust
+- coordination
+- cooperation
+- reliability
+- trust-building
+- coordination-cost
+- transaction-costs
+- team-collaboration
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

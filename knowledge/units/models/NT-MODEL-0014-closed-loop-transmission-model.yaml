@@ -2,21 +2,21 @@ id: NT-MODEL-0014
 type: model
 status: frozen
 version: 0.1.0
-title: Closed Loop Transmission Model
-summary: Closed Loop Transmission Model structural knowledge unit.
+title: Mô hình Truyền thông Vòng lặp Kín
+summary: Đơn vị tri thức cấu trúc về Mô hình Truyền thông Vòng lặp Kín.
 primary_domain: tri-nhan
 secondary_domains:
 - hop-chung
-definition: Formal definition of Closed Loop Transmission Model in NhanThuat architecture.
+definition: Định nghĩa chính thức về Mô hình Truyền thông Vòng lặp Kín trong kiến trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Các bối cảnh quản trị vận hành.
 exceptions:
-- Emergency crisis overrides.
+- Các trường hợp khẩn cấp ghi đè do khủng hoảng.
 applications:
   governance:
-  - Apply Closed Loop Transmission Model to organizational workflows.
+  - Áp dụng Mô hình Truyền thông Vòng lặp Kín vào quy trình làm việc của tổ chức.
 risks:
-- Misapplication of Closed Loop Transmission Model leading to suboptimal performance.
+- Áp dụng sai Mô hình Truyền thông Vòng lặp Kín dẫn đến hiệu suất không tối ưu.
 evidence:
   level: supported
   references:
@@ -30,9 +30,13 @@ relations:
 tags:
 - model
 - tri-nhan
+- closed-loop
+- transmission-model
+- communication-feedback
+- organizational-governance
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
 mechanism:
-- 'Step 1: Identify Closed Loop Transmission Model.'
-- 'Step 2: Analyze parameters.'
-- 'Step 3: Execute model.'
+- 'Bước 1: Xác định Mô hình Truyền thông Vòng lặp Kín.'
+- 'Bước 2: Phân tích các tham số.'
+- 'Bước 3: Thực thi mô hình.'

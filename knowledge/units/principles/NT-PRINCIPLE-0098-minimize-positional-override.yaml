@@ -2,22 +2,21 @@ id: NT-PRINCIPLE-0098
 type: principle
 status: frozen
 version: 0.1.0
-title: Minimize Positional Override
-summary: Avoid overriding delegated decisions unless a fundamental boundary, safety,
-  or strategic violation has occurred.
+title: Tối thiểu hóa việc phủ quyết theo vị trí
+summary: Tránh bác bỏ các quyết định đã ủy quyền trừ khi xảy ra vi phạm cơ bản về ranh giới, an toàn hoặc chiến lược.
 primary_domain: dung-nhan
 secondary_domains:
 - tri-nhan
-definition: Frequently overriding a delegate's decision destroys their sense of agency.
+definition: Thường xuyên bác bỏ quyết định của người được ủy quyền sẽ hủy hoại ý thức chủ thể của họ.
 conditions:
-- Executive oversight of delegated teams.
+- Sự giám sát của cấp điều hành đối với các đội ngũ được ủy quyền.
 exceptions:
-- High-risk errors carrying existential consequence.
+- Các sai sót rủi ro cao mang hậu quả sống còn.
 applications:
   leadership_coaching:
-  - Coach executives to support subordinate choices even when suboptimal.
+  - Huấn luyện cấp điều hành ủng hộ các lựa chọn của cấp dưới ngay cả khi chưa tối ưu.
 risks:
-- Allowing catastrophic errors to proceed to avoid overriding.
+- Để các sai lầm thảm khốc xảy ra vì né tránh việc phủ quyết.
 evidence:
   level: supported
   references:
@@ -32,5 +31,9 @@ tags:
 - authority
 - override
 - delegation
+- agency
+- leadership
+- autonomy
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

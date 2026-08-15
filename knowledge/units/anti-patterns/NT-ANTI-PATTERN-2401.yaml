@@ -2,25 +2,25 @@ id: NT-ANTI-PATTERN-2401
 type: anti-pattern
 status: frozen
 version: 1.0.0
-title: Single Point of Failure
-summary: Phụ thuộc toàn bộ vào một nhân sự hoặc quy trình duy nhất.
+title: Điểm lỗi đơn lẻ
+summary: Sự phụ thuộc hoàn toàn vào một nhân sự, tài nguyên hoặc quy trình duy nhất trong tổ chức.
 primary_domain: hop-chung
 domain_area: NT-DA-0024
 secondary_domains:
 - thanh-su
-definition: Tập trung hóa quá mức nhằm tối ưu chi phí ngắn hạn tạo ra điểm chết.
+definition: Việc tập trung hóa quá mức nhằm tối ưu hóa chi phí ngắn hạn, vô tình tạo ra một điểm nghẽn có nguy cơ làm tê liệt toàn bộ hệ thống khi xảy ra sự cố.
 mechanism:
-- Giao quyền sinh sát cho một nút thắt.
-- Thiếu Cross-training.
+- Giao quyền quyết định hoặc kiểm soát cốt lõi cho một nút thắt duy nhất.
+- Thiếu hoạt động đào tạo chéo (cross-training) và chia sẻ kiến thức giữa các thành viên.
 conditions:
-- Bất kỳ tổ chức nào thiếu dự phòng.
+- Bất kỳ tổ chức hoặc quy trình vận hành nào thiếu cơ chế dự phòng và nhân sự thay thế.
 exceptions:
-- Chuyên môn hóa ở các vị trí không quan trọng.
+- Các vị trí chuyên môn hóa sâu nhưng không nằm trong chuỗi vận hành cốt lõi hoặc dễ dàng thay thế.
 applications:
   management:
-  - Luân chuyển công việc
+  - Thực hiện luân chuyển công việc định kỳ và xây dựng tài liệu quy trình chuẩn (SOP).
 risks:
-- Rủi ro sụp đổ tức thì
+- Nguy cơ sụp đổ hoặc đình trệ toàn bộ hệ thống ngay lập tức khi nhân sự chủ chốt rời đi hoặc gặp sự cố.
 evidence:
   level: supported
   references: []
@@ -32,5 +32,10 @@ relations:
 tags:
 - risk
 - dependency
+- single-point-of-failure
+- organizational-risk
+- cross-training
+- redundancy-planning
+- dependency-risk
 created_at: '2026-08-12'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

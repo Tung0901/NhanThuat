@@ -1,31 +1,27 @@
 id: NT-PHENOMENON-3105
 type: phenomenon
-title: Present Bias (Hyperbolic Discounting)
-summary: The tendency to disproportionately prefer smaller, immediate rewards over
-  larger, later rewards.
+title: Thiên kiến hiện tại (Chiết khấu hyperbolic)
+summary: Xu hướng ưa thích một cách không cân xứng những phần thưởng nhỏ, tức thì hơn những phần thưởng lớn hơn nhưng đến muộn hơn.
 primary_domain: tri-nhan
 domain_area: NT-DA-0027
-definition: A time-inconsistent model of discounting where the discount rate falls
-  rapidly for small delay periods and falls slowly for longer delay periods.
+definition: Một mô hình chiết khấu không nhất quán theo thời gian, trong đó tỷ lệ chiết khấu giảm nhanh với các khoảng thời gian trì hoãn ngắn và giảm chậm với các khoảng thời gian trì hoãn dài hơn.
 mechanism:
-- Immediate rewards trigger the limbic system (dopamine).
-- Future rewards require abstract processing in the prefrontal cortex.
-- The subjective value of the future reward is heavily discounted relative to the
-  immediate sensation.
+- Phần thưởng tức thì kích hoạt hệ viền (dopamine).
+- Phần thưởng tương lai đòi hỏi xử lý trừu tượng ở vỏ não trước trán.
+- Giá trị chủ quan của phần thưởng tương lai bị chiết khấu mạnh so với cảm giác tức thì.
 conditions:
-- When an immediate reward is tangibly available right now.
+- Khi một phần thưởng tức thì có thể đạt được một cách cụ thể ngay lúc này.
 exceptions:
-- When individuals use commitment devices to bind their future selves.
+- Khi cá nhân sử dụng các thiết bị ràng buộc cam kết để trói buộc bản thân trong tương lai.
 applications:
   incentives:
-  - Provide immediate, small recognition rather than solely relying on year-end bonuses.
+  - Đưa ra sự ghi nhận nhỏ, tức thì thay vì chỉ dựa vào thưởng cuối năm.
 risks:
-- Sacrificing long-term strategic architecture for short-term feature delivery.
+- Hy sinh kiến trúc chiến lược dài hạn để đổi lấy việc giao tính năng ngắn hạn.
 evidence:
   level: strong
   references:
-  - Laibson, D. (1997). 'Golden eggs and hyperbolic discounting'. Quarterly Journal
-    of Economics.
+  - Laibson, D. (1997). 'Golden eggs and hyperbolic discounting'. Quarterly Journal of Economics.
 relations:
   supports: []
   conflicts_with: []
@@ -35,7 +31,11 @@ tags:
 - time
 - discounting
 - impulse
+- present-bias
+- hyperbolic-discounting
+- delay-discounting
+- impulsivity
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

@@ -2,22 +2,21 @@ id: NT-PRINCIPLE-0084
 type: principle
 status: frozen
 version: 0.1.0
-title: Align Influence with Shared Purpose
-summary: Align Influence with Shared Purpose structural knowledge unit.
+title: Căn chỉnh ảnh hưởng với mục đích chung
+summary: Căn chỉnh ảnh hưởng với mục đích chung là một đơn vị tri thức cấu trúc trong kho tri thức Nhân Thuật.
 primary_domain: tri-nhan
 secondary_domains:
 - hop-chung
-definition: Formal definition of Align Influence with Shared Purpose in NhanThuat
-  architecture.
+definition: Định nghĩa chính thức của Nguyên tắc Căn chỉnh ảnh hưởng với mục đích chung trong kiến trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Các bối cảnh quản trị vận hành.
 exceptions:
-- Emergency crisis overrides.
+- Các tình huống khẩn cấp yêu cầu vượt quyền ưu tiên.
 applications:
   governance:
-  - Apply Align Influence with Shared Purpose to organizational workflows.
+  - Áp dụng Nguyên tắc Căn chỉnh ảnh hưởng với mục đích chung vào các quy trình vận hành của tổ chức.
 risks:
-- Misapplication of Align Influence with Shared Purpose leading to suboptimal performance.
+- Áp dụng sai Nguyên tắc Căn chỉnh ảnh hưởng với mục đích chung dẫn đến hiệu suất dưới mức tối ưu.
 evidence:
   level: supported
   references:
@@ -31,5 +30,10 @@ relations:
 tags:
 - principle
 - tri-nhan
+- influence
+- shared-purpose
+- alignment
+- persuasion-ethics
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

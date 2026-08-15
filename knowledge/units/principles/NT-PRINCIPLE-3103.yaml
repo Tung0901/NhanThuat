@@ -1,26 +1,23 @@
 id: NT-PRINCIPLE-3103
 type: principle
-title: Friction Addition for High-Risk Decisions
-summary: Intentionally introduce cognitive or physical friction to slow down automatic
-  processing (System 1) before irreversible or high-risk actions.
+title: Thêm trở ngại cho quyết định rủi ro cao
+summary: Cố ý đưa vào ma sát nhận thức hoặc vật lý để làm chậm quá trình xử lý tự động (Hệ thống 1) trước các hành động không thể đảo ngược hoặc rủi ro cao.
 primary_domain: tri-nhan
 domain_area: NT-DA-0027
-definition: 'The inverse of nudging: using choice architecture to deliberately make
-  an action harder to perform, forcing metacognitive reflection.'
+definition: 'Nghịch đảo của cú huých: sử dụng kiến trúc lựa chọn để cố ý khiến một hành động khó thực hiện hơn, buộc phải có phản tư siêu nhận thức.'
 mechanism:
-- Identify a catastrophic failure path often taken via automatic habit.
-- Insert a procedural roadblock (e.g., typing the name of the repo to delete it).
-- The roadblock breaks automaticity and forces System 2 engagement.
+- Xác định một đường thất bại thảm khốc thường được thực hiện qua thói quen tự động.
+- 'Chèn một rào cản thủ tục (ví dụ: gõ tên kho lưu trữ trước khi xóa nó).'
+- Rào cản phá vỡ tính tự động và buộc Hệ thống 2 tham gia.
 conditions:
-- Irreversible, high-cost, or highly secure operations.
+- Các thao tác không thể đảo ngược, chi phí cao hoặc yêu cầu bảo mật cao.
 exceptions:
-- High-frequency, low-risk operational tasks where friction causes fatigue.
+- Các tác vụ vận hành tần suất cao, rủi ro thấp, nơi ma sát gây ra sự mệt mỏi.
 applications:
   devops:
-  - Require secondary manual approval for production deployments on Friday afternoons.
+  - Yêu cầu phê duyệt thủ công lần hai cho các bản triển khai sản xuất vào chiều thứ Sáu.
 risks:
-- Alarm fatigue—if there is too much friction everywhere, users will automate bypassing
-  it.
+- Sự mệt mỏi vì cảnh báo — nếu có quá nhiều ma sát ở mọi nơi, người dùng sẽ tự động hóa việc né tránh nó.
 evidence:
   level: strong
   references:
@@ -35,7 +32,10 @@ tags:
 - friction
 - security
 - system2
+- choice-architecture
+- deployment
+- safeguards
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

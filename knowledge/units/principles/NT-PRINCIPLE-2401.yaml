@@ -2,14 +2,13 @@ id: NT-PRINCIPLE-2401
 type: principle
 status: frozen
 version: 1.0.0
-title: Fail Gracefully
+title: Thất bại có kiểm soát
 summary: Thiết kế hệ thống sao cho một lỗi cục bộ không kéo theo sự sụp đổ toàn bộ.
 primary_domain: hop-chung
 domain_area: NT-DA-0024
 secondary_domains:
 - thanh-su
-definition: Xây dựng hệ thống có thể hấp thụ lỗi và tiếp tục hoạt động ở mức độ suy
-  giảm.
+definition: Xây dựng hệ thống có thể hấp thụ lỗi và tiếp tục hoạt động ở mức độ suy giảm.
 mechanism:
 - Áp dụng nguyên lý vách ngăn.
 - Phân tán quyền quyết định.
@@ -33,5 +32,9 @@ relations:
 tags:
 - system-design
 - resilience
+- fail-gracefully
+- fault-tolerance
+- bulkheads
+- decentralization
 created_at: '2026-08-12'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

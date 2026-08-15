@@ -2,18 +2,46 @@ id: NT-PRINCIPLE-0057
 type: principle
 status: frozen
 version: 0.1.0
-title: Align rewards with internal mastery
-summary: Design incentives and recognition to celebrate skill growth, quality, and autonomy rather than purely transactional short-term quotas.
+title: Căn chỉnh phần thưởng với sự tinh thông nội tại
+summary: Thiết kế động lực và sự công nhận để tôn vinh sự phát triển kỹ năng, chất lượng và quyền tự chủ thay vì các hạn mức ngắn hạn thuần giao dịch.
 primary_domain: tu-than
-secondary_domains: [tri-nhan, thanh-su]
-definition: Rewards that recognize competence and growth strengthen intrinsic motivation, whereas rewards tied solely to crude quotas undermine intrinsic craft focus.
-mechanism: [Focus recognition on mastery and craft, Support skill development, Reinforce intrinsic pride, Sustain quality output.]
-conditions: [Work requires craft quality, high reliability, or long-term capability building.]
-exceptions: [Simple transactional piece-rate tasks may utilize direct output bonuses effectively.]
-applications: {compensation: [Structure rewards around professional progression and mastery.], recognition: [Praise skill improvement and problem-solving thoroughness.]}
-risks: [Subjective evaluation bias in measuring mastery.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0030, NT-LAW-0005], applies_to: []}
-tags: [motivation, principle, rewards, mastery]
+secondary_domains:
+- tri-nhan
+- thanh-su
+definition: Phần thưởng công nhận năng lực và sự phát triển củng cố động lực nội tại, trong khi phần thưởng chỉ gắn với hạn mức thô bạo làm suy yếu sự tập trung vào tay nghề nội tại.
+mechanism:
+- Tập trung công nhận vào sự tinh thông và tay nghề
+- Hỗ trợ phát triển kỹ năng
+- Củng cố niềm tự hào nội tại
+- Duy trì chất lượng đầu ra.
+conditions:
+- Công việc cần chất lượng tay nghề, độ tin cậy cao hoặc xây dựng năng lực dài hạn.
+exceptions:
+- Nhiệm vụ đơn giản trả theo sản phẩm có thể dùng thưởng theo đầu ra trực tiếp hiệu quả.
+applications:
+  compensation:
+  - Cấu trúc phần thưởng quanh sự thăng tiến nghề nghiệp và sự tinh thông.
+  recognition:
+  - Khen ngợi sự cải thiện kỹ năng và tính thấu đáo khi giải quyết vấn đề.
+risks:
+- Thiên kiến đánh giá chủ quan trong việc đo lường sự tinh thông.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0030
+  - NT-LAW-0005
+  applies_to: []
+tags:
+- motivation
+- principle
+- rewards
+- mastery
+- intrinsic-motivation
+- recognition
+- compensation
 created_at: '2026-07-21'
-updated_at: '2026-07-21'
+updated_at: '2026-08-15'

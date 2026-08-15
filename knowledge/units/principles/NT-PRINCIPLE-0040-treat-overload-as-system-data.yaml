@@ -2,36 +2,34 @@ id: NT-PRINCIPLE-0040
 type: principle
 status: frozen
 version: 0.1.0
-title: Treat overload as system data
-summary: Read overload as evidence about capacity, constraints, priorities, and design
-  instead of only as an individual resilience issue.
+title: Coi quá tải là dữ liệu hệ thống
+summary: Đọc quá tải như bằng chứng về năng lực, ràng buộc, ưu tiên và thiết kế thay vì chỉ là vấn đề sức chịu đựng cá nhân.
 primary_domain: thanh-su
 secondary_domains:
 - tu-than
 - hop-chung
-definition: Overload shows where demand exceeds capacity or clarity, so it should
-  trigger system diagnosis before moral judgment.
+definition: Quá tải cho thấy nơi nhu cầu vượt quá năng lực hoặc độ rõ ràng, nên nó phải kích hoạt chẩn đoán hệ thống trước khi phán xét đạo đức.
 mechanism:
-- Identify demand sources
-- Compare demand to capacity
-- Decide what to stop
-- delay
-- delegate
-- or redesign.
+- Xác định nguồn nhu cầu
+- So sánh nhu cầu với năng lực
+- Quyết định nên dừng
+- trì hoãn
+- ủy quyền
+- hay thiết kế lại.
 conditions:
-- People are persistently overloaded
-- Errors or delays are increasing.
+- Mọi người bị quá tải dai dẳng
+- Lỗi hoặc trễ hẹn đang gia tăng.
 exceptions:
-- Personal skill gaps may still matter
-- Short-term crises may require temporary stretch.
+- Khoảng trống kỹ năng cá nhân vẫn có thể quan trọng
+- Khủng hoảng ngắn hạn có thể cần vượt sức tạm thời.
 applications:
   management:
-  - Review work-in-progress and decision load.
+  - Rà soát công việc đang tiến hành và tải trọng ra quyết định.
   operations:
-  - Use overload signals to rebalance flow.
+  - Dùng tín hiệu quá tải để tái cân bằng luồng công việc.
 risks:
-- Excusing avoidable underperformance
-- Normalizing chronic overload.
+- Bào chữa cho kết quả kém có thể tránh được
+- Bình thường hóa quá tải kinh niên.
 evidence:
   level: provisional
   references: []
@@ -46,5 +44,8 @@ tags:
 - overload
 - capacity
 - systems
+- system-data
+- workload
+- diagnosis
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

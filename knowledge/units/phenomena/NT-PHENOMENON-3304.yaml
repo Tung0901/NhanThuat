@@ -1,36 +1,27 @@
 id: NT-PHENOMENON-3304
 type: phenomenon
-title: Groupthink
-summary: A psychological phenomenon that occurs within a group of people in which
-  the desire for harmony or conformity results in an irrational or dysfunctional decision-making
-  outcome.
+title: Tư duy bầy đàn
+summary: Hiện tượng tâm lý xảy ra trong một nhóm người khi mong muốn hòa hợp hoặc tuân thủ dẫn đến một kết quả ra quyết định phi lý hoặc rối loạn chức năng.
 primary_domain: tri-nhan
 domain_area: NT-DA-0029
-definition: A mode of thinking that people engage in when they are deeply involved
-  in a cohesive in-group, when the members' strivings for unanimity override their
-  motivation to realistically appraise alternative courses of action.
+definition: Một kiểu tư duy mà con người thực hiện khi họ tham gia sâu vào một nhóm nội bộ gắn kết chặt chẽ, khi nỗ lực đạt sự nhất trí của các thành viên lấn át động lực đánh giá một cách thực tế các phương án hành động thay thế.
 mechanism:
-- A highly cohesive group faces a complex decision.
-- To maintain group harmony and avoid conflict, dissenting opinions are self-censored
-  or actively suppressed.
-- The group creates illusions of invulnerability and unanimity, leading to catastrophic
-  miscalculations.
+- Một nhóm gắn kết cao đối mặt với một quyết định phức tạp.
+- Để duy trì sự hòa hợp trong nhóm và tránh xung đột, các ý kiến bất đồng bị tự kiểm duyệt hoặc chủ động bị đàn áp.
+- Nhóm tạo ra những ảo tưởng về tính bất khả xâm phạm và sự nhất trí, dẫn đến những tính toán sai lầm thảm khốc.
 conditions:
-- Highly cohesive, insulated groups led by a strong, directive leader under high stress.
+- Các nhóm gắn kết cao, biệt lập, dẫn dắt bởi một người lãnh đạo mạnh mẽ, chỉ đạo trực tiếp trong điều kiện áp lực cao.
 exceptions:
-- Groups that utilize formal 'red teaming' or designated devil's advocates.
+- Các nhóm sử dụng phương thức "red teaming" chính thức hoặc các người phản biện được chỉ định (devil's advocate).
 applications:
   decision_making:
-  - Leaders should withhold their own opinions until the end of the meeting to prevent
-    anchoring the group.
+  - Các nhà lãnh đạo nên giữ kín ý kiến của mình đến cuối buổi họp để tránh neo giữ định hướng của cả nhóm.
 risks:
-- Continuing with disastrous product launches or investments despite internal knowledge
-  that it will fail.
+- Tiếp tục các chiến dịch ra mắt sản phẩm hoặc khoản đầu tư thảm họa dù nội bộ biết rõ rằng chúng sẽ thất bại.
 evidence:
   level: strong
   references:
-  - 'Janis, I. L. (1972). ''Victims of Groupthink: A psychological study of foreign-policy
-    decisions and fiascoes''. Houghton Mifflin.'
+  - 'Janis, I. L. (1972). ''Victims of Groupthink: A psychological study of foreign-policy decisions and fiascoes''. Houghton Mifflin.'
 relations:
   supports: []
   conflicts_with: []
@@ -40,7 +31,10 @@ relations:
 tags:
 - groupthink
 - decision-making
+- conformity
+- unanimity
+- cohesion
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

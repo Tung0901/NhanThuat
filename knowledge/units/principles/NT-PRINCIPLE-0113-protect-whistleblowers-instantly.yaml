@@ -2,23 +2,21 @@ id: NT-PRINCIPLE-0113
 type: principle
 status: frozen
 version: 0.1.0
-title: Protect Whistleblowers Instantly
-summary: Guarantee total legal, financial, and physical protection to individuals
-  who report internal ethical violations.
+title: Bảo vệ người tố giác ngay lập tức
+summary: Đảm bảo sự bảo vệ tuyệt đối về pháp lý, tài chính và thể chất cho những cá nhân báo cáo các vi phạm đạo đức nội bộ.
 primary_domain: tu-than
 secondary_domains:
 - tri-nhan
-definition: Whistleblowers are the ultimate immune system of an organization. Establish
-  encrypted, anonymous reporting channels.
+definition: Người tố giác là hệ miễn dịch tối thượng của tổ chức. Hãy thiết lập các kênh báo cáo mã hóa, ẩn danh.
 conditions:
-- Corporate governance and compliance.
+- Quản trị doanh nghiệp và tuân thủ.
 exceptions:
-- Proven bad-faith false accusations made maliciously.
+- Các cáo buộc sai trái có chủ đích ác ý đã được chứng minh.
 applications:
   whistleblower_hotline:
-  - Deploy zero-knowledge encrypted reporting tools in BusinessOS.
+  - Triển khai công cụ báo cáo mã hóa zero-knowledge trong BusinessOS.
 risks:
-- Managing anonymous false accusations against innocent colleagues.
+- Xử lý các cáo buộc sai ẩn danh nhắm vào đồng nghiệp vô tội.
 evidence:
   level: supported
   references:
@@ -33,5 +31,9 @@ tags:
 - ethics
 - whistleblower
 - protection
+- governance
+- reporting-channels
+- speak-up
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

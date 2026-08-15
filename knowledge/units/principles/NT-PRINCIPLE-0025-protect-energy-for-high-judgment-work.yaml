@@ -2,33 +2,31 @@ id: NT-PRINCIPLE-0025
 type: principle
 status: frozen
 version: 0.1.0
-title: Protect energy for high-judgment work
-summary: Reserve people's best cognitive and emotional energy for decisions and interactions
-  where judgment matters most.
+title: Giữ năng lượng cho công việc đòi hỏi phán đoán cao
+summary: Dành năng lượng nhận thức và cảm xúc tốt nhất của con người cho các quyết định và tương tác nơi phán đoán quan trọng nhất.
 primary_domain: tu-than
 secondary_domains:
 - dung-nhan
 - thanh-su
-definition: High-judgment work should be scheduled and designed around real human
-  capacity, not treated as infinitely available effort.
+definition: Công việc đòi hỏi phán đoán cao nên được lên lịch và thiết kế quanh năng lực thực tế của con người, không được coi là nỗ lực vô hạn.
 mechanism:
-- Identify high-judgment work
-- Reserve energy and focus
-- Reduce low-value drain.
+- Xác định công việc đòi hỏi phán đoán cao.
+- Dành riêng năng lượng và sự tập trung.
+- Giảm các tiêu hao giá trị thấp.
 conditions:
-- The work requires judgment
-- Energy limits can affect quality.
+- Công việc đòi hỏi phán đoán.
+- Giới hạn năng lượng có thể ảnh hưởng đến chất lượng.
 exceptions:
-- Urgency may override ideal timing
-- Some routine work must still happen.
+- Tính khẩn cấp có thể vượt qua thời điểm lý tưởng.
+- Một số công việc thường nhật vẫn phải diễn ra.
 applications:
   execution:
-  - Place complex decisions before avoidable drain.
+  - Đặt các quyết định phức tạp trước những tiêu hao có thể tránh được.
   management:
-  - Reduce meeting load around critical judgment periods.
+  - Giảm tải cuộc họp quanh các giai đoạn phán đoán quan trọng.
 risks:
-- Overprotecting people from necessary workload
-- Treating energy as the only constraint.
+- Bảo vệ con người quá mức khỏi khối lượng công việc cần thiết.
+- Coi năng lượng là ràng buộc duy nhất.
 evidence:
   level: provisional
   references: []
@@ -42,5 +40,7 @@ tags:
 - energy
 - judgment
 - capacity
+- cognitive-load
+- performance
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

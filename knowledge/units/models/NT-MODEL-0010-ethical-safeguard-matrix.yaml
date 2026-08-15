@@ -2,21 +2,21 @@ id: NT-MODEL-0010
 type: model
 status: frozen
 version: 0.1.0
-title: Leadership Safeguard Matrix
-summary: Leadership Safeguard Matrix structural knowledge unit.
+title: Ma trận Bảo vệ Lãnh đạo
+summary: Đơn vị tri thức cấu trúc về Ma trận Bảo vệ Lãnh đạo trong quản trị tổ chức.
 primary_domain: dung-nhan
 secondary_domains:
 - tu-than
-definition: Formal definition of Leadership Safeguard Matrix in NhanThuat architecture.
+definition: Định nghĩa chính thức về Ma trận Bảo vệ Lãnh đạo trong cấu trúc Nhân Thuật, thiết lập các ranh giới bảo vệ quyền lực, uy tín và sự an toàn của cấp quản lý.
 conditions:
-- Operational governance contexts.
+- Áp dụng trong các bối cảnh quản trị vận hành tiêu chuẩn của tổ chức.
 exceptions:
-- Emergency crisis overrides.
+- Các trường hợp khủng hoảng khẩn cấp yêu cầu quyền can thiệp đặc biệt vượt quyền hạn thông thường.
 applications:
   governance:
-  - Apply Leadership Safeguard Matrix to organizational workflows.
+  - Áp dụng Ma trận Bảo vệ Lãnh đạo vào quy trình làm việc và phân cấp quyết định của tổ chức.
 risks:
-- Misapplication of Leadership Safeguard Matrix leading to suboptimal performance.
+- Việc áp dụng sai lệch Ma trận Bảo vệ Lãnh đạo có thể dẫn đến sự quan liêu, hiệu suất kém tối ưu và gây tắc nghẽn quyết định.
 evidence:
   level: supported
   references:
@@ -30,9 +30,13 @@ relations:
 tags:
 - model
 - dung-nhan
+- leadership-safeguard
+- governance-matrix
+- organizational-protection
+- risk-management
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
 mechanism:
-- 'Step 1: Identify Leadership Safeguard Matrix.'
-- 'Step 2: Analyze parameters.'
-- 'Step 3: Execute model.'
+- 'Bước 1: Xác định các thành phần và ranh giới của Ma trận Bảo vệ Lãnh đạo.'
+- 'Bước 2: Phân tích các tham số vận hành, mức độ rủi ro và quyền hạn liên quan.'
+- 'Bước 3: Triển khai mô hình bảo vệ vào thực tế vận hành của tổ chức.'

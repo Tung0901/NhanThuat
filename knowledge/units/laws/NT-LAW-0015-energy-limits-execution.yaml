@@ -2,34 +2,32 @@ id: NT-LAW-0015
 type: law
 status: frozen
 version: 0.1.0
-title: Energy limits execution
-summary: Execution quality declines when cognitive, emotional, or physical energy
-  falls below the demand of the work.
+title: Năng lượng giới hạn khả năng thực thi
+summary: Chất lượng thực thi sẽ suy giảm khi năng lượng nhận thức, cảm xúc hoặc thể chất giảm xuống dưới mức yêu cầu của công việc.
 primary_domain: tu-than
 secondary_domains:
 - dung-nhan
 - thanh-su
-definition: People cannot sustain judgment, discipline, and responsiveness when the
-  energy required by a task exceeds available capacity for too long.
+definition: Con người không thể duy trì khả năng phán đoán, kỷ luật và sự nhạy bén khi năng lượng cần thiết cho một nhiệm vụ vượt quá khả năng đáp ứng hiện có trong thời gian quá dài.
 mechanism:
-- Spend energy on decisions and action
-- Capacity declines under load
-- Quality falls or avoidance rises.
+- Tiêu hao năng lượng cho các quyết định và hành động
+- Khả năng đáp ứng suy giảm dưới áp lực công việc
+- Chất lượng giảm sút hoặc xu hướng né tránh gia tăng.
 conditions:
-- The work requires sustained attention or self-control
-- Recovery is limited.
+- Công việc đòi hỏi sự tập trung liên tục hoặc khả năng tự kiểm soát
+- Thời gian hoặc khả năng phục hồi bị hạn chế.
 exceptions:
-- Short bursts can exceed normal limits
-- Strong systems can reduce individual energy burden.
+- Những nỗ lực bộc phát trong ngắn hạn có thể vượt qua các giới hạn thông thường
+- Hệ thống vận hành mạnh mẽ có thể giảm bớt gánh nặng năng lượng cho từng cá nhân.
 applications:
   execution:
-  - Plan recovery as part of capacity
-  - not as an afterthought.
+  - Lập kế hoạch phục hồi như một phần của năng lực định mức
+  - chứ không phải là một phương án bổ sung sau cùng.
   management:
-  - Watch for energy constraints before diagnosing attitude problems.
+  - Xem xét các giới hạn về năng lượng trước khi quy kết cho các vấn đề về thái độ.
 risks:
-- Romanticizing exhaustion
-- Excusing poor design as personal weakness.
+- Lãng mạn hóa sự kiệt sức
+- Bao biện cho quy trình thiết kế kém là do điểm yếu của cá nhân.
 evidence:
   level: provisional
   references: []
@@ -44,5 +42,10 @@ tags:
 - energy
 - execution
 - capacity
+- energy-limits
+- execution-capacity
+- cognitive-fatigue
+- burnout-prevention
+- resource-depletion
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

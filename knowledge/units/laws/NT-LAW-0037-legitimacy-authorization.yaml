@@ -2,21 +2,21 @@ id: NT-LAW-0037
 type: law
 status: frozen
 version: 0.1.0
-title: Legitimacy Authorization
-summary: Legitimacy Authorization structural knowledge unit.
+title: Ủy Quyền Tính Hợp Pháp
+summary: Đơn vị tri thức cấu trúc về ủy quyền tính hợp pháp trong quản trị tổ chức.
 primary_domain: tri-nhan
 secondary_domains:
 - dung-nhan
-definition: Formal definition of Legitimacy Authorization in NhanThuat architecture.
+definition: Định nghĩa chính thức về ủy quyền tính hợp pháp trong kiến trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Các bối cảnh quản trị vận hành.
 exceptions:
-- Emergency crisis overrides.
+- Các trường hợp ghi đè trong tình trạng khẩn cấp.
 applications:
   governance:
-  - Apply Legitimacy Authorization to organizational workflows.
+  - Áp dụng ủy quyền tính hợp pháp vào các quy trình làm việc của tổ chức.
 risks:
-- Misapplication of Legitimacy Authorization leading to suboptimal performance.
+- Áp dụng sai ủy quyền tính hợp pháp dẫn đến hiệu suất dưới mức tối ưu.
 evidence:
   level: supported
   references:
@@ -30,5 +30,10 @@ relations:
 tags:
 - law
 - tri-nhan
+- legitimacy-authorization
+- operational-governance
+- structural-authority
+- organizational-workflow
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

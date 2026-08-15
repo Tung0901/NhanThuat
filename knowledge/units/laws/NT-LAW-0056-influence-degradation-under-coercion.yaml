@@ -2,22 +2,21 @@ id: NT-LAW-0056
 type: law
 status: frozen
 version: 0.1.0
-title: Influence Degradation Under Coercion
-summary: Influence Degradation Under Coercion structural knowledge unit.
+title: Sự suy giảm ảnh hưởng dưới tác động cưỡng chế
+summary: Đơn vị tri thức cấu trúc về sự suy giảm ảnh hưởng dưới tác động cưỡng chế.
 primary_domain: dung-nhan
 secondary_domains:
 - tri-nhan
-definition: Formal definition of Influence Degradation Under Coercion in NhanThuat
-  architecture.
+definition: Định nghĩa chính thức về sự suy giảm ảnh hưởng dưới tác động cưỡng chế trong cấu trúc Nhân Thuật.
 conditions:
-- Operational governance contexts.
+- Các bối cảnh quản trị vận hành.
 exceptions:
-- Emergency crisis overrides.
+- Sự phủ quyết trong các tình huống khủng hoảng khẩn cấp.
 applications:
   governance:
-  - Apply Influence Degradation Under Coercion to organizational workflows.
+  - Áp dụng nguyên lý suy giảm ảnh hưởng dưới tác động cưỡng chế vào quy trình làm việc của tổ chức.
 risks:
-- Misapplication of Influence Degradation Under Coercion leading to suboptimal performance.
+- Việc áp dụng sai lệch nguyên lý suy giảm ảnh hưởng dưới tác động cưỡng chế dẫn đến hiệu suất kém tối ưu.
 evidence:
   level: supported
   references:
@@ -31,5 +30,11 @@ relations:
 tags:
 - law
 - dung-nhan
+- influence-degradation
+- coercion-effect
+- organizational-influence
+- coercive-power
+- nhanthuat-framework
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'
+mechanism: []

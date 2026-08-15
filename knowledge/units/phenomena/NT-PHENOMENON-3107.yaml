@@ -1,29 +1,23 @@
 id: NT-PHENOMENON-3107
 type: phenomenon
-title: Mental Accounting
-summary: The tendency to categorize and treat money differently depending on its origin
-  or intended use, rather than treating it as fully fungible.
+title: Kế toán tinh thần
+summary: Xu hướng phân loại và đối xử với tiền một cách khác nhau tùy theo nguồn gốc hoặc mục đích sử dụng dự kiến, thay vì coi tiền là hoàn toàn có thể thay thế được.
 primary_domain: tri-nhan
 domain_area: NT-DA-0027
-definition: A cognitive tracking system where individuals assign subjective value
-  to resources based on arbitrary mental buckets, violating the economic principle
-  of fungibility.
+definition: Một hệ thống theo dõi mang tính nhận thức, trong đó cá nhân gán giá trị chủ quan cho các nguồn lực dựa trên các 'hộp' tinh thần tùy ý, vi phạm nguyên tắc kinh tế về tính khả hoán.
 mechanism:
-- Money is assigned to a specific 'account' (e.g., entertainment, salary, bonus).
-- Expenditures are constrained by the balance of that specific account, not total
-  wealth.
-- Windfall gains are spent more frivolously than earned salary.
+- 'Tiền được xếp vào một ''tài khoản'' cụ thể (ví dụ: giải trí, lương, thưởng).'
+- Các khoản chi bị giới hạn bởi số dư của tài khoản cụ thể đó, chứ không phải tổng tài sản.
+- Khoản tiền bất ngờ được tiêu xài phung phí hơn tiền lương kiếm được.
 conditions:
-- When resources are explicitly labeled or received in discrete chunks.
+- Khi các nguồn lực được dán nhãn tường minh hoặc nhận về theo từng khoản rời rạc.
 exceptions:
-- Highly liquid corporate treasuries with strict financial controls.
+- Các quỹ doanh nghiệp có tính thanh khoản cao với các kiểm soát tài chính nghiêm ngặt.
 applications:
   budgeting:
-  - Separate training budgets from operational budgets to ensure skill investment
-    isn't cannibalized.
+  - Tách ngân sách đào tạo khỏi ngân sách vận hành để đảm bảo khoản đầu tư kỹ năng không bị ăn mòn.
 risks:
-- Wasting 'found money' or continuing unprofitable projects because the budget is
-  already allocated.
+- Phung phí 'tiền nhặt được' hoặc tiếp tục các dự án không sinh lời vì ngân sách đã được phân bổ.
 evidence:
   level: strong
   references:
@@ -36,7 +30,9 @@ relations:
 tags:
 - finance
 - fungibility
+- mental-accounting
+- budgeting
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

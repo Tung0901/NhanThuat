@@ -2,35 +2,33 @@ id: NT-PRINCIPLE-0036
 type: principle
 status: frozen
 version: 0.1.0
-title: Separate known, unknown, and deciding
-summary: Distinguish facts, uncertainties, and choices so ambiguity does not turn
-  into confusion or unnecessary control behavior.
+title: Tách biệt điều đã biết, chưa biết và quyết định
+summary: Phân biệt sự kiện, điểm không chắc chắn và lựa chọn để sự mơ hồ không biến thành bối rối hay hành vi kiểm soát không cần thiết.
 primary_domain: tri-nhan
 secondary_domains:
 - thanh-su
 - hop-chung
-definition: Clear separation between what is known, what is unknown, and what must
-  be decided reduces the psychological pressure of uncertainty.
+definition: Tách bạch rõ ràng giữa điều đã biết, điều chưa biết và điều phải quyết định giúp giảm áp lực tâm lý của sự không chắc chắn.
 mechanism:
-- List known facts
-- Name open uncertainties
-- Identify the decision that remains.
+- Liệt kê sự kiện đã biết
+- Gọi tên các điểm không chắc chắn còn mở
+- Xác định quyết định còn lại.
 conditions:
-- The group is confused or anxious
-- Several interpretations are competing.
+- Nhóm bối rối hoặc lo lắng
+- Nhiều cách diễn giải đang cạnh tranh nhau.
 exceptions:
-- Very urgent situations may need direct action first
-- Excessive classification can delay obvious moves.
+- Tình huống rất khẩn cấp có thể cần hành động trực tiếp trước
+- Phân loại quá mức có thể trì hoãn các động thái rõ ràng.
 applications:
   planning:
-  - Use three columns for facts
-  - unknowns
-  - and decisions.
+  - Dùng ba cột cho sự kiện
+  - điểm chưa biết
+  - và quyết định.
   communication:
-  - Do not present uncertainty as failure when it is normal.
+  - Đừng trình bày sự không chắc chắn là thất bại khi nó bình thường.
 risks:
-- Creating false precision
-- Avoiding commitment by endlessly refining unknowns.
+- Tạo ra độ chính xác giả tạo
+- Tránh cam kết bằng cách tinh chỉnh điểm chưa biết vô tận.
 evidence:
   level: provisional
   references: []
@@ -44,5 +42,8 @@ tags:
 - uncertainty
 - clarity
 - decisions
+- known-unknowns
+- decision-making
+- ambiguity
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

@@ -2,33 +2,47 @@ id: NT-ANTI-PATTERN-0009
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Willpower fallacy in trait mismatch
-summary: Attribuing performance or behavioral slips caused by chronic trait-role mismatch and high adaptation costs to a lack of motivation, character, or willpower.
+title: Ngụy biện ý chí trong sự lệch pha đặc tính
+summary: Quy kết sự sụt giảm hiệu suất hoặc sai sót hành vi gây ra bởi sự lệch pha mãn tính giữa đặc tính và vai trò cùng chi phí thích ứng cao là do thiếu động lực, phẩm chất hoặc ý chí.
 primary_domain: tri-nhan
-secondary_domains: [tu-than, dung-nhan]
-definition: A management failure mode that ignores systemic adaptation costs, expecting employees to indefinitely override their stable defaults through sheer effort and self-discipline.
+secondary_domains:
+- tu-than
+- dung-nhan
+definition: Một hình thái thất bại trong quản lý khi bỏ qua chi phí thích ứng của hệ thống, kỳ vọng nhân viên đè nén các đặc tính cố định của họ một cách vô hạn chỉ bằng nỗ lực và kỷ luật bản thân thuần túy.
 mechanism:
-  - Place individual in a role with high mismatch between defaults and expectations.
-  - Expect continuous behavioral modification without task or environmental adjustment.
-  - Accumulate chronic self-regulation fatigue and emotional exhaustion.
-  - Blame the subsequent drop in performance or behavioral slips on lack of willpower or poor attitude.
+- Đặt cá nhân vào vai trò có sự lệch pha lớn giữa xu hướng tự nhiên và kỳ vọng công việc.
+- Kỳ vọng sự điều chỉnh hành vi liên tục mà không điều chỉnh nhiệm vụ hay môi trường.
+- Tích tụ sự mệt mỏi tự điều chỉnh mãn tính và kiệt sức về mặt cảm xúc.
+- Đổ lỗi cho sự sụt giảm hiệu suất hoặc sai sót hành vi sau đó là do thiếu ý chí hoặc thái độ kém.
 conditions:
-  - Management expects continuous behavior adaptation without task or environment redesign.
+- Ban quản lý kỳ vọng sự thích ứng hành vi liên tục mà không tái thiết kế nhiệm vụ hoặc môi trường làm việc.
 exceptions:
-  - Short-term crisis situations where temporary masking is necessary and supported.
+- Các tình huống khủng hoảng ngắn hạn, nơi việc tạm thời nén đặc tính cá nhân là cần thiết và được hỗ trợ.
 applications:
-  review: [Audit performance reviews to ensure employees are not penalized for default styles when skills and outcomes are correct.]
-  role-design: [Redesign high-friction tasks to lower adaptation costs rather than demanding increased willpower.]
+  review:
+  - Rà soát đánh giá hiệu suất để đảm bảo nhân viên không bị phạt vì phong cách mặc định khi kỹ năng và kết quả vẫn đạt chuẩn.
+  role-design:
+  - Tái thiết kế các nhiệm vụ có độ ma sát cao để giảm chi phí thích ứng thay vì đòi hỏi gia tăng nỗ lực ý chí.
 risks:
-  - Lowering standard competence requirements under the guise of accommodating traits.
+- Hạ thấp tiêu chuẩn năng lực cần thiết dưới danh nghĩa thích ứng với đặc tính cá nhân.
 evidence:
   level: provisional
   references: []
 relations:
   supports: []
   conflicts_with: []
-  depends_on: [NT-LAW-0035, NT-PRINCIPLE-0061]
+  depends_on:
+  - NT-LAW-0035
+  - NT-PRINCIPLE-0061
   applies_to: []
-tags: [personality, traits, anti-pattern, willpower-fallacy, role-mismatch]
+tags:
+- personality
+- traits
+- anti-pattern
+- willpower-fallacy
+- role-mismatch
+- trait-mismatch
+- adaptation-cost
+- burnout
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'

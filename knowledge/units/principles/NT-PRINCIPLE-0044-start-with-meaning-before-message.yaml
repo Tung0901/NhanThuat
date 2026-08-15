@@ -2,18 +2,45 @@ id: NT-PRINCIPLE-0044
 type: principle
 status: frozen
 version: 0.1.0
-title: Start with meaning before message
-summary: Before asking for attention, connect the message to what the person can recognize as meaningful, relevant, or consequential.
+title: Bắt đầu từ ý nghĩa trước thông điệp
+summary: Trước khi yêu cầu sự chú ý, hãy kết nối thông điệp với điều người nghe có thể nhận ra là có ý nghĩa, liên quan hoặc hệ quả.
 primary_domain: tri-nhan
-secondary_domains: [hop-chung, tu-than]
-definition: A message is more likely to be heard when the listener can see why it matters before being asked to process details.
-mechanism: [Identify listener concern, State relevance, Then provide detail.]
-conditions: [Attention is limited, The topic competes with other priorities.]
-exceptions: [Emergency commands may need to precede explanation, False relevance damages trust.]
-applications: {communication: [Open with why the topic matters to the listener.], leadership: [Tie priorities to shared purpose or concrete risk.]}
-risks: [Over-framing, Manipulating perceived importance.]
-evidence: {level: provisional, references: []}
-relations: {supports: [], conflicts_with: [], depends_on: [NT-LAW-0002], applies_to: []}
-tags: [attention, meaning, communication]
+secondary_domains:
+- hop-chung
+- tu-than
+definition: Thông điệp dễ được lắng nghe hơn khi người nghe thấy được vì sao nó quan trọng trước khi được yêu cầu xử lý chi tiết.
+mechanism:
+- Xác định mối quan tâm của người nghe
+- Nêu tính liên quan
+- Sau đó cung cấp chi tiết.
+conditions:
+- Sự chú ý có hạn
+- Chủ đề cạnh tranh với các ưu tiên khác.
+exceptions:
+- Mệnh lệnh khẩn cấp có thể cần trước phần giải thích
+- Tính liên quan giả tạo làm tổn hại niềm tin.
+applications:
+  communication:
+  - Mở đầu bằng vì sao chủ đề quan trọng với người nghe.
+  leadership:
+  - Gắn các ưu tiên với mục đích chung hoặc rủi ro cụ thể.
+risks:
+- Đóng khung quá mức
+- Thao túng cảm nhận về tầm quan trọng.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0002
+  applies_to: []
+tags:
+- attention
+- meaning
+- communication
+- framing
+- relevance
 created_at: '2026-07-21'
-updated_at: '2026-07-21'
+updated_at: '2026-08-15'

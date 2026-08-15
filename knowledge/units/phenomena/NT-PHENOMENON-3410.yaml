@@ -1,36 +1,27 @@
 id: NT-PHENOMENON-3410
 type: phenomenon
-title: Message Framing (Gain vs. Loss)
-summary: The way a choice is presented (framed) as either a gain or a loss drastically
-  alters the likelihood of persuasion, even if the objective outcomes are identical.
+title: Đóng khung thông điệp (Lợi ích so với Mất mát)
+summary: Cách một lựa chọn được trình bày (đóng khung) dưới dạng lợi ích hoặc mất mát làm thay đổi đáng kể khả năng thuyết phục, ngay cả khi kết quả khách quan là giống hệt nhau.
 primary_domain: tri-nhan
 domain_area: NT-DA-0030
-definition: The application of Prospect Theory to persuasive communication, dictating
-  that people are risk-averse when presented with gains, but risk-seeking when presented
-  with losses.
+definition: Việc ứng dụng Lý thuyết triển vọng vào truyền thông thuyết phục, khẳng định rằng con người ngại rủi ro khi đối diện với lợi ích, nhưng lại tìm kiếm rủi ro khi đối diện với mất mát.
 mechanism:
-- Determine if the desired behavior is perceived as safe or risky by the target.
-- If safe (e.g., wearing sunscreen), use a Gain Frame ('Use sunscreen to maintain
-  healthy skin').
-- If risky (e.g., getting a mammogram that might find cancer), use a Loss Frame ('Failing
-  to get a mammogram can cost you your life').
+- Xác định xem hành vi mong muốn được đối tượng nhận định là an toàn hay rủi ro.
+- 'Nếu an toàn (ví dụ: dùng kem chống nắng), hãy dùng khung lợi ích (''Dùng kem chống nắng để duy trì làn da khỏe mạnh'').'
+- 'Nếu rủi ro (ví dụ: chụp nhũ ảnh có thể phát hiện ung thư), hãy dùng khung mất mát (''Không chụp nhũ ảnh có thể khiến bạn mất mạng'').'
 conditions:
-- Healthcare communication, financial advising, and high-stakes sales.
+- Truyền thông chăm sóc sức khỏe, tư vấn tài chính và bán hàng có mức đặt cược cao.
 exceptions:
-- When the target is in a highly analytical, 'System 2' state and actively translates
-  the probabilities.
+- Khi đối tượng đang ở trạng thái phân tích cao độ, 'Hệ thống 2', và chủ động quy đổi các xác suất.
 applications:
   marketing:
-  - Selling insurance requires loss framing; selling vacation packages requires gain
-    framing.
+  - Bán bảo hiểm đòi hỏi đóng khung mất mát; bán gói du lịch đòi hỏi đóng khung lợi ích.
 risks:
-- Overusing loss framing can induce anxiety and cause the target to completely avoid
-  the message (defensive avoidance).
+- Lạm dụng đóng khung mất mát có thể gây lo âu và khiến đối tượng hoàn toàn né tránh thông điệp (né tránh phòng vệ).
 evidence:
   level: strong
   references:
-  - 'Rothman, A. J., & Salovey, P. (1997). ''Shaping perceptions to motivate healthy
-    behavior: the role of message framing''. Psychological Bulletin.'
+  - 'Rothman, A. J., & Salovey, P. (1997). ''Shaping perceptions to motivate healthy behavior: the role of message framing''. Psychological Bulletin.'
 relations:
   supports: []
   conflicts_with: []
@@ -39,7 +30,12 @@ relations:
 tags:
 - framing
 - communication
+- message-framing
+- gain-loss
+- prospect-theory
+- persuasion
+- risk
 status: frozen
 version: 0.1.0
 created_at: '2026-08-13'
-updated_at: '2026-08-14'
+updated_at: '2026-08-15'

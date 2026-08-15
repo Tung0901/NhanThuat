@@ -2,28 +2,26 @@ id: NT-ANTI-PATTERN-0043
 type: anti-pattern
 status: frozen
 version: 0.1.0
-title: Personalization Spillover
-summary: Allowing objective task disagreement to degenerate into personal attacks,
-  destroying trust and team cohesion.
+title: Sự Biến Tướng Cá Nhân Hóa
+summary: Để sự bất đồng khách quan về công việc biến tướng thành các cuộc tấn công cá nhân, phá hủy lòng tin và sự gắn kết nhóm.
 primary_domain: hop-chung
 secondary_domains:
 - tri-nhan
-definition: Personalization spillover occurs when a debate over work facts mutates
-  into questioning a colleague's competence or character.
+definition: Sự biến tướng cá nhân hóa xảy ra khi một cuộc tranh luận về sự thật công việc chuyển biến thành việc nghi ngờ năng lực hoặc nhân cách của đồng nghiệp.
 mechanism:
-- Task debate becomes intense.
-- Participant attacks character.
-- Discussion shifts to defending self-esteem.
-- Trust collapses.
+- Cuộc tranh luận về công việc trở nên gay gắt.
+- Người tham gia quay sang tấn công nhân cách đối phương.
+- Thảo luận chuyển sang việc bảo vệ lòng tự trọng cá nhân.
+- Sự tin tưởng sụp đổ.
 conditions:
-- High stress environments without clear meeting rules.
+- Môi trường áp lực cao thiếu các quy tắc cuộc họp rõ ràng.
 exceptions:
-- None.
+- Không có.
 applications:
   team_coaching:
-  - Intervene immediately when a team member uses ad hominem language.
+  - Can thiệp ngay lập tức khi một thành viên sử dụng ngôn từ tấn công cá nhân (ad hominem).
 risks:
-- Over-regulating debate language to the point of killing passion.
+- Kiểm soát ngôn từ tranh luận quá mức đến mức dập tắt nhiệt huyết.
 evidence:
   level: supported
   references:
@@ -39,5 +37,10 @@ tags:
 - conflict
 - personalization
 - anti-patterns
+- personalization-spillover
+- ad-hominem
+- conflict-resolution
+- task-conflict
+- team-trust
 created_at: '2026-07-22'
-updated_at: '2026-07-22'
+updated_at: '2026-08-15'

@@ -2,18 +2,52 @@ id: NT-MODEL-0003
 type: model
 status: frozen
 version: 0.1.0
-title: Adaptation cycle
-summary: A pattern model showing how repeated context, behavior, consequence, and expectation form stable adaptation.
+title: Chu kỳ thích ứng
+summary: Mô hình khuôn mẫu thể hiện cách thức bối cảnh, hành vi, hệ quả và kỳ vọng lặp đi lặp lại tạo nên sự thích ứng ổn định.
 primary_domain: tri-nhan
-secondary_domains: [tu-than, thanh-su]
-definition: Adaptation stabilizes when context cues behavior, behavior receives consequence, and consequence updates expectation for the next context.
-mechanism: [Context cue, Behavior, Consequence, Expectation, Repetition.]
-conditions: [A pattern repeats, consequences are noticed, alternatives are available or constrained.]
-exceptions: [Hidden consequences may not train behavior, strong values can resist repeated pressure.]
-applications: {culture: [Map what the environment repeatedly teaches.], learning: [Use repeated safe correction to build new expectations.]}
-risks: [Conditioning without consent, mistaking adaptation for agreement.]
-evidence: {level: provisional, references: []}
-relations: {supports: [NT-PRINCIPLE-0051], conflicts_with: [], depends_on: [NT-LAW-0028], applies_to: []}
-tags: [pattern, adaptation, consequences]
+secondary_domains:
+- tu-than
+- thanh-su
+definition: Sự thích ứng trở nên ổn định khi bối cảnh kích hoạt hành vi, hành vi nhận lại hệ quả, và hệ quả cập nhật kỳ vọng cho bối cảnh tiếp theo.
+mechanism:
+- Tín hiệu bối cảnh
+- Hành vi
+- Hệ quả
+- Kỳ vọng
+- Sự lặp lại.
+conditions:
+- Một khuôn mẫu lặp lại
+- các hệ quả được nhận thức rõ
+- các phương án thay thế có sẵn hoặc bị hạn chế.
+exceptions:
+- Các hệ quả tiềm ẩn có thể không định hình được hành vi
+- các giá trị cốt lõi mạnh mẽ có thể chống lại áp lực lặp đi lặp lại.
+applications:
+  culture:
+  - Phác thảo những gì môi trường liên tục dạy cho cá nhân.
+  learning:
+  - Sử dụng việc sửa sai an toàn lặp đi lặp lại để xây dựng các kỳ vọng mới.
+risks:
+- Tạo phản xạ có điều kiện mà không có sự đồng thuận
+- nhầm lẫn sự thích ứng với sự đồng thuận.
+evidence:
+  level: provisional
+  references: []
+relations:
+  supports:
+  - NT-PRINCIPLE-0051
+  conflicts_with: []
+  depends_on:
+  - NT-LAW-0028
+  applies_to: []
+tags:
+- pattern
+- adaptation
+- consequences
+- adaptation-cycle
+- behavioral-conditioning
+- habit-loop
+- organizational-culture
+- learning-process
 created_at: '2026-07-21'
-updated_at: '2026-07-21'
+updated_at: '2026-08-15'

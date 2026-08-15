@@ -2,33 +2,31 @@ id: NT-PRINCIPLE-0029
 type: principle
 status: frozen
 version: 0.1.0
-title: Bring distant goals near
-summary: Translate long-term goals into near signals, routines, and consequences that
-  people can notice during daily decisions.
+title: Đưa mục tiêu xa đến gần
+summary: Chuyển các mục tiêu dài hạn thành tín hiệu, thói quen và hệ quả gần để con người có thể nhận ra trong các quyết định hằng ngày.
 primary_domain: thanh-su
 secondary_domains:
 - tri-nhan
 - tu-than
-definition: Distant goals gain influence when they are made visible and actionable
-  in the immediate environment.
+definition: Mục tiêu xa có sức ảnh hưởng khi chúng được làm cho hiện hữu và khả thi trong môi trường tức thời.
 mechanism:
-- Name long-term goal
-- Create near cues and checkpoints
-- Link daily action to future consequence.
+- Nêu tên mục tiêu dài hạn.
+- Tạo tín hiệu và điểm chốt gần.
+- Kết nối hành động hằng ngày với hệ quả tương lai.
 conditions:
-- The goal is important but abstract
-- Daily behavior affects it.
+- Mục tiêu quan trọng nhưng trừu tượng.
+- Hành vi hằng ngày ảnh hưởng đến nó.
 exceptions:
-- Over-shortening can distort strategy
-- Some outcomes require patience without frequent signal.
+- Rút ngắn quá mức có thể bóp méo chiến lược.
+- Một số kết quả đòi hỏi kiên nhẫn mà không có tín hiệu thường xuyên.
 applications:
   strategy:
-  - Create weekly indicators for annual goals.
+  - Tạo chỉ số tuần cho các mục tiêu năm.
   communication:
-  - Connect purpose to today's tradeoff.
+  - Kết nối mục đích với sự đánh đổi hôm nay.
 risks:
-- Reducing vision to tasks
-- Creating false urgency.
+- Quy giản tầm nhìn thành nhiệm vụ.
+- Tạo ra tính khẩn trương giả.
 evidence:
   level: provisional
   references: []
@@ -43,5 +41,7 @@ tags:
 - goals
 - salience
 - execution
+- long-term
+- motivation
 created_at: '2026-07-20'
-updated_at: '2026-07-20'
+updated_at: '2026-08-15'

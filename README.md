@@ -32,21 +32,18 @@ python scripts/run_web_dashboard.py   # khởi chạy Knowledge Workbench
 
 EPIC 5 synthesis hoạt động fallback-first: nếu không có key, trang Hỏi Nhân Thuật
 trả về dòng truy xuất deterministic. Để kích hoạt LLM synthesis, đặt API key
-OpenAI-compatible vào `.streamlit/secrets.toml` (tham khảo `secrets.toml.example`):
-
-**Google Gemini** (khuyến nghị — tạo key miễn phí tại https://aistudio.google.com/apikey):
+Google AI Studio (Gemini) vào `.streamlit/secrets.toml` (tham khảo `secrets.toml.example`):
 
 ```toml
-OPENAI_API_KEY = "AIzaSy-..."
-OPENAI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai"
-NHAN_THUAT_LLM_MODEL = "gemini-2.5-flash"
+GEMINI_API_KEY = "AIzaSy-..."   # tạo miễn phí tại https://aistudio.google.com/apikey
 ```
 
-**Hoặc OpenAI / provider khác:**
+Base URL và mô hình mặc định (`https://generativelanguage.googleapis.com/v1beta/openai`,
+`gemini-2.5-flash`) đã được thiết lập sẵn. Chỉ cần đặt chúng khi muốn tùy chỉnh:
 
 ```toml
-OPENAI_API_KEY = "sk-..."
-OPENAI_BASE_URL = "https://api.openai.com/v1"
+GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai"
+GEMINI_MODEL = "gemini-2.5-flash"
 ```
 
 Trên Streamlit Community Cloud, dán nguyên khối TOML ở trên vào

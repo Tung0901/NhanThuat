@@ -12,7 +12,15 @@ from nhan_thuat.runtime.prompt_builder import PromptBuilder
 from nhan_thuat.runtime.resolver import KnowledgeResolver
 from nhan_thuat.runtime.synthesizer import KnowledgeSynthesizer
 
-_SECRET_KEYS = ("OPENAI_API_KEY", "OPENAI_BASE_URL", "NHAN_THUAT_OPENAI_API_KEY", "NHAN_THUAT_LLM_MODEL")
+_SECRET_KEYS = (
+    "GEMINI_API_KEY",
+    "GOOGLE_API_KEY",
+    "OPENAI_API_KEY",
+    "GEMINI_BASE_URL",
+    "GEMINI_MODEL",
+    "OPENAI_BASE_URL",
+    "NHAN_THUAT_LLM_MODEL",
+)
 
 
 def _sync_secrets_to_env() -> None:

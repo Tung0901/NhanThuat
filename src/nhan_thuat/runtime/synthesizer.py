@@ -1,9 +1,10 @@
 """LLM synthesis with a deterministic fallback (capability NHANTHUAT-CAP-002).
 
-Fallback-first design: if no OpenAI-compatible API key is configured the
-synthesizer returns the deterministic retrieval flow (context, citations,
-audit). With a key it calls the configured provider over ``requests`` and
-includes an audit record (correlation_id, provider, prompt, latency, model).
+Fallback-first design: if no Google Gemini (AI Studio) API key is configured
+the synthesizer returns the deterministic retrieval flow (context, citations,
+audit). With a key it calls the Gemini OpenAI-compatible endpoint over
+``requests`` and includes an audit record (correlation_id, provider, prompt,
+latency, model).
 """
 
 from __future__ import annotations
@@ -19,37 +20,33 @@ import requests
 from nhan_thuat.models import KnowledgeUnit
 from nhan_thuat.runtime.prompt_builder import PromptBuilder
 
-DEFAULT_BASE_URL = "https://api.openai.com/v1"
-DEFAULT_MODEL = "gpt-4o-mini"
-GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai"
-GEMINI_MODEL = "gemini-2.5-flash"
+DEFAULT_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai"
+DEFAULT_MODEL = "gemini-2.5-flash"
 
 
 def _api_key() -> str:
-    return (os.environ.get("OPENAI_API_KEY") or os.environ.get("NHAN_THUAT_OPENAI_API_KEY", "")).strip()
-
-
-def _is_gemini_key(key: str) -> bool:
-    """Google Gemini API keys start with ``AIza``; auto-configure the provider."""
-    return key.startswith("AIza")
+    return (
+        os.environ.get("GEMINI_API_KEY")
+        or os.environ.get("GOOGLE_API_KEY")
+        or os.environ.get("OPENAI_API_KEY")
+        or ""
+    ).strip()
 
 
 def _base_url() -> str:
-    explicit = os.environ.get("OPENAI_BASE_URL", "").strip().rstrip("/")
-    if explicit:
-        return explicit
-    if _is_gemini_key(_api_key()):
-        return GEMINI_BASE_URL
-    return DEFAULT_BASE_URL
+    explicit = (
+        os.environ.get("GEMINI_BASE_URL", "")
+        or os.environ.get("OPENAI_BASE_URL", "")
+    ).strip().rstrip("/")
+    return explicit or DEFAULT_BASE_URL
 
 
 def _model() -> str:
-    explicit = os.environ.get("NHAN_THUAT_LLM_MODEL", "").strip()
-    if explicit:
-        return explicit
-    if _is_gemini_key(_api_key()):
-        return GEMINI_MODEL
-    return DEFAULT_MODEL
+    explicit = (
+        os.environ.get("GEMINI_MODEL", "")
+        or os.environ.get("NHAN_THUAT_LLM_MODEL", "")
+    ).strip()
+    return explicit or DEFAULT_MODEL
 
 
 def provider_name() -> str:
@@ -57,8 +54,6 @@ def provider_name() -> str:
     base = _base_url()
     if "generativelanguage.googleapis.com" in base:
         return "google-gemini"
-    if "api.openai.com" in base:
-        return "openai"
     return "openai-compatible"
 
 
@@ -108,7 +103,7 @@ class KnowledgeSynthesizer:
                     "prompt": prompt,
                 },
                 "warning": (
-                    "Chưa cấu hình LLM synthesis (thiếu OPENAI_API_KEY). "
+                    "Chưa cấu hình LLM synthesis (thiếu GEMINI_API_KEY). "
                     "Đang hiển thị dòng truy xuất tri thức deterministic."
                 ),
             }

@@ -6,6 +6,25 @@ Mọi thay đổi đáng chú ý của dự án được ghi tại đây.
 
 ### Added
 
+- KnowledgeSynthesizer (capability NHANTHUAT-CAP-002) with fallback-first LLM synthesis via OpenAI-compatible endpoint, configurable through OPENAI_API_KEY / NHAN_THUAT_OPENAI_API_KEY, OPENAI_BASE_URL, and NHAN_THUAT_LLM_MODEL.
+- `KnowledgeResolver.resolve_scored` returning (score, unit) pairs for real relevance ranking.
+- Knowledge unit export endpoint `GET /knowledge/units/{unit_id}/export?format=json|markdown` and Workbench download buttons (JSON/Markdown) in the detail page.
+- Five synthesizer/resolver tests and three knowledge unit export tests.
+
+### Changed
+
+- Ask page now surfaces real resolver scores, synthesis mode (LLM or deterministic), citations, and audit (correlation_id, provider, model, latency) instead of planned/mock placeholders.
+- System page shows live synthesis provider status; mock "134/134" placeholder removed.
+- `requests` added to package dependencies.
+- Full repository ruff scope (src, scripts, tests, app, backend) passes clean.
+- Version bumped to 1.0.0.
+
+### Fixed
+
+- Synthesizer provider call monkeypatching in tests via module-level `requests` import.
+
+### Added
+
 - Khung repository cho EPIC 0.
 - JSON Schema cho domain và knowledge unit.
 - Loader và validator YAML/JSON.

@@ -7,9 +7,9 @@
 | EPIC 2 - Knowledge Architecture | FROZEN | Taxonomy, ontology, registry, and knowledge catalog |
 | EPIC 3 - Laws and Principles | FROZEN | Core laws and principles library |
 | EPIC 4 - Application Layer & Philosophy Lens Engine | ACTIVE | Convert knowledge into action-oriented tools & integrated Five Philosophy Lenses (Rhetoric, Confucianism, Legalism, Taoism, Xunzi) |
-| EPIC 5 - Knowledge Engine and AI | NOT STARTED | Retrieval, citation, confidence, and audit after explicit approval |
-| EPIC 6 - Usable Product | NOT STARTED | Web, chat, export, and API integrations after explicit approval |
-| EPIC 7 - Validation and Release | NOT STARTED | Release Nhan Thuat 1.0 |
+| EPIC 5 - Knowledge Engine and AI | COMPLETED | Retrieval, citation, confidence, and audit after explicit approval |
+| EPIC 6 - Usable Product | COMPLETED | Web, chat, export, and API integrations after explicit approval |
+| EPIC 7 - Validation and Release | COMPLETED | Release Nhan Thuat 1.0 |
 
 Status is confirmed by `status.yaml`, validation, and tests; it is not based on informal estimates.
 

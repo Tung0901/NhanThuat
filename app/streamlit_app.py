@@ -24,11 +24,13 @@ st.set_page_config(
 # Inject CSS
 inject_minimalist_css()
 
-# Sidebar Branding
-with st.sidebar:
-    st.markdown("<h2 style='text-align: center; margin-bottom: 0;'>♟️ Nhân Thuật</h2>", unsafe_allow_html=True)
-    st.markdown("<p style='text-align: center; font-style: italic; color: var(--text-secondary);'>Nghệ thuật thấu hiểu và quản trị con người</p>", unsafe_allow_html=True)
-    st.divider()
+# Global Branding (Sticky Header)
+st.markdown("""
+<div style="text-align: center; position: sticky; top: 3.5rem; z-index: 999; background: rgba(248, 250, 252, 0.9); backdrop-filter: blur(8px); padding: 1rem 0; border-bottom: 1px solid var(--border); margin: -4rem -4rem 2rem -4rem;">
+    <h1 style='margin-bottom: 0; font-size: 2.2rem;'>♟️ Nhân Thuật</h1>
+    <p style='font-style: italic; color: var(--text-secondary); margin-bottom: 0; font-size: 1.1rem;'>Nghệ thuật thấu hiểu và quản trị con người</p>
+</div>
+""", unsafe_allow_html=True)
 
 # Pages
 ask_page = st.Page("pages/ask.py", title="Hỏi Nhân Thuật", icon="🔍", default=True)

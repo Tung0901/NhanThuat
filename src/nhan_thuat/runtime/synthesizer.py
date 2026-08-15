@@ -21,18 +21,43 @@ from nhan_thuat.runtime.prompt_builder import PromptBuilder
 
 DEFAULT_BASE_URL = "https://api.openai.com/v1"
 DEFAULT_MODEL = "gpt-4o-mini"
+GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai"
+GEMINI_MODEL = "gemini-2.5-flash"
 
 
 def _api_key() -> str:
     return os.environ.get("OPENAI_API_KEY") or os.environ.get("NHAN_THUAT_OPENAI_API_KEY", "")
 
 
+def _is_gemini_key(key: str) -> bool:
+    """Google Gemini API keys start with ``AIza``; auto-configure the provider."""
+    return key.startswith("AIza")
+
+
 def _base_url() -> str:
-    return os.environ.get("OPENAI_BASE_URL", DEFAULT_BASE_URL)
+    if os.environ.get("OPENAI_BASE_URL"):
+        return os.environ["OPENAI_BASE_URL"]
+    if _is_gemini_key(_api_key()):
+        return GEMINI_BASE_URL
+    return DEFAULT_BASE_URL
 
 
 def _model() -> str:
-    return os.environ.get("NHAN_THUAT_LLM_MODEL", DEFAULT_MODEL)
+    if os.environ.get("NHAN_THUAT_LLM_MODEL"):
+        return os.environ["NHAN_THUAT_LLM_MODEL"]
+    if _is_gemini_key(_api_key()):
+        return GEMINI_MODEL
+    return DEFAULT_MODEL
+
+
+def provider_name() -> str:
+    """Human-readable provider label derived from the configured base URL."""
+    base = _base_url()
+    if "generativelanguage.googleapis.com" in base:
+        return "google-gemini"
+    if "api.openai.com" in base:
+        return "openai"
+    return "openai-compatible"
 
 
 OPENAI_BASE_URL = _base_url()
@@ -96,7 +121,7 @@ class KnowledgeSynthesizer:
                 "citations": citations,
                 "audit": {
                     "correlation_id": correlation_id,
-                    "provider": "openai-compatible",
+                    "provider": provider_name(),
                     "model": _model(),
                     "latency_ms": latency_ms,
                     "prompt": prompt,
@@ -110,7 +135,7 @@ class KnowledgeSynthesizer:
                 "citations": citations,
                 "audit": {
                     "correlation_id": correlation_id,
-                    "provider": "openai-compatible",
+                    "provider": provider_name(),
                     "model": _model(),
                     "latency_ms": latency_ms,
                     "prompt": prompt,

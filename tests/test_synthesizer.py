@@ -82,7 +82,7 @@ def test_synthesizer_llm_with_key_and_mock_provider(units: list[KnowledgeUnit], 
 
     assert result["mode"] == "llm"
     assert "Phân tích theo Luật X" in result["synthesis"]
-    assert result["audit"]["provider"] == "openai-compatible"
+    assert result["audit"]["provider"] == "openai"
     assert result["audit"]["model"]
     assert result["audit"]["latency_ms"] >= 0
 
@@ -100,3 +100,28 @@ def test_synthesizer_falls_back_on_provider_error(units: list[KnowledgeUnit], mo
 
     assert result["mode"] == "deterministic"
     assert "deterministic" in result.get("warning", "")
+
+
+def test_gemini_key_autodetects_provider(units: list[KnowledgeUnit], monkeypatch) -> None:
+    monkeypatch.setenv("OPENAI_API_KEY", "AIzaSy-test-key")
+    synthesizer = KnowledgeSynthesizer()
+
+    class FakeResponse:
+        def raise_for_status(self) -> None:
+            return None
+
+        def json(self) -> dict:
+            return {"choices": [{"message": {"content": "Phân tích bằng Gemini."}}]}
+
+    def fake_post(*args, **kwargs) -> FakeResponse:
+        assert "generativelanguage.googleapis.com" in args[0]
+        assert kwargs["json"]["model"] == "gemini-2.5-flash"
+        return FakeResponse()
+
+    monkeypatch.setattr("nhan_thuat.runtime.synthesizer.requests.post", fake_post)
+
+    result = synthesizer.synthesize("test query", units[:2])
+
+    assert result["mode"] == "llm"
+    assert result["audit"]["provider"] == "google-gemini"
+    assert result["audit"]["model"] == "gemini-2.5-flash"

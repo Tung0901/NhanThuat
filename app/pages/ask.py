@@ -4,6 +4,7 @@ import streamlit as st
 
 from app.components.ui_blocks import render_unit_card
 from app.services.engine_adapter import EngineAdapter
+from app.utils.localization import t_domain
 
 st.title("Hỏi Nhân Thuật")
 st.markdown("Đặt một câu hỏi hoặc mô tả một tình huống. Nhân Thuật sẽ tìm các quy luật, hiện tượng hành vi, mô hình và nguyên tắc liên quan.")
@@ -53,7 +54,7 @@ if query:
             
         st.markdown("### Trích dẫn")
         for citation in synthesis.get("citations", []):
-            st.markdown(f"- **{citation['title']}** — `{citation['id']}` ({citation['domain']})")
+            st.markdown(f"- **{citation['title']}** — `{citation['id']}` ({t_domain(citation['domain'])})")
             
         audit = synthesis.get("audit", {})
         st.caption(f"Kiểm tra: `{audit.get('correlation_id', '')}` | Nhà cung cấp: {audit.get('provider')} | Mô hình: {audit.get('model') or '—'} | {audit.get('latency_ms', 0)} ms")

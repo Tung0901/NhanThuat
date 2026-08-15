@@ -30,7 +30,11 @@ with col_a:
 with col_b:
     synth_status = "Đã cấu hình (LLM)" if adapter.synthesizer.provider_configured else "Dòng truy xuất deterministic"
     render_metric("LLM synthesis", synth_status)
-    st.caption("Năng lực NHANTHUAT-CAP-002 — EPIC 5")
+    if adapter.synthesizer.provider_configured:
+        from nhan_thuat.runtime.synthesizer import _model, provider_name
+        st.caption(f"Nhà cung cấp: {provider_name()} | Mô hình: {_model()}")
+    else:
+        st.caption("Năng lực NHANTHUAT-CAP-002 — EPIC 5")
 
 st.markdown("---")
 

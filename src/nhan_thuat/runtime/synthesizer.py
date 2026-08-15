@@ -152,7 +152,7 @@ class KnowledgeSynthesizer:
             "Yêu cầu nội dung:\n"
             "- Không dùng ngôn ngữ chung chung, sáo rỗng hay tối nghĩa. Hãy viết rõ ràng, sắc bén và dễ hiểu.\n"
             "- Cung cấp ít nhất 3 bước giải pháp (actionable steps) mang tính thực tiễn cao.\n"
-            "- Bám sát phần Tri thức bên dưới, trích dẫn ID tri thức (ví dụ: NT-PRINCIPLE-0001) khi tham chiếu.\n"
+            "- Bám sát phần Tri thức bên dưới. BẮT BUỘC gọi tên tri thức bằng tiếng Việt kèm theo ID (ví dụ: 'Nguyên tắc X (NT-PRINCIPLE-0001)') và phải DIỄN GIẢI rõ ý nghĩa của tri thức đó, tuyệt đối không chỉ viết mã ID trống không.\n"
             "- Nhận diện rõ các rủi ro hoặc thiên kiến có thể xảy ra và cách phòng tránh.\n\n"
             f"CÂU HỎI:\n{query}\n\n"
             f"TRI THỨC BỐI CẢNH:\n{context}"

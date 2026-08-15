@@ -24,6 +24,12 @@ st.set_page_config(
 # Inject CSS
 inject_minimalist_css()
 
+# Sidebar Branding
+with st.sidebar:
+    st.markdown("<h2 style='text-align: center; margin-bottom: 0;'>♟️ Nhân Thuật</h2>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: center; font-style: italic; color: var(--text-secondary);'>Nghệ thuật thấu hiểu và quản trị con người</p>", unsafe_allow_html=True)
+    st.divider()
+
 # Pages
 ask_page = st.Page("pages/ask.py", title="Hỏi Nhân Thuật", icon="🔍", default=True)
 explorer_page = st.Page("pages/explorer.py", title="Khám phá Tri thức", icon="📚")

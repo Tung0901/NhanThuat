@@ -109,7 +109,29 @@ def validate_repository(root: str | Path) -> list[ValidationIssue]:
     issues.extend(_check_knowledge_evidence_references(records, evidence_records))
     issues.extend(_check_architecture_rules(records))
     issues.extend(_check_domain_lifecycle(repo, domain_status_records))
+    issues.extend(_check_unit_domain_area(repo, records))
     issues.extend(_check_frozen_register(repo, epic_records, domain_status_records, records))
+    return issues
+
+
+def _check_unit_domain_area(
+    repo: Path, records: Iterable[tuple[Path, dict[str, Any]]]
+) -> list[ValidationIssue]:
+    registry_path = repo / "knowledge" / "domain-registry.yaml"
+    if not registry_path.exists():
+        return []
+    try:
+        registry = load_document(registry_path)
+    except LoadError:
+        return []
+    domain_ids = {
+        domain.get("id") for domain in registry.get("domains", []) if isinstance(domain, dict)
+    }
+    issues: list[ValidationIssue] = []
+    for path, data in records:
+        domain_area = data.get("domain_area")
+        if isinstance(domain_area, str) and domain_area not in domain_ids:
+            issues.append(ValidationIssue(path, f"domain_area not in domain registry: {domain_area}"))
     return issues
 
 

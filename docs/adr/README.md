@@ -16,3 +16,7 @@ is exercised.
 
 Only the Product Owner may approve decisions that change project governance or
 Frozen content.
+
+## Records
+
+- ADR-0001..ADR-0017, see individual files in this directory.

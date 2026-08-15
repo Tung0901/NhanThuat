@@ -6,9 +6,14 @@ thức; nội dung trong hội thoại chỉ là đầu vào cho quy trình biê
 
 ## Trạng thái
 
-- Phiên bản: `0.1.0-dev`
-- Giai đoạn: EPIC 1 — Hiến chương và nền tảng
-- EPIC 0 đã được Frozen; EPIC 1 đang ở trạng thái Ready for Review.
+- Phiên bản: `1.0.0`
+- 30 lĩnh vực tri thức (`NT-DA-0001`..`NT-DA-0030`)
+- 370 knowledge units (82 Luật, 134 Nguyên tắc, 45 Mô hình, 60 Phản-mẫu, 49 Hiện tượng hành vi) — tất cả ở trạng thái Frozen
+- Governance: Frozen Register (`governance/frozen-register.yaml`), validator, CI
+- Kiến trúc 5 Lăng kính Triết học (Hùng Biện, Nho gia, Pháp gia, Đạo gia, Tuân Tử)
+- Knowledge Runtime: graph traversal, keyword resolver, prompt builder, heuristic evaluator
+- Knowledge Workbench (Streamlit): 6 trang — Hỏi Nhân Thuật, Khám phá Tri thức, Lĩnh vực, Bằng chứng & Nguồn, Hệ thống, Chi tiết Tri thức
+- LLM synthesis (EPIC 5, capability `NHANTHUAT-CAP-002`): fallback-first — hoạt động deterministic nếu không cấu hình API key
 
 ## Bắt đầu nhanh
 
@@ -20,6 +25,18 @@ python -m venv .venv
 python -m pip install -e ".[dev]"
 python scripts/validate_all.py
 pytest
+python scripts/run_web_dashboard.py   # khởi chạy Knowledge Workbench
+```
+
+### Cấu hình LLM synthesis (tùy chọn)
+
+EPIC 5 synthesis hoạt động fallback-first: nếu không có key, trang Hỏi Nhân Thuật
+trả về dòng truy xuất deterministic. Để kích hoạt LLM synthesis, đặt API key
+OpenAI-compatible vào `.streamlit/secrets.toml` (tham khảo `secrets.toml.example`):
+
+```toml
+OPENAI_API_KEY = "sk-..."
+OPENAI_BASE_URL = "https://api.openai.com/v1"   # tùy chọn
 ```
 
 ## Nguyên tắc

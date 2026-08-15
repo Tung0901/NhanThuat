@@ -71,9 +71,9 @@ Duplicate Frozen entries and duplicate Frozen sources are validation failures.
 Every Frozen domain status artifact must declare non-empty `members`. Every
 listed knowledge unit must also be Frozen and must match the declared member
 group type, such as `laws` for `type: law`. Supported member groups are `laws`,
-`principles`, `models`, `strategies`, `tools`, `cases`, `evidence_units`, and
-`anti_patterns`. `evidence_units` covers the legacy knowledge-unit type
-`evidence`; standalone Evidence Layer records remain governed by the Evidence
+`principles`, `models`, `strategies`, `tools`, `cases`, `evidence_units`,
+`anti_patterns`, and `phenomena`. `evidence_units` covers the legacy knowledge-unit
+type `evidence`; standalone Evidence Layer records remain governed by the Evidence
 Layer and are not domain members. The validator checks the listed IDs against
 the loaded knowledge registry content and verifies `unit_counts` exactly against
 the member lists.

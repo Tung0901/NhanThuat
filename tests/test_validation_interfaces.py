@@ -252,6 +252,52 @@ def test_repository_validation_reports_frozen_domain_artifact_errors(tmp_path: P
     assert any("frozen domain artifacts must match domain file inventory" in issue.message for issue in issues)
 
 
+def test_repository_validation_reports_domain_area_not_in_registry(tmp_path: Path) -> None:
+    repo = _minimal_validation_repo(tmp_path)
+    unit = load_document(ROOT / "knowledge" / "units" / "laws" / "NT-LAW-0001.yaml")
+    unit["domain_area"] = "NT-DA-9999"
+    (repo / "knowledge" / "units" / "laws" / "NT-LAW-0001.yaml").write_text(
+        _dump_minimal_yaml(unit), encoding="utf-8"
+    )
+
+    issues = validate_repository(repo)
+
+    assert any("domain_area not in domain registry: NT-DA-9999" in issue.message for issue in issues)
+
+
+def test_repository_validation_accepts_frozen_domain_with_phenomena_members(tmp_path: Path) -> None:
+    repo = _minimal_validation_repo(tmp_path)
+    phenomenon = load_document(ROOT / "knowledge" / "units" / "phenomena" / "NT-PHENOMENON-3001.yaml")
+    phenomenon["status"] = "frozen"
+    phenomenon.pop("domain_area", None)
+    (repo / "knowledge" / "units" / "phenomena").mkdir(parents=True, exist_ok=True)
+    (repo / "knowledge" / "units" / "phenomena" / "NT-PHENOMENON-3001.yaml").write_text(
+        _dump_minimal_yaml(phenomenon), encoding="utf-8"
+    )
+    domain_status = {
+        "domain_area_id": "NT-DA-0001",
+        "slug": "human-nature",
+        "name": "Human Nature",
+        "status": "frozen",
+        "previous_status": "ready_for_review",
+        "progress": 100,
+        "approved_by": "Product Owner",
+        "frozen_at": "2026-07-21",
+        "blockers": [],
+        "unit_counts": {"phenomena": 1},
+        "members": {"phenomena": ["NT-PHENOMENON-3001"]},
+        "artifacts": ["docs/domains/human-nature/status.yaml"],
+    }
+    (repo / "docs" / "domains" / "human-nature" / "status.yaml").write_text(
+        _dump_minimal_yaml(domain_status), encoding="utf-8"
+    )
+    _write_frozen_domain_register(repo)
+
+    issues = validate_repository(repo)
+
+    assert issues == []
+
+
 def _dump_minimal_yaml(data: dict[str, object]) -> str:
     yaml = pytest.importorskip("yaml")
     return yaml.safe_dump(data, allow_unicode=True, sort_keys=False)

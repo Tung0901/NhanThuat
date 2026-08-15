@@ -48,7 +48,8 @@ directory, and `unit_counts` that match the member inventory. The artifact list
 must match the domain directory file inventory. This gives domain freeze atomic
 semantics without requiring the validator to infer content membership from
 prose. Domain members may include the existing knowledge-unit types law,
-principle, model, strategy, tool, case, evidence, and anti-pattern. Standalone
+principle, model, strategy, tool, case, evidence, anti-pattern, and phenomenon
+(`phenomena` member group). Standalone
 Evidence Layer records are intentionally excluded from domain-member semantics
 because they have a separate evidence lifecycle and registry.
 

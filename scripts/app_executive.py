@@ -215,7 +215,7 @@ if selected == "THAM MƯU TÌNH HUỐNG":
                     [Phương án rút lui an toàn, bảo toàn đại cuộc nếu mọi thương lượng đổ vỡ].
                     </details>
                     """
-                    candidate_models = ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-3.5-flash', 'gemini-3.6-flash']
+                    candidate_models = ['gemini-3.6-flash', 'gemini-3.5-flash', 'gemini-3-flash']
                     success = False
                     last_err = ""
                     for model_name in candidate_models:

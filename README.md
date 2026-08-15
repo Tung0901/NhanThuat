@@ -39,11 +39,11 @@ GEMINI_API_KEY = "AIzaSy-..."   # tạo miễn phí tại https://aistudio.googl
 ```
 
 Base URL và mô hình mặc định (`https://generativelanguage.googleapis.com/v1beta/openai`,
-`gemini-2.5-flash`) đã được thiết lập sẵn. Chỉ cần đặt chúng khi muốn tùy chỉnh:
+`gemini-3.6-flash`) đã được thiết lập sẵn. Chỉ cần đặt chúng khi muốn tùy chỉnh:
 
 ```toml
 GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai"
-GEMINI_MODEL = "gemini-2.5-flash"
+GEMINI_MODEL = "gemini-3.6-flash"
 ```
 
 Trên Streamlit Community Cloud, dán nguyên khối TOML ở trên vào

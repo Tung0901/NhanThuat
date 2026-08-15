@@ -112,7 +112,7 @@ def test_synthesizer_falls_back_on_provider_error(units: list[KnowledgeUnit], mo
 
 def test_synthesizer_honors_explicit_model_override(units: list[KnowledgeUnit], monkeypatch) -> None:
     monkeypatch.setenv("GEMINI_API_KEY", "AIzaSy-test-key")
-    monkeypatch.setenv("NHAN_THUAT_LLM_MODEL", "gemini-2.5-pro")
+    monkeypatch.setenv("NHAN_THUAT_LLM_MODEL", "gemini-3.6-flash")
     synthesizer = KnowledgeSynthesizer()
 
     class FakeResponse:
@@ -123,7 +123,7 @@ def test_synthesizer_honors_explicit_model_override(units: list[KnowledgeUnit], 
             return {"choices": [{"message": {"content": "Phân tích."}}]}
 
     def fake_post(*args, **kwargs) -> FakeResponse:
-        assert kwargs["json"]["model"] == "gemini-2.5-pro"
+        assert kwargs["json"]["model"] == "gemini-3.6-flash"
         return FakeResponse()
 
     monkeypatch.setattr("nhan_thuat.runtime.synthesizer.requests.post", fake_post)
@@ -131,4 +131,4 @@ def test_synthesizer_honors_explicit_model_override(units: list[KnowledgeUnit], 
     result = synthesizer.synthesize("test query", units[:2])
 
     assert result["mode"] == "llm"
-    assert result["audit"]["model"] == "gemini-2.5-pro"
+    assert result["audit"]["model"] == "gemini-3.6-flash"

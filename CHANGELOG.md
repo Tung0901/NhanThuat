@@ -55,3 +55,4 @@ Mọi thay đổi đáng chú ý của dự án được ghi tại đây.
 - Twenty frozen domain status files reformatted to block YAML style without semantic changes (documented in the M16 review package).
 - Knowledge engine now loads 370 units; tests and runtime assertions updated from 274 to 370.
 - New units set to `review` status pending Product Owner approval; auto-frozen states reverted per governance.
+- M16 knowledge expansion approved by Product Owner (2026-08-14): NT-BATCH-002, NT-DA-0021 through NT-DA-0030, and all 96 units frozen and registered in the Frozen Register.

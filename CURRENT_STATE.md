@@ -58,7 +58,7 @@ All 5 engine files expose standardized Program 8 & 9 metadata blocks: `philosoph
 
 - **Domain Areas:** 30 registered domains (`NT-DA-0001` through `NT-DA-0030`) across three categories: CAT-CORE (1), CAT-BEHAVIORAL (6), CAT-APPLIED (23).
 - **Knowledge Units:** 370 units (82 Laws, 134 Principles, 45 Models, 60 Anti-Patterns, 49 Phenomena).
-- **Governance:** 274 units frozen; 96 new units in `review` status awaiting Product Owner approval.
+- **Governance:** 370 units frozen (all unit statuses `frozen`); NT-BATCH-002 and NT-DA-0021..0030 registered in `governance/frozen-register.yaml` (Product Owner approval 2026-08-14).
 - **Validation Status:** `scripts/validate_all.py` passes 100% clean.
 - **Test Suite Status:** `pytest` passes 100% cleanly.
 

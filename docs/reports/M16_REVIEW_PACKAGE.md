@@ -2,7 +2,13 @@
 
 **Document ID:** `DOC-REP-M16-001`
 **Execution Date:** August 14, 2026
-**Status:** READY FOR PRODUCT OWNER REVIEW
+**Status:** **APPROVED BY PRODUCT OWNER (2026-08-14)**
+
+## 0. Approval Record
+
+- **Decision:** Approved in full by Product Owner on August 14, 2026.
+- **Effect:** NT-BATCH-002 frozen; NT-DA-0021 through NT-DA-0030 frozen with all 96 units; `docs/domains/*/status.yaml` for the ten new domains stamped `frozen` (frozen_at 2026-08-14); frozen register updated.
+- **Post-approval change control:** G3 (reformatted frozen status.yaml) accepted as change control record; G5 (anti-patterns 3xxx) confirmed deferred to backlog; G7 (EPIC 5 scope) acknowledged — LLM integration tracked under capability NHANTHUAT-CAP-002.
 
 ## 1. Purpose
 

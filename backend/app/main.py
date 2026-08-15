@@ -25,7 +25,7 @@ import json
 import uuid
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any
 from urllib.parse import parse_qs, urlparse
 
 from backend.app.engine.nhan_thuat_api import process_nhan_thuat_analysis
@@ -42,13 +42,13 @@ nhan_thuat_public_v1 = KnowledgeEngineAdapterV1(knowledge_engine)
 salesos_plugin = SalesOSPlugin()
 
 # Execution History Store for Provenance Lookup
-execution_provenance_store: Dict[str, Dict[str, Any]] = {}
+execution_provenance_store: dict[str, dict[str, Any]] = {}
 
 STATIC_DIR = Path(__file__).resolve().parent / "static"
 DOCS_KNOWLEDGE_DIR = Path(__file__).resolve().parent.parent.parent / "docs" / "knowledge"
 
 
-def export_unit(engine: KnowledgeEngine, unit_id: str, fmt: str = "markdown") -> Dict[str, Any]:
+def export_unit(engine: KnowledgeEngine, unit_id: str, fmt: str = "markdown") -> dict[str, Any]:
     """Export a knowledge unit as JSON or Markdown (EPIC 6)."""
     unit_res = engine.resolve_latest_active_unit(unit_id)
     if unit_res["status"] != "success":
@@ -76,7 +76,7 @@ def export_unit(engine: KnowledgeEngine, unit_id: str, fmt: str = "markdown") ->
 class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
     """HTTP Request Handler for BusinessOS API Gateway and Web App Dashboard."""
 
-    def _send_json_response(self, status_code: int, data: Dict[str, Any]) -> None:
+    def _send_json_response(self, status_code: int, data: dict[str, Any]) -> None:
         self.send_response(status_code)
         self.send_header("Content-Type", "application/json; charset=utf-8")
         self.end_headers()
@@ -339,11 +339,11 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
 
         try:
             payload = json.loads(body_bytes.decode("utf-8")) if body_bytes else {}
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - malformed client payload
             self._send_json_response(400, {
                 "status": "VALIDATION_ERROR",
                 "error_code": "INVALID_JSON_PAYLOAD",
-                "message": f"Malformed JSON payload: {str(e)}",
+                "message": f"Malformed JSON payload: {e!s}",
             })
             return
 

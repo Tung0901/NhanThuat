@@ -6,13 +6,13 @@ Provides detailed actionable execution scripts, step-by-step dialogues, draft co
 import json
 import uuid
 from pathlib import Path
-from typing import Any, Dict, List, Tuple
+from typing import Any
 
 from backend.app.engine.runtime import BusinessOSRuntimeOrchestrator
 from nhan_thuat.knowledge_engine import IndexedUnit, KnowledgeEngine
 
 _orchestrator: BusinessOSRuntimeOrchestrator = None
-_dialogue_few_shots: Dict[str, Any] = None
+_dialogue_few_shots: dict[str, Any] = None
 
 
 def get_orchestrator() -> BusinessOSRuntimeOrchestrator:
@@ -22,21 +22,21 @@ def get_orchestrator() -> BusinessOSRuntimeOrchestrator:
     return _orchestrator
 
 
-def get_dialogue_few_shots() -> Dict[str, Any]:
+def get_dialogue_few_shots() -> dict[str, Any]:
     global _dialogue_few_shots
     if _dialogue_few_shots is None:
         template_file = Path(__file__).resolve().parent.parent.parent / "docs" / "templates" / "dialogue_few_shots.json"
         if template_file.exists():
             try:
                 _dialogue_few_shots = json.loads(template_file.read_text(encoding="utf-8"))
-            except Exception:
+            except Exception:  # noqa: BLE001 - fall back to empty few-shot examples
                 _dialogue_few_shots = {}
         else:
             _dialogue_few_shots = {}
     return _dialogue_few_shots
 
 
-def find_relevant_units(scenario_text: str, engine: KnowledgeEngine, top_k: int = 3) -> List[IndexedUnit]:
+def find_relevant_units(scenario_text: str, engine: KnowledgeEngine, top_k: int = 3) -> list[IndexedUnit]:
     text_lower = scenario_text.lower()
     synonym_map = {
         "báo cáo láo": ["báo cáo", "dối", "sự thật", "hình danh", "chức danh", "kỷ luật", "truth", "threat", "formal", "position"],
@@ -56,7 +56,7 @@ def find_relevant_units(scenario_text: str, engine: KnowledgeEngine, top_k: int 
         if key in text_lower:
             expanded_tokens.extend(syn_list)
 
-    scores: Dict[str, Tuple[int, IndexedUnit]] = {}
+    scores: dict[str, tuple[int, IndexedUnit]] = {}
     for unit_id, unit in engine.units_by_id.items():
         score = 0
         raw = unit.raw_data
@@ -82,7 +82,7 @@ def find_relevant_units(scenario_text: str, engine: KnowledgeEngine, top_k: int 
     return [u[1] for u in sorted_units[:top_k]]
 
 
-def check_context_ambiguity(scenario_text: str) -> Tuple[bool, str]:
+def check_context_ambiguity(scenario_text: str) -> tuple[bool, str]:
     text_lower = scenario_text.lower().strip()
     words = text_lower.split()
 
@@ -110,7 +110,7 @@ def check_context_ambiguity(scenario_text: str) -> Tuple[bool, str]:
     return False, ""
 
 
-def generate_actionable_script_details(primary: str, scenario_text: str) -> Dict[str, Any]:
+def generate_actionable_script_details(primary: str, scenario_text: str) -> dict[str, Any]:
     """Generates Senior Executive Co-Pilot Strategic Analysis, 3-step verbatim dialogue, draft communications, and financial/operational directives."""
     few_shots = get_dialogue_few_shots().get("templates", {})
     text_lower = scenario_text.lower()
@@ -342,7 +342,7 @@ def generate_actionable_script_details(primary: str, scenario_text: str) -> Dict
         }
 
 
-def process_nhan_thuat_analysis(scenario_text: str, scenario_type_hint: str = "general") -> Dict[str, Any]:
+def process_nhan_thuat_analysis(scenario_text: str, scenario_type_hint: str = "general") -> dict[str, Any]:
     orchestrator = get_orchestrator()
     text_lower = scenario_text.lower()
 
@@ -351,9 +351,7 @@ def process_nhan_thuat_analysis(scenario_text: str, scenario_type_hint: str = "g
 
     # 1. Determine scenario type
     ops_keywords = ["vật tư", "nhà cung cấp", "chậm tiến độ", "công trình", "thi công", "hợp đồng", "chế tài", "vi phạm hợp đồng", "trách nhiệm", "nợ", "đòi nợ", "thanh toán"]
-    if any(w in text_lower for w in ops_keywords):
-        scenario_type = "governance"
-    elif any(w in text_lower for w in ["báo cáo láo", "dối trá", "kỷ luật", "vi phạm", "đình công", "quy chế"]):
+    if any(w in text_lower for w in ops_keywords) or any(w in text_lower for w in ["báo cáo láo", "dối trá", "kỷ luật", "vi phạm", "đình công", "quy chế"]):
         scenario_type = "governance"
     elif any(w in text_lower for w in ["chê", "đắt", "báo giá", "từ chối", "giá"]):
         scenario_type = "objection"

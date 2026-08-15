@@ -7,11 +7,10 @@ Cách chạy:
     python scripts/test_nhan_thuat_cli.py
 """
 
-import sys
 import subprocess
+import sys
 import uuid
 from pathlib import Path
-from typing import Dict, List, Tuple
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
@@ -20,8 +19,8 @@ repo_root = Path(__file__).resolve().parent.parent
 
 # Auto-switch to project virtual environment .venv if running under global python
 try:
-    import yaml  # noqa: F401 - intentional availability probe
     import jsonschema  # noqa: F401 - intentional availability probe
+    import yaml  # noqa: F401 - intentional availability probe
 except ImportError:
     venv_python = repo_root / ".venv" / "Scripts" / "python.exe"
     if venv_python.exists() and str(venv_python) != sys.executable:
@@ -41,8 +40,13 @@ if str(src_path) not in sys.path:
 if str(repo_root) not in sys.path:
     sys.path.insert(0, str(repo_root))
 
-from backend.app.engine.runtime import BusinessOSRuntimeOrchestrator  # noqa: E402 - after sys.path setup
-from nhan_thuat.knowledge_engine import KnowledgeEngine, IndexedUnit  # noqa: E402 - after sys.path setup
+from backend.app.engine.runtime import (
+    BusinessOSRuntimeOrchestrator,
+)
+from nhan_thuat.knowledge_engine import (
+    IndexedUnit,
+    KnowledgeEngine,
+)
 
 
 def format_header(title: str) -> str:
@@ -50,7 +54,7 @@ def format_header(title: str) -> str:
     return f"\n{line}\n  {title.upper()}\n{line}"
 
 
-def find_relevant_knowledge_units(scenario_text: str, engine: KnowledgeEngine, top_k: int = 3) -> List[IndexedUnit]:
+def find_relevant_knowledge_units(scenario_text: str, engine: KnowledgeEngine, top_k: int = 3) -> list[IndexedUnit]:
     """
     Search and score all 274 Knowledge Units against scenario keywords, tags, domain, title, summary, definition.
     """
@@ -74,7 +78,7 @@ def find_relevant_knowledge_units(scenario_text: str, engine: KnowledgeEngine, t
         if key in text_lower:
             expanded_tokens.extend(syn_list)
 
-    scores: Dict[str, Tuple[int, IndexedUnit]] = {}
+    scores: dict[str, tuple[int, IndexedUnit]] = {}
 
     for unit_id, unit in engine.units_by_id.items():
         score = 0
@@ -103,7 +107,7 @@ def find_relevant_knowledge_units(scenario_text: str, engine: KnowledgeEngine, t
     return [u[1] for u in sorted_units[:top_k]]
 
 
-def check_context_ambiguity(scenario_text: str) -> Tuple[bool, str]:
+def check_context_ambiguity(scenario_text: str) -> tuple[bool, str]:
     """
     Check if the input lacks operational conflict context (e.g. short location 'Công trình ở Nhà Bè').
     Returns (is_ambiguous: bool, warning_message: str).
@@ -149,9 +153,7 @@ def analyze_scenario(scenario_text: str, orchestrator: BusinessOSRuntimeOrchestr
     
     # Priority 1: Operational / Construction / Supplier / Contract / Delay Incidents -> GOVERNANCE (LEGALISM)
     ops_keywords = ["vật tư", "nhà cung cấp", "chậm tiến độ", "công trình", "thi công", "hợp đồng", "chế tài", "vi phạm hợp đồng", "trách nhiệm"]
-    if any(w in text_lower for w in ops_keywords):
-        scenario_type = "governance"
-    elif any(w in text_lower for w in ["báo cáo láo", "dối trá", "kỷ luật", "vi phạm", "đình công", "quy chế"]):
+    if any(w in text_lower for w in ops_keywords) or any(w in text_lower for w in ["báo cáo láo", "dối trá", "kỷ luật", "vi phạm", "đình công", "quy chế"]):
         scenario_type = "governance"
     elif any(w in text_lower for w in ["chê", "đắt", "báo giá", "từ chối", "giá"]):
         scenario_type = "objection"

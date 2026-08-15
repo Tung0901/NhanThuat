@@ -1,8 +1,10 @@
 """Tests for Streamlit WebApp Engine Adapter."""
 
 import pytest
+
 from app.services.engine_adapter import EngineAdapter
 from nhan_thuat.models import KnowledgeUnit
+
 
 @pytest.fixture(scope="module")
 def adapter():

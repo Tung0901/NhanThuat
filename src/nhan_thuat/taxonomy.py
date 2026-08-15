@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
+from collections.abc import Iterable
 from dataclasses import dataclass
-from typing import Iterable
 
 from .models import Domain
 
@@ -13,7 +13,7 @@ class Taxonomy:
     domains: dict[str, Domain]
 
     @classmethod
-    def from_domains(cls, domains: Iterable[Domain]) -> "Taxonomy":
+    def from_domains(cls, domains: Iterable[Domain]) -> Taxonomy:
         return cls(domains={domain.slug: domain for domain in sorted(domains, key=lambda item: item.id)})
 
     def require_domain(self, slug: str) -> Domain:

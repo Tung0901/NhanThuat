@@ -4,8 +4,8 @@ Launches Streamlit app directly in headless mode using project's virtual environ
 Usage: python scripts/run_executive_streamlit.py
 """
 
-import sys
 import subprocess
+import sys
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -29,4 +29,4 @@ if __name__ == "__main__":
     ]
     print("Launching BusinessOS Executive Streamlit UI on http://localhost:8501...")
     print(f"Running command: {' '.join(cmd)}")
-    subprocess.run(cmd, cwd=str(REPO_ROOT))
+    subprocess.run(cmd, cwd=str(REPO_ROOT), check=False)

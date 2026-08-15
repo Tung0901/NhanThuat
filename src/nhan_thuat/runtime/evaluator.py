@@ -1,6 +1,7 @@
 """Evaluation logic for adherence to knowledge units."""
 
-from typing import Any, Iterable
+from collections.abc import Iterable
+from typing import Any
 
 from nhan_thuat.models import KnowledgeUnit
 

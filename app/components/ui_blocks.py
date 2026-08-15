@@ -1,8 +1,10 @@
 """UI Block helpers for Nhan Thuat Streamlit WebApp."""
 
 import streamlit as st
+
+from app.utils.localization import t_domain, t_type
 from nhan_thuat.models import KnowledgeUnit
-from app.utils.localization import t_type, t_domain
+
 
 def render_tag_pill(label: str, type_class: str = ""):
     """Renders a styled pill tag safely."""
@@ -10,7 +12,7 @@ def render_tag_pill(label: str, type_class: str = ""):
     css_class = f"badge badge-{type_class.lower()}" if type_class else "badge"
     return f'<span class="{css_class}">{label}</span>'
 
-def render_unit_card(unit: KnowledgeUnit, score: float = None):
+def render_unit_card(unit: KnowledgeUnit, score: float | None = None):
     """Renders an editorial knowledge card for a knowledge unit using native Streamlit containers."""
     
     with st.container(border=True):

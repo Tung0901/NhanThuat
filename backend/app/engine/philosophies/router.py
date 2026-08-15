@@ -9,14 +9,14 @@ Program 13 SDK Integration, and Corrected AI Router Architectural Directives.
 import json
 from enum import Enum
 from pathlib import Path
-from typing import Any, Dict, Optional, Tuple
+from typing import Any
 
 # AI Router Corrected Technical Directives
 GLOBAL_AI_TEMPERATURE: float = 0.1  # Consistency preference, not a 99% mathematical guarantee
 FIXED_REPRODUCIBILITY_SEED: int = 42
 
 # Canonical Source of Truth Registry
-CANONICAL_SOURCE_REGISTRY: Dict[str, str] = {
+CANONICAL_SOURCE_REGISTRY: dict[str, str] = {
     "knowledge_units": "knowledge/units/",
     "schemas": "schemas/",
     "docs_knowledge": "docs/knowledge/",
@@ -25,7 +25,7 @@ CANONICAL_SOURCE_REGISTRY: Dict[str, str] = {
 }
 
 # Version Resolution Policy: Latest Approved + Active + Compatible Version
-VERSION_RESOLUTION_POLICY: Dict[str, Any] = {
+VERSION_RESOLUTION_POLICY: dict[str, Any] = {
     "resolution_strategy": "LATEST_APPROVED_ACTIVE_COMPATIBLE",
     "enforce_pinning": True,
     "record_provenance_checksum": True,
@@ -64,15 +64,15 @@ class PhilosophyRouter:
 
     GLOBAL_AI_TEMPERATURE: float = GLOBAL_AI_TEMPERATURE
     FIXED_REPRODUCIBILITY_SEED: int = FIXED_REPRODUCIBILITY_SEED
-    CANONICAL_SOURCE_REGISTRY: Dict[str, str] = CANONICAL_SOURCE_REGISTRY
-    VERSION_RESOLUTION_POLICY: Dict[str, Any] = VERSION_RESOLUTION_POLICY
+    CANONICAL_SOURCE_REGISTRY: dict[str, str] = CANONICAL_SOURCE_REGISTRY
+    VERSION_RESOLUTION_POLICY: dict[str, Any] = VERSION_RESOLUTION_POLICY
     FALLBACK_INSUFFICIENT_KNOWLEDGE: str = FALLBACK_INSUFFICIENT_KNOWLEDGE
 
-    def __init__(self, engine_dir: Optional[Path] = None) -> None:
+    def __init__(self, engine_dir: Path | None = None) -> None:
         if engine_dir is None:
             engine_dir = Path(__file__).resolve().parent
         self.engine_dir = engine_dir
-        self.engines: Dict[PhilosophyType, Dict[str, Any]] = {}
+        self.engines: dict[PhilosophyType, dict[str, Any]] = {}
         self._load_all_engines()
 
     def _load_all_engines(self) -> None:
@@ -92,7 +92,7 @@ class PhilosophyRouter:
             else:
                 self.engines[phil_type] = {"error": f"File {filename} not found"}
 
-    def get_router_constraints(self) -> Dict[str, Any]:
+    def get_router_constraints(self) -> dict[str, Any]:
         """Return explicit technical constraints governing AI Router execution."""
         return {
             "global_ai_temperature": self.GLOBAL_AI_TEMPERATURE,
@@ -109,7 +109,7 @@ class PhilosophyRouter:
             ],
         }
 
-    def route(self, context: Dict[str, Any]) -> Dict[str, Any]:
+    def route(self, context: dict[str, Any]) -> dict[str, Any]:
         """
         Route context scenario to Primary, Secondary, and optional Tertiary philosophy lenses.
         
@@ -203,7 +203,7 @@ class PhilosophyRouter:
 
     def _determine_lens_hierarchy(
         self, text: str, scenario_type: str
-    ) -> Tuple[PhilosophyType, Optional[PhilosophyType], Optional[PhilosophyType]]:
+    ) -> tuple[PhilosophyType, PhilosophyType | None, PhilosophyType | None]:
         """
         Determine Primary, Secondary, and Tertiary lenses based on canonical BusinessOS policies:
         - Customer Objection: Primary Rhetoric, Secondary Taoism
@@ -272,9 +272,9 @@ class PhilosophyRouter:
     def _calculate_lens_weights(
         self,
         primary: PhilosophyType,
-        secondary: Optional[PhilosophyType],
-        tertiary: Optional[PhilosophyType],
-    ) -> Dict[str, float]:
+        secondary: PhilosophyType | None,
+        tertiary: PhilosophyType | None,
+    ) -> dict[str, float]:
         """Assign normalized composition weights for composed lenses."""
         weights = {}
         if secondary and tertiary:
@@ -292,9 +292,9 @@ class PhilosophyRouter:
         self,
         text: str,
         primary: PhilosophyType,
-        secondary: Optional[PhilosophyType],
-        tertiary: Optional[PhilosophyType],
-    ) -> Dict[str, float]:
+        secondary: PhilosophyType | None,
+        tertiary: PhilosophyType | None,
+    ) -> dict[str, float]:
         """Calculate confidence score per lens taking engine metadata confidence_modifier into account."""
         scores = {}
         active_lenses = [lens for lens in [primary, secondary, tertiary] if lens is not None]
@@ -308,9 +308,9 @@ class PhilosophyRouter:
     def _resolve_lens_conflicts(
         self,
         primary: PhilosophyType,
-        secondary: Optional[PhilosophyType],
-        tertiary: Optional[PhilosophyType],
-    ) -> Dict[str, Any]:
+        secondary: PhilosophyType | None,
+        tertiary: PhilosophyType | None,
+    ) -> dict[str, Any]:
         """Detect and resolve potential conflicts between composed lenses based on engine metadata."""
         active_lenses = [lens for lens in [primary, secondary, tertiary] if lens is not None]
         incompatibilities = []
@@ -340,11 +340,11 @@ class PhilosophyRouter:
     def _generate_explanation(
         self,
         primary: PhilosophyType,
-        secondary: Optional[PhilosophyType],
-        tertiary: Optional[PhilosophyType],
-        weights: Dict[str, float],
-        confidence_scores: Dict[str, float],
-        conflict_result: Dict[str, Any],
+        secondary: PhilosophyType | None,
+        tertiary: PhilosophyType | None,
+        weights: dict[str, float],
+        confidence_scores: dict[str, float],
+        conflict_result: dict[str, Any],
         scenario_type: str,
     ) -> str:
         """Generate clear natural language explanation of multi-lens selection."""

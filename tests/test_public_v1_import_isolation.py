@@ -29,7 +29,8 @@ def test_public_v1_import_without_businessos():
         [sys.executable, "-c", test_script],
         env=merged_env,
         capture_output=True,
-        text=True
+        text=True,
+        check=False,
     )
 
     assert result.returncode == 0, f"Failed to import public v1 contract in isolation.\nSTDOUT: {result.stdout}\nSTDERR: {result.stderr}"

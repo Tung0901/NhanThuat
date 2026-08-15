@@ -1,11 +1,13 @@
 """Tests for Nhan Thuat runtime components with deep behavior coverage."""
 
 import pytest
-from nhan_thuat.models import KnowledgeUnit, EvidenceSummary
-from nhan_thuat.runtime.graph import KnowledgeGraph, CircularDependencyError
-from nhan_thuat.runtime.resolver import KnowledgeResolver
-from nhan_thuat.runtime.prompt_builder import PromptBuilder
+
+from nhan_thuat.models import EvidenceSummary, KnowledgeUnit
 from nhan_thuat.runtime.evaluator import KnowledgeEvaluator
+from nhan_thuat.runtime.graph import CircularDependencyError, KnowledgeGraph
+from nhan_thuat.runtime.prompt_builder import PromptBuilder
+from nhan_thuat.runtime.resolver import KnowledgeResolver
+
 
 @pytest.fixture
 def base_unit():

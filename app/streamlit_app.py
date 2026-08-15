@@ -1,5 +1,6 @@
 import sys
 from pathlib import Path
+
 # Ensure the root and src directories are in the Python path
 root_path = Path(__file__).parent.parent
 src_path = root_path / "src"
@@ -8,8 +9,9 @@ if str(root_path) not in sys.path:
 if str(src_path) not in sys.path:
     sys.path.insert(0, str(src_path))
 
-import streamlit as st  # noqa: E402 - after sys.path setup
-from app.styles.custom_css import inject_minimalist_css  # noqa: E402 - after sys.path setup
+import streamlit as st
+
+from app.styles.custom_css import inject_minimalist_css
 
 # Page Configuration
 st.set_page_config(

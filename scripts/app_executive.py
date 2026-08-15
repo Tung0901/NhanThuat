@@ -1,9 +1,10 @@
 import os
-import streamlit as st
-import google.generativeai as genai
-from streamlit_option_menu import option_menu
 from datetime import datetime
+
+import google.generativeai as genai
+import streamlit as st
 from dotenv import load_dotenv
+from streamlit_option_menu import option_menu
 
 # --- 1. CONFIG & ENV ---
 load_dotenv()
@@ -169,7 +170,7 @@ if selected == "THAM MƯU TÌNH HUỐNG":
                 if st.button("💾 Lưu Ca Này Vào Kho"):
                     last_user = next((m["content"] for m in reversed(st.session_state.messages) if m["role"] == "user"), "")
                     last_ai = next((m["content"] for m in reversed(st.session_state.messages) if m["role"] == "assistant"), "")
-                    now_str = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+                    now_str = datetime.now().astimezone().strftime("%d/%m/%Y %H:%M:%S")
                     record = f"\n\n## 🕒 Ca xử lý: {now_str}\n\n**TÌNH HUỐNG:**\n> {last_user}\n\n**PHÁN QUYẾT:**\n{last_ai}\n\n---\n"
                     with open(THUC_CHIEN_PATH, "a", encoding="utf-8") as f:
                         f.write(record)
@@ -180,8 +181,7 @@ if selected == "THAM MƯU TÌNH HUỐNG":
             with st.chat_message("user"):
                 st.markdown(prompt_text, unsafe_allow_html=True)
                 
-            with st.chat_message("assistant"):
-                with st.spinner("Đang thấu cảm & thiết lập phương pháp..."):
+            with st.chat_message("assistant"), st.spinner("Đang thấu cảm & thiết lập phương pháp..."):
                     sys_prompt = f"""Bạn là một Cố Vấn Chiến Lược & Nhân Sinh Cấp Cao, hiện thân cho trí tuệ Binh pháp, Nhân thuật và phong cách sống thâm trầm, từng trải của người dùng.
 
                     TÌNH HUỐNG HIỆN TẠI CỦA NGƯỜI DÙNG: {prompt_text}
@@ -227,7 +227,7 @@ if selected == "THAM MƯU TÌNH HUỐNG":
                                 st.session_state.messages.append({"role": "assistant", "content": res.text})
                                 success = True
                                 break
-                        except Exception as e:
+                        except Exception as e:  # noqa: BLE001 - try next candidate model
                             last_err = str(e)
                             continue
                     if not success:

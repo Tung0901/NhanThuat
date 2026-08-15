@@ -10,7 +10,7 @@ SRC = REPO_ROOT / "src"
 if str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
 
-from nhan_thuat.validator import validate_repository  # noqa: E402
+from nhan_thuat.validator import validate_repository
 
 
 def main() -> int:

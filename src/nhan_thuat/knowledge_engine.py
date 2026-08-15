@@ -7,7 +7,7 @@ import hashlib
 import json
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Set, Tuple
+from typing import Any
 
 from nhan_thuat.loader import iter_documents, load_document
 from nhan_thuat.validator import validate_document
@@ -15,7 +15,7 @@ from nhan_thuat.validator import validate_document
 FALLBACK_INSUFFICIENT_KNOWLEDGE = "INSUFFICIENT_VERIFIED_KNOWLEDGE"
 
 
-def calculate_unit_checksum(data: Dict[str, Any]) -> str:
+def calculate_unit_checksum(data: dict[str, Any]) -> str:
     """Calculate SHA-256 checksum for a knowledge unit payload."""
     serialized = json.dumps(data, sort_keys=True, default=str).encode("utf-8")
     return f"sha256:{hashlib.sha256(serialized).hexdigest()}"
@@ -31,11 +31,11 @@ class IndexedUnit:
     domain: str
     version: str
     status: str
-    tags: List[str]
-    raw_data: Dict[str, Any]
+    tags: list[str]
+    raw_data: dict[str, Any]
     file_path: str
     checksum: str
-    direct_dependencies: List[str] = field(default_factory=list)
+    direct_dependencies: list[str] = field(default_factory=list)
 
 
 @dataclass
@@ -55,7 +55,7 @@ class KnowledgeEngine:
     Single Source of Truth loader and graph traverser for 274 Knowledge Units + Custom RAG Pipeline.
     """
 
-    def __init__(self, root_dir: Optional[str | Path] = None, schema_path: Optional[str | Path] = None) -> None:
+    def __init__(self, root_dir: str | Path | None = None, schema_path: str | Path | None = None) -> None:
         repo_root = Path(__file__).resolve().parent.parent.parent
         if root_dir is None:
             root_dir = repo_root / "knowledge" / "units"
@@ -73,19 +73,19 @@ class KnowledgeEngine:
             self.unit_schema = {}
 
         # Primary Index Maps
-        self.units_by_id: Dict[str, IndexedUnit] = {}
-        self.units_by_type: Dict[str, List[IndexedUnit]] = {}
-        self.units_by_domain: Dict[str, List[IndexedUnit]] = {}
-        self.units_by_tag: Dict[str, List[IndexedUnit]] = {}
-        self.units_by_status: Dict[str, List[IndexedUnit]] = {}
+        self.units_by_id: dict[str, IndexedUnit] = {}
+        self.units_by_type: dict[str, list[IndexedUnit]] = {}
+        self.units_by_domain: dict[str, list[IndexedUnit]] = {}
+        self.units_by_tag: dict[str, list[IndexedUnit]] = {}
+        self.units_by_status: dict[str, list[IndexedUnit]] = {}
 
         # Custom RAG Docs Index Map
-        self.custom_docs: Dict[str, CustomDocUnit] = {}
+        self.custom_docs: dict[str, CustomDocUnit] = {}
 
         # Load and Index Knowledge Base + Custom Docs
         self.reload()
 
-    def get_unit(self, unit_id: str) -> Optional[IndexedUnit]:
+    def get_unit(self, unit_id: str) -> IndexedUnit | None:
         """Fetch IndexedUnit by ID."""
         return self.units_by_id.get(unit_id)
 
@@ -118,7 +118,7 @@ class KnowledgeEngine:
                             content=text,
                             checksum=checksum,
                         )
-                    except Exception:
+                    except Exception:  # noqa: BLE001, S110 - skip unreadable custom docs
                         pass
 
     def reload(self) -> None:
@@ -198,7 +198,7 @@ class KnowledgeEngine:
         # Scan Custom Company RAG Documents
         self.scan_custom_documents()
 
-    def query_custom_documents(self, query_text: str, top_k: int = 2) -> List[CustomDocUnit]:
+    def query_custom_documents(self, query_text: str, top_k: int = 2) -> list[CustomDocUnit]:
         """Search company custom documents/contracts/SOPs matching query keywords."""
         if not self.custom_docs:
             return []
@@ -206,7 +206,7 @@ class KnowledgeEngine:
         text_lower = query_text.lower()
         tokens = [t.strip() for t in text_lower.split() if len(t.strip()) > 1]
 
-        scores: List[Tuple[int, CustomDocUnit]] = []
+        scores: list[tuple[int, CustomDocUnit]] = []
         for doc in self.custom_docs.values():
             score = 0
             doc_text = f"{doc.title} {doc.content}".lower()
@@ -221,9 +221,9 @@ class KnowledgeEngine:
         scores.sort(key=lambda x: x[0], reverse=True)
         return [item[1] for item in scores[:top_k]]
 
-    def _extract_direct_dependencies(self, data: Dict[str, Any]) -> List[str]:
+    def _extract_direct_dependencies(self, data: dict[str, Any]) -> list[str]:
         """Extract referenced unit IDs from relationships, related_units, depends_on, prerequisites."""
-        deps: Set[str] = set()
+        deps: set[str] = set()
 
         for rel in data.get("related_units", []):
             if isinstance(rel, str):
@@ -241,7 +241,7 @@ class KnowledgeEngine:
 
         relationships = data.get("relationships", {})
         if isinstance(relationships, dict):
-            for rel_type, rel_target in relationships.items():
+            for rel_target in relationships.values():
                 if isinstance(rel_target, list):
                     for item in rel_target:
                         if isinstance(item, str):
@@ -251,9 +251,9 @@ class KnowledgeEngine:
                 elif isinstance(rel_target, str):
                     deps.add(rel_target)
 
-        return sorted(list(deps))
+        return sorted(deps)
 
-    def detect_missing_references(self) -> List[str]:
+    def detect_missing_references(self) -> list[str]:
         """Verify all direct dependencies exist in units_by_id."""
         missing = []
         for unit_id, unit in self.units_by_id.items():
@@ -262,13 +262,13 @@ class KnowledgeEngine:
                     missing.append(f"Unit '{unit_id}' references missing unit '{dep_id}'")
         return missing
 
-    def detect_circular_dependencies(self) -> List[List[str]]:
+    def detect_circular_dependencies(self) -> list[list[str]]:
         """Verify graph has no circular dependency cycles."""
         cycles = []
         visited = set()
         rec_stack = set()
 
-        def dfs(curr_id: str, path: List[str]):
+        def dfs(curr_id: str, path: list[str]):
             visited.add(curr_id)
             rec_stack.add(curr_id)
 
@@ -295,12 +295,12 @@ class KnowledgeEngine:
 
         return cycles
 
-    def get_transitive_dependencies(self, unit_id: str, max_depth: int = 10) -> List[str]:
+    def get_transitive_dependencies(self, unit_id: str, max_depth: int = 10) -> list[str]:
         """Resolve all transitive dependencies using DFS up to max_depth."""
         if unit_id not in self.units_by_id:
             return []
 
-        visited: Set[str] = set()
+        visited: set[str] = set()
 
         def dfs(curr_id: str, depth: int):
             if depth > max_depth or curr_id in visited:
@@ -317,15 +317,15 @@ class KnowledgeEngine:
             if direct in self.units_by_id:
                 dfs(direct, 1)
 
-        return sorted(list(visited))
+        return sorted(visited)
 
     def query(
         self,
-        domain: Optional[str] = None,
-        unit_type: Optional[str] = None,
-        tag: Optional[str] = None,
-        status: Optional[str] = None,
-    ) -> List[IndexedUnit]:
+        domain: str | None = None,
+        unit_type: str | None = None,
+        tag: str | None = None,
+        status: str | None = None,
+    ) -> list[IndexedUnit]:
         """Query knowledge units matching filters."""
         candidates = list(self.units_by_id.values())
 
@@ -340,7 +340,7 @@ class KnowledgeEngine:
 
         return candidates
 
-    def resolve_latest_active_unit(self, unit_id: str) -> Dict[str, Any]:
+    def resolve_latest_active_unit(self, unit_id: str) -> dict[str, Any]:
         """Resolve unit obeying LATESTAT_APPROVED_ACTIVE_COMPATIBLE rules."""
         unit = self.units_by_id.get(unit_id)
         if not unit:

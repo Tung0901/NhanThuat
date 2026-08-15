@@ -8,8 +8,8 @@ Sau khi chạy, mở trình duyệt web tại địa chỉ:
     http://localhost:8000
 """
 
-import sys
 import subprocess
+import sys
 from pathlib import Path
 
 if hasattr(sys.stdout, "reconfigure"):
@@ -47,7 +47,7 @@ def main() -> None:
     ]
     
     try:
-        subprocess.run(cmd, cwd=str(REPO_ROOT))
+        subprocess.run(cmd, cwd=str(REPO_ROOT), check=False)
     except KeyboardInterrupt:
         print("\n[STOPPED] Đã dừng Web Server.")
 

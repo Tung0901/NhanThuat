@@ -1,7 +1,9 @@
-import streamlit as st
 import time
-from app.services.engine_adapter import EngineAdapter
+
+import streamlit as st
+
 from app.components.ui_blocks import render_unit_card
+from app.services.engine_adapter import EngineAdapter
 
 st.title("Hỏi Nhân Thuật")
 st.markdown("Đặt một câu hỏi hoặc mô tả một tình huống. Nhân Thuật sẽ tìm các quy luật, hiện tượng hành vi, mô hình và nguyên tắc liên quan.")

@@ -1,14 +1,15 @@
 import streamlit as st
-from app.services.engine_adapter import EngineAdapter
+
 from app.components.ui_blocks import render_tag_pill
-from app.utils.localization import t_type, t_domain, t_title, t_evidence
+from app.services.engine_adapter import EngineAdapter
+from app.utils.localization import t_domain, t_evidence, t_title, t_type
 
 st.title("Chi tiết Tri thức")
 
 adapter = EngineAdapter()
 all_units = adapter.engine.units_by_id
 
-unit_id = st.selectbox("Chọn Mã Tri thức", [""] + sorted(list(all_units.keys())))
+unit_id = st.selectbox("Chọn Mã Tri thức", [""] + sorted(all_units.keys()))
 
 if unit_id:
     # Need KnowledgeUnit model

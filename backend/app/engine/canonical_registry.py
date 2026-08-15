@@ -13,7 +13,7 @@ Enforces LATEST_APPROVED_ACTIVE_COMPATIBLE version resolution rule.
 import hashlib
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Dict, Optional
+from typing import Any
 
 
 def calculate_file_checksum(file_path: Path) -> str:
@@ -36,7 +36,7 @@ class CanonicalSourceEntry:
     compatibility_status: bool = True
     effective_date: str = "2026-07-23"
     checksum: str = ""
-    provenance: Dict[str, Any] = field(default_factory=dict)
+    provenance: dict[str, Any] = field(default_factory=dict)
 
 
 class CanonicalSourceRegistry:
@@ -45,12 +45,12 @@ class CanonicalSourceRegistry:
     Guarantees strict Single Source of Truth retrieval across registered paths.
     """
 
-    def __init__(self, repo_root: Optional[Path] = None) -> None:
+    def __init__(self, repo_root: Path | None = None) -> None:
         if repo_root is None:
             repo_root = Path(__file__).resolve().parent.parent.parent.parent
         self.repo_root = Path(repo_root)
 
-        self.registered_paths: Dict[str, Path] = {
+        self.registered_paths: dict[str, Path] = {
             "knowledge_units": self.repo_root / "knowledge" / "units",
             "schemas": self.repo_root / "schemas",
             "docs_knowledge": self.repo_root / "docs" / "knowledge",
@@ -58,7 +58,7 @@ class CanonicalSourceRegistry:
             "governance": self.repo_root / "governance",
         }
 
-        self.sources: Dict[str, CanonicalSourceEntry] = {}
+        self.sources: dict[str, CanonicalSourceEntry] = {}
         self.scan_and_register_sources()
 
     def scan_and_register_sources(self) -> None:
@@ -96,7 +96,7 @@ class CanonicalSourceRegistry:
                 )
                 self.sources[rel_path] = entry
 
-    def resolve_source(self, relative_path: str) -> Optional[CanonicalSourceEntry]:
+    def resolve_source(self, relative_path: str) -> CanonicalSourceEntry | None:
         """
         Resolve a specific source file under LATEST_APPROVED_ACTIVE_COMPATIBLE policy.
         Returns None if source is missing, inactive, unapproved, or incompatible.
@@ -117,7 +117,7 @@ class CanonicalSourceRegistry:
 
         return None
 
-    def get_registered_sources_summary(self) -> Dict[str, Any]:
+    def get_registered_sources_summary(self) -> dict[str, Any]:
         """Return summary of all registered canonical sources."""
         summary = {}
         for s_type, p in self.registered_paths.items():

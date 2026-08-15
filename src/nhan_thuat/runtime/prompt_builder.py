@@ -1,6 +1,6 @@
 """Prompt assembly from knowledge units."""
 
-from typing import Iterable
+from collections.abc import Iterable
 
 from nhan_thuat.models import KnowledgeUnit
 

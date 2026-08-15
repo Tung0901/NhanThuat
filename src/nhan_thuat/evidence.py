@@ -2,9 +2,10 @@
 
 from __future__ import annotations
 
+from collections.abc import Iterable
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any
 
 CONFIDENCE_LEVELS = ("hypothesis", "provisional", "supported", "strong", "contested")
 SOURCE_KINDS = (
@@ -37,7 +38,7 @@ class EvidenceSource:
     license: str | None = None
 
     @classmethod
-    def from_mapping(cls, data: dict[str, Any]) -> "EvidenceSource":
+    def from_mapping(cls, data: dict[str, Any]) -> EvidenceSource:
         return cls(
             kind=str(data["kind"]),
             title=str(data["title"]),
@@ -63,7 +64,7 @@ class Citation:
     accessed_at: str | None = None
 
     @classmethod
-    def from_mapping(cls, data: dict[str, Any]) -> "Citation":
+    def from_mapping(cls, data: dict[str, Any]) -> Citation:
         return cls(
             id=str(data["id"]),
             source_locator=str(data["source_locator"]),
@@ -82,7 +83,7 @@ class EvidenceClaim:
     citations: tuple[str, ...]
 
     @classmethod
-    def from_mapping(cls, data: dict[str, Any]) -> "EvidenceClaim":
+    def from_mapping(cls, data: dict[str, Any]) -> EvidenceClaim:
         return cls(
             id=str(data["id"]),
             summary=str(data["summary"]),
@@ -99,7 +100,7 @@ class Confidence:
     reviewed_at: str | None = None
 
     @classmethod
-    def from_mapping(cls, data: dict[str, Any]) -> "Confidence":
+    def from_mapping(cls, data: dict[str, Any]) -> Confidence:
         return cls(
             level=str(data["level"]),
             basis=str(data["basis"]),
@@ -132,7 +133,7 @@ class EvidenceRecord:
     raw: dict[str, Any] = field(default_factory=dict, repr=False, compare=False)
 
     @classmethod
-    def from_mapping(cls, data: dict[str, Any], source_path: Path | None = None) -> "EvidenceRecord":
+    def from_mapping(cls, data: dict[str, Any], source_path: Path | None = None) -> EvidenceRecord:
         return cls(
             id=str(data["id"]),
             type=str(data["type"]),

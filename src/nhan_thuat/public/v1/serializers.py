@@ -1,11 +1,11 @@
 """
 Public serializers for NhanThuat Contract V1.
 """
-from dataclasses import is_dataclass, asdict
-from typing import Any, Dict
+from dataclasses import asdict, is_dataclass
+from typing import Any
 
 
-def serialize_contract(obj: Any) -> Dict[str, Any]:
+def serialize_contract(obj: Any) -> dict[str, Any]:
     """Serialize a public contract dataclass to a dictionary."""
     if is_dataclass(obj):
         return asdict(obj)

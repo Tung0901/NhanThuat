@@ -7,8 +7,8 @@ from pathlib import Path
 from typing import Any
 
 from .catalog import KnowledgeCatalog
-from .loader import iter_documents, load_document
 from .evidence import EvidenceRecord
+from .loader import iter_documents, load_document
 from .models import Domain, KnowledgeRelation, KnowledgeUnit
 from .ontology import iter_unit_relations
 from .taxonomy import Taxonomy
@@ -29,7 +29,7 @@ class KnowledgeRegistry:
     relations: tuple[KnowledgeRelation, ...]
 
     @classmethod
-    def load(cls, root: str | Path) -> "KnowledgeRegistry":
+    def load(cls, root: str | Path) -> KnowledgeRegistry:
         repo = Path(root)
         domains = _load_domains(repo)
         units = _load_units(repo)

@@ -2,17 +2,18 @@
 Public data contracts for NhanThuat Contract V1.
 """
 from dataclasses import dataclass, field
-from typing import Dict, Any, List, Optional
+from typing import Any
+
 from .compatibility import ContractVersion
 from .provenance import ProvenanceRecord
 
 
 @dataclass(frozen=True)
 class KnowledgeQuery:
-    domain_slug: Optional[str] = None
-    unit_type: Optional[str] = None
-    tag: Optional[str] = None
-    status: Optional[str] = None
+    domain_slug: str | None = None
+    unit_type: str | None = None
+    tag: str | None = None
+    status: str | None = None
     limit: int = 100
 
 
@@ -27,9 +28,9 @@ class KnowledgeUnitSummary:
 
 @dataclass(frozen=True)
 class KnowledgeResult:
-    query_filter: Dict[str, Any]
+    query_filter: dict[str, Any]
     total_matches: int
-    units: List[KnowledgeUnitSummary]
+    units: list[KnowledgeUnitSummary]
     contract_version: ContractVersion
 
 
@@ -39,18 +40,18 @@ class ReasoningRequest:
     correlation_id: str
     intent_action: str
     scenario_type: str
-    context_stack: Dict[str, Any]
-    requested_knowledge_ids: List[str] = field(default_factory=list)
+    context_stack: dict[str, Any]
+    requested_knowledge_ids: list[str] = field(default_factory=list)
 
 
 @dataclass(frozen=True)
 class ReasoningResult:
     correlation_id: str
     status_code: str
-    primary_lens: Optional[str] = None
-    secondary_lenses: List[str] = field(default_factory=list)
-    applied_knowledge_units: List[str] = field(default_factory=list)
+    primary_lens: str | None = None
+    secondary_lenses: list[str] = field(default_factory=list)
+    applied_knowledge_units: list[str] = field(default_factory=list)
     recommended_action: str = ""
     reasoning_explanation: str = ""
-    causal_provenance: Optional[ProvenanceRecord] = None
-    contract_version: Optional[ContractVersion] = None
+    causal_provenance: ProvenanceRecord | None = None
+    contract_version: ContractVersion | None = None

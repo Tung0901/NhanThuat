@@ -4,10 +4,7 @@ BusinessOS Consumer Fixture Test.
 This test validates that a BusinessOS application (or downstream consumer)
 can use the NhanThuat Public Contract V1 without importing internal modules.
 """
-from nhan_thuat.public.v1 import (
-    KnowledgeQuery,
-    NhanThuatProviderV1
-)
+from nhan_thuat.public.v1 import KnowledgeQuery, NhanThuatProviderV1
 from nhan_thuat.public.v1.adapter import KnowledgeEngineAdapterV1
 
 

@@ -1,20 +1,21 @@
 """
 Internal adapter mapping the internal KnowledgeEngine to the NhanThuat Public Contract V1.
 """
-from typing import List, Dict, Any, Optional
+from typing import Any
 
 from nhan_thuat.knowledge_engine import KnowledgeEngine
-from .provider import NhanThuatProviderV1
+
+from .capabilities import NHANTHUAT_CAPABILITIES, CapabilityDescriptor
 from .contracts import (
+    ContractVersion,
     KnowledgeQuery,
     KnowledgeResult,
     KnowledgeUnitSummary,
     ReasoningRequest,
     ReasoningResult,
-    ContractVersion,
 )
-from .capabilities import NHANTHUAT_CAPABILITIES, CapabilityDescriptor
 from .errors import PublicError
+from .provider import NhanThuatProviderV1
 
 
 class KnowledgeEngineAdapterV1(NhanThuatProviderV1):
@@ -23,11 +24,11 @@ class KnowledgeEngineAdapterV1(NhanThuatProviderV1):
     using the internal KnowledgeEngine.
     """
 
-    def __init__(self, engine: Optional[KnowledgeEngine] = None):
+    def __init__(self, engine: KnowledgeEngine | None = None):
         self._engine = engine or KnowledgeEngine()
         self._version = ContractVersion(major=1, minor=0, patch=0, identifier="nhanthuat-public")
 
-    def get_unit(self, unit_id: str) -> Optional[Dict[str, Any]]:
+    def get_unit(self, unit_id: str) -> dict[str, Any] | None:
         result = self._engine.resolve_latest_active_unit(unit_id)
         if result["status"] == "success":
             return result["unit"]
@@ -70,7 +71,7 @@ class KnowledgeEngineAdapterV1(NhanThuatProviderV1):
             contract_version=self._version
         )
 
-    def list_domain_units(self, domain_slug: str) -> List[KnowledgeUnitSummary]:
+    def list_domain_units(self, domain_slug: str) -> list[KnowledgeUnitSummary]:
         query = KnowledgeQuery(domain_slug=domain_slug, limit=1000)
         result = self.query_knowledge(query)
         return result.units
@@ -83,7 +84,7 @@ class KnowledgeEngineAdapterV1(NhanThuatProviderV1):
             error_code="CAPABILITY_NOT_IMPLEMENTED"
         )
 
-    def list_capabilities(self) -> List[CapabilityDescriptor]:
+    def list_capabilities(self) -> list[CapabilityDescriptor]:
         return NHANTHUAT_CAPABILITIES
 
     def get_contract_metadata(self) -> ContractVersion:

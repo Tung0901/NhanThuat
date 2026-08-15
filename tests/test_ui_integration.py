@@ -1,8 +1,10 @@
 import sys
 from pathlib import Path
+
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from app.services.engine_adapter import EngineAdapter
+
 
 def test_ui_engine_adapter_integration():
     """Verify EngineAdapter correctly integrates with the actual KnowledgeEngine."""

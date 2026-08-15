@@ -3,8 +3,8 @@
 from __future__ import annotations
 
 import re
+from collections.abc import Iterable
 from dataclasses import dataclass
-from typing import Iterable
 
 ID_PATTERN = re.compile(
     r"^(?:NT-(?P<prefix>[A-Z]+(?:-[A-Z]+)*|EPIC)-(?P<number>[0-9]{2,4})|"

@@ -6,10 +6,10 @@ Single Entry Point for 11-Stage Cognitive Execution Pipeline & Executive Dynamic
 import hashlib
 import time
 from dataclasses import dataclass, field
-from typing import Any, Dict, List, Optional
+from typing import Any
 
 from backend.app.engine.philosophies.router import PhilosophyRouter
-from nhan_thuat.knowledge_engine import KnowledgeEngine, FALLBACK_INSUFFICIENT_KNOWLEDGE
+from nhan_thuat.knowledge_engine import FALLBACK_INSUFFICIENT_KNOWLEDGE, KnowledgeEngine
 
 
 @dataclass
@@ -18,11 +18,11 @@ class RuntimeRequestPayload:
     correlation_id: str
     intent_action: str
     scenario_type: str = "general"
-    context_stack: Dict[str, Any] = field(default_factory=dict)
+    context_stack: dict[str, Any] = field(default_factory=dict)
     user_id: str = "USER-DEFAULT"
     org_id: str = "ORG-DEFAULT"
     authority_level: int = 1
-    requested_knowledge_ids: List[str] = field(default_factory=list)
+    requested_knowledge_ids: list[str] = field(default_factory=list)
 
 
 @dataclass
@@ -31,13 +31,13 @@ class RuntimeResponsePayload:
     correlation_id: str
     status_code: str
     decision_rationale: str
-    structured_output: Dict[str, Any]
-    primary_philosophy: Optional[str]
+    structured_output: dict[str, Any]
+    primary_philosophy: str | None
     confidence_score: float
     execution_latency_ms: float
-    causal_provenance: Dict[str, Any]
-    config_snapshot: Dict[str, Any]
-    error_code: Optional[str] = None
+    causal_provenance: dict[str, Any]
+    config_snapshot: dict[str, Any]
+    error_code: str | None = None
 
 
 class BusinessOSRuntimeOrchestrator:
@@ -49,13 +49,13 @@ class BusinessOSRuntimeOrchestrator:
 
     def __init__(
         self,
-        knowledge_engine: Optional[KnowledgeEngine] = None,
-        philosophy_router: Optional[PhilosophyRouter] = None,
+        knowledge_engine: KnowledgeEngine | None = None,
+        philosophy_router: PhilosophyRouter | None = None,
     ) -> None:
         self.knowledge_engine = knowledge_engine or KnowledgeEngine()
         self.philosophy_router = philosophy_router or PhilosophyRouter()
 
-    def process_situation(self, scenario_text: str) -> Dict[str, Any]:
+    def process_situation(self, scenario_text: str) -> dict[str, Any]:
         """Process any executive situation dynamically using NhanThuat Engine."""
         from backend.app.engine.nhan_thuat_api import process_nhan_thuat_analysis
         return process_nhan_thuat_analysis(scenario_text)
@@ -75,7 +75,7 @@ class BusinessOSRuntimeOrchestrator:
         }
 
         # 1. Knowledge Resolution
-        resolved_units: List[Any] = []
+        resolved_units: list[Any] = []
         for kid in request.requested_knowledge_ids:
             unit_res = self.knowledge_engine.resolve_latest_active_unit(kid)
             if unit_res["status"] == "success":
@@ -167,7 +167,7 @@ class BusinessOSRuntimeOrchestrator:
         )
 
 
-def generate_executive_script(user_input: str, result: Dict[str, Any]) -> str:
+def generate_executive_script(user_input: str, result: dict[str, Any]) -> str:
     """Generate clean executive Markdown script for Streamlit UI rendering without raw HTML leaks."""
     script = result.get("action_script", {})
     pos_analysis = script.get("position_analysis", "Tình huống vướng vào xung đột nghĩa vụ và cam kết vận hành.")

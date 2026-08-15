@@ -8,25 +8,23 @@ Enforces strict unidirectional import policies across NhanThuat, BusinessOS, and
 
 import ast
 from pathlib import Path
-from typing import List, Set, Tuple
 
 
-def get_imported_modules(file_path: Path) -> Set[str]:
+def get_imported_modules(file_path: Path) -> set[str]:
     """Parse a Python file AST and extract all top-level imported module names."""
-    imports: Set[str] = set()
+    imports: set[str] = set()
     try:
         content = file_path.read_text(encoding="utf-8")
         tree = ast.parse(content, filename=str(file_path))
-    except Exception:
+    except Exception:  # noqa: BLE001 - return empty set for unparseable files
         return imports
 
     for node in ast.walk(tree):
         if isinstance(node, ast.Import):
             for alias in node.names:
                 imports.add(alias.name)
-        elif isinstance(node, ast.ImportFrom):
-            if node.module:
-                imports.add(node.module)
+        elif isinstance(node, ast.ImportFrom) and node.module:
+            imports.add(node.module)
 
     return imports
 
@@ -36,11 +34,11 @@ def test_nhanthuat_import_isolation() -> None:
     nhanthuat_dir = Path(__file__).resolve().parent.parent / "src" / "nhan_thuat"
     assert nhanthuat_dir.exists(), "src/nhan_thuat/ directory must exist"
 
-    violations: List[Tuple[str, str]] = []
+    violations: list[tuple[str, str]] = []
     for py_file in nhanthuat_dir.rglob("*.py"):
         imports = get_imported_modules(py_file)
         for imp in imports:
-            if imp.startswith("backend") or imp.startswith("app") or imp.startswith("salesos_pack"):
+            if imp.startswith(("backend", "app", "salesos_pack")):
                 violations.append((str(py_file.name), imp))
 
     assert not violations, f"NhanThuat import boundary violations found: {violations}"
@@ -51,7 +49,7 @@ def test_businessos_kernel_import_isolation() -> None:
     backend_dir = Path(__file__).resolve().parent.parent / "backend" / "app"
     assert backend_dir.exists(), "backend/app/ directory must exist"
 
-    violations: List[Tuple[str, str]] = []
+    violations: list[tuple[str, str]] = []
     for py_file in backend_dir.rglob("*.py"):
         imports = get_imported_modules(py_file)
         for imp in imports:

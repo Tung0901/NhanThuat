@@ -1,8 +1,10 @@
 import sys
 from pathlib import Path
+
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from app.utils.localization import t_type, t_domain, t_taxonomy
+from app.utils.localization import t_domain, t_taxonomy, t_type
+
 
 def test_localization_layer():
     """Verify localization mapping works as expected."""

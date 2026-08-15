@@ -2,6 +2,7 @@
 
 import streamlit as st
 
+
 def inject_minimalist_css():
     """Injects minimalist-ui styles overriding Streamlit defaults."""
     

@@ -11,7 +11,8 @@ from __future__ import annotations
 import os
 import time
 import uuid
-from typing import Any, Iterable
+from collections.abc import Iterable
+from typing import Any
 
 import requests
 
@@ -89,7 +90,7 @@ class KnowledgeSynthesizer:
                     "prompt": prompt,
                 },
             }
-        except Exception as exc:  # pragma: no cover - network boundary
+        except Exception as exc:  # noqa: BLE001 - intentional: any provider failure must fall back to deterministic
             latency_ms = int((time.monotonic() - started) * 1000)
             return {
                 "mode": "deterministic",

@@ -23,7 +23,7 @@ class Domain:
     source_path: Path | None = None
 
     @classmethod
-    def from_mapping(cls, data: dict[str, Any], source_path: Path | None = None) -> "Domain":
+    def from_mapping(cls, data: dict[str, Any], source_path: Path | None = None) -> Domain:
         return cls(
             id=str(data["id"]),
             slug=str(data["slug"]),
@@ -43,7 +43,7 @@ class EvidenceSummary:
     references: tuple[str, ...] = ()
 
     @classmethod
-    def from_mapping(cls, data: dict[str, Any]) -> "EvidenceSummary":
+    def from_mapping(cls, data: dict[str, Any]) -> EvidenceSummary:
         return cls(
             level=str(data["level"]),
             references=tuple(str(reference) for reference in data.get("references", [])),
@@ -87,7 +87,7 @@ class KnowledgeUnit:
     raw: dict[str, Any] = field(default_factory=dict, repr=False, compare=False)
 
     @classmethod
-    def from_mapping(cls, data: dict[str, Any], source_path: Path | None = None) -> "KnowledgeUnit":
+    def from_mapping(cls, data: dict[str, Any], source_path: Path | None = None) -> KnowledgeUnit:
         applications = {
             str(name): tuple(str(item) for item in values)
             for name, values in data.get("applications", {}).items()

@@ -18,10 +18,9 @@ def get_all_imports(file_path: Path) -> set[str]:
             if isinstance(node, ast.Import):
                 for name in node.names:
                     imports.add(name.name)
-            elif isinstance(node, ast.ImportFrom):
-                if node.module:
-                    imports.add(node.module)
-    except Exception:
+            elif isinstance(node, ast.ImportFrom) and node.module:
+                imports.add(node.module)
+    except Exception:  # noqa: BLE001, S110 - return what we parsed so far on unparseable input
         pass
     return imports
 

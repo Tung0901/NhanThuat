@@ -1,6 +1,7 @@
 import streamlit as st
+
+from app.components.ui_blocks import render_metric, render_unit_card
 from app.services.engine_adapter import EngineAdapter
-from app.components.ui_blocks import render_unit_card, render_metric
 from app.utils.localization import t_domain, t_type
 
 st.title("Khám phá Tri thức")

@@ -9,7 +9,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT / "src"))
 
-from nhan_thuat.registry import load_registry  # noqa: E402
+from nhan_thuat.registry import load_registry
 
 
 def main() -> int:

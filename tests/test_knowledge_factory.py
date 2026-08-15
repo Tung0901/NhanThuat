@@ -1,6 +1,11 @@
 from pathlib import Path
 
-from nhan_thuat.factory import FACTORY_STAGES, QUALITY_GATES, detect_duplicate_candidates, review_batch
+from nhan_thuat.factory import (
+    FACTORY_STAGES,
+    QUALITY_GATES,
+    detect_duplicate_candidates,
+    review_batch,
+)
 from nhan_thuat.loader import load_document
 from nhan_thuat.registry import load_registry
 

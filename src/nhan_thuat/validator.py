@@ -2,10 +2,11 @@
 
 from __future__ import annotations
 
+from collections.abc import Iterable
 from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any
 
 from jsonschema import Draft202012Validator, FormatChecker
 
@@ -17,7 +18,6 @@ from .naming import (
     validate_unit_identifier_matches_type,
 )
 from .ontology import known_relation_types
-
 
 DOMAIN_LIFECYCLE_STATES = {
     "idea",
@@ -322,12 +322,8 @@ def _check_domain_lifecycle(
             if previous_status not in DOMAIN_LIFECYCLE_STATES:
                 issues.append(ValidationIssue(path, f"invalid previous domain lifecycle state: {previous_status}"))
             allowed = DOMAIN_ALLOWED_TRANSITIONS.get(previous_status, set())
-            if status == previous_status:
+            if status == previous_status or status not in allowed:
                 issues.append(ValidationIssue(path, f"invalid domain lifecycle transition: {previous_status} -> {status}"))
-            elif status not in allowed:
-                issues.append(
-                    ValidationIssue(path, f"invalid domain lifecycle transition: {previous_status} -> {status}")
-                )
         if status == "approved" and not data.get("approved_by"):
             issues.append(ValidationIssue(path, "approved domain must declare approved_by"))
         if status == "frozen":

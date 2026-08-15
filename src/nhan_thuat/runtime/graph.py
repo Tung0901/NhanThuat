@@ -3,12 +3,11 @@
 from collections import defaultdict
 from collections.abc import Iterable
 
-from nhan_thuat.models import KnowledgeUnit, KnowledgeRelation
+from nhan_thuat.models import KnowledgeRelation, KnowledgeUnit
 
 
 class CircularDependencyError(Exception):
     """Raised when a circular dependency is detected in the knowledge graph."""
-    pass
 
 
 class KnowledgeGraph:

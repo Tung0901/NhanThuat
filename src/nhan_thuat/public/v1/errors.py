@@ -1,7 +1,6 @@
 """
 Public errors for NhanThuat Contract V1.
 """
-from typing import Optional
 
 
 class PublicError(Exception):

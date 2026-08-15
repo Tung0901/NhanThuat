@@ -8,7 +8,6 @@ Sau khi chạy, mở trình duyệt web tại địa chỉ:
     http://localhost:8000
 """
 
-import os
 import sys
 import subprocess
 from pathlib import Path

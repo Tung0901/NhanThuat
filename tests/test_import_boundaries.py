@@ -17,7 +17,7 @@ def get_imported_modules(file_path: Path) -> Set[str]:
     try:
         content = file_path.read_text(encoding="utf-8")
         tree = ast.parse(content, filename=str(file_path))
-    except Exception as e:
+    except Exception:
         return imports
 
     for node in ast.walk(tree):

@@ -3,7 +3,7 @@ SalesOS Integration Test Suite for BusinessOS.
 Tests API Gateway endpoints (/salesos/leads, /salesos/health) and full repository integration.
 """
 
-from backend.app.main import BusinessOSGatewayHandler, salesos_plugin
+from backend.app.main import salesos_plugin
 
 
 def test_salesos_plugin_loaded_in_gateway() -> None:
@@ -29,7 +29,7 @@ def test_api_gateway_lead_creation_and_retrieval() -> None:
 
     # Retrieve lead from repository
     fetched_lead = next(
-        (l for l in salesos_plugin.capability.lead_repository if l.object_id == lead_id),
+        (lead for lead in salesos_plugin.capability.lead_repository if lead.object_id == lead_id),
         None
     )
     assert fetched_lead is not None

@@ -2,7 +2,6 @@
 Capabilities catalog for NhanThuat Contract V1.
 """
 from dataclasses import dataclass
-from typing import Optional
 
 
 @dataclass(frozen=True)

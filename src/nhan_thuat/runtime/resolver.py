@@ -1,6 +1,6 @@
 """Knowledge resolution engine."""
 
-from typing import Iterable, Sequence
+from typing import Iterable
 
 from nhan_thuat.models import KnowledgeUnit
 

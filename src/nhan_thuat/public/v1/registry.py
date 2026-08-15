@@ -1,7 +1,7 @@
 """
 Public Contract Registry for NhanThuat Contract V1.
 """
-from typing import Dict, Any, Type, Optional
+from typing import Dict, Type, Optional
 
 
 class ContractRegistry:

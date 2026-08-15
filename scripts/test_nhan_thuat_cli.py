@@ -11,7 +11,7 @@ import sys
 import subprocess
 import uuid
 from pathlib import Path
-from typing import Any, Dict, List, Tuple
+from typing import Dict, List, Tuple
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
@@ -20,8 +20,8 @@ repo_root = Path(__file__).resolve().parent.parent
 
 # Auto-switch to project virtual environment .venv if running under global python
 try:
-    import yaml
-    import jsonschema
+    import yaml  # noqa: F401 - intentional availability probe
+    import jsonschema  # noqa: F401 - intentional availability probe
 except ImportError:
     venv_python = repo_root / ".venv" / "Scripts" / "python.exe"
     if venv_python.exists() and str(venv_python) != sys.executable:
@@ -41,9 +41,8 @@ if str(src_path) not in sys.path:
 if str(repo_root) not in sys.path:
     sys.path.insert(0, str(repo_root))
 
-from backend.app.engine.philosophies.router import PhilosophyRouter, PhilosophyType
-from backend.app.engine.runtime import BusinessOSRuntimeOrchestrator, RuntimeRequestPayload
-from nhan_thuat.knowledge_engine import KnowledgeEngine, IndexedUnit
+from backend.app.engine.runtime import BusinessOSRuntimeOrchestrator  # noqa: E402 - after sys.path setup
+from nhan_thuat.knowledge_engine import KnowledgeEngine, IndexedUnit  # noqa: E402 - after sys.path setup
 
 
 def format_header(title: str) -> str:
@@ -198,7 +197,7 @@ def analyze_scenario(scenario_text: str, orchestrator: BusinessOSRuntimeOrchestr
 
     # Display 3: Kịch bản Ứng xử & Phân tích Tư tưởng
     print("\n3. KỊCH BẢN ỨNG XỬ & PHÂN TÍCH TƯ TƯỞNG (DETERMINISTIC ACTION SCRIPT):")
-    print(f"   ► Cấu hình AI Execution: Temperature = 0.1 (Ưu tiên logic nhất quán 99%), Seed = 42")
+    print("   ► Cấu hình AI Execution: Temperature = 0.1 (Ưu tiên logic nhất quán 99%), Seed = 42")
 
     if primary == "LEGALISM":
         print("   ► Phân tích Pháp Gia (LENS-LEGALISM - QUẢN TRỊ THI CÔNG & HỢP ĐỒNG):")
@@ -234,7 +233,7 @@ def main() -> None:
     orchestrator = BusinessOSRuntimeOrchestrator()
     unit_count = len(orchestrator.knowledge_engine.units_by_id)
     print(f"✓ Đã nạp thành công {unit_count} Đơn vị Tri thức Nhân Thuật (100% Schema Validated)")
-    print(f"✓ Đã nạp thành công 5 Router Triết học (Rhetoric, Confucian, Legalism, Taoism, Xunzi)")
+    print("✓ Đã nạp thành công 5 Router Triết học (Rhetoric, Confucian, Legalism, Taoism, Xunzi)")
 
     # Test Presets Demonstration including Construction Delay case
     preset_scenarios = [

@@ -2,7 +2,6 @@ import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-import pytest
 from app.services.engine_adapter import EngineAdapter
 
 def test_ui_engine_adapter_integration():

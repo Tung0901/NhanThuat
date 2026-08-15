@@ -1,7 +1,6 @@
 from pathlib import Path
 
 from nhan_thuat.loader import load_document
-from nhan_thuat.registry import load_registry
 from nhan_thuat.validator import validate_repository
 
 ROOT = Path(__file__).resolve().parents[1]

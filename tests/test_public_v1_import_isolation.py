@@ -19,8 +19,6 @@ def test_public_v1_import_without_businessos():
     test_script = "from nhan_thuat.public.v1 import KnowledgeQuery; print('Import successful')"
 
     # Run the script in a subprocess with ONLY src in the PYTHONPATH
-    env = {"PYTHONPATH": str(src_dir)}
-    
     # We must also inherit the system environment variables except for PYTHONPATH 
     # to allow Python to run correctly (like PATH).
     import os

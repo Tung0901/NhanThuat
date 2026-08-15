@@ -3,7 +3,7 @@ Internal adapter mapping the internal KnowledgeEngine to the NhanThuat Public Co
 """
 from typing import List, Dict, Any, Optional
 
-from nhan_thuat.knowledge_engine import KnowledgeEngine, FALLBACK_INSUFFICIENT_KNOWLEDGE
+from nhan_thuat.knowledge_engine import KnowledgeEngine
 from .provider import NhanThuatProviderV1
 from .contracts import (
     KnowledgeQuery,
@@ -14,7 +14,7 @@ from .contracts import (
     ContractVersion,
 )
 from .capabilities import NHANTHUAT_CAPABILITIES, CapabilityDescriptor
-from .errors import PublicError, InsufficientVerifiedKnowledgeError
+from .errors import PublicError
 
 
 class KnowledgeEngineAdapterV1(NhanThuatProviderV1):

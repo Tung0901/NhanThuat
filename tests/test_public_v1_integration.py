@@ -6,9 +6,7 @@ can use the NhanThuat Public Contract V1 without importing internal modules.
 """
 from nhan_thuat.public.v1 import (
     KnowledgeQuery,
-    NhanThuatProviderV1,
-    InsufficientVerifiedKnowledgeError,
-    PublicError
+    NhanThuatProviderV1
 )
 from nhan_thuat.public.v1.adapter import KnowledgeEngineAdapterV1
 

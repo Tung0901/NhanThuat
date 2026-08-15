@@ -1,8 +1,7 @@
 """Knowledge graph traversal and dependency resolution."""
 
 from collections import defaultdict
-from collections.abc import Iterable, Mapping, Sequence
-from typing import Any
+from collections.abc import Iterable
 
 from nhan_thuat.models import KnowledgeUnit, KnowledgeRelation
 

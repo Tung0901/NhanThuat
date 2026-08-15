@@ -2,7 +2,6 @@ import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-import pytest
 from app.utils.localization import t_type, t_domain, t_taxonomy
 
 def test_localization_layer():

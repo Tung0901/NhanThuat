@@ -3,13 +3,11 @@ Milestone M15 Runtime Hardening Targeted Test Suite.
 Tests KnowledgeEngine, CanonicalSourceRegistry, BusinessOSRuntimeOrchestrator, Storage, and API Endpoints.
 """
 
-import json
 from pathlib import Path
 from backend.app.engine.canonical_registry import CanonicalSourceRegistry
 from backend.app.engine.runtime import BusinessOSRuntimeOrchestrator, RuntimeRequestPayload
 from backend.app.engine.storage import FileStateStorageAdapter, InMemoryStorageAdapter
 from nhan_thuat.knowledge_engine import KnowledgeEngine, FALLBACK_INSUFFICIENT_KNOWLEDGE
-from nhan_thuat.loader import load_document
 
 
 def test_knowledge_engine_loading_and_indexing() -> None:

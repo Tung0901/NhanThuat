@@ -4,7 +4,6 @@ Launches Streamlit app directly in headless mode using project's virtual environ
 Usage: python scripts/run_executive_streamlit.py
 """
 
-import os
 import sys
 import subprocess
 from pathlib import Path

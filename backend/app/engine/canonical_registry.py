@@ -11,11 +11,9 @@ Enforces LATEST_APPROVED_ACTIVE_COMPATIBLE version resolution rule.
 """
 
 import hashlib
-import json
-from dataclasses import asdict, dataclass, field
-from datetime import datetime, timezone
+from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, Optional
 
 
 def calculate_file_checksum(file_path: Path) -> str:

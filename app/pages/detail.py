@@ -80,3 +80,13 @@ if unit_id:
                 st.markdown(f"- {ref}")
         else:
             st.caption("Không có nguồn trích dẫn.")
+
+    st.markdown("---")
+    st.markdown("## Xuất dữ liệu")
+    col_e1, col_e2 = st.columns(2)
+    json_export = adapter.engine.units_by_id[unit.id].raw_data
+    markdown_export = f"# {unit.title}\n- ID: {unit.id}\n- Type: {unit.type}\n- Domain: {unit.primary_domain}\n\n## Summary\n{unit.summary}\n\n## Definition\n{unit.definition}"
+    with col_e1:
+        st.download_button("Tải JSON", data=str(json_export), file_name=f"{unit.id}.json", mime="application/json")
+    with col_e2:
+        st.download_button("Tải Markdown", data=markdown_export, file_name=f"{unit.id}.md", mime="text/markdown")

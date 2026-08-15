@@ -8,9 +8,8 @@ import uuid
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
-from backend.app.engine.philosophies.router import PhilosophyRouter, PhilosophyType
 from backend.app.engine.runtime import BusinessOSRuntimeOrchestrator
-from nhan_thuat.knowledge_engine import CustomDocUnit, IndexedUnit, KnowledgeEngine
+from nhan_thuat.knowledge_engine import IndexedUnit, KnowledgeEngine
 
 _orchestrator: BusinessOSRuntimeOrchestrator = None
 _dialogue_few_shots: Dict[str, Any] = None

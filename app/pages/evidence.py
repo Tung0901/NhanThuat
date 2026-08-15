@@ -23,7 +23,7 @@ for level in sorted(sources_by_level.keys()):
     with st.expander(f"Xem danh sách nguồn ({len(sources_by_level[level])})"):
         for u in sources_by_level[level]:
             st.markdown(f"**Nhận định:** {u.title}")
-            st.markdown(f"**Mức độ hỗ trợ:** Cao") # Using a default value as it's not directly in the model
+            st.markdown("**Mức độ hỗ trợ:** Cao") # Using a default value as it's not directly in the model
             if u.evidence and u.evidence.references:
                 st.markdown("**Nguồn:**")
                 for ref in u.evidence.references:

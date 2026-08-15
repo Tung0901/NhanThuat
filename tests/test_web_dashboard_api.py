@@ -40,3 +40,39 @@ def test_process_nhan_thuat_analysis_rhetoric_scenario() -> None:
     assert res["status"] == "success"
     assert res["philosophy_routing"]["primary_philosophy"] == "RHETORIC"
     assert "Reframing" in res["action_script"]["step_1_anchor"]["title"]
+
+
+def test_knowledge_unit_export_json() -> None:
+    from backend.app.main import export_unit
+    from nhan_thuat.knowledge_engine import KnowledgeEngine
+
+    res = export_unit(KnowledgeEngine(), "NT-LAW-0001", fmt="json")
+
+    assert res["status"] == "success"
+    assert res["payload"]["format"] == "json"
+    assert res["payload"]["unit"]["id"] == "NT-LAW-0001"
+    assert "title" in res["payload"]["unit"]
+    assert "primary_domain" in res["payload"]["unit"]
+
+
+def test_knowledge_unit_export_markdown_shape() -> None:
+    from backend.app.main import export_unit
+    from nhan_thuat.knowledge_engine import KnowledgeEngine
+
+    res = export_unit(KnowledgeEngine(), "NT-LAW-0001", fmt="markdown")
+
+    assert res["status"] == "success"
+    assert isinstance(res["payload"], str)
+    assert res["payload"].startswith("# ")
+    assert "ID: NT-LAW-0001" in res["payload"]
+    assert "Type: law" in res["payload"]
+
+
+def test_knowledge_unit_export_unknown_returns_error() -> None:
+    from backend.app.main import export_unit
+    from nhan_thuat.knowledge_engine import KnowledgeEngine
+
+    res = export_unit(KnowledgeEngine(), "NT-LAW-9999", fmt="json")
+
+    assert res["status"] == "error"
+    assert res["code"] == 404

@@ -11,6 +11,7 @@ Exposes REST API endpoints for BusinessOS Kernel, SalesOS Plugin, CPQ Quote Gene
 - GET  /health
 - GET  /version
 - GET  /knowledge/units/{unit_id}
+- GET  /knowledge/units/{unit_id}/export?format=json|markdown
 - GET  /knowledge/domains/{domain_slug}
 - POST /knowledge/query
 - POST /runtime/execute
@@ -21,16 +22,15 @@ Exposes REST API endpoints for BusinessOS Kernel, SalesOS Plugin, CPQ Quote Gene
 """
 
 import json
-import os
 import uuid
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path
-from typing import Any, Dict, Optional
+from typing import Any, Dict
 from urllib.parse import parse_qs, urlparse
 
 from backend.app.engine.nhan_thuat_api import process_nhan_thuat_analysis
 from backend.app.engine.runtime import BusinessOSRuntimeOrchestrator, RuntimeRequestPayload
-from nhan_thuat.knowledge_engine import FALLBACK_INSUFFICIENT_KNOWLEDGE, KnowledgeEngine
+from nhan_thuat.knowledge_engine import KnowledgeEngine
 from nhan_thuat.public.v1.adapter import KnowledgeEngineAdapterV1
 from nhan_thuat.public.v1.contracts import KnowledgeQuery
 from salesos_pack.plugin import SalesOSPlugin
@@ -46,6 +46,31 @@ execution_provenance_store: Dict[str, Dict[str, Any]] = {}
 
 STATIC_DIR = Path(__file__).resolve().parent / "static"
 DOCS_KNOWLEDGE_DIR = Path(__file__).resolve().parent.parent.parent / "docs" / "knowledge"
+
+
+def export_unit(engine: KnowledgeEngine, unit_id: str, fmt: str = "markdown") -> Dict[str, Any]:
+    """Export a knowledge unit as JSON or Markdown (EPIC 6)."""
+    unit_res = engine.resolve_latest_active_unit(unit_id)
+    if unit_res["status"] != "success":
+        return {"status": "error", "code": 404, "payload": unit_res}
+    raw = unit_res["unit"].raw_data
+    if fmt == "json":
+        return {"status": "success", "code": 200, "payload": {"status": "success", "format": "json", "unit": raw}}
+    lines = [
+        f"# {raw.get('title', unit_id)}",
+        f"- ID: {raw.get('id', unit_id)}",
+        f"- Type: {raw.get('type', '')}",
+        f"- Status: {raw.get('status', '')}",
+        f"- Domain: {raw.get('primary_domain', '')}",
+        f"- Domain Area: {raw.get('domain_area', '')}",
+        "",
+        "## Summary",
+        str(raw.get("summary", "")),
+        "",
+        "## Definition",
+        str(raw.get("definition", "")),
+    ]
+    return {"status": "success", "code": 200, "payload": "\n".join(lines)}
 
 
 class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
@@ -228,6 +253,20 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
             })
             return
 
+# 4b. Knowledge Unit Export: GET /knowledge/units/{unit_id}/export?format=json|markdown
+        if path.startswith("/knowledge/units/") and path.endswith("/export"):
+            unit_id = path.split("/knowledge/units/")[1].replace("/export", "")
+            fmt = (parse_qs(parsed_url.query).get("format") or ["markdown"])[0]
+            export_res = export_unit(knowledge_engine, unit_id, fmt)
+            if export_res["status"] == "success":
+                if isinstance(export_res["payload"], str):
+                    self._send_html_response(200, export_res["payload"])
+                else:
+                    self._send_json_response(200, export_res["payload"])
+            else:
+                self._send_json_response(404, export_res["payload"])
+            return
+
         # 5. Knowledge Unit Lookup: GET /knowledge/units/{unit_id}
         if path.startswith("/knowledge/units/"):
             unit_id = path.split("/knowledge/units/")[1]
@@ -273,7 +312,7 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
         if path.startswith("/salesos/leads/"):
             lead_id = path.split("/salesos/leads/")[1]
             matching_lead = next(
-                (l for l in salesos_plugin.capability.lead_repository if l.object_id == lead_id),
+                (lead for lead in salesos_plugin.capability.lead_repository if lead.object_id == lead_id),
                 None
             )
             if matching_lead:

@@ -9,7 +9,7 @@ Program 13 SDK Integration, and Corrected AI Router Architectural Directives.
 import json
 from enum import Enum
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, Optional, Tuple
 
 # AI Router Corrected Technical Directives
 GLOBAL_AI_TEMPERATURE: float = 0.1  # Consistency preference, not a 99% mathematical guarantee
@@ -297,7 +297,7 @@ class PhilosophyRouter:
     ) -> Dict[str, float]:
         """Calculate confidence score per lens taking engine metadata confidence_modifier into account."""
         scores = {}
-        active_lenses = [l for l in [primary, secondary, tertiary] if l is not None]
+        active_lenses = [lens for lens in [primary, secondary, tertiary] if lens is not None]
         for lens in active_lenses:
             engine_meta = self.engines.get(lens, {}).get("metadata", {})
             modifier = float(engine_meta.get("confidence_modifier", 1.0))
@@ -312,7 +312,7 @@ class PhilosophyRouter:
         tertiary: Optional[PhilosophyType],
     ) -> Dict[str, Any]:
         """Detect and resolve potential conflicts between composed lenses based on engine metadata."""
-        active_lenses = [l for l in [primary, secondary, tertiary] if l is not None]
+        active_lenses = [lens for lens in [primary, secondary, tertiary] if lens is not None]
         incompatibilities = []
 
         for lens in active_lenses:

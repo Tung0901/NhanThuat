@@ -134,7 +134,7 @@ class BusinessOSRuntimeOrchestrator:
             "intent_action": request.intent_action,
             "scenario_type": request.scenario_type,
             "resolved_knowledge_count": len(resolved_units),
-            "lenses_applied": [l["philosophy_id"] for l in routing_result.get("lenses", [])],
+            "lenses_applied": [lens["philosophy_id"] for lens in routing_result.get("lenses", [])],
             "execution_status": "COMPLETED",
         }
 

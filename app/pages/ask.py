@@ -39,7 +39,9 @@ if query:
     st.markdown("### Kết luận")
     if synthesis.get("warning"):
         st.caption(synthesis["warning"])
-    st.write(synthesis["synthesis"])
+        
+    with st.chat_message("assistant", avatar="♟️"):
+        st.markdown(synthesis["synthesis"])
     
     st.markdown("---")
     

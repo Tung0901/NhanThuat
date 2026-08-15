@@ -65,16 +65,37 @@ def inject_minimalist_css():
     footer {visibility: hidden;}
     header {background: transparent !important;}
     
-    /* Bento Box / Editorial Article Cards */
-    .knowledge-card {
-        background-color: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 6px;
-        padding: 32px;
-        margin-bottom: 24px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    /* Bento Box / Editorial Article Cards & Native Containers */
+    .knowledge-card, [data-testid="stVerticalBlockBorderWrapper"] {
+        background-color: var(--surface) !important;
+        border: 1px solid var(--border) !important;
+        border-radius: 8px !important;
+        padding: 16px !important;
+        margin-bottom: 24px !important;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.03) !important;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease !important;
     }
     
+    [data-testid="stVerticalBlockBorderWrapper"]:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.06) !important;
+        border-color: var(--accent) !important;
+    }
+    
+    /* Synthesis Glassmorphism Box */
+    .synthesis-box {
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(226, 232, 240, 0.8);
+        border-radius: 12px;
+        padding: 32px;
+        margin-bottom: 32px;
+        box-shadow: 0 8px 32px rgba(15, 23, 42, 0.04);
+        border-left: 4px solid var(--accent);
+        font-size: 1.05rem;
+        line-height: 1.7;
+    }
     /* Tags / Badges */
     .badge {
         display: inline-flex;

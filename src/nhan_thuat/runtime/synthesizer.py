@@ -147,11 +147,15 @@ class KnowledgeSynthesizer:
     def _build_prompt(self, query: str, units: Iterable[KnowledgeUnit]) -> str:
         context = self.prompt_builder.build_context(units, format_type="markdown")
         return (
-            "Bạn là Nhân Thuật, một hệ tri thức về hành vi con người và tổ chức.\n"
-            "Trả lời bằng tiếng Việt, bám sát phần Tri thức bên dưới, trích dẫn ID "
-            "tri thức (dạng NT-*) khi tham chiếu, và nêu rõ rủi ro/hạn chế nếu có.\n\n"
+            "Bạn là Nhân Thuật, một chuyên gia chiến lược bậc thầy về hành vi con người và quản trị tổ chức.\n"
+            "Nhiệm vụ của bạn là phân tích sâu sắc, đa chiều và đưa ra CÁC GIẢI PHÁP HÀNH ĐỘNG cụ thể.\n\n"
+            "Yêu cầu nội dung:\n"
+            "- Không dùng ngôn ngữ chung chung, sáo rỗng hay tối nghĩa. Hãy viết rõ ràng, sắc bén và dễ hiểu.\n"
+            "- Cung cấp ít nhất 3 bước giải pháp (actionable steps) mang tính thực tiễn cao.\n"
+            "- Bám sát phần Tri thức bên dưới, trích dẫn ID tri thức (ví dụ: NT-PRINCIPLE-0001) khi tham chiếu.\n"
+            "- Nhận diện rõ các rủi ro hoặc thiên kiến có thể xảy ra và cách phòng tránh.\n\n"
             f"CÂU HỎI:\n{query}\n\n"
-            f"TRI THỨC:\n{context}"
+            f"TRI THỨC BỐI CẢNH:\n{context}"
         )
 
     def _deterministic_synthesis(self, query: str, units: Iterable[KnowledgeUnit]) -> str:
@@ -176,7 +180,7 @@ class KnowledgeSynthesizer:
                     {"role": "system", "content": "Bạn là một chuyên gia phân tích tri thức."},
                     {"role": "user", "content": prompt},
                 ],
-                "temperature": 0.2,
+                "temperature": 0.4,
             },
             timeout=self.timeout,
         )

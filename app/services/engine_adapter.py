@@ -1,5 +1,6 @@
 """Service adapter for the Nhan Thuat Knowledge Engine."""
 
+import os
 from typing import Any
 
 import streamlit as st
@@ -11,6 +12,25 @@ from nhan_thuat.runtime.prompt_builder import PromptBuilder
 from nhan_thuat.runtime.resolver import KnowledgeResolver
 from nhan_thuat.runtime.synthesizer import KnowledgeSynthesizer
 
+_SECRET_KEYS = ("OPENAI_API_KEY", "OPENAI_BASE_URL", "NHAN_THUAT_OPENAI_API_KEY", "NHAN_THUAT_LLM_MODEL")
+
+
+def _sync_secrets_to_env() -> None:
+    """Mirror Streamlit secrets into os.environ so the core synthesizer can read them.
+
+    On Streamlit Community Cloud secrets are exposed through ``st.secrets``; the
+    synthesizer reads configuration from ``os.environ``. Setting the env vars
+    here (without overriding already-set values) keeps one source of truth.
+    """
+    try:
+        for key in _SECRET_KEYS:
+            if key not in os.environ:
+                value = st.secrets.get(key)
+                if value:
+                    os.environ[key] = str(value)
+    except Exception:  # noqa: BLE001, S110 - secrets manager may be unavailable; env vars suffice
+        pass
+
 
 @st.cache_resource(show_spinner="Booting Nhan Thuat Knowledge Engine...")
 def get_engine() -> KnowledgeEngine:
@@ -21,6 +41,7 @@ class EngineAdapter:
     """Provides a clean UI-facing interface for the Nhan Thuat engine without exposing complexity."""
     
     def __init__(self):
+        _sync_secrets_to_env()
         self.engine = get_engine()
         # Convert IndexedUnits to KnowledgeUnits for the resolver
         knowledge_units = []

@@ -86,7 +86,7 @@ if unit_id:
     st.markdown("## Xuất dữ liệu")
     col_e1, col_e2 = st.columns(2)
     json_export = adapter.engine.units_by_id[unit.id].raw_data
-    markdown_export = f"# {unit.title}\n- ID: {unit.id}\n- Type: {unit.type}\n- Domain: {unit.primary_domain}\n\n## Summary\n{unit.summary}\n\n## Definition\n{unit.definition}"
+    markdown_export = f"# {unit.title}\n- Mã: {unit.id}\n- Loại: {unit.type}\n- Lĩnh vực: {unit.primary_domain}\n\n## Tóm tắt\n{unit.summary}\n\n## Định nghĩa\n{unit.definition}"
     with col_e1:
         st.download_button("Tải JSON", data=str(json_export), file_name=f"{unit.id}.json", mime="application/json")
     with col_e2:

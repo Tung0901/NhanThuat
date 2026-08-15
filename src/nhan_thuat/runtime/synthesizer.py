@@ -19,12 +19,24 @@ import requests
 from nhan_thuat.models import KnowledgeUnit
 from nhan_thuat.runtime.prompt_builder import PromptBuilder
 
-OPENAI_BASE_URL = os.environ.get("OPENAI_BASE_URL", "https://api.openai.com/v1")
-OPENAI_MODEL = os.environ.get("NHAN_THUAT_LLM_MODEL", "gpt-4o-mini")
+DEFAULT_BASE_URL = "https://api.openai.com/v1"
+DEFAULT_MODEL = "gpt-4o-mini"
 
 
 def _api_key() -> str:
     return os.environ.get("OPENAI_API_KEY") or os.environ.get("NHAN_THUAT_OPENAI_API_KEY", "")
+
+
+def _base_url() -> str:
+    return os.environ.get("OPENAI_BASE_URL", DEFAULT_BASE_URL)
+
+
+def _model() -> str:
+    return os.environ.get("NHAN_THUAT_LLM_MODEL", DEFAULT_MODEL)
+
+
+OPENAI_BASE_URL = _base_url()
+OPENAI_MODEL = _model()
 
 
 class KnowledgeSynthesizer:
@@ -69,8 +81,8 @@ class KnowledgeSynthesizer:
                     "prompt": prompt,
                 },
                 "warning": (
-                    "LLM synthesis is not configured (no OPENAI_API_KEY). "
-                    "Showing the deterministic knowledge retrieval flow."
+                    "Chưa cấu hình LLM synthesis (thiếu OPENAI_API_KEY). "
+                    "Đang hiển thị dòng truy xuất tri thức deterministic."
                 ),
             }
 
@@ -85,7 +97,7 @@ class KnowledgeSynthesizer:
                 "audit": {
                     "correlation_id": correlation_id,
                     "provider": "openai-compatible",
-                    "model": OPENAI_MODEL,
+                    "model": _model(),
                     "latency_ms": latency_ms,
                     "prompt": prompt,
                 },
@@ -99,12 +111,12 @@ class KnowledgeSynthesizer:
                 "audit": {
                     "correlation_id": correlation_id,
                     "provider": "openai-compatible",
-                    "model": OPENAI_MODEL,
+                    "model": _model(),
                     "latency_ms": latency_ms,
                     "prompt": prompt,
                     "error": str(exc),
                 },
-                "warning": f"LLM provider call failed ({exc}); fell back to deterministic flow.",
+                "warning": f"Lỗi khi gọi LLM provider ({exc}); đã chuyển sang dòng truy xuất deterministic.",
             }
 
     def _build_prompt(self, query: str, units: Iterable[KnowledgeUnit]) -> str:
@@ -131,10 +143,10 @@ class KnowledgeSynthesizer:
 
     def _call_provider(self, prompt: str) -> str:
         response = requests.post(
-            f"{OPENAI_BASE_URL.rstrip('/')}/chat/completions",
+            f"{_base_url().rstrip('/')}/chat/completions",
             headers={"Authorization": f"Bearer {_api_key()}"},
             json={
-                "model": OPENAI_MODEL,
+                "model": _model(),
                 "messages": [
                     {"role": "system", "content": "Bạn là một chuyên gia phân tích tri thức."},
                     {"role": "user", "content": prompt},

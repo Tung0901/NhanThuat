@@ -18,7 +18,7 @@ else:
     
     if selected_domain:
         st.markdown(f"## {t_domain(selected_domain)}")
-        st.caption(selected_domain.title()) # English canonical name as secondary text
+        st.caption(f"Mã lĩnh vực: `{selected_domain}`")
         
         st.markdown("### Lĩnh vực này nghiên cứu vấn đề gì?")
         st.write(t_domain_desc(selected_domain))

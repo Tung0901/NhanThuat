@@ -34,10 +34,23 @@ EPIC 5 synthesis hoạt động fallback-first: nếu không có key, trang Hỏ
 trả về dòng truy xuất deterministic. Để kích hoạt LLM synthesis, đặt API key
 OpenAI-compatible vào `.streamlit/secrets.toml` (tham khảo `secrets.toml.example`):
 
+**Google Gemini** (khuyến nghị — tạo key miễn phí tại https://aistudio.google.com/apikey):
+
+```toml
+OPENAI_API_KEY = "AIzaSy-..."
+OPENAI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai"
+NHAN_THUAT_LLM_MODEL = "gemini-2.5-flash"
+```
+
+**Hoặc OpenAI / provider khác:**
+
 ```toml
 OPENAI_API_KEY = "sk-..."
-OPENAI_BASE_URL = "https://api.openai.com/v1"   # tùy chọn
+OPENAI_BASE_URL = "https://api.openai.com/v1"
 ```
+
+Trên Streamlit Community Cloud, dán nguyên khối TOML ở trên vào
+**app → Settings → Secrets** (không cần file `.streamlit/secrets.toml`).
 
 ## Nguyên tắc
 

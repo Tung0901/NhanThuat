@@ -15,7 +15,7 @@ from app.styles.custom_css import inject_minimalist_css
 
 # Page Configuration
 st.set_page_config(
-    page_title="Nhân Thuật | Knowledge Workbench",
+    page_title="Nhân Thuật | Kho Tri thức",
     page_icon="♟️",
     layout="wide",
     initial_sidebar_state="expanded"

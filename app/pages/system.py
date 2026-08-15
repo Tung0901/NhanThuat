@@ -25,12 +25,12 @@ st.markdown("---")
 
 col_a, col_b = st.columns(2)
 with col_a:
-    render_metric("Runtime", "Đang hoạt động")
+    render_metric("Bộ chạy tri thức", "Đang hoạt động")
     st.caption("KnowledgeEngine + Resolver + Graph + Evaluator")
 with col_b:
-    synth_status = "Đã cấu hình (LLM)" if adapter.synthesizer.provider_configured else "Fallback deterministic"
+    synth_status = "Đã cấu hình (LLM)" if adapter.synthesizer.provider_configured else "Dòng truy xuất deterministic"
     render_metric("LLM synthesis", synth_status)
-    st.caption("Capability NHANTHUAT-CAP-002 — EPIC 5")
+    st.caption("Năng lực NHANTHUAT-CAP-002 — EPIC 5")
 
 st.markdown("---")
 

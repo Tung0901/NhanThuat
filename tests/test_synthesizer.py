@@ -99,4 +99,4 @@ def test_synthesizer_falls_back_on_provider_error(units: list[KnowledgeUnit], mo
     result = synthesizer.synthesize("test query", units[:2])
 
     assert result["mode"] == "deterministic"
-    assert "fell back" in result.get("warning", "")
+    assert "deterministic" in result.get("warning", "")

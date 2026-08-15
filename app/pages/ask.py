@@ -10,7 +10,7 @@ st.markdown("Đặt một câu hỏi hoặc mô tả một tình huống. Nhân 
 
 adapter = EngineAdapter()
 
-query = st.text_input("Query", placeholder="Ví dụ: Tại sao khách hàng biết sản phẩm phù hợp nhưng vẫn trì hoãn quyết định mua?", label_visibility="collapsed")
+query = st.text_input("Câu hỏi", placeholder="Ví dụ: Tại sao khách hàng biết sản phẩm phù hợp nhưng vẫn trì hoãn quyết định mua?", label_visibility="collapsed")
 
 if query:
     with st.spinner("Đang phân tích với Nhân Thuật..."):
@@ -56,7 +56,7 @@ if query:
             st.markdown(f"- **{citation['title']}** — `{citation['id']}` ({citation['domain']})")
             
         audit = synthesis.get("audit", {})
-        st.caption(f"Audit: `{audit.get('correlation_id', '')}` | provider: {audit.get('provider')} | model: {audit.get('model') or '—'} | {audit.get('latency_ms', 0)} ms")
+        st.caption(f"Kiểm tra: `{audit.get('correlation_id', '')}` | Nhà cung cấp: {audit.get('provider')} | Mô hình: {audit.get('model') or '—'} | {audit.get('latency_ms', 0)} ms")
             
     with col2:
         st.markdown("### Đánh giá rủi ro")

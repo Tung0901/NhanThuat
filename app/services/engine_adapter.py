@@ -6,6 +6,7 @@ from nhan_thuat.knowledge_engine import KnowledgeEngine
 from nhan_thuat.runtime.resolver import KnowledgeResolver
 from nhan_thuat.runtime.prompt_builder import PromptBuilder
 from nhan_thuat.runtime.evaluator import KnowledgeEvaluator
+from nhan_thuat.runtime.synthesizer import KnowledgeSynthesizer
 from nhan_thuat.models import KnowledgeUnit
 
 @st.cache_resource(show_spinner="Booting Nhan Thuat Knowledge Engine...")
@@ -28,10 +29,19 @@ class EngineAdapter:
         self.resolver = KnowledgeResolver(knowledge_units)
         self.prompt_builder = PromptBuilder()
         self.evaluator = KnowledgeEvaluator()
+        self.synthesizer = KnowledgeSynthesizer()
         
     def resolve_query(self, query: str, limit: int = 5) -> List[KnowledgeUnit]:
         """Resolve a text query to the top N knowledge units."""
         return self.resolver.resolve(query, limit=limit)
+
+    def resolve_scored(self, query: str, limit: int = 5) -> List[Tuple[int, KnowledgeUnit]]:
+        """Resolve a query to (score, unit) pairs with real resolver scores."""
+        return self.resolver.resolve_scored(query, limit=limit)
+        
+    def synthesize(self, query: str, units: List[KnowledgeUnit]) -> Dict[str, Any]:
+        """Produce a synthesis (LLM if configured, deterministic fallback)."""
+        return self.synthesizer.synthesize(query, units)
         
     def resolve_dependencies(self, unit_id: str) -> List[KnowledgeUnit]:
         """Get transitive dependencies for a unit.

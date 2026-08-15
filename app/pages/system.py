@@ -16,7 +16,7 @@ with col2:
     render_metric("Lĩnh vực", f"{len(domains)}+")
 with col3:
     render_metric("Lăng kính triết học", "5")
-    st.caption("PLANNED: đọc từ philosophy registry (EPIC 5)")
+    st.caption("Hùng Biện, Nho, Pháp, Đạo, Tuân Tử")
 with col4:
     types = adapter.get_all_types()
     render_metric("Loại tri thức", f"{len(types)}")
@@ -26,9 +26,11 @@ st.markdown("---")
 col_a, col_b = st.columns(2)
 with col_a:
     render_metric("Runtime", "Đang hoạt động")
+    st.caption("KnowledgeEngine + Resolver + Graph + Evaluator")
 with col_b:
-    render_metric("Kiểm tra hệ thống", "134/134 đạt")
-    st.caption("PLANNED: thay bằng số liệu pytest/validate_all thật (EPIC 5)")
+    synth_status = "Đã cấu hình (LLM)" if adapter.synthesizer.provider_configured else "Fallback deterministic"
+    render_metric("LLM synthesis", synth_status)
+    st.caption("Capability NHANTHUAT-CAP-002 — EPIC 5")
 
 st.markdown("---")
 

@@ -17,6 +17,12 @@ class KnowledgeResolver:
         This is a basic keyword-based fallback implementation.
         In production, this should integrate with a vector store or BM25 engine.
         """
+        return [unit for _, unit in self.resolve_scored(query, limit=limit, domain_filter=domain_filter)]
+
+    def resolve_scored(
+        self, query: str, limit: int = 5, domain_filter: str | None = None
+    ) -> list[tuple[int, KnowledgeUnit]]:
+        """Resolve a query and return (score, unit) pairs sorted by relevance."""
         results = []
         query_terms = set(query.lower().split())
         
@@ -41,7 +47,7 @@ class KnowledgeResolver:
         # Sort by score descending
         results.sort(key=lambda x: x[0], reverse=True)
         
-        return [unit for score, unit in results[:limit]]
+        return results[:limit]
 
     def resolve_by_id(self, unit_id: str) -> KnowledgeUnit | None:
         """Resolve a specific unit by its ID."""

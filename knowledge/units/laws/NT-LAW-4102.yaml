@@ -1,0 +1,34 @@
+id: NT-LAW-4102
+type: law
+status: draft
+version: 1.0.0
+title: Quy luật Ngại Mất Mát (Loss Aversion)
+summary: Đau đớn tâm lý do mất đi một thứ gì đó luôn lớn gấp đôi so với niềm vui có được một thứ tương đương.
+primary_domain: tu-than
+domain_area: NT-DA-0027
+secondary_domains:
+  - tri-nhan
+definition: Quyết định của con người thường thiên vị cực lớn vào việc tránh rủi ro mất mát thay vì tìm kiếm lợi ích, do cơ chế tiến hóa sinh tồn của não bộ.
+conditions:
+  - Khi phải đưa ra lựa chọn giữa các phương án mang rủi ro rõ ràng.
+exceptions:
+  - Khi cá nhân đã rơi vào bước đường cùng, lúc này họ chấp nhận rủi ro cực đoan.
+applications:
+  general:
+    - Áp dụng trong quản trị và kinh doanh.
+risks:
+  - Tạo ra quyết định bảo thủ, bỏ lỡ cơ hội đổi mới.
+evidence:
+  level: strong
+  references:
+    - Kahneman & Tversky, Prospect Theory (1979)
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+  - risk-aversion
+  - behavioral-economics
+created_at: '2026-08-15'
+updated_at: '2026-08-15'

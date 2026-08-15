@@ -66,6 +66,7 @@ def t_domain(domain_id: str) -> str:
         "behavioral-design": "Thiết kế hành vi",
         "social-psychology": "Tâm lý xã hội",
         "persuasion-influence": "Thuyết phục & Ảnh hưởng",
+        "consumer-psychology": "Thấu hiểu Khách hàng",
         "all": "Tất cả"
     }
     return mapping.get(domain_id.lower(), domain_id.replace('-', ' ').title())
@@ -109,7 +110,8 @@ def t_domain_desc(domain_id: str) -> str:
         "strategy": "Nghiên cứu tư duy chiến lược và nghệ thuật định vị, cạnh tranh.",
         "execution": "Nghiên cứu cơ chế chuyển hóa ý định thành hành động và kết quả.",
         "culture": "Nghiên cứu văn hóa tổ chức và ảnh hưởng của nó lên hành vi tập thể.",
-        "ethics": "Nghiên cứu nguyên tắc đạo đức và giới hạn ứng xử trong quản trị."
+        "ethics": "Nghiên cứu nguyên tắc đạo đức và giới hạn ứng xử trong quản trị.",
+        "consumer-psychology": "Nghiên cứu quá trình tâm lý, cảm xúc và hành vi của người tiêu dùng trong quyết định mua sắm và lòng trung thành."
     }
     return mapping.get(domain_id.lower(), "Nghiên cứu và ứng dụng các quy luật hành vi trong lĩnh vực này.")
 

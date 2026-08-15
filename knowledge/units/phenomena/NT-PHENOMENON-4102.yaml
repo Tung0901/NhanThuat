@@ -1,0 +1,34 @@
+id: NT-PHENOMENON-4102
+type: phenomenon
+status: draft
+version: 1.0.0
+title: Hiệu ứng Chim mồi (Decoy Effect)
+summary: Khách hàng sẽ thay đổi ưu tiên giữa hai lựa chọn khi xuất hiện một lựa chọn thứ ba hoàn toàn bất đối xứng.
+primary_domain: dung-nhan
+domain_area: NT-DA-0027
+secondary_domains:
+  - thanh-su
+definition: Lựa chọn mồi nhử không được thiết kế để bán, mà được thiết kế để làm cho một trong các lựa chọn khác trở nên hấp dẫn hơn hẳn.
+conditions:
+  - Lựa chọn chim mồi phải rõ ràng kém hơn lựa chọn mục tiêu trên một khía cạnh, nhưng giá tương đương.
+exceptions:
+  - Khách hàng đã am hiểu và có sẵn tiêu chuẩn chính xác tuyệt đối.
+applications:
+  general:
+    - Áp dụng trong quản trị và kinh doanh.
+risks:
+  - Nếu khách hàng nhận ra thủ thuật, sẽ dẫn đến sự phẫn nộ và mất uy tín.
+evidence:
+  level: strong
+  references:
+    - Dan Ariely, Predictably Irrational (2008)
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+  - choice-architecture
+  - pricing
+created_at: '2026-08-15'
+updated_at: '2026-08-15'

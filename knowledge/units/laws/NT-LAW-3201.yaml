@@ -1,0 +1,37 @@
+id: NT-LAW-3201
+type: law
+status: draft
+version: 1.0.0
+title: Quy luật Giá trị Cảm nhận
+summary: Khách hàng không mua giá trị thực tế của sản phẩm, họ mua giá trị cảm nhận và sự giải tỏa cảm xúc mà sản phẩm mang lại.
+primary_domain: thanh-su
+domain_area: NT-DA-0031
+secondary_domains:
+  - tri-nhan
+definition: Định giá của não bộ không dựa trên chi phí cấu thành sản phẩm, mà dựa trên bối cảnh so sánh, câu chuyện thương hiệu và kỳ vọng về cảm xúc.
+conditions:
+  - Khi thông tin về giá trị thực tế bị thiếu hoặc khó đánh giá.
+  - Khi sản phẩm gắn liền với nhu cầu thể hiện bản thân hoặc giảm thiểu rủi ro tâm lý.
+exceptions:
+  - Thị trường hàng hóa thiết yếu (commodity) cạnh tranh hoàn hảo về giá.
+applications:
+  general:
+    - Áp dụng trong quản trị và kinh doanh.
+risks:
+  - Thổi phồng giá trị cảm nhận quá mức dẫn đến khủng hoảng niềm tin khi trải nghiệm thực tế kém.
+evidence:
+  level: strong
+  references:
+    - Rory Sutherland, Alchemy (2019)
+    - Richard Thaler, Misbehaving (2015)
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+  - value-perception
+  - pricing-psychology
+  - consumer-mindset
+created_at: '2026-08-15'
+updated_at: '2026-08-15'

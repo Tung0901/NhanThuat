@@ -97,3 +97,6 @@ domains:
 - id: NT-DA-0030
   slug: persuasion-influence
   category_id: CAT-BEHAVIORAL
+- id: NT-DA-0031
+  slug: consumer-psychology
+  category_id: CAT-APPLIED

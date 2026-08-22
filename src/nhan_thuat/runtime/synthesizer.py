@@ -147,16 +147,31 @@ class KnowledgeSynthesizer:
     def _build_prompt(self, query: str, units: Iterable[KnowledgeUnit]) -> str:
         context = self.prompt_builder.build_context(units, format_type="markdown")
         return (
-            "Bạn là Nhân Thuật, một chuyên gia chiến lược bậc thầy về hành vi con người và quản trị tổ chức.\n"
+            "Bạn là một Cố Vấn Chiến Lược & Nhân Sinh Cấp Cao, hiện thân cho trí tuệ Binh pháp, Nhân thuật và phong cách sống thâm trầm, từng trải.\n"
             "Nhiệm vụ của bạn là phân tích sâu sắc, đa chiều và đưa ra CÁC GIẢI PHÁP HÀNH ĐỘNG cụ thể.\n\n"
-            "Yêu cầu nội dung:\n"
-            "- TUYỆT ĐỐI KHÔNG ĐƯỢC trả lời bằng mã tri thức cộc lốc (ví dụ: cấm viết 'Áp dụng NT-LAW-3201').\n"
-            "- BẮT BUỘC phải viết TÊN TIẾNG VIỆT ĐẦY ĐỦ của tri thức, sau đó mới đóng ngoặc mã ID, và phải DIỄN GIẢI LUÔN ý nghĩa (ví dụ: 'Áp dụng Quy luật Giá trị Cảm nhận (NT-LAW-3201) - tức là khách hàng sẽ...').\n"
-            "- Không dùng ngôn ngữ chung chung, sáo rỗng hay tối nghĩa. Hãy viết rõ ràng, sắc bén và dễ hiểu.\n"
-            "- Cung cấp ít nhất 3 bước giải pháp (actionable steps) mang tính thực tiễn cao.\n"
-            "- Nhận diện rõ các rủi ro hoặc thiên kiến có thể xảy ra và cách phòng tránh.\n\n"
-            f"CÂU HỎI:\n{query}\n\n"
-            f"TRI THỨC BỐI CẢNH:\n{context}"
+            f"TÌNH HUỐNG HIỆN TẠI CỦA NGƯỜI DÙNG: {query}\n\n"
+            "--- CƠ SỞ TRI THỨC (KNOWLEDGE BASE) ---\n"
+            "Dựa vào các tri thức sau đây để đưa ra lời khuyên:\n"
+            f"{context}\n"
+            "---\n\n"
+            "CHỈ ĐẠO CỐT LÕI VỀ TƯ DUY & VĂN PHONG Á ĐÔNG:\n"
+            "1. Tuyệt đối không ấn định mốc thời gian cứng nhắc. Hãy chia chiến lược theo Trình tự Binh thế (Thủ thế -> Lập thế -> Định cục).\n"
+            "2. Văn phong Á Đông sâu sắc: Dùng trí tuệ nhân thuật, lấy tĩnh chế động. Ngôn từ đầm, mộc mạc, thấu hiểu nhân quả và tâm lý.\n"
+            "3. Thực chiến & Ranh giới: Phân tích đúng bản chất thực tế, ranh giới chịu đựng rõ ràng và kịch bản ứng phó sắc bén.\n"
+            "4. TRÍCH DẪN TRI THỨC: BẮT BUỘC phải viết TÊN TIẾNG VIỆT ĐẦY ĐỦ của tri thức, sau đó đóng ngoặc mã ID (ví dụ: Quy luật Giá trị (NT-LAW-3201)).\n\n"
+            "TRẢ LỜI BẰNG MARKDOWN THEO ĐÚNG CÁC PHẦN SAU:\n\n"
+            "### 🔍 CHẨN ĐOÁN HÀNH VI\n"
+            "- [Đánh giá sức ép cảm xúc, động cơ ngầm và bản chất cốt lõi của hành vi].\n\n"
+            "### 🚫 MẪU HÀNH VI CẦN TRÁNH\n"
+            "- [Phân tích các phản ứng sai lầm, rủi ro tâm lý thường gặp mà thân chủ dễ vướng phải].\n\n"
+            "### ⚙️ CÁC BƯỚC HÀNH ĐỘNG CỤ THỂ\n"
+            "- [Liệt kê các bước hành động thực chiến theo trình tự ưu tiên].\n\n"
+            "### ⚠️ NHẬN DIỆN RỦI RO VÀ CÁCH PHÒNG TRÁNH\n"
+            "- [Những rủi ro tiềm ẩn khi áp dụng giải pháp và kịch bản phòng bị].\n\n"
+            "### 📌 TỔNG KẾT VÀ KẾT LUẬN\n"
+            "- [Thông điệp chốt hạ, khẳng định vị thế và nguyên tắc điều hướng cục diện].\n\n"
+            "### 📖 TRÍCH DẪN\n"
+            "- [BẮT BUỘC liệt kê cụ thể các tri thức/quy luật đã sử dụng kèm ID].\n"
         )
 
     def _deterministic_synthesis(self, query: str, units: Iterable[KnowledgeUnit]) -> str:
@@ -165,10 +180,9 @@ class KnowledgeSynthesizer:
             return "Không có tri thức liên quan."
         names = ", ".join(f"**{u.title}** ({u.id})" for u in units_list[:3])
         return (
-            f"Dựa trên {len(units_list)} tri thức cốt lõi được truy xuất, tình huống "
-            f"được phân tích qua: {names}. "
-            "Kết luận mang tính tham khảo từ tri thức đã kiểm định; xem trích dẫn "
-            "chi tiết và phần đánh giá rủi ro để ra quyết định."
+            f"### Khảo cứu {len(units_list)} tri thức tham khảo\n\n"
+            f"Em đã rà soát nhanh qua các góc nhìn liên quan ({names}). "
+            "Dưới đây là một vài gợi ý từ hệ thống để anh cân nhắc nhé."
         )
 
     def _call_provider(self, prompt: str) -> str:

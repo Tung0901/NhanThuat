@@ -35,6 +35,9 @@ from nhan_thuat.public.v1.adapter import KnowledgeEngineAdapterV1
 from nhan_thuat.public.v1.contracts import KnowledgeQuery
 from salesos_pack.plugin import SalesOSPlugin
 
+from dotenv import load_dotenv
+load_dotenv()
+
 # Global Engine & Plugin Instances
 runtime_orchestrator = BusinessOSRuntimeOrchestrator()
 knowledge_engine = KnowledgeEngine()
@@ -93,13 +96,34 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
         parsed_url = urlparse(self.path)
         path = parsed_url.path
 
-        # 0. Serve Web App Dashboard
-        if path == "/" or path == "/dashboard" or path == "/index.html":
-            index_file = STATIC_DIR / "index.html"
+        # 0. Serve Landing Page, App Dashboard, and Static Assets
+        if path == "/" or path == "/index.html":
+            index_file = Path(__file__).resolve().parent.parent.parent / "index.html"
             if index_file.exists():
                 self._send_html_response(200, index_file.read_text(encoding="utf-8"))
             else:
-                self._send_html_response(404, "<h1>Dashboard HTML static file not found</h1>")
+                self._send_html_response(404, "<h1>Landing HTML static file not found</h1>")
+            return
+
+        if path == "/app" or path == "/dashboard":
+            app_file = Path(__file__).resolve().parent.parent.parent / "frontend" / "app.html"
+            if app_file.exists():
+                self._send_html_response(200, app_file.read_text(encoding="utf-8"))
+            else:
+                self._send_html_response(404, "<h1>App HTML not found</h1>")
+            return
+
+        if path.startswith("/css/") or path.startswith("/js/"):
+            asset_file = Path(__file__).resolve().parent.parent.parent / "frontend" / path.lstrip("/")
+            content_type = "text/css" if path.endswith(".css") else "application/javascript"
+            if asset_file.exists():
+                self.send_response(200)
+                self.send_header("Content-Type", content_type)
+                self.end_headers()
+                self.wfile.write(asset_file.read_bytes())
+            else:
+                self.send_response(404)
+                self.end_headers()
             return
 
         # 1. Health & Version Endpoints
@@ -221,9 +245,20 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
             unit_id = path.split("/api/v1/knowledge/units/")[1]
             unit_res = nhan_thuat_public_v1.get_unit(unit_id)
             if unit_res:
-                self._send_json_response(200, {"status": "success", "unit": unit_res})
+                import dataclasses
+                unit_dict = dataclasses.asdict(unit_res) if dataclasses.is_dataclass(unit_res) else unit_res
+                self._send_json_response(200, {"status": "success", "unit": unit_dict})
             else:
                 self._send_json_response(404, {"status": "error", "message": "Unit not found"})
+            return
+
+        if path == "/api/v1/knowledge/units":
+            units = list(knowledge_engine.units_by_id.values())
+            self._send_json_response(200, {
+                "status": "success",
+                "count": len(units),
+                "units": [{"id": u.unit_id, "title": u.title, "domain": u.domain, "type": u.unit_type, "summary": u.raw_data.get("summary", "")} for u in units],
+            })
             return
 
         if path.startswith("/api/v1/knowledge/domains/"):
@@ -586,8 +621,11 @@ def create_app_server(host: str = "127.0.0.1", port: int = 8000) -> HTTPServer:
 
 
 if __name__ == "__main__":
-    print("Starting BusinessOS & NhanThuat Web Dashboard Server on http://127.0.0.1:8000...")
-    server = create_app_server()
+    import os
+    port = int(os.environ.get("PORT", 8000))
+    host = os.environ.get("HOST", "0.0.0.0")
+    print(f"Starting BusinessOS & NhanThuat Web Dashboard Server on http://{host}:{port}...")
+    server = create_app_server(host=host, port=port)
     try:
         server.serve_forever()
     except KeyboardInterrupt:

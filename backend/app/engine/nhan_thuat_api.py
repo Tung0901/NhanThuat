@@ -372,19 +372,23 @@ def process_nhan_thuat_analysis(scenario_text: str, scenario_type_hint: str = "g
     })
 
     # 3. Match Knowledge Units
-    matched_units = find_relevant_units(scenario_text, orchestrator.knowledge_engine, top_k=3)
+    # For UI rendering, we get top 5 units
+    matched_units = find_relevant_units(scenario_text, orchestrator.knowledge_engine, top_k=5)
+    
+    # If no match from synonyms, pass ALL units so Gemini can act as a retriever
+    all_units = list(orchestrator.knowledge_engine.units_by_id.values())
+    units_for_synthesis = matched_units if len(matched_units) >= 1 else all_units
 
-    # 3b. Match Custom RAG Company Documents / SOPs / Contracts
-    custom_rag_docs = orchestrator.knowledge_engine.query_custom_documents(scenario_text, top_k=2)
+    # Convert IndexedUnit to KnowledgeUnit expected by synthesizer
+    from nhan_thuat.models import KnowledgeUnit
+    knowledge_units = [KnowledgeUnit.from_mapping(u.raw_data) for u in units_for_synthesis]
 
-    primary = router_res.get("primary_philosophy", "NONE").upper()
-    secondary = router_res.get("secondary_philosophy")
-    tertiary = router_res.get("tertiary_philosophy")
+    # 4. Use KnowledgeSynthesizer to generate exact Streamlit format
+    from nhan_thuat.runtime.synthesizer import KnowledgeSynthesizer
+    synthesizer = KnowledgeSynthesizer()
+    synthesis_result = synthesizer.synthesize(scenario_text, knowledge_units)
 
-    # 4. Generate Detailed Actionable Script & Communication Drafts & Directives
-    script_details = generate_actionable_script_details(primary, scenario_text)
-
-    correlation_id = f"CORR-WEB-{uuid.uuid4().hex[:8].upper()}"
+    correlation_id = synthesis_result.get("audit", {}).get("correlation_id", f"CORR-WEB-{uuid.uuid4().hex[:8].upper()}")
 
     return {
         "status": "success",
@@ -392,47 +396,10 @@ def process_nhan_thuat_analysis(scenario_text: str, scenario_type_hint: str = "g
         "is_ambiguous": is_ambiguous,
         "ambiguity_warning": warning_msg if is_ambiguous else "",
         "philosophy_routing": {
-            "primary_philosophy": primary,
-            "secondary_philosophy": secondary.upper() if secondary else None,
-            "tertiary_philosophy": tertiary.upper() if tertiary else None,
-            "lens_weights": router_res.get("lens_weights", {}),
-            "lens_confidence_scores": router_res.get("lens_confidence_scores", {}),
-            "explanation": router_res.get("explanation", ""),
+            "primary_philosophy": router_res.get("primary_philosophy", "NONE").upper(),
+            "secondary_philosophy": router_res.get("secondary_philosophy"),
+            "tertiary_philosophy": router_res.get("tertiary_philosophy"),
         },
-        "matched_knowledge_units": [
-            {
-                "unit_id": u.unit_id,
-                "unit_type": u.unit_type,
-                "title": u.title,
-                "domain": u.domain,
-                "checksum": u.checksum,
-                "summary": str(u.raw_data.get("summary", u.title)),
-            }
-            for u in matched_units
-        ],
-        "matched_custom_docs": [
-            {
-                "doc_id": d.doc_id,
-                "title": d.title,
-                "file_path": d.file_path,
-                "checksum": d.checksum,
-                "snippet": d.content[:200] + "...",
-            }
-            for d in custom_rag_docs
-        ],
-        "action_script": {
-            "primary_lens": primary,
-            "execution_config": {
-                "temperature": 0.1,
-                "reproducibility_seed": 42,
-            },
-            "position_analysis": script_details["position_analysis"],
-            "step_1_anchor": script_details["step_1_anchor"],
-            "step_2_deadline_consequence": script_details["step_2_deadline_consequence"],
-            "step_3_way_out_plan_b": script_details["step_3_way_out_plan_b"],
-            "draft_official_communication": script_details["draft_official_communication"],
-            "financial_and_operational_directives": script_details["financial_and_operational_directives"],
-            "action_principles_summary": script_details["action_principles"],
-        },
+        "synthesis_result": synthesis_result,  # This contains mode, synthesis, citations, audit
         "correlation_id": correlation_id,
     }

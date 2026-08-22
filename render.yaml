@@ -6,6 +6,6 @@ services:
     startCommand: PYTHONPATH=src python -m backend.app.main
     envVars:
       - key: PYTHON_VERSION
-        value: 3.11.0
+        value: "3.11.0"
       - key: PORT
-        value: 8000
+        value: "8000"

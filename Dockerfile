@@ -1,0 +1,14 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+ENV PYTHONPATH=src
+ENV PORT=7860
+ENV HOST=0.0.0.0
+
+EXPOSE 7860
+
+CMD ["python", "-m", "backend.app.main"]

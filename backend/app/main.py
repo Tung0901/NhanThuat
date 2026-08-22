@@ -395,8 +395,15 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
                 })
                 return
 
-            result = process_nhan_thuat_analysis(scenario_text, scenario_type_hint)
-            self._send_json_response(200, result)
+            try:
+                result = process_nhan_thuat_analysis(scenario_text, scenario_type_hint)
+                self._send_json_response(200, result)
+            except Exception as e:
+                self._send_json_response(500, {
+                    "status": "INTERNAL_ERROR",
+                    "error_code": "ANALYSIS_FAILED",
+                    "message": f"Server error: {e!s}"
+                })
             return
 
         # 1. CPQ Quote Generator: POST /api/v1/salesos/cpq/generate-quote

@@ -1154,41 +1154,89 @@
                 const data = await res.json();
                 if (data.status === 'success' && data.units) {
                     listEl.innerHTML = '';
+                    
+                    // Group units by domain
+                    const groups = {};
                     data.units.forEach(u => {
-                        const card = document.createElement('div');
-                        card.className = 'knowledge-card';
-                        card.innerHTML = `
-                            <div class="knowledge-card-title">${u.title || u.id}</div>
-                            <div class="knowledge-card-meta">${u.id} &bull; ${u.domain || 'Core'}</div>
-                        `;
-                        card.addEventListener('click', async () => {
-                            if (card.querySelector('.knowledge-content')) {
-                                const contentEl = card.querySelector('.knowledge-content');
-                                contentEl.style.display = contentEl.style.display === 'none' ? 'block' : 'none';
-                                return;
-                            }
-                            card.innerHTML += `<div class="knowledge-content" style="margin-top: 15px; font-size: 14.5px; color: rgba(255,255,255,0.8); border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; line-height: 1.6;">Đang tải nội dung...</div>`;
-                            try {
-                                const detailRes = await fetch('/api/v1/knowledge/units/' + u.id);
-                                const detailData = await detailRes.json();
-                                if (detailData.status === 'success' && detailData.unit) {
-                                    let content = "";
-                                    let rawData = detailData.unit.raw_data || detailData.unit;
-                                    if (rawData.summary) content += "**Tóm tắt:**\n" + rawData.summary + "\n\n";
-                                    if (rawData.definition) content += "**Định nghĩa:**\n" + rawData.definition + "\n\n";
-                                    if (rawData.conditions) content += "**Điều kiện áp dụng:**\n" + (Array.isArray(rawData.conditions) ? "- " + rawData.conditions.join("\n- ") : rawData.conditions) + "\n\n";
-                                    if (rawData.risks) content += "**Rủi ro:**\n" + (Array.isArray(rawData.risks) ? "- " + rawData.risks.join("\n- ") : rawData.risks) + "\n\n";
-                                    if (rawData.content) content += "\n\n" + rawData.content;
-                                    
-                                    card.querySelector('.knowledge-content').innerHTML = formatChatHTML(content || 'Không có nội dung.');
-                                } else {
-                                    card.querySelector('.knowledge-content').innerHTML = 'Không thể tải nội dung.';
-                                }
-                            } catch(e) {
-                                card.querySelector('.knowledge-content').innerHTML = 'Lỗi kết nối.';
-                            }
+                        const d = u.domain || 'unknown';
+                        if (!groups[d]) groups[d] = [];
+                        groups[d].push(u);
+                    });
+                    
+                    const domainMap = {
+                        'tu-than': 'TU THÂN (Quản lý bản thân)',
+                        'tri-nhan': 'TRỊ NHÂN (Thấu hiểu tâm lý)',
+                        'dung-nhan': 'DÙNG NHÂN (Quản trị & Lãnh đạo)',
+                        'hop-chung': 'HỢP CHÚNG (Quyền lực & Hệ thống)',
+                        'thanh-su': 'THÀNH SỰ (Thực thi chiến lược)',
+                        'unknown': 'KHÁC'
+                    };
+
+                    Object.keys(groups).sort().forEach(domain => {
+                        const groupContainer = document.createElement('div');
+                        groupContainer.className = 'knowledge-group';
+                        groupContainer.style.marginBottom = '10px';
+                        
+                        const header = document.createElement('div');
+                        header.className = 'knowledge-group-header';
+                        header.innerHTML = `<span>${domainMap[domain] || domain.toUpperCase()}</span> <span class="toggle-icon" style="font-size: 10px;">▼</span>`;
+                        header.style.cssText = 'padding: 15px; background: rgba(255,255,255,0.05); cursor: pointer; border-radius: 6px; font-weight: 600; font-size: 13px; letter-spacing: 1px; display: flex; justify-content: space-between; align-items: center; border: 1px solid rgba(255,255,255,0.1);';
+                        
+                        const itemsContainer = document.createElement('div');
+                        itemsContainer.className = 'knowledge-group-items';
+                        itemsContainer.style.display = 'none';
+                        itemsContainer.style.paddingLeft = '10px';
+                        itemsContainer.style.marginTop = '10px';
+                        
+                        header.addEventListener('click', () => {
+                            const isHidden = itemsContainer.style.display === 'none';
+                            itemsContainer.style.display = isHidden ? 'block' : 'none';
+                            header.querySelector('.toggle-icon').textContent = isHidden ? '▲' : '▼';
                         });
-                        listEl.appendChild(card);
+
+                        groups[domain].forEach(u => {
+                            const card = document.createElement('div');
+                            card.className = 'knowledge-card';
+                            const typeMap = { 'anti-pattern': 'Bẫy', 'law': 'Quy luật', 'principle': 'Nguyên tắc', 'strategy': 'Chiến thuật' };
+                            const displayType = typeMap[u.type] || u.type;
+                            
+                            card.innerHTML = `
+                                <div class="knowledge-card-title">${u.title || u.id}</div>
+                                <div class="knowledge-card-meta">[${displayType.toUpperCase()}] &bull; ${u.id}</div>
+                            `;
+                            card.addEventListener('click', async () => {
+                                if (card.querySelector('.knowledge-content')) {
+                                    const contentEl = card.querySelector('.knowledge-content');
+                                    contentEl.style.display = contentEl.style.display === 'none' ? 'block' : 'none';
+                                    return;
+                                }
+                                card.innerHTML += `<div class="knowledge-content" style="margin-top: 15px; font-size: 14.5px; color: rgba(255,255,255,0.8); border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; line-height: 1.6;">Đang tải nội dung...</div>`;
+                                try {
+                                    const detailRes = await fetch('/api/v1/knowledge/units/' + u.id);
+                                    const detailData = await detailRes.json();
+                                    if (detailData.status === 'success' && detailData.unit) {
+                                        let content = "";
+                                        let rawData = detailData.unit.raw_data || detailData.unit;
+                                        if (rawData.summary) content += "**Tóm tắt:**\n" + rawData.summary + "\n\n";
+                                        if (rawData.definition) content += "**Định nghĩa:**\n" + rawData.definition + "\n\n";
+                                        if (rawData.conditions) content += "**Điều kiện áp dụng:**\n" + (Array.isArray(rawData.conditions) ? "- " + rawData.conditions.join("\n- ") : rawData.conditions) + "\n\n";
+                                        if (rawData.risks) content += "**Rủi ro:**\n" + (Array.isArray(rawData.risks) ? "- " + rawData.risks.join("\n- ") : rawData.risks) + "\n\n";
+                                        if (rawData.content) content += "\n\n" + rawData.content;
+                                        
+                                        card.querySelector('.knowledge-content').innerHTML = formatChatHTML(content || 'Không có nội dung.');
+                                    } else {
+                                        card.querySelector('.knowledge-content').innerHTML = 'Không thể tải nội dung.';
+                                    }
+                                } catch(e) {
+                                    card.querySelector('.knowledge-content').innerHTML = 'Lỗi kết nối.';
+                                }
+                            });
+                            itemsContainer.appendChild(card);
+                        });
+                        
+                        groupContainer.appendChild(header);
+                        groupContainer.appendChild(itemsContainer);
+                        listEl.appendChild(groupContainer);
                     });
                     knowledgeLoaded = true;
                 }

@@ -1144,11 +1144,11 @@
                                 if (detailData.status === 'success' && detailData.unit) {
                                     let content = "";
                                     let rawData = detailData.unit.raw_data || detailData.unit;
-                                    if (rawData.summary) content += "**Tóm tắt:**\\n" + rawData.summary + "\\n\\n";
-                                    if (rawData.definition) content += "**Định nghĩa:**\\n" + rawData.definition + "\\n\\n";
-                                    if (rawData.conditions) content += "**Điều kiện áp dụng:**\\n" + (Array.isArray(rawData.conditions) ? "- " + rawData.conditions.join("\\n- ") : rawData.conditions) + "\\n\\n";
-                                    if (rawData.risks) content += "**Rủi ro:**\\n" + (Array.isArray(rawData.risks) ? "- " + rawData.risks.join("\\n- ") : rawData.risks) + "\\n\\n";
-                                    if (rawData.content) content += "\\n\\n" + rawData.content;
+                                    if (rawData.summary) content += "**Tóm tắt:**\n" + rawData.summary + "\n\n";
+                                    if (rawData.definition) content += "**Định nghĩa:**\n" + rawData.definition + "\n\n";
+                                    if (rawData.conditions) content += "**Điều kiện áp dụng:**\n" + (Array.isArray(rawData.conditions) ? "- " + rawData.conditions.join("\n- ") : rawData.conditions) + "\n\n";
+                                    if (rawData.risks) content += "**Rủi ro:**\n" + (Array.isArray(rawData.risks) ? "- " + rawData.risks.join("\n- ") : rawData.risks) + "\n\n";
+                                    if (rawData.content) content += "\n\n" + rawData.content;
                                     
                                     card.querySelector('.knowledge-content').innerHTML = formatChatHTML(content || 'Không có nội dung.');
                                 } else {

@@ -126,6 +126,7 @@ class KnowledgeSynthesizer:
             }
         except Exception as exc:  # noqa: BLE001 - intentional: any provider failure must fall back to deterministic
             latency_ms = int((time.monotonic() - started) * 1000)
+            print(f"[ERROR] LLM Provider call failed: {exc}")
             return {
                 "mode": "deterministic",
                 "synthesis": self._deterministic_synthesis(query, units_list),

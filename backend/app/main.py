@@ -247,6 +247,39 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
             if unit_res:
                 import dataclasses
                 unit_dict = dataclasses.asdict(unit_res) if dataclasses.is_dataclass(unit_res) else unit_res
+                
+                # Auto-generate detailed content if missing
+                raw = unit_dict.get("raw_data") or unit_dict
+                if not raw.get("content"):
+                    try:
+                        from nhan_thuat.runtime.synthesizer import KnowledgeSynthesizer
+                        syn = KnowledgeSynthesizer()
+                        if syn.provider_configured:
+                            title = unit_dict.get("title", unit_id)
+                            summary = raw.get("summary", "")
+                            prompt = (
+                                f"Bạn là một Cố Vấn Nhân Thuật lão luyện. "
+                                f"Khái niệm/Tri thức: '{title}'. Tóm tắt: '{summary}'.\n"
+                                f"Hãy viết một bài phân tích CHUYÊN SÂU (tối thiểu 500 chữ) giải thích ngọn ngành tri thức này. "
+                                f"Tuyệt đối không viết qua loa. Bắt buộc viết bằng Markdown chia làm 3 phần rõ ràng:\n"
+                                f"### Bản chất cốt lõi\n(Phân tích sâu về tâm lý, động cơ và quy luật)\n\n"
+                                f"### Ví dụ thực tiễn\n(Đưa ra một kịch bản sinh động trong quản trị hoặc đàm phán)\n\n"
+                                f"### Bài học rút ra\n(Cách ứng dụng vào thực tế)"
+                            )
+                            print(f"[INFO] Lazy-generating content for {unit_id}...")
+                            generated = syn._call_provider(prompt)
+                            
+                            # Cache in memory
+                            if hasattr(unit_res, "raw_data") and isinstance(unit_res.raw_data, dict):
+                                unit_res.raw_data["content"] = generated
+                            
+                            if "raw_data" in unit_dict:
+                                unit_dict["raw_data"]["content"] = generated
+                            else:
+                                unit_dict["content"] = generated
+                    except Exception as e:
+                        print(f"[ERROR] Auto-generate content failed for {unit_id}: {e}")
+
                 self._send_json_response(200, {"status": "success", "unit": unit_dict})
             else:
                 self._send_json_response(404, {"status": "error", "message": "Unit not found"})

@@ -260,11 +260,11 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
                             prompt = (
                                 f"Bạn là một Cố Vấn Nhân Thuật lão luyện. "
                                 f"Khái niệm/Tri thức: '{title}'. Tóm tắt: '{summary}'.\n"
-                                f"Hãy viết một bài phân tích CHUYÊN SÂU (tối thiểu 500 chữ) giải thích ngọn ngành tri thức này. "
+                                f"Hãy viết một bài phân tích CHUYÊN SÂU (tối thiểu 600 chữ) giải thích ngọn ngành tri thức này theo cấu trúc Lăng Kính Kép (Đông - Tây dung hợp). "
                                 f"Tuyệt đối không viết qua loa. Bắt buộc viết bằng Markdown chia làm 3 phần rõ ràng:\n"
-                                f"### Bản chất cốt lõi\n(Phân tích sâu về tâm lý, động cơ và quy luật)\n\n"
-                                f"### Ví dụ thực tiễn\n(Đưa ra một kịch bản sinh động trong quản trị hoặc đàm phán)\n\n"
-                                f"### Bài học rút ra\n(Cách ứng dụng vào thực tế)"
+                                f"### 1. Bản chất cốt lõi\n(Phân tích sâu về tâm lý, động cơ và quy luật vận hành)\n\n"
+                                f"### 2. Lăng Kính Kép (Đông - Tây)\n(Đối chiếu sự tương đồng: Giải thích tri thức này dưới lăng kính triết học Phương Đông cổ đại [như Nho, Đạo, Pháp, Binh] và lăng kính khoa học Phương Tây hiện đại [như Kinh tế học hành vi, Khoa học nhận thức, Lý thuyết trò chơi])\n\n"
+                                f"### 3. Thực Chiến (Ví dụ & Ứng dụng)\n(Đưa ra một kịch bản sinh động trong quản trị, đàm phán hoặc lãnh đạo để làm rõ cách ứng dụng)"
                             )
                             print(f"[INFO] Lazy-generating content for {unit_id}...")
                             generated = syn._call_provider(prompt)

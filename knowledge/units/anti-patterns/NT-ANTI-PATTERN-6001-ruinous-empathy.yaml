@@ -1,0 +1,39 @@
+id: NT-ANTI-PATTERN-6001
+type: anti-pattern
+status: frozen
+version: 0.1.0
+title: Đồng cảm thái quá (Ruinous Empathy)
+summary: Tình trạng nhà quản lý vì quá quan tâm đến cảm xúc cá nhân của nhân viên mà né tránh việc phản hồi thẳng thắn, dẫn đến hiệu suất giảm sút và bất mãn nội bộ.
+primary_domain: dung-nhan
+secondary_domains:
+- tri-nhan
+definition: Một bẫy hành vi trong Dùng Nhân, nơi sự hòa khí giả tạo được đặt lên trên sự phát triển thực chất. Quản lý dung túng cho sai lầm vì sợ làm tổn thương nhân viên.
+conditions:
+- Môi trường làm việc đề cao tình cảm, thiếu các chỉ số đo lường hiệu suất rõ ràng.
+- Quản lý thiếu kỹ năng xử lý xung đột (conflict resolution).
+exceptions:
+- Nhân viên đang gặp cú sốc tâm lý lớn (tang tóc, bệnh tật hiểm nghèo) cần sự bao dung tạm thời.
+applications:
+  governance:
+  - Cần đưa vào danh mục các hành vi quản lý bị cấm trong đào tạo lãnh đạo cấp trung.
+risks:
+- Dung túng cho nhân sự yếu kém, khiến nhân sự giỏi bất mãn và rời đi.
+- Làm mất đi tính kỷ luật của tổ chức.
+evidence:
+  level: supported
+  references:
+  - "Radical Candor - Kim Scott"
+relations:
+  supports: []
+  conflicts_with: 
+  - NT-STRATEGY-6001
+  depends_on: []
+  applies_to: []
+tags:
+- anti-pattern
+- leadership
+- radical-candor
+- kim-scott
+created_at: '2026-08-24'
+updated_at: '2026-08-24'
+mechanism: []

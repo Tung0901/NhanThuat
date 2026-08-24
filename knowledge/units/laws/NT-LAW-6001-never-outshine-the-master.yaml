@@ -1,0 +1,36 @@
+id: NT-LAW-6001
+type: law
+status: frozen
+version: 0.1.0
+title: Không bao giờ che khuất chủ tướng
+summary: Trong cấu trúc quyền lực, việc cấp dưới tỏ ra quá thông minh hoặc tài giỏi hơn cấp trên sẽ kích hoạt cảm giác bất an của họ, dẫn đến sự kìm hãm hoặc tiêu diệt.
+primary_domain: hop-chung
+secondary_domains:
+- dung-nhan
+definition: Một quy luật bất biến trong Hợp Chúng và Dùng Nhân. Quyền lực đòi hỏi sự tôn nghiêm và cảm giác vượt trội. Sự tỏa sáng sai chỗ của cấp dưới là mối đe dọa trực tiếp đến cấu trúc này.
+conditions:
+- Tổ chức có tính thứ bậc cao, sếp trực tiếp là người có cái tôi lớn hoặc thiếu tự tin.
+exceptions:
+- Môi trường khởi nghiệp cực kỳ phẳng (flat organization), nơi sếp chỉ quan tâm đến hiệu suất thay vì quyền lực.
+applications:
+  governance:
+  - Nhân sự giỏi cần học cách "giấu tài" hoặc nhường công trạng cho cấp trên để đổi lấy tài nguyên thực chất.
+risks:
+- Gây ảo tưởng cho nhân sự rằng chỉ cần giỏi chuyên môn là sẽ được trọng dụng, phớt lờ rủi ro chính trị công sở.
+evidence:
+  level: supported
+  references:
+  - "The 48 Laws of Power - Robert Greene"
+relations:
+  supports: []
+  conflicts_with: []
+  depends_on: []
+  applies_to: []
+tags:
+- law
+- power-dynamics
+- robert-greene
+- survival
+created_at: '2026-08-24'
+updated_at: '2026-08-24'
+mechanism: []

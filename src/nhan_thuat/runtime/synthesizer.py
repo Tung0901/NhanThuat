@@ -61,6 +61,15 @@ def get_provider_configs() -> list[dict[str, str]]:
             "provider_name": "groq",
         })
         
+    deepseek_key = os.environ.get("DEEPSEEK_API_KEY", "").strip()
+    if deepseek_key:
+        configs.append({
+            "api_key": deepseek_key,
+            "base_url": "https://api.deepseek.com/v1",
+            "model": os.environ.get("DEEPSEEK_MODEL", "").strip() or "deepseek-chat",
+            "provider_name": "deepseek",
+        })
+
     openai_key = os.environ.get("OPENAI_API_KEY", "").strip()
     if openai_key:
         configs.append({

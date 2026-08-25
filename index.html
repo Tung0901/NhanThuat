@@ -1219,8 +1219,29 @@
                                         let rawData = detailData.unit.raw_data || detailData.unit;
                                         if (rawData.summary) content += "**Tóm tắt:**\n" + rawData.summary + "\n\n";
                                         if (rawData.definition) content += "**Định nghĩa:**\n" + rawData.definition + "\n\n";
-                                        if (rawData.conditions) content += "**Điều kiện áp dụng:**\n" + (Array.isArray(rawData.conditions) ? "- " + rawData.conditions.join("\n- ") : rawData.conditions) + "\n\n";
-                                        if (rawData.risks) content += "**Rủi ro:**\n" + (Array.isArray(rawData.risks) ? "- " + rawData.risks.join("\n- ") : rawData.risks) + "\n\n";
+                                        if (rawData.mechanism && rawData.mechanism.length > 0) content += "**Cơ chế hoạt động:**\n" + (Array.isArray(rawData.mechanism) ? "- " + rawData.mechanism.join("\n- ") : rawData.mechanism) + "\n\n";
+                                        if (rawData.conditions && rawData.conditions.length > 0) content += "**Điều kiện áp dụng:**\n" + (Array.isArray(rawData.conditions) ? "- " + rawData.conditions.join("\n- ") : rawData.conditions) + "\n\n";
+                                        if (rawData.exceptions && rawData.exceptions.length > 0) content += "**Ngoại lệ:**\n" + (Array.isArray(rawData.exceptions) ? "- " + rawData.exceptions.join("\n- ") : rawData.exceptions) + "\n\n";
+                                        if (rawData.risks && rawData.risks.length > 0) content += "**Rủi ro:**\n" + (Array.isArray(rawData.risks) ? "- " + rawData.risks.join("\n- ") : rawData.risks) + "\n\n";
+                                        if (rawData.applications && Object.keys(rawData.applications).length > 0) {
+                                            content += "**Ứng dụng:**\n";
+                                            for (const [key, value] of Object.entries(rawData.applications)) {
+                                                if (Array.isArray(value) && value.length > 0) {
+                                                    content += `- **${key}**:\n  - ` + value.join("\n  - ") + "\n";
+                                                } else if (typeof value === 'string') {
+                                                    content += `- **${key}**: ${value}\n`;
+                                                }
+                                            }
+                                            content += "\n";
+                                        }
+                                        if (rawData.relations && Object.keys(rawData.relations).length > 0) {
+                                            let hasRelation = false;
+                                            let relContent = "**Liên kết:**\n";
+                                            if (rawData.relations.depends_on && rawData.relations.depends_on.length > 0) { relContent += "- **Phụ thuộc vào:** " + rawData.relations.depends_on.join(", ") + "\n"; hasRelation = true; }
+                                            if (rawData.relations.supports && rawData.relations.supports.length > 0) { relContent += "- **Hỗ trợ cho:** " + rawData.relations.supports.join(", ") + "\n"; hasRelation = true; }
+                                            if (rawData.relations.conflicts_with && rawData.relations.conflicts_with.length > 0) { relContent += "- **Xung đột với:** " + rawData.relations.conflicts_with.join(", ") + "\n"; hasRelation = true; }
+                                            if (hasRelation) content += relContent + "\n";
+                                        }
                                         if (rawData.content) content += "\n\n" + rawData.content;
                                         
                                         card.querySelector('.knowledge-content').innerHTML = formatChatHTML(content || 'Không có nội dung.');

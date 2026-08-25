@@ -267,7 +267,7 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
                                 f"### 3. Thực Chiến (Ví dụ & Ứng dụng)\n(Đưa ra một kịch bản sinh động trong quản trị, đàm phán hoặc lãnh đạo để làm rõ cách ứng dụng)"
                             )
                             print(f"[INFO] Lazy-generating content for {unit_id}...")
-                            generated = syn._call_provider(prompt)
+                            generated = syn.generate_text(prompt)
                             
                             # Cache in memory
                             if hasattr(unit_res, "raw_data") and isinstance(unit_res.raw_data, dict):

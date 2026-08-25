@@ -211,6 +211,21 @@ class KnowledgeSynthesizer:
             "Dưới đây là một vài gợi ý từ hệ thống để anh cân nhắc nhé."
         )
 
+    def generate_text(self, prompt: str) -> str:
+        """Call providers with failover and return just the text."""
+        configs = get_provider_configs()
+        if not configs:
+            raise Exception("No providers configured")
+        
+        errors = []
+        for config in configs:
+            try:
+                return self._call_provider(prompt, config)
+            except Exception as e:
+                errors.append(f"{config['provider_name']}: {e}")
+                
+        raise Exception(f"All providers failed: {' | '.join(errors)}")
+
     def _call_provider(self, prompt: str, config: dict[str, str]) -> str:
         response = requests.post(
             f"{config['base_url']}/chat/completions",

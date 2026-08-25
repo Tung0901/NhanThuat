@@ -7,7 +7,8 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
 
-        * { margin: 0; padding: 0; box-sizing: border-box; user-select: none; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .chat-msg, .knowledge-card, .chat-tab-pane { user-select: text !important; }
 
         html, body {
             width: 100%;
@@ -874,6 +875,9 @@
         </div>
 
         <div id="sidebar-view-knowledge" class="sidebar-view">
+            <div style="padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); position: sticky; top: 0; background: #000; z-index: 10;">
+                <input type="text" id="knowledge-search-input" placeholder="Tìm kiếm theo tên hoặc mã..." style="width: 100%; padding: 10px 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-family: inherit; font-size: 0.9rem; outline: none; transition: border-color 0.3s;" onfocus="this.style.borderColor='rgba(255,255,255,0.3)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+            </div>
             <div class="knowledge-list" id="knowledge-list">
                 <div style="text-align: center; color: rgba(255,255,255,0.5); margin-top: 50px;">Đang tải kho tri thức...</div>
             </div>
@@ -1966,6 +1970,25 @@
             
             return '<p>' + html + '</p>';
         }
+        // Search functionality for Knowledge Base
+        document.addEventListener('input', function(e) {
+            if(e.target && e.target.id === 'knowledge-search-input') {
+                const term = e.target.value.toLowerCase();
+                document.querySelectorAll('.knowledge-card').forEach(card => {
+                    const titleEl = card.querySelector('.knowledge-card-title');
+                    const metaEl = card.querySelector('.knowledge-card-meta');
+                    if (titleEl && metaEl) {
+                        const title = titleEl.textContent.toLowerCase();
+                        const meta = metaEl.textContent.toLowerCase();
+                        if(title.includes(term) || meta.includes(term)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            }
+        });
     }
     </script>
 

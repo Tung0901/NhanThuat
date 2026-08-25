@@ -21,7 +21,7 @@ from nhan_thuat.models import KnowledgeUnit
 from nhan_thuat.runtime.prompt_builder import PromptBuilder
 
 DEFAULT_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai"
-DEFAULT_MODEL = "gemini-1.5-flash"
+DEFAULT_MODEL = "gemini-3.6-flash"
 
 
 def get_provider_configs() -> list[dict[str, str]]:

@@ -27,7 +27,7 @@ DEFAULT_MODEL = "gemini-3.6-flash"
 def _api_key() -> str:
     return (
         os.environ.get("GEMINI_API_KEY")
-        or os.environ.get("GOOGLE_API_KEY")
+        or os.environ.get("GROQ_API_KEY")
         or os.environ.get("OPENAI_API_KEY")
         or ""
     ).strip()
@@ -38,14 +38,19 @@ def _base_url() -> str:
         os.environ.get("GEMINI_BASE_URL", "")
         or os.environ.get("OPENAI_BASE_URL", "")
     ).strip().rstrip("/")
+    if not explicit and os.environ.get("GROQ_API_KEY") and not os.environ.get("GEMINI_API_KEY"):
+        return "https://api.groq.com/openai/v1"
     return explicit or DEFAULT_BASE_URL
 
 
 def _model() -> str:
     explicit = (
         os.environ.get("GEMINI_MODEL", "")
+        or os.environ.get("GROQ_MODEL", "")
         or os.environ.get("NHAN_THUAT_LLM_MODEL", "")
     ).strip()
+    if not explicit and os.environ.get("GROQ_API_KEY") and not os.environ.get("GEMINI_API_KEY"):
+        return "llama3-70b-8192"
     return explicit or DEFAULT_MODEL
 
 
@@ -54,6 +59,8 @@ def provider_name() -> str:
     base = _base_url()
     if "generativelanguage.googleapis.com" in base:
         return "google-gemini"
+    if "api.groq.com" in base:
+        return "groq"
     return "openai-compatible"
 
 

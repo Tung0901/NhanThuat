@@ -1974,17 +1974,39 @@
         document.addEventListener('input', function(e) {
             if(e.target && e.target.id === 'knowledge-search-input') {
                 const term = e.target.value.toLowerCase();
-                document.querySelectorAll('.knowledge-card').forEach(card => {
-                    const titleEl = card.querySelector('.knowledge-card-title');
-                    const metaEl = card.querySelector('.knowledge-card-meta');
-                    if (titleEl && metaEl) {
-                        const title = titleEl.textContent.toLowerCase();
-                        const meta = metaEl.textContent.toLowerCase();
-                        if(title.includes(term) || meta.includes(term)) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
+                document.querySelectorAll('.knowledge-group').forEach(group => {
+                    let hasVisibleCard = false;
+                    const itemsContainer = group.querySelector('.knowledge-group-items');
+                    const toggleIcon = group.querySelector('.toggle-icon');
+                    
+                    group.querySelectorAll('.knowledge-card').forEach(card => {
+                        const titleEl = card.querySelector('.knowledge-card-title');
+                        const metaEl = card.querySelector('.knowledge-card-meta');
+                        if (titleEl && metaEl) {
+                            const title = titleEl.textContent.toLowerCase();
+                            const meta = metaEl.textContent.toLowerCase();
+                            if(title.includes(term) || meta.includes(term)) {
+                                card.style.display = 'block';
+                                hasVisibleCard = true;
+                            } else {
+                                card.style.display = 'none';
+                            }
                         }
+                    });
+
+                    if (term !== '') {
+                        if (hasVisibleCard) {
+                            group.style.display = 'block';
+                            if (itemsContainer) itemsContainer.style.display = 'block';
+                            if (toggleIcon) toggleIcon.textContent = '▲';
+                        } else {
+                            group.style.display = 'none';
+                        }
+                    } else {
+                        group.style.display = 'block';
+                        if (itemsContainer) itemsContainer.style.display = 'none';
+                        if (toggleIcon) toggleIcon.textContent = '▼';
+                        group.querySelectorAll('.knowledge-card').forEach(c => c.style.display = 'block');
                     }
                 });
             }

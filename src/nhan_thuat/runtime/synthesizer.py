@@ -24,48 +24,37 @@ DEFAULT_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai"
 DEFAULT_MODEL = "gemini-3.6-flash"
 
 
-def _api_key() -> str:
-    return (
-        os.environ.get("GEMINI_API_KEY")
-        or os.environ.get("GROQ_API_KEY")
-        or os.environ.get("OPENAI_API_KEY")
-        or ""
-    ).strip()
-
-
-def _base_url() -> str:
-    explicit = (
-        os.environ.get("GEMINI_BASE_URL", "")
-        or os.environ.get("OPENAI_BASE_URL", "")
-    ).strip().rstrip("/")
-    if not explicit and os.environ.get("GROQ_API_KEY") and not os.environ.get("GEMINI_API_KEY"):
-        return "https://api.groq.com/openai/v1"
-    return explicit or DEFAULT_BASE_URL
-
-
-def _model() -> str:
-    explicit = (
-        os.environ.get("GEMINI_MODEL", "")
-        or os.environ.get("GROQ_MODEL", "")
-        or os.environ.get("NHAN_THUAT_LLM_MODEL", "")
-    ).strip()
-    if not explicit and os.environ.get("GROQ_API_KEY") and not os.environ.get("GEMINI_API_KEY"):
-        return "llama3-70b-8192"
-    return explicit or DEFAULT_MODEL
-
-
-def provider_name() -> str:
-    """Human-readable provider label derived from the configured base URL."""
-    base = _base_url()
-    if "generativelanguage.googleapis.com" in base:
-        return "google-gemini"
-    if "api.groq.com" in base:
-        return "groq"
-    return "openai-compatible"
-
-
-OPENAI_BASE_URL = _base_url()
-OPENAI_MODEL = _model()
+def get_provider_configs() -> list[dict[str, str]]:
+    configs = []
+    
+    gemini_key = os.environ.get("GEMINI_API_KEY", "").strip()
+    if gemini_key:
+        configs.append({
+            "api_key": gemini_key,
+            "base_url": os.environ.get("GEMINI_BASE_URL", "").strip().rstrip("/") or DEFAULT_BASE_URL,
+            "model": os.environ.get("GEMINI_MODEL", "").strip() or DEFAULT_MODEL,
+            "provider_name": "google-gemini",
+        })
+        
+    groq_key = os.environ.get("GROQ_API_KEY", "").strip()
+    if groq_key:
+        configs.append({
+            "api_key": groq_key,
+            "base_url": "https://api.groq.com/openai/v1",
+            "model": os.environ.get("GROQ_MODEL", "").strip() or "llama3-70b-8192",
+            "provider_name": "groq",
+        })
+        
+    openai_key = os.environ.get("OPENAI_API_KEY", "").strip()
+    if openai_key:
+        configs.append({
+            "api_key": openai_key,
+            "base_url": os.environ.get("OPENAI_BASE_URL", "").strip().rstrip("/") or DEFAULT_BASE_URL,
+            "model": os.environ.get("NHAN_THUAT_LLM_MODEL", "").strip() or DEFAULT_MODEL,
+            "provider_name": "openai-compatible",
+        })
+        
+    return configs
 
 
 class KnowledgeSynthesizer:
@@ -77,18 +66,10 @@ class KnowledgeSynthesizer:
 
     @property
     def provider_configured(self) -> bool:
-        return bool(_api_key())
+        return len(get_provider_configs()) > 0
 
     def synthesize(self, query: str, units: Iterable[KnowledgeUnit]) -> dict[str, Any]:
-        """Return a synthesis result with mode, citations, and audit.
-
-        The result dict always contains:
-        - ``mode``: "llm" or "deterministic"
-        - ``synthesis``: human-readable markdown
-        - ``citations``: list of {"id", "title", "domain"}
-        - ``audit``: {correlation_id, provider, model, latency_ms, prompt}
-        - ``warning``: optional note when LLM was unavailable
-        """
+        """Return a synthesis result with mode, citations, and audit."""
         units_list = list(units)
         citations = [
             {"id": unit.id, "title": unit.title, "domain": unit.primary_domain}
@@ -97,7 +78,8 @@ class KnowledgeSynthesizer:
         prompt = self._build_prompt(query, units_list)
         correlation_id = f"CORR-LLM-{uuid.uuid4().hex[:8].upper()}"
 
-        if not self.provider_configured:
+        configs = get_provider_configs()
+        if not configs:
             return {
                 "mode": "deterministic",
                 "synthesis": self._deterministic_synthesis(query, units_list),
@@ -110,53 +92,58 @@ class KnowledgeSynthesizer:
                     "prompt": prompt,
                 },
                 "warning": (
-                    "Chưa cấu hình LLM synthesis (thiếu GEMINI_API_KEY). "
+                    "Chưa cấu hình LLM synthesis. "
                     "Đang hiển thị dòng truy xuất tri thức deterministic."
                 ),
             }
 
         started = time.monotonic()
-        try:
-            text = self._call_provider(prompt)
-            latency_ms = int((time.monotonic() - started) * 1000)
-            return {
-                "mode": "llm",
-                "synthesis": text,
-                "citations": citations,
-                "audit": {
-                    "correlation_id": correlation_id,
-                    "provider": provider_name(),
-                    "model": _model(),
-                    "latency_ms": latency_ms,
-                    "prompt": prompt,
-                },
-            }
-        except Exception as exc:  # noqa: BLE001 - intentional: any provider failure must fall back to deterministic
-            latency_ms = int((time.monotonic() - started) * 1000)
-            print(f"[ERROR] LLM Provider call failed: {exc}")
+        errors = []
 
-            warning_msg = (
-                f"Lỗi khi gọi LLM provider ({exc}); đã chuyển sang dòng truy xuất deterministic. "
-                f"Đã thử: {_base_url()}/chat/completions | Mô hình: {_model()}."
-            )
+        for config in configs:
+            try:
+                text = self._call_provider(prompt, config)
+                latency_ms = int((time.monotonic() - started) * 1000)
+                return {
+                    "mode": "llm",
+                    "synthesis": text,
+                    "citations": citations,
+                    "audit": {
+                        "correlation_id": correlation_id,
+                        "provider": config["provider_name"],
+                        "model": config["model"],
+                        "latency_ms": latency_ms,
+                        "prompt": prompt,
+                    },
+                }
+            except Exception as exc:  # noqa: BLE001
+                err_msg = str(exc)
+                errors.append(f"{config['provider_name']}: {err_msg}")
+                print(f"[ERROR] LLM Provider {config['provider_name']} call failed: {exc}")
 
-            synthesis_text = self._deterministic_synthesis(query, units_list)
-            synthesis_text += f"\n\n**[SYSTEM DIAGNOSTICS - DEBUG]**\n{warning_msg}"
+        # If all providers fail, fall back to deterministic
+        latency_ms = int((time.monotonic() - started) * 1000)
+        warning_msg = (
+            f"Lỗi khi gọi TẤT CẢ LLM providers ({' | '.join(errors)}); đã chuyển sang dòng truy xuất deterministic."
+        )
 
-            return {
-                "mode": "deterministic",
-                "synthesis": synthesis_text,
-                "citations": citations,
-                "audit": {
-                    "correlation_id": correlation_id,
-                    "provider": provider_name(),
-                    "model": _model(),
-                    "latency_ms": latency_ms,
-                    "prompt": prompt,
-                    "error": str(exc),
-                },
-                "warning": warning_msg,
-            }
+        synthesis_text = self._deterministic_synthesis(query, units_list)
+        synthesis_text += f"\n\n**[SYSTEM DIAGNOSTICS - DEBUG]**\n{warning_msg}"
+
+        return {
+            "mode": "deterministic",
+            "synthesis": synthesis_text,
+            "citations": citations,
+            "audit": {
+                "correlation_id": correlation_id,
+                "provider": "deterministic",
+                "model": "fallback",
+                "latency_ms": latency_ms,
+                "prompt": prompt,
+                "error": " | ".join(errors),
+            },
+            "warning": warning_msg,
+        }
 
     def _build_prompt(self, query: str, units: Iterable[KnowledgeUnit]) -> str:
         context = self.prompt_builder.build_context(units, format_type="markdown")
@@ -199,12 +186,12 @@ class KnowledgeSynthesizer:
             "Dưới đây là một vài gợi ý từ hệ thống để anh cân nhắc nhé."
         )
 
-    def _call_provider(self, prompt: str) -> str:
+    def _call_provider(self, prompt: str, config: dict[str, str]) -> str:
         response = requests.post(
-            f"{_base_url().rstrip('/')}/chat/completions",
-            headers={"Authorization": f"Bearer {_api_key()}"},
+            f"{config['base_url']}/chat/completions",
+            headers={"Authorization": f"Bearer {config['api_key']}"},
             json={
-                "model": _model(),
+                "model": config["model"],
                 "messages": [
                     {"role": "system", "content": "Bạn là một chuyên gia phân tích tri thức."},
                     {"role": "user", "content": prompt},

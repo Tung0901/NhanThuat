@@ -41,7 +41,7 @@ def get_provider_configs() -> list[dict[str, str]]:
         configs.append({
             "api_key": groq_key,
             "base_url": "https://api.groq.com/openai/v1",
-            "model": os.environ.get("GROQ_MODEL", "").strip() or "llama3-70b-8192",
+            "model": os.environ.get("GROQ_MODEL", "").strip() or "llama-3.3-70b-versatile",
             "provider_name": "groq",
         })
         

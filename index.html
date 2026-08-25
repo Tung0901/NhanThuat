@@ -16,6 +16,59 @@
             position: relative;
         }
 
+        .info-modal {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            z-index: 999999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+        .info-modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .info-modal-content {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 3rem;
+            border-radius: 24px;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+            transform: translateY(30px);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            color: white;
+            font-family: 'Outfit', sans-serif;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+        .info-modal.active .info-modal-content {
+            transform: translateY(0);
+        }
+        .close-modal {
+            position: absolute;
+            top: 15px; right: 20px;
+            background: none; border: none;
+            color: rgba(255,255,255,0.5);
+            font-size: 2.5rem; cursor: pointer;
+            transition: color 0.3s;
+            outline: none;
+        }
+        .close-modal:hover { color: white; }
+        #modal-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem; margin-bottom: 1rem; color: #39FF14;
+        }
+        #modal-body {
+            font-size: 1.1rem; line-height: 1.6; color: rgba(255,255,255,0.85);
+        }
+
         #top-gradient {
             position: fixed;
             top: -30vh;
@@ -363,7 +416,7 @@
 
     <main class="hero-content">
         <h1 class="hero-title">Nghệ thuật thấu hiểu <br> và quản trị con người</h1>
-        <button class="hero-btn" onclick="window.location.href='/frontend/app.html'">
+        <button class="hero-btn" onclick="openModal('demo')">
             <span class="btn-text">Khám phá ngay</span>
             <span class="blinking-dot"></span>
         </button>
@@ -371,8 +424,8 @@
 
     <footer class="footer-container">
         <div class="footer-top">
-            <h2 class="footer-title">Kết Nối</h2>
-            <h2 class="footer-title quote">Thấu Hiểu. Dẫn Dắt. Trường Tồn.</h2>
+            <h2 class="footer-title" style="text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em;">STAY IN TOUCH</h2>
+            <h2 class="footer-title quote" style="text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em;">THINK. BUILD. REPEAT.</h2>
         </div>
 
         <hr class="footer-divider">
@@ -391,10 +444,10 @@
             </div>
 
             <nav class="footer-links">
-                <a href="#about" class="footer-link">Giới thiệu</a>
-                <a href="#features" class="footer-link">Triết lý</a>
-                <a href="#pricing" class="footer-link">Phương pháp</a>
-                <a href="#contact" class="footer-link">Liên hệ</a>
+                <a href="#about" class="footer-link" onclick="openModal('about', event)">Giới thiệu</a>
+                <a href="#features" class="footer-link" onclick="openModal('features', event)">Triết lý</a>
+                <a href="#pricing" class="footer-link" onclick="openModal('pricing', event)">Phương pháp</a>
+                <a href="#contact" class="footer-link" onclick="openModal('contact', event)">Liên hệ</a>
             </nav>
 
             <div class="footer-copyright">
@@ -404,7 +457,7 @@
     </footer>
 
     <div class="footer-logo-wrap">
-        <h2 class="footer-logo-text">Nhân Thuật</h2>
+        <h2 class="footer-logo-text" style="text-transform: uppercase; font-weight: 800; font-size: 18vw; letter-spacing: -0.02em; transform: translateX(0); text-align: center;">LOOPSTACK</h2>
     </div>
 
     <div class="video-container">
@@ -420,7 +473,37 @@
         <span class="cursor-card-text"><span class="text-white">Say</span> Hello!</span>
     </div>
 
+    <div id="info-modal" class="info-modal">
+        <div class="info-modal-content">
+            <button class="close-modal" onclick="closeModal()">×</button>
+            <h3 id="modal-title">Tiêu đề</h3>
+            <div id="modal-body">Nội dung...</div>
+        </div>
+    </div>
+
     <script>
+        const modalData = {
+            'about': { title: 'Giới thiệu', body: 'Nhân Thuật là hệ thống kiến trúc hành vi giúp nhà quản trị kiến tạo sức ảnh hưởng, xoay chuyển cục diện và đắc nhân tâm một cách tự nhiên nhất.' },
+            'features': { title: 'Triết lý', body: 'Con người luôn bị chi phối bởi những rào cản vô hình: Nỗi sợ hãi, lòng tham, và cái tôi. Hiểu được cấu trúc này là chìa khóa để phá vỡ mọi bế tắc trong đàm phán và lãnh đạo.' },
+            'pricing': { title: 'Phương pháp', body: 'Như dòng kim loại nóng chảy, Nhân Thuật linh hoạt và uyển chuyển. Không có một công thức cố định, chỉ có sự thích ứng liên tục với môi trường và hoàn cảnh để đạt được mục tiêu tối hậu.' },
+            'contact': { title: 'Liên hệ', body: 'Liên hệ ngay với chúng tôi để ứng dụng các mô hình tâm lý học và hệ thống vào việc quản trị rủi ro, xây dựng văn hóa đội ngũ bền vững.' },
+            'demo': { title: 'Khám phá ngay', body: 'Chào mừng bạn đến với bản thử nghiệm giới hạn (Closed Beta) của Nhân Thuật. Hãy để lại thông tin để chúng tôi liên hệ và cấp quyền truy cập vào Kho Tri Thức hành vi.' }
+        };
+
+        function openModal(key, e) {
+            if(e) e.preventDefault();
+            const data = modalData[key];
+            if(data) {
+                document.getElementById('modal-title').textContent = data.title;
+                document.getElementById('modal-body').innerHTML = data.body;
+                document.getElementById('info-modal').classList.add('active');
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('info-modal').classList.remove('active');
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             const logoText = document.querySelector('.footer-logo-text');
 

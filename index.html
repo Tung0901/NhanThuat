@@ -1,1393 +1,558 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Statue of Laocoön</title>
+    <title>Loopstack</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+        @import url('https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&display=swap');
 
-        * { margin: 0; padding: 0; box-sizing: border-box; user-select: none; }
-
-        html, body {
-            width: 100%;
-            margin: 0;
-            padding: 0;
-            background-color: #000000;
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            min-height: 900vh;
-            font-family: 'Inter', sans-serif;
-            color: #ffffff;
-            overflow-x: hidden;
-            cursor: none;
+            background-color: #000000;
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
         }
 
-        * { cursor: none !important; }
-
-        ::-webkit-scrollbar { display: none; width: 0; }
-
-        #webgl {
+        #top-gradient {
             position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            z-index: 1;
+            top: -30vh;
+            left: 0;
+            width: 100vw;
+            height: auto;
+            display: block;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding-top: 6vh;
+            width: 95%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.8rem;
+            font-weight: 400;
+            color: #ffffff;
+            line-height: 1.15;
+            margin-bottom: 2.2rem;
+            letter-spacing: -0.015em;
+            text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-btn {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: #ffffff;
+            background-color: #000000;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            padding: 1.3rem 2.5rem;
+            border-radius: 9999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
             outline: none;
         }
+        .hero-btn:hover {
+            background-color: #ffffff;
+            color: #000000;
+            border-color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+        }
+        .hero-btn:active {
+            transform: translateY(0);
+        }
 
-        .cursor-inner {
-            position: fixed; top: 0; left: 0;
-            width: 6px; height: 6px;
-            border: 2px solid rgba(255, 255, 255, 1);
+        .blinking-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #39FF14;
             border-radius: 50%;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-            z-index: 9999;
-        }
-        .cursor-outer {
-            position: fixed; top: 0; left: 0;
-            width: 40px; height: 40px;
-            border: 1.5px solid rgba(255, 255, 255, 0.7);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-            z-index: 9998;
-            transition: width 0.3s, height 0.3s, background 0.3s;
-        }
-
-        .cinematic-container {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            z-index: 10;
-            pointer-events: none;          /* clicks pass through to canvas */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 0 60px 40px 60px;
-            box-sizing: border-box;
-        }
-
-        .main-header {
-            display: flex; justify-content: space-between; align-items: center;
-            width: 100%; z-index: 20;
-            pointer-events: auto;
-            padding: 20px 0;
-        }
-        .brand { font-size: 14px; font-weight: 600; letter-spacing: 5px; text-transform: uppercase; }
-        .header-nav { display: flex; align-items: center; gap: 24px; }
-        .nav-link {
-            color: #ffffff; text-decoration: none;
-            font-size: 10px; text-transform: uppercase; letter-spacing: 2px;
-            font-weight: 500; transition: color 0.3s;
-        }
-        .nav-link:hover { color: #ffffff; }
-        .nav-dot { width: 3px; height: 3px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; }
-        .contact-btn {
-            display: inline-flex; align-items: center; gap: 8px;
-            padding: 10px 24px;
-            background: #ffffff; color: #000000;
-            text-decoration: none;
-            font-size: 10px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;
-            border-radius: 20px;
-            transition: transform 0.3s, background 0.3s;
-        }
-        .btn-circle {
-            display: inline-block; width: 6px; height: 6px;
-            border: 1px solid #000000; border-radius: 50%; background: transparent;
-        }
-        .contact-btn:hover { transform: scale(1.05); background: #f0f0f0; }
-
-        .slide { position: absolute; bottom: 12%; pointer-events: none; }
-
-        #slide-1 { left: 0; width: 100%; }
-        #slide-1 .slide-title { margin-left: 60px; }
-        #slide-1 .desc-row { position: relative; display: flex; width: 100%; }
-        #slide-1 .col-1 {
-            margin-left: 60px;
-            width: calc(25vw - 60px);
-            max-width: calc(25vw - 60px);
-        }
-        #slide-1 .col-2 {
-            position: absolute;
-            left: calc(25vw + 40px);
-            width: calc(25vw - 60px);
-            max-width: calc(25vw - 60px);
-        }
-
-        #slide-2 { left: 0; width: 100%; }
-        #slide-2-img {
-            position: fixed;
-            top: 90px;
-            left: 60px;
-            width: calc(25vw - 60px);
-            aspect-ratio: 1 / 1;
-            overflow: hidden;
-            z-index: 2;
-            pointer-events: none;
-            clip-path: inset(0 0 100% 0);
-            transition: clip-path 1.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
-            opacity: 0;
-        }
-        #slide-2-img img {
-            width: 100%; height: 100%;
-            object-fit: cover;
-            transform: scale(1.15);
-            transition: transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        #slide-2-img.active { clip-path: inset(0 0 0 0); opacity: 1; }
-        #slide-2-img.active img { transform: scale(1); }
-
-        #slide-2 .slide-title { margin-left: calc(25vw + 40px); }
-        #slide-2 .slide-desc {
-            margin-left: calc(50vw + 20px);
-            width: calc(25vw - 60px);
-            max-width: calc(25vw - 60px);
-        }
-
-        #slide-3 {
-            left: 60px;
-            width: calc(25vw - 60px);
-            max-width: calc(25vw - 60px);
-        }
-        #slide-3 .slide-title { white-space: nowrap; }
-
-        #slide-4 { left: 60px; max-width: 600px; }
-
-        .slide-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 116px;
-            line-height: 1.0;
-            font-weight: 400;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            color: #fff6ed;
-        }
-        .slide-desc {
-            font-size: 16px; line-height: 1.7; font-weight: 300;
-            color: #d1d5db; letter-spacing: 0.5px;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
-                        transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-            transition-delay: 0.4s;
-        }
-        .slide.active .slide-desc { opacity: 1; transform: translateY(0); }
-
-        .slide-title .char {
+            position: relative;
             display: inline-block;
-            opacity: 0;
-            transform: translateY(50px);
-            filter: blur(12px);
-            transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
-                        transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
-                        filter 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+            animation: pulse-glow 2s infinite ease-in-out;
         }
-        .slide.active .slide-title .char { opacity: 1; transform: translateY(0); filter: blur(0); }
-        .slide.active { pointer-events: auto; }
+        .blinking-dot::after {
+            content: '';
+            position: absolute;
+            top: -5px; left: -5px; right: -5px; bottom: -5px;
+            background-color: rgba(57, 255, 20, 0.45);
+            border-radius: 50%;
+            animation: wave-expand 2s infinite ease-in-out;
+        }
+        @keyframes pulse-glow {
+            0%, 100% {
+                opacity: 0.5;
+                transform: scale(0.85);
+                box-shadow: 0 0 4px rgba(57, 255, 20, 0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.1);
+                box-shadow: 0 0 12px rgba(57, 255, 20, 0.9);
+            }
+        }
+        @keyframes wave-expand {
+            0%   { transform: scale(0.6); opacity: 0.9; }
+            100% { transform: scale(2.3); opacity: 0; }
+        }
 
-        .story-dashes {
-            position: absolute; top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            display: flex; flex-direction: column; gap: 12px;
-        }
-        .story-dash { width: 2px; height: 40px; background: rgba(255, 255, 255, 0.15); border-radius: 2px; }
-        .story-dash-fill { width: 100%; height: 0%; background: #ffffff; border-radius: 2px; }
-
-        .grid-horizontal-line {
-            position: fixed; top: 70px; left: 0; right: 0;
-            width: 100%; height: 1px;
-            background: rgba(255, 255, 255, 0.12);
-            z-index: 5; pointer-events: none;
-        }
-        .grid-lines {
-            position: fixed; top: 0; left: 40px; right: 40px;
-            width: calc(100% - 80px); height: 100vh;
-            display: flex; justify-content: space-between;
-            z-index: 5; pointer-events: none;
-        }
-        .grid-line {
-            position: relative; width: 1px; height: 100%;
-            background: rgba(255, 255, 255, 0.12);
-        }
-        .grid-line:nth-child(3) { margin-top: 70px; height: calc(100vh - 70px); }
-        .grid-dot {
-            position: absolute; left: 50%;
-            transform: translate(-50%, -50%);
-            width: 6px; height: 6px; border-radius: 50%;
-            background: rgba(255, 255, 255, 0.35);
-            box-shadow: 0 0 4px rgba(255, 255, 255, 0.15);
-        }
-        
-        /* Chat Sidebar Styles */
-        #chat-sidebar {
+        .footer-container {
             position: fixed;
-            top: 0; right: 0;
-            width: 800px; height: 100vh;
-            min-width: 400px; max-width: 90vw;
-            background: rgba(10, 10, 10, 0.6);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-left: 1px solid rgba(255, 255, 255, 0.1);
-            transform: translateX(100%);
-            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            z-index: 100;
-            display: flex; flex-direction: column;
-            pointer-events: auto;
-            resize: horizontal;
-            direction: rtl;
-            overflow: hidden;
-        }
-        #chat-sidebar > * {
-            direction: ltr;
-        }
-        #chat-sidebar.open {
-            transform: translateX(0);
-        }
-        #chat-sidebar.minimized {
-            height: 90px !important;
-            width: 350px !important;
-            min-width: 350px;
-            top: auto;
-            bottom: 20px;
+            top: 50vh;
+            left: 20px;
             right: 20px;
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.2);
-            transform: none;
-            resize: none;
-        }
-        #chat-sidebar.minimized .chat-history,
-        #chat-sidebar.minimized .chat-input-container {
-            display: none;
-        }
-        #chat-sidebar.minimized .chat-header {
-            border-bottom: none;
-            padding: 20px 30px;
-        }
-        .chat-header {
-            padding: 20px 30px;
-            display: flex; justify-content: space-between; align-items: center;
-        }
-        .sidebar-top-tabs {
+            width: calc(100vw - 40px);
+            transform: translateY(-50%);
+            z-index: 3;
             display: flex;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        .sidebar-tab {
-            flex: 1;
-            background: transparent;
-            border: none;
-            color: rgba(255,255,255,0.5);
-            padding: 12px 0;
-            font-family: 'Inter', sans-serif;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            cursor: pointer;
-            border-bottom: 2px solid transparent;
-            transition: all 0.3s;
-        }
-        .sidebar-tab.active {
-            color: #f59e0b;
-            border-bottom-color: #f59e0b;
-        }
-        .sidebar-view {
-            display: none;
             flex-direction: column;
-            flex: 1;
-            overflow: hidden;
         }
-        .sidebar-view.active {
+        .footer-top {
             display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            width: 100%;
+            padding: 0 5px;
         }
-        
-        /* Knowledge Card */
-        .knowledge-list {
+        .footer-title {
+            font-family: 'General Sans', -apple-system, sans-serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: #ffffff;
+            letter-spacing: -0.015em;
+            margin: 0;
+        }
+        .footer-title.quote {
+            text-transform: none;
+        }
+        .footer-divider {
+            border: none;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.2);
+            margin: 1.6rem 0;
+            width: 100%;
+        }
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 0 5px;
+        }
+        .footer-socials {
+            display: flex;
+            gap: 1.25rem;
+            align-items: center;
             flex: 1;
-            overflow-y: auto;
-            padding: 20px 30px;
         }
-        .knowledge-card {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 8px;
-            padding: 16px;
-            margin-bottom: 16px;
-            cursor: pointer;
-            transition: background 0.3s, transform 0.2s;
+        .social-icon {
+            color: rgba(255, 255, 255, 0.55);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
         }
-        .knowledge-card:hover {
-            background: rgba(255,255,255,0.08);
+        .social-icon:hover {
+            color: #ffffff;
             transform: translateY(-2px);
         }
-        .knowledge-card-title {
-            color: #fff6ed;
-            font-family: 'Playfair Display', serif;
-            font-size: 18px;
-            margin-bottom: 8px;
+        .footer-links {
+            display: flex;
+            gap: 2.8rem;
+            justify-content: center;
+            align-items: center;
+            flex: 2;
         }
-        .knowledge-card-meta {
-            font-family: 'Inter', sans-serif;
-            font-size: 12px;
-            color: rgba(255,255,255,0.5);
+        .footer-link {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: #ffffff;
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .footer-link:hover {
+            opacity: 0.75;
+            transform: translateY(-1px);
+        }
+        .footer-copyright {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.45);
+            text-align: right;
+            flex: 1;
+            letter-spacing: 0.02em;
         }
 
-        .chat-header h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 400;
-            color: #fff6ed;
-            letter-spacing: 1px;
-        }
-        .close-chat-btn {
-            background: transparent;
-            border: none;
-            color: rgba(255,255,255,0.5);
-            font-size: 24px;
-            cursor: none;
-            transition: color 0.3s;
-        }
-        .close-chat-btn:hover { color: #ffffff; }
-        
-        .chat-history {
-            flex: 1;
-            padding: 30px;
-            overflow-y: auto;
-            display: flex; flex-direction: column; gap: 20px;
-            -ms-overflow-style: none; scrollbar-width: none;
-        }
-        .chat-history::-webkit-scrollbar { display: none; }
-        
-        .chat-msg {
-            max-width: 85%;
-            padding: 16px 20px;
-            line-height: 1.6;
-            font-size: 17.5px;
-            letter-spacing: 0.3px;
-        }
-        .chat-msg p { margin-bottom: 12px; }
-        .chat-msg p:last-child { margin-bottom: 0; }
-        .chat-msg h3 { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 12px; font-weight: normal; color: #f59e0b; }
-        .chat-msg h4 { font-family: 'Inter', sans-serif; font-size: 15px; margin: 12px 0 8px; font-weight: 500; color: #fff6ed; }
-        .chat-msg ul { margin-left: 20px; margin-bottom: 10px; }
-        .chat-msg li { margin-bottom: 6px; }
-        
-        .msg-user {
-            align-self: flex-end;
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 20px 20px 0 20px;
-        }
-        .msg-bot {
-            align-self: flex-start;
-            background: rgba(0,0,0,0.5);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 20px 20px 20px 0;
-            color: #d1d5db;
-        }
-        
-        .chat-input-container {
-            padding: 24px 30px 40px 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .chat-input-wrapper {
-            position: relative;
+        .footer-logo-wrap {
+            position: fixed;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            width: 100%;
+            padding: 0 20px;
+            box-sizing: border-box;
             display: flex;
+            justify-content: center;
             align-items: center;
+            z-index: 3;
+            margin: 0;
         }
-        .chat-tabs-nav {
-            display: flex; gap: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 12px;
-            overflow-x: auto;
-        }
-        .chat-tab-btn {
-            background: transparent; border: none; color: rgba(255,255,255,0.6); padding: 8px 12px; cursor: pointer;
-            font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; border-bottom: 2px solid transparent;
+        .footer-logo-text {
+            font-family: 'General Sans', -apple-system, sans-serif;
+            font-size: 21.9vw;
+            font-weight: 400;
+            color: #ffffff;
+            letter-spacing: -0.03em;
+            margin-right: -0.03em;
+            transform: translateX(-20px);
+            line-height: 0.8;
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-left: 0;
+            text-align: center;
+            width: 100%;
+            pointer-events: none;
+            opacity: 0.95;
+            text-shadow: none;
             white-space: nowrap;
         }
-        .chat-tab-btn.active {
-            color: #f59e0b; border-bottom-color: #f59e0b;
+
+        .video-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100vw;
+            height: 90vh;
+            overflow: hidden;
+            z-index: -1;
         }
-        .chat-tab-pane { display: none; }
-        .chat-tab-pane.active { display: block; }
-        
-        .chat-input {
+        #bg-video {
             width: 100%;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 30px;
-            padding: 16px 50px 16px 24px;
-            color: #ffffff;
-            font-family: 'Inter', sans-serif;
-            font-size: 18px;
-            outline: none;
-            transition: border-color 0.3s, background 0.3s;
-            cursor: none;
-        }
-        .chat-input:focus {
-            border-color: rgba(255, 255, 255, 0.5);
-            background: rgba(255, 255, 255, 0.08);
-        }
-        .chat-input::placeholder { color: rgba(255, 255, 255, 0.3); }
-        .chat-send-btn {
-            position: absolute;
-            right: 12px;
-            width: 32px; height: 32px;
-            border-radius: 50%;
-            background: #ffffff;
-            color: #000000;
-            border: none;
-            display: flex; justify-content: center; align-items: center;
-            font-size: 16px;
-            cursor: none;
-            transition: transform 0.3s, background 0.3s;
-        }
-        .chat-send-btn:hover {
-            transform: scale(1.1);
-            background: #f0f0f0;
-        }
-        
-        .typing-indicator {
-            align-self: flex-start;
-            font-style: italic;
-            color: rgba(255, 255, 255, 0.4);
-            font-size: 13px;
-            padding: 10px 20px;
+            height: 110%;
+            object-fit: cover;
+            display: block;
+            transform: translateY(0%);
         }
 
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .cinematic-container { padding: 0 20px 20px 20px; }
-            .slide-title { font-size: 56px; }
-            .header-nav { display: none; }
-            
-            #slide-1 .desc-row { flex-direction: column; gap: 15px; }
-            #slide-1 .col-1, #slide-1 .col-2 {
-                position: relative; left: 0; margin-left: 0;
-                width: 100%; max-width: 100%;
-            }
-            #slide-1 .slide-title { margin-left: 0; }
-            
-            #slide-2 .slide-title { margin-left: 0; }
-            #slide-2 .slide-desc {
-                margin-left: 0; width: 100%; max-width: 100%;
-            }
-            #slide-2-img { display: none !important; }
-            
-            #slide-3, #slide-4 {
-                left: 0; width: 100%; max-width: 100%; padding: 0 20px;
-            }
-            
-            #chat-sidebar {
-                width: 100%; min-width: 100%; max-width: 100%;
-            }
-            
-            .grid-lines { display: none; }
+        .glass-cursor-card {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 99999;
+            pointer-events: none;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 9999px;
+            box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0;
+            will-change: transform, opacity;
+            transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                        background 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glass-cursor-card.active { opacity: 1; }
+        .glass-cursor-card.dark-mode {
+            background: rgba(0, 0, 0, 0.82);
+            border-color: rgba(255, 255, 255, 0.08);
+            box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+        }
+        .cursor-card-text {
+            font-family: 'General Sans', -apple-system, sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            color: #39FF14;
+            text-transform: uppercase;
+            white-space: nowrap;
+            text-shadow: 0 0 8px rgba(57, 255, 20, 0.45);
+        }
+        .cursor-card-text .text-white {
+            color: #ffffff;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+        }
+        .cursor-ring-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 48px;
+            height: 48px;
+            border: 1.5px solid rgba(255, 255, 255, 0.45);
+            border-radius: 50%;
+            z-index: 99998;
+            pointer-events: none;
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0;
+            will-change: transform, opacity;
+            transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                        border-color 0.4s ease;
+        }
+        .cursor-ring-outline.active { opacity: 1; }
+        .cursor-ring-outline.expanded {
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .hero-title .word-wrapper {
+            display: inline-block;
+            overflow: hidden;
+            vertical-align: bottom;
+            padding-bottom: 0.15em;
+            margin-bottom: -0.15em;
+        }
+        .hero-title .word-inner {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(105%);
+            filter: blur(20px);
+            animation: word-reveal-mask 1.3s cubic-bezier(0.05, 0.9, 0.1, 1) forwards;
+        }
+        @keyframes word-reveal-mask {
+            0%   { opacity: 0; transform: translateY(105%); filter: blur(20px); }
+            30%  { opacity: 1; }
+            100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+        }
+
+        .footer-logo-text .letter-wrapper {
+            display: inline-block;
+            overflow: hidden;
+            vertical-align: bottom;
+            line-height: 0.8;
+        }
+        .footer-logo-text .letter-inner {
+            display: inline-block;
+            opacity: 0;
+            transform: translateX(-105%);
+            filter: blur(20px);
+            animation: letter-reveal-mask 1.2s cubic-bezier(0.05, 0.9, 0.1, 1) forwards;
+        }
+        @keyframes letter-reveal-mask {
+            0%   { opacity: 0; transform: translateX(-105%); filter: blur(20px); }
+            25%  { opacity: 1; }
+            100% { opacity: 0.95; transform: translateX(0); filter: blur(0); }
         }
     </style>
 </head>
 <body>
-    <div class="cursor-inner"></div>
-    <div class="cursor-outer"></div>
+    <img src="https://api.getlayers.ai/storage/v1/object/public/public/assets/loopstack-f8c64439bf/black_gradient.svg" alt="Top Gradient" id="top-gradient">
 
-    <div class="cinematic-container">
-        <div class="main-header">
-            <div class="brand">NHÂN THUẬT</div>
-            <nav class="header-nav">
-                <a href="#slide-1" class="nav-link">Khởi Nguồn</a>
-                <span class="nav-dot"></span>
-                <a href="#slide-2" class="nav-link">Bản Chất</a>
-                <span class="nav-dot"></span>
-                <a href="#slide-3" class="nav-link">Vận Hành</a>
-                <span class="nav-dot"></span>
-                <a href="#slide-4" class="nav-link">Ứng Dụng</a>
+    <main class="hero-content">
+        <h1 class="hero-title">Apply Now to be part <br> of the closed beta</h1>
+        <button class="hero-btn">
+            <span class="btn-text">Book a demo</span>
+            <span class="blinking-dot"></span>
+        </button>
+    </main>
+
+    <footer class="footer-container">
+        <div class="footer-top">
+            <h2 class="footer-title">Stay in Touch</h2>
+            <h2 class="footer-title quote">Think. Build. Repeat.</h2>
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="footer-bottom">
+            <div class="footer-socials">
+                <a href="#" aria-label="LinkedIn" class="social-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+                <a href="#" aria-label="X" class="social-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg>
+                </a>
+                <a href="#" aria-label="Instagram" class="social-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+            </div>
+
+            <nav class="footer-links">
+                <a href="#about" class="footer-link">About</a>
+                <a href="#features" class="footer-link">Features</a>
+                <a href="#pricing" class="footer-link">Pricing</a>
+                <a href="#contact" class="footer-link">Contact</a>
             </nav>
-            <div class="header-actions">
-                <a href="#" id="toggle-chat-btn" class="contact-btn">Mở Nhân Thuật <span class="btn-circle"></span></a>
-            </div>
-        </div>
 
-        <div class="slide" id="slide-1">
-            <h2 class="slide-title">Khởi Nguồn <br>Nhân Thuật</h2>
-            <div class="desc-row">
-                <p class="slide-desc col-1">Nhân Thuật không chỉ là thao túng hay kiểm soát. Nó là nghệ thuật thấu hiểu sâu sắc bản chất con người, nhận diện dòng chảy của cảm xúc và động lực ẩn sâu bên trong mỗi cá nhân.</p>
-                <p class="slide-desc col-2">Được đúc kết từ hàng ngàn năm lịch sử, Nhân Thuật là hệ thống kiến trúc hành vi giúp nhà quản trị kiến tạo sức ảnh hưởng, xoay chuyển cục diện và đắc nhân tâm một cách tự nhiên nhất.</p>
+            <div class="footer-copyright">
+                © 2026 Loopstack
             </div>
         </div>
-        
-        <div class="slide" id="slide-2">
-            <h2 class="slide-title">Bản Chất <br>Tâm Lý</h2>
-            <p class="slide-desc">Con người luôn bị chi phối bởi những rào cản vô hình: Nỗi sợ hãi, lòng tham, và cái tôi. Hiểu được cấu trúc này là chìa khóa để phá vỡ mọi bế tắc trong đàm phán và lãnh đạo.</p>
-        </div>
-        
-        <div class="slide" id="slide-3">
-            <h2 class="slide-title">Vận Hành <br>Hệ Thống</h2>
-            <p class="slide-desc">Như dòng kim loại nóng chảy, Nhân Thuật linh hoạt và uyển chuyển. Không có một công thức cố định, chỉ có sự thích ứng liên tục với môi trường và hoàn cảnh để đạt được mục tiêu tối hậu.</p>
-        </div>
-        
-        <div class="slide" id="slide-4">
-            <h2 class="slide-title">Kiến Tạo <br>Tương Lai</h2>
-            <p class="slide-desc">Kết hợp triết học cổ đại và khoa học hệ thống hiện đại, Nhân Thuật mang đến cho bạn quyền năng để thiết kế hành vi, quản trị rủi ro và xây dựng những đế chế trường tồn.</p>
-        </div>
+    </footer>
+
+    <div class="footer-logo-wrap">
+        <h2 class="footer-logo-text">Loopstack</h2>
     </div>
 
-    <div class="slide-image-mask" id="slide-2-img">
-        <img src="https://api.getlayers.ai/storage/v1/object/public/public/assets/laocoon-59f84455c6/1.png" alt="Editorial Concept">
+    <div class="video-container">
+        <video autoplay muted playsinline loop id="bg-video">
+            <source src="https://api.getlayers.ai/storage/v1/object/public/public/assets/loopstack-f8c64439bf/flower.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
     </div>
 
-    <div class="grid-horizontal-line"></div>
-    <div class="grid-lines">
-        <div class="grid-line"><div class="grid-dot top"></div><div class="grid-dot bottom"></div></div>
-        <div class="grid-line"><div class="grid-dot top"></div><div class="grid-dot bottom"></div></div>
-        <div class="grid-line"><div class="grid-dot top"></div><div class="grid-dot bottom"></div></div>
-        <div class="grid-line"><div class="grid-dot top"></div><div class="grid-dot bottom"></div></div>
-        <div class="grid-line story-progress-container">
-            <div class="grid-dot top"></div>
-            <div class="grid-dot bottom"></div>
-            <div class="story-dashes">
-                <div class="story-dash"><div class="story-dash-fill" id="dash-fill-1"></div></div>
-                <div class="story-dash"><div class="story-dash-fill" id="dash-fill-2"></div></div>
-                <div class="story-dash"><div class="story-dash-fill" id="dash-fill-3"></div></div>
-                <div class="story-dash"><div class="story-dash-fill" id="dash-fill-4"></div></div>
-            </div>
-        </div>
+    <div id="cursor-ring" class="cursor-ring-outline"></div>
+
+    <div id="glass-card" class="glass-cursor-card">
+        <span class="cursor-card-text"><span class="text-white">Say</span> Hello!</span>
     </div>
 
-    <canvas id="webgl"></canvas>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const logoText = document.querySelector('.footer-logo-text');
 
-    <!-- Chat Sidebar -->
-    <div id="chat-sidebar">
-        <div class="chat-header">
-            <h3>Nhân Thuật</h3>
-            <div style="display: flex; gap: 15px; align-items: center;">
-                <button class="close-chat-btn" id="min-chat-btn" title="Thu nhỏ">&minus;</button>
-                <button class="close-chat-btn" id="close-chat-btn" title="Đóng">&times;</button>
-            </div>
-        </div>
-        
-        <div class="sidebar-top-tabs">
-            <button class="sidebar-tab active" data-target="sidebar-view-chat">HỘI THOẠI</button>
-            <button class="sidebar-tab" data-target="sidebar-view-knowledge">KHO TRI THỨC</button>
-        </div>
+            if (logoText) {
+                const text = logoText.textContent.trim();
+                logoText.innerHTML = '';
 
-        <div id="sidebar-view-chat" class="sidebar-view active">
-            <div class="chat-history" id="chat-history">
-                <div class="chat-msg msg-bot">
-                    <h3>CỐ VẤN NHÂN THUẬT</h3>
-                    <p>Đặt một câu hỏi hoặc mô tả một tình huống. Nhân Thuật sẽ tìm các quy luật, hiện tượng hành vi, mô hình và nguyên tắc liên quan.</p>
-                </div>
-            </div>
-            <div class="chat-input-container">
-                <div class="chat-input-wrapper">
-                    <input type="text" class="chat-input" id="chat-input" placeholder="Nhập tình huống...">
-                    <button class="chat-send-btn" id="chat-send-btn">➤</button>
-                </div>
-            </div>
-        </div>
+                [...text].forEach((char, index) => {
+                    const wrapper = document.createElement('span');
+                    wrapper.className = 'letter-wrapper';
 
-        <div id="sidebar-view-knowledge" class="sidebar-view">
-            <div class="knowledge-list" id="knowledge-list">
-                <div style="text-align: center; color: rgba(255,255,255,0.5); margin-top: 50px;">Đang tải kho tri thức...</div>
-            </div>
-        </div>
-    </div>
+                    const inner = document.createElement('span');
+                    inner.textContent = char === ' ' ? ' ' : char;
+                    inner.className = 'letter-inner';
 
-    <script type="importmap">
-    {
-        "imports": {
-            "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-            "three/examples/jsm/loaders/GLTFLoader.js": "https://unpkg.com/three@0.160.0/examples/jsm/loaders/GLTFLoader.js"
-        }
-    }
-    </script>
+                    inner.style.animationDelay = `${index * 0.09}s`;
 
-    <script type="module">
-    import * as THREE from 'three';
-    import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+                    wrapper.appendChild(inner);
+                    logoText.appendChild(wrapper);
+                });
+            }
 
-    const ASSET_BASE_URL = "https://api.getlayers.ai/storage/v1/object/public/public/assets/laocoon-59f84455c6";
+            const heroTitle = document.querySelector('.hero-title');
+            if (heroTitle) {
+                const text = heroTitle.innerHTML;
+                const parts = text.split(/(\s+|<br\s*\/?>)/i);
+                heroTitle.innerHTML = '';
 
-    const canvas = document.querySelector('#webgl');
-    let scene, camera, renderer;
-    let gltfModel;
-    let modelPivot;
-    let mixer;
-    const clock = new THREE.Clock();
-    let currentScroll = 0;
+                let wordIndex = 0;
+                parts.forEach(part => {
+                    if (part.trim() === '') {
+                        heroTitle.appendChild(document.createTextNode(' '));
+                    } else if (part.toLowerCase().startsWith('<br')) {
+                        heroTitle.appendChild(document.createElement('br'));
+                    } else {
+                        const wrapper = document.createElement('span');
+                        wrapper.className = 'word-wrapper';
 
-    let mouseX = 0, mouseY = 0, targetMouseX = 0, targetMouseY = 0;
-    let cursorX = window.innerWidth / 2,  cursorY = window.innerHeight / 2;
-    let outerCursorX = window.innerWidth / 2, outerCursorY = window.innerHeight / 2;
+                        const inner = document.createElement('span');
+                        inner.className = 'word-inner';
+                        inner.textContent = part;
 
-    let bgMaterial;
-    const shaderUniforms = {
-        uTime: { value: 0 },
-        uResolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) },
-        uMouse: { value: new THREE.Vector2(0, 0) },
-        uScroll: { value: 0 }
-    };
+                        inner.style.animationDelay = `${wordIndex * 0.1}s`;
+                        wordIndex++;
 
-    let sparkParticles;
-    const sparkCount = 40;
-    const sparkData = [];
-
-    const sizes = { width: window.innerWidth, height: window.innerHeight };
-
-    function splitTitlesIntoChars() {
-        const titles = document.querySelectorAll('.slide-title');
-        titles.forEach(title => {
-            const text = title.innerHTML;
-            let newHTML = '';
-            let delayCounter = 0;
-            const parts = text.split(/(<br\s*\/?>)/i);
-            parts.forEach(part => {
-                if (part.toLowerCase().startsWith('<br')) {
-                    newHTML += part;
-                } else {
-                    for (let i = 0; i < part.length; i++) {
-                        if (part[i] === ' ') {
-                            newHTML += ' ';
-                        } else {
-                            newHTML += `<span class="char" style="transition-delay: ${delayCounter * 0.035}s">${part[i]}</span>`;
-                            delayCounter++;
-                        }
+                        wrapper.appendChild(inner);
+                        heroTitle.appendChild(wrapper);
                     }
-                }
-            });
-            title.innerHTML = newHTML;
-        });
-    }
-
-    function createBackgroundShader() {
-        const vertexShader = `
-            varying vec2 vUv;
-            void main() {
-                vUv = uv;
-                gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-            }
-        `;
-
-        const fragmentShader = `
-            varying vec2 vUv;
-            uniform float uTime;
-            uniform vec2 uResolution;
-            uniform vec2 uMouse;
-            uniform float uScroll;
-
-            float hash(float n) { return fract(sin(n) * 43758.5453123); }
-            float noise(in vec3 x) {
-                vec3 p = floor(x);
-                vec3 f = fract(x);
-                f = f*f*(3.0-2.0*f);
-                float n = p.x + p.y*57.0 + 113.0*p.z;
-                return mix(mix(mix(hash(n+  0.0), hash(n+  1.0), f.x),
-                               mix(hash(n+ 57.0), hash(n+ 58.0), f.x), f.y),
-                           mix(mix(hash(n+113.0), hash(n+114.0), f.x),
-                               mix(hash(n+170.0), hash(n+171.0), f.x), f.y), f.z);
+                });
             }
 
-            void main() {
-                vec2 uv = (gl_FragCoord.xy - 0.5 * uResolution.xy) / uResolution.y;
-                float aspect = uResolution.x / uResolution.y;
-                
-                float time = uTime * 0.08;
-                float scroll = uScroll;
-                
-                float angle1 = 0.6;
-                float angle2 = -0.7;
-                float angle3 = 1.2;
-                
-                float freq1 = 2.4;
-                float freq2 = 3.2;
-                float freq3 = 4.0;
-                
-                vec2 warpedUv = uv;
-                
-                float scrollDeform = scroll * 5.0;
-                
-                warpedUv.x += sin(uv.y * 2.5 + time * 0.2 + scrollDeform) * 0.35;
-                warpedUv.y += cos(uv.x * 2.5 - time * 0.15 - scrollDeform * 0.8) * 0.35;
-                
-                warpedUv.x += sin(uv.y * 1.2 - time * 0.1 - scrollDeform * 1.5) * 0.25;
-                warpedUv.y += cos(uv.x * 1.2 + time * 0.18 + scrollDeform * 1.2) * 0.25;
-                
-                vec2 scrollDrift = vec2(scroll * 0.04, -scroll * 0.02);
-                vec2 mouseShift = vec2(uMouse.x * aspect * 0.05, uMouse.y * 0.05);
-                warpedUv += scrollDrift + mouseShift;
-                
-                vec2 dir1 = vec2(cos(angle1), sin(angle1));
-                vec2 dir2 = vec2(cos(angle2), sin(angle2));
-                vec2 dir3 = vec2(cos(angle3), sin(angle3));
-                
-                float w1 = sin(dot(warpedUv, dir1) * freq1 + time * 1.0);
-                float w2 = cos(dot(warpedUv, dir2) * freq2 - time * 1.4 + w1 * 0.4);
-                float w3 = sin(dot(warpedUv, dir3) * freq3 + time * 1.8 + w2 * 0.5);
-                
-                float waveField = w1 * 0.50 + w2 * 0.35 + w3 * 0.15;
-                
-                float wideSheen = pow(max(0.0, 1.0 - abs(waveField - 0.1)), 2.5);
-                float crispSpecular = pow(max(0.0, 1.0 - abs(waveField - 0.15)), 8.0);
-                float crest = wideSheen * 0.5 + crispSpecular * 0.9;
-                
-                vec3 c0_shadow = vec3(0.0010, 0.0006, 0.0004);
-                vec3 c0_wave1  = vec3(0.085, 0.040, 0.015);
-                vec3 c0_wave2  = vec3(0.050, 0.022, 0.008);
-                vec3 c0_crest  = vec3(0.45, 0.30, 0.18);
-                
-                vec3 c1_shadow = vec3(0.0004, 0.0006, 0.0012);
-                vec3 c1_wave1  = vec3(0.015, 0.035, 0.065);
-                vec3 c1_wave2  = vec3(0.008, 0.020, 0.045);
-                vec3 c1_crest  = vec3(0.18, 0.35, 0.55);
-                
-                float t = smoothstep(0.0, 1.0, scroll);
-                vec3 colShadow = mix(c0_shadow, c1_shadow, t);
-                vec3 colWave1  = mix(c0_wave1, c1_wave1, t);
-                vec3 colWave2  = mix(c0_wave2, c1_wave2, t);
-                vec3 colCrest  = mix(c0_crest, c1_crest, t);
-                
-                vec3 color = colShadow;
-                color = mix(color, colWave2, smoothstep(-0.6, 0.2, waveField));
-                color = mix(color, colWave1, smoothstep(0.0, 0.8, waveField));
-                
-                color += colCrest * crest * 1.4;
-                
-                float vignette = 1.0 - dot(uv, uv) * 0.12;
-                color *= vignette;
-                
-                gl_FragColor = vec4(color, 1.0);
-            }
-        `;
+            const glassCard = document.getElementById('glass-card');
+            const cursorRing = document.getElementById('cursor-ring');
 
-        bgMaterial = new THREE.ShaderMaterial({
-            vertexShader: vertexShader,
-            fragmentShader: fragmentShader,
-            uniforms: shaderUniforms,
-            depthWrite: false,
-            depthTest: false
-        });
+            if (glassCard && cursorRing) {
+                let mouseX = window.innerWidth / 2;
+                let mouseY = window.innerHeight / 2;
 
-        const bgGeometry = new THREE.PlaneGeometry(30, 30);
-        const bgMesh = new THREE.Mesh(bgGeometry, bgMaterial);
-        bgMesh.position.set(0.0, 0.0, -8.0);
-        bgMesh.renderOrder = -10;
-        camera.add(bgMesh);
-    }
+                let cardX = mouseX;
+                let cardY = mouseY;
 
-    function createSparkTexture() {
-        const canvas = document.createElement('canvas');
-        canvas.width = 16; canvas.height = 16;
-        const ctx = canvas.getContext('2d');
-        const gradient = ctx.createRadialGradient(8, 8, 0, 8, 8, 8);
-        gradient.addColorStop(0, 'rgba(255, 255, 255, 1)');
-        gradient.addColorStop(0.25, 'rgba(255, 255, 255, 0.85)');
-        gradient.addColorStop(0.6, 'rgba(255, 255, 255, 0.3)');
-        gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
-        ctx.fillStyle = gradient;
-        ctx.fillRect(0, 0, 16, 16);
-        return new THREE.CanvasTexture(canvas);
-    }
+                let ringX = mouseX;
+                let ringY = mouseY;
 
-    function createSparks() {
-        const geometry = new THREE.BufferGeometry();
-        const positions = new Float32Array(sparkCount * 3);
-        const colors = new Float32Array(sparkCount * 3);
+                let isFirstMove = true;
+                let scale = 0;
+                let targetScale = 0;
+                let isHoveringBtn = false;
 
-        for (let i = 0; i < sparkCount; i++) {
-            const x = (Math.random() - 0.5) * 6.5;
-            const y = (Math.random() - 0.5) * 5.0 - 0.5;
-            const z = (Math.random() - 0.5) * 6.5;
-            positions[i * 3] = x;
-            positions[i * 3 + 1] = y;
-            positions[i * 3 + 2] = z;
+                document.addEventListener('mousemove', (e) => {
+                    mouseX = e.clientX;
+                    mouseY = e.clientY;
 
-            if (Math.random() < 0.6) {
-                colors[i * 3] = 1.0;
-                colors[i * 3 + 1] = 0.4 + Math.random() * 0.15;
-                colors[i * 3 + 2] = 0.05 + Math.random() * 0.1;
-            } else {
-                colors[i * 3] = 0.55 + Math.random() * 0.15;
-                colors[i * 3 + 1] = 0.82 + Math.random() * 0.12;
-                colors[i * 3 + 2] = 1.0;
-            }
+                    if (isFirstMove) {
+                        cardX = mouseX;
+                        cardY = mouseY;
+                        ringX = mouseX;
+                        ringY = mouseY;
+                        isFirstMove = false;
+                        glassCard.classList.add('active');
+                        cursorRing.classList.add('active');
+                    }
 
-            sparkData.push({
-                speedX: (Math.random() - 0.5) * 0.4,
-                speedY: 0.15 + Math.random() * 0.3,
-                speedZ: (Math.random() - 0.5) * 0.4,
-                swaySpeed: 0.5 + Math.random() * 1.5,
-                swayRadius: 0.05 + Math.random() * 0.15,
-                phase: Math.random() * Math.PI * 2
-            });
-        }
-
-        geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-        geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-
-        const material = new THREE.PointsMaterial({
-            size: 0.025,
-            vertexColors: true,
-            transparent: true,
-            opacity: 0.85,
-            blending: THREE.AdditiveBlending,
-            depthWrite: false,
-            map: createSparkTexture()
-        });
-
-        sparkParticles = new THREE.Points(geometry, material);
-        scene.add(sparkParticles);
-    }
-
-    function loadModel() {
-        const loader = new GLTFLoader();
-        loader.load(
-            ASSET_BASE_URL + '/bronze_horse.glb',
-            (gltf) => {
-                gltfModel = gltf.scene;
-
-                modelPivot = new THREE.Group();
-                scene.add(modelPivot);
-                modelPivot.add(gltfModel);
-
-                gltfModel.traverse((child) => {
-                    if (child.isMesh) {
-                        child.castShadow = false;
-                        child.receiveShadow = false;
-                        if (child.material) {
-                            child.material.roughness = 0.42;
-                            child.material.metalness = 0.92;
-                            child.material.flatShading = false;
-                            if (child.material.map) {
-                                child.material.map.anisotropy = 16;
-                            }
-                        }
+                    if (!isHoveringBtn) {
+                        targetScale = 1;
                     }
                 });
 
-                if (gltf.animations && gltf.animations.length > 0) {
-                    mixer = new THREE.AnimationMixer(gltfModel);
-                    gltf.animations.forEach((clip) => { mixer.clipAction(clip).play(); });
-                }
-
-                const boxInitial = new THREE.Box3().setFromObject(gltfModel);
-                const sizeInitial = boxInitial.getSize(new THREE.Vector3());
-                const maxDim = Math.max(sizeInitial.x, sizeInitial.y, sizeInitial.z);
-                const targetScale = 3.5 / (maxDim > 0.0001 ? maxDim : 1);
-                gltfModel.scale.setScalar(targetScale);
-
-                gltfModel.updateMatrixWorld(true);
-
-                const boxScaled = new THREE.Box3().setFromObject(gltfModel);
-                const centerScaled = boxScaled.getCenter(new THREE.Vector3());
-
-                gltfModel.position.sub(centerScaled);
-                modelPivot.position.y = -0.4;
-            },
-            undefined,
-            (error) => { console.error('Error loading bronze horse model:', error); }
-        );
-    }
-
-    function onWindowResize() {
-        sizes.width = window.innerWidth;
-        sizes.height = window.innerHeight;
-        camera.aspect = sizes.width / sizes.height;
-        camera.updateProjectionMatrix();
-        renderer.setSize(sizes.width, sizes.height);
-        renderer.setPixelRatio(1);
-        if (shaderUniforms) shaderUniforms.uResolution.value.set(sizes.width, sizes.height);
-    }
-
-    window.addEventListener('mousemove', (event) => {
-        cursorX = event.clientX;
-        cursorY = event.clientY;
-        const cursorInner = document.querySelector('.cursor-inner');
-        if (cursorInner) { cursorInner.style.left = `${cursorX}px`; cursorInner.style.top = `${cursorY}px`; }
-        targetMouseX = (event.clientX / window.innerWidth) * 2 - 1;
-        targetMouseY = (event.clientY / window.innerHeight) * 2 - 1;
-    });
-    window.addEventListener('resize', onWindowResize);
-
-    function updateGridDots(scroll) {
-        const dots = document.querySelectorAll('.grid-dot');
-        dots.forEach((dot, i) => {
-            const startY = (i * 17) % 80 + 10;
-            let speed = 90 + (i * 55) % 180;
-            if (i % 2 === 0) speed = -speed;
-            let y = startY + scroll * speed;
-            y = ((y % 100) + 100) % 100;
-            dot.style.top = `${y}%`;
-        });
-    }
-
-    function updateSlides(scroll) {
-        const slide1 = document.getElementById('slide-1');
-        const slide2 = document.getElementById('slide-2');
-        const slide3 = document.getElementById('slide-3');
-        const slide4 = document.getElementById('slide-4');
-
-        for (let i = 1; i <= 4; i++) {
-            const fill = document.getElementById(`dash-fill-${i}`);
-            if (fill) {
-                const start = (i - 1) * 0.25;
-                const end = i * 0.25;
-                let progress = (scroll - start) / (end - start);
-                progress = Math.max(0, Math.min(1, progress));
-                fill.style.height = `${progress * 100}%`;
-            }
-        }
-
-        function isActive(val, start, end) { return val >= start && val <= end; }
-
-        if (slide1) slide1.classList.toggle('active', isActive(scroll, -0.10, 0.12));
-        if (slide2) {
-            const active2 = isActive(scroll, 0.28, 0.40);
-            slide2.classList.toggle('active', active2);
-            const slide2Img = document.getElementById('slide-2-img');
-            if (slide2Img) slide2Img.classList.toggle('active', active2);
-        }
-        if (slide3) slide3.classList.toggle('active', isActive(scroll, 0.56, 0.68));
-        if (slide4) slide4.classList.toggle('active', isActive(scroll, 0.84, 1.05));
-    }
-
-    function animate() {
-        requestAnimationFrame(animate);
-        const deltaTime = clock.getDelta();
-        if (mixer) mixer.update(deltaTime);
-
-        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-        const scrollTop = window.scrollY !== undefined ? window.scrollY
-            : (window.pageYOffset !== undefined ? window.pageYOffset : document.documentElement.scrollTop);
-        const targetScroll = maxScroll > 0 ? scrollTop / maxScroll : 0;
-
-        currentScroll += (targetScroll - currentScroll) * 0.025;
-
-        mouseX += (targetMouseX - mouseX) * 0.05;
-        mouseY += (targetMouseY - mouseY) * 0.05;
-
-        outerCursorX += (cursorX - outerCursorX) * 0.2;
-        outerCursorY += (cursorY - outerCursorY) * 0.2;
-        const cursorOuter = document.querySelector('.cursor-outer');
-        if (cursorOuter) { cursorOuter.style.left = `${outerCursorX}px`; cursorOuter.style.top = `${outerCursorY}px`; }
-
-        if (modelPivot) {
-            modelPivot.rotation.y = mouseX * 0.25;
-            modelPivot.rotation.x = mouseY * 0.15;
-        }
-
-        if (sparkParticles) {
-            const positions = sparkParticles.geometry.attributes.position.array;
-            const time = clock.getElapsedTime();
-            const scrollVelocity = Math.abs(targetScroll - currentScroll);
-            const speedMultiplier = 1.0 + scrollVelocity * 9.0;
-            const turbulence = scrollVelocity * 0.8;
-
-            for (let i = 0; i < sparkCount; i++) {
-                const idx = i * 3;
-                const data = sparkData[i];
-                positions[idx]     += data.speedX * deltaTime * speedMultiplier;
-                positions[idx + 1] += data.speedY * deltaTime * speedMultiplier;
-                positions[idx + 2] += data.speedZ * deltaTime * speedMultiplier;
-
-                const currentSway = data.swayRadius * (1.0 + turbulence * 4.0);
-                positions[idx]     += Math.sin(time * data.swaySpeed + data.phase) * currentSway * deltaTime;
-                positions[idx + 2] += Math.cos(time * data.swaySpeed + data.phase) * currentSway * deltaTime;
-
-                if (positions[idx + 1] > 3.0 || Math.abs(positions[idx]) > 3.5 || Math.abs(positions[idx + 2]) > 3.5) {
-                    positions[idx + 1] = -2.5;
-                    positions[idx]     = (Math.random() - 0.5) * 3.0;
-                    positions[idx + 2] = (Math.random() - 0.5) * 3.0;
-                }
-            }
-            sparkParticles.geometry.attributes.position.needsUpdate = true;
-        }
-
-        const phi = currentScroll * Math.PI * 2.0;
-        const y = 0.35 + Math.sin(currentScroll * Math.PI) * 0.8;
-        const radius = 4.2 - Math.sin(currentScroll * Math.PI) * 0.6;
-        const x = radius * Math.sin(phi);
-        const z = radius * Math.cos(phi);
-
-        let transitionProgress = Math.min(1.0, currentScroll / 0.28);
-        let easeFactor = (Math.cos(transitionProgress * Math.PI) + 1.0) * 0.5;
-        const lookAtXOffset = -0.9 * easeFactor;
-        const targetLookAt = new THREE.Vector3(lookAtXOffset, -0.15, 0);
-        const targetPos = new THREE.Vector3(x, y, z);
-        camera.position.lerp(targetPos, 0.025);
-        camera.lookAt(targetLookAt);
-
-        if (shaderUniforms) {
-            shaderUniforms.uTime.value = clock.getElapsedTime();
-            shaderUniforms.uMouse.value.set(mouseX, -mouseY);
-            shaderUniforms.uScroll.value = currentScroll;
-        }
-
-        updateSlides(currentScroll);
-        updateGridDots(currentScroll);
-        renderer.render(scene, camera);
-    }
-
-    function setupNavigation() {
-        const navLinks = document.querySelectorAll('.nav-link');
-        const targetScrolls = [0.0, 0.34, 0.62, 0.94];
-        navLinks.forEach((link, index) => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-                const targetY = maxScroll * targetScrolls[index];
-                window.scrollTo({ top: targetY, behavior: 'smooth' });
-            });
-        });
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-        splitTitlesIntoChars();
-
-        scene = new THREE.Scene();
-        scene.background = new THREE.Color('#000000');
-        scene.fog = new THREE.FogExp2('#000000', 0.01);
-
-        camera = new THREE.PerspectiveCamera(50, sizes.width / sizes.height, 0.1, 100);
-        camera.position.set(0, 0.2, 3.0);
-        scene.add(camera);
-
-        createBackgroundShader();
-
-        renderer = new THREE.WebGLRenderer({
-            canvas: canvas,
-            antialias: false,
-            alpha: false,
-            powerPreference: "high-performance"
-        });
-        renderer.setSize(sizes.width, sizes.height);
-        renderer.setPixelRatio(1);
-
-        renderer.shadowMap.enabled = false;
-        renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-        renderer.toneMapping = THREE.ACESFilmicToneMapping;
-        renderer.toneMappingExposure = 2.2;
-
-        const ambientLight = new THREE.AmbientLight('#ffffff', 0.1);
-        scene.add(ambientLight);
-
-        const keyLight = new THREE.SpotLight('#ffffff', 18.0);
-        keyLight.position.set(4, 6, 3);
-        keyLight.angle = Math.PI / 4;
-        keyLight.penumbra = 0.9;
-        keyLight.castShadow = false;
-        keyLight.shadow.mapSize.width = 1024;
-        keyLight.shadow.mapSize.height = 1024;
-        keyLight.shadow.camera.near = 1.0;
-        keyLight.shadow.camera.far = 15;
-        keyLight.shadow.bias = -0.001;
-        scene.add(keyLight);
-
-        const rimLight = new THREE.DirectionalLight('#e3f2ff', 10.0);
-        rimLight.position.set(-5, 3, -4);
-        scene.add(rimLight);
-
-        const fillLight = new THREE.DirectionalLight('#fff3e6', 0.8);
-        fillLight.position.set(-2, -4, 2);
-        scene.add(fillLight);
-
-        createSparks();
-        loadModel();
-        onWindowResize();
-        
-        animate();
-        setupNavigation();
-        setupChatSidebar();
-    });
-    
-    function setupChatSidebar() {
-        const toggleBtn = document.getElementById('toggle-chat-btn');
-        const closeBtn = document.getElementById('close-chat-btn');
-        const minBtn = document.getElementById('min-chat-btn');
-        const sidebar = document.getElementById('chat-sidebar');
-        const input = document.getElementById('chat-input');
-        const sendBtn = document.getElementById('chat-send-btn');
-        const history = document.getElementById('chat-history');
-
-        function toggleChat(e) {
-            if (e) e.preventDefault();
-            sidebar.classList.toggle('open');
-            if (sidebar.classList.contains('open') && !sidebar.classList.contains('minimized')) {
-                setTimeout(() => input.focus(), 500);
-            }
-        }
-
-        toggleBtn.addEventListener('click', () => {
-            sidebar.classList.remove('minimized');
-            if (!sidebar.classList.contains('open')) toggleChat();
-        });
-        closeBtn.addEventListener('click', toggleChat);
-        if (minBtn) {
-            minBtn.addEventListener('click', () => {
-                sidebar.classList.toggle('minimized');
-            });
-        }
-        
-        // Top Tabs Logic
-        const topTabs = document.querySelectorAll('.sidebar-tab');
-        const sidebarViews = document.querySelectorAll('.sidebar-view');
-        let knowledgeLoaded = false;
-
-        topTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                topTabs.forEach(t => t.classList.remove('active'));
-                sidebarViews.forEach(v => v.classList.remove('active'));
-                
-                tab.classList.add('active');
-                document.getElementById(tab.getAttribute('data-target')).classList.add('active');
-
-                if (tab.getAttribute('data-target') === 'sidebar-view-knowledge' && !knowledgeLoaded) {
-                    loadKnowledgeBase();
-                }
-            });
-        });
-
-        async function loadKnowledgeBase() {
-            const listEl = document.getElementById('knowledge-list');
-            listEl.innerHTML = '<div style="text-align: center; color: rgba(255,255,255,0.5); margin-top: 50px;">Đang tải kho tri thức...</div>';
-            try {
-                const res = await fetch('/api/v1/knowledge/units');
-                const data = await res.json();
-                if (data.status === 'success' && data.units) {
-                    listEl.innerHTML = '';
-                    
-                    // Group units by domain
-                    const groups = {};
-                    data.units.forEach(u => {
-                        const d = u.domain || 'unknown';
-                        if (!groups[d]) groups[d] = [];
-                        groups[d].push(u);
-                    });
-                    
-                    const domainMap = {
-                        'tu-than': 'TU THÂN (Quản lý bản thân)',
-                        'tri-nhan': 'TRỊ NHÂN (Thấu hiểu tâm lý)',
-                        'dung-nhan': 'DÙNG NHÂN (Quản trị & Lãnh đạo)',
-                        'hop-chung': 'HỢP CHÚNG (Quyền lực & Hệ thống)',
-                        'thanh-su': 'THÀNH SỰ (Thực thi chiến lược)',
-                        'unknown': 'KHÁC'
-                    };
-
-                    Object.keys(groups).sort().forEach(domain => {
-                        const groupContainer = document.createElement('div');
-                        groupContainer.className = 'knowledge-group';
-                        groupContainer.style.marginBottom = '10px';
-                        
-                        const header = document.createElement('div');
-                        header.className = 'knowledge-group-header';
-                        header.innerHTML = `<span>${domainMap[domain] || domain.toUpperCase()}</span> <span class="toggle-icon" style="font-size: 10px;">▼</span>`;
-                        header.style.cssText = 'padding: 15px; background: rgba(255,255,255,0.05); cursor: pointer; border-radius: 6px; font-weight: 600; font-size: 13px; letter-spacing: 1px; display: flex; justify-content: space-between; align-items: center; border: 1px solid rgba(255,255,255,0.1);';
-                        
-                        const itemsContainer = document.createElement('div');
-                        itemsContainer.className = 'knowledge-group-items';
-                        itemsContainer.style.display = 'none';
-                        itemsContainer.style.paddingLeft = '10px';
-                        itemsContainer.style.marginTop = '10px';
-                        
-                        header.addEventListener('click', () => {
-                            const isHidden = itemsContainer.style.display === 'none';
-                            itemsContainer.style.display = isHidden ? 'block' : 'none';
-                            header.querySelector('.toggle-icon').textContent = isHidden ? '▲' : '▼';
-                        });
-
-                        groups[domain].forEach(u => {
-                            const card = document.createElement('div');
-                            card.className = 'knowledge-card';
-                            const typeMap = { 'anti-pattern': 'Bẫy', 'law': 'Quy luật', 'principle': 'Nguyên tắc', 'strategy': 'Chiến thuật' };
-                            const displayType = typeMap[u.type] || u.type;
-                            
-                            card.innerHTML = `
-                                <div class="knowledge-card-title">${u.title || u.id}</div>
-                                <div class="knowledge-card-meta">[${displayType.toUpperCase()}] &bull; ${u.id}</div>
-                            `;
-                            card.addEventListener('click', async () => {
-                                if (card.querySelector('.knowledge-content')) {
-                                    const contentEl = card.querySelector('.knowledge-content');
-                                    contentEl.style.display = contentEl.style.display === 'none' ? 'block' : 'none';
-                                    return;
-                                }
-                                card.innerHTML += `<div class="knowledge-content" style="margin-top: 15px; font-size: 14.5px; color: rgba(255,255,255,0.8); border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; line-height: 1.6;">Đang tải nội dung...</div>`;
-                                try {
-                                    const detailRes = await fetch('/api/v1/knowledge/units/' + u.id);
-                                    const detailData = await detailRes.json();
-                                    if (detailData.status === 'success' && detailData.unit) {
-                                        let content = "";
-                                        let rawData = detailData.unit.raw_data || detailData.unit;
-                                        if (rawData.summary) content += "**Tóm tắt:**\n" + rawData.summary + "\n\n";
-                                        if (rawData.definition) content += "**Định nghĩa:**\n" + rawData.definition + "\n\n";
-                                        if (rawData.mechanism && rawData.mechanism.length > 0) content += "**Cơ chế hoạt động:**\n" + (Array.isArray(rawData.mechanism) ? "- " + rawData.mechanism.join("\n- ") : rawData.mechanism) + "\n\n";
-                                        if (rawData.conditions && rawData.conditions.length > 0) content += "**Điều kiện áp dụng:**\n" + (Array.isArray(rawData.conditions) ? "- " + rawData.conditions.join("\n- ") : rawData.conditions) + "\n\n";
-                                        if (rawData.exceptions && rawData.exceptions.length > 0) content += "**Ngoại lệ:**\n" + (Array.isArray(rawData.exceptions) ? "- " + rawData.exceptions.join("\n- ") : rawData.exceptions) + "\n\n";
-                                        if (rawData.risks && rawData.risks.length > 0) content += "**Rủi ro:**\n" + (Array.isArray(rawData.risks) ? "- " + rawData.risks.join("\n- ") : rawData.risks) + "\n\n";
-                                        if (rawData.applications && Object.keys(rawData.applications).length > 0) {
-                                            content += "**Ứng dụng:**\n";
-                                            for (const [key, value] of Object.entries(rawData.applications)) {
-                                                if (Array.isArray(value) && value.length > 0) {
-                                                    content += `- **${key}**:\n  - ` + value.join("\n  - ") + "\n";
-                                                } else if (typeof value === 'string') {
-                                                    content += `- **${key}**: ${value}\n`;
-                                                }
-                                            }
-                                            content += "\n";
-                                        }
-                                        if (rawData.relations && Object.keys(rawData.relations).length > 0) {
-                                            let hasRelation = false;
-                                            let relContent = "**Liên kết:**\n";
-                                            if (rawData.relations.depends_on && rawData.relations.depends_on.length > 0) { relContent += "- **Phụ thuộc vào:** " + rawData.relations.depends_on.join(", ") + "\n"; hasRelation = true; }
-                                            if (rawData.relations.supports && rawData.relations.supports.length > 0) { relContent += "- **Hỗ trợ cho:** " + rawData.relations.supports.join(", ") + "\n"; hasRelation = true; }
-                                            if (rawData.relations.conflicts_with && rawData.relations.conflicts_with.length > 0) { relContent += "- **Xung đột với:** " + rawData.relations.conflicts_with.join(", ") + "\n"; hasRelation = true; }
-                                            if (hasRelation) content += relContent + "\n";
-                                        }
-                                        if (rawData.content) content += "\n\n" + rawData.content;
-                                        
-                                        card.querySelector('.knowledge-content').innerHTML = formatChatHTML(content || 'Không có nội dung.');
-                                    } else {
-                                        card.querySelector('.knowledge-content').innerHTML = 'Không thể tải nội dung.';
-                                    }
-                                } catch(e) {
-                                    card.querySelector('.knowledge-content').innerHTML = 'Lỗi kết nối.';
-                                }
-                            });
-                            itemsContainer.appendChild(card);
-                        });
-                        
-                        groupContainer.appendChild(header);
-                        groupContainer.appendChild(itemsContainer);
-                        listEl.appendChild(groupContainer);
-                    });
-                    knowledgeLoaded = true;
-                }
-            } catch (e) {
-                listEl.innerHTML = '<div style="color:red;text-align:center;">Lỗi khi tải kho tri thức.</div>';
-            }
-        }
-        
-        // Interactive cursors over chat elements
-        const clickableSelectors = '#chat-sidebar, .chat-input, .chat-send-btn, .close-chat-btn';
-        document.querySelectorAll(clickableSelectors).forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                const outer = document.querySelector('.cursor-outer');
-                if(outer) {
-                    outer.style.width = '30px';
-                    outer.style.height = '30px';
-                    outer.style.background = 'rgba(255,255,255,0.1)';
-                }
-            });
-            el.addEventListener('mouseleave', () => {
-                const outer = document.querySelector('.cursor-outer');
-                if(outer) {
-                    outer.style.width = '40px';
-                    outer.style.height = '40px';
-                    outer.style.background = 'transparent';
-                }
-            });
-        });
-
-        async function handleSend() {
-            const val = input.value.trim();
-            if (!val) return;
-            
-            // Add user message
-            const userMsg = document.createElement('div');
-            userMsg.className = 'chat-msg msg-user';
-            userMsg.textContent = val;
-            history.appendChild(userMsg);
-            
-            input.value = '';
-            
-            // Loading indicator
-            const loaderId = 'loader-' + Date.now();
-            const loader = document.createElement('div');
-            loader.id = loaderId;
-            loader.className = 'typing-indicator';
-            loader.textContent = 'Nhân Thuật đang phân tích...';
-            history.appendChild(loader);
-            
-            history.scrollTop = history.scrollHeight;
-            
-            try {
-                const res = await fetch('/api/v1/nhan-thuat/analyze', {
-                    method: 'POST',
-                    headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({ scenario_text: val, scenario_type_hint: 'leadership' })
+                document.addEventListener('mouseleave', () => {
+                    targetScale = 0;
                 });
-                const data = await res.json();
-                
-                const l = document.getElementById(loaderId);
-                if(l) l.remove();
-                
-                const botMsg = document.createElement('div');
-                botMsg.className = 'chat-msg msg-bot';
-                
-                if (data.status === 'success' && data.synthesis_result && data.synthesis_result.synthesis) {
-                    botMsg.innerHTML = formatChatTabs(data.synthesis_result);
-                } else {
-                    botMsg.textContent = "Không thể phân tích dữ liệu lúc này.";
+
+                document.addEventListener('mouseenter', () => {
+                    if (!isHoveringBtn) {
+                        targetScale = 1;
+                    }
+                });
+
+                const heroBtn = document.querySelector('.hero-btn');
+                if (heroBtn) {
+                    heroBtn.addEventListener('mouseenter', () => {
+                        isHoveringBtn = true;
+                        targetScale = 0;
+                        cursorRing.classList.add('expanded');
+                    });
+                    heroBtn.addEventListener('mouseleave', () => {
+                        isHoveringBtn = false;
+                        targetScale = 1;
+                        cursorRing.classList.remove('expanded');
+                    });
                 }
-                history.appendChild(botMsg);
-                
-            } catch (e) {
-                const l = document.getElementById(loaderId);
-                if(l) l.remove();
-                
-                const errMsg = document.createElement('div');
-                errMsg.className = 'chat-msg msg-bot';
-                errMsg.style.color = '#ef4444';
-                errMsg.textContent = "Lỗi kết nối API.";
-                history.appendChild(errMsg);
+
+                const updatePhysics = () => {
+                    cardX += (mouseX - cardX) * 0.08;
+                    cardY += (mouseY - cardY) * 0.08;
+
+                    ringX = mouseX;
+                    ringY = mouseY;
+
+                    scale += (targetScale - scale) * 0.15;
+
+                    const currentRingScale = cursorRing.classList.contains('expanded') ? 1.6 * scale : scale;
+
+                    glassCard.style.transform = `translate3d(${cardX}px, ${cardY}px, 0) translate(-50%, -50%) scale(${scale})`;
+                    cursorRing.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%) scale(${currentRingScale})`;
+
+                    requestAnimationFrame(updatePhysics);
+                };
+
+                updatePhysics();
             }
-            history.scrollTop = history.scrollHeight;
-        }
-        
-        sendBtn.addEventListener('click', handleSend);
-        input.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') handleSend();
         });
-        
-        window.switchTab = function(btn, paneId) {
-            const container = btn.closest('.chat-msg');
-            container.querySelectorAll('.chat-tab-btn').forEach(b => b.classList.remove('active'));
-            container.querySelectorAll('.chat-tab-pane').forEach(p => p.classList.remove('active'));
-            btn.classList.add('active');
-            container.querySelector('#' + paneId).classList.add('active');
-        };
-
-        function formatChatTabs(result) {
-            const id = Math.random().toString(36).substr(2, 9);
-            const textHTML = formatChatHTML(result.synthesis);
-            
-            let citationsHTML = 'Không có tài liệu trích dẫn.';
-            if (result.citations && result.citations.length > 0) {
-                citationsHTML = '<ul>' + result.citations.map(c => '<li><strong>' + c.title + '</strong> (' + c.id + ') - ' + c.domain + '</li>').join('') + '</ul>';
-            }
-
-            return '<div class="chat-tabs-nav">' +
-                   '<button class="chat-tab-btn active" onclick="switchTab(this, \'tab-chien-luoc-' + id + '\')">Chiến lược</button>' +
-                   '<button class="chat-tab-btn" onclick="switchTab(this, \'tab-trich-dan-' + id + '\')">Khám phá tri thức & Bằng chứng</button>' +
-                   '</div>' +
-                   '<div class="chat-tab-pane active" id="tab-chien-luoc-' + id + '">' + textHTML + '</div>' +
-                   '<div class="chat-tab-pane" id="tab-trich-dan-' + id + '">' + citationsHTML + '</div>';
-        }
-
-        function formatChatHTML(text) {
-            let html = text
-                .replace(/^### (.*?)$/gm, '<h4>$1</h4>')
-                .replace(/^## (.*?)$/gm, '<h3>$1</h3>')
-                .replace(/^\*\*([^*]+)\*\*(.*)$/gm, '<strong>$1</strong>$2')
-                .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
-                .replace(/\*([^*]+)\*/g, '<em>$1</em>')
-                .replace(/\n\n/g, '</p><p>');
-            
-            html = html.replace(/(?:^|\n)- (.*?)(?=\n|$)/g, '<li>$1</li>');
-            html = html.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
-            
-            return '<p>' + html + '</p>';
-        }
-    }
     </script>
 </body>
 </html>

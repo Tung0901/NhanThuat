@@ -27,7 +27,7 @@ DEFAULT_MODEL = "gemini-3.6-flash"
 def get_provider_configs() -> list[dict[str, str]]:
     configs = []
     
-    gemini_key = os.environ.get("GEMINI_API_KEY", "").strip()
+    gemini_key = (os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY") or "").strip()
     if gemini_key:
         configs.append({
             "api_key": gemini_key,
@@ -41,7 +41,7 @@ def get_provider_configs() -> list[dict[str, str]]:
         configs.append({
             "api_key": groq_key,
             "base_url": "https://api.groq.com/openai/v1",
-            "model": os.environ.get("GROQ_MODEL", "").strip() or "llama-3.3-70b-versatile",
+            "model": os.environ.get("GROQ_MODEL", "").strip() or "llama-3.1-70b-versatile",
             "provider_name": "groq",
         })
         

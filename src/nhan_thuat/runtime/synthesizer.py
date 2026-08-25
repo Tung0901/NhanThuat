@@ -127,9 +127,18 @@ class KnowledgeSynthesizer:
         except Exception as exc:  # noqa: BLE001 - intentional: any provider failure must fall back to deterministic
             latency_ms = int((time.monotonic() - started) * 1000)
             print(f"[ERROR] LLM Provider call failed: {exc}")
+
+            warning_msg = (
+                f"Lỗi khi gọi LLM provider ({exc}); đã chuyển sang dòng truy xuất deterministic. "
+                f"Đã thử: {_base_url()}/chat/completions | Mô hình: {_model()}."
+            )
+
+            synthesis_text = self._deterministic_synthesis(query, units_list)
+            synthesis_text += f"\n\n**[SYSTEM DIAGNOSTICS - DEBUG]**\n{warning_msg}"
+
             return {
                 "mode": "deterministic",
-                "synthesis": self._deterministic_synthesis(query, units_list),
+                "synthesis": synthesis_text,
                 "citations": citations,
                 "audit": {
                     "correlation_id": correlation_id,
@@ -139,10 +148,7 @@ class KnowledgeSynthesizer:
                     "prompt": prompt,
                     "error": str(exc),
                 },
-                "warning": (
-                    f"Lỗi khi gọi LLM provider ({exc}); đã chuyển sang dòng truy xuất deterministic. "
-                    f"Đã thử: {_base_url()}/chat/completions | Mô hình: {_model()}."
-                ),
+                "warning": warning_msg,
             }
 
     def _build_prompt(self, query: str, units: Iterable[KnowledgeUnit]) -> str:

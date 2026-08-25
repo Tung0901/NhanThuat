@@ -3,20 +3,24 @@ type: anti-pattern
 status: frozen
 version: 0.1.0
 title: Ngụy biện Trực giác
-summary: Đơn vị kiến thức cấu trúc về Ngụy biện Trực giác (Intuition Fallacy) trong ra quyết định quản trị.
+summary: Hiện tượng các nhà quản lý phụ thuộc quá mức vào cảm tính và kinh nghiệm cá nhân khi ra quyết định, phớt lờ dữ liệu thực tế, dẫn đến những sai lầm hệ thống có thể tránh được.
 primary_domain: tri-nhan
 secondary_domains:
 - dung-nhan
-definition: Định nghĩa chính thức về Ngụy biện Trực giác trong kiến trúc Nhân Thuật, chỉ hiện tượng phụ thuộc quá mức vào cảm tính cá nhân thay vì dựa trên dữ liệu, bằng chứng và phân tích hệ thống.
+definition: Ngụy biện Trực giác (Intuition Fallacy) là sự tự tin thái quá của con người vào "giác quan thứ sáu" hoặc khả năng phán đoán nhanh của bản thân trong các lĩnh vực phức tạp. Nó xảy ra khi người ra quyết định đánh đồng sự lưu loát trong nhận thức (cognitive fluency) do quen thuộc với độ chính xác của dự đoán, dẫn đến việc gạt bỏ các phân tích dữ liệu và bằng chứng khách quan.
 conditions:
-- Bối cảnh quản trị vận hành tổ chức.
+- Khi người ra quyết định là các chuyên gia có nhiều năm kinh nghiệm nhưng môi trường hoạt động đã thay đổi (thị trường mới, công nghệ mới).
+- Trong các tổ chức thiếu cơ sở hạ tầng dữ liệu hoặc hệ thống đánh giá khách quan.
 exceptions:
-- Trường hợp ghi đè trong khủng hoảng khẩn cấp.
+- Các quyết định mang tính nghệ thuật, sáng tạo nguyên bản hoặc các cuộc khủng hoảng thời gian thực nơi thời gian phân tích dữ liệu đồng nghĩa với sự thất bại.
+- Môi trường ổn định tuyệt đối (high-validity environments) nơi trực giác chuyên gia có cơ sở để chính xác (ví dụ: cờ vua, cứu hỏa).
 applications:
   governance:
-  - Áp dụng nhận diện Ngụy biện Trực giác vào quy trình làm việc tổ chức.
+  - Bắt buộc áp dụng khung đánh giá bằng văn bản (written rubrics) trước khi phỏng vấn tuyển dụng.
+  - Sử dụng phương pháp "Red Teaming" hoặc "Pre-mortem" (Khám nghiệm trước khi chết) để thách thức các quyết định cảm tính của lãnh đạo cấp cao.
 risks:
-- Áp dụng sai Ngụy biện Trực giác dẫn đến hiệu suất không đạt tối ưu.
+- Quyết định sai lầm gây thiệt hại về tài chính và chiến lược do bỏ qua dữ liệu trọng yếu.
+- Phá vỡ tinh thần làm việc của nhân sự phân tích dữ liệu (data teams) khi kết quả của họ bị gạt bỏ bởi "cảm giác" của lãnh đạo.
 evidence:
   level: supported
   references:

@@ -3,20 +3,25 @@ type: anti-pattern
 status: frozen
 version: 0.1.0
 title: Bế tắc thương lượng theo vị thế
-summary: Đơn vị kiến thức cấu trúc về Bế tắc thương lượng theo vị thế trong đàm phán tổ chức.
+summary: Trạng thái bế tắc xảy ra khi các bên đàm phán bám chặt vào lập trường cứng nhắc ban đầu thay vì tập trung vào lợi ích cốt lõi, dẫn đến tổn hại mối quan hệ và bỏ lỡ cơ hội hợp tác.
 primary_domain: thanh-su
 secondary_domains:
 - tri-nhan
-definition: Định nghĩa chính thức về Bế tắc thương lượng theo vị thế trong kiến trúc Nhân Thuật.
+definition: Bế tắc thương lượng theo vị thế là một hội chứng hành vi trong đàm phán, nơi cái tôi và thể diện bị trói buộc vào một lập trường cố định. Thay vì khám phá các phương án giải quyết vấn đề, các bên tiêu tốn tài nguyên để bảo vệ vị thế, tạo ra các tối hậu thư và từ chối nhượng bộ, làm leo thang xung đột không cần thiết.
 conditions:
-- Các ngữ cảnh quản trị và vận hành tổ chức.
+- Xảy ra trong các cuộc đàm phán có tính cạnh tranh cao (phân bổ nguồn lực khan hiếm), thiếu niềm tin giữa các bên.
+- Khi người đàm phán bị áp lực phải chứng tỏ năng lực với tổ chức của họ.
 exceptions:
-- Trường hợp đè quyền ưu tiên khi ứng phó với khủng hoảng khẩn cấp.
+- Các đàm phán một lần (one-off) không cần duy trì mối quan hệ lâu dài.
+- Khi vị thế của một bên áp đảo hoàn toàn đối phương (mô hình Zero-sum game).
 applications:
   governance:
-  - Áp dụng nhận diện Bế tắc thương lượng theo vị thế vào quy trình làm việc của tổ chức.
+  - Đào tạo đội ngũ cách tách bạch "con người" khỏi "vấn đề" trong đàm phán.
+  - Xây dựng cơ chế BATNA (Best Alternative to a Negotiated Agreement) chuẩn hóa cho các giao dịch lớn.
 risks:
-- Áp dụng không đúng Bế tắc thương lượng theo vị thế dẫn đến hiệu suất tổ chức không đạt mức tối ưu.
+- Kéo dài thời gian đàm phán một cách vô ích.
+- Đạt được những thỏa thuận dưới mức tối ưu (sub-optimal agreements).
+- Phá vỡ các mối quan hệ đối tác chiến lược lâu dài.
 evidence:
   level: supported
   references:

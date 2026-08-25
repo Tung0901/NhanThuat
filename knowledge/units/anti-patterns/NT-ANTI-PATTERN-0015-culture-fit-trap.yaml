@@ -3,20 +3,26 @@ type: anti-pattern
 status: frozen
 version: 0.1.0
 title: Bẫy Phù hợp Văn hóa
-summary: Đơn vị kiến thức cấu trúc về Bẫy Phù hợp Văn hóa (Culture Fit Trap) trong quản trị và tuyển dụng.
+summary: Sự thiên lệch trong tuyển dụng và thăng tiến khi các nhà quản lý ưu tiên những cá nhân có tính cách giống mình, dẫn đến một tổ chức đồng nhất và mất khả năng đổi mới.
 primary_domain: tri-nhan
 secondary_domains:
 - hop-chung
-definition: Định nghĩa chính thức về Bẫy Phù hợp Văn hóa trong kiến trúc Nhân Thuật, mô tả rủi ro vô tình tạo ra tính tư duy đồng nhất và loại trừ sự đa dạng do ưu tiên tính đồng điệu văn hóa hơn năng lực chuyên môn.
+definition: Bẫy "Phù hợp Văn hóa" là sự đánh đồng sai lệch giữa "sự dễ chịu khi làm việc cùng" (likability) với "sự phù hợp về giá trị cốt lõi". Nó tạo ra một buồng vang (echo chamber) trong tổ chức, nơi các ý kiến trái chiều bị triệt tiêu, và những cá nhân khác biệt bị loại trừ.
 conditions:
-- Bối cảnh quản trị vận hành tổ chức.
+- Phổ biến ở các startup đang phát triển nóng.
+- Các phòng ban do một nhà lãnh đạo có cá tính quá mạnh chi phối.
+- Các tổ chức thiếu khung năng lực hành vi (behavioral competency framework) rõ ràng.
 exceptions:
-- Trường hợp ghi đè trong khủng hoảng khẩn cấp.
+- Các tổ chức quy mô siêu nhỏ (dưới 5 người) ở giai đoạn sinh tồn, nơi sự đồng điệu cá nhân tuyệt đối là yếu tố sống còn.
 applications:
   governance:
-  - Áp dụng nhận diện Bẫy Phù hợp Văn hóa vào quy trình làm việc tổ chức.
+  - Thay thế tiêu chí "Culture Fit" bằng "Culture Add" (Bổ sung văn hóa).
+  - Thiết kế các bài phỏng vấn hành vi có cấu trúc khắt khe.
+  - Đưa các thành viên có nền tảng đa dạng vào hội đồng đánh giá.
 risks:
-- Áp dụng sai Bẫy Phù hợp Văn hóa dẫn đến hiệu suất không đạt tối ưu.
+- Suy giảm nghiêm trọng năng lực đổi mới sáng tạo.
+- Tăng rủi ro thiên vị vô thức (unconscious bias) trong môi trường làm việc.
+- Tạo ra văn hóa bài trừ sự khác biệt và rò rỉ nhân tài đa dạng.
 evidence:
   level: supported
   references:

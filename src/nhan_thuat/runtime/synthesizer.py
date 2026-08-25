@@ -27,13 +27,26 @@ DEFAULT_MODEL = "gemini-3.6-flash"
 def get_provider_configs() -> list[dict[str, str]]:
     configs = []
     
-    gemini_key = (os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY") or "").strip()
-    if gemini_key:
+    gemini_keys = []
+    
+    primary = (os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY") or "").strip()
+    if primary:
+        gemini_keys.append(primary)
+        
+    for i in range(2, 6):
+        key = (os.environ.get(f"GEMINI_API_KEY_{i}") or os.environ.get(f"GOOGLE_API_KEY_{i}") or "").strip()
+        if key and key not in gemini_keys:
+            gemini_keys.append(key)
+            
+    base_url = os.environ.get("GEMINI_BASE_URL", "").strip().rstrip("/") or DEFAULT_BASE_URL
+    model = os.environ.get("GEMINI_MODEL", "").strip() or DEFAULT_MODEL
+    
+    for i, key in enumerate(gemini_keys):
         configs.append({
-            "api_key": gemini_key,
-            "base_url": os.environ.get("GEMINI_BASE_URL", "").strip().rstrip("/") or DEFAULT_BASE_URL,
-            "model": os.environ.get("GEMINI_MODEL", "").strip() or DEFAULT_MODEL,
-            "provider_name": "google-gemini",
+            "api_key": key,
+            "base_url": base_url,
+            "model": model,
+            "provider_name": f"google-gemini-{i+1}" if len(gemini_keys) > 1 else "google-gemini",
         })
         
     groq_key = os.environ.get("GROQ_API_KEY", "").strip()

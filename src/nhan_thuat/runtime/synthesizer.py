@@ -75,7 +75,7 @@ def get_provider_configs() -> list[dict[str, str]]:
         configs.append({
             "api_key": openai_key,
             "base_url": os.environ.get("OPENAI_BASE_URL", "").strip().rstrip("/") or DEFAULT_BASE_URL,
-            "model": os.environ.get("NHAN_THUAT_LLM_MODEL", "").strip() or DEFAULT_MODEL,
+            "model": os.environ.get("OPENAI_MODEL", "").strip() or os.environ.get("NHAN_THUAT_LLM_MODEL", "").strip() or DEFAULT_MODEL,
             "provider_name": "openai-compatible",
         })
         

@@ -33,8 +33,11 @@ def get_provider_configs() -> list[dict[str, str]]:
     if primary:
         gemini_keys.append(primary)
         
-    for i in range(2, 6):
-        key = (os.environ.get(f"GEMINI_API_KEY_{i}") or os.environ.get(f"GOOGLE_API_KEY_{i}") or "").strip()
+    for i in range(1, 6):
+        key = (os.environ.get(f"GEMINI_API_KEY_{i}") or 
+               os.environ.get(f"GOOGLE_API_KEY_{i}") or 
+               os.environ.get(f"GEMINI_API_KEY{i}") or 
+               os.environ.get(f"GOOGLE_API_KEY{i}") or "").strip()
         if key and key not in gemini_keys:
             gemini_keys.append(key)
             

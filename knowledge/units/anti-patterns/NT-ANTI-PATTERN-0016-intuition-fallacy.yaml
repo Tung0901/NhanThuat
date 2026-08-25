@@ -13,7 +13,7 @@ conditions:
 - Trong các tổ chức thiếu cơ sở hạ tầng dữ liệu hoặc hệ thống đánh giá khách quan.
 exceptions:
 - Các quyết định mang tính nghệ thuật, sáng tạo nguyên bản hoặc các cuộc khủng hoảng thời gian thực nơi thời gian phân tích dữ liệu đồng nghĩa với sự thất bại.
-- Môi trường ổn định tuyệt đối (high-validity environments) nơi trực giác chuyên gia có cơ sở để chính xác (ví dụ: cờ vua, cứu hỏa).
+- "Môi trường ổn định tuyệt đối (high-validity environments) nơi trực giác chuyên gia có cơ sở để chính xác (ví dụ: cờ vua, cứu hỏa)."
 applications:
   governance:
   - Bắt buộc áp dụng khung đánh giá bằng văn bản (written rubrics) trước khi phỏng vấn tuyển dụng.

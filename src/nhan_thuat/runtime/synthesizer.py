@@ -70,7 +70,7 @@ class KnowledgeSynthesizer:
 
     def synthesize(self, query: str, units: Iterable[KnowledgeUnit]) -> dict[str, Any]:
         """Return a synthesis result with mode, citations, and audit."""
-        units_list = list(units)
+        units_list = list(units)[:5]
         citations = [
             {"id": unit.id, "title": unit.title, "domain": unit.primary_domain}
             for unit in units_list
@@ -200,6 +200,9 @@ class KnowledgeSynthesizer:
             },
             timeout=self.timeout,
         )
-        response.raise_for_status()
+        try:
+            response.raise_for_status()
+        except requests.exceptions.HTTPError as e:
+            raise Exception(f"{e} - Response: {response.text}") from e
         payload = response.json()
         return payload["choices"][0]["message"]["content"]

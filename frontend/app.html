@@ -1679,343 +1679,50 @@
             return '<p>' + html + '</p>';
         }
     }
-    </script>
-<script>
     
-    function setupChatSidebar() {
-        const toggleBtn = document.getElementById('toggle-chat-btn');
-        const closeBtn = document.getElementById('close-chat-btn');
-        const minBtn = document.getElementById('min-chat-btn');
-        const sidebar = document.getElementById('chat-sidebar');
-        const input = document.getElementById('chat-input');
-        const sendBtn = document.getElementById('chat-send-btn');
-        const history = document.getElementById('chat-history');
-
-        function toggleChat(e) {
-            if (e) e.preventDefault();
-            sidebar.classList.toggle('open');
-            if (sidebar.classList.contains('open') && !sidebar.classList.contains('minimized')) {
-                setTimeout(() => input.focus(), 500);
-            }
-        }
-
-        toggleBtn.addEventListener('click', () => {
-            sidebar.classList.remove('minimized');
-            if (!sidebar.classList.contains('open')) toggleChat();
-        });
-        closeBtn.addEventListener('click', toggleChat);
-        if (minBtn) {
-            minBtn.addEventListener('click', () => {
-                sidebar.classList.toggle('minimized');
-            });
-        }
-        
-        // Top Tabs Logic
-        const topTabs = document.querySelectorAll('.sidebar-tab');
-        const sidebarViews = document.querySelectorAll('.sidebar-view');
-        let knowledgeLoaded = false;
-
-        topTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                topTabs.forEach(t => t.classList.remove('active'));
-                sidebarViews.forEach(v => v.classList.remove('active'));
+    // Search functionality for Knowledge Base
+    document.addEventListener('input', function(e) {
+        if(e.target && e.target.id === 'knowledge-search-input') {
+            const term = e.target.value.toLowerCase();
+            document.querySelectorAll('.knowledge-group').forEach(group => {
+                let hasVisibleCard = false;
+                const itemsContainer = group.querySelector('.knowledge-group-items');
+                const toggleIcon = group.querySelector('.toggle-icon');
                 
-                tab.classList.add('active');
-                document.getElementById(tab.getAttribute('data-target')).classList.add('active');
-
-                if (tab.getAttribute('data-target') === 'sidebar-view-knowledge' && !knowledgeLoaded) {
-                    loadKnowledgeBase();
-                }
-            });
-        });
-
-        async function loadKnowledgeBase() {
-            const listEl = document.getElementById('knowledge-list');
-            listEl.innerHTML = '<div style="text-align: center; color: rgba(255,255,255,0.5); margin-top: 50px;">Đang tải kho tri thức...</div>';
-            try {
-                const res = await fetch('/api/v1/knowledge/units');
-                const data = await res.json();
-                if (data.status === 'success' && data.units) {
-                    listEl.innerHTML = '';
-                    
-                    // Group units by domain
-                    const groups = {};
-                    data.units.forEach(u => {
-                        const d = u.domain || 'unknown';
-                        if (!groups[d]) groups[d] = [];
-                        groups[d].push(u);
-                    });
-                    
-                    const domainMap = {
-                        'tu-than': 'TU THÂN (Quản lý bản thân)',
-                        'tri-nhan': 'TRỊ NHÂN (Thấu hiểu tâm lý)',
-                        'dung-nhan': 'DÙNG NHÂN (Quản trị & Lãnh đạo)',
-                        'hop-chung': 'HỢP CHÚNG (Quyền lực & Hệ thống)',
-                        'thanh-su': 'THÀNH SỰ (Thực thi chiến lược)',
-                        'unknown': 'KHÁC'
-                    };
-
-                    Object.keys(groups).sort().forEach(domain => {
-                        const groupContainer = document.createElement('div');
-                        groupContainer.className = 'knowledge-group';
-                        groupContainer.style.marginBottom = '10px';
-                        
-                        const header = document.createElement('div');
-                        header.className = 'knowledge-group-header';
-                        header.innerHTML = `<span>${domainMap[domain] || domain.toUpperCase()}</span> <span class="toggle-icon" style="font-size: 10px;">▼</span>`;
-                        header.style.cssText = 'padding: 15px; background: rgba(255,255,255,0.05); cursor: pointer; border-radius: 6px; font-weight: 600; font-size: 13px; letter-spacing: 1px; display: flex; justify-content: space-between; align-items: center; border: 1px solid rgba(255,255,255,0.1);';
-                        
-                        const itemsContainer = document.createElement('div');
-                        itemsContainer.className = 'knowledge-group-items';
-                        itemsContainer.style.display = 'none';
-                        itemsContainer.style.paddingLeft = '10px';
-                        itemsContainer.style.marginTop = '10px';
-                        
-                        header.addEventListener('click', () => {
-                            const isHidden = itemsContainer.style.display === 'none';
-                            itemsContainer.style.display = isHidden ? 'block' : 'none';
-                            header.querySelector('.toggle-icon').textContent = isHidden ? '▲' : '▼';
-                        });
-
-                        groups[domain].forEach(u => {
-                            const card = document.createElement('div');
-                            card.className = 'knowledge-card';
-                            const typeMap = { 'anti-pattern': 'Bẫy', 'law': 'Quy luật', 'principle': 'Nguyên tắc', 'strategy': 'Chiến thuật' };
-                            const displayType = typeMap[u.type] || u.type;
-                            
-                            card.innerHTML = `
-                                <div class="knowledge-card-title">${u.title || u.id}</div>
-                                <div class="knowledge-card-meta">[${displayType.toUpperCase()}] &bull; ${u.id}</div>
-                            `;
-                            card.addEventListener('click', async () => {
-                                if (card.querySelector('.knowledge-content')) {
-                                    const contentEl = card.querySelector('.knowledge-content');
-                                    contentEl.style.display = contentEl.style.display === 'none' ? 'block' : 'none';
-                                    return;
-                                }
-                                card.innerHTML += `<div class="knowledge-content" style="margin-top: 15px; font-size: 14.5px; color: rgba(255,255,255,0.8); border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; line-height: 1.6;">Đang tải nội dung...</div>`;
-                                try {
-                                    const detailRes = await fetch('/api/v1/knowledge/units/' + u.id);
-                                    const detailData = await detailRes.json();
-                                    if (detailData.status === 'success' && detailData.unit) {
-                                        let content = "";
-                                        let rawData = detailData.unit.raw_data || detailData.unit;
-                                        if (rawData.summary) content += "**Tóm tắt:**\n" + rawData.summary + "\n\n";
-                                        if (rawData.definition) content += "**Định nghĩa:**\n" + rawData.definition + "\n\n";
-                                        if (rawData.mechanism && rawData.mechanism.length > 0) content += "**Cơ chế hoạt động:**\n" + (Array.isArray(rawData.mechanism) ? "- " + rawData.mechanism.join("\n- ") : rawData.mechanism) + "\n\n";
-                                        if (rawData.conditions && rawData.conditions.length > 0) content += "**Điều kiện áp dụng:**\n" + (Array.isArray(rawData.conditions) ? "- " + rawData.conditions.join("\n- ") : rawData.conditions) + "\n\n";
-                                        if (rawData.exceptions && rawData.exceptions.length > 0) content += "**Ngoại lệ:**\n" + (Array.isArray(rawData.exceptions) ? "- " + rawData.exceptions.join("\n- ") : rawData.exceptions) + "\n\n";
-                                        if (rawData.risks && rawData.risks.length > 0) content += "**Rủi ro:**\n" + (Array.isArray(rawData.risks) ? "- " + rawData.risks.join("\n- ") : rawData.risks) + "\n\n";
-                                        if (rawData.applications && Object.keys(rawData.applications).length > 0) {
-                                            content += "**Ứng dụng:**\n";
-                                            for (const [key, value] of Object.entries(rawData.applications)) {
-                                                if (Array.isArray(value) && value.length > 0) {
-                                                    content += `- **${key}**:\n  - ` + value.join("\n  - ") + "\n";
-                                                } else if (typeof value === 'string') {
-                                                    content += `- **${key}**: ${value}\n`;
-                                                }
-                                            }
-                                            content += "\n";
-                                        }
-                                        if (rawData.relations && Object.keys(rawData.relations).length > 0) {
-                                            let hasRelation = false;
-                                            let relContent = "**Liên kết:**\n";
-                                            if (rawData.relations.depends_on && rawData.relations.depends_on.length > 0) { relContent += "- **Phụ thuộc vào:** " + rawData.relations.depends_on.join(", ") + "\n"; hasRelation = true; }
-                                            if (rawData.relations.supports && rawData.relations.supports.length > 0) { relContent += "- **Hỗ trợ cho:** " + rawData.relations.supports.join(", ") + "\n"; hasRelation = true; }
-                                            if (rawData.relations.conflicts_with && rawData.relations.conflicts_with.length > 0) { relContent += "- **Xung đột với:** " + rawData.relations.conflicts_with.join(", ") + "\n"; hasRelation = true; }
-                                            if (hasRelation) content += relContent + "\n";
-                                        }
-                                        if (rawData.content) content += "\n\n" + rawData.content;
-                                        
-                                        card.querySelector('.knowledge-content').innerHTML = formatChatHTML(content || 'Không có nội dung.');
-                                    } else {
-                                        card.querySelector('.knowledge-content').innerHTML = 'Không thể tải nội dung.';
-                                    }
-                                } catch(e) {
-                                    card.querySelector('.knowledge-content').innerHTML = 'Lỗi kết nối.';
-                                }
-                            });
-                            itemsContainer.appendChild(card);
-                        });
-                        
-                        groupContainer.appendChild(header);
-                        groupContainer.appendChild(itemsContainer);
-                        listEl.appendChild(groupContainer);
-                    });
-                    knowledgeLoaded = true;
-                }
-            } catch (e) {
-                listEl.innerHTML = '<div style="color:red;text-align:center;">Lỗi khi tải kho tri thức.</div>';
-            }
-        }
-        
-        // Interactive cursors over chat elements
-        const clickableSelectors = '#chat-sidebar, .chat-input, .chat-send-btn, .close-chat-btn';
-        document.querySelectorAll(clickableSelectors).forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                const outer = document.querySelector('.cursor-outer');
-                if(outer) {
-                    outer.style.width = '30px';
-                    outer.style.height = '30px';
-                    outer.style.background = 'rgba(255,255,255,0.1)';
-                }
-            });
-            el.addEventListener('mouseleave', () => {
-                const outer = document.querySelector('.cursor-outer');
-                if(outer) {
-                    outer.style.width = '40px';
-                    outer.style.height = '40px';
-                    outer.style.background = 'transparent';
-                }
-            });
-        });
-
-        async function handleSend() {
-            const val = input.value.trim();
-            if (!val) return;
-            
-            // Add user message
-            const userMsg = document.createElement('div');
-            userMsg.className = 'chat-msg msg-user';
-            userMsg.textContent = val;
-            history.appendChild(userMsg);
-            
-            input.value = '';
-            
-            // Loading indicator
-            const loaderId = 'loader-' + Date.now();
-            const loader = document.createElement('div');
-            loader.id = loaderId;
-            loader.className = 'typing-indicator';
-            loader.textContent = 'Nhân Thuật đang phân tích...';
-            history.appendChild(loader);
-            
-            history.scrollTop = history.scrollHeight;
-            
-            try {
-                const res = await fetch('/api/v1/nhan-thuat/analyze', {
-                    method: 'POST',
-                    headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({ scenario_text: val, scenario_type_hint: 'leadership' })
-                });
-                const data = await res.json();
-                
-                const l = document.getElementById(loaderId);
-                if(l) l.remove();
-                
-                const botMsg = document.createElement('div');
-                botMsg.className = 'chat-msg msg-bot';
-                
-                if (data.status === 'success' && data.synthesis_result && data.synthesis_result.synthesis) {
-                    botMsg.innerHTML = formatChatTabs(data.synthesis_result);
-                } else {
-                    botMsg.textContent = "Không thể phân tích dữ liệu lúc này.";
-                }
-                history.appendChild(botMsg);
-                
-            } catch (e) {
-                const l = document.getElementById(loaderId);
-                if(l) l.remove();
-                
-                const errMsg = document.createElement('div');
-                errMsg.className = 'chat-msg msg-bot';
-                errMsg.style.color = '#ef4444';
-                errMsg.textContent = "Lỗi kết nối API.";
-                history.appendChild(errMsg);
-            }
-            history.scrollTop = history.scrollHeight;
-        }
-        
-        sendBtn.addEventListener('click', handleSend);
-        input.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') handleSend();
-        });
-        
-        window.switchTab = function(btn, paneId) {
-            const container = btn.closest('.chat-msg');
-            container.querySelectorAll('.chat-tab-btn').forEach(b => b.classList.remove('active'));
-            container.querySelectorAll('.chat-tab-pane').forEach(p => p.classList.remove('active'));
-            btn.classList.add('active');
-            container.querySelector('#' + paneId).classList.add('active');
-        };
-
-        function formatChatTabs(result) {
-            const id = Math.random().toString(36).substr(2, 9);
-            const textHTML = formatChatHTML(result.synthesis);
-            
-            let citationsHTML = 'Không có tài liệu trích dẫn.';
-            if (result.citations && result.citations.length > 0) {
-                citationsHTML = '<ul>' + result.citations.map(c => '<li><strong>' + c.title + '</strong> (' + c.id + ') - ' + c.domain + '</li>').join('') + '</ul>';
-            }
-
-            return '<div class="chat-tabs-nav">' +
-                   '<button class="chat-tab-btn active" onclick="switchTab(this, \'tab-chien-luoc-' + id + '\')">Chiến lược</button>' +
-                   '<button class="chat-tab-btn" onclick="switchTab(this, \'tab-trich-dan-' + id + '\')">Khám phá tri thức & Bằng chứng</button>' +
-                   '</div>' +
-                   '<div class="chat-tab-pane active" id="tab-chien-luoc-' + id + '">' + textHTML + '</div>' +
-                   '<div class="chat-tab-pane" id="tab-trich-dan-' + id + '">' + citationsHTML + '</div>';
-        }
-
-        function formatChatHTML(text) {
-            let html = text
-                .replace(/^### (.*?)$/gm, '<h4>$1</h4>')
-                .replace(/^## (.*?)$/gm, '<h3>$1</h3>')
-                .replace(/^\*\*([^*]+)\*\*(.*)$/gm, '<strong>$1</strong>$2')
-                .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
-                .replace(/\*([^*]+)\*/g, '<em>$1</em>')
-                .replace(/\n\n/g, '</p><p>');
-            
-            html = html.replace(/(?:^|\n)- (.*?)(?=\n|$)/g, '<li>$1</li>');
-            html = html.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
-            
-            return '<p>' + html + '</p>';
-        }
-        // Search functionality for Knowledge Base
-        document.addEventListener('input', function(e) {
-            if(e.target && e.target.id === 'knowledge-search-input') {
-                const term = e.target.value.toLowerCase();
-                document.querySelectorAll('.knowledge-group').forEach(group => {
-                    let hasVisibleCard = false;
-                    const itemsContainer = group.querySelector('.knowledge-group-items');
-                    const toggleIcon = group.querySelector('.toggle-icon');
-                    
-                    group.querySelectorAll('.knowledge-card').forEach(card => {
-                        const titleEl = card.querySelector('.knowledge-card-title');
-                        const metaEl = card.querySelector('.knowledge-card-meta');
-                        if (titleEl && metaEl) {
-                            const title = titleEl.textContent.toLowerCase();
-                            const meta = metaEl.textContent.toLowerCase();
-                            if(title.includes(term) || meta.includes(term)) {
-                                card.style.display = 'block';
-                                hasVisibleCard = true;
-                            } else {
-                                card.style.display = 'none';
-                            }
-                        }
-                    });
-
-                    if (term !== '') {
-                        if (hasVisibleCard) {
-                            group.style.display = 'block';
-                            if (itemsContainer) itemsContainer.style.display = 'block';
-                            if (toggleIcon) toggleIcon.textContent = '▲';
+                group.querySelectorAll('.knowledge-card').forEach(card => {
+                    const titleEl = card.querySelector('.knowledge-card-title');
+                    const metaEl = card.querySelector('.knowledge-card-meta');
+                    if (titleEl && metaEl) {
+                        const title = titleEl.textContent.toLowerCase();
+                        const meta = metaEl.textContent.toLowerCase();
+                        if(title.includes(term) || meta.includes(term)) {
+                            card.style.display = 'block';
+                            hasVisibleCard = true;
                         } else {
-                            group.style.display = 'none';
+                            card.style.display = 'none';
                         }
-                    } else {
-                        group.style.display = 'block';
-                        if (itemsContainer) itemsContainer.style.display = 'none';
-                        if (toggleIcon) toggleIcon.textContent = '▼';
-                        group.querySelectorAll('.knowledge-card').forEach(c => c.style.display = 'block');
                     }
                 });
-            }
-        });
-    }
+
+                if (term !== '') {
+                    if (hasVisibleCard) {
+                        group.style.display = 'block';
+                        if (itemsContainer) itemsContainer.style.display = 'block';
+                        if (toggleIcon) toggleIcon.textContent = '▲';
+                    } else {
+                        group.style.display = 'none';
+                    }
+                } else {
+                    group.style.display = 'block';
+                    if (itemsContainer) itemsContainer.style.display = 'none';
+                    if (toggleIcon) toggleIcon.textContent = '▼';
+                    group.querySelectorAll('.knowledge-card').forEach(c => c.style.display = 'block');
+                }
+            });
+        }
+    });
+    
+    document.addEventListener("DOMContentLoaded", setupChatSidebar);
     </script>
-
-document.addEventListener("DOMContentLoaded", setupChatSidebar);
-
-</script>
 </body>
 </html>

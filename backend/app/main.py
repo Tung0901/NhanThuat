@@ -418,7 +418,7 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
         # 0. Web App Dashboard API Endpoint: POST /api/v1/nhan-thuat/analyze
         if path == "/api/v1/nhan-thuat/analyze":
             scenario_text = payload.get("scenario_text", "")
-            scenario_type_hint = payload.get("scenario_type", "general")
+            scenario_type_hint = payload.get("scenario_type") or payload.get("scenario_type_hint") or "general"
 
             if not scenario_text:
                 self._send_json_response(400, {

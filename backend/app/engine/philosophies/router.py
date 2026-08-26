@@ -43,6 +43,10 @@ class PhilosophyType(str, Enum):
     LEGALISM = "legalism"
     TAOISM = "taoism"
     XUNZI = "xunzi"
+    SUNZI = "sunzi"
+    STOICISM = "stoicism"
+    BEHAVIORAL = "behavioral"
+    HUMAN_NATURE = "human_nature"
 
 
 class PhilosophyRouter:
@@ -83,6 +87,10 @@ class PhilosophyRouter:
             PhilosophyType.LEGALISM: "legalism_engine.json",
             PhilosophyType.TAOISM: "taoism_engine.json",
             PhilosophyType.XUNZI: "xunzi_engine.json",
+            PhilosophyType.SUNZI: "sunzi_engine.json",
+            PhilosophyType.STOICISM: "stoicism_engine.json",
+            PhilosophyType.BEHAVIORAL: "behavioral_engine.json",
+            PhilosophyType.HUMAN_NATURE: "human_nature_engine.json",
         }
         for phil_type, filename in engine_files.items():
             file_path = self.engine_dir / filename
@@ -243,6 +251,18 @@ class PhilosophyRouter:
         if st == "leadership" or any(w in text for w in ["duc tri", "quan tu", "culture building"]):
             return PhilosophyType.CONFUCIAN, PhilosophyType.XUNZI, None
 
+        if any(w in text for w in ["đời sống", "doi song", "hằng ngày", "hang ngay", "đồng hành", "dong hanh", "cuộc sống", "tâm sự", "giúp gì", "ứng dụng", "bình an"]):
+            return PhilosophyType.BEHAVIORAL, PhilosophyType.STOICISM, PhilosophyType.HUMAN_NATURE
+
+        if any(w in text for w in ["cạnh tranh", "canh tranh", "chiến lược", "chien luoc", "thế trận", "the tran", "binh pháp", "tôn tử", "ton tu", "thủ thế", "lập thế", "định cục", "bất chiến"]):
+            return PhilosophyType.SUNZI, PhilosophyType.LEGALISM, PhilosophyType.BEHAVIORAL
+
+        if any(w in text for w in ["khắc kỷ", "khac ky", "stoic", "tâm trí", "nghịch cảnh", "nghich canh", "áp lực", "ap luc", "bình tĩnh", "vòng tròn kiểm soát", "cơn giận"]):
+            return PhilosophyType.STOICISM, PhilosophyType.TAOISM, PhilosophyType.CONFUCIAN
+
+        if any(w in text for w in ["dụng nhân", "dung nhan", "nhìn người", "nhin nguoi", "tiểu nhân", "tieu nhan", "dụng mộc", "bát quan", "phân quyền", "bảo toàn"]):
+            return PhilosophyType.HUMAN_NATURE, PhilosophyType.XUNZI, PhilosophyType.LEGALISM
+
         # Keyword Scoring Fallback
         scores = {p: 0 for p in PhilosophyType}
         
@@ -256,16 +276,25 @@ class PhilosophyRouter:
             scores[PhilosophyType.TAOISM] += 3
         if any(w in text for w in ["tuan tu", "xunzi", "tinh ac", "khuyen hoc", "dinh phan"]):
             scores[PhilosophyType.XUNZI] += 3
+        if any(w in text for w in ["binh phap", "ton tu", "sunzi", "thu the", "lap the", "dinh cuc"]):
+            scores[PhilosophyType.SUNZI] += 3
+        if any(w in text for w in ["khac ky", "stoic", "kiem soat", "nghich canh"]):
+            scores[PhilosophyType.STOICISM] += 3
+        if any(w in text for w in ["tam ly", "hanh vi", "thao tung", "cialdini", "kahneman", "dark triad"]):
+            scores[PhilosophyType.BEHAVIORAL] += 3
+        if any(w in text for w in ["nhan thuat", "dung nguoi", "nhin nguoi", "bat quan", "human nature"]):
+            scores[PhilosophyType.HUMAN_NATURE] += 3
 
         sorted_lenses = sorted(scores.keys(), key=lambda k: scores[k], reverse=True)
         primary = sorted_lenses[0]
         secondary = sorted_lenses[1] if scores[sorted_lenses[1]] > 0 else None
         tertiary = sorted_lenses[2] if scores[sorted_lenses[2]] > 0 else None
 
-        # Fallback to Rhetoric
+        # Fallback to Sunzi & Behavioral if general question
         if scores[primary] == 0:
-            primary = PhilosophyType.RHETORIC
-            secondary = PhilosophyType.TAOISM
+            primary = PhilosophyType.BEHAVIORAL
+            secondary = PhilosophyType.STOICISM
+            tertiary = PhilosophyType.HUMAN_NATURE
 
         return primary, secondary, tertiary
 

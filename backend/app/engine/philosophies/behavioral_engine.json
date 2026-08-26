@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "philosophy_id": "LENS-BEHAVIORAL",
+    "philosophy_name": "Behavioral Psychology & Power Dynamics Lens",
+    "version": "1.1.0",
+    "source_document": "docs/knowledge/09_TAM_LY_HOC_HANH_VI.md",
+    "supported_domains": [
+      "psychology",
+      "persuasion",
+      "power_dynamics",
+      "negotiation",
+      "bias_detection"
+    ],
+    "supported_personas": [
+      "Behavioral Strategist",
+      "Cognitive Profiler"
+    ],
+    "preferred_reasoning_modes": [
+      "Cognitive",
+      "Behavioral",
+      "Diagnostic"
+    ],
+    "compatible_lenses": [
+      "LENS-RHETORIC",
+      "LENS-SUNZI",
+      "LENS-LEGALISM"
+    ],
+    "incompatible_lenses": [],
+    "confidence_modifier": 1.0,
+    "governance_status": "frozen",
+    "last_reviewed": "2026-08-26"
+  },
+  "engine_name": "Behavioral Psychology Engine",
+  "version": "1.1.0",
+  "description": "Hệ thống 1 & Hệ thống 2, Bộ 6 đòn bẩy thuyết phục Cialdini, Bắt bài thiên kiến và Phòng thủ Tam Giác Đen",
+  "mechanisms": {
+    "system_1_and_2": "Cân bằng giữa phản xạ cảm xúc trực giác và phân tích lý trí.",
+    "persuasion_levers": "Đáp lễ, Nhất quán, Bằng chứng xã hội, Uy quyền, Thiện cảm, Khan hiếm.",
+    "dark_triad_defense": "Phòng thủ trước Ái kỷ (Narcissism), Xảo quyệt (Machiavellianism), Thái nhân cách (Psychopathy)."
+  }
+}

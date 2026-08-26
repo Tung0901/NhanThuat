@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "philosophy_id": "LENS-STOICISM",
+    "philosophy_name": "Stoicism Mindset Lens",
+    "version": "1.1.0",
+    "source_document": "docs/knowledge/07_CHU_NGHIA_KHAC_KY.md",
+    "supported_domains": [
+      "mindset",
+      "leadership",
+      "crisis",
+      "emotional_regulation",
+      "decision_making"
+    ],
+    "supported_personas": [
+      "Executive Mindset Coach",
+      "Crisis Leadership Advisor"
+    ],
+    "preferred_reasoning_modes": [
+      "Reflective",
+      "Stoic",
+      "Objective"
+    ],
+    "compatible_lenses": [
+      "LENS-TAOISM",
+      "LENS-CONFUCIAN",
+      "LENS-SUNZI"
+    ],
+    "incompatible_lenses": [],
+    "confidence_modifier": 1.0,
+    "governance_status": "frozen",
+    "last_reviewed": "2026-08-26"
+  },
+  "engine_name": "Stoicism Leadership Engine",
+  "version": "1.1.0",
+  "description": "Vòng tròn kiểm soát (Dichotomy of Control), Dự phòng nghịch cảnh (Premeditatio Malorum), Biến chướng ngại thành đường đi (Amor Fati)",
+  "core_principles": {
+    "dichotomy_of_control": "Phân định rõ việc trong tầm kiểm soát và ngoài tầm kiểm soát.",
+    "premeditatio_malorum": "Diễn tập trước kịch bản xấu nhất để triệt tiêu nỗi sợ.",
+    "amor_fati": "Yêu lấy định mệnh và biến nghịch cảnh thành bàn đạp tiến lên.",
+    "view_from_above": "Nhìn nhận đại cuộc từ góc nhìn bao quát, triệt tiêu bản ngã cá nhân."
+  }
+}

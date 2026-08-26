@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "philosophy_id": "LENS-SUNZI",
+    "philosophy_name": "Sunzi Art of War Lens",
+    "version": "1.1.0",
+    "source_document": "docs/knowledge/08_BINH_PHAP_TON_TU.md",
+    "supported_domains": [
+      "strategy",
+      "competition",
+      "negotiation",
+      "leadership",
+      "crisis"
+    ],
+    "supported_personas": [
+      "Senior Executive Co-Pilot",
+      "Strategy Agent",
+      "Negotiation Master"
+    ],
+    "preferred_reasoning_modes": [
+      "Strategic",
+      "Asymmetric",
+      "Positional"
+    ],
+    "compatible_lenses": [
+      "LENS-LEGALISM",
+      "LENS-TAOISM",
+      "LENS-BEHAVIORAL"
+    ],
+    "incompatible_lenses": [],
+    "confidence_modifier": 1.0,
+    "governance_status": "frozen",
+    "last_reviewed": "2026-08-26"
+  },
+  "engine_name": "Sunzi Art of War Strategic Engine",
+  "version": "1.1.0",
+  "description": "5 Trụ cột Binh pháp (Đạo-Thiên-Địa-Tướng-Pháp), Nghệ thuật Tạo Thế & Tiết, Trình tự Binh thế 3 giai đoạn (Thủ Thế - Lập Thế - Định Cục)",
+  "five_pillars": {
+    "Dao": "Đồng lòng & Tầm nhìn tập thể",
+    "Thien": "Thời thế, chu kỳ kinh tế và thời điểm vàng",
+    "Dia": "Địa bàn, thị phần và vị thế phòng thủ",
+    "Tuong": "5 phẩm chất chỉ huy (Trí, Tín, Nhân, Dũng, Nghiêm)",
+    "Phap": "Quy chế kỷ luật và chuẩn hóa chuỗi cung ứng"
+  },
+  "three_stage_flow": {
+    "stage_1_thu_the": "Thủ thế: Bảo toàn vị thế, khóa rủi ro và làm cho mình không thể thua.",
+    "stage_2_lap_the": "Lập thế: Gài đòn bẩy bất đối xứng và tạo phương án thay thế tối ưu (Plan B).",
+    "stage_3_dinh_cuc": "Định cục: Chốt hạ chiến thắng trên thế thượng phong nhưng mở lối thoát danh dự."
+  }
+}

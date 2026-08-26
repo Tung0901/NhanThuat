@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "philosophy_id": "LENS-HUMAN_NATURE",
+    "philosophy_name": "Human Nature & People Mastery Lens",
+    "version": "1.1.0",
+    "source_document": "docs/knowledge/06_NHAN_THUAT_UNG_XU.md",
+    "supported_domains": [
+      "human_nature",
+      "leadership",
+      "delegation",
+      "talent_evaluation",
+      "interpersonal"
+    ],
+    "supported_personas": [
+      "Senior Talent Strategist",
+      "Executive Counselor"
+    ],
+    "preferred_reasoning_modes": [
+      "Intuitive",
+      "Empathetic",
+      "Systemic"
+    ],
+    "compatible_lenses": [
+      "LENS-CONFUCIAN",
+      "LENS-XUNZI",
+      "LENS-LEGALISM"
+    ],
+    "incompatible_lenses": [],
+    "confidence_modifier": 1.0,
+    "governance_status": "frozen",
+    "last_reviewed": "2026-08-26"
+  },
+  "engine_name": "Human Nature Mastery Engine",
+  "version": "1.1.0",
+  "description": "Bát quan thấu tâm, Thuật dụng người có tì vết, Phân quyền không mất quyền và Hóa giải bẫy đồng nhất",
+  "mastery_framework": {
+    "bat_quan_thau_tam": "8 Phép thử nhìn thấu trung thực, năng lực và dũng khí của nhân sự.",
+    "dung_nhan_huu_ty": "Lấy sở trường bù sở đoản, dùng người như dụng mộc.",
+    "phan_quyen_tam_chot": "Giữ vững 3 chốt chặn: Quyền Sinh Tử, Quyền Tài Chính và Kênh Thông Tin Trực Tiếp."
+  }
+}

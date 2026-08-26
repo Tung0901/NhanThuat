@@ -1627,8 +1627,10 @@
                 
                 if (data.status === 'success' && data.synthesis_result && data.synthesis_result.synthesis) {
                     botMsg.innerHTML = formatChatTabs(data.synthesis_result);
+                } else if (data.message) {
+                    botMsg.innerHTML = `<div style="color: rgba(255,255,255,0.85);">${data.message}</div>`;
                 } else {
-                    botMsg.textContent = "Không thể phân tích dữ liệu lúc này.";
+                    botMsg.textContent = "Hệ thống đang đồng bộ tri thức, vui lòng gửi lại câu hỏi sau giây lát.";
                 }
                 history.appendChild(botMsg);
                 
@@ -1638,8 +1640,8 @@
                 
                 const errMsg = document.createElement('div');
                 errMsg.className = 'chat-msg msg-bot';
-                errMsg.style.color = '#ef4444';
-                errMsg.textContent = "Lỗi kết nối API.";
+                errMsg.style.color = 'rgba(255,255,255,0.85)';
+                errMsg.innerHTML = `⚠️ <em>Hệ thống đang kết nối dữ liệu máy chủ AI (${e.message || 'Timeout'}). Vui lòng gửi lại câu hỏi sau giây lát nhé.</em>`;
                 history.appendChild(errMsg);
             }
             history.scrollTop = history.scrollHeight;
@@ -1660,34 +1662,36 @@
 
         function formatChatTabs(result) {
             const id = Math.random().toString(36).substr(2, 9);
-            const textHTML = formatChatHTML(result.synthesis);
+            const textHTML = formatChatHTML(result.synthesis || '');
             
-            let citationsHTML = 'Không có tài liệu trích dẫn.';
+            let citationsHTML = '<div style="color: rgba(255,255,255,0.6); padding: 10px 0;">Không có tài liệu trích dẫn trực tiếp.</div>';
             if (result.citations && result.citations.length > 0) {
-                citationsHTML = '<ul>' + result.citations.map(c => '<li><strong>' + c.title + '</strong> (' + c.id + ') - ' + c.domain + '</li>').join('') + '</ul>';
+                citationsHTML = '<ul style="margin: 0; padding-left: 20px; line-height: 1.8;">' + result.citations.map(c => '<li style="margin-bottom: 6px;"><strong>' + (c.title || c.id) + '</strong> (' + c.id + ') <span style="opacity: 0.6;">— ' + (c.domain || '') + '</span></li>').join('') + '</ul>';
             }
 
-            return '<div class="chat-tabs-nav">' +
-                   '<button class="chat-tab-btn active" onclick="switchTab(this, \'tab-chien-luoc-' + id + '\')">Chiến lược</button>' +
-                   '<button class="chat-tab-btn" onclick="switchTab(this, \'tab-trich-dan-' + id + '\')">Khám phá tri thức & Bằng chứng</button>' +
+            return '<div class="chat-tabs-nav" style="display: flex; gap: 10px; margin-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">' +
+                   '<button class="chat-tab-btn active" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 5px 14px; border-radius: 12px; cursor: pointer; font-size: 13px;" onclick="switchTab(this, \'tab-chien-luoc-' + id + '\')">📜 Luận Giải & Chiến Lược</button>' +
+                   '<button class="chat-tab-btn" style="background: transparent; border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); padding: 5px 14px; border-radius: 12px; cursor: pointer; font-size: 13px;" onclick="switchTab(this, \'tab-trich-dan-' + id + '\')">📚 Căn Cứ & Trích Dẫn</button>' +
                    '</div>' +
-                   '<div class="chat-tab-pane active" id="tab-chien-luoc-' + id + '">' + textHTML + '</div>' +
-                   '<div class="chat-tab-pane" id="tab-trich-dan-' + id + '">' + citationsHTML + '</div>';
+                   '<div class="chat-tab-pane active" id="tab-chien-luoc-' + id + '" style="line-height: 1.7; font-size: 14.5px;">' + textHTML + '</div>' +
+                   '<div class="chat-tab-pane" id="tab-trich-dan-' + id + '" style="display: none; line-height: 1.7; font-size: 14px;">' + citationsHTML + '</div>';
         }
 
         function formatChatHTML(text) {
-            let html = text
-                .replace(/^### (.*?)$/gm, '<h4>$1</h4>')
-                .replace(/^## (.*?)$/gm, '<h3>$1</h3>')
-                .replace(/^\*\*([^*]+)\*\*(.*)$/gm, '<strong>$1</strong>$2')
-                .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
-                .replace(/\*([^*]+)\*/g, '<em>$1</em>')
-                .replace(/\n\n/g, '</p><p>');
+            if (!text) return '';
+            let html = String(text)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/^### (.*?)$/gm, '<h4 style="color: #f59e0b; margin: 14px 0 6px 0; font-size: 16px;">$1</h4>')
+                .replace(/^## (.*?)$/gm, '<h3 style="color: #f8fafc; margin: 16px 0 8px 0; font-size: 17px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 4px;">$1</h3>')
+                .replace(/^\*\*([^*]+)\*\*(.*)$/gm, '<strong style="color: #f8fafc;">$1</strong>$2')
+                .replace(/\*\*([^*]+)\*\*/g, '<strong style="color: #f8fafc;">$1</strong>')
+                .replace(/\*([^*]+)\*/g, '<em style="color: #cbd5e1;">$1</em>')
+                .replace(/\n\n/g, '</p><p style="margin-bottom: 12px;">')
+                .replace(/\n/g, '<br>');
             
-            html = html.replace(/(?:^|\n)- (.*?)(?=\n|$)/g, '<li>$1</li>');
-            html = html.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
-            
-            return '<p>' + html + '</p>';
+            return '<p style="margin-bottom: 12px;">' + html + '</p>';
         }
     }
     

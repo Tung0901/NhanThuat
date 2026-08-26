@@ -27,71 +27,17 @@ DEFAULT_MODEL = "gemini-3.6-flash"
 def get_provider_configs() -> list[dict[str, str]]:
     configs = []
     
-    gemini_keys = []
+    key = os.environ.get("GOOGLE_API_KEY", "").strip()
+    if not key:
+        return configs
+        
+    configs.append({
+        "api_key": key,
+        "base_url": "https://generativelanguage.googleapis.com/v1beta/openai",
+        "model": "gemini-3.6-flash",
+        "provider_name": "google-gemini",
+    })
     
-    primary = (os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY") or "").strip()
-    if primary:
-        gemini_keys.append(primary)
-        
-    for i in range(1, 6):
-        key = (os.environ.get(f"GEMINI_API_KEY_{i}") or 
-               os.environ.get(f"GOOGLE_API_KEY_{i}") or 
-               os.environ.get(f"GEMINI_API_KEY{i}") or 
-               os.environ.get(f"GOOGLE_API_KEY{i}") or "").strip()
-        if key and key not in gemini_keys:
-            gemini_keys.append(key)
-            
-    base_url = os.environ.get("GEMINI_BASE_URL", "").strip().rstrip("/") or DEFAULT_BASE_URL
-    model = os.environ.get("GEMINI_MODEL", "").strip() or DEFAULT_MODEL
-    
-    # Auto-fix deprecated or unsupported models for the OpenAI compatibility endpoint
-    if "2.5-flash" in model.lower() or "gemini-pro" in model.lower() or "1.5" in model.lower():
-        model = "gemini-3.6-flash"
-    
-    for i, key in enumerate(gemini_keys):
-        configs.append({
-            "api_key": key,
-            "base_url": base_url,
-            "model": model,
-            "provider_name": f"google-gemini-{i+1}" if len(gemini_keys) > 1 else "google-gemini",
-        })
-        
-    groq_key = os.environ.get("GROQ_API_KEY", "").strip()
-    if groq_key:
-        groq_model = os.environ.get("GROQ_MODEL", "").strip() or "llama3-8b-8192"
-        if "3.1-8b-instant" in groq_model.lower():
-            groq_model = "llama3-8b-8192"
-            
-        configs.append({
-            "api_key": groq_key,
-            "base_url": "https://api.groq.com/openai/v1",
-            "model": groq_model,
-            "provider_name": "groq",
-        })
-        
-    deepseek_key = os.environ.get("DEEPSEEK_API_KEY", "").strip()
-    if deepseek_key:
-        configs.append({
-            "api_key": deepseek_key,
-            "base_url": "https://api.deepseek.com/v1",
-            "model": os.environ.get("DEEPSEEK_MODEL", "").strip() or "deepseek-chat",
-            "provider_name": "deepseek",
-        })
-
-    openai_key = os.environ.get("OPENAI_API_KEY", "").strip()
-    if openai_key:
-        openai_model = os.environ.get("OPENAI_MODEL", "").strip() or os.environ.get("NHAN_THUAT_LLM_MODEL", "").strip() or DEFAULT_MODEL
-        # Auto-fix deprecated or unsupported models
-        if "2.5-flash" in openai_model.lower() or "gemini-pro" in openai_model.lower() or "1.5" in openai_model.lower():
-            openai_model = "gemini-3.6-flash"
-            
-        configs.append({
-            "api_key": openai_key,
-            "base_url": os.environ.get("OPENAI_BASE_URL", "").strip().rstrip("/") or DEFAULT_BASE_URL,
-            "model": openai_model,
-            "provider_name": "openai-compatible",
-        })
-        
     return configs
 
 

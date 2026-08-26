@@ -97,7 +97,7 @@ def get_provider_configs() -> list[dict[str, str]]:
 class KnowledgeSynthesizer:
     """Produces a synthesis for a query and its retrieved knowledge units."""
 
-    def __init__(self, prompt_builder: PromptBuilder | None = None, timeout: int = 30) -> None:
+    def __init__(self, prompt_builder: PromptBuilder | None = None, timeout: int = 15) -> None:
         self.prompt_builder = prompt_builder or PromptBuilder()
         self.timeout = timeout
 
@@ -165,8 +165,8 @@ class KnowledgeSynthesizer:
         )
 
         synthesis_text = self._deterministic_synthesis(query, units_list)
-        synthesis_text += f"\n\n**[SYSTEM DIAGNOSTICS - DEBUG]**\n{warning_msg}"
-
+        # Removed appending the raw warning_msg to synthesis_text so it doesn't leak to the end-user UI
+        
         return {
             "mode": "deterministic",
             "synthesis": synthesis_text,

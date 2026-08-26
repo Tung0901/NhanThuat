@@ -1509,11 +1509,11 @@
                                         let content = "";
                                         let rawData = detailData.unit.raw_data || detailData.unit;
                                         
-                                        // 1. Show AI-generated content FIRST
+                                        // 1. Show analysis content FIRST
                                         if (rawData.content) {
-                                            content += "### 🤖 AI Phân Tích Chuyên Sâu\n" + rawData.content + "\n\n";
+                                            content += rawData.content + "\n\n";
                                         } else {
-                                            content += "*(AI đang quá tải, không thể tự động phân tích sâu lúc này)*\n\n";
+                                            content += "*(Đang khởi tạo luận giải chuyên sâu, vui lòng thử lại sau giây lát)*\n\n";
                                         }
 
                                         // 2. Wrap raw YAML data in a details block

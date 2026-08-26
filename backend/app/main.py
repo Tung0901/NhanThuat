@@ -243,6 +243,34 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
         # NhanThuat Public Contract V1 Endpoints
         if path.startswith("/api/v1/knowledge/units/"):
             unit_id = path.split("/api/v1/knowledge/units/")[1]
+
+            # Check if this is a Book Unit
+            if unit_id.startswith("BOOK-"):
+                book_stem = unit_id.replace("BOOK-", "")
+                book_file = DOCS_KNOWLEDGE_DIR / f"{book_stem}.md"
+                if book_file.exists():
+                    text = book_file.read_text(encoding="utf-8")
+                    title = text.splitlines()[0].replace("#", "").strip() if text.startswith("#") else book_stem
+                    summary = text.splitlines()[2] if len(text.splitlines()) > 2 else ""
+                    self._send_json_response(200, {
+                        "status": "success",
+                        "unit": {
+                            "id": unit_id,
+                            "title": title,
+                            "domain": "bo-sach-tri-thuc",
+                            "type": "cẩm_nang_học_thuật",
+                            "summary": summary,
+                            "content": text,
+                            "raw_data": {
+                                "id": unit_id,
+                                "title": title,
+                                "summary": summary,
+                                "content": text
+                            }
+                        }
+                    })
+                    return
+
             unit_res = nhan_thuat_public_v1.get_unit(unit_id)
             if unit_res:
                 import dataclasses
@@ -287,10 +315,26 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
 
         if path == "/api/v1/knowledge/units":
             units = list(knowledge_engine.units_by_id.values())
+            res_units = [{"id": u.unit_id, "title": u.title, "domain": u.domain, "type": u.unit_type, "summary": u.raw_data.get("summary", "")} for u in units]
+
+            # Ingest all 16 books as top-tier knowledge units
+            if DOCS_KNOWLEDGE_DIR.exists():
+                for p in sorted(DOCS_KNOWLEDGE_DIR.glob("*.md")):
+                    text = p.read_text(encoding="utf-8", errors="ignore")
+                    title = text.splitlines()[0].replace("#", "").strip() if text.startswith("#") else p.stem
+                    summary = text.splitlines()[2] if len(text.splitlines()) > 2 else "Cẩm nang học thuật & chiến lược chuyên sâu."
+                    res_units.append({
+                        "id": f"BOOK-{p.stem}",
+                        "title": f"📚 {title}",
+                        "domain": "bo-sach-tri-thuc",
+                        "type": "cẩm_nang_học_thuật",
+                        "summary": summary
+                    })
+
             self._send_json_response(200, {
                 "status": "success",
-                "count": len(units),
-                "units": [{"id": u.unit_id, "title": u.title, "domain": u.domain, "type": u.unit_type, "summary": u.raw_data.get("summary", "")} for u in units],
+                "count": len(res_units),
+                "units": res_units,
             })
             return
 

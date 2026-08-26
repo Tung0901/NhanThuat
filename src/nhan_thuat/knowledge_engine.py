@@ -94,7 +94,7 @@ class KnowledgeEngine:
         self.custom_docs.clear()
 
         custom_dirs = [
-            self.repo_root / "docs" / "knowledge" / "custom_docs",
+            self.repo_root / "docs" / "knowledge",
             self.repo_root / "docs" / "departments" / "templates",
         ]
 

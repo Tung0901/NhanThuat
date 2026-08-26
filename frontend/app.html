@@ -1557,27 +1557,61 @@
         };
 
         const DIGITAL_BOOKS = [
-            { file: "08_BINH_PHAP_TON_TU.md", title: "Binh Pháp Tôn Tử", icon: "⚔️", desc: "Chiến lược cạnh tranh, tạo lập thế trận bất đối xứng & nghệ thuật định cục." },
-            { file: "07_CHU_NGHIA_KHAC_KY.md", title: "Chủ Nghĩa Khắc Kỷ", icon: "🏛️", desc: "Làm chủ tâm trí, bản lĩnh trong nghịch cảnh & quản trị cảm xúc của người đứng đầu." },
-            { file: "09_TAM_LY_HOC_HANH_VI.md", title: "Tâm Lý Học Hành Vi", icon: "🧠", desc: "Bắt bài động cơ ngầm, bộ 6 đòn bẩy thuyết phục & phòng thủ Tam Giác Đen thao túng." },
-            { file: "06_NHAN_THUAT_UNG_XU.md", title: "Nhân Thuật & Dụng Nhân", icon: "👥", desc: "Bát quan thấu tâm, thuật dùng người có tì vết & phân quyền không mất quyền." },
-            { file: "01_THUAT_HUNG_BIEN.md", title: "Thuật Hùng Biện", icon: "📜", desc: "Bẻ gãy luận điểm, đảo ngược góc nhìn & nghệ thuật xử lý từ chối đỉnh cao." },
-            { file: "02_TU_THU_KNOWLEDGE_PACK.md", title: "Nho Gia & Đạo Đức Lãnh Đạo", icon: "👑", desc: "Đức trị, nhân chính, cấu trúc Tam Cương Bát Mục & quy tắc Hòa nhi bất đồng." },
-            { file: "03_HAN_PHI_TU_KNOWLEDGE_PACK.md", title: "Pháp Gia & Quản Trị Hệ Thống", icon: "⚖️", desc: "Bộ ba Pháp-Thế-Thuật, Hình danh tương phù, Nhị bỉnh & bộ lọc Bát gian." },
-            { file: "04_TRANG_TU_KNOWLEDGE_PACK.md", title: "Đạo Gia & Ứng Biến Linh Hoạt", icon: "☯️", desc: "Tâm trai, tọa vọng, tư duy bứt phá Tiêu Dao Du & thuật Dụng vô dụng." },
-            { file: "05_TUAN_TU_KNOWLEDGE_PACK.md", title: "Tuân Tử & Huấn Luyện Nhân Sự", icon: "📖", desc: "Thuyết tính ác, uốn nắn hành vi, Khuyên học & quy chuẩn Dùng lễ định phần." },
-            { file: "10_THUC_CHIEN_NHAN_SINH.md", title: "Kho Thực Chiến Nhân Sinh", icon: "⭐", desc: "Hồ sơ lưu trữ các ca thực chiến, phán quyết chiến lược và cẩm nang bài học." }
+            { file: "08_BINH_PHAP_TON_TU.md", title: "Binh Pháp Tôn Tử", author: "Tôn Vũ • Binh Gia", cat: "strategy", icon: "⚔️", badge: "THẾ TRẬN", desc: "Nghệ thuật kiến tạo thế trận bất đối xứng, biến hóa theo thời cuộc & bất chiến tự nhiên thành.", tags: ["Thủ Thế", "Lập Thế", "Định Cục", "Binh Bất Yếm Trá"] },
+            { file: "07_CHU_NGHIA_KHAC_KY.md", title: "Chủ Nghĩa Khắc Kỷ", author: "Marcus Aurelius & Seneca • Stoicism", cat: "mindset", icon: "🏛️", badge: "BẢN LĨNH", desc: "Làm chủ tâm trí, bản lĩnh trong nghịch cảnh, quản trị cơn giận & nghệ thuật giữ uy quyền trầm tĩnh.", tags: ["Vòng Tròn Kiểm Soát", "Amor Fati", "Seneca on Anger"] },
+            { file: "09_TAM_LY_HOC_HANH_VI.md", title: "Tâm Lý Học Hành Vi & Quyền Lực", author: "Daniel Kahneman & Robert Cialdini", cat: "psychology", icon: "🧠", badge: "THUYẾT PHỤC", desc: "Bắt bài động cơ ngầm, bộ 6 đòn bẩy thuyết phục, giải mã thiên kiến & phòng thủ Tam Giác Đen độc hại.", tags: ["Hệ Thống 1 & 2", "6 Đòn Bẩy", "Dark Triad Defense"] },
+            { file: "06_NHAN_THUAT_UNG_XU.md", title: "Nhân Thuật & Dụng Nhân", author: "Quỷ Cốc Tử & Trí Tuệ Cổ Nhân", cat: "leadership", icon: "👥", badge: "DỤNG NHÂN", desc: "Bát quan thấu tâm, thuật dùng người có tì vết, phân quyền không mất quyền & hóa giải bẫy cảm tình.", tags: ["Bát Quan Thấu Tâm", "Dụng Nhân Hữu Tỳ", "3 Chốt Chặn"] },
+            { file: "01_THUAT_HUNG_BIEN.md", title: "Thuật Hùng Biện & Đối Thoại", author: "Aristotle & Tung Hoành Gia", cat: "strategy", icon: "📜", badge: "ĐỐI THOẠI", desc: "Bẻ gãy luận điểm, đảo ngược góc nhìn, nghệ thuật xử lý từ chối đỉnh cao & thuyết phục đối tác.", tags: ["Refutation Matrix", "PAS Model", "Xử Lý Từ Chối"] },
+            { file: "02_TU_THU_KNOWLEDGE_PACK.md", title: "Nho Gia & Đạo Đức Lãnh Đạo", author: "Khổng Tử & Mạnh Tử • Tứ Thư", cat: "leadership", icon: "👑", badge: "ĐỨC TRỊ", desc: "Nghệ thuật lãnh đạo bằng nhân chính, Tam Cương Bát Mục, phân biệt Quân tử vs Tiểu nhân & Hòa nhi bất đồng.", tags: ["Đức Trị", "Quân Tử vs Tiểu Nhân", "Hòa Nhi Bất Đồng"] },
+            { file: "03_HAN_PHI_TU_KNOWLEDGE_PACK.md", title: "Pháp Gia & Quản Trị Hệ Thống", author: "Hàn Phi Tử • Pháp Trị", cat: "leadership", icon: "⚖️", badge: "KỶ CƯƠNG", desc: "Bộ ba Pháp - Thế - Thuật, quy trình Hình danh tham đồng, Nhị bỉnh thưởng phạt & bộ lọc chống Bát gian.", tags: ["Pháp-Thế-Thuật", "Hình Danh", "Phòng Chống Bát Gian"] },
+            { file: "04_TRANG_TU_KNOWLEDGE_PACK.md", title: "Đạo Gia & Ứng Biến Linh Hoạt", author: "Lão Tử & Trang Tử • Đạo Gia", cat: "mindset", icon: "☯️", badge: "LINH HOẠT", desc: "Tâm trai, tọa vọng, tư duy bứt phá Tiêu Dao Du, lấy tĩnh chế động & thuật Dụng vô dụng trong khủng hoảng.", tags: ["Tâm Trai", "Tiêu Dao Du", "Dụng Vô Dụng"] },
+            { file: "05_TUAN_TU_KNOWLEDGE_PACK.md", title: "Tuân Tử & Huấn Luyện Nhân Sự", author: "Tuân Tử • Nho - Pháp Dung Hợp", cat: "leadership", icon: "📖", badge: "UỐN NẮN", desc: "Thuyết tính ác và sự uốn nắn (Vĩ), Khuyên học, mentorship liên tục & quy chuẩn Dùng lễ định phần.", tags: ["Khuyên Học", "Thuyết Tính Ác", "Dùng Lễ Định Phần"] },
+            { file: "10_THUC_CHIEN_NHAN_SINH.md", title: "Kho Thực Chiến Nhân Sinh", author: "NhanThuat Executive Archives", cat: "practice", icon: "⭐", badge: "HỒ SƠ CA", desc: "Hồ sơ lưu trữ các ca thực chiến tiêu biểu, phán quyết chiến lược và cẩm nang bài học điều hành thực tế.", tags: ["Case Studies", "Đàm Phán", "Giải Quyết Khủng Hoảng"] }
         ];
 
-        function loadBookshelf() {
+        let selectedBookCat = 'all';
+
+        window.filterBookCategory = function(cat, btn) {
+            selectedBookCat = cat;
+            document.querySelectorAll('.book-cat-pill').forEach(p => p.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+            renderBooksList();
+        };
+
+        function renderBooksList() {
             const container = document.getElementById('books-container');
+            if (!container) return;
             container.innerHTML = '';
-            DIGITAL_BOOKS.forEach(b => {
+
+            const filtered = selectedBookCat === 'all' 
+                ? DIGITAL_BOOKS 
+                : DIGITAL_BOOKS.filter(b => b.cat === selectedBookCat);
+
+            // Filter bar
+            const filterBar = document.createElement('div');
+            filterBar.style.cssText = 'display: flex; gap: 8px; overflow-x: auto; padding-bottom: 12px; margin-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.06); scrollbar-width: none;';
+            filterBar.innerHTML = `
+                <button class="book-cat-pill ${selectedBookCat === 'all' ? 'active' : ''}" style="padding: 5px 12px; border-radius: 16px; font-size: 11.5px; cursor: pointer; white-space: nowrap; background: ${selectedBookCat === 'all' ? '#f59e0b' : 'rgba(255,255,255,0.05)'}; color: ${selectedBookCat === 'all' ? '#000' : 'rgba(255,255,255,0.7)'}; border: 1px solid ${selectedBookCat === 'all' ? '#f59e0b' : 'rgba(255,255,255,0.1)'}; font-weight: 600;" onclick="filterBookCategory('all', this)">Tất Cả (10)</button>
+                <button class="book-cat-pill ${selectedBookCat === 'strategy' ? 'active' : ''}" style="padding: 5px 12px; border-radius: 16px; font-size: 11.5px; cursor: pointer; white-space: nowrap; background: ${selectedBookCat === 'strategy' ? '#f59e0b' : 'rgba(255,255,255,0.05)'}; color: ${selectedBookCat === 'strategy' ? '#000' : 'rgba(255,255,255,0.7)'}; border: 1px solid ${selectedBookCat === 'strategy' ? '#f59e0b' : 'rgba(255,255,255,0.1)'}; font-weight: 600;" onclick="filterBookCategory('strategy', this)">⚔️ Chiến Lược</button>
+                <button class="book-cat-pill ${selectedBookCat === 'mindset' ? 'active' : ''}" style="padding: 5px 12px; border-radius: 16px; font-size: 11.5px; cursor: pointer; white-space: nowrap; background: ${selectedBookCat === 'mindset' ? '#f59e0b' : 'rgba(255,255,255,0.05)'}; color: ${selectedBookCat === 'mindset' ? '#000' : 'rgba(255,255,255,0.7)'}; border: 1px solid ${selectedBookCat === 'mindset' ? '#f59e0b' : 'rgba(255,255,255,0.1)'}; font-weight: 600;" onclick="filterBookCategory('mindset', this)">🏛️ Bản Lĩnh</button>
+                <button class="book-cat-pill ${selectedBookCat === 'psychology' ? 'active' : ''}" style="padding: 5px 12px; border-radius: 16px; font-size: 11.5px; cursor: pointer; white-space: nowrap; background: ${selectedBookCat === 'psychology' ? '#f59e0b' : 'rgba(255,255,255,0.05)'}; color: ${selectedBookCat === 'psychology' ? '#000' : 'rgba(255,255,255,0.7)'}; border: 1px solid ${selectedBookCat === 'psychology' ? '#f59e0b' : 'rgba(255,255,255,0.1)'}; font-weight: 600;" onclick="filterBookCategory('psychology', this)">🧠 Tâm Lý</button>
+                <button class="book-cat-pill ${selectedBookCat === 'leadership' ? 'active' : ''}" style="padding: 5px 12px; border-radius: 16px; font-size: 11.5px; cursor: pointer; white-space: nowrap; background: ${selectedBookCat === 'leadership' ? '#f59e0b' : 'rgba(255,255,255,0.05)'}; color: ${selectedBookCat === 'leadership' ? '#000' : 'rgba(255,255,255,0.7)'}; border: 1px solid ${selectedBookCat === 'leadership' ? '#f59e0b' : 'rgba(255,255,255,0.1)'}; font-weight: 600;" onclick="filterBookCategory('leadership', this)">👑 Quản Trị</button>
+            `;
+            container.appendChild(filterBar);
+
+            filtered.forEach(b => {
                 const card = document.createElement('div');
                 card.className = 'book-card';
                 card.innerHTML = `
-                    <div class="book-title">${b.icon} ${b.title}</div>
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px;">
+                        <div class="book-title" style="margin: 0;">${b.icon} ${b.title}</div>
+                        <span style="font-size: 10px; background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); padding: 2px 8px; border-radius: 10px; font-weight: 700; letter-spacing: 0.5px;">${b.badge}</span>
+                    </div>
+                    <div style="font-size: 11.5px; color: #cbd5e1; opacity: 0.7; margin-bottom: 8px;">${b.author}</div>
                     <div class="book-desc">${b.desc}</div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px;">
+                        ${b.tags.map(t => `<span style="font-size: 11px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); padding: 2px 7px; border-radius: 4px;">#${t}</span>`).join('')}
+                    </div>
                     <div class="book-actions">
                         <button class="book-btn book-btn-read" onclick="readBookInline('${b.file}', '${b.title}')">📖 Đọc Trực Tiếp</button>
                         <a class="book-btn book-btn-pdf" href="/api/v1/knowledge/books/${b.file}/export-pdf" target="_blank">📥 Tải Bản In / PDF</a>
@@ -1588,6 +1622,10 @@
             booksLoaded = true;
         }
 
+        window.loadBookshelf = function() {
+            renderBooksList();
+        };
+
         window.readBookInline = async function(file, title) {
             const container = document.getElementById('books-container');
             container.innerHTML = `<div style="text-align: center; color: rgba(255,255,255,0.6); padding: 40px 0;">Đang mở tác phẩm ${title}...</div>`;
@@ -1596,19 +1634,24 @@
                 const data = await res.json();
                 if (data.status === 'success' && data.content) {
                     container.innerHTML = `
-                        <div style="margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center;">
-                            <button onclick="loadBookshelf()" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 6px 14px; border-radius: 8px; cursor: pointer; font-size: 12px; font-weight: 600;">← Quay Lại Tủ Sách</button>
-                            <a class="book-btn book-btn-pdf" href="/api/v1/knowledge/books/${file}/export-pdf" target="_blank">📥 Tải Bản In / PDF</a>
+                        <div style="margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; background: #000; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1); z-index: 10;">
+                            <button id="btn-back-bookshelf" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">← Quay Lại Tủ Sách</button>
+                            <a class="book-btn book-btn-pdf" href="/api/v1/knowledge/books/${file}/export-pdf" target="_blank" style="padding: 8px 16px; font-size: 13px;">📥 Tải Bản In / PDF</a>
                         </div>
-                        <div style="background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 24px; line-height: 1.8; font-size: 14.5px; color: rgba(255,255,255,0.9);">
+                        <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 26px; line-height: 1.85; font-size: 15px; color: rgba(255,255,255,0.92); font-family: 'Times New Roman', Times, serif;">
                             ${formatChatHTML(data.content)}
                         </div>
                     `;
+                    document.getElementById('btn-back-bookshelf').addEventListener('click', () => {
+                        window.loadBookshelf();
+                    });
                 } else {
-                    container.innerHTML = '<div style="color: #ef4444; padding: 20px;">Không thể tải nội dung sách lúc này.</div><button onclick="loadBookshelf()">Quay lại</button>';
+                    container.innerHTML = '<div style="color: #ef4444; padding: 20px;">Không thể tải nội dung sách lúc này.</div><button id="btn-back-err" style="padding: 6px 12px; background: #333; color: #fff; border-radius: 6px; cursor: pointer;">Quay lại</button>';
+                    document.getElementById('btn-back-err').addEventListener('click', () => window.loadBookshelf());
                 }
             } catch(e) {
-                container.innerHTML = '<div style="color: #ef4444; padding: 20px;">Lỗi tải sách.</div><button onclick="loadBookshelf()">Quay lại</button>';
+                container.innerHTML = '<div style="color: #ef4444; padding: 20px;">Lỗi tải sách: ' + e.message + '</div><button id="btn-back-err2" style="padding: 6px 12px; background: #333; color: #fff; border-radius: 6px; cursor: pointer;">Quay lại</button>';
+                document.getElementById('btn-back-err2').addEventListener('click', () => window.loadBookshelf());
             }
         };
 
@@ -1623,8 +1666,8 @@
                 if (tab.getAttribute('data-target') === 'sidebar-view-knowledge' && !knowledgeLoaded) {
                     loadKnowledgeBase();
                 }
-                if (tab.getAttribute('data-target') === 'sidebar-view-books' && !booksLoaded) {
-                    loadBookshelf();
+                if (tab.getAttribute('data-target') === 'sidebar-view-books') {
+                    window.loadBookshelf();
                 }
             });
         });

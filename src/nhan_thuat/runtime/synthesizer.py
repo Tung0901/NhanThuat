@@ -44,6 +44,10 @@ def get_provider_configs() -> list[dict[str, str]]:
     base_url = os.environ.get("GEMINI_BASE_URL", "").strip().rstrip("/") or DEFAULT_BASE_URL
     model = os.environ.get("GEMINI_MODEL", "").strip() or DEFAULT_MODEL
     
+    # Auto-fix deprecated models
+    if "2.5-flash" in model.lower() or "gemini-pro" in model.lower():
+        model = "gemini-3.6-flash"
+    
     for i, key in enumerate(gemini_keys):
         configs.append({
             "api_key": key,
@@ -54,10 +58,14 @@ def get_provider_configs() -> list[dict[str, str]]:
         
     groq_key = os.environ.get("GROQ_API_KEY", "").strip()
     if groq_key:
+        groq_model = os.environ.get("GROQ_MODEL", "").strip() or "llama3-8b-8192"
+        if "3.1-8b-instant" in groq_model.lower():
+            groq_model = "llama3-8b-8192"
+            
         configs.append({
             "api_key": groq_key,
             "base_url": "https://api.groq.com/openai/v1",
-            "model": os.environ.get("GROQ_MODEL", "").strip() or "llama-3.1-8b-instant",
+            "model": groq_model,
             "provider_name": "groq",
         })
         
@@ -72,10 +80,14 @@ def get_provider_configs() -> list[dict[str, str]]:
 
     openai_key = os.environ.get("OPENAI_API_KEY", "").strip()
     if openai_key:
+        openai_model = os.environ.get("OPENAI_MODEL", "").strip() or os.environ.get("NHAN_THUAT_LLM_MODEL", "").strip() or DEFAULT_MODEL
+        if "2.5-flash" in openai_model.lower():
+            openai_model = "gemini-3.6-flash"
+            
         configs.append({
             "api_key": openai_key,
             "base_url": os.environ.get("OPENAI_BASE_URL", "").strip().rstrip("/") or DEFAULT_BASE_URL,
-            "model": os.environ.get("OPENAI_MODEL", "").strip() or os.environ.get("NHAN_THUAT_LLM_MODEL", "").strip() or DEFAULT_MODEL,
+            "model": openai_model,
             "provider_name": "openai-compatible",
         })
         

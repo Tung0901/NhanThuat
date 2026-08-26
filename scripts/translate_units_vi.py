@@ -56,6 +56,7 @@ def _api_key() -> str:
     return (
         os.environ.get("GEMINI_API_KEY")
         or os.environ.get("GOOGLE_API_KEY")
+        or os.environ.get("DEEPSEEK_API_KEY")
         or os.environ.get("OPENAI_API_KEY")
         or ""
     ).strip()
@@ -233,7 +234,7 @@ def main() -> int:
 
     _load_env()
     if not _api_key():
-        print("ERROR: missing GEMINI_API_KEY or GOOGLE_API_KEY (in .env or environment)")
+        print("ERROR: missing DEEPSEEK_API_KEY, GEMINI_API_KEY or GOOGLE_API_KEY (in .env or environment)")
         return 1
 
     files = find_unit_files()

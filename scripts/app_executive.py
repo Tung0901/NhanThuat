@@ -8,6 +8,7 @@ from streamlit_option_menu import option_menu
 
 # --- 1. CONFIG & ENV ---
 load_dotenv()
+DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY") or os.getenv("OPENAI_API_KEY")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
 if GEMINI_API_KEY:
     genai.configure(api_key=GEMINI_API_KEY)
@@ -157,8 +158,8 @@ st.markdown("""
 
 # --- 7. MAIN CONTENT ---
 if selected == "THAM MƯU TÌNH HUỐNG":
-    if not GEMINI_API_KEY:
-        st.error("⚠️ Chưa cấu hình biến môi trường GEMINI_API_KEY hoặc GOOGLE_API_KEY trong file .env")
+    if not GEMINI_API_KEY and not DEEPSEEK_API_KEY:
+        st.error("⚠️ Chưa cấu hình biến môi trường DEEPSEEK_API_KEY hoặc GEMINI_API_KEY trong file .env")
     else:
         for msg in st.session_state.messages:
             with st.chat_message(msg["role"]):
@@ -215,21 +216,45 @@ if selected == "THAM MƯU TÌNH HUỐNG":
                     [Phương án rút lui an toàn, bảo toàn đại cuộc nếu mọi thương lượng đổ vỡ].
                     </details>
                     """
-                    candidate_models = ['gemini-3.6-flash', 'gemini-3.5-flash', 'gemini-3-flash']
                     success = False
                     last_err = ""
-                    for model_name in candidate_models:
+                    
+                    if DEEPSEEK_API_KEY:
+                        import requests
                         try:
-                            model = genai.GenerativeModel(model_name)
-                            res = model.generate_content(sys_prompt)
-                            if res and res.text:
-                                st.markdown(res.text, unsafe_allow_html=True)
-                                st.session_state.messages.append({"role": "assistant", "content": res.text})
+                            resp = requests.post(
+                                "https://api.deepseek.com/chat/completions",
+                                headers={"Authorization": f"Bearer {DEEPSEEK_API_KEY}"},
+                                json={
+                                    "model": "deepseek-chat",
+                                    "messages": [{"role": "user", "content": sys_prompt}],
+                                    "temperature": 0.4
+                                },
+                                timeout=20
+                            )
+                            resp.raise_for_status()
+                            text = resp.json()["choices"][0]["message"]["content"]
+                            if text:
+                                st.markdown(text, unsafe_allow_html=True)
+                                st.session_state.messages.append({"role": "assistant", "content": text})
                                 success = True
-                                break
-                        except Exception as e:  # noqa: BLE001 - try next candidate model
-                            last_err = str(e)
-                            continue
+                        except Exception as e:
+                            last_err = f"Deepseek Error: {str(e)}"
+                            
+                    if not success and GEMINI_API_KEY:
+                        candidate_models = ['gemini-3.6-flash', 'gemini-3.5-flash', 'gemini-3-flash']
+                        for model_name in candidate_models:
+                            try:
+                                model = genai.GenerativeModel(model_name)
+                                res = model.generate_content(sys_prompt)
+                                if res and res.text:
+                                    st.markdown(res.text, unsafe_allow_html=True)
+                                    st.session_state.messages.append({"role": "assistant", "content": res.text})
+                                    success = True
+                                    break
+                            except Exception as e:  # noqa: BLE001 - try next candidate model
+                                last_err = f"Gemini Error: {str(e)}"
+                                continue
                     if not success:
                         st.error(f"Lỗi hệ thống: {last_err}")
 

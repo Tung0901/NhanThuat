@@ -27,16 +27,27 @@ DEFAULT_MODEL = "gemini-3.6-flash"
 def get_provider_configs() -> list[dict[str, str]]:
     configs = []
     
-    key = os.environ.get("GOOGLE_API_KEY", "").strip() or os.environ.get("GEMINI_API_KEY", "").strip()
-    if not key:
-        return configs
-        
-    configs.append({
-        "api_key": key,
-        "base_url": "https://generativelanguage.googleapis.com/v1beta/openai",
-        "model": "gemini-3.6-flash",
-        "provider_name": "google-gemini",
-    })
+    # 1. Deepseek / OpenAI
+    openai_key = os.environ.get("OPENAI_API_KEY", "").strip() or os.environ.get("DEEPSEEK_API_KEY", "").strip()
+    if openai_key:
+        base_url = os.environ.get("OPENAI_BASE_URL", "https://api.deepseek.com/v1").strip()
+        model = os.environ.get("NHAN_THUAT_LLM_MODEL", "deepseek-chat").strip()
+        configs.append({
+            "api_key": openai_key,
+            "base_url": base_url,
+            "model": model,
+            "provider_name": "deepseek",
+        })
+
+    # 2. Gemini / Google
+    google_key = os.environ.get("GOOGLE_API_KEY", "").strip() or os.environ.get("GEMINI_API_KEY", "").strip()
+    if google_key:
+        configs.append({
+            "api_key": google_key,
+            "base_url": "https://generativelanguage.googleapis.com/v1beta/openai",
+            "model": "gemini-3.6-flash",
+            "provider_name": "google-gemini",
+        })
     
     return configs
 

@@ -28,7 +28,7 @@ def get_provider_configs() -> list[dict[str, str]]:
     configs = []
     
     # 1. Deepseek / OpenAI
-    openai_key = os.environ.get("OPENAI_API_KEY", "").strip() or os.environ.get("DEEPSEEK_API_KEY", "").strip()
+    openai_key = os.environ.get("DEEPSEEK_API_KEY", "").strip() or os.environ.get("OPENAI_API_KEY", "").strip()
     if openai_key:
         base_url = os.environ.get("OPENAI_BASE_URL", "https://api.deepseek.com/v1").strip()
         model = os.environ.get("NHAN_THUAT_LLM_MODEL", "deepseek-chat").strip()

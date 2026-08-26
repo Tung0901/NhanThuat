@@ -54,10 +54,10 @@ def _load_env() -> None:
 
 def _api_key() -> str:
     return (
-        os.environ.get("GEMINI_API_KEY")
-        or os.environ.get("GOOGLE_API_KEY")
-        or os.environ.get("DEEPSEEK_API_KEY")
+        os.environ.get("DEEPSEEK_API_KEY")
         or os.environ.get("OPENAI_API_KEY")
+        or os.environ.get("GEMINI_API_KEY")
+        or os.environ.get("GOOGLE_API_KEY")
         or ""
     ).strip()
 

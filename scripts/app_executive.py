@@ -230,7 +230,7 @@ if selected == "THAM MƯU TÌNH HUỐNG":
                                     "messages": [{"role": "user", "content": sys_prompt}],
                                     "temperature": 0.4
                                 },
-                                timeout=20
+                                timeout=60
                             )
                             resp.raise_for_status()
                             text = resp.json()["choices"][0]["message"]["content"]

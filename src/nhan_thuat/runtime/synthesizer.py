@@ -30,7 +30,7 @@ def get_provider_configs() -> list[dict[str, str]]:
     # 1. Deepseek / OpenAI
     openai_key = os.environ.get("DEEPSEEK_API_KEY", "").strip() or os.environ.get("OPENAI_API_KEY", "").strip()
     if openai_key:
-        base_url = os.environ.get("OPENAI_BASE_URL", "https://api.deepseek.com/v1").strip()
+        base_url = os.environ.get("OPENAI_BASE_URL", "https://api.deepseek.com").strip()
         model = os.environ.get("NHAN_THUAT_LLM_MODEL", "deepseek-chat").strip()
         configs.append({
             "api_key": openai_key,
@@ -55,7 +55,7 @@ def get_provider_configs() -> list[dict[str, str]]:
 class KnowledgeSynthesizer:
     """Produces a synthesis for a query and its retrieved knowledge units."""
 
-    def __init__(self, prompt_builder: PromptBuilder | None = None, timeout: int = 15) -> None:
+    def __init__(self, prompt_builder: PromptBuilder | None = None, timeout: int = 60) -> None:
         self.prompt_builder = prompt_builder or PromptBuilder()
         self.timeout = timeout
 

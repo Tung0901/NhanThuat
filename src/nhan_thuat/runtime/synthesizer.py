@@ -27,7 +27,7 @@ DEFAULT_MODEL = "gemini-3.6-flash"
 def get_provider_configs() -> list[dict[str, str]]:
     configs = []
     
-    key = os.environ.get("GOOGLE_API_KEY", "").strip()
+    key = os.environ.get("GOOGLE_API_KEY", "").strip() or os.environ.get("GEMINI_API_KEY", "").strip()
     if not key:
         return configs
         

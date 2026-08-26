@@ -233,7 +233,7 @@ def main() -> int:
 
     _load_env()
     if not _api_key():
-        print("ERROR: missing GEMINI_API_KEY (in .env or environment)")
+        print("ERROR: missing GEMINI_API_KEY or GOOGLE_API_KEY (in .env or environment)")
         return 1
 
     files = find_unit_files()

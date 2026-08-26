@@ -8,7 +8,7 @@ from streamlit_option_menu import option_menu
 
 # --- 1. CONFIG & ENV ---
 load_dotenv()
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
 if GEMINI_API_KEY:
     genai.configure(api_key=GEMINI_API_KEY)
 
@@ -158,7 +158,7 @@ st.markdown("""
 # --- 7. MAIN CONTENT ---
 if selected == "THAM MƯU TÌNH HUỐNG":
     if not GEMINI_API_KEY:
-        st.error("⚠️ Chưa cấu hình biến môi trường GEMINI_API_KEY trong file .env")
+        st.error("⚠️ Chưa cấu hình biến môi trường GEMINI_API_KEY hoặc GOOGLE_API_KEY trong file .env")
     else:
         for msg in st.session_state.messages:
             with st.chat_message(msg["role"]):

@@ -349,6 +349,47 @@ def process_nhan_thuat_analysis(scenario_text: str, scenario_type_hint: str = "g
     # 0. Context Ambiguity Check
     is_ambiguous, warning_msg = check_context_ambiguity(scenario_text)
 
+    # 0. Check Interactive Sparring / Roleplay Mode
+    if scenario_type_hint == "sparring":
+        from nhan_thuat.runtime.synthesizer import KnowledgeSynthesizer
+        syn = KnowledgeSynthesizer()
+        sparring_prompt = (
+            f"Bạn đang đóng vai trò là một ĐỐI TÁC ĐÀM PHÁN / NHÂN SỰ CỰC KỲ RẮN MẶT, lão luyện, sắc sảo và kiên quyết bảo vệ tối đa quyền lợi của mình trong một phiên thương lượng thực chiến.\n\n"
+            f"LỜI THOẠI / LẬP LUẬN CỦA NGƯỜI DÙNG: \"{scenario_text}\"\n\n"
+            f"NHIỆM VỤ CỦA BẠN (TRẢ LỜI BẰNG MARKDOWN CHIA LÀM 2 PHẦN):\n\n"
+            f"### ⚔️ 1. ĐỐI ĐÁP PHẢN BIỆN TRỰC DIỆN (LỜI THOẠI ĐỐI KHÁNG)\n"
+            f"(Hãy cất lời thoại với thái độ sắc sảo, tự tin, xoáy thẳng vào điểm yếu hoặc chỗ chưa chặt chẽ trong lời nói của người dùng. Dùng lý lẽ đanh thép để đẩy quả bóng trách nhiệm hoặc bảo vệ mức giá/điều kiện của mình).\n\n"
+            f"### 💡 2. GỢI Ý ĐÒN BẨY HÓA GIẢI (GÓC NHÌN CỐ VẤN NHÂN THUẬT)\n"
+            f"- **Điểm sơ hở trong lập luận vừa rồi:** [Chỉ ra ngắn gọn]\n"
+            f"- **Đòn bẩy Binh pháp / Tâm lý nên dùng ở lượt tiếp theo:** [Đưa ra câu gợi ý đối đáp sắc bén nhất để người dùng lật ngược thế cờ]."
+        )
+        try:
+            generated_text = syn.generate_text(sparring_prompt)
+            return {
+                "status": "success",
+                "scenario_text": scenario_text,
+                "is_ambiguous": False,
+                "ambiguity_warning": "",
+                "philosophy_routing": {
+                    "primary_philosophy": "SPARRING_ADVERSARIAL",
+                    "secondary_philosophy": "BEHAVIORAL",
+                    "tertiary_philosophy": "SUNZI",
+                },
+                "synthesis_result": {
+                    "mode": "llm",
+                    "synthesis": generated_text,
+                    "citations": [],
+                    "audit": {
+                        "provider": "deepseek",
+                        "model": "deepseek-chat",
+                        "correlation_id": f"CORR-SPAR-{uuid.uuid4().hex[:8].upper()}"
+                    }
+                },
+                "correlation_id": f"CORR-SPAR-{uuid.uuid4().hex[:8].upper()}",
+            }
+        except Exception:
+            pass  # fall through to standard synthesis
+
     # 1. Determine scenario type
     ops_keywords = ["vật tư", "nhà cung cấp", "chậm tiến độ", "công trình", "thi công", "hợp đồng", "chế tài", "vi phạm hợp đồng", "trách nhiệm", "nợ", "đòi nợ", "thanh toán"]
     if any(w in text_lower for w in ops_keywords) or any(w in text_lower for w in ["báo cáo láo", "dối trá", "kỷ luật", "vi phạm", "đình công", "quy chế"]):

@@ -44,8 +44,8 @@ def get_provider_configs() -> list[dict[str, str]]:
     base_url = os.environ.get("GEMINI_BASE_URL", "").strip().rstrip("/") or DEFAULT_BASE_URL
     model = os.environ.get("GEMINI_MODEL", "").strip() or DEFAULT_MODEL
     
-    # Auto-fix deprecated models
-    if "2.5-flash" in model.lower() or "gemini-pro" in model.lower():
+    # Auto-fix deprecated or unsupported models for the OpenAI compatibility endpoint
+    if "2.5-flash" in model.lower() or "gemini-pro" in model.lower() or "1.5" in model.lower():
         model = "gemini-3.6-flash"
     
     for i, key in enumerate(gemini_keys):
@@ -81,7 +81,8 @@ def get_provider_configs() -> list[dict[str, str]]:
     openai_key = os.environ.get("OPENAI_API_KEY", "").strip()
     if openai_key:
         openai_model = os.environ.get("OPENAI_MODEL", "").strip() or os.environ.get("NHAN_THUAT_LLM_MODEL", "").strip() or DEFAULT_MODEL
-        if "2.5-flash" in openai_model.lower():
+        # Auto-fix deprecated or unsupported models
+        if "2.5-flash" in openai_model.lower() or "gemini-pro" in openai_model.lower() or "1.5" in openai_model.lower():
             openai_model = "gemini-3.6-flash"
             
         configs.append({

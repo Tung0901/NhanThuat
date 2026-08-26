@@ -971,8 +971,13 @@
             </div>
             <div class="chat-history" id="chat-history">
                 <div class="chat-msg msg-bot">
-                    <h3>CỐ VẤN NHÂN THUẬT</h3>
-                    <p>Đặt một câu hỏi hoặc mô tả một tình huống. Nhân Thuật sẽ vận dụng 9 lăng kính triết học và tâm lý học để tham mưu phương án thực chiến tối ưu nhất.</p>
+                    <h3 style="display: flex; align-items: center; gap: 8px; font-family: 'Playfair Display', serif; font-size: 20px; color: #f59e0b; margin-bottom: 8px;">👑 CỐ VẤN NHÂN THUẬT</h3>
+                    <p style="font-size: 14.5px; line-height: 1.7; color: rgba(255,255,255,0.92); margin-bottom: 10px;">
+                        <em>"Nhìn thấu tâm can để định vị thế &bull; Vận dụng quy luật để xoay chuyển cục diện."</em>
+                    </p>
+                    <p style="font-size: 13.5px; line-height: 1.65; color: rgba(255,255,255,0.75);">
+                        Hãy chia sẻ tình huống thực tế, bài toán quản trị nhân sự hoặc phiên đàm phán quan trọng bạn đang đối mặt. Nhân Thuật sẽ cùng bạn bóc tách động cơ ngầm, thiết lập phòng thủ và kiến tạo kịch bản tác chiến sắc bén nhất.
+                    </p>
                 </div>
             </div>
             <div class="chat-input-container">
@@ -1935,19 +1940,73 @@
 
         function formatChatHTML(text) {
             if (!text) return '';
-            let html = String(text)
+            
+            // 1. Preserve and extract code blocks (including ASCII box tables)
+            const codeBlocks = [];
+            let processed = String(text).replace(/```([\s\S]*?)```/g, (match, code) => {
+                const id = `__CODE_BLOCK_${codeBlocks.length}__`;
+                const escaped = code
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;');
+                codeBlocks.push(`<pre style="background: rgba(0, 0, 0, 0.75); border: 1px solid rgba(255, 255, 255, 0.18); border-radius: 8px; padding: 14px 18px; overflow-x: auto; font-family: 'Consolas', 'Fira Code', 'Courier New', monospace; font-size: 12.5px; line-height: 1.55; color: #38bdf8; margin: 14px 0; white-space: pre;"><code>${escaped.trim()}</code></pre>`);
+                return id;
+            });
+
+            // 2. Escape HTML
+            processed = processed
                 .replace(/&/g, '&amp;')
                 .replace(/</g, '&lt;')
-                .replace(/>/g, '&gt;')
-                .replace(/^### (.*?)$/gm, '<h4 style="color: #f59e0b; margin: 14px 0 6px 0; font-size: 16px;">$1</h4>')
-                .replace(/^## (.*?)$/gm, '<h3 style="color: #f8fafc; margin: 16px 0 8px 0; font-size: 17px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 4px;">$1</h3>')
-                .replace(/^\*\*([^*]+)\*\*(.*)$/gm, '<strong style="color: #f8fafc;">$1</strong>$2')
+                .replace(/>/g, '&gt;');
+
+            // 3. Format markdown tables
+            processed = processed.replace(/((?:^|\n)\|[^\n]+\|\n\|[-:\s|]+\|\n(?:\|[^\n]+\|\n?)+)/g, (match) => {
+                const lines = match.trim().split('\n');
+                if (lines.length < 3) return match;
+                
+                const parseRow = (line) => line.split('|').slice(1, -1).map(c => c.trim());
+                const headers = parseRow(lines[0]);
+                const rows = lines.slice(2).map(parseRow);
+
+                let tableHtml = '<div style="overflow-x: auto; margin: 16px 0; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 13.5px;">';
+                tableHtml += '<thead><tr style="background: rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.15);">';
+                headers.forEach(h => {
+                    tableHtml += `<th style="padding: 10px 14px; color: #f59e0b; font-weight: 600;">${h}</th>`;
+                });
+                tableHtml += '</tr></thead><tbody>';
+                rows.forEach((r, idx) => {
+                    const bg = idx % 2 === 1 ? 'background: rgba(255,255,255,0.02);' : '';
+                    tableHtml += `<tr style="${bg} border-bottom: 1px solid rgba(255,255,255,0.05);">`;
+                    r.forEach(c => {
+                        tableHtml += `<td style="padding: 10px 14px; color: rgba(255,255,255,0.85);">${c}</td>`;
+                    });
+                    tableHtml += '</tr>';
+                });
+                tableHtml += '</tbody></table></div>';
+                return '\n' + tableHtml + '\n';
+            });
+
+            // 4. Format headings, bold, italic, lists, blockquotes, horizontal rules
+            processed = processed
+                .replace(/^#### (.*?)$/gm, '<h5 style="color: #cbd5e1; margin: 12px 0 4px 0; font-size: 14px; font-weight: 600;">$1</h5>')
+                .replace(/^### (.*?)$/gm, '<h4 style="color: #f59e0b; margin: 16px 0 6px 0; font-size: 16px; font-weight: 600;">$1</h4>')
+                .replace(/^## (.*?)$/gm, '<h3 style="color: #f8fafc; margin: 18px 0 8px 0; font-size: 18px; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 4px;">$1</h3>')
+                .replace(/^# (.*?)$/gm, '<h2 style="color: #fff; margin: 20px 0 10px 0; font-size: 20px; font-weight: 700;">$1</h2>')
+                .replace(/^---$/gm, '<hr style="border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 18px 0;">')
+                .replace(/^\> (.*?)$/gm, '<blockquote style="border-left: 3px solid #f59e0b; padding-left: 14px; margin: 12px 0; color: rgba(255,255,255,0.8); font-style: italic; background: rgba(245,158,11,0.04); padding-top: 6px; padding-bottom: 6px; border-radius: 0 6px 6px 0;">$1</blockquote>')
                 .replace(/\*\*([^*]+)\*\*/g, '<strong style="color: #f8fafc;">$1</strong>')
                 .replace(/\*([^*]+)\*/g, '<em style="color: #cbd5e1;">$1</em>')
                 .replace(/\n\n/g, '</p><p style="margin-bottom: 12px;">')
                 .replace(/\n/g, '<br>');
-            
-            return '<p style="margin-bottom: 12px;">' + html + '</p>';
+
+            let finalHtml = '<p style="margin-bottom: 12px;">' + processed + '</p>';
+
+            // 5. Restore code blocks
+            codeBlocks.forEach((block, idx) => {
+                finalHtml = finalHtml.replace(`__CODE_BLOCK_${idx}__`, block);
+            });
+
+            return finalHtml;
         }
     }
     

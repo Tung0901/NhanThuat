@@ -959,7 +959,7 @@
         
         <div class="sidebar-top-tabs">
             <button class="sidebar-tab active" data-target="sidebar-view-chat">HỘI THOẠI</button>
-            <button class="sidebar-tab" data-target="sidebar-view-books">TỦ SÁCH (10)</button>
+            <button class="sidebar-tab" data-target="sidebar-view-books">TỦ SÁCH (16)</button>
             <button class="sidebar-tab" data-target="sidebar-view-knowledge">KHO TRI THỨC</button>
         </div>
 
@@ -984,11 +984,20 @@
         </div>
 
         <div id="sidebar-view-books" class="sidebar-view">
-            <div style="padding: 18px 30px; border-bottom: 1px solid rgba(255,255,255,0.08); background: #000; position: sticky; top: 0; z-index: 10;">
-                <h4 style="font-family: 'Playfair Display', serif; font-size: 18px; color: #f8fafc; margin-bottom: 4px;">Ấn Phẩm Tri Thức Cốt Lõi</h4>
-                <p style="font-size: 12px; color: rgba(255,255,255,0.5); margin: 0;">Trọn bộ 10 cẩm nang chiến lược, tâm lý & quản trị thực chiến</p>
+            <div style="padding: 16px 24px 12px 24px; border-bottom: 1px solid rgba(255,255,255,0.08); background: #000; position: sticky; top: 0; z-index: 20;">
+                <h4 style="font-family: 'Playfair Display', serif; font-size: 18px; color: #f8fafc; margin-bottom: 2px;">Ấn Phẩm Tri Thức Cốt Lõi</h4>
+                <p style="font-size: 11.5px; color: rgba(255,255,255,0.5); margin-bottom: 12px;">Trọn bộ 16 cẩm nang khoa học nhận thức, chiến lược, tâm lý & quản trị thực chiến</p>
+                
+                <!-- Fixed, unclipped Category Filter Bar -->
+                <div id="bookshelf-filter-bar" style="display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; -ms-overflow-style: none;">
+                    <button class="book-cat-pill active" style="padding: 6px 14px; border-radius: 16px; font-size: 11.5px; cursor: pointer; white-space: nowrap; background: #f59e0b; color: #000; border: 1px solid #f59e0b; font-weight: 700;" onclick="filterBookCategory('all', this)">Tất Cả (16)</button>
+                    <button class="book-cat-pill" style="padding: 6px 14px; border-radius: 16px; font-size: 11.5px; cursor: pointer; white-space: nowrap; background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.12); font-weight: 600;" onclick="filterBookCategory('psychology', this)">🧠 Tâm Lý & Đàm Phán</button>
+                    <button class="book-cat-pill" style="padding: 6px 14px; border-radius: 16px; font-size: 11.5px; cursor: pointer; white-space: nowrap; background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.12); font-weight: 600;" onclick="filterBookCategory('strategy', this)">⚔️ Chiến Lược & Game Theory</button>
+                    <button class="book-cat-pill" style="padding: 6px 14px; border-radius: 16px; font-size: 11.5px; cursor: pointer; white-space: nowrap; background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.12); font-weight: 600;" onclick="filterBookCategory('leadership', this)">👑 Hệ Thống & Quản Trị</button>
+                    <button class="book-cat-pill" style="padding: 6px 14px; border-radius: 16px; font-size: 11.5px; cursor: pointer; white-space: nowrap; background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.12); font-weight: 600;" onclick="filterBookCategory('mindset', this)">🏛️ Bản Lĩnh & Nghịch Cảnh</button>
+                </div>
             </div>
-            <div class="books-container" id="books-container">
+            <div class="books-container" id="books-container" style="padding-top: 16px;">
                 <!-- Book Cards rendered dynamically -->
             </div>
         </div>
@@ -1557,15 +1566,28 @@
         };
 
         const DIGITAL_BOOKS = [
-            { file: "08_BINH_PHAP_TON_TU.md", title: "Binh Pháp Tôn Tử", author: "Tôn Vũ • Binh Gia", cat: "strategy", icon: "⚔️", badge: "THẾ TRẬN", desc: "Nghệ thuật kiến tạo thế trận bất đối xứng, biến hóa theo thời cuộc & bất chiến tự nhiên thành.", tags: ["Thủ Thế", "Lập Thế", "Định Cục", "Binh Bất Yếm Trá"] },
-            { file: "07_CHU_NGHIA_KHAC_KY.md", title: "Chủ Nghĩa Khắc Kỷ", author: "Marcus Aurelius & Seneca • Stoicism", cat: "mindset", icon: "🏛️", badge: "BẢN LĨNH", desc: "Làm chủ tâm trí, bản lĩnh trong nghịch cảnh, quản trị cơn giận & nghệ thuật giữ uy quyền trầm tĩnh.", tags: ["Vòng Tròn Kiểm Soát", "Amor Fati", "Seneca on Anger"] },
-            { file: "09_TAM_LY_HOC_HANH_VI.md", title: "Tâm Lý Học Hành Vi & Quyền Lực", author: "Daniel Kahneman & Robert Cialdini", cat: "psychology", icon: "🧠", badge: "THUYẾT PHỤC", desc: "Bắt bài động cơ ngầm, bộ 6 đòn bẩy thuyết phục, giải mã thiên kiến & phòng thủ Tam Giác Đen độc hại.", tags: ["Hệ Thống 1 & 2", "6 Đòn Bẩy", "Dark Triad Defense"] },
-            { file: "06_NHAN_THUAT_UNG_XU.md", title: "Nhân Thuật & Dụng Nhân", author: "Quỷ Cốc Tử & Trí Tuệ Cổ Nhân", cat: "leadership", icon: "👥", badge: "DỤNG NHÂN", desc: "Bát quan thấu tâm, thuật dùng người có tì vết, phân quyền không mất quyền & hóa giải bẫy cảm tình.", tags: ["Bát Quan Thấu Tâm", "Dụng Nhân Hữu Tỳ", "3 Chốt Chặn"] },
-            { file: "01_THUAT_HUNG_BIEN.md", title: "Thuật Hùng Biện & Đối Thoại", author: "Aristotle & Tung Hoành Gia", cat: "strategy", icon: "📜", badge: "ĐỐI THOẠI", desc: "Bẻ gãy luận điểm, đảo ngược góc nhìn, nghệ thuật xử lý từ chối đỉnh cao & thuyết phục đối tác.", tags: ["Refutation Matrix", "PAS Model", "Xử Lý Từ Chối"] },
-            { file: "02_TU_THU_KNOWLEDGE_PACK.md", title: "Nho Gia & Đạo Đức Lãnh Đạo", author: "Khổng Tử & Mạnh Tử • Tứ Thư", cat: "leadership", icon: "👑", badge: "ĐỨC TRỊ", desc: "Nghệ thuật lãnh đạo bằng nhân chính, Tam Cương Bát Mục, phân biệt Quân tử vs Tiểu nhân & Hòa nhi bất đồng.", tags: ["Đức Trị", "Quân Tử vs Tiểu Nhân", "Hòa Nhi Bất Đồng"] },
+            // I. TÂM LÝ & ĐÀM PHÁN
+            { file: "22_DAM_PHAN_CONG_TRUONG.md", title: "Đàm Phán Đỉnh Cao FBI", author: "Chris Voss • Cựu Chuyên Gia FBI", cat: "psychology", icon: "🎙️", badge: "ĐÀM PHÁN", desc: "Thấu cảm chiến thuật (Tactical Empathy), soi gương, gắn nhãn cảm xúc & mô hình trả giá Ackerman.", tags: ["Tactical Empathy", "Mirroring", "Ackerman Method"] },
+            { file: "09_TAM_LY_HOC_HANH_VI.md", title: "Tâm Lý Học Hành Vi & Quyền Lực", author: "Daniel Kahneman & Amos Tversky", cat: "psychology", icon: "🧠", badge: "NHẬN THỨC", desc: "Hệ thống 1 & 2, bẫy thiên kiến mỏ neo, tâm lý sợ mất mát & phòng thủ Tam Giác Đen thao túng.", tags: ["Hệ Thống 1 & 2", "Loss Aversion", "Dark Triad"] },
+            { file: "11_TAM_LY_HOC_THUYET_PHUC.md", title: "Tâm Lý Học Thuyết Phục (Pre-suasion)", author: "GS. Robert Cialdini", cat: "psychology", icon: "🎯", badge: "THUYẾT PHỤC", desc: "7 Nguyên tắc tạo ảnh hưởng, kỹ thuật dọn đường tâm lý Pre-suasion & đòn bẩy nhượng bộ.", tags: ["7 Principles", "Pre-suasion", "Reciprocity"] },
+            { file: "01_THUAT_HUNG_BIEN.md", title: "Thuật Hùng Biện & Đối Thoại", author: "Aristotle & Tung Hoành Gia", cat: "psychology", icon: "📜", badge: "ĐỐI THOẠI", desc: "Bẻ gãy luận điểm, đảo ngược góc nhìn, nghệ thuật xử lý từ chối đỉnh cao & logic phản chứng.", tags: ["Refutation Matrix", "Ethos-Pathos-Logos", "Xử Lý Từ Chối"] },
+            
+            // II. CHIẾN LƯỢC & GAME THEORY
+            { file: "08_BINH_PHAP_TON_TU.md", title: "Binh Pháp Tôn Tử: Binh Thế & Định Cục", author: "Tôn Vũ • Binh Gia", cat: "strategy", icon: "⚔️", badge: "THẾ TRẬN", desc: "Nghệ thuật kiến tạo thế trận bất đối xứng, biến hóa theo thời cuộc & bất chiến tự nhiên thành.", tags: ["Thủ Thế", "Lập Thế", "Định Cục", "Bất Chiến Tự Nhiên Thành"] },
+            { file: "12_LY_THUYET_TRO_CHOI.md", title: "Lý Thuyết Trò Chơi (Game Theory)", author: "John Nash & Thomas Schelling", cat: "strategy", icon: "♟️", badge: "GAME THEORY", desc: "Cân bằng Nash, thế lưỡng nan của tù nhân, chiến lược Tit-for-Tat & nghệ thuật ràng buộc chiến lược.", tags: ["Nash Equilibrium", "Prisoner's Dilemma", "Tit-for-Tat"] },
+            { file: "17_CHIEN_LUOC_BAT_DOI_XUNG.md", title: "Chiến Lược Bất Đối Xứng & Antifragile", author: "GS. Nassim Nicholas Taleb", cat: "strategy", icon: "🛡️", badge: "CHỐNG GÃY VỠ", desc: "Khả năng hưởng lợi từ biến động (Antifragile), chiến lược Quả tạ (Barbell) & nguyên tắc Skin in the Game.", tags: ["Antifragile", "Barbell Strategy", "Skin in the Game"] },
+            
+            // III. HỆ THỐNG & QUẢN TRỊ
+            { file: "20_TU_DUY_HE_THONG.md", title: "Tư Duy Hệ Thống & Điểm Đòn Bẩy", author: "Donella Meadows (MIT) & Peter Senge", cat: "leadership", icon: "🔄", badge: "HỆ THỐNG", desc: "Cấu trúc dòng chảy - trữ lượng, 12 điểm đòn bẩy can thiệp & hóa giải các bẫy hệ thống doanh nghiệp.", tags: ["Systems Thinking", "12 Leverage Points", "Feedback Loops"] },
+            { file: "21_NGUYEN_TAC_QUAN_TRI_THUC_THI.md", title: "Nguyên Tắc Quản Trị & Thực Thi", author: "Ray Dalio & Andy Grove (Intel)", cat: "leadership", icon: "⚡", badge: "HIỆU SUẤT", desc: "Văn hóa sự thật triệt để (Radical Transparency), Idea Meritocracy & đòn bẩy quản lý (Managerial Leverage).", tags: ["Radical Truth", "Idea Meritocracy", "High Output"] },
             { file: "03_HAN_PHI_TU_KNOWLEDGE_PACK.md", title: "Pháp Gia & Quản Trị Hệ Thống", author: "Hàn Phi Tử • Pháp Trị", cat: "leadership", icon: "⚖️", badge: "KỶ CƯƠNG", desc: "Bộ ba Pháp - Thế - Thuật, quy trình Hình danh tham đồng, Nhị bỉnh thưởng phạt & bộ lọc chống Bát gian.", tags: ["Pháp-Thế-Thuật", "Hình Danh", "Phòng Chống Bát Gian"] },
-            { file: "04_TRANG_TU_KNOWLEDGE_PACK.md", title: "Đạo Gia & Ứng Biến Linh Hoạt", author: "Lão Tử & Trang Tử • Đạo Gia", cat: "mindset", icon: "☯️", badge: "LINH HOẠT", desc: "Tâm trai, tọa vọng, tư duy bứt phá Tiêu Dao Du, lấy tĩnh chế động & thuật Dụng vô dụng trong khủng hoảng.", tags: ["Tâm Trai", "Tiêu Dao Du", "Dụng Vô Dụng"] },
+            { file: "06_NHAN_THUAT_UNG_XU.md", title: "Nhân Thuật & Nghệ Thuật Dụng Nhân", author: "Quỷ Cốc Tử & Trí Tuệ Cổ Nhân", cat: "leadership", icon: "👥", badge: "DỤNG NHÂN", desc: "Bát quan thấu tâm, thuật dùng người có tì vết, phân quyền không mất quyền & hóa giải bẫy cảm tình.", tags: ["Bát Quan Thấu Tâm", "Dụng Nhân Hữu Tỳ", "3 Chốt Chặn"] },
+            { file: "02_TU_THU_KNOWLEDGE_PACK.md", title: "Nho Gia & Đạo Đức Lãnh Đạo", author: "Khổng Tử & Mạnh Tử • Tứ Thư", cat: "leadership", icon: "👑", badge: "ĐỨC TRỊ", desc: "Nghệ thuật lãnh đạo bằng nhân chính, Tam Cương Bát Mục, phân biệt Quân tử vs Tiểu nhân & Hòa nhi bất đồng.", tags: ["Đức Trị", "Quân Tử vs Tiểu Nhân", "Hòa Nhi Bất Đồng"] },
             { file: "05_TUAN_TU_KNOWLEDGE_PACK.md", title: "Tuân Tử & Huấn Luyện Nhân Sự", author: "Tuân Tử • Nho - Pháp Dung Hợp", cat: "leadership", icon: "📖", badge: "UỐN NẮN", desc: "Thuyết tính ác và sự uốn nắn (Vĩ), Khuyên học, mentorship liên tục & quy chuẩn Dùng lễ định phần.", tags: ["Khuyên Học", "Thuyết Tính Ác", "Dùng Lễ Định Phần"] },
+
+            // IV. BẢN LĨNH & NGHỊCH CẢNH
+            { file: "07_CHU_NGHIA_KHAC_KY.md", title: "Chủ Nghĩa Khắc Kỷ & Bản Lĩnh", author: "Marcus Aurelius & Seneca • Stoicism", cat: "mindset", icon: "🏛️", badge: "BẢN LĨNH", desc: "Làm chủ tâm trí, bản lĩnh trong nghịch cảnh, quản trị cơn giận & nghệ thuật giữ uy quyền trầm tĩnh.", tags: ["Vòng Tròn Kiểm Soát", "Amor Fati", "Seneca on Anger"] },
+            { file: "04_TRANG_TU_KNOWLEDGE_PACK.md", title: "Đạo Gia & Ứng Biến Linh Hoạt", author: "Lão Tử & Trang Tử • Đạo Gia", cat: "mindset", icon: "☯️", badge: "LINH HOẠT", desc: "Tâm trai, tọa vọng, tư duy bứt phá Tiêu Dao Du, lấy tĩnh chế động & thuật Dụng vô dụng trong khủng hoảng.", tags: ["Tâm Trai", "Tiêu Dao Du", "Dụng Vô Dụng"] },
             { file: "10_THUC_CHIEN_NHAN_SINH.md", title: "Kho Thực Chiến Nhân Sinh", author: "NhanThuat Executive Archives", cat: "practice", icon: "⭐", badge: "HỒ SƠ CA", desc: "Hồ sơ lưu trữ các ca thực chiến tiêu biểu, phán quyết chiến lược và cẩm nang bài học điều hành thực tế.", tags: ["Case Studies", "Đàm Phán", "Giải Quyết Khủng Hoảng"] }
         ];
 
@@ -1573,8 +1595,18 @@
 
         window.filterBookCategory = function(cat, btn) {
             selectedBookCat = cat;
-            document.querySelectorAll('.book-cat-pill').forEach(p => p.classList.remove('active'));
-            if (btn) btn.classList.add('active');
+            document.querySelectorAll('#bookshelf-filter-bar .book-cat-pill').forEach(p => {
+                p.style.background = 'rgba(255,255,255,0.05)';
+                p.style.color = 'rgba(255,255,255,0.7)';
+                p.style.borderColor = 'rgba(255,255,255,0.12)';
+                p.style.fontWeight = '600';
+            });
+            if (btn) {
+                btn.style.background = '#f59e0b';
+                btn.style.color = '#000';
+                btn.style.borderColor = '#f59e0b';
+                btn.style.fontWeight = '700';
+            }
             renderBooksList();
         };
 
@@ -1586,18 +1618,6 @@
             const filtered = selectedBookCat === 'all' 
                 ? DIGITAL_BOOKS 
                 : DIGITAL_BOOKS.filter(b => b.cat === selectedBookCat);
-
-            // Filter bar
-            const filterBar = document.createElement('div');
-            filterBar.style.cssText = 'display: flex; gap: 8px; overflow-x: auto; padding-bottom: 12px; margin-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.06); scrollbar-width: none;';
-            filterBar.innerHTML = `
-                <button class="book-cat-pill ${selectedBookCat === 'all' ? 'active' : ''}" style="padding: 5px 12px; border-radius: 16px; font-size: 11.5px; cursor: pointer; white-space: nowrap; background: ${selectedBookCat === 'all' ? '#f59e0b' : 'rgba(255,255,255,0.05)'}; color: ${selectedBookCat === 'all' ? '#000' : 'rgba(255,255,255,0.7)'}; border: 1px solid ${selectedBookCat === 'all' ? '#f59e0b' : 'rgba(255,255,255,0.1)'}; font-weight: 600;" onclick="filterBookCategory('all', this)">Tất Cả (10)</button>
-                <button class="book-cat-pill ${selectedBookCat === 'strategy' ? 'active' : ''}" style="padding: 5px 12px; border-radius: 16px; font-size: 11.5px; cursor: pointer; white-space: nowrap; background: ${selectedBookCat === 'strategy' ? '#f59e0b' : 'rgba(255,255,255,0.05)'}; color: ${selectedBookCat === 'strategy' ? '#000' : 'rgba(255,255,255,0.7)'}; border: 1px solid ${selectedBookCat === 'strategy' ? '#f59e0b' : 'rgba(255,255,255,0.1)'}; font-weight: 600;" onclick="filterBookCategory('strategy', this)">⚔️ Chiến Lược</button>
-                <button class="book-cat-pill ${selectedBookCat === 'mindset' ? 'active' : ''}" style="padding: 5px 12px; border-radius: 16px; font-size: 11.5px; cursor: pointer; white-space: nowrap; background: ${selectedBookCat === 'mindset' ? '#f59e0b' : 'rgba(255,255,255,0.05)'}; color: ${selectedBookCat === 'mindset' ? '#000' : 'rgba(255,255,255,0.7)'}; border: 1px solid ${selectedBookCat === 'mindset' ? '#f59e0b' : 'rgba(255,255,255,0.1)'}; font-weight: 600;" onclick="filterBookCategory('mindset', this)">🏛️ Bản Lĩnh</button>
-                <button class="book-cat-pill ${selectedBookCat === 'psychology' ? 'active' : ''}" style="padding: 5px 12px; border-radius: 16px; font-size: 11.5px; cursor: pointer; white-space: nowrap; background: ${selectedBookCat === 'psychology' ? '#f59e0b' : 'rgba(255,255,255,0.05)'}; color: ${selectedBookCat === 'psychology' ? '#000' : 'rgba(255,255,255,0.7)'}; border: 1px solid ${selectedBookCat === 'psychology' ? '#f59e0b' : 'rgba(255,255,255,0.1)'}; font-weight: 600;" onclick="filterBookCategory('psychology', this)">🧠 Tâm Lý</button>
-                <button class="book-cat-pill ${selectedBookCat === 'leadership' ? 'active' : ''}" style="padding: 5px 12px; border-radius: 16px; font-size: 11.5px; cursor: pointer; white-space: nowrap; background: ${selectedBookCat === 'leadership' ? '#f59e0b' : 'rgba(255,255,255,0.05)'}; color: ${selectedBookCat === 'leadership' ? '#000' : 'rgba(255,255,255,0.7)'}; border: 1px solid ${selectedBookCat === 'leadership' ? '#f59e0b' : 'rgba(255,255,255,0.1)'}; font-weight: 600;" onclick="filterBookCategory('leadership', this)">👑 Quản Trị</button>
-            `;
-            container.appendChild(filterBar);
 
             filtered.forEach(b => {
                 const card = document.createElement('div');

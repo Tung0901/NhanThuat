@@ -30,6 +30,7 @@ from urllib.parse import parse_qs, urlparse
 
 from backend.app.engine.nhan_thuat_api import process_nhan_thuat_analysis
 from backend.app.engine.runtime import BusinessOSRuntimeOrchestrator, RuntimeRequestPayload
+from nhan_thuat.council.council_engine import CouncilEngine
 from nhan_thuat.engine.sparring_engine import SparringEngine
 from nhan_thuat.export.executive_brief import ExecutiveBriefExporter
 from nhan_thuat.knowledge_engine import KnowledgeEngine
@@ -49,6 +50,7 @@ nhan_thuat_public_v1 = KnowledgeEngineAdapterV1(knowledge_engine)
 salesos_plugin = SalesOSPlugin()
 db_manager = DatabaseManager()
 sparring_engine = SparringEngine(db_manager=db_manager, knowledge_engine=knowledge_engine)
+council_engine = CouncilEngine(knowledge_engine=knowledge_engine)
 department_packs = DepartmentPackRegistry()
 brief_exporter = ExecutiveBriefExporter()
 
@@ -635,6 +637,23 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
                     "format": "markdown",
                     "document": output_doc,
                 })
+            return
+
+        # 0d. Multi-Agent Council Endpoints: POST /api/v1/council/deliberate, POST /api/v1/council/synthesize
+        if path == "/api/v1/council/deliberate" or path == "/api/v1/council/synthesize":
+            scenario_text = payload.get("scenario_text") or payload.get("scenario", "")
+            if not scenario_text:
+                self._send_json_response(400, {
+                    "status": "error",
+                    "message": "Field 'scenario_text' is required.",
+                })
+                return
+
+            deliberation = council_engine.deliberate(scenario_text)
+            self._send_json_response(200, {
+                "status": "success",
+                "deliberation": deliberation.to_dict(),
+            })
             return
 
         # 0. Web App Dashboard API Endpoint: POST /api/v1/nhan-thuat/analyze

@@ -604,34 +604,247 @@
         .chat-mode-bar {
             display: flex;
             align-items: center;
-            gap: 10px;
-            padding: 12px 30px;
+            gap: 8px;
+            padding: 10px 24px;
             background: rgba(255, 255, 255, 0.02);
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
         }
+        .chat-mode-bar::-webkit-scrollbar { display: none; }
         .chat-mode-pill {
             background: transparent;
             border: 1px solid rgba(255, 255, 255, 0.15);
-            color: rgba(255, 255, 255, 0.6);
-            padding: 6px 14px;
+            color: rgba(255, 255, 255, 0.65);
+            padding: 6px 12px;
             border-radius: 20px;
-            font-size: 12px;
+            font-size: 11.5px;
             font-family: 'Inter', sans-serif;
             font-weight: 600;
             cursor: pointer;
+            white-space: nowrap;
             transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
         .chat-mode-pill:hover {
             border-color: rgba(255, 255, 255, 0.4);
             color: #ffffff;
+            background: rgba(255, 255, 255, 0.05);
         }
         .chat-mode-pill.active {
             background: #f59e0b;
             border-color: #f59e0b;
             color: #000000;
             font-weight: 700;
-            box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.35);
         }
+
+        /* Executive Export Brief Button */
+        .export-brief-btn {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(245, 158, 11, 0.08) 100%);
+            border: 1px solid rgba(245, 158, 11, 0.4);
+            color: #f59e0b;
+            padding: 5px 12px;
+            border-radius: 16px;
+            font-size: 11px;
+            font-weight: 700;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.2s;
+        }
+        .export-brief-btn:hover {
+            background: #f59e0b;
+            color: #000000;
+            box-shadow: 0 0 12px rgba(245, 158, 11, 0.4);
+            transform: translateY(-1px);
+        }
+
+        /* Knowledge Graph Badges */
+        .knowledge-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            background: rgba(245, 158, 11, 0.08);
+            color: #f59e0b;
+            margin-right: 6px;
+            margin-bottom: 6px;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+        .knowledge-badge:hover {
+            background: rgba(245, 158, 11, 0.25);
+            border-color: #f59e0b;
+            transform: translateY(-1px);
+        }
+        .knowledge-badge.type-law { border-color: rgba(56, 189, 248, 0.4); background: rgba(56, 189, 248, 0.08); color: #38bdf8; }
+        .knowledge-badge.type-anti-pattern { border-color: rgba(248, 113, 113, 0.4); background: rgba(248, 113, 113, 0.08); color: #f87171; }
+        .knowledge-badge.type-principle { border-color: rgba(52, 211, 153, 0.4); background: rgba(52, 211, 153, 0.08); color: #34d399; }
+
+        /* Multi-Agent Council Visual Cards */
+        .council-stage-header {
+            font-family: 'Playfair Display', serif;
+            font-size: 15px;
+            font-weight: 600;
+            color: #f59e0b;
+            margin: 16px 0 10px 0;
+            padding-bottom: 6px;
+            border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .council-pitch-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .council-pitch-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 14px 16px;
+            transition: all 0.2s;
+        }
+        .council-pitch-card:hover {
+            border-color: rgba(245, 158, 11, 0.35);
+            background: rgba(255, 255, 255, 0.06);
+        }
+        .council-pitch-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #f8fafc;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .council-pitch-stance {
+            font-size: 12.5px;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.5;
+            font-style: italic;
+            margin-bottom: 8px;
+            padding-left: 10px;
+            border-left: 2px solid #f59e0b;
+        }
+        .cross-debate-card {
+            background: rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 3px solid #ef4444;
+            border-radius: 8px;
+            padding: 12px 14px;
+            margin-bottom: 10px;
+            font-size: 13px;
+        }
+        .decision-matrix-box {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(0, 0, 0, 0.4) 100%);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            border-radius: 12px;
+            padding: 18px;
+            margin: 14px 0;
+        }
+        .plan-tab-bar {
+            display: flex;
+            gap: 6px;
+            margin: 12px 0;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 4px;
+            border-radius: 8px;
+        }
+        .plan-tab-btn {
+            flex: 1;
+            padding: 6px 8px;
+            font-size: 11.5px;
+            font-weight: 600;
+            border: none;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.6);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+        }
+        .plan-tab-btn.active {
+            background: #f59e0b;
+            color: #000;
+            font-weight: 700;
+        }
+
+        /* Case Studies Grid */
+        .case-study-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 12px;
+            transition: all 0.2s;
+        }
+        .case-study-card:hover {
+            border-color: rgba(245, 158, 11, 0.4);
+            transform: translateY(-2px);
+        }
+        .case-domain-badge {
+            font-size: 10.5px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: rgba(245, 158, 11, 0.15);
+            color: #f59e0b;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            text-transform: uppercase;
+        }
+
+        /* Modal Overlay for Knowledge Units */
+        .unit-modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 10000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .unit-modal-overlay.open { display: flex; }
+        .unit-modal-card {
+            background: #0d0d0d;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            max-width: 680px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 28px;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            user-select: text !important;
+        }
+        .unit-modal-close {
+            position: absolute;
+            top: 20px; right: 20px;
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .unit-modal-close:hover { color: #fff; }
 
         /* Bookshelf Cards */
         .books-container {
@@ -950,7 +1163,10 @@
     <!-- Chat Sidebar -->
     <div id="chat-sidebar" class="open">
         <div class="chat-header">
-            <h3>Nhân Thuật</h3>
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <h3>Nhân Thuật</h3>
+                <button class="export-brief-btn" id="export-brief-btn" title="Xuất Bản Kịch Bản Ra HTML In Ấn hoặc Markdown">📄 Xuất Kịch Bản</button>
+            </div>
             <div style="display: flex; gap: 15px; align-items: center;">
                 <button class="close-chat-btn" id="min-chat-btn" title="Thu nhỏ">&minus;</button>
                 <button class="close-chat-btn" id="close-chat-btn" title="Đóng">&times;</button>
@@ -960,14 +1176,16 @@
         <div class="sidebar-top-tabs">
             <button class="sidebar-tab active" data-target="sidebar-view-chat">HỘI THOẠI</button>
             <button class="sidebar-tab" data-target="sidebar-view-books">TỦ SÁCH (16)</button>
-            <button class="sidebar-tab" data-target="sidebar-view-knowledge">KHO TRI THỨC</button>
+            <button class="sidebar-tab" data-target="sidebar-view-knowledge">KHO TRI THỨC (379)</button>
         </div>
 
         <div id="sidebar-view-chat" class="sidebar-view active">
             <div class="chat-mode-bar">
-                <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.4); font-weight: 600;">Chế độ:</span>
-                <button id="mode-advisory" class="chat-mode-pill active" onclick="setChatMode('leadership')">💡 Tham Mưu Chiến Lược</button>
-                <button id="mode-sparring" class="chat-mode-pill" onclick="setChatMode('sparring')">⚔️ Đối Kháng Đàm Phán</button>
+                <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.4); font-weight: 600; white-space: nowrap;">Chế độ:</span>
+                <button id="mode-advisory" class="chat-mode-pill active" onclick="setChatMode('leadership')">💡 Tham Mưu</button>
+                <button id="mode-sparring" class="chat-mode-pill" onclick="setChatMode('sparring')">⚔️ Đấu Trí</button>
+                <button id="mode-council" class="chat-mode-pill" onclick="setChatMode('council')">🏛️ Hội Đồng Cố Vấn</button>
+                <button id="mode-cases" class="chat-mode-pill" onclick="setChatMode('cases')">📋 Case Studies</button>
             </div>
             <div class="chat-history" id="chat-history">
                 <div class="chat-msg msg-bot">
@@ -982,7 +1200,7 @@
             </div>
             <div class="chat-input-container">
                 <div class="chat-input-wrapper">
-                    <input type="text" class="chat-input" id="chat-input" placeholder="Nhập tình huống hoặc câu nói đối thoại...">
+                    <input type="text" class="chat-input" id="chat-input" placeholder="Nhập tình huống hoặc bài toán quản trị cần tham mưu...">
                     <button class="chat-send-btn" id="chat-send-btn">➤</button>
                 </div>
             </div>
@@ -1008,11 +1226,25 @@
         </div>
 
         <div id="sidebar-view-knowledge" class="sidebar-view">
-            <div style="padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); position: sticky; top: 0; background: #000; z-index: 10;">
-                <input type="text" id="knowledge-search-input" placeholder="Tìm kiếm theo tên hoặc mã..." style="width: 100%; padding: 10px 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-family: inherit; font-size: 0.9rem; outline: none; transition: border-color 0.3s;" onfocus="this.style.borderColor='rgba(255,255,255,0.3)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+            <div style="padding: 16px 20px 12px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); position: sticky; top: 0; background: #000; z-index: 10;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <span style="font-family: 'Playfair Display', serif; font-size: 16px; color: #f59e0b; font-weight: 600;">Hệ Thống 379 Tri Thức</span>
+                    <span style="font-size: 11px; background: rgba(255,255,255,0.08); padding: 2px 8px; border-radius: 12px; color: rgba(255,255,255,0.7);">31 Miền Quản Trị</span>
+                </div>
+                <input type="text" id="knowledge-search-input" placeholder="🔍 Tìm kiếm nhanh (BM25 + Semantic Hybrid Search)..." style="width: 100%; padding: 10px 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff; font-family: inherit; font-size: 0.9rem; outline: none; transition: border-color 0.3s;" onfocus="this.style.borderColor='#f59e0b'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'">
             </div>
             <div class="knowledge-list" id="knowledge-list">
-                <div style="text-align: center; color: rgba(255,255,255,0.5); margin-top: 50px;">Đang tải kho tri thức...</div>
+                <div style="text-align: center; color: rgba(255,255,255,0.5); margin-top: 50px;">Đang nạp 379 đơn vị tri thức...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Knowledge Unit Modal Inspector -->
+    <div class="unit-modal-overlay" id="unit-modal-overlay">
+        <div class="unit-modal-card" id="unit-modal-card">
+            <button class="unit-modal-close" id="unit-modal-close">&times;</button>
+            <div id="unit-modal-body">
+                <!-- Dynamically loaded content -->
             </div>
         </div>
     </div>
@@ -1557,17 +1789,177 @@
         let knowledgeLoaded = false;
         let booksLoaded = false;
         let currentChatMode = 'leadership';
+        let currentSparringSessionId = null;
+        let lastBriefPayload = null;
 
         window.setChatMode = function(mode) {
             currentChatMode = mode;
             document.querySelectorAll('.chat-mode-pill').forEach(btn => btn.classList.remove('active'));
+            
             if (mode === 'sparring') {
-                document.getElementById('mode-sparring').classList.add('active');
-                input.placeholder = "Nhập câu nói của đối tác / nhân sự bạn muốn đối kháng...";
+                const el = document.getElementById('mode-sparring');
+                if (el) el.classList.add('active');
+                input.placeholder = "Nhập quyết định / phản hồi đối kháng của bạn...";
+            } else if (mode === 'council') {
+                const el = document.getElementById('mode-council');
+                if (el) el.classList.add('active');
+                input.placeholder = "Nhập bài toán chiến lược để Hội Đồng 5 Cố Vấn tranh luận...";
+            } else if (mode === 'cases') {
+                const el = document.getElementById('mode-cases');
+                if (el) el.classList.add('active');
+                input.placeholder = "Nhập từ khóa tìm kiếm tình huống thực tế hoặc chọn bên dưới...";
+                renderCaseStudiesTab();
             } else {
-                document.getElementById('mode-advisory').classList.add('active');
-                input.placeholder = "Nhập tình huống hoặc câu chuyện cần tham mưu...";
+                const el = document.getElementById('mode-advisory');
+                if (el) el.classList.add('active');
+                input.placeholder = "Nhập tình huống hoặc bài toán quản trị cần tham mưu...";
             }
+        };
+
+        // Export Executive Brief Handler
+        const exportBriefBtn = document.getElementById('export-brief-btn');
+        if (exportBriefBtn) {
+            exportBriefBtn.addEventListener('click', async () => {
+                if (!lastBriefPayload) {
+                    alert("Chưa có kịch bản hoặc phân tích nào trong phiên đối thoại hiện tại để xuất bản.");
+                    return;
+                }
+
+                exportBriefBtn.textContent = "⏳ Đang xuất...";
+                try {
+                    const res = await fetch('/api/v1/export/brief', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            ...lastBriefPayload,
+                            format: 'html'
+                        })
+                    });
+                    const htmlText = await res.text();
+                    exportBriefBtn.textContent = "📄 Xuất Kịch Bản";
+
+                    // Open printable standalone HTML in new window
+                    const printWin = window.open('', '_blank');
+                    if (printWin) {
+                        printWin.document.open();
+                        printWin.document.write(htmlText);
+                        printWin.document.close();
+                    } else {
+                        alert("Trình duyệt đã chặn pop-up. Vui lòng cho phép mở cửa sổ mới để xem Bản Tham Mưu.");
+                    }
+                } catch(err) {
+                    exportBriefBtn.textContent = "📄 Xuất Kịch Bản";
+                    alert("Lỗi xuất bản kịch bản: " + err.message);
+                }
+            });
+        }
+
+        // Knowledge Unit Modal Inspector
+        const modalOverlay = document.getElementById('unit-modal-overlay');
+        const modalBody = document.getElementById('unit-modal-body');
+        const modalClose = document.getElementById('unit-modal-close');
+
+        if (modalClose && modalOverlay) {
+            modalClose.addEventListener('click', () => modalOverlay.classList.remove('open'));
+            modalOverlay.addEventListener('click', (e) => {
+                if (e.target === modalOverlay) modalOverlay.classList.remove('open');
+            });
+        }
+
+        window.showKnowledgeModal = async function(unitId) {
+            if (!modalOverlay || !modalBody) return;
+            modalOverlay.classList.add('open');
+            modalBody.innerHTML = `<div style="text-align: center; color: #f59e0b; padding: 40px 0;"><span style="font-size: 24px;">⏳</span><p style="margin-top: 10px;">Đang tải tri thức [${unitId}]...</p></div>`;
+
+            try {
+                const res = await fetch(`/api/v1/knowledge/units/${unitId}`);
+                const data = await res.json();
+                if (data.status === 'success' && data.unit) {
+                    const u = data.unit.raw_data || data.unit;
+                    const typeMap = { 'anti-pattern': 'Bẫy Cảm Bẫy', 'law': 'Quy Luật Thực Chứng', 'principle': 'Nguyên Tắc Hành Xử', 'strategy': 'Chiến Thuật Tác Chiến' };
+                    const displayType = typeMap[u.type] || u.type || 'Đơn vị Tri thức';
+
+                    modalBody.innerHTML = `
+                        <div style="display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+                            <span class="case-domain-badge">${displayType}</span>
+                            <span class="case-domain-badge" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; border-color: rgba(56, 189, 248, 0.3);">${u.primary_domain || u.domain || 'Domain'}</span>
+                            <span class="case-domain-badge" style="background: rgba(52, 211, 153, 0.15); color: #34d399; border-color: rgba(52, 211, 153, 0.3);">${u.id || unitId}</span>
+                        </div>
+                        <h2 style="font-family: 'Playfair Display', serif; font-size: 22px; color: #fff6ed; margin-bottom: 16px; font-weight: 600;">
+                            ${u.title || unitId}
+                        </h2>
+                        <div style="color: rgba(255,255,255,0.9); font-size: 14px; line-height: 1.7; font-family: 'Times New Roman', Times, serif;">
+                            ${u.summary ? `<div style="background: rgba(245, 158, 11, 0.06); border-left: 3px solid #f59e0b; padding: 10px 14px; border-radius: 0 6px 6px 0; margin-bottom: 16px;"><strong>Tóm lược:</strong> ${u.summary}</div>` : ''}
+                            ${u.definition ? `<h4 style="color: #f59e0b; margin: 14px 0 6px 0;">Định nghĩa bản chất</h4><p>${u.definition}</p>` : ''}
+                            ${u.mechanism && u.mechanism.length ? `<h4 style="color: #f59e0b; margin: 14px 0 6px 0;">Cơ chế chi phối</h4><ul style="padding-left: 20px;">${Array.isArray(u.mechanism) ? u.mechanism.map(m => `<li>${m}</li>`).join('') : `<li>${u.mechanism}</li>`}</ul>` : ''}
+                            ${u.conditions && u.conditions.length ? `<h4 style="color: #f59e0b; margin: 14px 0 6px 0;">Điều kiện kích hoạt</h4><ul style="padding-left: 20px;">${Array.isArray(u.conditions) ? u.conditions.map(c => `<li>${c}</li>`).join('') : `<li>${u.conditions}</li>`}</ul>` : ''}
+                            ${u.risks && u.risks.length ? `<h4 style="color: #f87171; margin: 14px 0 6px 0;">Rủi ro / Điểm mù</h4><ul style="padding-left: 20px; color: #fca5a5;">${Array.isArray(u.risks) ? u.risks.map(r => `<li>${r}</li>`).join('') : `<li>${u.risks}</li>`}</ul>` : ''}
+                        </div>
+                    `;
+                } else {
+                    modalBody.innerHTML = `<div style="color: #ef4444; padding: 20px;">Không tìm thấy chi tiết cho mã tri thức [${unitId}].</div>`;
+                }
+            } catch(e) {
+                modalBody.innerHTML = `<div style="color: #ef4444; padding: 20px;">Lỗi tải dữ liệu: ${e.message}</div>`;
+            }
+        };
+
+        // Render Case Studies in Chat History
+        async function renderCaseStudiesTab(domainFilter) {
+            const endpoint = domainFilter ? `/api/v1/cases?domain=${domainFilter}` : '/api/v1/cases';
+            const botMsg = document.createElement('div');
+            botMsg.className = 'chat-msg msg-bot';
+            botMsg.innerHTML = `
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                    <h3 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 18px; color: #f59e0b;">📋 TÌNH HUỐNG THỰC CHIẾN (CASE STUDIES)</h3>
+                    <span style="font-size: 11px; color: rgba(255,255,255,0.5);">HR-OS • Ops-OS • SalesOS</span>
+                </div>
+                <div style="display: flex; gap: 6px; margin-bottom: 14px; overflow-x: auto; padding-bottom: 4px;">
+                    <button class="chat-mode-pill ${!domainFilter ? 'active' : ''}" style="padding: 4px 10px; font-size: 11px;" onclick="renderCaseStudiesFiltered('')">Tất Cả</button>
+                    <button class="chat-mode-pill ${domainFilter === 'HR' ? 'active' : ''}" style="padding: 4px 10px; font-size: 11px;" onclick="renderCaseStudiesFiltered('HR')">💼 HR-OS (Nhân Sự)</button>
+                    <button class="chat-mode-pill ${domainFilter === 'OPS' ? 'active' : ''}" style="padding: 4px 10px; font-size: 11px;" onclick="renderCaseStudiesFiltered('OPS')">⚙️ Ops-OS (Vận Hành)</button>
+                    <button class="chat-mode-pill ${domainFilter === 'SALES' ? 'active' : ''}" style="padding: 4px 10px; font-size: 11px;" onclick="renderCaseStudiesFiltered('SALES')">📈 SalesOS (Kinh Doanh)</button>
+                </div>
+                <div id="cases-list-container" style="color: rgba(255,255,255,0.6); font-size: 13px;">Đang tải danh sách hồ sơ...</div>
+            `;
+            history.appendChild(botMsg);
+            history.scrollTop = history.scrollHeight;
+
+            try {
+                const res = await fetch(endpoint);
+                const data = await res.json();
+                const container = botMsg.querySelector('#cases-list-container');
+                if (data.status === 'success' && data.cases && data.cases.length > 0) {
+                    container.innerHTML = data.cases.map(c => `
+                        <div class="case-study-card">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px;">
+                                <strong style="color: #f8fafc; font-size: 14px;">${c.title}</strong>
+                                <span class="case-domain-badge">${c.domain}</span>
+                            </div>
+                            <p style="font-size: 12.5px; color: rgba(255,255,255,0.8); margin-bottom: 10px; line-height: 1.5;">${c.context_description}</p>
+                            <div style="display: flex; gap: 8px;">
+                                <button class="export-brief-btn" style="padding: 4px 10px; font-size: 11px;" onclick="loadCaseIntoInput('${encodeURIComponent(c.context_description)}')">⚡ Nạp Tình Huống Này</button>
+                            </div>
+                        </div>
+                    `).join('');
+                } else {
+                    container.innerHTML = '<div>Không có tình huống nào thuộc nhóm này.</div>';
+                }
+            } catch(e) {
+                const container = botMsg.querySelector('#cases-list-container');
+                if (container) container.innerHTML = `<div style="color: #ef4444;">Lỗi tải tình huống: ${e.message}</div>`;
+            }
+        }
+
+        window.renderCaseStudiesFiltered = function(dom) {
+            renderCaseStudiesTab(dom);
+        };
+
+        window.loadCaseIntoInput = function(encodedText) {
+            const text = decodeURIComponent(encodedText);
+            input.value = text;
+            window.setChatMode('council');
+            input.focus();
         };
 
         const DIGITAL_BOOKS = [
@@ -1699,7 +2091,7 @@
 
         async function loadKnowledgeBase() {
             const listEl = document.getElementById('knowledge-list');
-            listEl.innerHTML = '<div style="text-align: center; color: rgba(255,255,255,0.5); margin-top: 50px;">Đang tải kho tri thức...</div>';
+            listEl.innerHTML = '<div style="text-align: center; color: rgba(255,255,255,0.5); margin-top: 50px;">Đang nạp 379 đơn vị tri thức từ Hybrid Engine...</div>';
             try {
                 const res = await fetch('/api/v1/knowledge/units');
                 const data = await res.json();
@@ -1713,16 +2105,6 @@
                         if (!groups[d]) groups[d] = [];
                         groups[d].push(u);
                     });
-                    
-                    const domainMap = {
-                        'bo-sach-tri-thuc': '📚 BỘ SÁCH & CẨM NANG HỌC THUẬT (16 TÁC PHẨM)',
-                        'tu-than': 'TU THÂN (Quản lý bản thân)',
-                        'tri-nhan': 'TRỊ NHÂN (Thấu hiểu tâm lý)',
-                        'dung-nhan': 'DÙNG NHÂN (Quản trị & Lãnh đạo)',
-                        'hop-chung': 'HỢP CHÚNG (Quyền lực & Hệ thống)',
-                        'thanh-su': 'THÀNH SỰ (Thực thi chiến lược)',
-                        'unknown': 'KHÁC'
-                    };
 
                     Object.keys(groups).sort().forEach(domain => {
                         const groupContainer = document.createElement('div');
@@ -1731,14 +2113,14 @@
                         
                         const header = document.createElement('div');
                         header.className = 'knowledge-group-header';
-                        header.innerHTML = `<span>${domainMap[domain] || domain.toUpperCase()}</span> <span class="toggle-icon" style="font-size: 10px;">▼</span>`;
-                        header.style.cssText = 'padding: 15px; background: rgba(255,255,255,0.05); cursor: pointer; border-radius: 6px; font-weight: 600; font-size: 13px; letter-spacing: 1px; display: flex; justify-content: space-between; align-items: center; border: 1px solid rgba(255,255,255,0.1);';
+                        header.innerHTML = `<span>📂 ${domain.toUpperCase()} (${groups[domain].length} units)</span> <span class="toggle-icon" style="font-size: 10px;">▼</span>`;
+                        header.style.cssText = 'padding: 14px 16px; background: rgba(255,255,255,0.05); cursor: pointer; border-radius: 8px; font-weight: 600; font-size: 13px; letter-spacing: 0.5px; display: flex; justify-content: space-between; align-items: center; border: 1px solid rgba(255,255,255,0.1);';
                         
                         const itemsContainer = document.createElement('div');
                         itemsContainer.className = 'knowledge-group-items';
                         itemsContainer.style.display = 'none';
-                        itemsContainer.style.paddingLeft = '10px';
-                        itemsContainer.style.marginTop = '10px';
+                        itemsContainer.style.paddingLeft = '6px';
+                        itemsContainer.style.marginTop = '8px';
                         
                         header.addEventListener('click', () => {
                             const isHidden = itemsContainer.style.display === 'none';
@@ -1756,65 +2138,7 @@
                                 <div class="knowledge-card-title">${u.title || u.id}</div>
                                 <div class="knowledge-card-meta">[${displayType.toUpperCase()}] &bull; ${u.id}</div>
                             `;
-                            card.addEventListener('click', async () => {
-                                if (card.querySelector('.knowledge-content')) {
-                                    const contentEl = card.querySelector('.knowledge-content');
-                                    contentEl.style.display = contentEl.style.display === 'none' ? 'block' : 'none';
-                                    return;
-                                }
-                                card.innerHTML += `<div class="knowledge-content" style="margin-top: 15px; font-size: 14.5px; color: rgba(255,255,255,0.8); border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; line-height: 1.6;">Đang tải nội dung...</div>`;
-                                try {
-                                    const detailRes = await fetch('/api/v1/knowledge/units/' + u.id);
-                                    const detailData = await detailRes.json();
-                                    if (detailData.status === 'success' && detailData.unit) {
-                                        let content = "";
-                                        let rawData = detailData.unit.raw_data || detailData.unit;
-                                        
-                                        // 1. Show analysis content FIRST
-                                        if (rawData.content) {
-                                            content += rawData.content + "\n\n";
-                                        } else {
-                                            content += "*(Đang khởi tạo luận giải chuyên sâu, vui lòng thử lại sau giây lát)*\n\n";
-                                        }
-
-                                        // 2. Wrap raw YAML data in a details block
-                                        let rawContent = "";
-                                        if (rawData.summary) rawContent += "**Tóm tắt:**\n" + rawData.summary + "\n\n";
-                                        if (rawData.definition) rawContent += "**Định nghĩa:**\n" + rawData.definition + "\n\n";
-                                        if (rawData.mechanism && rawData.mechanism.length > 0) rawContent += "**Cơ chế hoạt động:**\n" + (Array.isArray(rawData.mechanism) ? "- " + rawData.mechanism.join("\n- ") : rawData.mechanism) + "\n\n";
-                                        if (rawData.conditions && rawData.conditions.length > 0) rawContent += "**Điều kiện áp dụng:**\n" + (Array.isArray(rawData.conditions) ? "- " + rawData.conditions.join("\n- ") : rawData.conditions) + "\n\n";
-                                        if (rawData.exceptions && rawData.exceptions.length > 0) rawContent += "**Ngoại lệ:**\n" + (Array.isArray(rawData.exceptions) ? "- " + rawData.exceptions.join("\n- ") : rawData.exceptions) + "\n\n";
-                                        if (rawData.risks && rawData.risks.length > 0) rawContent += "**Rủi ro:**\n" + (Array.isArray(rawData.risks) ? "- " + rawData.risks.join("\n- ") : rawData.risks) + "\n\n";
-                                        if (rawData.applications && Object.keys(rawData.applications).length > 0) {
-                                            rawContent += "**Ứng dụng:**\n";
-                                            for (const [key, value] of Object.entries(rawData.applications)) {
-                                                if (Array.isArray(value) && value.length > 0) {
-                                                    rawContent += `- **${key}**:\n  - ` + value.join("\n  - ") + "\n";
-                                                } else if (typeof value === 'string') {
-                                                    rawContent += `- **${key}**: ${value}\n`;
-                                                }
-                                            }
-                                            rawContent += "\n";
-                                        }
-                                        if (rawData.relations && Object.keys(rawData.relations).length > 0) {
-                                            let hasRelation = false;
-                                            let relContent = "**Liên kết:**\n";
-                                            if (rawData.relations.depends_on && rawData.relations.depends_on.length > 0) { relContent += "- **Phụ thuộc vào:** " + rawData.relations.depends_on.join(", ") + "\n"; hasRelation = true; }
-                                            if (rawData.relations.supports && rawData.relations.supports.length > 0) { relContent += "- **Hỗ trợ cho:** " + rawData.relations.supports.join(", ") + "\n"; hasRelation = true; }
-                                            if (rawData.relations.conflicts_with && rawData.relations.conflicts_with.length > 0) { relContent += "- **Xung đột với:** " + rawData.relations.conflicts_with.join(", ") + "\n"; hasRelation = true; }
-                                            if (hasRelation) rawContent += relContent + "\n";
-                                        }
-                                        
-                                        content += "<details style='margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;'><summary style='cursor: pointer; opacity: 0.7; font-weight: 600;'>Nội dung gốc (Database)</summary>\n\n" + rawContent + "\n</details>";
-                                        
-                                        card.querySelector('.knowledge-content').innerHTML = formatChatHTML(content);
-                                    } else {
-                                        card.querySelector('.knowledge-content').innerHTML = 'Không thể tải nội dung.';
-                                    }
-                                } catch(e) {
-                                    card.querySelector('.knowledge-content').innerHTML = 'Lỗi kết nối hoặc timeout.';
-                                }
-                            });
+                            card.addEventListener('click', () => window.showKnowledgeModal(u.id));
                             itemsContainer.appendChild(card);
                         });
                         
@@ -1825,12 +2149,12 @@
                     knowledgeLoaded = true;
                 }
             } catch (e) {
-                listEl.innerHTML = '<div style="color:red;text-align:center;">Lỗi khi tải kho tri thức.</div>';
+                listEl.innerHTML = '<div style="color:red;text-align:center;">Lỗi khi nạp kho tri thức.</div>';
             }
         }
         
         // Interactive cursors over chat elements
-        const clickableSelectors = '#chat-sidebar, .chat-input, .chat-send-btn, .close-chat-btn';
+        const clickableSelectors = '#chat-sidebar, .chat-input, .chat-send-btn, .close-chat-btn, .chat-mode-pill, .export-brief-btn';
         document.querySelectorAll(clickableSelectors).forEach(el => {
             el.addEventListener('mouseenter', () => {
                 const outer = document.querySelector('.cursor-outer');
@@ -1867,38 +2191,112 @@
             const loader = document.createElement('div');
             loader.id = loaderId;
             loader.className = 'typing-indicator';
-            loader.textContent = 'Nhân Thuật đang phân tích...';
+            loader.textContent = currentChatMode === 'council' 
+                ? '🏛️ Hội Đồng 5 Cố Vấn đang tranh luận...' 
+                : currentChatMode === 'sparring' 
+                ? '⚔️ Cố Vấn đang phản biện đối kháng...' 
+                : 'Nhân Thuật đang phân tích...';
             history.appendChild(loader);
-            
             history.scrollTop = history.scrollHeight;
             
             try {
-                const res = await fetch('/api/v1/nhan-thuat/analyze', {
-                    method: 'POST',
-                    headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({ scenario_text: val, scenario_type_hint: currentChatMode })
-                });
-                const data = await res.json();
-                
-                const l = document.getElementById(loaderId);
-                if(l) l.remove();
-                
-                const botMsg = document.createElement('div');
-                botMsg.className = 'chat-msg msg-bot';
-                
-                if (data.status === 'success' && data.synthesis_result && data.synthesis_result.synthesis) {
-                    botMsg.innerHTML = formatChatTabs(data.synthesis_result);
-                } else if (data.message) {
-                    botMsg.innerHTML = `<div style="color: rgba(255,255,255,0.85);">${data.message}</div>`;
-                } else {
-                    botMsg.textContent = "Hệ thống đang đồng bộ tri thức, vui lòng gửi lại câu hỏi sau giây lát.";
+                // 1. Council Mode: Multi-Agent Council
+                if (currentChatMode === 'council') {
+                    const res = await fetch('/api/v1/council/deliberate', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ scenario_text: val })
+                    });
+                    const data = await res.json();
+                    document.getElementById(loaderId)?.remove();
+
+                    const botMsg = document.createElement('div');
+                    botMsg.className = 'chat-msg msg-bot';
+                    if (data.status === 'success' && data.deliberation) {
+                        botMsg.innerHTML = formatCouncilDeliberationHTML(data.deliberation);
+                        // Save lastBriefPayload for export
+                        const d = data.deliberation;
+                        lastBriefPayload = {
+                            title: `Biên Bản Hội Đồng Cố Vấn: ${val.substring(0, 45)}...`,
+                            situation_summary: val,
+                            philosophy_analysis: d.decision_matrix ? d.decision_matrix.highest_consensus : "Hội đồng 5 trường phái tranh luận.",
+                            action_script: d.decision_matrix ? d.decision_matrix.plan_a_primary : {},
+                            directives: d.decision_matrix ? d.decision_matrix.execution_directives : []
+                        };
+                    } else {
+                        botMsg.innerHTML = `<div style="color: #ef4444;">${data.message || 'Lỗi xử lý Hội Đồng Cố Vấn.'}</div>`;
+                    }
+                    history.appendChild(botMsg);
                 }
-                history.appendChild(botMsg);
+                // 2. Sparring Mode: Stateful Adversarial Sparring
+                else if (currentChatMode === 'sparring') {
+                    if (!currentSparringSessionId) {
+                        // Create new session
+                        const sessRes = await fetch('/api/v1/sparring/sessions', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ title: `Đấu trí: ${val.substring(0, 30)}...`, philosophy_lens: 'auto' })
+                        });
+                        const sessData = await sessRes.json();
+                        if (sessData.session) currentSparringSessionId = sessData.session.id;
+                    }
+
+                    const res = await fetch('/api/v1/sparring/messages', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ session_id: currentSparringSessionId, message: val })
+                    });
+                    const data = await res.json();
+                    document.getElementById(loaderId)?.remove();
+
+                    const botMsg = document.createElement('div');
+                    botMsg.className = 'chat-msg msg-bot';
+                    if (data.status === 'success' && data.response) {
+                        botMsg.innerHTML = formatSparringResponseHTML(data);
+                        lastBriefPayload = {
+                            title: `Kịch Bản Đấu Trí Điều Hành`,
+                            situation_summary: val,
+                            philosophy_analysis: data.response,
+                            action_script: { verbatim_reply: data.response },
+                            directives: []
+                        };
+                    } else {
+                        botMsg.innerHTML = `<div style="color: #ef4444;">${data.message || 'Lỗi đối kháng.'}</div>`;
+                    }
+                    history.appendChild(botMsg);
+                }
+                // 3. Leadership / General Advisory Mode
+                else {
+                    const res = await fetch('/api/v1/nhan-thuat/analyze', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ scenario_text: val, scenario_type_hint: 'leadership' })
+                    });
+                    const data = await res.json();
+                    document.getElementById(loaderId)?.remove();
+                    
+                    const botMsg = document.createElement('div');
+                    botMsg.className = 'chat-msg msg-bot';
+                    
+                    if (data.status === 'success' && data.synthesis_result && data.synthesis_result.synthesis) {
+                        botMsg.innerHTML = formatChatTabs(data.synthesis_result);
+                        lastBriefPayload = {
+                            title: `Bản Tham Mưu Nhân Thuật: ${val.substring(0, 45)}...`,
+                            situation_summary: val,
+                            philosophy_analysis: data.synthesis_result.synthesis,
+                            action_script: data.action_script || {},
+                            knowledge_units: data.matched_knowledge_units || []
+                        };
+                    } else if (data.message) {
+                        botMsg.innerHTML = `<div style="color: rgba(255,255,255,0.85);">${data.message}</div>`;
+                    } else {
+                        botMsg.textContent = "Hệ thống đang đồng bộ tri thức, vui lòng gửi lại câu hỏi sau giây lát.";
+                    }
+                    history.appendChild(botMsg);
+                }
                 
             } catch (e) {
-                const l = document.getElementById(loaderId);
-                if(l) l.remove();
-                
+                document.getElementById(loaderId)?.remove();
                 const errMsg = document.createElement('div');
                 errMsg.className = 'chat-msg msg-bot';
                 errMsg.style.color = 'rgba(255,255,255,0.85)';
@@ -1921,18 +2319,143 @@
             container.querySelector('#' + paneId).classList.add('active');
         };
 
+        window.selectPlanTab = function(btn, planId, matrixId) {
+            const matrixBox = document.getElementById(matrixId);
+            if (!matrixBox) return;
+            matrixBox.querySelectorAll('.plan-tab-btn').forEach(b => b.classList.remove('active'));
+            matrixBox.querySelectorAll('.plan-content-panel').forEach(p => p.style.display = 'none');
+            btn.classList.add('active');
+            const target = document.getElementById(planId);
+            if (target) target.style.display = 'block';
+        };
+
+        function formatCouncilDeliberationHTML(delib) {
+            const matrixId = 'matrix-' + Math.random().toString(36).substr(2, 9);
+            const m = delib.decision_matrix || {};
+
+            let html = `
+                <div style="margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">
+                    <h3 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 19px; color: #f59e0b;">🏛️ HỘI ĐỒNG CỐ VẤN ĐA TRIẾT LÝ</h3>
+                    <span style="font-size: 11px; color: rgba(255,255,255,0.5);">${(delib.total_latency_ms || 0).toFixed(1)} ms</span>
+                </div>
+            `;
+
+            // 1. Stage 1: Pitches
+            html += `<div class="council-stage-header"><span>🏛️ GIAI ĐOẠN 1: 5 LẬP TRƯỜNG TRIẾT HỌC (PERSPECTIVE PITCHES)</span></div>`;
+            html += `<div class="council-pitch-grid">`;
+            (delib.pitches || []).forEach(p => {
+                const schoolIcons = { LEGALISM: '⚖️', TAOISM: '☯️', CONFUCIAN: '📜', XUNZI: '🏛️', SUNZI: '⚔️' };
+                const icon = schoolIcons[p.agent_id] || '💡';
+                const badgesHtml = (p.cited_unit_ids || []).map(uid => `<a href="javascript:void(0)" class="knowledge-badge" onclick="showKnowledgeModal('${uid}')">🏷️ ${uid}</a>`).join('');
+
+                html += `
+                    <div class="council-pitch-card">
+                        <div class="council-pitch-title">
+                            <span>${icon} ${p.title}</span>
+                            <span style="font-size: 11px; color: #f59e0b;">${p.agent_id}</span>
+                        </div>
+                        <div class="council-pitch-stance">"${p.stance}"</div>
+                        <ul style="padding-left: 18px; margin-bottom: 8px; font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.5;">
+                            ${(p.core_arguments || []).map(a => `<li>${a}</li>`).join('')}
+                        </ul>
+                        ${badgesHtml ? `<div style="margin-bottom: 6px;">${badgesHtml}</div>` : ''}
+                        ${p.risk_warning ? `<div style="font-size: 11.5px; color: #f87171; background: rgba(248,113,113,0.06); padding: 4px 8px; border-radius: 4px;">${p.risk_warning}</div>` : ''}
+                    </div>
+                `;
+            });
+            html += `</div>`;
+
+            // 2. Stage 2: Cross Debates
+            if (delib.cross_debates && delib.cross_debates.length > 0) {
+                html += `<div class="council-stage-header"><span>⚔️ GIAI ĐOẠN 2: TRANH LUẬN ĐỐI KHÁNG CHÉO (CROSS-EXAMINATION)</span></div>`;
+                delib.cross_debates.forEach(cd => {
+                    html += `
+                        <div class="cross-debate-card">
+                            <strong style="color: #f87171; display: block; margin-bottom: 4px;">🥊 ${cd.challenger_id} ➔ ${cd.target_id}</strong>
+                            <p style="margin-bottom: 6px; color: rgba(255,255,255,0.9);">"${cd.critique}"</p>
+                            <div style="font-size: 12px; color: #34d399;">💡 <em>Giải pháp khắc chế: ${cd.counter_recommendation}</em></div>
+                        </div>
+                    `;
+                });
+            }
+
+            // 3. Stage 3: Decision Matrix
+            if (m) {
+                html += `<div class="council-stage-header"><span>🏆 GIAI ĐOẠN 3: MA TRẬN QUYẾT ĐỊNH ĐIỀU HÀNH</span></div>`;
+                html += `
+                    <div class="decision-matrix-box" id="${matrixId}">
+                        <div style="background: rgba(245, 158, 11, 0.12); border-left: 3px solid #f59e0b; padding: 12px 14px; border-radius: 0 8px 8px 0; margin-bottom: 12px;">
+                            <strong style="color: #f59e0b; display: block; font-size: 13.5px; margin-bottom: 4px;">👑 ĐỒNG THUẬN CAO NHẤT (HIGHEST CONSENSUS):</strong>
+                            <div style="color: #fff; font-size: 13.5px; line-height: 1.6;">${m.highest_consensus || ''}</div>
+                        </div>
+
+                        <div class="plan-tab-bar">
+                            <button class="plan-tab-btn active" onclick="selectPlanTab(this, 'pa-${matrixId}', '${matrixId}')">🟢 Phương Án A (Chủ Đạo)</button>
+                            <button class="plan-tab-btn" onclick="selectPlanTab(this, 'pb-${matrixId}', '${matrixId}')">🟡 Phương Án B (Dự Phòng)</button>
+                            <button class="plan-tab-btn" onclick="selectPlanTab(this, 'pc-${matrixId}', '${matrixId}')">🔴 Phương Án C (Khoanh Vùng)</button>
+                        </div>
+
+                        <!-- Plan A -->
+                        <div class="plan-content-panel" id="pa-${matrixId}" style="display: block; font-size: 13px; color: rgba(255,255,255,0.9);">
+                            <h4 style="color: #34d399; margin-bottom: 6px;">${m.plan_a_primary?.name || 'Phương án A'}</h4>
+                            <p style="margin-bottom: 8px;">${m.plan_a_primary?.summary || ''}</p>
+                            <ul style="padding-left: 18px; line-height: 1.6;">${(m.plan_a_primary?.action_steps || []).map(s => `<li>${s}</li>`).join('')}</ul>
+                        </div>
+
+                        <!-- Plan B -->
+                        <div class="plan-content-panel" id="pb-${matrixId}" style="display: none; font-size: 13px; color: rgba(255,255,255,0.9);">
+                            <h4 style="color: #fbbf24; margin-bottom: 6px;">${m.plan_b_fallback?.name || 'Phương án B'}</h4>
+                            <p style="margin-bottom: 8px;">${m.plan_b_fallback?.summary || ''}</p>
+                            <ul style="padding-left: 18px; line-height: 1.6;">${(m.plan_b_fallback?.action_steps || []).map(s => `<li>${s}</li>`).join('')}</ul>
+                        </div>
+
+                        <!-- Plan C -->
+                        <div class="plan-content-panel" id="pc-${matrixId}" style="display: none; font-size: 13px; color: rgba(255,255,255,0.9);">
+                            <h4 style="color: #f87171; margin-bottom: 6px;">${m.plan_c_containment?.name || 'Phương án C'}</h4>
+                            <p style="margin-bottom: 8px;">${m.plan_c_containment?.summary || ''}</p>
+                            <ul style="padding-left: 18px; line-height: 1.6;">${(m.plan_c_containment?.action_steps || []).map(s => `<li>${s}</li>`).join('')}</ul>
+                        </div>
+
+                        ${m.execution_directives && m.execution_directives.length ? `
+                            <div style="margin-top: 14px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.1);">
+                                <strong style="color: #38bdf8; font-size: 12.5px; display: block; margin-bottom: 4px;">⚡ CHỈ THỊ THỰC THI NGAY:</strong>
+                                <ul style="padding-left: 18px; font-size: 12.5px; color: rgba(255,255,255,0.85);">${m.execution_directives.map(d => `<li>${d}</li>`).join('')}</ul>
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            }
+
+            return html;
+        }
+
+        function formatSparringResponseHTML(data) {
+            const badges = (data.matched_unit_ids || []).map(uid => `<a href="javascript:void(0)" class="knowledge-badge" onclick="showKnowledgeModal('${uid}')">🏷️ ${uid}</a>`).join('');
+            
+            return `
+                <div style="margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 11px; background: rgba(245, 158, 11, 0.2); color: #f59e0b; padding: 2px 8px; border-radius: 12px; font-weight: 700;">⚔️ LĂNG KÍNH: ${data.philosophy_lens || 'AUTO'}</span>
+                    <span style="font-size: 11px; color: rgba(255,255,255,0.5);">${(data.latency_ms || 0).toFixed(1)} ms</span>
+                </div>
+                <div style="font-family: 'Times New Roman', Times, serif; font-size: 14.5px; line-height: 1.7; color: rgba(255,255,255,0.92);">
+                    ${formatChatHTML(data.response || '')}
+                </div>
+                ${badges ? `<div style="margin-top: 12px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.1);"><span style="font-size: 11px; color: rgba(255,255,255,0.5); margin-right: 6px;">Căn cứ tri thức:</span>${badges}</div>` : ''}
+            `;
+        }
+
         function formatChatTabs(result) {
             const id = Math.random().toString(36).substr(2, 9);
             const textHTML = formatChatHTML(result.synthesis || '');
             
             let citationsHTML = '<div style="color: rgba(255,255,255,0.6); padding: 10px 0;">Không có tài liệu trích dẫn trực tiếp.</div>';
             if (result.citations && result.citations.length > 0) {
-                citationsHTML = '<ul style="margin: 0; padding-left: 20px; line-height: 1.8;">' + result.citations.map(c => '<li style="margin-bottom: 6px;"><strong>' + (c.title || c.id) + '</strong> (' + c.id + ') <span style="opacity: 0.6;">— ' + (c.domain || '') + '</span></li>').join('') + '</ul>';
+                citationsHTML = '<div style="display: flex; flex-wrap: wrap; gap: 8px; padding-top: 8px;">' + result.citations.map(c => `<a href="javascript:void(0)" class="knowledge-badge" onclick="showKnowledgeModal('${c.id}')">🏷️ ${c.id}: ${c.title || c.id}</a>`).join('') + '</div>';
             }
 
             return '<div class="chat-tabs-nav" style="display: flex; gap: 10px; margin-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">' +
-                   '<button class="chat-tab-btn active" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 5px 14px; border-radius: 12px; cursor: pointer; font-size: 13px;" onclick="switchTab(this, \'tab-chien-luoc-' + id + '\')">📜 Luận Giải & Chiến Lược</button>' +
-                   '<button class="chat-tab-btn" style="background: transparent; border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); padding: 5px 14px; border-radius: 12px; cursor: pointer; font-size: 13px;" onclick="switchTab(this, \'tab-trich-dan-' + id + '\')">📚 Căn Cứ & Trích Dẫn</button>' +
+                   '<button class="chat-tab-btn active" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 5px 14px; border-radius: 12px; cursor: pointer; font-size: 13px;" onclick="switchTab(this, \'tab-chien-luoc-' + id + '\')">📜 Luận Giải & Kịch Bản</button>' +
+                   '<button class="chat-tab-btn" style="background: transparent; border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); padding: 5px 14px; border-radius: 12px; cursor: pointer; font-size: 13px;" onclick="switchTab(this, \'tab-trich-dan-' + id + '\')">📚 Căn Cứ Tri Thức</button>' +
                    '</div>' +
                    '<div class="chat-tab-pane active" id="tab-chien-luoc-' + id + '" style="line-height: 1.7; font-size: 14.5px;">' + textHTML + '</div>' +
                    '<div class="chat-tab-pane" id="tab-trich-dan-' + id + '" style="display: none; line-height: 1.7; font-size: 14px;">' + citationsHTML + '</div>';
@@ -2013,7 +2536,7 @@
     // Search functionality for Knowledge Base
     document.addEventListener('input', function(e) {
         if(e.target && e.target.id === 'knowledge-search-input') {
-            const term = e.target.value.toLowerCase();
+            const term = e.target.value.toLowerCase().trim();
             document.querySelectorAll('.knowledge-group').forEach(group => {
                 let hasVisibleCard = false;
                 const itemsContainer = group.querySelector('.knowledge-group-items');

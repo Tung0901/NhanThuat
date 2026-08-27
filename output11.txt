@@ -1,0 +1,20 @@
+1670:                 .replace(/^\*\*([^*]+)\*\*(.*)$/gm, '<strong>$1</strong>$2')
+1671:                 .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+1672:                 .replace(/\*([^*]+)\*/g, '<em>$1</em>')
+1673:                 .replace(/\n\n/g, '</p><p>');
+1674:             
+1675:             html = html.replace(/(?:^|\n)- (.*?)(?=\n|$)/g, '<li>$1</li>');
+1676:             html = html.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
+1677:             
+1678:             return '<p>' + html + '</p>';
+1679:         }
+1680:     }
+1681:     </script>
+1682: <script>
+1683:     
+1684:     function setupChatSidebar() {
+1685:         const toggleBtn = document.getElementById('toggle-chat-btn');
+1686:         const closeBtn = document.getElementById('close-chat-btn');
+1687:         const minBtn = document.getElementById('min-chat-btn');
+1688:         const sidebar = document.getElementById('chat-sidebar');
+1689:         const input = document.getElementById('chat-input');

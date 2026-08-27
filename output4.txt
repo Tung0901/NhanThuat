@@ -1,0 +1,9 @@
+307: .knowledge-list {
+571: .knowledge-list {
+857: <button class="sidebar-tab" data-target="sidebar-view-knowledge">KHO TRI THỨC</button>
+875: <div id="sidebar-view-knowledge" class="sidebar-view">
+876: <div class="knowledge-list" id="knowledge-list">
+1429: if (tab.getAttribute('data-target') === 'sidebar-view-knowledge' && !knowledgeLoaded) {
+1436: const listEl = document.getElementById('knowledge-list');
+1721: if (tab.getAttribute('data-target') === 'sidebar-view-knowledge' && !knowledgeLoaded) {
+1728: const listEl = document.getElementById('knowledge-list');

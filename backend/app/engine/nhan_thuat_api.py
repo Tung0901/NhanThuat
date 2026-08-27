@@ -36,50 +36,24 @@ def get_dialogue_few_shots() -> dict[str, Any]:
     return _dialogue_few_shots
 
 
+_hybrid_retriever = None
+
+
+def get_hybrid_retriever(engine: KnowledgeEngine) -> Any:
+    global _hybrid_retriever
+    if _hybrid_retriever is None:
+        from nhan_thuat.rag.hybrid_retriever import HybridRetriever
+        units_list = list(engine.units_by_id.values())
+        _hybrid_retriever = HybridRetriever(units=units_list)
+    return _hybrid_retriever
+
+
 def find_relevant_units(scenario_text: str, engine: KnowledgeEngine, top_k: int = 3) -> list[IndexedUnit]:
-    text_lower = scenario_text.lower()
-    synonym_map = {
-        "báo cáo láo": ["báo cáo", "dối", "sự thật", "hình danh", "chức danh", "kỷ luật", "truth", "threat", "formal", "position"],
-        "đình công": ["đình công", "lương", "tranh chấp", "đòi", "tổ đội", "quyền lợi", "xung đột", "coercive", "compliance", "structural", "fit"],
-        "đắt": ["đắt", "giá", "báo giá", "chi phí", "từ chối", "khách hàng", "giá trị", "khung", "rhetoric", "framing", "exchange"],
-        "đòi nợ": ["nợ", "đòi nợ", "quá hạn", "thanh toán", "tiền hàng", "thu hồi", "công nợ"],
-        "vật tư": ["vật tư", "nhà cung cấp", "hợp đồng", "tiến độ", "chậm", "chế tài", "vi phạm", "giao"],
-        "nhà cung cấp": ["nhà cung cấp", "vật tư", "hợp đồng", "tiến độ", "chậm", "chế tài"],
-        "nhà bè": ["công trình", "thi công", "hiện trường", "dự án", "địa điểm", "tiến độ", "nhà cung cấp"],
-        "công trình": ["thi công", "hiện trường", "dự án", "tiến độ", "chậm"],
-    }
-
-    tokens = [t.strip() for t in text_lower.split() if len(t.strip()) > 1]
-    expanded_tokens = list(tokens)
-
-    for key, syn_list in synonym_map.items():
-        if key in text_lower:
-            expanded_tokens.extend(syn_list)
-
-    scores: dict[str, tuple[int, IndexedUnit]] = {}
-    for unit_id, unit in engine.units_by_id.items():
-        score = 0
-        raw = unit.raw_data
-        unit_text = f"{unit.unit_id} {unit.title} {unit.domain} {unit.unit_type} {raw.get('summary', '')} {raw.get('definition', '')} {' '.join(unit.tags)} {' '.join(raw.get('key_mechanisms', []))} {' '.join(raw.get('operational_rules', []))}".lower()
-
-        for token in expanded_tokens:
-            if token in unit_text:
-                score += 2
-            if token in unit.title.lower():
-                score += 5
-            if token in unit.tags:
-                score += 4
-            if token in unit.domain.lower():
-                score += 3
-
-        if score > 0:
-            scores[unit_id] = (score, unit)
-
-    if not scores:
-        return list(engine.units_by_id.values())[:top_k]
-
-    sorted_units = sorted(scores.values(), key=lambda x: (x[0], x[1].unit_id), reverse=True)
-    return [u[1] for u in sorted_units[:top_k]]
+    retriever = get_hybrid_retriever(engine)
+    res = retriever.retrieve(scenario_text, top_k=top_k, expand_relations=True)
+    if res.primary_units:
+        return res.primary_units[:top_k]
+    return list(engine.units_by_id.values())[:top_k]
 
 
 def check_context_ambiguity(scenario_text: str) -> tuple[bool, str]:
@@ -413,8 +387,7 @@ def process_nhan_thuat_analysis(scenario_text: str, scenario_type_hint: str = "g
     })
 
     # 3. Match Knowledge Units
-    # For UI rendering, we get top 5 units
-    matched_units = find_relevant_units(scenario_text, orchestrator.knowledge_engine, top_k=5)
+    matched_units = find_relevant_units(scenario_text, orchestrator.knowledge_engine, top_k=3)
     
     # If no match from synonyms, pass ALL units so Gemini can act as a retriever
     all_units = list(orchestrator.knowledge_engine.units_by_id.values())
@@ -424,12 +397,28 @@ def process_nhan_thuat_analysis(scenario_text: str, scenario_type_hint: str = "g
     from nhan_thuat.models import KnowledgeUnit
     knowledge_units = [KnowledgeUnit.from_mapping(u.raw_data) for u in units_for_synthesis]
 
-    # 4. Use KnowledgeSynthesizer to generate exact Streamlit format
+    # 4. Generate Actionable Script
+    primary_phil = router_res.get("primary_philosophy", "NONE").upper()
+    action_script = generate_actionable_script_details(primary_phil, scenario_text)
+
+    # 5. Use KnowledgeSynthesizer to generate exact Streamlit format
     from nhan_thuat.runtime.synthesizer import KnowledgeSynthesizer
     synthesizer = KnowledgeSynthesizer()
     synthesis_result = synthesizer.synthesize(scenario_text, knowledge_units)
 
-    correlation_id = synthesis_result.get("audit", {}).get("correlation_id", f"CORR-WEB-{uuid.uuid4().hex[:8].upper()}")
+    correlation_id = f"CORR-WEB-{uuid.uuid4().hex[:8].upper()}"
+
+    matched_units_payload = [
+        {
+            "unit_id": u.unit_id,
+            "title": u.title,
+            "domain": u.domain,
+            "unit_type": u.unit_type,
+            "summary": u.raw_data.get("summary", ""),
+            "checksum": u.checksum,
+        }
+        for u in matched_units
+    ]
 
     return {
         "status": "success",
@@ -437,10 +426,17 @@ def process_nhan_thuat_analysis(scenario_text: str, scenario_type_hint: str = "g
         "is_ambiguous": is_ambiguous,
         "ambiguity_warning": warning_msg if is_ambiguous else "",
         "philosophy_routing": {
-            "primary_philosophy": router_res.get("primary_philosophy", "NONE").upper(),
+            "primary_philosophy": primary_phil,
             "secondary_philosophy": router_res.get("secondary_philosophy"),
             "tertiary_philosophy": router_res.get("tertiary_philosophy"),
+            "lens_weights": router_res.get("lens_weights", {}),
+            "lens_confidence_scores": router_res.get("lens_confidence_scores", {}),
+            "conflict_resolution": router_res.get("conflict_resolution", {}),
+            "explanation": router_res.get("explanation", ""),
         },
+        "matched_knowledge_units": matched_units_payload,
+        "matched_custom_docs": [],
+        "action_script": action_script,
         "synthesis_result": synthesis_result,  # This contains mode, synthesis, citations, audit
         "correlation_id": correlation_id,
     }

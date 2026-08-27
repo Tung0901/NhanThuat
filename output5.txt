@@ -1,0 +1,30 @@
+312: .knowledge-card {
+321: .knowledge-card:hover {
+325: .knowledge-card-title {
+331: .knowledge-card-meta {
+576: .knowledge-card {
+585: .knowledge-card:hover {
+589: .knowledge-card-title {
+595: .knowledge-card-meta {
+1419: let knowledgeLoaded = false;
+1429: if (tab.getAttribute('data-target') === 'sidebar-view-knowledge' && !knowledgeLoaded) {
+1436: const listEl = document.getElementById('knowledge-list');
+1437: listEl.innerHTML = '<div style="text-align: center; color: rgba(255,255,255,0.5); margin-top: 50px;">Đang tải kho tri thức...</div>';
+1442: listEl.innerHTML = '';
+1485: card.className = 'knowledge-card';
+1490: <div class="knowledge-card-title">${u.title || u.id}</div>
+1491: <div class="knowledge-card-meta">[${displayType.toUpperCase()}] &bull; ${u.id}</div>
+1546: listEl.appendChild(groupContainer);
+1548: knowledgeLoaded = true;
+1551: listEl.innerHTML = '<div style="color:red;text-align:center;">Lỗi khi tải kho tri thức.</div>';
+1711: let knowledgeLoaded = false;
+1721: if (tab.getAttribute('data-target') === 'sidebar-view-knowledge' && !knowledgeLoaded) {
+1728: const listEl = document.getElementById('knowledge-list');
+1729: listEl.innerHTML = '<div style="text-align: center; color: rgba(255,255,255,0.5); margin-top: 50px;">Đang tải kho tri thức...</div>';
+1734: listEl.innerHTML = '';
+1777: card.className = 'knowledge-card';
+1782: <div class="knowledge-card-title">${u.title || u.id}</div>
+1783: <div class="knowledge-card-meta">[${displayType.toUpperCase()}] &bull; ${u.id}</div>
+1838: listEl.appendChild(groupContainer);
+1840: knowledgeLoaded = true;
+1843: listEl.innerHTML = '<div style="color:red;text-align:center;">Lỗi khi tải kho tri thức.</div>';

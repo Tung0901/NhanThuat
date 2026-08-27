@@ -14,7 +14,7 @@ from nhan_thuat.knowledge_engine import FALLBACK_INSUFFICIENT_KNOWLEDGE, Knowled
 def test_knowledge_engine_loading_and_indexing() -> None:
     engine = KnowledgeEngine()
     # All knowledge units loaded
-    assert len(engine.units_by_id) == 376
+    assert len(engine.units_by_id) == 379
 
     # Check primary indexes
     assert "NT-LAW-0001" in engine.units_by_id

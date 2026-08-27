@@ -1,0 +1,23 @@
+226: #chat-sidebar {
+245: #chat-sidebar > * {
+248: #chat-sidebar.open {
+251: #chat-sidebar.minimized {
+263: #chat-sidebar.minimized .chat-history,
+264: #chat-sidebar.minimized .chat-input-container {
+267: #chat-sidebar.minimized .chat-header {
+483: #chat-sidebar {
+490: #chat-sidebar {
+509: #chat-sidebar > * {
+512: #chat-sidebar.open {
+515: #chat-sidebar.minimized {
+527: #chat-sidebar.minimized .chat-history,
+528: #chat-sidebar.minimized .chat-input-container {
+531: #chat-sidebar.minimized .chat-header {
+747: #chat-sidebar {
+847: <div id="chat-sidebar" class="open">
+878: <input type="text" id="knowledge-search-input" placeholder="Tìm kiếm theo tên hoặc mã..." style="width: 100%; padding: 10px 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-family: inherit; font-size: 0.9rem; outline: none; transition: border-color 0.3s;" onfocus="this.style.borderColor='rgba(255,255,255,0.3)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+1396: const sidebar = document.getElementById('chat-sidebar');
+1560: const clickableSelectors = '#chat-sidebar, .chat-input, .chat-send-btn, .close-chat-btn';
+1688: const sidebar = document.getElementById('chat-sidebar');
+1852: const clickableSelectors = '#chat-sidebar, .chat-input, .chat-send-btn, .close-chat-btn';
+1974: if(e.target && e.target.id === 'knowledge-search-input') {

@@ -1,0 +1,4 @@
+1389: setupChatSidebar();
+1392: function setupChatSidebar() {
+1684: function setupChatSidebar() {
+2016: document.addEventListener("DOMContentLoaded", setupChatSidebar);

@@ -3,12 +3,16 @@ from backend.app.engine.philosophies.router import PhilosophyRouter, PhilosophyT
 
 def test_philosophy_router_initialization() -> None:
     router = PhilosophyRouter()
-    assert len(router.engines) == 5
+    assert len(router.engines) == 9
     assert PhilosophyType.RHETORIC in router.engines
     assert PhilosophyType.CONFUCIAN in router.engines
     assert PhilosophyType.LEGALISM in router.engines
     assert PhilosophyType.TAOISM in router.engines
     assert PhilosophyType.XUNZI in router.engines
+    assert PhilosophyType.SUNZI in router.engines
+    assert PhilosophyType.STOICISM in router.engines
+    assert PhilosophyType.BEHAVIORAL in router.engines
+    assert PhilosophyType.HUMAN_NATURE in router.engines
 
 
 def test_ai_router_corrected_technical_directives() -> None:

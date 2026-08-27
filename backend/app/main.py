@@ -30,19 +30,27 @@ from urllib.parse import parse_qs, urlparse
 
 from backend.app.engine.nhan_thuat_api import process_nhan_thuat_analysis
 from backend.app.engine.runtime import BusinessOSRuntimeOrchestrator, RuntimeRequestPayload
+from nhan_thuat.engine.sparring_engine import SparringEngine
+from nhan_thuat.export.executive_brief import ExecutiveBriefExporter
 from nhan_thuat.knowledge_engine import KnowledgeEngine
+from nhan_thuat.packs.department_pack import DepartmentPackRegistry
 from nhan_thuat.public.v1.adapter import KnowledgeEngineAdapterV1
 from nhan_thuat.public.v1.contracts import KnowledgeQuery
+from nhan_thuat.storage.db import DatabaseManager
 from salesos_pack.plugin import SalesOSPlugin
 
 from dotenv import load_dotenv
 load_dotenv()
 
-# Global Engine & Plugin Instances
+# Global Engine, Plugin & Storage Instances
 runtime_orchestrator = BusinessOSRuntimeOrchestrator()
 knowledge_engine = KnowledgeEngine()
 nhan_thuat_public_v1 = KnowledgeEngineAdapterV1(knowledge_engine)
 salesos_plugin = SalesOSPlugin()
+db_manager = DatabaseManager()
+sparring_engine = SparringEngine(db_manager=db_manager, knowledge_engine=knowledge_engine)
+department_packs = DepartmentPackRegistry()
+brief_exporter = ExecutiveBriefExporter()
 
 # Execution History Store for Provenance Lookup
 execution_provenance_store: dict[str, dict[str, Any]] = {}
@@ -238,6 +246,74 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
                 "total_leads": len(leads_data),
                 "leads": leads_data,
             })
+            return
+
+        # 4a. Sparring Sessions & Messages API: GET /api/v1/sparring/sessions, GET /api/v1/sparring/sessions/{session_id}
+        if path == "/api/v1/sparring/sessions":
+            sessions = db_manager.list_sessions()
+            self._send_json_response(200, {
+                "status": "success",
+                "count": len(sessions),
+                "sessions": [s.to_dict() for s in sessions],
+            })
+            return
+
+        if path.startswith("/api/v1/sparring/sessions/"):
+            session_id = path.split("/api/v1/sparring/sessions/")[1]
+            session = db_manager.get_session(session_id)
+            if session:
+                messages = db_manager.list_messages(session_id)
+                self._send_json_response(200, {
+                    "status": "success",
+                    "session": session.to_dict(),
+                    "messages": [m.to_dict() for m in messages],
+                })
+            else:
+                self._send_json_response(404, {"status": "error", "message": f"Session '{session_id}' not found."})
+            return
+
+        # 4b. Case Studies API: GET /api/v1/cases, GET /api/v1/cases/{case_id}
+        if path == "/api/v1/cases":
+            domain = (parse_qs(parsed_url.query).get("domain") or [None])[0]
+            cases = db_manager.list_case_studies(domain=domain)
+            self._send_json_response(200, {
+                "status": "success",
+                "count": len(cases),
+                "cases": [c.to_dict() for c in cases],
+            })
+            return
+
+        if path.startswith("/api/v1/cases/"):
+            case_id = path.split("/api/v1/cases/")[1]
+            case = db_manager.get_case_study(case_id)
+            if case:
+                self._send_json_response(200, {
+                    "status": "success",
+                    "case": case.to_dict(),
+                })
+            else:
+                self._send_json_response(404, {"status": "error", "message": f"Case study '{case_id}' not found."})
+            return
+
+        # 4c. Department Packs API: GET /api/v1/packs, GET /api/v1/packs/{domain}
+        if path == "/api/v1/packs":
+            packs = department_packs.list_packs()
+            self._send_json_response(200, {
+                "status": "success",
+                "packs": [p.__dict__ for p in packs],
+            })
+            return
+
+        if path.startswith("/api/v1/packs/"):
+            domain = path.split("/api/v1/packs/")[1]
+            pack = department_packs.get_pack(domain)
+            if pack:
+                self._send_json_response(200, {
+                    "status": "success",
+                    "pack": pack.__dict__,
+                })
+            else:
+                self._send_json_response(404, {"status": "error", "message": f"Department pack '{domain}' not found."})
             return
 
         # NhanThuat Public Contract V1 Endpoints
@@ -457,6 +533,108 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
                 "error_code": "INVALID_JSON_PAYLOAD",
                 "message": f"Malformed JSON payload: {e!s}",
             })
+            return
+
+        # 0a. Sparring Sessions & Messages POST: POST /api/v1/sparring/sessions, POST /api/v1/sparring/messages
+        if path == "/api/v1/sparring/sessions":
+            title = payload.get("title", "Phiên Đấu Trí Điều Hành")
+            lens = payload.get("philosophy_lens", "auto")
+            initial_context = payload.get("context") or payload.get("initial_context")
+            metadata = payload.get("metadata", {})
+            session = sparring_engine.start_session(
+                title=title,
+                philosophy_lens=lens,
+                initial_context=initial_context,
+                metadata=metadata,
+            )
+            self._send_json_response(201, {
+                "status": "success",
+                "session": session.to_dict(),
+            })
+            return
+
+        if path == "/api/v1/sparring/messages":
+            session_id = payload.get("session_id")
+            message = payload.get("message") or payload.get("content", "")
+            lens = payload.get("philosophy_lens")
+            if not message:
+                self._send_json_response(400, {
+                    "status": "error",
+                    "message": "Field 'message' or 'content' is required.",
+                })
+                return
+            if not session_id:
+                session = sparring_engine.start_session(title=message[:50], philosophy_lens=lens or "auto")
+                session_id = session.id
+            
+            turn_result = sparring_engine.process_turn(
+                session_id=session_id,
+                user_message=message,
+                override_lens=lens,
+            )
+            self._send_json_response(200, turn_result)
+            return
+
+        # 0b. Case Studies POST: POST /api/v1/cases
+        if path == "/api/v1/cases":
+            domain = payload.get("domain", "GENERAL")
+            title = payload.get("title", "")
+            context_description = payload.get("context_description") or payload.get("description", "")
+            decision_script = payload.get("decision_script", {})
+            lessons_learned = payload.get("lessons_learned", [])
+            tags = payload.get("tags", [])
+
+            if not title or not context_description:
+                self._send_json_response(400, {
+                    "status": "error",
+                    "message": "Fields 'title' and 'context_description' are required.",
+                })
+                return
+
+            case = db_manager.create_case_study(
+                domain=domain,
+                title=title,
+                context_description=context_description,
+                decision_script=decision_script,
+                lessons_learned=lessons_learned,
+                tags=tags,
+            )
+            self._send_json_response(201, {
+                "status": "success",
+                "case": case.to_dict(),
+            })
+            return
+
+        # 0c. Executive Brief Export POST: POST /api/v1/export/brief
+        if path == "/api/v1/export/brief":
+            title = payload.get("title", "Bản Tham Mưu Quyết Định Điều Hành")
+            situation_summary = payload.get("situation_summary", "")
+            philosophy_analysis = payload.get("philosophy_analysis", "")
+            action_script = payload.get("action_script", {})
+            knowledge_units = payload.get("knowledge_units", [])
+            directives = payload.get("directives", [])
+            lessons_learned = payload.get("lessons_learned", [])
+            fmt = payload.get("format", "markdown")
+
+            output_doc = brief_exporter.export_brief(
+                title=title,
+                situation_summary=situation_summary,
+                philosophy_analysis=philosophy_analysis,
+                action_script=action_script,
+                knowledge_units=knowledge_units,
+                directives=directives,
+                lessons_learned=lessons_learned,
+                format=fmt,
+            )
+
+            if fmt.lower() == "html":
+                self._send_html_response(200, output_doc)
+            else:
+                self._send_json_response(200, {
+                    "status": "success",
+                    "format": "markdown",
+                    "document": output_doc,
+                })
             return
 
         # 0. Web App Dashboard API Endpoint: POST /api/v1/nhan-thuat/analyze

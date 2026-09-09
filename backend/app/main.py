@@ -28,7 +28,7 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import parse_qs, urlparse
 
-from backend.app.engine.nhan_thuat_api import process_nhan_thuat_analysis
+from backend.app.engine.nhan_thuat_api import diagnose_person_role_fit, process_nhan_thuat_analysis
 from backend.app.engine.runtime import BusinessOSRuntimeOrchestrator, RuntimeRequestPayload
 from nhan_thuat.council.council_engine import CouncilEngine
 from nhan_thuat.engine.sparring_engine import SparringEngine
@@ -654,6 +654,12 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
                 "status": "success",
                 "deliberation": deliberation.to_dict(),
             })
+            return
+
+        # 0e. Person-Role Fit Diagnostic Endpoint: POST /api/v1/diagnostics/person-role-fit
+        if path == "/api/v1/diagnostics/person-role-fit":
+            result = diagnose_person_role_fit(payload)
+            self._send_json_response(200, result)
             return
 
         # 0. Web App Dashboard API Endpoint: POST /api/v1/nhan-thuat/analyze

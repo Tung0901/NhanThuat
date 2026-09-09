@@ -84,12 +84,125 @@ def check_context_ambiguity(scenario_text: str) -> tuple[bool, str]:
     return False, ""
 
 
-def generate_actionable_script_details(primary: str, scenario_text: str) -> dict[str, Any]:
+def generate_actionable_script_details(primary: str, scenario_text: str, matched_units: list = None) -> dict[str, Any]:
     """Generates Senior Executive Co-Pilot Strategic Analysis, 3-step verbatim dialogue, draft communications, and financial/operational directives."""
     few_shots = get_dialogue_few_shots().get("templates", {})
     text_lower = scenario_text.lower()
 
-    # Debt collection scenario
+    # 1. Human Resources / Person-Role Fit / Hiring & Promotion Scenario
+    hr_keywords = ["nhân sự", "tuyển dụng", "bố trí", "vai trò", "tính cách", "nhân tài", "phỏng vấn", "đánh giá", "bổ nhiệm", "sa thải", "giữ chân", "hiệu suất", "năng lực"]
+    if any(w in text_lower for w in hr_keywords):
+        return {
+            "position_analysis": (
+                "Bản chất bài toán nhân sự này nằm ở sự sai lệch giữa thiên hướng tính cách tiềm ẩn mặc định của cá nhân "
+                "và yêu cầu hành vi của vai trò (Chiếu theo Mô hình NT-MODEL-0007 & Nguyên tắc Chuẩn hóa Đánh giá NT-PRINCIPLE-0067). "
+                "Nếu dùng quyền lực ép buộc hoặc chỉ phán xét bằng cảm tính, nhân sự sẽ tiêu hao năng lượng tự điều chỉnh, dẫn đến ma sát nhận thức, "
+                "giảm sút hiệu năng hoặc chống đối ngầm. Nhà quản trị cần tách bạch giữa Năng lực cốt lõi và Gánh nặng thích ứng tình huống."
+            ),
+            "step_1_anchor": {
+                "title": "Bước 1: Chuẩn hóa Tiêu chuẩn & Thấu suốt Thiên hướng Cá nhân (NT-MODEL-0007)",
+                "verbatim": (
+                    f'"Chào [Tên Nhân sự/Ứng viên], tổ chức đánh giá rất cao thế mạnh và những đóng góp thực chất của bạn. '
+                    f'Tuy nhiên, khi đối chiếu trực tiếp với yêu cầu của vai trò trong giai đoạn này, chúng ta cần một sự chuẩn hóa rõ ràng '
+                    f'về mặt hành vi, trách nhiệm và tiêu chuẩn bàn giao kết quả (Hình Danh Tham Đồng). Chúng ta hãy cùng ngồi lại để định vị chính xác kỳ vọng hai bên."'
+                )
+            },
+            "step_2_deadline_consequence": {
+                "title": "Bước 2: Đo lường Ma sát Thích ứng & Thiết lập Cơ chế Kiểm định (30-60 Ngày)",
+                "verbatim": (
+                    f'"Trong 30 ngày tới, tôi sẽ thiết lập 3 chỉ số hành vi then chốt cho vị trí này. '
+                    f'Nếu bạn cảm thấy áp lực tự điều chỉnh quá lớn hoặc vai trò không phát huy được giá trị tốt nhất của bạn, '
+                    f'tổ chức sẽ thẳng thắn thảo luận để tái cấu trúc phạm vi nhiệm vụ hoặc chuyển dịch sang vai trò phù hợp hơn, thay vì để sự ma sát kéo dài ảnh hưởng tới toàn đội ngũ."'
+                )
+            },
+            "step_3_way_out_plan_b": {
+                "title": "Bước 3: Mở Đường Hỗ trợ Môi trường & Kế hoạch Dự phòng Bố trí (Plan B)",
+                "verbatim": (
+                    f'"Tổ chức sẵn sàng cung cấp các điểm tựa hỗ trợ: phân bổ người phối hợp bù trừ điểm khuyết và trao quyền chủ động trong vùng thế mạnh. '
+                    f'Nhưng nếu sau thời gian thử thách, sự lệch pha vai trò vẫn gây tổn hại tới tiến độ chung, tôi sẽ chủ động kích hoạt phương án tái bố trí '
+                    f'hoặc tạo điều kiện để bạn chuyển giao trong êm đẹp trên tinh thần tôn trọng tối đa."'
+                )
+            },
+            "draft_official_communication": (
+                f"THÔNG BÁO VỀ VIỆC THỐNG NHẤT TIÊU CHUẨN VAI TRÒ & LỘ TRÌNH ĐÁNH GIÁ\n"
+                f"------------------------------------------------------------------\n"
+                f"Kính gửi: [Họ và Tên Nhân Sự / Ứng Viên]\n\n"
+                f"Căn cứ Định hướng Tái cơ cấu & Chuẩn hóa Năng lực Doanh nghiệp.\n"
+                f"Ban Điều Hành xin gửi bản Thỏa thuận Tiêu chuẩn Vai trò (Role Expectation Framework):\n"
+                f"1. Xác định 3 kết quả then chốt (Key Deliverables) và hành vi chuẩn mực được kỳ vọng.\n"
+                f"2. Áp dụng cơ chế đánh giá định kỳ 15 ngày để đo lường mức độ tương thích thực tế.\n"
+                f"3. Doanh nghiệp cam kết hỗ trợ tối đa về nguồn lực và môi trường để nhân sự bứt phá.\n\n"
+                f"Trân trọng,\n[Ban Lãnh Đạo / Ban Nhân Sự]"
+            ),
+            "financial_and_operational_directives": [
+                "👥 THIẾT KẾ LẠI VAI TRÒ (JOB REDESIGN): Bổ sung nhân sự hỗ trợ hành chính/vận hành để giải phóng thời gian cho nhân sự tập trung vào vùng thế mạnh chuyên môn.",
+                "📊 CHUẨN HÓA ĐÁNH GIÁ (RUBRIC METRICS): Chuyển đổi từ đánh giá thái độ định tính sang đánh giá bằng rubric định lượng theo kết quả thực chứng (Hình Danh Tham Đồng).",
+                "🛡️ CHỐT CHẶN DỰ PHÒNG (SUCCESSION PLAN): Chuẩn bị sẵn 01 ứng viên dự phòng bên ngoài hoặc nhân sự phó để sẵn sàng thế chỗ trong 14 ngày nếu có biến động."
+            ],
+            "action_principles": [
+                "Không coi thiên hướng mặc định là giới hạn tuyệt đối của năng lực.",
+                "Đo lường chi phí thích ứng để tránh đốt cháy năng lượng nhận thức nhân sự.",
+                "Lấy Lễ định Phần (Tuân Tử): Rõ ràng về ranh giới quyền hạn và kỳ vọng kết quả."
+            ]
+        }
+
+    # 2. Internal Conflict, Factions, Arrogance, Politics Scenario
+    conflict_keywords = ["kiêu ngạo", "chia rẽ", "bè phái", "mâu thuẫn", "tranh chấp", "đố kỵ", "thao túng", "bằng mặt", "nói xấu", "chống đối", "bất mãn"]
+    if any(w in text_lower for w in conflict_keywords):
+        return {
+            "position_analysis": (
+                "Tình huống mâu thuẫn/chia rẽ này đang tạo ra sự rạn nứt cấu trúc quyền lực và đe dọa trực tiếp sự ổn định của tổ chức. "
+                "Cá nhân hoặc nhóm đối lập đang dùng vị thế chuyên môn hoặc ảnh hưởng ngầm để yêu sách. "
+                "Áp dụng lăng kính Pháp Gia kết hợp Nho Gia ('Hòa nhi bất đồng' & 'Khử Bát Gian'): Tách rời giữa tài năng cá nhân và kỷ cương hệ thống. "
+                "Tuyệt đối không nhượng bộ trước hành vi thị uy quyền lực ngầm, nhưng cũng không xử lý thô bạo để tránh kích hoạt phản kháng tập thể."
+            ),
+            "step_1_anchor": {
+                "title": "Bước 1: Tách Biệt Tài Năng Khỏi Kỷ Cương (Hình Danh Tương Phù)",
+                "verbatim": (
+                    f'"[Tên Cá nhân/Đại diện], tổ chức luôn ghi nhận đầy đủ năng lực và thành tích cá nhân của bạn. '
+                    f'Tuy nhiên, kỷ luật tổ chức và sự đoàn kết nội bộ là lằn ranh đỏ không thể thương lượng. '
+                    f'Mọi đóng góp dù lớn đến đâu đều phải nằm trong khuôn khổ văn hóa chung. Không ai được phép đứng trên lợi ích tập thể."'
+                )
+            },
+            "step_2_deadline_consequence": {
+                "title": "Bước 2: Thu Hẹp Phạm Vi Ảnh Hưởng & Thiết Lập Thế Cân Bằng (Counter-balance)",
+                "verbatim": (
+                    f'"Tôi yêu cầu mọi bất đồng phải được đưa ra thảo luận công khai, minh bạch trong cuộc họp giao ban sáng mai. '
+                    f'Sau ngày hôm nay, bất kỳ hành vi lôi kéo bè phái hoặc gây chia rẽ nào bị phát hiện sẽ bị xem là cố tình phá hoại tổ chức, '
+                    f'và tôi sẽ kích hoạt điều khoản đình chỉ chức vụ ngay lập tức mà không cần thêm cảnh cáo."'
+                )
+            },
+            "step_3_way_out_plan_b": {
+                "title": "Bước 3: Mở Đường Hội Nhập 'Hòa Nhi Bất Đồng' & Chuẩn Bị Thay Thế (Plan B)",
+                "verbatim": (
+                    f'"Nếu bạn thực sự muốn cùng doanh nghiệp đi xa, hãy tập trung 100% năng lượng vào mục tiêu chung và hỗ trợ đồng đội. '
+                    f'Cánh cửa ghi nhận và đãi ngộ xứng đáng luôn rộng mở. Nhưng nếu bạn tiếp tục giữ thái độ bất hợp tác, '
+                    f'tôi đã chuẩn bị sẵn phương án phân quyền và chuyển giao công việc cho đội ngũ kế cận trong 24 giờ."'
+                )
+            },
+            "draft_official_communication": (
+                f"CHỈ ĐẠO CỦA CHỦ TỊCH / TỔNG GIÁM ĐỐC VỀ KỶ CƯƠNG & ĐOÀN KẾT NỘI BỘ\n"
+                f"-------------------------------------------------------------------\n"
+                f"Kính gửi: Toàn thể Cán bộ Quản lý và Đội ngũ Nhân sự\n\n"
+                f"Để bảo đảm sức mạnh vận hành thống nhất trong giai đoạn chiến lược mới, Ban Điều Hành chỉ đạo:\n"
+                f"1. Kiên quyết duy trì nguyên tắc 'Hòa nhi bất đồng' - Tự do tranh biện giải pháp, nhưng tuyệt đối thống nhất hành động.\n"
+                f"2. Nghiêm cấm mọi hành vi chia rẽ, bài xích cá nhân hoặc bè phái cục bộ làm suy yếu sức mạnh tổ chức.\n"
+                f"3. Cán bộ quản lý vi phạm kỷ luật văn hóa sẽ bị đình chỉ nhiệm vụ để thanh tra độc lập.\n\n"
+                f"[Chủ Tịch Hội Đồng Quản Trị / Ban Điều Hành]"
+            ),
+            "financial_and_operational_directives": [
+                "⚖️ PHÂN QUYỀN ĐỐI TRỌNG (COUNTER-BALANCE): Chia tách quyền hạn ký duyệt tài chính và nhân sự của bộ phận có nguy cơ bè phái để tránh thao túng cục bộ.",
+                "🔍 KIỂM TOÁN VẬN HÀNH ĐỘC LẬP: Cử trợ lý điều hành hoặc thanh tra nội bộ tham gia các cuộc họp bộ phận để giám sát tính minh bạch thông tin.",
+                "🛡️ BẢO VỆ NHÂN SỰ TRUNG LẬP: Trực tiếp đối thoại và bảo vệ các cá nhân có năng lực nhưng đang bị nhóm quyền lực ngầm cô lập."
+            ],
+            "action_principles": [
+                "Khử Bát Gian (Hàn Phi Tử): Không để nhân sự lũng đoạn thông tin hoặc liên minh bè phái.",
+                "Hòa nhi bất đồng (Nho Gia): Cho phép khác biệt về quan điểm, nhưng kỷ cương hành động là bất khả xâm phạm.",
+                "Lập thế kiềm tỏa trước khi ra tay: Luôn có phương án nhân sự thay thế trước khi xử lý người tài có tì vết."
+            ]
+        }
+
+    # 3. Debt collection & Payment Delay Scenario
     if any(w in text_lower for w in ["nợ", "đòi nợ", "quá hạn", "chậm thanh toán", "tiền hàng"]):
         return {
             "position_analysis": "Vụ việc đòi nợ / quá hạn thanh toán này đang làm tổn hại trực tiếp dòng tiền vận hành của doanh nghiệp. Nếu nhượng bộ bằng cảm tính, đối tác sẽ tiếp tục chiếm dụng vốn. Áp dụng lăng kính Pháp Gia ('Hình Danh Tương Phù') kết hợp Chế tài Nhị Bỉnh: Khóa công nợ, tính lãi phạt chậm trả và gửi công văn hạn định 48h trước khi chuyển sang cơ quan tư pháp/luật sư.",
@@ -129,6 +242,7 @@ def generate_actionable_script_details(primary: str, scenario_text: str) -> dict
             ]
         }
 
+    # 4. Labor Strike / Collective Worker Dispute Scenario
     if "đình công" in text_lower and "strike_labor" in few_shots:
         tmpl = few_shots["strike_labor"]
         return {
@@ -158,162 +272,330 @@ def generate_actionable_script_details(primary: str, scenario_text: str) -> dict
             ]
         }
 
-    if primary == "LEGALISM":
-        tmpl = few_shots.get("material_delay", {})
-        return {
-            "position_analysis": tmpl.get(
-                "position_analysis",
-                "Vụ việc này Nhà cung cấp đang vi phạm cam kết tiến độ hợp đồng. Nếu nể hờn xử lý bằng tình cảm, công trình sẽ bị sụp dây chuyền và dự án chịu phạt tiến độ nặng. Phải lập tức siết kỷ luật pháp lý, dùng điều khoản phạt làm đòn bẩy buộc đối tác dồn lực giao bù trong 24h-48h."
-            ),
-            "step_1_anchor": {
-                "title": "Bước 1: Thiết lập Vị thế & Căn cứ Hợp đồng ('Hình Danh Tương Phù')",
-                "verbatim": tmpl.get("direct_dialogue", {}).get(
-                    "step_1_anchor",
-                    '"Anh [Tên Giám Đốc/Đại Diện NCC], theo Hợp đồng [Số HĐ] và Biên bản chốt tiến độ tuần trước, vật tư phải có mặt tại công trình Nhà Bè muộn nhất 17h00 hôm qua. Việc bên anh giao trễ đã làm ngưng trệ 100% tổ đội công nhân và máy móc hiện trường. Bên em làm việc đúng theo căn cứ hợp đồng (\'Hình Danh Tương Phù\'), không chấp nhận các lý do khách quan không có xác nhận văn bản."'
-                )
-            },
-            "step_2_deadline_consequence": {
-                "title": "Bước 2: Ấn định Thời hạn & Chế tài Ràng buộc (Chế Tài Nhị Bỉnh)",
-                "verbatim": tmpl.get("direct_dialogue", {}).get(
-                    "step_2_deadline_consequence",
-                    '"Em yêu cầu bên anh dồn ngay xe hàng giao đủ 100% khối lượng về công trình trước 12h00 trưa mai. Sau mốc này, Ban Quản lý Dự án sẽ lập Biên bản Vi phạm Đơn phương, bắt đầu tính phạt 0.5%/ngày và treo toàn bộ đợt thanh toán Kỳ 2 để cấn trừ chi phí thiệt hại dừng thi công."'
-                )
-            },
-            "step_3_way_out_plan_b": {
-                "title": "Bước 3: Mở Đường lui & Kích hoạt Phương án Dự phòng (Plan B)",
-                "verbatim": tmpl.get("direct_dialogue", {}).get(
-                    "step_3_way_out_plan_b",
-                    '"Nếu bên anh tập trung xử lý giao đủ trước 17h00 chiều mai và có cam kết tiến độ đợt sau, em sẽ bảo lãnh với Chủ tịch không tính phạt vi phạm đợt này. Nhưng nếu trưa mai hàng không tới, em buộc phải cho kích hoạt Đơn vị dự phòng (Plan B) nhập hàng thế chỗ và trừ thẳng chi phí chênh lệch vào tài khoản bên anh."'
-                )
-            },
-            "draft_official_communication": tmpl.get(
-                "ready_to_send_text",
-                "CÔNG VĂN YÊU CẦU GIAO BÙ VẬT TƯ & THÔNG BÁO CHẾ TÀI HỢP ĐỒNG\n---------------------------------------------------------------\nKính gửi Ban Giám đốc [Tên Nhà Cung Cấp],\n\nCăn cứ Hợp đồng số [Số HĐ/2026] và Biên bản giao nhận tiến độ hiện trường.\nBan Quản lý Dự án chính thức thông báo:\n1. Ghi nhận vi phạm chậm giao vật tư [Tên vật tư] làm ngưng trệ thi công hiện trường.\n2. Yêu cầu Quý công ty hoàn thành giao bù 100% khối lượng trước 12h00 ngày [DD/MM/YYYY].\n3. Quá thời hạn trên, chúng tôi sẽ áp dụng điều khoản phạt chậm tiến độ 0.5%/ngày và giữ thanh toán Đợt 2 để bảo đảm thiệt hại.\n\nRất mong sự hợp tác khẩn trương của Quý công ty.\n[Ban Quản Lý Dự Án BusinessOS]"
-            ),
-            "financial_and_operational_directives": [
-                "💰 TẠM TẮT GIẢI NGÂN: Tạm giữ lại 10% - 20% giá trị thanh toán đợt tiếp theo theo Điều 2 Quy chế QC-OPS-01/2026.",
-                "⚖️ CHẾ TÀI PHẠT VI PHẠM: Áp dụng phạt 0.5%/ngày chậm trễ tính từ 17h00 ngày hôm qua.",
-                "🚀 KÍCH HOẠT PLAN B: Chuyển 100% khối lượng còn lại cho Đơn vị Cung cấp Dự phòng B và cấn trừ tiền chênh lệch vào tài khoản bên vi phạm."
-            ],
-            "action_principles": [
-                "Đối chiếu cam kết thực tế theo nguyên tắc Hình Danh Tương Phù.",
-                "Áp dụng Nhị Bỉnh (Thưởng - Phạt minh bạch), không dung dưỡng vi phạm.",
-                "Kích hoạt song song Plan B dự phòng để đảm bảo tiến độ tuyệt đối."
-            ]
-        }
-    elif primary == "RHETORIC":
+    # 5. Price Objection / Commercial Negotiation Scenario
+    if any(w in text_lower for w in ["chê đắt", "giá cao", "báo giá", "chiết khấu", "giảm giá", "đắt"]):
         tmpl = few_shots.get("price_objection", {})
         return {
-            "position_analysis": tmpl.get(
-                "position_analysis",
-                "Khách hàng đang dùng bài 'chê giá cao' để ép chiết khấu. Nếu vội vàng giảm giá, ta tự hạ thấp giá trị giải pháp và đưa dự án vào thế 'làm ráng lấy volume'. Phải lập tức bóc tách khung đối thoại: Chuyển tâm trí khách từ 'Chi phí đầu tư ban đầu' sang 'Dòng tiền và Tiết kiệm chi phí vận hành 3 năm'."
+            "position_analysis": (
+                "Khách hàng đang dùng chiến thuật 'chê giá cao' để thử thách tâm lý và ép chiết khấu. "
+                "Nếu vội vàng giảm giá, ta tự thừa nhận biên lợi nhuận bị thổi phồng và làm xói mòn vị thế giải pháp. "
+                "Áp dụng Thuật Hùng Biện (Aristotle) kết hợp Thấu cảm Chiến thuật FBI (Chris Voss): "
+                "Bẻ gãy khung so sánh chi phí ban đầu, chuyển đổi tâm trí đối tác sang Tổng chi phí sở hữu (TCO) và Dòng tiền tiết kiệm 3 năm."
             ),
             "step_1_anchor": {
-                "title": "Bước 1: Bẻ gãy Khung Chi phí & Chuyển đổi sang Dòng tiền (Reframing)",
-                "verbatim": tmpl.get("direct_dialogue", {}).get(
-                    "step_1_anchor",
-                    '"Em rất hiểu Anh/Chị luôn đặt tiêu chí tối ưu ngân sách lên hàng đầu. Nhưng nếu so sánh báo giá bên em với các đơn vị giá rẻ trên thị trường, giống như so sánh một hệ thống tự động dài hạn với giải pháp chắp vá tạm thời. Giá trị thực sự không nằm ở \'số tiền chi ra hôm nay\', mà nằm ở \'dòng tiền và chi phí vận hành 3 năm tới\'."'
+                "title": "Bước 1: Thấu Cảm & Bẻ Khung Chi Phí (Tactical Empathy & Reframing)",
+                "verbatim": (
+                    '"Tôi hoàn toàn thấu hiểu mối bận tâm của Anh/Chị về ngân sách đầu tư ban đầu. '
+                    'Tuy nhiên, nếu chỉ so sánh con số báo giá bề mặt, ta đang so sánh một hệ thống giải pháp vận hành bền vững 3 năm '
+                    'với những phương án vá víu ngắn hạn mang đầy rủi ro ẩn. Giá trị thực sự của thương vụ này nằm ở sự an tâm dòng tiền dài hạn."'
                 )
             },
             "step_2_deadline_consequence": {
-                "title": "Bước 2: Bóc tách Rủi ro & Đưa ra Phản đề (Consequence Probe)",
-                "verbatim": tmpl.get("direct_dialogue", {}).get(
-                    "step_2_deadline_consequence",
-                    '"Nếu chọn phương án rẻ hơn 15%, Anh/Chị tiết kiệm được ngay đợt 1, nhưng rủi ro gián đoạn hệ thống và chi phí khắc phục sự cố sau 6 tháng sẽ cao gấp 3 lần số tiền tiết kiệm đó. Anh/chị có sẵn sàng đánh đổi sự ổn định của toàn bộ hoạt động kinh doanh chỉ vì mức chênh lệch ban đầu này không?"'
+                "title": "Bước 2: Bóc Tách Rủi Ro & Đưa Ra Phản Đề (Consequence Probe)",
+                "verbatim": (
+                    '"Nếu chọn đối tác rẻ hơn 15%, Anh/Chị có thể tiết kiệm một khoản ngân sách tức thời. '
+                    'Nhưng liệu Anh/Chị có sẵn sàng đánh đổi sự gián đoạn vận hành và chi phí khắc phục sự cố sau 6 tháng '
+                    'cao gấp 3 lần khoản chênh lệch đó không?"'
                 )
             },
             "step_3_way_out_plan_b": {
-                "title": "Bước 3: Cam kết Giá trị & Chốt Thoả thuận (Closing Commitment)",
-                "verbatim": tmpl.get("direct_dialogue", {}).get(
-                    "step_3_way_out_plan_b",
-                    '"Để Anh/chị hoàn toàn yên tâm, bên em cam kết bảo hành hiệu năng 100% bằng văn bản. Nếu Anh/Chị duyệt hợp đồng trong tuần này, em xin tặng thêm Gói Bảo trì Chuyên sâu 12 tháng trị giá [X triệu]. Em gửi bản Hợp đồng cập nhật để Anh/Chị chốt luôn nhé."'
+                "title": "Bước 3: Gia Tăng Giá Trị Kèm Điều Kiện Ràng Buộc (Closing Commitment)",
+                "verbatim": (
+                    '"Thay vì giảm trừ tiền mặt làm ảnh hưởng chất lượng triển khai, tôi xin tặng thêm Gói Bảo Trì & Cố Vấn Chuyên Sâu 12 tháng trị giá [X triệu]. '
+                    'Đổi lại, tôi cần Anh/Chị phê duyệt hợp đồng trong tuần này để đội ngũ kỹ thuật kịp khóa lịch trình triển khai tối ưu nhất."'
                 )
-            },
-            "draft_official_communication": tmpl.get(
-                "ready_to_send_text",
-                "TƯ VẤN THAM MƯU GỬI KHÁCH HÀNG / ĐỐI TÁC\n---------------------------------------\nChào Anh/Chị [Tên Khách Hàng],\n\nEm đã xem xét kỹ mối quan tâm của Anh/Chị về ngân sách đầu tư.\nBên em không cạnh tranh bằng giá thấp nhất, mà cam kết hiệu quả dòng tiền và độ ổn định cao nhất cho hệ thống của Anh/Chị.\n\nEm xin gửi Bảng Phân Tích Tổng Chi Phí Sở Hữu (TCO 3 Năm) để Anh/Chị thấy rõ khoản tiết kiệm vận hành dài hạn [X triệu].\nChiều nay 15h00 em xin phép gọi điện hỗ trợ Anh/Chị chốt phương án tốt nhất nhé!\n\n[Tên Quản Lý Kinh Doanh BusinessOS]"
-            ),
-            "financial_and_operational_directives": [
-                "💰 GIỮ KHUNG GIÁ NGUYÊN BẢN: Giữ nguyên đơn giá báo giá chuẩn, không tự ý chiết khấu quá 3% ngân sách.",
-                "📊 TỐI ƯU DÒNG TIỀN: Cấu trúc lộ trình thanh toán linh hoạt làm 4 đợt (30% - 30% - 30% - 10%) để giảm áp lực vốn ban đầu cho khách.",
-                "🎁 GÓI GIA TĂNG GIÁ TRỊ: Tặng Gói Bảo trì Chuyên sâu 12 tháng thay vì giảm trừ tiền mặt."
-            ],
-            "action_principles": [
-                "Rút củi đáy nồi: Thay đổi khung đối thoại từ Chi phí sang Dòng tiền.",
-                "Bóc tách bản chất từ chối: Khách chưa thấy giá trị tương xứng.",
-                "Chốt hạ cam kết bằng gói gia tăng giá trị dài hạn."
-            ]
-        }
-    elif primary == "XUNZI":
-        return {
-            "position_analysis": "Vi phạm quy trình hiện tại xuất phát từ thói quen thiếu rèn nắn tiêu chuẩn. Cần áp dụng thuyết Tính Ác: Dùng kỷ luật quy chuẩn để uốn nắn hành vi nhân sự, kết hợp với lộ trình Khuyên Học để đào tạo nâng chuẩn.",
-            "step_1_anchor": {
-                "title": "Bước 1: Chuẩn hóa Quy chuẩn & Xác lập Khung Tiêu chuẩn (Khuyên Học)",
-                "verbatim": '"Mọi vị trí trong tổ chức đều phải tuân thủ đúng Quy chế Vận hành đã ban hành. Việc phát sinh sai sót/vi phạm hiện tại phản ánh khoảng hống về năng lực và kỷ luật quy trình. Chúng ta cần rèn nắn lại tiêu chuẩn ngay lập tức."'
-            },
-            "step_2_deadline_consequence": {
-                "title": "Bước 2: Đưa ra Lộ trình Huấn luyện & Đánh giá (Assessment)",
-                "verbatim": '"Yêu cầu toàn bộ nhân sự liên quan tham gia đợt Sát hạch Quy trình và Kỷ luật làm việc trong vòng 3 ngày tới. Nhân sự nào không đạt tiêu chuẩn sẽ bị tái bố trí công việc."'
-            },
-            "step_3_way_out_plan_b": {
-                "title": "Bước 3: Động viên & Tạo Cơ hội Cải thiện (Rehabilitation)",
-                "verbatim": '"Tổ chức luôn mở đường cho những nhân sự cam kết học tập và sửa đổi. Khi vượt qua bài kiểm tra tiêu chuẩn, các bạn sẽ được công nhận và trao lại đúng quyền hạn."'
             },
             "draft_official_communication": (
-                "THÔNG BÁO VỀ VIỆC CHUẨN HÓA QUY TRÌNH & KỶ LUẬT THI CÔNG\n"
-                "--------------------------------------------------------\n"
-                "Kính gửi: Toàn thể Cán bộ Nhân viên / Đội ngũ Hiện trường\n\n"
-                "Căn cứ Quy chế Kỷ luật và Tiêu chuẩn Vận hành BusinessOS.\n"
-                "Ban Quản lý yêu cầu:\n"
-                "1. Nghiêm túc tuân thủ 100% quy trình báo cáo và thi công theo tiêu chuẩn.\n"
-                "2. Tổ chức đợt huấn luyện & kiểm tra quy chuẩn vào [Ngày/Giờ].\n"
-                "3. Mọi hành vi vi phạm quy chuẩn sẽ bị xử lý nghiêm theo quy định.\n\n"
-                "Ban Quản lý Dự án BusinessOS"
+                "THƯ THAM MƯU TỐI ƯU HIỆU QUẢ ĐẦU TƯ GỬI ĐỐI TÁC / KHÁCH HÀNG\n"
+                "----------------------------------------------------------\n"
+                "Kính gửi: Ban Lãnh Đạo [Tên Doanh Nghiệp Đối Tác]\n\n"
+                "Chúng tôi đã xem xét thấu đáo các đề xuất ngân sách của Quý công ty.\n"
+                "Triết lý của chúng tôi là không cạnh tranh bằng mức giá rẻ nhất, mà cam kết hiệu quả dòng tiền và độ tin cậy tối cao.\n"
+                "Xin trân trọng gửi kèm Bản Phân Tích Tổng Chi Phí Sở Hữu (TCO 3 Năm) để minh chứng khoản tối ưu vận hành thực tế.\n\n"
+                "Trân trọng,\n[Giám Đốc Chiến Lược / Kinh Doanh]"
             ),
             "financial_and_operational_directives": [
-                "💰 CHÍNH SÁCH THƯỞNG PHẠT QUY TRÌNH: Trừ 5% quỹ thưởng tháng đối với đơn vị vi phạm quy chuẩn báo cáo.",
-                "📋 SÁT HẠCH TIÊU CHUẨN: Tổ chức sát hạch bắt buộc trong 72 giờ đối với 100% nhân sự hiện trường.",
-                "🔄 TÁI BỐ TRÍ TỰ ĐỘNG: Chuyển giao các nhân sự không đạt sát hạch sang bộ phận hỗ trợ."
+                "💰 GIỮ VỮNG ĐƠN GIÁ NIÊM YẾT: Không tự ý chiết khấu tiền mặt quá 3% ngân sách.",
+                "📊 TỐI ƯU LỘ TRÌNH THANH TOÁN: Linh hoạt chia nhỏ thành 4 kỳ thanh toán để giải tỏa áp lực vốn ngắn hạn cho khách hàng.",
+                "🎁 BÙ ĐẮP BẰNG DỊCH VỤ GIA TĂNG: Tặng kèm gói đào tạo chuyển giao công nghệ thay vì giảm trừ doanh thu."
             ],
             "action_principles": [
-                "Áp dụng thuyết Tính Ác: Rèn nắn hành vi qua kỷ luật và học tập.",
-                "Đưa ra lộ trình Khuyên Học và kiểm tra quy chuẩn.",
-                "Chuẩn hóa tiêu chuẩn làm việc trước khi giao quyền."
+                "Rút củi đáy nồi: Đổi khung đối thoại từ Chi phí sang Dòng tiền và Rủi ro.",
+                "Không nhượng bộ một chiều: Bất kỳ sự linh hoạt nào cũng phải đi kèm cam kết chốt hạn của đối tác.",
+                "Tôn vinh giá trị giải pháp: Vị thế chuyên gia được xác lập bằng sự tự tin vào chuẩn mực kết quả."
             ]
         }
+
+    # 6. Specific Material / Construction Delay Scenario
+    if any(w in text_lower for w in ["vật tư", "giao hàng", "chậm giao", "nhà cung cấp"]) and any(w in text_lower for w in ["công trình", "thi công", "hiện trường"]):
+        return {
+            "position_analysis": "Nhà cung cấp đang vi phạm tiến độ giao nhận vật tư hiện trường. Nếu xử lý nể nang bằng tình cảm, công trình sẽ bị ngưng trệ dây chuyền và chịu thiệt hại nặng. Cần lập tức siết kỷ cương hợp đồng ('Hình Danh Tham Đồng') để buộc đối tác tập trung xe hàng giao bù trong 24h.",
+            "step_1_anchor": {
+                "title": "Bước 1: Thiết lập Vị thế & Căn cứ Hợp đồng (Hình Danh Tham Đồng)",
+                "verbatim": '"Anh [Tên Đại diện NCC], theo Hợp đồng và Biên bản giao nhận đã ký, vật tư phải có mặt tại hiện trường muộn nhất hôm qua. Việc giao trễ đã làm đình trệ toàn bộ máy móc và nhân công. Chúng tôi làm việc chuẩn mực trên căn cứ hợp đồng, không chấp nhận các lý do khách quan ngoài văn bản."'
+            },
+            "step_2_deadline_consequence": {
+                "title": "Bước 2: Ấn định Mốc Thời Hạn & Kích Hoạt Chế Tài Phạt (Nhị Bỉnh)",
+                "verbatim": '"Yêu cầu bên anh điều động xe hàng giao đủ 100% khối lượng trước 12h00 trưa mai. Quá thời hạn này, Ban Quản lý sẽ lập biên bản vi phạm đơn phương, tính phạt 0.5%/ngày và treo toàn bộ đợt giải ngân tiếp theo để bảo toàn thiệt hại."'
+            },
+            "step_3_way_out_plan_b": {
+                "title": "Bước 3: Mở Đường Lui & Kích Hoạt Nhà Cung Cấp Dự Phòng (Plan B)",
+                "verbatim": '"Nếu bên anh nỗ lực giao đủ trước 17h00 chiều mai, chúng tôi sẽ xem xét miễn phạt đợt này. Nhưng nếu trưa mai hàng không tới, chúng tôi buộc phải cho đơn vị dự phòng nhập hàng thay thế và cấn trừ toàn bộ chi phí chênh lệch vào thanh toán bên anh."'
+            },
+            "draft_official_communication": (
+                "CÔNG VĂN ĐÔN ĐỐC TIẾN ĐỘ GIAO HÀNG & THÔNG BÁO CHẾ TÀI HỢP ĐỒNG\n"
+                "---------------------------------------------------------------\n"
+                "Kính gửi: Ban Giám Đốc [Tên Đơn Vị Cung Cấp]\n\n"
+                "Ban Quản Lý Dự Án chính thức thông báo:\n"
+                "1. Ghi nhận vi phạm chậm tiến độ cung ứng làm ảnh hưởng trực tiếp tới kế hoạch thi công.\n"
+                "2. Yêu cầu Quý công ty hoàn tất giao bù 100% khối lượng trước 12h00 ngày [DD/MM/YYYY].\n"
+                "3. Quá thời hạn trên, chúng tôi sẽ kích hoạt chế tài phạt vi phạm theo Hợp đồng.\n\n"
+                "Ban Quản Lý Dự Án"
+            ),
+            "financial_and_operational_directives": [
+                "💰 TẠM GIỮ GIẢI NGÂN: Giữ lại 15% giá trị thanh toán đợt tiếp theo để bảo đảm tiến độ.",
+                "⚖️ ÁP DỤNG PHẠT CHẬM TIẾN ĐỘ: Phạt 0.5%/ngày theo đúng điều khoản hợp đồng.",
+                "🚀 KÍCH HOẠT NHÀ CUNG CẤP B: Nhập bù khối lượng thiếu từ nguồn dự phòng nếu quá 24h."
+            ],
+            "action_principles": [
+                "Lấy Hợp đồng và hiện trạng làm căn cứ bất biến (Hình Danh Tham Đồng).",
+                "Thưởng phạt minh bạch (Nhị Bỉnh), không để tình cảm làm mờ lý trí quản trị.",
+                "Luôn duy trì giải pháp dự phòng Plan B tại mọi thời điểm."
+            ]
+        }
+
+    # 7. Adaptive Fallback based on Primary Philosophy Lens
+    if primary == "LEGALISM":
+        return {
+            "position_analysis": (
+                f"Phân tích bối cảnh: \"{scenario_text[:80]}...\". Lăng kính Pháp Gia (Hàn Phi Tử) chỉ ra rằng: "
+                "Khi xảy ra sự cố vận hành, nguồn gốc cốt lõi là ranh giới quyền hạn và trách nhiệm chưa tương thích (Hình Danh bất tương phù). "
+                "Cần lập tức lập lại trật tự bằng quy chế minh bạch, áp dụng Nhị Bỉnh (Thưởng - Phạt phân minh) để loại trừ rủi ro thao túng."
+            ),
+            "step_1_anchor": {
+                "title": "Bước 1: Khẳng định Quy chế & Ranh giới Trách nhiệm (Hình Danh Tham Đồng)",
+                "verbatim": f'"Chúng ta giải quyết tình huống này dựa trên căn cứ quy chuẩn và kết quả thực tế, không dựa trên cảm tính hay lời biện bạch cá nhân."'
+            },
+            "step_2_deadline_consequence": {
+                "title": "Bước 2: Ấn định Thời hạn Khắc phục & Chế tài Ràng buộc",
+                "verbatim": f'"Yêu cầu các bên liên quan hoàn thành phương án khắc phục trước thời hạn ấn định. Mọi vi phạm cam kết sẽ chịu chế tài quy chế rõ ràng."'
+            },
+            "step_3_way_out_plan_b": {
+                "title": "Bước 3: Mở Cơ chế Phục hồi & Chuẩn bị Kế hoạch Dự phòng (Plan B)",
+                "verbatim": f'"Những nỗ lực khắc phục kịp thời sẽ được ghi nhận và bảo lưu quyền lợi. Ngược lại, kế hoạch dự phòng độc lập sẽ kích hoạt ngay để đảm bảo an toàn hệ thống."'
+            },
+            "draft_official_communication": (
+                f"THÔNG BÁO CHỈ ĐẠO XỬ LÝ VÀ CHUẨN HÓA QUY TRÌNH\n"
+                f"----------------------------------------------\n"
+                f"Kính gửi: Các Đơn Vị và Cá Nhân Liên Quan\n\n"
+                f"Nội dung: Chỉ đạo giải quyết dứt điểm sự việc theo đúng quy chuẩn kỷ luật và mục tiêu điều hành.\n"
+                f"Thời hạn báo cáo hoàn tất: Trước 17h00 ngày quy định.\n\n"
+                f"Ban Điều Hành"
+            ),
+            "financial_and_operational_directives": [
+                "⚖️ SIẾT CHẶT KỶ CƯƠNG: Tạm khóa các quyền duyệt đặc cách cho đến khi khắc phục xong sự cố.",
+                "📋 LẬP BIÊN BẢN HIỆN TRẠNG: Xác lập chứng cứ khách quan trước khi đưa ra phán quyết.",
+                "🛡️ BẢO VỆ DÒNG TIỀN: Rà soát các cam kết tài chính liên quan để triệt tiêu nguy cơ thất thoát."
+            ],
+            "action_principles": [
+                "Hình Danh Tham Đồng: Danh nghĩa thế nào thì trách nhiệm và thẩm quyền tương ứng như thế.",
+                "Nhị Bỉnh: Nắm chắc hai cán cân thưởng và phạt trong tay người điều hành.",
+                "Tuyệt đối không dung dưỡng những vi phạm lặp lại làm xói mòn uy lực hệ thống."
+            ]
+        }
+    elif primary == "CONFUCIAN":
+        return {
+            "position_analysis": (
+                f"Phân tích bối cảnh: \"{scenario_text[:80]}...\". Lăng kính Nho Gia đề cao Đức Trị & Nhân Chính: "
+                "Thu phục lòng người bằng sự chính trực (Tu thân lập đức) và duy trì sự hòa thuận sâu sắc (Hòa nhi bất đồng). "
+                "Cần phân định rõ ràng giữa người Quân tử (hướng về đại cuộc) và kẻ Tiểu nhân (trục lợi cá nhân) để có đối sách thích hợp."
+            ),
+            "step_1_anchor": {
+                "title": "Bước 1: Lấy Đại Cuộc Làm Trọng & Lắng Nghe Thấu Đáo",
+                "verbatim": f'"Mục tiêu cao nhất của chúng ta là sự hưng thịnh và bền vững của tập thể. Mọi cá nhân đều xứng đáng được lắng nghe trên tinh thần chân thành."'
+            },
+            "step_2_deadline_consequence": {
+                "title": "Bước 2: Chuẩn Hóa Lễ Nghĩa & Khơi Gợi Trách Nhiệm Tự Giác",
+                "verbatim": f'"Tôi tin tưởng vào danh dự và lương tri nghề nghiệp của các bạn. Hãy hành động xứng đáng với vị thế và sự tin cậy mà tổ chức trao gửi."'
+            },
+            "step_3_way_out_plan_b": {
+                "title": "Bước 3: Mở Đường Cho Sự Hoàn Lương & Đãi Ngộ Người Có Đức",
+                "verbatim": f'"Tổ chức luôn trân trọng những người biết vì đại cuộc. Những cống hiến âm thầm sẽ được đền đáp xứng đáng bằng cả sự nghiệp lâu dài."'
+            },
+            "draft_official_communication": (
+                f"THƯ NGỎ CỦA NGƯỜI ĐỨNG ĐẦU VỀ TINH THẦN ĐỒNG LÒNG VÌ ĐẠI CUỘC\n"
+                f"----------------------------------------------------------\n"
+                f"Gửi toàn thể Đội ngũ Cộng sự,\n\n"
+                f"Sức mạnh của chúng ta nằm ở sự đồng tâm hiệp lực và niềm tin lẫn nhau.\n"
+                f"Mỗi thử thách là dịp để chúng ta tôi luyện bản lĩnh và khẳng định văn hóa cốt lõi.\n\n"
+                f"Người Đứng Đầu Tổ Chức"
+            ),
+            "financial_and_operational_directives": [
+                "👑 CHĂM LO PHÚC LỢI CỐT LÕI: Đảm bảo quyền lợi xứng đáng cho những nhân sự cống hiến bền bỉ.",
+                "🤝 ĐỐI THOẠI CHÂN THÀNH: Tổ chức phiên gặp gỡ giải tỏa tâm tư cho các nhân sự chủ chốt.",
+                "🌟 VINH DANH GƯƠNG SÁNG: Khen thưởng công khai các tấm gương vượt khó vì tập thể."
+            ],
+            "action_principles": [
+                "Hòa nhi bất đồng: Hòa hợp nhưng giữ vững chính kiến và phẩm cách.",
+                "Kỷ sở bất dục, vật thi ư nhân: Điều gì mình không muốn, đừng áp đặt cho người khác.",
+                "Lãnh đạo bằng sự nêu gương trước khi đòi hỏi sự phục tùng."
+            ]
+        }
+    elif primary == "TAOISM":
+        return {
+            "position_analysis": (
+                f"Phân tích bối cảnh: \"{scenario_text[:80]}...\". Lăng kính Đạo Gia (Trang Tử & Lão Tử) dạy: "
+                "Lấy tĩnh chế động, thuận theo tự nhiên (Vô Vi), không hấp tấp dùng sức đối đầu trực diện khi sóng gió đang cuộn trào. "
+                "Áp dụng phương pháp Tâm Trai / Tọa Vọng để thanh lọc định kiến, nhận diện thế cục ngầm và vận dụng thuật 'Dụng Vô Dụng'."
+            ),
+            "step_1_anchor": {
+                "title": "Bước 1: Lấy Tĩnh Chế Động & Tách Khỏi Cơn Lốc Cảm Xúc (Tâm Trai)",
+                "verbatim": f'"Lúc này càng nóng vội càng dễ sập bẫy định kiến. Chúng ta lùi lại một bước để nhìn thấu toàn cảnh dòng chảy sự việc."'
+            },
+            "step_2_deadline_consequence": {
+                "title": "Bước 2: Thuận Thế Điều Hướng & Biến Bất Lợi Thành Cơ Hội (Dụng Vô Dụng)",
+                "verbatim": f'"Không đối đầu trực diện với lực cản. Hãy nương theo đà của đối phương để chuyển hướng năng lượng về phía có lợi cho chúng ta."'
+            },
+            "step_3_way_out_plan_b": {
+                "title": "Bước 3: Giải Quyết Trong Êm Đẹp Tự Nhiên (Vô Vi Nhi Vô Bất Vi)",
+                "verbatim": f'"Khi mọi nút thắt tự bộc lộ, sự việc sẽ tự tìm về trạng thái cân bằng mới mà không cần hao tổn quá nhiều sức lực."'
+            },
+            "draft_official_communication": (
+                f"THÔNG ĐIỆP ĐIỀU HÀNH: GIỮ VỮNG TÂM THẾ TRONG BIẾN ĐỘNG\n"
+                f"--------------------------------------------------\n"
+                f"Kính gửi: Các Lãnh Đạo Đơn Vị\n\n"
+                f"Yêu cầu giữ vững sự bình tĩnh, duy trì vận hành ổn định và không phát ngôn khi chưa có dữ liệu kiểm chứng.\n\n"
+                f"Ban Cố Vấn Chiến Lược"
+            ),
+            "financial_and_operational_directives": [
+                "🧘 TẠM DỪNG QUYẾT ĐỊNH VỘI VÃ: Không ký duyệt các điều chỉnh chính sách lớn khi cảm xúc các bên đang căng thẳng.",
+                "🌊 BẢO TOÀN NGUYÊN KHÍ: Tập trung nguồn lực vào hoạt động cốt lõi mang lại dòng tiền an toàn.",
+                "🔄 TÙY THỜI THÍCH ỨNG: Chuẩn bị kịch bản đón đầu khi đối phương tự bộc lộ sơ hở."
+            ],
+            "action_principles": [
+                "Lấy nhu thắng cương, lấy nhược thắng cường.",
+                "Tâm trai tọa vọng: Lắng lòng để nhìn thấy những điều mắt thường bỏ sót.",
+                "Thuận theo tự nhiên, không cưỡng ép những điều chưa chín muồi."
+            ]
+        }
+    else:  # XUNZI or general
+        return {
+            "position_analysis": (
+                f"Phân tích bối cảnh: \"{scenario_text[:80]}...\". Lăng kính Tuân Tử chỉ ra: "
+                "Con người vốn có thiên hướng tư lợi và quán tính buông thả (Thuyết Tính Ác). "
+                "Nếu không có Lễ chế rèn nắn (Vĩ) và mentorship liên tục (Khuyên Học), tổ chức sẽ tự trượt vào hỗn loạn. "
+                "Cần dùng quy chuẩn định phần để uốn nắn hành vi và nâng tầm chuẩn mực."
+            ),
+            "step_1_anchor": {
+                "title": "Bước 1: Xác Lập Khung Quy Chuẩn Rèn Nắn (Dùng Lễ Định Phần)",
+                "verbatim": f'"Mọi vị trí đều cần được rèn giũa để đạt chuẩn mực cao nhất. Sự cố hôm nay là cơ hội để chúng ta uốn nắn lại quy trình."'
+            },
+            "step_2_deadline_consequence": {
+                "title": "Bước 2: Thiết Lập Lộ Trình Huấn Luyện & Sát Hạch Bắt Buộc",
+                "verbatim": f'"Yêu cầu tham gia đợt sát hạch nâng chuẩn trong 7 ngày tới. Nhân sự vượt qua thử thách sẽ được trao thêm quyền hạn mới."'
+            },
+            "step_3_way_out_plan_b": {
+                "title": "Bước 3: Công Nhận Sự Chuyển Hóa & Bồi Dưỡng Lâu Dài",
+                "verbatim": f'"Tổ chức luôn trân quý những cộng sự có ý chí cầu tiến và sẵn sàng uốn nắn bản thân vì tiêu chuẩn hoàn hảo."'
+            },
+            "draft_official_communication": (
+                f"KẾ HOẠCH NÂNG CHUẨN NĂNG LỰC & KỶ LUẬT THỰC THI\n"
+                f"----------------------------------------------\n"
+                f"Gửi: Toàn thể Cán bộ Đơn vị\n\n"
+                f"Khởi động chương trình sát hạch quy chuẩn và nâng tầm kỹ năng chuyên môn.\n\n"
+                f"Ban Đào Tạo & Quản Trị Hiệu Năng"
+            ),
+            "financial_and_operational_directives": [
+                "📖 MENTORSHIP BẮT BUỘC: Ghép cặp nhân sự còn non với cán bộ kỳ cựu để rèn nắn thực chiến.",
+                "🎯 TIÊU CHUẨN HÓA KPI: Gắn 30% kết quả đánh giá với mức độ tuân thủ quy chuẩn.",
+                "🔄 TÁI BỐ TRÍ LINH HOẠT: Chuyển giao các nhân sự không cam kết học hỏi sang vị trí hỗ trợ."
+            ],
+            "action_principles": [
+                "Tính ác - Nhân vi vi: Con người cần sự rèn giũa có ý thức để trở nên hoàn thiện.",
+                "Khuyên học: Việc học tập và rèn luyện kỹ năng phải diễn ra liên tục, không ngừng nghỉ.",
+                "Dùng Lễ định phần: Phân định ranh giới chức trách để ngăn chặn tranh chấp."
+            ]
+        }
+
+
+def diagnose_person_role_fit(payload: dict[str, Any]) -> dict[str, Any]:
+    """
+    Evaluates alignment between personal default traits and role behavioral expectations
+    based on NT-MODEL-0007 (Person-Role Fit Model) and NT-PRINCIPLE-0067 (Standardize Evaluation).
+    """
+    candidate_name = payload.get("candidate_name", "").strip() or "Nhân sự"
+    target_role = payload.get("target_role", "").strip() or "Vị trí quản lý"
+    raw_traits = payload.get("traits", [])
+    raw_demands = payload.get("role_demands", [])
+    context = payload.get("context", "")
+
+    # Normalize traits and demands
+    traits = [t.strip() for t in raw_traits if t.strip()] if isinstance(raw_traits, list) else [s.strip() for s in str(raw_traits).split(",") if s.strip()]
+    demands = [d.strip() for d in raw_demands if d.strip()] if isinstance(raw_demands, list) else [s.strip() for s in str(raw_demands).split(",") if s.strip()]
+
+    if not traits:
+        traits = ["Thiên hướng sáng tạo", "Thích tự chủ cao", "Ngại xung đột trực diện", "Nhạy bén cơ hội"]
+    if not demands:
+        demands = ["Kỷ luật quy trình nghiêm ngặt", "Đàm phán căng thẳng", "Chịu áp lực số hàng tuần", "Quản lý giám sát chi tiết"]
+
+    # Trait vs Demand friction heuristic
+    friction_points = []
+    traits_text = " ".join(traits).lower()
+    demands_text = " ".join(demands).lower()
+
+    if any(k in traits_text for k in ["tự do", "tự chủ", "sáng tạo", "linh hoạt"]) and any(k in demands_text for k in ["kỷ luật", "quy trình", "nghiêm ngặt", "giám sát", "chi tiết"]):
+        friction_points.append("Ma sát giữa nhu cầu tự do sáng tạo và kỳ vọng tuân thủ quy trình kiểm soát chặt chẽ.")
+
+    if any(k in traits_text for k in ["ngại xung đột", "dĩ hòa", "nhân từ", "cảm xúc"]) and any(k in demands_text for k in ["đàm phán", "căng thẳng", "sa thải", "thu nợ", "áp lực số", "rắn mặt"]):
+        friction_points.append("Chi phí nhận thức cao khi phải đối đầu trực diện hoặc đưa ra các phán quyết cứng rắn.")
+
+    if any(k in traits_text for k in ["chuyên môn sâu", "hướng nội", "ít nói"]) and any(k in demands_text for k in ["ngoại giao", "xây dựng quan hệ", "thuyết trình", "lôi kéo bè phái", "networking"]):
+        friction_points.append("Hao tổn năng lượng tự điều chỉnh trong các tương tác xã hội cường độ cao ngoài chuyên môn.")
+
+    if not friction_points:
+        friction_points.append("Cần theo dõi mức độ căng thẳng nhận thức trong 30 ngày đầu để xác định điểm nghẽn ẩn.")
+
+    # Calculate adaptation friction score
+    friction_score = min(85, max(25, 30 + len(friction_points) * 20))
+    if friction_score < 40:
+        fit_level = "Tương Thích Cao (High Alignment)"
+        fit_color = "#10b981"
+    elif friction_score <= 65:
+        fit_level = "Ma Sát Thích Ứng Trung Bình (Manageable Friction)"
+        fit_color = "#f59e0b"
     else:
-        return {
-            "position_analysis": "Cần bình tĩnh đánh giá sự cố trên tinh thần trung thực và tôn trọng sự thật khách quan. Không xử lý hấp vội mà cần bóc tách đúng nguyên nhân cốt lõi.",
-            "step_1_anchor": {
-                "title": "Bước 1: Thiết lập Vị thế & Nhận diện Mâu thuẫn",
-                "verbatim": '"Chúng ta cần đối diện trực tiếp với bản chất sự cố trên tinh thần trung thực và tôn trọng sự thật."'
-            },
-            "step_2_deadline_consequence": {
-                "title": "Bước 2: Xác lập Thời hạn & Trách nhiệm Cụ thể",
-                "verbatim": '"Yêu cầu hoàn thành việc khắc phục sự cố đúng thời hạn và có báo cáo nguyên nhân minh bạch."'
-            },
-            "step_3_way_out_plan_b": {
-                "title": "Bước 3: Thỏa thuận Phương án Khắc phục & Đồng hành",
-                "verbatim": '"Tổ chức sẽ đồng hành và tạo điều kiện tối đa nếu các bên thể hiện sự thiện chí và tinh thần trách nhiệm."'
-            },
-            "draft_official_communication": (
-                "THÔNG BÁO CHỈ ĐẠO XỬ LÝ SỰ CỐ & THỎA THUẬN GIẢI PHÁP\n"
-                "---------------------------------------------------\n"
-                "Kính gửi: Các Bộ phận / Đơn vị Liên quan\n\n"
-                "Đề nghị các bên nghiêm túc phối hợp xử lý sự cố theo đúng chỉ đạo và báo cáo kết quả trước [HH:MM ngày DD/MM/YYYY].\n\n"
-                "Ban Điều Hành BusinessOS"
-            ),
-            "financial_and_operational_directives": [
-                "💰 BẢO ĐẢM TÀI CHÍNH: Tạm dừng các khoản chi phi chính thức ngoài dự toán.",
-                "📋 BÓC TÁCH NGUYÊN NHÂN: Lập biên bản kiểm toán tài chính và tiến độ hiện trường.",
-                "🤝 ĐỒNG HÀNH KHẮC PHỤC: Hỗ trợ nguồn lực kỹ thuật cho bộ phận vướng mắc."
-            ],
-            "action_principles": [
-                "Đối diện sự thật và xác lập trách nhiệm minh bạch.",
-                "Đưa ra thời hạn và yêu cầu cam kết cụ thể.",
-                "Duy trì tinh thần hợp tác xây dựng."
-            ]
-        }
+        fit_level = "Lệch Pha Nhận Thức Lớn (High Risk Friction)"
+        fit_color = "#ef4444"
+
+    return {
+        "status": "success",
+        "candidate_name": candidate_name,
+        "target_role": target_role,
+        "friction_score": friction_score,
+        "fit_level": fit_level,
+        "fit_color": fit_color,
+        "adaptation_cost_analysis": (
+            f"Khi cá nhân [{candidate_name}] với các thiên hướng mặc định ({', '.join(traits[:3])}) "
+            f"đảm nhiệm vị trí [{target_role}] đòi hỏi ({', '.join(demands[:3])}), "
+            f"hệ thống ước tính mức độ ma sát nhận thức ở mức {friction_score}%. "
+            f"Nhân sự sẽ phải liên tục kích hoạt cơ chế tự kiểm soát hành vi (self-regulation), "
+            f"có thể dẫn đến kiệt sức nếu môi trường làm việc không có sự hỗ trợ bổ trợ."
+        ),
+        "identified_friction_points": friction_points,
+        "compensatory_strategies": [
+            "Bố trí 01 cộng sự có thiên hướng bù trừ (ví dụ: người mạnh chi tiết bổ trợ cho người mạnh ý tưởng).",
+            "Tạo không gian tự chủ trong phạm vi chuyên môn cốt lõi, giảm bớt các cuộc họp điều hành không cần thiết.",
+            "Chuẩn hóa tiêu chuẩn đánh giá đầu ra (NT-PRINCIPLE-0067) thay vì giám sát vi mô phương pháp làm việc."
+        ],
+        "placement_verdict": (
+            "BỔ NHIỆM CÓ ĐIỀU KIỆN KÈM HỖ TRỢ MÔI TRƯỜNG" if friction_score <= 65 else "CÂN NHẮC TÁI THIẾT KẾ VAI TRÒ HOẶC CHỌN ỨNG VIÊN BÙ TRỪ"
+        ),
+        "cited_units": [
+            {"id": "NT-MODEL-0007", "title": "Mô hình tương thích cá nhân - vai trò", "domain": "tri-nhan"},
+            {"id": "NT-PRINCIPLE-0067", "title": "Chuẩn hóa đánh giá", "domain": "tri-nhan"},
+            {"id": "NT-LAW-0034", "title": "Quy luật ma sát nhận thức", "domain": "tri-nhan"}
+        ]
+    }
 
 
 def process_nhan_thuat_analysis(scenario_text: str, scenario_type_hint: str = "general") -> dict[str, Any]:

@@ -1,2581 +1,1511 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Statue of Laocoön</title>
+    <title>Nhân Thuật | Human Intelligence OS - Trung Tâm Chỉ Huy Điều Hành</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+        :root {
+            --bg-base: #09090b;
+            --bg-surface: #121216;
+            --bg-surface-elevated: #18181f;
+            --bg-glass: rgba(18, 18, 22, 0.75);
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --border-focus: rgba(245, 158, 11, 0.45);
+            --gold-primary: #f59e0b;
+            --gold-light: #fbbf24;
+            --gold-glow: rgba(245, 158, 11, 0.18);
+            --cyan-accent: #38bdf8;
+            --emerald-accent: #10b981;
+            --rose-accent: #f43f5e;
+            --text-main: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-display: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', Georgia, serif;
+        }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        .chat-msg, .knowledge-card, .chat-tab-pane { user-select: text !important; }
-
-        html, body {
-            width: 100%;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #000000;
-            -ms-overflow-style: none;
-            scrollbar-width: none;
+            box-sizing: border-box;
+            cursor: default !important;
+        }
+
+        a, button, input[type="button"], input[type="submit"], select, .clickable, .tab-btn, .pill-btn, .chip-item, .card-interactive {
+            cursor: pointer !important;
+        }
+
+        input[type="text"], textarea {
+            cursor: text !important;
         }
 
         body {
-            min-height: 900vh;
-            font-family: 'Inter', sans-serif;
-            color: #ffffff;
-            overflow-x: hidden;
-            cursor: none;
-        }
-
-        * { cursor: none !important; }
-
-        ::-webkit-scrollbar { display: none; width: 0; }
-
-        #webgl {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            z-index: 1;
-            outline: none;
-        }
-
-        .cursor-inner {
-            position: fixed; top: 0; left: 0;
-            width: 6px; height: 6px;
-            border: 2px solid rgba(255, 255, 255, 1);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-            z-index: 9999;
-        }
-        .cursor-outer {
-            position: fixed; top: 0; left: 0;
-            width: 40px; height: 40px;
-            border: 1.5px solid rgba(255, 255, 255, 0.7);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-            z-index: 9998;
-            transition: width 0.3s, height 0.3s, background 0.3s;
-        }
-
-        .cinematic-container {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            z-index: 10;
-            pointer-events: none;          /* clicks pass through to canvas */
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            height: 100vh;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Top Executive Header */
+        .exec-header {
+            height: 64px;
+            background: rgba(10, 10, 14, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
             justify-content: space-between;
-            padding: 0 60px 40px 60px;
-            box-sizing: border-box;
+            padding: 0 24px;
+            z-index: 50;
+            flex-shrink: 0;
         }
 
-        .main-header {
-            display: flex; justify-content: space-between; align-items: center;
-            width: 100%; z-index: 20;
-            pointer-events: auto;
-            padding: 20px 0;
-        }
-        .brand { font-size: 14px; font-weight: 600; letter-spacing: 5px; text-transform: uppercase; }
-        .header-nav { display: flex; align-items: center; gap: 24px; }
-        .nav-link {
-            color: #ffffff; text-decoration: none;
-            font-size: 10px; text-transform: uppercase; letter-spacing: 2px;
-            font-weight: 500; transition: color 0.3s;
-        }
-        .nav-link:hover { color: #ffffff; }
-        .nav-dot { width: 3px; height: 3px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; }
-        .contact-btn {
-            display: inline-flex; align-items: center; gap: 8px;
-            padding: 10px 24px;
-            background: #ffffff; color: #000000;
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             text-decoration: none;
-            font-size: 10px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;
-            border-radius: 20px;
-            transition: transform 0.3s, background 0.3s;
-        }
-        .btn-circle {
-            display: inline-block; width: 6px; height: 6px;
-            border: 1px solid #000000; border-radius: 50%; background: transparent;
-        }
-        .contact-btn:hover { transform: scale(1.05); background: #f0f0f0; }
-
-        .slide { position: absolute; bottom: 12%; pointer-events: none; }
-
-        #slide-1 { left: 0; width: 100%; }
-        #slide-1 .slide-title { margin-left: 60px; }
-        #slide-1 .desc-row { position: relative; display: flex; width: 100%; }
-        #slide-1 .col-1 {
-            margin-left: 60px;
-            width: calc(25vw - 60px);
-            max-width: calc(25vw - 60px);
-        }
-        #slide-1 .col-2 {
-            position: absolute;
-            left: calc(25vw + 40px);
-            width: calc(25vw - 60px);
-            max-width: calc(25vw - 60px);
         }
 
-        #slide-2 { left: 0; width: 100%; }
-        #slide-2-img {
-            position: fixed;
-            top: 90px;
-            left: 60px;
-            width: calc(25vw - 60px);
-            aspect-ratio: 1 / 1;
-            overflow: hidden;
-            z-index: 2;
-            pointer-events: none;
-            clip-path: inset(0 0 100% 0);
-            transition: clip-path 1.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
-            opacity: 0;
-        }
-        #slide-2-img img {
-            width: 100%; height: 100%;
-            object-fit: cover;
-            transform: scale(1.15);
-            transition: transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        #slide-2-img.active { clip-path: inset(0 0 0 0); opacity: 1; }
-        #slide-2-img.active img { transform: scale(1); }
-
-        #slide-2 .slide-title { margin-left: calc(25vw + 40px); }
-        #slide-2 .slide-desc {
-            margin-left: calc(50vw + 20px);
-            width: calc(25vw - 60px);
-            max-width: calc(25vw - 60px);
-        }
-
-        #slide-3 {
-            left: 60px;
-            width: calc(25vw - 60px);
-            max-width: calc(25vw - 60px);
-        }
-        #slide-3 .slide-title { white-space: nowrap; }
-
-        #slide-4 { left: 60px; max-width: 600px; }
-
-        .slide-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 116px;
-            line-height: 1.0;
-            font-weight: 400;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            color: #fff6ed;
-        }
-        .slide-desc {
-            font-size: 16px; line-height: 1.7; font-weight: 300;
-            color: #d1d5db; letter-spacing: 0.5px;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
-                        transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-            transition-delay: 0.4s;
-        }
-        .slide.active .slide-desc { opacity: 1; transform: translateY(0); }
-
-        .slide-title .char {
-            display: inline-block;
-            opacity: 0;
-            transform: translateY(50px);
-            filter: blur(12px);
-            transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
-                        transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
-                        filter 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-        }
-        .slide.active .slide-title .char { opacity: 1; transform: translateY(0); filter: blur(0); }
-        .slide.active { pointer-events: auto; }
-
-        .story-dashes {
-            position: absolute; top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            display: flex; flex-direction: column; gap: 12px;
-        }
-        .story-dash { width: 2px; height: 40px; background: rgba(255, 255, 255, 0.15); border-radius: 2px; }
-        .story-dash-fill { width: 100%; height: 0%; background: #ffffff; border-radius: 2px; }
-
-        .grid-horizontal-line {
-            position: fixed; top: 70px; left: 0; right: 0;
-            width: 100%; height: 1px;
-            background: rgba(255, 255, 255, 0.12);
-            z-index: 5; pointer-events: none;
-        }
-        .grid-lines {
-            position: fixed; top: 0; left: 40px; right: 40px;
-            width: calc(100% - 80px); height: 100vh;
-            display: flex; justify-content: space-between;
-            z-index: 5; pointer-events: none;
-        }
-        .grid-line {
-            position: relative; width: 1px; height: 100%;
-            background: rgba(255, 255, 255, 0.12);
-        }
-        .grid-line:nth-child(3) { margin-top: 70px; height: calc(100vh - 70px); }
-        .grid-dot {
-            position: absolute; left: 50%;
-            transform: translate(-50%, -50%);
-            width: 6px; height: 6px; border-radius: 50%;
-            background: rgba(255, 255, 255, 0.35);
-            box-shadow: 0 0 4px rgba(255, 255, 255, 0.15);
-        }
-        
-        /* Chat Sidebar Styles */
-        #chat-sidebar {
-            position: fixed;
-            top: 0; right: 0;
-            width: 800px; height: 100vh;
-            min-width: 400px; max-width: 90vw;
-            z-index: 100000;
-            background: rgba(10, 10, 10, 0.6);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-left: 1px solid rgba(255, 255, 255, 0.1);
-            transform: translateX(100%);
-            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            z-index: 100;
-            display: flex; flex-direction: column;
-            pointer-events: auto;
-            resize: horizontal;
-            direction: rtl;
-            overflow: hidden;
-        }
-        #chat-sidebar > * {
-            direction: ltr;
-        }
-        #chat-sidebar.open {
-            transform: translateX(0);
-        }
-        #chat-sidebar.minimized {
-            height: 90px !important;
-            width: 350px !important;
-            min-width: 350px;
-            top: auto;
-            bottom: 20px;
-            right: 20px;
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.2);
-            transform: none;
-            resize: none;
-        }
-        #chat-sidebar.minimized .chat-history,
-        #chat-sidebar.minimized .chat-input-container {
-            display: none;
-        }
-        #chat-sidebar.minimized .chat-header {
-            border-bottom: none;
-            padding: 20px 30px;
-        }
-        .chat-header {
-            padding: 20px 30px;
-            display: flex; justify-content: space-between; align-items: center;
-        }
-        .sidebar-top-tabs {
-            display: flex;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        .sidebar-tab {
-            flex: 1;
-            background: transparent;
-            border: none;
-            color: rgba(255,255,255,0.5);
-            padding: 12px 0;
-            font-family: 'Inter', sans-serif;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            cursor: pointer;
-            border-bottom: 2px solid transparent;
-            transition: all 0.3s;
-        }
-        .sidebar-tab.active {
-            color: #f59e0b;
-            border-bottom-color: #f59e0b;
-        }
-        .sidebar-view {
-            display: none;
-            flex-direction: column;
-            flex: 1;
-            overflow: hidden;
-        }
-        .sidebar-view.active {
-            display: flex;
-        }
-        
-        /* Knowledge Card */
-        .knowledge-list {
-            flex: 1;
-            overflow-y: auto;
-            padding: 20px 30px;
-        }
-        .knowledge-card {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 8px;
-            padding: 16px;
-            margin-bottom: 16px;
-            cursor: pointer;
-            transition: background 0.3s, transform 0.2s;
-        }
-        .knowledge-card:hover {
-            background: rgba(255,255,255,0.08);
-            transform: translateY(-2px);
-        }
-        .knowledge-card-title {
-            color: #fff6ed;
-            font-family: 'Playfair Display', serif;
-            font-size: 18px;
-            margin-bottom: 8px;
-        }
-        .knowledge-card-meta {
-            font-family: 'Inter', sans-serif;
-            font-size: 12px;
-            color: rgba(255,255,255,0.5);
-        }
-
-        .chat-header h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 400;
-            color: #fff6ed;
-            letter-spacing: 1px;
-        }
-        .close-chat-btn {
-            background: transparent;
-            border: none;
-            color: rgba(255,255,255,0.5);
-            font-size: 24px;
-            cursor: none;
-            transition: color 0.3s;
-        }
-        .close-chat-btn:hover { color: #ffffff; }
-        
-        .chat-history {
-            flex: 1;
-            padding: 30px;
-            overflow-y: auto;
-            display: flex; flex-direction: column; gap: 20px;
-            -ms-overflow-style: none; scrollbar-width: none;
-        }
-        .chat-history::-webkit-scrollbar { display: none; }
-        
-        .chat-msg {
-            max-width: 85%;
-            padding: 16px 20px;
-            line-height: 1.6;
-            font-size: 17.5px;
-            letter-spacing: 0.3px;
-        }
-        .chat-msg p { margin-bottom: 12px; }
-        .chat-msg p:last-child { margin-bottom: 0; }
-        .chat-msg h3 { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 12px; font-weight: normal; color: #f59e0b; }
-        .chat-msg h4 { font-family: 'Inter', sans-serif; font-size: 15px; margin: 12px 0 8px; font-weight: 500; color: #fff6ed; }
-        .chat-msg ul { margin-left: 20px; margin-bottom: 10px; }
-        .chat-msg li { margin-bottom: 6px; }
-        
-        .msg-user {
-            align-self: flex-end;
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 20px 20px 0 20px;
-        }
-        .msg-bot {
-            align-self: flex-start;
-            background: rgba(0,0,0,0.5);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 20px 20px 20px 0;
-            color: #d1d5db;
-        }
-        
-        .chat-input-container {
-            padding: 24px 30px 40px 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .chat-input-wrapper {
-            position: relative;
+        .brand-crest {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #f59e0b 0%, #b45309 100%);
             display: flex;
             align-items: center;
-        }
-        .chat-tabs-nav {
-            display: flex; gap: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 12px;
-            overflow-x: auto;
-        }
-        .chat-tab-btn {
-            background: transparent; border: none; color: rgba(255,255,255,0.6); padding: 8px 12px; cursor: pointer;
-            font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; border-bottom: 2px solid transparent;
-            white-space: nowrap;
-        }
-        .chat-tab-btn.active {
-            color: #f59e0b; border-bottom-color: #f59e0b;
-        }
-        .chat-tab-pane { display: none; }
-        .chat-tab-pane.active { display: block; }
-        
-        .chat-input {
-            width: 100%;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 30px;
-            padding: 16px 50px 16px 24px;
-            color: #ffffff;
-            font-family: 'Inter', sans-serif;
-            font-size: 18px;
-            outline: none;
-            transition: border-color 0.3s, background 0.3s;
-            cursor: none;
-        }
-        .chat-input:focus {
-            border-color: rgba(255, 255, 255, 0.5);
-            background: rgba(255, 255, 255, 0.08);
-        }
-        .chat-input::placeholder { color: rgba(255, 255, 255, 0.3); }
-        .chat-send-btn {
-            position: absolute;
-            right: 12px;
-            width: 32px; height: 32px;
-            border-radius: 50%;
-            background: #ffffff;
-            color: #000000;
-            border: none;
-            display: flex; justify-content: center; align-items: center;
-            font-size: 16px;
-            cursor: none;
-            transition: transform 0.3s, background 0.3s;
-        }
-        .chat-send-btn:hover {
-            transform: scale(1.1);
-            background: #f0f0f0;
-        }
-        
-        .typing-indicator {
-            align-self: flex-start;
-            font-style: italic;
-            color: rgba(255, 255, 255, 0.4);
-            font-size: 13px;
-            padding: 10px 20px;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.35);
         }
 
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .cinematic-container { padding: 0 20px 20px 20px; }
-            .slide-title { font-size: 56px; }
-            .header-nav { display: none; }
-            
-            #slide-1 .desc-row { flex-direction: column; gap: 15px; }
-            #slide-1 .col-1, #slide-1 .col-2 {
-                position: relative; left: 0; margin-left: 0;
-                width: 100%; max-width: 100%;
-            }
-            #slide-1 .slide-title { margin-left: 0; }
-            
-            #slide-2 .slide-title { margin-left: 0; }
-            #slide-2 .slide-desc {
-                margin-left: 0; width: 100%; max-width: 100%;
-            }
-            #slide-2-img { display: none !important; }
-            
-            #slide-3, #slide-4 {
-                left: 0; width: 100%; max-width: 100%; padding: 0 20px;
-            }
-            
-            #chat-sidebar {
-                width: 100%; min-width: 100%; max-width: 100%;
-            }
-            
-            .grid-lines { display: none; }
-        }
-    
-#chat-sidebar {
-            position: fixed;
-            top: 0; right: 0;
-            width: 800px; height: 100vh;
-            min-width: 400px; max-width: 90vw;
-            z-index: 100000;
-            background: rgba(10, 10, 10, 0.6);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-left: 1px solid rgba(255, 255, 255, 0.1);
-            transform: translateX(100%);
-            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            z-index: 100;
-            display: flex; flex-direction: column;
-            pointer-events: auto;
-            resize: horizontal;
-            direction: rtl;
-            overflow: hidden;
-        }
-        #chat-sidebar > * {
-            direction: ltr;
-        }
-        #chat-sidebar.open {
-            transform: translateX(0);
-        }
-        #chat-sidebar.minimized {
-            height: 90px !important;
-            width: 350px !important;
-            min-width: 350px;
-            top: auto;
-            bottom: 20px;
-            right: 20px;
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.2);
-            transform: none;
-            resize: none;
-        }
-        #chat-sidebar.minimized .chat-history,
-        #chat-sidebar.minimized .chat-input-container {
-            display: none;
-        }
-        #chat-sidebar.minimized .chat-header {
-            border-bottom: none;
-            padding: 20px 30px;
-        }
-        .chat-header {
-            padding: 20px 30px;
-            display: flex; justify-content: space-between; align-items: center;
-        }
-        .sidebar-top-tabs {
-            display: flex;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        .sidebar-tab {
-            flex: 1;
-            background: transparent;
-            border: none;
-            color: rgba(255,255,255,0.5);
-            padding: 12px 0;
-            font-family: 'Inter', sans-serif;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            cursor: pointer;
-            border-bottom: 2px solid transparent;
-            transition: all 0.3s;
-        }
-        .sidebar-tab.active {
-            color: #f59e0b;
-            border-bottom-color: #f59e0b;
-        }
-        .sidebar-view {
-            display: none;
-            flex-direction: column;
-            flex: 1;
-            overflow: hidden;
-        }
-        .sidebar-view.active {
-            display: flex;
-        }
-        
-        /* Knowledge Card */
-        .knowledge-list {
-            flex: 1;
-            overflow-y: auto;
-            padding: 20px 30px;
-        }
-        .knowledge-card {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 8px;
-            padding: 16px;
-            margin-bottom: 16px;
-            cursor: pointer;
-            transition: background 0.3s, transform 0.2s;
-        }
-        .knowledge-card:hover {
-            background: rgba(255,255,255,0.08);
-            transform: translateY(-2px);
-        }
-        .knowledge-card-title {
-            color: #fff6ed;
-            font-family: 'Playfair Display', serif;
-            font-size: 18px;
-            margin-bottom: 8px;
-        }
-        .knowledge-card-meta {
-            font-family: 'Inter', sans-serif;
-            font-size: 12px;
-            color: rgba(255,255,255,0.5);
-        }
-
-        /* Mode Toggle Pills */
-        .chat-mode-bar {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 24px;
-            background: rgba(255, 255, 255, 0.02);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            overflow-x: auto;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-        .chat-mode-bar::-webkit-scrollbar { display: none; }
-        .chat-mode-pill {
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            color: rgba(255, 255, 255, 0.65);
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 11.5px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            cursor: pointer;
-            white-space: nowrap;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .chat-mode-pill:hover {
-            border-color: rgba(255, 255, 255, 0.4);
-            color: #ffffff;
-            background: rgba(255, 255, 255, 0.05);
-        }
-        .chat-mode-pill.active {
-            background: #f59e0b;
-            border-color: #f59e0b;
-            color: #000000;
+        .brand-meta h1 {
+            font-family: var(--font-display);
+            font-size: 17px;
             font-weight: 700;
-            box-shadow: 0 0 15px rgba(245, 158, 11, 0.35);
+            letter-spacing: 0.04em;
+            color: #ffffff;
+            line-height: 1.1;
         }
 
-        /* Executive Export Brief Button */
-        .export-brief-btn {
-            background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(245, 158, 11, 0.08) 100%);
-            border: 1px solid rgba(245, 158, 11, 0.4);
-            color: #f59e0b;
-            padding: 5px 12px;
-            border-radius: 16px;
+        .brand-meta span {
             font-size: 11px;
-            font-weight: 700;
-            cursor: pointer;
-            letter-spacing: 0.5px;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            transition: all 0.2s;
-        }
-        .export-brief-btn:hover {
-            background: #f59e0b;
-            color: #000000;
-            box-shadow: 0 0 12px rgba(245, 158, 11, 0.4);
-            transform: translateY(-1px);
+            letter-spacing: 0.08em;
+            color: var(--gold-primary);
+            text-transform: uppercase;
+            font-weight: 600;
         }
 
-        /* Knowledge Graph Badges */
-        .knowledge-badge {
-            display: inline-flex;
+        /* Nav Tabs */
+        .header-nav {
+            display: flex;
             align-items: center;
             gap: 4px;
-            padding: 3px 8px;
-            border-radius: 6px;
-            font-size: 11px;
-            font-weight: 600;
-            cursor: pointer;
-            border: 1px solid rgba(245, 158, 11, 0.3);
-            background: rgba(245, 158, 11, 0.08);
-            color: #f59e0b;
-            margin-right: 6px;
-            margin-bottom: 6px;
-            transition: all 0.2s;
-            text-decoration: none;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-subtle);
+            padding: 4px;
+            border-radius: 12px;
         }
-        .knowledge-badge:hover {
-            background: rgba(245, 158, 11, 0.25);
-            border-color: #f59e0b;
-            transform: translateY(-1px);
-        }
-        .knowledge-badge.type-law { border-color: rgba(56, 189, 248, 0.4); background: rgba(56, 189, 248, 0.08); color: #38bdf8; }
-        .knowledge-badge.type-anti-pattern { border-color: rgba(248, 113, 113, 0.4); background: rgba(248, 113, 113, 0.08); color: #f87171; }
-        .knowledge-badge.type-principle { border-color: rgba(52, 211, 153, 0.4); background: rgba(52, 211, 153, 0.08); color: #34d399; }
 
-        /* Multi-Agent Council Visual Cards */
-        .council-stage-header {
-            font-family: 'Playfair Display', serif;
-            font-size: 15px;
+        .workspace-tab-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            font-family: var(--font-sans);
+            font-size: 12.5px;
             font-weight: 600;
-            color: #f59e0b;
-            margin: 16px 0 10px 0;
-            padding-bottom: 6px;
-            border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+            padding: 7px 16px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 7px;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .council-pitch-grid {
+
+        .workspace-tab-btn:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .workspace-tab-btn.active {
+            color: #000000;
+            background: var(--gold-primary);
+            box-shadow: 0 2px 10px rgba(245, 158, 11, 0.3);
+            font-weight: 700;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .export-btn {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            color: var(--gold-light);
+            font-family: var(--font-sans);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 7px 14px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .export-btn:hover {
+            background: rgba(245, 158, 11, 0.2);
+            border-color: var(--gold-primary);
+            color: #ffffff;
+        }
+
+        .home-link-btn {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 7px 12px;
+            border-radius: 8px;
+            border: 1px solid var(--border-subtle);
+            transition: all 0.2s ease;
+        }
+
+        .home-link-btn:hover {
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Workspace Viewport */
+        .workspace-viewport {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            background: radial-gradient(circle at 50% 0%, rgba(30, 27, 22, 0.35) 0%, rgba(9, 9, 11, 1) 75%);
+        }
+
+        .workspace-module {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .workspace-module.active {
+            display: flex;
+        }
+
+        /* MODULE 1: ADVISORY COCKPIT */
+        .cockpit-layout {
+            display: flex;
+            height: 100%;
+            width: 100%;
+        }
+
+        .cockpit-main {
+            flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            margin-bottom: 16px;
+            height: 100%;
+            border-right: 1px solid var(--border-subtle);
+            position: relative;
         }
-        .council-pitch-card {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 14px 16px;
-            transition: all 0.2s;
+
+        .cockpit-sidebar {
+            width: 320px;
+            height: 100%;
+            background: rgba(14, 14, 18, 0.6);
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            border-left: 1px solid var(--border-subtle);
         }
-        .council-pitch-card:hover {
-            border-color: rgba(245, 158, 11, 0.35);
-            background: rgba(255, 255, 255, 0.06);
-        }
-        .council-pitch-title {
-            font-size: 14px;
-            font-weight: 700;
-            color: #f8fafc;
-            margin-bottom: 6px;
+
+        .mode-toolbar {
+            padding: 12px 20px;
+            border-bottom: 1px solid var(--border-subtle);
             display: flex;
             align-items: center;
             justify-content: space-between;
+            background: rgba(12, 12, 16, 0.5);
+            flex-shrink: 0;
         }
-        .council-pitch-stance {
-            font-size: 12.5px;
-            color: rgba(255, 255, 255, 0.85);
-            line-height: 1.5;
-            font-style: italic;
-            margin-bottom: 8px;
-            padding-left: 10px;
-            border-left: 2px solid #f59e0b;
-        }
-        .cross-debate-card {
-            background: rgba(0, 0, 0, 0.35);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-left: 3px solid #ef4444;
-            border-radius: 8px;
-            padding: 12px 14px;
-            margin-bottom: 10px;
-            font-size: 13px;
-        }
-        .decision-matrix-box {
-            background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(0, 0, 0, 0.4) 100%);
-            border: 1px solid rgba(245, 158, 11, 0.35);
-            border-radius: 12px;
-            padding: 18px;
-            margin: 14px 0;
-        }
-        .plan-tab-bar {
+
+        .mode-pills {
             display: flex;
-            gap: 6px;
-            margin: 12px 0;
-            background: rgba(0, 0, 0, 0.4);
-            padding: 4px;
-            border-radius: 8px;
+            gap: 8px;
         }
-        .plan-tab-btn {
-            flex: 1;
-            padding: 6px 8px;
-            font-size: 11.5px;
+
+        .mode-pill {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            font-size: 12px;
             font-weight: 600;
-            border: none;
-            background: transparent;
-            color: rgba(255, 255, 255, 0.6);
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.2s;
-            text-align: center;
-        }
-        .plan-tab-btn.active {
-            background: #f59e0b;
-            color: #000;
-            font-weight: 700;
-        }
-
-        /* Case Studies Grid */
-        .case-study-card {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 10px;
-            padding: 16px;
-            margin-bottom: 12px;
-            transition: all 0.2s;
-        }
-        .case-study-card:hover {
-            border-color: rgba(245, 158, 11, 0.4);
-            transform: translateY(-2px);
-        }
-        .case-domain-badge {
-            font-size: 10.5px;
-            font-weight: 700;
-            padding: 2px 8px;
-            border-radius: 4px;
-            background: rgba(245, 158, 11, 0.15);
-            color: #f59e0b;
-            border: 1px solid rgba(245, 158, 11, 0.3);
-            text-transform: uppercase;
-        }
-
-        /* Modal Overlay for Knowledge Units */
-        .unit-modal-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            z-index: 10000;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        .unit-modal-overlay.open { display: flex; }
-        .unit-modal-card {
-            background: #0d0d0d;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 5px 12px;
             border-radius: 16px;
-            max-width: 680px;
-            width: 100%;
-            max-height: 85vh;
-            overflow-y: auto;
-            padding: 28px;
-            position: relative;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-            user-select: text !important;
+            transition: all 0.2s ease;
         }
-        .unit-modal-close {
-            position: absolute;
-            top: 20px; right: 20px;
-            background: transparent;
-            border: none;
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 24px;
-            cursor: pointer;
-            transition: color 0.2s;
-        }
-        .unit-modal-close:hover { color: #fff; }
 
-        /* Bookshelf Cards */
-        .books-container {
+        .mode-pill.active {
+            background: var(--gold-glow);
+            border-color: var(--gold-primary);
+            color: var(--gold-light);
+        }
+
+        .scenario-chips-container {
+            padding: 10px 20px;
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            border-bottom: 1px solid var(--border-subtle);
+            background: rgba(9, 9, 11, 0.4);
+            scrollbar-width: none;
+            flex-shrink: 0;
+        }
+
+        .scenario-chip {
+            white-space: nowrap;
+            font-size: 11.5px;
+            color: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-subtle);
+            padding: 5px 12px;
+            border-radius: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .scenario-chip:hover {
+            border-color: var(--gold-primary);
+            color: #ffffff;
+            background: rgba(245, 158, 11, 0.08);
+        }
+
+        .chat-feed {
             flex: 1;
             overflow-y: auto;
-            padding: 24px 30px;
+            padding: 24px 28px;
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 20px;
+            scroll-behavior: smooth;
         }
-        .book-card {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+
+        .message-bubble {
+            max-width: 88%;
+            border-radius: 14px;
+            padding: 18px 22px;
+            line-height: 1.65;
+            font-size: 14px;
+            animation: fadeIn 0.3s ease;
+            user-select: text !important;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .msg-user {
+            align-self: flex-end;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+        }
+
+        .msg-assistant {
+            align-self: flex-start;
+            background: var(--bg-surface-elevated);
+            border: 1px solid var(--border-subtle);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 95%;
+        }
+
+        .chat-input-bar {
+            padding: 16px 24px;
+            background: rgba(12, 12, 16, 0.85);
+            border-top: 1px solid var(--border-subtle);
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .chat-text-input {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-subtle);
             border-radius: 12px;
-            padding: 18px 20px;
-            transition: all 0.3s;
-            position: relative;
+            padding: 14px 18px;
+            color: #ffffff;
+            font-family: var(--font-sans);
+            font-size: 14px;
+            outline: none;
+            transition: all 0.2s ease;
         }
-        .book-card:hover {
-            border-color: rgba(245, 158, 11, 0.4);
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
-            transform: translateY(-2px);
+
+        .chat-text-input:focus {
+            border-color: var(--gold-primary);
+            background: rgba(255, 255, 255, 0.06);
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.15);
         }
-        .book-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 18px;
-            color: #f8fafc;
+
+        .chat-text-input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .send-action-btn {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            border: none;
+            color: #000000;
+            font-weight: 700;
+            padding: 14px 22px;
+            border-radius: 12px;
+            font-size: 13.5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .send-action-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35);
+        }
+
+        /* Result Tabs Inside Assistant Bubble */
+        .bubble-tabs {
+            display: flex;
+            gap: 6px;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 10px;
+            margin-bottom: 14px;
+            overflow-x: auto;
+        }
+
+        .bubble-tab-btn {
+            background: transparent;
+            border: 1px solid transparent;
+            color: var(--text-secondary);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 6px;
+        }
+
+        .bubble-tab-btn.active {
+            background: rgba(245, 158, 11, 0.12);
+            border-color: rgba(245, 158, 11, 0.3);
+            color: var(--gold-light);
+        }
+
+        .bubble-tab-content {
+            display: none;
+        }
+
+        .bubble-tab-content.active {
+            display: block;
+        }
+
+        /* MODULE 4: PERSON-ROLE FIT DIAGNOSTIC LAB */
+        .diagnostic-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 30px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .diag-header {
+            margin-bottom: 24px;
+        }
+
+        .diag-header h2 {
+            font-family: var(--font-display);
+            font-size: 26px;
+            font-weight: 700;
+            color: #ffffff;
             margin-bottom: 6px;
+        }
+
+        .diag-header p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .diag-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .diag-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .diag-card h3 {
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--gold-light);
+            margin-bottom: 16px;
             display: flex;
             align-items: center;
             gap: 8px;
         }
-        .book-desc {
-            font-size: 13px;
-            color: rgba(255, 255, 255, 0.6);
-            line-height: 1.5;
+
+        .form-label {
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .diag-input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 10px 14px;
+            color: #ffffff;
+            font-family: var(--font-sans);
+            font-size: 13.5px;
+            margin-bottom: 14px;
+            outline: none;
+        }
+
+        .diag-input:focus {
+            border-color: var(--gold-primary);
+        }
+
+        .tags-selector-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
             margin-bottom: 14px;
         }
-        .book-actions {
-            display: flex;
-            gap: 10px;
-        }
-        .book-btn {
-            padding: 6px 14px;
-            border-radius: 8px;
-            font-size: 12px;
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: all 0.2s;
-        }
-        .book-btn-read {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: #ffffff;
-        }
-        .book-btn-read:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-        .book-btn-pdf {
-            background: rgba(245, 158, 11, 0.15);
-            border: 1px solid rgba(245, 158, 11, 0.3);
-            color: #f59e0b;
-        }
-        .book-btn-pdf:hover {
-            background: rgba(245, 158, 11, 0.3);
+
+        .selectable-tag {
+            font-size: 11.5px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            padding: 5px 11px;
+            border-radius: 12px;
+            transition: all 0.15s ease;
         }
 
-        .chat-header h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 400;
-            color: #fff6ed;
-            letter-spacing: 1px;
+        .selectable-tag.selected {
+            background: rgba(245, 158, 11, 0.15);
+            border-color: var(--gold-primary);
+            color: var(--gold-light);
+            font-weight: 600;
         }
-        .close-chat-btn {
+
+        .diag-cta-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #f59e0b 0%, #b45309 100%);
+            border: none;
+            color: #000000;
+            font-weight: 700;
+            font-size: 15px;
+            padding: 14px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.25);
+            transition: transform 0.2s ease;
+        }
+
+        .diag-cta-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .diag-result-card {
+            background: var(--bg-surface-elevated);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 26px;
+            margin-top: 24px;
+            display: none;
+        }
+
+        .friction-gauge-container {
+            margin: 16px 0;
+        }
+
+        .gauge-track {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gauge-fill {
+            height: 100%;
+            width: 0%;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* MODULE 5: BOOKS & CODEX */
+        .codex-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 24px 36px;
+        }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 18px;
+            margin-top: 16px;
+        }
+
+        .book-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 14px;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.25s ease;
+        }
+
+        .book-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(245, 158, 11, 0.4);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Knowledge Unit Modal */
+        .modal-backdrop {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-backdrop.open {
+            display: flex;
+        }
+
+        .modal-window {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            width: 90%;
+            max-width: 720px;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
             background: transparent;
             border: none;
-            color: rgba(255,255,255,0.5);
+            color: var(--text-muted);
             font-size: 24px;
-            cursor: none;
-            transition: color 0.3s;
+            line-height: 1;
         }
-        .close-chat-btn:hover { color: #ffffff; }
-        
-        .chat-history {
-            flex: 1;
-            padding: 30px;
-            overflow-y: auto;
-            display: flex; flex-direction: column; gap: 20px;
-            -ms-overflow-style: none; scrollbar-width: none;
+
+        .modal-close-btn:hover {
+            color: #ffffff;
         }
-        .chat-history::-webkit-scrollbar { display: none; }
-        
-        .chat-msg {
-            max-width: 85%;
-            padding: 16px 20px;
-            line-height: 1.6;
-            font-size: 17.5px;
-            letter-spacing: 0.3px;
+
+        /* Council Grid */
+        .council-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px;
+            margin: 16px 0;
         }
-        .chat-msg p { margin-bottom: 12px; }
-        .chat-msg p:last-child { margin-bottom: 0; }
-        .chat-msg h3 { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 12px; font-weight: normal; color: #f59e0b; }
-        .chat-msg h4 { font-family: 'Inter', sans-serif; font-size: 15px; margin: 12px 0 8px; font-weight: 500; color: #fff6ed; }
-        .chat-msg ul { margin-left: 20px; margin-bottom: 10px; }
-        .chat-msg li { margin-bottom: 6px; }
-        
-        .msg-user {
-            align-self: flex-end;
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 20px 20px 0 20px;
+
+        .council-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 16px;
+            font-size: 13px;
         }
-        .msg-bot {
-            align-self: flex-start;
-            background: rgba(0,0,0,0.5);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 20px 20px 20px 0;
-            color: #d1d5db;
-        }
-        
-        .chat-input-container {
-            padding: 24px 30px 40px 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .chat-input-wrapper {
-            position: relative;
+
+        .council-card h4 {
+            font-size: 14px;
+            color: var(--gold-light);
+            margin-bottom: 6px;
             display: flex;
             align-items: center;
-        }
-        .chat-tabs-nav {
-            display: flex; gap: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 12px;
-            overflow-x: auto;
-        }
-        .chat-tab-btn {
-            background: transparent; border: none; color: rgba(255,255,255,0.6); padding: 8px 12px; cursor: pointer;
-            font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; border-bottom: 2px solid transparent;
-            white-space: nowrap;
-        }
-        .chat-tab-btn.active {
-            color: #f59e0b; border-bottom-color: #f59e0b;
-        }
-        .chat-tab-pane { display: none; }
-        .chat-tab-pane.active { display: block; }
-        
-        .chat-input {
-            width: 100%;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 30px;
-            padding: 16px 50px 16px 24px;
-            color: #ffffff;
-            font-family: 'Inter', sans-serif;
-            font-size: 18px;
-            outline: none;
-            transition: border-color 0.3s, background 0.3s;
-            cursor: none;
-        }
-        .chat-input:focus {
-            border-color: rgba(255, 255, 255, 0.5);
-            background: rgba(255, 255, 255, 0.08);
-        }
-        .chat-input::placeholder { color: rgba(255, 255, 255, 0.3); }
-        .chat-send-btn {
-            position: absolute;
-            right: 12px;
-            width: 32px; height: 32px;
-            border-radius: 50%;
-            background: #ffffff;
-            color: #000000;
-            border: none;
-            display: flex; justify-content: center; align-items: center;
-            font-size: 16px;
-            cursor: none;
-            transition: transform 0.3s, background 0.3s;
-        }
-        .chat-send-btn:hover {
-            transform: scale(1.1);
-            background: #f0f0f0;
-        }
-        
-        .typing-indicator {
-            align-self: flex-start;
-            font-style: italic;
-            color: rgba(255, 255, 255, 0.4);
-            font-size: 13px;
-            padding: 10px 20px;
+            gap: 6px;
         }
 
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .cinematic-container { padding: 0 20px 20px 20px; }
-            .slide-title { font-size: 56px; }
-            .header-nav { display: none; }
-            
-            #slide-1 .desc-row { flex-direction: column; gap: 15px; }
-            #slide-1 .col-1, #slide-1 .col-2 {
-                position: relative; left: 0; margin-left: 0;
-                width: 100%; max-width: 100%;
+        /* Mobile responsiveness */
+        @media (max-width: 900px) {
+            .exec-header {
+                padding: 0 14px;
             }
-            #slide-1 .slide-title { margin-left: 0; }
-            
-            #slide-2 .slide-title { margin-left: 0; }
-            #slide-2 .slide-desc {
-                margin-left: 0; width: 100%; max-width: 100%;
+            .header-nav {
+                display: none;
             }
-            #slide-2-img { display: none !important; }
-            
-            #slide-3, #slide-4 {
-                left: 0; width: 100%; max-width: 100%; padding: 0 20px;
+            .cockpit-sidebar {
+                display: none;
             }
-            
-            #chat-sidebar {
-                width: 100%; min-width: 100%; max-width: 100%;
-            }
-            
-            .grid-lines { display: none; }
-        }
-    
-
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.2rem !important;
-                margin-bottom: 1.5rem !important;
-            }
-            .footer-container {
-                top: 55vh !important;
-                transform: translateY(-40%) !important;
-            }
-            .footer-logo-text {
-                font-size: 14vw !important;
-            }
-            .hero-content {
-                padding-top: 4vh !important;
-            }
-            .glass-cursor-card {
-                display: none !important;
+            .diag-grid {
+                grid-template-columns: 1fr;
             }
         }
-
     </style>
 </head>
 <body>
-    <div class="cursor-inner"></div>
-    <div class="cursor-outer"></div>
-
-    <div class="cinematic-container">
-        <div class="main-header">
-            <div class="brand">NHÂN THUẬT</div>
-            <nav class="header-nav">
-                <a href="#slide-1" class="nav-link">Khởi Nguồn</a>
-                <span class="nav-dot"></span>
-                <a href="#slide-2" class="nav-link">Bản Chất</a>
-                <span class="nav-dot"></span>
-                <a href="#slide-3" class="nav-link">Vận Hành</a>
-                <span class="nav-dot"></span>
-                <a href="#slide-4" class="nav-link">Ứng Dụng</a>
-            </nav>
-            <div class="header-actions">
-                <a href="#" id="toggle-chat-btn" class="contact-btn">Mở Nhân Thuật <span class="btn-circle"></span></a>
+    <!-- Executive Top Navigation Bar -->
+    <header class="exec-header">
+        <a href="/" class="header-brand">
+            <div class="brand-crest">👑</div>
+            <div class="brand-meta">
+                <h1>NHÂN THUẬT</h1>
+                <span>HUMAN INTELLIGENCE OS • v1.2</span>
             </div>
-        </div>
+        </a>
 
-        <div class="slide" id="slide-1">
-            <h2 class="slide-title">Khởi Nguồn <br>Nhân Thuật</h2>
-            <div class="desc-row">
-                <p class="slide-desc col-1">Nhân Thuật không chỉ là thao túng hay kiểm soát. Nó là nghệ thuật thấu hiểu sâu sắc bản chất con người, nhận diện dòng chảy của cảm xúc và động lực ẩn sâu bên trong mỗi cá nhân.</p>
-                <p class="slide-desc col-2">Được đúc kết từ hàng ngàn năm lịch sử, Nhân Thuật là hệ thống kiến trúc hành vi giúp nhà quản trị kiến tạo sức ảnh hưởng, xoay chuyển cục diện và đắc nhân tâm một cách tự nhiên nhất.</p>
-            </div>
-        </div>
-        
-        <div class="slide" id="slide-2">
-            <h2 class="slide-title">Bản Chất <br>Tâm Lý</h2>
-            <p class="slide-desc">Con người luôn bị chi phối bởi những rào cản vô hình: Nỗi sợ hãi, lòng tham, và cái tôi. Hiểu được cấu trúc này là chìa khóa để phá vỡ mọi bế tắc trong đàm phán và lãnh đạo.</p>
-        </div>
-        
-        <div class="slide" id="slide-3">
-            <h2 class="slide-title">Vận Hành <br>Hệ Thống</h2>
-            <p class="slide-desc">Như dòng kim loại nóng chảy, Nhân Thuật linh hoạt và uyển chuyển. Không có một công thức cố định, chỉ có sự thích ứng liên tục với môi trường và hoàn cảnh để đạt được mục tiêu tối hậu.</p>
-        </div>
-        
-        <div class="slide" id="slide-4">
-            <h2 class="slide-title">Kiến Tạo <br>Tương Lai</h2>
-            <p class="slide-desc">Kết hợp triết học cổ đại và khoa học hệ thống hiện đại, Nhân Thuật mang đến cho bạn quyền năng để thiết kế hành vi, quản trị rủi ro và xây dựng những đế chế trường tồn.</p>
-        </div>
-    </div>
+        <nav class="header-nav">
+            <button class="workspace-tab-btn active" onclick="switchWorkspace('view-advisory', this)">💡 Tham Mưu</button>
+            <button class="workspace-tab-btn" onclick="switchWorkspace('view-council', this)">🏛️ Hội Đồng Cố Vấn</button>
+            <button class="workspace-tab-btn" onclick="switchWorkspace('view-sparring', this)">⚔️ Đấu Trí</button>
+            <button class="workspace-tab-btn" onclick="switchWorkspace('view-diagnostics', this)">🧩 Chẩn Đoán Nhân Sự</button>
+            <button class="workspace-tab-btn" onclick="switchWorkspace('view-codex', this)">📚 Tủ Sách & Tri Thức</button>
+        </nav>
 
-    <div class="slide-image-mask" id="slide-2-img">
-        <img src="https://api.getlayers.ai/storage/v1/object/public/public/assets/laocoon-59f84455c6/1.png" alt="Editorial Concept">
-    </div>
-
-    <div class="grid-horizontal-line"></div>
-    <div class="grid-lines">
-        <div class="grid-line"><div class="grid-dot top"></div><div class="grid-dot bottom"></div></div>
-        <div class="grid-line"><div class="grid-dot top"></div><div class="grid-dot bottom"></div></div>
-        <div class="grid-line"><div class="grid-dot top"></div><div class="grid-dot bottom"></div></div>
-        <div class="grid-line"><div class="grid-dot top"></div><div class="grid-dot bottom"></div></div>
-        <div class="grid-line story-progress-container">
-            <div class="grid-dot top"></div>
-            <div class="grid-dot bottom"></div>
-            <div class="story-dashes">
-                <div class="story-dash"><div class="story-dash-fill" id="dash-fill-1"></div></div>
-                <div class="story-dash"><div class="story-dash-fill" id="dash-fill-2"></div></div>
-                <div class="story-dash"><div class="story-dash-fill" id="dash-fill-3"></div></div>
-                <div class="story-dash"><div class="story-dash-fill" id="dash-fill-4"></div></div>
-            </div>
+        <div class="header-actions">
+            <button class="export-btn" id="export-brief-top-btn">📄 Xuất Kịch Bản</button>
+            <a href="/" class="home-link-btn">Trang Chủ</a>
         </div>
-    </div>
+    </header>
 
-    <canvas id="webgl"></canvas>
+    <!-- Main Workspace Viewport -->
+    <main class="workspace-viewport">
 
-    <!-- Chat Sidebar -->
-    <div id="chat-sidebar" class="open">
-        <div class="chat-header">
-            <div style="display: flex; align-items: center; gap: 12px;">
-                <h3>Nhân Thuật</h3>
-                <button class="export-brief-btn" id="export-brief-btn" title="Xuất Bản Kịch Bản Ra HTML In Ấn hoặc Markdown">📄 Xuất Kịch Bản</button>
-            </div>
-            <div style="display: flex; gap: 15px; align-items: center;">
-                <button class="close-chat-btn" id="min-chat-btn" title="Thu nhỏ">&minus;</button>
-                <button class="close-chat-btn" id="close-chat-btn" title="Đóng">&times;</button>
-            </div>
-        </div>
-        
-        <div class="sidebar-top-tabs">
-            <button class="sidebar-tab active" data-target="sidebar-view-chat">HỘI THOẠI</button>
-            <button class="sidebar-tab" data-target="sidebar-view-books">TỦ SÁCH (16)</button>
-            <button class="sidebar-tab" data-target="sidebar-view-knowledge">KHO TRI THỨC (379)</button>
-        </div>
+        <!-- MODULE 1: THAM MƯU CHIẾN LƯỢC (ADVISORY COCKPIT) -->
+        <section id="view-advisory" class="workspace-module active">
+            <div class="cockpit-layout">
+                <div class="cockpit-main">
+                    <div class="mode-toolbar">
+                        <div class="mode-pills">
+                            <button class="mode-pill active" onclick="setAdvisoryMode('leadership', this)">💡 Tham Mưu Điều Hành</button>
+                            <button class="mode-pill" onclick="setAdvisoryMode('cases', this)">📋 Tình Huống Thực Chiến (Cases)</button>
+                        </div>
+                        <span style="font-size: 11px; color: var(--text-muted);">AI Co-Pilot • RAG 370 Tri Thức • 5 Lăng Kính</span>
+                    </div>
 
-        <div id="sidebar-view-chat" class="sidebar-view active">
-            <div class="chat-mode-bar">
-                <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.4); font-weight: 600; white-space: nowrap;">Chế độ:</span>
-                <button id="mode-advisory" class="chat-mode-pill active" onclick="setChatMode('leadership')">💡 Tham Mưu</button>
-                <button id="mode-sparring" class="chat-mode-pill" onclick="setChatMode('sparring')">⚔️ Đấu Trí</button>
-                <button id="mode-council" class="chat-mode-pill" onclick="setChatMode('council')">🏛️ Hội Đồng Cố Vấn</button>
-                <button id="mode-cases" class="chat-mode-pill" onclick="setChatMode('cases')">📋 Case Studies</button>
-            </div>
-            <div class="chat-history" id="chat-history">
-                <div class="chat-msg msg-bot">
-                    <h3 style="display: flex; align-items: center; gap: 8px; font-family: 'Playfair Display', serif; font-size: 20px; color: #f59e0b; margin-bottom: 8px;">👑 CỐ VẤN NHÂN THUẬT</h3>
-                    <p style="font-size: 14.5px; line-height: 1.7; color: rgba(255,255,255,0.92); margin-bottom: 10px;">
-                        <em>"Nhìn thấu tâm can để định vị thế &bull; Vận dụng quy luật để xoay chuyển cục diện."</em>
-                    </p>
-                    <p style="font-size: 13.5px; line-height: 1.65; color: rgba(255,255,255,0.75);">
-                        Hãy chia sẻ tình huống thực tế, bài toán quản trị nhân sự hoặc phiên đàm phán quan trọng bạn đang đối mặt. Nhân Thuật sẽ cùng bạn bóc tách động cơ ngầm, thiết lập phòng thủ và kiến tạo kịch bản tác chiến sắc bén nhất.
-                    </p>
+                    <div class="scenario-chips-container">
+                        <span style="font-size: 11px; color: var(--gold-primary); font-weight: 600; padding: 5px 0;">Tình huống mẫu:</span>
+                        <button class="scenario-chip" onclick="fillScenario('Trưởng phòng kinh doanh là người tài nhưng kiêu ngạo, chia rẽ nội bộ, yêu sách hoa hồng riêng.')">Trưởng phòng kiêu ngạo & chia rẽ</button>
+                        <button class="scenario-chip" onclick="fillScenario('Khách hàng chê giá báo giá quá đắt, đòi chiết khấu 20% mới đồng ý ký hợp đồng.')">Khách hàng ép giá & chê đắt</button>
+                        <button class="scenario-chip" onclick="fillScenario('Đối tác nợ đọng công nợ 60 ngày quá hạn, liên tục hứa hẹn nhưng không thanh toán.')">Đối tác nợ đọng quá hạn</button>
+                        <button class="scenario-chip" onclick="fillScenario('Nhân sự chủ chốt dọa nghỉ việc ngay giữa giai đoạn cao điểm dự án để đòi tăng lương.')">Nhân sự đòi tăng lương đột xuất</button>
+                    </div>
+
+                    <div class="chat-feed" id="chat-feed">
+                        <div class="message-bubble msg-assistant">
+                            <h3 style="font-family: var(--font-serif); font-size: 18px; color: var(--gold-light); margin-bottom: 6px;">👑 CỐ VẤN CHIẾN LƯỢC NHÂN THUẬT</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: 10px; font-style: italic;">
+                                "Nhìn thấu tâm can để định vị thế • Vận dụng quy luật để xoay chuyển cục diện."
+                            </p>
+                            <p style="color: rgba(255,255,255,0.85); font-size: 13.5px;">
+                                Chào Anh/Chị Lãnh đạo. Hãy chia sẻ tình huống điều hành, mâu thuẫn nhân sự, phiên đàm phán hóc búa hoặc thế cờ quản trị bạn đang đối diện. 
+                                Hệ thống sẽ đối chiếu 370 đơn vị tri thức và kích hoạt lăng kính triết học tương thích để xuất bản kịch bản tác chiến 3 bước sắc bén nhất.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="chat-input-bar">
+                        <input type="text" class="chat-text-input" id="advisory-input" placeholder="Nhập tình huống quản trị hoặc bài toán nhân sự cần tham mưu...">
+                        <button class="send-action-btn" id="advisory-send-btn">Tác Chiến ➤</button>
+                    </div>
+                </div>
+
+                <div class="cockpit-sidebar">
+                    <div style="padding: 16px 20px; border-bottom: 1px solid var(--border-subtle);">
+                        <h4 style="font-size: 13px; font-weight: 700; color: var(--gold-light); text-transform: uppercase; letter-spacing: 0.05em;">Hồ Sơ Thực Chiến Gợi Ý</h4>
+                        <p style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">Các ca điển hình trong doanh nghiệp</p>
+                    </div>
+                    <div id="case-studies-sidebar-list" style="padding: 14px; display: flex; flex-direction: column; gap: 10px;">
+                        <!-- Dynamically populated or static fast picks -->
+                        <div class="book-card" style="padding: 12px; cursor: pointer;" onclick="fillScenario('Tổ đội thi công hiện trường dọa ngưng việc đòi tăng đơn giá khoán.')">
+                            <strong style="font-size: 12.5px; color: #fff;">Xử lý Đình công Tự phát</strong>
+                            <p style="font-size: 11px; color: var(--text-secondary); margin-top: 4px;">Nguyên tắc Hình Danh Tương Phù & Chế tài Nhị Bỉnh trong quản trị khoán.</p>
+                        </div>
+                        <div class="book-card" style="padding: 12px; cursor: pointer;" onclick="fillScenario('Nhân viên kinh doanh thông đồng đại lý lũng đoạn chính sách chiết khấu.')">
+                            <strong style="font-size: 12.5px; color: #fff;">Chống Thao Túng & Bát Gian</strong>
+                            <p style="font-size: 11px; color: var(--text-secondary); margin-top: 4px;">Bộ lọc kiểm toán độc lập và cơ chế phân quyền đối trọng.</p>
+                        </div>
+                        <div class="book-card" style="padding: 12px; cursor: pointer;" onclick="fillScenario('Tuyển dụng Giám đốc Vận hành nhưng có thiên hướng sáng tạo tự do cao.')">
+                            <strong style="font-size: 12.5px; color: #fff;">Lệch Pha Cá Nhân - Vai Trò</strong>
+                            <p style="font-size: 11px; color: var(--text-secondary); margin-top: 4px;">Ứng dụng NT-MODEL-0007 đo lường chi phí thích ứng nhận thức.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="chat-input-container">
-                <div class="chat-input-wrapper">
-                    <input type="text" class="chat-input" id="chat-input" placeholder="Nhập tình huống hoặc bài toán quản trị cần tham mưu...">
-                    <button class="chat-send-btn" id="chat-send-btn">➤</button>
-                </div>
-            </div>
-        </div>
+        </section>
 
-        <div id="sidebar-view-books" class="sidebar-view">
-            <div style="padding: 16px 24px 12px 24px; border-bottom: 1px solid rgba(255,255,255,0.08); background: #000; position: sticky; top: 0; z-index: 20;">
-                <h4 style="font-family: 'Playfair Display', serif; font-size: 18px; color: #f8fafc; margin-bottom: 2px;">Ấn Phẩm Tri Thức Cốt Lõi</h4>
-                <p style="font-size: 11.5px; color: rgba(255,255,255,0.5); margin-bottom: 12px;">Trọn bộ 16 cẩm nang khoa học nhận thức, chiến lược, tâm lý & quản trị thực chiến</p>
-                
-                <!-- Fixed, unclipped Category Filter Bar -->
-                <div id="bookshelf-filter-bar" style="display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; -ms-overflow-style: none;">
-                    <button class="book-cat-pill active" style="padding: 6px 14px; border-radius: 16px; font-size: 11.5px; cursor: pointer; white-space: nowrap; background: #f59e0b; color: #000; border: 1px solid #f59e0b; font-weight: 700;" onclick="filterBookCategory('all', this)">Tất Cả (16)</button>
-                    <button class="book-cat-pill" style="padding: 6px 14px; border-radius: 16px; font-size: 11.5px; cursor: pointer; white-space: nowrap; background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.12); font-weight: 600;" onclick="filterBookCategory('psychology', this)">🧠 Tâm Lý & Đàm Phán</button>
-                    <button class="book-cat-pill" style="padding: 6px 14px; border-radius: 16px; font-size: 11.5px; cursor: pointer; white-space: nowrap; background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.12); font-weight: 600;" onclick="filterBookCategory('strategy', this)">⚔️ Chiến Lược & Game Theory</button>
-                    <button class="book-cat-pill" style="padding: 6px 14px; border-radius: 16px; font-size: 11.5px; cursor: pointer; white-space: nowrap; background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.12); font-weight: 600;" onclick="filterBookCategory('leadership', this)">👑 Hệ Thống & Quản Trị</button>
-                    <button class="book-cat-pill" style="padding: 6px 14px; border-radius: 16px; font-size: 11.5px; cursor: pointer; white-space: nowrap; background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.12); font-weight: 600;" onclick="filterBookCategory('mindset', this)">🏛️ Bản Lĩnh & Nghịch Cảnh</button>
+        <!-- MODULE 2: HỘI ĐỒNG 5 CỐ VẤN (MULTI-LENS COUNCIL) -->
+        <section id="view-council" class="workspace-module">
+            <div style="flex: 1; overflow-y: auto; padding: 30px 40px; max-width: 1300px; margin: 0 auto; width: 100%;">
+                <div class="diag-header">
+                    <h2>🏛️ HỘI ĐỒNG CỐ VẤN ĐA TRIẾT PHÁI (MULTI-LENS COUNCIL)</h2>
+                    <p>Nhập bài toán nan giải để 5 đại trường phái tranh luận: Pháp Gia, Nho Gia, Đạo Gia, Tuân Tử và Binh Pháp Tôn Tử.</p>
                 </div>
-            </div>
-            <div class="books-container" id="books-container" style="padding-top: 16px;">
-                <!-- Book Cards rendered dynamically -->
-            </div>
-        </div>
 
-        <div id="sidebar-view-knowledge" class="sidebar-view">
-            <div style="padding: 16px 20px 12px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); position: sticky; top: 0; background: #000; z-index: 10;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                    <span style="font-family: 'Playfair Display', serif; font-size: 16px; color: #f59e0b; font-weight: 600;">Hệ Thống 379 Tri Thức</span>
-                    <span style="font-size: 11px; background: rgba(255,255,255,0.08); padding: 2px 8px; border-radius: 12px; color: rgba(255,255,255,0.7);">31 Miền Quản Trị</span>
+                <div style="display: flex; gap: 12px; margin-bottom: 24px;">
+                    <input type="text" class="diag-input" id="council-scenario-input" placeholder="Ví dụ: Giám đốc chi nhánh làm ăn có lãi nhưng lập bè cánh riêng, có nên sa thải ngay không?" style="margin-bottom: 0;">
+                    <button class="send-action-btn" id="council-deliberate-btn" style="white-space: nowrap; padding: 10px 24px;">Triệu Tập Hội Đồng ⚡</button>
                 </div>
-                <input type="text" id="knowledge-search-input" placeholder="🔍 Tìm kiếm nhanh (BM25 + Semantic Hybrid Search)..." style="width: 100%; padding: 10px 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff; font-family: inherit; font-size: 0.9rem; outline: none; transition: border-color 0.3s;" onfocus="this.style.borderColor='#f59e0b'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'">
+
+                <div id="council-result-area" style="display: none;">
+                    <!-- Rendered by formatCouncilDeliberationHTML -->
+                </div>
             </div>
-            <div class="knowledge-list" id="knowledge-list">
-                <div style="text-align: center; color: rgba(255,255,255,0.5); margin-top: 50px;">Đang nạp 379 đơn vị tri thức...</div>
+        </section>
+
+        <!-- MODULE 3: PHÒNG ĐẤU TRÍ GIẢ LẬP (SPARRING ARENA) -->
+        <section id="view-sparring" class="workspace-module">
+            <div style="flex: 1; display: flex; flex-direction: column; max-width: 1000px; margin: 0 auto; width: 100%; height: 100%; padding: 20px 30px;">
+                <div style="border-bottom: 1px solid var(--border-subtle); padding-bottom: 14px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <h2 style="font-family: var(--font-display); font-size: 20px; color: #ffffff;">⚔️ PHÒNG ĐẤU TRÍ & THƯƠNG THUYẾT ĐỐI KHÁNG</h2>
+                        <p style="font-size: 12.5px; color: var(--text-secondary);">Rèn luyện phản xạ đối đáp trước những đối thủ, đối tác và nhân sự rắn mặt nhất.</p>
+                    </div>
+                    <button class="export-btn" onclick="startNewSparring()">+ Ván Đấu Mới</button>
+                </div>
+
+                <div class="chat-feed" id="sparring-feed" style="padding: 10px 0;">
+                    <div class="message-bubble msg-assistant">
+                        <strong style="color: var(--gold-light);">🤖 ĐỐI THỦ THƯƠNG LƯỢNG SẮC BÉN:</strong>
+                        <p style="margin-top: 6px;">"Tôi đã xem báo giá và các điều khoản của công ty anh. Thẳng thắn mà nói, mức giá này quá vô lý so với mặt bằng chung. Nếu anh không giảm ngay 25%, buổi làm việc hôm nay kết thúc ở đây."</p>
+                    </div>
+                </div>
+
+                <div class="chat-input-bar" style="background: transparent; border: none; padding: 14px 0 0 0;">
+                    <input type="text" class="chat-text-input" id="sparring-input" placeholder="Nhập câu phản hồi đối kháng của bạn...">
+                    <button class="send-action-btn" id="sparring-send-btn">Đối Đòn ⚔️</button>
+                </div>
             </div>
-        </div>
-    </div>
+        </section>
+
+        <!-- MODULE 4: CHẨN ĐOÁN NHÂN SỰ (PERSON-ROLE FIT LAB - NT-MODEL-0007) -->
+        <section id="view-diagnostics" class="workspace-module">
+            <div class="diagnostic-container">
+                <div class="diag-header">
+                    <h2>🧩 PHÒNG CHẨN ĐOÁN TƯƠNG THÍCH CÁ NHÂN - VAI TRÒ</h2>
+                    <p>Ứng dụng Mô hình NT-MODEL-0007 & Chuẩn hóa Đánh giá NT-PRINCIPLE-0067 để đo lường chi phí thích ứng nhận thức và ma sát vai trò.</p>
+                </div>
+
+                <div class="diag-grid">
+                    <!-- Left: Person Dispositions -->
+                    <div class="diag-card">
+                        <h3>👤 THIÊN HƯỚNG CÁ NHÂN (DEFAULT TRAITS)</h3>
+                        <label class="form-label">Họ tên nhân sự / Ứng viên:</label>
+                        <input type="text" class="diag-input" id="diag-person-name" value="Nguyễn Hoàng Long" placeholder="Nhập họ tên...">
+
+                        <label class="form-label">Chọn các thiên hướng tính cách tiềm ẩn mặc định:</label>
+                        <div class="tags-selector-group" id="diag-traits-group">
+                            <span class="selectable-tag selected" onclick="toggleTag(this)">Tự do sáng tạo</span>
+                            <span class="selectable-tag selected" onclick="toggleTag(this)">Thích tự chủ cao</span>
+                            <span class="selectable-tag" onclick="toggleTag(this)">Ngại xung đột trực diện</span>
+                            <span class="selectable-tag" onclick="toggleTag(this)">Kỷ luật chi tiết cao</span>
+                            <span class="selectable-tag selected" onclick="toggleTag(this)">Nhạy cảm cơ hội</span>
+                            <span class="selectable-tag" onclick="toggleTag(this)">Quyết đoán lạnh lùng</span>
+                            <span class="selectable-tag" onclick="toggleTag(this)">Hướng nội chuyên môn</span>
+                            <span class="selectable-tag" onclick="toggleTag(this)">Tham vọng quyền lực</span>
+                        </div>
+                    </div>
+
+                    <!-- Right: Role Demands -->
+                    <div class="diag-card">
+                        <h3>🎯 KỲ VỌNG VAI TRÒ (ROLE DEMANDS)</h3>
+                        <label class="form-label">Vị trí đảm nhiệm:</label>
+                        <input type="text" class="diag-input" id="diag-role-name" value="Giám Đốc Vận Hành (COO)" placeholder="Nhập chức danh...">
+
+                        <label class="form-label">Chọn các yêu cầu hành vi then chốt của vị trí:</label>
+                        <div class="tags-selector-group" id="diag-demands-group">
+                            <span class="selectable-tag selected" onclick="toggleTag(this)">Tuân thủ quy trình nghiêm ngặt</span>
+                            <span class="selectable-tag selected" onclick="toggleTag(this)">Giám sát số liệu chi tiết</span>
+                            <span class="selectable-tag selected" onclick="toggleTag(this)">Chịu áp lực số hàng tuần</span>
+                            <span class="selectable-tag" onclick="toggleTag(this)">Đàm phán ngoại giao cấp cao</span>
+                            <span class="selectable-tag" onclick="toggleTag(this)">Sa thải / Kỷ luật nhân sự</span>
+                            <span class="selectable-tag" onclick="toggleTag(this)">Lãnh đạo truyền cảm hứng</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="diag-cta-btn" id="run-diagnostic-btn">🚀 Chẩn Đoán Ma Sát Nhận Thức & Đưa Ra Phán Quyết</button>
+
+                <!-- Diagnostic Results Area -->
+                <div class="diag-result-card" id="diag-result-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h3 style="font-size: 18px; color: #fff; margin-bottom: 0;">KẾT QUẢ CHẨN ĐOÁN MA SÁT NHẬN THỨC</h3>
+                        <span id="diag-fit-badge" style="padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700;">--</span>
+                    </div>
+
+                    <div class="friction-gauge-container">
+                        <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--text-secondary); margin-bottom: 4px;">
+                            <span>Mức độ ma sát thích ứng (Cognitive Friction):</span>
+                            <strong id="diag-friction-score-text" style="color: #fff;">0%</strong>
+                        </div>
+                        <div class="gauge-track">
+                            <div class="gauge-fill" id="diag-gauge-fill"></div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 18px; font-size: 13.5px; line-height: 1.7; color: rgba(255,255,255,0.9);">
+                        <p id="diag-cost-analysis" style="margin-bottom: 14px; background: rgba(255,255,255,0.03); padding: 12px 16px; border-radius: 8px; border-left: 3px solid var(--gold-primary);"></p>
+                        
+                        <h4 style="color: var(--gold-light); font-size: 14px; margin-bottom: 6px;">⚠️ Điểm Ma Sát Nhận Diện (Friction Points):</h4>
+                        <ul id="diag-friction-points" style="padding-left: 20px; margin-bottom: 14px; color: #cbd5e1;"></ul>
+
+                        <h4 style="color: var(--emerald-accent); font-size: 14px; margin-bottom: 6px;">🛡️ Chiến Lược Bù Đắp Môi Trường (Compensatory Strategies):</h4>
+                        <ul id="diag-compensatory-list" style="padding-left: 20px; margin-bottom: 16px; color: #cbd5e1;"></ul>
+
+                        <div style="padding: 12px 16px; background: rgba(245, 158, 11, 0.08); border-radius: 8px; border: 1px solid rgba(245, 158, 11, 0.2);">
+                            <strong style="color: var(--gold-light);">📌 Phán Quyết Điều Hành: </strong>
+                            <span id="diag-verdict-text" style="color: #ffffff; font-weight: 600;"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODULE 5: TỦ SÁCH 16 CẨM NANG & 370 TRI THỨC -->
+        <section id="view-codex" class="workspace-module">
+            <div class="codex-container">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
+                    <div>
+                        <h2 style="font-family: var(--font-display); font-size: 22px; color: #ffffff;">📚 TỦ SÁCH ĐIỀU HÀNH & KHO 370 TRI THỨC</h2>
+                        <p style="font-size: 12.5px; color: var(--text-secondary);">Trọn bộ 16 cẩm nang tinh hoa và 370 đơn vị tri thức chuẩn hóa qua 30 miền quản trị.</p>
+                    </div>
+
+                    <div style="display: flex; gap: 8px;">
+                        <button class="mode-pill active" onclick="filterBookCat('all', this)">Tất Cả (16)</button>
+                        <button class="mode-pill" onclick="filterBookCat('psychology', this)">🧠 Tâm Lý & Đàm Phán</button>
+                        <button class="mode-pill" onclick="filterBookCat('strategy', this)">⚔️ Chiến Lược & Game Theory</button>
+                        <button class="mode-pill" onclick="filterBookCat('leadership', this)">👑 Hệ Thống & Quản Trị</button>
+                        <button class="mode-pill" onclick="filterBookCat('mindset', this)">🏛️ Bản Lĩnh & Nghịch Cảnh</button>
+                    </div>
+                </div>
+
+                <div class="books-grid" id="books-grid-container">
+                    <!-- Populated dynamically from DIGITAL_BOOKS -->
+                </div>
+
+                <div style="margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border-subtle);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+                        <h3 style="font-family: var(--font-display); font-size: 18px; color: var(--gold-light);">HỆ THỐNG 370 ĐƠN VỊ TRI THỨC (CATALOG)</h3>
+                        <input type="text" id="knowledge-search-input" placeholder="🔍 Tra cứu theo mã ID hoặc từ khóa..." style="padding: 8px 14px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-subtle); border-radius: 8px; color: #fff; font-size: 12.5px; outline: none; width: 280px;">
+                    </div>
+                    <div id="knowledge-catalog-list" style="display: flex; flex-direction: column; gap: 8px;">
+                        <div style="text-align: center; color: var(--text-muted); padding: 30px 0;">Đang nạp kho 370 tri thức...</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <!-- Knowledge Unit Modal Inspector -->
-    <div class="unit-modal-overlay" id="unit-modal-overlay">
-        <div class="unit-modal-card" id="unit-modal-card">
-            <button class="unit-modal-close" id="unit-modal-close">&times;</button>
-            <div id="unit-modal-body">
-                <!-- Dynamically loaded content -->
+    <div class="modal-backdrop" id="unit-modal-backdrop">
+        <div class="modal-window">
+            <button class="modal-close-btn" onclick="closeUnitModal()">&times;</button>
+            <div id="unit-modal-content">
+                <!-- Dynamically loaded -->
             </div>
         </div>
     </div>
 
-    <script type="importmap">
-    {
-        "imports": {
-            "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-            "three/examples/jsm/loaders/GLTFLoader.js": "https://unpkg.com/three@0.160.0/examples/jsm/loaders/GLTFLoader.js"
-        }
-    }
-    </script>
-
-    <script type="module">
-    import * as THREE from 'three';
-    import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-
-    const ASSET_BASE_URL = "https://api.getlayers.ai/storage/v1/object/public/public/assets/laocoon-59f84455c6";
-
-    const canvas = document.querySelector('#webgl');
-    let scene, camera, renderer;
-    let gltfModel;
-    let modelPivot;
-    let mixer;
-    const clock = new THREE.Clock();
-    let currentScroll = 0;
-
-    let mouseX = 0, mouseY = 0, targetMouseX = 0, targetMouseY = 0;
-    let cursorX = window.innerWidth / 2,  cursorY = window.innerHeight / 2;
-    let outerCursorX = window.innerWidth / 2, outerCursorY = window.innerHeight / 2;
-
-    let bgMaterial;
-    const shaderUniforms = {
-        uTime: { value: 0 },
-        uResolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) },
-        uMouse: { value: new THREE.Vector2(0, 0) },
-        uScroll: { value: 0 }
-    };
-
-    let sparkParticles;
-    const sparkCount = 40;
-    const sparkData = [];
-
-    const sizes = { width: window.innerWidth, height: window.innerHeight };
-
-    function splitTitlesIntoChars() {
-        const titles = document.querySelectorAll('.slide-title');
-        titles.forEach(title => {
-            const text = title.innerHTML;
-            let newHTML = '';
-            let delayCounter = 0;
-            const parts = text.split(/(<br\s*\/?>)/i);
-            parts.forEach(part => {
-                if (part.toLowerCase().startsWith('<br')) {
-                    newHTML += part;
-                } else {
-                    for (let i = 0; i < part.length; i++) {
-                        if (part[i] === ' ') {
-                            newHTML += ' ';
-                        } else {
-                            newHTML += `<span class="char" style="transition-delay: ${delayCounter * 0.035}s">${part[i]}</span>`;
-                            delayCounter++;
-                        }
-                    }
-                }
-            });
-            title.innerHTML = newHTML;
-        });
-    }
-
-    function createBackgroundShader() {
-        const vertexShader = `
-            varying vec2 vUv;
-            void main() {
-                vUv = uv;
-                gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-            }
-        `;
-
-        const fragmentShader = `
-            varying vec2 vUv;
-            uniform float uTime;
-            uniform vec2 uResolution;
-            uniform vec2 uMouse;
-            uniform float uScroll;
-
-            float hash(float n) { return fract(sin(n) * 43758.5453123); }
-            float noise(in vec3 x) {
-                vec3 p = floor(x);
-                vec3 f = fract(x);
-                f = f*f*(3.0-2.0*f);
-                float n = p.x + p.y*57.0 + 113.0*p.z;
-                return mix(mix(mix(hash(n+  0.0), hash(n+  1.0), f.x),
-                               mix(hash(n+ 57.0), hash(n+ 58.0), f.x), f.y),
-                           mix(mix(hash(n+113.0), hash(n+114.0), f.x),
-                               mix(hash(n+170.0), hash(n+171.0), f.x), f.y), f.z);
-            }
-
-            void main() {
-                vec2 uv = (gl_FragCoord.xy - 0.5 * uResolution.xy) / uResolution.y;
-                float aspect = uResolution.x / uResolution.y;
-                
-                float time = uTime * 0.08;
-                float scroll = uScroll;
-                
-                float angle1 = 0.6;
-                float angle2 = -0.7;
-                float angle3 = 1.2;
-                
-                float freq1 = 2.4;
-                float freq2 = 3.2;
-                float freq3 = 4.0;
-                
-                vec2 warpedUv = uv;
-                
-                float scrollDeform = scroll * 5.0;
-                
-                warpedUv.x += sin(uv.y * 2.5 + time * 0.2 + scrollDeform) * 0.35;
-                warpedUv.y += cos(uv.x * 2.5 - time * 0.15 - scrollDeform * 0.8) * 0.35;
-                
-                warpedUv.x += sin(uv.y * 1.2 - time * 0.1 - scrollDeform * 1.5) * 0.25;
-                warpedUv.y += cos(uv.x * 1.2 + time * 0.18 + scrollDeform * 1.2) * 0.25;
-                
-                vec2 scrollDrift = vec2(scroll * 0.04, -scroll * 0.02);
-                vec2 mouseShift = vec2(uMouse.x * aspect * 0.05, uMouse.y * 0.05);
-                warpedUv += scrollDrift + mouseShift;
-                
-                vec2 dir1 = vec2(cos(angle1), sin(angle1));
-                vec2 dir2 = vec2(cos(angle2), sin(angle2));
-                vec2 dir3 = vec2(cos(angle3), sin(angle3));
-                
-                float w1 = sin(dot(warpedUv, dir1) * freq1 + time * 1.0);
-                float w2 = cos(dot(warpedUv, dir2) * freq2 - time * 1.4 + w1 * 0.4);
-                float w3 = sin(dot(warpedUv, dir3) * freq3 + time * 1.8 + w2 * 0.5);
-                
-                float waveField = w1 * 0.50 + w2 * 0.35 + w3 * 0.15;
-                
-                float wideSheen = pow(max(0.0, 1.0 - abs(waveField - 0.1)), 2.5);
-                float crispSpecular = pow(max(0.0, 1.0 - abs(waveField - 0.15)), 8.0);
-                float crest = wideSheen * 0.5 + crispSpecular * 0.9;
-                
-                vec3 c0_shadow = vec3(0.0010, 0.0006, 0.0004);
-                vec3 c0_wave1  = vec3(0.085, 0.040, 0.015);
-                vec3 c0_wave2  = vec3(0.050, 0.022, 0.008);
-                vec3 c0_crest  = vec3(0.45, 0.30, 0.18);
-                
-                vec3 c1_shadow = vec3(0.0004, 0.0006, 0.0012);
-                vec3 c1_wave1  = vec3(0.015, 0.035, 0.065);
-                vec3 c1_wave2  = vec3(0.008, 0.020, 0.045);
-                vec3 c1_crest  = vec3(0.18, 0.35, 0.55);
-                
-                float t = smoothstep(0.0, 1.0, scroll);
-                vec3 colShadow = mix(c0_shadow, c1_shadow, t);
-                vec3 colWave1  = mix(c0_wave1, c1_wave1, t);
-                vec3 colWave2  = mix(c0_wave2, c1_wave2, t);
-                vec3 colCrest  = mix(c0_crest, c1_crest, t);
-                
-                vec3 color = colShadow;
-                color = mix(color, colWave2, smoothstep(-0.6, 0.2, waveField));
-                color = mix(color, colWave1, smoothstep(0.0, 0.8, waveField));
-                
-                color += colCrest * crest * 1.4;
-                
-                float vignette = 1.0 - dot(uv, uv) * 0.12;
-                color *= vignette;
-                
-                gl_FragColor = vec4(color, 1.0);
-            }
-        `;
-
-        bgMaterial = new THREE.ShaderMaterial({
-            vertexShader: vertexShader,
-            fragmentShader: fragmentShader,
-            uniforms: shaderUniforms,
-            depthWrite: false,
-            depthTest: false
-        });
-
-        const bgGeometry = new THREE.PlaneGeometry(30, 30);
-        const bgMesh = new THREE.Mesh(bgGeometry, bgMaterial);
-        bgMesh.position.set(0.0, 0.0, -8.0);
-        bgMesh.renderOrder = -10;
-        camera.add(bgMesh);
-    }
-
-    function createSparkTexture() {
-        const canvas = document.createElement('canvas');
-        canvas.width = 16; canvas.height = 16;
-        const ctx = canvas.getContext('2d');
-        const gradient = ctx.createRadialGradient(8, 8, 0, 8, 8, 8);
-        gradient.addColorStop(0, 'rgba(255, 255, 255, 1)');
-        gradient.addColorStop(0.25, 'rgba(255, 255, 255, 0.85)');
-        gradient.addColorStop(0.6, 'rgba(255, 255, 255, 0.3)');
-        gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
-        ctx.fillStyle = gradient;
-        ctx.fillRect(0, 0, 16, 16);
-        return new THREE.CanvasTexture(canvas);
-    }
-
-    function createSparks() {
-        const geometry = new THREE.BufferGeometry();
-        const positions = new Float32Array(sparkCount * 3);
-        const colors = new Float32Array(sparkCount * 3);
-
-        for (let i = 0; i < sparkCount; i++) {
-            const x = (Math.random() - 0.5) * 6.5;
-            const y = (Math.random() - 0.5) * 5.0 - 0.5;
-            const z = (Math.random() - 0.5) * 6.5;
-            positions[i * 3] = x;
-            positions[i * 3 + 1] = y;
-            positions[i * 3 + 2] = z;
-
-            if (Math.random() < 0.6) {
-                colors[i * 3] = 1.0;
-                colors[i * 3 + 1] = 0.4 + Math.random() * 0.15;
-                colors[i * 3 + 2] = 0.05 + Math.random() * 0.1;
-            } else {
-                colors[i * 3] = 0.55 + Math.random() * 0.15;
-                colors[i * 3 + 1] = 0.82 + Math.random() * 0.12;
-                colors[i * 3 + 2] = 1.0;
-            }
-
-            sparkData.push({
-                speedX: (Math.random() - 0.5) * 0.4,
-                speedY: 0.15 + Math.random() * 0.3,
-                speedZ: (Math.random() - 0.5) * 0.4,
-                swaySpeed: 0.5 + Math.random() * 1.5,
-                swayRadius: 0.05 + Math.random() * 0.15,
-                phase: Math.random() * Math.PI * 2
-            });
-        }
-
-        geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-        geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-
-        const material = new THREE.PointsMaterial({
-            size: 0.025,
-            vertexColors: true,
-            transparent: true,
-            opacity: 0.85,
-            blending: THREE.AdditiveBlending,
-            depthWrite: false,
-            map: createSparkTexture()
-        });
-
-        sparkParticles = new THREE.Points(geometry, material);
-        scene.add(sparkParticles);
-    }
-
-    function loadModel() {
-        const loader = new GLTFLoader();
-        loader.load(
-            ASSET_BASE_URL + '/bronze_horse.glb',
-            (gltf) => {
-                gltfModel = gltf.scene;
-
-                modelPivot = new THREE.Group();
-                scene.add(modelPivot);
-                modelPivot.add(gltfModel);
-
-                gltfModel.traverse((child) => {
-                    if (child.isMesh) {
-                        child.castShadow = false;
-                        child.receiveShadow = false;
-                        if (child.material) {
-                            child.material.roughness = 0.42;
-                            child.material.metalness = 0.92;
-                            child.material.flatShading = false;
-                            if (child.material.map) {
-                                child.material.map.anisotropy = 16;
-                            }
-                        }
-                    }
-                });
-
-                if (gltf.animations && gltf.animations.length > 0) {
-                    mixer = new THREE.AnimationMixer(gltfModel);
-                    gltf.animations.forEach((clip) => { mixer.clipAction(clip).play(); });
-                }
-
-                const boxInitial = new THREE.Box3().setFromObject(gltfModel);
-                const sizeInitial = boxInitial.getSize(new THREE.Vector3());
-                const maxDim = Math.max(sizeInitial.x, sizeInitial.y, sizeInitial.z);
-                const targetScale = 3.5 / (maxDim > 0.0001 ? maxDim : 1);
-                gltfModel.scale.setScalar(targetScale);
-
-                gltfModel.updateMatrixWorld(true);
-
-                const boxScaled = new THREE.Box3().setFromObject(gltfModel);
-                const centerScaled = boxScaled.getCenter(new THREE.Vector3());
-
-                gltfModel.position.sub(centerScaled);
-                modelPivot.position.y = -0.4;
-            },
-            undefined,
-            (error) => { console.error('Error loading bronze horse model:', error); }
-        );
-    }
-
-    function onWindowResize() {
-        sizes.width = window.innerWidth;
-        sizes.height = window.innerHeight;
-        camera.aspect = sizes.width / sizes.height;
-        camera.updateProjectionMatrix();
-        renderer.setSize(sizes.width, sizes.height);
-        renderer.setPixelRatio(1);
-        if (shaderUniforms) shaderUniforms.uResolution.value.set(sizes.width, sizes.height);
-    }
-
-    window.addEventListener('mousemove', (event) => {
-        cursorX = event.clientX;
-        cursorY = event.clientY;
-        const cursorInner = document.querySelector('.cursor-inner');
-        if (cursorInner) { cursorInner.style.left = `${cursorX}px`; cursorInner.style.top = `${cursorY}px`; }
-        targetMouseX = (event.clientX / window.innerWidth) * 2 - 1;
-        targetMouseY = (event.clientY / window.innerHeight) * 2 - 1;
-    });
-    window.addEventListener('resize', onWindowResize);
-
-    function updateGridDots(scroll) {
-        const dots = document.querySelectorAll('.grid-dot');
-        dots.forEach((dot, i) => {
-            const startY = (i * 17) % 80 + 10;
-            let speed = 90 + (i * 55) % 180;
-            if (i % 2 === 0) speed = -speed;
-            let y = startY + scroll * speed;
-            y = ((y % 100) + 100) % 100;
-            dot.style.top = `${y}%`;
-        });
-    }
-
-    function updateSlides(scroll) {
-        const slide1 = document.getElementById('slide-1');
-        const slide2 = document.getElementById('slide-2');
-        const slide3 = document.getElementById('slide-3');
-        const slide4 = document.getElementById('slide-4');
-
-        for (let i = 1; i <= 4; i++) {
-            const fill = document.getElementById(`dash-fill-${i}`);
-            if (fill) {
-                const start = (i - 1) * 0.25;
-                const end = i * 0.25;
-                let progress = (scroll - start) / (end - start);
-                progress = Math.max(0, Math.min(1, progress));
-                fill.style.height = `${progress * 100}%`;
-            }
-        }
-
-        function isActive(val, start, end) { return val >= start && val <= end; }
-
-        if (slide1) slide1.classList.toggle('active', isActive(scroll, -0.10, 0.12));
-        if (slide2) {
-            const active2 = isActive(scroll, 0.28, 0.40);
-            slide2.classList.toggle('active', active2);
-            const slide2Img = document.getElementById('slide-2-img');
-            if (slide2Img) slide2Img.classList.toggle('active', active2);
-        }
-        if (slide3) slide3.classList.toggle('active', isActive(scroll, 0.56, 0.68));
-        if (slide4) slide4.classList.toggle('active', isActive(scroll, 0.84, 1.05));
-    }
-
-    function animate() {
-        requestAnimationFrame(animate);
-        const deltaTime = clock.getDelta();
-        if (mixer) mixer.update(deltaTime);
-
-        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-        const scrollTop = window.scrollY !== undefined ? window.scrollY
-            : (window.pageYOffset !== undefined ? window.pageYOffset : document.documentElement.scrollTop);
-        const targetScroll = maxScroll > 0 ? scrollTop / maxScroll : 0;
-
-        currentScroll += (targetScroll - currentScroll) * 0.025;
-
-        mouseX += (targetMouseX - mouseX) * 0.05;
-        mouseY += (targetMouseY - mouseY) * 0.05;
-
-        outerCursorX += (cursorX - outerCursorX) * 0.2;
-        outerCursorY += (cursorY - outerCursorY) * 0.2;
-        const cursorOuter = document.querySelector('.cursor-outer');
-        if (cursorOuter) { cursorOuter.style.left = `${outerCursorX}px`; cursorOuter.style.top = `${outerCursorY}px`; }
-
-        if (modelPivot) {
-            modelPivot.rotation.y = mouseX * 0.25;
-            modelPivot.rotation.x = mouseY * 0.15;
-        }
-
-        if (sparkParticles) {
-            const positions = sparkParticles.geometry.attributes.position.array;
-            const time = clock.getElapsedTime();
-            const scrollVelocity = Math.abs(targetScroll - currentScroll);
-            const speedMultiplier = 1.0 + scrollVelocity * 9.0;
-            const turbulence = scrollVelocity * 0.8;
-
-            for (let i = 0; i < sparkCount; i++) {
-                const idx = i * 3;
-                const data = sparkData[i];
-                positions[idx]     += data.speedX * deltaTime * speedMultiplier;
-                positions[idx + 1] += data.speedY * deltaTime * speedMultiplier;
-                positions[idx + 2] += data.speedZ * deltaTime * speedMultiplier;
-
-                const currentSway = data.swayRadius * (1.0 + turbulence * 4.0);
-                positions[idx]     += Math.sin(time * data.swaySpeed + data.phase) * currentSway * deltaTime;
-                positions[idx + 2] += Math.cos(time * data.swaySpeed + data.phase) * currentSway * deltaTime;
-
-                if (positions[idx + 1] > 3.0 || Math.abs(positions[idx]) > 3.5 || Math.abs(positions[idx + 2]) > 3.5) {
-                    positions[idx + 1] = -2.5;
-                    positions[idx]     = (Math.random() - 0.5) * 3.0;
-                    positions[idx + 2] = (Math.random() - 0.5) * 3.0;
-                }
-            }
-            sparkParticles.geometry.attributes.position.needsUpdate = true;
-        }
-
-        const phi = currentScroll * Math.PI * 2.0;
-        const y = 0.35 + Math.sin(currentScroll * Math.PI) * 0.8;
-        const radius = 4.2 - Math.sin(currentScroll * Math.PI) * 0.6;
-        const x = radius * Math.sin(phi);
-        const z = radius * Math.cos(phi);
-
-        let transitionProgress = Math.min(1.0, currentScroll / 0.28);
-        let easeFactor = (Math.cos(transitionProgress * Math.PI) + 1.0) * 0.5;
-        const lookAtXOffset = -0.9 * easeFactor;
-        const targetLookAt = new THREE.Vector3(lookAtXOffset, -0.15, 0);
-        const targetPos = new THREE.Vector3(x, y, z);
-        camera.position.lerp(targetPos, 0.025);
-        camera.lookAt(targetLookAt);
-
-        if (shaderUniforms) {
-            shaderUniforms.uTime.value = clock.getElapsedTime();
-            shaderUniforms.uMouse.value.set(mouseX, -mouseY);
-            shaderUniforms.uScroll.value = currentScroll;
-        }
-
-        updateSlides(currentScroll);
-        updateGridDots(currentScroll);
-        renderer.render(scene, camera);
-    }
-
-    function setupNavigation() {
-        const navLinks = document.querySelectorAll('.nav-link');
-        const targetScrolls = [0.0, 0.34, 0.62, 0.94];
-        navLinks.forEach((link, index) => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-                const targetY = maxScroll * targetScrolls[index];
-                window.scrollTo({ top: targetY, behavior: 'smooth' });
-            });
-        });
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-        splitTitlesIntoChars();
-
-        scene = new THREE.Scene();
-        scene.background = new THREE.Color('#000000');
-        scene.fog = new THREE.FogExp2('#000000', 0.01);
-
-        camera = new THREE.PerspectiveCamera(50, sizes.width / sizes.height, 0.1, 100);
-        camera.position.set(0, 0.2, 3.0);
-        scene.add(camera);
-
-        createBackgroundShader();
-
-        renderer = new THREE.WebGLRenderer({
-            canvas: canvas,
-            antialias: false,
-            alpha: false,
-            powerPreference: "high-performance"
-        });
-        renderer.setSize(sizes.width, sizes.height);
-        renderer.setPixelRatio(1);
-
-        renderer.shadowMap.enabled = false;
-        renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-        renderer.toneMapping = THREE.ACESFilmicToneMapping;
-        renderer.toneMappingExposure = 2.2;
-
-        const ambientLight = new THREE.AmbientLight('#ffffff', 0.1);
-        scene.add(ambientLight);
-
-        const keyLight = new THREE.SpotLight('#ffffff', 18.0);
-        keyLight.position.set(4, 6, 3);
-        keyLight.angle = Math.PI / 4;
-        keyLight.penumbra = 0.9;
-        keyLight.castShadow = false;
-        keyLight.shadow.mapSize.width = 1024;
-        keyLight.shadow.mapSize.height = 1024;
-        keyLight.shadow.camera.near = 1.0;
-        keyLight.shadow.camera.far = 15;
-        keyLight.shadow.bias = -0.001;
-        scene.add(keyLight);
-
-        const rimLight = new THREE.DirectionalLight('#e3f2ff', 10.0);
-        rimLight.position.set(-5, 3, -4);
-        scene.add(rimLight);
-
-        const fillLight = new THREE.DirectionalLight('#fff3e6', 0.8);
-        fillLight.position.set(-2, -4, 2);
-        scene.add(fillLight);
-
-        createSparks();
-        loadModel();
-        onWindowResize();
+    <script>
+    // --- WORKSPACE TAB SWITCHER ---
+    function switchWorkspace(viewId, btn) {
+        document.querySelectorAll('.workspace-module').forEach(m => m.classList.remove('active'));
+        document.querySelectorAll('.workspace-tab-btn').forEach(b => b.classList.remove('active'));
         
-        animate();
-        setupNavigation();
-        setupChatSidebar();
-    });
-    
-    function setupChatSidebar() {
-        const toggleBtn = document.getElementById('toggle-chat-btn');
-        const closeBtn = document.getElementById('close-chat-btn');
-        const minBtn = document.getElementById('min-chat-btn');
-        const sidebar = document.getElementById('chat-sidebar');
-        const input = document.getElementById('chat-input');
-        const sendBtn = document.getElementById('chat-send-btn');
-        const history = document.getElementById('chat-history');
+        const target = document.getElementById(viewId);
+        if (target) target.classList.add('active');
+        if (btn) btn.classList.add('active');
 
-        function toggleChat(e) {
-            if (e) e.preventDefault();
-            sidebar.classList.toggle('open');
-            if (sidebar.classList.contains('open') && !sidebar.classList.contains('minimized')) {
-                setTimeout(() => input.focus(), 500);
-            }
+        if (viewId === 'view-codex') {
+            loadBookshelf();
+            loadKnowledgeCatalog();
         }
+    }
 
-        toggleBtn.addEventListener('click', () => {
-            sidebar.classList.remove('minimized');
-            if (!sidebar.classList.contains('open')) toggleChat();
-        });
-        closeBtn.addEventListener('click', toggleChat);
-        if (minBtn) {
-            minBtn.addEventListener('click', () => {
-                sidebar.classList.toggle('minimized');
-            });
-        }
-        
-        // Top Tabs Logic
-        const topTabs = document.querySelectorAll('.sidebar-tab');
-        const sidebarViews = document.querySelectorAll('.sidebar-view');
-        let knowledgeLoaded = false;
-        let booksLoaded = false;
-        let currentChatMode = 'leadership';
-        let currentSparringSessionId = null;
-        let lastBriefPayload = null;
-
-        window.setChatMode = function(mode) {
-            currentChatMode = mode;
-            document.querySelectorAll('.chat-mode-pill').forEach(btn => btn.classList.remove('active'));
-            
-            if (mode === 'sparring') {
-                const el = document.getElementById('mode-sparring');
-                if (el) el.classList.add('active');
-                input.placeholder = "Nhập quyết định / phản hồi đối kháng của bạn...";
-            } else if (mode === 'council') {
-                const el = document.getElementById('mode-council');
-                if (el) el.classList.add('active');
-                input.placeholder = "Nhập bài toán chiến lược để Hội Đồng 5 Cố Vấn tranh luận...";
-            } else if (mode === 'cases') {
-                const el = document.getElementById('mode-cases');
-                if (el) el.classList.add('active');
-                input.placeholder = "Nhập từ khóa tìm kiếm tình huống thực tế hoặc chọn bên dưới...";
-                renderCaseStudiesTab();
-            } else {
-                const el = document.getElementById('mode-advisory');
-                if (el) el.classList.add('active');
-                input.placeholder = "Nhập tình huống hoặc bài toán quản trị cần tham mưu...";
-            }
-        };
-
-        // Export Executive Brief Handler
-        const exportBriefBtn = document.getElementById('export-brief-btn');
-        if (exportBriefBtn) {
-            exportBriefBtn.addEventListener('click', async () => {
-                if (!lastBriefPayload) {
-                    alert("Chưa có kịch bản hoặc phân tích nào trong phiên đối thoại hiện tại để xuất bản.");
-                    return;
-                }
-
-                exportBriefBtn.textContent = "⏳ Đang xuất...";
-                try {
-                    const res = await fetch('/api/v1/export/brief', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            ...lastBriefPayload,
-                            format: 'html'
-                        })
-                    });
-                    const htmlText = await res.text();
-                    exportBriefBtn.textContent = "📄 Xuất Kịch Bản";
-
-                    // Open printable standalone HTML in new window
-                    const printWin = window.open('', '_blank');
-                    if (printWin) {
-                        printWin.document.open();
-                        printWin.document.write(htmlText);
-                        printWin.document.close();
-                    } else {
-                        alert("Trình duyệt đã chặn pop-up. Vui lòng cho phép mở cửa sổ mới để xem Bản Tham Mưu.");
-                    }
-                } catch(err) {
-                    exportBriefBtn.textContent = "📄 Xuất Kịch Bản";
-                    alert("Lỗi xuất bản kịch bản: " + err.message);
-                }
-            });
-        }
-
-        // Knowledge Unit Modal Inspector
-        const modalOverlay = document.getElementById('unit-modal-overlay');
-        const modalBody = document.getElementById('unit-modal-body');
-        const modalClose = document.getElementById('unit-modal-close');
-
-        if (modalClose && modalOverlay) {
-            modalClose.addEventListener('click', () => modalOverlay.classList.remove('open'));
-            modalOverlay.addEventListener('click', (e) => {
-                if (e.target === modalOverlay) modalOverlay.classList.remove('open');
-            });
-        }
-
-        window.showKnowledgeModal = async function(unitId) {
-            if (!modalOverlay || !modalBody) return;
-            modalOverlay.classList.add('open');
-            modalBody.innerHTML = `<div style="text-align: center; color: #f59e0b; padding: 40px 0;"><span style="font-size: 24px;">⏳</span><p style="margin-top: 10px;">Đang tải tri thức [${unitId}]...</p></div>`;
-
-            try {
-                const res = await fetch(`/api/v1/knowledge/units/${unitId}`);
-                const data = await res.json();
-                if (data.status === 'success' && data.unit) {
-                    const u = data.unit.raw_data || data.unit;
-                    const typeMap = { 'anti-pattern': 'Bẫy Cảm Bẫy', 'law': 'Quy Luật Thực Chứng', 'principle': 'Nguyên Tắc Hành Xử', 'strategy': 'Chiến Thuật Tác Chiến' };
-                    const displayType = typeMap[u.type] || u.type || 'Đơn vị Tri thức';
-
-                    modalBody.innerHTML = `
-                        <div style="display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
-                            <span class="case-domain-badge">${displayType}</span>
-                            <span class="case-domain-badge" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; border-color: rgba(56, 189, 248, 0.3);">${u.primary_domain || u.domain || 'Domain'}</span>
-                            <span class="case-domain-badge" style="background: rgba(52, 211, 153, 0.15); color: #34d399; border-color: rgba(52, 211, 153, 0.3);">${u.id || unitId}</span>
-                        </div>
-                        <h2 style="font-family: 'Playfair Display', serif; font-size: 22px; color: #fff6ed; margin-bottom: 16px; font-weight: 600;">
-                            ${u.title || unitId}
-                        </h2>
-                        <div style="color: rgba(255,255,255,0.9); font-size: 14px; line-height: 1.7; font-family: 'Times New Roman', Times, serif;">
-                            ${u.summary ? `<div style="background: rgba(245, 158, 11, 0.06); border-left: 3px solid #f59e0b; padding: 10px 14px; border-radius: 0 6px 6px 0; margin-bottom: 16px;"><strong>Tóm lược:</strong> ${u.summary}</div>` : ''}
-                            ${u.definition ? `<h4 style="color: #f59e0b; margin: 14px 0 6px 0;">Định nghĩa bản chất</h4><p>${u.definition}</p>` : ''}
-                            ${u.mechanism && u.mechanism.length ? `<h4 style="color: #f59e0b; margin: 14px 0 6px 0;">Cơ chế chi phối</h4><ul style="padding-left: 20px;">${Array.isArray(u.mechanism) ? u.mechanism.map(m => `<li>${m}</li>`).join('') : `<li>${u.mechanism}</li>`}</ul>` : ''}
-                            ${u.conditions && u.conditions.length ? `<h4 style="color: #f59e0b; margin: 14px 0 6px 0;">Điều kiện kích hoạt</h4><ul style="padding-left: 20px;">${Array.isArray(u.conditions) ? u.conditions.map(c => `<li>${c}</li>`).join('') : `<li>${u.conditions}</li>`}</ul>` : ''}
-                            ${u.risks && u.risks.length ? `<h4 style="color: #f87171; margin: 14px 0 6px 0;">Rủi ro / Điểm mù</h4><ul style="padding-left: 20px; color: #fca5a5;">${Array.isArray(u.risks) ? u.risks.map(r => `<li>${r}</li>`).join('') : `<li>${u.risks}</li>`}</ul>` : ''}
-                        </div>
-                    `;
-                } else {
-                    modalBody.innerHTML = `<div style="color: #ef4444; padding: 20px;">Không tìm thấy chi tiết cho mã tri thức [${unitId}].</div>`;
-                }
-            } catch(e) {
-                modalBody.innerHTML = `<div style="color: #ef4444; padding: 20px;">Lỗi tải dữ liệu: ${e.message}</div>`;
-            }
-        };
-
-        // Render Case Studies in Chat History
-        async function renderCaseStudiesTab(domainFilter) {
-            const endpoint = domainFilter ? `/api/v1/cases?domain=${domainFilter}` : '/api/v1/cases';
-            const botMsg = document.createElement('div');
-            botMsg.className = 'chat-msg msg-bot';
-            botMsg.innerHTML = `
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                    <h3 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 18px; color: #f59e0b;">📋 TÌNH HUỐNG THỰC CHIẾN (CASE STUDIES)</h3>
-                    <span style="font-size: 11px; color: rgba(255,255,255,0.5);">HR-OS • Ops-OS • SalesOS</span>
-                </div>
-                <div style="display: flex; gap: 6px; margin-bottom: 14px; overflow-x: auto; padding-bottom: 4px;">
-                    <button class="chat-mode-pill ${!domainFilter ? 'active' : ''}" style="padding: 4px 10px; font-size: 11px;" onclick="renderCaseStudiesFiltered('')">Tất Cả</button>
-                    <button class="chat-mode-pill ${domainFilter === 'HR' ? 'active' : ''}" style="padding: 4px 10px; font-size: 11px;" onclick="renderCaseStudiesFiltered('HR')">💼 HR-OS (Nhân Sự)</button>
-                    <button class="chat-mode-pill ${domainFilter === 'OPS' ? 'active' : ''}" style="padding: 4px 10px; font-size: 11px;" onclick="renderCaseStudiesFiltered('OPS')">⚙️ Ops-OS (Vận Hành)</button>
-                    <button class="chat-mode-pill ${domainFilter === 'SALES' ? 'active' : ''}" style="padding: 4px 10px; font-size: 11px;" onclick="renderCaseStudiesFiltered('SALES')">📈 SalesOS (Kinh Doanh)</button>
-                </div>
-                <div id="cases-list-container" style="color: rgba(255,255,255,0.6); font-size: 13px;">Đang tải danh sách hồ sơ...</div>
-            `;
-            history.appendChild(botMsg);
-            history.scrollTop = history.scrollHeight;
-
-            try {
-                const res = await fetch(endpoint);
-                const data = await res.json();
-                const container = botMsg.querySelector('#cases-list-container');
-                if (data.status === 'success' && data.cases && data.cases.length > 0) {
-                    container.innerHTML = data.cases.map(c => `
-                        <div class="case-study-card">
-                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px;">
-                                <strong style="color: #f8fafc; font-size: 14px;">${c.title}</strong>
-                                <span class="case-domain-badge">${c.domain}</span>
-                            </div>
-                            <p style="font-size: 12.5px; color: rgba(255,255,255,0.8); margin-bottom: 10px; line-height: 1.5;">${c.context_description}</p>
-                            <div style="display: flex; gap: 8px;">
-                                <button class="export-brief-btn" style="padding: 4px 10px; font-size: 11px;" onclick="loadCaseIntoInput('${encodeURIComponent(c.context_description)}')">⚡ Nạp Tình Huống Này</button>
-                            </div>
-                        </div>
-                    `).join('');
-                } else {
-                    container.innerHTML = '<div>Không có tình huống nào thuộc nhóm này.</div>';
-                }
-            } catch(e) {
-                const container = botMsg.querySelector('#cases-list-container');
-                if (container) container.innerHTML = `<div style="color: #ef4444;">Lỗi tải tình huống: ${e.message}</div>`;
-            }
-        }
-
-        window.renderCaseStudiesFiltered = function(dom) {
-            renderCaseStudiesTab(dom);
-        };
-
-        window.loadCaseIntoInput = function(encodedText) {
-            const text = decodeURIComponent(encodedText);
+    // Quick Fill Scenario
+    function fillScenario(text) {
+        const input = document.getElementById('advisory-input');
+        if (input) {
             input.value = text;
-            window.setChatMode('council');
             input.focus();
-        };
-
-        const DIGITAL_BOOKS = [
-            // I. TÂM LÝ & ĐÀM PHÁN
-            { file: "22_DAM_PHAN_CONG_TRUONG.md", title: "Đàm Phán Đỉnh Cao FBI", author: "Chris Voss • Cựu Chuyên Gia FBI", cat: "psychology", icon: "🎙️", badge: "ĐÀM PHÁN", desc: "Thấu cảm chiến thuật (Tactical Empathy), soi gương, gắn nhãn cảm xúc & mô hình trả giá Ackerman.", tags: ["Tactical Empathy", "Mirroring", "Ackerman Method"] },
-            { file: "09_TAM_LY_HOC_HANH_VI.md", title: "Tâm Lý Học Hành Vi & Quyền Lực", author: "Daniel Kahneman & Amos Tversky", cat: "psychology", icon: "🧠", badge: "NHẬN THỨC", desc: "Hệ thống 1 & 2, bẫy thiên kiến mỏ neo, tâm lý sợ mất mát & phòng thủ Tam Giác Đen thao túng.", tags: ["Hệ Thống 1 & 2", "Loss Aversion", "Dark Triad"] },
-            { file: "11_TAM_LY_HOC_THUYET_PHUC.md", title: "Tâm Lý Học Thuyết Phục (Pre-suasion)", author: "GS. Robert Cialdini", cat: "psychology", icon: "🎯", badge: "THUYẾT PHỤC", desc: "7 Nguyên tắc tạo ảnh hưởng, kỹ thuật dọn đường tâm lý Pre-suasion & đòn bẩy nhượng bộ.", tags: ["7 Principles", "Pre-suasion", "Reciprocity"] },
-            { file: "01_THUAT_HUNG_BIEN.md", title: "Thuật Hùng Biện & Đối Thoại", author: "Aristotle & Tung Hoành Gia", cat: "psychology", icon: "📜", badge: "ĐỐI THOẠI", desc: "Bẻ gãy luận điểm, đảo ngược góc nhìn, nghệ thuật xử lý từ chối đỉnh cao & logic phản chứng.", tags: ["Refutation Matrix", "Ethos-Pathos-Logos", "Xử Lý Từ Chối"] },
-            
-            // II. CHIẾN LƯỢC & GAME THEORY
-            { file: "08_BINH_PHAP_TON_TU.md", title: "Binh Pháp Tôn Tử: Binh Thế & Định Cục", author: "Tôn Vũ • Binh Gia", cat: "strategy", icon: "⚔️", badge: "THẾ TRẬN", desc: "Nghệ thuật kiến tạo thế trận bất đối xứng, biến hóa theo thời cuộc & bất chiến tự nhiên thành.", tags: ["Thủ Thế", "Lập Thế", "Định Cục", "Bất Chiến Tự Nhiên Thành"] },
-            { file: "12_LY_THUYET_TRO_CHOI.md", title: "Lý Thuyết Trò Chơi (Game Theory)", author: "John Nash & Thomas Schelling", cat: "strategy", icon: "♟️", badge: "GAME THEORY", desc: "Cân bằng Nash, thế lưỡng nan của tù nhân, chiến lược Tit-for-Tat & nghệ thuật ràng buộc chiến lược.", tags: ["Nash Equilibrium", "Prisoner's Dilemma", "Tit-for-Tat"] },
-            { file: "17_CHIEN_LUOC_BAT_DOI_XUNG.md", title: "Chiến Lược Bất Đối Xứng & Antifragile", author: "GS. Nassim Nicholas Taleb", cat: "strategy", icon: "🛡️", badge: "CHỐNG GÃY VỠ", desc: "Khả năng hưởng lợi từ biến động (Antifragile), chiến lược Quả tạ (Barbell) & nguyên tắc Skin in the Game.", tags: ["Antifragile", "Barbell Strategy", "Skin in the Game"] },
-            
-            // III. HỆ THỐNG & QUẢN TRỊ
-            { file: "20_TU_DUY_HE_THONG.md", title: "Tư Duy Hệ Thống & Điểm Đòn Bẩy", author: "Donella Meadows (MIT) & Peter Senge", cat: "leadership", icon: "🔄", badge: "HỆ THỐNG", desc: "Cấu trúc dòng chảy - trữ lượng, 12 điểm đòn bẩy can thiệp & hóa giải các bẫy hệ thống doanh nghiệp.", tags: ["Systems Thinking", "12 Leverage Points", "Feedback Loops"] },
-            { file: "21_NGUYEN_TAC_QUAN_TRI_THUC_THI.md", title: "Nguyên Tắc Quản Trị & Thực Thi", author: "Ray Dalio & Andy Grove (Intel)", cat: "leadership", icon: "⚡", badge: "HIỆU SUẤT", desc: "Văn hóa sự thật triệt để (Radical Transparency), Idea Meritocracy & đòn bẩy quản lý (Managerial Leverage).", tags: ["Radical Truth", "Idea Meritocracy", "High Output"] },
-            { file: "03_HAN_PHI_TU_KNOWLEDGE_PACK.md", title: "Pháp Gia & Quản Trị Hệ Thống", author: "Hàn Phi Tử • Pháp Trị", cat: "leadership", icon: "⚖️", badge: "KỶ CƯƠNG", desc: "Bộ ba Pháp - Thế - Thuật, quy trình Hình danh tham đồng, Nhị bỉnh thưởng phạt & bộ lọc chống Bát gian.", tags: ["Pháp-Thế-Thuật", "Hình Danh", "Phòng Chống Bát Gian"] },
-            { file: "06_NHAN_THUAT_UNG_XU.md", title: "Nhân Thuật & Nghệ Thuật Dụng Nhân", author: "Quỷ Cốc Tử & Trí Tuệ Cổ Nhân", cat: "leadership", icon: "👥", badge: "DỤNG NHÂN", desc: "Bát quan thấu tâm, thuật dùng người có tì vết, phân quyền không mất quyền & hóa giải bẫy cảm tình.", tags: ["Bát Quan Thấu Tâm", "Dụng Nhân Hữu Tỳ", "3 Chốt Chặn"] },
-            { file: "02_TU_THU_KNOWLEDGE_PACK.md", title: "Nho Gia & Đạo Đức Lãnh Đạo", author: "Khổng Tử & Mạnh Tử • Tứ Thư", cat: "leadership", icon: "👑", badge: "ĐỨC TRỊ", desc: "Nghệ thuật lãnh đạo bằng nhân chính, Tam Cương Bát Mục, phân biệt Quân tử vs Tiểu nhân & Hòa nhi bất đồng.", tags: ["Đức Trị", "Quân Tử vs Tiểu Nhân", "Hòa Nhi Bất Đồng"] },
-            { file: "05_TUAN_TU_KNOWLEDGE_PACK.md", title: "Tuân Tử & Huấn Luyện Nhân Sự", author: "Tuân Tử • Nho - Pháp Dung Hợp", cat: "leadership", icon: "📖", badge: "UỐN NẮN", desc: "Thuyết tính ác và sự uốn nắn (Vĩ), Khuyên học, mentorship liên tục & quy chuẩn Dùng lễ định phần.", tags: ["Khuyên Học", "Thuyết Tính Ác", "Dùng Lễ Định Phần"] },
-
-            // IV. BẢN LĨNH & NGHỊCH CẢNH
-            { file: "07_CHU_NGHIA_KHAC_KY.md", title: "Chủ Nghĩa Khắc Kỷ & Bản Lĩnh", author: "Marcus Aurelius & Seneca • Stoicism", cat: "mindset", icon: "🏛️", badge: "BẢN LĨNH", desc: "Làm chủ tâm trí, bản lĩnh trong nghịch cảnh, quản trị cơn giận & nghệ thuật giữ uy quyền trầm tĩnh.", tags: ["Vòng Tròn Kiểm Soát", "Amor Fati", "Seneca on Anger"] },
-            { file: "04_TRANG_TU_KNOWLEDGE_PACK.md", title: "Đạo Gia & Ứng Biến Linh Hoạt", author: "Lão Tử & Trang Tử • Đạo Gia", cat: "mindset", icon: "☯️", badge: "LINH HOẠT", desc: "Tâm trai, tọa vọng, tư duy bứt phá Tiêu Dao Du, lấy tĩnh chế động & thuật Dụng vô dụng trong khủng hoảng.", tags: ["Tâm Trai", "Tiêu Dao Du", "Dụng Vô Dụng"] },
-            { file: "10_THUC_CHIEN_NHAN_SINH.md", title: "Kho Thực Chiến Nhân Sinh", author: "NhanThuat Executive Archives", cat: "practice", icon: "⭐", badge: "HỒ SƠ CA", desc: "Hồ sơ lưu trữ các ca thực chiến tiêu biểu, phán quyết chiến lược và cẩm nang bài học điều hành thực tế.", tags: ["Case Studies", "Đàm Phán", "Giải Quyết Khủng Hoảng"] }
-        ];
-
-        let selectedBookCat = 'all';
-
-        window.filterBookCategory = function(cat, btn) {
-            selectedBookCat = cat;
-            document.querySelectorAll('#bookshelf-filter-bar .book-cat-pill').forEach(p => {
-                p.style.background = 'rgba(255,255,255,0.05)';
-                p.style.color = 'rgba(255,255,255,0.7)';
-                p.style.borderColor = 'rgba(255,255,255,0.12)';
-                p.style.fontWeight = '600';
-            });
-            if (btn) {
-                btn.style.background = '#f59e0b';
-                btn.style.color = '#000';
-                btn.style.borderColor = '#f59e0b';
-                btn.style.fontWeight = '700';
-            }
-            renderBooksList();
-        };
-
-        function renderBooksList() {
-            const container = document.getElementById('books-container');
-            if (!container) return;
-            container.innerHTML = '';
-
-            const filtered = selectedBookCat === 'all' 
-                ? DIGITAL_BOOKS 
-                : DIGITAL_BOOKS.filter(b => b.cat === selectedBookCat);
-
-            filtered.forEach(b => {
-                const card = document.createElement('div');
-                card.className = 'book-card';
-                card.innerHTML = `
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px;">
-                        <div class="book-title" style="margin: 0;">${b.icon} ${b.title}</div>
-                        <span style="font-size: 10px; background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); padding: 2px 8px; border-radius: 10px; font-weight: 700; letter-spacing: 0.5px;">${b.badge}</span>
-                    </div>
-                    <div style="font-size: 11.5px; color: #cbd5e1; opacity: 0.7; margin-bottom: 8px;">${b.author}</div>
-                    <div class="book-desc">${b.desc}</div>
-                    <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px;">
-                        ${b.tags.map(t => `<span style="font-size: 11px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); padding: 2px 7px; border-radius: 4px;">#${t}</span>`).join('')}
-                    </div>
-                    <div class="book-actions">
-                        <button class="book-btn book-btn-read" onclick="readBookInline('${b.file}', '${b.title}')">📖 Đọc Trực Tiếp</button>
-                        <a class="book-btn book-btn-pdf" href="/api/v1/knowledge/books/${b.file}/export-pdf" target="_blank">📥 Tải Bản In / PDF</a>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
-            booksLoaded = true;
-        }
-
-        window.loadBookshelf = function() {
-            renderBooksList();
-        };
-
-        window.readBookInline = async function(file, title) {
-            const container = document.getElementById('books-container');
-            container.innerHTML = `<div style="text-align: center; color: rgba(255,255,255,0.6); padding: 40px 0;">Đang mở tác phẩm ${title}...</div>`;
-            try {
-                const res = await fetch('/api/v1/knowledge/books/' + file);
-                const data = await res.json();
-                if (data.status === 'success' && data.content) {
-                    container.innerHTML = `
-                        <div style="margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; background: #000; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1); z-index: 10;">
-                            <button id="btn-back-bookshelf" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">← Quay Lại Tủ Sách</button>
-                            <a class="book-btn book-btn-pdf" href="/api/v1/knowledge/books/${file}/export-pdf" target="_blank" style="padding: 8px 16px; font-size: 13px;">📥 Tải Bản In / PDF</a>
-                        </div>
-                        <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 26px; line-height: 1.85; font-size: 15px; color: rgba(255,255,255,0.92); font-family: 'Times New Roman', Times, serif;">
-                            ${formatChatHTML(data.content)}
-                        </div>
-                    `;
-                    document.getElementById('btn-back-bookshelf').addEventListener('click', () => {
-                        window.loadBookshelf();
-                    });
-                } else {
-                    container.innerHTML = '<div style="color: #ef4444; padding: 20px;">Không thể tải nội dung sách lúc này.</div><button id="btn-back-err" style="padding: 6px 12px; background: #333; color: #fff; border-radius: 6px; cursor: pointer;">Quay lại</button>';
-                    document.getElementById('btn-back-err').addEventListener('click', () => window.loadBookshelf());
-                }
-            } catch(e) {
-                container.innerHTML = '<div style="color: #ef4444; padding: 20px;">Lỗi tải sách: ' + e.message + '</div><button id="btn-back-err2" style="padding: 6px 12px; background: #333; color: #fff; border-radius: 6px; cursor: pointer;">Quay lại</button>';
-                document.getElementById('btn-back-err2').addEventListener('click', () => window.loadBookshelf());
-            }
-        };
-
-        topTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                topTabs.forEach(t => t.classList.remove('active'));
-                sidebarViews.forEach(v => v.classList.remove('active'));
-                
-                tab.classList.add('active');
-                document.getElementById(tab.getAttribute('data-target')).classList.add('active');
-
-                if (tab.getAttribute('data-target') === 'sidebar-view-knowledge' && !knowledgeLoaded) {
-                    loadKnowledgeBase();
-                }
-                if (tab.getAttribute('data-target') === 'sidebar-view-books') {
-                    window.loadBookshelf();
-                }
-            });
-        });
-
-        async function loadKnowledgeBase() {
-            const listEl = document.getElementById('knowledge-list');
-            listEl.innerHTML = '<div style="text-align: center; color: rgba(255,255,255,0.5); margin-top: 50px;">Đang nạp 379 đơn vị tri thức từ Hybrid Engine...</div>';
-            try {
-                const res = await fetch('/api/v1/knowledge/units');
-                const data = await res.json();
-                if (data.status === 'success' && data.units) {
-                    listEl.innerHTML = '';
-                    
-                    // Group units by domain
-                    const groups = {};
-                    data.units.forEach(u => {
-                        const d = u.domain || 'unknown';
-                        if (!groups[d]) groups[d] = [];
-                        groups[d].push(u);
-                    });
-
-                    Object.keys(groups).sort().forEach(domain => {
-                        const groupContainer = document.createElement('div');
-                        groupContainer.className = 'knowledge-group';
-                        groupContainer.style.marginBottom = '10px';
-                        
-                        const header = document.createElement('div');
-                        header.className = 'knowledge-group-header';
-                        header.innerHTML = `<span>📂 ${domain.toUpperCase()} (${groups[domain].length} units)</span> <span class="toggle-icon" style="font-size: 10px;">▼</span>`;
-                        header.style.cssText = 'padding: 14px 16px; background: rgba(255,255,255,0.05); cursor: pointer; border-radius: 8px; font-weight: 600; font-size: 13px; letter-spacing: 0.5px; display: flex; justify-content: space-between; align-items: center; border: 1px solid rgba(255,255,255,0.1);';
-                        
-                        const itemsContainer = document.createElement('div');
-                        itemsContainer.className = 'knowledge-group-items';
-                        itemsContainer.style.display = 'none';
-                        itemsContainer.style.paddingLeft = '6px';
-                        itemsContainer.style.marginTop = '8px';
-                        
-                        header.addEventListener('click', () => {
-                            const isHidden = itemsContainer.style.display === 'none';
-                            itemsContainer.style.display = isHidden ? 'block' : 'none';
-                            header.querySelector('.toggle-icon').textContent = isHidden ? '▲' : '▼';
-                        });
-
-                        groups[domain].forEach(u => {
-                            const card = document.createElement('div');
-                            card.className = 'knowledge-card';
-                            const typeMap = { 'anti-pattern': 'Bẫy', 'law': 'Quy luật', 'principle': 'Nguyên tắc', 'strategy': 'Chiến thuật' };
-                            const displayType = typeMap[u.type] || u.type;
-                            
-                            card.innerHTML = `
-                                <div class="knowledge-card-title">${u.title || u.id}</div>
-                                <div class="knowledge-card-meta">[${displayType.toUpperCase()}] &bull; ${u.id}</div>
-                            `;
-                            card.addEventListener('click', () => window.showKnowledgeModal(u.id));
-                            itemsContainer.appendChild(card);
-                        });
-                        
-                        groupContainer.appendChild(header);
-                        groupContainer.appendChild(itemsContainer);
-                        listEl.appendChild(groupContainer);
-                    });
-                    knowledgeLoaded = true;
-                }
-            } catch (e) {
-                listEl.innerHTML = '<div style="color:red;text-align:center;">Lỗi khi nạp kho tri thức.</div>';
-            }
-        }
-        
-        // Interactive cursors over chat elements
-        const clickableSelectors = '#chat-sidebar, .chat-input, .chat-send-btn, .close-chat-btn, .chat-mode-pill, .export-brief-btn';
-        document.querySelectorAll(clickableSelectors).forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                const outer = document.querySelector('.cursor-outer');
-                if(outer) {
-                    outer.style.width = '30px';
-                    outer.style.height = '30px';
-                    outer.style.background = 'rgba(255,255,255,0.1)';
-                }
-            });
-            el.addEventListener('mouseleave', () => {
-                const outer = document.querySelector('.cursor-outer');
-                if(outer) {
-                    outer.style.width = '40px';
-                    outer.style.height = '40px';
-                    outer.style.background = 'transparent';
-                }
-            });
-        });
-
-        async function handleSend() {
-            const val = input.value.trim();
-            if (!val) return;
-            
-            // Add user message
-            const userMsg = document.createElement('div');
-            userMsg.className = 'chat-msg msg-user';
-            userMsg.textContent = val;
-            history.appendChild(userMsg);
-            
-            input.value = '';
-            
-            // Loading indicator
-            const loaderId = 'loader-' + Date.now();
-            const loader = document.createElement('div');
-            loader.id = loaderId;
-            loader.className = 'typing-indicator';
-            loader.textContent = currentChatMode === 'council' 
-                ? '🏛️ Hội Đồng 5 Cố Vấn đang tranh luận...' 
-                : currentChatMode === 'sparring' 
-                ? '⚔️ Cố Vấn đang phản biện đối kháng...' 
-                : 'Nhân Thuật đang phân tích...';
-            history.appendChild(loader);
-            history.scrollTop = history.scrollHeight;
-            
-            try {
-                // 1. Council Mode: Multi-Agent Council
-                if (currentChatMode === 'council') {
-                    const res = await fetch('/api/v1/council/deliberate', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ scenario_text: val })
-                    });
-                    const data = await res.json();
-                    document.getElementById(loaderId)?.remove();
-
-                    const botMsg = document.createElement('div');
-                    botMsg.className = 'chat-msg msg-bot';
-                    if (data.status === 'success' && data.deliberation) {
-                        botMsg.innerHTML = formatCouncilDeliberationHTML(data.deliberation);
-                        // Save lastBriefPayload for export
-                        const d = data.deliberation;
-                        lastBriefPayload = {
-                            title: `Biên Bản Hội Đồng Cố Vấn: ${val.substring(0, 45)}...`,
-                            situation_summary: val,
-                            philosophy_analysis: d.decision_matrix ? d.decision_matrix.highest_consensus : "Hội đồng 5 trường phái tranh luận.",
-                            action_script: d.decision_matrix ? d.decision_matrix.plan_a_primary : {},
-                            directives: d.decision_matrix ? d.decision_matrix.execution_directives : []
-                        };
-                    } else {
-                        botMsg.innerHTML = `<div style="color: #ef4444;">${data.message || 'Lỗi xử lý Hội Đồng Cố Vấn.'}</div>`;
-                    }
-                    history.appendChild(botMsg);
-                }
-                // 2. Sparring Mode: Stateful Adversarial Sparring
-                else if (currentChatMode === 'sparring') {
-                    if (!currentSparringSessionId) {
-                        // Create new session
-                        const sessRes = await fetch('/api/v1/sparring/sessions', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ title: `Đấu trí: ${val.substring(0, 30)}...`, philosophy_lens: 'auto' })
-                        });
-                        const sessData = await sessRes.json();
-                        if (sessData.session) currentSparringSessionId = sessData.session.id;
-                    }
-
-                    const res = await fetch('/api/v1/sparring/messages', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ session_id: currentSparringSessionId, message: val })
-                    });
-                    const data = await res.json();
-                    document.getElementById(loaderId)?.remove();
-
-                    const botMsg = document.createElement('div');
-                    botMsg.className = 'chat-msg msg-bot';
-                    if (data.status === 'success' && data.response) {
-                        botMsg.innerHTML = formatSparringResponseHTML(data);
-                        lastBriefPayload = {
-                            title: `Kịch Bản Đấu Trí Điều Hành`,
-                            situation_summary: val,
-                            philosophy_analysis: data.response,
-                            action_script: { verbatim_reply: data.response },
-                            directives: []
-                        };
-                    } else {
-                        botMsg.innerHTML = `<div style="color: #ef4444;">${data.message || 'Lỗi đối kháng.'}</div>`;
-                    }
-                    history.appendChild(botMsg);
-                }
-                // 3. Leadership / General Advisory Mode
-                else {
-                    const res = await fetch('/api/v1/nhan-thuat/analyze', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ scenario_text: val, scenario_type_hint: 'leadership' })
-                    });
-                    const data = await res.json();
-                    document.getElementById(loaderId)?.remove();
-                    
-                    const botMsg = document.createElement('div');
-                    botMsg.className = 'chat-msg msg-bot';
-                    
-                    if (data.status === 'success' && data.synthesis_result && data.synthesis_result.synthesis) {
-                        botMsg.innerHTML = formatChatTabs(data.synthesis_result);
-                        lastBriefPayload = {
-                            title: `Bản Tham Mưu Nhân Thuật: ${val.substring(0, 45)}...`,
-                            situation_summary: val,
-                            philosophy_analysis: data.synthesis_result.synthesis,
-                            action_script: data.action_script || {},
-                            knowledge_units: data.matched_knowledge_units || []
-                        };
-                    } else if (data.message) {
-                        botMsg.innerHTML = `<div style="color: rgba(255,255,255,0.85);">${data.message}</div>`;
-                    } else {
-                        botMsg.textContent = "Hệ thống đang đồng bộ tri thức, vui lòng gửi lại câu hỏi sau giây lát.";
-                    }
-                    history.appendChild(botMsg);
-                }
-                
-            } catch (e) {
-                document.getElementById(loaderId)?.remove();
-                const errMsg = document.createElement('div');
-                errMsg.className = 'chat-msg msg-bot';
-                errMsg.style.color = 'rgba(255,255,255,0.85)';
-                errMsg.innerHTML = `⚠️ <em>Hệ thống đang kết nối dữ liệu máy chủ AI (${e.message || 'Timeout'}). Vui lòng gửi lại câu hỏi sau giây lát nhé.</em>`;
-                history.appendChild(errMsg);
-            }
-            history.scrollTop = history.scrollHeight;
-        }
-        
-        sendBtn.addEventListener('click', handleSend);
-        input.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') handleSend();
-        });
-        
-        window.switchTab = function(btn, paneId) {
-            const container = btn.closest('.chat-msg');
-            container.querySelectorAll('.chat-tab-btn').forEach(b => b.classList.remove('active'));
-            container.querySelectorAll('.chat-tab-pane').forEach(p => p.classList.remove('active'));
-            btn.classList.add('active');
-            container.querySelector('#' + paneId).classList.add('active');
-        };
-
-        window.selectPlanTab = function(btn, planId, matrixId) {
-            const matrixBox = document.getElementById(matrixId);
-            if (!matrixBox) return;
-            matrixBox.querySelectorAll('.plan-tab-btn').forEach(b => b.classList.remove('active'));
-            matrixBox.querySelectorAll('.plan-content-panel').forEach(p => p.style.display = 'none');
-            btn.classList.add('active');
-            const target = document.getElementById(planId);
-            if (target) target.style.display = 'block';
-        };
-
-        function formatCouncilDeliberationHTML(delib) {
-            const matrixId = 'matrix-' + Math.random().toString(36).substr(2, 9);
-            const m = delib.decision_matrix || {};
-
-            let html = `
-                <div style="margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">
-                    <h3 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 19px; color: #f59e0b;">🏛️ HỘI ĐỒNG CỐ VẤN ĐA TRIẾT LÝ</h3>
-                    <span style="font-size: 11px; color: rgba(255,255,255,0.5);">${(delib.total_latency_ms || 0).toFixed(1)} ms</span>
-                </div>
-            `;
-
-            // 1. Stage 1: Pitches
-            html += `<div class="council-stage-header"><span>🏛️ GIAI ĐOẠN 1: 5 LẬP TRƯỜNG TRIẾT HỌC (PERSPECTIVE PITCHES)</span></div>`;
-            html += `<div class="council-pitch-grid">`;
-            (delib.pitches || []).forEach(p => {
-                const schoolIcons = { LEGALISM: '⚖️', TAOISM: '☯️', CONFUCIAN: '📜', XUNZI: '🏛️', SUNZI: '⚔️' };
-                const icon = schoolIcons[p.agent_id] || '💡';
-                const badgesHtml = (p.cited_unit_ids || []).map(uid => `<a href="javascript:void(0)" class="knowledge-badge" onclick="showKnowledgeModal('${uid}')">🏷️ ${uid}</a>`).join('');
-
-                html += `
-                    <div class="council-pitch-card">
-                        <div class="council-pitch-title">
-                            <span>${icon} ${p.title}</span>
-                            <span style="font-size: 11px; color: #f59e0b;">${p.agent_id}</span>
-                        </div>
-                        <div class="council-pitch-stance">"${p.stance}"</div>
-                        <ul style="padding-left: 18px; margin-bottom: 8px; font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.5;">
-                            ${(p.core_arguments || []).map(a => `<li>${a}</li>`).join('')}
-                        </ul>
-                        ${badgesHtml ? `<div style="margin-bottom: 6px;">${badgesHtml}</div>` : ''}
-                        ${p.risk_warning ? `<div style="font-size: 11.5px; color: #f87171; background: rgba(248,113,113,0.06); padding: 4px 8px; border-radius: 4px;">${p.risk_warning}</div>` : ''}
-                    </div>
-                `;
-            });
-            html += `</div>`;
-
-            // 2. Stage 2: Cross Debates
-            if (delib.cross_debates && delib.cross_debates.length > 0) {
-                html += `<div class="council-stage-header"><span>⚔️ GIAI ĐOẠN 2: TRANH LUẬN ĐỐI KHÁNG CHÉO (CROSS-EXAMINATION)</span></div>`;
-                delib.cross_debates.forEach(cd => {
-                    html += `
-                        <div class="cross-debate-card">
-                            <strong style="color: #f87171; display: block; margin-bottom: 4px;">🥊 ${cd.challenger_id} ➔ ${cd.target_id}</strong>
-                            <p style="margin-bottom: 6px; color: rgba(255,255,255,0.9);">"${cd.critique}"</p>
-                            <div style="font-size: 12px; color: #34d399;">💡 <em>Giải pháp khắc chế: ${cd.counter_recommendation}</em></div>
-                        </div>
-                    `;
-                });
-            }
-
-            // 3. Stage 3: Decision Matrix
-            if (m) {
-                html += `<div class="council-stage-header"><span>🏆 GIAI ĐOẠN 3: MA TRẬN QUYẾT ĐỊNH ĐIỀU HÀNH</span></div>`;
-                html += `
-                    <div class="decision-matrix-box" id="${matrixId}">
-                        <div style="background: rgba(245, 158, 11, 0.12); border-left: 3px solid #f59e0b; padding: 12px 14px; border-radius: 0 8px 8px 0; margin-bottom: 12px;">
-                            <strong style="color: #f59e0b; display: block; font-size: 13.5px; margin-bottom: 4px;">👑 ĐỒNG THUẬN CAO NHẤT (HIGHEST CONSENSUS):</strong>
-                            <div style="color: #fff; font-size: 13.5px; line-height: 1.6;">${m.highest_consensus || ''}</div>
-                        </div>
-
-                        <div class="plan-tab-bar">
-                            <button class="plan-tab-btn active" onclick="selectPlanTab(this, 'pa-${matrixId}', '${matrixId}')">🟢 Phương Án A (Chủ Đạo)</button>
-                            <button class="plan-tab-btn" onclick="selectPlanTab(this, 'pb-${matrixId}', '${matrixId}')">🟡 Phương Án B (Dự Phòng)</button>
-                            <button class="plan-tab-btn" onclick="selectPlanTab(this, 'pc-${matrixId}', '${matrixId}')">🔴 Phương Án C (Khoanh Vùng)</button>
-                        </div>
-
-                        <!-- Plan A -->
-                        <div class="plan-content-panel" id="pa-${matrixId}" style="display: block; font-size: 13px; color: rgba(255,255,255,0.9);">
-                            <h4 style="color: #34d399; margin-bottom: 6px;">${m.plan_a_primary?.name || 'Phương án A'}</h4>
-                            <p style="margin-bottom: 8px;">${m.plan_a_primary?.summary || ''}</p>
-                            <ul style="padding-left: 18px; line-height: 1.6;">${(m.plan_a_primary?.action_steps || []).map(s => `<li>${s}</li>`).join('')}</ul>
-                        </div>
-
-                        <!-- Plan B -->
-                        <div class="plan-content-panel" id="pb-${matrixId}" style="display: none; font-size: 13px; color: rgba(255,255,255,0.9);">
-                            <h4 style="color: #fbbf24; margin-bottom: 6px;">${m.plan_b_fallback?.name || 'Phương án B'}</h4>
-                            <p style="margin-bottom: 8px;">${m.plan_b_fallback?.summary || ''}</p>
-                            <ul style="padding-left: 18px; line-height: 1.6;">${(m.plan_b_fallback?.action_steps || []).map(s => `<li>${s}</li>`).join('')}</ul>
-                        </div>
-
-                        <!-- Plan C -->
-                        <div class="plan-content-panel" id="pc-${matrixId}" style="display: none; font-size: 13px; color: rgba(255,255,255,0.9);">
-                            <h4 style="color: #f87171; margin-bottom: 6px;">${m.plan_c_containment?.name || 'Phương án C'}</h4>
-                            <p style="margin-bottom: 8px;">${m.plan_c_containment?.summary || ''}</p>
-                            <ul style="padding-left: 18px; line-height: 1.6;">${(m.plan_c_containment?.action_steps || []).map(s => `<li>${s}</li>`).join('')}</ul>
-                        </div>
-
-                        ${m.execution_directives && m.execution_directives.length ? `
-                            <div style="margin-top: 14px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.1);">
-                                <strong style="color: #38bdf8; font-size: 12.5px; display: block; margin-bottom: 4px;">⚡ CHỈ THỊ THỰC THI NGAY:</strong>
-                                <ul style="padding-left: 18px; font-size: 12.5px; color: rgba(255,255,255,0.85);">${m.execution_directives.map(d => `<li>${d}</li>`).join('')}</ul>
-                            </div>
-                        ` : ''}
-                    </div>
-                `;
-            }
-
-            return html;
-        }
-
-        function formatSparringResponseHTML(data) {
-            const badges = (data.matched_unit_ids || []).map(uid => `<a href="javascript:void(0)" class="knowledge-badge" onclick="showKnowledgeModal('${uid}')">🏷️ ${uid}</a>`).join('');
-            
-            return `
-                <div style="margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
-                    <span style="font-size: 11px; background: rgba(245, 158, 11, 0.2); color: #f59e0b; padding: 2px 8px; border-radius: 12px; font-weight: 700;">⚔️ LĂNG KÍNH: ${data.philosophy_lens || 'AUTO'}</span>
-                    <span style="font-size: 11px; color: rgba(255,255,255,0.5);">${(data.latency_ms || 0).toFixed(1)} ms</span>
-                </div>
-                <div style="font-family: 'Times New Roman', Times, serif; font-size: 14.5px; line-height: 1.7; color: rgba(255,255,255,0.92);">
-                    ${formatChatHTML(data.response || '')}
-                </div>
-                ${badges ? `<div style="margin-top: 12px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.1);"><span style="font-size: 11px; color: rgba(255,255,255,0.5); margin-right: 6px;">Căn cứ tri thức:</span>${badges}</div>` : ''}
-            `;
-        }
-
-        function formatChatTabs(result) {
-            const id = Math.random().toString(36).substr(2, 9);
-            const textHTML = formatChatHTML(result.synthesis || '');
-            
-            let citationsHTML = '<div style="color: rgba(255,255,255,0.6); padding: 10px 0;">Không có tài liệu trích dẫn trực tiếp.</div>';
-            if (result.citations && result.citations.length > 0) {
-                citationsHTML = '<div style="display: flex; flex-wrap: wrap; gap: 8px; padding-top: 8px;">' + result.citations.map(c => `<a href="javascript:void(0)" class="knowledge-badge" onclick="showKnowledgeModal('${c.id}')">🏷️ ${c.id}: ${c.title || c.id}</a>`).join('') + '</div>';
-            }
-
-            return '<div class="chat-tabs-nav" style="display: flex; gap: 10px; margin-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">' +
-                   '<button class="chat-tab-btn active" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 5px 14px; border-radius: 12px; cursor: pointer; font-size: 13px;" onclick="switchTab(this, \'tab-chien-luoc-' + id + '\')">📜 Luận Giải & Kịch Bản</button>' +
-                   '<button class="chat-tab-btn" style="background: transparent; border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); padding: 5px 14px; border-radius: 12px; cursor: pointer; font-size: 13px;" onclick="switchTab(this, \'tab-trich-dan-' + id + '\')">📚 Căn Cứ Tri Thức</button>' +
-                   '</div>' +
-                   '<div class="chat-tab-pane active" id="tab-chien-luoc-' + id + '" style="line-height: 1.7; font-size: 14.5px;">' + textHTML + '</div>' +
-                   '<div class="chat-tab-pane" id="tab-trich-dan-' + id + '" style="display: none; line-height: 1.7; font-size: 14px;">' + citationsHTML + '</div>';
-        }
-
-        function formatChatHTML(text) {
-            if (!text) return '';
-            
-            // 1. Preserve and extract code blocks (including ASCII box tables)
-            const codeBlocks = [];
-            let processed = String(text).replace(/```([\s\S]*?)```/g, (match, code) => {
-                const id = `__CODE_BLOCK_${codeBlocks.length}__`;
-                const escaped = code
-                    .replace(/&/g, '&amp;')
-                    .replace(/</g, '&lt;')
-                    .replace(/>/g, '&gt;');
-                codeBlocks.push(`<pre style="background: rgba(0, 0, 0, 0.75); border: 1px solid rgba(255, 255, 255, 0.18); border-radius: 8px; padding: 14px 18px; overflow-x: auto; font-family: 'Consolas', 'Fira Code', 'Courier New', monospace; font-size: 12.5px; line-height: 1.55; color: #38bdf8; margin: 14px 0; white-space: pre;"><code>${escaped.trim()}</code></pre>`);
-                return id;
-            });
-
-            // 2. Escape HTML
-            processed = processed
-                .replace(/&/g, '&amp;')
-                .replace(/</g, '&lt;')
-                .replace(/>/g, '&gt;');
-
-            // 3. Format markdown tables
-            processed = processed.replace(/((?:^|\n)\|[^\n]+\|\n\|[-:\s|]+\|\n(?:\|[^\n]+\|\n?)+)/g, (match) => {
-                const lines = match.trim().split('\n');
-                if (lines.length < 3) return match;
-                
-                const parseRow = (line) => line.split('|').slice(1, -1).map(c => c.trim());
-                const headers = parseRow(lines[0]);
-                const rows = lines.slice(2).map(parseRow);
-
-                let tableHtml = '<div style="overflow-x: auto; margin: 16px 0; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px;"><table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 13.5px;">';
-                tableHtml += '<thead><tr style="background: rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.15);">';
-                headers.forEach(h => {
-                    tableHtml += `<th style="padding: 10px 14px; color: #f59e0b; font-weight: 600;">${h}</th>`;
-                });
-                tableHtml += '</tr></thead><tbody>';
-                rows.forEach((r, idx) => {
-                    const bg = idx % 2 === 1 ? 'background: rgba(255,255,255,0.02);' : '';
-                    tableHtml += `<tr style="${bg} border-bottom: 1px solid rgba(255,255,255,0.05);">`;
-                    r.forEach(c => {
-                        tableHtml += `<td style="padding: 10px 14px; color: rgba(255,255,255,0.85);">${c}</td>`;
-                    });
-                    tableHtml += '</tr>';
-                });
-                tableHtml += '</tbody></table></div>';
-                return '\n' + tableHtml + '\n';
-            });
-
-            // 4. Format headings, bold, italic, lists, blockquotes, horizontal rules
-            processed = processed
-                .replace(/^#### (.*?)$/gm, '<h5 style="color: #cbd5e1; margin: 12px 0 4px 0; font-size: 14px; font-weight: 600;">$1</h5>')
-                .replace(/^### (.*?)$/gm, '<h4 style="color: #f59e0b; margin: 16px 0 6px 0; font-size: 16px; font-weight: 600;">$1</h4>')
-                .replace(/^## (.*?)$/gm, '<h3 style="color: #f8fafc; margin: 18px 0 8px 0; font-size: 18px; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 4px;">$1</h3>')
-                .replace(/^# (.*?)$/gm, '<h2 style="color: #fff; margin: 20px 0 10px 0; font-size: 20px; font-weight: 700;">$1</h2>')
-                .replace(/^---$/gm, '<hr style="border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 18px 0;">')
-                .replace(/^\> (.*?)$/gm, '<blockquote style="border-left: 3px solid #f59e0b; padding-left: 14px; margin: 12px 0; color: rgba(255,255,255,0.8); font-style: italic; background: rgba(245,158,11,0.04); padding-top: 6px; padding-bottom: 6px; border-radius: 0 6px 6px 0;">$1</blockquote>')
-                .replace(/\*\*([^*]+)\*\*/g, '<strong style="color: #f8fafc;">$1</strong>')
-                .replace(/\*([^*]+)\*/g, '<em style="color: #cbd5e1;">$1</em>')
-                .replace(/\n\n/g, '</p><p style="margin-bottom: 12px;">')
-                .replace(/\n/g, '<br>');
-
-            let finalHtml = '<p style="margin-bottom: 12px;">' + processed + '</p>';
-
-            // 5. Restore code blocks
-            codeBlocks.forEach((block, idx) => {
-                finalHtml = finalHtml.replace(`__CODE_BLOCK_${idx}__`, block);
-            });
-
-            return finalHtml;
         }
     }
-    
-    // Search functionality for Knowledge Base
-    document.addEventListener('input', function(e) {
-        if(e.target && e.target.id === 'knowledge-search-input') {
-            const term = e.target.value.toLowerCase().trim();
-            document.querySelectorAll('.knowledge-group').forEach(group => {
-                let hasVisibleCard = false;
-                const itemsContainer = group.querySelector('.knowledge-group-items');
-                const toggleIcon = group.querySelector('.toggle-icon');
-                
-                group.querySelectorAll('.knowledge-card').forEach(card => {
-                    const titleEl = card.querySelector('.knowledge-card-title');
-                    const metaEl = card.querySelector('.knowledge-card-meta');
-                    if (titleEl && metaEl) {
-                        const title = titleEl.textContent.toLowerCase();
-                        const meta = metaEl.textContent.toLowerCase();
-                        if(title.includes(term) || meta.includes(term)) {
-                            card.style.display = 'block';
-                            hasVisibleCard = true;
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    }
-                });
 
-                if (term !== '') {
-                    if (hasVisibleCard) {
-                        group.style.display = 'block';
-                        if (itemsContainer) itemsContainer.style.display = 'block';
-                        if (toggleIcon) toggleIcon.textContent = '▲';
-                    } else {
-                        group.style.display = 'none';
-                    }
-                } else {
-                    group.style.display = 'block';
-                    if (itemsContainer) itemsContainer.style.display = 'none';
-                    if (toggleIcon) toggleIcon.textContent = '▼';
-                    group.querySelectorAll('.knowledge-card').forEach(c => c.style.display = 'block');
-                }
+    function setAdvisoryMode(mode, btn) {
+        document.querySelectorAll('.mode-pills .mode-pill').forEach(p => p.classList.remove('active'));
+        if (btn) btn.classList.add('active');
+        if (mode === 'cases') {
+            fillScenario('Trưởng phòng kinh doanh là người tài nhưng kiêu ngạo, chia rẽ nội bộ.');
+        }
+    }
+
+    // --- PERSON-ROLE FIT DIAGNOSTIC LAB ---
+    function toggleTag(el) {
+        el.classList.toggle('selected');
+    }
+
+    document.getElementById('run-diagnostic-btn').addEventListener('click', async () => {
+        const btn = document.getElementById('run-diagnostic-btn');
+        btn.textContent = "⏳ Đang Chẩn Đoán & Tính Toán Ma Sát...";
+        btn.disabled = true;
+
+        const candidateName = document.getElementById('diag-person-name').value.trim() || 'Nhân sự';
+        const targetRole = document.getElementById('diag-role-name').value.trim() || 'Vị trí quản lý';
+        
+        const selectedTraits = Array.from(document.querySelectorAll('#diag-traits-group .selectable-tag.selected')).map(el => el.textContent.trim());
+        const selectedDemands = Array.from(document.querySelectorAll('#diag-demands-group .selectable-tag.selected')).map(el => el.textContent.trim());
+
+        try {
+            const res = await fetch('/api/v1/diagnostics/person-role-fit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    candidate_name: candidateName,
+                    target_role: targetRole,
+                    traits: selectedTraits,
+                    role_demands: selectedDemands
+                })
             });
+            const data = await res.json();
+            btn.textContent = "🚀 Chẩn Đoán Ma Sát Nhận Thức & Đưa Ra Phán Quyết";
+            btn.disabled = false;
+
+            if (data.status === 'success') {
+                const resCard = document.getElementById('diag-result-card');
+                resCard.style.display = 'block';
+
+                const badge = document.getElementById('diag-fit-badge');
+                badge.textContent = data.fit_level;
+                badge.style.background = data.fit_color + '22';
+                badge.style.color = data.fit_color;
+                badge.style.border = `1px solid ${data.fit_color}55`;
+
+                document.getElementById('diag-friction-score-text').textContent = data.friction_score + '%';
+                const fill = document.getElementById('diag-gauge-fill');
+                fill.style.width = data.friction_score + '%';
+                fill.style.background = data.fit_color;
+
+                document.getElementById('diag-cost-analysis').textContent = data.adaptation_cost_analysis;
+
+                const pointsList = document.getElementById('diag-friction-points');
+                pointsList.innerHTML = data.identified_friction_points.map(p => `<li>${p}</li>`).join('');
+
+                const compList = document.getElementById('diag-compensatory-list');
+                compList.innerHTML = data.compensatory_strategies.map(c => `<li>${c}</li>`).join('');
+
+                document.getElementById('diag-verdict-text').textContent = data.placement_verdict;
+
+                resCard.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                alert("Lỗi chẩn đoán: " + (data.message || "Không thể phân tích"));
+            }
+        } catch(err) {
+            btn.textContent = "🚀 Chẩn Đoán Ma Sát Nhận Thức & Đưa Ra Phán Quyết";
+            btn.disabled = false;
+            alert("Lỗi kết nối máy chủ: " + err.message);
         }
     });
-    
-    document.addEventListener("DOMContentLoaded", setupChatSidebar);
+
+    // --- CHAT & ADVISORY API LOGIC ---
+    let lastBriefPayload = null;
+
+    async function handleSendAdvisory() {
+        const input = document.getElementById('advisory-input');
+        const text = input.value.trim();
+        if (!text) return;
+
+        input.value = '';
+        const feed = document.getElementById('chat-feed');
+
+        // Add user bubble
+        const userMsg = document.createElement('div');
+        userMsg.className = 'message-bubble msg-user';
+        userMsg.textContent = text;
+        feed.appendChild(userMsg);
+
+        // Add loading bubble
+        const loaderId = 'loader-' + Date.now();
+        const loader = document.createElement('div');
+        loader.id = loaderId;
+        loader.className = 'message-bubble msg-assistant';
+        loader.innerHTML = `<em>👑 Cố Vấn đang đối chiếu 370 đơn vị tri thức và kích hoạt lăng kính triết học...</em>`;
+        feed.appendChild(loader);
+        feed.scrollTop = feed.scrollHeight;
+
+        try {
+            const res = await fetch('/api/v1/nhan-thuat/analyze', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ scenario_text: text, scenario_type_hint: 'leadership' })
+            });
+            const data = await res.json();
+            document.getElementById(loaderId)?.remove();
+
+            const botMsg = document.createElement('div');
+            botMsg.className = 'message-bubble msg-assistant';
+
+            if (data.status === 'success') {
+                botMsg.innerHTML = renderAdvisoryResponseHTML(data, text);
+                lastBriefPayload = {
+                    title: `Bản Tham Mưu: ${text.substring(0, 45)}...`,
+                    situation_summary: text,
+                    philosophy_analysis: data.synthesis_result?.synthesis || "Phân tích điều hành",
+                    action_script: data.action_script || {},
+                    directives: data.action_script?.financial_and_operational_directives || []
+                };
+            } else {
+                botMsg.innerHTML = `<div style="color: #ef4444;">${data.message || 'Lỗi phân tích.'}</div>`;
+            }
+            feed.appendChild(botMsg);
+        } catch(err) {
+            document.getElementById(loaderId)?.remove();
+            const errMsg = document.createElement('div');
+            errMsg.className = 'message-bubble msg-assistant';
+            errMsg.innerHTML = `⚠️ Lỗi kết nối: ${err.message}`;
+            feed.appendChild(errMsg);
+        }
+        feed.scrollTop = feed.scrollHeight;
+    }
+
+    document.getElementById('advisory-send-btn').addEventListener('click', handleSendAdvisory);
+    document.getElementById('advisory-input').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') handleSendAdvisory();
+    });
+
+    function renderAdvisoryResponseHTML(data, query) {
+        const id = 'resp-' + Math.random().toString(36).substr(2, 9);
+        const script = data.action_script || {};
+        const syn = data.synthesis_result || {};
+        const matched = data.matched_knowledge_units || [];
+
+        return `
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-subtle); padding-bottom: 10px; margin-bottom: 12px;">
+                <h3 style="font-family: var(--font-serif); font-size: 17px; color: var(--gold-light);">👑 BẢN THAM MƯU CHIẾN LƯỢC ĐIỀU HÀNH</h3>
+                <span style="font-size: 11px; background: rgba(245,158,11,0.15); color: var(--gold-primary); padding: 2px 8px; border-radius: 12px; font-weight: 700;">
+                    Lăng Kính: ${data.philosophy_routing?.primary_philosophy || 'DYNAMIC'}
+                </span>
+            </div>
+
+            <div class="bubble-tabs">
+                <button class="bubble-tab-btn active" onclick="switchBubbleTab('${id}', 'analysis', this)">🔍 Phân Tích Vị Thế</button>
+                <button class="bubble-tab-btn" onclick="switchBubbleTab('${id}', 'dialogue', this)">💬 Lời Thoại 3 Bước</button>
+                <button class="bubble-tab-btn" onclick="switchBubbleTab('${id}', 'directives', this)">⚖️ Chỉ Thị Vận Hành</button>
+                <button class="bubble-tab-btn" onclick="switchBubbleTab('${id}', 'citations', this)">📖 Tri Thức Đối Chiếu (${matched.length})</button>
+            </div>
+
+            <div id="${id}-analysis" class="bubble-tab-content active" style="font-size: 13.5px; line-height: 1.7; color: rgba(255,255,255,0.92);">
+                ${formatMarkdownText(syn.synthesis || script.position_analysis || "Đang phân tích...")}
+            </div>
+
+            <div id="${id}-dialogue" class="bubble-tab-content" style="font-size: 13.5px; line-height: 1.7;">
+                <div style="background: rgba(255,255,255,0.03); border-left: 3px solid var(--gold-primary); padding: 12px 16px; margin-bottom: 12px; border-radius: 0 8px 8px 0;">
+                    <strong style="color: var(--gold-light);">${script.step_1_anchor?.title || 'Bước 1: Thủ Thế & Định Vị'}</strong>
+                    <p style="color: #ffffff; margin-top: 4px; font-style: italic;">${script.step_1_anchor?.verbatim || ''}</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.03); border-left: 3px solid var(--cyan-accent); padding: 12px 16px; margin-bottom: 12px; border-radius: 0 8px 8px 0;">
+                    <strong style="color: var(--cyan-accent);">${script.step_2_deadline_consequence?.title || 'Bước 2: Lập Thế & Chế Tài'}</strong>
+                    <p style="color: #ffffff; margin-top: 4px; font-style: italic;">${script.step_2_deadline_consequence?.verbatim || ''}</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.03); border-left: 3px solid var(--emerald-accent); padding: 12px 16px; margin-bottom: 12px; border-radius: 0 8px 8px 0;">
+                    <strong style="color: var(--emerald-accent);">${script.step_3_way_out_plan_b?.title || 'Bước 3: Định Cục & Mở Đường Lui'}</strong>
+                    <p style="color: #ffffff; margin-top: 4px; font-style: italic;">${script.step_3_way_out_plan_b?.verbatim || ''}</p>
+                </div>
+
+                ${script.draft_official_communication ? `
+                    <div style="margin-top: 16px; padding: 14px; background: rgba(0,0,0,0.4); border: 1px solid var(--border-subtle); border-radius: 8px;">
+                        <span style="font-size: 11px; color: var(--gold-primary); font-weight: 700; text-transform: uppercase;">Văn Bản Soạn Sẵn:</span>
+                        <pre style="white-space: pre-wrap; font-family: monospace; font-size: 12px; color: #cbd5e1; margin-top: 6px;">${script.draft_official_communication}</pre>
+                    </div>
+                ` : ''}
+            </div>
+
+            <div id="${id}-directives" class="bubble-tab-content" style="font-size: 13.5px; line-height: 1.7;">
+                <ul style="padding-left: 18px; color: #cbd5e1;">
+                    ${(script.financial_and_operational_directives || []).map(d => `<li style="margin-bottom: 8px;">${d}</li>`).join('')}
+                </ul>
+            </div>
+
+            <div id="${id}-citations" class="bubble-tab-content" style="font-size: 13px;">
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                    ${matched.map(u => `
+                        <div style="padding: 10px 14px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: 8px; cursor: pointer;" onclick="showUnitModal('${u.unit_id}')">
+                            <strong style="color: var(--gold-light); font-size: 13px;">🏷️ [${u.unit_id}] ${u.title}</strong>
+                            <p style="color: var(--text-secondary); font-size: 12px; margin-top: 2px;">${u.summary || ''}</p>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        `;
+    }
+
+    function switchBubbleTab(id, tab, btn) {
+        btn.parentElement.querySelectorAll('.bubble-tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        ['analysis', 'dialogue', 'directives', 'citations'].forEach(t => {
+            const pane = document.getElementById(`${id}-${t}`);
+            if (pane) pane.classList.remove('active');
+        });
+        const target = document.getElementById(`${id}-${tab}`);
+        if (target) target.classList.add('active');
+    }
+
+    // Markdown Parser
+    function formatMarkdownText(md) {
+        if (!md) return '';
+        return md
+            .replace(/^### (.*?)$/gm, '<h4 style="color: var(--gold-light); margin: 14px 0 6px 0; font-size: 15px;">$1</h4>')
+            .replace(/^## (.*?)$/gm, '<h3 style="color: #fff; margin: 16px 0 8px 0; font-size: 16px;">$1</h3>')
+            .replace(/\*\*([^*]+)\*\*/g, '<strong style="color: #fff;">$1</strong>')
+            .replace(/\*([^*]+)\*/g, '<em style="color: #cbd5e1;">$1</em>')
+            .replace(/\n\n/g, '<p style="margin-bottom: 10px;"></p>')
+            .replace(/\n/g, '<br>');
+    }
+
+    // --- EXPORT BRIEF ---
+    document.getElementById('export-brief-top-btn').addEventListener('click', async () => {
+        if (!lastBriefPayload) {
+            alert("Chưa có kịch bản hoặc phân tích nào trong phiên đối thoại hiện tại.");
+            return;
+        }
+        try {
+            const res = await fetch('/api/v1/export/brief', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ ...lastBriefPayload, format: 'html' })
+            });
+            const htmlText = await res.text();
+            const printWin = window.open('', '_blank');
+            if (printWin) {
+                printWin.document.open();
+                printWin.document.write(htmlText);
+                printWin.document.close();
+            } else {
+                alert("Vui lòng cho phép trình duyệt mở cửa sổ mới để xem Bản Tham Mưu.");
+            }
+        } catch(e) {
+            alert("Lỗi xuất kịch bản: " + e.message);
+        }
+    });
+
+    // --- COUNCIL DELIBERATION ---
+    document.getElementById('council-deliberate-btn').addEventListener('click', async () => {
+        const input = document.getElementById('council-scenario-input');
+        const text = input.value.trim();
+        if (!text) return;
+
+        const btn = document.getElementById('council-deliberate-btn');
+        btn.textContent = "⏳ Hội Đồng Đang Tranh Luận...";
+        btn.disabled = true;
+
+        try {
+            const res = await fetch('/api/v1/council/deliberate', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ scenario_text: text })
+            });
+            const data = await res.json();
+            btn.textContent = "Triệu Tập Hội Đồng ⚡";
+            btn.disabled = false;
+
+            const area = document.getElementById('council-result-area');
+            area.style.display = 'block';
+
+            if (data.status === 'success' && data.deliberation) {
+                const d = data.deliberation;
+                const m = d.decision_matrix || {};
+                
+                let pitchesHtml = (d.pitches || []).map(p => `
+                    <div class="council-card">
+                        <h4>⚖️ ${p.agent_id}</h4>
+                        <p style="color: #ffffff; margin-bottom: 8px; font-weight: 500;">"${p.position}"</p>
+                        <p style="color: var(--text-secondary); font-size: 12px;"><strong>Căn cứ:</strong> ${p.rationale}</p>
+                    </div>
+                `).join('');
+
+                area.innerHTML = `
+                    <h3 style="font-family: var(--font-serif); font-size: 20px; color: var(--gold-light); margin-bottom: 14px;">GIAI ĐOẠN 1: 5 LẬP TRƯỜNG TRIẾT HỌC</h3>
+                    <div class="council-grid">${pitchesHtml}</div>
+
+                    <div style="margin-top: 24px; padding: 20px; background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: 14px;">
+                        <h3 style="font-family: var(--font-serif); font-size: 18px; color: var(--gold-light); margin-bottom: 10px;">GIAI ĐOẠN 2: QUYẾT SÁCH HỢP NHẤT & MA TRẬN ĐỒNG THUẬN</h3>
+                        <div style="padding: 12px 16px; background: rgba(245, 158, 11, 0.08); border-left: 3px solid var(--gold-primary); margin-bottom: 14px;">
+                            <strong>Chiến Lược Đồng Thuận Cao Nhất: </strong> ${m.highest_consensus || 'Hợp nhất 5 góc nhìn'}
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                            <div style="padding: 14px; background: rgba(255,255,255,0.03); border-radius: 8px; border: 1px solid var(--border-subtle);">
+                                <strong style="color: var(--emerald-accent);">🎯 PLAN A (ƯU TIÊN HÀNH ĐỘNG):</strong>
+                                <p style="font-size: 13px; color: #fff; margin-top: 6px;">${m.plan_a_primary?.summary || JSON.stringify(m.plan_a_primary || {})}</p>
+                            </div>
+                            <div style="padding: 14px; background: rgba(255,255,255,0.03); border-radius: 8px; border: 1px solid var(--border-subtle);">
+                                <strong style="color: var(--cyan-accent);">🛡️ PLAN B (DỰ PHÒNG CHỐNG ĐỔ VỠ):</strong>
+                                <p style="font-size: 13px; color: #fff; margin-top: 6px;">${m.plan_b_contingency?.summary || JSON.stringify(m.plan_b_contingency || {})}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+        } catch(err) {
+            btn.textContent = "Triệu Tập Hội Đồng ⚡";
+            btn.disabled = false;
+            alert("Lỗi: " + err.message);
+        }
+    });
+
+    // --- SPARRING LOGIC ---
+    let sparringSessionId = null;
+
+    async function handleSparringTurn() {
+        const input = document.getElementById('sparring-input');
+        const text = input.value.trim();
+        if (!text) return;
+        input.value = '';
+
+        const feed = document.getElementById('sparring-feed');
+        const userMsg = document.createElement('div');
+        userMsg.className = 'message-bubble msg-user';
+        userMsg.textContent = text;
+        feed.appendChild(userMsg);
+
+        if (!sparringSessionId) {
+            const sRes = await fetch('/api/v1/sparring/sessions', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ title: 'Đấu trí: ' + text.substring(0, 30), philosophy_lens: 'auto' })
+            });
+            const sData = await sRes.json();
+            if (sData.session) sparringSessionId = sData.session.id;
+        }
+
+        try {
+            const res = await fetch('/api/v1/sparring/messages', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ session_id: sparringSessionId, message: text })
+            });
+            const data = await res.json();
+            const botMsg = document.createElement('div');
+            botMsg.className = 'message-bubble msg-assistant';
+            botMsg.innerHTML = `
+                <strong style="color: #ef4444;">🤖 ĐỐI THỦ PHẢN ĐÒN:</strong>
+                <p style="margin: 8px 0; color: #ffffff;">${data.response || 'Tôi chưa thấy lập luận của anh đủ sức thuyết phục.'}</p>
+                <div style="font-size: 12px; color: var(--gold-light); background: rgba(245,158,11,0.08); padding: 8px 12px; border-radius: 6px; margin-top: 8px;">
+                    💡 <strong>Gợi ý đòn bẩy tiếp theo:</strong> Dùng kỹ thuật Soi Gương (Mirroring) và đặt câu hỏi 'Làm sao tôi có thể làm được điều đó?'
+                </div>
+            `;
+            feed.appendChild(botMsg);
+            feed.scrollTop = feed.scrollHeight;
+        } catch(e) {
+            alert("Lỗi đấu trí: " + e.message);
+        }
+    }
+
+    document.getElementById('sparring-send-btn').addEventListener('click', handleSparringTurn);
+    document.getElementById('sparring-input').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') handleSparringTurn();
+    });
+
+    function startNewSparring() {
+        sparringSessionId = null;
+        const feed = document.getElementById('sparring-feed');
+        feed.innerHTML = `
+            <div class="message-bubble msg-assistant">
+                <strong style="color: var(--gold-light);">🤖 ĐỐI THỦ THƯƠNG LƯỢNG MỚI:</strong>
+                <p style="margin-top: 6px;">"Chào anh. Tôi đại diện cho tập đoàn đối tác. Hôm nay chúng ta cần giải quyết dứt điểm vấn đề hợp đồng và quyền phân phối. Xin mời anh mở lời."</p>
+            </div>
+        `;
+    }
+
+    // --- BOOKS & CODEX DATA ---
+    const DIGITAL_BOOKS = [
+        { file: "22_DAM_PHAN_CONG_TRUONG.md", title: "Đàm Phán Đỉnh Cao FBI", author: "Chris Voss • Cựu Chuyên Gia FBI", cat: "psychology", icon: "🎙️", badge: "ĐÀM PHÁN", desc: "Thấu cảm chiến thuật (Tactical Empathy), soi gương, gắn nhãn cảm xúc & mô hình trả giá Ackerman." },
+        { file: "09_TAM_LY_HOC_HANH_VI.md", title: "Tâm Lý Học Hành Vi & Quyền Lực", author: "Daniel Kahneman & Amos Tversky", cat: "psychology", icon: "🧠", badge: "NHẬN THỨC", desc: "Hệ thống 1 & 2, bẫy thiên kiến mỏ neo, tâm lý sợ mất mát & phòng thủ Tam Giác Đen thao túng." },
+        { file: "11_TAM_LY_HOC_THUYET_PHUC.md", title: "Tâm Lý Học Thuyết Phục", author: "GS. Robert Cialdini", cat: "psychology", icon: "🎯", badge: "THUYẾT PHỤC", desc: "7 Nguyên tắc tạo ảnh hưởng, kỹ thuật dọn đường tâm lý Pre-suasion & đòn bẩy nhượng bộ." },
+        { file: "01_THUAT_HUNG_BIEN.md", title: "Thuật Hùng Biện & Đối Thoại", author: "Aristotle & Quỷ Cốc Tử", cat: "psychology", icon: "📜", badge: "ĐỐI THOẠI", desc: "Bẻ gãy luận điểm, đảo ngược góc nhìn, nghệ thuật xử lý từ chối đỉnh cao & logic phản chứng." },
+        { file: "08_BINH_PHAP_TON_TU.md", title: "Binh Pháp Tôn Tử: Binh Thế & Định Cục", author: "Tôn Vũ • Binh Gia", cat: "strategy", icon: "⚔️", badge: "THẾ TRẬN", desc: "Nghệ thuật kiến tạo thế trận bất đối xứng, biến hóa theo thời cuộc & bất chiến tự nhiên thành." },
+        { file: "12_LY_THUYET_TRO_CHOI.md", title: "Lý Thuyết Trò Chơi (Game Theory)", author: "John Nash & Thomas Schelling", cat: "strategy", icon: "♟️", badge: "GAME THEORY", desc: "Cân bằng Nash, thế lưỡng nan của tù nhân, chiến lược Tit-for-Tat & nghệ thuật ràng buộc chiến lược." },
+        { file: "17_CHIEN_LUOC_BAT_DOI_XUNG.md", title: "Chiến Lược Bất Đối Xứng", author: "GS. Nassim Nicholas Taleb", cat: "strategy", icon: "🛡️", badge: "CHỐNG GÃY VỠ", desc: "Khả năng hưởng lợi từ biến động (Antifragile), chiến lược Quả tạ (Barbell) & nguyên tắc Skin in the Game." },
+        { file: "20_TU_DUY_HE_THONG.md", title: "Tư Duy Hệ Thống & Điểm Đòn Bẩy", author: "Donella Meadows (MIT)", cat: "leadership", icon: "🔄", badge: "HỆ THỐNG", desc: "Cấu trúc dòng chảy - trữ lượng, 12 điểm đòn bẩy can thiệp & hóa giải các bẫy hệ thống doanh nghiệp." },
+        { file: "21_NGUYEN_TAC_QUAN_TRI_THUC_THI.md", title: "Nguyên Tắc Quản Trị & Thực Thi", author: "Ray Dalio & Andy Grove", cat: "leadership", icon: "⚡", badge: "HIỆU SUẤT", desc: "Văn hóa sự thật triệt để (Radical Transparency), Idea Meritocracy & đòn bẩy quản lý." },
+        { file: "03_HAN_PHI_TU_KNOWLEDGE_PACK.md", title: "Pháp Gia & Quản Trị Hệ Thống", author: "Hàn Phi Tử • Pháp Trị", cat: "leadership", icon: "⚖️", badge: "KỶ CƯƠNG", desc: "Bộ ba Pháp - Thế - Thuật, quy trình Hình danh tham đồng, Nhị bỉnh thưởng phạt & bộ lọc chống Bát gian." },
+        { file: "06_NHAN_THUAT_UNG_XU.md", title: "Nhân Thuật & Nghệ Thuật Dụng Nhân", author: "Quỷ Cốc Tử", cat: "leadership", icon: "👥", badge: "DỤNG NHÂN", desc: "Bát quan thấu tâm, thuật dùng người có tì vết, phân quyền không mất quyền & hóa giải bẫy cảm tình." },
+        { file: "02_TU_THU_KNOWLEDGE_PACK.md", title: "Nho Gia & Đạo Đức Lãnh Đạo", author: "Khổng Tử & Mạnh Tử", cat: "leadership", icon: "👑", badge: "ĐỨC TRỊ", desc: "Nghệ thuật lãnh đạo bằng nhân chính, Tam Cương Bát Mục, phân biệt Quân tử vs Tiểu nhân." },
+        { file: "05_TUAN_TU_KNOWLEDGE_PACK.md", title: "Tuân Tử & Huấn Luyện Nhân Sự", author: "Tuân Tử • Nho - Pháp Dung Hợp", cat: "leadership", icon: "📖", badge: "UỐN NẮN", desc: "Thuyết tính ác và sự uốn nắn (Vĩ), Khuyên học, mentorship liên tục & quy chuẩn Dùng lễ định phần." },
+        { file: "07_CHU_NGHIA_KHAC_KY.md", title: "Chủ Nghĩa Khắc Kỷ & Bản Lĩnh", author: "Marcus Aurelius & Seneca", cat: "mindset", icon: "🏛️", badge: "BẢN LĨNH", desc: "Làm chủ tâm trí, bản lĩnh trong nghịch cảnh, quản trị cơn giận & nghệ thuật giữ uy quyền trầm tĩnh." },
+        { file: "04_TRANG_TU_KNOWLEDGE_PACK.md", title: "Đạo Gia & Ứng Biến Linh Hoạt", author: "Lão Tử & Trang Tử", cat: "mindset", icon: "☯️", badge: "LINH HOẠT", desc: "Tâm trai, tọa vọng, tư duy bứt phá Tiêu Dao Du, lấy tĩnh chế động & thuật Dụng vô dụng trong khủng hoảng." },
+        { file: "10_THUC_CHIEN_NHAN_SINH.md", title: "Kho Thực Chiến Nhân Sinh", author: "NhanThuat Executive Archives", cat: "practice", icon: "⭐", badge: "HỒ SƠ CA", desc: "Hồ sơ lưu trữ các ca thực chiến tiêu biểu, phán quyết chiến lược và cẩm nang bài học điều hành thực tế." }
+    ];
+
+    let selectedBookCategory = 'all';
+
+    function loadBookshelf() {
+        const container = document.getElementById('books-grid-container');
+        if (!container) return;
+
+        const filtered = selectedBookCategory === 'all' 
+            ? DIGITAL_BOOKS 
+            : DIGITAL_BOOKS.filter(b => b.cat === selectedBookCategory);
+
+        container.innerHTML = filtered.map(b => `
+            <div class="book-card">
+                <div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <span style="font-size: 20px;">${b.icon}</span>
+                        <span style="font-size: 10px; background: rgba(245,158,11,0.15); color: var(--gold-primary); padding: 2px 7px; border-radius: 10px; font-weight: 700;">${b.badge}</span>
+                    </div>
+                    <strong style="font-size: 14px; color: #ffffff; display: block; margin-bottom: 4px;">${b.title}</strong>
+                    <div style="font-size: 11px; color: var(--gold-light); margin-bottom: 8px;">${b.author}</div>
+                    <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.5;">${b.desc}</p>
+                </div>
+                <div style="margin-top: 14px; display: flex; gap: 8px;">
+                    <button class="export-btn" style="flex: 1; justify-content: center; font-size: 11px;" onclick="window.open('/api/v1/knowledge/books/${b.file}', '_blank')">📖 Đọc Sách</button>
+                    <button class="export-btn" style="padding: 6px 10px; font-size: 11px;" onclick="window.open('/api/v1/knowledge/books/${b.file}/export-pdf', '_blank')">📥 PDF</button>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function filterBookCat(cat, btn) {
+        selectedBookCategory = cat;
+        btn.parentElement.querySelectorAll('.mode-pill').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        loadBookshelf();
+    }
+
+    // --- KNOWLEDGE UNITS CATALOG ---
+    let allKnowledgeUnits = [];
+
+    async function loadKnowledgeCatalog() {
+        const container = document.getElementById('knowledge-catalog-list');
+        if (!container || allKnowledgeUnits.length > 0) return;
+
+        try {
+            const res = await fetch('/api/v1/knowledge/units');
+            const data = await res.json();
+            if (data.status === 'success' && data.units) {
+                allKnowledgeUnits = data.units;
+                renderKnowledgeUnits(allKnowledgeUnits);
+            }
+        } catch(e) {
+            container.innerHTML = `<div style="color: #ef4444; text-align: center;">Lỗi nạp tri thức: ${e.message}</div>`;
+        }
+    }
+
+    function renderKnowledgeUnits(units) {
+        const container = document.getElementById('knowledge-catalog-list');
+        if (!container) return;
+
+        container.innerHTML = units.slice(0, 100).map(u => `
+            <div style="padding: 12px 18px; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 10px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: border-color 0.2s;" onclick="showUnitModal('${u.id}')">
+                <div>
+                    <strong style="color: var(--gold-light); font-size: 13.5px;">[${u.id}] ${u.title}</strong>
+                    <div style="font-size: 11.5px; color: var(--text-secondary); margin-top: 2px;">${u.summary || ''}</div>
+                </div>
+                <span style="font-size: 11px; background: rgba(255,255,255,0.05); color: var(--text-muted); padding: 2px 8px; border-radius: 6px; white-space: nowrap;">${u.primary_domain || 'domain'}</span>
+            </div>
+        `).join('');
+    }
+
+    document.getElementById('knowledge-search-input')?.addEventListener('input', (e) => {
+        const term = e.target.value.toLowerCase().trim();
+        if (!term) {
+            renderKnowledgeUnits(allKnowledgeUnits);
+            return;
+        }
+        const filtered = allKnowledgeUnits.filter(u => 
+            (u.id && u.id.toLowerCase().includes(term)) ||
+            (u.title && u.title.toLowerCase().includes(term)) ||
+            (u.summary && u.summary.toLowerCase().includes(term))
+        );
+        renderKnowledgeUnits(filtered);
+    });
+
+    // --- UNIT MODAL INSPECTOR ---
+    async function showUnitModal(unitId) {
+        const modal = document.getElementById('unit-modal-backdrop');
+        const content = document.getElementById('unit-modal-content');
+        modal.classList.add('open');
+        content.innerHTML = `<div style="text-align: center; color: var(--gold-primary); padding: 40px 0;">Đang tải tri thức [${unitId}]...</div>`;
+
+        try {
+            const res = await fetch(`/api/v1/knowledge/units/${unitId}`);
+            const data = await res.json();
+            if (data.status === 'success' && data.unit) {
+                const u = data.unit.raw_data || data.unit;
+                content.innerHTML = `
+                    <div style="display: flex; gap: 8px; margin-bottom: 12px;">
+                        <span style="font-size: 11px; background: rgba(245,158,11,0.15); color: var(--gold-primary); padding: 2px 8px; border-radius: 6px; font-weight: 700;">${u.type ? u.type.toUpperCase() : 'UNIT'}</span>
+                        <span style="font-size: 11px; background: rgba(56,189,248,0.15); color: var(--cyan-accent); padding: 2px 8px; border-radius: 6px;">${u.primary_domain || u.domain || 'Domain'}</span>
+                        <span style="font-size: 11px; background: rgba(16,185,129,0.15); color: var(--emerald-accent); padding: 2px 8px; border-radius: 6px;">${u.id}</span>
+                    </div>
+                    <h2 style="font-family: var(--font-serif); font-size: 22px; color: #ffffff; margin-bottom: 14px;">${u.title}</h2>
+                    <div style="font-size: 13.5px; line-height: 1.7; color: rgba(255,255,255,0.9);">
+                        ${u.summary ? `<div style="background: rgba(245,158,11,0.06); border-left: 3px solid var(--gold-primary); padding: 10px 14px; border-radius: 0 6px 6px 0; margin-bottom: 14px;"><strong>Tóm lược:</strong> ${u.summary}</div>` : ''}
+                        ${u.definition ? `<h4 style="color: var(--gold-light); margin: 12px 0 4px 0;">Định nghĩa bản chất</h4><p>${u.definition}</p>` : ''}
+                        ${u.mechanism && u.mechanism.length ? `<h4 style="color: var(--gold-light); margin: 12px 0 4px 0;">Cơ chế chi phối</h4><ul style="padding-left: 20px;">${Array.isArray(u.mechanism) ? u.mechanism.map(m => `<li>${m}</li>`).join('') : `<li>${u.mechanism}</li>`}</ul>` : ''}
+                        ${u.conditions && u.conditions.length ? `<h4 style="color: var(--cyan-accent); margin: 12px 0 4px 0;">Điều kiện kích hoạt</h4><ul style="padding-left: 20px;">${Array.isArray(u.conditions) ? u.conditions.map(c => `<li>${c}</li>`).join('') : `<li>${u.conditions}</li>`}</ul>` : ''}
+                        ${u.risks && u.risks.length ? `<h4 style="color: #f87171; margin: 12px 0 4px 0;">Rủi ro / Điểm mù</h4><ul style="padding-left: 20px; color: #fca5a5;">${Array.isArray(u.risks) ? u.risks.map(r => `<li>${r}</li>`).join('') : `<li>${u.risks}</li>`}</ul>` : ''}
+                    </div>
+                `;
+            } else {
+                content.innerHTML = `<div style="color: #ef4444;">Không tìm thấy tri thức [${unitId}].</div>`;
+            }
+        } catch(e) {
+            content.innerHTML = `<div style="color: #ef4444;">Lỗi: ${e.message}</div>`;
+        }
+    }
+
+    function closeUnitModal() {
+        document.getElementById('unit-modal-backdrop').classList.remove('open');
+    }
+
+    document.getElementById('unit-modal-backdrop')?.addEventListener('click', (e) => {
+        if (e.target.id === 'unit-modal-backdrop') closeUnitModal();
+    });
     </script>
 </body>
 </html>

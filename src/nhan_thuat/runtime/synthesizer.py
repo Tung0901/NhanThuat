@@ -51,10 +51,11 @@ def get_provider_configs() -> list[dict[str, str]]:
     # 2. Gemini / Google
     google_key = os.environ.get("GOOGLE_API_KEY", "").strip() or os.environ.get("GEMINI_API_KEY", "").strip()
     if _is_valid_api_key(google_key):
+        model = os.environ.get("NHAN_THUAT_LLM_MODEL", "").strip() or os.environ.get("GEMINI_MODEL", "").strip() or DEFAULT_MODEL
         configs.append({
             "api_key": google_key,
             "base_url": "https://generativelanguage.googleapis.com/v1beta/openai",
-            "model": "gemini-3.6-flash",
+            "model": model,
             "provider_name": "google-gemini",
         })
     
@@ -178,13 +179,59 @@ class KnowledgeSynthesizer:
     def _deterministic_synthesis(self, query: str, units: Iterable[KnowledgeUnit]) -> str:
         units_list = list(units)
         if not units_list:
-            return "Không có tri thức liên quan."
-        names = ", ".join(f"**{u.title}** ({u.id})" for u in units_list[:3])
-        return (
-            f"### Khảo cứu {len(units_list)} tri thức tham khảo\n\n"
-            f"Em đã rà soát nhanh qua các góc nhìn liên quan ({names}). "
-            "Dưới đây là một vài gợi ý từ hệ thống để anh cân nhắc nhé."
-        )
+            return "Không tìm thấy tri thức tương ứng trực tiếp trong hệ thống."
+
+        lines = [
+            f"### 🔍 1. BÓC TÁCH BẢN CHẤT & ĐỘNG CƠ NGẦM",
+            f"Đối chiếu tình huống: *\"{query}\"* qua hệ thống {len(units_list)} tri thức tham chiếu cốt lõi:\n",
+        ]
+
+        for u in units_list[:3]:
+            lines.append(f"- **{u.title} ({u.id})** [Miền: `{u.primary_domain}`]:")
+            if u.summary:
+                lines.append(f"  ► *Bản chất:* {u.summary}")
+            if u.definition and u.definition != u.summary:
+                lines.append(f"  ► *Cơ chế:* {u.definition}")
+            if hasattr(u, 'mechanism') and u.mechanism:
+                mechs = u.mechanism if isinstance(u.mechanism, list) else [u.mechanism]
+                lines.append(f"  ► *Tác động:* {mechs[0]}")
+            lines.append("")
+
+        lines.extend([
+            "### ⚙️ 2. KỊCH BẢN HÀNH ĐỘNG THỰC CHIẾN (3 BƯỚC ĐIỀU HÀNH)",
+            "- **Bước 1 (Thủ Thế - Định vị & Khóa rủi ro):** Xác lập ranh giới hiện trạng minh bạch. Tách bạch giữa yếu tố cảm xúc cá nhân và quyền hạn/nghĩa vụ trong vai trò. Không đưa ra bất kỳ nhượng bộ tức thời nào khi chưa xác định rõ động cơ đối phương.",
+            "- **Bước 2 (Lập Thế - Tạo đòn bẩy & Chuẩn hóa tiêu chuẩn):** Áp dụng quy chuẩn đánh giá khách quan và nguyên tắc ràng buộc lợi ích. Đưa ra các mốc kiểm định (checkpoint) cụ thể kèm chế tài thưởng phạt rõ ràng.",
+            "- **Bước 3 (Định Cục - Mở đường lui & Chốt hạ cam kết):** Thiết lập phương án dự phòng song song. Mở ra lối thoát danh dự cho đối phương khi tuân thủ cam kết, nhưng kiên quyết kích hoạt chế tài nếu ranh giới bị xâm phạm.",
+            "",
+            "### ⚠️ 3. NHỮNG BẪY TÂM LÝ & SAI LẦM CẦN TRÁNH",
+        ])
+
+        collected_risks = []
+        for u in units_list:
+            if hasattr(u, 'risks') and u.risks:
+                if isinstance(u.risks, list):
+                    collected_risks.extend(u.risks)
+                else:
+                    collected_risks.append(u.risks)
+
+        if collected_risks:
+            for r in collected_risks[:3]:
+                lines.append(f"- ⚠️ **Cảnh báo:** {r}")
+        else:
+            lines.append("- ⚠️ Tránh bẫy phản ứng vội vã bằng cảm tính hoặc dùng quyền lực cứng bức ép khi chưa bẻ gãy điểm tựa tâm lý đối phương.")
+            lines.append("- ⚠️ Tránh nhân nhượng vô điều kiện tạo tiền lệ xấu khiến đối tác/nhân sự tiếp tục lấn tới.")
+
+        lines.extend([
+            "",
+            "### 📌 4. CHỐT HẠ ĐỊNH CỤC",
+            "> *\"Người nắm quyền chủ động không thắng bằng áp đặt ồn ào, mà định đoạt cục diện bằng cơ cấu luật chơi và điểm đòn bẩy vị thế.\"*",
+            "",
+            "### 📖 TRÍCH DẪN TRI THỨC",
+        ])
+        for u in units_list[:4]:
+            lines.append(f"- `{u.id}`: **{u.title}** ({u.type.upper() if hasattr(u, 'type') else 'UNIT'}) — Miền: {u.primary_domain}")
+
+        return "\n".join(lines)
 
     def generate_text(self, prompt: str) -> str:
         """Call providers with failover and return just the text."""

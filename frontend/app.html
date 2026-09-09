@@ -1261,9 +1261,9 @@
                 
                 let pitchesHtml = (d.pitches || []).map(p => `
                     <div class="council-card">
-                        <h4>⚖️ ${p.agent_id}</h4>
-                        <p style="color: #ffffff; margin-bottom: 8px; font-weight: 500;">"${p.position}"</p>
-                        <p style="color: var(--text-secondary); font-size: 12px;"><strong>Căn cứ:</strong> ${p.rationale}</p>
+                        <h4>⚖️ ${p.title || p.agent_id}</h4>
+                        <p style="color: #ffffff; margin-bottom: 8px; font-weight: 500;">"${p.stance || ''}"</p>
+                        <p style="color: var(--text-secondary); font-size: 12px;"><strong>Căn cứ:</strong> ${(p.core_arguments || []).join('<br> • ')}</p>
                     </div>
                 `).join('');
 
@@ -1283,7 +1283,7 @@
                             </div>
                             <div style="padding: 14px; background: rgba(255,255,255,0.03); border-radius: 8px; border: 1px solid var(--border-subtle);">
                                 <strong style="color: var(--cyan-accent);">🛡️ PLAN B (DỰ PHÒNG CHỐNG ĐỔ VỠ):</strong>
-                                <p style="font-size: 13px; color: #fff; margin-top: 6px;">${m.plan_b_contingency?.summary || JSON.stringify(m.plan_b_contingency || {})}</p>
+                                <p style="font-size: 13px; color: #fff; margin-top: 6px;">${m.plan_b_fallback?.summary || JSON.stringify(m.plan_b_fallback || {})}</p>
                             </div>
                         </div>
                     </div>

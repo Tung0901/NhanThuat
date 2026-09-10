@@ -95,14 +95,93 @@ class CouncilEngine:
             domain = str(getattr(u, "primary_domain", getattr(u, "domain", raw.get("primary_domain", ""))))
             citations.append({"id": uid, "title": title, "domain": domain})
 
-        # 2. Stage 1: Generate 5 Agent Perspective Pitches
-        pitches = self._generate_pitches(scenario_text, citations)
-
-        # 3. Stage 2: Cross-School Debates
-        cross_debates = self._generate_cross_debates(scenario_text, pitches)
-
-        # 4. Stage 3: Synthesize Decision Matrix
-        decision_matrix = self._synthesize_decision_matrix(scenario_text, pitches, cross_debates, citations)
+        # 2. Try to generate dynamically via LLM
+        pitches = []
+        cross_debates = []
+        decision_matrix = None
+        
+        try:
+            from nhan_thuat.runtime.synthesizer import KnowledgeSynthesizer
+            syn = KnowledgeSynthesizer()
+            prompt = (
+                f"Bạn là Hội đồng 5 Cố Vấn Triết Học (Pháp Gia, Đạo Gia, Nho Gia, Tuân Tử, Tôn Tử). "
+                f"Hãy phân tích tình huống sau của Chủ tịch/CEO và trả về 100% JSON hợp lệ.\n\n"
+                f"TÌNH HUỐNG: {scenario_text}\n\n"
+                f"TRI THỨC THAM KHẢO:\n"
+            )
+            for c in citations:
+                prompt += f"- [{c['id']}] {c['title']} ({c['domain']})\n"
+                
+            prompt += (
+                "\nCẤU TRÚC JSON YÊU CẦU (Trả về đúng cấu trúc này, không bọc markdown):\n"
+                "{\n"
+                "  \"pitches\": [\n"
+                "    {\n"
+                "      \"agent_id\": \"LEGALISM | TAOISM | CONFUCIAN | XUNZI | SUNZI\",\n"
+                "      \"title\": \"Tên đại diện và triết lý\",\n"
+                "      \"stance\": \"Lập trường 1-2 câu ngắn gọn\",\n"
+                "      \"core_arguments\": [\"Lập luận 1\", \"Lập luận 2\"],\n"
+                "      \"risk_warning\": \"Cảnh báo rủi ro nếu áp dụng cứng nhắc\"\n"
+                "    }\n"
+                "  ], (lưu ý: pitches phải đủ 5 trường phái)\n"
+                "  \"cross_debates\": [\n"
+                "    {\n"
+                "      \"challenger_id\": \"ID người phản biện (ví dụ LEGALISM)\",\n"
+                "      \"target_id\": \"ID người bị phản biện (ví dụ CONFUCIAN)\",\n"
+                "      \"critique\": \"Lời phản biện\",\n"
+                "      \"counter_recommendation\": \"Đề xuất hóa giải\"\n"
+                "    }\n"
+                "  ], (khoảng 2-3 debates)\n"
+                "  \"decision_matrix\": {\n"
+                "    \"highest_consensus\": \"Điểm đồng thuận cao nhất\",\n"
+                "    \"core_conflicts\": [\"Mâu thuẫn 1\", \"Mâu thuẫn 2\"],\n"
+                "    \"plan_a_primary\": {\"name\": \"Tên Plan A\", \"summary\": \"Tóm tắt\", \"action_steps\": [\"Bước 1\", \"Bước 2\"]},\n"
+                "    \"plan_b_fallback\": {\"name\": \"Tên Plan B\", \"summary\": \"Tóm tắt\", \"action_steps\": [\"Bước 1\", \"Bước 2\"]},\n"
+                "    \"plan_c_containment\": {\"name\": \"Tên Plan C\", \"summary\": \"Tóm tắt\", \"action_steps\": [\"Bước 1\", \"Bước 2\"]},\n"
+                "    \"critical_caveats\": [\"Lưu ý 1\"],\n"
+                "    \"execution_directives\": [\"Chỉ thị 1\"]\n"
+                "  }\n"
+                "}"
+            )
+            
+            data = syn.generate_json(prompt)
+            
+            # Map JSON to python models
+            raw_pitches = data.get("pitches", [])
+            for p in raw_pitches:
+                pitches.append(PerspectivePitch(
+                    agent_id=p.get("agent_id", "UNKNOWN"),
+                    title=p.get("title", "Unknown"),
+                    stance=p.get("stance", ""),
+                    core_arguments=p.get("core_arguments", []),
+                    risk_warning=p.get("risk_warning", "")
+                ))
+                
+            raw_debates = data.get("cross_debates", [])
+            for d in raw_debates:
+                cross_debates.append(CrossDebatePoint(
+                    challenger_id=d.get("challenger_id", ""),
+                    target_id=d.get("target_id", ""),
+                    critique=d.get("critique", ""),
+                    counter_recommendation=d.get("counter_recommendation", "")
+                ))
+                
+            dm = data.get("decision_matrix", {})
+            decision_matrix = DecisionMatrix(
+                highest_consensus=dm.get("highest_consensus", ""),
+                core_conflicts=dm.get("core_conflicts", []),
+                plan_a_primary=dm.get("plan_a_primary", {}),
+                plan_b_fallback=dm.get("plan_b_fallback", {}),
+                plan_c_containment=dm.get("plan_c_containment", {}),
+                critical_caveats=dm.get("critical_caveats", []),
+                execution_directives=dm.get("execution_directives", [])
+            )
+        except Exception as e:
+            print(f"[CouncilEngine] Failed to generate dynamically: {e}")
+            # Fallback to deterministic mock
+            pitches = self._generate_pitches(scenario_text, citations)
+            cross_debates = self._generate_cross_debates(scenario_text, pitches)
+            decision_matrix = self._synthesize_decision_matrix(scenario_text, pitches, cross_debates, citations)
 
         total_latency = (time.perf_counter() - t_start) * 1000
 

@@ -86,6 +86,30 @@ def check_context_ambiguity(scenario_text: str) -> tuple[bool, str]:
 
 def generate_actionable_script_details(primary: str, scenario_text: str, matched_units: list = None) -> dict[str, Any]:
     """Generates Senior Executive Co-Pilot Strategic Analysis, 3-step verbatim dialogue, draft communications, and financial/operational directives."""
+    # 1. Try to generate dynamically via LLM
+    try:
+        from nhan_thuat.runtime.synthesizer import KnowledgeSynthesizer
+        syn = KnowledgeSynthesizer()
+        prompt = (
+            f"Bạn là Cố vấn Chiến lược cấp cao. Hãy lập Kịch bản Hành động (Actionable Script) cho tình huống sau.\n"
+            f"Lăng kính triết học chủ đạo: {primary}\n"
+            f"Tình huống thực tế: {scenario_text}\n"
+            f"Trích dẫn tri thức tham khảo: {[getattr(u, 'title', str(u)) for u in (matched_units or [])]}\n\n"
+            "TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON SAU (Không bọc bằng markdown ```json):\n"
+            "{\n"
+            "  \"position_analysis\": \"Phân tích vị thế và bản chất vấn đề\",\n"
+            "  \"step_1_anchor\": {\"title\": \"Tên bước 1\", \"verbatim\": \"Câu nói mẫu\"},\n"
+            "  \"step_2_deadline_consequence\": {\"title\": \"Tên bước 2\", \"verbatim\": \"Câu nói mẫu\"},\n"
+            "  \"step_3_way_out_plan_b\": {\"title\": \"Tên bước 3\", \"verbatim\": \"Câu nói mẫu\"},\n"
+            "  \"draft_official_communication\": \"Văn bản mẫu/Công văn mẫu\",\n"
+            "  \"financial_and_operational_directives\": [\"Chỉ thị 1\", \"Chỉ thị 2\"],\n"
+            "  \"action_principles\": [\"Nguyên tắc 1\", \"Nguyên tắc 2\"]\n"
+            "}"
+        )
+        return syn.generate_json(prompt)
+    except Exception as e:
+        print(f"[NhanThuatAPI] LLM script generation failed, using fallback: {e}")
+
     few_shots = get_dialogue_few_shots().get("templates", {})
     text_lower = scenario_text.lower()
 
@@ -538,6 +562,40 @@ def diagnose_person_role_fit(payload: dict[str, Any]) -> dict[str, Any]:
     if not demands:
         demands = ["Kỷ luật quy trình nghiêm ngặt", "Đàm phán căng thẳng", "Chịu áp lực số hàng tuần", "Quản lý giám sát chi tiết"]
 
+    # 1. Try to generate dynamically via LLM
+    try:
+        from nhan_thuat.runtime.synthesizer import KnowledgeSynthesizer
+        syn = KnowledgeSynthesizer()
+        prompt = (
+            f"Chẩn đoán độ tương thích Person-Role Fit (NT-MODEL-0007).\n"
+            f"Nhân sự: {candidate_name}\n"
+            f"Vai trò: {target_role}\n"
+            f"Thiên hướng cá nhân: {traits}\n"
+            f"Yêu cầu vai trò: {demands}\n\n"
+            "TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON SAU (Không bọc bằng markdown ```json):\n"
+            "{\n"
+            "  \"friction_score\": 75, (số nguyên từ 0 đến 100, 100 là cực kỳ xung đột)\n"
+            "  \"fit_level\": \"Lệch Pha Nhận Thức Lớn | Ma Sát Thích Ứng Trung Bình | Tương Thích Cao\",\n"
+            "  \"fit_color\": \"#ef4444 | #f59e0b | #10b981\",\n"
+            "  \"adaptation_cost_analysis\": \"Phân tích chi phí thích ứng nhận thức\",\n"
+            "  \"identified_friction_points\": [\"Điểm ma sát 1\", \"Điểm ma sát 2\"],\n"
+            "  \"compensatory_strategies\": [\"Chiến lược bù trừ 1\", \"Chiến lược bù trừ 2\"],\n"
+            "  \"placement_verdict\": \"Phán quyết bổ nhiệm (VD: CÂN NHẮC TÁI THIẾT KẾ VAI TRÒ HOẶC CHỌN ỨNG VIÊN BÙ TRỪ)\"\n"
+            "}"
+        )
+        result = syn.generate_json(prompt)
+        result["status"] = "success"
+        result["candidate_name"] = candidate_name
+        result["target_role"] = target_role
+        result["cited_units"] = [
+            {"id": "NT-MODEL-0007", "title": "Mô hình tương thích cá nhân - vai trò", "domain": "tri-nhan"},
+            {"id": "NT-PRINCIPLE-0067", "title": "Chuẩn hóa đánh giá", "domain": "tri-nhan"},
+            {"id": "NT-LAW-0034", "title": "Quy luật ma sát nhận thức", "domain": "tri-nhan"}
+        ]
+        return result
+    except Exception as e:
+        print(f"[NhanThuatAPI] LLM fit diagnosis failed, using fallback: {e}")
+
     # Trait vs Demand friction heuristic
     friction_points = []
     traits_text = " ".join(traits).lower()
@@ -594,6 +652,156 @@ def diagnose_person_role_fit(payload: dict[str, Any]) -> dict[str, Any]:
             {"id": "NT-MODEL-0007", "title": "Mô hình tương thích cá nhân - vai trò", "domain": "tri-nhan"},
             {"id": "NT-PRINCIPLE-0067", "title": "Chuẩn hóa đánh giá", "domain": "tri-nhan"},
             {"id": "NT-LAW-0034", "title": "Quy luật ma sát nhận thức", "domain": "tri-nhan"}
+        ]
+    }
+
+
+def diagnose_team_structural_fit(payload: dict[str, Any]) -> dict[str, Any]:
+    """
+    Evaluates team structural compatibility, emergent interaction friction (NT-MODEL-0009),
+    and detects the Homogeneity Trap (NT-ANTI-PATTERN-0011 & NT-ANTI-PATTERN-0017)
+    under the principle of Selecting for Structural Fit (NT-PRINCIPLE-0066) and Cognitive Diversity (NT-LAW-0042).
+    """
+    candidate = payload.get("candidate", {})
+    team = payload.get("team", {})
+
+    candidate_name = candidate.get("name", "").strip() or payload.get("candidate_name", "").strip() or "Nhân sự mới"
+    candidate_role = candidate.get("role", "").strip() or payload.get("candidate_role", "").strip() or "Thành viên chủ chốt"
+    raw_cand_traits = candidate.get("traits", []) or payload.get("candidate_traits", [])
+
+    team_name = team.get("name", "").strip() or payload.get("team_name", "").strip() or "Ban Điều Hành / Đội Ngũ Dự Án"
+    team_mission = team.get("mission", "").strip() or payload.get("team_mission", "").strip() or "Thực thi mục tiêu chiến lược"
+    raw_team_traits = team.get("traits", []) or payload.get("team_traits", [])
+
+    def _norm(raw: Any) -> list[str]:
+        if isinstance(raw, list):
+            return [str(x).strip() for x in raw if str(x).strip()]
+        return [s.strip() for s in str(raw).split(",") if s.strip()]
+
+    cand_traits = _norm(raw_cand_traits)
+    team_traits = _norm(raw_team_traits)
+
+    if not cand_traits:
+        cand_traits = ["Tự do sáng tạo", "Tư duy cơ hội", "Thích tự chủ cao"]
+    if not team_traits:
+        team_traits = ["Kỷ luật quy trình nghiêm ngặt", "Giám sát số liệu chi tiết", "Ngại xung đột trực diện"]
+
+    # 1. Dynamic LLM Generation
+    try:
+        from nhan_thuat.runtime.synthesizer import KnowledgeSynthesizer
+        syn = KnowledgeSynthesizer()
+        prompt = (
+            f"Chẩn đoán khớp cấu trúc đội ngũ Team Structural Fit (NT-PRINCIPLE-0066, NT-MODEL-0009, NT-ANTI-PATTERN-0011).\n"
+            f"Nhân sự mới: {candidate_name} (Dự kiến vai trò: {candidate_role})\n"
+            f"Thiên hướng nhân sự: {cand_traits}\n"
+            f"Đội ngũ tiếp nhận: {team_name} (Sứ mệnh: {team_mission})\n"
+            f"Đặc tính nhận thức hiện tại của đội ngũ: {team_traits}\n\n"
+            "TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON SAU (Không bọc bằng markdown ```json):\n"
+            "{\n"
+            "  \"diversity_score\": 75, (số nguyên 0-100, đo độ đa dạng nhận thức tích cực)\n"
+            "  \"homogeneity_risk_score\": 25, (số nguyên 0-100, đo nguy cơ bẫy đồng nhất và điểm mù)\n"
+            "  \"structural_alignment_level\": \"Khớp Cấu Trúc Bổ Trợ | Cân Bằng Có Ma Sát | Bẫy Đồng Nhất Nguy Hiểm | Xung Đột Tương Tác Phát Sinh\",\n"
+            "  \"status_color\": \"#10b981 | #f59e0b | #ef4444\",\n"
+            "  \"structural_analysis\": \"Phân tích tương tác phát sinh khi nhân sự bước vào cấu trúc đội ngũ\",\n"
+            "  \"emergent_frictions\": [\"Ma sát phát sinh 1\", \"Ma sát phát sinh 2\"],\n"
+            "  \"systemic_blind_spots\": [\"Điểm mù hệ thống 1\", \"Điểm mù 2\"],\n"
+            "  \"structural_directives\": [\"Chỉ thị cấu trúc 1\", \"Chỉ thị cấu trúc 2\"],\n"
+            "  \"composition_verdict\": \"Phán quyết chuẩn bị và bố trí đội ngũ\"\n"
+            "}"
+        )
+        result = syn.generate_json(prompt)
+        result["status"] = "success"
+        result["candidate_name"] = candidate_name
+        result["candidate_role"] = candidate_role
+        result["team_name"] = team_name
+        result["cited_units"] = [
+            {"id": "NT-PRINCIPLE-0066", "title": "Tuyển chọn theo sự khớp cấu trúc", "domain": "tri-nhan"},
+            {"id": "NT-MODEL-0009", "title": "Mô hình tương tác phát sinh", "domain": "tri-nhan"},
+            {"id": "NT-ANTI-PATTERN-0011", "title": "Bẫy đồng nhất (Homogeneity Trap)", "domain": "hop-chung"},
+            {"id": "NT-LAW-0042", "title": "Quy luật đa dạng nhận thức", "domain": "hop-chung"},
+            {"id": "NT-MODEL-0012", "title": "Đường cong gắn kết - ma sát", "domain": "hop-chung"}
+        ]
+        return result
+    except Exception as e:
+        print(f"[NhanThuatAPI] LLM team structural fit failed, using fallback: {e}")
+
+    # 2. Deterministic Heuristic Analysis
+    cand_text = " ".join(cand_traits).lower()
+    team_text = " ".join(team_traits).lower()
+
+    # Shared keywords / traits count
+    overlap_count = 0
+    keywords_list = ["sáng tạo", "tự chủ", "kỷ luật", "chi tiết", "xung đột", "quyết đoán", "cơ hội", "chuyên môn", "quyền lực"]
+    for kw in keywords_list:
+        if kw in cand_text and kw in team_text:
+            overlap_count += 1
+
+    blind_spots = []
+    emergent_frictions = []
+    structural_directives = []
+
+    # 1. Check Emergent Friction / Power Conflict (NT-MODEL-0009)
+    if ("quyết đoán" in cand_text or "quyền lực" in cand_text or "áp đặt" in cand_text) and \
+       ("quyết đoán" in team_text or "quyền lực" in team_text or "áp đặt" in team_text):
+        homogeneity_risk_score = 45
+        diversity_score = 55
+        structural_alignment_level = "Xung Đột Tương Tác Phát Sinh (Emergent Power Conflict)"
+        status_color = "#f59e0b"
+        emergent_frictions.append("Nguy cơ phân tranh phạm vi ảnh hưởng và va chạm quyền lực ngầm giữa các thành viên có bản năng chi phối cao.")
+        emergent_frictions.append("Căng thẳng nhận thức gia tăng khi ra quyết định trong điều kiện ranh giới trách nhiệm không rõ ràng.")
+        structural_directives.append("Áp dụng nguyên tắc Dùng Lễ Định Phần (Tuân Tử): Phân định tuyệt đối ranh giới quyền hạn và mục tiêu đo lường.")
+        structural_directives.append("Thiết lập cơ chế trọng tài trung gian (Confucian/Legalism) khi có bất đồng quan điểm chiến lược.")
+        composition_verdict = "BỔ NHIỆM KÈM PHÂN ĐỊNH RANH GIỚI BẮT BUỘC ĐỂ NGĂN XUNG ĐỘT QUYỀN LỰC"
+    # 2. Check Homogeneity Trap (NT-ANTI-PATTERN-0011)
+    elif overlap_count >= 2 or (("hòa hoãn" in cand_text or "ngại xung đột" in cand_text) and ("hòa hoãn" in team_text or "ngại xung đột" in team_text)):
+        homogeneity_risk_score = 85
+        diversity_score = 25
+        structural_alignment_level = "Bẫy Đồng Nhất Nguy Hiểm (Homogeneity Trap)"
+        status_color = "#ef4444"
+        blind_spots.append("Thiếu năng lực phản biện đối kháng; đội ngũ dễ rơi vào tư duy tập thể (Groupthink) và thiên kiến xác nhận.")
+        blind_spots.append("Chậm phát hiện sai sót trong giả định kinh doanh do các thành viên có chung điểm mù nhận thức.")
+        emergent_frictions.append("Ma sát thấp giả tạo trong ngắn hạn nhưng tích tụ rủi ro bùng nổ khi gặp khủng hoảng bên ngoài.")
+        structural_directives.append("Bắt buộc chỉ định vai trò Phản Biện Độc Lập (Devil's Advocate) trong mọi quyết định trọng yếu.")
+        structural_directives.append("Bổ sung nhân sự có thiên hướng đối nghịch để phá vỡ cấu trúc đồng nhất (NT-LAW-0042).")
+        composition_verdict = "CẢNH BÁO BẪY ĐỒNG NHẤT: CẦN BỔ TRỢ NHÂN SỰ CÓ PHONG CÁCH TƯ DUY ĐỐI TRỌNG"
+    # 3. Complementary / Structural Fit (NT-PRINCIPLE-0066)
+    else:
+        homogeneity_risk_score = 25
+        diversity_score = 85
+        structural_alignment_level = "Khớp Cấu Trúc Bổ Trợ (High Complementarity)"
+        status_color = "#10b981"
+        emergent_frictions.append("Cần thời gian điều chỉnh nhịp giao tiếp giữa phong cách sáng tạo/tự do và kỷ luật quy trình sẵn có.")
+        structural_directives.append("Thiết lập cơ chế Tương Thuộc Bắt Buộc (NT-PRINCIPLE-0071): Buộc nhân sự mới và đội ngũ hiện tại phải phụ thuộc đầu ra của nhau.")
+        structural_directives.append("Tận dụng góc nhìn mới để rà soát các quy trình cũ đã xơ cứng.")
+        composition_verdict = "CẤU TRÚC BỔ TRỢ TỐI ƯU: ĐỀ XUẤT TIẾP NHẬN VÀ THIẾT LẬP CƠ CHẾ PHỐI HỢP"
+
+    structural_analysis = (
+        f"Đội ngũ [{team_name}] với đặc tính nhận thức nền ({', '.join(team_traits[:3])}) "
+        f"khi tiếp nhận nhân sự [{candidate_name}] mang thiên hướng ({', '.join(cand_traits[:3])}), "
+        f"hệ thống xác định chỉ số đa dạng nhận thức ở mức {diversity_score}% và nguy cơ bẫy đồng nhất ở mức {homogeneity_risk_score}%. "
+        f"Trạng thái cấu trúc: {structural_alignment_level}."
+    )
+
+    return {
+        "status": "success",
+        "candidate_name": candidate_name,
+        "candidate_role": candidate_role,
+        "team_name": team_name,
+        "diversity_score": diversity_score,
+        "homogeneity_risk_score": homogeneity_risk_score,
+        "structural_alignment_level": structural_alignment_level,
+        "status_color": status_color,
+        "structural_analysis": structural_analysis,
+        "emergent_frictions": emergent_frictions,
+        "systemic_blind_spots": blind_spots,
+        "structural_directives": structural_directives,
+        "composition_verdict": composition_verdict,
+        "cited_units": [
+            {"id": "NT-PRINCIPLE-0066", "title": "Tuyển chọn theo sự khớp cấu trúc", "domain": "tri-nhan"},
+            {"id": "NT-MODEL-0009", "title": "Mô hình tương tác phát sinh", "domain": "tri-nhan"},
+            {"id": "NT-ANTI-PATTERN-0011", "title": "Bẫy đồng nhất (Homogeneity Trap)", "domain": "hop-chung"},
+            {"id": "NT-LAW-0042", "title": "Quy luật đa dạng nhận thức", "domain": "hop-chung"},
+            {"id": "NT-MODEL-0012", "title": "Đường cong gắn kết - ma sát", "domain": "hop-chung"}
         ]
     }
 

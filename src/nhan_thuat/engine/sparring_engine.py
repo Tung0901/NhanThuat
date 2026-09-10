@@ -166,7 +166,33 @@ class SparringEngine:
             title = str(getattr(u, "title", raw.get("title", uid)))
             domain = str(getattr(u, "primary_domain", getattr(u, "domain", raw.get("primary_domain", ""))))
             citations.append({"id": uid, "title": title, "domain": domain})
+        # 1. Try to generate dynamically via LLM
+        try:
+            from nhan_thuat.runtime.synthesizer import KnowledgeSynthesizer
+            syn = KnowledgeSynthesizer()
+            prompt = (
+                f"Bạn là một Đối tác đàm phán / Cố vấn cực kỳ RẮN MẶT và SẮC BÉN, đang đại diện cho lăng kính triết học: {lens}.\n"
+                f"LỜI THOẠI / CÁCH XỬ LÝ CỦA NGƯỜI DÙNG: \"{user_text}\"\n\n"
+                f"TRI THỨC THAM KHẢO:\n"
+            )
+            for c in citations:
+                prompt += f"- [{c['id']}] {c['title']} ({c['domain']})\n"
+                
+            prompt += (
+                "\nNHIỆM VỤ (TRẢ LỜI ĐÚNG 2 PHẦN BẰNG MARKDOWN, KHÔNG THÊM GÌ KHÁC):\n\n"
+                f"### ⚔️ 1. ĐỐI ĐÁP PHẢN BIỆN TRỰC DIỆN ({lens} LENS)\n"
+                "[Đóng vai đối thủ hoặc cố vấn gai góc. Phản biện thẳng thừng, chỉ ra sự cả nể, ngây thơ hoặc sai lầm trong cách xử lý của người dùng. Không dông dài, đánh trúng tim đen. Tối đa 4 câu.]\n\n"
+                f"### 💡 2. GỢI Ý ĐÒN BẨY HÓA GIẢI & CHIẾN LƯỢC\n"
+                "- **Sơ hở cốt lõi:** [1 câu]\n"
+                "- **Căn cứ tri thức đối trọng:** [Nhắc đến 1 nguyên tắc trong tri thức tham khảo]\n"
+                "- **Lời thoại lật ngược thế cờ:** *[Viết nguyên văn 1 câu nói sắc lẹm để người dùng nói lại với đối phương, giành lại quyền chủ động]*"
+            )
+            full_response = syn.generate_text(prompt)
+            return full_response, citations
+        except Exception as e:
+            print(f"[SparringEngine] LLM generation failed, using fallback: {e}")
 
+        # 2. Fallback to Specialized Lens Personas
         primary_unit_str = f"[{citations[0]['id']} - {citations[0]['title']}]" if citations else "NT-LAW-0001"
 
         # Specialized Lens Personas

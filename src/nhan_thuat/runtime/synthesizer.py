@@ -163,13 +163,20 @@ class KnowledgeSynthesizer:
             "---\n\n"
             "HÃY PHÂN TÍCH VÀ ĐƯA RA LỜI THAM MƯU BẰNG MARKDOWN THEO ĐÚNG 3 PHẦN MẠCH LẠC SAU (Lưu ý: Không viết kịch bản hội thoại ở đây, vì phần hội thoại đã được xử lý ở module khác):\n\n"
             "### 🔍 1. BÓC TÁCH BẢN CHẤT & ĐỘNG CƠ NGẦM\n"
-            "- [Đánh giá chính xác bản chất tâm lý, động cơ ẩn giấu và thế cục hiện tại của các bên. Chỉ ra quy luật nhân thuật đang chi phối].\n\n"
+            "*Viết súc tích, phân định rõ ràng các tầng lớp của vấn đề theo định dạng liệt kê (bullet points):*\n"
+            "- **Hiện tượng bề mặt:** [Vấn đề nhìn thấy bằng mắt thường, hành vi đang diễn ra].\n"
+            "- **Động cơ ngầm ẩn (Root Driver):** [Lợi ích cốt lõi, nỗi sợ hãi hoặc định kiến thực sự đang chi phối đối phương].\n"
+            "- **Hệ quả cục diện:** [Nếu không can thiệp hoặc can thiệp sai, thế cờ sẽ nghiêng về đâu, tổ chức sẽ trả giá thế nào].\n\n"
             "### ⚠️ 2. NHỮNG BẪY TÂM LÝ & SAI LẦM CẦN TRÁNH\n"
-            "- [Những phản ứng bốc đồng, bẫy cảm xúc hoặc sơ hở đàm phán mà người dùng tuyệt đối không được mắc phải].\n\n"
+            "*Tuyệt đối trình bày dưới dạng BẢNG (Markdown Table) gồm 3 cột (KHÔNG dùng gạch đầu dòng):*\n"
+            "| Tên Bẫy | Biểu hiện dễ mắc phải | Hậu quả nhãn tiền |\n"
+            "|---|---|---|\n"
+            "| [Tên bẫy 1] | [Hành vi bốc đồng, cảm xúc] | [Hậu quả] |\n"
+            "| [Tên bẫy 2] | [Sai lầm trong đánh giá] | [Hậu quả] |\n\n"
             "### 📌 3. CHỐT HẠ ĐỊNH CỤC\n"
-            "- [Thông điệp đúc kết vị thế và nguyên tắc điều hướng cục diện bằng một câu nói hoặc đoạn văn ngắn đầy uy lực].\n\n"
+            "- [Tối đa 1-2 câu tuyên ngôn (Maxim) súc tích, sắc bén nhất để định hướng tâm thế hành động. Tuyệt đối không giải thích dài dòng ở đây].\n\n"
             "### 📖 TRÍCH DẪN TRI THỨC\n"
-            "- [Liệt kê các tri thức/quy luật đã vận dụng kèm mã ID, ví dụ: Binh Pháp Tôn Tử, Quy luật Giá trị (NT-LAW-3201)].\n"
+            "- [Liệt kê ngắn gọn các tri thức/quy luật đã vận dụng kèm mã ID, ví dụ: Binh Pháp Tôn Tử, Quy luật Giá trị (NT-LAW-3201)].\n"
         )
 
     def _deterministic_synthesis(self, query: str, units: Iterable[KnowledgeUnit]) -> str:
@@ -195,6 +202,8 @@ class KnowledgeSynthesizer:
 
         lines.extend([
             "### ⚠️ 2. NHỮNG BẪY TÂM LÝ & SAI LẦM CẦN TRÁNH",
+            "| Tên Bẫy | Biểu hiện dễ mắc phải | Hậu quả nhãn tiền |",
+            "|---|---|---|",
         ])
 
         collected_risks = []
@@ -206,11 +215,11 @@ class KnowledgeSynthesizer:
                     collected_risks.append(u.risks)
 
         if collected_risks:
-            for r in collected_risks[:3]:
-                lines.append(f"- ⚠️ **Cảnh báo:** {r}")
+            for idx, r in enumerate(collected_risks[:3]):
+                lines.append(f"| Bẫy {idx+1} | {r} | Tổn hại nghiêm trọng uy tín hoặc dòng tiền |")
         else:
-            lines.append("- ⚠️ Tránh bẫy phản ứng vội vã bằng cảm tính hoặc dùng quyền lực cứng bức ép khi chưa bẻ gãy điểm tựa tâm lý đối phương.")
-            lines.append("- ⚠️ Tránh nhân nhượng vô điều kiện tạo tiền lệ xấu khiến đối tác/nhân sự tiếp tục lấn tới.")
+            lines.append("| Bẫy cảm xúc vội vã | Phản ứng bằng cảm tính hoặc dùng quyền lực cứng bức ép | Mất vị thế đàm phán, tạo sự chống đối ngầm |")
+            lines.append("| Nhượng bộ vô điều kiện | Nhân nhượng tạo tiền lệ xấu khi chưa bẻ gãy tâm lý đối phương | Khiến đối tác/nhân sự lấn lướt, phá vỡ kỷ cương |")
 
         lines.extend([
             "",

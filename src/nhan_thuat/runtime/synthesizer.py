@@ -160,10 +160,11 @@ class KnowledgeSynthesizer:
             f"TÌNH HUỐNG THỰC TẾ CỦA NGƯỜI DÙNG: {query}\n\n"
             "--- CƠ SỞ TRI THỨC ĐỐI CHIẾU ---\n"
             f"{context}\n"
-            "---\n\n"
-            "HÃY PHÂN TÍCH VÀ ĐƯA RA LỜI THAM MƯU BẰNG MARKDOWN THEO ĐÚNG 3 PHẦN MẠCH LẠC SAU (Lưu ý: Không viết kịch bản hội thoại ở đây, vì phần hội thoại đã được xử lý ở module khác):\n\n"
+            "HÃY PHÂN TÍCH VÀ ĐƯA RA LỜI THAM MƯU BẰNG MARKDOWN THEO ĐÚNG 4 PHẦN MẠCH LẠC SAU (Văn phong đồ sộ, phân tích cực kỳ sâu sắc, ngôn từ uy lực. Lưu ý: Không viết kịch bản hội thoại ở đây, vì phần hội thoại đã được xử lý ở module khác):\n\n"
+            "### 👁️ TỔNG QUAN TÌNH THẾ\n"
+            "- [Viết 1 đoạn văn (khoảng 3-4 câu) mượt mà, sâu sắc tóm tắt ngay mức độ nghiêm trọng và bản chất cốt lõi của sự việc. Thể hiện tầm nhìn bao quát của một Cố vấn cấp cao].\n\n"
             "### 🔍 1. BÓC TÁCH BẢN CHẤT & ĐỘNG CƠ NGẦM\n"
-            "*Viết súc tích, phân định rõ ràng các tầng lớp của vấn đề theo định dạng liệt kê (bullet points):*\n"
+            "*Phân tích đồ sộ, đa tầng, viết súc tích nhưng cực kỳ sắc bén (dùng bullet points):*\n"
             "- **Hiện tượng bề mặt:** [Vấn đề nhìn thấy bằng mắt thường, hành vi đang diễn ra].\n"
             "- **Động cơ ngầm ẩn (Root Driver):** [Lợi ích cốt lõi, nỗi sợ hãi hoặc định kiến thực sự đang chi phối đối phương].\n"
             "- **Hệ quả cục diện:** [Nếu không can thiệp hoặc can thiệp sai, thế cờ sẽ nghiêng về đâu, tổ chức sẽ trả giá thế nào].\n\n"
@@ -185,8 +186,11 @@ class KnowledgeSynthesizer:
             return "Không tìm thấy tri thức tương ứng trực tiếp trong hệ thống."
 
         lines = [
-            f"### 🔍 1. BÓC TÁCH BẢN CHẤT & ĐỘNG CƠ NGẦM",
-            f"Đối chiếu tình huống: *\"{query}\"* qua hệ thống {len(units_list)} tri thức tham chiếu cốt lõi:\n",
+            "### 👁️ TỔNG QUAN TÌNH THẾ",
+            f"Vấn đề **\"{query}\"** không chỉ là một rắc rối vận hành đơn thuần, mà là hệ quả của những xung đột ngầm về lợi ích và sự lệch pha trong cấu trúc quyền lực. Việc can thiệp đòi hỏi phải nhìn thấu các quy luật nhân thuật đang chi phối bên dưới bề mặt.",
+            "",
+            "### 🔍 1. BÓC TÁCH BẢN CHẤT & ĐỘNG CƠ NGẦM",
+            f"Đối chiếu tình huống qua hệ thống {len(units_list)} tri thức tham chiếu cốt lõi:\n",
         ]
 
         for u in units_list[:3]:

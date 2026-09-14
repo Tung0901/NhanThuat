@@ -831,21 +831,20 @@
 
                     <div class="scenario-chips-container">
                         <span style="font-size: 11px; color: var(--gold-primary); font-weight: 600; padding: 5px 0;">Tình huống mẫu:</span>
-                        <button class="scenario-chip" onclick="fillScenario('Trưởng phòng kinh doanh là người tài nhưng kiêu ngạo, chia rẽ nội bộ, yêu sách hoa hồng riêng.')">Trưởng phòng kiêu ngạo & chia rẽ</button>
-                        <button class="scenario-chip" onclick="fillScenario('Khách hàng chê giá báo giá quá đắt, đòi chiết khấu 20% mới đồng ý ký hợp đồng.')">Khách hàng ép giá & chê đắt</button>
-                        <button class="scenario-chip" onclick="fillScenario('Đối tác nợ đọng công nợ 60 ngày quá hạn, liên tục hứa hẹn nhưng không thanh toán.')">Đối tác nợ đọng quá hạn</button>
-                        <button class="scenario-chip" onclick="fillScenario('Nhân sự chủ chốt dọa nghỉ việc ngay giữa giai đoạn cao điểm dự án để đòi tăng lương.')">Nhân sự đòi tăng lương đột xuất</button>
+                        <button class="scenario-chip" onclick="fillScenario('Xung đột quyền lực ngầm và lợi ích cục bộ giữa các phòng ban.')">Xung đột lợi ích & Quyền lực ngầm</button>
+                        <button class="scenario-chip" onclick="fillScenario('Nhân sự chủ chốt có dấu hiệu bất mãn, chống đối ngầm và thao túng tập thể.')">Nhân sự chống đối & Bất mãn</button>
+                        <button class="scenario-chip" onclick="fillScenario('Đàm phán ở thế yếu, đối phương ép buộc các điều khoản bất lợi.')">Đàm phán thế yếu & Ép buộc</button>
+                        <button class="scenario-chip" onclick="fillScenario('Cấu trúc đội ngũ rạn nứt do lệch pha vai trò và giới hạn năng lực thích ứng.')">Rạn nứt cấu trúc đội ngũ</button>
                     </div>
 
                     <div class="chat-feed" id="chat-feed">
                         <div class="message-bubble msg-assistant">
                             <h3 style="font-family: var(--font-serif); font-size: 18px; color: var(--gold-light); margin-bottom: 6px;">👑 CỐ VẤN CHIẾN LƯỢC NHÂN THUẬT</h3>
-                            <p style="color: var(--text-secondary); margin-bottom: 10px; font-style: italic;">
-                                "Nhìn thấu tâm can để định vị thế • Vận dụng quy luật để xoay chuyển cục diện."
+                            <p style="color: var(--text-secondary); margin-bottom: 10px; font-style: italic; font-size: 14px;">
+                                "Phía sau mọi rắc rối bề mặt luôn là những dòng chảy ngầm của tâm lý và quyền lực."
                             </p>
-                            <p style="color: rgba(255,255,255,0.85); font-size: 13.5px;">
-                                Chào Anh/Chị Lãnh đạo. Hãy chia sẻ tình huống điều hành hoặc mâu thuẫn nhân sự đang đối diện. 
-                                Hệ thống sẽ đối chiếu tri thức và đề xuất kịch bản tác chiến 3 bước sắc bén nhất.
+                            <p style="color: rgba(255,255,255,0.85); font-size: 13.5px; line-height: 1.6;">
+                                Chào mừng đến với Trung Tâm Chỉ Huy. Hãy chia sẻ bất kỳ bài toán quản trị, đàm phán hay mâu thuẫn nhân sự nào bạn đang đối mặt. Hệ thống sẽ bóc tách mọi lớp vỏ bọc, đối chiếu kho tàng tri thức và thiết lập định cục bằng những kịch bản sắc bén nhất.
                             </p>
                         </div>
                     </div>
@@ -1445,7 +1444,7 @@
         const loader = document.createElement('div');
         loader.id = loaderId;
         loader.className = 'message-bubble msg-assistant';
-        loader.innerHTML = `<em>👑 Cố Vấn đang đối chiếu 370 đơn vị tri thức và kích hoạt lăng kính triết học...</em>`;
+        loader.innerHTML = `<em>⏳ Hệ thống đang quét sâu vào hàng trăm tầng quy luật, bóc tách động cơ ngầm và tổng hợp chiến lược điều hướng cục diện...</em>`;
         feed.appendChild(loader);
         feed.scrollTop = feed.scrollHeight;
 

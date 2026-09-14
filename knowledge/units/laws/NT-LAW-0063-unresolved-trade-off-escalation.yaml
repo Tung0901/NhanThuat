@@ -1,7 +1,7 @@
 id: NT-LAW-0063
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Sự leo thang từ các đánh đổi chưa được giải quyết
 summary: Những đánh đổi mang tính cấu trúc bị kìm nén chắc chắn sẽ leo thang thành những xích mích cá nhân theo thời gian.
 primary_domain: hop-chung
@@ -13,7 +13,7 @@ conditions:
 exceptions:
 - Các nhóm hoàn toàn tự chủ và không có sự chồng chéo về nhu cầu tài nguyên.
 applications:
-  conflict_resolution:
+  conflict-resolution:
   - Giải quyết các đánh đổi tài nguyên cốt lõi ở cấp lãnh đạo.
 risks:
 - Coi các xung đột tài nguyên mang tính cấu trúc như những bất đồng về tính cách cá nhân.
@@ -37,5 +37,10 @@ tags:
 - organizational-tension
 - conflict-escalation
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Tồn tại các đánh đổi cấu trúc chưa được giải quyết giữa các bộ phận.
+- Căng thẳng tích tụ mà không có kênh xử lý chính thức.
+- Áp lực được chuyển thành quy kết cá nhân và xích mích.
+- Xung đột quan hệ làm giảm phối hợp và tăng ma sát vận hành.
+- Vấn đề cấu trúc gốc vẫn không được giải quyết và tiếp tục tái diễn.

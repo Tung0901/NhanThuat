@@ -10,8 +10,8 @@ def test_milestone2_status_initializes_domain_system() -> None:
 
     assert status["milestone_id"] == "NT-MILESTONE-02"
     assert status["title"] == "Milestone 2 - Knowledge Expansion & Domain System"
-    assert status["status"] == "in_progress"
-    assert status["progress"] == 10
+    assert status["status"] == "frozen"
+    assert status["progress"] == 100
 
 
 def test_domain_registry_contains_only_approved_ids_and_slugs() -> None:

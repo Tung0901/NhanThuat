@@ -1,22 +1,31 @@
 id: NT-PRINCIPLE-0064
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Yêu cầu quyền bất đồng được bảo vệ
-summary: Yêu cầu quyền bất đồng được bảo vệ là một đơn vị tri thức cấu trúc trong kho tri thức Nhân Thuật.
+summary: Thiết lập cơ chế bắt buộc có tiếng nói phản biện được bảo vệ trong các quyết định quan trọng. Bất đồng có kênh chính thức sẽ thay thế bất đồng ngầm và giảm điểm mù tập thể.
 primary_domain: tri-nhan
 secondary_domains:
 - hop-chung
-definition: Định nghĩa chính thức của Nguyên tắc Yêu cầu quyền bất đồng được bảo vệ trong kiến trúc Nhân Thuật.
+definition: Yêu cầu quyền bất đồng được bảo vệ là nguyên tắc đảm bảo mọi quyết định trọng yếu đều có ít nhất một kênh phản biện chính thức, an toàn và không thể bị trù dập.
 conditions:
-- Các bối cảnh quản trị vận hành.
+- Quyết định có ảnh hưởng lớn và khó đảo ngược.
+- Tồn tại khoảng cách quyền lực có thể khiến bất đồng bị nén lại.
 exceptions:
-- Các tình huống khẩn cấp yêu cầu vượt quyền ưu tiên.
+- Quyết định khẩn cấp trong thời gian cực ngắn có thể phản biện sau khi xử lý tình huống.
+- Quyết định đã được kiểm định qua kênh độc lập trước đó.
 applications:
   governance:
-  - Áp dụng Nguyên tắc Yêu cầu quyền bất đồng được bảo vệ vào các quy trình vận hành của tổ chức.
+  - Quy định bước phản biện bắt buộc trong quy trình ra quyết định trọng yếu.
+  - Thiết lập kênh phản biện ẩn danh cho các vấn đề nhạy cảm.
+  leadership:
+  - Chủ động mời và cảm ơn người phản biện trước tập thể để tạo chuẩn mực.
+  team-management:
+  - Luân phiên vai trò phản biện để tránh cá nhân hóa xung đột.
 risks:
-- Áp dụng sai Nguyên tắc Yêu cầu quyền bất đồng được bảo vệ dẫn đến hiệu suất dưới mức tối ưu.
+- Cơ chế bị hình thức hóa, phản biện chỉ để đủ thủ tục.
+- Người phản biện bị cô lập ngầm dù không có hình thức trừng phạt.
+- Phản biện vô trách nhiệm làm chậm mọi quyết định.
 evidence:
   level: supported
   references:
@@ -35,5 +44,9 @@ tags:
 - psychological-safety
 - decision-quality
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Xác định các loại quyết định bắt buộc phải qua bước phản biện.
+- Chỉ định người hoặc vai trò chịu trách nhiệm nêu ý kiến trái chiều.
+- Bảo vệ người phản biện khỏi hậu quả tiêu cực về đánh giá và đãi ngộ.
+- Ghi nhận và xử lý công khai các rủi ro được nêu trước khi chốt.

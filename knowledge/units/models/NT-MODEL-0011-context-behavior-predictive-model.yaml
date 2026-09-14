@@ -1,22 +1,31 @@
 id: NT-MODEL-0011
 type: model
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Mô hình Dự báo Hành vi theo Bối cảnh
-summary: Đơn vị tri thức cấu trúc về Mô hình Dự báo Hành vi theo Bối cảnh trong phân tích nhân sự.
+summary: Mô hình dự báo hành vi cá nhân dựa trên tương tác giữa đặc điểm ổn định và bối cảnh tình huống. Hành vi là hàm của con người nhân với môi trường, không phải chỉ một trong hai.
 primary_domain: tri-nhan
 secondary_domains:
 - dung-nhan
-definition: Định nghĩa chính thức về Mô hình Dự báo Hành vi theo Bối cảnh trong cấu trúc Nhân Thuật, giúp dự đoán phản ứng và xu hướng hành vi của cá nhân dựa trên môi trường xung quanh.
+definition: 'Mô hình Dự báo Hành vi theo Bối cảnh là khung phân tích hành vi dựa trên ba lớp biến số: đặc tính nền của cá nhân, đặc điểm tình huống hiện tại, và mức độ mạnh của tình huống quyết định mức ảnh hưởng tương đối của hai lớp trước.'
 conditions:
-- Áp dụng trong các bối cảnh quản trị vận hành và đánh giá nhân sự định kỳ.
+- Có thông tin về đặc tính cá nhân và bối cảnh vận hành.
+- Hành vi quan tâm có tính lặp lại tương đối.
 exceptions:
-- Các tình huống khủng hoảng bất ngờ hoặc hành vi bất thường vượt ngoài các kịch bản dự báo thông thường.
+- Hành vi bất thường do biến cố cá nhân không dự báo được từ mô hình.
+- Môi trường thay đổi đột ngột làm dữ liệu lịch sử mất giá trị.
 applications:
-  governance:
-  - Áp dụng Mô hình Dự báo Hành vi theo Bối cảnh vào quy trình làm việc, tuyển dụng và quản trị nhân sự của tổ chức.
+  management:
+  - Thiết kế môi trường phù hợp với hành vi mục tiêu thay vì chỉ kỳ vọng vào tính cách.
+  - Điều chỉnh cường độ tình huống để tăng hoặc giảm mức ảnh hưởng của đặc tính.
+  hiring:
+  - Đánh giá mức phù hợp bối cảnh công việc bên cạnh đặc tính cá nhân.
+  team-design:
+  - Bố trí con người vào môi trường làm phát huy điểm mạnh và giảm điểm yếu.
 risks:
-- Việc áp dụng sai lệch Mô hình Dự báo Hành vi theo Bối cảnh có thể dẫn đến các quyết định nhân sự thiếu chính xác và làm giảm hiệu suất chung.
+- Dán nhãn cá nhân cố định từ dự báo hành vi.
+- Bỏ qua biến động tình huống khiến dự báo sai lệch.
+- Dùng mô hình để ngụy biện cho việc ép con người vào môi trường xấu.
 evidence:
   level: supported
   references:
@@ -35,8 +44,9 @@ tags:
 - predictive-modeling
 - organizational-behavior
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'
 mechanism:
-- 'Bước 1: Xác định các biến số môi trường và bối cảnh trong Mô hình Dự báo Hành vi.'
-- 'Bước 2: Phân tích các tham số hành vi cá nhân và dữ liệu bối cảnh lịch sử.'
-- 'Bước 3: Chạy mô hình dự báo để đưa ra các kịch bản hành vi tiềm năng của nhân sự.'
+- Xác định các đặc tính nền quan trọng của cá nhân liên quan tới hành vi cần dự báo.
+- Phân tích các đặc điểm bối cảnh đang tác động lên cá nhân.
+- Đánh giá cường độ tình huống để biết đặc tính hay bối cảnh chi phối mạnh hơn.
+- Tổng hợp thành các kịch bản hành vi có khả năng xảy ra và điều kiện kích hoạt.

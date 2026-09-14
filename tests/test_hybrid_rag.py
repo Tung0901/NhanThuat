@@ -3,7 +3,6 @@ Test Suite for Phase 2: Hybrid RAG Engine (BM25 + Dense Vector Search + RRF Fusi
 Tests lexical search, semantic embeddings, rank fusion, multi-tier relationship expansion, and latency.
 """
 
-import time
 from pathlib import Path
 
 import pytest
@@ -95,10 +94,7 @@ def test_hybrid_retriever_rrf_and_latency(sample_units: list[KnowledgeUnit], tmp
     hybrid = HybridRetriever(units=sample_units, bm25_engine=bm25_engine, vector_engine=vector_engine)
 
     query = "đối tác nợ quá hạn không chịu thanh toán tiền hàng"
-    t_start = time.perf_counter()
     result = hybrid.retrieve(query, top_k=5, expand_relations=True)
-    latency_ms = (time.perf_counter() - t_start) * 1000
-
     assert len(result.primary_units) == 5
     assert len(result.fusion_items) == 5
     assert result.total_latency_ms < 500.0  # Fast retrieval under 500ms

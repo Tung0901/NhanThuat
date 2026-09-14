@@ -6,8 +6,23 @@ from __future__ import annotations
 
 import json
 from dataclasses import asdict, dataclass, field
-from datetime import datetime
+from datetime import UTC, datetime
 from typing import Any
+
+
+def _utcnow_iso() -> str:
+    """Naive UTC timestamp in ISO format (backward-compatible storage format)."""
+    return datetime.now(UTC).replace(tzinfo=None).isoformat()
+
+
+def _safe_json_loads(value: Any, default: Any) -> Any:
+    """Parse a JSON string, returning ``default`` when parsing fails."""
+    if not isinstance(value, str):
+        return value if value is not None else default
+    try:
+        return json.loads(value)
+    except json.JSONDecodeError:
+        return default
 
 
 @dataclass
@@ -15,7 +30,7 @@ class SparringSession:
     id: str
     title: str
     philosophy_lens: str = "auto"
-    created_at: str = field(default_factory=lambda: datetime.utcnow().isoformat())
+    created_at: str = field(default_factory=_utcnow_iso)
     status: str = "active"  # 'active', 'completed', 'archived'
     summary: str = ""
     metadata: dict[str, Any] = field(default_factory=dict)
@@ -26,12 +41,7 @@ class SparringSession:
     @classmethod
     def from_row(cls, row: dict[str, Any] | tuple[Any, ...]) -> SparringSession:
         if isinstance(row, dict):
-            meta = row.get("metadata", {})
-            if isinstance(meta, str):
-                try:
-                    meta = json.loads(meta)
-                except Exception:
-                    meta = {}
+            meta = _safe_json_loads(row.get("metadata", {}), {})
             return cls(
                 id=str(row["id"]),
                 title=str(row["title"]),
@@ -42,12 +52,7 @@ class SparringSession:
                 metadata=meta,
             )
         # Tuple format: (id, title, philosophy_lens, created_at, status, summary, metadata)
-        meta = {}
-        if len(row) > 6 and row[6]:
-            try:
-                meta = json.loads(row[6])
-            except Exception:
-                meta = {}
+        meta = _safe_json_loads(row[6], {}) if len(row) > 6 and row[6] else {}
         return cls(
             id=str(row[0]),
             title=str(row[1]),
@@ -66,7 +71,7 @@ class SparringMessage:
     role: str  # 'user' or 'assistant' or 'system'
     content: str
     matched_unit_ids: list[str] = field(default_factory=list)
-    created_at: str = field(default_factory=lambda: datetime.utcnow().isoformat())
+    created_at: str = field(default_factory=_utcnow_iso)
     metadata: dict[str, Any] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -75,18 +80,8 @@ class SparringMessage:
     @classmethod
     def from_row(cls, row: dict[str, Any] | tuple[Any, ...]) -> SparringMessage:
         if isinstance(row, dict):
-            units = row.get("matched_unit_ids", [])
-            if isinstance(units, str):
-                try:
-                    units = json.loads(units)
-                except Exception:
-                    units = []
-            meta = row.get("metadata", {})
-            if isinstance(meta, str):
-                try:
-                    meta = json.loads(meta)
-                except Exception:
-                    meta = {}
+            units = _safe_json_loads(row.get("matched_unit_ids", []), [])
+            meta = _safe_json_loads(row.get("metadata", {}), {})
             return cls(
                 id=str(row["id"]),
                 session_id=str(row["session_id"]),
@@ -97,18 +92,8 @@ class SparringMessage:
                 metadata=meta,
             )
         # Tuple format: (id, session_id, role, content, matched_unit_ids, created_at, metadata)
-        units = []
-        if len(row) > 4 and row[4]:
-            try:
-                units = json.loads(row[4])
-            except Exception:
-                units = []
-        meta = {}
-        if len(row) > 6 and row[6]:
-            try:
-                meta = json.loads(row[6])
-            except Exception:
-                meta = {}
+        units = _safe_json_loads(row[4], []) if len(row) > 4 and row[4] else []
+        meta = _safe_json_loads(row[6], {}) if len(row) > 6 and row[6] else {}
         return cls(
             id=str(row[0]),
             session_id=str(row[1]),
@@ -128,7 +113,7 @@ class CaseStudy:
     context_description: str
     decision_script: dict[str, Any] = field(default_factory=dict)
     lessons_learned: list[str] = field(default_factory=list)
-    created_at: str = field(default_factory=lambda: datetime.utcnow().isoformat())
+    created_at: str = field(default_factory=_utcnow_iso)
     tags: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
@@ -137,24 +122,9 @@ class CaseStudy:
     @classmethod
     def from_row(cls, row: dict[str, Any] | tuple[Any, ...]) -> CaseStudy:
         if isinstance(row, dict):
-            script = row.get("decision_script", {})
-            if isinstance(script, str):
-                try:
-                    script = json.loads(script)
-                except Exception:
-                    script = {}
-            lessons = row.get("lessons_learned", [])
-            if isinstance(lessons, str):
-                try:
-                    lessons = json.loads(lessons)
-                except Exception:
-                    lessons = []
-            tags = row.get("tags", [])
-            if isinstance(tags, str):
-                try:
-                    tags = json.loads(tags)
-                except Exception:
-                    tags = []
+            script = _safe_json_loads(row.get("decision_script", {}), {})
+            lessons = _safe_json_loads(row.get("lessons_learned", []), [])
+            tags = _safe_json_loads(row.get("tags", []), [])
             return cls(
                 id=str(row["id"]),
                 domain=str(row.get("domain", "GENERAL")),
@@ -166,24 +136,9 @@ class CaseStudy:
                 tags=tags,
             )
         # Tuple format: (id, domain, title, context_description, decision_script, lessons_learned, created_at, tags)
-        script = {}
-        if len(row) > 4 and row[4]:
-            try:
-                script = json.loads(row[4])
-            except Exception:
-                script = {}
-        lessons = []
-        if len(row) > 5 and row[5]:
-            try:
-                lessons = json.loads(row[5])
-            except Exception:
-                lessons = []
-        tags = []
-        if len(row) > 7 and row[7]:
-            try:
-                tags = json.loads(row[7])
-            except Exception:
-                tags = []
+        script = _safe_json_loads(row[4], {}) if len(row) > 4 and row[4] else {}
+        lessons = _safe_json_loads(row[5], []) if len(row) > 5 and row[5] else []
+        tags = _safe_json_loads(row[7], []) if len(row) > 7 and row[7] else []
         return cls(
             id=str(row[0]),
             domain=str(row[1]) if len(row) > 1 else "GENERAL",

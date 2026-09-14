@@ -146,7 +146,7 @@ class VectorSearchEngine:
             uid = str(getattr(u, "id", getattr(u, "unit_id", "")))
             ver = str(getattr(u, "version", ""))
             checksum = str(getattr(u, "checksum", ""))
-            hasher.update(f"{uid}:{ver}:{checksum}".encode("utf-8"))
+            hasher.update(f"{uid}:{ver}:{checksum}".encode())
         return hasher.hexdigest()
 
     def index_units(self, units: list[Any], use_cache: bool = True) -> None:
@@ -171,8 +171,8 @@ class VectorSearchEngine:
                     if cached_ids == self.unit_ids:
                         self.embeddings = np.array(cache_data["embeddings"], dtype=np.float32)
                         return
-            except Exception:
-                pass  # Recompute if cache read fails
+            except (OSError, ValueError, KeyError) as exc:
+                print(f"[WARN] Vector cache read failed, recomputing: {exc}")
 
         # Compute fresh embeddings
         texts = []
@@ -195,8 +195,8 @@ class VectorSearchEngine:
             }
             with open(self.cache_path, "w", encoding="utf-8") as f:
                 json.dump(cache_payload, f)
-        except Exception:
-            pass  # Non-blocking if write fails
+        except OSError as exc:
+            print(f"[WARN] Vector cache write failed, continuing without cache: {exc}")
 
     def search(
         self,

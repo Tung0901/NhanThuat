@@ -1,7 +1,7 @@
 id: NT-MODEL-0026
 type: model
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Khung phân bổ thẩm quyền
 summary: Mô hình ủy quyền 4 cấp độ phân định quyền ra quyết định từ Chỉ đạo trực tiếp đến Tự chủ hoàn toàn.
 primary_domain: dung-nhan
@@ -17,7 +17,7 @@ conditions:
 exceptions:
 - Các hành động pháp lý khẩn cấp.
 applications:
-  delegation_tooling:
+  delegation-tooling:
   - Cấu hình các quy tắc phân công nhiệm vụ trên BusinessOS với các cấp độ thẩm quyền rõ ràng.
 risks:
 - Đánh giá sai mức độ sẵn sàng của nhân viên và giao Cấp độ 4 quá sớm.
@@ -41,4 +41,4 @@ tags:
 - autonomy-levels
 - organizational-design
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'

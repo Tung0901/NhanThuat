@@ -7,28 +7,34 @@ summary: Đau đớn tâm lý do mất đi một thứ gì đó luôn lớn gấ
 primary_domain: tu-than
 domain_area: NT-DA-0027
 secondary_domains:
-  - tri-nhan
+- tri-nhan
 definition: Quyết định của con người thường thiên vị cực lớn vào việc tránh rủi ro mất mát thay vì tìm kiếm lợi ích, do cơ chế tiến hóa sinh tồn của não bộ.
 conditions:
-  - Khi phải đưa ra lựa chọn giữa các phương án mang rủi ro rõ ràng.
+- Khi phải đưa ra lựa chọn giữa các phương án mang rủi ro rõ ràng.
 exceptions:
-  - Khi cá nhân đã rơi vào bước đường cùng, lúc này họ chấp nhận rủi ro cực đoan.
+- Khi cá nhân đã rơi vào bước đường cùng, lúc này họ chấp nhận rủi ro cực đoan.
 applications:
   general:
-    - Áp dụng trong quản trị và kinh doanh.
+  - Áp dụng trong quản trị và kinh doanh.
 risks:
-  - Tạo ra quyết định bảo thủ, bỏ lỡ cơ hội đổi mới.
+- Tạo ra quyết định bảo thủ, bỏ lỡ cơ hội đổi mới.
 evidence:
   level: strong
   references:
-    - Kahneman & Tversky, Prospect Theory (1979)
+  - Kahneman & Tversky, Prospect Theory (1979)
 relations:
   supports: []
   conflicts_with: []
   depends_on: []
   applies_to: []
 tags:
-  - risk-aversion
-  - behavioral-economics
+- risk-aversion
+- behavioral-economics
 created_at: '2026-08-15'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'
+mechanism:
+- Chủ thể đánh giá một lựa chọn có khả năng mất mát hoặc lợi ích.
+- Mất mát tiềm năng gây đau đớn tâm lý lớn hơn niềm vui tương ứng.
+- Chủ thể nghiêng về tránh mất mát ngay cả khi đánh đổi lợi ích ròng.
+- Quyết định bị chi phối bởi khung mất mát thay vì giá trị khách quan.
+- Hành vi kinh tế và tổ chức phản ánh mức chiết khấu tâm lý bất đối xứng này.

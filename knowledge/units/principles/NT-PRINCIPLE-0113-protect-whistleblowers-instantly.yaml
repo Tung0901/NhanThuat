@@ -1,7 +1,7 @@
 id: NT-PRINCIPLE-0113
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Bảo vệ người tố giác ngay lập tức
 summary: Đảm bảo sự bảo vệ tuyệt đối về pháp lý, tài chính và thể chất cho những cá nhân báo cáo các vi phạm đạo đức nội bộ.
 primary_domain: tu-than
@@ -13,7 +13,7 @@ conditions:
 exceptions:
 - Các cáo buộc sai trái có chủ đích ác ý đã được chứng minh.
 applications:
-  whistleblower_hotline:
+  whistleblower-hotline:
   - Triển khai công cụ báo cáo mã hóa zero-knowledge trong BusinessOS.
 risks:
 - Xử lý các cáo buộc sai ẩn danh nhắm vào đồng nghiệp vô tội.
@@ -35,5 +35,10 @@ tags:
 - reporting-channels
 - speak-up
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Thiết lập kênh báo cáo vi phạm mã hóa và ẩn danh.
+- Cam kết bảo vệ pháp lý, tài chính và thể chất cho người tố giác.
+- Quy định quy trình xử lý thông tin tố giác độc lập với các bên bị tố.
+- Xử lý nghiêm mọi hành vi trả đũa người tố giác.
+- Theo dõi số lượng và kết quả xử lý các vụ tố giác để đánh giá hiệu lực.

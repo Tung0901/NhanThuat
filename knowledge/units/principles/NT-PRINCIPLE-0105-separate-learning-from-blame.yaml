@@ -1,7 +1,7 @@
 id: NT-PRINCIPLE-0105
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Tách biệt học hỏi khỏi quy trách nhiệm
 summary: Tách bạch rõ ràng các buổi rà soát sự cố tìm nguyên nhân gốc rễ khỏi các buổi đánh giá quản lý hiệu suất cá nhân.
 primary_domain: tri-nhan
@@ -13,7 +13,7 @@ conditions:
 exceptions:
 - Sơ suất lặp lại sau khi đã được kèm cặp và ghi nhận bằng tài liệu.
 applications:
-  post_mortem_policy:
+  post-mortem-policy:
   - Quy định ghi chú post-mortem không được dùng làm căn cứ tính thưởng.
 risks:
 - Không xử lý tình trạng năng lực cá nhân yếu lặp lại.
@@ -35,5 +35,10 @@ tags:
 - incident-review
 - no-blame-culture
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Tách buổi rà soát sự cố khỏi các buổi đánh giá hiệu suất cá nhân.
+- Quy định mục tiêu duy nhất của rà soát sự cố là tìm nguyên nhân gốc.
+- Miễn trừ kết luận rà soát khỏi hồ sơ đánh giá cá nhân trong đa số trường hợp.
+- Ghi nhận và khen thưởng việc chủ động báo cáo chi tiết.
+- Theo dõi tỷ lệ sự cố được báo cáo để đánh giá hiệu quả của cơ chế.

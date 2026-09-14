@@ -1,22 +1,31 @@
 id: NT-MODEL-0014
 type: model
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Mô hình Truyền thông Vòng lặp Kín
-summary: Đơn vị tri thức cấu trúc về Mô hình Truyền thông Vòng lặp Kín.
+summary: Mô hình truyền thông yêu cầu vòng phản hồi kín từ người nhận trở lại người gửi để xác nhận thông điệp được hiểu đúng. Giao tiếp một chiều tạo khoảng trống sai lệch.
 primary_domain: tri-nhan
 secondary_domains:
 - hop-chung
-definition: Định nghĩa chính thức về Mô hình Truyền thông Vòng lặp Kín trong kiến trúc Nhân Thuật.
+definition: 'Mô hình Truyền thông Vòng lặp Kín là khung thiết kế giao tiếp gồm bốn khối nối tiếp: mã hóa, truyền tải, giải mã và phản hồi xác nhận, trong đó khối phản hồi bắt buộc khép kín vòng lặp để điều chỉnh sai lệch.'
 conditions:
-- Các bối cảnh quản trị vận hành.
+- Thông điệp quan trọng hoặc có độ phức tạp cao.
+- Có kênh phản hồi khả dụng giữa các bên.
 exceptions:
-- Các trường hợp khẩn cấp ghi đè do khủng hoảng.
+- Thông báo một chiều đơn giản không cần vòng phản hồi đầy đủ.
+- Kênh truyền đạt theo quy định không cho phép phản hồi trực tiếp.
 applications:
-  governance:
-  - Áp dụng Mô hình Truyền thông Vòng lặp Kín vào quy trình làm việc của tổ chức.
+  communication:
+  - Thiết kế mọi giao tiếp quan trọng kèm cơ chế xác nhận hai chiều.
+  - Yêu cầu người nhận trình bày lại cách hiểu của mình.
+  management:
+  - Kiểm tra mức độ hiểu thực tế sau khi giao việc quan trọng.
+  process-design:
+  - Tích hợp bước phản hồi bắt buộc vào quy trình chuyển giao thông tin.
 risks:
-- Áp dụng sai Mô hình Truyền thông Vòng lặp Kín dẫn đến hiệu suất không tối ưu.
+- Phản hồi hình thức không phản ánh cách hiểu thật.
+- Vòng lặp kín bị bỏ qua trong giao tiếp văn bản quan trọng.
+- Quá tải phản hồi làm chậm các kênh thông tin đơn giản.
 evidence:
   level: supported
   references:
@@ -35,8 +44,9 @@ tags:
 - communication-feedback
 - organizational-governance
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'
 mechanism:
-- 'Bước 1: Xác định Mô hình Truyền thông Vòng lặp Kín.'
-- 'Bước 2: Phân tích các tham số.'
-- 'Bước 3: Thực thi mô hình.'
+- Người gửi mã hóa thông điệp theo ý định và ngữ cảnh của mình.
+- Thông điệp được truyền qua kênh với các nhiễu tiềm ẩn.
+- Người nhận giải mã và hình thành cách hiểu riêng.
+- Người nhận phản hồi lại cách hiểu để người gửi kiểm tra và điều chỉnh.

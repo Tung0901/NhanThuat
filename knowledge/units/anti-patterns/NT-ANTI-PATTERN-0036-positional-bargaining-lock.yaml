@@ -1,7 +1,7 @@
 id: NT-ANTI-PATTERN-0036
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Bế tắc thương lượng theo vị thế
 summary: Trạng thái bế tắc xảy ra khi các bên đàm phán bám chặt vào lập trường cứng nhắc ban đầu thay vì tập trung vào lợi ích cốt lõi, dẫn đến tổn hại mối quan hệ và bỏ lỡ cơ hội hợp tác.
 primary_domain: thanh-su
@@ -41,5 +41,10 @@ tags:
 - bargaining-lock
 - stubborn-positions
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Các bên xác định lập trường và gắn cái tôi, thể diện vào lập trường đó.
+- Đề xuất bị đọc như đòn công kích cá nhân thay vì vấn đề cần giải quyết.
+- Mỗi bên tăng cường bảo vệ vị thế bằng tối hậu thư và từ chối nhượng bộ.
+- Nguồn lực bị tiêu hao vào việc phòng thủ lập trường thay vì tìm phương án.
+- Bế tắc kéo dài làm xói mòn quan hệ và cơ hội hợp tác.

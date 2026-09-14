@@ -1,7 +1,7 @@
 id: NT-ANTI-PATTERN-0032
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Thao túng khung nhận thức
 summary: Đơn vị kiến thức cấu trúc về Thao túng khung nhận thức (Manipulative Framing) trong quản trị hành vi.
 primary_domain: tri-nhan
@@ -35,5 +35,10 @@ tags:
 - information-manipulation
 - decision-making
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Người trình bày lựa chọn cách diễn đạt có lợi cho mục đích của mình.
+- Thông tin quan trọng bị lược bỏ, nhấn mạnh quá mức hoặc đặt sai ngữ cảnh.
+- Người tiếp nhận hình thành đánh giá dựa trên khung méo mó.
+- Quyết định được đưa ra mà không biết mình đang thiếu thông tin.
+- Khi sự thật bộc lộ, niềm tin giữa các bên bị tổn hại nghiêm trọng.

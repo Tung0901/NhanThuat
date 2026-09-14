@@ -1,22 +1,32 @@
 id: NT-LAW-0050
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Kiệt quệ do quá tải nhận thức
-summary: Đơn vị tri thức cấu trúc về hiện tượng kiệt quệ do quá tải nhận thức trong tổ chức.
+summary: Năng lực ra quyết định tiêu hao theo thời gian chịu tải và cạn dần nếu không được phục hồi. Khi cạn, hành vi rơi về mặc định, phản xạ và né tránh.
 primary_domain: tu-than
 secondary_domains:
 - tri-nhan
-definition: Định nghĩa chuẩn tắc về sự kiệt quệ do quá tải nhận thức trong cấu trúc Nhân Thuật.
+definition: 'Kiệt quệ do quá tải nhận thức là quy luật về giới hạn tiêu hao của năng lực nhận thức: chất lượng phán đoán suy giảm có hệ thống khi tải kéo dài vượt khả năng phục hồi.'
 conditions:
-- Bối cảnh quản trị vận hành tổ chức.
+- Khối lượng công việc đòi hỏi phán đoán liên tục trong thời gian dài.
+- Thiếu cơ chế giảm tải hoặc phục hồi.
 exceptions:
-- Cơ chế can thiệp ưu tiên trong tình trạng khủng hoảng khẩn cấp.
+- Công việc quen thuộc được tự động hóa không tiêu hao năng lực phán đoán đáng kể.
+- Nghỉ ngắn có chủ đích giữa các tác vụ nặng giảm tốc độ kiệt quệ.
 applications:
-  governance:
-  - Ứng dụng nguyên lý kiệt quệ tải nhận thức vào việc tối ưu hóa quy trình làm việc tổ chức.
+  operations:
+  - Giới hạn số quyết định quan trọng trong một ngày và bảo vệ khoảng nghỉ giữa các phiên.
+  - Đưa quyết định quan trọng vào khung giờ năng lượng cao nhất.
+  management:
+  - Theo dõi dấu hiệu kiệt quệ qua chất lượng quyết định cuối ngày.
+  - Thiết kế ca làm việc có điểm phục hồi thay vì tải liên tục.
+  workflow-design:
+  - Giảm số lựa chọn không cần thiết bằng mặc định hợp lý.
 risks:
-- Áp dụng sai nguyên lý kiệt quệ tải nhận thức dẫn đến suy giảm hiệu suất hoạt động.
+- Quyết định quan trọng bị đưa ra trong trạng thái cạn năng lượng.
+- Xung đột quan hệ gia tăng do kiệt sức.
+- Mặc định kém được duy trì vì không còn năng lực đánh giá lại.
 evidence:
   level: supported
   references:
@@ -36,5 +46,9 @@ tags:
 - cognitive-capacity
 - workflow-overload
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Các tác vụ phán đoán và tự điều chỉnh tiêu hao năng lực nhận thức.
+- Tải kéo dài không có khoảng phục hồi làm nguồn lực cạn dần.
+- Khả năng kiểm soát xung lực và cân nhắc dài hạn suy giảm.
+- Hành vi rơi về mặc định quen thuộc, né tránh quyết định hoặc cáu gắt.

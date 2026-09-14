@@ -1,7 +1,7 @@
 id: NT-ANTI-PATTERN-0041
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Bẫy Biện Minh Thừa
 summary: Gắn các khoản tiền thưởng nhỏ vào công việc sáng tạo hoặc hợp tác nhóm, biến những nhân sự có động lực nội tại thành những kẻ hành động vì tiền.
 primary_domain: tu-than
@@ -17,7 +17,7 @@ conditions:
 exceptions:
 - Các vị trí hưởng hoa hồng kinh doanh.
 applications:
-  culture_design:
+  culture-design:
   - Bảo vệ các chương trình ghi nhận lẫn nhau giữa đồng nghiệp khỏi bị thương mại hóa bằng tiền mặt.
 risks:
 - Trả lương thấp cho nhân viên dưới cái mác bảo vệ động lực nội tại.
@@ -42,4 +42,4 @@ tags:
 - extrinsic-rewards
 - incentive-trap
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'

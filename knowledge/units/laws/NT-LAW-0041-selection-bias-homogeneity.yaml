@@ -1,22 +1,31 @@
 id: NT-LAW-0041
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Tính Đồng nhất do Thiên kiến Lựa chọn
-summary: Đơn vị tri thức cấu trúc về hiện tượng đồng nhất hóa bắt nguồn từ thiên kiến lựa chọn.
+summary: Cơ chế tuyển chọn thiên lệch tự củng cố và dẫn tới đội ngũ đồng nhất về kiểu tư duy, nền tảng và cách ra quyết định. Đồng nhất quá mức làm suy giảm năng lực phát hiện rủi ro.
 primary_domain: tri-nhan
 secondary_domains:
 - hop-chung
-definition: Định nghĩa chính thức về Tính Đồng nhất do Thiên kiến Lựa chọn trong cấu trúc kiến trúc Nhân Thuật.
+definition: 'Tính đồng nhất do thiên kiến lựa chọn là quy luật về hệ quả tích lũy của tiêu chí chọn lọc thiên lệch: càng chọn theo một khuôn mẫu, tổ chức càng mất đa dạng nhận thức.'
 conditions:
-- Các bối cảnh quản trị vận hành.
+- Tiêu chí lựa chọn không được chuẩn hóa hoặc không được kiểm tra định kỳ.
+- Quyết định chọn lọc dựa nhiều vào quen thuộc và cảm nhận chủ quan.
 exceptions:
-- Các trường hợp ưu tiên xử lý khủng hoảng khẩn cấp.
+- Quy trình chuẩn hóa tiêu chí kèm kiểm tra thiên kiến định kỳ duy trì được đa dạng.
+- Vai trò yêu cầu chuẩn hóa cực cao có thể cần khuôn mẫu hẹp có chủ đích.
 applications:
+  hiring:
+  - Chuẩn hóa bộ tiêu chí đánh giá và kiểm tra phân bố ứng viên được chọn theo thời gian.
+  - Luân phiên người tham gia hội đồng tuyển chọn để giảm khuôn mẫu cá nhân.
   governance:
-  - Áp dụng nguyên lý Tính Đồng nhất do Thiên kiến Lựa chọn vào các quy trình làm việc của tổ chức.
+  - Theo dõi chỉ số đa dạng nhận thức của các nhóm ra quyết định quan trọng.
+  team-design:
+  - Chủ động bổ sung góc nhìn khác biệt cho các vị trí phân tích và phản biện.
 risks:
-- Áp dụng sai nguyên lý Tính Đồng nhất do Thiên kiến Lựa chọn dẫn đến hiệu suất dưới mức tối ưu.
+- Tư duy tập thể và điểm mù hệ thống do quá đồng nhất.
+- Tự củng cố văn hóa độc canh, khó thích ứng khi môi trường thay đổi.
+- Bỏ lỡ nhân tài khác khuôn mẫu nhưng phù hợp công việc.
 evidence:
   level: supported
   references:
@@ -36,5 +45,9 @@ tags:
 - groupthink-risk
 - workforce-diversity
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Tiêu chí lựa chọn ngầm ưu tiên một kiểu ứng viên quen thuộc.
+- Lựa chọn lặp lại theo tiêu chí đó làm tăng tỷ trọng người tương tự nhau.
+- Đồng nhất tăng khiến tiêu chí tiếp tục nghiêng về khuôn mẫu sẵn có.
+- Tổ chức mất dần các góc nhìn khác biệt vốn cần cho phát hiện rủi ro.

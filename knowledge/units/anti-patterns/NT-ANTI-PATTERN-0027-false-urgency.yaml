@@ -1,7 +1,7 @@
 id: NT-ANTI-PATTERN-0027
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Sự Khẩn Cấp Giả Tạo
 summary: Sự khẩn cấp giả tạo là tình trạng tổ chức liên tục tạo ra áp lực thời gian không cần thiết, biến mọi tác vụ thành báo động đỏ gây kiệt sức và giảm chất lượng quyết định.
 primary_domain: dung-nhan
@@ -36,5 +36,10 @@ tags:
 - organizational-stress
 - time-management-anti-pattern
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Tổ chức hoặc người quản lý gán nhãn khẩn cấp cho nhiều công việc thường ngày.
+- Áp lực thời gian liên tục làm suy giảm chất lượng phán đoán.
+- Nhân sự kiệt sức và mất khả năng phân biệt ưu tiên thật.
+- Các quyết định quan trọng và không quan trọng đều bị xử lý như tình huống cháy.
+- Kiệt sức tập thể làm giảm hiệu suất và tăng sai sót trên diện rộng.

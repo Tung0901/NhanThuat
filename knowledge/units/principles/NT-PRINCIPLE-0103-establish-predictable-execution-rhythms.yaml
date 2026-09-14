@@ -1,7 +1,7 @@
 id: NT-PRINCIPLE-0103
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Thiết lập nhịp thực thi ổn định
 summary: Xây dựng các nhịp rà soát vận hành cố định (họp ngắn hằng ngày, demo hằng tuần) để duy trì sự thống nhất.
 primary_domain: dung-nhan
@@ -13,7 +13,7 @@ conditions:
 exceptions:
 - Các nhiệm vụ nghiên cứu cá nhân cần tập trung sâu.
 applications:
-  ops_cadence:
+  ops-cadence:
   - Thiết lập họp ngắn 15 phút mỗi ngày tập trung vào các điểm tắc nghẽn.
 risks:
 - Biến họp ngắn thành các buổi báo cáo hành chính giá trị thấp.
@@ -35,5 +35,10 @@ tags:
 - coordination
 - team-management
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- 'Thiết kế nhịp rà soát cố định: họp ngắn, đánh giá tiến độ, demo định kỳ.'
+- Đảm bảo tính dự đoán được của lịch để giảm phối hợp đột xuất.
+- Gắn mỗi nhịp với đầu ra cụ thể thay vì họp để họp.
+- Duy trì nhịp độ ổn định kể cả khi áp lực tăng.
+- Điều chỉnh tần suất khi quy mô hoặc mức phức tạp thay đổi.

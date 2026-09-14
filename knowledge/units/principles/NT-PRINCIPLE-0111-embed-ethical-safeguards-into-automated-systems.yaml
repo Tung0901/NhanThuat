@@ -1,7 +1,7 @@
 id: NT-PRINCIPLE-0111
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Nhúng các rào chắn đạo đức vào hệ thống tự động
 summary: Mã hóa các kiểm tra ranh giới đạo đức và khẳng định an toàn trực tiếp vào các quy trình tự động của BusinessOS.
 primary_domain: tu-than
@@ -13,7 +13,7 @@ conditions:
 exceptions:
 - Các quy trình giấy tờ thủ công, không tự động.
 applications:
-  ai_safety:
+  ai-safety:
   - Nhúng ma trận rào chắn đạo đức vào các công cụ đề xuất AI để chặn những lời khuyên lừa dối.
 risks:
 - Tạo ra các kiểm tra phần mềm cứng nhắc chặn cả các phá lệ khẩn cấp hợp lệ.
@@ -35,5 +35,10 @@ tags:
 - automated-decision-making
 - safeguards
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Xác định các ranh giới đạo đức quan trọng cần bảo vệ trong hệ thống.
+- Mã hóa các kiểm tra ranh giới thành quy tắc tự động.
+- Thiết kế khẳng định an toàn và cổng phê duyệt trong quy trình tự động.
+- Ghi log đầy đủ để kiểm toán hành vi hệ thống.
+- Cập nhật kiểm tra khi xuất hiện rủi ro đạo đức mới.

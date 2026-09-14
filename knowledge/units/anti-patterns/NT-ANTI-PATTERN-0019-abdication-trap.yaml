@@ -1,7 +1,7 @@
 id: NT-ANTI-PATTERN-0019
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Bẫy buông bỏ trách nhiệm
 summary: Đơn vị kiến thức cấu trúc về mẫu chống hình Bẫy buông bỏ trách nhiệm (Abdication Trap).
 primary_domain: dung-nhan
@@ -35,5 +35,10 @@ tags:
 - leadership-trap
 - accountability-evasion
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Người quản lý giao việc hoặc dự án cho cấp dưới.
+- Việc theo dõi, hỗ trợ và chịu trách nhiệm cuối cùng không được thực hiện.
+- Vấn đề phát sinh không được phát hiện kịp thời.
+- Khi thất bại xảy ra, trách nhiệm được đẩy về phía người nhận việc.
+- Niềm tin và hiệu suất của đội ngũ suy giảm.

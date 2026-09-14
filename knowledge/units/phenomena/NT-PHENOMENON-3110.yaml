@@ -14,7 +14,7 @@ conditions:
 exceptions:
 - Các trải nghiệm ngắn, đồng nhất, không có sự biến thiên về cường độ cảm xúc.
 applications:
-  ux_design:
+  ux-design:
   - Luôn kết thúc hành trình người dùng hoặc quá trình thoát khỏi dịch vụ bằng một nốt tích cực, mang lại cảm giác được đền đáp.
 risks:
 - Đầu tư nhiều vào việc cải thiện trải nghiệm 'trung bình' trong khi bỏ qua một phần kết gây khó chịu, dẫn đến tỷ lệ giữ chân tiêu cực.
@@ -34,6 +34,6 @@ tags:
 - experience-design
 - ux
 status: frozen
-version: 0.1.0
+version: 0.2.0
 created_at: '2026-08-13'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'

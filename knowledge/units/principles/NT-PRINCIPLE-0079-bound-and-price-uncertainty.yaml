@@ -1,22 +1,31 @@
 id: NT-PRINCIPLE-0079
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Giới hạn và định giá sự không chắc chắn
-summary: Giới hạn và định giá sự không chắc chắn là một đơn vị tri thức cấu trúc trong kho tri thức Nhân Thuật.
+summary: Đặt giới hạn và định giá cụ thể cho sự không chắc chắn thay vì giả định nó bằng không. Xử lý bất định có phương pháp giúp quyết định tỉnh táo hơn.
 primary_domain: tri-nhan
 secondary_domains:
 - thanh-su
-definition: Định nghĩa chính thức của Nguyên tắc Giới hạn và định giá sự không chắc chắn trong kiến trúc Nhân Thuật.
+definition: Giới hạn và định giá sự không chắc chắn là nguyên tắc quản trị rủi ro yêu cầu mọi kế hoạch quan trọng phải nêu rõ phạm vi bất định, xác suất ước lượng và chi phí đi kèm của khả năng sai khác.
 conditions:
-- Các bối cảnh quản trị vận hành.
+- Kế hoạch có ảnh hưởng lớn và phụ thuộc vào giả định.
+- Có dữ liệu hoặc kinh nghiệm để ước lượng phạm vi bất định.
 exceptions:
-- Các tình huống khẩn cấp yêu cầu vượt quyền ưu tiên.
+- Công việc thử nghiệm nhỏ, chi phí sai thấp có thể chấp nhận bất định cao không cần định giá.
+- Quyết định khẩn cấp phải hành động trước khi đủ thông tin định giá.
 applications:
+  planning:
+  - Bắt buộc ghi phạm vi bất định và phương án dự phòng trong kế hoạch trọng yếu.
+  - Phân bổ ngân sách dự phòng theo mức bất định thực tế.
+  negotiation:
+  - Đưa điều khoản điều chỉnh cho các biến số không chắc chắn trong hợp đồng.
   governance:
-  - Áp dụng Nguyên tắc Giới hạn và định giá sự không chắc chắn vào các quy trình vận hành của tổ chức.
+  - Yêu cầu trình bày kịch bản xấu nhất và chi phí của nó trước khi phê duyệt.
 risks:
-- Áp dụng sai Nguyên tắc Giới hạn và định giá sự không chắc chắn dẫn đến hiệu suất dưới mức tối ưu.
+- Giả định bất định bằng không dẫn tới sốc khi sai khác lớn.
+- Định giá bất định hình thức không gắn với ngân sách thực.
+- Dùng bất định làm cái cớ cho mọi thất bại.
 evidence:
   level: supported
   references:
@@ -35,5 +44,9 @@ tags:
 - decision-rules
 - risk-management
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Nhận diện các biến số không chắc chắn trong kế hoạch.
+- Khoanh vùng phạm vi biến động hợp lý cho từng biến.
+- Gán xác suất hoặc kịch bản cho các khả năng chính.
+- Đưa chi phí của bất định vào cấu trúc quyết định, ngân sách dự phòng và điều khoản.

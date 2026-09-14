@@ -25,7 +25,7 @@ from backend.app.main import create_app_server
 
 def main() -> None:
     host = os.environ.get("HOST", "0.0.0.0")
-    port = int(os.environ.get("PORT", 8000))
+    port = int(os.environ.get("PORT", "8000"))
     local_url = f"http://localhost:{port}" if host == "0.0.0.0" else f"http://{host}:{port}"
 
     print("=" * 80)

@@ -1,0 +1,21 @@
+epic_id: NT-EPIC-04
+status: in_progress
+progress: 90
+deliverables:
+  - id: NT-E4-D01
+    title: Five Philosophy Lens single-source documents
+    status: approved
+  - id: NT-E4-D02
+    title: Executable lens engines (Rhetoric, Confucian, Legalism, Taoism, Xunzi)
+    status: approved
+  - id: NT-E4-D03
+    title: Multi-lens PhilosophyRouter with weights and conflict resolution
+    status: approved
+  - id: NT-E4-D04
+    title: Application-layer tools over the knowledge base (advisory, council, sparring, diagnostics)
+    status: approved
+  - id: NT-E4-D05
+    title: Product Owner review and freeze of EPIC 4
+    status: backlog
+blockers: []
+last_reviewed_at: '2026-09-14'

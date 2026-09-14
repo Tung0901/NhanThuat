@@ -1,7 +1,7 @@
 id: NT-PRINCIPLE-0104
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Làm cho nút thắt hiển thị tức thì
 summary: Hiển thị ngay các điểm tắc nghẽn thực thi và hàng đợi dồn ứ trên các bảng giám sát trực quan dùng chung.
 primary_domain: dung-nhan
@@ -35,5 +35,10 @@ tags:
 - dashboards
 - flow
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Xác định các trạng thái công việc và dấu hiệu bị chặn.
+- Thiết kế bảng hiển thị trực quan dùng chung cho toàn đội.
+- Cập nhật trạng thái theo thời gian thực khi công việc bị tắc.
+- Nổi bật trực quan các mục bị chặn và thời gian đã chờ.
+- Đưa xử lý nút thắt vào đầu chương trình nghị sự của các buổi vận hành.

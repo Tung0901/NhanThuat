@@ -1,7 +1,7 @@
 id: NT-LAW-0071
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Tốc độ Vòng lặp Phản hồi
 summary: Tốc độ thích ứng của tổ chức tỷ lệ thuận với tốc độ xử lý dữ liệu đo lường từ các hành động thành các mô hình tư duy cập nhật.
 primary_domain: tri-nhan
@@ -13,7 +13,7 @@ conditions:
 exceptions:
 - Các khoản đầu tư chiến lược dài hạn kéo dài nhiều năm.
 applications:
-  ci_cd:
+  ci-cd:
   - Triển khai các đường ống kiểm thử đơn vị tự động để cung cấp phản hồi tức thì về lỗi cho lập trình viên.
 risks:
 - Phản ứng thái quá trước những nhiễu loạn ngắn hạn trong các vòng lặp phản hồi nhanh.
@@ -36,5 +36,10 @@ tags:
 - agile-iteration
 - telemetry-processing
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Hành động được thực hiện và tạo ra hệ quả trong thực tế.
+- Độ trễ phản hồi giữa hành động và dữ liệu kết quả càng lớn thì học hỏi càng chậm.
+- Vòng lặp phản hồi ngắn cho phép điều chỉnh mô hình tư duy kịp thời.
+- Vòng lặp phản hồi dài khiến tổ chức lặp lại sai lầm trước khi nhận ra.
+- Tốc độ thích ứng của tổ chức tỷ lệ với tốc độ khép kín vòng phản hồi.

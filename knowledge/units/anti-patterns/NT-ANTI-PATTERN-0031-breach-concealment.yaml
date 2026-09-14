@@ -1,22 +1,31 @@
 id: NT-ANTI-PATTERN-0031
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Hành vi che giấu vi phạm
-summary: Đơn vị tri thức cấu trúc về Hành vi che giấu vi phạm trong quản trị và tuân thủ tổ chức.
+summary: Sai sót và vi phạm bị che giấu thay vì được báo cáo kịp thời. Sự cố nhỏ không được xử lý tích tụ thành rủi ro lớn không thể đảo ngược.
 primary_domain: tri-nhan
 secondary_domains:
 - hop-chung
-definition: Định nghĩa chính thức về Hành vi che giấu vi phạm (Breach Concealment) trong kiến trúc Nhân Thuật, miêu tả hành động cố tình không báo cáo hoặc lấp liếm các sai sót, sự cố quy trình và vi phạm chính sách.
+definition: Hành vi che giấu vi phạm là phản-mẫu tuân thủ trong đó cá nhân hoặc bộ phận cố tình không báo cáo sai sót, sự cố hoặc vi phạm chính sách nhằm tránh hậu quả trước mắt.
 conditions:
-- Bối cảnh quản trị vận hành tổ chức.
+- Văn hóa trừng phạt sai sót và thiếu kênh báo cáo an toàn.
+- Mục tiêu tuân thủ bị đo bằng số lượng vi phạm phát hiện được.
 exceptions:
-- Trường hợp ghi đè trong khủng hoảng khẩn cấp.
+- Trường hợp vi phạm do cố ý trục lợi vẫn thuộc diện xử lý riêng.
+- Thông tin nhạy cảm được bảo vệ theo quy trình hợp pháp.
 applications:
   governance:
-  - Áp dụng nhận diện và ngăn chặn Hành vi che giấu vi phạm vào quy trình làm việc tổ chức.
+  - Thiết kế kênh báo cáo sự cố an toàn và có thời hạn miễn trừ khi hợp tác.
+  - Rà soát chính sách để báo cáo sớm không gây bất lợi so với che giấu.
+  risk-management:
+  - Đo lường chất lượng phát hiện sự cố thay vì chỉ đếm số vụ vi phạm.
+  culture:
+  - Lãnh đạo công khai khen thưởng việc báo cáo sớm các sai sót nghiêm trọng.
 risks:
-- Việc để xảy ra Hành vi che giấu vi phạm dẫn đến rủi ro hệ thống bùng phát và giảm hiệu suất tổ chức.
+- Sự cố tích tụ bùng phát với quy mô lớn và chi phí cao.
+- Mất niềm tin khiến kênh báo cáo chính thức bị vô hiệu.
+- Rủi ro pháp lý và danh tiếng tăng theo thời gian che giấu.
 evidence:
   level: supported
   references:
@@ -35,5 +44,9 @@ tags:
 - governance-failure
 - risk-management
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Xảy ra sai sót hoặc vi phạm trong quá trình vận hành.
+- Người liên quan đánh giá chi phí báo cáo cao hơn chi phí che giấu.
+- Thông tin bị lược bỏ hoặc làm nhẹ trong báo cáo.
+- Rủi ro tích tụ ngoài tầm kiểm soát cho tới khi bộc lộ quy mô lớn.

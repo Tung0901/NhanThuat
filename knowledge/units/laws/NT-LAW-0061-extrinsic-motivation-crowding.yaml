@@ -1,7 +1,7 @@
 id: NT-LAW-0061
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Sự lấn át động lực nội tại
 summary: Việc áp dụng các phần thưởng tài chính cho những công việc phức tạp vốn có động lực nội tại sẽ làm giảm cam kết bên trong và chất lượng sáng tạo.
 primary_domain: tu-than
@@ -13,7 +13,7 @@ conditions:
 exceptions:
 - Các công việc chân tay lặp đi lặp lại, mang tính rập khuôn và thiếu đi sức hút nội tại.
 applications:
-  compensation_design:
+  compensation-design:
   - Sử dụng mức lương cơ bản hậu hĩnh thay vì cơ chế hoa hồng chia nhỏ cho các đội ngũ kỹ sư nghiên cứu và phát triển (R&D).
 risks:
 - Phá hủy tinh thần làm việc nhóm tự nguyện và sự an toàn tâm lý bằng các cấu trúc tiền thưởng cạnh tranh cực đoan.
@@ -37,5 +37,10 @@ tags:
 - overjustification-effect
 - compensation-design
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Công việc vốn có động lực nội tại và ý nghĩa cá nhân.
+- Phần thưởng tài chính được áp dụng cho công việc đó.
+- Chủ thể chuyển trọng tâm từ ý nghĩa sang tính toán phần thưởng.
+- Khi phần thưởng không còn hoặc giảm, nỗ lực tự nguyện sụt giảm mạnh.
+- Cam kết nội tại đã bị thay thế bởi quan hệ giao dịch.

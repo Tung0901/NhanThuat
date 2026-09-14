@@ -1,22 +1,31 @@
 id: NT-LAW-0054
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Tiếp nhận đồng bộ khung nhận thức
-summary: Đơn vị tri thức cấu trúc về Tiếp nhận đồng bộ khung nhận thức trong hệ thống.
+summary: Thông điệp được tiếp nhận khi khung nhận thức của người nhận được khớp trước. Khác khung tạo đề kháng, hiểu sai hoặc im lặng.
 primary_domain: tri-nhan
 secondary_domains:
 - dung-nhan
-definition: Định nghĩa chính thức về Tiếp nhận đồng bộ khung nhận thức trong kiến trúc Nhân Thuật.
+definition: 'Tiếp nhận đồng bộ khung nhận thức là quy luật về điều kiện tiếp nhận thông điệp: hiệu quả truyền đạt phụ thuộc vào mức độ tương thích giữa khung của người gửi và khung đang vận hành ở người nhận.'
 conditions:
-- Bối cảnh quản trị vận hành tổ chức.
+- Người nhận đã có khung nhận thức ổn định về chủ đề.
+- Thông điệp cần được tiếp nhận để tạo hành động.
 exceptions:
-- Các trường hợp can thiệp ưu tiên trong khủng hoảng khẩn cấp.
+- Bằng chứng mới đủ mạnh có thể tái định hình khung nhận thức hiện có.
+- Trong tình huống khẩn cấp, mệnh lệnh trực tiếp có thể vượt qua nhu cầu khớp khung.
 applications:
-  governance:
-  - Áp dụng Tiếp nhận đồng bộ khung nhận thức vào các quy trình làm việc của tổ chức.
+  communication:
+  - Xác định khung nhận thức của người nhận trước khi thiết kế thông điệp quan trọng.
+  - Dùng ví dụ và ngôn ngữ quen thuộc với người nhận thay vì thuật ngữ của người gửi.
+  negotiation:
+  - Liên kết đề xuất với giá trị và mối quan tâm đã được người đối diện công nhận.
+  change-management:
+  - Kể câu chuyện thay đổi dựa trên trải nghiệm hiện có của nhân sự.
 risks:
-- Áp dụng sai Tiếp nhận đồng bộ khung nhận thức dẫn đến hiệu suất dưới mức tối ưu.
+- Thông điệp đúng nhưng bị từ chối vì lệch khung người nhận.
+- Điều chỉnh khung thiếu nguyên tắc dẫn tới thao túng nhận thức.
+- Hiểu sai im lặng là đồng thuận trong khi thực tế là đề kháng ngầm.
 evidence:
   level: supported
   references:
@@ -35,5 +44,9 @@ tags:
 - cognitive-framing
 - governance-alignment
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Người gửi mã hóa thông điệp theo khung nhận thức của mình.
+- Người nhận diễn giải thông điệp qua khung đang vận hành sẵn có.
+- Khi hai khung tương thích, thông điệp được tiếp nhận và ghi nhớ.
+- Khi lệch khung, thông điệp bị đề kháng, hiểu sai hoặc bỏ qua.

@@ -1,22 +1,31 @@
 id: NT-MODEL-0013
 type: model
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Ma trận Ủy quyền và Thoái thác
-summary: Đơn vị tri thức cấu trúc về Ma trận Ủy quyền và Thoái thác trong quản lý.
+summary: Ma trận phân loại hành vi giao quyền theo mức chủ động của người nhận và mức can thiệp của người giao. Mô hình giúp phân biệt ủy quyền lành mạnh với thoái thác và vi quản lý.
 primary_domain: dung-nhan
 secondary_domains:
 - tri-nhan
-definition: Định nghĩa chính thức về Ma trận Ủy quyền và Thoái thác trong hệ thống kiến trúc Nhân Thuật.
+definition: 'Ma trận Ủy quyền và Thoái thác là khung hai chiều đối chiếu mức tự chủ được trao với mức hỗ trợ được cung cấp, xác định bốn vùng hành vi: ủy quyền lành mạnh, thoái thác, vi quản lý và kiểm soát chặt có hỗ trợ.'
 conditions:
-- Các bối cảnh quản trị vận hành tổ chức.
+- Tồn tại quan hệ giao việc thường xuyên giữa các cấp.
+- Mức tự chủ và hỗ trợ có thể quan sát và điều chỉnh.
 exceptions:
-- Các trường hợp khẩn cấp ghi đè cơ chế thông thường.
+- Giao việc cho người mới cần vùng kiểm soát chặt có hỗ trợ trong giai đoạn đầu.
+- Khủng hoảng có thể tạm dịch chuyển về vùng kiểm soát tập trung.
 applications:
-  governance:
-  - Áp dụng Ma trận Ủy quyền và Thoái thác vào quy trình làm việc của tổ chức.
+  delegation:
+  - Định vị các quan hệ giao việc hiện tại trên ma trận để phát hiện lệch chuẩn.
+  - Điều chỉnh mức tự chủ theo năng lực thay vì theo cảm hứng.
+  management:
+  - Tự đánh giá xu hướng vi quản lý hoặc thoái thác của bản thân.
+  talent-development:
+  - Lộ trình dịch chuyển dần từ kiểm soát chặt sang ủy quyền lành mạnh.
 risks:
-- Áp dụng sai lệch Ma trận Ủy quyền và Thoái thác dẫn đến hiệu suất kém tối ưu.
+- Định vị sai khiến can thiệp không đúng mức.
+- Trao tự chủ không kèm hỗ trợ dẫn tới thất bại rồi siết quyền.
+- Coi ma trận là công cụ chấm điểm cá nhân thay vì chẩn đoán cấu trúc.
 evidence:
   level: supported
   references:
@@ -36,8 +45,9 @@ tags:
 - nhanthuat-architecture
 - governance-framework
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'
 mechanism:
-- 'Bước 1: Xác định Ma trận Ủy quyền và Thoái thác.'
-- 'Bước 2: Phân tích các tham số liên quan.'
-- 'Bước 3: Thực thi mô hình trong thực tế.'
+- Đánh giá mức tự chủ thực tế đang được trao cho người nhận.
+- Đánh giá mức hỗ trợ và giám sát đang được cung cấp kèm.
+- Định vị từng quan hệ giao việc trên ma trận hai chiều.
+- Điều chỉnh về vùng ủy quyền lành mạnh phù hợp năng lực người nhận.

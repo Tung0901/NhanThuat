@@ -1,7 +1,7 @@
 id: NT-ANTI-PATTERN-0045
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Khoảng trống thẩm quyền
 summary: Không chỉ định rõ người chịu trách nhiệm quyết định, dẫn đến sự đình trệ, các cuộc tranh luận vô hồi kết của hội đồng và thất bại không ai nhận trách nhiệm.
 primary_domain: dung-nhan
@@ -18,7 +18,7 @@ conditions:
 exceptions:
 - Các cơ quan bỏ phiếu dân chủ được thành lập rõ ràng theo điều lệ.
 applications:
-  governance_audit:
+  governance-audit:
   - Đảm bảo mỗi sáng kiến chiến lược đều có duy nhất một người đứng tên chịu trách nhiệm quyết định.
 risks:
 - Giao quyền cho kẻ độc tài mà thiếu các cơ chế tham vấn cần thiết.
@@ -43,4 +43,4 @@ tags:
 - governance
 - committee-paralysis
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'

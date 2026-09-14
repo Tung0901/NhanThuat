@@ -1,22 +1,31 @@
 id: NT-MODEL-0022
 type: model
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Đường ống quy trình đàm phán
-summary: Đơn vị tri thức cấu trúc về Đường ống quy trình đàm phán trong kiến trúc Nhân Thuật.
+summary: 'Đường ống quy trình đàm phán gồm năm giai đoạn nối tiếp: chuẩn bị, khai vấn, đề xuất, mặc cả và chốt thỏa thuận. Mỗi giai đoạn có mục tiêu và sai lầm điển hình riêng.'
 primary_domain: thanh-su
 secondary_domains:
 - tri-nhan
-definition: Định nghĩa chính thức về Đường ống quy trình đàm phán trong kiến trúc Nhân Thuật.
+definition: Đường ống quy trình đàm phán là mô hình mô tả tiến trình đàm phán như một chuỗi giai đoạn có thứ tự, trong đó kết quả mỗi giai đoạn là đầu vào cho giai đoạn tiếp theo và bỏ qua giai đoạn nào sẽ làm suy yếu toàn bộ tiến trình.
 conditions:
-- Các bối cảnh quản trị vận hành.
+- Đàm phán có độ phức tạp cần tiến trình có cấu trúc.
+- Các bên có thể chuẩn bị trước và trao đổi nhiều vòng.
 exceptions:
-- Bị ghi đè trong các tình huống khủng hoảng khẩn cấp.
+- Đàm phán đơn giản, giá trị thấp có thể rút gọn các giai đoạn.
+- Tình huống khẩn cấp cần chốt nhanh theo kịch bản định sẵn.
 applications:
-  governance:
-  - Áp dụng Đường ống quy trình đàm phán vào các quy trình công việc của tổ chức.
+  negotiation:
+  - Kiểm tra tiến trình đàm phán có bỏ qua giai đoạn chuẩn bị hoặc khai vấn không.
+  - Chuẩn bị phương án thay thế tốt nhất trước khi ngồi vào bàn.
+  sales:
+  - Áp dụng cấu trúc chuẩn bị - khai vấn - đề xuất cho chu kỳ bán hàng phức tạp.
+  procurement:
+  - Chuẩn hóa tiến trình đàm phán nhà cung cấp theo các giai đoạn của đường ống.
 risks:
-- Áp dụng sai Đường ống quy trình đàm phán dẫn đến hiệu suất kém tối ưu.
+- Nhảy thẳng vào mặc cả khi chưa hiểu lợi ích đối phương.
+- Bỏ qua giai đoạn chuẩn bị phương án thay thế nên mất lợi thế.
+- Coi đường ống là quy trình cứng nhắc thay vì khung linh hoạt.
 evidence:
   level: supported
   references:
@@ -36,8 +45,10 @@ tags:
 - negotiation-model
 - process-model
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'
 mechanism:
-- 'Bước 1: Nhận diện Đường ống quy trình đàm phán.'
-- 'Bước 2: Phân tích các tham số.'
-- 'Bước 3: Thực thi mô hình.'
+- 'Chuẩn bị: xác định lợi ích, phương án thay thế và giới hạn của mình.'
+- 'Khai vấn: tìm hiểu lợi ích, ưu tiên và lo ngại của đối phương.'
+- 'Đề xuất: trình bày phương án dựa trên lợi ích đã trao đổi.'
+- 'Mặc cả: xử lý khác biệt bằng tiêu chí khách quan và nhượng bộ có điều kiện.'
+- 'Chốt: ghi nhận thỏa thuận, trách nhiệm và cơ chế xử lý thay đổi.'

@@ -1,0 +1,18 @@
+epic_id: NT-EPIC-05
+status: ready_for_review
+progress: 100
+deliverables:
+  - id: NT-E5-D01
+    title: Retrieval and ranking (keyword resolver + hybrid RAG)
+    status: approved
+  - id: NT-E5-D02
+    title: Citation and provenance records
+    status: approved
+  - id: NT-E5-D03
+    title: Confidence and evidence levels
+    status: approved
+  - id: NT-E5-D04
+    title: LLM synthesis with deterministic fallback and audit trail
+    status: approved
+blockers: []
+last_reviewed_at: '2026-09-14'

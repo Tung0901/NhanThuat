@@ -1,7 +1,7 @@
 id: NT-LAW-0064
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Ranh giới Quyền Quyết định
 summary: Sự mơ hồ trong quyền quyết định chính thức làm gia tăng ma sát phối hợp trong tổ chức và gây ra tình trạng tê liệt quyết định.
 primary_domain: dung-nhan
@@ -35,5 +35,10 @@ tags:
 - governance-structure
 - role-clarity
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Quyền quyết định không được phân định rõ giữa các vai trò.
+- Nhiều bên tin rằng mình có quyền quyết định hoặc không ai dám quyết.
+- Các quyết định bị đẩy qua lại giữa các phòng ban.
+- Thời gian và nguồn lực bị tiêu hao vào đàm phán ngầm về thẩm quyền.
+- Tổ chức mất khả năng đưa ra quyết định kịp thời.

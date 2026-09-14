@@ -15,7 +15,7 @@ conditions:
 exceptions:
 - Các nhiệm vụ hoàn toàn mới, phức tạp hoặc nguy hiểm đòi hỏi sự chú ý liên tục của Hệ thống tư duy 2.
 applications:
-  behavior_change:
+  behavior-change:
   - Để thay đổi một thói quen, hãy giữ nguyên gợi ý cũ, mang lại phần thưởng cũ, nhưng chèn vào một chuỗi hành vi mới.
 risks:
 - Vô tình hình thành các thói quen tổ chức tiêu cực (như dập tắt các ý kiến trái chiều) vì chúng mang lại phần thưởng cảm xúc tức thì (giảm thiểu xung đột).
@@ -37,6 +37,6 @@ tags:
 - behavior-change
 - operant-conditioning
 status: frozen
-version: 0.1.0
+version: 0.2.0
 created_at: '2026-08-13'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'

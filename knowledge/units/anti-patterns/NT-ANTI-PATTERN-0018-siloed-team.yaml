@@ -1,7 +1,7 @@
 id: NT-ANTI-PATTERN-0018
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Đội nhóm cô lập
 summary: Đơn vị kiến thức cấu trúc về mẫu chống hình Đội nhóm cô lập (Siloed Team).
 primary_domain: hop-chung
@@ -35,5 +35,10 @@ tags:
 - organizational-silo
 - cross-functional-barrier
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Các bộ phận được thiết kế mục tiêu và chỉ số riêng biệt.
+- Thông tin và nguồn lực bị giữ lại trong từng bộ phận.
+- Hợp tác liên phòng ban trở thành ngoại lệ thay vì mặc định.
+- Xung đột lợi ích cục bộ làm chậm các sáng kiến chung.
+- Tổ chức mất khả năng phối hợp ở các vấn đề xuyên chức năng.

@@ -1,22 +1,31 @@
 id: NT-MODEL-0017
 type: model
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Mô hình Đánh giá Độ bất định
-summary: Đơn vị tri thức cấu trúc về Mô hình Đánh giá Độ bất định trong quản trị tổ chức.
+summary: 'Mô hình phân loại độ bất định theo bốn mức: đã biết, biết là chưa biết, không biết là chưa biết, và bất định do mơ hồ. Mỗi mức cần cách tiếp cận riêng.'
 primary_domain: tri-nhan
 secondary_domains:
 - thanh-su
-definition: Định nghĩa chính thức về Mô hình Đánh giá Độ bất định trong kiến trúc Nhân Thuật.
+definition: 'Mô hình Đánh giá Độ bất định là khung phân loại tình huống theo bốn mức bất định tăng dần, giúp chọn phương pháp xử lý phù hợp: dữ liệu, thực nghiệm, thăm dò, hoặc thích ứng linh hoạt.'
 conditions:
-- Các bối cảnh quản trị vận hành tổ chức.
+- Tình huống ra quyết định có mức bất định cao hoặc hỗn hợp.
+- Có nguồn lực để thực hiện bước thăm dò và thực nghiệm.
 exceptions:
-- Trường hợp khẩn cấp kích hoạt cơ chế ghi đè xử lý khủng hoảng.
+- Tình huống khẩn cấp không cho phép thăm dò đầy đủ, phải hành động và điều chỉnh.
+- Vấn đề đã được nghiên cứu kỹ, bất định nằm trong phạm vi ước lượng được.
 applications:
-  governance:
-  - Áp dụng Mô hình Đánh giá Độ bất định vào các quy trình làm việc của tổ chức.
+  planning:
+  - Phân loại từng vùng của kế hoạch theo bốn mức bất định.
+  - 'Gán phương pháp xử lý tương ứng: phân tích, thực nghiệm, thăm dò hoặc thích ứng.'
+  risk-management:
+  - Thiết kế phương án thích ứng cho các vùng bất định cao.
+  decision-making:
+  - Điều chỉnh mức độ chi tiết kế hoạch theo mức bất định thực tế.
 risks:
-- Áp dụng sai lệch Mô hình Đánh giá Độ bất định dẫn đến hiệu suất hoạt động kém tối ưu.
+- Đối xử với mọi bất định như nhau dẫn tới lãng phí hoặc liều lĩnh.
+- Bỏ qua vùng mơ hồ khiến các bên hiểu khác nhau về cùng mục tiêu.
+- Phân tích quá mức các vấn đề chỉ có thể thăm dò.
 evidence:
   level: supported
   references:
@@ -36,8 +45,9 @@ tags:
 - governance-framework
 - decision-making
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'
 mechanism:
-- 'Bước 1: Xác định Mô hình Đánh giá Độ bất định.'
-- 'Bước 2: Phân tích các tham số liên quan.'
-- 'Bước 3: Tiến hành thực thi mô hình.'
+- Xác định các điều đã biết chắc chắn trong tình huống.
+- Liệt kê các điều biết là chưa biết và đặt câu hỏi cần trả lời.
+- Nhận diện vùng chưa biết là chưa biết cần thăm dò trước khi phân tích.
+- Xác định vùng mơ hồ về tiêu chí và cách diễn giải để xử lý riêng.

@@ -1,22 +1,31 @@
 id: NT-PRINCIPLE-0068
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Phỏng vấn như các giả thuyết
-summary: Phỏng vấn như các giả thuyết là một đơn vị tri thức cấu trúc trong kho tri thức Nhân Thuật.
+summary: Coi mỗi cuộc phỏng vấn là một phép kiểm định giả thuyết về ứng viên thay vì một phán quyết cảm tính. Giả thuyết rõ giúp thiết kế câu hỏi sắc bén và tránh kết luận sớm.
 primary_domain: tri-nhan
 secondary_domains:
 - thanh-su
-definition: Định nghĩa chính thức của Nguyên tắc Phỏng vấn như các giả thuyết trong kiến trúc Nhân Thuật.
+definition: 'Phỏng vấn như các giả thuyết là nguyên tắc đánh giá con người theo phương pháp khoa học: mỗi buổi phỏng vấn kiểm định một giả thuyết cụ thể về năng lực hoặc hành vi, với tiêu chí xác nhận và bác bỏ rõ ràng.'
 conditions:
-- Các bối cảnh quản trị vận hành.
+- Có mô tả công việc và tiêu chuẩn năng lực làm cơ sở hình thành giả thuyết.
+- Người phỏng vấn được đào tạo về kỹ thuật đặt câu hỏi hành vi.
 exceptions:
-- Các tình huống khẩn cấp yêu cầu vượt quyền ưu tiên.
+- Vòng phỏng vấn sàng lọc nhanh có thể dùng tiêu chí tối thiểu thay vì giả thuyết đầy đủ.
+- Vị trí đặc biệt cần đánh giá qua thử việc dài hạn thay vì phỏng vấn.
 applications:
-  governance:
-  - Áp dụng Nguyên tắc Phỏng vấn như các giả thuyết vào các quy trình vận hành của tổ chức.
+  hiring:
+  - Chuẩn bị bộ giả thuyết và câu hỏi kiểm định cho từng vòng phỏng vấn.
+  - Yêu cầu người phỏng vấn ghi lại bằng chứng cụ thể thay vì kết luận chung.
+  leadership:
+  - Áp dụng cách đặt câu hỏi kiểm định giả thuyết khi tìm hiểu vấn đề của nhân sự.
+  decision-making:
+  - Dùng cấu trúc giả thuyết - bằng chứng cho mọi đánh giá quan trọng về con người.
 risks:
-- Áp dụng sai Nguyên tắc Phỏng vấn như các giả thuyết dẫn đến hiệu suất dưới mức tối ưu.
+- Giả thuyết ban đầu định hướng câu hỏi theo cách xác nhận thiên kiến.
+- Ứng viên luyện tập trả lời làm giảm giá trị kiểm định.
+- Quá nhiều giả thuyết làm buổi phỏng vấn phân tán.
 evidence:
   level: supported
   references:
@@ -35,5 +44,9 @@ tags:
 - candidate-assessment
 - decision-making
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Hình thành giả thuyết cụ thể cần kiểm định cho từng ứng viên.
+- Thiết kế câu hỏi và tình huống có khả năng phân biệt giả thuyết đúng/sai.
+- Ghi nhận bằng chứng hành vi thay vì cảm nhận chung.
+- Cập nhật đánh giá theo bằng chứng và tìm giả thuyết thay thế khi cần.

@@ -1,22 +1,31 @@
 id: NT-MODEL-0010
 type: model
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Ma trận Bảo vệ Lãnh đạo
-summary: Đơn vị tri thức cấu trúc về Ma trận Bảo vệ Lãnh đạo trong quản trị tổ chức.
+summary: Ma trận xác định các ranh giới bảo vệ cần thiết cho người ra quyết định trước rủi ro đạo đức, pháp lý và xung đột lợi ích. Bảo vệ lãnh đạo đúng cách giúp quyết định táo bạo hơn trong phạm vi an toàn.
 primary_domain: dung-nhan
 secondary_domains:
 - tu-than
-definition: Định nghĩa chính thức về Ma trận Bảo vệ Lãnh đạo trong cấu trúc Nhân Thuật, thiết lập các ranh giới bảo vệ quyền lực, uy tín và sự an toàn của cấp quản lý.
+definition: 'Ma trận Bảo vệ Lãnh đạo là khung phân loại các cơ chế bảo vệ người ra quyết định theo bốn nhóm: ranh giới pháp lý, ranh giới đạo đức, ranh giới quy trình và ranh giới quan hệ, mỗi nhóm tương ứng với loại rủi ro cụ thể.'
 conditions:
-- Áp dụng trong các bối cảnh quản trị vận hành tiêu chuẩn của tổ chức.
+- Người ra quyết định phải đưa ra lựa chọn có rủi ro đáng kể.
+- Tổ chức có quy trình quản trị và kiểm soát đủ chín.
 exceptions:
-- Các trường hợp khủng hoảng khẩn cấp yêu cầu quyền can thiệp đặc biệt vượt quyền hạn thông thường.
+- Tình huống vi phạm pháp luật hoặc đạo đức rõ ràng không được bảo vệ.
+- Rủi ro cá nhân do hành vi cố ý nằm ngoài phạm vi bảo vệ.
 applications:
   governance:
-  - Áp dụng Ma trận Bảo vệ Lãnh đạo vào quy trình làm việc và phân cấp quyết định của tổ chức.
+  - Thiết kế cơ chế phê duyệt và biên bản cho các quyết định rủi ro cao.
+  - Ban hành chính sách tuyên bố xung đột lợi ích cho các vị trí trọng yếu.
+  leadership:
+  - Xây dựng môi trường quyết định an toàn để người quản lý không né tránh trách nhiệm.
+  risk-management:
+  - Phân loại rủi ro quyết định theo ma trận và gán biện pháp bảo vệ tương ứng.
 risks:
-- Việc áp dụng sai lệch Ma trận Bảo vệ Lãnh đạo có thể dẫn đến sự quan liêu, hiệu suất kém tối ưu và gây tắc nghẽn quyết định.
+- Biến cơ chế bảo vệ thành lá chắn né tránh trách nhiệm.
+- Quan liêu hóa quy trình phê duyệt làm tê liệt khả năng quyết định.
+- Bảo vệ che đậy hành vi sai trái của người có quyền.
 evidence:
   level: supported
   references:
@@ -35,8 +44,9 @@ tags:
 - organizational-protection
 - risk-management
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'
 mechanism:
-- 'Bước 1: Xác định các thành phần và ranh giới của Ma trận Bảo vệ Lãnh đạo.'
-- 'Bước 2: Phân tích các tham số vận hành, mức độ rủi ro và quyền hạn liên quan.'
-- 'Bước 3: Triển khai mô hình bảo vệ vào thực tế vận hành của tổ chức.'
+- Nhận diện các loại rủi ro mà người ra quyết định đang đối mặt.
+- Phân loại rủi ro vào bốn nhóm bảo vệ của ma trận.
+- 'Thiết kế cơ chế bảo vệ tương ứng cho từng nhóm: miễn trừ hợp lý, quy trình phê duyệt, biên bản, tuyên bố lợi ích.'
+- Rà soát định kỳ xem cơ chế bảo vệ còn phù hợp với rủi ro mới.

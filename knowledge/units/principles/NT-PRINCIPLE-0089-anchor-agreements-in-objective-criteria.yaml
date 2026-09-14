@@ -1,22 +1,31 @@
 id: NT-PRINCIPLE-0089
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Cố định thỏa thuận vào tiêu chí khách quan
-summary: Cố định thỏa thuận vào tiêu chí khách quan là một đơn vị tri thức cấu trúc trong kho tri thức Nhân Thuật.
+summary: Dùng tiêu chí khách quan làm điểm neo cho thỏa thuận thay vì đấu trí ý chí. Tiêu chí khách quan giúp thỏa thuận công bằng và dễ được chấp nhận.
 primary_domain: thanh-su
 secondary_domains:
 - dung-nhan
-definition: Định nghĩa chính thức của Nguyên tắc Cố định thỏa thuận vào tiêu chí khách quan trong kiến trúc Nhân Thuật.
+definition: Cố định thỏa thuận vào tiêu chí khách quan là nguyên tắc đàm phán dựa trên chuẩn mực bên ngoài như thị trường, luật lệ, tiêu chuẩn nghề nghiệp và tiền lệ hợp lý, thay vì nhượng bộ ngẫu nhiên theo sức ép.
 conditions:
-- Các bối cảnh quản trị vận hành.
+- Tồn tại chuẩn mực bên ngoài có thể tham chiếu cho vấn đề đang bàn.
+- Các bên cần thỏa thuận có khả năng được chấp nhận rộng rãi.
 exceptions:
-- Các tình huống khẩn cấp yêu cầu vượt quyền ưu tiên.
+- Vấn đề chưa có tiêu chuẩn tham chiếu, cần thống nhất tiêu chí mới.
+- Đàm phán quan hệ dài hạn có thể linh hoạt hơn để duy trì hợp tác.
 applications:
+  negotiation:
+  - Neo đề xuất vào dữ liệu thị trường, tiêu chuẩn ngành hoặc tiền lệ hợp lý.
+  - Thống nhất trước tiêu chí đánh giá để giảm tranh cãi về con số.
+  procurement:
+  - Dùng bảng tiêu chí đánh giá công khai cho lựa chọn nhà cung cấp.
   governance:
-  - Áp dụng Nguyên tắc Cố định thỏa thuận vào tiêu chí khách quan vào các quy trình vận hành của tổ chức.
+  - Áp dụng tiêu chí khách quan cho phân bổ ngân sách và đánh giá kết quả.
 risks:
-- Áp dụng sai Nguyên tắc Cố định thỏa thuận vào tiêu chí khách quan dẫn đến hiệu suất dưới mức tối ưu.
+- Chọn tiêu chí có lợi cho một bên và gọi đó là khách quan.
+- Tiêu chí đã lỗi thời không còn phù hợp thực tế.
+- Dùng tiêu chí khách quan để né tránh đối thoại về giá trị.
 evidence:
   level: supported
   references:
@@ -35,5 +44,9 @@ tags:
 - fairness
 - negotiation
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Xác định các tiêu chí khách quan liên quan tới vấn đề đàm phán.
+- Thống nhất trước về bộ tiêu chí và cách áp dụng.
+- Đưa đề xuất gắn với tiêu chí thay vì chỉ nêu mong muốn.
+- Xử lý bất đồng bằng lập luận trên tiêu chí, không bằng sức ép.

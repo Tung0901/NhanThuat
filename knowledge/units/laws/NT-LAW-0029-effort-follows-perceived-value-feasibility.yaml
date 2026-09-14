@@ -1,7 +1,7 @@
 id: NT-LAW-0029
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Nỗ lực đi theo giá trị nhận thức và tính khả thi
 summary: Con người phân bổ năng lượng và nỗ lực khi họ nhận thấy mục tiêu có giá trị và hành động đòi hỏi có tính khả thi trong mức độ rủi ro và rào cản chấp nhận được.
 primary_domain: tu-than
@@ -23,7 +23,7 @@ exceptions:
 applications:
   leadership:
   - Làm rõ lý do mục tiêu mang tính quan trọng song song với việc loại bỏ sự mơ hồ trong thực thi.
-  organizational-design:
+  organization-design:
   - Giảm thiểu rào cản và ma sát vận hành trước khi đòi hỏi hiệu suất cao hơn.
 risks:
 - Hứa hẹn giá trị quá mức mà không hỗ trợ các điều kiện đảm bảo tính khả thi
@@ -49,4 +49,4 @@ tags:
 - perceived-feasibility
 - goal-pursuit
 created_at: '2026-07-21'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'

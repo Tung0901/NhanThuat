@@ -1,7 +1,7 @@
 id: NT-PRINCIPLE-0109
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Căn chỉnh phần thưởng với các giá trị đã công bố
 summary: Đảm bảo thăng tiến, thưởng và sự công nhận công khai thực sự tôn vinh các hành vi phù hợp với các nguyên tắc văn hóa.
 primary_domain: hop-chung
@@ -13,7 +13,7 @@ conditions:
 exceptions:
 - Không có.
 applications:
-  promotion_calibration:
+  promotion-calibration:
   - Yêu cầu xác nhận Tuân thủ Giá trị Văn hóa trước khi phê duyệt thăng tiến.
 risks:
 - Áp dụng tuân thủ giá trị một cách chủ quan.
@@ -35,5 +35,10 @@ tags:
 - recognition
 - leadership
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Rà soát tiêu chí thăng tiến và thưởng liên quan đến hành vi văn hóa.
+- Đưa đánh giá giá trị và hành vi vào hồ sơ đề bạt.
+- Từ chối thăng tiến với người vi phạm giá trị rõ ràng dù đạt chỉ số.
+- Công khai câu chuyện của người được ghi nhận vì hành vi đúng.
+- Kiểm tra định kỳ mức tương quan giữa phần thưởng và giá trị công bố.

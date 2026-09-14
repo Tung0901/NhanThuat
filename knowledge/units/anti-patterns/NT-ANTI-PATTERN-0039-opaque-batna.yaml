@@ -1,22 +1,31 @@
 id: NT-ANTI-PATTERN-0039
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: BATNA Mù mờ
-summary: Đơn vị tri thức cấu trúc về BATNA mù mờ trong đàm phán và quản trị tổ chức.
+summary: Một bên đàm phán mà không biết rõ phương án thay thế tốt nhất của mình nếu thỏa thuận thất bại. Thiếu BATNA rõ ràng dẫn tới nhượng bộ quá mức hoặc chấp nhận điều kiện bất lợi.
 primary_domain: thanh-su
 secondary_domains:
 - tri-nhan
-definition: Định nghĩa chính thức về BATNA mù mờ (Opaque BATNA) trong kiến trúc Nhân Thuật, chỉ trạng thái không rõ ràng hoặc che giấu phương án thay thế tốt nhất khi thỏa thuận thất bại.
+definition: BATNA mù mờ là phản-mẫu đàm phán trong đó người đàm phán không xác định rõ phương án thay thế tốt nhất khi không đạt được thỏa thuận, dẫn đến mất khả năng đánh giá đúng giới hạn chấp nhận và sức mạnh đàm phán.
 conditions:
-- Bối cảnh quản trị vận hành tổ chức.
+- Đàm phán có tính cạnh tranh hoặc giá trị lớn.
+- Người đàm phán chưa chuẩn bị phương án thay thế rõ ràng.
 exceptions:
-- Các trường hợp ghi đè trong khủng hoảng khẩn cấp.
+- Quan hệ hợp tác dài hạn coi trọng giá trị quan hệ hơn từng giao dịch.
+- Đàm phán nội bộ trong tổ chức có thể ưu tiên mục tiêu chung.
 applications:
-  governance:
-  - Ánh xạ và đánh giá hiện tượng BATNA mù mờ trong các quy trình vận hành tổ chức.
+  negotiation:
+  - Xác định và cải thiện phương án thay thế trước mọi đàm phán quan trọng.
+  - Dùng BATNA làm mốc từ chối thay vì ngưỡng nhượng bộ theo cảm tính.
+  procurement:
+  - Duy trì nhiều nhà cung cấp thay thế để tăng vị thế đàm phán.
+  leadership:
+  - Đào tạo đội ngũ kỹ năng chuẩn bị và đánh giá phương án thay thế.
 risks:
-- Nhận diện sai hoặc đánh giá lệch lạc về BATNA mù mờ dẫn đến hiệu suất không đạt mức tối ưu.
+- Chấp nhận thỏa thuận tệ hơn cả phương án thay thế chưa nhận diện.
+- Nhượng bộ quá mức do thiếu mốc so sánh.
+- Bị đối phương chi phối hoàn toàn nhịp và phạm vi đàm phán.
 evidence:
   level: supported
   references:
@@ -35,5 +44,9 @@ tags:
 - negotiation-strategy
 - governance-anti-pattern
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Người đàm phán bước vào bàn đàm phán mà chưa xác định phương án thay thế.
+- Không có mốc so sánh nên không biết đâu là điểm từ chối hợp lý.
+- Áp lực thỏa thuận khiến các nhượng bộ vượt ngưỡng cần thiết.
+- Thỏa thuận có thể tệ hơn cả phương án thay thế chưa được nhận diện.

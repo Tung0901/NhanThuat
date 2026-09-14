@@ -1,22 +1,31 @@
 id: NT-PRINCIPLE-0083
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Tối ưu chi phí phối hợp thông qua độ tin cậy
-summary: Tối ưu chi phí phối hợp thông qua độ tin cậy là một đơn vị tri thức cấu trúc trong kho tri thức Nhân Thuật.
+summary: Đầu tư vào độ tin cậy để giảm chi phí phối hợp dài hạn. Mỗi điểm thiếu tin cậy buộc hệ thống tăng kiểm tra và đệm an toàn tốn kém.
 primary_domain: hop-chung
 secondary_domains:
 - thanh-su
-definition: Định nghĩa chính thức của Nguyên tắc Tối ưu chi phí phối hợp thông qua độ tin cậy trong kiến trúc Nhân Thuật.
+definition: Tối ưu chi phí phối hợp thông qua độ tin cậy là nguyên tắc đầu tư vào tính ổn định của con người, quy trình và hệ thống nhằm giảm nhu cầu kiểm tra, đối chiếu và xử lý sai sót trong phối hợp.
 conditions:
-- Các bối cảnh quản trị vận hành.
+- Công việc phụ thuộc lẫn nhau giữa nhiều vai trò.
+- Chi phí phối hợp hiện tại đủ lớn để đo lường và cải thiện.
 exceptions:
-- Các tình huống khẩn cấp yêu cầu vượt quyền ưu tiên.
+- Quan hệ một lần không đủ thời gian thu hồi đầu tư độ tin cậy.
+- Công việc độc lập ít giao tiếp không cần tối ưu chi phí phối hợp.
 applications:
-  governance:
-  - Áp dụng Nguyên tắc Tối ưu chi phí phối hợp thông qua độ tin cậy vào các quy trình vận hành của tổ chức.
+  operations:
+  - Đo lường chi phí kiểm tra và sửa lỗi tại các điểm giao thoa giữa các bộ phận.
+  - Đầu tư tiêu chuẩn và tự động hóa tại các điểm phối hợp đắt đỏ nhất.
+  process-design:
+  - Thiết kế giao diện bàn giao rõ ràng để giảm sai sót chuyển tiếp.
+  management:
+  - Xem độ tin cậy của đồng nghiệp là tài sản vận hành cần đầu tư, không phải yếu tố tự có.
 risks:
-- Áp dụng sai Nguyên tắc Tối ưu chi phí phối hợp thông qua độ tin cậy dẫn đến hiệu suất dưới mức tối ưu.
+- Đầu tư độ tin cậy hình thức không giải quyết nguyên nhân gốc.
+- Tối ưu chi phí phối hợp bằng cách cắt giao tiếp cần thiết.
+- Đo lường sai chi phí thực của thiếu tin cậy.
 evidence:
   level: supported
   references:
@@ -35,5 +44,9 @@ tags:
 - coordination
 - dependency-management
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Nhận diện các điểm phối hợp tốn kém do phải kiểm tra hoặc xử lý sai sót.
+- Đo lường chi phí thực tế của các điểm thiếu tin cậy.
+- 'Đầu tư vào cải thiện độ ổn định: tiêu chuẩn, tự động hóa, đào tạo, giao diện rõ ràng.'
+- Theo dõi mức giảm chi phí phối hợp sau đầu tư.

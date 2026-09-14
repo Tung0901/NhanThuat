@@ -1,7 +1,7 @@
 id: NT-ANTI-PATTERN-0033
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Ép buộc dựa trên vị thế
 summary: Đơn vị kiến thức cấu trúc về Ép buộc dựa trên vị thế (Positional Forcing) trong quản trị hành vi và đàm phán.
 primary_domain: dung-nhan
@@ -35,5 +35,10 @@ tags:
 - coercive-power
 - negotiation-risk
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Một bên có ưu thế về vị trí, quyền lực hoặc lợi thế thương lượng.
+- Bên mạnh sử dụng lợi thế để áp đặt điều kiện thay vì thương lượng.
+- Bên yếu chấp nhận vì không có phương án thay thế tốt.
+- Thỏa thuận thiếu cam kết tự nguyện và dễ bị phá vỡ ngầm.
+- Quan hệ dài hạn suy giảm dù kết quả ngắn hạn đạt được.

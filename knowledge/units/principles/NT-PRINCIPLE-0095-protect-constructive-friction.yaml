@@ -1,7 +1,7 @@
 id: NT-PRINCIPLE-0095
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Bảo vệ ma sát mang tính xây dựng
 summary: Chủ động nuôi dưỡng môi trường trong đó sự phản biện nghiêm túc về nhiệm vụ được bảo vệ như một lá chắn chống lại tư duy bầy đàn.
 primary_domain: hop-chung
@@ -35,5 +35,10 @@ tags:
 - psychological-safety
 - culture
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Thiết kế nghi thức thảo luận bắt buộc có phản biện trước khi chốt.
+- Tách phản biện khỏi đánh giá hiệu suất cá nhân.
+- Bảo vệ người nêu ý kiến trái chiều khỏi hậu quả xã hội tiêu cực.
+- Ghi nhận và xử lý các điểm phản biện trong biên bản quyết định.
+- Định kỳ đánh giá xem vai trò phản biện còn hiệu lực hay đã hình thức.

@@ -1,22 +1,31 @@
 id: NT-LAW-0038
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Suy giảm quyền lực theo vai trò
-summary: Đơn vị tri thức cấu trúc về quy luật suy giảm quyền lực theo vị trí vai trò.
+summary: Quyền lực gắn với vị trí suy giảm khi khoảng cách giữa người nắm quyền và nơi công việc thực sự diễn ra tăng lên. Thông tin và khả năng kiểm soát thực tế dịch chuyển về phía người gần công việc.
 primary_domain: dung-nhan
 secondary_domains:
 - tri-nhan
-definition: Định nghĩa chuẩn tắc về sự suy thoái quyền lực vai trò trong kiến trúc Nhân Thuật.
+definition: 'Suy giảm quyền lực theo vai trò là quy luật mô tả quá trình hao mòn quyền lực vị trí: quyền hạn danh nghĩa không tự động chuyển thành ảnh hưởng thực tế khi khoảng cách vận hành tăng.'
 conditions:
-- Bối cảnh quản trị vận hành của tổ chức.
+- Tồn tại khoảng cách vận hành giữa vị trí quyền lực và nơi công việc diễn ra.
+- Người vận hành có quyền tự quyết trong phạm vi công việc.
 exceptions:
-- Trường hợp can thiệp ưu tiên trong tình huống khủng hoảng khẩn cấp.
+- Cơ chế báo cáo và kiểm soát trực tuyến thời gian thực thu hẹp khoảng cách thông tin.
+- Quyền lực dựa trên chuyên môn sâu không suy giảm theo khoảng cách.
 applications:
   governance:
-  - Ứng dụng nguyên lý suy giảm quyền lực vai trò vào tối ưu hóa luồng công việc tổ chức.
+  - Thiết kế cơ chế báo cáo trực tiếp từ điểm vận hành tới người ra quyết định.
+  - Rà soát định kỳ sự lệch giữa sơ đồ quyền hạn và ảnh hưởng thực tế.
+  management:
+  - Duy trì hiện diện vận hành định kỳ để cập nhật thông tin thực địa.
+  organization-design:
+  - Phân bổ quyền quyết định theo khoảng cách thông tin, không chỉ theo cấp bậc.
 risks:
-- Áp dụng sai nguyên lý suy giảm quyền lực vai trò dẫn đến hiệu suất hoạt động kém tối ưu.
+- Người nắm vị trí nhầm quyền hạn danh nghĩa với ảnh hưởng thực tế.
+- Quyết định đưa ra chậm và lệch do thiếu thông tin vận hành.
+- Xung đột ngầm giữa quyền lực chính thức và quyền lực thông tin.
 evidence:
   level: supported
   references:
@@ -35,5 +44,9 @@ tags:
 - power-erosion
 - organizational-governance
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Một vai trò được giao quyền hạn dựa trên vị trí.
+- Khoảng cách về thời gian, thông tin hoặc địa lý so với điểm ra quyết định thực tế tăng lên.
+- Người trực tiếp vận hành tích lũy thông tin cục bộ và khả năng điều chỉnh thực tế.
+- Quyền lực thực tế chuyển dần sang người kiểm soát thông tin và nguồn lực vận hành.

@@ -1,7 +1,7 @@
 id: NT-ANTI-PATTERN-0040
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Trục lợi Hiệu ứng Con Rắn
 summary: Khen thưởng dựa trên các chỉ số định lượng hẹp mà thiếu cơ chế kiểm soát chất lượng, khiến các bên liên quan cố tình tạo ra sự cố giả nhằm lấy thành tích.
 primary_domain: tu-than
@@ -17,7 +17,7 @@ conditions:
 exceptions:
 - Hệ thống xác minh và kiểm định hoàn toàn tự động.
 applications:
-  metric_governance:
+  metric-governance:
   - Kiểm toán cơ chế thưởng sửa lỗi phần mềm để ngăn chặn việc cố tình tạo thêm lỗi nhân tạo.
 risks:
 - Bổ sung quá nhiều bước kiểm tra tuân thủ làm trì trệ tốc độ thực thi công việc.
@@ -42,4 +42,4 @@ tags:
 - goodhart-law
 - incentive-design
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'

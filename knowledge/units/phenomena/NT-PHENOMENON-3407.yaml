@@ -16,7 +16,7 @@ conditions:
 exceptions:
 - Khi yêu cầu ban đầu được đền bù bằng tiền hậu hĩnh, làm chuyển sự quy kết từ bản sắc nội tại sang phần thưởng bên ngoài.
 applications:
-  ux_design:
+  ux-design:
   - Dùng thử miễn phí hoặc chỉ yêu cầu một địa chỉ email trước khi yêu cầu số thẻ tín dụng.
 risks:
 - Làm mất lòng người dùng nếu sự leo thang từ yêu cầu nhỏ lên lớn diễn ra quá nhanh hoặc quá gay gắt.
@@ -37,6 +37,6 @@ tags:
 - escalation
 - self-image
 status: frozen
-version: 0.1.0
+version: 0.2.0
 created_at: '2026-08-13'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'

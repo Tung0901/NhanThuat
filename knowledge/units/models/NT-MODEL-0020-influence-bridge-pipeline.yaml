@@ -1,22 +1,31 @@
 id: NT-MODEL-0020
 type: model
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Tuyến Cầu Nối Sức Ảnh Hưởng
-summary: Đơn vị tri thức cấu trúc về Tuyến Cầu Nối Sức Ảnh Hưởng trong quản trị tổ chức.
+summary: 'Mô hình thiết kế tuyến đường ảnh hưởng qua các trạm trung gian: từ người khởi xướng đến người ra quyết định cuối. Tuyến cầu nối giúp chọn đúng người cần thuyết phục ở từng chặng.'
 primary_domain: tri-nhan
 secondary_domains:
 - dung-nhan
-definition: Định nghĩa chuẩn tắc về Tuyến Cầu Nối Sức Ảnh Hưởng trong cấu trúc kiến trúc Nhân Thuật.
+definition: Tuyến Cầu Nối Sức Ảnh Hưởng là khung phân tích mạng lưới ảnh hưởng trong tổ chức thành chuỗi các trạm trung gian có vai trò khác nhau, từ người đề xuất, người gây ảnh hưởng, người phê duyệt đến người thực thi.
 conditions:
-- Bối cảnh quản trị và điều hành tổ chức.
+- Tổ chức có cấu trúc quyết định qua nhiều tầng.
+- Thông tin và đề xuất không thể đi thẳng tới người quyết định.
 exceptions:
-- Các tình huống khủng hoảng khẩn cấp cần quyền can thiệp đặc biệt.
+- Tổ chức phẳng cho phép tiếp cận trực tiếp người ra quyết định.
+- Vấn đề khẩn cấp cần leo thang tắt qua các tầng.
 applications:
-  governance:
-  - Áp dụng Tuyến Cầu Nối Sức Ảnh Hưởng vào các quy trình làm việc của tổ chức.
+  influence:
+  - Xác định toàn bộ tuyến cần đi qua trước khi vận động một đề xuất lớn.
+  - Chuẩn bị thông tin phù hợp cho mối quan tâm của từng trạm.
+  leadership:
+  - Duy trì quan hệ với các trạm ảnh hưởng quan trọng trước khi cần đến.
+  sales:
+  - Phân tích chuỗi quyết định mua hàng và xây dựng chiến lược cho từng vai trò.
 risks:
-- Áp dụng sai lệch Tuyến Cầu Nối Sức Ảnh Hưởng dẫn đến hiệu suất vận hành kém tối ưu.
+- Bỏ qua trạm trung gian quan trọng khiến đề xuất bị chặn muộn.
+- Lệch hướng thành vận động hành lang thiếu minh bạch.
+- Chỉ tập trung vào người quyết định mà bỏ qua người thực thi.
 evidence:
   level: supported
   references:
@@ -36,8 +45,9 @@ tags:
 - persuasion-pipeline
 - governance-flow
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'
 mechanism:
-- 'Bước 1: Xác định Tuyến Cầu Nối Sức Ảnh Hưởng.'
-- 'Bước 2: Phân tích các tham số vận hành.'
-- 'Bước 3: Thực thi mô hình trong thực tế.'
+- Xác định mục tiêu ảnh hưởng và người ra quyết định cuối cùng.
+- Vẽ tuyến các trạm trung gian giữa người đề xuất và người quyết định.
+- Xác định vai trò và mối quan tâm của từng trạm trên tuyến.
+- 'Thiết kế cách tiếp cận phù hợp cho từng chặng: cung cấp thông tin, xử lý lo ngại, tạo đồng thuận.'

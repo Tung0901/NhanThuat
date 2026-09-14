@@ -14,7 +14,7 @@ conditions:
 exceptions:
 - Khi hiện trạng được nhìn nhận là nguy hiểm hoặc sắp thất bại.
 applications:
-  product_design:
+  product-design:
   - Tận dụng các lựa chọn mặc định một cách cẩn trọng, vì người dùng hiếm khi thay đổi chúng.
 risks:
 - Sự trì trệ của tổ chức và không áp dụng được các công cụ vượt trội.
@@ -36,6 +36,6 @@ tags:
 - inertia
 - change-resistance
 status: frozen
-version: 0.1.0
+version: 0.2.0
 created_at: '2026-08-13'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'

@@ -1,22 +1,31 @@
 id: NT-PRINCIPLE-0074
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Hiệu chỉnh theo năng lực đã chứng minh
-summary: Hiệu chỉnh theo năng lực đã chứng minh là một đơn vị tri thức cấu trúc trong kho tri thức Nhân Thuật.
+summary: Mở rộng quyền hạn và trách nhiệm theo năng lực đã được chứng minh qua kết quả thực tế. Hiệu chỉnh theo năng lực giúp trao quyền chính xác và duy trì niềm tin.
 primary_domain: dung-nhan
 secondary_domains:
 - tri-nhan
-definition: Định nghĩa chính thức của Nguyên tắc Hiệu chỉnh theo năng lực đã chứng minh trong kiến trúc Nhân Thuật.
+definition: 'Hiệu chỉnh theo năng lực đã chứng minh là nguyên tắc giao quyền theo bằng chứng: mức độ tự chủ và phạm vi quyết định được điều chỉnh dựa trên thành tích hành vi đã kiểm chứng, không dựa trên thâm niên hoặc lời hứa.'
 conditions:
-- Các bối cảnh quản trị vận hành.
+- Có tiêu chí và dữ liệu đánh giá năng lực đủ tin cậy.
+- Phạm vi quyền hạn có thể điều chỉnh theo bước.
 exceptions:
-- Các tình huống khẩn cấp yêu cầu vượt quyền ưu tiên.
+- Tình huống khủng hoảng cần giao quyền đặc biệt vượt năng lực đã chứng minh.
+- Vai trò mới chưa có lịch sử cần giai đoạn đánh giá trước khi mở quyền.
 applications:
+  delegation:
+  - Giao quyền theo mức năng lực đã chứng minh và mở rộng dần theo kết quả.
+  - Thu hẹp quyền hạn khi bằng chứng cho thấy năng lực chưa tương xứng.
+  management:
+  - Dùng lộ trình mở rộng quyền hạn như công cụ phát triển nhân sự.
   governance:
-  - Áp dụng Nguyên tắc Hiệu chỉnh theo năng lực đã chứng minh vào các quy trình vận hành của tổ chức.
+  - Rà soát định kỳ mức quyền hạn thực tế so với năng lực đã chứng minh.
 risks:
-- Áp dụng sai Nguyên tắc Hiệu chỉnh theo năng lực đã chứng minh dẫn đến hiệu suất dưới mức tối ưu.
+- Đánh giá năng lực dựa trên một vài kết quả may mắn.
+- Thu hẹp quyền hạn quá nhanh làm suy giảm động lực.
+- Thiếu lộ trình mở rộng khiến nhân sự giỏi bị giữ ở mức thấp.
 evidence:
   level: supported
   references:
@@ -35,5 +44,9 @@ tags:
 - performance-evidence
 - trust-building
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Xác định các mốc năng lực có thể chứng minh bằng kết quả.
+- Bắt đầu với phạm vi quyền hạn tương xứng năng lực hiện có.
+- Ghi nhận kết quả thực tế qua nhiều tình huống đa dạng.
+- Mở rộng hoặc thu hẹp quyền hạn theo bằng chứng thu được.

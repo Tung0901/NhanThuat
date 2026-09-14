@@ -2,7 +2,7 @@ id: NT-ANTI-PATTERN-2301
 type: anti-pattern
 status: frozen
 version: 1.0.0
-title: Ngụy biện chi phí chìm
+title: Leo thang cam kết vào dự án thất bại
 summary: Xu hướng tiếp tục đổ thêm nguồn lực vào một dự án hoặc quyết định thất bại chỉ vì đã đầu tư quá nhiều trước đó.
 primary_domain: tri-nhan
 domain_area: NT-DA-0023
@@ -37,4 +37,4 @@ tags:
 - project-management
 - loss-aversion
 created_at: '2026-08-12'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'

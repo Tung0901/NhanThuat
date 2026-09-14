@@ -15,7 +15,7 @@ conditions:
 exceptions:
 - Các phản xạ sinh lý không tự chủ.
 applications:
-  product_design:
+  product-design:
   - Luôn tối ưu hóa Khả năng (làm cho việc thực hiện dễ dàng hơn) trước khi cố gắng gia tăng Động lực một cách gượng ép.
 risks:
 - Chỉ phụ thuộc vào các bài phát biểu truyền 'Động lực' mà bỏ qua rào cản cản trở hành vi (Khả năng thực hiện).
@@ -37,6 +37,6 @@ tags:
 - habit-formation
 - user-engagement
 status: frozen
-version: 0.1.0
+version: 0.2.0
 created_at: '2026-08-13'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'

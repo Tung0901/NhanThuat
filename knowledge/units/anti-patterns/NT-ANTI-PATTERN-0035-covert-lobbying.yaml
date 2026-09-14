@@ -1,7 +1,7 @@
 id: NT-ANTI-PATTERN-0035
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Vận động hành lang ngầm
 summary: Đơn vị kiến thức cấu trúc về hành vi Vận động hành lang ngầm trong quản trị tổ chức.
 primary_domain: tri-nhan
@@ -36,5 +36,10 @@ tags:
 - influence-peddling
 - informal-governance
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Các cá nhân hoặc nhóm tác động đến quyết định ngoài kênh chính thức.
+- Thông tin và lợi ích được trao đổi riêng, không qua kiểm chứng.
+- Quyết định được đưa ra dựa trên lợi ích ngầm thay vì tiêu chí công khai.
+- Những người không tham gia vận động bị bất lợi không rõ nguyên nhân.
+- Niềm tin vào tính minh bạch của quy trình tổ chức suy giảm.

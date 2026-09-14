@@ -1,22 +1,31 @@
 id: NT-ANTI-PATTERN-0029
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Giám sát mang tính trừng phạt
-summary: Đơn vị tri thức cấu trúc về Giám sát mang tính trừng phạt trong quản trị tổ chức.
+summary: Giám sát được thiết kế để bắt lỗi và trừng phạt thay vì hỗ trợ cải thiện. Nhân sự học cách che giấu sai sót và tối ưu hình thức trước mắt thay vì giải quyết vấn đề thật.
 primary_domain: dung-nhan
 secondary_domains:
 - tri-nhan
-definition: Định nghĩa chính thức về Giám sát mang tính trừng phạt (Punitive Surveillance) trong kiến trúc Nhân Thuật, phản ánh mô hình quản lý theo dõi chặt chẽ nhằm mục đích bắt lỗi và trừng phạt thay vì hỗ trợ phát triển.
+definition: Giám sát mang tính trừng phạt là phản-mẫu kiểm soát trong đó các cơ chế theo dõi, đánh giá và báo cáo được vận hành chủ yếu để phát hiện và xử phạt sai phạm, tạo ra văn hóa sợ hãi và che giấu.
 conditions:
-- Bối cảnh quản trị vận hành tổ chức.
+- Văn hóa quản lý thiên về kỷ luật trừng phạt hơn phát triển.
+- Áp lực thành tích cao kèm thiếu an toàn tâm lý.
 exceptions:
-- Trường hợp ghi đè trong khủng hoảng khẩn cấp.
+- Trường hợp vi phạm nghiêm trọng có chủ ý vẫn cần xử lý kỷ luật rõ ràng.
+- Giám sát bắt buộc theo quy định pháp lý với mục đích bảo vệ an toàn.
 applications:
+  management:
+  - Thiết kế giám sát tập trung vào hỗ trợ cải thiện và phát hiện rào cản hệ thống.
+  - Tách dữ liệu giám sát khỏi quyết định kỷ luật trong đa số trường hợp.
   governance:
-  - Áp dụng nhận diện Giám sát mang tính trừng phạt vào quy trình làm việc của tổ chức.
+  - Thiết lập chính sách xử lý sai sót theo mức độ cố ý thay vì mọi lỗi như nhau.
+  culture:
+  - Công khai ghi nhận việc dám báo cáo sự cố thay vì trừng phạt.
 risks:
-- Áp dụng sai hoặc không kiểm soát được Giám sát mang tính trừng phạt dẫn đến hiệu suất kém và triệt tiêu động lực làm việc.
+- Văn hóa che giấu làm sự cố nhỏ tích tụ thành khủng hoảng.
+- Nhân sự giỏi rời bỏ môi trường kiểm soát vi mô.
+- Dữ liệu giám sát bị bóp méo khiến lãnh đạo ra quyết định sai.
 evidence:
   level: supported
   references:
@@ -35,5 +44,9 @@ tags:
 - fear-based-management
 - workplace-monitoring
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Cơ chế giám sát được thiết kế tập trung vào phát hiện lỗi.
+- Nhân sự học rằng sai sót dẫn tới trừng phạt thay vì học hỏi.
+- Che giấu sai sót trở thành chiến lược tự bảo vệ hợp lý.
+- Dữ liệu giám sát mất giá trị vì phản ánh bề mặt đã được tô vẽ.

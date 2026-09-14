@@ -1,7 +1,7 @@
 id: NT-PRINCIPLE-0098
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Tối thiểu hóa việc phủ quyết theo vị trí
 summary: Tránh bác bỏ các quyết định đã ủy quyền trừ khi xảy ra vi phạm cơ bản về ranh giới, an toàn hoặc chiến lược.
 primary_domain: dung-nhan
@@ -13,7 +13,7 @@ conditions:
 exceptions:
 - Các sai sót rủi ro cao mang hậu quả sống còn.
 applications:
-  leadership_coaching:
+  leadership-coaching:
   - Huấn luyện cấp điều hành ủng hộ các lựa chọn của cấp dưới ngay cả khi chưa tối ưu.
 risks:
 - Để các sai lầm thảm khốc xảy ra vì né tránh việc phủ quyết.
@@ -35,5 +35,10 @@ tags:
 - leadership
 - autonomy
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Ghi nhận tần suất và lý do các quyết định bị bác bỏ ở cấp trên.
+- 'Phân loại nguyên nhân: vi phạm ranh giới thật hay can thiệp theo thói quen.'
+- Chỉ bác bỏ khi có vi phạm cơ bản về ranh giới, an toàn hoặc chiến lược.
+- Phản hồi lý do cụ thể để người bị bác bỏ học hỏi thay vì mất động lực.
+- Theo dõi tác động của việc hạn chế phủ quyết lên tinh thần chủ thể của đội ngũ.

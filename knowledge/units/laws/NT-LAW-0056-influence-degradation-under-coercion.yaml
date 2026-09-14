@@ -1,22 +1,32 @@
 id: NT-LAW-0056
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Sự suy giảm ảnh hưởng dưới tác động cưỡng chế
-summary: Đơn vị tri thức cấu trúc về sự suy giảm ảnh hưởng dưới tác động cưỡng chế.
+summary: Cưỡng chế làm suy giảm ảnh hưởng thật. Càng dùng quyền lực cứng, càng mất kênh ảnh hưởng mềm và càng phụ thuộc vào kiểm soát liên tục.
 primary_domain: dung-nhan
 secondary_domains:
 - tri-nhan
-definition: Định nghĩa chính thức về sự suy giảm ảnh hưởng dưới tác động cưỡng chế trong cấu trúc Nhân Thuật.
+definition: 'Sự suy giảm ảnh hưởng dưới tác động cưỡng chế là quy luật về quan hệ nghịch giữa cưỡng chế và ảnh hưởng nội tâm: tuân thủ do áp lực không nuôi dưỡng được cam kết tự nguyện.'
 conditions:
-- Các bối cảnh quản trị vận hành.
+- Quan hệ có bất đối xứng quyền lực và chế tài.
+- Mục tiêu thay đổi đòi hỏi mức tự nguyện nhất định mới bền.
 exceptions:
-- Sự phủ quyết trong các tình huống khủng hoảng khẩn cấp.
+- Cưỡng chế ngắn hạn cần thiết để ngăn thiệt hại an toàn nghiêm trọng.
+- Cưỡng chế kèm giải thích và lộ trình giảm áp lực vẫn có thể duy trì ảnh hưởng.
 applications:
-  governance:
-  - Áp dụng nguyên lý suy giảm ảnh hưởng dưới tác động cưỡng chế vào quy trình làm việc của tổ chức.
+  leadership:
+  - Thay cưỡng chế bằng thuyết phục dựa trên lợi ích chung và động lực nội tại.
+  - Đo mức đồng thuận thực chất bên cạnh mức tuân thủ hình thức.
+  management:
+  - Dùng chế tài như biện pháp cuối thay vì công cụ mặc định.
+  - Giữ kênh đối thoại mở khi buộc phải áp dụng biện pháp cứng.
+  negotiation:
+  - Dùng lợi ích chung và tiêu chí khách quan thay vì gây áp lực trực tiếp.
 risks:
-- Việc áp dụng sai lệch nguyên lý suy giảm ảnh hưởng dưới tác động cưỡng chế dẫn đến hiệu suất kém tối ưu.
+- Tuân thủ giả và báo cáo sai lệch để đối phó chế tài.
+- Phản kháng ngầm tích tụ đến khi bùng phát khó kiểm soát.
+- Phụ thuộc kiểm soát liên tục làm chi phí quản lý tăng vô hạn.
 evidence:
   level: supported
   references:
@@ -36,5 +46,9 @@ tags:
 - coercive-power
 - nhanthuat-framework
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Chủ thể dùng chế tài hoặc áp lực để buộc thay đổi hành vi.
+- Người nhận điều chỉnh hành vi để tránh hậu quả trong khi vẫn giữ quan điểm cũ.
+- Kênh ảnh hưởng nội tâm giữa hai bên thu hẹp dần.
+- Khi áp lực giảm, hành vi quay lại trạng thái trước hoặc phản kháng ngầm.

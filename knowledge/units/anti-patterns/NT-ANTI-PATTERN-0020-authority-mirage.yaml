@@ -1,7 +1,7 @@
 id: NT-ANTI-PATTERN-0020
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Ảo tưởng quyền lực
 summary: Đơn vị kiến thức cấu trúc về Ảo tưởng quyền lực (Authority Mirage) trong quản trị tổ chức.
 primary_domain: dung-nhan
@@ -35,5 +35,10 @@ tags:
 - governance-failure
 - organizational-behavior
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Tổ chức tạo ra các vị trí, chức danh hoặc tuyên bố tạo cảm giác thẩm quyền.
+- Các quyết định quan trọng được giao cho người thiếu năng lực thực tế.
+- Khoảng cách giữa quyền hạn danh nghĩa và năng lực thực tế không được nhận diện.
+- Sai lầm tích lũy trong khi hệ thống vẫn tin vào hình thức bên ngoài.
+- Khi kết quả không đạt, hệ thống mất niềm tin vào quy trình thay vì vào người.

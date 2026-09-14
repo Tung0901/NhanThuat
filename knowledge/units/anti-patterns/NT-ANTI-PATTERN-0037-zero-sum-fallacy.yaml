@@ -1,7 +1,7 @@
 id: NT-ANTI-PATTERN-0037
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Ngụy biện tổng bằng không
 summary: Đơn vị kiến thức cấu trúc về Ngụy biện tổng bằng không trong tư duy chiến lược.
 primary_domain: thanh-su
@@ -36,5 +36,10 @@ tags:
 - scarcity-mindset
 - zero-sum-game
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Các bên tiếp cận tình huống như trò chơi có tổng cố định.
+- Mọi lợi ích của một bên bị mặc định là tổn thất của bên kia.
+- Các phương án cùng có lợi bị bỏ qua vì khung nhận thức tổng bằng không.
+- Nguồn lực bị tiêu hao vào cạnh tranh phân chia thay vì mở rộng giá trị.
+- Kết quả để lại cả hai bên đều kém hơn phương án hợp tác khả thi.

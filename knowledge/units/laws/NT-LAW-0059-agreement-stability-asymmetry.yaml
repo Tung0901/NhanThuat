@@ -1,22 +1,31 @@
 id: NT-LAW-0059
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Sự Bất Đối Xứng về Độ Ổn Định của Thỏa Thuận
-summary: Đơn vị tri thức cấu trúc về Sự Bất Đối Xứng về Độ Ổn Định của Thỏa Thuận.
+summary: Độ ổn định của thỏa thuận phân bố bất đối xứng giữa các bên. Bên ít phụ thuộc có thể phá vỡ với chi phí thấp hơn, nên cấu trúc thỏa thuận phải tính đến điều đó.
 primary_domain: thanh-su
 secondary_domains:
 - dung-nhan
-definition: Định nghĩa chính thức về Sự Bất Đối Xứng về Độ Ổn Định của Thỏa Thuận trong cấu trúc Nhân Thuật.
+definition: 'Sự bất đối xứng về độ ổn định của thỏa thuận là quy luật về phân bố rủi ro phá vỡ: mức độ bền vững của một thỏa thuận khác nhau giữa các bên tùy theo phương án thay thế và chi phí rời bỏ.'
 conditions:
-- Các bối cảnh quản trị vận hành.
+- Các bên có mức độ phụ thuộc khác nhau vào thỏa thuận.
+- Chi phí rời bỏ thỏa thuận không cân xứng giữa các bên.
 exceptions:
-- Các trường hợp khẩn cấp ghi đè do khủng hoảng.
+- Cơ chế chia sẻ rủi ro và điều khoản điều chỉnh làm cân bằng độ ổn định.
+- Thỏa thuận có giá trị quan hệ dài hạn làm tăng chi phí phá vỡ cho cả hai bên.
 applications:
+  negotiation:
+  - Đánh giá độ ổn định của thỏa thuận theo góc nhìn từng bên trước khi ký kết.
+  - Thiết kế điều khoản điều chỉnh theo bối cảnh để duy trì tính bền vững.
   governance:
-  - Áp dụng Sự Bất Đối Xứng về Độ Ổn Định của Thỏa Thuận vào quy trình làm việc của tổ chức.
+  - Duy trì cơ chế rà soát định kỳ các thỏa thuận dài hạn quan trọng.
+  partnership:
+  - Cân bằng lại quyền lợi khi cán cân phương án thay thế dịch chuyển.
 risks:
-- Việc áp dụng sai lệch Sự Bất Đối Xứng về Độ Ổn Định của Thỏa Thuận dẫn đến hiệu suất kém tối ưu.
+- Đối tác phá vỡ thỏa thuận khi có phương án thay thế tốt hơn.
+- Thỏa thuận có lợi trước mắt nhưng bất ổn về dài hạn do bất đối xứng.
+- Bên yếu thế chịu toàn bộ rủi ro điều chỉnh khi thị trường thay đổi.
 evidence:
   level: supported
   references:
@@ -35,5 +44,9 @@ tags:
 - contract-stability
 - negotiation-asymmetry
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Thỏa thuận được thiết lập dựa trên phương án thay thế của từng bên.
+- Chi phí rời bỏ và giá trị phương án thay thế khác nhau giữa các bên.
+- Bên có phương án thay thế tốt hơn chịu ít tổn thất khi phá vỡ thỏa thuận.
+- Cấu trúc thỏa thuận không tính bất đối xứng này sẽ mất ổn định khi bối cảnh thay đổi.

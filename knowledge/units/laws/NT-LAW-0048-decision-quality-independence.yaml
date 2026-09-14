@@ -1,22 +1,31 @@
 id: NT-LAW-0048
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Tính độc lập của chất lượng quyết định
-summary: Đơn vị tri thức cấu trúc về Tính độc lập của chất lượng quyết định.
+summary: Chất lượng quyết định được xác định bởi chất lượng quy trình tại thời điểm ra quyết định, không bởi kết quả đến sau. Kết quả tốt có thể đến từ quyết định tồi và ngược lại.
 primary_domain: tri-nhan
 secondary_domains:
 - dung-nhan
-definition: Định nghĩa chính thức về Tính độc lập của chất lượng quyết định trong kiến trúc Nhân Thuật.
+definition: 'Tính độc lập của chất lượng quyết định là quy luật tách chất lượng quyết định khỏi kết quả: hai quyết định khác nhau về quy trình có thể cho cùng một kết quả, nên phán xét phải dựa trên quy trình.'
 conditions:
-- Bối cảnh quản trị vận hành.
+- Môi trường quyết định có độ bất định đáng kể.
+- Kết quả chịu ảnh hưởng của nhiều biến số ngoài kiểm soát.
 exceptions:
-- Các can thiệp ghi đè trong tình huống khủng hoảng khẩn cấp.
+- Trong môi trường ổn định và lặp lại, kết quả là chỉ báo đủ tin cậy cho chất lượng quyết định.
+- Quy trình đã được kiểm định có thể tạm dựa vào kết quả ngắn hạn.
 applications:
   governance:
-  - Áp dụng Tính độc lập của chất lượng quyết định vào các quy trình làm việc của tổ chức.
+  - Đánh giá quyết định lớn bằng chất lượng quy trình, giả định và dữ liệu đầu vào.
+  - Tách đánh giá quy trình khỏi kết quả trong các buổi tổng kết.
+  management:
+  - Khen thưởng quy trình ra quyết định tốt ngay cả khi kết quả chưa thuận lợi.
+  learning:
+  - Phân tích quyết định theo kịch bản thay thế để không học sai từ may mắn.
 risks:
-- Áp dụng sai Tính độc lập của chất lượng quyết định dẫn đến hiệu suất dưới mức tối ưu.
+- Trừng phạt người ra quyết định đúng nhưng gặp kết quả xấu do bất định.
+- Tưởng thưởng quyết định tùy tiện gặp may và lặp lại nó ở quy mô lớn.
+- Học hỏi sai lệch khiến tổ chức không cải thiện được năng lực ra quyết định.
 evidence:
   level: supported
   references:
@@ -35,5 +44,9 @@ tags:
 - governance-framework
 - operational-governance
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Quyết định được đưa ra trong điều kiện bất định với thông tin hữu hạn.
+- Kết quả phụ thuộc vào cả quy trình quyết định lẫn các yếu tố ngẫu nhiên ngoài tầm kiểm soát.
+- Đánh giá theo kết quả đơn thuần trộn lẫn chất lượng quy trình với may mắn.
+- Tổ chức học sai bài học và lặp lại lỗi khi chỉ nhìn kết quả.

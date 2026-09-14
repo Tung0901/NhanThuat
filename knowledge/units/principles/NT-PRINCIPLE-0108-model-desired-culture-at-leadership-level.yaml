@@ -1,7 +1,7 @@
 id: NT-PRINCIPLE-0108
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Làm gương cho văn hóa mong muốn ở cấp lãnh đạo
 summary: Yêu cầu các nhà lãnh đạo cấp cao thể hiện các hành vi văn hóa mục tiêu trong các quyết định vận hành hằng ngày.
 primary_domain: hop-chung
@@ -13,7 +13,7 @@ conditions:
 exceptions:
 - Không có.
 applications:
-  exec_coaching:
+  exec-coaching:
   - Đánh giá hiệu suất của cấp điều hành dựa trên các chỉ số làm gương văn hóa.
 risks:
 - Kỳ vọng lãnh đạo luôn luôn hoàn hảo.
@@ -35,5 +35,10 @@ tags:
 - values
 - tone-from-top
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Xác định các hành vi văn hóa mục tiêu quan sát được ở cấp lãnh đạo.
+- Đưa các hành vi này vào tiêu chí đánh giá chính cấp điều hành.
+- Công khai ghi nhận khi lãnh đạo thể hiện đúng chuẩn mực.
+- Xử lý nhất quán khi lãnh đạo vi phạm chuẩn mực, không ngoại lệ.
+- Theo dõi nhận thức của tổ chức về mức độ nhất quán giữa nói và làm.

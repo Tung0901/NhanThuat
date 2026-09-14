@@ -1,22 +1,31 @@
 id: NT-PRINCIPLE-0071
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Thiết lập sự phụ thuộc lẫn nhau
-summary: Thiết lập sự phụ thuộc lẫn nhau là một đơn vị tri thức cấu trúc trong kho tri thức Nhân Thuật.
+summary: Thiết kế công việc đòi hỏi sự phụ thuộc lẫn nhau thực chất để tạo phối hợp tự nhiên. Phụ thuộc được thiết kế đúng giảm nhu cầu kiểm soát và tăng gắn kết công việc.
 primary_domain: hop-chung
 secondary_domains:
 - dung-nhan
-definition: Định nghĩa chính thức của Nguyên tắc Thiết lập sự phụ thuộc lẫn nhau trong kiến trúc Nhân Thuật.
+definition: Thiết lập sự phụ thuộc lẫn nhau là nguyên tắc tổ chức công việc trong đó các vai trò buộc phải chia sẻ thông tin, nguồn lực hoặc kết quả để hoàn thành mục tiêu chung, thay vì mỗi vai trò vận hành độc lập hoàn toàn.
 conditions:
-- Các bối cảnh quản trị vận hành.
+- Mục tiêu chung cần nỗ lực phối hợp của nhiều vai trò.
+- Chi phí phối hợp thấp hơn lợi ích hợp tác mang lại.
 exceptions:
-- Các tình huống khẩn cấp yêu cầu vượt quyền ưu tiên.
+- Công việc chuyên môn hóa cao, độc lập tự nhiên có thể không cần phụ thuộc cưỡng bức.
+- Khoảng cách địa lý hoặc múi giờ lớn làm chi phí phối hợp vượt lợi ích.
 applications:
-  governance:
-  - Áp dụng Nguyên tắc Thiết lập sự phụ thuộc lẫn nhau vào các quy trình vận hành của tổ chức.
+  team-design:
+  - Thiết kế mục tiêu và sản phẩm bàn giao chung cho các nhóm cần hợp tác.
+  - Đặt chỉ số đo lường kết quả hợp tác, không chỉ kết quả cá nhân.
+  process-design:
+  - Tạo điểm giao thoa bắt buộc trong quy trình thay vì để các bộ phận hoạt động biệt lập.
+  management:
+  - Ghi nhận và thưởng cho hành vi hợp tác thực chất.
 risks:
-- Áp dụng sai Nguyên tắc Thiết lập sự phụ thuộc lẫn nhau dẫn đến hiệu suất dưới mức tối ưu.
+- Phụ thuộc cưỡng bức tạo ma sát không cần thiết.
+- Một mắt xích yếu kéo chậm toàn bộ chuỗi.
+- Phối hợp hình thức gia tăng cuộc họp mà không tăng kết quả.
 evidence:
   level: supported
   references:
@@ -35,5 +44,9 @@ tags:
 - collaboration
 - team-structure
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Phân tích dòng công việc để tìm điểm giao thoa thực chất giữa các vai trò.
+- Thiết kế sản phẩm bàn giao chung buộc phải phối hợp.
+- Định nghĩa quyền truy cập thông tin và nguồn lực chia sẻ.
+- Đo lường kết quả hợp tác bên cạnh kết quả cá nhân.

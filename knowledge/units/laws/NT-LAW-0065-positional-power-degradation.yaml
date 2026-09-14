@@ -1,7 +1,7 @@
 id: NT-LAW-0065
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Sự Suy giảm Quyền lực Vị trí
 summary: Việc quá phụ thuộc vào quyền lực chính thức để ép buộc thực thi sẽ làm suy giảm lòng tin, khả năng đổi mới sáng tạo và sự cam kết tự nguyện.
 primary_domain: dung-nhan
@@ -36,5 +36,10 @@ tags:
 - intrinsic-motivation
 - leadership-trust
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Người quản lý dựa chủ yếu vào quyền lực chính thức để buộc thực thi.
+- Nhân sự tuân thủ ở mức bề mặt để tránh hậu quả.
+- Sáng kiến và cam kết tự nguyện suy giảm vì thiếu không gian tự quyết.
+- Đổi mới và cải tiến liên tục biến mất khỏi hành vi đội ngũ.
+- Hệ thống phụ thuộc ngày càng nhiều vào kiểm soát thay vì tự vận hành.

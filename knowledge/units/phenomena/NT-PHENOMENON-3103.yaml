@@ -14,7 +14,7 @@ conditions:
 exceptions:
 - Các loại token, tiền tệ hoặc món đồ chỉ nhằm mục đích bán lại.
 applications:
-  product_design:
+  product-design:
   - Dùng thử miễn phí tạo ra cảm giác sở hữu về mặt tâm lý, tăng tỷ lệ giữ chân khi kết thúc thời gian dùng thử.
 risks:
 - Định giá quá cao các hệ thống kế thừa hoặc công cụ nội bộ chỉ vì tổ chức đã tự xây dựng chúng.
@@ -34,6 +34,6 @@ tags:
 - endowment-effect
 - loss-aversion
 status: frozen
-version: 0.1.0
+version: 0.2.0
 created_at: '2026-08-13'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'

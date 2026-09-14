@@ -1,22 +1,32 @@
 id: NT-PRINCIPLE-0081
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Tách niềm tin khỏi cảm xúc
-summary: Tách niềm tin khỏi cảm xúc là một đơn vị tri thức cấu trúc trong kho tri thức Nhân Thuật.
+summary: Niềm tin vận hành nên dựa trên độ tin cậy đã kiểm chứng thay vì cảm xúc nhất thời. Tách hai yếu tố giúp niềm tin ổn định dưới áp lực.
 primary_domain: hop-chung
 secondary_domains:
 - tri-nhan
-definition: Định nghĩa chính thức của Nguyên tắc Tách niềm tin khỏi cảm xúc trong kiến trúc Nhân Thuật.
+definition: Tách niềm tin khỏi cảm xúc là nguyên tắc xây dựng tin cậy dựa trên tính nhất quán hành vi, năng lực đã chứng minh và cơ chế bảo đảm, thay vì dựa trên thiện cảm hoặc trạng thái cảm xúc nhất thời.
 conditions:
-- Các bối cảnh quản trị vận hành.
+- Quan hệ hợp tác kéo dài và ảnh hưởng tới kết quả công việc.
+- Có thể quan sát hành vi của đối tác qua thời gian.
 exceptions:
-- Các tình huống khẩn cấp yêu cầu vượt quyền ưu tiên.
+- Giai đoạn đầu quan hệ chưa đủ dữ liệu cần dựa vào tham chiếu và bảo đảm.
+- Trong quan hệ cá nhân, yếu tố cảm xúc có vai trò riêng ngoài công việc.
 applications:
+  partnership:
+  - Thiết kế cơ chế bảo đảm cho quan hệ mới và quan hệ có rủi ro cao.
+  - Đánh giá đối tác định kỳ bằng dữ liệu hành vi, không bằng cảm nhận.
+  management:
+  - Không giao quyền quan trọng dựa trên thiện cảm cá nhân.
+  - Tách đánh giá công việc khỏi quan hệ cảm xúc với nhân sự.
   governance:
-  - Áp dụng Nguyên tắc Tách niềm tin khỏi cảm xúc vào các quy trình vận hành của tổ chức.
+  - Duy trì cơ chế xác minh định kỳ cho các quan hệ đối tác trọng yếu.
 risks:
-- Áp dụng sai Nguyên tắc Tách niềm tin khỏi cảm xúc dẫn đến hiệu suất dưới mức tối ưu.
+- Thiện cảm cá nhân che giấu dấu hiệu thiếu độ tin cậy.
+- Nghi ngờ quá mức dựa trên cảm xúc tiêu cực làm xói mòn quan hệ.
+- Dùng cơ chế bảo đảm thay thế hoàn toàn cho việc xây dựng tin cậy thực chất.
 evidence:
   level: supported
   references:
@@ -35,5 +45,9 @@ tags:
 - reliability
 - interpersonal-trust
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Phân biệt cảm giác thiện cảm với bằng chứng về độ tin cậy.
+- Đánh giá đối tác qua tính nhất quán hành vi và kết quả đã kiểm chứng.
+- Thiết kế cơ chế bảo đảm cho các điểm thiếu dữ liệu tin cậy.
+- Duy trì đánh giá định kỳ dựa trên hành vi thay vì cảm nhận.

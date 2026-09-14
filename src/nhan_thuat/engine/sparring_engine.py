@@ -6,13 +6,12 @@ and strategic coaching using 9 Philosophy Lenses and Hybrid RAG retrieval.
 
 from __future__ import annotations
 
-import uuid
-from typing import Any, Callable
+from typing import Any
 
 from nhan_thuat.knowledge_engine import KnowledgeEngine
 from nhan_thuat.rag.hybrid_retriever import HybridRetriever
 from nhan_thuat.storage.db import DatabaseManager
-from nhan_thuat.storage.models import SparringMessage, SparringSession
+from nhan_thuat.storage.models import SparringSession
 
 
 def default_route_philosophy(text: str) -> str:
@@ -189,7 +188,7 @@ class SparringEngine:
             )
             full_response = syn.generate_text(prompt)
             return full_response, citations
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - LLM failure must fall back to persona script
             print(f"[SparringEngine] LLM generation failed, using fallback: {e}")
 
         # 2. Fallback to Specialized Lens Personas
@@ -198,10 +197,10 @@ class SparringEngine:
         # Specialized Lens Personas
         if lens == "LEGALISM":
             adversarial_text = (
-                f"Lập luận của bạn đang quá cả nể và dựa dẫm vào lời hứa cảm tính! "
-                f"Trong quản trị và hợp đồng, lời nói không có biên bản tương đương với hư vô. "
-                f"Nếu bạn nhượng bộ lúc này mà không siết chặt chế tài, đối tác sẽ tiếp tục kéo giãn giới hạn vi phạm. "
-                f"Bạn đang để doanh nghiệp gánh chịu 100% rủi ro tiến độ và tài chính."
+                "Lập luận của bạn đang quá cả nể và dựa dẫm vào lời hứa cảm tính! "
+                "Trong quản trị và hợp đồng, lời nói không có biên bản tương đương với hư vô. "
+                "Nếu bạn nhượng bộ lúc này mà không siết chặt chế tài, đối tác sẽ tiếp tục kéo giãn giới hạn vi phạm. "
+                "Bạn đang để doanh nghiệp gánh chịu 100% rủi ro tiến độ và tài chính."
             )
             strategy_text = (
                 f"- **Sơ hở cốt lõi:** Thiếu mốc thời hạn ràng buộc (Hard Deadline) và thiếu chế tài phạt lũy tiến.\n"
@@ -210,9 +209,9 @@ class SparringEngine:
             )
         elif lens == "RHETORIC":
             adversarial_text = (
-                f"Bạn đang mắc bẫy 'Khung Chi Phí' do đối phương giăng ra! "
-                f"Khi đối phương chê giá đắt hoặc đòi chiết khấu, việc bạn vội vã phân trần hoặc hạ giá chỉ chứng minh giải pháp của bạn bị thổi phồng giá trị lúc đầu. "
-                f"Bạn đang ở thế phòng thủ bị động và để đối phương nắm toàn quyền dẫn dắt cuộc thương thảo."
+                "Bạn đang mắc bẫy 'Khung Chi Phí' do đối phương giăng ra! "
+                "Khi đối phương chê giá đắt hoặc đòi chiết khấu, việc bạn vội vã phân trần hoặc hạ giá chỉ chứng minh giải pháp của bạn bị thổi phồng giá trị lúc đầu. "
+                "Bạn đang ở thế phòng thủ bị động và để đối phương nắm toàn quyền dẫn dắt cuộc thương thảo."
             )
             strategy_text = (
                 f"- **Sơ hở cốt lõi:** Đối đáp trên tiêu chí 'Số tiền bỏ ra hôm nay' thay vì chuyển dịch sang 'Tổng chi phí vận hành 3 năm (TCO)'.\n"
@@ -221,9 +220,9 @@ class SparringEngine:
             )
         elif lens == "SUNZI":
             adversarial_text = (
-                f"Bạn đang tấn công trực diện vào điểm mạnh của đối thủ khi thực lực chưa chuẩn bị đủ! "
-                f"Binh pháp dạy: 'Bất chiến tự nhiên thành', người giỏi dụng binh thì lập thế bất bại trước khi đòi đánh thắng. "
-                f"Cách tiếp cận hiện tại của bạn là hành động hấp tấp, dễ biến xung đột cục bộ thành tổn thất toàn diện cho cả hai bên."
+                "Bạn đang tấn công trực diện vào điểm mạnh của đối thủ khi thực lực chưa chuẩn bị đủ! "
+                "Binh pháp dạy: 'Bất chiến tự nhiên thành', người giỏi dụng binh thì lập thế bất bại trước khi đòi đánh thắng. "
+                "Cách tiếp cận hiện tại của bạn là hành động hấp tấp, dễ biến xung đột cục bộ thành tổn thất toàn diện cho cả hai bên."
             )
             strategy_text = (
                 f"- **Sơ hở cốt lõi:** Lập thế trận chưa kín kẽ, để lộ điểm yếu về thời gian và áp lực dòng tiền.\n"
@@ -232,9 +231,9 @@ class SparringEngine:
             )
         elif lens == "STOICISM":
             adversarial_text = (
-                f"Bạn đang bị cảm xúc bực bội và phản xạ tự ái chi phối quyết định! "
-                f"Hành vi vô lý của đối tác hay sự cố bất ngờ là ngoại cảnh nằm ngoài 'Vòng tròn kiểm soát' của bạn. "
-                f"Nếu bạn để cơn giận dẫn dắt lời nói, bạn đã tự giao chìa khóa tâm trí của mình vào tay đối phương."
+                "Bạn đang bị cảm xúc bực bội và phản xạ tự ái chi phối quyết định! "
+                "Hành vi vô lý của đối tác hay sự cố bất ngờ là ngoại cảnh nằm ngoài 'Vòng tròn kiểm soát' của bạn. "
+                "Nếu bạn để cơn giận dẫn dắt lời nói, bạn đã tự giao chìa khóa tâm trí của mình vào tay đối phương."
             )
             strategy_text = (
                 f"- **Sơ hở cốt lõi:** Đồng hóa cái tôi với sự cố khách quan.\n"
@@ -243,9 +242,9 @@ class SparringEngine:
             )
         else:  # Xunzi / Confucian / General
             adversarial_text = (
-                f"Phương án của bạn giải quyết được phần ngọn nhưng chưa chạm vào gốc rễ của mâu thuẫn! "
-                f"Vi phạm quy trình hay mâu thuẫn nhân sự xuất phát từ thói quen thiếu rèn nắn tiêu chuẩn và ranh giới vai trò lỏng lẻo. "
-                f"Nếu chỉ dùng mệnh lệnh hành chính mà không chuẩn hóa lại quy chuẩn ('Dùng Lễ Định Phần'), sự cố tương tự sẽ lặp lại."
+                "Phương án của bạn giải quyết được phần ngọn nhưng chưa chạm vào gốc rễ của mâu thuẫn! "
+                "Vi phạm quy trình hay mâu thuẫn nhân sự xuất phát từ thói quen thiếu rèn nắn tiêu chuẩn và ranh giới vai trò lỏng lẻo. "
+                "Nếu chỉ dùng mệnh lệnh hành chính mà không chuẩn hóa lại quy chuẩn ('Dùng Lễ Định Phần'), sự cố tương tự sẽ lặp lại."
             )
             strategy_text = (
                 f"- **Sơ hở cốt lõi:** Thiếu quy chuẩn hóa vai trò và lộ trình đào tạo nâng chuẩn.\n"

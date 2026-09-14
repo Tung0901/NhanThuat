@@ -1,22 +1,31 @@
 id: NT-ANTI-PATTERN-0030
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Thái độ hoài nghi mang tính giao dịch
-summary: Đơn vị tri thức cấu trúc về Thái độ hoài nghi mang tính giao dịch trong quản trị hành vi.
+summary: Quan hệ trong tổ chức bị thương mại hóa thuần túy, thiếu niềm tin và cam kết lâu dài. Con người chỉ làm đủ mức để được trả công, không đóng góp thêm cho tổ chức.
 primary_domain: hop-chung
 secondary_domains:
 - tri-nhan
-definition: Định nghĩa chính thức về Thái độ hoài nghi mang tính giao dịch (Transactional Cynicism) trong kiến trúc Nhân Thuật, chỉ trạng thái các mối quan hệ trong tổ chức bị thương mại hóa thuần túy, thiếu vắng lòng tin và sự cam kết lâu dài.
+definition: Thái độ hoài nghi mang tính giao dịch là phản-mẫu văn hóa trong đó quan hệ làm việc bị rút gọn thành trao đổi lợi ích thuần túy, triệt tiêu sự tin tưởng, cam kết và lựa chọn vị tha.
 conditions:
-- Bối cảnh quản trị vận hành tổ chức.
+- Chính sách đãi ngộ và đánh giá chỉ tập trung vào số lượng đầu ra.
+- Tổ chức có lịch sử phá vỡ cam kết với nhân sự.
 exceptions:
-- Trường hợp ghi đè trong khủng hoảng khẩn cấp.
+- Một số vai trò thời vụ hợp pháp dựa trên trao đổi giao dịch thuần túy.
+- Giai đoạn tái cấu trúc khẩn cấp có thể tạm giảm kỳ vọng cam kết dài hạn.
 applications:
-  governance:
-  - Áp dụng phân tích Thái độ hoài nghi mang tính giao dịch vào quy trình làm việc tổ chức.
+  culture:
+  - Xây dựng chuẩn mực đối xử tôn trọng và cam kết hai chiều rõ ràng.
+  - Ghi nhận đóng góp phi giao dịch như hỗ trợ đồng nghiệp và chia sẻ tri thức.
+  management:
+  - Bổ sung tiêu chí đánh giá ủng hộ hợp tác dài hạn bên cạnh chỉ số ngắn hạn.
+  leadership:
+  - Giữ lời và thực hiện đúng cam kết để xây dựng lại niềm tin.
 risks:
-- Sự xuất hiện hoặc áp dụng sai Thái độ hoài nghi mang tính giao dịch dẫn đến làm suy yếu văn hóa tổ chức và giảm hiệu suất.
+- Mất lòng trung thành và mức dấn thân tự nguyện của nhân sự.
+- Lan truyền thái độ hoài nghi sang người mới.
+- Chi phí tuyển dụng và đào tạo tăng do tỷ lệ rời bỏ cao.
 evidence:
   level: supported
   references:
@@ -35,5 +44,9 @@ tags:
 - employee-disengagement
 - organizational-cynicism
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Tổ chức đối xử với nhân sự thuần túy qua chỉ số và chi phí.
+- Nhân sự điều chỉnh kỳ vọng xuống mức trao đổi tương xứng tối thiểu.
+- Hành vi dấn thân ngoài chức trách biến mất.
+- Văn hóa hoài nghi lan rộng và tự củng cố qua các chu kỳ tiếp theo.

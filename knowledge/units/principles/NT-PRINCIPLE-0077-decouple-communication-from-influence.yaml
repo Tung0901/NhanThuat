@@ -1,22 +1,31 @@
 id: NT-PRINCIPLE-0077
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Tách truyền đạt khỏi ảnh hưởng
-summary: Tách truyền đạt khỏi ảnh hưởng là một đơn vị tri thức cấu trúc trong kho tri thức Nhân Thuật.
+summary: Gửi thông tin đầy đủ không tự động tạo ra ảnh hưởng. Cần tách hai việc này để thiết kế đúng cách tác động và đánh giá đúng kết quả truyền đạt.
 primary_domain: tri-nhan
 secondary_domains:
 - dung-nhan
-definition: Định nghĩa chính thức của Nguyên tắc Tách truyền đạt khỏi ảnh hưởng trong kiến trúc Nhân Thuật.
+definition: Tách truyền đạt khỏi ảnh hưởng là nguyên tắc phân biệt giữa việc chuyển giao thông tin (truyền đạt) và việc thay đổi nhận thức, quyết định hoặc hành vi của người nhận (ảnh hưởng).
 conditions:
-- Các bối cảnh quản trị vận hành.
+- Tồn tại mục tiêu thay đổi hành vi gắn với hoạt động truyền thông.
+- Có thể đo lường riêng mức độ tiếp nhận và mức độ thay đổi.
 exceptions:
-- Các tình huống khẩn cấp yêu cầu vượt quyền ưu tiên.
+- Truyền đạt thuần túy theo quy định không kèm mục tiêu ảnh hưởng hành vi.
+- Ảnh hưởng không phù hợp đạo đức như thao túng thông tin bị loại trừ.
 applications:
-  governance:
-  - Áp dụng Nguyên tắc Tách truyền đạt khỏi ảnh hưởng vào các quy trình vận hành của tổ chức.
+  communication:
+  - 'Đặt mục tiêu riêng cho từng chiến dịch: ghi nhận, thấu hiểu hay thay đổi hành vi.'
+  - Đo lường riêng mức độ hiểu và mức độ hành động sau truyền thông.
+  leadership:
+  - Phân biệt giữa đã thông báo và đã tạo được đồng thuận.
+  change-management:
+  - Thiết kế chuỗi hoạt động từ cung cấp thông tin tới tạo điều kiện thay đổi hành vi.
 risks:
-- Áp dụng sai Nguyên tắc Tách truyền đạt khỏi ảnh hưởng dẫn đến hiệu suất dưới mức tối ưu.
+- Tăng khối lượng truyền thông nhưng hành vi không thay đổi.
+- Đánh giá hiệu quả truyền thông bằng số lượng thay vì mức thay đổi.
+- Dùng truyền đạt để lảng tránh trách nhiệm tạo ảnh hưởng thực chất.
 evidence:
   level: supported
   references:
@@ -35,5 +44,9 @@ tags:
 - information-flow
 - persuasion
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- 'Xác định mục tiêu thực sự: cần thông tin được biết đến hay cần hành vi thay đổi.'
+- Thiết kế kênh và nội dung phù hợp với mục tiêu đó.
+- Đánh giá kết quả truyền đạt bằng mức độ tiếp nhận thông tin.
+- Đánh giá kết quả ảnh hưởng bằng thay đổi hành vi hoặc quyết định thực tế.

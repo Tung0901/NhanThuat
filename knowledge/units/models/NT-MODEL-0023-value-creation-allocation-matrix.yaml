@@ -1,22 +1,31 @@
 id: NT-MODEL-0023
 type: model
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Ma trận tạo giá trị và phân bổ
-summary: Đơn vị tri thức cấu trúc về Ma trận tạo giá trị và phân bổ trong kiến trúc Nhân Thuật.
+summary: 'Ma trận phân biệt bốn loại giá trị trong đàm phán: giá trị khác biệt có thể trao đổi, giá trị chung, giá trị riêng mỗi bên, và giá trị xung đột. Chiến lược xử lý mỗi loại khác nhau.'
 primary_domain: thanh-su
 secondary_domains:
 - hop-chung
-definition: Định nghĩa chính thức về Ma trận tạo giá trị và phân bổ trong kiến trúc Nhân Thuật.
+definition: 'Ma trận tạo giá trị và phân bổ là khung phân loại các yếu tố giá trị trong thương lượng thành bốn vùng theo mức độ chia sẻ giữa các bên, giúp xác định cách xử lý: trao đổi, củng cố, giữ riêng hoặc đàm phán.'
 conditions:
-- Các bối cảnh quản trị vận hành.
+- Đàm phán có nhiều chiều giá trị ngoài giá tiền.
+- Các bên có thể trao đổi thông tin về ưu tiên.
 exceptions:
-- Bị ghi đè trong các tình huống khủng hoảng khẩn cấp.
+- Thương lượng thuần túy chia phần với một chiều giá trị duy nhất.
+- Đối tác không sẵn sàng trao đổi thông tin ưu tiên.
 applications:
-  governance:
-  - Áp dụng Ma trận tạo giá trị và phân bổ vào các quy trình công việc của tổ chức.
+  negotiation:
+  - Phân loại các vấn đề đàm phán vào bốn vùng trước khi thiết kế đề xuất.
+  - Tập trung mở rộng vùng giá trị khác biệt có thể trao đổi.
+  partnership:
+  - Thiết kế cấu trúc hợp tác phân vùng rõ giữa chia sẻ chung và bảo toàn riêng.
+  conflict-resolution:
+  - Cô lập các vùng xung đột thật để xử lý riêng khỏi các vùng hợp tác.
 risks:
-- Áp dụng sai Ma trận tạo giá trị và phân bổ dẫn đến hiệu suất kém tối ưu.
+- Phân loại sai vùng dẫn tới chiến lược không phù hợp.
+- Bộc lộ vùng giá trị riêng trong quan hệ thiếu tin cậy.
+- Tối ưu từng vùng mà bỏ qua tính tổng thể của thỏa thuận.
 evidence:
   level: supported
   references:
@@ -36,8 +45,9 @@ tags:
 - matrix
 - resource-allocation
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'
 mechanism:
-- 'Bước 1: Nhận diện Ma trận tạo giá trị và phân bổ.'
-- 'Bước 2: Phân tích các tham số.'
-- 'Bước 3: Thực thi mô hình.'
+- Liệt kê các yếu tố giá trị trong thương lượng.
+- 'Phân loại mức độ chia sẻ: chung, khác biệt bổ trợ, riêng, xung đột.'
+- 'Thiết kế chiến lược cho từng vùng: mở rộng, trao đổi, bảo toàn, dàn xếp.'
+- Phân bổ giá trị đã tạo theo đóng góp và thỏa thuận.

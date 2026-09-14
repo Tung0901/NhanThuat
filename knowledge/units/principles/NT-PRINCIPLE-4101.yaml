@@ -7,28 +7,34 @@ summary: Đơn giản hóa quá trình tư duy và ra quyết định để giú
 primary_domain: hop-chung
 domain_area: NT-DA-0026
 secondary_domains:
-  - thanh-su
+- thanh-su
 definition: Bộ nhớ làm việc của con người rất giới hạn. Mọi tác vụ yêu cầu trí nhớ hoặc phân tích sâu đều làm tăng tải trọng, gây ra trì hoãn hoặc sai sót.
 conditions:
-  - Quá trình chuyển giao thông tin, đào tạo hoặc thiết kế sản phẩm/giao diện.
+- Quá trình chuyển giao thông tin, đào tạo hoặc thiết kế sản phẩm/giao diện.
 exceptions:
-  - Các bài toán cần phân tích logic hệ thống bậc hai (System 2 thinking).
+- Các bài toán cần phân tích logic hệ thống bậc hai (System 2 thinking).
 applications:
   general:
-    - Áp dụng trong quản trị và kinh doanh.
+  - Áp dụng trong quản trị và kinh doanh.
 risks:
-  - Giảm tải quá mức dẫn đến việc khách hàng hoặc nhân viên mất khả năng tư duy độc lập (ngu hóa).
+- Giảm tải quá mức dẫn đến việc khách hàng hoặc nhân viên mất khả năng tư duy độc lập (ngu hóa).
 evidence:
   level: strong
   references:
-    - John Sweller, Cognitive Load Theory (1988)
+  - John Sweller, Cognitive Load Theory (1988)
 relations:
   supports: []
   conflicts_with: []
   depends_on: []
   applies_to: []
 tags:
-  - ux-design
-  - cognitive-science
+- ux-design
+- cognitive-science
 created_at: '2026-08-15'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'
+mechanism:
+- Nhận diện các điểm quá tải nhận thức trong quy trình hiện tại.
+- Rút gọn thông tin, lựa chọn và bước xử lý về mức cần thiết.
+- Dùng mặc định hợp lý và trực quan hóa để giảm ghi nhớ.
+- Chia nhỏ tác vụ phức tạp thành các bước đơn giản hơn.
+- Kiểm tra tác động lên tốc độ và độ chính xác của quyết định.

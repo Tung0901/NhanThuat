@@ -14,7 +14,7 @@ conditions:
 exceptions:
 - Khi thói quen neo dễ bị gián đoạn bởi việc đi lại hoặc lịch trình cuối tuần.
 applications:
-  habit_stacking:
+  habit-stacking:
   - '"Sau khi tôi rót cà phê buổi sáng, tôi sẽ viết một dòng mã."'
 risks:
 - Xếp chồng quá nhiều thói quen mới lên một thói quen neo, khiến toàn bộ chuỗi sụp đổ.
@@ -36,6 +36,6 @@ tags:
 - routine
 - anchoring
 status: frozen
-version: 0.1.0
+version: 0.2.0
 created_at: '2026-08-13'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'

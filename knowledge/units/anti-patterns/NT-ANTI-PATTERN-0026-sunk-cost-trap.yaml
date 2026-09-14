@@ -1,7 +1,7 @@
 id: NT-ANTI-PATTERN-0026
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Bẫy Chi Phí Chìm
 summary: Bẫy chi phí chìm là hiện tượng tổ chức tiếp tục đổ nguồn lực vào các dự án hoặc quyết định không hiệu quả chỉ vì đã lỡ đầu tư nhiều tài nguyên trước đó.
 primary_domain: tri-nhan
@@ -36,5 +36,10 @@ tags:
 - decision-making-bias
 - governance-anti-pattern
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Nguồn lực đã được đầu tư vào một dự án hoặc quyết định kém hiệu quả.
+- Chi phí không thu hồi được dùng làm lý do để tiếp tục đầu tư.
+- Hành vi tiếp tục được ngụy biện bởi cảm giác hối tiếc khi bỏ dở.
+- Nguồn lực bổ sung tiếp tục bị khóa vào hoạt động kém giá trị.
+- Thiệt hại tích lũy lớn hơn nhiều nếu dừng lại từ thời điểm phù hợp.

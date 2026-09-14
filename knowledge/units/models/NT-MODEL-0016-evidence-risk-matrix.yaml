@@ -1,22 +1,31 @@
 id: NT-MODEL-0016
 type: model
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Ma trận Rủi ro Bằng chứng
-summary: Đơn vị tri thức cấu trúc về Ma trận Rủi ro Bằng chứng trong quản trị vận hành.
+summary: Ma trận đối chiếu hai chiều mức độ mạnh của bằng chứng và mức độ rủi ro của quyết định. Mỗi vùng ma trận yêu cầu mức xác minh và thẩm quyền phê duyệt khác nhau.
 primary_domain: tri-nhan
 secondary_domains:
 - dung-nhan
-definition: Định nghĩa chính thức về Ma trận Rủi ro Bằng chứng trong kiến trúc Nhân Thuật.
+definition: 'Ma trận Rủi ro Bằng chứng là khung phân loại quyết định theo chất lượng bằng chứng hiện có và mức tổn thất tiềm ẩn nếu sai, xác định bốn vùng: quyết định nhanh, quyết định cần thêm dữ liệu, quyết định cần thẩm quyền cao, và quyết định cấm cho tới khi có bằng chứng.'
 conditions:
-- Các bối cảnh quản trị vận hành tổ chức.
+- Có thể ước lượng tương đối chất lượng bằng chứng và mức rủi ro.
+- Quy trình phê duyệt cho phép áp dụng mức khác nhau theo vùng.
 exceptions:
-- Trường hợp khẩn cấp kích hoạt cơ chế ghi đè xử lý khủng hoảng.
+- Tình huống khẩn cấp buộc hành động trước khi đủ bằng chứng.
+- Bằng chứng yếu nhưng cơ hội có cửa sổ thời gian ngắn cần quyết định nhanh.
 applications:
   governance:
-  - Áp dụng Ma trận Rủi ro Bằng chứng vào các quy trình làm việc của tổ chức.
+  - Gắn mức thẩm quyền phê duyệt với từng vùng của ma trận.
+  - Yêu cầu bổ sung bằng chứng cho các quyết định rủi ro cao.
+  risk-management:
+  - Phân loại danh mục quyết định theo ma trận để phân bổ nguồn lực xác minh.
+  decision-making:
+  - Dùng ma trận làm ngôn ngữ chung khi thảo luận mức độ sẵn sàng quyết định.
 risks:
-- Áp dụng sai lệch Ma trận Rủi ro Bằng chứng dẫn đến hiệu suất hoạt động kém tối ưu.
+- Đánh giá bằng chứng và rủi ro theo cảm tính chủ quan.
+- Áp dụng máy móc ma trận cho tình huống đặc thù.
+- Trì hoãn vô hạn các quyết định ở vùng cần thêm bằng chứng.
 evidence:
   level: supported
   references:
@@ -36,8 +45,9 @@ tags:
 - governance-model
 - decision-framework
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'
 mechanism:
-- 'Bước 1: Xác định Ma trận Rủi ro Bằng chứng.'
-- 'Bước 2: Phân tích các tham số liên quan.'
-- 'Bước 3: Tiến hành thực thi mô hình.'
+- Đánh giá mức mạnh của bằng chứng đang có cho quyết định.
+- Đánh giá mức rủi ro và độ khó đảo ngược của quyết định.
+- Định vị quyết định trên ma trận hai chiều.
+- 'Áp dụng quy tắc tương ứng: hành động, thu thập thêm, leo thang thẩm quyền hoặc dừng lại.'

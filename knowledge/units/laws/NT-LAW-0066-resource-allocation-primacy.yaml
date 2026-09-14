@@ -1,7 +1,7 @@
 id: NT-LAW-0066
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Tính tối thượng của phân bổ nguồn lực
 summary: Một chiến lược thực sự không tồn tại cho đến khi các nguồn lực khan hiếm được phân bổ lại để hỗ trợ cho các lựa chọn của chiến lược đó.
 primary_domain: thanh-su
@@ -13,7 +13,7 @@ conditions:
 exceptions:
 - Các thử nghiệm thăm dò với lượng phân bổ nguồn lực ban đầu rất nhỏ.
 applications:
-  strategic_audit:
+  strategic-audit:
   - Đo lường sự dịch chuyển nhân tài và ngân sách giữa các sáng kiến.
 risks:
 - Tuyên bố chuyển dịch chiến lược nhưng không thay đổi việc phân bổ ngân sách.
@@ -35,5 +35,10 @@ tags:
 - budgeting
 - talent-commitment
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Tổ chức tuyên bố ưu tiên chiến lược trong các văn bản.
+- Phân bổ nguồn lực thực tế vẫn theo quán tính cũ.
+- Khoảng cách giữa tuyên bố và phân bổ khiến chiến lược không được thực thi.
+- Các sáng kiến chiến lược thiếu nguồn lực và thất bại.
+- Tổ chức quay lại trạng thái cân bằng cũ bất kể tuyên bố mới.

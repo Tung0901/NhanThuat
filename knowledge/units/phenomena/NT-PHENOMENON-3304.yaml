@@ -14,7 +14,7 @@ conditions:
 exceptions:
 - Các nhóm sử dụng phương thức "red teaming" chính thức hoặc các người phản biện được chỉ định (devil's advocate).
 applications:
-  decision_making:
+  decision-making:
   - Các nhà lãnh đạo nên giữ kín ý kiến của mình đến cuối buổi họp để tránh neo giữ định hướng của cả nhóm.
 risks:
 - Tiếp tục các chiến dịch ra mắt sản phẩm hoặc khoản đầu tư thảm họa dù nội bộ biết rõ rằng chúng sẽ thất bại.
@@ -35,6 +35,6 @@ tags:
 - unanimity
 - cohesion
 status: frozen
-version: 0.1.0
+version: 0.2.0
 created_at: '2026-08-13'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'

@@ -14,3 +14,9 @@ docs/generated/*
 tmp_pytest/
 scratch/
 skills-lock.json
+
+# Runtime stores and caches (rebuilt automatically)
+knowledge/nhan_thuat.db
+knowledge/.vector_cache.json
+logs/
+nhan_thuat.db

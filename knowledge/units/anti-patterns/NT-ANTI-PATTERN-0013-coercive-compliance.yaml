@@ -1,22 +1,32 @@
 id: NT-ANTI-PATTERN-0013
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Sự tuân thủ cưỡng ép
-summary: Đơn vị tri thức cấu trúc về Sự tuân thủ cưỡng ép trong quản trị và hành vi tổ chức.
+summary: Tổ chức đạt được sự tuân thủ bề mặt bằng áp lực và chế tài thay vì đồng thuận thực chất. Con người làm theo để tránh hậu quả, không phải vì hiểu và tin vào mục tiêu.
 primary_domain: dung-nhan
 secondary_domains:
 - tri-nhan
-definition: Định nghĩa chính thức về Sự tuân thủ cưỡng ép (Coercive Compliance) trong kiến trúc Nhân Thuật.
+definition: Sự tuân thủ cưỡng ép là phản-mẫu quản trị trong đó hành vi tuân thủ được tạo ra chủ yếu bằng đe dọa, trừng phạt hoặc áp lực quyền lực, dẫn đến tuân thủ hình thức và phản kháng ngầm.
 conditions:
-- Bối cảnh quản trị vận hành.
+- Quan hệ quyền lực bất đối xứng rõ rệt.
+- Mục tiêu thay đổi đòi hỏi mức tự nguyện nhất định để duy trì.
 exceptions:
-- Các trường hợp đè quyền trong khủng hoảng khẩn cấp.
+- Trong tình huống an toàn nghiêm trọng, cưỡng chế ngắn hạn cần thiết để ngăn thiệt hại tức thời.
+- Quy định pháp lý bắt buộc có thể yêu cầu biện pháp chế tài kèm theo.
 applications:
-  governance:
-  - Áp dụng Sự tuân thủ cưỡng ép vào quy trình làm việc của tổ chức.
+  leadership:
+  - Thay thế đe dọa bằng giải thích lợi ích chung và động lực nội tại.
+  - Đo lường mức đồng thuận thực chất bên cạnh mức tuân thủ hình thức.
+  management:
+  - Xây dựng cơ chế đối thoại trước khi áp dụng chế tài.
+  - Ghi nhận và xử lý các rào cản khiến nhân sự không thể tuân thủ tự nguyện.
+  culture:
+  - Theo dõi dấu hiệu tuân thủ hình thức và phản kháng ngầm trong khảo sát nội bộ.
 risks:
-- Áp dụng sai Sự tuân thủ cưỡng ép dẫn đến hiệu suất không đạt mức tối ưu.
+- Tuân thủ giả và báo cáo sai lệch để đối phó.
+- Phản kháng ngầm tích tụ dẫn tới khủng hoảng khi bùng phát.
+- Mất nhân tài vì môi trường áp lực không tạo được cam kết.
 evidence:
   level: supported
   references:
@@ -35,5 +45,9 @@ tags:
 - authoritarian-control
 - organizational-governance
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Người quản lý dùng chế tài hoặc đe dọa để buộc thay đổi hành vi.
+- Nhân sự điều chỉnh hành vi bề mặt để tránh hậu quả.
+- Cam kết nội tâm không được hình thành, thậm chí suy giảm.
+- Khi áp lực giảm hoặc người quản lý rời đi, hành vi quay lại hoặc phản kháng.

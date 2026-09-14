@@ -1,7 +1,7 @@
 id: NT-PRINCIPLE-0097
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Xác định rõ các ngưỡng leo thang
 summary: Quy định các ngưỡng kích hoạt cụ thể buộc phải leo thang một quyết định lên cấp cao hơn, để các lựa chọn thông thường hoàn toàn tự chủ.
 primary_domain: dung-nhan
@@ -35,5 +35,10 @@ tags:
 - delegation
 - workflow
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- 'Xác định các loại ngưỡng cần thiết: tài chính, rủi ro, chiến lược, pháp lý.'
+- Quy định mức ngưỡng cụ thể cho từng cấp quyết định.
+- Thông báo rõ ngưỡng để các quyết định thông thường được tự chủ.
+- Thiết lập kênh leo thang nhanh khi ngưỡng bị vượt qua.
+- Rà soát ngưỡng định kỳ theo mức trưởng thành của đội ngũ.

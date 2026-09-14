@@ -1,8 +1,8 @@
 id: NT-MODEL-0003
 type: model
 status: frozen
-version: 0.1.0
-title: Chu kỳ thích ứng
+version: 0.2.0
+title: Vòng lặp Thích ứng Hành vi
 summary: Mô hình khuôn mẫu thể hiện cách thức bối cảnh, hành vi, hệ quả và kỳ vọng lặp đi lặp lại tạo nên sự thích ứng ổn định.
 primary_domain: tri-nhan
 secondary_domains:
@@ -50,4 +50,4 @@ tags:
 - organizational-culture
 - learning-process
 created_at: '2026-07-21'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'

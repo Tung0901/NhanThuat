@@ -1,22 +1,31 @@
 id: NT-MODEL-0021
 type: model
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Ma Trận Thuyết Phục Chính Danh
-summary: Đơn vị tri thức cấu trúc về Ma Trận Thuyết Phục Chính Danh trong điều hành tổ chức.
+summary: Ma trận phân loại các phương thức thuyết phục theo mức độ minh bạch của ý định và mức độ tự nguyện của người bị thuyết phục. Mô hình giúp phân biệt thuyết phục chính danh với thao túng.
 primary_domain: tri-nhan
 secondary_domains:
 - hop-chung
-definition: Định nghĩa chuẩn tắc về Ma Trận Thuyết Phục Chính Danh trong cấu trúc kiến trúc Nhân Thuật.
+definition: 'Ma trận Thuyết Phục Chính Danh là khung đánh giá các kỹ thuật gây ảnh hưởng theo hai chiều: mức độ minh bạch về ý định của người thuyết phục và mức độ tự nguyện thực sự của người tiếp nhận.'
 conditions:
-- Bối cảnh quản trị và điều hành tổ chức.
+- Cần đánh giá đạo đức của hoạt động gây ảnh hưởng.
+- Người tiếp nhận có quyền lựa chọn trong tình huống.
 exceptions:
-- Các tình huống khủng hoảng khẩn cấp cần quyền can thiệp đặc biệt.
+- Tình huống bảo vệ an toàn cộng đồng có thể cần mức áp đặt cao hơn bình thường.
+- Giao tiếp quảng cáo theo quy định pháp luật có khuôn khổ riêng.
 applications:
-  governance:
-  - Ứng dụng Ma Trận Thuyết Phục Chính Danh vào các quy trình làm việc của tổ chức.
+  leadership:
+  - Kiểm tra các kỹ thuật vận động có nằm trong vùng chính danh không.
+  - Minh bạch ý định khi đề xuất thay đổi lớn.
+  negotiation:
+  - Phân biệt thuyết phục dựa trên lợi ích với thao túng thông tin.
+  sales:
+  - Thiết kế hoạt động bán hàng minh bạch về giá trị và điều kiện.
 risks:
-- Áp dụng sai lệch Ma Trận Thuyết Phục Chính Danh dẫn đến giảm sút hiệu suất hoạt động.
+- Ngụy biện cho thao túng bằng danh nghĩa thuyết phục.
+- Đánh giá thấp áp lực ngầm từ bất đối xứng quyền lực.
+- Minh bạch hình thức nhưng vẫn giới hạn lựa chọn thực chất.
 evidence:
   level: supported
   references:
@@ -36,8 +45,9 @@ tags:
 - persuasion-matrix
 - governance-decision-making
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'
 mechanism:
-- 'Bước 1: Xác định Ma Trận Thuyết Phục Chính Danh.'
-- 'Bước 2: Phân tích các tham số ảnh hưởng.'
-- 'Bước 3: Tiến hành thực thi mô hình.'
+- Xác định kỹ thuật gây ảnh hưởng đang được xem xét.
+- Đánh giá mức độ người tiếp nhận biết rõ ý định của người thuyết phục.
+- Đánh giá mức độ lựa chọn của người tiếp nhận có thực sự tự nguyện.
+- Phân loại và điều chỉnh về vùng thuyết phục chính danh.

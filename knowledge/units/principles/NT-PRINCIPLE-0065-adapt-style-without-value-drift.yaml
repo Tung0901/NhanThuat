@@ -1,22 +1,31 @@
 id: NT-PRINCIPLE-0065
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Thích ứng phong cách mà không lệch giá trị
-summary: Thích ứng phong cách mà không lệch giá trị là một đơn vị tri thức cấu trúc trong kho tri thức Nhân Thuật.
+summary: Điều chỉnh cách tiếp cận theo con người và tình huống nhưng giữ nguyên hệ giá trị cốt lõi. Thích ứng phong cách giúp tăng hiệu quả giao tiếp; lệch giá trị làm suy giảm niềm tin.
 primary_domain: tri-nhan
 secondary_domains:
 - tu-than
-definition: Định nghĩa chính thức của Nguyên tắc Thích ứng phong cách mà không lệch giá trị trong kiến trúc Nhân Thuật.
+definition: 'Thích ứng phong cách mà không lệch giá trị là nguyên tắc lãnh đạo thích ứng: thay đổi cách diễn đạt, nhịp độ và kênh giao tiếp theo đối tượng trong khi các nguyên tắc đạo đức và tiêu chuẩn xử lý được giữ nguyên.'
 conditions:
-- Các bối cảnh quản trị vận hành.
+- Người lãnh đạo tương tác với nhiều nhóm tính cách và văn hóa khác nhau.
+- Hành vi có thể điều chỉnh mà không đánh đổi nguyên tắc.
 exceptions:
-- Các tình huống khẩn cấp yêu cầu vượt quyền ưu tiên.
+- Khi đối tác cố tình khai thác sự thích ứng để đòi nhượng bộ nguyên tắc.
+- Trong bối cảnh đòi hỏi tính nhất quán tuyệt đối như tuân thủ pháp lý.
 applications:
-  governance:
-  - Áp dụng Nguyên tắc Thích ứng phong cách mà không lệch giá trị vào các quy trình vận hành của tổ chức.
+  leadership:
+  - Điều chỉnh cách góp ý theo phong cách tiếp nhận của từng nhân sự.
+  - Giữ nguyên tiêu chuẩn chất lượng bất kể cách diễn đạt thay đổi.
+  communication:
+  - Chọn kênh và thời điểm phù hợp với người nhận nhưng không thay đổi thông điệp cốt lõi.
+  culture:
+  - Nêu rõ ranh giới giữa thích ứng giao tiếp và thỏa hiệp giá trị.
 risks:
-- Áp dụng sai Nguyên tắc Thích ứng phong cách mà không lệch giá trị dẫn đến hiệu suất dưới mức tối ưu.
+- Sự thích ứng dần trượt thành thỏa hiệp giá trị ngầm.
+- Bị nhận diện là hai mặt gây mất nhất quán.
+- Sử dụng thích ứng như công cụ thao túng theo từng đối tượng.
 evidence:
   level: supported
   references:
@@ -35,5 +44,9 @@ tags:
 - value-alignment
 - leadership-adaptation
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Xác định hệ giá trị và tiêu chuẩn xử lý bất biến cần giữ.
+- Quan sát phong cách tiếp nhận thông tin của từng đối tượng.
+- Điều chỉnh cách truyền đạt cho phù hợp mà không thay đổi bản chất nội dung.
+- Kiểm tra định kỳ xem sự thích ứng có làm trôi lệch chuẩn mực hay không.

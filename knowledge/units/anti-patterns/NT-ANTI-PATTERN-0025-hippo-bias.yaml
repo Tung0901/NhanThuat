@@ -1,7 +1,7 @@
 id: NT-ANTI-PATTERN-0025
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Định kiến HIPPO
 summary: Đơn vị kiến thức cấu trúc về Định kiến HIPPO (Ý kiến người nhận lương cao nhất) trong tổ chức.
 primary_domain: dung-nhan
@@ -35,5 +35,10 @@ tags:
 - authority-bias
 - governance
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Người có chức vụ hoặc lương cao nhất phát biểu quan điểm.
+- Hội nhóm mặc định ưu tiên ý kiến đó thay vì kiểm chứng bằng dữ liệu.
+- Người có dữ liệu hoặc góc nhìn tốt hơn không lên tiếng.
+- Quyết định phản ánh thứ bậc thay vì chất lượng phân tích.
+- Sai lầm được phát hiện muộn và kém được kiểm chứng.

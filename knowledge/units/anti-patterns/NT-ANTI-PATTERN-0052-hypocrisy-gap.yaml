@@ -1,7 +1,7 @@
 id: NT-ANTI-PATTERN-0052
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Khoảng cách giữa lời nói và hành động
 summary: Truyền thông rầm rộ về các giá trị cốt lõi của doanh nghiệp nhưng lãnh đạo lại thường xuyên vi phạm trong các quyết định vận hành hàng ngày.
 primary_domain: hop-chung
@@ -18,7 +18,7 @@ conditions:
 exceptions:
 - Không có.
 applications:
-  culture_audit:
+  culture-audit:
   - Xác định sự lệch pha giữa phản hồi từ khảo sát nhân viên và các tuyên bố truyền thông của ban điều hành.
 risks:
 - Làm nhân viên nản lòng khi chỉ ra sự mâu thuẫn kéo dài không thể khắc phục của ban điều hành.
@@ -43,4 +43,4 @@ tags:
 - culture-alignment
 - organizational-integrity
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'

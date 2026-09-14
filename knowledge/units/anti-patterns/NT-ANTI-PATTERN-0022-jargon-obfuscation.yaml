@@ -1,7 +1,7 @@
 id: NT-ANTI-PATTERN-0022
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Làm mờ bằng thuật ngữ
 summary: Đơn vị kiến thức cấu trúc về Làm mờ bằng thuật ngữ (Jargon Obfuscation) trong giao tiếp quản trị.
 primary_domain: tri-nhan
@@ -35,5 +35,10 @@ tags:
 - governance
 - clarity-in-leadership
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Người nói sử dụng thuật ngữ phức tạp để trình bày vấn đề.
+- Sự mơ hồ được ngụy trang thành tính chuyên nghiệp.
+- Người nghe không dám hỏi lại vì sợ bị đánh giá thiếu hiểu biết.
+- Thông tin quan trọng không được làm rõ và trách nhiệm không ai nắm.
+- Khi sự việc vỡ lộ, mỗi bên diễn giải theo hướng có lợi cho mình.

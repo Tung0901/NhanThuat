@@ -1,7 +1,7 @@
 id: NT-PRINCIPLE-0099
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Tập trung nguồn lực vào các nút thắt trọng yếu
 summary: Dồn sức lực của tổ chức vào việc giải phóng ràng buộc hạn chế nhất đang kìm hãm tiến độ tổng thể.
 primary_domain: thanh-su
@@ -13,7 +13,7 @@ conditions:
 exceptions:
 - Danh mục đầu tư kinh doanh đa dạng hóa.
 applications:
-  execution_triage:
+  execution-triage:
   - Xác định ràng buộc vận hành chính trước khi cho phép triển khai các công việc thứ yếu.
 risks:
 - Xác định sai nút thắt.
@@ -35,5 +35,10 @@ tags:
 - resource-allocation
 - execution
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Vẽ sơ đồ dòng công việc và xác định các điểm chờ đợi.
+- Đo lường điểm tắc nghẽn giới hạn thông lượng tổng thể.
+- Dồn nguồn lực vào việc giải phóng nút thắt trọng yếu nhất.
+- Theo dõi sau giải phóng để phát hiện nút thắt chuyển sang vị trí mới.
+- Lặp lại chu trình tập trung nguồn lực theo nút thắt hiện hành.

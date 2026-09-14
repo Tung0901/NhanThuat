@@ -24,6 +24,10 @@ DEFAULT_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai"
 DEFAULT_MODEL = "gemini-3.6-flash"
 
 
+class ProviderError(RuntimeError):
+    """Raised when all configured LLM providers fail or none is configured."""
+
+
 def _is_valid_api_key(key: str) -> bool:
     if not key:
         return False
@@ -241,45 +245,44 @@ class KnowledgeSynthesizer:
         """Call providers with failover and return just the text."""
         configs = get_provider_configs()
         if not configs:
-            raise Exception("No providers configured")
-        
+            raise ProviderError("No providers configured")
+
         errors = []
         for config in configs:
             try:
                 return self._call_provider(prompt, config)
-            except Exception as e:
+            except Exception as e:  # noqa: BLE001 - failover across any provider failure
                 errors.append(f"{config['provider_name']}: {e}")
-                
-        raise Exception(f"All providers failed: {' | '.join(errors)}")
+
+        raise ProviderError(f"All providers failed: {' | '.join(errors)}")
 
     def generate_json(self, prompt: str) -> dict[str, Any]:
         """Call providers and force JSON return, parsing it safely."""
         configs = get_provider_configs()
         if not configs:
-            raise Exception("No providers configured")
-        
+            raise ProviderError("No providers configured")
+
         errors = []
         for config in configs:
             try:
                 json_prompt = prompt + "\n\nCRITICAL: You MUST return ONLY valid JSON. Do not wrap it in markdown block quotes like ```json ... ```. Just return the raw JSON object."
                 text = self._call_provider(json_prompt, config)
-                
+
                 # Cleanup common markdown code block wrapping if LLM ignores instruction
                 text = text.strip()
                 if text.startswith("```json"):
                     text = text[7:]
                 elif text.startswith("```"):
                     text = text[3:]
-                if text.endswith("```"):
-                    text = text[:-3]
+                text = text.removesuffix("```")
                 text = text.strip()
-                
+
                 import json
                 return json.loads(text)
-            except Exception as e:
+            except Exception as e:  # noqa: BLE001 - failover across any provider failure
                 errors.append(f"{config['provider_name']}: {e}")
-                
-        raise Exception(f"All providers failed JSON generation: {' | '.join(errors)}")
+
+        raise ProviderError(f"All providers failed JSON generation: {' | '.join(errors)}")
 
     def _call_provider(self, prompt: str, config: dict[str, str]) -> str:
         response = requests.post(
@@ -298,6 +301,6 @@ class KnowledgeSynthesizer:
         try:
             response.raise_for_status()
         except requests.exceptions.HTTPError as e:
-            raise Exception(f"{e} - Response: {response.text}") from e
+            raise ProviderError(f"{e} - Response: {response.text}") from e
         payload = response.json()
         return payload["choices"][0]["message"]["content"]

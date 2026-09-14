@@ -1,22 +1,32 @@
 id: NT-PRINCIPLE-0078
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Đánh giá quyết định theo quy trình, không theo kết quả
-summary: Đánh giá quyết định theo quy trình, không theo kết quả là một đơn vị tri thức cấu trúc trong kho tri thức Nhân Thuật.
+summary: Đánh giá chất lượng quyết định bằng quy trình đã dùng, không chỉ bằng kết quả cuối cùng. Đánh giá theo quy trình giúp học đúng bài học trong môi trường bất định.
 primary_domain: tri-nhan
 secondary_domains:
 - dung-nhan
-definition: Định nghĩa chính thức của Nguyên tắc Đánh giá quyết định theo quy trình, không theo kết quả trong kiến trúc Nhân Thuật.
+definition: Đánh giá quyết định theo quy trình, không theo kết quả là nguyên tắc kiểm điểm dựa trên chất lượng phân tích, giả định, dữ liệu và lập luận tại thời điểm ra quyết định, tách khỏi may mắn của kết quả.
 conditions:
-- Các bối cảnh quản trị vận hành.
+- Quyết định được đưa ra trong điều kiện bất định.
+- Có thể ghi nhận lại quá trình ra quyết định.
 exceptions:
-- Các tình huống khẩn cấp yêu cầu vượt quyền ưu tiên.
+- Trường hợp vi phạm quy trình bắt buộc rõ ràng vẫn xử lý theo quy chế.
+- Môi trường ổn định cho phép dùng kết quả làm chỉ báo đủ tin cậy.
 applications:
   governance:
-  - Áp dụng Nguyên tắc Đánh giá quyết định theo quy trình, không theo kết quả vào các quy trình vận hành của tổ chức.
+  - Yêu cầu ghi lại giả định và lý do cho các quyết định trọng yếu.
+  - Đánh giá quyết định định kỳ bằng chất lượng quy trình.
+  management:
+  - Khen thưởng quy trình tốt ngay cả khi kết quả chưa thuận lợi.
+  - Không kết luận năng lực chỉ từ một kết quả đơn lẻ.
+  learning:
+  - Dùng phân tích kịch bản thay thế để học từ các quyết định đã qua.
 risks:
-- Áp dụng sai Nguyên tắc Đánh giá quyết định theo quy trình, không theo kết quả dẫn đến hiệu suất dưới mức tối ưu.
+- Bao biện cho quyết định kém bằng lý do bất định.
+- Bỏ qua bài học từ kết quả thực tế khi quá tập trung vào quy trình.
+- Đánh giá quy trình hình thức trong khi kết quả bị lờ đi.
 evidence:
   level: supported
   references:
@@ -35,5 +45,9 @@ tags:
 - hindsight-bias
 - process-evaluation
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Tái dựng bối cảnh và các lựa chọn tại thời điểm quyết định.
+- Đánh giá chất lượng thông tin, giả định và lập luận đã sử dụng.
+- Phân tích vai trò của các yếu tố ngoài tầm kiểm soát đối với kết quả.
+- Rút ra bài học quy trình thay vì chỉ phán xét kết quả.

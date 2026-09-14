@@ -1,7 +1,7 @@
 id: NT-ANTI-PATTERN-0034
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Thuyết phục trong phòng vọng âm
 summary: Đơn vị kiến thức cấu trúc về Thuyết phục trong phòng vọng âm (Echo Chamber Persuasion) trong hành vi tổ chức.
 primary_domain: tri-nhan
@@ -35,5 +35,10 @@ tags:
 - persuasion-bias
 - confirmation-bias
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Nhóm hoặc cá nhân chỉ tiếp xúc với thông tin đồng điệu với quan điểm sẵn có.
+- Các góc nhìn phản biện bị loại khỏi các kênh thảo luận.
+- Niềm tin vào quan điểm hiện tại được củng cố mà không qua kiểm chứng.
+- Sai lệch nhận thức tăng dần theo thời gian.
+- Khi đối mặt thực tế trái ngược, nhóm bất ngờ và không có phương án.

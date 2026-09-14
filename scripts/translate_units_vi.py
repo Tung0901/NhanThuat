@@ -28,7 +28,7 @@ import yaml
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT / "src"))
 
-from nhan_thuat.runtime.synthesizer import DEFAULT_BASE_URL, DEFAULT_MODEL  # noqa: E402
+from nhan_thuat.runtime.synthesizer import DEFAULT_BASE_URL, DEFAULT_MODEL
 
 VN_DIACRITICS = set("ăâđêôơưáàảãạấầẩẫậắằẳẵặéèẻẽẹếềểễệíìỉĩịóòỏõọốồổỗộớờởỡợúùủũụứừửữựýỳỷỹỵ")
 

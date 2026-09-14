@@ -1,7 +1,7 @@
 id: NT-LAW-0070
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Sự phụ thuộc giữa Học hỏi và An toàn tâm lý
 summary: Tốc độ học hỏi của tổ chức bị giới hạn nghiêm ngặt bởi mức độ an toàn tâm lý của các kênh báo cáo lỗi.
 primary_domain: tri-nhan
@@ -13,7 +13,7 @@ conditions:
 exceptions:
 - Hành vi cố ý phá hoại có chủ đích.
 applications:
-  blameless_reviews:
+  blameless-reviews:
   - Tiến hành đánh giá sự cố không đổ lỗi, tập trung vào thiết kế hệ thống.
 risks:
 - Nhầm lẫn giữa an toàn tâm lý với việc thiếu các tiêu chuẩn hiệu suất.
@@ -35,5 +35,10 @@ tags:
 - organizational-learning
 - blameless-culture
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Nhân sự phát hiện lỗi, rủi ro hoặc thất bại trong thực thi.
+- Đánh giá mức độ an toàn khi báo cáo tin xấu.
+- Nếu tin xấu bị trừng phạt, nhân sự chọn che giấu sai sót.
+- Dữ liệu học hỏi bị phá hủy, tổ chức mất khả năng cải thiện.
+- Tổ chức mắc lại cùng loại lỗi ở quy mô ngày càng lớn.

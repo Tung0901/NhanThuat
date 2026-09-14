@@ -1,22 +1,31 @@
 id: NT-PRINCIPLE-0063
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Giảm thiểu quyền lực vai trò
-summary: Giảm thiểu quyền lực vai trò là một đơn vị tri thức cấu trúc trong kho tri thức Nhân Thuật.
+summary: Giảm sự phụ thuộc vào quyền lực gắn với chức danh bằng cách chuyển ảnh hưởng sang năng lực, cấu trúc và tiêu chí khách quan. Quyền lực vị trí càng ít bị dùng làm công cụ, tổ chức càng giảm rủi ro điểm mù và đề kháng giả tạo.
 primary_domain: dung-nhan
 secondary_domains:
 - tri-nhan
-definition: Định nghĩa chính thức của Nguyên tắc Giảm thiểu quyền lực vai trò trong kiến trúc Nhân Thuật.
+definition: Giảm thiểu quyền lực vai trò là nguyên tắc thiết kế tổ chức nhằm hạn chế việc dùng vị trí chức danh làm nguồn tác động chính; thay vào đó, ảnh hưởng được dựa trên năng lực đã chứng minh, luận cứ và cơ chế ra quyết định minh bạch.
 conditions:
-- Các bối cảnh quản trị vận hành.
+- Tổ chức có phân cấp chức danh nhưng công việc đòi hỏi phán đoán chuyên môn.
+- Tồn tại cơ chế ghi nhận đóng góp ngoài thứ bậc.
 exceptions:
-- Các tình huống khẩn cấp yêu cầu vượt quyền ưu tiên.
+- Tình huống khẩn cấp cần chuỗi chỉ huy rõ ràng và tập trung quyền quyết định.
+- Vai trò chịu trách nhiệm pháp lý bắt buộc gắn với quyền quyết định tương ứng.
 applications:
+  organization-design:
+  - Thiết kế quyền quyết định theo loại công việc thay vì mặc định theo cấp bậc.
+  - Bổ sung vai trò chuyên môn có tiếng nói chính thức trong các quyết định kỹ thuật.
   governance:
-  - Áp dụng Nguyên tắc Giảm thiểu quyền lực vai trò vào các quy trình vận hành của tổ chức.
+  - Rà soát định kỳ ma trận quyền hạn để loại bỏ quyền lực không còn cần thiết.
+  leadership:
+  - Chủ động hạ thấp giọng nói quyền lực trong thảo luận để khuyến khích phản biện.
 risks:
-- Áp dụng sai Nguyên tắc Giảm thiểu quyền lực vai trò dẫn đến hiệu suất dưới mức tối ưu.
+- Làm mờ trách nhiệm khi quyền hạn không đi kèm trách nhiệm giải trình rõ ràng.
+- Kéo dài thời gian ra quyết định do phải đồng thuận rộng.
+- Tạo khoảng trống quyền lực cho nhóm lợi ích ngầm chi phối.
 evidence:
   level: supported
   references:
@@ -35,5 +44,9 @@ tags:
 - organizational-design
 - governance
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Nhận diện các quyết định đang bị chi phối chủ yếu bởi chức danh.
+- Chuyển trọng số đánh giá sang luận cứ, dữ liệu và năng lực đã chứng minh.
+- Thiết kế cơ chế để người ít quyền vẫn có kênh ảnh hưởng hợp pháp.
+- Định kỳ rà soát xem quyền hạn thực tế có vượt quá nhu cầu công việc hay không.

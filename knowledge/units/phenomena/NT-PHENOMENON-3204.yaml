@@ -14,7 +14,7 @@ conditions:
 exceptions:
 - Các nhiệm vụ đòi hỏi sự tập trung sâu không thể ghép với những phần thưởng gây mất tập trung cao độ.
 applications:
-  habit_formation:
+  habit-formation:
   - Chỉ cho phép xem một chương trình yêu thích khi đang làm báo cáo chi phí hành chính.
 risks:
 - Quy tắc sụp đổ nếu cá nhân thiếu ý chí tự chủ để duy trì sự hạn chế.
@@ -35,6 +35,6 @@ tags:
 - self-control
 - present-bias
 status: frozen
-version: 0.1.0
+version: 0.2.0
 created_at: '2026-08-13'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'

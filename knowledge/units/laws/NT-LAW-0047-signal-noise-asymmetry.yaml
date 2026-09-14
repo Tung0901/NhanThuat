@@ -1,22 +1,31 @@
 id: NT-LAW-0047
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Bất đối xứng tín hiệu và nhiễu
-summary: Đơn vị tri thức cấu trúc về Tính bất đối xứng giữa tín hiệu và nhiễu.
+summary: Khi khối lượng thông tin tăng, nhiễu tăng nhanh hơn tín hiệu có ích. Chi phí lọc thông tin tăng phi tuyến và dần vượt giá trị của phần tín hiệu thu được.
 primary_domain: tri-nhan
 secondary_domains:
 - dung-nhan
-definition: Định nghĩa chính thức về Tính bất đối xứng giữa tín hiệu và nhiễu trong kiến trúc Nhân Thuật.
+definition: 'Bất đối xứng tín hiệu và nhiễu là quy luật về cấu trúc dòng thông tin: tỷ trọng tín hiệu quan trọng trong tổng lượng thông tin giảm khi hệ thống mở rộng nếu không có cơ chế lọc tương ứng.'
 conditions:
-- Bối cảnh quản trị vận hành.
+- Khối lượng thông tin tăng nhanh hơn năng lực lọc.
+- Thiếu tiêu chuẩn phân biệt tín hiệu và nhiễu.
 exceptions:
-- Các can thiệp ghi đè trong tình huống khủng hoảng khẩn cấp.
+- Bộ lọc theo ngưỡng ngoại lệ và tiêu chuẩn tín hiệu rõ giữ được tỷ lệ tín hiệu.
+- Tự động hóa lọc sơ bộ giảm chi phí chú ý của người quyết định.
 applications:
-  governance:
-  - Áp dụng Tính bất đối xứng tín hiệu và nhiễu vào các quy trình làm việc của tổ chức.
+  operations:
+  - Thiết lập ngưỡng báo cáo ngoại lệ thay vì báo cáo toàn bộ.
+  - Định kỳ cắt bỏ báo cáo không dẫn tới hành động nào.
+  management:
+  - Quy định tiêu chuẩn một tín hiệu hữu ích trước khi đưa vào báo cáo.
+  data-design:
+  - Xây dựng bảng điều khiển tập trung vào chỉ số tín hiệu thay vì số liệu trang trí.
 risks:
-- Áp dụng sai Tính bất đối xứng tín hiệu và nhiễu dẫn đến hiệu suất dưới mức tối ưu.
+- Tín hiệu cảnh báo sớm bị chôn trong nhiễu.
+- Người ra quyết định quá tải dẫn tới bỏ qua toàn bộ thông tin.
+- Tăng thu thập dữ liệu làm vấn đề nhiễu trầm trọng hơn.
 evidence:
   level: supported
   references:
@@ -36,5 +45,9 @@ tags:
 - communication-clarity
 - noise-reduction
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Hệ thống tạo ra ngày càng nhiều thông tin vận hành.
+- Phần lớn thông tin gia tăng là nhiễu lặp lại hoặc không hành động được.
+- Tín hiệu quan trọng bị pha loãng trong tổng khối lượng.
+- Chi phí chú ý và lọc tăng nhanh hơn lợi ích thu được từ tín hiệu.

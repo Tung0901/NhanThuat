@@ -1,22 +1,31 @@
 id: NT-LAW-0039
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Điểm mù do triệt tiêu phản biện
-summary: Đơn vị tri thức cấu trúc về điểm mù nhận thức sinh ra do dập tắt ý kiến trái chiều.
+summary: Khi bất đồng bị triệt tiêu, tổ chức mất kênh phát hiện sự thật và tích lũy điểm mù nhận thức. Những gì không được nói ra sẽ không được sửa.
 primary_domain: tri-nhan
 secondary_domains:
 - hop-chung
-definition: Định nghĩa chuẩn tắc về điểm mù do đàn áp phản biện trong kiến trúc Nhân Thuật.
+definition: 'Điểm mù do triệt tiêu phản biện là quy luật về hệ quả nhận thức của việc đàn áp bất đồng: khả năng tự phát hiện sai lệch của hệ thống suy giảm tương ứng với mức độ phản biện bị chặn.'
 conditions:
-- Bối cảnh quản trị vận hành của tổ chức.
+- Người ra quyết định có quyền lực áp đặt hoặc trừng phạt.
+- Thiếu kênh phản biện độc lập được bảo vệ.
 exceptions:
-- Trường hợp can thiệp ưu tiên trong tình huống khủng hoảng khẩn cấp.
+- Kênh phản biện ẩn danh hoặc bên thứ ba độc lập vẫn duy trì dòng thông tin.
+- Văn hóa tổ chức coi bất đồng là nghĩa vụ nghề nghiệp.
 applications:
   governance:
-  - Nhận diện và phòng ngừa điểm mù do triệt tiêu phản biện trong quy trình vận hành tổ chức.
+  - Thiết lập kênh phản biện được bảo vệ và quy trình xử lý thông tin bất lợi không trừng phạt.
+  - Định kỳ kiểm tra chéo các quyết định quan trọng bằng vai trò phản biện chỉ định.
+  leadership:
+  - Chủ động mời ý kiến trái chiều và cảm ơn người nêu vấn đề trước tập thể.
+  culture:
+  - Đưa tiêu chí dám nói sự thật vào đánh giá văn hóa định kỳ.
 risks:
-- Áp dụng sai cách thức xử lý ý kiến bất đồng dẫn đến suy giảm chất lượng ra quyết định và hiệu suất.
+- Quyết định dựa trên thông tin đã được lọc theo hướng có lợi.
+- Sự cố tích tụ phát nổ với quy mô lớn hơn nhiều so với nếu được xử lý sớm.
+- Nhân sự giỏi rời đi vì không được nói thật.
 evidence:
   level: supported
   references:
@@ -35,5 +44,9 @@ tags:
 - feedback-censorship
 - organizational-blindspot
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Một quan điểm hoặc người nêu ý kiến trái chiều bị trừng phạt hoặc gạt bỏ.
+- Những người quan sát học được rằng lên tiếng là rủi ro.
+- Thông tin bất lợi ngừng được truyền lên cấp ra quyết định.
+- Hệ thống mất khả năng tự điều chỉnh và tích lũy sai lệch cho đến khi sự cố bộc lộ.

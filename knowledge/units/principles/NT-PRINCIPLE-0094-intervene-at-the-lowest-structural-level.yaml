@@ -1,7 +1,7 @@
 id: NT-PRINCIPLE-0094
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Can thiệp ở cấp cấu trúc thấp nhất
 summary: Giải quyết xung đột trực tiếp giữa các bên liên quan chính trước khi leo thang lên cấp lãnh đạo điều hành.
 primary_domain: hop-chung
@@ -34,5 +34,10 @@ tags:
 - self-governance
 - decentralization
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Khi phát sinh xung đột, xác định cấp thấp nhất có đủ thẩm quyền giải quyết.
+- Khuyến khích các bên trực tiếp trao đổi và tự tìm phương án.
+- Chỉ leo thang khi vấn đề vượt quá thẩm quyền hoặc ảnh hưởng rộng.
+- Ghi nhận cách giải quyết để tái sử dụng cho tình huống tương tự.
+- Tránh leo thang sớm làm suy yếu năng lực tự quản của đội ngũ.

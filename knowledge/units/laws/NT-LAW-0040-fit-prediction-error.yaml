@@ -1,22 +1,31 @@
 id: NT-LAW-0040
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Sai lệch Dự đoán Mức độ Phù hợp
-summary: Đơn vị tri thức cấu trúc về sai lệch trong việc dự đoán mức độ phù hợp của nhân sự.
+summary: Dự đoán mức độ phù hợp giữa con người và vai trò có sai số hệ thống. Đánh giá càng dựa vào ấn tượng bề mặt, sai lệch càng lớn và chi phí thích ứng sau đó càng cao.
 primary_domain: tri-nhan
 secondary_domains:
 - dung-nhan
-definition: Định nghĩa chính thức về Sai lệch Dự đoán Mức độ Phù hợp trong cấu trúc kiến trúc Nhân Thuật.
+definition: 'Sai lệch dự đoán mức độ phù hợp là quy luật về giới hạn của dự báo con người - vai trò: con người đánh giá quá cao khả năng dự đoán của mình và bỏ qua chi phí thích ứng thực tế.'
 conditions:
-- Các bối cảnh quản trị vận hành.
+- Quyết định phân vai dựa trên dự đoán thay vì bằng chứng hành vi thực tế.
+- Bối cảnh đánh giá khác biệt với bối cảnh làm việc.
 exceptions:
-- Các trường hợp ưu tiên xử lý khủng hoảng khẩn cấp.
+- Mẫu thử việc mô phỏng sát môi trường làm việc thật làm giảm sai lệch đáng kể.
+- Vai trò có tiêu chuẩn đầu ra đo lường được ngay từ đầu.
 applications:
-  governance:
-  - Áp dụng nguyên lý Sai lệch Dự đoán Mức độ Phù hợp vào các quy trình làm việc của tổ chức.
+  hiring:
+  - Thiết kế bài đánh giá mô phỏng công việc thực tế thay vì dựa vào ấn tượng phỏng vấn.
+  - Đo lường mức phù hợp qua hành vi đã quan sát được, không qua lời tự mô tả.
+  management:
+  - Xác định ngưỡng thử việc và tiêu chí đánh giá lại trước khi cam kết dài hạn.
+  planning:
+  - Tính trước chi phí thích ứng khi bố trí nhân sự vào vai trò mới.
 risks:
-- Áp dụng sai nguyên lý Sai lệch Dự đoán Mức độ Phù hợp dẫn đến hiệu suất dưới mức tối ưu.
+- Bố trí sai người vào vai trò dẫn tới thất bại kép cho cả cá nhân và tổ chức.
+- Đánh giá quá tự tin vào khả năng đọc người.
+- Bỏ qua chi phí thời gian để một người thích ứng với vai trò.
 evidence:
   level: supported
   references:
@@ -36,5 +45,9 @@ tags:
 - talent-matching
 - workplace-assessment
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Một chủ thể được đánh giá mức phù hợp với vai trò dựa trên dữ liệu sẵn có.
+- Dữ liệu đánh giá thường nghiêng về biểu hiện bề mặt trong bối cảnh có kiểm soát.
+- Môi trường làm việc thực tế đặt ra yêu cầu khác với bối cảnh đánh giá.
+- Khoảng cách giữa dự đoán và thực tế chuyển thành chi phí thích ứng do sai lệch.

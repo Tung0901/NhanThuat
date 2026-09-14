@@ -14,7 +14,7 @@ conditions:
 exceptions:
 - Các thói quen mang tính lặp đi lặp lại vận hành theo cơ chế tự động không làm cạn kiệt chức năng điều hành.
 applications:
-  process_design:
+  process-design:
   - Lên lịch các quyết định chiến lược quan trọng vào buổi sáng; dùng các lựa chọn mặc định cho các quyết định vào buổi chiều.
 risks:
 - Các thẩm phán hoặc bác sĩ đưa ra những quyết định tồi tệ hơn, khắc nghiệt hơn hoặc thận trọng hơn một cách có hệ thống vào cuối ca làm việc.
@@ -35,6 +35,6 @@ tags:
 - status-quo-bias
 - system-1
 status: frozen
-version: 0.1.0
+version: 0.2.0
 created_at: '2026-08-13'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'

@@ -1,22 +1,31 @@
 id: NT-PRINCIPLE-0080
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Làm rõ chi phí cơ hội
-summary: Làm rõ chi phí cơ hội là một đơn vị tri thức cấu trúc trong kho tri thức Nhân Thuật.
+summary: Nêu rõ cái gì bị từ bỏ khi chọn một phương án để quyết định sáng suốt hơn. Chi phí cơ hội ẩn là nguồn gốc của nhiều lựa chọn kém.
 primary_domain: tri-nhan
 secondary_domains:
 - thanh-su
-definition: Định nghĩa chính thức của Nguyên tắc Làm rõ chi phí cơ hội trong kiến trúc Nhân Thuật.
+definition: Làm rõ chi phí cơ hội là nguyên tắc ra quyết định yêu cầu mọi phương án được đánh giá kèm giá trị của phương án tốt nhất bị từ bỏ, không chỉ chi phí trực tiếp của phương án được chọn.
 conditions:
-- Các bối cảnh quản trị vận hành.
+- Quyết định sử dụng nguồn lực khan hiếm như thời gian, tiền, nhân sự.
+- Tồn tại nhiều phương án cạnh tranh đáng kể.
 exceptions:
-- Các tình huống khẩn cấp yêu cầu vượt quyền ưu tiên.
+- Quyết định không tiêu tốn nguồn lực khan hiếm hoặc đã cam kết không thể thay đổi.
+- Phương án bị từ bỏ không thực sự khả dụng.
 applications:
-  governance:
-  - Áp dụng Nguyên tắc Làm rõ chi phí cơ hội vào các quy trình vận hành của tổ chức.
+  decision-making:
+  - Ghi rõ phương án tốt nhất bị từ bỏ trong hồ sơ quyết định.
+  - So sánh định kỳ giá trị theo đuổi với giá trị của nguồn lực đang dùng.
+  resource-allocation:
+  - Đánh giá lại phân bổ nguồn lực khi cơ hội mới xuất hiện.
+  management:
+  - Nhận diện các nguồn lực bị khóa vào hoạt động kém giá trị hơn cơ hội hiện có.
 risks:
-- Áp dụng sai Nguyên tắc Làm rõ chi phí cơ hội dẫn đến hiệu suất dưới mức tối ưu.
+- Bỏ qua chi phí cơ hội làm duy trì hoạt động kém hiệu quả.
+- Thay đổi quá thường xuyên vì sợ lỡ cơ hội mới.
+- Đánh giá sai giá trị phương án bị từ bỏ do thiếu dữ liệu.
 evidence:
   level: supported
   references:
@@ -35,5 +44,9 @@ tags:
 - trade-offs
 - resource-allocation
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Liệt kê các phương án thay thế thực sự khả dụng.
+- Xác định giá trị kỳ vọng của phương án bị từ bỏ tốt nhất.
+- Đưa chi phí cơ hội vào tiêu chí so sánh quyết định.
+- Tái đánh giá khi xuất hiện phương án thay thế mới tốt hơn.

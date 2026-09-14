@@ -1,7 +1,7 @@
 id: NT-LAW-0062
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Sự phân tách giữa xung đột công việc và xung đột quan hệ
 summary: Xung đột công việc giúp cải thiện chất lượng ra quyết định, trong khi xung đột quan hệ làm suy giảm an toàn tâm lý và hiệu suất làm việc.
 primary_domain: hop-chung
@@ -13,7 +13,7 @@ conditions:
 exceptions:
 - Môi trường khủng hoảng có mức độ căng thẳng cao.
 applications:
-  team_governance:
+  team-governance:
   - Thiết lập các quy tắc cơ bản nhằm tập trung cuộc tranh luận vào dữ liệu và các giả thuyết.
 risks:
 - Để xung đột quan hệ ngụy trang dưới danh nghĩa tranh luận công việc.
@@ -35,5 +35,10 @@ tags:
 - decision-making
 - team-dynamics
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Các bên bất đồng về quan điểm công việc trong điều kiện áp lực cao.
+- Nếu bất đồng tập trung vào vấn đề, giả định sai được chỉ ra và sửa.
+- Nếu bất đồng chuyển hướng sang con người, an toàn tâm lý suy giảm.
+- Xung đột công việc lành mạnh cải thiện chất lượng quyết định.
+- Xung đột quan hệ không được xử lý ăn mòn hợp tác dài hạn.

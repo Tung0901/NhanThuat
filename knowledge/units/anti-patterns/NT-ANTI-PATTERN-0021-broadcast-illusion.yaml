@@ -1,7 +1,7 @@
 id: NT-ANTI-PATTERN-0021
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Ảo tưởng truyền phát
 summary: Đơn vị kiến thức cấu trúc về Ảo tưởng truyền phát (Broadcast Illusion) trong truyền thông tổ chức.
 primary_domain: tri-nhan
@@ -35,5 +35,10 @@ tags:
 - organizational-communication
 - governance
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Người gửi truyền đạt thông điệp qua kênh một chiều.
+- Việc đã gửi đi được đánh đồng với việc đã được hiểu.
+- Không có bước xác nhận mức độ tiếp nhận thực tế.
+- Khoảng cách giữa ý định và cách hiểu tích lũy qua các lần truyền đạt.
+- Sai lệch chỉ bộc lộ khi hành động thực tế đi chệch kỳ vọng.

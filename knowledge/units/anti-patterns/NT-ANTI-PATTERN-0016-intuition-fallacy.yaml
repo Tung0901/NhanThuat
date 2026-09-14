@@ -1,7 +1,7 @@
 id: NT-ANTI-PATTERN-0016
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Ngụy biện Trực giác
 summary: Hiện tượng các nhà quản lý phụ thuộc quá mức vào cảm tính và kinh nghiệm cá nhân khi ra quyết định, phớt lờ dữ liệu thực tế, dẫn đến những sai lầm hệ thống có thể tránh được.
 primary_domain: tri-nhan
@@ -13,7 +13,7 @@ conditions:
 - Trong các tổ chức thiếu cơ sở hạ tầng dữ liệu hoặc hệ thống đánh giá khách quan.
 exceptions:
 - Các quyết định mang tính nghệ thuật, sáng tạo nguyên bản hoặc các cuộc khủng hoảng thời gian thực nơi thời gian phân tích dữ liệu đồng nghĩa với sự thất bại.
-- "Môi trường ổn định tuyệt đối (high-validity environments) nơi trực giác chuyên gia có cơ sở để chính xác (ví dụ: cờ vua, cứu hỏa)."
+- 'Môi trường ổn định tuyệt đối (high-validity environments) nơi trực giác chuyên gia có cơ sở để chính xác (ví dụ: cờ vua, cứu hỏa).'
 applications:
   governance:
   - Bắt buộc áp dụng khung đánh giá bằng văn bản (written rubrics) trước khi phỏng vấn tuyển dụng.
@@ -39,5 +39,10 @@ tags:
 - decision-making
 - data-driven-governance
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Người ra quyết định quen thuộc với lĩnh vực đến mức cảm thấy tự tin phán đoán nhanh.
+- Sự lưu loát nhận thức bị nhầm với độ chính xác của dự đoán.
+- Dữ liệu và bằng chứng khách quan bị gạt bỏ vì không khớp trực giác.
+- Sai lầm hệ thống lặp lại trong các quyết định quan trọng.
+- Khi sai lầm bộc lộ, nguyên nhân thường bị quy cho ngoại cảnh.

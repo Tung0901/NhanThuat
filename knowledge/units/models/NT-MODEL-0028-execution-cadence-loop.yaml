@@ -1,7 +1,7 @@
 id: NT-MODEL-0028
 type: model
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Vòng lặp nhịp độ thực thi
 summary: 'Chu trình vận hành 4 giai đoạn: Lập kế hoạch -> Thực thi -> Đánh giá -> Điều chỉnh.'
 primary_domain: dung-nhan
@@ -18,7 +18,7 @@ conditions:
 exceptions:
 - Các dự án triển khai tĩnh một lần duy nhất.
 applications:
-  sprint_management:
+  sprint-management:
   - Cấu trúc các chu kỳ làm việc của nhóm xoay quanh vòng lặp thực thi 2 tuần.
 risks:
 - Bỏ qua bước họp cải tiến dẫn đến việc lặp lại các sai sót trong quy trình.
@@ -42,4 +42,4 @@ tags:
 - pdca-loop
 - continuous-improvement
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'

@@ -7,28 +7,34 @@ summary: Khách hàng sẽ thay đổi ưu tiên giữa hai lựa chọn khi xu�
 primary_domain: dung-nhan
 domain_area: NT-DA-0027
 secondary_domains:
-  - thanh-su
+- thanh-su
 definition: Lựa chọn mồi nhử không được thiết kế để bán, mà được thiết kế để làm cho một trong các lựa chọn khác trở nên hấp dẫn hơn hẳn.
 conditions:
-  - Lựa chọn chim mồi phải rõ ràng kém hơn lựa chọn mục tiêu trên một khía cạnh, nhưng giá tương đương.
+- Lựa chọn chim mồi phải rõ ràng kém hơn lựa chọn mục tiêu trên một khía cạnh, nhưng giá tương đương.
 exceptions:
-  - Khách hàng đã am hiểu và có sẵn tiêu chuẩn chính xác tuyệt đối.
+- Khách hàng đã am hiểu và có sẵn tiêu chuẩn chính xác tuyệt đối.
 applications:
   general:
-    - Áp dụng trong quản trị và kinh doanh.
+  - Áp dụng trong quản trị và kinh doanh.
 risks:
-  - Nếu khách hàng nhận ra thủ thuật, sẽ dẫn đến sự phẫn nộ và mất uy tín.
+- Nếu khách hàng nhận ra thủ thuật, sẽ dẫn đến sự phẫn nộ và mất uy tín.
 evidence:
   level: strong
   references:
-    - Dan Ariely, Predictably Irrational (2008)
+  - Dan Ariely, Predictably Irrational (2008)
 relations:
   supports: []
   conflicts_with: []
   depends_on: []
   applies_to: []
 tags:
-  - choice-architecture
-  - pricing
+- choice-architecture
+- pricing
 created_at: '2026-08-15'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'
+mechanism:
+- Người tiêu dùng đứng trước hai lựa chọn tương đương về giá trị.
+- Một lựa chọn thứ ba bất đối xứng được thêm vào.
+- Lựa chọn mồi làm nổi bật ưu thế của một trong hai lựa chọn gốc.
+- Người tiêu dùng chuyển ưu tiên sang lựa chọn được mồi làm nổi bật.
+- Quyết định thay đổi trong khi giá trị thực của các lựa chọn không đổi.

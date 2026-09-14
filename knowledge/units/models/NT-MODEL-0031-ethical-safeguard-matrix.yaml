@@ -1,7 +1,7 @@
 id: NT-MODEL-0031
 type: model
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Ma trận Rào chắn Đạo đức
 summary: Mô hình 2x2 đánh giá các quyết định dựa trên mức độ Bất đối xứng Rủi ro và Tính minh bạch về Ý định.
 primary_domain: tu-than
@@ -18,7 +18,7 @@ conditions:
 exceptions:
 - Không có.
 applications:
-  ai_audit:
+  ai-audit:
   - Kiểm toán các mô hình gợi ý của AI nhằm ngăn chặn các hành vi mang tính bóc lột trục lợi.
 risks:
 - Phân loại nhầm các khoản đầu tư rủi ro cao hợp pháp thành hành vi bóc lột trục lợi.
@@ -43,4 +43,4 @@ tags:
 - ai-decision-audit
 - business-ethics
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'

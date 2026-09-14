@@ -14,7 +14,7 @@ conditions:
 exceptions:
 - Khi việc áp đặt các ràng buộc cứng hoặc chính sách bảo mật là bắt buộc nghiêm ngặt (không dùng cú huých cho mục đích tuân thủ).
 applications:
-  system_design:
+  system-design:
   - Sắp xếp các menu phức tạp sao cho các tính năng được sử dụng nhiều nhất hoặc an toàn nhất nổi bật về mặt thị giác.
 risks:
 - '"Bùn lầy" — sử dụng kiến trúc lựa chọn để cố ý gây hiểu lầm hoặc khai thác giá trị từ người dùng (các mẫu thiết kế đen tối).'
@@ -36,6 +36,6 @@ tags:
 - decision
 - behavior
 status: frozen
-version: 0.1.0
+version: 0.2.0
 created_at: '2026-08-13'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'

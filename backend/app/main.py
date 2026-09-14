@@ -22,8 +22,11 @@ Exposes REST API endpoints for BusinessOS Kernel, SalesOS Plugin, CPQ Quote Gene
 """
 
 import json
+import os
+import re
 import uuid
-from http.server import BaseHTTPRequestHandler, HTTPServer
+from html import escape as html_escape
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from typing import Any
 from urllib.parse import parse_qs, urlparse
@@ -59,6 +62,95 @@ execution_provenance_store: dict[str, dict[str, Any]] = {}
 
 STATIC_DIR = Path(__file__).resolve().parent / "static"
 DOCS_KNOWLEDGE_DIR = Path(__file__).resolve().parent.parent.parent / "docs" / "knowledge"
+REPO_ROOT = Path(__file__).resolve().parent.parent.parent
+
+
+def render_markdown_to_html(text: str) -> str:
+    """Small, dependency-free markdown -> HTML renderer for book/unit exports.
+
+    Handles the subset used by docs/knowledge books: headings, bold/italic,
+    inline code, links, blockquotes, unordered/ordered lists, tables, rules.
+    All content is HTML-escaped before formatting tags are applied.
+    """
+    lines = text.splitlines()
+    html_parts: list[str] = []
+    in_ul = in_ol = in_table = False
+
+    def close_lists() -> None:
+        nonlocal in_ul, in_ol
+        if in_ul:
+            html_parts.append("</ul>")
+            in_ul = False
+        if in_ol:
+            html_parts.append("</ol>")
+            in_ol = False
+
+    def close_table() -> None:
+        nonlocal in_table
+        if in_table:
+            html_parts.append("</tbody></table>")
+            in_table = False
+
+    def inline(raw: str) -> str:
+        out = html_escape(raw, quote=False)
+        out = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", out)
+        out = re.sub(r"(?<!\*)\*([^*]+)\*(?!\*)", r"<em>\1</em>", out)
+        out = re.sub(r"`([^`]+)`", r"<code>\1</code>", out)
+        out = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", r'<a href="\2">\1</a>', out)
+        return out
+
+    for line in lines:
+        stripped = line.strip()
+        if stripped.startswith("|") and stripped.endswith("|"):
+            cells = [c.strip() for c in stripped.strip("|").split("|")]
+            if all(re.fullmatch(r":?-{2,}:?", c) for c in cells):
+                continue
+            if not in_table:
+                close_lists()
+                html_parts.append('<table><thead><tr>' + "".join(f"<th>{inline(c)}</th>" for c in cells) + "</tr></thead><tbody>")
+                in_table = True
+            else:
+                html_parts.append("<tr>" + "".join(f"<td>{inline(c)}</td>" for c in cells) + "</tr>")
+            continue
+        close_table()
+
+        if re.match(r"^#{1,6}\s", stripped):
+            close_lists()
+            level = len(stripped) - len(stripped.lstrip("#"))
+            html_parts.append(f"<h{level}>{inline(stripped[level:].strip())}</h{level}>")
+            continue
+        if stripped in ("---", "***", "___"):
+            close_lists()
+            html_parts.append("<hr>")
+            continue
+        if stripped.startswith("> "):
+            close_lists()
+            html_parts.append(f"<blockquote>{inline(stripped[2:])}</blockquote>")
+            continue
+        if re.match(r"^[-*]\s+", stripped):
+            if in_ol:
+                html_parts.append("</ol>")
+                in_ol = False
+            if not in_ul:
+                html_parts.append("<ul>")
+                in_ul = True
+            html_parts.append(f"<li>{inline(stripped[2:].strip())}</li>")
+            continue
+        if re.match(r"^\d+[.)]\s+", stripped):
+            if in_ul:
+                html_parts.append("</ul>")
+                in_ul = False
+            if not in_ol:
+                html_parts.append("<ol>")
+                in_ol = True
+            html_parts.append(f"<li>{inline(re.sub(r'^\d+[.)]\s+', '', stripped))}</li>")
+            continue
+        close_lists()
+        if stripped:
+            html_parts.append(f"<p>{inline(stripped)}</p>")
+    close_lists()
+    close_table()
+    return "\n".join(html_parts)
 
 
 def export_unit(engine: KnowledgeEngine, unit_id: str, fmt: str = "markdown") -> dict[str, Any]:
@@ -92,6 +184,7 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
     def _send_json_response(self, status_code: int, data: dict[str, Any]) -> None:
         self.send_response(status_code)
         self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.send_header("Cache-Control", "no-store")
         self.end_headers()
         response_bytes = json.dumps(data, indent=2, default=str, ensure_ascii=False).encode("utf-8")
         self.wfile.write(response_bytes)
@@ -99,6 +192,7 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
     def _send_html_response(self, status_code: int, html_content: str) -> None:
         self.send_response(status_code)
         self.send_header("Content-Type", "text/html; charset=utf-8")
+        self.send_header("Cache-Control", "no-cache")
         self.end_headers()
         self.wfile.write(html_content.encode("utf-8"))
 
@@ -129,6 +223,7 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
             if asset_file.exists():
                 self.send_response(200)
                 self.send_header("Content-Type", content_type)
+                self.send_header("Cache-Control", "public, max-age=3600")
                 self.end_headers()
                 self.wfile.write(asset_file.read_bytes())
             else:
@@ -165,26 +260,35 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
             if book_file.exists():
                 text = book_file.read_text(encoding="utf-8")
                 title = text.splitlines()[0].replace("#", "").strip() if text.startswith("#") else book_name
+                body_html = render_markdown_to_html(text)
                 html_doc = f"""<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>{title} - BUSINESSOS DIGITAL BOOK</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{html_escape(title)} - NHÂN THUẬT DIGITAL BOOK</title>
     <style>
-        body {{ font-family: 'Plus Jakarta Sans', Arial, sans-serif; margin: 40px; color: #0f172a; line-height: 1.7; }}
+        body {{ font-family: 'Plus Jakarta Sans', Arial, sans-serif; margin: 40px auto; max-width: 820px; padding: 0 20px; color: #0f172a; line-height: 1.75; }}
         h1 {{ color: #0f172a; border-bottom: 3px solid #f59e0b; padding-bottom: 12px; font-size: 24px; }}
-        h2 {{ color: #1e293b; margin-top: 24px; border-bottom: 1px solid #cbd5e1; padding-bottom: 6px; font-size: 18px; }}
+        h2 {{ color: #1e293b; margin-top: 28px; border-bottom: 1px solid #cbd5e1; padding-bottom: 6px; font-size: 19px; }}
+        h3 {{ color: #334155; margin-top: 20px; font-size: 16px; }}
         blockquote {{ background: #f8fafc; border-left: 4px solid #f59e0b; margin: 16px 0; padding: 12px 16px; font-style: italic; color: #334155; }}
-        pre {{ background: #0f172a; color: #34d399; padding: 16px; border-radius: 8px; font-family: monospace; overflow-x: auto; }}
+        table {{ border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 13.5px; }}
+        th, td {{ border: 1px solid #cbd5e1; padding: 8px 10px; text-align: left; vertical-align: top; }}
+        th {{ background: #fef3c7; }}
+        code {{ background: #f1f5f9; padding: 2px 5px; border-radius: 4px; font-family: monospace; }}
         .header-meta {{ background: #fffbe0; border: 1px solid #fef08a; padding: 12px; border-radius: 8px; font-size: 13px; margin-bottom: 20px; }}
+        .print-btn {{ position: fixed; right: 24px; bottom: 24px; background: #f59e0b; color: #0f172a; border: none; padding: 12px 20px; border-radius: 8px; font-weight: 700; cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,0.2); }}
+        @media print {{ .print-btn {{ display: none; }} body {{ margin: 0; }} }}
     </style>
 </head>
 <body>
     <div class="header-meta">
-        <strong>ẤN BẢN SÁCH SỐ TRI THỨC NHÂN THUẬT CORE • BUSINESSOS</strong><br>
-        Tài liệu lưu hành nội bộ - Mã sách: {book_name}
+        <strong>ẤN BẢN SÁCH SỐ TRI THỨC NHÂN THUẬT CORE • NHÂN THUẬT OS</strong><br>
+        Tài liệu lưu hành nội bộ - Mã sách: {html_escape(book_name)}
     </div>
-    <pre style="background:transparent; color:#0f172a; font-family:inherit; whitespace:pre-wrap;">{text}</pre>
+    {body_html}
+    <button class="print-btn" onclick="window.print()">🖨️ In / Lưu PDF</button>
 </body>
 </html>"""
                 self._send_html_response(200, html_doc)
@@ -350,10 +454,28 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
                     return
 
             unit_res = nhan_thuat_public_v1.get_unit(unit_id)
+            if not unit_res:
+                # Draft or non-active units are not served by the public contract;
+                # serve their raw data directly with an explicit status label.
+                indexed = knowledge_engine.units_by_id.get(unit_id)
+                if indexed is not None:
+                    raw = dict(indexed.raw_data)
+                    raw.setdefault("status", indexed.status)
+                    self._send_json_response(200, {
+                        "status": "success",
+                        "unit": {
+                            "id": indexed.unit_id,
+                            "title": indexed.title,
+                            "domain": indexed.domain,
+                            "type": indexed.unit_type,
+                            "summary": raw.get("summary", ""),
+                            "raw_data": raw,
+                        },
+                    })
+                    return
             if unit_res:
                 import dataclasses
-                unit_dict = dataclasses.asdict(unit_res) if dataclasses.is_dataclass(unit_res) else unit_res
-                
+                unit_dict = dataclasses.asdict(unit_res) if dataclasses.is_dataclass(unit_res) else unit_res                
                 # Auto-generate detailed content if missing
                 raw = unit_dict.get("raw_data") or unit_dict
                 if not raw.get("content"):
@@ -394,7 +516,6 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
         if path == "/api/v1/knowledge/units":
             units = list(knowledge_engine.units_by_id.values())
             res_units = [{"id": u.unit_id, "title": u.title, "domain": u.domain, "type": u.unit_type, "summary": u.raw_data.get("summary", "")} for u in units]
-
             # Ingest all 16 books as top-tier knowledge units
             if DOCS_KNOWLEDGE_DIR.exists():
                 for p in sorted(DOCS_KNOWLEDGE_DIR.glob("*.md")):
@@ -413,6 +534,36 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
                 "status": "success",
                 "count": len(res_units),
                 "units": res_units,
+            })
+            return
+
+        if path == "/api/v1/knowledge/stats":
+            units_meta = list(knowledge_engine.units_by_id.values())
+            by_type: dict[str, int] = {}
+            frozen = 0
+            for u in units_meta:
+                by_type[u.unit_type] = by_type.get(u.unit_type, 0) + 1
+                if str(u.status).lower() == "frozen":
+                    frozen += 1
+            book_files = sorted(DOCS_KNOWLEDGE_DIR.glob("*.md")) if DOCS_KNOWLEDGE_DIR.exists() else []
+            domain_count = 0
+            registry_path = REPO_ROOT / "knowledge" / "domain-registry.yaml"
+            if registry_path.exists():
+                try:
+                    import yaml as _yaml
+                    registry = _yaml.safe_load(registry_path.read_text(encoding="utf-8")) or {}
+                    domain_count = len(registry.get("domains", []))
+                except Exception as exc:  # noqa: BLE001
+                    print(f"[WARN] domain registry read failed: {exc}")
+            self._send_json_response(200, {
+                "status": "success",
+                "stats": {
+                    "units": len(units_meta),
+                    "frozen_units": frozen,
+                    "books": len(book_files),
+                    "domains": domain_count,
+                    "by_type": by_type,
+                },
             })
             return
 
@@ -908,9 +1059,9 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
         self._send_json_response(404, {"error": "Endpoint not found"})
 
 
-def create_app_server(host: str = "127.0.0.1", port: int = 8000) -> HTTPServer:
-    """Create HTTPServer app instance for local server or test suite execution."""
-    return HTTPServer((host, port), BusinessOSGatewayHandler)
+def create_app_server(host: str = "127.0.0.1", port: int = 8000) -> ThreadingHTTPServer:
+    """Create a threaded HTTP server instance for local server or test suite execution."""
+    return ThreadingHTTPServer((host, port), BusinessOSGatewayHandler)
 
 
 if __name__ == "__main__":

@@ -15,7 +15,7 @@ conditions:
 exceptions:
 - Nhờ một việc quá nặng nề, xúc phạm hoặc không phù hợp với sự chênh lệch quyền lực.
 applications:
-  relationship_building:
+  relationship-building:
   - Nhờ một đồng nghiệp có thái độ thù địch một lời khuyên nhỏ để hóa giải sự thù địch và xây dựng sự thân thiết.
 risks:
 - Trông có vẻ kém năng lực hoặc hay phiền hà nếu lạm dụng.
@@ -36,6 +36,6 @@ tags:
 - favor
 - attitude
 status: frozen
-version: 0.1.0
+version: 0.2.0
 created_at: '2026-08-13'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'

@@ -15,7 +15,7 @@ conditions:
 exceptions:
 - Các bối cảnh du cư hoặc biến động cao, nơi môi trường không thể ổn định được.
 applications:
-  office_design:
+  office-design:
   - Đặt đồ ăn vặt lành mạnh ngang tầm mắt và giấu đồ ăn không lành mạnh trong hộp đục ở phòng nghỉ.
 risks:
 - Tối ưu hóa quá mức một không gian cho một quy trình cụ thể, khiến nó trở nên khó khăn cho sự cộng tác hoặc thay đổi.
@@ -36,6 +36,6 @@ tags:
 - willpower
 - context
 status: frozen
-version: 0.1.0
+version: 0.2.0
 created_at: '2026-08-13'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'

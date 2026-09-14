@@ -1,22 +1,31 @@
 id: NT-MODEL-0018
 type: model
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Ma trận niềm tin cấu trúc
-summary: Đơn vị tri thức cấu trúc về Ma trận niềm tin cấu trúc trong tổ chức.
+summary: 'Ma trận phân loại niềm tin theo hai chiều: cơ sở hình thành và mức độ lệ thuộc vào quan hệ. Mỗi loại niềm tin cần cơ chế duy trì và kiểm chứng khác nhau.'
 primary_domain: hop-chung
 secondary_domains:
 - dung-nhan
-definition: Định nghĩa chính thức về Ma trận niềm tin cấu trúc trong kiến trúc Nhân Thuật.
+definition: Ma trận niềm tin cấu trúc là khung phân loại các dạng niềm tin trong tổ chức theo cơ sở hình thành (năng lực, tính chính trực, quan hệ, thể chế) và theo mức độ phụ thuộc vào cá nhân hay cấu trúc.
 conditions:
-- Các bối cảnh quản trị vận hành tổ chức.
+- Tổ chức có nhiều loại quan hệ công việc khác nhau.
+- Cần phân biệt đánh giá con người với đánh giá thể chế.
 exceptions:
-- Các tình huống ghi đè do khủng hoảng khẩn cấp.
+- Quan hệ mới chưa đủ dữ liệu để phân loại niềm tin.
+- Niềm tin cá nhân mạnh có thể tạm thay thế thể chế trong giai đoạn ngắn.
 applications:
   governance:
-  - Áp dụng Ma trận niềm tin cấu trúc vào các quy trình làm việc của tổ chức.
+  - Xây dựng thể chế để niềm tin không phụ thuộc hoàn toàn vào cá nhân cụ thể.
+  - Thiết kế cơ chế kế nhiệm cho các vị trí có niềm tin cá nhân tập trung.
+  team-management:
+  - Đánh giá loại niềm tin cần thiết cho từng cộng tác và cách xây dựng tương ứng.
+  partnership:
+  - Phân biệt niềm tin dựa trên quan hệ với niềm tin dựa trên năng lực trong hợp tác.
 risks:
-- Việc áp dụng sai Ma trận niềm tin cấu trúc dẫn đến hiệu suất không tối ưu.
+- Niềm tin cá nhân hóa quá mức tạo điểm phụ thuộc đơn nhất.
+- Nhầm niềm tin quan hệ với niềm tin năng lực dẫn tới giao sai việc.
+- Dùng ma trận để dán nhãn quan hệ thay vì cải thiện cấu trúc.
 evidence:
   level: supported
   references:
@@ -35,8 +44,9 @@ tags:
 - trust-framework
 - governance-model
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'
 mechanism:
-- 'Bước 1: Xác định Ma trận niềm tin cấu trúc.'
-- 'Bước 2: Phân tích các tham số liên quan.'
-- 'Bước 3: Thực thi mô hình trong thực tế.'
+- Xác định loại niềm tin đang cần cho từng quan hệ công việc.
+- 'Phân loại cơ sở hình thành: năng lực đã chứng minh, tính nhất quán, quan hệ, thể chế.'
+- Đánh giá mức độ niềm tin đang dựa vào cá nhân hay vào cấu trúc.
+- Thiết kế cơ chế duy trì phù hợp với từng ô của ma trận.

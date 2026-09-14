@@ -1,7 +1,7 @@
 id: NT-ANTI-PATTERN-0028
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Ủy Quyền Mù Quáng
 summary: Ủy quyền mù quáng là hành vi giao quyền hạn hoặc nhiệm vụ cho cấp dưới nhưng hoàn toàn thiếu sự giám sát, đối chiếu và cơ chế kiểm soát rủi ro kèm theo.
 primary_domain: hop-chung
@@ -36,5 +36,10 @@ tags:
 - governance-failure
 - delegation-risk
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Người quản lý giao quyền hạn hoặc nhiệm vụ cho cấp dưới.
+- Cơ chế theo dõi, đối chiếu và xử lý rủi ro không được thiết lập kèm.
+- Sai sót không được phát hiện cho đến khi hậu quả lan rộng.
+- Trách nhiệm quản lý bị từ bỏ dưới danh nghĩa trao quyền.
+- Khi sự cố bộc lộ, hệ thống lấy lại quyền hạn trong trạng thái mất niềm tin.

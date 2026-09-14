@@ -1,7 +1,7 @@
 id: NT-LAW-0068
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Động lực từ nhịp độ thực thi
 summary: Đà vận hành được tích lũy thông qua các nhịp độ bàn giao ngắn và có thể dự đoán được, thay vì các đợt phát hành lớn bị trì hoãn.
 primary_domain: dung-nhan
@@ -13,7 +13,7 @@ conditions:
 exceptions:
 - Các dự án cơ sở hạ tầng hạng nặng.
 applications:
-  agile_delivery:
+  agile-delivery:
   - Áp dụng nghiêm ngặt chu kỳ bàn giao 2 tuần để duy trì các chỉ số đo lường bàn giao.
 risks:
 - Bàn giao mã nguồn chưa hoàn thiện dưới áp lực của nhịp độ.
@@ -36,5 +36,10 @@ tags:
 - operational-momentum
 - delivery-cycle
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Công việc được chia thành các phần bàn giao nhỏ, hoàn chỉnh và có thể dự đoán.
+- Mỗi bàn giao tạo ra bằng chứng tiến độ và phản hồi thực tế.
+- Nhịp độ đều đặn xây dựng đà tâm lý và giảm rủi ro tích lũy.
+- Các đợt phát hành lớn bị trì hoãn làm mất đà và tăng rủi ro.
+- Tổ chức duy trì tốc độ và khả năng điều chỉnh nhờ nhịp thực thi ổn định.

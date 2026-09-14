@@ -1,7 +1,7 @@
 id: NT-ANTI-PATTERN-0024
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Tê liệt Phân tích
 summary: Đơn vị kiến thức cấu trúc về Tê liệt Phân tích (Analysis Paralysis) trong quản trị và ra quyết định.
 primary_domain: tri-nhan
@@ -35,5 +35,10 @@ tags:
 - decision-fatigue
 - governance
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Vấn đề quan trọng cần quyết định trong điều kiện chưa đủ thông tin.
+- Nhu cầu chắc chắn khiến người ra quyết định tiếp tục thu thập và phân tích.
+- Mỗi vòng phân tích mở ra thêm câu hỏi thay vì đóng lại quyết định.
+- Thời điểm hành động tốt nhất trôi qua trong khi phân tích vẫn tiếp diễn.
+- Chi phí cơ hội của sự chậm trễ tích lũy và có thể vượt chi phí sai lầm.

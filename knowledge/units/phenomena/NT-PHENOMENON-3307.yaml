@@ -14,7 +14,7 @@ conditions:
 exceptions:
 - Khi nhiệm vụ hấp dẫn, ý nghĩa ở mức cao hoặc khi kết quả của từng cá nhân được công khai.
 applications:
-  team_structure:
+  team-structure:
   - 'Giữ các nhóm dự án nhỏ (ví dụ: "Nhóm hai chiếc bánh pizza") để duy trì khả năng quan sát cao đối với đóng góp của từng cá nhân.'
 risks:
 - Các nhóm phình to đạt tổng sản lượng thấp hơn so với các nhóm nhỏ, gọn gàng hơn.
@@ -38,6 +38,6 @@ tags:
 - free-riding
 - group-productivity
 status: frozen
-version: 0.1.0
+version: 0.2.0
 created_at: '2026-08-13'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'

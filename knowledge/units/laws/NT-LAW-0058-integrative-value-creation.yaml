@@ -1,22 +1,31 @@
 id: NT-LAW-0058
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Kiến tạo Giá trị Tích hợp
-summary: Đơn vị tri thức cấu trúc về Kiến tạo Giá trị Tích hợp.
+summary: Giá trị có thể được mở rộng trước khi chia. Khai thác khác biệt về ưu tiên và nguồn lực tạo ra miếng bánh lớn hơn cho cả hai bên.
 primary_domain: thanh-su
 secondary_domains:
 - tri-nhan
-definition: Định nghĩa chính thức về Kiến tạo Giá trị Tích hợp trong cấu trúc Nhân Thuật.
+definition: 'Kiến tạo giá trị tích hợp là quy luật về khả năng mở rộng tổng giá trị trong đàm phán: khác biệt giữa các bên là nguyên liệu để tạo phương án cùng có lợi trước khi phân chia.'
 conditions:
-- Các bối cảnh quản trị vận hành.
+- Các bên có ưu tiên hoặc nguồn lực khác nhau.
+- Có đủ tin cậy để chia sẻ thông tin về lợi ích và ưu tiên.
 exceptions:
-- Các trường hợp khẩn cấp ghi đè do khủng hoảng.
+- Khi nguồn lực cố định và ưu tiên đồng nhất, thương lượng mang tính phân chia.
+- Một bên cố tình phá giá trị chung để giành phần lớn hơn.
 applications:
-  governance:
-  - Áp dụng Kiến tạo Giá trị Tích hợp vào quy trình làm việc của tổ chức.
+  negotiation:
+  - Thiết kế gói phương án đa tiêu chí để khai thác khác biệt ưu tiên.
+  - Tách vấn đề phân chia khỏi vấn đề tạo giá trị trong tiến trình đàm phán.
+  partnership:
+  - Xây quan hệ đối tác dựa trên bổ trợ thay vì cạnh tranh đơn thuần.
+  conflict-resolution:
+  - Tìm vùng lợi ích chung trước khi giải quyết các điểm chia rẽ.
 risks:
-- Việc áp dụng sai lệch Kiến tạo Giá trị Tích hợp dẫn đến hiệu suất kém tối ưu.
+- Chia sẻ thông tin lợi ích trong quan hệ thiếu tin cậy.
+- Tối ưu tổng giá trị nhưng phân bổ bất công gây xói mòn quan hệ.
+- Nhầm nhượng bộ một chiều là kiến tạo giá trị.
 evidence:
   level: supported
   references:
@@ -35,5 +44,9 @@ tags:
 - negotiation-strategy
 - mutual-gains
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Các bên nhận diện khác biệt về ưu tiên, nguồn lực và năng lực.
+- Khác biệt được chuyển thành các trao đổi bù trừ thay vì đối đầu.
+- Tổng giá trị của thỏa thuận được mở rộng qua thiết kế phương án.
+- Phần giá trị mở rộng được phân bổ theo đóng góp và thỏa thuận.

@@ -1,7 +1,7 @@
 id: NT-PRINCIPLE-0092
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Cân bằng chỉ số ngắn hạn với định hướng dài hạn
 summary: Kết hợp các mục tiêu vận hành ngắn hạn với điều khoản thu hồi thưởng dài hạn và các ngưỡng chất lượng để bảo vệ sự lành mạnh của tổ chức.
 primary_domain: tu-than
@@ -13,7 +13,7 @@ conditions:
 exceptions:
 - Thưởng điểm đột xuất ngắn hạn cho các can thiệp khẩn cấp chỉ xảy ra một lần.
 applications:
-  executive_pay:
+  executive-pay:
   - Yêu cầu thời gian trao quyền cổ phần 3 năm và cơ chế thu hồi thưởng theo kết quả.
 risks:
 - Giảm động lực ngắn hạn khi hoãn thưởng quá xa về tương lai.
@@ -35,5 +35,10 @@ tags:
 - executive-pay
 - vesting
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Xác định cặp mục tiêu ngắn hạn và hệ quả dài hạn cần cân bằng.
+- Thiết kế thưởng ngắn hạn kèm điều khoản thu hồi hoặc giữ chân dài hạn.
+- Bổ sung ngưỡng chất lượng tối thiểu để chặn tối ưu ngắn hạn có hại.
+- Theo dõi các chỉ số dài hạn song song với chỉ số ngắn hạn.
+- Điều chỉnh trọng số khi phát hiện lệch về một phía.

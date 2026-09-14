@@ -1,22 +1,31 @@
 id: NT-LAW-0037
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Ủy Quyền Tính Hợp Pháp
-summary: Đơn vị tri thức cấu trúc về ủy quyền tính hợp pháp trong quản trị tổ chức.
+summary: Quyền ra lệnh chỉ được tuân thủ bền vững khi người thi hành nhận thấy nó hợp pháp. Vị trí, chuyên môn, quy trình và sự chấp thuận của tập thể là bốn nguồn hợp pháp hóa quyền lực.
 primary_domain: tri-nhan
 secondary_domains:
 - dung-nhan
-definition: Định nghĩa chính thức về ủy quyền tính hợp pháp trong kiến trúc Nhân Thuật.
+definition: 'Ủy quyền tính hợp pháp là quy luật về điều kiện tồn tại của quyền chỉ huy: mệnh lệnh có hiệu lực thực tế khi nguồn gốc và cách sử dụng nó được người thi hành cảm nhận là chính đáng.'
 conditions:
-- Các bối cảnh quản trị vận hành.
+- Tồn tại quan hệ quyền lực giữa người chỉ thị và người thi hành.
+- Người thi hành có khả năng đánh giá nguồn gốc quyền lực.
 exceptions:
-- Các trường hợp ghi đè trong tình trạng khẩn cấp.
+- Tình huống khẩn cấp cho phép chỉ thị vượt quy trình trước khi hợp pháp hóa sau.
+- Quan hệ hợp đồng hoặc luật định đã quy định sẵn cơ chế ủy quyền.
 applications:
   governance:
-  - Áp dụng ủy quyền tính hợp pháp vào các quy trình làm việc của tổ chức.
+  - Ghi rõ căn cứ hợp pháp của các loại quyết định quan trọng trong điều lệ hoặc quy chế.
+  - Định kỳ rà soát xem quyền hạn thực tế còn khớp với vị trí và quy trình hay không.
+  leadership:
+  - Giải thích nguồn căn cứ khi ban hành chỉ thị quan trọng thay vì chỉ dựa vào chức danh.
+  change-management:
+  - Xây dựng sự chấp thuận của tập thể trước khi áp đặt thay đổi lớn.
 risks:
-- Áp dụng sai ủy quyền tính hợp pháp dẫn đến hiệu suất dưới mức tối ưu.
+- Dựa hoàn toàn vào chức danh khiến tuân thủ suy yếu khi người nắm vị trí thay đổi.
+- Hợp pháp hóa hình thức che giấu nguồn gốc quyền lực thực tế.
+- Nhầm sự im lặng trong cuộc họp là đồng thuận tập thể.
 evidence:
   level: supported
   references:
@@ -35,5 +44,9 @@ tags:
 - structural-authority
 - organizational-workflow
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Một chủ thể đưa ra chỉ thị hoặc yêu cầu.
+- 'Người thi hành đối chiếu nguồn gốc chỉ thị với bốn nguồn hợp pháp: vị trí chính thức, chuyên môn, quy trình đã thống nhất, sự chấp thuận của tập thể.'
+- Khi tính hợp pháp được công nhận, tuân thủ diễn ra tự nguyện và bền vững.
+- Khi tính hợp pháp mỏng, tuân thủ chuyển thành hình thức, cưỡng chế làm chi phí thi hành tăng cao.

@@ -10,8 +10,6 @@ import json
 from io import BytesIO
 from unittest.mock import MagicMock
 
-import pytest
-
 from backend.app.engine.nhan_thuat_api import diagnose_team_structural_fit
 from backend.app.main import BusinessOSGatewayHandler
 

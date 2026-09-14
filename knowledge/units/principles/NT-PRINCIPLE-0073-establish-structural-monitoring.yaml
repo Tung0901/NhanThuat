@@ -1,22 +1,31 @@
 id: NT-PRINCIPLE-0073
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Thiết lập giám sát cấu trúc
-summary: Thiết lập giám sát cấu trúc là một đơn vị tri thức cấu trúc trong kho tri thức Nhân Thuật.
+summary: Giám sát dựa trên cấu trúc, dữ liệu và chỉ số thay vì dựa trên nghi ngờ cá nhân. Giám sát cấu trúc giảm xung đột quan hệ và tăng khả năng phát hiện sớm.
 primary_domain: dung-nhan
 secondary_domains:
 - thanh-su
-definition: Định nghĩa chính thức của Nguyên tắc Thiết lập giám sát cấu trúc trong kiến trúc Nhân Thuật.
+definition: Thiết lập giám sát cấu trúc là nguyên tắc xây dựng cơ chế theo dõi dựa trên luồng dữ liệu và điểm kiểm tra được thiết kế sẵn, không phụ thuộc vào việc quan sát hoặc nghi ngờ từng cá nhân.
 conditions:
-- Các bối cảnh quản trị vận hành.
+- Quy trình có thể quan sát qua dữ liệu hoặc chỉ số.
+- Rủi ro đủ lớn để cần theo dõi thường xuyên.
 exceptions:
-- Các tình huống khẩn cấp yêu cầu vượt quyền ưu tiên.
+- Công việc sáng tạo khó đo lường cần cơ chế đánh giá định tính thay vì chỉ số.
+- Nhóm nhỏ có độ tin cậy cao có thể giám sát theo kết quả cuối.
 applications:
+  operations:
+  - Thiết kế điểm kiểm tra và ngưỡng cảnh báo trong quy trình vận hành.
+  - Tự động hóa thu thập chỉ số để giảm công sức báo cáo thủ công.
   governance:
-  - Áp dụng Nguyên tắc Thiết lập giám sát cấu trúc vào các quy trình vận hành của tổ chức.
+  - Duy trì lịch rà soát định kỳ đối với các cơ chế giám sát trọng yếu.
+  management:
+  - Chuyển từ kiểm tra đột xuất sang theo dõi cấu trúc thường xuyên.
 risks:
-- Áp dụng sai Nguyên tắc Thiết lập giám sát cấu trúc dẫn đến hiệu suất dưới mức tối ưu.
+- Lạm dụng giám sát cấu trúc để kiểm soát vi mô.
+- Chỉ số giám sát bị tối ưu hình thức thay vì phản ánh thực chất.
+- Cảnh báo quá nhiều làm mất độ nhạy của cơ chế.
 evidence:
   level: supported
   references:
@@ -35,5 +44,9 @@ tags:
 - control-systems
 - accountability
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Xác định các điểm kiểm tra quan trọng trong quy trình.
+- Thiết kế chỉ số và ngưỡng cảnh báo tự động cho từng điểm.
+- Gắn trách nhiệm xử lý cảnh báo với vai trò cụ thể.
+- Rà soát định kỳ xem cơ chế giám sát còn phù hợp với rủi ro hiện tại.

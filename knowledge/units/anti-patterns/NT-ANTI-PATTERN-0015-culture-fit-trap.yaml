@@ -1,7 +1,7 @@
 id: NT-ANTI-PATTERN-0015
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Bẫy Phù hợp Văn hóa
 summary: Sự thiên lệch trong tuyển dụng và thăng tiến khi các nhà quản lý ưu tiên những cá nhân có tính cách giống mình, dẫn đến một tổ chức đồng nhất và mất khả năng đổi mới.
 primary_domain: tri-nhan
@@ -41,5 +41,10 @@ tags:
 - hiring-bias
 - diversity-and-inclusion
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Người quản lý tuyển chọn và thăng tiến dựa trên cảm giác dễ chịu khi làm việc cùng.
+- Tiêu chí thực tế bị thay bằng sự tương đồng tính cách và phong cách.
+- Những cá nhân khác biệt dần bị loại khỏi các vị trí quan trọng.
+- Tổ chức mất đa dạng góc nhìn và hình thành buồng vang.
+- Ý kiến trái chiều bị triệt tiêu, khả năng đổi mới suy giảm.

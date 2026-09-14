@@ -7,28 +7,34 @@ summary: Nghịch lý của nhu cầu khi một sản phẩm càng có giá cao,
 primary_domain: thanh-su
 domain_area: NT-DA-0031
 secondary_domains:
-  - tri-nhan
+- tri-nhan
 definition: Khách hàng sẵn sàng chi trả mức giá phi lý cho một sản phẩm không phải vì chất lượng vượt trội, mà vì mức giá đó chứng minh đẳng cấp của người sở hữu.
 conditions:
-  - Sản phẩm phải có tính độc quyền hoặc số lượng giới hạn.
+- Sản phẩm phải có tính độc quyền hoặc số lượng giới hạn.
 exceptions:
-  - Giai đoạn khủng hoảng kinh tế sâu sắc.
+- Giai đoạn khủng hoảng kinh tế sâu sắc.
 applications:
   general:
-    - Áp dụng trong quản trị và kinh doanh.
+  - Áp dụng trong quản trị và kinh doanh.
 risks:
-  - Giảm giá sẽ làm mất tính độc quyền.
+- Giảm giá sẽ làm mất tính độc quyền.
 evidence:
   level: strong
   references:
-    - Thorstein Veblen, The Theory of the Leisure Class (1899)
+  - Thorstein Veblen, The Theory of the Leisure Class (1899)
 relations:
   supports: []
   conflicts_with: []
   depends_on: []
   applies_to: []
 tags:
-  - status-signaling
-  - luxury-psychology
+- status-signaling
+- luxury-psychology
 created_at: '2026-08-15'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'
+mechanism:
+- Người tiêu dùng quan sát mức giá cao của sản phẩm.
+- Giá cao được diễn giải thành tín hiệu về đẳng cấp và sự khan hiếm.
+- Khao khát sở hữu tăng theo mức giá thay vì giảm theo quy luật cầu thông thường.
+- Việc sở hữu trở thành phương tiện phô trương vị thế xã hội.
+- Nhu cầu tiếp tục tăng khi sản phẩm càng đắt và càng khó tiếp cận.

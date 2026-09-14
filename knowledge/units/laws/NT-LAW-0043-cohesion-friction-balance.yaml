@@ -1,22 +1,31 @@
 id: NT-LAW-0043
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Cân Bằng Gắn Kết và Ma Sát
-summary: Đơn vị tri thức cấu trúc về Cân Bằng Gắn Kết và Ma Sát.
+summary: Gắn kết quá cao kết hợp ma sát quá thấp triệt tiêu phản biện. Hiệu suất nhóm bền vững nằm ở vùng cân bằng giữa tin cậy đủ dày và bất đồng chức năng đủ mạnh.
 primary_domain: hop-chung
 secondary_domains:
 - tri-nhan
-definition: Định nghĩa chuẩn mực về Cân Bằng Gắn Kết và Ma Sát trong cấu trúc Nhân Thuật.
+definition: 'Cân bằng gắn kết và ma sát là quy luật về điều kiện tối ưu của nhóm: độ gắn kết và mức ma sát phải được giữ trong tương quan cho phép vừa hợp tác vừa kiểm chứng lẫn nhau.'
 conditions:
-- Các bối cảnh quản trị vận hành.
+- Nhóm làm việc phụ thuộc lẫn nhau trong thời gian dài.
+- Chất lượng quyết định tập thể quan trọng hơn tốc độ đồng thuận.
 exceptions:
-- Các trường hợp can thiệp ưu tiên trong khủng hoảng khẩn cấp.
+- Nhóm khủng hoảng cần đồng thuận nhanh có thể tạm nén ma sát.
+- Nhóm mới thành lập cần ưu tiên gắn kết trước khi tăng ma sát chức năng.
 applications:
-  governance:
-  - Áp dụng Cân Bằng Gắn Kết và Ma Sát vào các luồng công việc tổ chức.
+  team-management:
+  - Duy trì nghi thức phản biện định kỳ như một phần bắt buộc của vận hành nhóm.
+  - Theo dõi dấu hiệu đồng thuận quá nhanh và chủ động mời ý kiến trái chiều.
+  leadership:
+  - Làm gương tách bất đồng công việc khỏi quan hệ cá nhân.
+  culture:
+  - Đưa tiêu chí sức khỏe bất đồng vào đánh giá định kỳ của nhóm.
 risks:
-- Áp dụng sai Cân Bằng Gắn Kết và Ma Sát dẫn đến hiệu suất dưới mức tối ưu.
+- Nhóm dễ dãi đồng thuận dẫn tới quyết định kém kiểm chứng.
+- Xung đột quan hệ núp dưới danh nghĩa phản biện thẳng thắn.
+- Ma sát bị triệt tiêu sau một vài xung đột gay gắt.
 evidence:
   level: supported
   references:
@@ -35,5 +44,9 @@ tags:
 - constructive-friction
 - organizational-dynamics
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Gắn kết tăng giúp phối hợp trơn tru và giảm chi phí giao tiếp.
+- Gắn kết vượt ngưỡng làm giảm động lực nêu bất đồng.
+- Ma sát chức năng duy trì kiểm chứng và phát hiện sai lệch.
+- Nhóm rơi vào suy giảm chất lượng quyết định khi một trong hai cực mất cân bằng.

@@ -1,7 +1,7 @@
 id: NT-LAW-0069
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Tắc nghẽn công việc đang xử lý
 summary: Khi lượng công việc đang xử lý (WIP) vượt quá năng suất của hệ thống, thời gian hoàn thành (lead time) sẽ tăng lên theo cấp số nhân phi tuyến tính.
 primary_domain: dung-nhan
@@ -13,7 +13,7 @@ conditions:
 exceptions:
 - Các tiến trình tính toán song song được tự động hóa hoàn toàn.
 applications:
-  workflow_management:
+  workflow-management:
   - Thiết lập giới hạn WIP nghiêm ngặt trên bảng Kanban.
 risks:
 - Thiết lập giới hạn WIP quá thấp dẫn đến việc nhân viên bị nhàn rỗi.
@@ -37,5 +37,10 @@ tags:
 - context-switching
 - workflow-congestion
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Khối lượng công việc đang xử lý (WIP) vượt năng suất hệ thống.
+- Chuyển đổi ngữ cảnh giữa các tác vụ tiêu hao thời gian và chú ý.
+- Thời gian hoàn thành mỗi công việc tăng phi tuyến.
+- Hàng đợi chờ ngày càng dài và tiến độ tổng thể chậm lại.
+- Giảm WIP là cách duy nhất khôi phục tốc độ hoàn thành.

@@ -1,7 +1,7 @@
 id: NT-ANTI-PATTERN-0017
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Nhà máy rập khuôn
 summary: Đơn vị kiến thức cấu trúc về mẫu chống hình Nhà máy rập khuôn (Clone Factory).
 primary_domain: hop-chung
@@ -35,5 +35,10 @@ tags:
 - process-duplication
 - organizational-design
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Tổ chức tuyển chọn và đào tạo theo một khuôn mẫu duy nhất.
+- Các cá nhân khác biệt phải thích nghi hoặc bị loại bỏ.
+- Nhóm ngày càng đồng nhất về cách tư duy và phản ứng.
+- Khả năng phát hiện rủi ro và sáng tạo suy giảm.
+- Hệ thống trở nên giòn và khó thích ứng khi môi trường thay đổi.

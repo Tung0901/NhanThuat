@@ -1,7 +1,7 @@
 id: NT-PRINCIPLE-0110
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Thể chế hóa các rào chắn chuẩn mực
 summary: Xây dựng các kiểm tra vận hành tường minh nhằm phát hiện và điều chỉnh sự trôi dạt văn hóa trước khi hành vi độc hại trở thành lẽ thường.
 primary_domain: hop-chung
@@ -13,7 +13,7 @@ conditions:
 exceptions:
 - Các đội ngũ sáng lập nhỏ dưới 5 người.
 applications:
-  culture_pulse:
+  culture-pulse:
   - Chạy khảo sát mạch văn hóa ẩn danh hằng tháng để theo dõi mức an toàn tâm lý.
 risks:
 - Kiệt sức vì khảo sát quá nhiều (survey fatigue).
@@ -35,5 +35,10 @@ tags:
 - psychological-safety
 - organizational-health
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Thiết lập kênh phản hồi ẩn danh cho các vấn đề văn hóa.
+- Tổ chức khảo sát văn hóa định kỳ với câu hỏi hành vi cụ thể.
+- Bổ sung cơ chế đánh giá đồng nghiệp vào chu kỳ đánh giá.
+- Phân tích xu hướng trôi dạt trước khi hành vi độc hại thành chuẩn.
+- Công bố hành động khắc phục để duy trì niềm tin vào cơ chế.

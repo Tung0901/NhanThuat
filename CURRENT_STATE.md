@@ -1,7 +1,7 @@
 # Current Repository State - NhanThuat Knowledge Repository
 
-**Last Updated:** 2026-08-14  
-**Status:** **100% ACTIVATED AND INTEGRATED (FIVE PHILOSOPHY LENS SYSTEM + KNOWLEDGE WORKBENCH)**
+**Last Updated:** 2026-09-14
+**Status:** **ACTIVE — Vietnamese content base complete, Web app (Executive Studio) operational**
 
 ---
 
@@ -9,63 +9,50 @@
 
 NhanThuat is a formal knowledge repository and governance framework for human nature, organizational behavior, decision intelligence, leadership, and operational management.
 
-With the completion of the **BusinessOS Five Philosophy Lens System Upgrade**, NhanThuat incorporates five foundational philosophical systems into executable documentation, structured JSON engines with standardized SemVer metadata, and an advanced multi-lens context router.
-
-The repository also ships a **Streamlit Knowledge Workbench** (v0.1) that exposes retrieval, exploration, evidence, and system pages over the deterministic Knowledge Engine (LLM synthesis marked PLANNED in EPIC 5).
+The repository ships:
+- A Vietnamese knowledge base (379 units) validated by schema + repository validators.
+- A five-lens philosophy system (Rhetoric, Confucianism, Legalism, Taoism, Xunzi) with executable engines and a multi-lens router.
+- An "Executive Studio" web app served by a stdlib HTTP gateway (`backend/app/main.py`) with the UI in `frontend/app.html`.
+- A fallback-first LLM synthesis layer (Google Gemini via OpenAI-compatible endpoint; deterministic fallback when no key is configured).
 
 ---
 
-## 2. Five Philosophy Lens Infrastructure (`docs/knowledge/` & `backend/app/engine/philosophies/`)
+## 2. Five Philosophy Lens Infrastructure
 
 ### Single Source of Truth Documentation (`docs/knowledge/`)
-1. **`01_THUAT_HUNG_BIEN.md` (Thuật Hùng Biện / Rhetoric Lens):**
-   - 4 Tầng Tri Thức: Nguyên tắc logic, Mô thức đối đáp (PAS, Gậy ông đập lưng ông), Kỹ thuật xử lý từ chối (Rút củi đáy nồi, Phản chứng, Đảo ngược góc nhìn), Tiêu chí hiệu quả giao tranh ngôn ngữ.
-2. **`02_TU_THU_KNOWLEDGE_PACK.md` (Nho Gia / Confucian Lens):**
-   - Tri thức Nho gia: Tam Cương Lĩnh, Bát Điều Mục, Ngũ Thường, Đức Trị & Nhân Chính, Mô thức "Hòa nhi bất đồng", Bảng phân biệt Quân tử vs. Tiểu nhân.
-3. **`03_HAN_PHI_TU_KNOWLEDGE_PACK.md` (Pháp Gia / Legalism Lens):**
-   - Tri thức Hàn Phi Tử: Bộ ba Quản trị (Pháp - Thế - Thuật), Nguyên tắc Hình Danh Tham Đồng, Mô thức Nhị Bỉnh (Thưởng - Phạt), Nhận diện Bát Gian (8 nguy cơ thao túng/nịnh bợ), Tiêu chí kỷ luật & minh bạch.
-4. **`04_TRANG_TU_KNOWLEDGE_PACK.md` (Đạo Gia / Taoism Lens):**
-   - Tri thức Trang Tử: Tiêu Dao Du (Tư duy bứt phá), Tề Vật Luận (Góc nhìn đa chiều), Vô Vi (Thuận tự nhiên), Mô thức "Dụng Vô Dụng", Phương pháp Tâm Trai / Tọa Vọng, Rubric đánh giá tính Linh hoạt & Thích ứng.
-5. **`05_TUAN_TU_KNOWLEDGE_PACK.md` (Tuân Tử / Xunzi Lens):**
-   - Tri thức Tuân Tử: Thuyết Tính Ác & Uốn nắn (Vĩ), Khuyên Học (Học tập liên tục & Mentorship), Dùng Lễ Định Phần (Quy chuẩn vai trò & ranh giới), Mô hình Huấn luyện & Sửa đổi Hành vi Nhân sự, Rubric Đánh giá Kỷ luật.
+1. `01_THUAT_HUNG_BIEN.md` — Thuật Hùng Biện (Rhetoric Lens).
+2. `02_TU_THU_KNOWLEDGE_PACK.md` — Nho Gia (Confucian Lens).
+3. `03_HAN_PHI_TU_KNOWLEDGE_PACK.md` — Pháp Gia (Legalism Lens).
+4. `04_TRANG_TU_KNOWLEDGE_PACK.md` — Đạo Gia (Taoism Lens).
+5. `05_TUAN_TU_KNOWLEDGE_PACK.md` — Tuân Tử (Xunzi Lens).
 
----
+The directory now holds 18 knowledge books in total (including applied books such as
+`06_NHAN_THUAT_UNG_XU.md`, `09_TAM_LY_HOC_HANH_VI.md`, `11_TAM_LY_HOC_THUYET_PHUC.md`,
+`20_TU_DUY_HE_THONG.md`, `21_NGUYEN_TAC_QUAN_TRI_THUC_THI.md`, and the three
+`THUC_CHIEN` case archives).
 
-### Executable JSON Engines & Standardized Metadata (`backend/app/engine/philosophies/`)
-1. **`rhetoric_engine.json` (`LENS-RHETORIC` v1.1.0):** Ma trận bẻ luận điểm (Refutation Matrix) & Kịch bản xử lý từ chối.
-2. **`confucian_engine.json` (`LENS-CONFUCIAN` v1.1.0):** Quy chuẩn Đạo đức Lãnh đạo, Bộ lọc "Quân tử vs. Tiểu nhân", Quy tắc "Hòa nhi bất đồng".
-3. **`legalism_engine.json` (`LENS-LEGALISM` v1.1.0):** Quy trình Hình Danh Tham Đồng, Bảng quy chế Nhị Bỉnh (Thưởng/Phạt), Bộ lọc chống Bát Gian.
-4. **`taoism_engine.json` (`LENS-TAOISM` v1.1.0):** Quy trình xử lý khủng hoảng Tâm Trai/Tọa Vọng, Đàm phán thấu cảm, Thuật Dụng Vô Dụng.
-5. **`xunzi_engine.json` (`LENS-XUNZI` v1.1.0):** Quy trình Huấn luyện Nhân sự 4 bước, Sửa đổi hành vi, Khuyên Học, Dùng Lễ Định Phần.
-
-All 5 engine files expose standardized Program 8 & 9 metadata blocks: `philosophy_id`, `philosophy_name`, `version`, `source_document`, `supported_domains`, `supported_personas`, `preferred_reasoning_modes`, `compatible_lenses`, `incompatible_lenses`, `confidence_modifier`, `governance_status`, and `last_reviewed`.
-
----
-
-### BusinessOS Philosophy Lens Router (`backend/app/engine/philosophies/router.py`)
-- `PhilosophyRouter` supports Multi-Lens Composition (Primary, Secondary, Tertiary):
-  - **Customer Price Objection** $\rightarrow$ Primary: `Rhetoric` ($0.70$), Secondary: `Taoism` ($0.30$)
-  - **Leadership** $\rightarrow$ Primary: `Confucianism` ($0.70$), Secondary: `Xunzi` ($0.30$)
-  - **Corporate Governance** $\rightarrow$ Primary: `Legalism` ($0.70$), Secondary: `Confucianism` ($0.30$)
-  - **Organization Transformation** $\rightarrow$ Primary: `Taoism` ($0.70$), Secondary: `Xunzi` ($0.30$)
-  - **Training / Coaching / Capability Building** $\rightarrow$ Primary: `Xunzi` ($0.70$), Secondary: `Confucianism` ($0.30$)
-  - **Organizational Conflict** $\rightarrow$ Tri-Lens: `Confucianism` ($0.60$), `Legalism` ($0.30$), `Taoism` ($0.10$)
-- Features Lens Priority, Lens Weights, Lens Confidence Scores, Lens Conflict Resolution, and Explanation Generation.
+### Executable JSON Engines (`backend/app/engine/philosophies/`)
+Five lens engines (`rhetoric_engine.json`, `confucian_engine.json`, `legalism_engine.json`,
+`taoism_engine.json`, `xunzi_engine.json`) expose standardized Program 8 & 9 metadata blocks
+and are composed by `PhilosophyRouter` (multi-lens weights and conflict resolution).
 
 ---
 
 ## 3. Domain & Knowledge Unit Catalog
 
-- **Domain Areas:** 30 registered domains (`NT-DA-0001` through `NT-DA-0030`) across three categories: CAT-CORE (1), CAT-BEHAVIORAL (6), CAT-APPLIED (23).
-- **Knowledge Units:** 370 units (82 Laws, 134 Principles, 45 Models, 60 Anti-Patterns, 49 Phenomena).
-- **Governance:** 370 units frozen (all unit statuses `frozen`); NT-BATCH-002 and NT-DA-0021..0030 registered in `governance/frozen-register.yaml` (Product Owner approval 2026-08-14).
+- **Domain Areas:** 31 registered domains (`NT-DA-0001` through `NT-DA-0031`) in `knowledge/domain-registry.yaml`.
+- **Knowledge Units:** 379 units — 85 Laws, 135 Principles, 45 Models, 61 Anti-Patterns, 52 Phenomena, 1 Strategy.
+- **Status:** 373 units `frozen`, 6 units `draft` (`NT-LAW-3201`, `NT-LAW-4102`, `NT-PRINCIPLE-4101`, `NT-PHENOMENON-4101`..`4103`) awaiting Product Owner freeze.
+- **Cases:** 3 curated field cases in `knowledge/cases/` (`CASE-OPS-001`, `CASE-SALES-001`, `CASE-HR-001`), mirrored in the runtime database.
 - **Validation Status:** `scripts/validate_all.py` passes 100% clean.
-- **Test Suite Status:** `pytest` passes 100% cleanly.
+- **Test Suite Status:** `pytest` passes 100% (179 tests).
+- **Lint Status:** `ruff check src scripts tests` passes clean.
 
 ---
 
-## 4. Knowledge Runtime & Workbench
+## 4. Knowledge Runtime & Web App
 
-- **Runtime components** (`src/nhan_thuat/runtime/`): `KnowledgeGraph` (transitive traversal + cycle detection), `KnowledgeResolver` (keyword scoring), `PromptBuilder` (markdown context), `KnowledgeEvaluator` (heuristic risk assessment).
-- **Knowledge Workbench** (`app/`, launched via `scripts/run_web_dashboard.py`): six Vietnamese pages — Hỏi Nhân Thuật (ask), Khám phá Tri thức (explorer), Lĩnh vực (domains), Bằng chứng & Nguồn (evidence), Hệ thống (system), Chi tiết Tri thức (detail).
+- **Runtime components** (`src/nhan_thuat/runtime/`): `KnowledgeGraph`, `KnowledgeResolver`, `PromptBuilder`, `KnowledgeEvaluator`, `KnowledgeSynthesizer` (multi-provider failover with deterministic fallback).
+- **Web gateway** (`backend/app/main.py`): stdlib `ThreadingHTTPServer` exposing REST endpoints for advisory analysis, council deliberation, sparring, diagnostics, case studies, department packs, knowledge units/domains/stats, book reader and PDF export.
+- **Web app** (`frontend/app.html`): five workspace modules — Tham Mưu (advisory), Hội Đồng Cố Vấn (council), Đấu Trí (sparring), Chẩn Đoán Nhân Sự (diagnostics), Tủ Sách & Tri Thức (bookshelf + catalog). Catalog renders all knowledge units with search, type filter and progressive loading; the bookshelf renders 18 books with an in-app Markdown reader; case studies are loaded from the API; the mobile navigation drawer restores module access on small screens; markdown is sanitized with DOMPurify.
 - **Engine index:** domain queries run on `primary_domain`; the `relations` block is treated as semantic (bidirectional) and excluded from dependency graph traversal.

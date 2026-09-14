@@ -830,6 +830,7 @@ def process_nhan_thuat_analysis(scenario_text: str, scenario_type_hint: str = "g
         )
         try:
             generated_text = syn.generate_text(sparring_prompt)
+            from nhan_thuat.runtime.synthesizer import provider_name as _provider_name, _model as _synth_model
             return {
                 "status": "success",
                 "scenario_text": scenario_text,
@@ -845,8 +846,8 @@ def process_nhan_thuat_analysis(scenario_text: str, scenario_type_hint: str = "g
                     "synthesis": generated_text,
                     "citations": [],
                     "audit": {
-                        "provider": "deepseek",
-                        "model": "deepseek-chat",
+                        "provider": _provider_name(),
+                        "model": _synth_model(),
                         "correlation_id": f"CORR-SPAR-{uuid.uuid4().hex[:8].upper()}"
                     }
                 },

@@ -1,22 +1,31 @@
 id: NT-PRINCIPLE-0066
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Tuyển chọn theo sự khớp cấu trúc
-summary: Tuyển chọn theo sự khớp cấu trúc là một đơn vị tri thức cấu trúc trong kho tri thức Nhân Thuật.
+summary: Tuyển chọn dựa trên mức phù hợp với cấu trúc công việc thực tế thay vì chỉ dựa vào hồ sơ hay ấn tượng. Khớp cấu trúc bền vững hơn khớp hình thức.
 primary_domain: tri-nhan
 secondary_domains:
 - dung-nhan
-definition: Định nghĩa chính thức của Nguyên tắc Tuyển chọn theo sự khớp cấu trúc trong kiến trúc Nhân Thuật.
+definition: 'Tuyển chọn theo sự khớp cấu trúc là nguyên tắc đánh giá ứng viên theo mức tương thích với yêu cầu cấu trúc của vai trò: mức tự chủ, mức hợp tác, độ bất định và tiêu chuẩn đầu ra của công việc.'
 conditions:
-- Các bối cảnh quản trị vận hành.
+- Vai trò có cấu trúc công việc được mô tả đủ rõ.
+- Có thể quan sát hành vi ứng viên trong tình huống gần với thực tế.
 exceptions:
-- Các tình huống khẩn cấp yêu cầu vượt quyền ưu tiên.
+- Vai trò được thiết kế riêng cho một cá nhân cụ thể với cấu trúc linh hoạt.
+- Vị trí dự kiến tái cấu trúc ngay sau khi tuyển.
 applications:
-  governance:
-  - Áp dụng Nguyên tắc Tuyển chọn theo sự khớp cấu trúc vào các quy trình vận hành của tổ chức.
+  hiring:
+  - Mô tả cấu trúc công việc trước khi viết mô tả vị trí và tiêu chí đánh giá.
+  - Dùng bài kiểm tra mô phỏng tình huống gần với công việc thật.
+  management:
+  - Đánh giá lại độ khớp cấu trúc khi vai trò thay đổi theo thời gian.
+  talent-development:
+  - Lập kế hoạch thu hẹp khoảng cách cấu trúc cho nhân sự có tiềm năng.
 risks:
-- Áp dụng sai Nguyên tắc Tuyển chọn theo sự khớp cấu trúc dẫn đến hiệu suất dưới mức tối ưu.
+- Chọn người giỏi nhưng lệch cấu trúc dẫn tới xung đột âm ỉ.
+- Đánh giá cấu trúc cứng nhắc bỏ lỡ khả năng thích ứng của con người.
+- Coi độ khớp cấu trúc là yếu tố duy nhất thay vì cân nhắc tổng thể.
 evidence:
   level: supported
   references:
@@ -35,5 +44,9 @@ tags:
 - hiring
 - role-competence
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- 'Phân tích cấu trúc công việc: mức tự chủ, nhịp phối hợp, độ bất định, tiêu chuẩn đầu ra.'
+- Chuyển các đặc điểm cấu trúc thành tiêu chí đánh giá quan sát được.
+- Đánh giá ứng viên dựa trên hành vi trong tình huống tương tự công việc.
+- So khớp mức phù hợp và xác định chi phí thích ứng cần thiết.

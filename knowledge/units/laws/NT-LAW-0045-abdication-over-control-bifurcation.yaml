@@ -1,22 +1,31 @@
 id: NT-LAW-0045
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Phân nhánh Thoái thác - Kiểm soát Quá mức
-summary: Đơn vị tri thức cấu trúc về Sự phân nhánh giữa Thoái thác và Kiểm soát Quá mức.
+summary: 'Khi năng lực ủy quyền bị vượt, hành vi quản trị phân nhánh thành hai cực: buông bỏ hoặc vi quản lý. Cả hai cực đều phá vỡ trách nhiệm và chất lượng thực thi.'
 primary_domain: dung-nhan
 secondary_domains:
 - tri-nhan
-definition: Định nghĩa chính thức về Phân nhánh Thoái thác - Kiểm soát Quá mức trong cấu trúc kiến trúc Nhân Thuật.
+definition: 'Phân nhánh thoái thác - kiểm soát quá mức là quy luật về cách hệ thống phản ứng khi ủy quyền vượt ngưỡng: thay vì điều chỉnh cấu trúc, người quản lý có xu hướng rơi về một trong hai cực trên.'
 conditions:
-- Các bối cảnh quản trị và vận hành tổ chức.
+- Ủy quyền vượt ngưỡng năng lực theo dõi.
+- Áp lực trách nhiệm cao trong khi công cụ kiểm soát không đủ.
 exceptions:
-- Các trường hợp can thiệp khẩn cấp khi xảy ra khủng hoảng.
+- Cơ chế giám sát theo ngoại lệ và ranh giới rõ giữ được mức ủy quyền lành mạnh.
+- Sai sót nhỏ được xử lý như dữ liệu học tập thay vì cớ siết kiểm soát.
 applications:
+  management:
+  - Thay đổi cấu trúc công việc khi phát hiện dấu hiệu quá tải thay vì tăng kiểm soát.
+  - Định nghĩa rõ ranh giới quyết định và điểm cần báo cáo bất thường.
   governance:
-  - Áp dụng Phân nhánh Thoái thác - Kiểm soát Quá mức vào các luồng quy trình công việc của tổ chức.
+  - Thiết lập cơ chế leo thang theo ngoại lệ để giảm nhu cầu kiểm soát toàn bộ.
+  leadership:
+  - Tự nhận diện xu hướng phản ứng cực đoan của bản thân khi căng thẳng.
 risks:
-- Việc áp dụng sai Phân nhánh Thoái thác - Kiểm soát Quá mức dẫn đến hiệu suất vận hành kém tối ưu.
+- Vi quản lý làm mất chủ động và động lực của nhân sự.
+- Buông bỏ trách nhiệm núp dưới danh nghĩa trao quyền.
+- Chu kỳ lặp lại giữa hai cực gây bất ổn vận hành kéo dài.
 evidence:
   level: supported
   references:
@@ -36,5 +45,10 @@ tags:
 - leadership-balance
 - governance-extremes
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Khối lượng hoặc độ phức tạp công việc vượt năng lực ủy quyền.
+- Người quản lý mất khả năng theo dõi chi tiết toàn bộ công việc.
+- Xuất hiện sai sót hoặc chậm trễ ở một số đầu việc.
+- 'Phản ứng phân nhánh: hoặc buông hẳn trách nhiệm, hoặc tăng kiểm soát vi mô lên toàn bộ.'
+- Cả hai cực làm xói mòn chủ động của người nhận và chất lượng hệ thống.

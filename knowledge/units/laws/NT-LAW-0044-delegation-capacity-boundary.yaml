@@ -1,22 +1,31 @@
 id: NT-LAW-0044
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Ranh giới Năng lực Ủy quyền
-summary: Đơn vị tri thức cấu trúc về Ranh giới Năng lực Ủy quyền trong quản trị tổ chức.
+summary: Năng lực ủy quyền có giới hạn và giới hạn đó phụ thuộc vào số lượng, chất lượng và mức độ phức tạp của công việc được giao. Vượt ngưỡng, chất lượng giám sát và trách nhiệm suy giảm.
 primary_domain: dung-nhan
 secondary_domains:
 - tri-nhan
-definition: Định nghĩa chính thức về Ranh giới Năng lực Ủy quyền trong cấu trúc kiến trúc Nhân Thuật.
+definition: 'Ranh giới năng lực ủy quyền là quy luật về giới hạn hữu hạn của năng lực giao việc: mỗi chủ thể chỉ có thể ủy quyền hiệu quả trong một dải khối lượng và độ phức tạp nhất định.'
 conditions:
-- Các bối cảnh quản trị và vận hành tổ chức.
+- Một chủ thể đang quản lý nhiều công việc được giao đồng thời.
+- Năng lực theo dõi và hỗ trợ có giới hạn thực tế.
 exceptions:
-- Các trường hợp can thiệp khẩn cấp khi xảy ra khủng hoảng.
+- Chia nhỏ theo tầng ủy quyền với cơ chế báo cáo gọn có thể mở rộng giới hạn.
+- Công việc được chuẩn hóa cao giảm nhu cầu theo dõi từng việc.
 applications:
+  management:
+  - Đếm và giới hạn số lượng đầu việc ủy quyền trực tiếp cho một người.
+  - Xây dựng cơ chế báo cáo theo ngoại lệ để giảm tải theo dõi.
   governance:
-  - Áp dụng Ranh giới Năng lực Ủy quyền vào các luồng quy trình công việc của tổ chức.
+  - Định kỳ rà soát ma trận ủy quyền so với năng lực thực tế của từng cấp.
+  organization-design:
+  - Đặt ngưỡng span of control dựa trên độ phức tạp công việc, không theo con số cứng.
 risks:
-- Việc áp dụng sai Ranh giới Năng lực Ủy quyền dẫn đến hiệu suất vận hành kém tối ưu.
+- Ủy quyền hình thức trong khi kiểm soát thực tế buộc quay lại người giao.
+- Bỏ sót công việc quan trọng khi danh sách ủy quyền vượt năng lực theo dõi.
+- Quá tải ngầm dẫn tới kiệt sức ở cả người giao lẫn người nhận.
 evidence:
   level: supported
   references:
@@ -36,5 +45,9 @@ tags:
 - governance-limits
 - organizational-delegation
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Người quản lý có năng lực xử lý và theo dõi hữu hạn.
+- Khối lượng công việc ủy quyền tăng làm giảm thời gian kiểm tra từng việc.
+- Chất lượng theo dõi suy giảm khi vượt ngưỡng năng lực.
+- Trách nhiệm và chất lượng đầu ra suy giảm dù danh nghĩa vẫn được ủy quyền.

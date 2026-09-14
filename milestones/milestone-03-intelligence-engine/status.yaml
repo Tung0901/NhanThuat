@@ -1,0 +1,24 @@
+milestone_id: NT-MILESTONE-03
+title: Milestone 3 - Intelligence Engine
+status: frozen
+previous_status: approved
+progress: 100
+started_at: '2026-07-22'
+approved_by: Product Owner
+frozen_at: '2026-09-14'
+scope:
+  - Five Philosophy Lens single-source documents
+  - Executable JSON lens engines
+  - Multi-Lens Router
+deliverables:
+  - id: NT-M3-D01
+    title: Rhetoric, Confucian, Legalism, Taoism, Xunzi lens documents
+    status: frozen
+  - id: NT-M3-D02
+    title: Executable lens engine JSON files with standardized metadata
+    status: frozen
+  - id: NT-M3-D03
+    title: PhilosophyRouter with lens weights and conflict resolution
+    status: frozen
+blockers: []
+last_reviewed_at: '2026-09-14'

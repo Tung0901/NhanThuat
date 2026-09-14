@@ -1,0 +1,44 @@
+id: CASE-HR-001
+type: case
+status: frozen
+version: 1.0.0
+title: Tổ đội thi công ngưng việc tự phát yêu cầu tăng đơn giá khoán
+summary: Tổ đội ngưng việc tập thể đòi tăng 20% đơn giá khoán giữa giai đoạn nước rút; xử lý bằng phân tách cá nhân kích động, đối thoại trên hợp đồng khoán và tái tạo động lực bằng thưởng tiến độ.
+primary_domain: dung-nhan
+secondary_domains:
+- hop-chung
+domain_area: NT-DA-0022
+context: >-
+  Tổ đội hoàn thiện hiện trường tổ chức ngưng việc tập thể đòi tăng 20% đơn giá
+  khoán giữa giai đoạn nước rút của dự án. Áp lực tiến độ và nguy cơ đổ vỡ hợp
+  đồng với chủ đầu tư đang ở mức cao.
+decision_script:
+  position_analysis: >-
+    Áp dụng kết hợp Tuân Tử (Lễ định phần) và Pháp Gia: phân tách rõ ràng giữa cá
+    nhân kích động và công nhân làm việc, đối thoại trên cơ sở hợp đồng khoán.
+  steps:
+  - Bước 1: Chốt khối lượng hiện trạng và khẳng định giá trị pháp lý của Hợp đồng
+    khoán.
+  - Bước 2: Ấn định thời hạn 12h quay lại vị trí công tác kèm chế tài chấm dứt
+    hợp đồng.
+  - Bước 3: Dành quỹ thưởng tiến độ cho các cá nhân hoàn thành vượt định mức để
+    hóa giải liên minh ngưng việc.
+lessons_learned:
+- Quy luật NT-LAW-0038: Suy giảm quyền lực xảy ra khi không thực thi kỷ luật kịp thời.
+- Nguyên tắc NT-PRINCIPLE-0061: Tái cấu trúc cơ chế khoán và vai trò trước khi yêu
+  cầu thay đổi thái độ.
+- Phản-mẫu NT-ANTI-PATTERN-0038: Nhượng bộ dưới áp lực ngưng việc tạo tiền lệ xấu
+  cho mọi chu kỳ sau.
+related_units:
+- NT-LAW-0038
+- NT-PRINCIPLE-0061
+- NT-ANTI-PATTERN-0038
+- NT-PRINCIPLE-0071
+tags:
+- hr
+- labor-dispute
+- discipline
+- xunzi
+- collective-action
+created_at: '2026-08-27'
+updated_at: '2026-09-14'

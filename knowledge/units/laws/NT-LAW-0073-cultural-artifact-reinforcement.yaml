@@ -1,7 +1,7 @@
 id: NT-LAW-0073
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Củng cố bằng tạo tác văn hóa
 summary: Các nghi thức, câu chuyện chung và các tạo tác vật lý hoặc kỹ thuật số tại nơi làm việc liên tục củng cố và định hình các chuẩn mực văn hóa.
 primary_domain: hop-chung
@@ -36,5 +36,10 @@ tags:
 - organizational-culture
 - team-alignment
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Các nghi thức, câu chuyện và tạo tác được duy trì trong tổ chức.
+- Chúng truyền đạt điều gì được coi trọng và điều gì được khen thưởng.
+- Thành viên mới học văn hóa qua các tạo tác nhanh hơn qua văn bản.
+- Các tạo tác lỗi thời tiếp tục củng cố chuẩn mực không còn phù hợp.
+- Văn hóa dịch chuyển khi hệ thống tạo tác được cập nhật có chủ đích.

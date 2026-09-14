@@ -1,22 +1,31 @@
 id: NT-PRINCIPLE-0075
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Tách biệt truyền tải khỏi xác nhận
-summary: Tách biệt truyền tải khỏi xác nhận là một đơn vị tri thức cấu trúc trong kho tri thức Nhân Thuật.
+summary: Truyền đạt không đồng nghĩa với được hiểu. Cần xác nhận riêng để đảm bảo thông điệp đã đến đúng và đủ.
 primary_domain: tri-nhan
 secondary_domains:
 - hop-chung
-definition: Định nghĩa chính thức của Nguyên tắc Tách biệt truyền tải khỏi xác nhận trong kiến trúc Nhân Thuật.
+definition: Tách biệt truyền tải khỏi xác nhận là nguyên tắc giao tiếp yêu cầu phân biệt rõ hành vi gửi thông tin với hành vi kiểm tra mức độ tiếp nhận thực tế của người nhận.
 conditions:
-- Các bối cảnh quản trị vận hành.
+- Thông điệp quan trọng hoặc phức tạp.
+- Kênh truyền đạt không có phản hồi trực tiếp tức thì.
 exceptions:
-- Các tình huống khẩn cấp yêu cầu vượt quyền ưu tiên.
+- Thông điệp đơn giản, quy ước rõ ràng không cần xác nhận riêng.
+- Kênh có cơ chế xác nhận tự động như biên bản ký nhận.
 applications:
-  governance:
-  - Áp dụng Nguyên tắc Tách biệt truyền tải khỏi xác nhận vào các quy trình vận hành của tổ chức.
+  communication:
+  - Kết thúc trao đổi quan trọng bằng yêu cầu người nhận tóm tắt lại nội dung.
+  - Phân biệt thông báo một chiều với trao đổi cần xác nhận hai chiều.
+  management:
+  - Kiểm tra mức độ hiểu của nhân sự sau khi giao việc bằng câu hỏi mở.
+  meeting-design:
+  - Dành phần cuối cuộc họp để xác nhận các điểm hành động đã được hiểu thống nhất.
 risks:
-- Áp dụng sai Nguyên tắc Tách biệt truyền tải khỏi xác nhận dẫn đến hiệu suất dưới mức tối ưu.
+- Tưởng rằng đã giao việc trong khi nhân sự hiểu khác.
+- Xác nhận hình thức 'anh hiểu chưa' tạo câu trả lời máy móc.
+- Bỏ qua xác nhận trong giao tiếp bằng văn bản quan trọng.
 evidence:
   level: supported
   references:
@@ -35,5 +44,9 @@ tags:
 - communication
 - misunderstanding
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Người gửi hoàn thành việc truyền đạt nội dung.
+- Người gửi tách biệt cảm giác 'đã nói' khỏi thực tế 'đã được hiểu'.
+- 'Thực hiện bước xác nhận riêng: yêu cầu người nhận diễn giải lại hoặc đặt câu hỏi.'
+- Điều chỉnh nội dung dựa trên khoảng cách giữa ý định và cách hiểu.

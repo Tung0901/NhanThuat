@@ -1,7 +1,7 @@
 id: NT-LAW-0067
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Tính tất yếu của sự đánh đổi chiến lược
 summary: Để đạt được hiệu suất vượt trội ở một khía cạnh đòi hỏi phải chấp nhận sự kém hiệu quả một cách có chủ đích ở một khía cạnh khác.
 primary_domain: thanh-su
@@ -36,5 +36,10 @@ tags:
 - opportunity-cost
 - product-strategy
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Tổ chức tìm cách tối ưu đồng thời nhiều khía cạnh cạnh tranh nhau.
+- Nguồn lực khan hiếm buộc phải lựa chọn giữa các ưu tiên.
+- Nỗ lực dàn trải khiến không khía cạnh nào đạt mức xuất sắc.
+- Định vị chiến lược mờ nhạt và khó tạo khác biệt.
+- Kết quả kém hơn cả các lựa chọn tập trung đánh đổi rõ ràng.

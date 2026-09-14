@@ -1,22 +1,31 @@
 id: NT-PRINCIPLE-0069
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Thiết kế cho đa dạng nhận thức
-summary: Thiết kế cho đa dạng nhận thức là một đơn vị tri thức cấu trúc trong kho tri thức Nhân Thuật.
+summary: Thiết kế nhóm làm việc có phổ nhận thức khác biệt để tăng khả năng giải quyết vấn đề phức tạp. Đa dạng nhận thức cần được thiết kế có chủ đích, không để tự phát.
 primary_domain: hop-chung
 secondary_domains:
 - tri-nhan
-definition: Định nghĩa chính thức của Nguyên tắc Thiết kế cho đa dạng nhận thức trong kiến trúc Nhân Thuật.
+definition: 'Thiết kế cho đa dạng nhận thức là nguyên tắc cấu trúc nhóm: chủ động bố trí các kiểu tư duy, kinh nghiệm và cách tiếp cận khác nhau vào nhóm giải quyết vấn đề, kèm cơ chế tích hợp các góc nhìn.'
 conditions:
-- Các bối cảnh quản trị vận hành.
+- Công việc có độ phức tạp và bất định cao.
+- Nhóm có thời gian và nghi thức phù hợp để xử lý khác biệt.
 exceptions:
-- Các tình huống khẩn cấp yêu cầu vượt quyền ưu tiên.
+- Công việc chuẩn hóa, quy trình cố định không cần phổ nhận thức rộng.
+- Nhóm khẩn cấp ngắn hạn cần tốc độ hơn đa dạng góc nhìn.
 applications:
-  governance:
-  - Áp dụng Nguyên tắc Thiết kế cho đa dạng nhận thức vào các quy trình vận hành của tổ chức.
+  team-design:
+  - Bố trí đa dạng kiểu tư duy cho các nhóm chiến lược và giải quyết vấn đề.
+  - Bổ sung vai trò phản biện và tổng hợp vào nhóm tự quản.
+  hiring:
+  - Cân nhắc tính bổ trợ nhận thức khi tuyển vào nhóm hiện có.
+  management:
+  - Bảo vệ tiếng nói thiểu số trong các phiên thảo luận quan trọng.
 risks:
-- Áp dụng sai Nguyên tắc Thiết kế cho đa dạng nhận thức dẫn đến hiệu suất dưới mức tối ưu.
+- Đa dạng không có cơ chế tích hợp gây tê liệt quyết định.
+- Lấy đa dạng hồ sơ thay cho đa dạng cách tư duy thực chất.
+- Áp lực đồng thuận xóa dần khác biệt sau thời gian đầu.
 evidence:
   level: supported
   references:
@@ -35,5 +44,9 @@ tags:
 - group-cognition
 - collective-intelligence
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Phân tích yêu cầu nhận thức của vấn đề cần giải quyết.
+- Xác định các kiểu tư duy cần có trong nhóm.
+- Chọn và bố trí thành viên theo phổ nhận thức mục tiêu.
+- Thiết lập cơ chế tranh luận có cấu trúc để tích hợp khác biệt.

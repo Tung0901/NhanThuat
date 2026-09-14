@@ -2,7 +2,6 @@
 Test Suite for Phase 3: Stateful Storage, Case Study Database, Sparring Engine, Department Packs & Executive Briefing.
 """
 
-from pathlib import Path
 
 import pytest
 
@@ -11,7 +10,6 @@ from nhan_thuat.export.executive_brief import ExecutiveBriefExporter
 from nhan_thuat.knowledge_engine import KnowledgeEngine
 from nhan_thuat.packs.department_pack import DepartmentPackRegistry
 from nhan_thuat.storage.db import DatabaseManager
-from nhan_thuat.storage.models import CaseStudy, SparringMessage, SparringSession
 
 
 @pytest.fixture
@@ -232,20 +230,26 @@ def test_executive_brief_exporter(mem_db: DatabaseManager) -> None:
     assert "BIÊN BẢN ĐẤU TRÍ ĐIỀU HÀNH" in sparring_html
 
 
-def test_main_api_gateway_integration() -> None:
-    from backend.app.main import brief_exporter, db_manager, department_packs, sparring_engine
+def test_main_api_gateway_integration(monkeypatch: pytest.MonkeyPatch) -> None:
+    from backend.app import main as app_main
+    from backend.app.main import brief_exporter, department_packs
 
-    # 1. Sparring flow via global instances
-    sess = sparring_engine.start_session("Phiên đàm phán hợp đồng cung ứng", philosophy_lens="LEGALISM")
+    # 1. Sparring flow via the gateway module, isolated from the repository database
+    isolated_db = DatabaseManager(db_path=":memory:")
+    isolated_engine = SparringEngine(db_manager=isolated_db, knowledge_engine=KnowledgeEngine())
+    monkeypatch.setattr(app_main, "sparring_engine", isolated_engine)
+
+    sess = app_main.sparring_engine.start_session("Phiên đàm phán hợp đồng cung ứng", philosophy_lens="LEGALISM")
     assert sess.id.startswith("SPAR-SESS-")
 
-    turn = sparring_engine.process_turn(sess.id, "Nhà thầu phụ dọa dừng thi công nếu không ứng tiền trước.")
+    turn = app_main.sparring_engine.process_turn(sess.id, "Nhà thầu phụ dọa dừng thi công nếu không ứng tiền trước.")
     assert turn["status"] == "success"
     assert turn["philosophy_lens"] == "LEGALISM"
     assert len(turn["matched_unit_ids"]) >= 1
 
-    # 2. Case study creation & retrieval
-    c = db_manager.create_case_study(
+    # 2. Case study creation & retrieval (kept in an isolated DB to avoid
+    #    polluting the repository database with test fixtures)
+    c = isolated_db.create_case_study(
         domain="OPS",
         title="Quản trị an toàn lao động hiện trường",
         context_description="Công nhân không tuân thủ đồ bảo hộ.",
@@ -254,7 +258,7 @@ def test_main_api_gateway_integration() -> None:
         tags=["safety", "ops"],
     )
     assert c.id.startswith("CASE-OPS-")
-    fetched = db_manager.get_case_study(c.id)
+    fetched = isolated_db.get_case_study(c.id)
     assert fetched is not None
     assert fetched.title == "Quản trị an toàn lao động hiện trường"
 

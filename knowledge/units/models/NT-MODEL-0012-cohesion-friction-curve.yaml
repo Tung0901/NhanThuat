@@ -1,22 +1,31 @@
 id: NT-MODEL-0012
 type: model
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Đường cong Ma sát Sự gắn kết
-summary: Đơn vị tri thức cấu trúc về Đường cong Ma sát Sự gắn kết trong quản trị tổ chức.
+summary: 'Đường cong mô tả quan hệ phi tuyến giữa mức gắn kết và ma sát trong nhóm: hiệu suất cao nhất ở vùng cân bằng, sụt giảm ở cả hai cực. Mô hình giúp chuẩn đoán sức khỏe nhóm.'
 primary_domain: hop-chung
 secondary_domains:
 - tri-nhan
-definition: Định nghĩa chính thức về Đường cong Ma sát Sự gắn kết trong hệ thống kiến trúc Nhân Thuật.
+definition: Đường cong Ma sát Sự gắn kết là mô hình biểu diễn quan hệ giữa mức gắn kết nội bộ và mức ma sát chức năng của nhóm, trong đó vùng hiệu suất tối ưu nằm giữa hai thái cực đồng thuận quá mức và xung đột quá mức.
 conditions:
-- Các bối cảnh quản trị vận hành tổ chức.
+- Nhóm làm việc phụ thuộc lẫn nhau và kéo dài.
+- Có thể quan sát được cả gắn kết lẫn bất đồng.
 exceptions:
-- Các trường hợp khẩn cấp ghi đè cơ chế thông thường.
+- Nhóm khủng hoảng ngắn hạn có thể chấp nhận đồng thuận cao hơn bình thường.
+- Nhóm mới thành lập cần ưu tiên gắn kết trước khi tăng ma sát.
 applications:
-  governance:
-  - Áp dụng Đường cong Ma sát Sự gắn kết vào quy trình làm việc của tổ chức.
+  team-management:
+  - Dùng đường cong để đánh giá định kỳ sức khỏe nhóm.
+  - Thiết kế nghi thức phản biện khi nhóm trượt về phía đồng thuận quá mức.
+  facilitation:
+  - Điều tiết mức bất đồng trong các phiên họp quan trọng.
+  leadership:
+  - Nhận diện dấu hiệu nhóm đang ở vùng nguy hiểm của đường cong.
 risks:
-- Áp dụng sai lệch Đường cong Ma sát Sự gắn kết dẫn đến hiệu suất kém tối ưu.
+- Đo lường hình thức gắn kết và ma sát không phản ánh thực chất.
+- Tăng ma sát quá mức làm xói mòn lòng tin.
+- Duy trì đồng thuận quá lâu tạo suy giảm chất lượng quyết định.
 evidence:
   level: supported
   references:
@@ -36,8 +45,9 @@ tags:
 - nhanthuat-architecture
 - governance-dynamics
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'
 mechanism:
-- 'Bước 1: Xác định Đường cong Ma sát Sự gắn kết.'
-- 'Bước 2: Phân tích các tham số liên quan.'
-- 'Bước 3: Thực thi mô hình trong thực tế.'
+- Đo mức gắn kết quan hệ giữa các thành viên nhóm.
+- Đo mức ma sát chức năng qua tần suất và chất lượng bất đồng.
+- Định vị nhóm trên đường cong để nhận diện vùng hiện tại.
+- Điều chỉnh nghi thức nhóm để dịch chuyển về vùng cân bằng.

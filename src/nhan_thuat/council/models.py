@@ -5,7 +5,7 @@ Data models for Multi-Agent Advisory Council in NhanThuat.
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass, field
-from datetime import datetime
+from datetime import UTC, datetime
 from typing import Any
 
 
@@ -52,7 +52,7 @@ class DecisionMatrix:
 class CouncilDeliberationResult:
     session_id: str
     scenario_text: str
-    created_at: str = field(default_factory=lambda: datetime.utcnow().isoformat())
+    created_at: str = field(default_factory=lambda: datetime.now(UTC).replace(tzinfo=None).isoformat())
     pitches: list[PerspectivePitch] = field(default_factory=list)
     cross_debates: list[CrossDebatePoint] = field(default_factory=list)
     decision_matrix: DecisionMatrix | None = None

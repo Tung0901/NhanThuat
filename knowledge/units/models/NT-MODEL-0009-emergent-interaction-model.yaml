@@ -1,22 +1,31 @@
 id: NT-MODEL-0009
 type: model
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Mô hình tương tác phát sinh
-summary: Đơn vị tri thức cấu trúc về Mô hình tương tác phát sinh.
+summary: Mô hình mô tả cách hành vi tập thể phát sinh từ tương tác cục bộ giữa các cá nhân, không do thiết kế trung tâm. Kết quả nhóm có thể khác xa tổng ý định của từng thành viên.
 primary_domain: tri-nhan
 secondary_domains:
 - hop-chung
-definition: Định nghĩa chính thức về Mô hình tương tác phát sinh trong kiến trúc Nhân Thuật.
+definition: 'Mô hình tương tác phát sinh là khung phân tích về sự hình thành hành vi cấp hệ thống từ các tương tác cục bộ lặp lại: quy tắc tương tác đơn giản giữa các cá nhân tạo ra mẫu hành vi tập thể khó suy ra từ từng cá nhân riêng lẻ.'
 conditions:
-- Các bối cảnh quản trị vận hành.
+- Nhiều cá nhân tương tác lặp lại theo quy tắc cục bộ.
+- Không có cơ chế điều khiển tập trung hoàn toàn hành vi nhóm.
 exceptions:
-- Các trường hợp ghi đè khẩn cấp khi có khủng hoảng.
+- Hệ thống có thiết kế tập trung áp đặt hành vi từ trên xuống.
+- Nhóm nhỏ đến mức mọi tương tác đều được quan sát trực tiếp.
 applications:
-  governance:
-  - Áp dụng Mô hình tương tác phát sinh vào các quy trình làm việc của tổ chức.
+  organization-design:
+  - Phân tích các quy tắc tương tác cục bộ thay vì chỉ nhìn sơ đồ tổ chức.
+  - Điều chỉnh điều kiện tương tác để thay đổi hành vi tập thể phát sinh.
+  change-management:
+  - Nhận diện các mẫu hành vi tự phát cần can thiệp ở tầng quy tắc tương tác.
+  culture:
+  - Theo dõi các chuẩn mực ngầm hình thành từ tương tác hằng ngày.
 risks:
-- Việc áp dụng sai Mô hình tương tác phát sinh dẫn đến hiệu suất dưới mức tối ưu.
+- Can thiệp vào cá nhân mà bỏ qua quy tắc tương tác sinh ra hành vi.
+- Đánh giá thấp tốc độ lan truyền của hành vi tiêu cực phát sinh.
+- Nhầm mẫu phát sinh nhất thời là đặc điểm cố định của nhóm.
 evidence:
   level: supported
   references:
@@ -35,8 +44,9 @@ tags:
 - interaction-model
 - workflow-optimization
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'
 mechanism:
-- 'Bước 1: Xác định Mô hình tương tác phát sinh.'
-- 'Bước 2: Phân tích các tham số.'
-- 'Bước 3: Thực thi mô hình.'
+- Các cá nhân hành động theo quy tắc cục bộ của mình trong từng tương tác.
+- Tương tác lặp lại tạo ra các mẫu phối hợp hoặc xung đột ổn định.
+- Các mẫu cục bộ lan truyền và cộng hưởng thành hành vi cấp nhóm.
+- Hành vi tập thể phát sinh trở thành môi trường mới cho các tương tác tiếp theo.

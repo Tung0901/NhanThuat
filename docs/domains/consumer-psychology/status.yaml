@@ -1,0 +1,23 @@
+domain_area_id: NT-DA-0031
+slug: consumer-psychology
+name: Consumer Psychology
+status: draft
+progress: 20
+review_owner: Product Owner
+scope:
+  - Consumer pricing psychology (Veblen, decoy, anchoring in purchase decisions)
+  - Perceived value and framing in commercial contexts
+  - Truth-illusion and repetition effects in marketing
+deliverables:
+  - id: NT-DA31-D01
+    title: Domain blueprint (ARCHITECTURE.md)
+    status: approved
+  - id: NT-DA31-D02
+    title: Knowledge units (6 units drafted, pending review)
+    status: in_progress
+  - id: NT-DA31-D03
+    title: Domain review package and freeze
+    status: not_started
+blockers:
+  - 6 units (NT-LAW-3201, NT-PHENOMENON-4101) await Product Owner freeze; remaining domain units live under other domain areas.
+last_reviewed_at: '2026-09-14'

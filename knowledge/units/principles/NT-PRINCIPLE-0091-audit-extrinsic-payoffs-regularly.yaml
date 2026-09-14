@@ -1,7 +1,7 @@
 id: NT-PRINCIPLE-0091
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Kiểm toán định kỳ các khoản khuyến khích ngoại sinh
 summary: Liên tục rà soát các chương trình khuyến khích nhằm phát hiện các hành vi lách luật bất ngờ, hệ quả ngoài ý muốn và sự trôi dạt của chỉ số.
 primary_domain: tu-than
@@ -35,5 +35,10 @@ tags:
 - metric-drift
 - behavioral-gaming
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Lập lịch kiểm toán định kỳ cho từng chương trình khuyến khích.
+- Thu thập dữ liệu về hành vi thực tế phát sinh quanh chương trình.
+- So sánh hành vi mong muốn với hành vi quan sát được.
+- Phát hiện hành vi lách luật, hệ quả ngoài ý muốn và trôi dạt chỉ số.
+- Cập nhật thiết kế khuyến khích dựa trên phát hiện.

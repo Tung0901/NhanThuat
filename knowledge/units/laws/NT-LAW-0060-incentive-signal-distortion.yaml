@@ -1,7 +1,7 @@
 id: NT-LAW-0060
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Sự bóp méo tín hiệu khuyến khích
 summary: Khi một chỉ số đo lường trở thành mục tiêu khuyến khích rõ ràng, các tác nhân sẽ tối ưu hóa chỉ số đó thay vì kết quả thực tế mà tổ chức hướng tới.
 primary_domain: tu-than
@@ -13,7 +13,7 @@ conditions:
 exceptions:
 - Các công việc vật lý mang tính định hình thuần túy, nơi sản lượng đo lường được phản ánh hoàn hảo chất lượng.
 applications:
-  incentive_design:
+  incentive-design:
   - Kết hợp các mục tiêu định lượng với các rào cản chất lượng mang tính định tính.
 risks:
 - Tạo ra các động lực ngược chiều vô tình dung túng cho các hành vi gây hại.
@@ -37,5 +37,10 @@ tags:
 - organizational-governance
 - perverse-incentives
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Một chỉ số được chọn làm thước đo thành tích.
+- Chỉ số đó được gắn với phần thưởng hoặc hình phạt rõ ràng.
+- Các tác nhân tìm cách tối ưu chính chỉ số thay vì mục tiêu thật.
+- Hành vi lách luật, làm đẹp số liệu xuất hiện ở vùng biên.
+- Kết quả thực tế suy giảm trong khi chỉ số vẫn duy trì.

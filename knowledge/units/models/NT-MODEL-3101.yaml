@@ -15,7 +15,7 @@ conditions:
 exceptions:
 - Các quyết định mà rủi ro hoặc lợi ích mang lại cực kỳ nhỏ hoặc mang tính thói quen thường nhật.
 applications:
-  risk_communication:
+  risk-communication:
   - Đóng khung xác suất bằng các con số tuyệt đối thay vì tỷ lệ phần trăm để giảm thiểu sự sai lệch do trọng số xác suất.
 risks:
 - Mặc định sự tối đa hóa hữu dụng kỳ vọng duy lý trong các mô hình tài chính hoặc hoạch định chiến lược.
@@ -36,6 +36,6 @@ tags:
 - loss-aversion
 - probability-weighting
 status: frozen
-version: 0.1.0
+version: 0.2.0
 created_at: '2026-08-13'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'

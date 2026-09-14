@@ -9,7 +9,6 @@ import re
 import unicodedata
 from typing import Any
 
-
 VIETNAMESE_ACCENTS_MAP = {
     "à": "a", "á": "a", "ả": "a", "ã": "a", "ạ": "a",
     "ă": "a", "ằ": "a", "ắ": "a", "ẳ": "a", "ẵ": "a", "ặ": "a",
@@ -42,7 +41,7 @@ VIETNAMESE_ACCENTS_MAP = {
 VI_STOP_WORDS = {
     "va", "la", "cua", "cho", "trong", "khi", "nhung", "cac", "mot", "nhieu",
     "den", "o", "tai", "ra", "vao", "voi", "neu", "thi", "do", "bi", "duoc",
-    "va", "ma", "hay", "hoac", "co", "khong", "se", "da", "dang", "nhu",
+    "ma", "hay", "hoac", "co", "khong", "se", "da", "dang", "nhu",
 }
 
 

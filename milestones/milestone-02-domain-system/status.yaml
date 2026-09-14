@@ -1,9 +1,11 @@
 milestone_id: NT-MILESTONE-02
 title: Milestone 2 - Knowledge Expansion & Domain System
-status: in_progress
-progress: 10
+status: frozen
+previous_status: in_progress
+progress: 100
 started_at: '2026-07-21'
 approved_by: Product Owner
+frozen_at: '2026-09-14'
 scope:
   - Domain blueprint
   - Domain Registry
@@ -12,15 +14,15 @@ scope:
 deliverables:
   - id: NT-M2-D01
     title: Milestone 2 Domain Blueprint
-    status: approved
+    status: frozen
   - id: NT-M2-D02
     title: Domain Registry with approved domain IDs and slugs
-    status: approved
+    status: frozen
   - id: NT-M2-D03
     title: Domain-based execution batches
-    status: not_started
+    status: frozen
   - id: NT-M2-D04
     title: Domain review and freeze packages
-    status: not_started
+    status: frozen
 blockers: []
-last_reviewed_at: '2026-07-22'
+last_reviewed_at: '2026-09-14'

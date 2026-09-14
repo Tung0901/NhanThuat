@@ -2,7 +2,7 @@ id: NT-MODEL-2401
 type: model
 status: frozen
 version: 1.0.0
-title: Chu kỳ Thích ứng
+title: Chu kỳ Thích ứng Hệ thống (Panarchy)
 summary: 'Mô hình bốn giai đoạn mô tả sự biến chuyển của hệ sinh thái và tổ chức: Khai thác, Bảo tồn, Giải phóng và Tái tổ chức.'
 primary_domain: hop-chung
 domain_area: NT-DA-0024
@@ -38,4 +38,4 @@ tags:
 - change-management
 - systems-thinking
 created_at: '2026-08-12'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'

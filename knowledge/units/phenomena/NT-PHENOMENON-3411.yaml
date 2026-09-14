@@ -15,7 +15,7 @@ conditions:
 exceptions:
 - Các chuyên gia cực kỳ sâu về lĩnh vực, những người biết chính xác họ muốn gì và thích sàng lọc qua hàng loạt kho hàng khổng lồ.
 applications:
-  product_design:
+  product-design:
   - 'Giới hạn các gói giá ở 3 mức (ví dụ: Cơ bản, Chuyên nghiệp, Doanh nghiệp) thay vì cung cấp 15 gói có khả năng tùy chỉnh cao.'
 risks:
 - Mất khách hàng ngách do đơn giản hóa quá mức một dòng sản phẩm vốn đòi hỏi khả năng tùy chỉnh cao.
@@ -38,6 +38,6 @@ tags:
 - status-quo
 - regret
 status: frozen
-version: 0.1.0
+version: 0.2.0
 created_at: '2026-08-13'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'

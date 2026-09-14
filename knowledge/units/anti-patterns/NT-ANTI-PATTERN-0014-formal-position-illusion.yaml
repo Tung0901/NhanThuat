@@ -1,7 +1,7 @@
 id: NT-ANTI-PATTERN-0014
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Ảo tưởng Vị trí Chính thức
 summary: Đơn vị kiến thức cấu trúc về Ảo tưởng Vị trí Chính thức (Formal Position Illusion) trong quản trị tổ chức.
 primary_domain: dung-nhan
@@ -35,5 +35,10 @@ tags:
 - authority-bias
 - organizational-governance
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Một cá nhân được bổ nhiệm vào vị trí chính thức với quyền hạn danh nghĩa.
+- Người đó mặc định rằng chức danh tự động tạo ra ảnh hưởng thực tế.
+- Bỏ qua việc xây dựng năng lực, quan hệ và sự tín nhiệm cần thiết.
+- Khi cần huy động nỗ lực thực chất, tập thể không phản hồi như kỳ vọng.
+- Người nắm vị trí gia tăng áp lực chính thức thay vì điều chỉnh cách tiếp cận.

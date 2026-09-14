@@ -1,22 +1,32 @@
 id: NT-ANTI-PATTERN-0012
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Bẫy sức hút cá nhân
-summary: Đơn vị tri thức cấu trúc về Bẫy sức hút cá nhân trong quản trị và lãnh đạo tổ chức.
+summary: Tổ chức phụ thuộc quá mức vào sức hút cá nhân của một lãnh đạo, khiến phán đoán tập thể bị thay thế bằng niềm tin vào hình ảnh cá nhân. Khi người đó rời đi hoặc sai lầm, hệ thống sụp đổ nhanh vì không có cấu trúc đỡ.
 primary_domain: tri-nhan
 secondary_domains:
 - dung-nhan
-definition: Định nghĩa chính thức về Bẫy sức hút cá nhân (Charismatic Trap) trong kiến trúc Nhân Thuật.
+definition: Bẫy sức hút cá nhân là phản-mẫu trong đó uy tín, sự tự tin và sức hấp dẫn của một cá nhân lấn át các cơ chế kiểm chứng, phản biện và phân quyền vốn cần thiết cho quyết định tập thể.
 conditions:
-- Bối cảnh quản trị vận hành.
+- Người lãnh đạo có sức hút mạnh và thành tích quá khứ ấn tượng.
+- Cơ chế phản biện và kế nhiệm yếu hoặc hình thức.
 exceptions:
-- Các trường hợp đè quyền trong khủng hoảng khẩn cấp.
+- Sức hút cá nhân đi kèm cấu trúc phân quyền và phản biện mạnh thì rủi ro được hạn chế.
+- Giai đoạn khủng hoảng cần tập trung vào một đầu mối có thể chấp nhận ngắn hạn.
 applications:
   governance:
-  - Áp dụng Bẫy sức hút cá nhân vào quy trình làm việc của tổ chức.
+  - Xây dựng cơ chế phản biện bắt buộc cho các quyết định lớn bất kể ai đề xuất.
+  - Chuẩn bị kế hoạch kế nhiệm cho các vị trí tập trung ảnh hưởng.
+  leadership:
+  - Chủ động chia sẻ quyền quyết định và công khai điểm yếu của bản thân.
+  - Khuyến khích nhân sự phản biện thẳng thắn mà không sợ hậu quả.
+  organization-design:
+  - Phân tán các điểm ảnh hưởng quan trọng thay vì dồn vào một cá nhân.
 risks:
-- Áp dụng sai Bẫy sức hút cá nhân dẫn đến hiệu suất không đạt mức tối ưu.
+- Sụp đổ hệ thống khi nhân vật trung tâm rời đi hoặc mắc sai lầm lớn.
+- Điểm mù tập thể tích lũy vì không ai dám phản biện.
+- Văn hóa sùng bái cá nhân làm lu mờ năng lực tập thể.
 evidence:
   level: supported
   references:
@@ -35,5 +45,9 @@ tags:
 - charisma-overreliance
 - governance-failure
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Một cá nhân gây ấn tượng mạnh về tầm nhìn và sự tự tin.
+- Tập thể dần gán mọi phán đoán đúng cho cá nhân đó.
+- Phản biện trở nên khó nói vì đối lập với hình ảnh được tôn sùng.
+- Hệ thống mất khả năng kiểm chứng độc lập và tích lũy rủi ro ngầm.

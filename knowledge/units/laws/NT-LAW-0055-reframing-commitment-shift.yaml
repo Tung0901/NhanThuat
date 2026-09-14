@@ -1,22 +1,32 @@
 id: NT-LAW-0055
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Chuyển hóa cam kết tái định khung
-summary: Đơn vị tri thức cấu trúc về Chuyển hóa cam kết tái định khung trong hệ thống.
+summary: Tái định khung vấn đề dịch chuyển cam kết mà không cần thay đổi lợi ích vật chất. Cách một việc được diễn giải quyết định mức nỗ lực con người dành cho nó.
 primary_domain: tri-nhan
 secondary_domains:
 - hop-chung
-definition: Định nghĩa chính thức về Chuyển hóa cam kết tái định khung trong kiến trúc Nhân Thuật.
+definition: 'Chuyển hóa cam kết tái định khung là quy luật về quan hệ giữa cách diễn giải và mức độ cam kết: thay đổi khung ý nghĩa làm thay đổi lựa chọn nỗ lực dù điều kiện vật chất giữ nguyên.'
 conditions:
-- Bối cảnh quản trị vận hành tổ chức.
+- Chủ thể đang nắm giữ một cách diễn giải có thể thay thế được.
+- Có không gian để tái định nghĩa ý nghĩa mà không thay đổi ràng buộc vật chất.
 exceptions:
-- Các trường hợp can thiệp ưu tiên trong khủng hoảng khẩn cấp.
+- Cam kết dựa trên hợp đồng hoặc nghĩa vụ pháp lý không dịch chuyển theo khung.
+- Khung mới không có cơ sở thực tế sẽ bị nhận diện là thao túng.
 applications:
-  governance:
-  - Áp dụng Chuyển hóa cam kết tái định khung vào các quy trình làm việc của tổ chức.
+  change-management:
+  - Tái định khung mục tiêu thay vì yêu cầu tăng nỗ lực thuần túy.
+  - Kết nối thay đổi với câu chuyện nghề nghiệp của nhân sự.
+  negotiation:
+  - Giúp đối phương nhìn vấn đề từ khung khác để mở thêm phương án.
+  - Chuyển từ tranh luận vị thế sang cùng giải quyết vấn đề chung.
+  leadership:
+  - Diễn giải lại công việc lặp lại bằng ý nghĩa đóng góp thay vì nghĩa vụ.
 risks:
-- Áp dụng sai Chuyển hóa cam kết tái định khung dẫn đến hiệu suất dưới mức tối ưu.
+- Tái định khung bị dùng để thao túng lựa chọn của người khác.
+- Thay khung liên tục làm xói mòn ổn định ưu tiên.
+- Khung mới không được củng cố bằng hành động thực tế sẽ mất hiệu lực.
 evidence:
   level: supported
   references:
@@ -35,5 +45,9 @@ tags:
 - behavioral-change
 - organizational-reframing
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Một nhiệm vụ hoặc mục tiêu được diễn giải theo một khung ý nghĩa nhất định.
+- Khung diễn giải xác định giá trị cảm nhận và mức ưu tiên.
+- Khung mới tái định nghĩa ý nghĩa, lợi ích hoặc bản sắc gắn với nhiệm vụ.
+- Mức cam kết và nỗ lực của chủ thể dịch chuyển theo khung mới.

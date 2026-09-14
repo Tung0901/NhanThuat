@@ -10,9 +10,8 @@ import time
 from dataclasses import dataclass, field
 from typing import Any
 
-from nhan_thuat.models import KnowledgeUnit
-from nhan_thuat.rag.bm25_search import BM25Engine, BM25Result
-from nhan_thuat.rag.vector_search import VectorResult, VectorSearchEngine
+from nhan_thuat.rag.bm25_search import BM25Engine
+from nhan_thuat.rag.vector_search import VectorSearchEngine
 
 
 @dataclass

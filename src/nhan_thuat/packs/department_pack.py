@@ -121,6 +121,6 @@ class DepartmentPackRegistry:
             "pack_name": pack.name,
             "primary_lens": pack.philosophy_primary,
             "rubrics": pack.assessment_rubrics,
-            "recommended_template": list(pack.action_templates.values())[0] if pack.action_templates else "",
+            "recommended_template": next(iter(pack.action_templates.values()), ""),
             "recommended_units": pack.core_laws + pack.core_principles,
         }

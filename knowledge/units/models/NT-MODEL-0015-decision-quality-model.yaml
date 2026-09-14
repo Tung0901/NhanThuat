@@ -1,22 +1,31 @@
 id: NT-MODEL-0015
 type: model
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Mô hình Chất lượng Quyết định
-summary: Đơn vị tri thức cấu trúc về Mô hình Chất lượng Quyết định.
+summary: 'Mô hình đánh giá chất lượng quyết định qua sáu thành phần: khung vấn đề, thông tin, lựa chọn, tiêu chí, lập luận và điều kiện thực thi. Quy trình tốt là nền tảng của quyết định tốt.'
 primary_domain: tri-nhan
 secondary_domains:
 - dung-nhan
-definition: Định nghĩa chính thức về Mô hình Chất lượng Quyết định trong kiến trúc Nhân Thuật.
+definition: 'Mô hình Chất lượng Quyết định là khung đánh giá quyết định theo sáu yếu tố quy trình: xác định đúng vấn đề, chất lượng thông tin, độ đa dạng của lựa chọn, tiêu chí rõ ràng, chất lượng lập luận và tính khả thi của điều kiện thực thi.'
 conditions:
-- Các bối cảnh quản trị vận hành.
+- Quyết định được cân nhắc hoặc đánh giá lại có hệ thống.
+- Có đủ thông tin để chấm điểm sáu thành phần.
 exceptions:
-- Các trường hợp khẩn cấp ghi đè do khủng hoảng.
+- Quyết định tức thời trong khủng hoảng chỉ đánh giá được sau khi hành động.
+- Quyết định lặp lại đã có quy trình chuẩn không cần chấm đủ sáu thành phần.
 applications:
+  decision-making:
+  - Dùng sáu thành phần làm checklist trước khi chốt quyết định trọng yếu.
+  - Chấm điểm quyết định sau khi hoàn tất để rút bài học quy trình.
   governance:
-  - Áp dụng Mô hình Chất lượng Quyết định vào quy trình làm việc của tổ chức.
+  - Yêu cầu hồ sơ quyết định thể hiện đủ sáu thành phần cho các quyết định lớn.
+  leadership:
+  - Đào tạo đội ngũ nâng chất lượng từng thành phần của quy trình ra quyết định.
 risks:
-- Áp dụng sai Mô hình Chất lượng Quyết định dẫn đến hiệu suất không tối ưu.
+- Chấm điểm đủ thủ tục mà không cải thiện chất lượng thực.
+- Bỏ qua thành phần thực thi khiến quyết định đúng không được triển khai.
+- Dùng điểm số để hợp thức hóa quyết định đã định trước.
 evidence:
   level: supported
   references:
@@ -35,8 +44,9 @@ tags:
 - governance-model
 - quality-assurance
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'
 mechanism:
-- 'Bước 1: Xác định Mô hình Chất lượng Quyết định.'
-- 'Bước 2: Phân tích các tham số.'
-- 'Bước 3: Thực thi mô hình.'
+- Kiểm tra vấn đề được phát biểu có đúng gốc rễ không.
+- Đánh giá chất lượng và độ đầy đủ của thông tin đầu vào.
+- Kiểm tra số lượng và độ đa dạng của các lựa chọn đã xem xét.
+- Đánh giá tiêu chí, lập luận và tính khả thi của điều kiện thực thi.

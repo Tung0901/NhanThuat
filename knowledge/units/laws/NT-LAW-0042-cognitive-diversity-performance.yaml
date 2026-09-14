@@ -1,22 +1,31 @@
 id: NT-LAW-0042
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Hiệu Suất Đa Dạng Nhận Thức
-summary: Đơn vị tri thức cấu trúc về Hiệu Suất Đa Dạng Nhận Thức.
+summary: Đa dạng về cách xử lý thông tin nâng cao chất lượng quyết định phức tạp khi được phối hợp đúng cách. Khác biệt nhận thức là nguồn lực, không phải trở ngại.
 primary_domain: hop-chung
 secondary_domains:
 - tri-nhan
-definition: Định nghĩa chuẩn mực về Hiệu Suất Đa Dạng Nhận Thức trong cấu trúc Nhân Thuật.
+definition: 'Hiệu suất đa dạng nhận thức là quy luật về lợi ích của khác biệt trong cách tư duy: nhóm có phổ nhận thức rộng xử lý vấn đề bất định tốt hơn nhóm đồng nhất cùng năng lực.'
 conditions:
-- Các bối cảnh quản trị vận hành.
+- Công việc có độ phức tạp và bất định cao.
+- Nhóm có cơ chế phối hợp và xử lý bất đồng hiệu quả.
 exceptions:
-- Các trường hợp can thiệp ưu tiên trong khủng hoảng khẩn cấp.
+- Công việc đơn giản, quy trình hóa cao không cần phổ nhận thức rộng.
+- Khác biệt nhận thức không được điều phối có thể làm chậm quyết định.
 applications:
-  governance:
-  - Áp dụng Hiệu Suất Đa Dạng Nhận Thức vào các luồng công việc tổ chức.
+  team-design:
+  - Thiết kế nhóm giải bài toán khó với phổ kiểu tư duy khác nhau thay vì nhân bản một kiểu giỏi.
+  - Phân vai phản biện và tổng hợp rõ ràng cho các phiên giải quyết vấn đề.
+  management:
+  - Bảo vệ người có góc nhìn thiểu số trong các cuộc thảo luận quan trọng.
+  decision-making:
+  - Yêu cầu ít nhất hai cách tiếp cận độc lập trước khi chốt phương án lớn.
 risks:
-- Áp dụng sai Hiệu Suất Đa Dạng Nhận Thức dẫn đến hiệu suất dưới mức tối ưu.
+- Nhầm đa dạng nhận thức với đa dạng hồ sơ hình thức.
+- Khác biệt không được điều phối biến thành xung đột tiêu hao.
+- Tiêu chuẩn nhóm thấp làm đa dạng trở thành bất đồng vô hiệu.
 evidence:
   level: supported
   references:
@@ -35,5 +44,9 @@ tags:
 - organizational-cognition
 - decision-making
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Các thành viên tiếp cận vấn đề bằng mô hình tư duy khác nhau.
+- Khác biệt tạo ra nhiều giả thuyết và phương án độc lập.
+- Tranh luận có cấu trúc sàng lọc giả thuyết và giảm thiên kiến tập thể.
+- Kết quả quyết định phức tạp được cải thiện khi các góc nhìn được tích hợp.

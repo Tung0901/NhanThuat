@@ -14,7 +14,7 @@ conditions:
 exceptions:
 - 'Khi giao dịch các loại hàng hóa thông thường (ví dụ: tiêu tiền để mua cà phê).'
 applications:
-  change_management:
+  change-management:
   - Diễn giải chi phí của việc không thay đổi (mất mát) thay vì chỉ nêu lợi ích của việc thay đổi (thắng lợi).
 risks:
 - Từ chối cắt lỗ đối với các dự án đang thất bại (leo thang cam kết).
@@ -34,6 +34,6 @@ tags:
 - prospect-theory
 - gains-and-losses
 status: frozen
-version: 0.1.0
+version: 0.2.0
 created_at: '2026-08-13'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'

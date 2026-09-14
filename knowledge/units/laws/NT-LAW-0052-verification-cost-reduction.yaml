@@ -1,22 +1,32 @@
 id: NT-LAW-0052
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Giảm Chi Phí Xác Minh
-summary: Đơn vị tri thức cấu trúc về việc giảm chi phí xác minh trong tổ chức.
+summary: Cơ chế bảo đảm đáng tin làm giảm chi phí xác minh từng giao dịch. Tin cậy vận hành thay thế dần kiểm tra tốn kém khi cấu trúc đủ chắc.
 primary_domain: hop-chung
 secondary_domains:
 - dung-nhan
-definition: Định nghĩa chính thức về giảm chi phí xác minh trong kiến trúc Nhân Thuật, tối ưu hóa các quy trình kiểm tra.
+definition: 'Giảm chi phí xác minh là quy luật về quan hệ giữa niềm tin và chi phí kiểm soát: đầu tư vào bảo đảm cấu trúc làm giảm nhu cầu xác minh lặp lại.'
 conditions:
-- Trong các bối cảnh quản trị vận hành tổ chức.
+- Các bên tham gia nhiều giao dịch lặp lại.
+- Có cơ chế bảo đảm hoặc lịch sử tin cậy đủ dài.
 exceptions:
-- Các trường hợp khẩn cấp ngoại lệ vượt quyền.
+- Vùng rủi ro cao vẫn cần xác minh độc lập bất kể mức tin cậy.
+- Bảo đảm mới hình thành chưa đủ dữ liệu để thay thế kiểm tra.
 applications:
   governance:
-  - Áp dụng giảm chi phí xác minh vào các quy trình làm việc của tổ chức.
+  - Đầu tư vào cơ chế bảo đảm cấu trúc để giảm chi phí kiểm tra về dài hạn.
+  - Phân tầng mức xác minh theo mức rủi ro thay vì kiểm tra toàn bộ.
+  operations:
+  - Chuyển từ kiểm tra từng giao dịch sang kiểm tra mẫu dựa trên mức tin cậy.
+  - Tự động hóa xác minh ở tầng hệ thống để giảm công sức con người.
+  procurement:
+  - Xây dựng quan hệ nhà cung cấp dài hạn kèm cơ chế đánh giá định kỳ thay vì kiểm tra từng lô.
 risks:
-- Áp dụng sai giảm chi phí xác minh dẫn đến hiệusuất dưới mức tối ưu.
+- Cắt giảm xác minh quá mức khiến rủi ro tích tụ âm thầm.
+- Duy trì kiểm tra dày đặc làm chi phí phối hợp vượt lợi ích.
+- Bảo đảm hình thức không được kiểm định định kỳ sẽ mất giá trị.
 evidence:
   level: supported
   references:
@@ -36,5 +46,9 @@ tags:
 - governance-efficiency
 - audit-reduction
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Mỗi hoạt động hợp tác đòi hỏi một mức xác minh để giảm rủi ro.
+- Xác minh toàn bộ ở mọi giao dịch tạo chi phí lớn và làm chậm vận hành.
+- Cơ chế bảo đảm đáng tin thay thế một phần nhu cầu xác minh.
+- Chi phí phối hợp giảm khi mức bảo đảm được duy trì ổn định.

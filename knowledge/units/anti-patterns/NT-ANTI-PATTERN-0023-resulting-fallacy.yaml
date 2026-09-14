@@ -1,7 +1,7 @@
 id: NT-ANTI-PATTERN-0023
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Ngụy biện Dựa trên Kết quả
 summary: Đơn vị kiến thức cấu trúc về Ngụy biện Dựa trên Kết quả (Resulting Fallacy) trong đánh giá quyết định.
 primary_domain: tri-nhan
@@ -35,5 +35,10 @@ tags:
 - decision-making
 - governance
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Một quyết định được đưa ra trong điều kiện bất định.
+- Kết quả đến sau được dùng làm thước đo duy nhất cho chất lượng quyết định.
+- May mắn hoặc rủi ro ngoài kiểm soát bị quy thành năng lực ra quyết định.
+- Quy trình ra quyết định tốt bị bỏ qua nếu kết quả xấu.
+- Tổ chức học sai bài học và lặp lại lỗi trong các quyết định tiếp theo.

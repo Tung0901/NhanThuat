@@ -1,7 +1,7 @@
 id: NT-PRINCIPLE-0101
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Căn chỉnh chiến lược với năng lực của tổ chức
 summary: Đảm bảo các hướng chiến lược được chọn khai thác năng lực cốt lõi hiện có hoặc có thể xây dựng, thay vì dựa vào mơ tưởng.
 primary_domain: thanh-su
@@ -13,7 +13,7 @@ conditions:
 exceptions:
 - Các dự án R&D táo bạo kiểu moonshot.
 applications:
-  hiring_alignment:
+  hiring-alignment:
   - Đối chiếu năng lực trong lộ trình chiến lược với tồn kho nhân tài hiện tại.
 risks:
 - Đặt mục tiêu quá thận trọng khiến tổ chức không thể đổi mới.
@@ -34,5 +34,10 @@ tags:
 - planning
 - talent
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Liệt kê năng lực cốt lõi hiện có và năng lực có thể xây dựng trong hợp lý.
+- Đối chiếu từng hướng chiến lược với năng lực cần thiết.
+- Loại bỏ hoặc điều chỉnh các hướng đòi hỏi năng lực không thể có được.
+- Xây dựng lộ trình phát triển năng lực cho các hướng còn lại.
+- Đánh giá định kỳ mức tiến bộ năng lực so với yêu cầu chiến lược.

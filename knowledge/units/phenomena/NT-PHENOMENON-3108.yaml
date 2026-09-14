@@ -14,7 +14,7 @@ conditions:
 exceptions:
 - Khi quyết định được chuyển giao cho một nhà quản lý hoàn toàn mới không có ràng buộc với quá khứ.
 applications:
-  project_management:
+  project-management:
   - Thiết lập các tiêu chí dừng dựa trên mốc quan trọng nghiêm ngặt trước khi dự án bắt đầu.
 risks:
 - Đổ tiền bạc vào chỗ mất (đầu tư thêm vào thua lỗ) trong các cuộc viết lại kỹ thuật vô vọng.
@@ -35,6 +35,6 @@ tags:
 - escalation-of-commitment
 - decision-making
 status: frozen
-version: 0.1.0
+version: 0.2.0
 created_at: '2026-08-13'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'

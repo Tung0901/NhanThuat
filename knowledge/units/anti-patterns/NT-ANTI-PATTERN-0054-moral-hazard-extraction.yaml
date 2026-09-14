@@ -1,7 +1,7 @@
 id: NT-ANTI-PATTERN-0054
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Trục lợi từ rủi ro đạo đức
 summary: Thiết kế các mô hình kinh doanh hoặc sản phẩm tài chính nhằm thu lợi nhuận tức thì trong khi đẩy các rủi ro đuôi dài hạn sang cho những khách hàng không hề hay biết.
 primary_domain: tu-than
@@ -18,7 +18,7 @@ conditions:
 exceptions:
 - Các khoản đầu tư mạo hiểm mang tính đầu cơ đã được công bố thông tin đầy đủ.
 applications:
-  product_governance:
+  product-governance:
   - Kiểm toán các sản phẩm tài chính và phần mềm để phát hiện các cấu trúc rủi ro đạo đức tiềm ẩn.
 risks:
 - Hạn chế các hoạt động đổi mới sáng tạo tài chính hợp pháp.
@@ -42,4 +42,4 @@ tags:
 - corporate-governance
 - risk-shifting
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'

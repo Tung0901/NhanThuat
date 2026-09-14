@@ -1,7 +1,7 @@
 id: NT-PRINCIPLE-0090
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Căn chỉnh động lực với mục đích của hệ thống
 summary: Thiết kế phần thưởng biến đổi để củng cố các kết quả toàn hệ thống và mục tiêu chung thay vì các bộ phận cô lập.
 primary_domain: tu-than
@@ -36,5 +36,10 @@ tags:
 - reward-design
 - okr
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Xác định các kết quả toàn hệ thống cần được củng cố.
+- Thiết kế phần thưởng gắn với kết quả chung thay vì chỉ số bộ phận.
+- Bổ sung cơ chế chia sẻ thành quả khi các bộ phận phối hợp tốt.
+- Rà soát định kỳ để phát hiện xung đột giữa khuyến khích bộ phận và mục tiêu chung.
+- Điều chỉnh cấu trúc thưởng khi hợp tác liên phòng ban bị xói mòn.

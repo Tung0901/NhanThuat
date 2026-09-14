@@ -1,7 +1,6 @@
 """Knowledge resolution engine with hybrid lexical and semantic search."""
 
 from collections.abc import Iterable
-from typing import Any
 
 from nhan_thuat.models import KnowledgeUnit
 from nhan_thuat.rag.hybrid_retriever import HybridRetrievalResult, HybridRetriever

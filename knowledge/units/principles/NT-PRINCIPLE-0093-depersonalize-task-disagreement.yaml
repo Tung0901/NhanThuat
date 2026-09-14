@@ -1,7 +1,7 @@
 id: NT-PRINCIPLE-0093
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Phi cá nhân hóa bất đồng về nhiệm vụ
 summary: Đóng khung mọi bất đồng trong công việc dựa trên dữ liệu khách quan, giả thuyết và mục tiêu, nhờ đó tránh để bất đồng chạm tới danh tính cá nhân.
 primary_domain: hop-chung
@@ -13,7 +13,7 @@ conditions:
 exceptions:
 - Các buổi đánh giá hiệu suất chuyên đánh giá hành vi ứng xử của từng cá nhân.
 applications:
-  meeting_design:
+  meeting-design:
   - Yêu cầu người phản biện trình bày ý kiến phản đối dưới dạng các giả thuyết cạnh tranh.
 risks:
 - Làm sạch tranh luận quá mức đến mức phản hồi trở nên chung chung.
@@ -35,5 +35,10 @@ tags:
 - feedback
 - hypotheses
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Khi xuất hiện bất đồng, chuyển toàn bộ thảo luận về vấn đề và dữ liệu.
+- Đóng khung lại ý kiến như giả thuyết cần kiểm chứng thay vì quan điểm cá nhân.
+- Tách người nêu ý kiến khỏi nội dung ý kiến.
+- Ghi nhận và đánh giá các giả thuyết bằng tiêu chí khách quan.
+- Kết thúc bằng kết luận chung, không quy kết cá nhân thắng thua.

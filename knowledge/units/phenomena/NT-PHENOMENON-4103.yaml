@@ -7,29 +7,35 @@ summary: Con người có xu hướng tin một thông tin là sự thật chỉ
 primary_domain: hop-chung
 domain_area: NT-DA-0026
 secondary_domains:
-  - tri-nhan
+- tri-nhan
 definition: Sự lặp lại liên tục làm tăng tính lưu loát nhận thức (cognitive fluency), khiến não bộ tốn ít năng lượng hơn để xử lý thông tin, từ đó mặc định gán cho nó mác "đáng tin".
 conditions:
-  - Thông tin được lặp lại một cách tinh tế và nhất quán.
+- Thông tin được lặp lại một cách tinh tế và nhất quán.
 exceptions:
-  - Thông tin đi ngược lại hoàn toàn niềm tin cốt lõi vững chắc của người nghe.
+- Thông tin đi ngược lại hoàn toàn niềm tin cốt lõi vững chắc của người nghe.
 applications:
   general:
-    - Áp dụng trong quản trị và kinh doanh.
+  - Áp dụng trong quản trị và kinh doanh.
 risks:
-  - Dễ bị lợi dụng trong tuyên truyền sai lệch hoặc lừa đảo đám đông (Brainwashing).
+- Dễ bị lợi dụng trong tuyên truyền sai lệch hoặc lừa đảo đám đông (Brainwashing).
 evidence:
   level: strong
   references:
-    - Hasher, Goldstein, and Toppino (1977)
+  - Hasher, Goldstein, and Toppino (1977)
 relations:
   supports: []
   conflicts_with: []
   depends_on: []
   applies_to: []
 tags:
-  - propaganda
-  - cognitive-bias
-  - marketing
+- propaganda
+- cognitive-bias
+- marketing
 created_at: '2026-08-15'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'
+mechanism:
+- Một thông tin được tiếp xúc lặp đi lặp lại nhiều lần.
+- Mỗi lần lặp lại làm tăng tính lưu loát nhận thức khi xử lý thông tin.
+- Não bộ tiêu tốn ít năng lượng hơn và gán cảm giác quen thuộc.
+- Cảm giác quen thuộc được diễn giải thành tín hiệu đáng tin.
+- Niềm tin vào thông tin tăng lên bất kể tính xác thực của nội dung.

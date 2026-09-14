@@ -1,7 +1,7 @@
 id: NT-ANTI-PATTERN-0053
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Dung túng ngôi sao độc hại
 summary: Dung túng hành vi lạm dụng hoặc không trung thực từ một nhân sự tạo doanh thu hàng đầu, làm hủy hoại sự an toàn tâm lý của cả đội ngũ.
 primary_domain: hop-chung
@@ -18,7 +18,7 @@ conditions:
 exceptions:
 - Không có.
 applications:
-  hr_governance:
+  hr-governance:
   - Áp dụng nghiêm ngặt chính sách sa thải không khoan nhượng đối với các hành vi lạm dụng.
 risks:
 - Mất đi nguồn doanh thu ngắn hạn khi sa thải một nhân sự xuất sắc nhưng độc hại.
@@ -43,4 +43,4 @@ tags:
 - toxic-culture
 - management-failure
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'

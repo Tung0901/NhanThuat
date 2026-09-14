@@ -1,7 +1,7 @@
 id: NT-PRINCIPLE-0107
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Thể chế hóa các bài học từ post-mortem
 summary: Chuyển mọi thất bại vận hành lớn thành các cập nhật tường minh cho kiến trúc hệ thống, các rào chắn hoặc danh sách kiểm tra.
 primary_domain: tri-nhan
@@ -13,7 +13,7 @@ conditions:
 exceptions:
 - Các bất thường bên ngoài riêng lẻ, không thể tái diễn.
 applications:
-  architecture_updates:
+  architecture-updates:
   - Yêu cầu mọi post-mortem của sự cố mức độ nghiêm trọng cao phải tạo ra ít nhất một kiểm tra xác thực tự động.
 risks:
 - Tích lũy quá nhiều danh sách kiểm tra quá khắt khe làm nghẽn tốc độ thực thi.
@@ -35,5 +35,10 @@ tags:
 - incident-response
 - continuous-improvement
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Sau mỗi thất bại vận hành lớn, thực hiện rà soát nguyên nhân gốc.
+- 'Chuyển kết luận thành các thay đổi cụ thể: quy tắc, rào chắn, danh sách kiểm tra.'
+- Gán trách nhiệm và thời hạn cho từng thay đổi.
+- Xác minh các thay đổi đã được triển khai vào hệ thống.
+- Rà soát lại hiệu lực của các thay đổi trong các chu kỳ vận hành sau.

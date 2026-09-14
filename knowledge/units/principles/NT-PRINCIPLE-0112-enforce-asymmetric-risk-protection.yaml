@@ -1,7 +1,7 @@
 id: NT-PRINCIPLE-0112
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Thực thi bảo vệ rủi ro bất đối xứng
 summary: Bảo vệ các bên liên quan dễ bị tổn thương, những người gánh chịu rủi ro chiều giảm bất đối xứng từ các quyết định của cấp điều hành.
 primary_domain: tu-than
@@ -13,7 +13,7 @@ conditions:
 exceptions:
 - Các đối tác tổ chức tinh vi hoạt động với mức cân bằng thông tin ngang nhau.
 applications:
-  consumer_protection:
+  consumer-protection:
   - Rà soát các điều khoản hợp đồng để đảm bảo có cơ chế hoàn tiền và bảo vệ an toàn rõ ràng.
 risks:
 - Bảo vệ khách hàng quá mức đến mức khiến công ty phải đối mặt với lạm dụng hoàn tiền gian lận.
@@ -35,5 +35,10 @@ tags:
 - consumer-protection
 - fairness
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Xác định các bên chịu rủi ro bất đối xứng từ quyết định của cấp điều hành.
+- Đánh giá mức độ thiếu quyền lực và thiếu thông tin của các bên này.
+- 'Thiết kế cơ chế bảo vệ cụ thể: đại diện tiếng nói, kênh khiếu nại, điều khoản an toàn.'
+- Ghi nhận tác động lên bên dễ tổn thương trong hồ sơ quyết định.
+- Rà soát định kỳ mức hiệu lực của các biện pháp bảo vệ.

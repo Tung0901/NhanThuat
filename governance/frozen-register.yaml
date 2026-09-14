@@ -54,6 +54,24 @@ entries:
   approved_by: Product Owner
   source: milestones/milestone-01-knowledge-core/status.yaml
   rationale: Product Owner approved and requested Milestone 1 freeze.
+- id: NT-MILESTONE-02
+  type: milestone
+  title: Milestone 2 - Knowledge Expansion & Domain System
+  status: frozen
+  frozen_at: '2026-09-14'
+  approved_by: Product Owner
+  source: milestones/milestone-02-domain-system/status.yaml
+  rationale: Domain system completed (31 domains registered, M16 batch frozen); status
+    synchronized and frozen with Product Owner approval on 2026-09-14.
+- id: NT-MILESTONE-03
+  type: milestone
+  title: Milestone 3 - Intelligence Engine
+  status: frozen
+  frozen_at: '2026-09-14'
+  approved_by: Product Owner
+  source: milestones/milestone-03-intelligence-engine/status.yaml
+  rationale: Five Philosophy Lens system delivered (documents, engines, router);
+    status artifact created and frozen with Product Owner approval on 2026-09-14.
 - id: NT-DA-0001
   type: domain_area
   title: Human Nature
@@ -336,3 +354,15 @@ entries:
   approved_by: Product Owner
   source: docs/domains/persuasion-influence/status.yaml
   rationale: Product Owner approved M16 knowledge expansion freeze.
+- id: NT-BATCH-003
+  type: knowledge_batch
+  title: Vietnamese Content Upgrade Batch (placeholder completion + mechanism backfill)
+  status: frozen
+  frozen_at: '2026-09-14'
+  approved_by: Product Owner
+  source: docs/reports/NT-BATCH-003_CONTENT_UPGRADE_2026-09-14.md
+  rationale: 'Product Owner approved the A1-A9 content upgrade on 2026-09-14: real
+    content for 45 placeholder units, mechanism backfill for 127 units, orphan evidence
+    placeholder resolution, duplicate title disambiguation, curated cases in knowledge/cases,
+    stub book completion, and application key normalization. Verified by validate_all
+    and pytest.'

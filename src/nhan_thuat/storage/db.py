@@ -8,7 +8,7 @@ from __future__ import annotations
 import json
 import sqlite3
 import uuid
-from datetime import datetime
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
@@ -161,7 +161,7 @@ class DatabaseManager:
             }
         ]
 
-        now = datetime.utcnow().isoformat()
+        now = datetime.now(UTC).replace(tzinfo=None).isoformat()
         for case in sample_cases:
             cursor.execute("""
                 INSERT INTO case_studies (id, domain, title, context_description, decision_script, lessons_learned, created_at, tags)
@@ -183,7 +183,7 @@ class DatabaseManager:
         conn = self._get_connection()
         cursor = conn.cursor()
         session_id = f"SPAR-SESS-{uuid.uuid4().hex[:8].upper()}"
-        now = datetime.utcnow().isoformat()
+        now = datetime.now(UTC).replace(tzinfo=None).isoformat()
         meta_str = json.dumps(metadata or {}, ensure_ascii=False)
 
         cursor.execute("""
@@ -267,7 +267,7 @@ class DatabaseManager:
         conn = self._get_connection()
         cursor = conn.cursor()
         msg_id = f"MSG-{uuid.uuid4().hex[:8].upper()}"
-        now = datetime.utcnow().isoformat()
+        now = datetime.now(UTC).replace(tzinfo=None).isoformat()
         units_str = json.dumps(matched_unit_ids or [], ensure_ascii=False)
         meta_str = json.dumps(metadata or {}, ensure_ascii=False)
 
@@ -309,7 +309,7 @@ class DatabaseManager:
         conn = self._get_connection()
         cursor = conn.cursor()
         case_id = f"CASE-{domain.upper()}-{uuid.uuid4().hex[:6].upper()}"
-        now = datetime.utcnow().isoformat()
+        now = datetime.now(UTC).replace(tzinfo=None).isoformat()
         script_str = json.dumps(decision_script or {}, ensure_ascii=False)
         lessons_str = json.dumps(lessons_learned or [], ensure_ascii=False)
         tags_str = json.dumps(tags or [], ensure_ascii=False)

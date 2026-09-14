@@ -1,22 +1,31 @@
 id: NT-ANTI-PATTERN-0038
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Nhượng bộ Cưỡng ép
-summary: Đơn vị tri thức cấu trúc về hiện tượng nhượng bộ do bị cưỡng ép trong quản trị tổ chức.
+summary: Một bên bị ép đưa ra nhượng bộ ngoài ý muốn bằng áp lực thời gian, quyền lực hoặc đe dọa. Thỏa thuận đạt được nhưng không bền vững và phá vỡ quan hệ dài hạn.
 primary_domain: thanh-su
 secondary_domains:
 - dung-nhan
-definition: Định nghĩa chính thức về Nhượng bộ Cưỡng ép (Coerced Concession) trong kiến trúc Nhân Thuật, mô tả hành vi dùng áp lực ép buộc đối phương đưa ra sự nhượng bộ ngoài ý muốn.
+definition: Nhượng bộ cưỡng ép là phản-mẫu đàm phán trong đó sự nhượng bộ được tạo ra bằng áp lực thay vì trao đổi lợi ích thực chất, dẫn đến thỏa thuận thiếu cam kết và hệ quả tiêu cực về sau.
 conditions:
-- Bối cảnh quản trị vận hành tổ chức.
+- Có bất đối xứng quyền lực hoặc lợi thế thời gian rõ rệt.
+- Bên yếu thế không có phương án thay thế tốt.
 exceptions:
-- Các trường hợp ghi đè trong khủng hoảng khẩn cấp.
+- Trường hợp bảo vệ lợi ích cộng đồng cần biện pháp cưỡng chế theo luật.
+- Đàm phán phân chia tài sản theo phán quyết có thẩm quyền.
 applications:
-  governance:
-  - Ánh xạ và nhận diện hiện tượng Nhượng bộ Cưỡng ép trong quy trình làm việc của tổ chức.
+  negotiation:
+  - Tránh dùng thời hạn nhân tạo và đe dọa để buộc nhượng bộ.
+  - Xây dựng phương án thay thế trước khi bước vào đàm phán quan trọng.
+  procurement:
+  - Ghi nhận và xử lý các dấu hiệu ép giá bằng áp lực trong chuỗi cung ứng.
+  leadership:
+  - Không dùng áp lực vị trí để đạt đồng thuận hình thức trong các cuộc đàm phán nội bộ.
 risks:
-- Nhận diện sai hoặc áp dụng sai khái niệm Nhượng bộ Cưỡng ép dẫn đến hiệu suất vận hành không tối ưu.
+- Thỏa thuận hình thành trên giấy nhưng thất bại trong thực thi.
+- Quan hệ đối tác dài hạn bị phá vỡ.
+- Xung đột leo thang khi bên bị ép tìm cách phục hồi thế cân bằng.
 evidence:
   level: supported
   references:
@@ -35,5 +44,9 @@ tags:
 - negotiation-anti-pattern
 - coercion-risk
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Một bên tạo áp lực bằng thời hạn, quyền lực hoặc nguy cơ tổn thất.
+- Bên kia nhượng bộ để tránh hậu quả trước mắt.
+- Thỏa thuận đạt được nhưng thiếu cam kết tự nguyện.
+- Bên bị ép tìm cách lách, trì hoãn hoặc phá vỡ khi có cơ hội.

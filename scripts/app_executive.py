@@ -238,8 +238,8 @@ if selected == "THAM MƯU TÌNH HUỐNG":
                                 st.markdown(text, unsafe_allow_html=True)
                                 st.session_state.messages.append({"role": "assistant", "content": text})
                                 success = True
-                        except Exception as e:
-                            last_err = f"Deepseek Error: {str(e)}"
+                        except Exception as e:  # noqa: BLE001 - provider failover
+                            last_err = f"Deepseek Error: {e!s}"
                             
                     if not success and GEMINI_API_KEY:
                         candidate_models = ['gemini-3.6-flash', 'gemini-3.5-flash', 'gemini-3-flash']
@@ -253,7 +253,7 @@ if selected == "THAM MƯU TÌNH HUỐNG":
                                     success = True
                                     break
                             except Exception as e:  # noqa: BLE001 - try next candidate model
-                                last_err = f"Gemini Error: {str(e)}"
+                                last_err = f"Gemini Error: {e!s}"
                                 continue
                     if not success:
                         st.error(f"Lỗi hệ thống: {last_err}")

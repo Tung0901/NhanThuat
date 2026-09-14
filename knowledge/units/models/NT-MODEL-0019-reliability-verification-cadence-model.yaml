@@ -1,22 +1,31 @@
 id: NT-MODEL-0019
 type: model
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Mô hình nhịp độ xác minh độ tin cậy
-summary: Đơn vị tri thức cấu trúc về Mô hình nhịp độ xác minh độ tin cậy.
+summary: Mô hình xác định nhịp độ xác minh tương ứng với mức độ tin cậy của từng đối tượng, giảm dần kiểm tra khi độ tin cậy tăng và tăng lại khi có dấu hiệu suy giảm. Nhịp độ đúng giúp cân bằng rủi ro và hiệu quả.
 primary_domain: dung-nhan
 secondary_domains:
 - hop-chung
-definition: Định nghĩa chính thức về Mô hình nhịp độ xác minh độ tin cậy trong kiến trúc Nhân Thuật.
+definition: 'Mô hình nhịp độ xác minh độ tin cậy là khung thiết kế tần suất và mức độ kiểm tra theo ba biến: mức rủi ro của hoạt động, lịch sử độ tin cậy của đối tượng, và chi phí của việc xác minh.'
 conditions:
-- Các bối cảnh quản trị vận hành tổ chức.
+- Quan hệ hợp tác kéo dài với nhiều chu kỳ bàn giao.
+- Có thể đo lường kết quả của các lần xác minh trước đó.
 exceptions:
-- Các tình huống ghi đè do khủng hoảng khẩn cấp.
+- Hoạt động thuộc diện bắt buộc kiểm tra định kỳ theo quy định pháp lý.
+- Đối tượng mới chưa có lịch sử cần nhịp độ xác minh dày ban đầu.
 applications:
   governance:
-  - Áp dụng Mô hình nhịp độ xác minh độ tin cậy vào các quy trình làm việc của tổ chức.
+  - Thiết kế lịch kiểm tra theo mức rủi ro và lịch sử tuân thủ.
+  - Điều chỉnh tần suất hậu kiểm dựa trên dữ liệu vi phạm.
+  operations:
+  - Giảm kiểm tra ở khâu ổn định và tập trung nguồn lực vào khâu rủi ro cao.
+  partnership:
+  - Điều chỉnh mức độ xác minh đối tác theo lịch sử hợp tác.
 risks:
-- Việc áp dụng sai Mô hình nhịp độ xác minh độ tin cậy dẫn đến hiệu suất không tối ưu.
+- Giảm nhịp xác minh quá nhanh khiến rủi ro tích tụ ngầm.
+- Duy trì nhịp kiểm tra dày đặc làm xói mòn quan hệ tin cậy.
+- Dữ liệu lịch sử bị đọc sai dẫn tới nhịp độ không phù hợp.
 evidence:
   level: supported
   references:
@@ -35,8 +44,9 @@ tags:
 - reliability-model
 - audit-cadence
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'
 mechanism:
-- 'Bước 1: Xác định Mô hình nhịp độ xác minh độ tin cậy.'
-- 'Bước 2: Phân tích các thông số vận hành.'
-- 'Bước 3: Thực thi mô hình kiểm chứng.'
+- Phân loại hoạt động theo mức rủi ro và hậu quả khi sai.
+- Ghi nhận lịch sử độ tin cậy của đối tượng qua thời gian.
+- Đặt nhịp độ xác minh ban đầu tương xứng mức rủi ro và lịch sử.
+- 'Điều chỉnh nhịp độ theo kết quả: giảm khi ổn định, tăng khi có dấu hiệu suy giảm.'

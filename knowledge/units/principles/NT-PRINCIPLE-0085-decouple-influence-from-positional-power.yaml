@@ -1,22 +1,31 @@
 id: NT-PRINCIPLE-0085
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Tách ảnh hưởng khỏi quyền lực vị trí
-summary: Tách ảnh hưởng khỏi quyền lực vị trí là một đơn vị tri thức cấu trúc trong kho tri thức Nhân Thuật.
+summary: Tách ảnh hưởng khỏi quyền lực vị trí để tạo môi trường cạnh tranh ý tưởng công bằng. Ảnh hưởng nên đến từ chất lượng lập luận và đóng góp thực chất.
 primary_domain: dung-nhan
 secondary_domains:
 - tri-nhan
-definition: Định nghĩa chính thức của Nguyên tắc Tách ảnh hưởng khỏi quyền lực vị trí trong kiến trúc Nhân Thuật.
+definition: Tách ảnh hưởng khỏi quyền lực vị trí là nguyên tắc thiết kế cơ chế để tiếng nói của cá nhân được đánh giá theo năng lực và lập luận, không bị áp đảo tự động bởi chức danh người phát biểu.
 conditions:
-- Các bối cảnh quản trị vận hành.
+- Tổ chức cần khai thác chuyên môn phân tán ngoài các vị trí lãnh đạo.
+- Văn hóa hiện tại có khoảng cách quyền lực gây ức chế phát biểu.
 exceptions:
-- Các tình huống khẩn cấp yêu cầu vượt quyền ưu tiên.
+- Quyết định cuối cùng vẫn thuộc về vai trò chịu trách nhiệm, sau khi đã tiếp nhận các luận cứ.
+- Trong khủng hoảng cần chuỗi chỉ huy tập trung.
 applications:
+  meeting-design:
+  - Thu thập ý kiến độc lập trước khi người có quyền lực cao phát biểu.
+  - Luân phiên người chủ trì để giảm áp lực thứ bậc.
   governance:
-  - Áp dụng Nguyên tắc Tách ảnh hưởng khỏi quyền lực vị trí vào các quy trình vận hành của tổ chức.
+  - Ghi nhận đóng góp theo chất lượng lập luận trong biên bản quyết định.
+  management:
+  - Chủ động mời chuyên gia ngoài cấp bậc phát biểu trong quyết định chuyên môn.
 risks:
-- Áp dụng sai Nguyên tắc Tách ảnh hưởng khỏi quyền lực vị trí dẫn đến hiệu suất dưới mức tối ưu.
+- Mỗi ý kiến được coi trọng hình thức làm loãng chất lượng thảo luận.
+- Khoảng cách quyền lực ngầm vẫn tiếp tục chi phối.
+- Bỏ qua trách nhiệm của người ra quyết định cuối cùng.
 evidence:
   level: supported
   references:
@@ -35,5 +44,9 @@ tags:
 - authority
 - meritocracy
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Nhận diện các điểm quyết định đang bị chi phối bởi thứ bậc phát biểu.
+- Thiết kế trình tự và phương thức thảo luận giảm áp lực chức danh.
+- Đánh giá đóng góp theo chất lượng luận cứ và kết quả.
+- Ghi nhận công khai đóng góp giá trị không phân biệt cấp bậc.

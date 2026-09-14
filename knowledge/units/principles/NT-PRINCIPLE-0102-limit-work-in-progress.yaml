@@ -1,7 +1,7 @@
 id: NT-PRINCIPLE-0102
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Giới hạn khối lượng công việc đang triển khai
 summary: Áp đặt giới hạn cứng về số dự án đang hoạt động của mỗi đội ngũ để tối đa hóa tốc độ hoàn thành.
 primary_domain: dung-nhan
@@ -35,5 +35,10 @@ tags:
 - throughput
 - lean
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Đo lường số lượng công việc đang triển khai của từng đội ngũ và cá nhân.
+- Xác định ngưỡng WIP tối đa cho phép dựa trên năng suất thực tế.
+- Chặn nhận việc mới khi đạt ngưỡng cho tới khi hoàn thành việc đang làm.
+- Ưu tiên hoàn thành hơn bắt đầu trong các quyết định điều phối.
+- Theo dõi tác động lên thời gian hoàn thành và điều chỉnh ngưỡng.

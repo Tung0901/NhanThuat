@@ -9,7 +9,6 @@ import math
 from dataclasses import dataclass, field
 from typing import Any
 
-from nhan_thuat.models import KnowledgeUnit
 from nhan_thuat.rag.normalizer import extract_unit_text_corpus, tokenize
 
 
@@ -102,7 +101,7 @@ class BM25Engine:
             total_length += doc_len
 
             # Track Document Frequency (df)
-            for term in tf.keys():
+            for term in tf:
                 doc_freqs[term] = doc_freqs.get(term, 0) + 1
                 self.vocab.add(term)
 
@@ -160,8 +159,7 @@ class BM25Engine:
 
             if score > min_score:
                 scores.append((score, idx, matched_terms))
-                if score > max_possible_score:
-                    max_possible_score = score
+                max_possible_score = max(max_possible_score, score)
 
         if not scores:
             return []

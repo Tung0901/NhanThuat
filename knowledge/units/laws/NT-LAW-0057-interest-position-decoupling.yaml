@@ -1,22 +1,31 @@
 id: NT-LAW-0057
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Sự tách rời vị thế và lợi ích
-summary: Đơn vị tri thức cấu trúc về sự tách rời vị thế và lợi ích.
+summary: Vị thế đàm phán và lợi ích thực là hai lớp khác nhau. Nhầm lẫn giữa chúng dẫn tới bế tắc và phương án tổng bằng không giả tạo.
 primary_domain: thanh-su
 secondary_domains:
 - hop-chung
-definition: Định nghĩa chính thức về sự tách rời vị thế và lợi ích trong cấu trúc Nhân Thuật.
+definition: 'Sự tách rời vị thế và lợi ích là quy luật về cấu trúc hai lớp của đàm phán: điều các bên tuyên bố đòi hỏi và điều các bên thực sự cần là hai lớp có thể tách rời và cần được xử lý riêng.'
 conditions:
-- Các bối cảnh quản trị vận hành.
+- Các bên có khác biệt lợi ích nhưng cũng có vùng lợi ích có thể dung hòa.
+- Vị thế được công bố chưa đại diện đầy đủ cho lợi ích thực.
 exceptions:
-- Sự phủ quyết trong các tình huống khủng hoảng khẩn cấp.
+- Lợi ích là sống còn và không thể thương lượng, đàm phán chỉ xoay quanh hình thức thực hiện.
+- Một bên chủ động che giấu lợi ích thật để giành lợi thế.
 applications:
-  governance:
-  - Áp dụng nguyên lý tách rời vị thế và lợi ích vào quy trình làm việc của tổ chức.
+  negotiation:
+  - Khai vấn nhu cầu, ưu tiên và lo ngại trước khi đề xuất phương án.
+  - Tách con người và vị thế ra khỏi vấn đề lợi ích cần giải quyết.
+  conflict-resolution:
+  - Chuyển tranh luận từ ai đúng sang nhu cầu nào chưa được đáp ứng.
+  sales:
+  - Tìm hiểu lợi ích thật sau yêu cầu giá để thiết kế gói phù hợp.
 risks:
-- Việc áp dụng sai lệch nguyên lý tách rời vị thế và lợi ích dẫn đến hiệu suất kém tối ưu.
+- Đàm phán theo vị thế dẫn tới bế tắc hoặc nhượng bộ không cần thiết.
+- Suy đoán sai lợi ích thật dẫn tới đề xuất lệch hướng.
+- Khai mở lợi ích nhưng bị đối phương khai thác đơn phương.
 evidence:
   level: supported
   references:
@@ -36,5 +45,9 @@ tags:
 - negotiation-strategy
 - nhanthuat-framework
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Các bên trình bày vị thế (điều họ đòi hỏi) trong đàm phán.
+- Vị thế là kết quả nén của lợi ích, ưu tiên và lo ngại bên dưới.
+- Đàm phán trên vị thế tạo đối đầu và giới hạn không gian phương án.
+- Khai mở lợi ích bên dưới cho phép thiết kế phương án đáp ứng cả hai phía.

@@ -1,0 +1,44 @@
+id: CASE-SALES-001
+type: case
+status: frozen
+version: 1.0.0
+title: Khách hàng doanh nghiệp từ chối báo giá do chênh lệch 15% so với đối thủ
+summary: Khách hàng gây áp lực chiết khấu sâu 15% và dọa ký với đơn vị giá rẻ; xử lý bằng tái định khung giá trị sang tổng chi phí sở hữu và cam kết hiệu năng thay vì cắt giá.
+primary_domain: thanh-su
+secondary_domains:
+- tri-nhan
+domain_area: NT-DA-0030
+context: >-
+  Khách hàng doanh nghiệp liên tục gây áp lực chiết khấu sâu 15%, dọa sẽ ký hợp
+  đồng với đơn vị thi công giá rẻ trên thị trường. Bộ phận kinh doanh đứng trước
+  lựa chọn cắt giá hoặc mất hợp đồng.
+decision_script:
+  position_analysis: >-
+    Áp dụng thuật Hùng Biện (Rhetoric Reframing): bẻ gãy khung chi phí ban đầu,
+    chuyển đổi sang bảng phân tích dòng tiền và TCO 3 năm.
+  steps:
+  - Bước 1: Đồng thuận với tiêu chí ngân sách, nhưng bóc tách rủi ro gián đoạn
+    hệ thống của giải pháp giá rẻ.
+  - Bước 2: Chứng minh chi phí vận hành và rủi ro gián đoạn của giải pháp giá rẻ
+    cao gấp 3 lần.
+  - Bước 3: Cam kết bảo hành hiệu năng 100% và tặng gói bảo trì chuyên sâu thay
+    vì chiết khấu tiền mặt.
+lessons_learned:
+- Quy luật NT-LAW-0054: Định khung giá trị (Framing) quyết định nhận thức về giá
+  đắt hay rẻ.
+- Nguyên tắc NT-PRINCIPLE-0086: Thiết lập khung giá trị minh bạch trước khi bước
+  vào bàn đàm phán.
+- Nguyên tắc NT-PRINCIPLE-0088: Tặng giá trị dịch vụ và bảo hành thay vì cắt giá —
+  mở rộng chiếc bánh thay vì chia phần nhỏ hơn.
+related_units:
+- NT-LAW-0054
+- NT-PRINCIPLE-0086
+- NT-PRINCIPLE-0088
+tags:
+- sales
+- negotiation
+- rhetoric
+- pricing
+- value-framing
+created_at: '2026-08-27'
+updated_at: '2026-09-14'

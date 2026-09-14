@@ -1,7 +1,7 @@
 id: NT-STRATEGY-6001
 type: strategy
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Đồng cảm chiến thuật (Tactical Empathy)
 summary: Đồng cảm chiến thuật là phương pháp nhận diện, gán nhãn và phản chiếu cảm xúc của đối phương để tước bỏ sự phòng thủ, tạo không gian an toàn cho đàm phán mà không nhất thiết phải đồng ý với họ.
 primary_domain: tri-nhan
@@ -22,10 +22,10 @@ risks:
 evidence:
   level: supported
   references:
-  - "Never Split the Difference - Chris Voss"
+  - Never Split the Difference - Chris Voss
 relations:
   supports: []
-  conflicts_with: 
+  conflicts_with:
   - NT-ANTI-PATTERN-6001
   depends_on: []
   applies_to: []
@@ -35,5 +35,10 @@ tags:
 - empathy
 - chris-voss
 created_at: '2026-08-24'
-updated_at: '2026-08-24'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Lắng nghe chủ động để nhận diện cảm xúc và lo ngại của đối phương.
+- Gọi tên trạng thái cảm xúc đó bằng ngôn ngữ trung tính.
+- Phản chiếu nội dung và cảm xúc để xác nhận sự thấu hiểu.
+- Giữ im lặng có chủ đích để đối phương cảm nhận được lắng nghe.
+- Chuyển sang đề xuất phương án khi sự phòng thủ đã hạ xuống.

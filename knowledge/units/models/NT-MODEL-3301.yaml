@@ -14,7 +14,7 @@ conditions:
 exceptions:
 - Những cá nhân có tính chủ nghĩa cá nhân cực kỳ cao và kháng cự mọi sự phân loại nhóm.
 applications:
-  organizational_design:
+  organization-design:
   - Luân chuyển nhân viên qua các phòng ban khác nhau nhằm mở rộng bản sắc xã hội của họ gắn liền với toàn bộ công ty, giúp giảm thiểu xung đột giữa các phòng ban.
 risks:
 - Tạo ra tâm lý 'chúng ta đối đầu với họ' dẫn đến chủ nghĩa bè phái độc hại.
@@ -36,6 +36,6 @@ tags:
 - social-categorization
 - team-dynamics
 status: frozen
-version: 0.1.0
+version: 0.2.0
 created_at: '2026-08-13'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'

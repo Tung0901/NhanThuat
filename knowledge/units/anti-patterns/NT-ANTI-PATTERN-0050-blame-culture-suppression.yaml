@@ -1,7 +1,7 @@
 id: NT-ANTI-PATTERN-0050
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Trấn áp bằng văn hóa đổ lỗi
 summary: Trừng phạt cá nhân báo tin xấu, khiến nhân viên che giấu sai sót cho đến khi sự cố nghiêm trọng xảy ra.
 primary_domain: tri-nhan
@@ -18,7 +18,7 @@ conditions:
 exceptions:
 - Các hành vi vi phạm pháp luật cố ý.
 applications:
-  culture_audit:
+  culture-audit:
   - Đánh dấu các đội nhóm không bao giờ báo cáo tin xấu.
 risks:
 - Bỏ qua việc kỷ luật hành vi lơ là nghiêm trọng lặp đi lặp lại.
@@ -43,4 +43,4 @@ tags:
 - error-hiding
 - incident-response
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'

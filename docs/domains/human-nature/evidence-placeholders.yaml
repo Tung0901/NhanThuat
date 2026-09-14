@@ -9,6 +9,22 @@ evidence_posture:
     - organizational research on psychological safety, trust, and coordination
     - ethics sources on dignity, manipulation, and legitimate influence
     - learning science sources on feedback, repetition, and adaptation
+evidence_needs:
+  - id: EV-REQ-0001-01
+    description: "Behavioral science sources for attention, cognitive load, threat response, and core human-nature mechanisms."
+    type: empirical_study
+    priority: high
+    status: placeholder
+  - id: EV-REQ-0001-02
+    description: "Organizational research on psychological safety, trust, and coordination."
+    type: empirical_study
+    priority: high
+    status: placeholder
+  - id: EV-REQ-0001-03
+    description: "Learning science sources on feedback, repetition, and adaptation."
+    type: empirical_study
+    priority: medium
+    status: placeholder
 notes:
   - Existing inline evidence fields remain backward-compatible.
   - Standalone evidence records should be added in a later evidence batch after source review.

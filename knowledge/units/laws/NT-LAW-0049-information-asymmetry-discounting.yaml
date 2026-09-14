@@ -1,22 +1,31 @@
 id: NT-LAW-0049
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Chiết khấu bất đối xứng thông tin
-summary: Đơn vị tri thức cấu trúc về Chiết khấu bất đối xứng thông tin.
+summary: Bên thiếu thông tin chiết khấu giá trị thông tin nhận được từ bên có thông tin. Mức bất đối xứng càng lớn, mức chiết khấu càng sâu và càng khó tạo đồng thuận.
 primary_domain: tri-nhan
 secondary_domains:
 - dung-nhan
-definition: Định nghĩa chính thức về Chiết khấu bất đối xứng thông tin trong kiến trúc Nhân Thuật.
+definition: 'Chiết khấu bất đối xứng thông tin là quy luật về định giá thông tin dưới điều kiện bất đối xứng: thông tin có giá trị bị đánh giá thấp hơn thực tế bởi bên không đủ dữ liệu để xác nhận.'
 conditions:
-- Bối cảnh quản trị vận hành.
+- Có bất đối xứng thông tin đáng kể giữa các bên.
+- Chi phí xác minh thông tin cao.
 exceptions:
-- Các can thiệp ghi đè trong tình huống khủng hoảng khẩn cấp.
+- Cơ chế chứng minh, kiểm toán hoặc bảo lãnh làm giảm mức chiết khấu.
+- Quan hệ tin cậy lâu dài cho phép tạm chấp nhận thông tin chưa xác minh.
 applications:
+  negotiation:
+  - Bổ sung bằng chứng độc lập và cơ chế xác minh để giảm chiết khấu thông tin.
+  - Chủ động chia sẻ dữ liệu kiểm chứng được thay vì chỉ tuyên bố.
   governance:
-  - Áp dụng Chiết khấu bất đối xứng thông tin vào các quy trình làm việc của tổ chức.
+  - Thiết kế cơ chế công bố thông tin có xác nhận của bên thứ ba.
+  sales:
+  - Dùng bằng chứng đo lường được thay cho lời hứa để giảm nghi ngờ của khách hàng.
 risks:
-- Áp dụng sai Chiết khấu bất đối xứng thông tin dẫn đến hiệu suất dưới mức tối ưu.
+- Phương án tốt bị bác bỏ vì không đủ bằng chứng xác minh.
+- Bên có thông tin lợi dụng bất đối xứng để trục lợi.
+- Đàm phán kéo dài do chi phí xác minh cao.
 evidence:
   level: supported
   references:
@@ -35,5 +44,9 @@ tags:
 - operational-governance
 - organizational-workflows
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Hai bên nắm mức độ thông tin không cân xứng về một giao dịch hoặc vấn đề.
+- Bên thiếu thông tin không thể xác minh đầy đủ giá trị thông tin được trao.
+- Bên thiếu thông tin chiết khấu giá trị đó theo mức nghi ngờ.
+- Chiết khấu quá sâu khiến các phương án tốt bị loại bỏ hoặc đàm phán thất bại.

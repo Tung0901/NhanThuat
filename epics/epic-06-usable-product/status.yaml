@@ -1,0 +1,18 @@
+epic_id: NT-EPIC-06
+status: ready_for_review
+progress: 100
+deliverables:
+  - id: NT-E6-D01
+    title: Executive Studio web app (advisory, council, sparring, diagnostics)
+    status: approved
+  - id: NT-E6-D02
+    title: Knowledge bookshelf and catalog experience
+    status: approved
+  - id: NT-E6-D03
+    title: Executive brief export
+    status: approved
+  - id: NT-E6-D04
+    title: HTTP API v1 (knowledge, cases, sparring, diagnostics, packs)
+    status: approved
+blockers: []
+last_reviewed_at: '2026-09-14'

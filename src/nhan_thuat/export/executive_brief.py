@@ -6,7 +6,7 @@ for board decisions, sparring transcripts, and department case studies.
 
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import UTC, datetime
 from typing import Any
 
 from nhan_thuat.storage.models import CaseStudy, SparringMessage, SparringSession
@@ -109,7 +109,7 @@ class ExecutiveBriefExporter:
         directives: list[str],
         lessons_learned: list[str],
     ) -> str:
-        now = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
+        now = datetime.now(UTC).strftime("%Y-%m-%d %H:%M UTC")
         lines = [
             f"# BẢN THAM MƯU & CHỈ ĐẠO ĐIỀU HÀNH: {title.upper()}",
             f"- **Ngày phát hành:** {now}",
@@ -174,7 +174,7 @@ class ExecutiveBriefExporter:
         directives: list[str],
         lessons_learned: list[str],
     ) -> str:
-        now = datetime.utcnow().strftime("%d/%m/%Y %H:%M")
+        now = datetime.now(UTC).strftime("%d/%m/%Y %H:%M")
         
         step1_title = action_script.get("step_1_anchor", {}).get("title", "Bước 1: Thiết lập vị thế") if isinstance(action_script.get("step_1_anchor"), dict) else "Bước 1: Thiết lập vị thế"
         step1_verb = action_script.get("step_1_anchor", {}).get("verbatim", str(action_script.get("step_1", ""))) if isinstance(action_script.get("step_1_anchor"), dict) else str(action_script.get("step_1", ""))
@@ -256,7 +256,6 @@ class ExecutiveBriefExporter:
 </html>"""
 
     def _render_sparring_html(self, session: SparringSession, messages: list[SparringMessage]) -> str:
-        now = datetime.utcnow().strftime("%d/%m/%Y %H:%M")
         msgs_html = ""
         for i, msg in enumerate(messages, 1):
             is_user = msg.role == "user"

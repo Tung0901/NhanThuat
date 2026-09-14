@@ -1,22 +1,31 @@
 id: NT-LAW-0046
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Độ trung thực truyền tải
-summary: Đơn vị tri thức cấu trúc về Độ trung thực truyền tải.
+summary: Độ chính xác của thông tin suy giảm qua mỗi chặng truyền. Nhiễu tích lũy theo số lớp trung gian và khoảng cách quyền lực giữa người gửi và người nhận.
 primary_domain: tri-nhan
 secondary_domains:
 - hop-chung
-definition: Định nghĩa chính thức về Độ trung thực truyền tải trong kiến trúc Nhân Thuật.
+definition: 'Độ trung thực truyền tải là quy luật về suy giảm chất lượng thông tin trong chuỗi truyền đạt: mỗi lần chuyển tiếp làm mất mát hoặc bóp méo một phần nội dung gốc.'
 conditions:
-- Bối cảnh quản trị vận hành.
+- Thông tin đi qua nhiều lớp trung gian trước khi tới người quyết định.
+- Có khác biệt quyền lực hoặc lợi ích giữa các chặng truyền.
 exceptions:
-- Các can thiệp ghi đè trong tình huống khủng hoảng khẩn cấp.
+- Kênh truyền trực tiếp hoặc ghi nhận nguyên văn giữ được độ trung thực cao.
+- Tiêu chuẩn truyền đạt viết và phản hồi xác nhận hai chiều giảm thất thoát.
 applications:
+  communication:
+  - Giảm số lớp trung gian cho thông tin quan trọng.
+  - Yêu cầu xác nhận hai chiều bằng cách để người nhận diễn giải lại.
   governance:
-  - Áp dụng Độ trung thực truyền tải vào các quy trình làm việc của tổ chức.
+  - Dùng kênh báo cáo trực tiếp cho tin xấu quan trọng.
+  operations:
+  - Chuẩn hóa mẫu ghi nhận hiện trường gốc trước khi tổng hợp.
 risks:
-- Áp dụng sai Độ trung thực truyền tải dẫn đến hiệu suất dưới mức tối ưu.
+- Ra quyết định trên thông tin đã bị bóp méo qua nhiều lớp.
+- Tin xấu bị làm mềm dẫn tới phản ứng chậm với khủng hoảng.
+- Trách nhiệm không truy được nguồn gốc khi sai lệch tích lũy.
 evidence:
   level: supported
   references:
@@ -36,5 +45,9 @@ tags:
 - information-flow
 - organizational-governance
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Thông tin gốc được mã hóa bởi người gửi với một số chi tiết bị lược bỏ.
+- Mỗi lớp trung gian tái diễn giải theo góc nhìn và lợi ích của mình.
+- Khoảng cách quyền lực khuyến khích làm mềm tin xấu trước khi chuyển tiếp.
+- Người nhận cuối cùng ra quyết định trên phiên bản đã sai lệch nhiều chặng.

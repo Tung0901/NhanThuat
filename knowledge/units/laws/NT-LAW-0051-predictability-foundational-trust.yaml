@@ -1,22 +1,32 @@
 id: NT-LAW-0051
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Niềm tin nền tảng từ tính khả đoán
-summary: Đơn vị tri thức cấu trúc về niềm tin nền tảng được thiết lập dựa trên tính nhất quán và khả đoán.
+summary: Niềm tin vận hành được xây từ tính khả đoán của hành vi lặp lại. Con người tin vào cái có thể dự đoán được trước khi tin vào quan hệ cá nhân.
 primary_domain: hop-chung
 secondary_domains:
 - tri-nhan
-definition: Định nghĩa chuẩn tắc về niềm tin nền tảng từ tính khả đoán trong cấu trúc Nhân Thuật.
+definition: 'Niềm tin nền tảng từ tính khả đoán là quy luật về cơ chế hình thành niềm tin: kỳ vọng ổn định về hành vi của đối tác là điều kiện nền để hợp tác mà không cần kiểm soát từng bước.'
 conditions:
-- Bối cảnh quản trị vận hành tổ chức.
+- Có đủ số lần tương tác lặp lại để quan sát hành vi.
+- Hành vi có tính nhất quán qua các bối cảnh khác nhau.
 exceptions:
-- Cơ chế can thiệp ưu tiên trong tình trạng khủng hoảng khẩn cấp.
+- Biến động lớn phá vỡ chuỗi hành vi có thể làm suy yếu niềm tin dù nền tảng tốt.
+- Niềm tin cá nhân có thể thay thế tạm thời khi chưa đủ dữ liệu hành vi.
 applications:
+  leadership:
+  - Cam kết nhỏ và thực hiện đúng hẹn là cách xây nền tảng tin cậy nhanh nhất.
+  - Duy trì nguyên tắc xử lý nhất quán giữa các tình huống tương tự.
   governance:
-  - Ứng dụng nguyên lý niềm tin nền tảng từ tính khả đoán vào quy trình làm việc tổ chức.
+  - Ổn định chính sách và quy trình để tăng khả năng dự đoán cho các bên liên quan.
+  - Công bố rõ tiêu chí và quy tắc trước khi áp dụng.
+  team-management:
+  - Giữ nhịp họp và cơ chế phản hồi đều đặn để củng cố kỳ vọng.
 risks:
-- Áp dụng sai nguyên lý niềm tin nền tảng từ tính khả đoán dẫn đến suy giảm hiệu suất tổ chức.
+- Hứa nhưng không thực hiện làm sụp nền tảng niềm tin đã xây.
+- Thay đổi quy tắc liên tục khiến các bên không thể dự đoán.
+- Nhầm tính khả đoán với cứng nhắc, bỏ qua nhu cầu thích ứng.
 evidence:
   level: supported
   references:
@@ -36,5 +46,9 @@ tags:
 - behavioral-consistency
 - trust-building
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Các bên quan sát hành vi lặp lại của nhau qua nhiều tương tác.
+- Sự nhất quán giữa lời nói và hành động tạo ra khả năng dự đoán.
+- Kỳ vọng ổn định giảm nhu cầu phòng vệ và kiểm tra.
+- Nền tảng niềm tin vận hành được thiết lập, cho phép hợp tác hiệu quả hơn.

@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import time
 import uuid
-from typing import Any
+from typing import ClassVar
 
 from nhan_thuat.council.models import (
     CouncilDeliberationResult,
@@ -26,7 +26,7 @@ class CouncilEngine:
     Orchestrates the 5-Agent Philosophical Advisory Council for high-stakes executive decisions.
     """
 
-    COUNCIL_MEMBERS = [
+    COUNCIL_MEMBERS: ClassVar[list[CouncilMember]] = [
         CouncilMember(
             agent_id="LEGALISM",
             title="Đại diện Pháp Gia (Hàn Phi Tử)",
@@ -176,7 +176,7 @@ class CouncilEngine:
                 critical_caveats=dm.get("critical_caveats", []),
                 execution_directives=dm.get("execution_directives", [])
             )
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - LLM output parsing must fall back to deterministic
             print(f"[CouncilEngine] Failed to generate dynamically: {e}")
             # Fallback to deterministic mock
             pitches = self._generate_pitches(scenario_text, citations)

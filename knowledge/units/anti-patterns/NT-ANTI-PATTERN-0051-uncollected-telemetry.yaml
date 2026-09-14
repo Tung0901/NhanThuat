@@ -1,7 +1,7 @@
 id: NT-ANTI-PATTERN-0051
 type: anti-pattern
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Bỏ qua thu thập dữ liệu vận hành
 summary: Phát hành sản phẩm hoặc thực thi chiến lược mà không ghi lại dữ liệu kết quả, khiến tổ chức không thể học hỏi và cải tiến.
 primary_domain: tri-nhan
@@ -18,7 +18,7 @@ conditions:
 exceptions:
 - Các buổi thảo luận ý tưởng trực tiếp không mang tính kỹ thuật.
 applications:
-  launch_checklist:
+  launch-checklist:
   - Yêu cầu kiểm tra việc ghi dữ liệu vận hành trước khi phê duyệt bất kỳ bản phát hành nào.
 risks:
 - Thu thập vô số dữ liệu đo lường vô giá trị.
@@ -43,4 +43,4 @@ tags:
 - data-driven
 - feedback-loop
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
+updated_at: '2026-09-14'

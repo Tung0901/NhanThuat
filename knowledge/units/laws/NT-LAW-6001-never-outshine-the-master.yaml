@@ -1,7 +1,7 @@
 id: NT-LAW-6001
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Không bao giờ che khuất chủ tướng
 summary: Trong cấu trúc quyền lực, việc cấp dưới tỏ ra quá thông minh hoặc tài giỏi hơn cấp trên sẽ kích hoạt cảm giác bất an của họ, dẫn đến sự kìm hãm hoặc tiêu diệt.
 primary_domain: hop-chung
@@ -20,7 +20,7 @@ risks:
 evidence:
   level: supported
   references:
-  - "The 48 Laws of Power - Robert Greene"
+  - The 48 Laws of Power - Robert Greene
 relations:
   supports: []
   conflicts_with: []
@@ -32,5 +32,10 @@ tags:
 - robert-greene
 - survival
 created_at: '2026-08-24'
-updated_at: '2026-08-24'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Cấp dưới thể hiện năng lực hoặc thành tích vượt trội trước người có quyền.
+- Người nắm quyền cảm nhận mối đe dọa với vị thế và sự tôn nghiêm.
+- Cảm giác bất an kích hoạt hành vi kìm hãm hoặc loại bỏ ngầm.
+- Cấp dưới học cách giảm sự tỏa sáng để tự bảo vệ.
+- Tổ chức mất nhân tài và năng lực thực thi khi cấu trúc quyền lực không được quản trị.

@@ -1,7 +1,7 @@
 id: NT-LAW-0075
 type: law
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Hiệu ứng dốc trượt đạo đức
 summary: Những thỏa hiệp đạo đức nhỏ không được chấn chỉnh kịp thời sẽ làm giảm khả năng kháng cự nhận thức đối với các hành vi gian lận lớn và sai phạm mang tính hệ thống theo thời gian.
 primary_domain: tu-than
@@ -13,7 +13,7 @@ conditions:
 exceptions:
 - Không có.
 applications:
-  compliance_audit:
+  compliance-audit:
   - Can thiệp quyết liệt vào các thỏa hiệp đạo đức nhỏ để ngăn chặn sự leo thang.
 risks:
 - Tạo ra một văn hóa trừng phạt quá mức, biến những sai sót nhỏ vô ý thành những sự kiện chấm dứt sự nghiệp.
@@ -36,5 +36,10 @@ tags:
 - incremental-rationalization
 - organizational-ethics
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Một thỏa hiệp đạo đức nhỏ được thực hiện và không bị chấn chỉnh.
+- Chủ thể hợp lý hóa hành vi để giảm bất hòa nhận thức.
+- Ngưỡng nhạy cảm với sai phạm tiếp theo giảm xuống.
+- Các thỏa hiệp lớn dần được coi là bình thường.
+- Sai phạm mang tính hệ thống hình thành khi các ranh giới đã bị bào mòn.

@@ -1,22 +1,31 @@
 id: NT-PRINCIPLE-0067
 type: principle
 status: frozen
-version: 0.1.0
+version: 0.2.0
 title: Chuẩn hóa đánh giá
-summary: Chuẩn hóa đánh giá là một đơn vị tri thức cấu trúc trong kho tri thức Nhân Thuật.
+summary: Dùng tiêu chí đánh giá được chuẩn hóa để giảm thiên kiến và tăng khả năng so sánh. Chuẩn hóa không làm mất tính cá nhân hóa nếu tiêu chí được thiết kế đúng.
 primary_domain: tri-nhan
 secondary_domains:
 - dung-nhan
-definition: Định nghĩa chính thức của Nguyên tắc Chuẩn hóa đánh giá trong kiến trúc Nhân Thuật.
+definition: Chuẩn hóa đánh giá là nguyên tắc áp dụng bộ tiêu chí thống nhất, có thang đo rõ ràng và được kiểm tra định kỳ cho các quyết định về con người, nhằm giảm ảnh hưởng của ấn tượng chủ quan.
 conditions:
-- Các bối cảnh quản trị vận hành.
+- Quyết định về con người được đưa ra thường xuyên và ảnh hưởng lớn.
+- Có nhiều người tham gia đánh giá cần đảm bảo tính nhất quán.
 exceptions:
-- Các tình huống khẩn cấp yêu cầu vượt quyền ưu tiên.
+- Đánh giá cho mục đích phát triển cá nhân có thể linh hoạt hơn.
+- Vai trò đặc thù chưa có đủ dữ liệu để chuẩn hóa.
 applications:
+  hiring:
+  - Dùng bộ tiêu chí và thang điểm chung cho mọi ứng viên cùng vị trí.
+  - Hiệu chỉnh kết quả đánh giá giữa các nhóm phỏng vấn viên khác nhau.
+  performance-review:
+  - Áp dụng thang đo hành vi cụ thể thay vì nhận xét chung chung.
   governance:
-  - Áp dụng Nguyên tắc Chuẩn hóa đánh giá vào các quy trình vận hành của tổ chức.
+  - Kiểm toán định kỳ phân bố kết quả đánh giá theo nhóm để phát hiện thiên kiến.
 risks:
-- Áp dụng sai Nguyên tắc Chuẩn hóa đánh giá dẫn đến hiệu suất dưới mức tối ưu.
+- Thang đo cứng nhắc bỏ qua bối cảnh đặc thù của từng vai trò.
+- Dùng số liệu chuẩn hóa để hợp thức hóa quyết định đã định sẵn.
+- Người đánh giá lạm dụng thang đo thay vì quan sát hành vi thực tế.
 evidence:
   level: supported
   references:
@@ -35,5 +44,9 @@ tags:
 - performance-review
 - consistency
 created_at: '2026-07-22'
-updated_at: '2026-08-15'
-mechanism: []
+updated_at: '2026-09-14'
+mechanism:
+- Xác định các chiều năng lực và hành vi cần đánh giá.
+- Xây dựng thang đo và mô tả mức độ cụ thể cho từng chiều.
+- Đào tạo người đánh giá cách sử dụng thang đo nhất quán.
+- Kiểm tra phân bố kết quả định kỳ để phát hiện thiên kiến hệ thống.

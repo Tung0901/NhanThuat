@@ -1,2 +1,0 @@
-313: .knowledge-card {
-577: .knowledge-card {

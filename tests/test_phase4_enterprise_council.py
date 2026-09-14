@@ -71,7 +71,12 @@ def test_council_deliberation_flow(council_engine: CouncilEngine) -> None:
     assert len(matrix.execution_directives) >= 1
 
 
-def test_python_sdk_local_inprocess_mode() -> None:
+def test_python_sdk_local_inprocess_mode(monkeypatch) -> None:
+    # Isolate the SDK from the repository database (keeps the repo clean)
+    from nhan_thuat.storage import db as db_module
+    isolated_db = db_module.DatabaseManager(db_path=":memory:")
+    monkeypatch.setattr(db_module, "DatabaseManager", lambda *args, **kwargs: isolated_db)
+
     client = NhanThuatClient(mode="local")
 
     # 1. Analyze Scenario
@@ -94,7 +99,15 @@ def test_python_sdk_local_inprocess_mode() -> None:
     assert council_res["status"] == "success"
     assert len(council_res["deliberation"]["pitches"]) == 5
 
-    # 4. List Case Studies
+    # 4. List Case Studies (user-driven library: seed one case first)
+    isolated_db.create_case_study(
+        domain="OPS",
+        title="Ca kiểm thử SDK",
+        context_description="Tình huống kiểm thử danh sách hồ sơ.",
+        decision_script={"position_analysis": "Phân tích kiểm thử."},
+        lessons_learned=["Bài học kiểm thử."],
+        tags=["test"],
+    )
     cases = client.list_case_studies(domain="OPS")
     assert len(cases) >= 1
 

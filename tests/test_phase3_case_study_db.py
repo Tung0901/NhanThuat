@@ -24,21 +24,24 @@ def sparring_engine(mem_db: DatabaseManager) -> SparringEngine:
     return SparringEngine(db_manager=mem_db, knowledge_engine=engine)
 
 
-def test_database_initialization_and_seed_data(mem_db: DatabaseManager) -> None:
-    # Verify default seed case studies were created
+def test_database_initialization_starts_empty(mem_db: DatabaseManager) -> None:
+    # Case library is user-driven: no pre-seeded case studies.
     cases = mem_db.list_case_studies()
-    assert len(cases) >= 3
+    assert cases == []
 
-    domains = {c.domain for c in cases}
-    assert "OPS" in domains
-    assert "SALES" in domains
-    assert "HR" in domains
-
-    # Verify specific case fields
-    ops_case = next(c for c in cases if c.domain == "OPS")
-    assert "Nhà Bè" in ops_case.title
-    assert "position_analysis" in ops_case.decision_script
-    assert len(ops_case.lessons_learned) >= 1
+    # A user-created case persists and round-trips correctly.
+    created = mem_db.create_case_study(
+        domain="OPS",
+        title="Ca thực chiến kiểm thử",
+        context_description="Tình huống kiểm thử lưu hồ sơ.",
+        decision_script={"position_analysis": "Phân tích vị thế kiểm thử."},
+        lessons_learned=["Bài học kiểm thử."],
+        tags=["test"],
+    )
+    stored = mem_db.list_case_studies()
+    assert len(stored) == 1
+    assert stored[0].id == created.id
+    assert "position_analysis" in stored[0].decision_script
 
 
 def test_sparring_session_crud(mem_db: DatabaseManager) -> None:
@@ -198,6 +201,19 @@ def test_department_pack_registry() -> None:
 
 def test_executive_brief_exporter(mem_db: DatabaseManager) -> None:
     exporter = ExecutiveBriefExporter()
+    mem_db.create_case_study(
+        domain="OPS",
+        title="Nhà cung cấp vật tư giao trễ 48h tại công trường",
+        context_description="Vật tư giao trễ làm ngưng trệ tổ đội thi công hiện trường.",
+        decision_script={
+            "position_analysis": "Áp dụng chế tài hợp đồng, không nhượng bộ cảm tính.",
+            "step_1": "Đối chiếu điều khoản hợp đồng bằng văn bản.",
+            "step_2": "Ấn định thời hạn 24h giao bù 100% khối lượng.",
+            "step_3": "Kích hoạt đơn vị cung ứng dự phòng Plan B.",
+        },
+        lessons_learned=["NT-LAW-0005: Động lực và chế tài quyết định thứ tự ưu tiên."],
+        tags=["operations", "contract"],
+    )
     case = mem_db.list_case_studies(domain="OPS")[0]
 
     # 1. Export Case Study to Markdown

@@ -2,6 +2,35 @@
 
 Mọi thay đổi đáng chú ý của dự án được ghi tại đây.
 
+## [1.0.2] - 2026-09-14
+
+### Added
+
+- Khối "🎯 Tóm tắt tình thế" ở đầu mỗi câu trả lời tham mưu (lấy từ `position_analysis` dễ hiểu).
+- Tab "📚 Thuật Ngữ" tự động phát hiện và chú giải 15 thuật ngữ cổ (Hình Danh Tương Phù, Nhị Bỉnh, Bát Gian...).
+- Nút "📋 Chép" cho từng bước thoại trong kịch bản 3 bước.
+- Banner cảnh báo khi tình huống mơ hồ (`ambiguity_warning`).
+- Thư viện Hồ Sơ Thực Chiến chỉ hiển thị khi chọn mục "Tình Huống Thực Chiến"; hồ sơ mở dạng modal đầy đủ (bối cảnh, phân tích vị thế, kịch bản, bài học, nút "Phân tích ca này").
+- Xuất kịch bản tự động lưu hồ sơ vào thư viện qua `POST /api/v1/cases`.
+
+### Changed
+
+- Tab "Phân Tích Vị Thế" đổi thành "Phân Tích Chi Tiết" — chia nội dung theo từng thẻ mục (section cards) thay vì khối markdown liền mạch.
+- Tab "Chỉ Thị & Nguyên Tắc" bổ sung nhóm "Nguyên tắc hành động" (`action_principles` trước đây bị bỏ qua).
+- Câu trả lời hiển thị badge lăng kính, chế độ (AI/Dự phòng) và correlation ID.
+- Prompt LLM synthesis thêm mục TÓM TẮT ĐIỀU HÀNH, yêu cầu giải thích thuật ngữ cổ trong ngoặc, câu ngắn dễ hiểu.
+- Prompt sinh `position_analysis` theo cấu trúc 4 câu hỏi (chuyện gì xảy ra / các bên muốn gì / rủi ro / hướng xử lý).
+- Sidebar "Hồ Sơ Thực Chiến Gợi Ý" và các chip "Tình huống mẫu" đã xóa; hồ sơ do người dùng lưu là nguồn duy nhất.
+
+### Fixed
+
+- Lỗi fallback in nguyên tuple Python (`('...', '...')`) của `mechanism`/`risks` trong chế độ không có LLM.
+- Case seed mặc định ghi rác vào DB mỗi lần test; DB khởi tạo rỗng, test dùng DB cô lập.
+
+### Removed
+
+- 3 case YAML mẫu trong `knowledge/cases/` và toàn bộ seed case mặc định (theo quyết định Product Owner: thư viện ca chỉ chứa ca thật do người dùng lưu).
+
 ## [1.0.1] - 2026-09-14
 
 ### Added

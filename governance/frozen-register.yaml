@@ -363,6 +363,7 @@ entries:
   source: docs/reports/NT-BATCH-003_CONTENT_UPGRADE_2026-09-14.md
   rationale: 'Product Owner approved the A1-A9 content upgrade on 2026-09-14: real
     content for 45 placeholder units, mechanism backfill for 127 units, orphan evidence
-    placeholder resolution, duplicate title disambiguation, curated cases in knowledge/cases,
-    stub book completion, and application key normalization. Verified by validate_all
-    and pytest.'
+    placeholder resolution, duplicate title disambiguation, stub book completion, and
+    application key normalization. Pre-made case studies were removed per Product Owner
+    decision; the Case Library is user-driven (cases saved on executive-brief export).
+    Verified by validate_all and pytest.'

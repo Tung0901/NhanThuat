@@ -157,31 +157,37 @@ class KnowledgeSynthesizer:
     def _build_prompt(self, query: str, units: Iterable[KnowledgeUnit]) -> str:
         context = self.prompt_builder.build_context(units, format_type="markdown")
         return (
-            "Bạn là Cố Vấn Chiến Lược & Nhân Thuật Cấp Cao. Phong cách tư vấn của bạn dung hợp hoàn hảo giữa "
-            "TRÍ TUỆ ĐÔNG PHƯƠNG (Binh pháp, thấu hiểu nhân tâm, lấy tĩnh chế động) và "
-            "KHOA HỌC QUẢN TRỊ HIỆN ĐẠI (Tâm lý học hành vi, đàm phán FBI, ranh giới pháp lý & đòn bẩy dòng tiền).\n\n"
-            "NGUYÊN TẮC BẤT BIẾN: Tuyệt đối không nói đạo lý suông hay mơ hồ. Mỗi phân tích phải đi kèm giải pháp hành động cụ thể.\n\n"
+            "Bạn là Cố Vấn Chiến Lược & Nhân Thuật Cấp Cao. Phong cách tư vấn của bạn dung hợp giữa "
+            "TRÍ TUỆ ĐÔNG PHƯƠNG (Binh pháp, thấu hiểu nhân tâm) và "
+            "KHOA HỌC QUẢN TRỊ HIỆN ĐẠI (Tâm lý học hành vi, đàm phán, ranh giới pháp lý).\n\n"
+            "QUY TẮC TRÌNH BÀY (bắt buộc):\n"
+            "- Viết tiếng Việt rõ ràng, câu ngắn, dễ hiểu cho một nhà quản lý bận rộn. KHÔNG dùng văn phong đại ngôn, không nói đạo lý suông.\n"
+            "- Khi dùng thuật ngữ cổ (ví dụ: Hình Danh Tương Phù, Nhị Bỉnh, Bát Gian, Tâm Trai...), "
+            "phải giải thích ngay trong ngoặc bằng tiếng Việt đời thường.\n"
+            "- Mỗi nhận định phải đi kèm việc cần làm cụ thể.\n\n"
             f"TÌNH HUỐNG THỰC TẾ CỦA NGƯỜI DÙNG: {query}\n\n"
             "--- CƠ SỞ TRI THỨC ĐỐI CHIẾU ---\n"
             f"{context}\n"
-            "HÃY PHÂN TÍCH VÀ ĐƯA RA LỜI THAM MƯU BẰNG MARKDOWN THEO ĐÚNG 4 PHẦN MẠCH LẠC SAU (Văn phong đồ sộ, phân tích cực kỳ sâu sắc, ngôn từ uy lực. Lưu ý: Không viết kịch bản hội thoại ở đây, vì phần hội thoại đã được xử lý ở module khác):\n\n"
+            "HÃY PHÂN TÍCH VÀ ĐƯA RA LỜI THAM MƯU BẰNG MARKDOWN THEO ĐÚNG 5 PHẦN SAU:\n\n"
+            "### 🎯 TÓM TẮT ĐIỀU HÀNH\n"
+            "- [3-4 gạch đầu dòng ngắn nhất có thể, ngôn ngữ bình dân: chuyện gì đang thực sự xảy ra; "
+            "điều gì đang bị đe dọa; việc quan trọng nhất cần làm ngay. Người đọc chỉ đọc phần này cũng phải hiểu và biết phải làm gì].\n\n"
             "### 👁️ TỔNG QUAN TÌNH THẾ\n"
-            "- [Viết 1 đoạn văn (khoảng 3-4 câu) mượt mà, sâu sắc tóm tắt ngay mức độ nghiêm trọng và bản chất cốt lõi của sự việc. Thể hiện tầm nhìn bao quát của một Cố vấn cấp cao].\n\n"
+            "- [1 đoạn văn 3-4 câu tóm tắt mức độ nghiêm trọng và bản chất cốt lõi của sự việc].\n\n"
             "### 🔍 1. BÓC TÁCH BẢN CHẤT & ĐỘNG CƠ NGẦM\n"
-            "*Phân tích đồ sộ, đa tầng, viết súc tích nhưng cực kỳ sắc bén (dùng bullet points):*\n"
             "- **Hiện tượng bề mặt:** [Vấn đề nhìn thấy bằng mắt thường, hành vi đang diễn ra].\n"
-            "- **Động cơ ngầm ẩn (Root Driver):** [Lợi ích cốt lõi, nỗi sợ hãi hoặc định kiến thực sự đang chi phối đối phương].\n"
-            "- **Hệ quả cục diện:** [Nếu không can thiệp hoặc can thiệp sai, thế cờ sẽ nghiêng về đâu, tổ chức sẽ trả giá thế nào].\n\n"
+            "- **Động cơ ngầm ẩn:** [Lợi ích cốt lõi, nỗi sợ hãi hoặc định kiến thực sự đang chi phối đối phương].\n"
+            "- **Hệ quả nếu không xử lý:** [Thế cờ sẽ nghiêng về đâu, tổ chức sẽ trả giá thế nào].\n\n"
             "### ⚠️ 2. NHỮNG BẪY TÂM LÝ & SAI LẦM CẦN TRÁNH\n"
-            "*Tuyệt đối trình bày dưới dạng BẢNG (Markdown Table) gồm 3 cột (KHÔNG dùng gạch đầu dòng):*\n"
+            "*Trình bày dưới dạng BẢNG (Markdown Table) gồm 3 cột:*\n"
             "| Tên Bẫy | Biểu hiện dễ mắc phải | Hậu quả nhãn tiền |\n"
             "|---|---|---|\n"
             "| [Tên bẫy 1] | [Hành vi bốc đồng, cảm xúc] | [Hậu quả] |\n"
             "| [Tên bẫy 2] | [Sai lầm trong đánh giá] | [Hậu quả] |\n\n"
             "### 📌 3. CHỐT HẠ ĐỊNH CỤC\n"
-            "- [Tối đa 1-2 câu tuyên ngôn (Maxim) súc tích, sắc bén nhất để định hướng tâm thế hành động. Tuyệt đối không giải thích dài dòng ở đây].\n\n"
+            "- [Tối đa 1-2 câu tuyên ngôn súc tích để định hướng hành động].\n\n"
             "### 📖 TRÍCH DẪN TRI THỨC\n"
-            "- [Liệt kê ngắn gọn các tri thức/quy luật đã vận dụng kèm mã ID, ví dụ: Binh Pháp Tôn Tử, Quy luật Giá trị (NT-LAW-3201)].\n"
+            "- [Liệt kê ngắn gọn các tri thức/quy luật đã vận dụng kèm mã ID, ví dụ: Quy luật Giá trị (NT-LAW-3201)].\n"
         )
 
     def _deterministic_synthesis(self, query: str, units: Iterable[KnowledgeUnit]) -> str:
@@ -189,23 +195,41 @@ class KnowledgeSynthesizer:
         if not units_list:
             return "Không tìm thấy tri thức tương ứng trực tiếp trong hệ thống."
 
+        top_units = units_list[:3]
+
         lines = [
+            "### 🎯 TÓM TẮT ĐIỀU HÀNH",
+            f"- Tình huống **\"{query}\"** được đối chiếu với {len(units_list)} tri thức liên quan trong kho Nhân Thuật.",
+        ]
+        for u in top_units[:2]:
+            summary_text = (u.summary or u.definition or "").strip()
+            if summary_text:
+                lines.append(f"- **{u.title} ({u.id})**: {summary_text}")
+        lines.append(
+            "- Việc cần làm ngay: xác định rõ lợi ích thật của từng bên, kiểm tra lại cấu trúc "
+            "quyền hạn và chọn một hành động cụ thể có thể kiểm chứng được."
+        )
+        lines.extend([
+            "",
             "### 👁️ TỔNG QUAN TÌNH THẾ",
-            f"Vấn đề **\"{query}\"** không chỉ là một rắc rối vận hành đơn thuần, mà là hệ quả của những xung đột ngầm về lợi ích và sự lệch pha trong cấu trúc quyền lực. Việc can thiệp đòi hỏi phải nhìn thấu các quy luật nhân thuật đang chi phối bên dưới bề mặt.",
+            (
+                f"Vấn đề **\"{query}\"** cần được nhìn như một chuỗi quan hệ giữa lợi ích, quyền hạn và "
+                "thông tin — không chỉ là sự việc bề mặt. Các tri thức dưới đây cho biết quy luật nào "
+                "đang vận hành phía sau tình huống."
+            ),
             "",
             "### 🔍 1. BÓC TÁCH BẢN CHẤT & ĐỘNG CƠ NGẦM",
-            f"Đối chiếu tình huống qua hệ thống {len(units_list)} tri thức tham chiếu cốt lõi:\n",
-        ]
+        ])
 
-        for u in units_list[:3]:
-            lines.append(f"- **{u.title} ({u.id})** [Miền: `{u.primary_domain}`]:")
+        for u in top_units:
+            lines.append(f"**{u.title}** — `{u.id}` (miền `{u.primary_domain}`):")
             if u.summary:
-                lines.append(f"  ► *Bản chất:* {u.summary}")
+                lines.append(f"- *Bản chất:* {u.summary}")
             if u.definition and u.definition != u.summary:
-                lines.append(f"  ► *Cơ chế:* {u.definition}")
-            if hasattr(u, 'mechanism') and u.mechanism:
-                mechs = u.mechanism if isinstance(u.mechanism, list) else [u.mechanism]
-                lines.append(f"  ► *Tác động:* {mechs[0]}")
+                lines.append(f"- *Cơ chế:* {u.definition}")
+            mechanism_items = [str(item) for item in (u.mechanism or ()) if str(item).strip()]
+            if mechanism_items:
+                lines.append(f"- *Cách vận hành:* {' → '.join(mechanism_items[:3])}")
             lines.append("")
 
         lines.extend([
@@ -214,30 +238,30 @@ class KnowledgeSynthesizer:
             "|---|---|---|",
         ])
 
-        collected_risks = []
+        collected_risks: list[str] = []
         for u in units_list:
-            if hasattr(u, 'risks') and u.risks:
-                if isinstance(u.risks, list):
-                    collected_risks.extend(u.risks)
-                else:
-                    collected_risks.append(u.risks)
+            for risk in (u.risks or ()):
+                text = str(risk).strip()
+                if text:
+                    collected_risks.append(text)
 
         if collected_risks:
-            for idx, r in enumerate(collected_risks[:3]):
-                lines.append(f"| Bẫy {idx+1} | {r} | Tổn hại nghiêm trọng uy tín hoặc dòng tiền |")
+            for idx, risk in enumerate(collected_risks[:4]):
+                lines.append(f"| Rủi ro {idx + 1} | {risk} | Tổn hại uy tín, dòng tiền hoặc quan hệ |")
         else:
-            lines.append("| Bẫy cảm xúc vội vã | Phản ứng bằng cảm tính hoặc dùng quyền lực cứng bức ép | Mất vị thế đàm phán, tạo sự chống đối ngầm |")
-            lines.append("| Nhượng bộ vô điều kiện | Nhân nhượng tạo tiền lệ xấu khi chưa bẻ gãy tâm lý đối phương | Khiến đối tác/nhân sự lấn lướt, phá vỡ kỷ cương |")
+            lines.append("| Bẫy cảm xúc vội vã | Phản ứng bằng cảm tính hoặc dùng quyền lực cứng để bức ép | Mất vị thế đàm phán, tạo chống đối ngầm |")
+            lines.append("| Nhượng bộ vô điều kiện | Nhân nhượng khi chưa xử lý được gốc vấn đề | Tạo tiền lệ xấu, phá vỡ kỷ cương |")
 
         lines.extend([
             "",
             "### 📌 3. CHỐT HẠ ĐỊNH CỤC",
-            "> *\"Người nắm quyền chủ động không thắng bằng áp đặt ồn ào, mà định đoạt cục diện bằng cơ cấu luật chơi và điểm đòn bẩy vị thế.\"*",
+            "> *\"Người nắm quyền chủ động không thắng bằng áp đặt ồn ào, mà định đoạt cục diện bằng cấu trúc và điểm đòn bẩy.\"*",
             "",
             "### 📖 TRÍCH DẪN TRI THỨC",
         ])
         for u in units_list[:4]:
-            lines.append(f"- `{u.id}`: **{u.title}** ({u.type.upper() if hasattr(u, 'type') else 'UNIT'}) — Miền: {u.primary_domain}")
+            unit_type = str(getattr(u, "type", "unit")).upper()
+            lines.append(f"- `{u.id}`: **{u.title}** ({unit_type}) — Miền: {u.primary_domain}")
 
         return "\n".join(lines)
 

@@ -68,6 +68,21 @@ def test_synthesizer_deterministic_fallback_without_key(units: list[KnowledgeUni
         _restore_keys(saved)
 
 
+def test_deterministic_synthesis_is_readable(units: list[KnowledgeUnit]) -> None:
+    """Regression: tuple-typed mechanism/risks must not leak Python repr into output."""
+    saved = _clear_keys()
+    try:
+        synthesizer = KnowledgeSynthesizer()
+        result = synthesizer.synthesize("Nhân sự chủ chốt bất mãn và chống đối ngầm", units[:3])
+        text = result["synthesis"]
+        assert "TÓM TẮT ĐIỀU HÀNH" in text
+        assert "('" not in text
+        assert "tuple(" not in text
+        assert "  ►" not in text
+    finally:
+        _restore_keys(saved)
+
+
 def test_synthesizer_llm_with_gemini_key(units: list[KnowledgeUnit], monkeypatch) -> None:
     monkeypatch.setenv("GEMINI_API_KEY", "AIzaSy-test-key")
     synthesizer = KnowledgeSynthesizer()

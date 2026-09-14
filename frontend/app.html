@@ -453,6 +453,128 @@
             display: block;
         }
 
+        /* Advisory response components */
+        .advisory-summary-card {
+            background: rgba(245, 158, 11, 0.07);
+            border: 1px solid rgba(245, 158, 11, 0.28);
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin-bottom: 14px;
+        }
+
+        .advisory-summary-card h4 {
+            font-family: var(--font-serif);
+            color: var(--gold-light);
+            font-size: 15px;
+            margin-bottom: 6px;
+        }
+
+        .advisory-badge {
+            font-size: 10.5px;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .advisory-banner {
+            background: rgba(251, 191, 36, 0.08);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            color: #fcd34d;
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 12.5px;
+            margin-bottom: 12px;
+        }
+
+        .advisory-section-card {
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin-bottom: 12px;
+        }
+
+        .advisory-section-card h4 {
+            color: var(--gold-light);
+            font-size: 14px;
+            margin-bottom: 8px;
+            font-family: var(--font-serif);
+        }
+
+        .advisory-copy-btn {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            font-size: 10.5px;
+            padding: 3px 8px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .advisory-copy-btn:hover {
+            border-color: var(--gold-primary);
+            color: var(--gold-light);
+        }
+
+        .glossary-item {
+            padding: 10px 14px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            font-size: 12.5px;
+        }
+
+        .glossary-item strong {
+            color: var(--gold-light);
+        }
+
+        /* Case library */
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 14px;
+            padding: 22px 28px;
+            overflow-y: auto;
+            width: 100%;
+        }
+
+        .case-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 16px;
+            cursor: pointer;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .case-card:hover {
+            border-color: var(--gold-primary);
+            transform: translateY(-1px);
+        }
+
+        .cases-empty {
+            grid-column: 1 / -1;
+            text-align: center;
+            color: var(--text-muted);
+            padding: 60px 20px;
+            font-size: 13.5px;
+            line-height: 1.8;
+        }
+
+        .unit-link {
+            color: var(--gold-primary);
+            cursor: pointer;
+            text-decoration: underline dotted;
+        }
+
+        .case-section-title {
+            color: var(--gold-light);
+            font-family: var(--font-serif);
+            font-size: 14.5px;
+            margin: 16px 0 6px 0;
+        }
+
         /* MODULE 4: PERSON-ROLE FIT DIAGNOSTIC LAB */
         .diagnostic-container {
             flex: 1;
@@ -882,14 +1004,6 @@
                         </div>
                     </div>
 
-                    <div class="scenario-chips-container">
-                        <span style="font-size: 11px; color: var(--gold-primary); font-weight: 600; padding: 5px 0;">Tình huống mẫu:</span>
-                        <button class="scenario-chip" onclick="fillScenario('Xung đột quyền lực ngầm và lợi ích cục bộ giữa các phòng ban.')">Xung đột lợi ích & Quyền lực ngầm</button>
-                        <button class="scenario-chip" onclick="fillScenario('Nhân sự chủ chốt có dấu hiệu bất mãn, chống đối ngầm và thao túng tập thể.')">Nhân sự chống đối & Bất mãn</button>
-                        <button class="scenario-chip" onclick="fillScenario('Đàm phán ở thế yếu, đối phương ép buộc các điều khoản bất lợi.')">Đàm phán thế yếu & Ép buộc</button>
-                        <button class="scenario-chip" onclick="fillScenario('Cấu trúc đội ngũ rạn nứt do lệch pha vai trò và giới hạn năng lực thích ứng.')">Rạn nứt cấu trúc đội ngũ</button>
-                    </div>
-
                     <div class="chat-feed" id="chat-feed">
                         <div class="message-bubble msg-assistant">
                             <h3 style="font-family: var(--font-serif); font-size: 18px; color: var(--gold-light); margin-bottom: 6px;">👑 CỐ VẤN CHIẾN LƯỢC NHÂN THUẬT</h3>
@@ -902,19 +1016,22 @@
                         </div>
                     </div>
 
-                    <div class="chat-input-bar">
+                    <div class="chat-input-bar" id="chat-input-bar">
                         <input type="text" class="chat-text-input" id="advisory-input" placeholder="Nhập tình huống quản trị hoặc bài toán nhân sự cần tham mưu...">
                         <button class="send-action-btn" id="advisory-send-btn">Tác Chiến ➤</button>
                     </div>
-                </div>
 
-                <div class="cockpit-sidebar">
-                    <div style="padding: 16px 20px; border-bottom: 1px solid var(--border-subtle);">
-                        <h4 style="font-size: 13px; font-weight: 700; color: var(--gold-light); text-transform: uppercase; letter-spacing: 0.05em;">Hồ Sơ Thực Chiến Gợi Ý</h4>
-                        <p style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">Các ca điển hình trong doanh nghiệp</p>
-                    </div>
-                    <div id="case-studies-sidebar-list" style="padding: 14px; display: flex; flex-direction: column; gap: 10px;">
-                        <div style="font-size: 11px; color: var(--text-muted);">Đang nạp hồ sơ thực chiến…</div>
+                    <!-- CASE LIBRARY (only visible in Cases mode) -->
+                    <div id="cases-library-view" style="display: none; flex-direction: column; flex: 1; min-height: 0;">
+                        <div style="padding: 20px 28px 16px; border-bottom: 1px solid var(--border-subtle);">
+                            <h3 style="font-family: var(--font-serif); font-size: 19px; color: var(--gold-light);">📂 THƯ VIỆN HỒ SƠ THỰC CHIẾN</h3>
+                            <p style="font-size: 12.5px; color: var(--text-secondary); margin-top: 4px;">
+                                Những ca khó sau khi phân tích và <strong>Xuất Kịch Bản</strong> sẽ được lưu tự động vào đây để tra cứu lại.
+                            </p>
+                        </div>
+                        <div id="cases-library-grid" class="cases-grid">
+                            <div class="cases-empty">Đang nạp hồ sơ…</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1246,6 +1363,16 @@
         </div>
     </div>
 
+    <!-- Case Study Dossier Modal -->
+    <div class="modal-backdrop" id="case-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="case-modal-title">
+        <div class="modal-window" style="max-width: 780px;">
+            <button class="modal-close-btn" onclick="closeCaseModal()" aria-label="Đóng hồ sơ thực chiến">&times;</button>
+            <div id="case-modal-content">
+                <!-- Dynamically loaded -->
+            </div>
+        </div>
+    </div>
+
     <script>
     // --- WORKSPACE TAB SWITCHER ---
     function switchWorkspace(viewId, btn) {
@@ -1287,39 +1414,149 @@
         }
     }
 
-    // --- CASE STUDIES SIDEBAR (dynamic) ---
-    async function loadCaseStudies() {
-        const container = document.getElementById('case-studies-sidebar-list');
-        if (!container) return;
+    // --- CASE LIBRARY (user-saved cases only) ---
+    async function loadCaseLibrary() {
+        const grid = document.getElementById('cases-library-grid');
+        if (!grid) return;
+        grid.innerHTML = `<div class="cases-empty">Đang nạp hồ sơ…</div>`;
         try {
             const res = await fetch('/api/v1/cases');
             const data = await res.json();
             const cases = (data.status === 'success' && (data.cases || data.case_studies)) || [];
             if (!cases.length) {
-                container.innerHTML = `<div style="font-size: 11px; color: var(--text-muted);">Chưa có hồ sơ thực chiến.</div>`;
+                grid.innerHTML = `
+                    <div class="cases-empty">
+                        <div style="font-size: 34px; margin-bottom: 10px;">🗂️</div>
+                        <strong style="color: var(--gold-light);">Chưa có hồ sơ nào</strong><br>
+                        Khi gặp một ca khó, hãy phân tích ở chế độ Tham Mưu rồi bấm <strong>“Xuất Kịch Bản”</strong>.<br>
+                        Hệ thống sẽ tự động lưu hồ sơ tại đây để tra cứu lại.
+                    </div>`;
                 return;
             }
-            container.innerHTML = cases.map(c => `
-                <div class="book-card" style="padding: 12px; cursor: pointer;" role="button" tabindex="0" onclick="fillScenario('${escapeHtml(c.context_description || c.title).replace(/'/g, "\\'")}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();fillScenario('${escapeHtml(c.context_description || c.title).replace(/'/g, "\\'")}');}">
-                    <strong style="font-size: 12.5px; color: #fff;">${escapeHtml(c.title)}</strong>
-                    <p style="font-size: 11px; color: var(--text-secondary); margin-top: 4px;">${escapeHtml((c.context_description || '').slice(0, 120))}${(c.context_description || '').length > 120 ? '…' : ''}</p>
+            const domainColor = (d) => d === 'HR' ? '#f472b6' : d === 'SALES' ? '#38bdf8' : '#34d399';
+            grid.innerHTML = cases.map(c => `
+                <div class="case-card" role="button" tabindex="0" onclick="showCaseModal('${escapeHtml(c.id)}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showCaseModal('${escapeHtml(c.id)}');}">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <span class="advisory-badge" style="background: rgba(56,189,248,0.12); color: ${domainColor(c.domain)};">${escapeHtml(c.domain || 'GENERAL')}</span>
+                        <span style="font-size: 10.5px; color: var(--text-muted);">${escapeHtml((c.created_at || '').slice(0, 10))}</span>
+                    </div>
+                    <strong style="font-size: 13.5px; color: #ffffff; display: block; margin-bottom: 6px;">${escapeHtml(c.title)}</strong>
+                    <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.5;">${escapeHtml((c.context_description || '').slice(0, 140))}${(c.context_description || '').length > 140 ? '…' : ''}</p>
                 </div>
             `).join('');
         } catch (e) {
-            container.innerHTML = `<div style="font-size: 11px; color: var(--text-muted);">Không tải được hồ sơ thực chiến.</div>`;
+            grid.innerHTML = `<div class="cases-empty">Không tải được hồ sơ thực chiến. Vui lòng thử lại.</div>`;
         }
     }
 
+    let lastFocusedCaseCard = null;
+
+    async function showCaseModal(caseId) {
+        const modal = document.getElementById('case-modal-backdrop');
+        const content = document.getElementById('case-modal-content');
+        if (!modal || !content) return;
+        lastFocusedElement = document.activeElement;
+        modal.classList.add('open');
+        content.innerHTML = `<div style="text-align: center; color: var(--gold-primary); padding: 40px 0;">Đang mở hồ sơ…</div>`;
+        try {
+            const res = await fetch(`/api/v1/cases/${encodeURIComponent(caseId)}`);
+            const data = await res.json();
+            const c = data.case || data.case_study;
+            if (data.status !== 'success' || !c) {
+                content.innerHTML = `<div style="color: #ef4444;">Không tìm thấy hồ sơ.</div>`;
+                return;
+            }
+            const ds = c.decision_script || {};
+            const steps = ['step_1', 'step_2', 'step_3']
+                .map(k => ds[k])
+                .filter(Boolean)
+                .map(s => typeof s === 'string' ? s : (s.title || '') + (s.verbatim ? `<br><em>${escapeHtml(s.verbatim)}</em>` : ''));
+            const lessons = (c.lessons_learned || []).map(l => `<li style="margin-bottom: 6px;">${linkUnitIds(l)}</li>`).join('');
+            content.innerHTML = `
+                <div style="display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+                    <span class="advisory-badge" style="background: rgba(56,189,248,0.15); color: var(--cyan-accent);">${escapeHtml(c.domain || 'GENERAL')}</span>
+                    <span class="advisory-badge" style="background: rgba(16,185,129,0.15); color: var(--emerald-accent);">${escapeHtml(c.id)}</span>
+                    <span class="advisory-badge" style="background: rgba(255,255,255,0.06); color: var(--text-muted);">${escapeHtml((c.created_at || '').slice(0, 10))}</span>
+                </div>
+                <h2 id="case-modal-title" style="font-family: var(--font-serif); font-size: 21px; color: #ffffff; margin-bottom: 14px;">${escapeHtml(c.title)}</h2>
+
+                <h4 class="case-section-title">📋 Bối cảnh</h4>
+                <p style="font-size: 13.5px; line-height: 1.7; color: rgba(255,255,255,0.9);">${escapeHtml(c.context_description || '')}</p>
+
+                ${ds.position_analysis ? `
+                    <h4 class="case-section-title">🔍 Phân tích vị thế</h4>
+                    <div class="advisory-summary-card" style="margin-bottom: 0;">
+                        <p style="font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.92);">${linkUnitIds(escapeHtml(ds.position_analysis))}</p>
+                    </div>
+                ` : ''}
+
+                ${steps.length ? `
+                    <h4 class="case-section-title">🎬 Kịch bản xử lý</h4>
+                    <ol style="padding-left: 20px; font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.9);">
+                        ${steps.map(s => `<li style="margin-bottom: 8px;">${linkUnitIds(s)}</li>`).join('')}
+                    </ol>
+                ` : ''}
+
+                ${lessons ? `
+                    <h4 class="case-section-title">📖 Bài học tri thức</h4>
+                    <ul style="padding-left: 20px; font-size: 13px; line-height: 1.7; color: #cbd5e1;">${lessons}</ul>
+                ` : ''}
+
+                <div style="margin-top: 18px; display: flex; gap: 8px; justify-content: flex-end;">
+                    <button class="export-btn" onclick="analyzeCase('${escapeHtml(c.id)}')">⚡ Phân tích ca này</button>
+                </div>
+            `;
+            window.__caseCache = window.__caseCache || {};
+            window.__caseCache[c.id] = c;
+            const closeBtn = modal.querySelector('.modal-close-btn');
+            if (closeBtn) closeBtn.focus();
+        } catch (e) {
+            content.innerHTML = `<div style="color: #ef4444;">Lỗi tải hồ sơ: ${escapeHtml(e.message)}</div>`;
+        }
+    }
+
+    function closeCaseModal() {
+        document.getElementById('case-modal-backdrop')?.classList.remove('open');
+        if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') lastFocusedElement.focus();
+    }
+
+    document.getElementById('case-modal-backdrop')?.addEventListener('click', (e) => {
+        if (e.target.id === 'case-modal-backdrop') closeCaseModal();
+    });
+
+    function analyzeCase(caseId) {
+        const c = (window.__caseCache || {})[caseId];
+        if (!c) return;
+        closeCaseModal();
+        setAdvisoryMode('leadership', document.querySelector('.mode-pills .mode-pill'));
+        fillScenario(c.context_description || c.title);
+        handleSendAdvisory();
+    }
+
+    // Turn NT-XXXX-#### / NT-XXXX-NNNN codes into clickable links
+    function linkUnitIds(text) {
+        return String(text == null ? '' : text).replace(/(NT-[A-Z][A-Z-]*-\d{3,4})/g, '<span class="unit-link" onclick="showUnitModal(\'$1\')">$1</span>');
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
-        loadCaseStudies();
         loadBookshelf();
     });
 
     function setAdvisoryMode(mode, btn) {
         document.querySelectorAll('.mode-pills .mode-pill').forEach(p => p.classList.remove('active'));
         if (btn) btn.classList.add('active');
+        const chatFeed = document.getElementById('chat-feed');
+        const chatInput = document.getElementById('chat-input-bar');
+        const casesView = document.getElementById('cases-library-view');
         if (mode === 'cases') {
-            fillScenario('Trưởng phòng kinh doanh là người tài nhưng kiêu ngạo, chia rẽ nội bộ.');
+            if (chatFeed) chatFeed.style.display = 'none';
+            if (chatInput) chatInput.style.display = 'none';
+            if (casesView) casesView.style.display = 'flex';
+            loadCaseLibrary();
+        } else {
+            if (chatFeed) chatFeed.style.display = '';
+            if (chatInput) chatInput.style.display = '';
+            if (casesView) casesView.style.display = 'none';
         }
     }
 
@@ -1576,7 +1813,9 @@
                     situation_summary: text,
                     philosophy_analysis: data.synthesis_result?.synthesis || "Phân tích điều hành",
                     action_script: data.action_script || {},
-                    directives: data.action_script?.financial_and_operational_directives || []
+                    directives: data.action_script?.financial_and_operational_directives || [],
+                    action_principles: data.action_script?.action_principles || [],
+                    lens: data.philosophy_routing?.primary_philosophy || 'DYNAMIC'
                 };
             } else {
                 botMsg.innerHTML = `<div style="color: #ef4444;">${data.message || 'Lỗi phân tích.'}</div>`;
@@ -1597,79 +1836,226 @@
         if (e.key === 'Enter') handleSendAdvisory();
     });
 
+    // --- ADVISORY GLOSSARY (thuật ngữ cổ) ---
+    const ADVISORY_GLOSSARY = {
+        'Hình Danh Tương Phù': 'Đối chiếu lời nói với việc làm thực tế để xác minh — không tin lời hứa suông.',
+        'Nhị Bỉnh': 'Hai cán cân thưởng – phạt: dùng cả phần thưởng lẫn chế tài để dẫn dắt hành vi.',
+        'Bát Gian': 'Tám kiểu nịnh bợ, thao túng lòng người thường gặp trong tổ chức.',
+        'Khử Bát Gian': 'Loại trừ tám kiểu nịnh bợ và thao túng.',
+        'Hòa nhi bất đồng': 'Giữ hòa khí nhưng vẫn thẳng thắn nêu ý kiến khác — hòa mà không hùa.',
+        'Lễ Định Phần': 'Dùng chuẩn mực, quy tắc rõ ràng để phân định vai trò và quyền hạn.',
+        'Pháp - Thế - Thuật': 'Ba trụ cột quản trị của Pháp gia: luật lệ rõ ràng, uy thế đủ mạnh, nghệ thuật dùng người.',
+        'Tâm Trai': 'Gạt bỏ tạp niệm để lắng nghe và phán đoán trong tĩnh lặng (tu tập của Đạo gia).',
+        'Tọa Vọng': 'Ngồi yên quan sát, để sự việc tự bộc lộ trước khi hành động.',
+        'Dụng Vô Dụng': 'Biến thứ tưởng như vô dụng thành lợi thế.',
+        'Tiêu Dao Du': 'Tư duy tự do, thoát khỏi khuôn khổ cũ để thấy đường mới.',
+        'Tề Vật Luận': 'Nhìn mọi vật bình đẳng, không áp đặt một góc nhìn duy nhất.',
+        'Tam Cương Bát Mục': 'Các chuẩn mực đạo đức và bổn phận của nhà lãnh đạo theo Nho gia.',
+        'Đức Trị': 'Lãnh đạo bằng phẩm hạnh và tấm gương, thay vì chỉ bằng quyền lực.',
+        'Nhân Chính': 'Cai trị bằng lòng nhân từ và sự công bằng với người dưới quyền.'
+    };
+
+    let __advisoryCopyStore = {};
+
+    function copyStoredText(key, btn) {
+        const text = __advisoryCopyStore[key] || '';
+        if (!text) return;
+        const done = () => {
+            if (btn) {
+                const prev = btn.textContent;
+                btn.textContent = '✅ Đã chép';
+                setTimeout(() => { btn.textContent = prev; }, 1500);
+            }
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(done).catch(() => fallbackCopyText(text, done));
+        } else {
+            fallbackCopyText(text, done);
+        }
+    }
+
+    function fallbackCopyText(text, done) {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); if (done) done(); } catch (e) { /* ignore */ }
+        document.body.removeChild(ta);
+    }
+
+    function extractSynthesisSections(md) {
+        if (!md) return [];
+        const lines = String(md).split('\n');
+        const sections = [];
+        let current = null;
+        for (const line of lines) {
+            const m = line.match(/^###\s+(.*)$/);
+            if (m) {
+                if (current) sections.push(current);
+                current = { title: m[1].replace(/[#*]/g, '').trim(), body: [] };
+            } else if (current) {
+                current.body.push(line);
+            }
+        }
+        if (current) sections.push(current);
+        return sections.map(s => ({ title: s.title, body: s.body.join('\n').trim() }));
+    }
+
+    function detectGlossaryTerms(text) {
+        const source = String(text || '').toLowerCase();
+        const found = [];
+        for (const [term, explanation] of Object.entries(ADVISORY_GLOSSARY)) {
+            if (source.includes(term.toLowerCase())) {
+                found.push([term, explanation]);
+            }
+        }
+        return found;
+    }
+
     function renderAdvisoryResponseHTML(data, query) {
         const id = 'resp-' + Math.random().toString(36).substr(2, 9);
         const script = data.action_script || {};
         const syn = data.synthesis_result || {};
         const matched = data.matched_knowledge_units || [];
+        const routing = data.philosophy_routing || {};
+        const isLLM = syn.mode === 'llm';
+        const modeLabel = isLLM ? '🤖 AI tư vấn' : '🛡️ Chế độ dự phòng';
+        const allText = JSON.stringify(data);
+        const glossary = detectGlossaryTerms(allText);
+
+        const sections = extractSynthesisSections(syn.synthesis || '');
+        const execSummary = sections.find(s => s.title.includes('TÓM TẮT ĐIỀU HÀNH'));
+        const quickSummary = script.position_analysis || (execSummary ? execSummary.body : '');
+        const analysisSections = sections.filter(s => s !== execSummary);
+
+        const stepKeys = [
+            ['step_1_anchor', 'Bước 1: Thủ Thế & Định Vị', 'var(--gold-primary)'],
+            ['step_2_deadline_consequence', 'Bước 2: Lập Thế & Chế Tài', 'var(--cyan-accent)'],
+            ['step_3_way_out_plan_b', 'Bước 3: Định Cục & Mở Đường Lui', 'var(--emerald-accent)']
+        ];
+
+        const stepCards = stepKeys.map(([key, fallbackTitle, color]) => {
+            const step = script[key] || {};
+            if (!step.title && !step.verbatim) return '';
+            const copyKey = `${id}-${key}`;
+            __advisoryCopyStore[copyKey] = step.verbatim || '';
+            return `
+                <div style="background: rgba(255,255,255,0.03); border-left: 3px solid ${color}; padding: 12px 16px; margin-bottom: 12px; border-radius: 0 8px 8px 0;">
+                    <div style="display: flex; justify-content: space-between; gap: 8px; align-items: flex-start;">
+                        <strong style="color: ${color}; font-size: 13px;">${escapeHtml(step.title || fallbackTitle)}</strong>
+                        ${step.verbatim ? `<button class="advisory-copy-btn" onclick="copyStoredText('${copyKey}', this)">📋 Chép</button>` : ''}
+                    </div>
+                    ${step.verbatim ? `<p style="color: #ffffff; margin-top: 6px; font-style: italic; font-size: 13px; line-height: 1.6;">${escapeHtml(step.verbatim)}</p>` : ''}
+                </div>`;
+        }).join('');
+
+        const directives = (script.financial_and_operational_directives || []).filter(Boolean);
+        const principles = (script.action_principles || []).filter(Boolean);
+
+        const citations = matched.length ? matched.map(u => `
+            <div style="padding: 12px 16px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: 8px; cursor: pointer;" onclick="showUnitModal('${escapeHtml(u.unit_id)}')">
+                <div style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap; margin-bottom: 4px;">
+                    <span class="advisory-badge" style="background: rgba(245,158,11,0.15); color: var(--gold-primary);">${escapeHtml(u.unit_type || 'unit')}</span>
+                    <span class="advisory-badge" style="background: rgba(56,189,248,0.12); color: var(--cyan-accent);">${escapeHtml(u.domain || '')}</span>
+                </div>
+                <strong style="color: var(--gold-light); font-size: 13px;">[${escapeHtml(u.unit_id)}] ${escapeHtml(u.title)}</strong>
+                <p style="color: var(--text-secondary); font-size: 12px; margin-top: 4px;">${escapeHtml(u.summary || '')}</p>
+            </div>
+        `).join('') : `<div style="color: var(--text-muted); font-size: 12.5px;">Không có tri thức đối chiếu trực tiếp.</div>`;
+
+        const analysisCards = analysisSections.length ? analysisSections.map((s, idx) => `
+            <div class="advisory-section-card">
+                <h4>${escapeHtml(s.title)}</h4>
+                <div style="font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.9);">${formatMarkdownText(s.body)}</div>
+            </div>
+        `).join('') : `<div class="advisory-section-card"><div style="font-size: 13px; line-height: 1.7;">${formatMarkdownText(syn.synthesis || 'Chưa có nội dung phân tích.')}</div></div>`;
+
+        const glossaryTab = glossary.length ? `
+            <button class="bubble-tab-btn" onclick="switchBubbleTab('${id}', 'glossary', this)">📚 Thuật Ngữ (${glossary.length})</button>
+        ` : '';
+        const glossaryPane = glossary.length ? `
+            <div id="${id}-glossary" class="bubble-tab-content" style="font-size: 13px;">
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                    ${glossary.map(([term, explanation]) => `
+                        <div class="glossary-item"><strong>${escapeHtml(term)}:</strong> ${escapeHtml(explanation)}</div>
+                    `).join('')}
+                </div>
+            </div>
+        ` : '';
 
         return `
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-subtle); padding-bottom: 10px; margin-bottom: 12px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-subtle); padding-bottom: 10px; margin-bottom: 12px; gap: 8px; flex-wrap: wrap;">
                 <h3 style="font-family: var(--font-serif); font-size: 17px; color: var(--gold-light);">👑 BẢN THAM MƯU CHIẾN LƯỢC ĐIỀU HÀNH</h3>
-                <span style="font-size: 11px; background: rgba(245,158,11,0.15); color: var(--gold-primary); padding: 2px 8px; border-radius: 12px; font-weight: 700;">
-                    Lăng Kính: ${data.philosophy_routing?.primary_philosophy || 'DYNAMIC'}
-                </span>
+                <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                    <span class="advisory-badge" style="background: rgba(245,158,11,0.15); color: var(--gold-primary);">Lăng Kính: ${escapeHtml(routing.primary_philosophy || 'DYNAMIC')}</span>
+                    <span class="advisory-badge" style="background: ${isLLM ? 'rgba(16,185,129,0.15)' : 'rgba(255,255,255,0.06)'}; color: ${isLLM ? 'var(--emerald-accent)' : 'var(--text-muted)'};">${modeLabel}</span>
+                    ${data.correlation_id ? `<span class="advisory-badge" style="background: rgba(255,255,255,0.05); color: var(--text-muted);">${escapeHtml(data.correlation_id)}</span>` : ''}
+                </div>
             </div>
+
+            ${data.ambiguity_warning ? `<div class="advisory-banner">⚠️ ${escapeHtml(data.ambiguity_warning)}</div>` : ''}
+
+            ${quickSummary ? `
+                <div class="advisory-summary-card">
+                    <h4>🎯 Tóm tắt tình thế</h4>
+                    <div style="font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.92);">${formatMarkdownText(quickSummary)}</div>
+                </div>
+            ` : ''}
 
             <div class="bubble-tabs">
-                <button class="bubble-tab-btn active" onclick="switchBubbleTab('${id}', 'analysis', this)">🔍 Phân Tích Vị Thế</button>
-                <button class="bubble-tab-btn" onclick="switchBubbleTab('${id}', 'dialogue', this)">💬 Lời Thoại 3 Bước</button>
-                <button class="bubble-tab-btn" onclick="switchBubbleTab('${id}', 'directives', this)">⚖️ Chỉ Thị Vận Hành</button>
+                <button class="bubble-tab-btn active" onclick="switchBubbleTab('${id}', 'analysis', this)">🔍 Phân Tích Chi Tiết</button>
+                <button class="bubble-tab-btn" onclick="switchBubbleTab('${id}', 'dialogue', this)">💬 Kịch Bản 3 Bước</button>
+                <button class="bubble-tab-btn" onclick="switchBubbleTab('${id}', 'directives', this)">⚖️ Chỉ Thị & Nguyên Tắc</button>
                 <button class="bubble-tab-btn" onclick="switchBubbleTab('${id}', 'citations', this)">📖 Tri Thức Đối Chiếu (${matched.length})</button>
+                ${glossaryTab}
             </div>
 
-            <div id="${id}-analysis" class="bubble-tab-content active" style="font-size: 13.5px; line-height: 1.7; color: rgba(255,255,255,0.92);">
-                ${formatMarkdownText(syn.synthesis || script.position_analysis || "Đang phân tích...")}
+            <div id="${id}-analysis" class="bubble-tab-content active">
+                ${analysisCards}
             </div>
 
             <div id="${id}-dialogue" class="bubble-tab-content" style="font-size: 13.5px; line-height: 1.7;">
-                <div style="background: rgba(255,255,255,0.03); border-left: 3px solid var(--gold-primary); padding: 12px 16px; margin-bottom: 12px; border-radius: 0 8px 8px 0;">
-                    <strong style="color: var(--gold-light);">${script.step_1_anchor?.title || 'Bước 1: Thủ Thế & Định Vị'}</strong>
-                    <p style="color: #ffffff; margin-top: 4px; font-style: italic;">${script.step_1_anchor?.verbatim || ''}</p>
-                </div>
-                <div style="background: rgba(255,255,255,0.03); border-left: 3px solid var(--cyan-accent); padding: 12px 16px; margin-bottom: 12px; border-radius: 0 8px 8px 0;">
-                    <strong style="color: var(--cyan-accent);">${script.step_2_deadline_consequence?.title || 'Bước 2: Lập Thế & Chế Tài'}</strong>
-                    <p style="color: #ffffff; margin-top: 4px; font-style: italic;">${script.step_2_deadline_consequence?.verbatim || ''}</p>
-                </div>
-                <div style="background: rgba(255,255,255,0.03); border-left: 3px solid var(--emerald-accent); padding: 12px 16px; margin-bottom: 12px; border-radius: 0 8px 8px 0;">
-                    <strong style="color: var(--emerald-accent);">${script.step_3_way_out_plan_b?.title || 'Bước 3: Định Cục & Mở Đường Lui'}</strong>
-                    <p style="color: #ffffff; margin-top: 4px; font-style: italic;">${script.step_3_way_out_plan_b?.verbatim || ''}</p>
-                </div>
-
+                ${stepCards || '<div style="color: var(--text-muted);">Chưa có kịch bản đối thoại cho tình huống này.</div>'}
                 ${script.draft_official_communication ? `
                     <div style="margin-top: 16px; padding: 14px; background: rgba(0,0,0,0.4); border: 1px solid var(--border-subtle); border-radius: 8px;">
                         <span style="font-size: 11px; color: var(--gold-primary); font-weight: 700; text-transform: uppercase;">Văn Bản Soạn Sẵn:</span>
-                        <pre style="white-space: pre-wrap; font-family: monospace; font-size: 12px; color: #cbd5e1; margin-top: 6px;">${script.draft_official_communication}</pre>
+                        <pre style="white-space: pre-wrap; font-family: monospace; font-size: 12px; color: #cbd5e1; margin-top: 6px;">${escapeHtml(script.draft_official_communication)}</pre>
                     </div>
                 ` : ''}
             </div>
 
             <div id="${id}-directives" class="bubble-tab-content" style="font-size: 13.5px; line-height: 1.7;">
-                <ul style="padding-left: 18px; color: #cbd5e1;">
-                    ${(script.financial_and_operational_directives || []).map(d => `<li style="margin-bottom: 8px;">${d}</li>`).join('')}
-                </ul>
+                ${directives.length ? `
+                    <h4 style="color: var(--gold-light); font-size: 13px; margin-bottom: 8px;">⚖️ Chỉ thị vận hành</h4>
+                    <ul style="padding-left: 18px; color: #cbd5e1;">
+                        ${directives.map(d => `<li style="margin-bottom: 8px;">${escapeHtml(d)}</li>`).join('')}
+                    </ul>
+                ` : ''}
+                ${principles.length ? `
+                    <h4 style="color: var(--emerald-accent); font-size: 13px; margin: 14px 0 8px 0;">🧭 Nguyên tắc hành động</h4>
+                    <ul style="padding-left: 18px; color: #cbd5e1;">
+                        ${principles.map(p => `<li style="margin-bottom: 8px;">${escapeHtml(p)}</li>`).join('')}
+                    </ul>
+                ` : ''}
+                ${(!directives.length && !principles.length) ? '<div style="color: var(--text-muted);">Chưa có chỉ thị cho tình huống này.</div>' : ''}
             </div>
 
             <div id="${id}-citations" class="bubble-tab-content" style="font-size: 13px;">
-                <div style="display: flex; flex-direction: column; gap: 8px;">
-                    ${matched.map(u => `
-                        <div style="padding: 10px 14px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: 8px; cursor: pointer;" onclick="showUnitModal('${u.unit_id}')">
-                            <strong style="color: var(--gold-light); font-size: 13px;">🏷️ [${u.unit_id}] ${u.title}</strong>
-                            <p style="color: var(--text-secondary); font-size: 12px; margin-top: 2px;">${u.summary || ''}</p>
-                        </div>
-                    `).join('')}
-                </div>
+                <div style="display: flex; flex-direction: column; gap: 8px;">${citations}</div>
             </div>
+
+            ${glossaryPane}
         `;
     }
 
     function switchBubbleTab(id, tab, btn) {
-        btn.parentElement.querySelectorAll('.bubble-tab-btn').forEach(b => b.classList.remove('active'));
+        const parent = btn.parentElement;
+        parent.querySelectorAll('.bubble-tab-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        ['analysis', 'dialogue', 'directives', 'citations'].forEach(t => {
-            const pane = document.getElementById(`${id}-${t}`);
-            if (pane) pane.classList.remove('active');
-        });
+        const panes = parent.parentElement.querySelectorAll(`[id^="${id}-"]`);
+        panes.forEach(p => p.classList.remove('active'));
         const target = document.getElementById(`${id}-${tab}`);
         if (target) target.classList.add('active');
     }
@@ -1710,6 +2096,11 @@
             alert("Chưa có kịch bản hoặc phân tích nào trong phiên đối thoại hiện tại.");
             return;
         }
+        const btn = document.getElementById('export-brief-top-btn');
+        const prevLabel = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = "⏳ Đang xuất & lưu hồ sơ…";
+        let savedCase = false;
         try {
             const res = await fetch('/api/v1/export/brief', {
                 method: 'POST',
@@ -1722,13 +2113,46 @@
                 printWin.document.open();
                 printWin.document.write(htmlText);
                 printWin.document.close();
-            } else {
-                alert("Vui lòng cho phép trình duyệt mở cửa sổ mới để xem Bản Tham Mưu.");
             }
+            savedCase = await saveCaseFromBrief(lastBriefPayload);
         } catch(e) {
             alert("Lỗi xuất kịch bản: " + e.message);
+        } finally {
+            btn.disabled = false;
+            btn.textContent = prevLabel;
+        }
+        if (savedCase) {
+            btn.textContent = "✅ Đã lưu hồ sơ";
+            setTimeout(() => { btn.textContent = prevLabel; }, 2000);
+            const casesView = document.getElementById('cases-library-view');
+            if (casesView && casesView.style.display !== 'none') loadCaseLibrary();
         }
     });
+
+    async function saveCaseFromBrief(payload) {
+        if (!payload || !payload.situation_summary) return false;
+        const title = payload.situation_summary.length > 70
+            ? payload.situation_summary.slice(0, 70) + '…'
+            : payload.situation_summary;
+        try {
+            const res = await fetch('/api/v1/cases', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    domain: 'GENERAL',
+                    title: title,
+                    context_description: payload.situation_summary,
+                    decision_script: payload.action_script || {},
+                    lessons_learned: payload.action_principles || [],
+                    tags: [String(payload.lens || 'dynamic').toLowerCase(), 'thuc-chien']
+                })
+            });
+            const data = await res.json();
+            return data.status === 'success' || Boolean(data.case);
+        } catch (e) {
+            return false;
+        }
+    }
 
     // --- COUNCIL DELIBERATION ---
     document.getElementById('council-deliberate-btn').addEventListener('click', async () => {

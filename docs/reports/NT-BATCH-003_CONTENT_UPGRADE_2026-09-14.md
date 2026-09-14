@@ -67,11 +67,13 @@ The Product Owner approved a full content upgrade (A1–A9) on 2026-09-14.
 
 ### 2.5 Cases and books
 
-- 3 curated cases written to `knowledge/cases/` as YAML:
-  `CASE-OPS-001`, `CASE-SALES-001`, `CASE-HR-001` (structured context,
-  decision script, lessons linked to NT-* units).
-- 7 auto-generated duplicate rows removed from `knowledge/nhan_thuat.db`
-  (kept: the 3 curated cases).
+- 3 curated cases were initially written to `knowledge/cases/` as YAML
+  (`CASE-OPS-001`, `CASE-SALES-001`, `CASE-HR-001`). Per Product Owner decision on
+  2026-09-14, the pre-made cases were **removed** (YAML files and database seeds):
+  the Case Library must be user-driven only. Any difficult/special case is saved
+  when the user exports an executive brief, which now persists the case
+  automatically.
+- 7 auto-generated duplicate rows removed from `knowledge/nhan_thuat.db`.
 - 3 stub books expanded with full Vietnamese editorial content:
   `06_THUC_CHIEN_DU_AN.md`, `07_THUC_CHIEN_DU_AN.md`, `10_THUC_CHIEN_NHAN_SINH.md`.
 

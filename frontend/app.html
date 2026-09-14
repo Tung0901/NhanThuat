@@ -724,20 +724,15 @@
             }
             .mode-pills {
                 width: 100%;
-                overflow-x: auto;
+                flex-wrap: wrap;
                 padding-bottom: 4px;
-                scrollbar-width: none;
-                -webkit-overflow-scrolling: touch;
-            }
-            .mode-pills::-webkit-scrollbar {
-                display: none;
             }
             .mode-pill {
                 flex-shrink: 0;
             }
             .scenario-chips-container {
                 padding: 10px 14px;
-                -webkit-overflow-scrolling: touch;
+                flex-wrap: wrap;
             }
             .scenario-chip {
                 flex-shrink: 0;
@@ -810,7 +805,6 @@
                             <button class="mode-pill active" onclick="setAdvisoryMode('leadership', this)">💡 Tham Mưu Điều Hành</button>
                             <button class="mode-pill" onclick="setAdvisoryMode('cases', this)">📋 Tình Huống Thực Chiến (Cases)</button>
                         </div>
-                        <span style="font-size: 11px; color: var(--text-muted);">AI Co-Pilot • RAG 370 Tri Thức • 5 Lăng Kính</span>
                     </div>
 
                     <div class="scenario-chips-container">
@@ -828,8 +822,8 @@
                                 "Nhìn thấu tâm can để định vị thế • Vận dụng quy luật để xoay chuyển cục diện."
                             </p>
                             <p style="color: rgba(255,255,255,0.85); font-size: 13.5px;">
-                                Chào Anh/Chị Lãnh đạo. Hãy chia sẻ tình huống điều hành, mâu thuẫn nhân sự, phiên đàm phán hóc búa hoặc thế cờ quản trị bạn đang đối diện. 
-                                Hệ thống sẽ đối chiếu 370 đơn vị tri thức và kích hoạt lăng kính triết học tương thích để xuất bản kịch bản tác chiến 3 bước sắc bén nhất.
+                                Chào Anh/Chị Lãnh đạo. Hãy chia sẻ tình huống điều hành hoặc mâu thuẫn nhân sự đang đối diện. 
+                                Hệ thống sẽ đối chiếu tri thức và đề xuất kịch bản tác chiến 3 bước sắc bén nhất.
                             </p>
                         </div>
                     </div>

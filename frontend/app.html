@@ -7,7 +7,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
+        /* Markdown Tables */
+        .bubble-tab-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            font-size: 13px;
+        }
+        .bubble-tab-content th, .bubble-tab-content td {
+            border: 1px solid var(--border-subtle);
+            padding: 8px 12px;
+            text-align: left;
+        }
+        .bubble-tab-content th {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--gold-light);
+            font-weight: 600;
+        }
+        .bubble-tab-content td {
+            color: rgba(255, 255, 255, 0.85);
+        }
         :root {
             --bg-base: #09090b;
             --bg-surface: #121216;
@@ -1547,6 +1569,11 @@
     // Markdown Parser
     function formatMarkdownText(md) {
         if (!md) return '';
+        // Use marked.js if available
+        if (typeof marked !== 'undefined') {
+            return marked.parse(md);
+        }
+        // Fallback
         return md
             .replace(/^### (.*?)$/gm, '<h4 style="color: var(--gold-light); margin: 14px 0 6px 0; font-size: 15px;">$1</h4>')
             .replace(/^## (.*?)$/gm, '<h3 style="color: #fff; margin: 16px 0 8px 0; font-size: 16px;">$1</h3>')

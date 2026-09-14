@@ -161,16 +161,12 @@ class KnowledgeSynthesizer:
             "--- CƠ SỞ TRI THỨC ĐỐI CHIẾU ---\n"
             f"{context}\n"
             "---\n\n"
-            "HÃY PHÂN TÍCH VÀ ĐƯA RA LỜI THAM MƯU BẰNG MARKDOWN THEO ĐÚNG 4 PHẦN MẠCH LẠC SAU:\n\n"
+            "HÃY PHÂN TÍCH VÀ ĐƯA RA LỜI THAM MƯU BẰNG MARKDOWN THEO ĐÚNG 3 PHẦN MẠCH LẠC SAU (Lưu ý: Không viết kịch bản hội thoại ở đây, vì phần hội thoại đã được xử lý ở module khác):\n\n"
             "### 🔍 1. BÓC TÁCH BẢN CHẤT & ĐỘNG CƠ NGẦM\n"
             "- [Đánh giá chính xác bản chất tâm lý, động cơ ẩn giấu và thế cục hiện tại của các bên. Chỉ ra quy luật nhân thuật đang chi phối].\n\n"
-            "### ⚙️ 2. KỊCH BẢN HÀNH ĐỘNG THỰC CHIẾN (TỪNG BƯỚC CỤ THỂ)\n"
-            "- **Bước 1 (Thủ Thế - Bảo toàn vị thế & Khóa rủi ro):** [Hành động cụ thể cần làm ngay].\n"
-            "- **Bước 2 (Lập Thế - Đòn bẩy thương lượng & Lời thoại mẫu):** [Gợi ý nguyên văn câu thoại hoặc văn bản giao tiếp sắc bén, chuẩn tâm lý đàm phán hiện đại].\n"
-            "- **Bước 3 (Định Cục - Chốt hạ thỏa thuận):** [Cách thức đóng thỏa thuận đảm bảo lợi ích lâu dài].\n\n"
-            "### ⚠️ 3. NHỮNG BẪY TÂM LÝ & SAI LẦM CẦN TRÁNH\n"
+            "### ⚠️ 2. NHỮNG BẪY TÂM LÝ & SAI LẦM CẦN TRÁNH\n"
             "- [Những phản ứng bốc đồng, bẫy cảm xúc hoặc sơ hở đàm phán mà người dùng tuyệt đối không được mắc phải].\n\n"
-            "### 📌 4. CHỐT HẠ ĐỊNH CỤC\n"
+            "### 📌 3. CHỐT HẠ ĐỊNH CỤC\n"
             "- [Thông điệp đúc kết vị thế và nguyên tắc điều hướng cục diện bằng một câu nói hoặc đoạn văn ngắn đầy uy lực].\n\n"
             "### 📖 TRÍCH DẪN TRI THỨC\n"
             "- [Liệt kê các tri thức/quy luật đã vận dụng kèm mã ID, ví dụ: Binh Pháp Tôn Tử, Quy luật Giá trị (NT-LAW-3201)].\n"
@@ -198,12 +194,7 @@ class KnowledgeSynthesizer:
             lines.append("")
 
         lines.extend([
-            "### ⚙️ 2. KỊCH BẢN HÀNH ĐỘNG THỰC CHIẾN (3 BƯỚC ĐIỀU HÀNH)",
-            "- **Bước 1 (Thủ Thế - Định vị & Khóa rủi ro):** Xác lập ranh giới hiện trạng minh bạch. Tách bạch giữa yếu tố cảm xúc cá nhân và quyền hạn/nghĩa vụ trong vai trò. Không đưa ra bất kỳ nhượng bộ tức thời nào khi chưa xác định rõ động cơ đối phương.",
-            "- **Bước 2 (Lập Thế - Tạo đòn bẩy & Chuẩn hóa tiêu chuẩn):** Áp dụng quy chuẩn đánh giá khách quan và nguyên tắc ràng buộc lợi ích. Đưa ra các mốc kiểm định (checkpoint) cụ thể kèm chế tài thưởng phạt rõ ràng.",
-            "- **Bước 3 (Định Cục - Mở đường lui & Chốt hạ cam kết):** Thiết lập phương án dự phòng song song. Mở ra lối thoát danh dự cho đối phương khi tuân thủ cam kết, nhưng kiên quyết kích hoạt chế tài nếu ranh giới bị xâm phạm.",
-            "",
-            "### ⚠️ 3. NHỮNG BẪY TÂM LÝ & SAI LẦM CẦN TRÁNH",
+            "### ⚠️ 2. NHỮNG BẪY TÂM LÝ & SAI LẦM CẦN TRÁNH",
         ])
 
         collected_risks = []
@@ -223,7 +214,7 @@ class KnowledgeSynthesizer:
 
         lines.extend([
             "",
-            "### 📌 4. CHỐT HẠ ĐỊNH CỤC",
+            "### 📌 3. CHỐT HẠ ĐỊNH CỤC",
             "> *\"Người nắm quyền chủ động không thắng bằng áp đặt ồn ào, mà định đoạt cục diện bằng cơ cấu luật chơi và điểm đòn bẩy vị thế.\"*",
             "",
             "### 📖 TRÍCH DẪN TRI THỨC",

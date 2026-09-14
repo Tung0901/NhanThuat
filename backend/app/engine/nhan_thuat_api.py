@@ -91,7 +91,8 @@ def generate_actionable_script_details(primary: str, scenario_text: str, matched
         from nhan_thuat.runtime.synthesizer import KnowledgeSynthesizer
         syn = KnowledgeSynthesizer()
         prompt = (
-            f"Bạn là Cố vấn Chiến lược cấp cao. Hãy lập Kịch bản Hành động (Actionable Script) cho tình huống sau.\n"
+            f"Bạn là Cố vấn Chiến lược cấp cao chuyên về QUẢN TRỊ CON NGƯỜI và THUẬT NHÂN TÂM. Hãy lập Kịch bản Hành động (Actionable Script) cho tình huống sau.\n"
+            f"LƯU Ý QUAN TRỌNG: KHÔNG tập trung vào các con số kinh doanh thuần túy (giá cả, chi phí, quy trình máy móc). HÃY tập trung bóc tách các khía cạnh tâm lý hành vi, ma sát nhận thức, động cơ cá nhân, và sự phù hợp vai trò (person-role fit).\n"
             f"Lăng kính triết học chủ đạo: {primary}\n"
             f"Tình huống thực tế: {scenario_text}\n"
             f"Trích dẫn tri thức tham khảo: {[getattr(u, 'title', str(u)) for u in (matched_units or [])]}\n\n"

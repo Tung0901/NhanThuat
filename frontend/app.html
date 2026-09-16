@@ -91,16 +91,19 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 24px;
+            padding: 0 16px;
+            gap: 12px;
             z-index: 50;
             flex-shrink: 0;
+            overflow: hidden;
         }
 
         .header-brand {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             text-decoration: none;
+            flex-shrink: 0;
         }
 
         .brand-crest {
@@ -141,6 +144,14 @@
             border: 1px solid var(--border-subtle);
             padding: 4px;
             border-radius: 12px;
+            flex-shrink: 0;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .header-nav::-webkit-scrollbar {
+            display: none;
         }
 
         .workspace-tab-btn {
@@ -148,13 +159,15 @@
             border: none;
             color: var(--text-secondary);
             font-family: var(--font-sans);
-            font-size: 12.5px;
+            font-size: 12px;
             font-weight: 600;
-            padding: 7px 16px;
+            padding: 6px 11px;
             border-radius: 8px;
             display: flex;
             align-items: center;
-            gap: 7px;
+            gap: 5px;
+            white-space: nowrap !important;
+            flex-shrink: 0;
             transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
@@ -173,7 +186,8 @@
         .header-actions {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 8px;
+            flex-shrink: 0;
         }
 
         .export-btn {
@@ -181,13 +195,15 @@
             border: 1px solid rgba(245, 158, 11, 0.3);
             color: var(--gold-light);
             font-family: var(--font-sans);
-            font-size: 12px;
+            font-size: 11.5px;
             font-weight: 600;
-            padding: 7px 14px;
+            padding: 6px 12px;
             border-radius: 8px;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
+            white-space: nowrap !important;
+            flex-shrink: 0;
             transition: all 0.2s ease;
         }
 
@@ -200,11 +216,13 @@
         .home-link-btn {
             color: var(--text-muted);
             text-decoration: none;
-            font-size: 12px;
+            font-size: 11.5px;
             font-weight: 500;
-            padding: 7px 12px;
+            padding: 6px 10px;
             border-radius: 8px;
             border: 1px solid var(--border-subtle);
+            white-space: nowrap !important;
+            flex-shrink: 0;
             transition: all 0.2s ease;
         }
 
@@ -1212,6 +1230,408 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* MODULE 6: SA BÀN TÌNH THẾ (WAR ROOM SANDBOX) */
+        .war-room-layout {
+            display: grid;
+            grid-template-columns: 340px 1fr 390px;
+            height: 100%;
+            width: 100%;
+            min-width: 0;
+            min-height: 0;
+            overflow: hidden;
+            background: rgba(10, 10, 14, 0.4);
+        }
+        .war-room-col {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            min-width: 0;
+            min-height: 0;
+            overflow: hidden;
+            border-right: 1px solid var(--border-subtle);
+        }
+        .war-room-col:last-child {
+            border-right: none;
+        }
+        .war-room-col-header {
+            padding: 14px 18px;
+            border-bottom: 1px solid var(--border-subtle);
+            background: rgba(255, 255, 255, 0.02);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+        }
+        .war-room-col-header h3 {
+            font-family: var(--font-display);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .war-room-col-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .war-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 14px;
+            transition: all 0.2s ease;
+        }
+        .war-card:hover {
+            border-color: rgba(245, 158, 11, 0.25);
+        }
+        .war-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .war-textarea {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.35);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 10px 12px;
+            color: #ffffff;
+            font-family: var(--font-sans);
+            font-size: 12.5px;
+            line-height: 1.5;
+            resize: vertical;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+        .war-textarea:focus {
+            border-color: var(--border-focus);
+            box-shadow: 0 0 10px var(--gold-glow);
+        }
+        .war-preset-chip {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 8px 10px;
+            font-size: 11.5px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+        .war-preset-chip:hover, .war-preset-chip.active {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: rgba(245, 158, 11, 0.4);
+            color: #ffffff;
+        }
+        .war-btn-primary {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #000000;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 16px;
+            font-family: var(--font-sans);
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            box-shadow: 0 4px 14px rgba(245, 158, 11, 0.25);
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .war-btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(245, 158, 11, 0.35);
+        }
+        .war-btn-step {
+            background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+            color: #000000;
+            border: none;
+            border-radius: 8px;
+            padding: 11px 16px;
+            font-family: var(--font-sans);
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            box-shadow: 0 4px 14px rgba(56, 189, 248, 0.25);
+            transition: all 0.2s ease;
+        }
+        .war-btn-step:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(56, 189, 248, 0.35);
+        }
+        .war-btn-step:disabled, .war-btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .war-btn-report {
+            background: rgba(245, 158, 11, 0.12);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            color: var(--gold-light);
+            border-radius: 8px;
+            padding: 10px 16px;
+            font-family: var(--font-sans);
+            font-size: 12.5px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            transition: all 0.2s ease;
+        }
+        .war-btn-report:hover {
+            background: rgba(245, 158, 11, 0.22);
+            color: #ffffff;
+            border-color: var(--gold-primary);
+        }
+        .war-btn-reset {
+            background: transparent;
+            border: 1px solid var(--border-subtle);
+            color: var(--text-muted);
+            border-radius: 8px;
+            padding: 8px 14px;
+            font-size: 11.5px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            width: 100%;
+        }
+        .war-btn-reset:hover {
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        .war-persona-card {
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+        .war-persona-card:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+        .persona-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+        }
+        .persona-main-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            min-width: 0;
+        }
+        .persona-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 17px;
+            flex-shrink: 0;
+        }
+        .persona-name-wrap {
+            min-width: 0;
+        }
+        .persona-name {
+            font-size: 12.5px;
+            font-weight: 700;
+            color: #ffffff;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .persona-role {
+            font-size: 11px;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .persona-stat-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+        .persona-bar-wrap {
+            flex: 1;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .persona-bar-inner {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .bar-loyalty { background: linear-gradient(90deg, #f59e0b, #10b981); }
+        .bar-stress { background: linear-gradient(90deg, #f43f5e, #fb7185); }
+        .persona-meta-pill {
+            font-size: 10.5px;
+            padding: 3px 7px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-subtle);
+        }
+        .war-timeline-feed {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .war-round-header {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(20, 20, 26, 0.6) 100%);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 10px;
+            padding: 12px 16px;
+        }
+        .war-round-title {
+            font-family: var(--font-display);
+            font-size: 13.5px;
+            font-weight: 700;
+            color: var(--gold-light);
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .war-round-summary {
+            font-size: 12px;
+            line-height: 1.55;
+            color: rgba(255, 255, 255, 0.85);
+        }
+        .war-action-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            animation: fadeIn 0.3s ease;
+        }
+        .war-action-speaker {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .war-public-bubble {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 3px solid var(--cyan-accent);
+            padding: 8px 12px;
+            border-radius: 0 8px 8px 0;
+            font-size: 12.5px;
+            line-height: 1.5;
+            color: #ffffff;
+        }
+        .war-private-thought {
+            background: rgba(139, 92, 246, 0.08);
+            border-left: 3px solid #a855f7;
+            padding: 8px 12px;
+            border-radius: 0 8px 8px 0;
+            font-size: 12px;
+            line-height: 1.5;
+            color: #d8b4fe;
+            font-style: italic;
+        }
+        .war-whisper {
+            background: rgba(245, 158, 11, 0.08);
+            border-left: 3px solid var(--gold-primary);
+            padding: 8px 12px;
+            border-radius: 0 8px 8px 0;
+            font-size: 12px;
+            line-height: 1.5;
+            color: #fde68a;
+        }
+        .war-intervention-banner {
+            background: linear-gradient(135deg, rgba(234, 179, 8, 0.18) 0%, rgba(30, 20, 10, 0.8) 100%);
+            border: 1px solid rgba(234, 179, 8, 0.5);
+            border-radius: 10px;
+            padding: 12px 16px;
+            color: #fef08a;
+            font-size: 12.5px;
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            box-shadow: 0 0 16px rgba(234, 179, 8, 0.15);
+        }
+        .war-report-box {
+            background: var(--bg-surface);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        }
+        .war-empty-state {
+            text-align: center;
+            color: var(--text-muted);
+            padding: 60px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+        @media (max-width: 1100px) {
+            .war-room-layout {
+                grid-template-columns: 1fr;
+                overflow-y: auto;
+                height: auto;
+            }
+            .war-room-col {
+                height: auto;
+                overflow: visible;
+                border-right: none;
+                border-bottom: 1px solid var(--border-subtle);
+            }
+            .war-room-col-body, .war-timeline-feed {
+                max-height: 480px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1231,6 +1651,7 @@
             <button class="workspace-tab-btn" onclick="switchWorkspace('view-sparring', this)">⚔️ Đấu Trí</button>
             <button class="workspace-tab-btn" onclick="switchWorkspace('view-diagnostics', this)">🧩 Chẩn Đoán Nhân Sự</button>
             <button class="workspace-tab-btn" onclick="switchWorkspace('view-codex', this)">📚 Tủ Sách & Tri Thức</button>
+            <button class="workspace-tab-btn" onclick="switchWorkspace('view-war-room', this)">♟️ Sa Bàn Tình Thế</button>
         </nav>
 
         <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Mở menu điều hướng" aria-expanded="false" aria-controls="header-nav" onclick="toggleMobileNav()">☰</button>
@@ -1250,6 +1671,7 @@
         <button class="workspace-tab-btn" onclick="switchWorkspace('view-sparring', this); closeMobileNav();">⚔️ Đấu Trí</button>
         <button class="workspace-tab-btn" onclick="switchWorkspace('view-diagnostics', this); closeMobileNav();">🧩 Chẩn Đoán Nhân Sự</button>
         <button class="workspace-tab-btn" onclick="switchWorkspace('view-codex', this); closeMobileNav();">📚 Tủ Sách & Tri Thức</button>
+        <button class="workspace-tab-btn" onclick="switchWorkspace('view-war-room', this); closeMobileNav();">♟️ Sa Bàn Tình Thế</button>
     </div>
 
     <!-- Main Workspace Viewport -->
@@ -1433,6 +1855,12 @@
                                 <strong style="color: var(--gold-light);">📌 Phán Quyết Điều Hành: </strong>
                                 <span id="diag-verdict-text" style="color: #ffffff; font-weight: 600;"></span>
                             </div>
+
+                            <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border-subtle); display: flex; justify-content: flex-end;">
+                                <button class="war-btn-step" id="diag-person-to-war-btn" onclick="transferPersonDiagToWarRoom()" style="width: auto; padding: 8px 16px; font-size: 12px;">
+                                    ♟️ Đưa Nhân Sự Này Vào Sa Bàn Mô Phỏng
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1549,6 +1977,12 @@
                                 <strong style="color: var(--gold-light);">📌 Phán Quyết Cấu Trúc Đội Ngũ: </strong>
                                 <span id="team-verdict-text" style="color: #ffffff; font-weight: 600;"></span>
                             </div>
+
+                            <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border-subtle); display: flex; justify-content: flex-end;">
+                                <button class="war-btn-step" id="diag-team-to-war-btn" onclick="transferTeamDiagToWarRoom()" style="width: auto; padding: 8px 16px; font-size: 12px;">
+                                    ♟️ Đưa Đội Ngũ Này Vào Sa Bàn Mô Phỏng Tình Thế
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1598,6 +2032,122 @@
                     </div>
                     <div id="catalog-load-more-wrap" style="display: none; text-align: center; margin-top: 14px;">
                         <button class="export-btn" id="catalog-load-more-btn" style="justify-content: center; padding: 10px 22px;">Tải thêm tri thức</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODULE 6: SA BÀN TÌNH THẾ (WAR ROOM SANDBOX) -->
+        <section id="view-war-room" class="workspace-module">
+            <div class="war-room-layout">
+                <!-- CỘT 1: BÀN CỜ & CĂN CƯỚC NHÂN CÁCH (SCENARIO & PERSONAS) -->
+                <div class="war-room-col">
+                    <div class="war-room-col-header">
+                        <h3><span>♟️</span> Bối Cảnh & Nhân Cách</h3>
+                        <span id="war-persona-count-badge" class="persona-meta-pill">0 nhân vật</span>
+                    </div>
+                    <div class="war-room-col-body">
+                        <!-- Presets Selector -->
+                        <div class="war-card">
+                            <div class="war-label">
+                                <span>📋 Kịch Bản Mẫu Điển Hình</span>
+                                <span style="font-size: 10px; color: var(--gold-light);">1-Click Nạp</span>
+                            </div>
+                            <div id="war-presets-list" style="display: flex; flex-direction: column; gap: 6px;">
+                                <div style="color: var(--text-muted); font-size: 11px;">Đang tải kịch bản mẫu...</div>
+                            </div>
+                        </div>
+
+                        <!-- Scenario Input -->
+                        <div class="war-card">
+                            <div class="war-label">
+                                <span>🎯 Tình Huống Giả Lập</span>
+                                <span id="war-status-tag" style="color: var(--emerald-accent); font-size: 10.5px;">Sẵn sàng</span>
+                            </div>
+                            <textarea id="war-scenario-input" class="war-textarea" rows="4" placeholder="Nhập tình thế quản trị hiểm hóc cần kiểm thử tâm lý bầy đàn..."></textarea>
+                            <button id="war-init-btn" class="war-btn-primary" onclick="initWarRoomSimulation()" style="margin-top: 10px;">
+                                <span>⚡</span> Khởi Tạo Sa Bàn Mô Phỏng
+                            </button>
+                        </div>
+
+                        <!-- Persona Cards Container -->
+                        <div class="war-label" style="margin-top: 4px;">
+                            <span>👥 Hồ Sơ Căn Cước Tâm Lý</span>
+                            <span id="war-session-id-display" style="font-size: 10px; color: var(--text-muted);">ID: Chưa tạo</span>
+                        </div>
+                        <div id="war-personas-container" style="display: flex; flex-direction: column; gap: 10px;">
+                            <div class="war-empty-state" style="padding: 24px 10px;">
+                                <div style="font-size: 28px;">👤</div>
+                                <div style="font-size: 12px;">Chưa có nhân vật nào.<br>Hãy bấm <strong>"Khởi Tạo Sa Bàn"</strong> để sinh các nhân vật mang động cơ và nỗi sợ riêng.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CỘT 2: DÒNG THỜI GIAN TƯƠNG TÁC (WAR ROOM LIVE FEED) -->
+                <div class="war-room-col">
+                    <div class="war-room-col-header">
+                        <h3><span>📡</span> Dòng Thời Gian Tình Thế (Live Feed)</h3>
+                        <div id="war-round-badge" class="persona-meta-pill" style="background: rgba(245,158,11,0.15); color: var(--gold-light); font-weight: 700;">Chưa bắt đầu</div>
+                    </div>
+                    
+                    <div id="war-stage-banner" style="display: none; padding: 12px 18px; border-bottom: 1px solid var(--border-subtle); background: rgba(0,0,0,0.2);">
+                        <div id="war-stage-title" style="font-family: var(--font-display); font-size: 13px; font-weight: 700; color: var(--gold-light);"></div>
+                        <div id="war-stage-desc" style="font-size: 12px; color: var(--text-secondary); margin-top: 4px; line-height: 1.5;"></div>
+                    </div>
+
+                    <div id="war-timeline-feed" class="war-timeline-feed">
+                        <div id="war-timeline-empty" class="war-empty-state">
+                            <div style="font-size: 42px; opacity: 0.8;">♟️</div>
+                            <div style="font-family: var(--font-display); font-size: 16px; font-weight: 700; color: #ffffff;">Thao Trường Giả Lập Sa Bàn</div>
+                            <p style="font-size: 12.5px; max-width: 380px; line-height: 1.6; margin: 0 auto;">
+                                Khởi tạo tình huống ở cột trái để bắt đầu mô phỏng phản ứng đa tầng giữa các AI Agent mang nhân cách, quyền lợi và toan tính riêng.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CỘT 3: TRUNG TÂM CAN THIỆP & BÁO CÁO CHIẾN LƯỢC -->
+                <div class="war-room-col">
+                    <div class="war-room-col-header">
+                        <h3><span>👑</span> Điều Khiển & Tham Mưu</h3>
+                        <span id="war-step-counter" class="persona-meta-pill">Vòng 0 / 3</span>
+                    </div>
+                    <div class="war-room-col-body">
+                        <!-- God-mode Intervention Card -->
+                        <div class="war-card">
+                            <div class="war-label">
+                                <span>👑 Lệnh Thượng Đế (Can Thiệp Tình Thế)</span>
+                            </div>
+                            <p style="font-size: 11.5px; color: var(--text-secondary); margin-bottom: 8px; line-height: 1.45;">
+                                Giữa các vòng, Chủ tịch có thể ban hành mệnh lệnh, phát ngôn hoặc biến cố để uốn nắn hành vi bầy đàn.
+                            </p>
+                            <textarea id="war-intervention-input" class="war-textarea" rows="3" placeholder="Ví dụ: Chủ tịch họp kín cam kết tăng 20% phụ cấp giữ chân người tài..."></textarea>
+                            
+                            <div style="display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px;">
+                                <button type="button" class="persona-meta-pill" onclick="quickFillWarIntervention('Chủ tịch bí mật gặp gỡ 1-1 từng trưởng bộ phận')" style="cursor: pointer;">🤝 Họp kín 1-1</button>
+                                <button type="button" class="persona-meta-pill" onclick="quickFillWarIntervention('Ban hành chỉ thị thanh tra đột xuất toàn diện')" style="cursor: pointer;">🔍 Thanh tra đột xuất</button>
+                                <button type="button" class="persona-meta-pill" onclick="quickFillWarIntervention('Cam kết giữ nguyên chế độ đãi ngộ cho người ở lại')" style="cursor: pointer;">🛡️ Bảo toàn đãi ngộ</button>
+                                <button type="button" class="persona-meta-pill" onclick="quickFillWarIntervention('Công bố kế hoạch thưởng nóng dự án vượt chỉ tiêu')" style="cursor: pointer;">💰 Thưởng nóng</button>
+                            </div>
+
+                            <button id="war-step-btn" class="war-btn-step" onclick="stepWarRoomRound()" disabled style="margin-top: 12px;">
+                                <span>▶️</span> Tiến Hành Vòng Kế Tiếp
+                            </button>
+                        </div>
+
+                        <!-- Report Action -->
+                        <button id="war-report-btn" class="war-btn-report" onclick="generateWarRoomReport()" disabled>
+                            <span>📑</span> Xuất Báo Cáo Tham Mưu Tổng Kết
+                        </button>
+                        <button id="war-reset-btn" class="war-btn-reset" onclick="resetWarRoom()">
+                            🔄 Thiết lập lại Sa Bàn
+                        </button>
+
+                        <!-- Strategic Report Container -->
+                        <div id="war-report-container" style="display: none; flex-direction: column; gap: 12px;">
+                            <!-- Populated dynamically -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1875,6 +2425,9 @@
         if (viewId === 'view-codex') {
             loadBookshelf();
             loadKnowledgeCatalog();
+        }
+        if (viewId === 'view-war-room') {
+            initWarRoom();
         }
     }
 
@@ -2549,6 +3102,12 @@
             </div>
 
             ${glossaryPane}
+
+            <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border-subtle); display: flex; justify-content: flex-end; gap: 8px;">
+                <button class="export-btn" onclick="transferScenarioToWarRoom('${encodeURIComponent(query)}')" style="font-size: 11.5px; padding: 6px 12px; border-color: rgba(56,189,248,0.4); color: var(--cyan-accent); background: rgba(56,189,248,0.1);">
+                    ♟️ Đưa Vào Sa Bàn Mô Phỏng Tình Thế
+                </button>
+            </div>
         `;
     }
 
@@ -3067,6 +3626,646 @@
             }
         }
     });
+
+    // ==========================================
+    // MODULE 6: SA BÀN TÌNH THẾ (WAR ROOM SANDBOX)
+    // ==========================================
+    let warRoomSession = null;
+    let warRoomPresets = [];
+
+    async function initWarRoom() {
+        if (warRoomPresets.length === 0) {
+            await loadWarRoomPresets();
+        }
+    }
+
+    async function loadWarRoomPresets() {
+        const container = document.getElementById('war-presets-list');
+        if (!container) return;
+        try {
+            const res = await fetch('/api/v1/war-room/presets');
+            const data = await res.json();
+            if (data.status === 'success' && Array.isArray(data.presets)) {
+                warRoomPresets = data.presets;
+                container.innerHTML = warRoomPresets.map(p => `
+                    <div class="war-preset-chip" onclick="selectWarRoomPreset('${p.id}')">
+                        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                            <strong style="color: #ffffff; font-size: 11.5px;">${p.icon || '⚡'} ${escapeHtml(p.title)}</strong>
+                            <span class="persona-meta-pill" style="font-size: 9.5px; padding: 1px 5px; color: var(--gold-light);">${escapeHtml(p.badge || 'Kịch bản')}</span>
+                        </div>
+                        <div style="font-size: 11px; color: var(--text-muted); line-height: 1.35; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                            ${escapeHtml(p.description || '')}
+                        </div>
+                    </div>
+                `).join('');
+            }
+        } catch (e) {
+            console.error('Lỗi nạp presets sa bàn:', e);
+            if (container) {
+                container.innerHTML = `<div style="color: var(--text-muted); font-size: 11px;">Không thể nạp kịch bản mẫu từ server.</div>`;
+            }
+        }
+    }
+
+    function selectWarRoomPreset(presetId) {
+        const preset = warRoomPresets.find(p => p.id === presetId);
+        if (!preset) return;
+        const input = document.getElementById('war-scenario-input');
+        if (input) {
+            input.value = preset.default_scenario;
+            input.focus();
+        }
+        document.querySelectorAll('.war-preset-chip').forEach(el => el.classList.remove('active'));
+        if (window.event && window.event.currentTarget) {
+            window.event.currentTarget.classList.add('active');
+        }
+    }
+
+    async function initWarRoomSimulation() {
+        const input = document.getElementById('war-scenario-input');
+        const scenario = input ? input.value.trim() : '';
+        if (!scenario) {
+            alert('Vui lòng nhập tình huống hoặc chọn một kịch bản mẫu trước khi khởi tạo Sa Bàn.');
+            return;
+        }
+
+        const initBtn = document.getElementById('war-init-btn');
+        if (initBtn) {
+            initBtn.disabled = true;
+            initBtn.innerHTML = `<span>⏳</span> Đang Kiến Trúc Nhân Cách…`;
+        }
+
+        try {
+            const res = await fetch('/api/v1/war-room/init', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ scenario: scenario })
+            });
+            const data = await res.json();
+            if (data.status === 'success' && data.session) {
+                warRoomSession = data.session;
+                renderWarRoomSession();
+            } else {
+                throw new Error(data.message || 'Lỗi khởi tạo sa bàn');
+            }
+        } catch (e) {
+            alert('Lỗi khởi tạo sa bàn: ' + e.message);
+        } finally {
+            if (initBtn) {
+                initBtn.disabled = false;
+                initBtn.innerHTML = `<span>⚡</span> Khởi Tạo Lại Sa Bàn`;
+            }
+        }
+    }
+
+    function renderWarRoomSession() {
+        if (!warRoomSession) return;
+
+        // Session badge & persona count
+        const countBadge = document.getElementById('war-persona-count-badge');
+        if (countBadge) countBadge.textContent = `${warRoomSession.personas.length} nhân vật`;
+
+        const idDisplay = document.getElementById('war-session-id-display');
+        if (idDisplay) idDisplay.textContent = `ID: ${warRoomSession.session_id}`;
+
+        const statusTag = document.getElementById('war-status-tag');
+        if (statusTag) statusTag.textContent = warRoomSession.status;
+
+        // Personas list
+        const personasContainer = document.getElementById('war-personas-container');
+        if (personasContainer) {
+            personasContainer.innerHTML = warRoomSession.personas.map(p => {
+                const loyaltyColor = p.loyalty_score >= 70 ? 'var(--emerald-accent)' : (p.loyalty_score >= 45 ? 'var(--gold-primary)' : 'var(--rose-accent)');
+                const stressColor = p.stress_level >= 75 ? 'var(--rose-accent)' : (p.stress_level >= 50 ? 'var(--gold-primary)' : 'var(--emerald-accent)');
+                return `
+                    <div class="war-persona-card" id="persona-card-${p.id}">
+                        <div class="persona-header">
+                            <div class="persona-main-info">
+                                <div class="persona-avatar">${p.avatar || '👤'}</div>
+                                <div class="persona-name-wrap">
+                                    <div class="persona-name">${escapeHtml(p.name)}</div>
+                                    <div class="persona-role">${escapeHtml(p.role)}</div>
+                                </div>
+                            </div>
+                            <span class="persona-meta-pill" style="font-size: 9.5px; background: rgba(56,189,248,0.12); color: var(--cyan-accent);">${escapeHtml(p.faction)}</span>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 4px; margin: 4px 0;">
+                            <div class="persona-stat-row">
+                                <span style="width: 75px;">Trung thành:</span>
+                                <div class="persona-bar-wrap">
+                                    <div class="persona-bar-inner bar-loyalty" style="width: ${p.loyalty_score}%;"></div>
+                                </div>
+                                <span style="width: 32px; text-align: right; color: ${loyaltyColor}; font-weight: 700;">${p.loyalty_score}%</span>
+                            </div>
+                            <div class="persona-stat-row">
+                                <span style="width: 75px;">Căng thẳng:</span>
+                                <div class="persona-bar-wrap">
+                                    <div class="persona-bar-inner bar-stress" style="width: ${p.stress_level}%;"></div>
+                                </div>
+                                <span style="width: 32px; text-align: right; color: ${stressColor}; font-weight: 700;">${p.stress_level}%</span>
+                            </div>
+                        </div>
+                        <div style="font-size: 11px; line-height: 1.4; color: rgba(255,255,255,0.75); background: rgba(0,0,0,0.25); padding: 6px 8px; border-radius: 6px;">
+                            <div><strong style="color: var(--gold-light);">Lợi ích:</strong> ${escapeHtml(p.core_interest)}</div>
+                            <div style="margin-top: 2px;"><strong style="color: #fca5a5;">Nỗi sợ:</strong> ${escapeHtml(p.hidden_fear)}</div>
+                            <div style="margin-top: 2px;"><strong style="color: var(--cyan-accent);">Lập trường:</strong> ${escapeHtml(p.stance)}</div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Timeline feed
+        const emptyState = document.getElementById('war-timeline-empty');
+        if (emptyState) emptyState.style.display = 'none';
+
+        const stageBanner = document.getElementById('war-stage-banner');
+        if (stageBanner) {
+            stageBanner.style.display = 'block';
+            document.getElementById('war-stage-title').textContent = 'Khởi tạo Sa Bàn thành công';
+            document.getElementById('war-stage-desc').textContent = 'Bàn cờ thế sự đã được dàn dựng với các nhân vật và toan tính ngầm. Hãy nhập lệnh can thiệp (nếu muốn) và bấm "Tiến Hành Vòng Kế Tiếp".';
+        }
+
+        // Stepper buttons
+        const stepBtn = document.getElementById('war-step-btn');
+        if (stepBtn) {
+            stepBtn.disabled = false;
+            stepBtn.innerHTML = `<span>▶️</span> Chạy Vòng 1 (Thăm Dò)`;
+        }
+
+        const reportBtn = document.getElementById('war-report-btn');
+        if (reportBtn) reportBtn.disabled = false;
+
+        updateRoundCounters();
+    }
+
+    function updateRoundCounters() {
+        if (!warRoomSession) return;
+        const cur = warRoomSession.current_round;
+        const max = warRoomSession.max_rounds;
+
+        const roundBadge = document.getElementById('war-round-badge');
+        if (roundBadge) {
+            roundBadge.textContent = cur > 0 ? `Vòng ${cur} / ${max}` : 'Chờ bắt đầu';
+        }
+
+        const stepCounter = document.getElementById('war-step-counter');
+        if (stepCounter) {
+            stepCounter.textContent = `Vòng ${cur} / ${max}`;
+        }
+
+        const stepBtn = document.getElementById('war-step-btn');
+        if (stepBtn) {
+            if (cur >= max) {
+                stepBtn.innerHTML = `<span>▶️</span> Chạy Vòng Bổ Sung (+${cur + 1})`;
+            } else {
+                stepBtn.innerHTML = `<span>▶️</span> Chạy Vòng ${cur + 1}`;
+            }
+        }
+    }
+
+    async function stepWarRoomRound() {
+        if (!warRoomSession) return;
+        const sid = warRoomSession.session_id;
+        const interventionInput = document.getElementById('war-intervention-input');
+        const intervention = interventionInput ? interventionInput.value.trim() : '';
+
+        const stepBtn = document.getElementById('war-step-btn');
+        if (stepBtn) {
+            stepBtn.disabled = true;
+            stepBtn.innerHTML = `<span>⏳</span> Đang Mô Phỏng Diễn Biến…`;
+        }
+
+        try {
+            const res = await fetch('/api/v1/war-room/step', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    session_id: sid,
+                    intervention: intervention
+                })
+            });
+            const data = await res.json();
+            if (data.status === 'success' && data.round) {
+                if (data.session) warRoomSession = data.session;
+                
+                // Clear intervention input after sending
+                if (interventionInput) interventionInput.value = '';
+
+                // Render newly completed round onto timeline
+                renderRoundToTimeline(data.round);
+                renderWarRoomSession(); // refresh persona stats & status
+                updateRoundCounters();
+            } else {
+                throw new Error(data.message || 'Lỗi chạy vòng mô phỏng');
+            }
+        } catch (e) {
+            alert('Lỗi chạy vòng mô phỏng: ' + e.message);
+        } finally {
+            if (stepBtn) {
+                stepBtn.disabled = false;
+                updateRoundCounters();
+            }
+        }
+    }
+
+    function renderRoundToTimeline(round) {
+        const feed = document.getElementById('war-timeline-feed');
+        if (!feed) return;
+
+        // Stage Banner update
+        const stageBanner = document.getElementById('war-stage-banner');
+        if (stageBanner) {
+            stageBanner.style.display = 'block';
+            document.getElementById('war-stage-title').textContent = round.stage_name;
+            document.getElementById('war-stage-desc').textContent = round.round_summary;
+        }
+
+        // Intervention milestone if applied
+        if (round.intervention) {
+            const intvEl = document.createElement('div');
+            intvEl.className = 'war-intervention-banner';
+            intvEl.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 6px; font-weight: 700;">
+                    <span>👑</span> LỆNH THƯỢNG ĐẾ CAN THIỆP:
+                </div>
+                <div style="font-style: italic; color: #ffffff;">"${escapeHtml(round.intervention)}"</div>
+            `;
+            feed.appendChild(intvEl);
+        }
+
+        // Round Header Divider
+        const roundDivider = document.createElement('div');
+        roundDivider.className = 'war-round-header';
+        roundDivider.innerHTML = `
+            <div class="war-round-title">
+                <span>⚔️</span> ${escapeHtml(round.stage_name)}
+            </div>
+            <div class="war-round-summary">
+                ${escapeHtml(round.round_summary)}
+            </div>
+        `;
+        feed.appendChild(roundDivider);
+
+        // Actions cards
+        if (Array.isArray(round.actions)) {
+            round.actions.forEach(act => {
+                const card = document.createElement('div');
+                card.className = 'war-action-card';
+
+                const loyaltyBadge = act.loyalty_change !== 0 
+                    ? `<span style="font-size: 10px; color: ${act.loyalty_change > 0 ? 'var(--emerald-accent)' : 'var(--rose-accent)'}; font-weight: 700;">${act.loyalty_change > 0 ? '+' : ''}${act.loyalty_change}% TT</span>` 
+                    : '';
+                const stressBadge = act.stress_change !== 0 
+                    ? `<span style="font-size: 10px; color: ${act.stress_change > 0 ? 'var(--rose-accent)' : 'var(--emerald-accent)'}; font-weight: 700;">${act.stress_change > 0 ? '+' : ''}${act.stress_change}% Stress</span>` 
+                    : '';
+
+                card.innerHTML = `
+                    <div class="war-action-speaker">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span style="font-size: 18px;">${act.avatar || '👤'}</span>
+                            <div>
+                                <strong style="color: #ffffff; font-size: 12.5px;">${escapeHtml(act.persona_name)}</strong>
+                                <span style="font-size: 11px; color: var(--text-muted); margin-left: 6px;">(${escapeHtml(act.role)})</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 6px;">
+                            ${loyaltyBadge}
+                            ${stressBadge}
+                        </div>
+                    </div>
+
+                    <!-- Public Speech / Action -->
+                    <div class="war-public-bubble">
+                        <div style="font-size: 10.5px; color: var(--cyan-accent); font-weight: 700; margin-bottom: 2px;">HÀNH ĐỘNG / PHÁT NGÔN CÔNG KHAI:</div>
+                        <div>${escapeHtml(act.public_action)}</div>
+                    </div>
+
+                    <!-- Private Motives / Thoughts -->
+                    <div class="war-private-thought">
+                        <div style="font-size: 10.5px; color: #a855f7; font-weight: 700; margin-bottom: 2px;">💭 TOAN TÍNH NỘI TÂM (ĐỘC THOẠI NGẦM):</div>
+                        <div>${escapeHtml(act.private_thought)}</div>
+                    </div>
+
+                    <!-- Secret Whisper if present -->
+                    ${act.whisper_content ? `
+                    <div class="war-whisper">
+                        <div style="font-size: 10.5px; color: var(--gold-primary); font-weight: 700; margin-bottom: 2px;">🤫 THÌ THẦM HÀNH LANG (GỬI TỚI ${escapeHtml(act.whisper_target || 'ĐỒNG MINH')}):</div>
+                        <div>"${escapeHtml(act.whisper_content)}"</div>
+                    </div>
+                    ` : ''}
+
+                    ${act.stance_shift ? `
+                    <div style="font-size: 11px; color: var(--text-muted); display: flex; align-items: center; gap: 6px;">
+                        <span>🔄 Chuyển biến lập trường:</span>
+                        <strong style="color: var(--gold-light);">${escapeHtml(act.stance_shift)}</strong>
+                    </div>
+                    ` : ''}
+                `;
+                feed.appendChild(card);
+            });
+        }
+
+        // Scroll to bottom smoothly
+        feed.scrollTop = feed.scrollHeight;
+    }
+
+    async function generateWarRoomReport() {
+        if (!warRoomSession) return;
+        const sid = warRoomSession.session_id;
+
+        const reportBtn = document.getElementById('war-report-btn');
+        if (reportBtn) {
+            reportBtn.disabled = true;
+            reportBtn.innerHTML = `<span>⏳</span> Đang Trích Xuất Báo Cáo…`;
+        }
+
+        try {
+            const res = await fetch('/api/v1/war-room/report', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ session_id: sid })
+            });
+            const data = await res.json();
+            if (data.status === 'success' && data.report) {
+                if (data.session) warRoomSession = data.session;
+                renderWarRoomReport(data.report);
+            } else {
+                throw new Error(data.message || 'Lỗi xuất báo cáo tham mưu');
+            }
+        } catch (e) {
+            alert('Lỗi xuất báo cáo: ' + e.message);
+        } finally {
+            if (reportBtn) {
+                reportBtn.disabled = false;
+                reportBtn.innerHTML = `<span>📑</span> Cập Nhật Báo Cáo Tham Mưu`;
+            }
+        }
+    }
+
+    function renderWarRoomReport(report) {
+        const container = document.getElementById('war-report-container');
+        if (!container) return;
+        container.style.display = 'flex';
+
+        const strategiesHtml = (report.actionable_strategies || []).map((s, idx) => `
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 10px 12px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                    <strong style="color: var(--gold-light); font-size: 12px;">${escapeHtml(s.name)}</strong>
+                    <span class="persona-meta-pill" style="color: var(--cyan-accent); font-size: 9.5px;">${escapeHtml(s.philosophy || '')}</span>
+                </div>
+                <ul style="padding-left: 18px; font-size: 11.5px; color: rgba(255,255,255,0.85); line-height: 1.5; margin-bottom: 6px;">
+                    ${(s.steps || []).map(st => `<li>${escapeHtml(st)}</li>`).join('')}
+                </ul>
+                <div style="font-size: 11px; color: var(--emerald-accent); line-height: 1.4;">
+                    <strong>Kết quả dự kiến:</strong> ${escapeHtml(s.expected_outcome || '')}
+                </div>
+                ${s.citation ? `
+                <div style="font-size: 10px; color: var(--text-muted); margin-top: 4px;">
+                    📖 ${escapeHtml(s.citation)}
+                </div>
+                ` : ''}
+            </div>
+        `).join('');
+
+        const factionHtml = (report.factional_matrix || []).map(f => `
+            <tr>
+                <td style="padding: 6px 8px; border: 1px solid var(--border-subtle); font-weight: 600; color: #fff;">${escapeHtml(f.faction)}</td>
+                <td style="padding: 6px 8px; border: 1px solid var(--border-subtle);">${escapeHtml(f.motive)}</td>
+                <td style="padding: 6px 8px; border: 1px solid var(--border-subtle); color: var(--gold-light);">${escapeHtml(f.risk_level || '')}</td>
+            </tr>
+        `).join('');
+
+        container.innerHTML = `
+            <div class="war-report-box">
+                <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(245,158,11,0.3); padding-bottom: 8px;">
+                    <h4 style="font-family: var(--font-display); font-size: 13.5px; color: var(--gold-light); margin: 0;">
+                        📑 BÁO CÁO THAM MƯU CHIẾN LƯỢC TỔNG KẾT
+                    </h4>
+                    <span class="persona-meta-pill" style="background: rgba(16,185,129,0.15); color: var(--emerald-accent); font-weight: 700;">HOÀN TẤT</span>
+                </div>
+
+                <!-- Executive Summary -->
+                <div style="font-size: 12px; line-height: 1.6; color: rgba(255,255,255,0.9); background: rgba(245,158,11,0.05); padding: 10px 12px; border-radius: 8px; border-left: 3px solid var(--gold-primary);">
+                    ${escapeHtml(report.executive_summary)}
+                </div>
+
+                <!-- Vulnerable Link -->
+                <div style="background: rgba(244,63,94,0.08); border-left: 3px solid var(--rose-accent); padding: 10px 12px; border-radius: 0 8px 8px 0; font-size: 11.5px; line-height: 1.5; color: #fca5a5;">
+                    <strong style="color: #fda4af;">⚠️ MẮT XÍCH NGUY HIỂM NHẤT:</strong><br>
+                    ${escapeHtml(report.vulnerable_link)}
+                </div>
+
+                <!-- Critical Breakdown Point -->
+                <div style="background: rgba(234,179,8,0.08); border-left: 3px solid var(--gold-primary); padding: 10px 12px; border-radius: 0 8px 8px 0; font-size: 11.5px; line-height: 1.5; color: #fde68a;">
+                    <strong style="color: var(--gold-light);">💥 ĐIỂM GÃY TỔ CHỨC DỰ BÁO:</strong><br>
+                    ${escapeHtml(report.critical_breakdown_point)}
+                </div>
+
+                <!-- Factional Matrix -->
+                ${factionHtml ? `
+                <div>
+                    <div style="font-size: 11px; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; margin-bottom: 6px;">MA TRẬN TOAN TÍNH CÁC PHE</div>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 11px; color: rgba(255,255,255,0.85);">
+                        <thead>
+                            <tr style="background: rgba(255,255,255,0.05);">
+                                <th style="padding: 6px 8px; border: 1px solid var(--border-subtle); text-align: left;">Phe nhóm</th>
+                                <th style="padding: 6px 8px; border: 1px solid var(--border-subtle); text-align: left;">Động cơ</th>
+                                <th style="padding: 6px 8px; border: 1px solid var(--border-subtle); text-align: left;">Rủi ro</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${factionHtml}
+                        </tbody>
+                    </table>
+                </div>
+                ` : ''}
+
+                <!-- Actionable Strategies -->
+                <div>
+                    <div style="font-size: 11px; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; margin-bottom: 8px;">3 KẾ SÁCH ĐỐI PHÓ (THEO NHÂN THUẬT)</div>
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        ${strategiesHtml}
+                    </div>
+                </div>
+
+                <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(245,158,11,0.3); display: flex; justify-content: flex-end;">
+                    <button class="war-btn-report" onclick="saveWarRoomReportAsCase()" id="save-war-case-btn" style="width: auto; padding: 8px 16px; font-size: 12px;">
+                        💾 Lưu Báo Cáo Vào Kho Hồ Sơ Thực Chiến (Case Study)
+                    </button>
+                </div>
+            </div>
+        `;
+
+        // Scroll report into view
+        container.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function quickFillWarIntervention(text) {
+        const input = document.getElementById('war-intervention-input');
+        if (input) {
+            input.value = text;
+            input.focus();
+        }
+    }
+
+    function resetWarRoom() {
+        if (!confirm('Bạn có chắc chắn muốn thiết lập lại sa bàn và xóa dữ liệu mô phỏng hiện tại không?')) return;
+        warRoomSession = null;
+        
+        const countBadge = document.getElementById('war-persona-count-badge');
+        if (countBadge) countBadge.textContent = '0 nhân vật';
+
+        const idDisplay = document.getElementById('war-session-id-display');
+        if (idDisplay) idDisplay.textContent = 'ID: Chưa tạo';
+
+        const personasContainer = document.getElementById('war-personas-container');
+        if (personasContainer) {
+            personasContainer.innerHTML = `
+                <div class="war-empty-state" style="padding: 24px 10px;">
+                    <div style="font-size: 28px;">👤</div>
+                    <div style="font-size: 12px;">Chưa có nhân vật nào.<br>Hãy bấm <strong>"Khởi Tạo Sa Bàn"</strong> để sinh các nhân vật mang động cơ và nỗi sợ riêng.</div>
+                </div>
+            `;
+        }
+
+        const feed = document.getElementById('war-timeline-feed');
+        if (feed) {
+            feed.innerHTML = `
+                <div id="war-timeline-empty" class="war-empty-state">
+                    <div style="font-size: 42px; opacity: 0.8;">♟️</div>
+                    <div style="font-family: var(--font-display); font-size: 16px; font-weight: 700; color: #ffffff;">Thao Trường Giả Lập Sa Bàn</div>
+                    <p style="font-size: 12.5px; max-width: 380px; line-height: 1.6; margin: 0 auto;">
+                        Khởi tạo tình huống ở cột trái để bắt đầu mô phỏng phản ứng đa tầng giữa các AI Agent mang nhân cách, quyền lợi và toan tính riêng.
+                    </p>
+                </div>
+            `;
+        }
+
+        const stageBanner = document.getElementById('war-stage-banner');
+        if (stageBanner) stageBanner.style.display = 'none';
+
+        const repContainer = document.getElementById('war-report-container');
+        if (repContainer) {
+            repContainer.style.display = 'none';
+            repContainer.innerHTML = '';
+        }
+
+        const stepBtn = document.getElementById('war-step-btn');
+        if (stepBtn) stepBtn.disabled = true;
+
+        const reportBtn = document.getElementById('war-report-btn');
+        if (reportBtn) reportBtn.disabled = true;
+
+        const roundBadge = document.getElementById('war-round-badge');
+        if (roundBadge) roundBadge.textContent = 'Chưa bắt đầu';
+
+        const stepCounter = document.getElementById('war-step-counter');
+        if (stepCounter) stepCounter.textContent = 'Vòng 0 / 3';
+    }
+
+    // --- CROSS-MODULE SEAMLESS CONNECTORS ---
+    function transferScenarioToWarRoom(encodedQuery) {
+        const text = decodeURIComponent(encodedQuery);
+        switchWorkspace('view-war-room');
+        const input = document.getElementById('war-scenario-input');
+        if (input) {
+            input.value = text;
+            input.focus();
+        }
+        initWarRoomSimulation();
+    }
+
+    function transferPersonDiagToWarRoom() {
+        const personName = document.getElementById('diag-person-name')?.value?.trim() || 'Nhân sự';
+        const roleName = document.getElementById('diag-role-name')?.value?.trim() || 'Vị trí quản lý';
+        const verdict = document.getElementById('diag-verdict-text')?.textContent?.trim() || '';
+        const friction = document.getElementById('diag-friction-score-text')?.textContent?.trim() || '50%';
+        
+        const scenario = `Mô phỏng ma sát bổ nhiệm nhân sự ${personName} vào vai trò ${roleName}. Mức độ ma sát thích ứng đo lường: ${friction}. Phán quyết điều hành: ${verdict}. Các phòng ban liên quan bắt đầu xuất hiện toan tính thăm dò và rào cản tâm lý phòng thủ.`;
+        
+        switchWorkspace('view-war-room');
+        const input = document.getElementById('war-scenario-input');
+        if (input) {
+            input.value = scenario;
+            input.focus();
+        }
+        initWarRoomSimulation();
+    }
+
+    function transferTeamDiagToWarRoom() {
+        const candName = document.getElementById('team-cand-name')?.value?.trim() || 'Nhân sự mới';
+        const candRole = document.getElementById('team-cand-role')?.value?.trim() || 'Thành viên mới';
+        const teamName = document.getElementById('team-group-name')?.value?.trim() || 'Ban Điều Hành';
+        const verdict = document.getElementById('team-verdict-text')?.textContent?.trim() || '';
+        const homoRisk = document.getElementById('team-homogeneity-score-text')?.textContent?.trim() || '50%';
+        
+        const scenario = `Mô phỏng xung đột cấu trúc và bẫy đồng nhất khi bổ nhiệm ${candName} (${candRole}) vào ${teamName}. Nguy cơ bẫy đồng nhất: ${homoRisk}. Phán quyết: ${verdict}. Bàn cờ quyền lực nội bộ bắt đầu rạn nứt, xuất hiện các phe cánh ngầm và phản kháng thụ động.`;
+        
+        switchWorkspace('view-war-room');
+        const input = document.getElementById('war-scenario-input');
+        if (input) {
+            input.value = scenario;
+            input.focus();
+        }
+        initWarRoomSimulation();
+    }
+
+    async function saveWarRoomReportAsCase() {
+        if (!warRoomSession || !warRoomSession.report) {
+            alert('Chưa có báo cáo Sa Bàn để lưu.');
+            return;
+        }
+        const btn = document.getElementById('save-war-case-btn');
+        const prevText = btn ? btn.innerHTML : '';
+        if (btn) {
+            btn.disabled = true;
+            btn.innerHTML = '⏳ Đang lưu hồ sơ…';
+        }
+        const rep = warRoomSession.report;
+        const title = `[Sa Bàn] ${warRoomSession.scenario.slice(0, 55)}…`;
+        try {
+            const res = await fetch('/api/v1/cases', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    domain: 'ORGANIZATION',
+                    title: title,
+                    context_description: `Mô phỏng Sa Bàn qua ${warRoomSession.current_round} vòng. Tình huống: ${warRoomSession.scenario}\n\nMắt xích nguy hiểm: ${rep.vulnerable_link}\nĐiểm gãy tổ chức: ${rep.critical_breakdown_point}`,
+                    decision_script: {
+                        vulnerable_link: rep.vulnerable_link,
+                        critical_breakdown_point: rep.critical_breakdown_point,
+                        strategies: rep.actionable_strategies
+                    },
+                    lessons_learned: (rep.actionable_strategies || []).map(s => `${s.name} (${s.philosophy}): ${s.expected_outcome}`),
+                    tags: ['sa-ban-tinh-the', 'mo-phong-to-chuc', 'war-room']
+                })
+            });
+            const data = await res.json();
+            if (data.status === 'success' || data.case) {
+                if (btn) {
+                    btn.innerHTML = '✅ Đã lưu vào Kho Hồ Sơ Thực Chiến';
+                    btn.style.color = 'var(--emerald-accent)';
+                }
+                setTimeout(() => {
+                    if (btn) {
+                        btn.disabled = false;
+                        btn.innerHTML = prevText;
+                        btn.style.color = '';
+                    }
+                }, 3000);
+            } else {
+                throw new Error(data.message || 'Không thể lưu hồ sơ');
+            }
+        } catch (e) {
+            alert('Lỗi lưu hồ sơ: ' + e.message);
+            if (btn) {
+                btn.disabled = false;
+                btn.innerHTML = prevText;
+            }
+        }
+    }
     </script>
 </body>
 </html>
+

@@ -41,6 +41,7 @@ from nhan_thuat.knowledge_engine import KnowledgeEngine
 from nhan_thuat.packs.department_pack import DepartmentPackRegistry
 from nhan_thuat.public.v1.adapter import KnowledgeEngineAdapterV1
 from nhan_thuat.public.v1.contracts import KnowledgeQuery
+from nhan_thuat.runtime.war_room import WarRoomEngine
 from nhan_thuat.storage.db import DatabaseManager
 from salesos_pack.plugin import SalesOSPlugin
 
@@ -55,6 +56,7 @@ salesos_plugin = SalesOSPlugin()
 db_manager = DatabaseManager()
 sparring_engine = SparringEngine(db_manager=db_manager, knowledge_engine=knowledge_engine)
 council_engine = CouncilEngine(knowledge_engine=knowledge_engine)
+war_room_engine = WarRoomEngine(knowledge_engine=knowledge_engine)
 department_packs = DepartmentPackRegistry()
 brief_exporter = ExecutiveBriefExporter()
 
@@ -251,6 +253,30 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
                     "authenticated": False,
                     "message": "Phiên làm việc không tồn tại hoặc đã hết hạn.",
                 })
+            return
+
+        # 0c. War Room SandBox GET: GET /api/v1/war-room/presets, GET /api/v1/war-room/state
+        if path == "/api/v1/war-room/presets":
+            self._send_json_response(200, {
+                "status": "success",
+                "presets": war_room_engine.get_presets(),
+            })
+            return
+
+        if path == "/api/v1/war-room/state":
+            qs = parse_qs(parsed_url.query)
+            session_id = qs.get("session_id", [""])[0]
+            session = war_room_engine.get_session(session_id)
+            if not session:
+                self._send_json_response(404, {
+                    "status": "error",
+                    "message": f"Session '{session_id}' not found.",
+                })
+                return
+            self._send_json_response(200, {
+                "status": "success",
+                "session": session.to_dict(),
+            })
             return
 
         # 1. Health & Version Endpoints
@@ -838,7 +864,53 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
             })
             return
 
-        # 0c. Executive Brief Export POST: POST /api/v1/export/brief
+        # 0c. War Room SandBox POST: /api/v1/war-room/init, /api/v1/war-room/step, /api/v1/war-room/report
+        if path == "/api/v1/war-room/init":
+            scenario = payload.get("scenario", "")
+            custom_personas = payload.get("custom_personas")
+            session = war_room_engine.initialize_session(scenario=scenario, custom_personas=custom_personas)
+            self._send_json_response(201, {
+                "status": "success",
+                "session": session.to_dict(),
+            })
+            return
+
+        if path == "/api/v1/war-room/step":
+            session_id = payload.get("session_id", "")
+            intervention = payload.get("intervention", "")
+            try:
+                round_result = war_room_engine.step_round(session_id=session_id, intervention=intervention)
+                session = war_room_engine.get_session(session_id)
+                self._send_json_response(200, {
+                    "status": "success",
+                    "round": round_result.to_dict(),
+                    "session": session.to_dict() if session else None,
+                })
+            except Exception as e:
+                self._send_json_response(400, {
+                    "status": "error",
+                    "message": str(e),
+                })
+            return
+
+        if path == "/api/v1/war-room/report":
+            session_id = payload.get("session_id", "")
+            try:
+                report = war_room_engine.generate_strategic_report(session_id=session_id)
+                session = war_room_engine.get_session(session_id)
+                self._send_json_response(200, {
+                    "status": "success",
+                    "report": report,
+                    "session": session.to_dict() if session else None,
+                })
+            except Exception as e:
+                self._send_json_response(400, {
+                    "status": "error",
+                    "message": str(e),
+                })
+            return
+
+        # 0d. Executive Brief Export POST: POST /api/v1/export/brief
         if path == "/api/v1/export/brief":
             title = payload.get("title", "Bản Tham Mưu Quyết Định Điều Hành")
             situation_summary = payload.get("situation_summary", "")

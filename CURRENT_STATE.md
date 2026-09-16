@@ -1,6 +1,6 @@
 # Current Repository State - NhanThuat Knowledge Repository
 
-**Last Updated:** 2026-09-14
+**Last Updated:** 2026-09-16
 **Status:** **ACTIVE — Vietnamese content base complete, Web app (Executive Studio) operational**
 
 ---
@@ -45,14 +45,14 @@ and are composed by `PhilosophyRouter` (multi-lens weights and conflict resoluti
 - **Status:** 373 units `frozen`, 6 units `draft` (`NT-LAW-3201`, `NT-LAW-4102`, `NT-PRINCIPLE-4101`, `NT-PHENOMENON-4101`..`4103`) awaiting Product Owner freeze.
 - **Cases:** 3 curated field cases in `knowledge/cases/` (`CASE-OPS-001`, `CASE-SALES-001`, `CASE-HR-001`), mirrored in the runtime database.
 - **Validation Status:** `scripts/validate_all.py` passes 100% clean.
-- **Test Suite Status:** `pytest` passes 100% (179 tests).
+- **Test Suite Status:** `pytest` passes 100% (184 tests).
 - **Lint Status:** `ruff check src scripts tests` passes clean.
 
 ---
 
 ## 4. Knowledge Runtime & Web App
 
-- **Runtime components** (`src/nhan_thuat/runtime/`): `KnowledgeGraph`, `KnowledgeResolver`, `PromptBuilder`, `KnowledgeEvaluator`, `KnowledgeSynthesizer` (multi-provider failover with deterministic fallback).
-- **Web gateway** (`backend/app/main.py`): stdlib `ThreadingHTTPServer` exposing REST endpoints for advisory analysis, council deliberation, sparring, diagnostics, case studies, department packs, knowledge units/domains/stats, book reader and PDF export.
-- **Web app** (`frontend/app.html`): five workspace modules — Tham Mưu (advisory), Hội Đồng Cố Vấn (council), Đấu Trí (sparring), Chẩn Đoán Nhân Sự (diagnostics), Tủ Sách & Tri Thức (bookshelf + catalog). Catalog renders all knowledge units with search, type filter and progressive loading; the bookshelf renders 18 books with an in-app Markdown reader; case studies are loaded from the API; the mobile navigation drawer restores module access on small screens; markdown is sanitized with DOMPurify.
+- **Runtime components** (`src/nhan_thuat/runtime/`): `KnowledgeGraph`, `KnowledgeResolver`, `PromptBuilder`, `KnowledgeEvaluator`, `KnowledgeSynthesizer` (multi-provider failover with deterministic fallback; multi-paragraph strategic argumentative treatise for situation overview).
+- **Web gateway** (`backend/app/main.py`): stdlib `ThreadingHTTPServer` exposing REST endpoints for advisory analysis, council deliberation, sparring, diagnostics, case studies, department packs, knowledge units/domains/stats, book reader, PDF export, and temporary authentication session management (`/api/v1/auth/*`).
+- **Web app** (`frontend/app.html`): five workspace modules with Dark Glassmorphism temporary login gate modal, quick 1-touch demo access, user profile header widget, and distinctive treatise-card layout for strategic situation overview.
 - **Engine index:** domain queries run on `primary_domain`; the `relations` block is treated as semantic (bidirectional) and excluded from dependency graph traversal.

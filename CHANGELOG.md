@@ -2,6 +2,21 @@
 
 Mọi thay đổi đáng chú ý của dự án được ghi tại đây.
 
+## [1.0.3] - 2026-09-16
+
+### Added
+
+- Cổng đăng nhập tạm thời (Temporary Login Gate Modal) phong cách Dark Glassmorphism, bảo vệ bảng điều khiển khi chưa xác thực.
+- Tính năng đăng nhập nhanh 1 chạm (Quick Access) cho 3 vai trò: Cố Vấn Cấp Cao (`EXECUTIVE`), Chuyên Viên Chiến Lược (`ADVISOR`), Khách Mời Trải Nghiệm (`GUEST`).
+- Widget hồ sơ người dùng trên Header (Avatar, Tên, Vai trò, nút Đăng xuất) và hỗ trợ đầy đủ trên menu di động.
+- Bộ API xác thực phía backend: `POST /api/v1/auth/login`, `GET /api/v1/auth/session`, `POST /api/v1/auth/logout`.
+- Bộ test tự động `tests/test_auth_and_treatise.py` kiểm thử toàn diện cơ chế xác thực và bài nghị luận tổng quan tình thế.
+
+### Changed
+
+- Phần "TỔNG QUAN TÌNH THẾ" được nâng cấp toàn diện từ vài câu ngắn thành một bài nghị luận chiến lược sâu sắc, đa tầng luận điểm (Luận đề thế trận, Biện giải chiều sâu ma sát tâm lý & dòng chảy ngầm, Luận kết & tâm thế định cục).
+- Giao diện hiển thị "TỔNG QUAN TÌNH THẾ" trên web app được thiết kế dạng thẻ chuyên biệt (`treatise-overview-card`) phong cách xã luận thượng cấp.
+
 ## [1.0.2] - 2026-09-14
 
 ### Added

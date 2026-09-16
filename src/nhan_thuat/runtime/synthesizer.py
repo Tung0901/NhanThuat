@@ -173,7 +173,10 @@ class KnowledgeSynthesizer:
             "- [3-4 gạch đầu dòng ngắn nhất có thể, ngôn ngữ bình dân: chuyện gì đang thực sự xảy ra; "
             "điều gì đang bị đe dọa; việc quan trọng nhất cần làm ngay. Người đọc chỉ đọc phần này cũng phải hiểu và biết phải làm gì].\n\n"
             "### 👁️ TỔNG QUAN TÌNH THẾ\n"
-            "- [1 đoạn văn 3-4 câu tóm tắt mức độ nghiêm trọng và bản chất cốt lõi của sự việc].\n\n"
+            "Trình bày như một BÀI NGHỊ LUẬN CHIẾN LƯỢC SÂU SẮC, TRAU CHUỐT (khoảng 2-3 đoạn văn cô đọng, sắc bén, dung hợp triết lý Đông Tây và thuật dụng nhân trị thế):\n"
+            "- **Đoạn 1 (Luận đề thế trận):** Không dừng lại ở hiện tượng vụn vặt bề mặt; hãy định vị thực chất cuộc diện này là gì trong tương quan lực lượng, cấu trúc quyền lực và dòng chảy kỳ vọng giữa các bên.\n"
+            "- **Đoạn 2 (Biện giải chiều sâu & Ma sát tâm lý):** Bóc tách các dòng chảy ngầm: nỗi sợ hãi, động cơ lợi ích thực tế, xung đột nhận thức và bẫy thế cờ mà nếu người lãnh đạo ứng xử bằng cảm xúc nóng vội hoặc do dự thì cục diện sẽ biến tướng nguy hiểm ra sao.\n"
+            "- **Đoạn 3 (Luận kết & Tâm thế định cục):** Đúc kết nguyên lý then chốt (kết hợp tư duy 'lấy tĩnh chế động', 'tùy thời định thế' với kỷ cương quản trị hiện đại), xác lập tâm thế của người nắm quyền chủ động để xoay chuyển cục diện.\n\n"
             "### 🔍 1. BÓC TÁCH BẢN CHẤT & ĐỘNG CƠ NGẦM\n"
             "- **Hiện tượng bề mặt:** [Vấn đề nhìn thấy bằng mắt thường, hành vi đang diễn ra].\n"
             "- **Động cơ ngầm ẩn:** [Lợi ích cốt lõi, nỗi sợ hãi hoặc định kiến thực sự đang chi phối đối phương].\n"
@@ -209,14 +212,50 @@ class KnowledgeSynthesizer:
             "- Việc cần làm ngay: xác định rõ lợi ích thật của từng bên, kiểm tra lại cấu trúc "
             "quyền hạn và chọn một hành động cụ thể có thể kiểm chứng được."
         )
+        # Xây dựng bài nghị luận chiến lược sâu sắc cho TỔNG QUAN TÌNH THẾ
+        treatise_paras = [
+            (
+                f"Vấn đề **\"{query}\"** thoạt nhìn có vẻ là một xung đột hay biến cố vụ việc đơn lẻ, song khi đặt vào "
+                "tọa độ quản trị và nhân tâm học, đây thực chất là sự đứt gãy hoặc xáo trộn trong tương quan giữa "
+                "**Lợi ích cốt lõi**, **Cấu trúc quyền hạn** và **Dòng chảy kỳ vọng ngầm**. Mọi biểu hiện bề mặt như "
+                "sự phản kháng, trì hoãn hay ma sát chỉ là phần nổi của tảng băng chìm; gốc rễ nằm ở tâm lý thủ thế "
+                "và sự phòng vệ tự nhiên của con người khi cảm nhận vùng an toàn hoặc quyền kiểm soát bị đe dọa."
+            )
+        ]
+
+        if top_units:
+            evidence_points = []
+            for u in top_units[:2]:
+                text = (u.summary or u.definition or "").strip()
+                if text:
+                    evidence_points.append(f"quy luật **{u.title}** (`{u.id}`: *{text}*)")
+
+            evidence_str = " cùng với ".join(evidence_points) if evidence_points else "các nguyên lý nền tảng của Nhân Thuật"
+            treatise_paras.append(
+                f"Soi chiếu dưới lăng kính triết học vận hành, tình thế này chịu sự tác động mang tính quyết định của {evidence_str}. "
+                "Nếu nhà quản trị chỉ nhìn vào hiện tượng để phản ứng theo phản xạ tự nhiên — hoặc dùng uy quyền cứng nhắc để áp chế, "
+                "hoặc nhượng bộ cảm tính để cầu an tạm thời — thì vô tình đều đẩy đối phương vào thế đối đầu triệt để hơn. "
+                "Cái bẫy lớn nhất của người cầm quyền trong thời khắc này là biến một bài toán cấu trúc thành cuộc đấu tranh cá nhân, "
+                "khiến tổ chức phải trả giá bằng sự xói mòn niềm tin và chi phí điều hòa nội bộ tăng vọt."
+            )
+        else:
+            treatise_paras.append(
+                "Trong mọi thế trận giằng co, việc vội vã đưa ra phán quyết khi chưa thấu tỏ động cơ sâu kín của các bên "
+                "luôn là mầm mống của thất bại chiến lược. Người lãnh đạo cần bóc tách rành mạch đâu là mâu thuẫn quyền lợi thật, "
+                "đâu chỉ là sự tự ái nhận thức và phòng vệ tâm lý."
+            )
+
+        treatise_paras.append(
+            "Do đó, định hướng giải pháp không phải là triệt hạ hay thỏa hiệp vô nguyên tắc, mà là nghệ thuật "
+            "**'Lập Thế Trước Khi Xuất Ngôn, Dựng Khung Trước Khi Dụng Nhân'**. Bậc cao thủ về nhân thuật luôn giữ tâm thế "
+            "'Tâm Trai' — tĩnh lặng để nhìn xuyên lớp sương mù cảm xúc, xác lập ranh giới kỷ cương không thể thương lượng, "
+            "đồng thời khéo léo chừa ra một lối thoát danh dự (Plan B) để đối phương chủ động chuyển hóa từ thế chống đối sang đồng thuận."
+        )
+
         lines.extend([
             "",
             "### 👁️ TỔNG QUAN TÌNH THẾ",
-            (
-                f"Vấn đề **\"{query}\"** cần được nhìn như một chuỗi quan hệ giữa lợi ích, quyền hạn và "
-                "thông tin — không chỉ là sự việc bề mặt. Các tri thức dưới đây cho biết quy luật nào "
-                "đang vận hành phía sau tình huống."
-            ),
+            "\n\n".join(treatise_paras),
             "",
             "### 🔍 1. BÓC TÁCH BẢN CHẤT & ĐỘNG CƠ NGẦM",
         ])

@@ -502,6 +502,266 @@
             font-family: var(--font-serif);
         }
 
+        /* Treatise Overview Card for TỔNG QUAN TÌNH THẾ */
+        .treatise-overview-card {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(18, 18, 22, 0.95) 100%) !important;
+            border-left: 4px solid var(--gold-primary) !important;
+            border-top: 1px solid rgba(245, 158, 11, 0.25) !important;
+            border-right: 1px solid rgba(245, 158, 11, 0.15) !important;
+            border-bottom: 1px solid rgba(245, 158, 11, 0.15) !important;
+            padding: 20px 24px !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35), inset 0 0 30px rgba(245, 158, 11, 0.03) !important;
+        }
+        .treatise-badge {
+            display: inline-block;
+            font-size: 10.5px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            background: rgba(245, 158, 11, 0.15);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+        .treatise-title {
+            font-family: var(--font-serif) !important;
+            font-size: 17px !important;
+            color: #ffffff !important;
+            margin-bottom: 12px !important;
+            letter-spacing: 0.02em;
+        }
+        .treatise-body {
+            font-size: 13.5px !important;
+            line-height: 1.85 !important;
+            color: rgba(255, 255, 255, 0.92) !important;
+            text-align: justify;
+        }
+        .treatise-body p {
+            margin-bottom: 12px;
+        }
+        .treatise-body strong {
+            color: var(--gold-light);
+        }
+
+        /* User Profile Badge in Header */
+        .user-profile-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-subtle);
+            padding: 4px 10px 4px 8px;
+            border-radius: 20px;
+            font-size: 12px;
+            transition: all 0.2s ease;
+        }
+        .user-profile-badge:hover {
+            border-color: rgba(245, 158, 11, 0.4);
+            background: rgba(245, 158, 11, 0.08);
+        }
+        .user-avatar-icon {
+            font-size: 16px;
+            line-height: 1;
+        }
+        .user-name-text {
+            color: #ffffff;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .user-role-tag {
+            font-size: 9.5px;
+            font-weight: 700;
+            color: var(--gold-primary);
+            background: rgba(245, 158, 11, 0.15);
+            padding: 2px 6px;
+            border-radius: 6px;
+            text-transform: uppercase;
+        }
+        .logout-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 11px;
+            margin-left: 4px;
+            cursor: pointer !important;
+            padding: 2px 4px;
+            border-radius: 4px;
+            transition: color 0.2s ease;
+        }
+        .logout-btn:hover {
+            color: #f43f5e;
+        }
+
+        /* Login Modal Gate */
+        .login-gate-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(9, 9, 11, 0.88);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 999999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .login-gate-modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .login-gate-card {
+            background: linear-gradient(145deg, #13131a 0%, #0c0c10 100%);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            border-radius: 20px;
+            padding: 36px 40px;
+            width: 100%;
+            max-width: 480px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(245, 158, 11, 0.12);
+            text-align: center;
+            position: relative;
+            transform: translateY(20px) scale(0.96);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .login-gate-modal.active .login-gate-card {
+            transform: translateY(0) scale(1);
+        }
+        .login-crest {
+            width: 54px;
+            height: 54px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #f59e0b 0%, #b45309 100%);
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 0 30px rgba(245, 158, 11, 0.4);
+        }
+        .login-gate-title {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 6px;
+            letter-spacing: 0.02em;
+        }
+        .login-gate-subtitle {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+        .login-field-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .login-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+        .login-input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            padding: 12px 16px;
+            color: #ffffff;
+            font-size: 13.5px;
+            font-family: var(--font-sans);
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .login-input:focus {
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 12px rgba(245, 158, 11, 0.25);
+            background: rgba(255, 255, 255, 0.06);
+        }
+        .login-submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #000000;
+            border: none;
+            border-radius: 10px;
+            padding: 13px;
+            font-size: 14px;
+            font-weight: 700;
+            font-family: var(--font-sans);
+            cursor: pointer !important;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+            margin-bottom: 20px;
+        }
+        .login-submit-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.45);
+        }
+        .quick-access-divider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            color: var(--text-muted);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+        .quick-access-divider::before, .quick-access-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border-subtle);
+        }
+        .quick-access-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+        .quick-access-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 10px 8px;
+            color: var(--text-secondary);
+            font-size: 11.5px;
+            font-weight: 600;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer !important;
+            transition: all 0.2s ease;
+        }
+        .quick-access-btn:hover {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: rgba(245, 158, 11, 0.4);
+            color: var(--gold-light);
+            transform: translateY(-1px);
+        }
+        .quick-access-btn span.emoji {
+            font-size: 18px;
+        }
+        .login-error-msg {
+            color: #f43f5e;
+            font-size: 12px;
+            margin-top: -10px;
+            margin-bottom: 14px;
+            display: none;
+        }
+
         .advisory-copy-btn {
             background: rgba(255, 255, 255, 0.06);
             border: 1px solid var(--border-subtle);
@@ -977,12 +1237,14 @@
 
         <div class="header-actions">
             <button class="export-btn" id="export-brief-top-btn">📄 Xuất Kịch Bản</button>
+            <div id="user-profile-widget" class="user-profile-widget"></div>
             <a href="/" class="home-link-btn">Trang Chủ</a>
         </div>
     </header>
 
     <!-- Mobile Navigation Drawer -->
     <div class="mobile-nav-drawer" id="mobile-nav-drawer" role="navigation" aria-label="Điều hướng di động">
+        <div id="mobile-user-profile-widget" style="padding: 10px 14px; border-bottom: 1px solid var(--border-subtle); margin-bottom: 8px;"></div>
         <button class="workspace-tab-btn active" onclick="switchWorkspace('view-advisory', this); closeMobileNav();">💡 Tham Mưu</button>
         <button class="workspace-tab-btn" onclick="switchWorkspace('view-council', this); closeMobileNav();">🏛️ Hội Đồng Cố Vấn</button>
         <button class="workspace-tab-btn" onclick="switchWorkspace('view-sparring', this); closeMobileNav();">⚔️ Đấu Trí</button>
@@ -1373,7 +1635,234 @@
         </div>
     </div>
 
+    <!-- Temporary Login Gate Modal -->
+    <div class="login-gate-modal" id="login-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="login-gate-title">
+        <div class="login-gate-card">
+            <div class="login-crest">👑</div>
+            <h2 class="login-gate-title" id="login-gate-title">NHÂN THUẬT OS</h2>
+            <p class="login-gate-subtitle">Cổng Định Danh & Xác Thực Cố Vấn Chiến Lược Điều Hành</p>
+
+            <form id="login-form" onsubmit="handleFormLogin(event)">
+                <div class="login-field-group">
+                    <label class="login-label" for="login-username">Tên đăng nhập hoặc Mã định danh</label>
+                    <input type="text" id="login-username" class="login-input" placeholder="Ví dụ: executive, admin, guest hoặc tên bạn..." required autocomplete="username">
+                </div>
+                <div class="login-field-group">
+                    <label class="login-label" for="login-password">Mật khẩu (Tùy chọn)</label>
+                    <input type="password" id="login-password" class="login-input" placeholder="Mặc định: 123456 (hoặc để trống)" autocomplete="current-password">
+                </div>
+                <div id="login-error-msg" class="login-error-msg"></div>
+                <button type="submit" class="login-submit-btn" id="login-submit-btn">Xác Thực & Vào Không Gian Làm Việc ➤</button>
+            </form>
+
+            <div class="quick-access-divider">Hoặc Đăng Nhập Nhanh 1 Chạm</div>
+
+            <div class="quick-access-grid">
+                <button type="button" class="quick-access-btn" onclick="quickLoginAs('executive')">
+                    <span class="emoji">👑</span>
+                    <span>Cố Vấn Cấp Cao</span>
+                </button>
+                <button type="button" class="quick-access-btn" onclick="quickLoginAs('advisor')">
+                    <span class="emoji">🏛️</span>
+                    <span>Chuyên Viên</span>
+                </button>
+                <button type="button" class="quick-access-btn" onclick="quickLoginAs('guest')">
+                    <span class="emoji">👁️</span>
+                    <span>Khách Mời</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script>
+    // --- TEMPORARY AUTHENTICATION SYSTEM ---
+    const AUTH_STORAGE_KEY = 'nhanthuat_session_v1';
+    let currentUserSession = null;
+
+    function getStoredSession() {
+        try {
+            const raw = localStorage.getItem(AUTH_STORAGE_KEY);
+            return raw ? JSON.parse(raw) : null;
+        } catch (e) {
+            return null;
+        }
+    }
+
+    function saveSession(session) {
+        currentUserSession = session;
+        try {
+            localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(session));
+        } catch (e) {}
+        updateUserProfileUI(session);
+        closeLoginModal();
+    }
+
+    function clearSession() {
+        currentUserSession = null;
+        try {
+            localStorage.removeItem(AUTH_STORAGE_KEY);
+        } catch (e) {}
+        updateUserProfileUI(null);
+        openLoginModal();
+    }
+
+    function openLoginModal() {
+        const modal = document.getElementById('login-modal-backdrop');
+        if (modal) modal.classList.add('active');
+        const err = document.getElementById('login-error-msg');
+        if (err) err.style.display = 'none';
+    }
+
+    function closeLoginModal() {
+        const modal = document.getElementById('login-modal-backdrop');
+        if (modal) modal.classList.remove('active');
+    }
+
+    function updateUserProfileUI(session) {
+        const desktopWidget = document.getElementById('user-profile-widget');
+        const mobileWidget = document.getElementById('mobile-user-profile-widget');
+
+        if (!session) {
+            const guestHtml = `
+                <button class="export-btn" style="border-color: rgba(245,158,11,0.5); color: var(--gold-light);" onclick="openLoginModal()">
+                    🔑 Đăng Nhập
+                </button>`;
+            if (desktopWidget) desktopWidget.innerHTML = guestHtml;
+            if (mobileWidget) mobileWidget.innerHTML = guestHtml;
+            return;
+        }
+
+        const avatar = session.avatar || '👑';
+        const name = escapeHtml(session.display_name || session.user_id || 'Cố Vấn');
+        const role = escapeHtml(session.role || 'EXECUTIVE');
+
+        const badgeHtml = `
+            <div class="user-profile-badge" title="Tài khoản đang hoạt động">
+                <span class="user-avatar-icon">${avatar}</span>
+                <span class="user-name-text">${name}</span>
+                <span class="user-role-tag">${role}</span>
+                <button class="logout-btn" onclick="handleLogout()" title="Đăng xuất khỏi phiên làm việc">🚪</button>
+            </div>
+        `;
+
+        if (desktopWidget) desktopWidget.innerHTML = badgeHtml;
+        if (mobileWidget) mobileWidget.innerHTML = badgeHtml;
+    }
+
+    async function handleFormLogin(e) {
+        if (e) e.preventDefault();
+        const username = (document.getElementById('login-username')?.value || '').trim();
+        const password = (document.getElementById('login-password')?.value || '').trim();
+        const submitBtn = document.getElementById('login-submit-btn');
+        const errorEl = document.getElementById('login-error-msg');
+
+        if (!username) return;
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = '⏳ Đang xác thực…';
+        }
+        if (errorEl) errorEl.style.display = 'none';
+
+        try {
+            const res = await fetch('/api/v1/auth/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password })
+            });
+            const data = await res.json();
+            if (data.status === 'success' && data.session) {
+                saveSession(data.session);
+            } else {
+                throw new Error(data.message || 'Xác thực không thành công.');
+            }
+        } catch (err) {
+            // Fallback for standalone static file execution
+            const lower = username.toLowerCase();
+            const fallbackSession = {
+                token: 'NT-SESSION-LOCAL-' + Date.now(),
+                user_id: lower,
+                display_name: username.charAt(0).toUpperCase() + username.slice(1),
+                role: lower === 'guest' ? 'GUEST' : (lower === 'advisor' ? 'ADVISOR' : 'EXECUTIVE'),
+                avatar: lower === 'guest' ? '👁️' : (lower === 'advisor' ? '🏛️' : '👑'),
+                logged_in_at: Date.now() / 1000
+            };
+            saveSession(fallbackSession);
+        } finally {
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Xác Thực & Vào Không Gian Làm Việc ➤';
+            }
+        }
+    }
+
+    async function quickLoginAs(role) {
+        const submitBtn = document.getElementById('login-submit-btn');
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = '⏳ Đang kết nối…';
+        }
+        try {
+            const res = await fetch('/api/v1/auth/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ role: role.toUpperCase() })
+            });
+            const data = await res.json();
+            if (data.status === 'success' && data.session) {
+                saveSession(data.session);
+            } else {
+                throw new Error('Quick login failed');
+            }
+        } catch (e) {
+            // Client fallback
+            const presets = {
+                executive: { display_name: 'Cố Vấn Điều Hành', role: 'EXECUTIVE', avatar: '👑' },
+                advisor: { display_name: 'Chuyên Viên Chiến Lược', role: 'ADVISOR', avatar: '🏛️' },
+                guest: { display_name: 'Khách Mời Trải Nghiệm', role: 'GUEST', avatar: '👁️' }
+            };
+            const p = presets[role] || presets.executive;
+            saveSession({
+                token: 'NT-SESSION-LOCAL-' + Date.now(),
+                user_id: role,
+                display_name: p.display_name,
+                role: p.role,
+                avatar: p.avatar,
+                logged_in_at: Date.now() / 1000
+            });
+        } finally {
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Xác Thực & Vào Không Gian Làm Việc ➤';
+            }
+        }
+    }
+
+    async function handleLogout() {
+        if (!confirm('Bạn có chắc chắn muốn đăng xuất khỏi phiên làm việc này?')) return;
+        const s = currentUserSession;
+        if (s && s.token) {
+            try {
+                await fetch('/api/v1/auth/logout', {
+                    method: 'POST',
+                    headers: { 'Authorization': `Bearer ${s.token}` }
+                });
+            } catch (e) {}
+        }
+        clearSession();
+    }
+
+    function initAuthGate() {
+        const s = getStoredSession();
+        if (s) {
+            currentUserSession = s;
+            updateUserProfileUI(s);
+            closeLoginModal();
+        } else {
+            updateUserProfileUI(null);
+            openLoginModal();
+        }
+    }
+
     // --- WORKSPACE TAB SWITCHER ---
     function switchWorkspace(viewId, btn) {
         document.querySelectorAll('.workspace-module').forEach(m => m.classList.remove('active'));
@@ -1539,6 +2028,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
+        initAuthGate();
         loadBookshelf();
     });
 
@@ -1965,12 +2455,24 @@
             </div>
         `).join('') : `<div style="color: var(--text-muted); font-size: 12.5px;">Không có tri thức đối chiếu trực tiếp.</div>`;
 
-        const analysisCards = analysisSections.length ? analysisSections.map((s, idx) => `
-            <div class="advisory-section-card">
-                <h4>${escapeHtml(s.title)}</h4>
-                <div style="font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.9);">${formatMarkdownText(s.body)}</div>
-            </div>
-        `).join('') : `<div class="advisory-section-card"><div style="font-size: 13px; line-height: 1.7;">${formatMarkdownText(syn.synthesis || 'Chưa có nội dung phân tích.')}</div></div>`;
+        const analysisCards = analysisSections.length ? analysisSections.map((s, idx) => {
+            const isTreatise = s.title.includes('TỔNG QUAN TÌNH THẾ');
+            if (isTreatise) {
+                return `
+                    <div class="advisory-section-card treatise-overview-card">
+                        <div class="treatise-badge">🏛️ LUẬN ĐỀ CHIẾN LƯỢC TOÀN CỤC</div>
+                        <h4 class="treatise-title">${escapeHtml(s.title)}</h4>
+                        <div class="treatise-body">${formatMarkdownText(s.body)}</div>
+                    </div>
+                `;
+            }
+            return `
+                <div class="advisory-section-card">
+                    <h4>${escapeHtml(s.title)}</h4>
+                    <div style="font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.9);">${formatMarkdownText(s.body)}</div>
+                </div>
+            `;
+        }).join('') : `<div class="advisory-section-card"><div style="font-size: 13px; line-height: 1.7;">${formatMarkdownText(syn.synthesis || 'Chưa có nội dung phân tích.')}</div></div>`;
 
         const glossaryTab = glossary.length ? `
             <button class="bubble-tab-btn" onclick="switchBubbleTab('${id}', 'glossary', this)">📚 Thuật Ngữ (${glossary.length})</button>

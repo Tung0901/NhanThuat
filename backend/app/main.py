@@ -24,6 +24,7 @@ Exposes REST API endpoints for BusinessOS Kernel, SalesOS Plugin, CPQ Quote Gene
 import json
 import os
 import re
+import time
 import uuid
 from html import escape as html_escape
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -59,6 +60,9 @@ brief_exporter = ExecutiveBriefExporter()
 
 # Execution History Store for Provenance Lookup
 execution_provenance_store: dict[str, dict[str, Any]] = {}
+
+# Temporary In-Memory Authentication Sessions Store
+_ACTIVE_SESSIONS: dict[str, dict[str, Any]] = {}
 
 STATIC_DIR = Path(__file__).resolve().parent / "static"
 DOCS_KNOWLEDGE_DIR = Path(__file__).resolve().parent.parent.parent / "docs" / "knowledge"
@@ -229,6 +233,24 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
             else:
                 self.send_response(404)
                 self.end_headers()
+            return
+
+        # 0b. Authentication Session Verification: GET /api/v1/auth/session
+        if path == "/api/v1/auth/session":
+            auth_header = self.headers.get("Authorization", "")
+            token = auth_header.replace("Bearer ", "").strip() if "Bearer " in auth_header else auth_header
+            if token and token in _ACTIVE_SESSIONS:
+                self._send_json_response(200, {
+                    "status": "success",
+                    "authenticated": True,
+                    "session": _ACTIVE_SESSIONS[token],
+                })
+            else:
+                self._send_json_response(401, {
+                    "status": "error",
+                    "authenticated": False,
+                    "message": "Phiên làm việc không tồn tại hoặc đã hết hạn.",
+                })
             return
 
         # 1. Health & Version Endpoints
@@ -685,6 +707,64 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
                 "status": "VALIDATION_ERROR",
                 "error_code": "INVALID_JSON_PAYLOAD",
                 "message": f"Malformed JSON payload: {e!s}",
+            })
+            return
+
+        # 0. Authentication Login & Logout: POST /api/v1/auth/login, POST /api/v1/auth/logout
+        if path == "/api/v1/auth/login":
+            username = str(payload.get("username", "")).strip().lower()
+            password = str(payload.get("password", "")).strip()
+            role_hint = str(payload.get("role", "")).strip().upper()
+
+            # Predefined credentials and quick-login roles
+            accounts = {
+                "admin": {"password": "nhanthuat2026", "name": "Cố Vấn Tối Cao (Admin)", "role": "EXECUTIVE", "avatar": "👑"},
+                "executive": {"password": "123456", "name": "Cố Vấn Điều Hành", "role": "EXECUTIVE", "avatar": "👑"},
+                "advisor": {"password": "123456", "name": "Chuyên Viên Chiến Lược", "role": "ADVISOR", "avatar": "🏛️"},
+                "guest": {"password": "guest", "name": "Khách Mời Trải Nghiệm", "role": "GUEST", "avatar": "👁️"},
+            }
+
+            matched = None
+            if username in accounts and (not password or accounts[username]["password"] == password):
+                matched = accounts[username]
+                user_id = username
+            elif role_hint in ("EXECUTIVE", "ADVISOR", "GUEST"):
+                role_key = role_hint.lower()
+                matched = accounts.get(role_key, accounts["guest"])
+                user_id = role_key
+            elif username:
+                # Flexible temporary login with any identifier
+                matched = {"name": username.capitalize(), "role": "EXECUTIVE", "avatar": "⚡"}
+                user_id = username
+            else:
+                matched = accounts["executive"]
+                user_id = "executive"
+
+            token = f"NT-SESSION-{uuid.uuid4().hex[:16].upper()}"
+            session_data = {
+                "token": token,
+                "user_id": user_id,
+                "display_name": matched["name"],
+                "role": matched["role"],
+                "avatar": matched["avatar"],
+                "logged_in_at": time.time(),
+            }
+            _ACTIVE_SESSIONS[token] = session_data
+
+            self._send_json_response(200, {
+                "status": "success",
+                "message": f"Đăng nhập thành công với vai trò {matched['name']}.",
+                "session": session_data,
+            })
+            return
+
+        if path == "/api/v1/auth/logout":
+            auth_header = self.headers.get("Authorization", "")
+            token = auth_header.replace("Bearer ", "").strip() if "Bearer " in auth_header else auth_header
+            _ACTIVE_SESSIONS.pop(token, None)
+            self._send_json_response(200, {
+                "status": "success",
+                "message": "Đã đăng xuất thành công.",
             })
             return
 

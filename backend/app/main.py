@@ -910,6 +910,29 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
                 })
             return
 
+        if path == "/api/v1/war-room/interrogate":
+            session_id = payload.get("session_id", "")
+            persona_id = payload.get("persona_id", "")
+            question = payload.get("question", "")
+            try:
+                interrogation = war_room_engine.interrogate_persona(
+                    session_id=session_id,
+                    persona_id=persona_id,
+                    question=question,
+                )
+                session = war_room_engine.get_session(session_id)
+                self._send_json_response(200, {
+                    "status": "success",
+                    "interrogation": interrogation,
+                    "session": session.to_dict() if session else None,
+                })
+            except Exception as e:
+                self._send_json_response(400, {
+                    "status": "error",
+                    "message": str(e),
+                })
+            return
+
         # 0d. Executive Brief Export POST: POST /api/v1/export/brief
         if path == "/api/v1/export/brief":
             title = payload.get("title", "Bản Tham Mưu Quyết Định Điều Hành")

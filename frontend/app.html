@@ -1606,15 +1606,156 @@
             gap: 14px;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
         }
-        .war-empty-state {
-            text-align: center;
-            color: var(--text-muted);
-            padding: 60px 20px;
+        /* MiroFish Additions: Filter Bar, Network Graph, Interrogation, Trajectory */
+        .war-feed-filter-bar {
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: rgba(0, 0, 0, 0.25);
+            border-bottom: 1px solid var(--border-subtle);
+            overflow-x: auto;
+            scrollbar-width: none;
+            flex-shrink: 0;
+        }
+        .war-feed-filter-bar::-webkit-scrollbar { display: none; }
+        .war-filter-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-subtle);
+            border-radius: 6px;
+            padding: 4px 9px;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.15s ease;
+        }
+        .war-filter-btn:hover {
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        .war-filter-btn.active {
+            background: rgba(245, 158, 11, 0.15);
+            border-color: var(--gold-primary);
+            color: var(--gold-light);
+            box-shadow: 0 0 8px rgba(245, 158, 11, 0.2);
+        }
+        .war-graph-card {
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0.65) 0%, rgba(10, 10, 15, 0.85) 100%);
+            border-bottom: 1px solid var(--border-subtle);
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .war-graph-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 14px;
+            background: rgba(255, 255, 255, 0.02);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .war-graph-title {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--cyan-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .war-graph-canvas {
+            width: 100%;
+            height: 210px;
+            display: block;
+        }
+        .war-btn-interrogate {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            color: var(--gold-light);
+            border-radius: 6px;
+            padding: 4px 8px;
+            font-size: 10.5px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.15s ease;
+        }
+        .war-btn-interrogate:hover {
+            background: rgba(245, 158, 11, 0.22);
+            border-color: var(--gold-primary);
+            color: #ffffff;
+        }
+        .persona-trajectory-wrap {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 9.5px;
+            color: var(--text-muted);
+            margin-top: 2px;
+            flex-wrap: wrap;
+        }
+        .trajectory-pill {
+            padding: 1px 5px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            font-weight: 700;
+            color: var(--cyan-accent);
+        }
+        .war-btn-autoplay {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(5, 150, 105, 0.3) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            color: var(--emerald-accent);
+            border-radius: 8px;
+            padding: 10px 16px;
+            font-family: var(--font-sans);
+            font-size: 12.5px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
+            gap: 8px;
+            width: 100%;
+            margin-top: 6px;
+            transition: all 0.2s ease;
+        }
+        .war-btn-autoplay:hover {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.3) 0%, rgba(5, 150, 105, 0.45) 100%);
+            border-color: var(--emerald-accent);
+            color: #ffffff;
+            box-shadow: 0 0 12px rgba(16, 185, 129, 0.25);
+        }
+        .war-btn-autoplay:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+        .interrogate-chat-bubble {
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-size: 12.5px;
+            line-height: 1.5;
+            max-width: 85%;
+        }
+        .interrogate-user-msg {
+            align-self: flex-end;
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(217, 119, 6, 0.25) 100%);
+            border: 1px solid rgba(245, 158, 11, 0.4);
+            color: #ffffff;
+            border-bottom-right-radius: 2px;
+        }
+        .interrogate-agent-msg {
+            align-self: flex-start;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-subtle);
+            color: #e2e8f0;
+            border-bottom-left-radius: 2px;
         }
         @media (max-width: 1100px) {
             .war-room-layout {
@@ -2084,11 +2225,46 @@
                     </div>
                 </div>
 
-                <!-- CỘT 2: DÒNG THỜI GIAN TƯƠNG TÁC (WAR ROOM LIVE FEED) -->
+                <!-- CỘT 2: DÒNG THỜI GIAN TƯƠNG TÁC (WAR ROOM LIVE FEED & GRAPH) -->
                 <div class="war-room-col">
                     <div class="war-room-col-header">
                         <h3><span>📡</span> Dòng Thời Gian Tình Thế (Live Feed)</h3>
-                        <div id="war-round-badge" class="persona-meta-pill" style="background: rgba(245,158,11,0.15); color: var(--gold-light); font-weight: 700;">Chưa bắt đầu</div>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <button id="war-graph-toggle-btn" class="persona-meta-pill" onclick="toggleWarGraphView()" style="cursor: pointer; background: rgba(56,189,248,0.12); color: var(--cyan-accent); font-weight: 700; border-color: rgba(56,189,248,0.3);">🕸️ Đồ Thị Mạng Lưới</button>
+                            <div id="war-round-badge" class="persona-meta-pill" style="background: rgba(245,158,11,0.15); color: var(--gold-light); font-weight: 700;">Chưa bắt đầu</div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Social Network Graph (MiroFish Graph Visualization) -->
+                    <div id="war-graph-card" class="war-graph-card" style="display: none;">
+                        <div class="war-graph-header">
+                            <div class="war-graph-title">
+                                <span>🕸️</span> Đồ Thị Quan Hệ Đa Tác Nhân & Luồng Rỉ Tai Hành Lang
+                            </div>
+                            <div id="war-graph-stats" style="font-size: 10.5px; color: var(--text-secondary);">
+                                Bấm vào node để Thẩm vấn 1-1
+                            </div>
+                        </div>
+                        <div id="war-graph-svg-wrap" style="position: relative; width: 100%; height: 210px; background: radial-gradient(circle at center, rgba(30,41,59,0.5) 0%, rgba(10,10,15,0.95) 100%);">
+                            <svg id="war-network-svg" class="war-graph-canvas" style="width: 100%; height: 210px;"></svg>
+                        </div>
+                        <div style="padding: 6px 14px; background: rgba(0,0,0,0.35); border-top: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: space-between; font-size: 10px; color: var(--text-muted);">
+                            <div style="display: flex; gap: 12px;">
+                                <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--emerald-accent);"></span> Đồng minh</span>
+                                <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--rose-accent);"></span> Xung đột/Tension</span>
+                                <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--gold-primary);"></span> Rỉ tai ngầm</span>
+                            </div>
+                            <span>💡 Bấm node để thẩm vấn trực tiếp</span>
+                        </div>
+                    </div>
+
+                    <!-- Channel Filter Tabs -->
+                    <div class="war-feed-filter-bar">
+                        <button class="war-filter-btn active" onclick="filterWarFeed('all', this)">Tất Cả</button>
+                        <button class="war-filter-btn" onclick="filterWarFeed('public', this)">📢 Công Khai</button>
+                        <button class="war-filter-btn" onclick="filterWarFeed('thought', this)">💭 Độc Thoại Ngầm</button>
+                        <button class="war-filter-btn" onclick="filterWarFeed('whisper', this)">🤫 Rỉ Tai Hành Lang</button>
+                        <button class="war-filter-btn" onclick="filterWarFeed('intervention', this)">👑 Lệnh Can Thiệp</button>
                     </div>
                     
                     <div id="war-stage-banner" style="display: none; padding: 12px 18px; border-bottom: 1px solid var(--border-subtle); background: rgba(0,0,0,0.2);">
@@ -2133,6 +2309,9 @@
 
                             <button id="war-step-btn" class="war-btn-step" onclick="stepWarRoomRound()" disabled style="margin-top: 12px;">
                                 <span>▶️</span> Tiến Hành Vòng Kế Tiếp
+                            </button>
+                            <button id="war-autoplay-btn" class="war-btn-autoplay" onclick="toggleWarRoomAutoPlay()" disabled>
+                                <span>⚡</span> Tự Động Mô Phỏng (Auto-Play)
                             </button>
                         </div>
 
@@ -2181,6 +2360,48 @@
             <button class="modal-close-btn" onclick="closeCaseModal()" aria-label="Đóng hồ sơ thực chiến">&times;</button>
             <div id="case-modal-content">
                 <!-- Dynamically loaded -->
+            </div>
+        </div>
+    </div>
+
+    <!-- War Room Direct Interrogation Modal (MiroFish Deep Interaction) -->
+    <div class="modal-backdrop" id="war-interrogate-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="interrogate-modal-title">
+        <div class="modal-window" style="max-width: 660px; padding: 0; overflow: hidden; border-color: rgba(245, 158, 11, 0.35); box-shadow: 0 20px 60px rgba(0,0,0,0.85), 0 0 25px rgba(245, 158, 11, 0.15);">
+            <div style="padding: 14px 18px; border-bottom: 1px solid var(--border-subtle); background: rgba(245, 158, 11, 0.08); display: flex; align-items: center; justify-content: space-between;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <span style="font-size: 20px;">🕵️</span>
+                    <div>
+                        <div id="interrogate-modal-title" style="font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--gold-light);">Thẩm Vấn Riêng 1-1 (MiroFish Deep Interaction)</div>
+                        <div style="font-size: 11px; color: var(--text-secondary);">Chất vấn kín động cơ, toan tính ngầm và nỗi sợ của nhân vật</div>
+                    </div>
+                </div>
+                <button class="modal-close-btn" onclick="closeInterrogateModal()" style="position: static; margin: 0;">&times;</button>
+            </div>
+
+            <!-- Target Persona Header Summary -->
+            <div id="interrogate-target-banner" style="padding: 10px 18px; background: rgba(0,0,0,0.35); border-bottom: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+                <!-- Populated dynamically -->
+            </div>
+
+            <!-- Chat / Dialogue Stream -->
+            <div id="interrogate-chat-stream" style="height: 270px; overflow-y: auto; padding: 14px 18px; display: flex; flex-direction: column; gap: 10px; background: rgba(0,0,0,0.2);">
+                <!-- Dynamic messages -->
+            </div>
+
+            <!-- Input & Quick Questions -->
+            <div style="padding: 12px 18px; background: rgba(255,255,255,0.02); border-top: 1px solid var(--border-subtle);">
+                <div style="display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 8px;">
+                    <button type="button" class="persona-meta-pill" onclick="quickFillInterrogate('Anh đang có toan tính gì sau lưng Ban Giám Đốc?')" style="cursor: pointer; font-size: 10px;">🔍 Hỏi toan tính ngầm</button>
+                    <button type="button" class="persona-meta-pill" onclick="quickFillInterrogate('Nếu công ty bảo đảm quyền lợi cho anh, anh có chịu hợp tác dẹp yên khối của mình không?')" style="cursor: pointer; font-size: 10px;">🤝 Đàm phán quyền lợi</button>
+                    <button type="button" class="persona-meta-pill" onclick="quickFillInterrogate('Tôi biết anh đang tiếp xúc với người bên ngoài, có đúng không?')" style="cursor: pointer; font-size: 10px;">⚡ Chất vấn đối thủ</button>
+                    <button type="button" class="persona-meta-pill" onclick="quickFillInterrogate('Ai là người đứng sau xúi giục anh chống đối?')" style="cursor: pointer; font-size: 10px;">🎯 Dò tìm thủ lĩnh ngầm</button>
+                </div>
+                <div style="display: flex; gap: 8px;">
+                    <input type="text" id="interrogate-question-input" class="war-textarea" style="height: 38px; resize: none; padding: 8px 12px; font-size: 12px;" placeholder="Nhập câu hỏi chất vấn trực tiếp Chủ tịch dành cho nhân vật này..." onkeydown="if(event.key === 'Enter') sendInterrogationQuestion();">
+                    <button id="interrogate-send-btn" class="war-btn-primary" style="width: auto; padding: 0 16px; height: 38px; flex-shrink: 0;" onclick="sendInterrogationQuestion()">
+                        <span>Gửi</span> ➤
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -3607,6 +3828,8 @@
         if (e.key === 'Escape') {
             closeUnitModal();
             closeBookModal();
+            closeCaseModal();
+            closeInterrogateModal();
             closeMobileNav();
             return;
         }
@@ -3737,6 +3960,10 @@
             personasContainer.innerHTML = warRoomSession.personas.map(p => {
                 const loyaltyColor = p.loyalty_score >= 70 ? 'var(--emerald-accent)' : (p.loyalty_score >= 45 ? 'var(--gold-primary)' : 'var(--rose-accent)');
                 const stressColor = p.stress_level >= 75 ? 'var(--rose-accent)' : (p.stress_level >= 50 ? 'var(--gold-primary)' : 'var(--emerald-accent)');
+                const trajectoryHtml = Array.isArray(p.loyalty_history) && p.loyalty_history.length > 1
+                    ? `<div class="persona-trajectory-wrap"><span style="color: var(--text-muted); font-size: 9.5px;">Quỹ đạo TT:</span> ${p.loyalty_history.map((val, idx) => `<span class="trajectory-pill">V${idx}: ${val}%</span>`).join('<span style="color: var(--text-muted);">➔</span>')}</div>`
+                    : '';
+
                 return `
                     <div class="war-persona-card" id="persona-card-${p.id}">
                         <div class="persona-header">
@@ -3747,7 +3974,10 @@
                                     <div class="persona-role">${escapeHtml(p.role)}</div>
                                 </div>
                             </div>
-                            <span class="persona-meta-pill" style="font-size: 9.5px; background: rgba(56,189,248,0.12); color: var(--cyan-accent);">${escapeHtml(p.faction)}</span>
+                            <div style="display: flex; align-items: center; gap: 5px;">
+                                <button class="war-btn-interrogate" onclick="openInterrogateModal('${p.id}')" title="Thẩm vấn kín 1-1 với nhân vật này">🕵️ Thẩm vấn</button>
+                                <span class="persona-meta-pill" style="font-size: 9.5px; background: rgba(56,189,248,0.12); color: var(--cyan-accent);">${escapeHtml(p.faction)}</span>
+                            </div>
                         </div>
                         <div style="display: flex; flex-direction: column; gap: 4px; margin: 4px 0;">
                             <div class="persona-stat-row">
@@ -3764,6 +3994,7 @@
                                 </div>
                                 <span style="width: 32px; text-align: right; color: ${stressColor}; font-weight: 700;">${p.stress_level}%</span>
                             </div>
+                            ${trajectoryHtml}
                         </div>
                         <div style="font-size: 11px; line-height: 1.4; color: rgba(255,255,255,0.75); background: rgba(0,0,0,0.25); padding: 6px 8px; border-radius: 6px;">
                             <div><strong style="color: var(--gold-light);">Lợi ích:</strong> ${escapeHtml(p.core_interest)}</div>
@@ -3783,18 +4014,28 @@
         if (stageBanner) {
             stageBanner.style.display = 'block';
             document.getElementById('war-stage-title').textContent = 'Khởi tạo Sa Bàn thành công';
-            document.getElementById('war-stage-desc').textContent = 'Bàn cờ thế sự đã được dàn dựng với các nhân vật và toan tính ngầm. Hãy nhập lệnh can thiệp (nếu muốn) và bấm "Tiến Hành Vòng Kế Tiếp".';
+            document.getElementById('war-stage-desc').textContent = 'Bàn cờ thế sự đã được dàn dựng với các nhân vật và toan tính ngầm. Hãy nhập lệnh can thiệp (nếu muốn) và bấm "Tiến Hành Vòng Kế Tiếp" hoặc "Tự Động Mô Phỏng".';
         }
 
-        // Stepper buttons
+        // Stepper & Autoplay buttons
         const stepBtn = document.getElementById('war-step-btn');
         if (stepBtn) {
             stepBtn.disabled = false;
             stepBtn.innerHTML = `<span>▶️</span> Chạy Vòng 1 (Thăm Dò)`;
         }
 
+        const autoPlayBtn = document.getElementById('war-autoplay-btn');
+        if (autoPlayBtn) {
+            autoPlayBtn.disabled = false;
+        }
+
         const reportBtn = document.getElementById('war-report-btn');
         if (reportBtn) reportBtn.disabled = false;
+
+        // Render network graph if graph data is present
+        if (warRoomSession.network_graph) {
+            renderNetworkGraph(warRoomSession.network_graph);
+        }
 
         updateRoundCounters();
     }
@@ -4111,6 +4352,10 @@
 
     function resetWarRoom() {
         if (!confirm('Bạn có chắc chắn muốn thiết lập lại sa bàn và xóa dữ liệu mô phỏng hiện tại không?')) return;
+        if (warRoomAutoPlayTimer) {
+            clearTimeout(warRoomAutoPlayTimer);
+            warRoomAutoPlayTimer = null;
+        }
         warRoomSession = null;
         
         const countBadge = document.getElementById('war-persona-count-badge');
@@ -4154,6 +4399,13 @@
         const stepBtn = document.getElementById('war-step-btn');
         if (stepBtn) stepBtn.disabled = true;
 
+        const autoPlayBtn = document.getElementById('war-autoplay-btn');
+        if (autoPlayBtn) {
+            autoPlayBtn.disabled = true;
+            autoPlayBtn.innerHTML = `<span>⚡</span> Tự Động Mô Phỏng (Auto-Play)`;
+            autoPlayBtn.style.background = '';
+        }
+
         const reportBtn = document.getElementById('war-report-btn');
         if (reportBtn) reportBtn.disabled = true;
 
@@ -4162,6 +4414,393 @@
 
         const stepCounter = document.getElementById('war-step-counter');
         if (stepCounter) stepCounter.textContent = 'Vòng 0 / 3';
+
+        const svg = document.getElementById('war-network-svg');
+        if (svg) svg.innerHTML = '';
+    }
+
+    // --- MIROFISH GRADE ENHANCEMENTS ---
+    let currentInterrogatePersonaId = null;
+    let warRoomAutoPlayTimer = null;
+    let currentFeedFilter = 'all';
+
+    function toggleWarGraphView() {
+        const card = document.getElementById('war-graph-card');
+        const btn = document.getElementById('war-graph-toggle-btn');
+        if (!card) return;
+        const isHidden = card.style.display === 'none';
+        card.style.display = isHidden ? 'block' : 'none';
+        if (btn) {
+            btn.textContent = isHidden ? '✕ Ẩn Đồ Thị' : '🕸️ Đồ Thị Mạng Lưới';
+            btn.style.background = isHidden ? 'rgba(245, 158, 11, 0.15)' : 'rgba(56, 189, 248, 0.12)';
+            btn.style.color = isHidden ? 'var(--gold-light)' : 'var(--cyan-accent)';
+        }
+        if (isHidden && warRoomSession && warRoomSession.network_graph) {
+            renderNetworkGraph(warRoomSession.network_graph);
+        }
+    }
+
+    function renderNetworkGraph(graphData) {
+        const svg = document.getElementById('war-network-svg');
+        if (!svg || !graphData || !Array.isArray(graphData.nodes) || graphData.nodes.length === 0) return;
+
+        const width = svg.clientWidth || 500;
+        const height = 210;
+        const cx = width / 2;
+        const cy = height / 2;
+        const radius = Math.min(width, height) * 0.38;
+        const nodes = graphData.nodes;
+        const nodeMap = {};
+
+        nodes.forEach((n, i) => {
+            const angle = (2 * Math.PI * i) / nodes.length - Math.PI / 2;
+            const x = cx + radius * Math.cos(angle);
+            const y = cy + radius * Math.sin(angle);
+            nodeMap[n.id] = { ...n, x, y };
+        });
+
+        let edgesSvg = '';
+        if (Array.isArray(graphData.edges)) {
+            graphData.edges.forEach(e => {
+                const s = nodeMap[e.source];
+                const t = nodeMap[e.target];
+                if (!s || !t) return;
+
+                let strokeColor = '#38bdf8';
+                let strokeWidth = 1.5;
+                let strokeDash = '';
+                let opacity = 0.55;
+
+                if (e.type === 'WHISPER') {
+                    strokeColor = '#f59e0b';
+                    strokeWidth = 2.5;
+                    strokeDash = 'stroke-dasharray="4,4"';
+                    opacity = 0.95;
+                } else if (e.type === 'ALLIANCE') {
+                    strokeColor = '#10b981';
+                    strokeWidth = 2;
+                    opacity = 0.75;
+                } else if (e.type === 'TENSION') {
+                    strokeColor = '#f43f5e';
+                    strokeWidth = 2;
+                    strokeDash = 'stroke-dasharray="2,2"';
+                    opacity = 0.75;
+                }
+
+                edgesSvg += `
+                    <line x1="${s.x}" y1="${s.y}" x2="${t.x}" y2="${t.y}" 
+                          stroke="${strokeColor}" stroke-width="${strokeWidth}" 
+                          opacity="${opacity}" ${strokeDash}>
+                        <title>${escapeHtml(e.label || '')}</title>
+                    </line>
+                `;
+            });
+        }
+
+        let nodesSvg = '';
+        nodes.forEach(n => {
+            const pos = nodeMap[n.id];
+            if (!pos) return;
+
+            let glowColor = '#38bdf8';
+            if (n.status === 'DANGER') glowColor = '#f43f5e';
+            else if (n.status === 'WARNING') glowColor = '#f59e0b';
+            else glowColor = '#10b981';
+
+            nodesSvg += `
+                <g class="graph-node" style="cursor: pointer;" onclick="openInterrogateModal('${n.id}')">
+                    <circle cx="${pos.x}" cy="${pos.y}" r="17" fill="#0f172a" stroke="${glowColor}" stroke-width="2.5" 
+                            style="filter: drop-shadow(0 0 6px ${glowColor});" />
+                    <text x="${pos.x}" y="${pos.y + 6}" font-size="15" text-anchor="middle" pointer-events="none">${pos.avatar || '👤'}</text>
+                    <text x="${pos.x}" y="${pos.y + 28}" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle" pointer-events="none">${escapeHtml(pos.name.split(' ').slice(-1)[0])}</text>
+                    <text x="${pos.x}" y="${pos.y + 38}" font-size="8.5" fill="var(--text-muted)" text-anchor="middle" pointer-events="none">${pos.loyalty}% TT</text>
+                    <title>${escapeHtml(pos.name)} (${escapeHtml(pos.role)})\nLập trường: ${escapeHtml(pos.stance)}\nTrung thành: ${pos.loyalty}%, Stress: ${pos.stress}%\nBấm để Thẩm vấn 1-1</title>
+                </g>
+            `;
+        });
+
+        svg.innerHTML = `
+            <defs>
+                <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="3" result="glow" />
+                    <feComposite in="SourceGraphic" in2="glow" operator="over" />
+                </filter>
+            </defs>
+            ${edgesSvg}
+            ${nodesSvg}
+        `;
+
+        const statsEl = document.getElementById('war-graph-stats');
+        if (statsEl && graphData) {
+            statsEl.innerHTML = `<span>👥 ${graphData.total_nodes || nodes.length} nhân vật</span> • <span>🔗 ${graphData.total_edges || 0} liên kết</span> • <span style="color: var(--gold-light);">🤫 ${graphData.active_whispers || 0} rỉ tai ngầm</span>`;
+        }
+    }
+
+    function filterWarFeed(channel, btn) {
+        currentFeedFilter = channel;
+        document.querySelectorAll('.war-filter-btn').forEach(b => b.classList.remove('active'));
+        if (btn) btn.classList.add('active');
+
+        const feed = document.getElementById('war-timeline-feed');
+        if (!feed) return;
+
+        const actionCards = feed.querySelectorAll('.war-action-card');
+        const banners = feed.querySelectorAll('.war-intervention-banner');
+        const headers = feed.querySelectorAll('.war-round-header');
+
+        if (channel === 'all') {
+            actionCards.forEach(c => {
+                c.style.display = 'flex';
+                c.querySelectorAll('.war-public-bubble, .war-private-thought, .war-whisper').forEach(b => b.style.display = 'block');
+            });
+            banners.forEach(b => b.style.display = 'flex');
+            headers.forEach(h => h.style.display = 'block');
+            return;
+        }
+
+        if (channel === 'intervention') {
+            actionCards.forEach(c => c.style.display = 'none');
+            banners.forEach(b => b.style.display = 'flex');
+            headers.forEach(h => h.style.display = 'block');
+            return;
+        }
+
+        banners.forEach(b => b.style.display = 'none');
+        headers.forEach(h => h.style.display = 'block');
+
+        actionCards.forEach(c => {
+            const hasPublic = !!c.querySelector('.war-public-bubble');
+            const hasThought = !!c.querySelector('.war-private-thought');
+            const hasWhisper = !!c.querySelector('.war-whisper');
+
+            if (channel === 'public') {
+                c.style.display = hasPublic ? 'flex' : 'none';
+                c.querySelectorAll('.war-public-bubble').forEach(b => b.style.display = 'block');
+                c.querySelectorAll('.war-private-thought, .war-whisper').forEach(b => b.style.display = 'none');
+            } else if (channel === 'thought') {
+                c.style.display = hasThought ? 'flex' : 'none';
+                c.querySelectorAll('.war-private-thought').forEach(b => b.style.display = 'block');
+                c.querySelectorAll('.war-public-bubble, .war-whisper').forEach(b => b.style.display = 'none');
+            } else if (channel === 'whisper') {
+                c.style.display = hasWhisper ? 'flex' : 'none';
+                c.querySelectorAll('.war-whisper').forEach(b => b.style.display = 'block');
+                c.querySelectorAll('.war-public-bubble, .war-private-thought').forEach(b => b.style.display = 'none');
+            }
+        });
+    }
+
+    function openInterrogateModal(personaId) {
+        if (!warRoomSession) return;
+        const persona = warRoomSession.personas.find(p => p.id === personaId);
+        if (!persona) return;
+
+        currentInterrogatePersonaId = personaId;
+        const modal = document.getElementById('war-interrogate-modal-backdrop');
+        if (!modal) return;
+
+        const banner = document.getElementById('interrogate-target-banner');
+        if (banner) {
+            const loyaltyColor = persona.loyalty_score >= 70 ? 'var(--emerald-accent)' : (persona.loyalty_score >= 45 ? 'var(--gold-primary)' : 'var(--rose-accent)');
+            const stressColor = persona.stress_level >= 75 ? 'var(--rose-accent)' : (persona.stress_level >= 50 ? 'var(--gold-primary)' : 'var(--emerald-accent)');
+            banner.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <div style="font-size: 24px;">${persona.avatar || '👤'}</div>
+                    <div>
+                        <strong style="color: #ffffff; font-size: 13px;">${escapeHtml(persona.name)}</strong>
+                        <span style="font-size: 11px; color: var(--text-secondary); margin-left: 6px;">${escapeHtml(persona.role)} • <span style="color: var(--cyan-accent);">${escapeHtml(persona.faction)}</span></span>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 8px; font-size: 11px;">
+                    <div>TT: <strong style="color: ${loyaltyColor};">${persona.loyalty_score}%</strong></div>
+                    <div>Stress: <strong style="color: ${stressColor};">${persona.stress_level}%</strong></div>
+                    <span class="persona-meta-pill" style="font-size: 9.5px;">${escapeHtml(persona.stance)}</span>
+                </div>
+            `;
+        }
+
+        const chatStream = document.getElementById('interrogate-chat-stream');
+        if (chatStream) {
+            const history = (warRoomSession.interrogation_history || []).filter(h => h.persona_id === personaId);
+            if (history.length === 0) {
+                chatStream.innerHTML = `
+                    <div style="text-align: center; color: var(--text-muted); font-size: 12px; margin: auto;">
+                        <div style="font-size: 28px; margin-bottom: 6px;">🔒</div>
+                        Chưa có cuộc thẩm vấn nào với ${escapeHtml(persona.name)}.<br>
+                        Hãy chọn gợi ý nhanh bên dưới hoặc nhập câu hỏi để trực tiếp bóc tách toan tính của nhân vật.
+                    </div>
+                `;
+            } else {
+                chatStream.innerHTML = history.map(h => `
+                    <div class="interrogate-chat-bubble interrogate-user-msg">
+                        <div style="font-size: 10px; opacity: 0.8; margin-bottom: 2px;">👑 CHỦ TỊCH HỎI:</div>
+                        <div>${escapeHtml(h.question)}</div>
+                    </div>
+                    <div class="interrogate-chat-bubble interrogate-agent-msg">
+                        <div style="font-size: 10.5px; color: var(--gold-light); font-weight: 700; margin-bottom: 3px;">
+                            ${h.avatar || '👤'} ${escapeHtml(h.persona_name)} TRẢ LỜI:
+                        </div>
+                        <div style="margin-bottom: 6px;">${escapeHtml(h.answer)}</div>
+                        ${h.inner_motive ? `
+                        <div style="background: rgba(168, 85, 247, 0.1); border-left: 2px solid #a855f7; padding: 6px 8px; border-radius: 4px; font-size: 11px; color: #d8b4fe; font-style: italic;">
+                            💭 Độc thoại toan tính: "${escapeHtml(h.inner_motive)}"
+                        </div>
+                        ` : ''}
+                    </div>
+                `).join('');
+                chatStream.scrollTop = chatStream.scrollHeight;
+            }
+        }
+
+        modal.classList.add('open');
+        const input = document.getElementById('interrogate-question-input');
+        if (input) {
+            input.value = '';
+            setTimeout(() => input.focus(), 150);
+        }
+    }
+
+    function closeInterrogateModal() {
+        const modal = document.getElementById('war-interrogate-modal-backdrop');
+        if (modal) modal.classList.remove('open');
+        currentInterrogatePersonaId = null;
+    }
+
+    document.getElementById('war-interrogate-modal-backdrop')?.addEventListener('click', (e) => {
+        if (e.target.id === 'war-interrogate-modal-backdrop') closeInterrogateModal();
+    });
+
+    function quickFillInterrogate(text) {
+        const input = document.getElementById('interrogate-question-input');
+        if (input) {
+            input.value = text;
+            input.focus();
+        }
+    }
+
+    async function sendInterrogationQuestion() {
+        if (!warRoomSession || !currentInterrogatePersonaId) return;
+        const input = document.getElementById('interrogate-question-input');
+        const question = input ? input.value.trim() : '';
+        if (!question) return;
+
+        const sendBtn = document.getElementById('interrogate-send-btn');
+        if (sendBtn) {
+            sendBtn.disabled = true;
+            sendBtn.innerHTML = `<span>⏳</span>`;
+        }
+
+        const chatStream = document.getElementById('interrogate-chat-stream');
+        if (chatStream) {
+            if (chatStream.children.length === 1 && chatStream.textContent.includes('Chưa có cuộc thẩm vấn')) {
+                chatStream.innerHTML = '';
+            }
+            const userMsg = document.createElement('div');
+            userMsg.className = 'interrogate-chat-bubble interrogate-user-msg';
+            userMsg.innerHTML = `
+                <div style="font-size: 10px; opacity: 0.8; margin-bottom: 2px;">👑 CHỦ TỊCH HỎI:</div>
+                <div>${escapeHtml(question)}</div>
+            `;
+            chatStream.appendChild(userMsg);
+            chatStream.scrollTop = chatStream.scrollHeight;
+        }
+
+        try {
+            const res = await fetch('/api/v1/war-room/interrogate', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    session_id: warRoomSession.session_id,
+                    persona_id: currentInterrogatePersonaId,
+                    question: question
+                })
+            });
+            const data = await res.json();
+            if (data.status === 'success' && data.interrogation) {
+                if (data.session) warRoomSession = data.session;
+                
+                if (chatStream) {
+                    const agentMsg = document.createElement('div');
+                    agentMsg.className = 'interrogate-chat-bubble interrogate-agent-msg';
+                    agentMsg.innerHTML = `
+                        <div style="font-size: 10.5px; color: var(--gold-light); font-weight: 700; margin-bottom: 3px;">
+                            ${data.interrogation.avatar || '👤'} ${escapeHtml(data.interrogation.persona_name)} TRẢ LỜI:
+                        </div>
+                        <div style="margin-bottom: 6px;">${escapeHtml(data.interrogation.answer)}</div>
+                        ${data.interrogation.inner_motive ? `
+                        <div style="background: rgba(168, 85, 247, 0.1); border-left: 2px solid #a855f7; padding: 6px 8px; border-radius: 4px; font-size: 11px; color: #d8b4fe; font-style: italic;">
+                            💭 Độc thoại toan tính: "${escapeHtml(data.interrogation.inner_motive)}"
+                        </div>
+                        ` : ''}
+                    `;
+                    chatStream.appendChild(agentMsg);
+                    chatStream.scrollTop = chatStream.scrollHeight;
+                }
+                if (input) input.value = '';
+            } else {
+                throw new Error(data.message || 'Lỗi thẩm vấn nhân vật');
+            }
+        } catch (e) {
+            alert('Lỗi thẩm vấn: ' + e.message);
+        } finally {
+            if (sendBtn) {
+                sendBtn.disabled = false;
+                sendBtn.innerHTML = `<span>Gửi</span> ➤`;
+            }
+            if (input) input.focus();
+        }
+    }
+
+    async function toggleWarRoomAutoPlay() {
+        if (!warRoomSession) return;
+        const btn = document.getElementById('war-autoplay-btn');
+
+        if (warRoomAutoPlayTimer) {
+            clearTimeout(warRoomAutoPlayTimer);
+            warRoomAutoPlayTimer = null;
+            if (btn) {
+                btn.innerHTML = `<span>⚡</span> Tự Động Mô Phỏng (Auto-Play)`;
+                btn.style.background = '';
+            }
+            return;
+        }
+
+        if (warRoomSession.current_round >= warRoomSession.max_rounds) {
+            alert('Sa bàn đã hoàn tất các vòng mô phỏng. Hãy bấm "Xuất Báo Cáo Tham Mưu" hoặc "Thiết lập lại Sa Bàn".');
+            return;
+        }
+
+        if (btn) {
+            btn.innerHTML = `<span>⏸️</span> Đang Tự Động Phát (Bấm để Dừng)`;
+            btn.style.background = 'linear-gradient(135deg, rgba(245, 158, 11, 0.3) 0%, rgba(217, 119, 6, 0.4) 100%)';
+            btn.style.borderColor = 'var(--gold-primary)';
+        }
+
+        async function runAutoPlayStep() {
+            if (!warRoomSession || warRoomSession.current_round >= warRoomSession.max_rounds) {
+                if (btn) {
+                    btn.innerHTML = `<span>⚡</span> Tự Động Mô Phỏng (Auto-Play)`;
+                    btn.style.background = '';
+                }
+                warRoomAutoPlayTimer = null;
+                generateWarRoomReport();
+                return;
+            }
+
+            await stepWarRoomRound();
+
+            if (warRoomSession && warRoomSession.current_round < warRoomSession.max_rounds) {
+                warRoomAutoPlayTimer = setTimeout(runAutoPlayStep, 2000);
+            } else {
+                if (btn) {
+                    btn.innerHTML = `<span>⚡</span> Tự Động Mô Phỏng (Auto-Play)`;
+                    btn.style.background = '';
+                }
+                warRoomAutoPlayTimer = null;
+                setTimeout(() => generateWarRoomReport(), 800);
+            }
+        }
+
+        runAutoPlayStep();
     }
 
     // --- CROSS-MODULE SEAMLESS CONNECTORS ---

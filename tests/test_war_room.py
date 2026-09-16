@@ -232,3 +232,61 @@ def test_war_room_api_endpoints():
     assert data["status"] == "success"
     assert "executive_summary" in data["report"]
 
+    # 6. POST /api/v1/war-room/interrogate
+    handler._send_json_response.reset_mock()
+    target_persona_id = data["session"]["personas"][0]["id"]
+    int_payload = json.dumps({
+        "session_id": session_id,
+        "persona_id": target_persona_id,
+        "question": "Anh có ý định gì sau lưng Ban Giám Đốc?",
+    }).encode("utf-8")
+    handler.path = "/api/v1/war-room/interrogate"
+    handler.headers = {"Content-Length": str(len(int_payload))}
+    handler.rfile = BytesIO(int_payload)
+    handler.do_POST()
+    handler._send_json_response.assert_called_once()
+    code, data = handler._send_json_response.call_args[0]
+    assert code == 200
+    assert data["status"] == "success"
+    assert "interrogation" in data
+    assert len(data["interrogation"]["answer"]) > 10
+
+
+def test_network_graph_and_history(war_room_engine):
+    """Test interactive graph computation and psychological trajectory tracking."""
+    session = war_room_engine.initialize_session("Nghi vấn rò rỉ dữ liệu khách hàng VIP")
+    assert "nodes" in session.network_graph
+    assert "edges" in session.network_graph
+    assert len(session.network_graph["nodes"]) == len(session.personas)
+
+    for p in session.personas:
+        assert len(p.loyalty_history) == 1
+        assert len(p.stress_history) == 1
+
+    # Advance 2 rounds
+    war_room_engine.step_round(session.session_id)
+    war_room_engine.step_round(session.session_id)
+
+    for p in session.personas:
+        assert len(p.loyalty_history) == 3
+        assert len(p.stress_history) == 3
+
+    assert len(session.network_graph["edges"]) >= 1
+
+
+def test_interrogate_persona_direct(war_room_engine):
+    """Test 1-on-1 direct interrogation of a persona."""
+    session = war_room_engine.initialize_session("Cắt giảm 30% nhân sự")
+    p0 = session.personas[0]
+    res = war_room_engine.interrogate_persona(
+        session_id=session.session_id,
+        persona_id=p0.id,
+        question="Nếu tôi tăng 20% lương cho anh, anh có chịu hợp tác dẹp yên khối vận hành không?",
+    )
+    assert res["persona_id"] == p0.id
+    assert res["persona_name"] == p0.name
+    assert "answer" in res
+    assert "inner_motive" in res
+    assert len(res["answer"]) > 15
+    assert len(session.interrogation_history) == 1
+

@@ -77,6 +77,8 @@ class Persona:
     stress_level: int = 40   # 0 - 100
     influence_score: int = 60 # 0 - 100
     avatar: str = "👤"
+    loyalty_history: list[int] = field(default_factory=list)
+    stress_history: list[int] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -132,6 +134,8 @@ class WarRoomSession:
     created_at: float = field(default_factory=time.time)
     updated_at: float = field(default_factory=time.time)
     relevant_units: list[dict[str, Any]] = field(default_factory=list)
+    network_graph: dict[str, Any] = field(default_factory=dict)
+    interrogation_history: list[dict[str, Any]] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -147,6 +151,8 @@ class WarRoomSession:
             "created_at": self.created_at,
             "updated_at": self.updated_at,
             "relevant_units": self.relevant_units,
+            "network_graph": self.network_graph,
+            "interrogation_history": self.interrogation_history,
         }
 
 
@@ -262,6 +268,10 @@ class WarRoomEngine:
             else:
                 personas = self._generate_personas_deterministic(scenario_text)
 
+        for p in personas:
+            p.loyalty_history = [p.loyalty_score]
+            p.stress_history = [p.stress_level]
+
         session = WarRoomSession(
             session_id=session_id,
             scenario=scenario_text,
@@ -273,6 +283,7 @@ class WarRoomEngine:
             interventions=[],
             relevant_units=relevant_units,
         )
+        session.network_graph = self._compute_network_graph(session)
         self._sessions[session_id] = session
         return session
 
@@ -547,9 +558,12 @@ class WarRoomEngine:
                 p.stress_level = max(5, min(100, p.stress_level + act.stress_change))
                 if act.stance_shift:
                     p.stance = act.stance_shift
+            p.loyalty_history.append(p.loyalty_score)
+            p.stress_history.append(p.stress_level)
 
         session.rounds.append(round_result)
         session.current_round = next_round_num
+        session.network_graph = self._compute_network_graph(session)
         session.updated_at = time.time()
 
         if next_round_num >= session.max_rounds and not intervention_clean:
@@ -816,6 +830,206 @@ class WarRoomEngine:
             intervention=intervention,
             actions=actions,
         )
+
+    def _compute_network_graph(self, session: WarRoomSession) -> dict[str, Any]:
+        """Compute interactive social network graph showing relationships, whispers, and tension."""
+        nodes = []
+        for p in session.personas:
+            status = "DANGER" if p.loyalty_score < 50 or p.stress_level > 70 else ("WARNING" if p.loyalty_score < 70 or p.stress_level > 55 else "HEALTHY")
+            nodes.append({
+                "id": p.id,
+                "name": p.name,
+                "role": p.role,
+                "faction": p.faction,
+                "avatar": p.avatar,
+                "loyalty": p.loyalty_score,
+                "stress": p.stress_level,
+                "influence": p.influence_score,
+                "stance": p.stance,
+                "status": status,
+                "loyalty_history": p.loyalty_history,
+                "stress_history": p.stress_history,
+            })
+
+        edges: list[dict[str, Any]] = []
+        seen_pairs: set[tuple[str, str]] = set()
+
+        # 1. Edges from active or past corridor whispers
+        for r in session.rounds:
+            for act in r.actions:
+                if act.whisper_target and act.whisper_content:
+                    target_p = next(
+                        (p for p in session.personas if p.name == act.whisper_target or act.whisper_target in p.role or p.id == act.whisper_target),
+                        None
+                    )
+                    if target_p and target_p.id != act.persona_id:
+                        pair_key = (min(act.persona_id, target_p.id), max(act.persona_id, target_p.id))
+                        edges.append({
+                            "source": act.persona_id,
+                            "target": target_p.id,
+                            "type": "WHISPER",
+                            "label": f"Rỉ tai: {act.whisper_content[:32]}...",
+                            "strength": 85,
+                            "active": r.round_number == session.current_round,
+                        })
+                        seen_pairs.add(pair_key)
+
+        # 2. Pairwise structural relationships based on factions and loyalty
+        for i, p1 in enumerate(session.personas):
+            for j in range(i + 1, len(session.personas)):
+                p2 = session.personas[j]
+                pair_key = (min(p1.id, p2.id), max(p1.id, p2.id))
+                if pair_key in seen_pairs:
+                    continue
+
+                if p1.faction == p2.faction:
+                    edges.append({
+                        "source": p1.id,
+                        "target": p2.id,
+                        "type": "ALLIANCE",
+                        "label": f"Cùng phe {p1.faction}",
+                        "strength": (p1.loyalty_score + p2.loyalty_score) // 2,
+                        "active": False,
+                    })
+                    seen_pairs.add(pair_key)
+                else:
+                    tension_score = (p1.stress_level + p2.stress_level) // 2
+                    if tension_score > 40:
+                        edges.append({
+                            "source": p1.id,
+                            "target": p2.id,
+                            "type": "TENSION",
+                            "label": "Bất đồng lập trường",
+                            "strength": tension_score,
+                            "active": False,
+                        })
+                        seen_pairs.add(pair_key)
+
+        faction_map: dict[str, list[str]] = {}
+        for p in session.personas:
+            faction_map.setdefault(p.faction, []).append(p.name)
+
+        factions = [{"name": f, "members": m, "count": len(m)} for f, m in faction_map.items()]
+
+        return {
+            "nodes": nodes,
+            "edges": edges,
+            "factions": factions,
+            "total_nodes": len(nodes),
+            "total_edges": len(edges),
+            "active_whispers": sum(1 for e in edges if e["type"] == "WHISPER" and e.get("active")),
+        }
+
+    def interrogate_persona(self, session_id: str, persona_id: str, question: str) -> dict[str, Any]:
+        """MiroFish Deep Interaction: 1-on-1 direct interrogation of any simulated persona."""
+        session = self._sessions.get(session_id)
+        if not session:
+            raise ValueError(f"Session '{session_id}' not found.")
+
+        persona = next((p for p in session.personas if p.id == persona_id), None)
+        if not persona:
+            raise ValueError(f"Persona '{persona_id}' not found in session.")
+
+        question_clean = question.strip()
+        if not question_clean:
+            raise ValueError("Question cannot be empty.")
+
+        # Try LLM interrogation
+        result = self._interrogate_persona_llm(session, persona, question_clean)
+        if not result:
+            result = self._interrogate_persona_deterministic(session, persona, question_clean)
+
+        interrogation_record = {
+            "id": f"int_{uuid.uuid4().hex[:6]}",
+            "session_id": session_id,
+            "persona_id": persona.id,
+            "persona_name": persona.name,
+            "role": persona.role,
+            "avatar": persona.avatar,
+            "faction": persona.faction,
+            "question": question_clean,
+            "answer": result.get("answer", ""),
+            "inner_motive": result.get("inner_motive", ""),
+            "stance_toward_chairman": result.get("stance_toward_chairman", persona.stance),
+            "loyalty_score": persona.loyalty_score,
+            "stress_level": persona.stress_level,
+            "timestamp": time.time(),
+        }
+
+        session.interrogation_history.append(interrogation_record)
+        session.updated_at = time.time()
+        return interrogation_record
+
+    def _interrogate_persona_llm(self, session: WarRoomSession, persona: Persona, question: str) -> dict[str, Any] | None:
+        system_prompt = (
+            f"Bạn đang nhập vai nhân vật {persona.name} ({persona.role}) thuộc phe '{persona.faction}' trong kịch bản doanh nghiệp của Nhân Thuật.\n"
+            f"- Lợi ích cốt lõi: {persona.core_interest}\n"
+            f"- Nỗi sợ sâu kín nhất: {persona.hidden_fear}\n"
+            f"- Lập trường hiện thời: {persona.stance}\n"
+            f"- Chỉ số Trung thành: {persona.loyalty_score}/100\n"
+            f"- Mức độ Căng thẳng: {persona.stress_level}/100\n"
+            f"Bối cảnh tình thế: {session.scenario}\n"
+            f"Vòng hiện tại: {session.current_round}/{session.max_rounds}\n\n"
+            "Chủ tịch HĐQT / Tổng Giám Đốc đang trực tiếp thẩm vấn kín bạn trong phòng làm việc. "
+            "Hãy trả lời sắc bén, sống động, bộc lộ đúng tâm lý nhân vật: Nếu trung thành thấp thì đề phòng, khéo léo chối quanh hoặc đưa ra yêu sách; nếu stress cao thì có biểu hiện bồn chồn, to tiếng thanh minh; nếu cùng phe trung thành thì dốc lòng tham mưu.\n"
+            "Trả về JSON định dạng:\n"
+            "{\n"
+            '  "answer": "Câu trả lời trực tiếp của bạn đối với Chủ tịch",\n'
+            '  "inner_motive": "Toan tính thực sự trong đầu bạn khi nói ra câu này (độc thoại nội tâm)",\n'
+            '  "stance_toward_chairman": "Hợp tác / Đề phòng / Cơ hội / Thách thức"\n'
+            "}"
+        )
+        user_prompt = f"Chủ tịch hỏi: \"{question}\""
+        data = self._call_llm_json(system_prompt, user_prompt)
+        if data and "answer" in data:
+            return data
+        return None
+
+    def _interrogate_persona_deterministic(self, session: WarRoomSession, persona: Persona, question: str) -> dict[str, Any]:
+        q_lower = question.lower()
+        if any(w in q_lower for w in ["tiền", "lương", "thưởng", "ngân sách", "quyền lợi", "chi phí"]):
+            answer = (
+                f"Thưa Chủ tịch, tôi luôn cống hiến hết mình vì công ty, nhưng anh cũng biết đấy, anh em trong khối của tôi "
+                f"đã gánh vác áp lực suốt thời gian qua. Nếu công ty muốn tôi giữ được sự ổn định, trước hết phải bảo đảm "
+                f"rằng quyền lợi cốt lõi ({persona.core_interest}) không bị cắt giảm tùy tiện."
+            )
+            inner_motive = "Chủ tịch đang dùng tiền và ngân sách để thăm dò mình. Mình phải giữ giá, tuyệt đối không được nhượng bộ dễ dàng."
+            stance = "Thương thảo điều kiện & Giữ giá"
+        elif any(w in q_lower for w in ["đối thủ", "phản bội", "bán", "rò rỉ", "nghỉ việc", "đi đâu"]):
+            if persona.loyalty_score < 60:
+                answer = (
+                    "Tôi khẳng định tôi không làm gì trái với hợp đồng lao động. Nhưng thưa Chủ tịch, thương trường ai cũng tìm "
+                    "chỗ dung thân an toàn. Nếu tổ chức không còn tôn trọng đóng góp của tôi, tôi có quyền lắng nghe các cơ hội khác."
+                )
+                inner_motive = "Chết tiệt, có kẻ đã mách với Chủ tịch về việc mình tiếp xúc đối tác ngoài! Phải dùng lý lẽ pháp lý để dựng rào chắn ngay."
+                stance = "Đề phòng & Phản kháng ngầm"
+            else:
+                answer = (
+                    "Tôi xin đem uy tín bao năm qua bảo đảm, không bao giờ có chuyện tôi bán đứng công ty cho đối thủ! "
+                    "Có kẻ trong nội bộ đang tung tin thất thiệt nhằm hãm hại và chia rẽ tôi với Ban Lãnh đạo."
+                )
+                inner_motive = "Có kẻ muốn chơi xấu mình. Phải thúc ép Chủ tịch cho kiểm tra lại nguồn tin."
+                stance = "Thanh minh & Trung thành"
+        elif any(w in q_lower for w in ["tại sao", "lý do", "chống đối", "phản kháng", "không nghe", "ai"]):
+            answer = (
+                f"Tôi không hề chống đối, tôi chỉ đang làm đúng chức trách được giao. Cách triển khai hiện tại của Ban Lãnh đạo "
+                f"quá nóng vội, đụng chạm trực tiếp đến ranh giới an toàn của các phòng ban. Nếu cứ ép tiến độ, rủi ro vỡ trận là khó tránh."
+            )
+            inner_motive = "Đẩy ngược trách nhiệm về quy trình chung, tránh để cá nhân mình bị quy kết là đầu mối chống đối."
+            stance = "Phòng thủ nguyên tắc"
+        else:
+            answer = (
+                f"Thưa Chủ tịch, tôi hiểu sự lo lắng của anh về tình hình hiện nay. Về phía tôi ({persona.role}), tôi sẽ tiếp tục "
+                f"quan sát và hành động vì lợi ích chung, miễn là nỗi lo lớn nhất của chúng tôi ('{persona.hidden_fear}') được giải tỏa."
+            )
+            inner_motive = "Chưa rõ Chủ tịch đang đứng về phe nào. Tốt nhất là trả lời nước đôi để nghe ngóng thêm động tĩnh."
+            stance = "Thận trọng nghe ngóng"
+
+        return {
+            "answer": answer,
+            "inner_motive": inner_motive,
+            "stance_toward_chairman": stance,
+        }
 
     def generate_strategic_report(self, session_id: str) -> dict[str, Any]:
         """Synthesize simulation history into an executive strategic war room report."""

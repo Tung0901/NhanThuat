@@ -188,19 +188,49 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
     """HTTP Request Handler for BusinessOS API Gateway and Web App Dashboard."""
 
     def _send_json_response(self, status_code: int, data: dict[str, Any]) -> None:
+        response_bytes = json.dumps(data, indent=2, default=str, ensure_ascii=False).encode("utf-8")
         self.send_response(status_code)
         self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.send_header("Content-Length", str(len(response_bytes)))
+        self.send_header("Connection", "close")
         self.send_header("Cache-Control", "no-store")
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, HEAD")
+        self.send_header("Access-Control-Allow-Headers", "Content-Type, Authorization")
         self.end_headers()
-        response_bytes = json.dumps(data, indent=2, default=str, ensure_ascii=False).encode("utf-8")
-        self.wfile.write(response_bytes)
+        if getattr(self, "command", "GET") != "HEAD":
+            self.wfile.write(response_bytes)
+            try:
+                self.wfile.flush()
+            except Exception:
+                pass
 
     def _send_html_response(self, status_code: int, html_content: str) -> None:
+        encoded = html_content.encode("utf-8")
         self.send_response(status_code)
         self.send_header("Content-Type", "text/html; charset=utf-8")
+        self.send_header("Content-Length", str(len(encoded)))
+        self.send_header("Connection", "close")
         self.send_header("Cache-Control", "no-cache")
         self.end_headers()
-        self.wfile.write(html_content.encode("utf-8"))
+        if getattr(self, "command", "GET") != "HEAD":
+            self.wfile.write(encoded)
+            try:
+                self.wfile.flush()
+            except Exception:
+                pass
+
+    def do_HEAD(self) -> None:
+        self.do_GET()
+
+    def do_OPTIONS(self) -> None:
+        self.send_response(204)
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, HEAD")
+        self.send_header("Access-Control-Allow-Headers", "Content-Type, Authorization")
+        self.send_header("Content-Length", "0")
+        self.send_header("Connection", "close")
+        self.end_headers()
 
     def do_GET(self) -> None:
         parsed_url = urlparse(self.path)
@@ -223,17 +253,86 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
                 self._send_html_response(404, "<h1>App HTML not found</h1>")
             return
 
+        if path == "/flower.mp4":
+            mp4_file = Path(__file__).resolve().parent.parent.parent / "frontend" / "flower.mp4"
+            if mp4_file.exists():
+                file_size = mp4_file.stat().st_size
+                range_header = self.headers.get("Range")
+                if range_header and range_header.startswith("bytes="):
+                    try:
+                        range_val = range_header.replace("bytes=", "").strip()
+                        parts = range_val.split("-")
+                        start = int(parts[0]) if parts[0] else 0
+                        end = int(parts[1]) if len(parts) > 1 and parts[1] else file_size - 1
+                        end = min(end, file_size - 1)
+                        content_length = end - start + 1
+
+                        self.send_response(206)
+                        self.send_header("Content-Type", "video/mp4")
+                        self.send_header("Content-Range", f"bytes {start}-{end}/{file_size}")
+                        self.send_header("Content-Length", str(content_length))
+                        self.send_header("Accept-Ranges", "bytes")
+                        self.send_header("Cache-Control", "public, max-age=86400")
+                        self.end_headers()
+                        if getattr(self, "command", "GET") != "HEAD":
+                            with open(mp4_file, "rb") as f:
+                                f.seek(start)
+                                self.wfile.write(f.read(content_length))
+                                try:
+                                    self.wfile.flush()
+                                except Exception:
+                                    pass
+                        return
+                    except Exception:
+                        pass
+
+                self.send_response(200)
+                self.send_header("Content-Type", "video/mp4")
+                self.send_header("Content-Length", str(file_size))
+                self.send_header("Accept-Ranges", "bytes")
+                self.send_header("Cache-Control", "public, max-age=86400")
+                self.end_headers()
+                if getattr(self, "command", "GET") != "HEAD":
+                    with open(mp4_file, "rb") as f:
+                        self.wfile.write(f.read())
+                        try:
+                            self.wfile.flush()
+                        except Exception:
+                            pass
+            else:
+                self.send_response(404)
+                self.send_header("Content-Length", "0")
+                self.end_headers()
+            return
+
+        if path == "/favicon.ico":
+            self.send_response(204)
+            self.send_header("Content-Length", "0")
+            self.send_header("Connection", "close")
+            self.end_headers()
+            return
+
         if path.startswith("/css/") or path.startswith("/js/"):
             asset_file = Path(__file__).resolve().parent.parent.parent / "frontend" / path.lstrip("/")
             content_type = "text/css" if path.endswith(".css") else "application/javascript"
             if asset_file.exists():
+                data = asset_file.read_bytes()
                 self.send_response(200)
                 self.send_header("Content-Type", content_type)
+                self.send_header("Content-Length", str(len(data)))
                 self.send_header("Cache-Control", "public, max-age=3600")
+                self.send_header("Connection", "close")
                 self.end_headers()
-                self.wfile.write(asset_file.read_bytes())
+                if getattr(self, "command", "GET") != "HEAD":
+                    self.wfile.write(data)
+                    try:
+                        self.wfile.flush()
+                    except Exception:
+                        pass
             else:
                 self.send_response(404)
+                self.send_header("Content-Length", "0")
+                self.send_header("Connection", "close")
                 self.end_headers()
             return
 

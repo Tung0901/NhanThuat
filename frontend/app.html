@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nhân Thuật | Human Intelligence OS - Trung Tâm Chỉ Huy Điều Hành</title>
+    <title>Nhân Thuật | Quản Trị & Thao Lược Con Người</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <!-- Marked.js for Markdown parsing -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <!-- DOMPurify for XSS sanitization -->
@@ -26,31 +26,33 @@
         }
         .bubble-tab-content th {
             background-color: rgba(255, 255, 255, 0.05);
-            color: var(--gold-light);
+            color: #ffffff;
             font-weight: 600;
         }
         .bubble-tab-content td {
             color: rgba(255, 255, 255, 0.85);
         }
+
         :root {
-            --bg-base: #09090b;
-            --bg-surface: #121216;
-            --bg-surface-elevated: #18181f;
-            --bg-glass: rgba(18, 18, 22, 0.75);
+            --bg-base: #000000;
+            --bg-surface: rgba(14, 14, 20, 0.72);
+            --bg-surface-elevated: rgba(22, 22, 30, 0.82);
+            --bg-glass: rgba(8, 8, 12, 0.78);
             --border-subtle: rgba(255, 255, 255, 0.08);
-            --border-focus: rgba(245, 158, 11, 0.45);
-            --gold-primary: #f59e0b;
-            --gold-light: #fbbf24;
-            --gold-glow: rgba(245, 158, 11, 0.18);
+            --border-focus: rgba(255, 255, 255, 0.28);
+            --gold-primary: #d4af37;
+            --gold-light: #f5e6be;
+            --gold-glow: rgba(212, 175, 55, 0.16);
+            --accent-emerald: #39FF14;
             --cyan-accent: #38bdf8;
             --emerald-accent: #10b981;
             --rose-accent: #f43f5e;
-            --text-main: #f8fafc;
-            --text-secondary: #94a3b8;
-            --text-muted: #64748b;
-            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            --font-display: 'Outfit', sans-serif;
-            --font-serif: 'Playfair Display', Georgia, serif;
+            --text-main: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.72);
+            --text-muted: rgba(255, 255, 255, 0.45);
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --font-display: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
         }
 
         * {
@@ -79,60 +81,164 @@
             display: flex;
             flex-direction: column;
             -webkit-font-smoothing: antialiased;
+            position: relative;
+        }
+
+        /* Ambient background video matching landing page */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.90;
+        }
+        #bg-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .video-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1;
+            pointer-events: none;
+            background: radial-gradient(circle at 50% 50%, rgba(5, 7, 12, 0.08) 0%, rgba(3, 4, 7, 0.65) 100%);
+        }
+
+        /* Ambient cursor ring matching landing page */
+        .cursor-ring-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 44px;
+            height: 44px;
+            border: 1.5px solid rgba(57, 255, 20, 0.45);
+            border-radius: 50%;
+            z-index: 99998;
+            pointer-events: none;
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0;
+            will-change: transform, opacity;
+            transition: opacity 0.3s ease, border-color 0.3s ease;
+            box-shadow: 0 0 14px rgba(57, 255, 20, 0.25);
+        }
+        .cursor-ring-outline.active {
+            opacity: 1;
+        }
+        .cursor-ring-outline.expanded {
+            border-color: rgba(57, 255, 20, 0.85);
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
+        }
+
+        .glass-cursor-card {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 99999;
+            pointer-events: none;
+            padding: 0.65rem 1.3rem;
+            background: rgba(14, 18, 28, 0.75);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(57, 255, 20, 0.3);
+            border-radius: 9999px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5), 0 0 16px rgba(57, 255, 20, 0.15);
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0;
+            will-change: transform, opacity;
+            transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        border-color 0.3s ease;
+        }
+        .glass-cursor-card.active { opacity: 1; }
+        .cursor-card-text {
+            font-family: var(--font-display);
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            color: #39FF14;
+            text-transform: uppercase;
+            white-space: nowrap;
+            text-shadow: 0 0 8px rgba(57, 255, 20, 0.45);
+        }
+        .cursor-card-text .text-white {
+            color: #ffffff;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
         }
 
         /* Top Executive Header */
         .exec-header {
-            height: 64px;
-            background: rgba(10, 10, 14, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            height: 56px;
+            background: rgba(4, 4, 8, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border-subtle);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 16px;
-            gap: 12px;
+            padding: 0 20px;
+            gap: 16px;
             z-index: 50;
             flex-shrink: 0;
-            overflow: hidden;
+            position: relative;
         }
 
         .header-brand {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             text-decoration: none;
             flex-shrink: 0;
         }
 
         .brand-crest {
-            width: 38px;
-            height: 38px;
-            border-radius: 10px;
-            background: linear-gradient(135deg, #f59e0b 0%, #b45309 100%);
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
-            box-shadow: 0 0 20px rgba(245, 158, 11, 0.35);
+            color: #ffffff;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+        }
+        .header-brand:hover .brand-crest {
+            border-color: rgba(255, 255, 255, 0.35);
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.25);
+            color: var(--accent-emerald);
+        }
+
+        .brand-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
         }
 
         .brand-meta h1 {
-            font-family: var(--font-display);
-            font-size: 17px;
-            font-weight: 700;
-            letter-spacing: 0.04em;
+            font-family: var(--font-serif);
+            font-size: 16.5px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
             color: #ffffff;
             line-height: 1.1;
         }
 
         .brand-meta span {
-            font-size: 11px;
-            letter-spacing: 0.08em;
-            color: var(--gold-primary);
+            font-family: var(--font-display);
+            font-size: 9.5px;
+            letter-spacing: 0.12em;
+            color: rgba(255, 255, 255, 0.55);
             text-transform: uppercase;
-            font-weight: 600;
+            font-weight: 500;
         }
 
         /* Nav Tabs */
@@ -142,8 +248,8 @@
             gap: 4px;
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid var(--border-subtle);
-            padding: 4px;
-            border-radius: 12px;
+            padding: 3px 4px;
+            border-radius: 9999px;
             flex-shrink: 0;
             overflow-x: auto;
             scrollbar-width: none;
@@ -158,77 +264,80 @@
             background: transparent;
             border: none;
             color: var(--text-secondary);
-            font-family: var(--font-sans);
+            font-family: var(--font-display);
             font-size: 12px;
-            font-weight: 600;
-            padding: 6px 11px;
-            border-radius: 8px;
+            font-weight: 500;
+            padding: 6px 14px;
+            border-radius: 9999px;
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 6px;
             white-space: nowrap !important;
             flex-shrink: 0;
-            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .workspace-tab-btn:hover {
             color: #ffffff;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.06);
         }
 
         .workspace-tab-btn.active {
-            color: #000000;
-            background: var(--gold-primary);
-            box-shadow: 0 2px 10px rgba(245, 158, 11, 0.3);
-            font-weight: 700;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+            font-weight: 600;
         }
 
         .header-actions {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             flex-shrink: 0;
         }
 
         .export-btn {
-            background: rgba(245, 158, 11, 0.1);
-            border: 1px solid rgba(245, 158, 11, 0.3);
-            color: var(--gold-light);
-            font-family: var(--font-sans);
-            font-size: 11.5px;
-            font-weight: 600;
-            padding: 6px 12px;
-            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-subtle);
+            color: #ffffff;
+            font-family: var(--font-display);
+            font-size: 12px;
+            font-weight: 500;
+            padding: 7px 16px;
+            border-radius: 9999px;
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 6px;
             white-space: nowrap !important;
             flex-shrink: 0;
-            transition: all 0.2s ease;
+            transition: all 0.25s ease;
         }
 
         .export-btn:hover {
-            background: rgba(245, 158, 11, 0.2);
-            border-color: var(--gold-primary);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.25);
             color: #ffffff;
         }
 
         .home-link-btn {
-            color: var(--text-muted);
+            color: var(--text-secondary);
             text-decoration: none;
-            font-size: 11.5px;
+            font-family: var(--font-display);
+            font-size: 12px;
             font-weight: 500;
-            padding: 6px 10px;
-            border-radius: 8px;
+            padding: 7px 14px;
+            border-radius: 9999px;
             border: 1px solid var(--border-subtle);
             white-space: nowrap !important;
             flex-shrink: 0;
-            transition: all 0.2s ease;
+            transition: all 0.25s ease;
         }
 
         .home-link-btn:hover {
             color: #ffffff;
-            border-color: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.05);
         }
 
         /* Workspace Viewport */
@@ -236,10 +345,11 @@
             flex: 1;
             position: relative;
             overflow: hidden;
-            background: radial-gradient(circle at 50% 0%, rgba(30, 27, 22, 0.35) 0%, rgba(9, 9, 11, 1) 75%);
+            background: transparent;
             min-width: 0;
             min-height: 0;
             width: 100%;
+            z-index: 5;
         }
 
         .workspace-module {
@@ -1117,16 +1227,18 @@
         .mobile-nav-drawer {
             display: none;
             position: fixed;
-            top: 64px;
+            top: 52px;
             left: 0;
             right: 0;
             z-index: 900;
-            background: rgba(10, 12, 18, 0.98);
+            background: rgba(6, 6, 10, 0.96);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
             border-bottom: 1px solid var(--border-subtle);
-            padding: 12px;
+            padding: 14px;
             flex-direction: column;
             gap: 8px;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+            box-shadow: 0 16px 36px rgba(0,0,0,0.6);
         }
         .mobile-nav-drawer.open {
             display: flex;
@@ -1134,48 +1246,61 @@
         .mobile-nav-drawer .workspace-tab-btn {
             width: 100%;
             text-align: left;
-            padding: 12px 14px;
+            padding: 12px 16px;
+            border-radius: 10px;
+            border: 1px solid transparent;
+        }
+        .mobile-nav-drawer .workspace-tab-btn.active {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
         }
 
         /* Mobile responsiveness */
         @media (max-width: 900px) {
             .mobile-nav-toggle {
-                display: inline-block;
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+                width: 36px;
+                height: 36px;
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid var(--border-subtle);
+                border-radius: 8px;
+                color: #ffffff;
+                font-size: 18px;
+                cursor: pointer;
             }
             .mobile-nav-drawer .workspace-tab-btn {
                 display: block;
             }
             .exec-header {
-                padding: 10px 14px;
-                flex-wrap: wrap;
-                height: auto;
-                min-height: 64px;
-                gap: 12px;
+                padding: 0 14px !important;
+                flex-wrap: nowrap !important;
+                height: 52px !important;
+                min-height: 52px !important;
+                gap: 8px;
                 justify-content: space-between;
             }
             .brand-meta h1 {
-                font-size: 14px;
+                font-size: 15px;
             }
             .brand-meta span {
-                font-size: 8px;
+                font-size: 8.5px;
+                letter-spacing: 0.1em;
             }
             .brand-crest {
-                width: 32px;
-                height: 32px;
-                font-size: 16px;
+                width: 30px;
+                height: 30px;
+                font-size: 14px;
             }
             .header-brand {
                 gap: 8px;
             }
             .header-actions {
-                gap: 8px;
-            }
-            .export-btn, .home-link-btn {
-                padding: 6px 10px;
-                font-size: 11px;
+                display: none !important;
             }
             .header-nav {
-                display: none;
+                display: none !important;
             }
             .cockpit-sidebar {
                 display: none;
@@ -1223,6 +1348,7 @@
                 white-space: nowrap;
             }
             .diagnostic-container, .codex-container {
+{{ ... }}
                 padding: 20px 14px;
                 -webkit-overflow-scrolling: touch;
             }
@@ -1234,13 +1360,14 @@
         /* MODULE 6: SA BÀN TÌNH THẾ (WAR ROOM SANDBOX) */
         .war-room-layout {
             display: grid;
-            grid-template-columns: 340px 1fr 390px;
+            grid-template-columns: 340px 1fr 380px;
             height: 100%;
             width: 100%;
             min-width: 0;
             min-height: 0;
             overflow: hidden;
-            background: rgba(10, 10, 14, 0.4);
+            background: transparent;
+            position: relative;
         }
         .war-room-col {
             display: flex;
@@ -1249,15 +1376,40 @@
             min-width: 0;
             min-height: 0;
             overflow: hidden;
-            border-right: 1px solid var(--border-subtle);
+            border-right: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(13, 15, 23, 0.94);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            position: relative;
         }
         .war-room-col:last-child {
             border-right: none;
+            border-left: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        /* The Center Live Arena allows the blooming ambient video to shine through and animate! */
+        #war-col-feed {
+            background: rgba(6, 8, 14, 0.45);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+        @keyframes float-seal {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-7px) scale(1.04); filter: drop-shadow(0 0 16px rgba(57, 255, 20, 0.3)); }
+        }
+        .empty-icon-seal {
+            animation: float-seal 4.5s ease-in-out infinite;
+        }
+        @keyframes warCardEnter {
+            0% { opacity: 0; transform: translateY(14px) scale(0.98); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .war-action-card, .war-round-header, .war-intervention-banner {
+            animation: warCardEnter 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
         .war-room-col-header {
-            padding: 14px 18px;
-            border-bottom: 1px solid var(--border-subtle);
-            background: rgba(255, 255, 255, 0.02);
+            padding: 13px 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+            background: #151824;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -1265,11 +1417,10 @@
         }
         .war-room-col-header h3 {
             font-family: var(--font-display);
-            font-size: 13px;
+            font-size: 15px;
             font-weight: 700;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            color: var(--gold-light);
+            letter-spacing: -0.01em;
+            color: #ffffff;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -1283,21 +1434,24 @@
             gap: 14px;
         }
         .war-card {
-            background: var(--bg-surface);
-            border: 1px solid var(--border-subtle);
-            border-radius: 12px;
-            padding: 14px;
-            transition: all 0.2s ease;
+            background: #171a26;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 14px;
+            padding: 15px;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
         }
         .war-card:hover {
-            border-color: rgba(245, 158, 11, 0.25);
+            border-color: rgba(255, 255, 255, 0.25);
+            background: #1c2030;
         }
         .war-label {
-            font-size: 11px;
+            font-family: var(--font-display);
+            font-size: 12px;
             font-weight: 700;
-            color: var(--text-secondary);
+            color: #ffffff;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.06em;
             margin-bottom: 8px;
             display: flex;
             align-items: center;
@@ -1305,48 +1459,63 @@
         }
         .war-textarea {
             width: 100%;
-            background: rgba(0, 0, 0, 0.35);
-            border: 1px solid var(--border-subtle);
-            border-radius: 8px;
+            background: #0f111a;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 10px;
             padding: 10px 12px;
             color: #ffffff;
             font-family: var(--font-sans);
-            font-size: 12.5px;
+            font-size: 13px;
             line-height: 1.5;
             resize: vertical;
             outline: none;
-            transition: border-color 0.2s ease;
+            transition: all 0.2s ease;
+        }
+        .war-textarea::placeholder {
+            color: #94a3b8;
+            opacity: 1;
         }
         .war-textarea:focus {
-            border-color: var(--border-focus);
-            box-shadow: 0 0 10px var(--gold-glow);
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 14px rgba(212, 175, 55, 0.25);
+            background: #121520;
         }
         .war-preset-chip {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border-subtle);
-            border-radius: 8px;
-            padding: 8px 10px;
-            font-size: 11.5px;
-            color: var(--text-secondary);
+            background: #1c2030;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 10px;
+            padding: 10px 13px;
             cursor: pointer;
             transition: all 0.2s ease;
             text-align: left;
             display: flex;
             flex-direction: column;
-            gap: 3px;
+            gap: 4px;
         }
         .war-preset-chip:hover, .war-preset-chip.active {
-            background: rgba(245, 158, 11, 0.1);
-            border-color: rgba(245, 158, 11, 0.4);
-            color: #ffffff;
+            background: #252b40;
+            border-color: var(--gold-primary);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+        }
+        .preset-title {
+            color: #ffffff !important;
+            font-size: 12.5px !important;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        .preset-desc {
+            font-size: 11.5px !important;
+            color: #cbd5e1 !important;
+            line-height: 1.45;
         }
         .war-btn-primary {
-            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            background: #ffffff;
             color: #000000;
             border: none;
-            border-radius: 8px;
-            padding: 10px 16px;
-            font-family: var(--font-sans);
+            border-radius: 9999px;
+            padding: 12px 18px;
+            font-family: var(--font-display);
             font-size: 13px;
             font-weight: 700;
             cursor: pointer;
@@ -1355,20 +1524,30 @@
             justify-content: center;
             gap: 8px;
             width: 100%;
-            box-shadow: 0 4px 14px rgba(245, 158, 11, 0.25);
-            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 16px rgba(255, 255, 255, 0.15);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .war-btn-primary:hover {
             transform: translateY(-1px);
-            box-shadow: 0 6px 18px rgba(245, 158, 11, 0.35);
+            background: #f8fafc;
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.25);
+        }
+        .war-btn-primary:disabled {
+            background: rgba(255, 255, 255, 0.12);
+            color: #94a3b8;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+            opacity: 1;
         }
         .war-btn-step {
-            background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+            background: linear-gradient(135deg, #d4af37 0%, #b48c1a 100%);
+            border: 1px solid rgba(212, 175, 55, 0.4);
             color: #000000;
-            border: none;
-            border-radius: 8px;
-            padding: 11px 16px;
-            font-family: var(--font-sans);
+            border-radius: 9999px;
+            padding: 12px 18px;
+            font-family: var(--font-display);
             font-size: 13px;
             font-weight: 700;
             cursor: pointer;
@@ -1377,25 +1556,59 @@
             justify-content: center;
             gap: 8px;
             width: 100%;
-            box-shadow: 0 4px 14px rgba(56, 189, 248, 0.25);
-            transition: all 0.2s ease;
+            box-shadow: 0 4px 16px rgba(212, 175, 55, 0.25);
+            transition: all 0.25s ease;
         }
         .war-btn-step:hover {
             transform: translateY(-1px);
-            box-shadow: 0 6px 18px rgba(56, 189, 248, 0.35);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+            filter: brightness(1.06);
         }
-        .war-btn-step:disabled, .war-btn-primary:disabled {
-            opacity: 0.5;
+        .war-btn-step:disabled {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: #94a3b8;
             cursor: not-allowed;
             transform: none;
+            box-shadow: none;
+            opacity: 1;
+        }
+        .war-btn-autoplay {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            color: #ffffff;
+            border-radius: 9999px;
+            padding: 10px 16px;
+            font-family: var(--font-display);
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            margin-top: 6px;
+            transition: all 0.2s ease;
+        }
+        .war-btn-autoplay:hover {
+            background: rgba(255, 255, 255, 0.14);
+            border-color: rgba(255, 255, 255, 0.35);
+        }
+        .war-btn-autoplay:disabled {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.12);
+            color: #64748b;
+            cursor: not-allowed;
+            opacity: 1;
         }
         .war-btn-report {
-            background: rgba(245, 158, 11, 0.12);
-            border: 1px solid rgba(245, 158, 11, 0.35);
-            color: var(--gold-light);
-            border-radius: 8px;
-            padding: 10px 16px;
-            font-family: var(--font-sans);
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            color: #fef08a;
+            border-radius: 9999px;
+            padding: 11px 16px;
+            font-family: var(--font-display);
             font-size: 12.5px;
             font-weight: 600;
             cursor: pointer;
@@ -1407,38 +1620,63 @@
             transition: all 0.2s ease;
         }
         .war-btn-report:hover {
-            background: rgba(245, 158, 11, 0.22);
-            color: #ffffff;
+            background: rgba(212, 175, 55, 0.25);
             border-color: var(--gold-primary);
         }
+        .war-btn-report:disabled {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.12);
+            color: #64748b;
+            cursor: not-allowed;
+            opacity: 1;
+        }
         .war-btn-reset {
-            background: transparent;
-            border: 1px solid var(--border-subtle);
-            color: var(--text-muted);
-            border-radius: 8px;
-            padding: 8px 14px;
-            font-size: 11.5px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: #cbd5e1;
+            border-radius: 9999px;
+            padding: 9px 14px;
+            font-family: var(--font-display);
+            font-size: 12px;
             cursor: pointer;
             transition: all 0.2s ease;
             width: 100%;
         }
         .war-btn-reset:hover {
             color: #ffffff;
-            border-color: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.35);
+            background: rgba(255, 255, 255, 0.08);
         }
-        .war-persona-card {
-            background: rgba(255, 255, 255, 0.025);
-            border: 1px solid var(--border-subtle);
-            border-radius: 10px;
-            padding: 12px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
+        .war-chip-pill {
+            background: #1c2030;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 9999px;
+            padding: 5px 11px;
+            font-family: var(--font-display);
+            font-size: 11.5px;
+            font-weight: 500;
+            color: #e2e8f0;
+            cursor: pointer;
             transition: all 0.2s ease;
         }
+        .war-chip-pill:hover {
+            background: #282f45;
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.35);
+        }
+        .war-persona-card {
+            background: #181b28;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 12px;
+            padding: 13px;
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+            transition: all 0.25s ease;
+        }
         .war-persona-card:hover {
-            background: rgba(255, 255, 255, 0.04);
-            border-color: rgba(255, 255, 255, 0.15);
+            background: #1e2232;
+            border-color: rgba(255, 255, 255, 0.25);
         }
         .persona-header {
             display: flex;
@@ -1449,26 +1687,32 @@
         .persona-main-info {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             min-width: 0;
         }
-        .persona-avatar {
+        .persona-avatar-monogram {
             width: 32px;
             height: 32px;
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.06);
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.16);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 17px;
+            font-family: var(--font-display);
+            font-size: 11.5px;
+            font-weight: 700;
+            color: #ffffff;
             flex-shrink: 0;
+            letter-spacing: 0.04em;
         }
         .persona-name-wrap {
             min-width: 0;
         }
         .persona-name {
-            font-size: 12.5px;
-            font-weight: 700;
+            font-family: var(--font-display);
+            font-size: 13px;
+            font-weight: 600;
             color: #ffffff;
             white-space: nowrap;
             overflow: hidden;
@@ -1478,71 +1722,98 @@
             font-size: 11px;
             color: var(--text-secondary);
             white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+        }
+        .persona-meta-pill {
+            font-family: var(--font-display);
+            font-size: 10.5px;
+            padding: 3px 8px;
+            border-radius: 9999px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            white-space: nowrap;
         }
         .persona-stat-row {
             display: flex;
             align-items: center;
             gap: 8px;
-            font-size: 11px;
-            color: var(--text-muted);
+            font-size: 10.5px;
+            color: var(--text-secondary);
         }
         .persona-bar-wrap {
             flex: 1;
-            height: 6px;
-            background: rgba(255, 255, 255, 0.06);
-            border-radius: 3px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 9999px;
             overflow: hidden;
         }
         .persona-bar-inner {
             height: 100%;
-            border-radius: 3px;
-            transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            border-radius: 9999px;
+            transition: width 0.3s ease;
         }
-        .bar-loyalty { background: linear-gradient(90deg, #f59e0b, #10b981); }
-        .bar-stress { background: linear-gradient(90deg, #f43f5e, #fb7185); }
-        .persona-meta-pill {
-            font-size: 10.5px;
-            padding: 3px 7px;
-            border-radius: 4px;
-            background: rgba(255, 255, 255, 0.04);
-            color: var(--text-secondary);
-            border: 1px solid var(--border-subtle);
+        .bar-loyalty {
+            background: var(--emerald-accent);
         }
+        .bar-stress {
+            background: var(--rose-accent);
+        }
+        .persona-tag-label {
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 500;
+            margin-right: 4px;
+        }
+
+        /* War Room Timeline & Feed */
         .war-timeline-feed {
             flex: 1;
             overflow-y: auto;
             padding: 16px;
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 12px;
         }
-        .war-round-header {
-            background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(20, 20, 26, 0.6) 100%);
-            border: 1px solid rgba(245, 158, 11, 0.3);
-            border-radius: 10px;
-            padding: 12px 16px;
+        .war-empty-state {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
         }
-        .war-round-title {
-            font-family: var(--font-display);
-            font-size: 13.5px;
-            font-weight: 700;
-            color: var(--gold-light);
-            margin-bottom: 4px;
+        .empty-icon-seal {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-subtle);
             display: flex;
             align-items: center;
-            gap: 8px;
+            justify-content: center;
+            color: var(--text-secondary);
+        }
+        .war-round-header {
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 14px;
+            margin-top: 6px;
+        }
+        .war-round-title {
+            font-family: var(--font-serif);
+            font-size: 13.5px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 4px;
         }
         .war-round-summary {
             font-size: 12px;
             line-height: 1.55;
-            color: rgba(255, 255, 255, 0.85);
+            color: var(--text-secondary);
         }
         .war-action-card {
-            background: var(--bg-surface);
+            background: rgba(18, 18, 24, 0.65);
             border: 1px solid var(--border-subtle);
-            border-radius: 10px;
+            border-radius: 12px;
             padding: 14px;
             display: flex;
             flex-direction: column;
@@ -1557,62 +1828,62 @@
         }
         .war-public-bubble {
             background: rgba(255, 255, 255, 0.03);
-            border-left: 3px solid var(--cyan-accent);
-            padding: 8px 12px;
+            border-left: 2px solid rgba(255, 255, 255, 0.35);
+            padding: 9px 12px;
             border-radius: 0 8px 8px 0;
             font-size: 12.5px;
-            line-height: 1.5;
+            line-height: 1.55;
             color: #ffffff;
         }
         .war-private-thought {
-            background: rgba(139, 92, 246, 0.08);
-            border-left: 3px solid #a855f7;
-            padding: 8px 12px;
+            background: rgba(139, 92, 246, 0.06);
+            border-left: 2px solid #a855f7;
+            padding: 9px 12px;
             border-radius: 0 8px 8px 0;
             font-size: 12px;
-            line-height: 1.5;
-            color: #d8b4fe;
+            line-height: 1.55;
+            color: #e9d5ff;
             font-style: italic;
         }
         .war-whisper {
-            background: rgba(245, 158, 11, 0.08);
-            border-left: 3px solid var(--gold-primary);
-            padding: 8px 12px;
+            background: rgba(212, 175, 55, 0.06);
+            border-left: 2px solid var(--gold-primary);
+            padding: 9px 12px;
             border-radius: 0 8px 8px 0;
             font-size: 12px;
-            line-height: 1.5;
-            color: #fde68a;
+            line-height: 1.55;
+            color: #fef08a;
         }
         .war-intervention-banner {
-            background: linear-gradient(135deg, rgba(234, 179, 8, 0.18) 0%, rgba(30, 20, 10, 0.8) 100%);
-            border: 1px solid rgba(234, 179, 8, 0.5);
-            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 12px;
             padding: 12px 16px;
-            color: #fef08a;
+            color: #ffffff;
             font-size: 12.5px;
             line-height: 1.5;
             display: flex;
             flex-direction: column;
             gap: 4px;
-            box-shadow: 0 0 16px rgba(234, 179, 8, 0.15);
         }
         .war-report-box {
-            background: var(--bg-surface);
-            border: 1px solid rgba(245, 158, 11, 0.35);
-            border-radius: 12px;
-            padding: 16px;
+            background: rgba(18, 18, 24, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 14px;
+            padding: 18px;
             display: flex;
             flex-direction: column;
             gap: 14px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
-        /* MiroFish Additions: Filter Bar, Network Graph, Interrogation, Trajectory */
+
+        /* Filter bar */
         .war-feed-filter-bar {
             display: flex;
             align-items: center;
             gap: 6px;
             padding: 8px 16px;
-            background: rgba(0, 0, 0, 0.25);
+            background: rgba(0, 0, 0, 0.3);
             border-bottom: 1px solid var(--border-subtle);
             overflow-x: auto;
             scrollbar-width: none;
@@ -1622,25 +1893,28 @@
         .war-filter-btn {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid var(--border-subtle);
-            border-radius: 6px;
-            padding: 4px 9px;
+            border-radius: 9999px;
+            padding: 5px 12px;
+            font-family: var(--font-display);
             font-size: 11px;
-            font-weight: 600;
+            font-weight: 500;
             color: var(--text-secondary);
             cursor: pointer;
             white-space: nowrap;
-            transition: all 0.15s ease;
+            transition: all 0.2s ease;
         }
         .war-filter-btn:hover {
             color: #ffffff;
+            background: rgba(255, 255, 255, 0.07);
             border-color: rgba(255, 255, 255, 0.2);
         }
         .war-filter-btn.active {
-            background: rgba(245, 158, 11, 0.15);
-            border-color: var(--gold-primary);
-            color: var(--gold-light);
-            box-shadow: 0 0 8px rgba(245, 158, 11, 0.2);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.3);
+            color: #ffffff;
         }
+
+        /* Social Network Graph */
         .war-graph-card {
             background: linear-gradient(180deg, rgba(15, 23, 42, 0.65) 0%, rgba(10, 10, 15, 0.85) 100%);
             border-bottom: 1px solid var(--border-subtle);
@@ -1657,14 +1931,12 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
         .war-graph-title {
+            font-family: var(--font-display);
             font-size: 11px;
-            font-weight: 700;
+            font-weight: 600;
             color: var(--cyan-accent);
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            display: flex;
-            align-items: center;
-            gap: 6px;
         }
         .war-graph-canvas {
             width: 100%;
@@ -1672,23 +1944,23 @@
             display: block;
         }
         .war-btn-interrogate {
-            background: rgba(245, 158, 11, 0.1);
-            border: 1px solid rgba(245, 158, 11, 0.3);
-            color: var(--gold-light);
-            border-radius: 6px;
-            padding: 4px 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-subtle);
+            color: #ffffff;
+            border-radius: 9999px;
+            padding: 4px 10px;
+            font-family: var(--font-display);
             font-size: 10.5px;
-            font-weight: 600;
+            font-weight: 500;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
             gap: 4px;
-            transition: all 0.15s ease;
+            transition: all 0.2s ease;
         }
         .war-btn-interrogate:hover {
-            background: rgba(245, 158, 11, 0.22);
-            border-color: var(--gold-primary);
-            color: #ffffff;
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.25);
         }
         .persona-trajectory-wrap {
             display: flex;
@@ -1708,14 +1980,14 @@
             color: var(--cyan-accent);
         }
         .war-btn-autoplay {
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(5, 150, 105, 0.3) 100%);
-            border: 1px solid rgba(16, 185, 129, 0.4);
-            color: var(--emerald-accent);
-            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-subtle);
+            color: #ffffff;
+            border-radius: 9999px;
             padding: 10px 16px;
-            font-family: var(--font-sans);
-            font-size: 12.5px;
-            font-weight: 700;
+            font-family: var(--font-display);
+            font-size: 12px;
+            font-weight: 500;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -1726,16 +1998,38 @@
             transition: all 0.2s ease;
         }
         .war-btn-autoplay:hover {
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.3) 0%, rgba(5, 150, 105, 0.45) 100%);
-            border-color: var(--emerald-accent);
-            color: #ffffff;
-            box-shadow: 0 0 12px rgba(16, 185, 129, 0.25);
+            background: rgba(255, 255, 255, 0.09);
+            border-color: rgba(255, 255, 255, 0.2);
         }
         .war-btn-autoplay:disabled {
-            opacity: 0.5;
+            opacity: 0.45;
             cursor: not-allowed;
-            box-shadow: none;
         }
+
+        /* Pulsing emerald dot matching landing page */
+        .live-pulse-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-emerald);
+            border-radius: 50%;
+            position: relative;
+            display: inline-block;
+            box-shadow: 0 0 6px var(--accent-emerald);
+            margin-right: 2px;
+        }
+        .live-pulse-dot::after {
+            content: '';
+            position: absolute;
+            top: -4px; left: -4px; right: -4px; bottom: -4px;
+            background-color: rgba(57, 255, 20, 0.35);
+            border-radius: 50%;
+            animation: pulse-ring 2s infinite ease-in-out;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.6); opacity: 0.9; }
+            100% { transform: scale(2.2); opacity: 0; }
+        }
+
         .interrogate-chat-bubble {
             padding: 10px 14px;
             border-radius: 10px;
@@ -1745,8 +2039,8 @@
         }
         .interrogate-user-msg {
             align-self: flex-end;
-            background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(217, 119, 6, 0.25) 100%);
-            border: 1px solid rgba(245, 158, 11, 0.4);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             color: #ffffff;
             border-bottom-right-radius: 2px;
         }
@@ -1757,62 +2051,213 @@
             color: #e2e8f0;
             border-bottom-left-radius: 2px;
         }
-        @media (max-width: 1100px) {
+
+        /* Mobile Segmented War Room Tabs & Floating Actions */
+        .war-mobile-tabs {
+            display: none;
+        }
+        .war-mobile-floating-bar {
+            display: none;
+        }
+
+        @media (max-width: 900px) {
+            .war-mobile-tabs {
+                display: flex;
+                width: 100%;
+                padding: 8px 12px;
+                gap: 6px;
+                background: rgba(6, 6, 10, 0.92);
+                border-bottom: 1px solid var(--border-subtle);
+                backdrop-filter: blur(20px);
+                position: sticky;
+                top: 0;
+                z-index: 25;
+            }
+            .war-m-tab {
+                flex: 1;
+                padding: 7px 8px;
+                border-radius: 9999px;
+                background: rgba(255, 255, 255, 0.04);
+                border: 1px solid var(--border-subtle);
+                color: var(--text-secondary);
+                font-family: var(--font-display);
+                font-size: 11.5px;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 6px;
+                cursor: pointer;
+                transition: all 0.25s ease;
+                white-space: nowrap;
+            }
+            .war-m-tab.active {
+                background: rgba(255, 255, 255, 0.12);
+                border-color: rgba(255, 255, 255, 0.28);
+                color: #ffffff;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+            }
+            .war-tab-dot {
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background: var(--accent-emerald);
+                box-shadow: 0 0 6px var(--accent-emerald);
+                display: inline-block;
+            }
+            .war-m-badge {
+                font-size: 9.5px;
+                padding: 1px 6px;
+                border-radius: 9999px;
+                background: rgba(255, 255, 255, 0.08);
+                color: var(--text-secondary);
+            }
+
             .war-room-layout {
-                grid-template-columns: 1fr;
-                overflow-y: auto;
-                height: auto;
+                display: flex;
+                flex-direction: column;
+                height: calc(100vh - 52px - 46px);
+                overflow: hidden;
             }
             .war-room-col {
-                height: auto;
-                overflow: visible;
+                display: none; /* Hide non-active columns on mobile! */
+                height: 100%;
+                flex: 1;
+                overflow-y: auto;
                 border-right: none;
-                border-bottom: 1px solid var(--border-subtle);
+                border-bottom: none;
             }
-            .war-room-col-body, .war-timeline-feed {
-                max-height: 480px;
+            .war-room-col.m-active {
+                display: flex; /* Only active tab is shown! */
+            }
+            .war-room-col-body {
+                padding: 12px 14px 75px 14px;
+            }
+            .war-timeline-feed {
+                height: 100% !important;
+                max-height: none !important;
+                padding: 12px 14px 75px 14px;
+            }
+
+            /* Floating mobile action bar */
+            .war-mobile-floating-bar {
+                position: fixed;
+                bottom: 12px;
+                left: 14px;
+                right: 14px;
+                z-index: 40;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                background: rgba(14, 14, 20, 0.92);
+                border: 1px solid rgba(255, 255, 255, 0.15);
+                backdrop-filter: blur(24px);
+                -webkit-backdrop-filter: blur(24px);
+                padding: 6px 10px;
+                border-radius: 9999px;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+            }
+            .war-m-float-action {
+                flex: 1;
+                background: rgba(255, 255, 255, 0.06);
+                border: 1px solid var(--border-subtle);
+                border-radius: 9999px;
+                color: #ffffff;
+                font-family: var(--font-display);
+                font-size: 11.5px;
+                padding: 8px 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 6px;
+                cursor: pointer;
+            }
+            .war-m-float-step {
+                flex: 1.4;
+                background: #ffffff;
+                color: #000000;
+                border: none;
+                border-radius: 9999px;
+                font-family: var(--font-display);
+                font-size: 12px;
+                font-weight: 600;
+                padding: 9px 14px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 6px;
+                cursor: pointer;
+                box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
+            }
+            .war-m-float-step:disabled {
+                opacity: 0.5;
+                cursor: not-allowed;
+            }
+            .glass-cursor-card, .cursor-ring-outline {
+                display: none !important;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Ambient video background matching landing page -->
+    <div class="video-container">
+        <video autoplay muted playsinline loop preload="auto" id="bg-video">
+            <source src="/flower.mp4" type="video/mp4">
+            <source src="https://api.getlayers.ai/storage/v1/object/public/public/assets/loopstack-f8c64439bf/flower.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="video-overlay"></div>
+    <div class="cursor-ring-outline" id="cursor-ring"></div>
+    <div id="glass-card" class="glass-cursor-card">
+        <span class="cursor-card-text"><span class="text-white">NHÂN</span> THUẬT</span>
+    </div>
+
     <!-- Executive Top Navigation Bar -->
     <header class="exec-header">
         <a href="/" class="header-brand">
-            <div class="brand-crest">👑</div>
+            <div class="brand-crest">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+            </div>
             <div class="brand-meta">
                 <h1>NHÂN THUẬT</h1>
-                <span>HUMAN INTELLIGENCE OS • v1.2</span>
+                <span>QUẢN TRỊ & THAO LƯỢC TÂM LÝ</span>
             </div>
         </a>
 
         <nav class="header-nav" id="header-nav">
-            <button class="workspace-tab-btn active" onclick="switchWorkspace('view-advisory', this)">💡 Tham Mưu</button>
-            <button class="workspace-tab-btn" onclick="switchWorkspace('view-council', this)">🏛️ Hội Đồng Cố Vấn</button>
-            <button class="workspace-tab-btn" onclick="switchWorkspace('view-sparring', this)">⚔️ Đấu Trí</button>
-            <button class="workspace-tab-btn" onclick="switchWorkspace('view-diagnostics', this)">🧩 Chẩn Đoán Nhân Sự</button>
-            <button class="workspace-tab-btn" onclick="switchWorkspace('view-codex', this)">📚 Tủ Sách & Tri Thức</button>
-            <button class="workspace-tab-btn" onclick="switchWorkspace('view-war-room', this)">♟️ Sa Bàn Tình Thế</button>
+            <button class="workspace-tab-btn" onclick="switchWorkspace('view-war-room', this)">Sa bàn tình thế</button>
+            <button class="workspace-tab-btn" onclick="switchWorkspace('view-advisory', this)">Tham mưu</button>
+            <button class="workspace-tab-btn" onclick="switchWorkspace('view-council', this)">Hội đồng cố vấn</button>
+            <button class="workspace-tab-btn" onclick="switchWorkspace('view-sparring', this)">Đấu trí</button>
+            <button class="workspace-tab-btn" onclick="switchWorkspace('view-diagnostics', this)">Chẩn đoán nhân sự</button>
+            <button class="workspace-tab-btn" onclick="switchWorkspace('view-codex', this)">Tủ sách & tri thức</button>
         </nav>
 
         <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Mở menu điều hướng" aria-expanded="false" aria-controls="header-nav" onclick="toggleMobileNav()">☰</button>
 
         <div class="header-actions">
-            <button class="export-btn" id="export-brief-top-btn">📄 Xuất Kịch Bản</button>
+            <button class="export-btn" id="export-brief-top-btn" onclick="openExecutiveExportModal()">Xuất kịch bản</button>
             <div id="user-profile-widget" class="user-profile-widget"></div>
-            <a href="/" class="home-link-btn">Trang Chủ</a>
+            <a href="/" class="home-link-btn">Trang chủ</a>
         </div>
     </header>
 
     <!-- Mobile Navigation Drawer -->
     <div class="mobile-nav-drawer" id="mobile-nav-drawer" role="navigation" aria-label="Điều hướng di động">
         <div id="mobile-user-profile-widget" style="padding: 10px 14px; border-bottom: 1px solid var(--border-subtle); margin-bottom: 8px;"></div>
-        <button class="workspace-tab-btn active" onclick="switchWorkspace('view-advisory', this); closeMobileNav();">💡 Tham Mưu</button>
-        <button class="workspace-tab-btn" onclick="switchWorkspace('view-council', this); closeMobileNav();">🏛️ Hội Đồng Cố Vấn</button>
-        <button class="workspace-tab-btn" onclick="switchWorkspace('view-sparring', this); closeMobileNav();">⚔️ Đấu Trí</button>
-        <button class="workspace-tab-btn" onclick="switchWorkspace('view-diagnostics', this); closeMobileNav();">🧩 Chẩn Đoán Nhân Sự</button>
-        <button class="workspace-tab-btn" onclick="switchWorkspace('view-codex', this); closeMobileNav();">📚 Tủ Sách & Tri Thức</button>
-        <button class="workspace-tab-btn" onclick="switchWorkspace('view-war-room', this); closeMobileNav();">♟️ Sa Bàn Tình Thế</button>
+        <button class="workspace-tab-btn" onclick="switchWorkspace('view-war-room', this); closeMobileNav();">Sa bàn tình thế</button>
+        <button class="workspace-tab-btn" onclick="switchWorkspace('view-advisory', this); closeMobileNav();">Tham mưu</button>
+        <button class="workspace-tab-btn" onclick="switchWorkspace('view-council', this); closeMobileNav();">Hội đồng cố vấn</button>
+        <button class="workspace-tab-btn" onclick="switchWorkspace('view-sparring', this); closeMobileNav();">Đấu trí</button>
+        <button class="workspace-tab-btn" onclick="switchWorkspace('view-diagnostics', this); closeMobileNav();">Chẩn đoán nhân sự</button>
+        <button class="workspace-tab-btn" onclick="switchWorkspace('view-codex', this); closeMobileNav();">Tủ sách & tri thức</button>
+        <div style="padding: 12px 14px; border-top: 1px solid var(--border-subtle); margin-top: 6px; display: flex; gap: 8px;">
+            <button class="export-btn" id="export-brief-mobile-btn" style="flex: 1; justify-content: center;" onclick="openExecutiveExportModal(); closeMobileNav();">Xuất kịch bản</button>
+            <a href="/" class="home-link-btn" style="flex: 1; text-align: center; justify-content: center; display: flex; align-items: center;">Trang chủ</a>
+        </div>
     </div>
 
     <!-- Main Workspace Viewport -->
@@ -1824,8 +2269,8 @@
                 <div class="cockpit-main">
                     <div class="mode-toolbar">
                         <div class="mode-pills">
-                            <button class="mode-pill active" onclick="setAdvisoryMode('leadership', this)">💡 Tham Mưu Điều Hành</button>
-                            <button class="mode-pill" onclick="setAdvisoryMode('cases', this)">📋 Tình Huống Thực Chiến (Cases)</button>
+                            <button class="mode-pill active" onclick="setAdvisoryMode('leadership', this)">💡 Tham mưu điều hành</button>
+                            <button class="mode-pill" onclick="setAdvisoryMode('cases', this)">📋 Tình huống thực chiến</button>
                         </div>
                     </div>
 
@@ -1843,7 +2288,7 @@
 
                     <div class="chat-input-bar" id="chat-input-bar">
                         <input type="text" class="chat-text-input" id="advisory-input" placeholder="Nhập tình huống quản trị hoặc bài toán nhân sự cần tham mưu...">
-                        <button class="send-action-btn" id="advisory-send-btn">Tác Chiến ➤</button>
+                        <button class="send-action-btn" id="advisory-send-btn">Tác chiến ➤</button>
                     </div>
 
                     <!-- CASE LIBRARY (only visible in Cases mode) -->
@@ -1851,7 +2296,7 @@
                         <div style="padding: 20px 28px 16px; border-bottom: 1px solid var(--border-subtle);">
                             <h3 style="font-family: var(--font-serif); font-size: 19px; color: var(--gold-light);">📂 THƯ VIỆN HỒ SƠ THỰC CHIẾN</h3>
                             <p style="font-size: 12.5px; color: var(--text-secondary); margin-top: 4px;">
-                                Những ca khó sau khi phân tích và <strong>Xuất Kịch Bản</strong> sẽ được lưu tự động vào đây để tra cứu lại.
+                                Những ca khó sau khi phân tích và <strong>Xuất kịch bản</strong> sẽ được lưu tự động vào đây để tra cứu lại.
                             </p>
                         </div>
                         <div id="cases-library-grid" class="cases-grid">
@@ -1872,7 +2317,7 @@
 
                 <div style="display: flex; gap: 12px; margin-bottom: 24px;">
                     <input type="text" class="diag-input" id="council-scenario-input" placeholder="Ví dụ: Giám đốc chi nhánh làm ăn có lãi nhưng lập bè cánh riêng, có nên sa thải ngay không?" style="margin-bottom: 0;">
-                    <button class="send-action-btn" id="council-deliberate-btn" style="white-space: nowrap; padding: 10px 24px;">Triệu Tập Hội Đồng ⚡</button>
+                    <button class="send-action-btn" id="council-deliberate-btn" style="white-space: nowrap; padding: 10px 24px;">Triệu tập hội đồng ⚡</button>
                 </div>
 
                 <div id="council-result-area" style="display: none;">
@@ -1889,7 +2334,7 @@
                         <h2 style="font-family: var(--font-display); font-size: 20px; color: #ffffff;">⚔️ PHÒNG ĐẤU TRÍ & THƯƠNG THUYẾT ĐỐI KHÁNG</h2>
                         <p style="font-size: 12.5px; color: var(--text-secondary);">Rèn luyện phản xạ đối đáp trước những đối thủ, đối tác và nhân sự rắn mặt nhất.</p>
                     </div>
-                    <button class="export-btn" onclick="startNewSparring()">+ Ván Đấu Mới</button>
+                    <button class="export-btn" onclick="startNewSparring()">+ Ván đấu mới</button>
                 </div>
 
                 <div class="chat-feed" id="sparring-feed" style="padding: 10px 0;">
@@ -1901,7 +2346,7 @@
 
                 <div class="chat-input-bar" style="background: transparent; border: none; padding: 14px 0 0 0;">
                     <input type="text" class="chat-text-input" id="sparring-input" placeholder="Nhập câu phản hồi đối kháng của bạn...">
-                    <button class="send-action-btn" id="sparring-send-btn">Đối Đòn ⚔️</button>
+                    <button class="send-action-btn" id="sparring-send-btn">Đối đòn ⚔️</button>
                 </div>
             </div>
         </section>
@@ -1916,7 +2361,7 @@
                     <!-- Sub-view Mode Switcher -->
                     <div style="display: flex; gap: 10px; margin-top: 14px;">
                         <button class="mode-pill active" id="tab-btn-person-fit" onclick="switchDiagTab('person', this)">
-                            👤 1. Cá Nhân - Vai Trò (Person-Role Fit - NT-MODEL-0007)
+                            👤 1. Cá nhân - Vai trò (Person-Role Fit - NT-MODEL-0007)
                         </button>
                         <button class="mode-pill" id="tab-btn-team-fit" onclick="switchDiagTab('team', this)">
                             👥 2. Khớp Cấu Trúc Đội Ngũ (Team Structural Fit - NT-PRINCIPLE-0066)
@@ -1964,7 +2409,7 @@
                         </div>
                     </div>
 
-                    <button class="diag-cta-btn" id="run-diagnostic-btn">🚀 Chẩn Đoán Ma Sát Nhận Thức & Đưa Ra Phán Quyết</button>
+                    <button class="diag-cta-btn" id="run-diagnostic-btn">🚀 Chẩn đoán ma sát nhận thức & đưa ra phán quyết</button>
 
                     <!-- Diagnostic Results Area -->
                     <div class="diag-result-card" id="diag-result-card">
@@ -1986,10 +2431,10 @@
                         <div style="margin-top: 18px; font-size: 13.5px; line-height: 1.7; color: rgba(255,255,255,0.9);">
                             <p id="diag-cost-analysis" style="margin-bottom: 14px; background: rgba(255,255,255,0.03); padding: 12px 16px; border-radius: 8px; border-left: 3px solid var(--gold-primary);"></p>
                             
-                            <h4 style="color: var(--gold-light); font-size: 14px; margin-bottom: 6px;">⚠️ Điểm Ma Sát Nhận Diện (Friction Points):</h4>
+                            <h4 style="color: var(--gold-light); font-size: 14px; margin-bottom: 6px;">⚠️ Điểm ma sát nhận diện (Friction Points):</h4>
                             <ul id="diag-friction-points" style="padding-left: 20px; margin-bottom: 14px; color: #cbd5e1;"></ul>
 
-                            <h4 style="color: var(--emerald-accent); font-size: 14px; margin-bottom: 6px;">🛡️ Chiến Lược Bù Đắp Môi Trường (Compensatory Strategies):</h4>
+                            <h4 style="color: var(--emerald-accent); font-size: 14px; margin-bottom: 6px;">🛡️ Chiến lược bù đắp môi trường (Compensatory Strategies):</h4>
                             <ul id="diag-compensatory-list" style="padding-left: 20px; margin-bottom: 16px; color: #cbd5e1;"></ul>
 
                             <div style="padding: 12px 16px; background: rgba(245, 158, 11, 0.08); border-radius: 8px; border: 1px solid rgba(245, 158, 11, 0.2);">
@@ -1999,7 +2444,7 @@
 
                             <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border-subtle); display: flex; justify-content: flex-end;">
                                 <button class="war-btn-step" id="diag-person-to-war-btn" onclick="transferPersonDiagToWarRoom()" style="width: auto; padding: 8px 16px; font-size: 12px;">
-                                    ♟️ Đưa Nhân Sự Này Vào Sa Bàn Mô Phỏng
+                                    ♟️ Đưa nhân sự này vào sa bàn mô phỏng
                                 </button>
                             </div>
                         </div>
@@ -2100,11 +2545,11 @@
                             
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
                                 <div style="background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.2); border-radius: 10px; padding: 14px;">
-                                    <h4 style="color: #f87171; font-size: 13.5px; margin-bottom: 8px;">⚠️ Điểm Mù Hệ Thống (Systemic Blind Spots):</h4>
+                                    <h4 style="color: #f87171; font-size: 13.5px; margin-bottom: 8px;">⚠️ Điểm mù hệ thống (Systemic Blind Spots):</h4>
                                     <ul id="team-blind-spots-list" style="padding-left: 18px; color: #cbd5e1; font-size: 13px;"></ul>
                                 </div>
                                 <div style="background: rgba(245, 158, 11, 0.05); border: 1px solid rgba(245, 158, 11, 0.2); border-radius: 10px; padding: 14px;">
-                                    <h4 style="color: #fbbf24; font-size: 13.5px; margin-bottom: 8px;">⚡ Ma Sát Tương Tác Phát Sinh (NT-MODEL-0009):</h4>
+                                    <h4 style="color: #fbbf24; font-size: 13.5px; margin-bottom: 8px;">⚡ Ma sát tương tác phát sinh (NT-MODEL-0009):</h4>
                                     <ul id="team-frictions-list" style="padding-left: 18px; color: #cbd5e1; font-size: 13px;"></ul>
                                 </div>
                             </div>
@@ -2121,7 +2566,7 @@
 
                             <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border-subtle); display: flex; justify-content: flex-end;">
                                 <button class="war-btn-step" id="diag-team-to-war-btn" onclick="transferTeamDiagToWarRoom()" style="width: auto; padding: 8px 16px; font-size: 12px;">
-                                    ♟️ Đưa Đội Ngũ Này Vào Sa Bàn Mô Phỏng Tình Thế
+                                    ♟️ Đưa Đội Ngũ Này Vào Sa bàn mô phỏng tình thế
                                 </button>
                             </div>
                         </div>
@@ -2140,11 +2585,11 @@
                     </div>
 
                     <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                        <button class="mode-pill active" onclick="filterBookCat('all', this)">Tất Cả (<span id="book-pill-all-count">…</span>)</button>
-                        <button class="mode-pill" onclick="filterBookCat('psychology', this)">🧠 Tâm Lý & Đàm Phán</button>
-                        <button class="mode-pill" onclick="filterBookCat('strategy', this)">⚔️ Chiến Lược & Game Theory</button>
-                        <button class="mode-pill" onclick="filterBookCat('leadership', this)">👑 Hệ Thống & Quản Trị</button>
-                        <button class="mode-pill" onclick="filterBookCat('mindset', this)">🏛️ Bản Lĩnh & Nghịch Cảnh</button>
+                        <button class="mode-pill active" onclick="filterBookCat('all', this)">Tất cả (<span id="book-pill-all-count">…</span>)</button>
+                        <button class="mode-pill" onclick="filterBookCat('psychology', this)">🧠 Tâm lý & đàm phán</button>
+                        <button class="mode-pill" onclick="filterBookCat('strategy', this)">⚔️ Chiến lược & Game Theory</button>
+                        <button class="mode-pill" onclick="filterBookCat('leadership', this)">👑 Hệ thống & quản trị</button>
+                        <button class="mode-pill" onclick="filterBookCat('mindset', this)">🏛️ Bản lĩnh & nghịch cảnh</button>
                     </div>
                 </div>
 
@@ -2180,58 +2625,82 @@
 
         <!-- MODULE 6: SA BÀN TÌNH THẾ (WAR ROOM SANDBOX) -->
         <section id="view-war-room" class="workspace-module">
+            <!-- Mobile Segmented Tabs Navigation -->
+            <div class="war-mobile-tabs" id="war-mobile-tabs">
+                <button class="war-m-tab active" id="war-mtab-feed" onclick="switchWarMobileTab('feed', this)">
+                    <span class="war-tab-dot"></span>
+                    <span>Diễn biến tình thế</span>
+                    <span id="war-mobile-round-tag" class="war-m-badge">Vòng 0/3</span>
+                </button>
+                <button class="war-m-tab" id="war-mtab-context" onclick="switchWarMobileTab('context', this)">
+                    <span>Bối cảnh & nhân sự</span>
+                    <span id="war-mobile-persona-tag" class="war-m-badge">0</span>
+                </button>
+                <button class="war-m-tab" id="war-mtab-control" onclick="switchWarMobileTab('control', this)">
+                    <span>Tham mưu & can thiệp</span>
+                </button>
+            </div>
+
             <div class="war-room-layout">
                 <!-- CỘT 1: BÀN CỜ & CĂN CƯỚC NHÂN CÁCH (SCENARIO & PERSONAS) -->
-                <div class="war-room-col">
+                <div class="war-room-col" id="war-col-context">
                     <div class="war-room-col-header">
-                        <h3><span>♟️</span> Bối Cảnh & Nhân Cách</h3>
+                        <h3>Bối cảnh & nhân cách</h3>
                         <span id="war-persona-count-badge" class="persona-meta-pill">0 nhân vật</span>
                     </div>
                     <div class="war-room-col-body">
                         <!-- Presets Selector -->
                         <div class="war-card">
                             <div class="war-label">
-                                <span>📋 Kịch Bản Mẫu Điển Hình</span>
-                                <span style="font-size: 10px; color: var(--gold-light);">1-Click Nạp</span>
+                                <span>Kịch bản mẫu điển hình</span>
+                                <span style="font-size: 10px; color: var(--gold-light);">Mẫu thực chứng</span>
                             </div>
                             <div id="war-presets-list" style="display: flex; flex-direction: column; gap: 6px;">
-                                <div style="color: var(--text-muted); font-size: 11px;">Đang tải kịch bản mẫu...</div>
+                                <div style="color: var(--text-muted); font-size: 11.5px;">Đang nạp kịch bản mẫu...</div>
                             </div>
                         </div>
 
                         <!-- Scenario Input -->
                         <div class="war-card">
                             <div class="war-label">
-                                <span>🎯 Tình Huống Giả Lập</span>
+                                <span>TÌNH HUỐNG GIẢ LẬP</span>
                                 <span id="war-status-tag" style="color: var(--emerald-accent); font-size: 10.5px;">Sẵn sàng</span>
                             </div>
-                            <textarea id="war-scenario-input" class="war-textarea" rows="4" placeholder="Nhập tình thế quản trị hiểm hóc cần kiểm thử tâm lý bầy đàn..."></textarea>
+                            <textarea id="war-scenario-input" class="war-textarea" rows="4" placeholder="Nhập tình thế quản trị hiểm hóc cần kiểm thử tâm lý và toan tính bầy đàn..."></textarea>
                             <button id="war-init-btn" class="war-btn-primary" onclick="initWarRoomSimulation()" style="margin-top: 10px;">
-                                <span>⚡</span> Khởi Tạo Sa Bàn Mô Phỏng
+                                Khởi tạo sa bàn mô phỏng
                             </button>
                         </div>
 
                         <!-- Persona Cards Container -->
                         <div class="war-label" style="margin-top: 4px;">
-                            <span>👥 Hồ Sơ Căn Cước Tâm Lý</span>
+                            <span>Hồ sơ căn cước tâm lý</span>
                             <span id="war-session-id-display" style="font-size: 10px; color: var(--text-muted);">ID: Chưa tạo</span>
                         </div>
                         <div id="war-personas-container" style="display: flex; flex-direction: column; gap: 10px;">
-                            <div class="war-empty-state" style="padding: 24px 10px;">
-                                <div style="font-size: 28px;">👤</div>
-                                <div style="font-size: 12px;">Chưa có nhân vật nào.<br>Hãy bấm <strong>"Khởi Tạo Sa Bàn"</strong> để sinh các nhân vật mang động cơ và nỗi sợ riêng.</div>
+                            <div class="war-empty-state" style="padding: 28px 14px;">
+                                <div class="empty-icon-seal">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="7" r="4"></circle><path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"></path></svg>
+                                </div>
+                                <div style="font-family: var(--font-display); font-size: 14px; font-weight: 500; color: #ffffff; margin-top: 8px;">Chưa khởi tạo nhân vật</div>
+                                <div style="font-size: 11.5px; color: var(--text-secondary); line-height: 1.5; margin-top: 4px;">
+                                    Bấm <strong>"Khởi tạo sa bàn"</strong> để thiết lập bàn cờ nhân sự với động cơ và nỗi sợ riêng biệt.
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- CỘT 2: DÒNG THỜI GIAN TƯƠNG TÁC (WAR ROOM LIVE FEED & GRAPH) -->
-                <div class="war-room-col">
+                <div class="war-room-col m-active" id="war-col-feed">
                     <div class="war-room-col-header">
-                        <h3><span>📡</span> Dòng Thời Gian Tình Thế (Live Feed)</h3>
+                        <h3>
+                            <span class="live-pulse-dot"></span>
+                            Diễn biến tình thế
+                        </h3>
                         <div style="display: flex; align-items: center; gap: 8px;">
-                            <button id="war-graph-toggle-btn" class="persona-meta-pill" onclick="toggleWarGraphView()" style="cursor: pointer; background: rgba(56,189,248,0.12); color: var(--cyan-accent); font-weight: 700; border-color: rgba(56,189,248,0.3);">🕸️ Đồ Thị Mạng Lưới</button>
-                            <div id="war-round-badge" class="persona-meta-pill" style="background: rgba(245,158,11,0.15); color: var(--gold-light); font-weight: 700;">Chưa bắt đầu</div>
+                            <button id="war-graph-toggle-btn" class="persona-meta-pill" onclick="toggleWarGraphView()" style="cursor: pointer; background: rgba(56,189,248,0.08); color: var(--cyan-accent); font-weight: 600; border-color: rgba(56,189,248,0.25);">Đồ thị mạng lưới</button>
+                            <div id="war-round-badge" class="persona-meta-pill" style="background: rgba(255,255,255,0.08); color: #ffffff; font-weight: 600;">Chưa bắt đầu</div>
                         </div>
                     </div>
 
@@ -2239,10 +2708,10 @@
                     <div id="war-graph-card" class="war-graph-card" style="display: none;">
                         <div class="war-graph-header">
                             <div class="war-graph-title">
-                                <span>🕸️</span> Đồ Thị Quan Hệ Đa Tác Nhân & Luồng Rỉ Tai Hành Lang
+                                Đồ Thị Quan Hệ & Dòng Chảy Tâm Lý
                             </div>
                             <div id="war-graph-stats" style="font-size: 10.5px; color: var(--text-secondary);">
-                                Bấm vào node để Thẩm vấn 1-1
+                                Chạm vào node để Thẩm vấn 1-1
                             </div>
                         </div>
                         <div id="war-graph-svg-wrap" style="position: relative; width: 100%; height: 210px; background: radial-gradient(circle at center, rgba(30,41,59,0.5) 0%, rgba(10,10,15,0.95) 100%);">
@@ -2251,76 +2720,78 @@
                         <div style="padding: 6px 14px; background: rgba(0,0,0,0.35); border-top: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: space-between; font-size: 10px; color: var(--text-muted);">
                             <div style="display: flex; gap: 12px;">
                                 <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--emerald-accent);"></span> Đồng minh</span>
-                                <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--rose-accent);"></span> Xung đột/Tension</span>
+                                <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--rose-accent);"></span> Xung đột / Căng thẳng</span>
                                 <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--gold-primary);"></span> Rỉ tai ngầm</span>
                             </div>
-                            <span>💡 Bấm node để thẩm vấn trực tiếp</span>
+                            <span>Chạm node để thẩm vấn</span>
                         </div>
                     </div>
 
                     <!-- Channel Filter Tabs -->
                     <div class="war-feed-filter-bar">
-                        <button class="war-filter-btn active" onclick="filterWarFeed('all', this)">Tất Cả</button>
-                        <button class="war-filter-btn" onclick="filterWarFeed('public', this)">📢 Công Khai</button>
-                        <button class="war-filter-btn" onclick="filterWarFeed('thought', this)">💭 Độc Thoại Ngầm</button>
-                        <button class="war-filter-btn" onclick="filterWarFeed('whisper', this)">🤫 Rỉ Tai Hành Lang</button>
-                        <button class="war-filter-btn" onclick="filterWarFeed('intervention', this)">👑 Lệnh Can Thiệp</button>
+                        <button class="war-filter-btn active" onclick="filterWarFeed('all', this)">Tất cả</button>
+                        <button class="war-filter-btn" onclick="filterWarFeed('public', this)">Công khai</button>
+                        <button class="war-filter-btn" onclick="filterWarFeed('thought', this)">Độc thoại ngầm</button>
+                        <button class="war-filter-btn" onclick="filterWarFeed('whisper', this)">Rỉ tai hành lang</button>
+                        <button class="war-filter-btn" onclick="filterWarFeed('intervention', this)">Chỉ thị lãnh đạo</button>
                     </div>
                     
-                    <div id="war-stage-banner" style="display: none; padding: 12px 18px; border-bottom: 1px solid var(--border-subtle); background: rgba(0,0,0,0.2);">
-                        <div id="war-stage-title" style="font-family: var(--font-display); font-size: 13px; font-weight: 700; color: var(--gold-light);"></div>
+                    <div id="war-stage-banner" style="display: none; padding: 12px 18px; border-bottom: 1px solid var(--border-subtle); background: rgba(255,255,255,0.02);">
+                        <div id="war-stage-title" style="font-family: var(--font-display); font-size: 13px; font-weight: 600; font-weight: 600; color: #ffffff;"></div>
                         <div id="war-stage-desc" style="font-size: 12px; color: var(--text-secondary); margin-top: 4px; line-height: 1.5;"></div>
                     </div>
 
                     <div id="war-timeline-feed" class="war-timeline-feed">
                         <div id="war-timeline-empty" class="war-empty-state">
-                            <div style="font-size: 42px; opacity: 0.8;">♟️</div>
-                            <div style="font-family: var(--font-display); font-size: 16px; font-weight: 700; color: #ffffff;">Thao Trường Giả Lập Sa Bàn</div>
-                            <p style="font-size: 12.5px; max-width: 380px; line-height: 1.6; margin: 0 auto;">
-                                Khởi tạo tình huống ở cột trái để bắt đầu mô phỏng phản ứng đa tầng giữa các AI Agent mang nhân cách, quyền lợi và toan tính riêng.
+                            <div class="empty-icon-seal" style="width: 50px; height: 50px;">
+                                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line><line x1="3" y1="9" x2="21" y2="9"></line></svg>
+                            </div>
+                            <div style="font-family: var(--font-serif); font-size: 17px; font-weight: 500; color: #ffffff; margin-top: 12px;">Sa bàn mô phỏng tình thế</div>
+                            <p style="font-size: 13px; max-width: 380px; line-height: 1.6; margin: 8px auto 0; color: var(--text-secondary);">
+                                Khởi tạo tình huống để bắt đầu quan sát phản ứng đa tầng giữa các nhân vật mang nhân cách, quyền lợi và toan tính độc lập.
                             </p>
                         </div>
                     </div>
                 </div>
 
                 <!-- CỘT 3: TRUNG TÂM CAN THIỆP & BÁO CÁO CHIẾN LƯỢC -->
-                <div class="war-room-col">
+                <div class="war-room-col" id="war-col-control">
                     <div class="war-room-col-header">
-                        <h3><span>👑</span> Điều Khiển & Tham Mưu</h3>
+                        <h3>Điều hành & tham mưu</h3>
                         <span id="war-step-counter" class="persona-meta-pill">Vòng 0 / 3</span>
                     </div>
                     <div class="war-room-col-body">
                         <!-- God-mode Intervention Card -->
                         <div class="war-card">
                             <div class="war-label">
-                                <span>👑 Lệnh Thượng Đế (Can Thiệp Tình Thế)</span>
+                                <span>CHỈ THỊ ĐIỀU HÀNH CHIẾN LƯỢC</span>
                             </div>
-                            <p style="font-size: 11.5px; color: var(--text-secondary); margin-bottom: 8px; line-height: 1.45;">
-                                Giữa các vòng, Chủ tịch có thể ban hành mệnh lệnh, phát ngôn hoặc biến cố để uốn nắn hành vi bầy đàn.
+                            <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 8px; line-height: 1.5;">
+                                Giữa các vòng xoay chuyển, lãnh đạo có thể ban hành mệnh lệnh hoặc phát ngôn ngầm để định thế lại cục diện.
                             </p>
-                            <textarea id="war-intervention-input" class="war-textarea" rows="3" placeholder="Ví dụ: Chủ tịch họp kín cam kết tăng 20% phụ cấp giữ chân người tài..."></textarea>
+                            <textarea id="war-intervention-input" class="war-textarea" rows="3" placeholder="Ví dụ: Chủ tịch họp kín cam kết bảo đảm toàn diện quyền lợi cho nhân sự chủ chốt..."></textarea>
                             
-                            <div style="display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px;">
-                                <button type="button" class="persona-meta-pill" onclick="quickFillWarIntervention('Chủ tịch bí mật gặp gỡ 1-1 từng trưởng bộ phận')" style="cursor: pointer;">🤝 Họp kín 1-1</button>
-                                <button type="button" class="persona-meta-pill" onclick="quickFillWarIntervention('Ban hành chỉ thị thanh tra đột xuất toàn diện')" style="cursor: pointer;">🔍 Thanh tra đột xuất</button>
-                                <button type="button" class="persona-meta-pill" onclick="quickFillWarIntervention('Cam kết giữ nguyên chế độ đãi ngộ cho người ở lại')" style="cursor: pointer;">🛡️ Bảo toàn đãi ngộ</button>
-                                <button type="button" class="persona-meta-pill" onclick="quickFillWarIntervention('Công bố kế hoạch thưởng nóng dự án vượt chỉ tiêu')" style="cursor: pointer;">💰 Thưởng nóng</button>
+                            <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px;">
+                                <button type="button" class="war-chip-pill" onclick="quickFillWarIntervention('Chủ tịch bí mật gặp gỡ 1-1 từng trưởng bộ phận')">Họp kín 1-1</button>
+                                <button type="button" class="war-chip-pill" onclick="quickFillWarIntervention('Ban hành chỉ thị thanh tra đột xuất toàn diện')">Thanh tra đột xuất</button>
+                                <button type="button" class="war-chip-pill" onclick="quickFillWarIntervention('Cam kết giữ nguyên chế độ đãi ngộ cho người ở lại')">Bảo toàn đãi ngộ</button>
+                                <button type="button" class="war-chip-pill" onclick="quickFillWarIntervention('Công bố kế hoạch thưởng nóng dự án vượt chỉ tiêu')">Thưởng nóng mục tiêu</button>
                             </div>
 
-                            <button id="war-step-btn" class="war-btn-step" onclick="stepWarRoomRound()" disabled style="margin-top: 12px;">
-                                <span>▶️</span> Tiến Hành Vòng Kế Tiếp
+                            <button id="war-step-btn" class="war-btn-step" onclick="stepWarRoomRound()" disabled style="margin-top: 14px;">
+                                <span>Tiến hành vòng kế tiếp</span>
                             </button>
                             <button id="war-autoplay-btn" class="war-btn-autoplay" onclick="toggleWarRoomAutoPlay()" disabled>
-                                <span>⚡</span> Tự Động Mô Phỏng (Auto-Play)
+                                <span>Tự động diễn tiến</span>
                             </button>
                         </div>
 
                         <!-- Report Action -->
                         <button id="war-report-btn" class="war-btn-report" onclick="generateWarRoomReport()" disabled>
-                            <span>📑</span> Xuất Báo Cáo Tham Mưu Tổng Kết
+                            <span>Xuất báo cáo chiến lược</span>
                         </button>
                         <button id="war-reset-btn" class="war-btn-reset" onclick="resetWarRoom()">
-                            🔄 Thiết lập lại Sa Bàn
+                            Thiết lập lại sa bàn
                         </button>
 
                         <!-- Strategic Report Container -->
@@ -2329,6 +2800,18 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Mobile Floating Bottom Action Bar for War Room -->
+            <div class="war-mobile-floating-bar" id="war-mobile-floating-bar">
+                <button class="war-m-float-action" onclick="switchWarMobileTab('control')">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                    <span>Ra chỉ thị</span>
+                </button>
+                <button class="war-m-float-step" id="war-m-step-btn" onclick="stepWarRoomRound()" disabled>
+                    <span>Tiến hành vòng kế tiếp</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
             </div>
         </section>
 
@@ -2371,7 +2854,7 @@
                 <div style="display: flex; align-items: center; gap: 10px;">
                     <span style="font-size: 20px;">🕵️</span>
                     <div>
-                        <div id="interrogate-modal-title" style="font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--gold-light);">Thẩm Vấn Riêng 1-1 (MiroFish Deep Interaction)</div>
+                        <div id="interrogate-modal-title" style="font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--gold-light);">Thẩm vấn riêng 1-1 (MiroFish Deep Interaction)</div>
                         <div style="font-size: 11px; color: var(--text-secondary);">Chất vấn kín động cơ, toan tính ngầm và nỗi sợ của nhân vật</div>
                     </div>
                 </div>
@@ -2411,7 +2894,7 @@
         <div class="login-gate-card">
             <div class="login-crest">👑</div>
             <h2 class="login-gate-title" id="login-gate-title">NHÂN THUẬT OS</h2>
-            <p class="login-gate-subtitle">Cổng Định Danh & Xác Thực Cố Vấn Chiến Lược Điều Hành</p>
+            <p class="login-gate-subtitle">Cổng định danh & xác thực cố vấn chiến lược điều hành</p>
 
             <form id="login-form" onsubmit="handleFormLogin(event)">
                 <div class="login-field-group">
@@ -2423,23 +2906,23 @@
                     <input type="password" id="login-password" class="login-input" placeholder="Mặc định: 123456 (hoặc để trống)" autocomplete="current-password">
                 </div>
                 <div id="login-error-msg" class="login-error-msg"></div>
-                <button type="submit" class="login-submit-btn" id="login-submit-btn">Xác Thực & Vào Không Gian Làm Việc ➤</button>
+                <button type="submit" class="login-submit-btn" id="login-submit-btn">Xác thực & vào không gian làm việc ➤</button>
             </form>
 
-            <div class="quick-access-divider">Hoặc Đăng Nhập Nhanh 1 Chạm</div>
+            <div class="quick-access-divider">Hoặc đăng nhập nhanh 1 chạm</div>
 
             <div class="quick-access-grid">
                 <button type="button" class="quick-access-btn" onclick="quickLoginAs('executive')">
                     <span class="emoji">👑</span>
-                    <span>Cố Vấn Cấp Cao</span>
+                    <span>Cố vấn cấp cao</span>
                 </button>
                 <button type="button" class="quick-access-btn" onclick="quickLoginAs('advisor')">
                     <span class="emoji">🏛️</span>
-                    <span>Chuyên Viên</span>
+                    <span>Chuyên viên</span>
                 </button>
                 <button type="button" class="quick-access-btn" onclick="quickLoginAs('guest')">
                     <span class="emoji">👁️</span>
-                    <span>Khách Mời</span>
+                    <span>Khách mời</span>
                 </button>
             </div>
         </div>
@@ -2496,7 +2979,7 @@
         if (!session) {
             const guestHtml = `
                 <button class="export-btn" style="border-color: rgba(245,158,11,0.5); color: var(--gold-light);" onclick="openLoginModal()">
-                    🔑 Đăng Nhập
+                    🔑 Đăng nhập
                 </button>`;
             if (desktopWidget) desktopWidget.innerHTML = guestHtml;
             if (mobileWidget) mobileWidget.innerHTML = guestHtml;
@@ -2561,7 +3044,7 @@
         } finally {
             if (submitBtn) {
                 submitBtn.disabled = false;
-                submitBtn.textContent = 'Xác Thực & Vào Không Gian Làm Việc ➤';
+                submitBtn.textContent = 'Xác thực & vào không gian làm việc ➤';
             }
         }
     }
@@ -2587,9 +3070,9 @@
         } catch (e) {
             // Client fallback
             const presets = {
-                executive: { display_name: 'Cố Vấn Điều Hành', role: 'EXECUTIVE', avatar: '👑' },
-                advisor: { display_name: 'Chuyên Viên Chiến Lược', role: 'ADVISOR', avatar: '🏛️' },
-                guest: { display_name: 'Khách Mời Trải Nghiệm', role: 'GUEST', avatar: '👁️' }
+                executive: { display_name: 'Cố vấn điều hành', role: 'EXECUTIVE', avatar: '👑' },
+                advisor: { display_name: 'Chuyên viên chiến lược', role: 'ADVISOR', avatar: '🏛️' },
+                guest: { display_name: 'Khách mời trải nghiệm', role: 'GUEST', avatar: '👁️' }
             };
             const p = presets[role] || presets.executive;
             saveSession({
@@ -2603,7 +3086,7 @@
         } finally {
             if (submitBtn) {
                 submitBtn.disabled = false;
-                submitBtn.textContent = 'Xác Thực & Vào Không Gian Làm Việc ➤';
+                submitBtn.textContent = 'Xác thực & vào không gian làm việc ➤';
             }
         }
     }
@@ -2801,9 +3284,135 @@
         return String(text == null ? '' : text).replace(/(NT-[A-Z][A-Z-]*-\d{3,4})/g, '<span class="unit-link" onclick="showUnitModal(\'$1\')">$1</span>');
     }
 
+    function initAmbientVideoAndMotion() {
+        // 1. Unstoppable Background Video Playback & Seamless Rewind
+        const video = document.getElementById('bg-video');
+        if (video) {
+            video.muted = true;
+            video.playsInline = true;
+            const tryPlay = () => {
+                const p = video.play();
+                if (p && typeof p.catch === 'function') {
+                    p.catch(() => {});
+                }
+            };
+            tryPlay();
+
+            // Resume/unlock playback on any user gesture
+            const unlockPlayback = () => {
+                tryPlay();
+                window.removeEventListener('click', unlockPlayback);
+                window.removeEventListener('touchstart', unlockPlayback);
+                window.removeEventListener('mousemove', unlockPlayback);
+                window.removeEventListener('keydown', unlockPlayback);
+            };
+            window.addEventListener('click', unlockPlayback, { passive: true, once: true });
+            window.addEventListener('touchstart', unlockPlayback, { passive: true, once: true });
+            window.addEventListener('mousemove', unlockPlayback, { passive: true, once: true });
+            window.addEventListener('keydown', unlockPlayback, { passive: true, once: true });
+
+            // Seamless video looping fallback if browser native loop stalls
+            video.addEventListener('ended', () => {
+                video.currentTime = 0;
+                tryPlay();
+            });
+            // Ensure play state is maintained
+            document.addEventListener('visibilitychange', () => {
+                if (document.visibilityState === 'visible') {
+                    tryPlay();
+                }
+            });
+        }
+
+        // 2. Signature Cursor Ring & Glass Card Physics Motion (from index.html)
+        const glassCard = document.getElementById('glass-card');
+        const cursorRing = document.getElementById('cursor-ring');
+
+        if (glassCard && cursorRing && window.innerWidth > 768) {
+            let mouseX = window.innerWidth / 2;
+            let mouseY = window.innerHeight / 2;
+            let cardX = mouseX;
+            let cardY = mouseY;
+            let ringX = mouseX;
+            let ringY = mouseY;
+            let isFirstMove = true;
+            let scale = 0;
+            let targetScale = 0;
+            let isHoveringInteractive = false;
+
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+
+                if (isFirstMove) {
+                    cardX = mouseX;
+                    cardY = mouseY;
+                    ringX = mouseX;
+                    ringY = mouseY;
+                    isFirstMove = false;
+                    glassCard.classList.add('active');
+                    cursorRing.classList.add('active');
+                }
+
+                if (!isHoveringInteractive) {
+                    targetScale = 1;
+                }
+            }, { passive: true });
+
+            document.addEventListener('mouseleave', () => {
+                targetScale = 0;
+            });
+
+            document.addEventListener('mouseenter', () => {
+                if (!isHoveringInteractive) {
+                    targetScale = 1;
+                }
+            });
+
+            // Delegate hover detection for interactive elements
+            document.addEventListener('mouseover', (e) => {
+                const target = e.target.closest('button, a, input, textarea, select, .clickable, .tab-btn, .pill-btn, .chip-item, .war-card, .war-preset-chip, .mode-pill, .workspace-tab-btn');
+                if (target) {
+                    isHoveringInteractive = true;
+                    targetScale = 0;
+                    cursorRing.classList.add('expanded');
+                }
+            }, { passive: true });
+
+            document.addEventListener('mouseout', (e) => {
+                const target = e.target.closest('button, a, input, textarea, select, .clickable, .tab-btn, .pill-btn, .chip-item, .war-card, .war-preset-chip, .mode-pill, .workspace-tab-btn');
+                if (target) {
+                    isHoveringInteractive = false;
+                    targetScale = 1;
+                    cursorRing.classList.remove('expanded');
+                }
+            }, { passive: true });
+
+            const updatePhysics = () => {
+                cardX += (mouseX - cardX) * 0.085;
+                cardY += (mouseY - cardY) * 0.085;
+
+                ringX += (mouseX - ringX) * 0.35;
+                ringY += (mouseY - ringY) * 0.35;
+
+                scale += (targetScale - scale) * 0.15;
+
+                const currentRingScale = cursorRing.classList.contains('expanded') ? 1.45 : (scale > 0.1 ? 1 : scale);
+
+                glassCard.style.transform = `translate3d(${cardX}px, ${cardY}px, 0) translate(-50%, -50%) scale(${scale})`;
+                cursorRing.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%) scale(${currentRingScale})`;
+
+                requestAnimationFrame(updatePhysics);
+            };
+
+            updatePhysics();
+        }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
         initAuthGate();
         loadBookshelf();
+        initAmbientVideoAndMotion();
     });
 
     function setAdvisoryMode(mode, btn) {
@@ -2901,7 +3510,7 @@
                 })
             });
             const data = await res.json();
-            btn.textContent = "🚀 Chẩn Đoán Ma Sát Nhận Thức & Đưa Ra Phán Quyết";
+            btn.textContent = "🚀 Chẩn đoán ma sát nhận thức & đưa ra phán quyết";
             btn.disabled = false;
 
             if (data.status === 'success') {
@@ -2934,7 +3543,7 @@
                 alert("Lỗi chẩn đoán: " + (data.message || "Không thể phân tích"));
             }
         } catch(err) {
-            btn.textContent = "🚀 Chẩn Đoán Ma Sát Nhận Thức & Đưa Ra Phán Quyết";
+            btn.textContent = "🚀 Chẩn đoán ma sát nhận thức & đưa ra phán quyết";
             btn.disabled = false;
             alert("Lỗi kết nối máy chủ: " + err.message);
         }
@@ -3195,9 +3804,9 @@
         const analysisSections = sections.filter(s => s !== execSummary);
 
         const stepKeys = [
-            ['step_1_anchor', 'Bước 1: Thủ Thế & Định Vị', 'var(--gold-primary)'],
-            ['step_2_deadline_consequence', 'Bước 2: Lập Thế & Chế Tài', 'var(--cyan-accent)'],
-            ['step_3_way_out_plan_b', 'Bước 3: Định Cục & Mở Đường Lui', 'var(--emerald-accent)']
+            ['step_1_anchor', 'Bước 1: Thủ thế & định vị', 'var(--gold-primary)'],
+            ['step_2_deadline_consequence', 'Bước 2: Lập thế & chế tài', 'var(--cyan-accent)'],
+            ['step_3_way_out_plan_b', 'Bước 3: Định cục & mở đường lui', 'var(--emerald-accent)']
         ];
 
         const stepCards = stepKeys.map(([key, fallbackTitle, color]) => {
@@ -3249,7 +3858,7 @@
         }).join('') : `<div class="advisory-section-card"><div style="font-size: 13px; line-height: 1.7;">${formatMarkdownText(syn.synthesis || 'Chưa có nội dung phân tích.')}</div></div>`;
 
         const glossaryTab = glossary.length ? `
-            <button class="bubble-tab-btn" onclick="switchBubbleTab('${id}', 'glossary', this)">📚 Thuật Ngữ (${glossary.length})</button>
+            <button class="bubble-tab-btn" onclick="switchBubbleTab('${id}', 'glossary', this)">📚 Thuật ngữ (${glossary.length})</button>
         ` : '';
         const glossaryPane = glossary.length ? `
             <div id="${id}-glossary" class="bubble-tab-content" style="font-size: 13px;">
@@ -3281,10 +3890,10 @@
             ` : ''}
 
             <div class="bubble-tabs">
-                <button class="bubble-tab-btn active" onclick="switchBubbleTab('${id}', 'analysis', this)">🔍 Phân Tích Chi Tiết</button>
-                <button class="bubble-tab-btn" onclick="switchBubbleTab('${id}', 'dialogue', this)">💬 Kịch Bản 3 Bước</button>
-                <button class="bubble-tab-btn" onclick="switchBubbleTab('${id}', 'directives', this)">⚖️ Chỉ Thị & Nguyên Tắc</button>
-                <button class="bubble-tab-btn" onclick="switchBubbleTab('${id}', 'citations', this)">📖 Tri Thức Đối Chiếu (${matched.length})</button>
+                <button class="bubble-tab-btn active" onclick="switchBubbleTab('${id}', 'analysis', this)">🔍 Phân tích chi tiết</button>
+                <button class="bubble-tab-btn" onclick="switchBubbleTab('${id}', 'dialogue', this)">💬 Kịch bản 3 bước</button>
+                <button class="bubble-tab-btn" onclick="switchBubbleTab('${id}', 'directives', this)">⚖️ Chỉ thị & nguyên tắc</button>
+                <button class="bubble-tab-btn" onclick="switchBubbleTab('${id}', 'citations', this)">📖 Tri thức đối chiếu (${matched.length})</button>
                 ${glossaryTab}
             </div>
 
@@ -3296,7 +3905,7 @@
                 ${stepCards || '<div style="color: var(--text-muted);">Chưa có kịch bản đối thoại cho tình huống này.</div>'}
                 ${script.draft_official_communication ? `
                     <div style="margin-top: 16px; padding: 14px; background: rgba(0,0,0,0.4); border: 1px solid var(--border-subtle); border-radius: 8px;">
-                        <span style="font-size: 11px; color: var(--gold-primary); font-weight: 700; text-transform: uppercase;">Văn Bản Soạn Sẵn:</span>
+                        <span style="font-size: 11px; color: var(--gold-primary); font-weight: 700; text-transform: uppercase;">Văn bản soạn sẵn:</span>
                         <pre style="white-space: pre-wrap; font-family: monospace; font-size: 12px; color: #cbd5e1; margin-top: 6px;">${escapeHtml(script.draft_official_communication)}</pre>
                     </div>
                 ` : ''}
@@ -3326,7 +3935,7 @@
 
             <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border-subtle); display: flex; justify-content: flex-end; gap: 8px;">
                 <button class="export-btn" onclick="transferScenarioToWarRoom('${encodeURIComponent(query)}')" style="font-size: 11.5px; padding: 6px 12px; border-color: rgba(56,189,248,0.4); color: var(--cyan-accent); background: rgba(56,189,248,0.1);">
-                    ♟️ Đưa Vào Sa Bàn Mô Phỏng Tình Thế
+                    ♟️ Đưa Vào Sa bàn mô phỏng tình thế
                 </button>
             </div>
         `;
@@ -3453,7 +4062,7 @@
                 body: JSON.stringify({ scenario_text: text })
             });
             const data = await res.json();
-            btn.textContent = "Triệu Tập Hội Đồng ⚡";
+            btn.textContent = "Triệu tập hội đồng ⚡";
             btn.disabled = false;
 
             const area = document.getElementById('council-result-area');
@@ -3478,7 +4087,7 @@
                     <div style="margin-top: 24px; padding: 20px; background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: 14px;">
                         <h3 style="font-family: var(--font-serif); font-size: 18px; color: var(--gold-light); margin-bottom: 10px;">GIAI ĐOẠN 2: QUYẾT SÁCH HỢP NHẤT & MA TRẬN ĐỒNG THUẬN</h3>
                         <div style="padding: 12px 16px; background: rgba(245, 158, 11, 0.08); border-left: 3px solid var(--gold-primary); margin-bottom: 14px;">
-                            <strong>Chiến Lược Đồng Thuận Cao Nhất: </strong> ${m.highest_consensus || 'Hợp nhất 5 góc nhìn'}
+                            <strong>Chiến lược đồng thuận cao nhất: </strong> ${m.highest_consensus || 'Hợp nhất 5 góc nhìn'}
                         </div>
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
                             <div style="padding: 14px; background: rgba(255,255,255,0.03); border-radius: 8px; border: 1px solid var(--border-subtle);">
@@ -3494,7 +4103,7 @@
                 `;
             }
         } catch(err) {
-            btn.textContent = "Triệu Tập Hội Đồng ⚡";
+            btn.textContent = "Triệu tập hội đồng ⚡";
             btn.disabled = false;
             alert("Lỗi: " + err.message);
         }
@@ -3608,7 +4217,7 @@
                     <p style="font-size: 12px; color: var(--text-secondary); line-height: 1.5;">${escapeHtml(b.desc)}</p>
                 </div>
                 <div style="margin-top: 14px; display: flex; gap: 8px;">
-                    <button class="export-btn" style="flex: 1; justify-content: center; font-size: 11px;" onclick="openBookModal('${escapeHtml(b.file)}', '${escapeHtml(b.title).replace(/'/g, "\\'")}')">📖 Đọc Sách</button>
+                    <button class="export-btn" style="flex: 1; justify-content: center; font-size: 11px;" onclick="openBookModal('${escapeHtml(b.file)}', '${escapeHtml(b.title).replace(/'/g, "\\'")}')">📖 Đọc sách</button>
                     <button class="export-btn" style="padding: 6px 10px; font-size: 11px;" onclick="window.open('/api/v1/knowledge/books/${encodeURIComponent(b.file)}/export-pdf', '_blank')" aria-label="Xuất PDF">📥 PDF</button>
                 </div>
             </div>
@@ -3856,6 +4465,46 @@
     let warRoomSession = null;
     let warRoomPresets = [];
 
+    // Helper: Monogram Initials for character avatars
+    function getInitials(name) {
+        if (!name) return 'NT';
+        const parts = name.trim().split(/\s+/);
+        if (parts.length === 1) return parts[0].substring(0, 2).toUpperCase();
+        return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+    }
+
+    // Mobile War Room Segmented Tab Switcher
+    function switchWarMobileTab(tabKey, btn) {
+        const colContext = document.getElementById('war-col-context');
+        const colFeed = document.getElementById('war-col-feed');
+        const colControl = document.getElementById('war-col-control');
+        const floatingBar = document.getElementById('war-mobile-floating-bar');
+
+        document.querySelectorAll('.war-m-tab').forEach(t => t.classList.remove('active'));
+        if (btn) {
+            btn.classList.add('active');
+        } else {
+            const targetTab = document.getElementById(`war-mtab-${tabKey}`);
+            if (targetTab) targetTab.classList.add('active');
+        }
+
+        if (colContext) colContext.classList.remove('m-active');
+        if (colFeed) colFeed.classList.remove('m-active');
+        if (colControl) colControl.classList.remove('m-active');
+
+        if (tabKey === 'context') {
+            if (colContext) colContext.classList.add('m-active');
+            if (floatingBar) floatingBar.style.display = 'none';
+        } else if (tabKey === 'control') {
+            if (colControl) colControl.classList.add('m-active');
+            if (floatingBar) floatingBar.style.display = 'none';
+        } else {
+            // Default: feed
+            if (colFeed) colFeed.classList.add('m-active');
+            if (floatingBar) floatingBar.style.display = 'flex';
+        }
+    }
+
     async function initWarRoom() {
         if (warRoomPresets.length === 0) {
             await loadWarRoomPresets();
@@ -3870,17 +4519,25 @@
             const data = await res.json();
             if (data.status === 'success' && Array.isArray(data.presets)) {
                 warRoomPresets = data.presets;
-                container.innerHTML = warRoomPresets.map(p => `
+                container.innerHTML = warRoomPresets.map(p => {
+                    const badge = p.badge || 'Mẫu';
+                    let badgeStyle = 'background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: #e2e8f0;';
+                    if (badge.includes('cao') || badge.includes('Khẩn')) {
+                        badgeStyle = 'background: rgba(244, 63, 94, 0.2); border: 1px solid rgba(244, 63, 94, 0.45); color: #fecdd3;';
+                    } else if (badge.includes('cảm') || badge.includes('thẳng')) {
+                        badgeStyle = 'background: rgba(245, 158, 11, 0.2); border: 1px solid rgba(245, 158, 11, 0.45); color: #fef08a;';
+                    }
+                    return `
                     <div class="war-preset-chip" onclick="selectWarRoomPreset('${p.id}')">
-                        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-                            <strong style="color: #ffffff; font-size: 11.5px;">${p.icon || '⚡'} ${escapeHtml(p.title)}</strong>
-                            <span class="persona-meta-pill" style="font-size: 9.5px; padding: 1px 5px; color: var(--gold-light);">${escapeHtml(p.badge || 'Kịch bản')}</span>
+                        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; gap: 8px;">
+                            <strong class="preset-title">${escapeHtml(p.title)}</strong>
+                            <span class="persona-meta-pill" style="${badgeStyle} font-size: 10px; font-weight: 600;">${escapeHtml(badge)}</span>
                         </div>
-                        <div style="font-size: 11px; color: var(--text-muted); line-height: 1.35; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                        <div class="preset-desc">
                             ${escapeHtml(p.description || '')}
                         </div>
                     </div>
-                `).join('');
+                `}).join('');
             }
         } catch (e) {
             console.error('Lỗi nạp presets sa bàn:', e);
@@ -3915,7 +4572,7 @@
         const initBtn = document.getElementById('war-init-btn');
         if (initBtn) {
             initBtn.disabled = true;
-            initBtn.innerHTML = `<span>⏳</span> Đang Kiến Trúc Nhân Cách…`;
+            initBtn.innerHTML = `<span>Đang thiết lập bàn cờ nhân sự…</span>`;
         }
 
         try {
@@ -3928,6 +4585,8 @@
             if (data.status === 'success' && data.session) {
                 warRoomSession = data.session;
                 renderWarRoomSession();
+                // On mobile, immediately focus on feed view
+                switchWarMobileTab('feed');
             } else {
                 throw new Error(data.message || 'Lỗi khởi tạo sa bàn');
             }
@@ -3936,7 +4595,7 @@
         } finally {
             if (initBtn) {
                 initBtn.disabled = false;
-                initBtn.innerHTML = `<span>⚡</span> Khởi Tạo Lại Sa Bàn`;
+                initBtn.innerHTML = `<span>Khởi tạo lại sa bàn</span>`;
             }
         }
     }
@@ -3947,6 +4606,9 @@
         // Session badge & persona count
         const countBadge = document.getElementById('war-persona-count-badge');
         if (countBadge) countBadge.textContent = `${warRoomSession.personas.length} nhân vật`;
+
+        const mobilePersonaTag = document.getElementById('war-mobile-persona-tag');
+        if (mobilePersonaTag) mobilePersonaTag.textContent = `${warRoomSession.personas.length}`;
 
         const idDisplay = document.getElementById('war-session-id-display');
         if (idDisplay) idDisplay.textContent = `ID: ${warRoomSession.session_id}`;
@@ -3961,45 +4623,45 @@
                 const loyaltyColor = p.loyalty_score >= 70 ? 'var(--emerald-accent)' : (p.loyalty_score >= 45 ? 'var(--gold-primary)' : 'var(--rose-accent)');
                 const stressColor = p.stress_level >= 75 ? 'var(--rose-accent)' : (p.stress_level >= 50 ? 'var(--gold-primary)' : 'var(--emerald-accent)');
                 const trajectoryHtml = Array.isArray(p.loyalty_history) && p.loyalty_history.length > 1
-                    ? `<div class="persona-trajectory-wrap"><span style="color: var(--text-muted); font-size: 9.5px;">Quỹ đạo TT:</span> ${p.loyalty_history.map((val, idx) => `<span class="trajectory-pill">V${idx}: ${val}%</span>`).join('<span style="color: var(--text-muted);">➔</span>')}</div>`
+                    ? `<div class="persona-trajectory-wrap"><span style="color: var(--text-muted); font-size: 9.5px;">Quỹ đạo:</span> ${p.loyalty_history.map((val, idx) => `<span class="trajectory-pill">V${idx}: ${val}%</span>`).join('<span style="color: var(--text-muted);">→</span>')}</div>`
                     : '';
 
                 return `
                     <div class="war-persona-card" id="persona-card-${p.id}">
                         <div class="persona-header">
                             <div class="persona-main-info">
-                                <div class="persona-avatar">${p.avatar || '👤'}</div>
+                                <div class="persona-avatar-monogram">${getInitials(p.name)}</div>
                                 <div class="persona-name-wrap">
                                     <div class="persona-name">${escapeHtml(p.name)}</div>
                                     <div class="persona-role">${escapeHtml(p.role)}</div>
                                 </div>
                             </div>
-                            <div style="display: flex; align-items: center; gap: 5px;">
-                                <button class="war-btn-interrogate" onclick="openInterrogateModal('${p.id}')" title="Thẩm vấn kín 1-1 với nhân vật này">🕵️ Thẩm vấn</button>
-                                <span class="persona-meta-pill" style="font-size: 9.5px; background: rgba(56,189,248,0.12); color: var(--cyan-accent);">${escapeHtml(p.faction)}</span>
+                            <div style="display: flex; align-items: center; gap: 6px;">
+                                <button class="war-btn-interrogate" onclick="openInterrogateModal('${p.id}')" title="Thẩm vấn kín 1-1 với nhân vật này">Thẩm vấn 1-1</button>
+                                <span class="persona-meta-pill" style="font-size: 9.5px;">${escapeHtml(p.faction)}</span>
                             </div>
                         </div>
                         <div style="display: flex; flex-direction: column; gap: 4px; margin: 4px 0;">
                             <div class="persona-stat-row">
-                                <span style="width: 75px;">Trung thành:</span>
+                                <span style="width: 72px;">Trung thành:</span>
                                 <div class="persona-bar-wrap">
                                     <div class="persona-bar-inner bar-loyalty" style="width: ${p.loyalty_score}%;"></div>
                                 </div>
-                                <span style="width: 32px; text-align: right; color: ${loyaltyColor}; font-weight: 700;">${p.loyalty_score}%</span>
+                                <span style="width: 32px; text-align: right; color: ${loyaltyColor}; font-weight: 600;">${p.loyalty_score}%</span>
                             </div>
                             <div class="persona-stat-row">
-                                <span style="width: 75px;">Căng thẳng:</span>
+                                <span style="width: 72px;">Căng thẳng:</span>
                                 <div class="persona-bar-wrap">
                                     <div class="persona-bar-inner bar-stress" style="width: ${p.stress_level}%;"></div>
                                 </div>
-                                <span style="width: 32px; text-align: right; color: ${stressColor}; font-weight: 700;">${p.stress_level}%</span>
+                                <span style="width: 32px; text-align: right; color: ${stressColor}; font-weight: 600;">${p.stress_level}%</span>
                             </div>
                             ${trajectoryHtml}
                         </div>
-                        <div style="font-size: 11px; line-height: 1.4; color: rgba(255,255,255,0.75); background: rgba(0,0,0,0.25); padding: 6px 8px; border-radius: 6px;">
-                            <div><strong style="color: var(--gold-light);">Lợi ích:</strong> ${escapeHtml(p.core_interest)}</div>
-                            <div style="margin-top: 2px;"><strong style="color: #fca5a5;">Nỗi sợ:</strong> ${escapeHtml(p.hidden_fear)}</div>
-                            <div style="margin-top: 2px;"><strong style="color: var(--cyan-accent);">Lập trường:</strong> ${escapeHtml(p.stance)}</div>
+                        <div style="font-size: 11px; line-height: 1.5; color: rgba(255,255,255,0.75); background: rgba(0,0,0,0.3); padding: 8px 10px; border-radius: 8px;">
+                            <div><span class="persona-tag-label">Lợi ích:</span> ${escapeHtml(p.core_interest)}</div>
+                            <div style="margin-top: 2px;"><span class="persona-tag-label">Nỗi sợ:</span> ${escapeHtml(p.hidden_fear)}</div>
+                            <div style="margin-top: 2px;"><span class="persona-tag-label">Lập trường:</span> ${escapeHtml(p.stance)}</div>
                         </div>
                     </div>
                 `;
@@ -4013,15 +4675,21 @@
         const stageBanner = document.getElementById('war-stage-banner');
         if (stageBanner) {
             stageBanner.style.display = 'block';
-            document.getElementById('war-stage-title').textContent = 'Khởi tạo Sa Bàn thành công';
-            document.getElementById('war-stage-desc').textContent = 'Bàn cờ thế sự đã được dàn dựng với các nhân vật và toan tính ngầm. Hãy nhập lệnh can thiệp (nếu muốn) và bấm "Tiến Hành Vòng Kế Tiếp" hoặc "Tự Động Mô Phỏng".';
+            document.getElementById('war-stage-title').textContent = 'Bàn cờ thế sự đã sẵn sàng';
+            document.getElementById('war-stage-desc').textContent = 'Các nhân vật đã được thiết lập với động cơ và nỗi sợ ngầm. Hãy nhập chỉ thị can thiệp (nếu cần) và bấm "Tiến hành vòng kế tiếp".';
         }
 
         // Stepper & Autoplay buttons
         const stepBtn = document.getElementById('war-step-btn');
         if (stepBtn) {
             stepBtn.disabled = false;
-            stepBtn.innerHTML = `<span>▶️</span> Chạy Vòng 1 (Thăm Dò)`;
+            stepBtn.innerHTML = `<span>Chạy vòng 1 (thăm dò)</span>`;
+        }
+
+        const floatStepBtn = document.getElementById('war-m-step-btn');
+        if (floatStepBtn) {
+            floatStepBtn.disabled = false;
+            floatStepBtn.innerHTML = `<span>Chạy vòng 1</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>`;
         }
 
         const autoPlayBtn = document.getElementById('war-autoplay-btn');
@@ -4050,18 +4718,25 @@
             roundBadge.textContent = cur > 0 ? `Vòng ${cur} / ${max}` : 'Chờ bắt đầu';
         }
 
+        const mobileRoundTag = document.getElementById('war-mobile-round-tag');
+        if (mobileRoundTag) {
+            mobileRoundTag.textContent = cur > 0 ? `Vòng ${cur}/${max}` : 'Vòng 0/3';
+        }
+
         const stepCounter = document.getElementById('war-step-counter');
         if (stepCounter) {
             stepCounter.textContent = `Vòng ${cur} / ${max}`;
         }
 
         const stepBtn = document.getElementById('war-step-btn');
+        const floatStepBtn = document.getElementById('war-m-step-btn');
+        const nextRoundText = cur >= max ? `Chạy Vòng Bổ Sung (+${cur + 1})` : `Tiến Hành Vòng ${cur + 1}`;
+
         if (stepBtn) {
-            if (cur >= max) {
-                stepBtn.innerHTML = `<span>▶️</span> Chạy Vòng Bổ Sung (+${cur + 1})`;
-            } else {
-                stepBtn.innerHTML = `<span>▶️</span> Chạy Vòng ${cur + 1}`;
-            }
+            stepBtn.innerHTML = `<span>${nextRoundText}</span>`;
+        }
+        if (floatStepBtn) {
+            floatStepBtn.innerHTML = `<span>${cur >= max ? `Vòng +${cur + 1}` : `Vòng ${cur + 1}`}</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>`;
         }
     }
 
@@ -4072,9 +4747,15 @@
         const intervention = interventionInput ? interventionInput.value.trim() : '';
 
         const stepBtn = document.getElementById('war-step-btn');
+        const floatStepBtn = document.getElementById('war-m-step-btn');
+
         if (stepBtn) {
             stepBtn.disabled = true;
-            stepBtn.innerHTML = `<span>⏳</span> Đang Mô Phỏng Diễn Biến…`;
+            stepBtn.innerHTML = `<span>Đang phân tích diễn biến…</span>`;
+        }
+        if (floatStepBtn) {
+            floatStepBtn.disabled = true;
+            floatStepBtn.innerHTML = `<span>Đang chạy…</span>`;
         }
 
         try {
@@ -4103,10 +4784,9 @@
         } catch (e) {
             alert('Lỗi chạy vòng mô phỏng: ' + e.message);
         } finally {
-            if (stepBtn) {
-                stepBtn.disabled = false;
-                updateRoundCounters();
-            }
+            if (stepBtn) stepBtn.disabled = false;
+            if (floatStepBtn) floatStepBtn.disabled = false;
+            updateRoundCounters();
         }
     }
 
@@ -4127,10 +4807,10 @@
             const intvEl = document.createElement('div');
             intvEl.className = 'war-intervention-banner';
             intvEl.innerHTML = `
-                <div style="display: flex; align-items: center; gap: 6px; font-weight: 700;">
-                    <span>👑</span> LỆNH THƯỢNG ĐẾ CAN THIỆP:
+                <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gold-light); font-weight: 600;">
+                    Chỉ thị can thiệp từ Lãnh đạo
                 </div>
-                <div style="font-style: italic; color: #ffffff;">"${escapeHtml(round.intervention)}"</div>
+                <div style="font-style: italic; color: #ffffff; line-height: 1.5;">"${escapeHtml(round.intervention)}"</div>
             `;
             feed.appendChild(intvEl);
         }
@@ -4140,7 +4820,7 @@
         roundDivider.className = 'war-round-header';
         roundDivider.innerHTML = `
             <div class="war-round-title">
-                <span>⚔️</span> ${escapeHtml(round.stage_name)}
+                ${escapeHtml(round.stage_name)}
             </div>
             <div class="war-round-summary">
                 ${escapeHtml(round.round_summary)}
@@ -4155,19 +4835,19 @@
                 card.className = 'war-action-card';
 
                 const loyaltyBadge = act.loyalty_change !== 0 
-                    ? `<span style="font-size: 10px; color: ${act.loyalty_change > 0 ? 'var(--emerald-accent)' : 'var(--rose-accent)'}; font-weight: 700;">${act.loyalty_change > 0 ? '+' : ''}${act.loyalty_change}% TT</span>` 
+                    ? `<span style="font-size: 10px; color: ${act.loyalty_change > 0 ? 'var(--emerald-accent)' : 'var(--rose-accent)'}; font-weight: 600;">${act.loyalty_change > 0 ? '+' : ''}${act.loyalty_change}% TT</span>` 
                     : '';
                 const stressBadge = act.stress_change !== 0 
-                    ? `<span style="font-size: 10px; color: ${act.stress_change > 0 ? 'var(--rose-accent)' : 'var(--emerald-accent)'}; font-weight: 700;">${act.stress_change > 0 ? '+' : ''}${act.stress_change}% Stress</span>` 
+                    ? `<span style="font-size: 10px; color: ${act.stress_change > 0 ? 'var(--rose-accent)' : 'var(--emerald-accent)'}; font-weight: 600;">${act.stress_change > 0 ? '+' : ''}${act.stress_change}% Stress</span>` 
                     : '';
 
                 card.innerHTML = `
                     <div class="war-action-speaker">
-                        <div style="display: flex; align-items: center; gap: 8px;">
-                            <span style="font-size: 18px;">${act.avatar || '👤'}</span>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <div class="persona-avatar-monogram">${getInitials(act.persona_name)}</div>
                             <div>
-                                <strong style="color: #ffffff; font-size: 12.5px;">${escapeHtml(act.persona_name)}</strong>
-                                <span style="font-size: 11px; color: var(--text-muted); margin-left: 6px;">(${escapeHtml(act.role)})</span>
+                                <strong style="color: #ffffff; font-size: 13px;">${escapeHtml(act.persona_name)}</strong>
+                                <span style="font-size: 11px; color: var(--text-secondary); margin-left: 6px;">(${escapeHtml(act.role)})</span>
                             </div>
                         </div>
                         <div style="display: flex; align-items: center; gap: 6px;">
@@ -4178,28 +4858,28 @@
 
                     <!-- Public Speech / Action -->
                     <div class="war-public-bubble">
-                        <div style="font-size: 10.5px; color: var(--cyan-accent); font-weight: 700; margin-bottom: 2px;">HÀNH ĐỘNG / PHÁT NGÔN CÔNG KHAI:</div>
+                        <div style="font-size: 10px; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(255,255,255,0.6); font-weight: 600; margin-bottom: 3px;">Phát ngôn & Hành động công khai:</div>
                         <div>${escapeHtml(act.public_action)}</div>
                     </div>
 
                     <!-- Private Motives / Thoughts -->
                     <div class="war-private-thought">
-                        <div style="font-size: 10.5px; color: #a855f7; font-weight: 700; margin-bottom: 2px;">💭 TOAN TÍNH NỘI TÂM (ĐỘC THOẠI NGẦM):</div>
+                        <div style="font-size: 10px; letter-spacing: 0.05em; text-transform: uppercase; color: #c084fc; font-weight: 600; margin-bottom: 3px;">Toan tính nội tâm:</div>
                         <div>${escapeHtml(act.private_thought)}</div>
                     </div>
 
                     <!-- Secret Whisper if present -->
                     ${act.whisper_content ? `
                     <div class="war-whisper">
-                        <div style="font-size: 10.5px; color: var(--gold-primary); font-weight: 700; margin-bottom: 2px;">🤫 THÌ THẦM HÀNH LANG (GỬI TỚI ${escapeHtml(act.whisper_target || 'ĐỒNG MINH')}):</div>
+                        <div style="font-size: 10px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gold-light); font-weight: 600; margin-bottom: 3px;">Rỉ tai hành lang gửi ${escapeHtml(act.whisper_target || 'Đồng minh')}:</div>
                         <div>"${escapeHtml(act.whisper_content)}"</div>
                     </div>
                     ` : ''}
 
                     ${act.stance_shift ? `
                     <div style="font-size: 11px; color: var(--text-muted); display: flex; align-items: center; gap: 6px;">
-                        <span>🔄 Chuyển biến lập trường:</span>
-                        <strong style="color: var(--gold-light);">${escapeHtml(act.stance_shift)}</strong>
+                        <span>Chuyển biến lập trường:</span>
+                        <strong style="color: #ffffff;">${escapeHtml(act.stance_shift)}</strong>
                     </div>
                     ` : ''}
                 `;
@@ -4218,7 +4898,7 @@
         const reportBtn = document.getElementById('war-report-btn');
         if (reportBtn) {
             reportBtn.disabled = true;
-            reportBtn.innerHTML = `<span>⏳</span> Đang Trích Xuất Báo Cáo…`;
+            reportBtn.innerHTML = `<span>Đang tổng hợp báo cáo tham mưu…</span>`;
         }
 
         try {
@@ -4239,7 +4919,7 @@
         } finally {
             if (reportBtn) {
                 reportBtn.disabled = false;
-                reportBtn.innerHTML = `<span>📑</span> Cập Nhật Báo Cáo Tham Mưu`;
+                reportBtn.innerHTML = `<span>Cập nhật báo cáo chiến lược</span>`;
             }
         }
     }
@@ -4250,20 +4930,20 @@
         container.style.display = 'flex';
 
         const strategiesHtml = (report.actionable_strategies || []).map((s, idx) => `
-            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 10px 12px;">
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 12px 14px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                    <strong style="color: var(--gold-light); font-size: 12px;">${escapeHtml(s.name)}</strong>
+                    <strong style="font-family: var(--font-serif); color: #ffffff; font-size: 13px;">${escapeHtml(s.name)}</strong>
                     <span class="persona-meta-pill" style="color: var(--cyan-accent); font-size: 9.5px;">${escapeHtml(s.philosophy || '')}</span>
                 </div>
-                <ul style="padding-left: 18px; font-size: 11.5px; color: rgba(255,255,255,0.85); line-height: 1.5; margin-bottom: 6px;">
+                <ul style="padding-left: 18px; font-size: 12px; color: rgba(255,255,255,0.85); line-height: 1.6; margin-bottom: 6px;">
                     ${(s.steps || []).map(st => `<li>${escapeHtml(st)}</li>`).join('')}
                 </ul>
-                <div style="font-size: 11px; color: var(--emerald-accent); line-height: 1.4;">
+                <div style="font-size: 11.5px; color: var(--emerald-accent); line-height: 1.45;">
                     <strong>Kết quả dự kiến:</strong> ${escapeHtml(s.expected_outcome || '')}
                 </div>
                 ${s.citation ? `
                 <div style="font-size: 10px; color: var(--text-muted); margin-top: 4px;">
-                    📖 ${escapeHtml(s.citation)}
+                    Tham chiếu: ${escapeHtml(s.citation)}
                 </div>
                 ` : ''}
             </div>
@@ -4271,48 +4951,48 @@
 
         const factionHtml = (report.factional_matrix || []).map(f => `
             <tr>
-                <td style="padding: 6px 8px; border: 1px solid var(--border-subtle); font-weight: 600; color: #fff;">${escapeHtml(f.faction)}</td>
-                <td style="padding: 6px 8px; border: 1px solid var(--border-subtle);">${escapeHtml(f.motive)}</td>
-                <td style="padding: 6px 8px; border: 1px solid var(--border-subtle); color: var(--gold-light);">${escapeHtml(f.risk_level || '')}</td>
+                <td style="padding: 7px 10px; border: 1px solid var(--border-subtle); font-weight: 600; color: #fff;">${escapeHtml(f.faction)}</td>
+                <td style="padding: 7px 10px; border: 1px solid var(--border-subtle);">${escapeHtml(f.motive)}</td>
+                <td style="padding: 7px 10px; border: 1px solid var(--border-subtle); color: var(--gold-light);">${escapeHtml(f.risk_level || '')}</td>
             </tr>
         `).join('');
 
         container.innerHTML = `
             <div class="war-report-box">
-                <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(245,158,11,0.3); padding-bottom: 8px;">
-                    <h4 style="font-family: var(--font-display); font-size: 13.5px; color: var(--gold-light); margin: 0;">
-                        📑 BÁO CÁO THAM MƯU CHIẾN LƯỢC TỔNG KẾT
+                <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 10px;">
+                    <h4 style="font-family: var(--font-serif); font-size: 15px; font-weight: 600; color: #ffffff; margin: 0;">
+                        Báo cáo tham mưu chiến lược
                     </h4>
-                    <span class="persona-meta-pill" style="background: rgba(16,185,129,0.15); color: var(--emerald-accent); font-weight: 700;">HOÀN TẤT</span>
+                    <span class="persona-meta-pill" style="background: rgba(16,185,129,0.12); color: var(--emerald-accent); font-weight: 600;">HOÀN TẤT</span>
                 </div>
 
                 <!-- Executive Summary -->
-                <div style="font-size: 12px; line-height: 1.6; color: rgba(255,255,255,0.9); background: rgba(245,158,11,0.05); padding: 10px 12px; border-radius: 8px; border-left: 3px solid var(--gold-primary);">
+                <div style="font-size: 12.5px; line-height: 1.65; color: rgba(255,255,255,0.92); background: rgba(255,255,255,0.03); padding: 12px 14px; border-radius: 10px; border-left: 3px solid rgba(255,255,255,0.4);">
                     ${escapeHtml(report.executive_summary)}
                 </div>
 
                 <!-- Vulnerable Link -->
-                <div style="background: rgba(244,63,94,0.08); border-left: 3px solid var(--rose-accent); padding: 10px 12px; border-radius: 0 8px 8px 0; font-size: 11.5px; line-height: 1.5; color: #fca5a5;">
-                    <strong style="color: #fda4af;">⚠️ MẮT XÍCH NGUY HIỂM NHẤT:</strong><br>
+                <div style="background: rgba(244,63,94,0.06); border-left: 3px solid var(--rose-accent); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 12px; line-height: 1.5; color: #fca5a5;">
+                    <strong style="color: #fda4af;">Mắt xích rủi ro trọng yếu:</strong><br>
                     ${escapeHtml(report.vulnerable_link)}
                 </div>
 
                 <!-- Critical Breakdown Point -->
-                <div style="background: rgba(234,179,8,0.08); border-left: 3px solid var(--gold-primary); padding: 10px 12px; border-radius: 0 8px 8px 0; font-size: 11.5px; line-height: 1.5; color: #fde68a;">
-                    <strong style="color: var(--gold-light);">💥 ĐIỂM GÃY TỔ CHỨC DỰ BÁO:</strong><br>
+                <div style="background: rgba(212,175,55,0.06); border-left: 3px solid var(--gold-primary); padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 12px; line-height: 1.5; color: #fde68a;">
+                    <strong style="color: var(--gold-light);">Điểm gãy tổ chức dự báo:</strong><br>
                     ${escapeHtml(report.critical_breakdown_point)}
                 </div>
 
                 <!-- Factional Matrix -->
                 ${factionHtml ? `
                 <div>
-                    <div style="font-size: 11px; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; margin-bottom: 6px;">MA TRẬN TOAN TÍNH CÁC PHE</div>
-                    <table style="width: 100%; border-collapse: collapse; font-size: 11px; color: rgba(255,255,255,0.85);">
+                    <div style="font-family: var(--font-display); font-size: 11px; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">Ma trận toan tính các phe</div>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 11.5px; color: rgba(255,255,255,0.85);">
                         <thead>
-                            <tr style="background: rgba(255,255,255,0.05);">
-                                <th style="padding: 6px 8px; border: 1px solid var(--border-subtle); text-align: left;">Phe nhóm</th>
-                                <th style="padding: 6px 8px; border: 1px solid var(--border-subtle); text-align: left;">Động cơ</th>
-                                <th style="padding: 6px 8px; border: 1px solid var(--border-subtle); text-align: left;">Rủi ro</th>
+                            <tr style="background: rgba(255,255,255,0.04);">
+                                <th style="padding: 7px 10px; border: 1px solid var(--border-subtle); text-align: left;">Phe nhóm</th>
+                                <th style="padding: 7px 10px; border: 1px solid var(--border-subtle); text-align: left;">Động cơ</th>
+                                <th style="padding: 7px 10px; border: 1px solid var(--border-subtle); text-align: left;">Rủi ro</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -4324,15 +5004,15 @@
 
                 <!-- Actionable Strategies -->
                 <div>
-                    <div style="font-size: 11px; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; margin-bottom: 8px;">3 KẾ SÁCH ĐỐI PHÓ (THEO NHÂN THUẬT)</div>
+                    <div style="font-family: var(--font-display); font-size: 11px; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Kế sách đối phó đề xuất</div>
                     <div style="display: flex; flex-direction: column; gap: 8px;">
                         ${strategiesHtml}
                     </div>
                 </div>
 
-                <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(245,158,11,0.3); display: flex; justify-content: flex-end;">
-                    <button class="war-btn-report" onclick="saveWarRoomReportAsCase()" id="save-war-case-btn" style="width: auto; padding: 8px 16px; font-size: 12px;">
-                        💾 Lưu Báo Cáo Vào Kho Hồ Sơ Thực Chiến (Case Study)
+                <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border-subtle); display: flex; justify-content: flex-end;">
+                    <button class="war-btn-report" onclick="saveWarRoomReportAsCase()" id="save-war-case-btn" style="width: auto; padding: 8px 18px; font-size: 12px;">
+                        Lưu báo cáo vào kho hồ sơ thực chiến
                     </button>
                 </div>
             </div>
@@ -4369,7 +5049,7 @@
             personasContainer.innerHTML = `
                 <div class="war-empty-state" style="padding: 24px 10px;">
                     <div style="font-size: 28px;">👤</div>
-                    <div style="font-size: 12px;">Chưa có nhân vật nào.<br>Hãy bấm <strong>"Khởi Tạo Sa Bàn"</strong> để sinh các nhân vật mang động cơ và nỗi sợ riêng.</div>
+                    <div style="font-size: 12px;">Chưa có nhân vật nào.<br>Hãy bấm <strong>"Khởi tạo sa bàn"</strong> để sinh các nhân vật mang động cơ và nỗi sợ riêng.</div>
                 </div>
             `;
         }
@@ -4379,7 +5059,7 @@
             feed.innerHTML = `
                 <div id="war-timeline-empty" class="war-empty-state">
                     <div style="font-size: 42px; opacity: 0.8;">♟️</div>
-                    <div style="font-family: var(--font-display); font-size: 16px; font-weight: 700; color: #ffffff;">Thao Trường Giả Lập Sa Bàn</div>
+                    <div style="font-family: var(--font-display); font-size: 16px; font-weight: 700; color: #ffffff;">Thao trường giả lập sa bàn</div>
                     <p style="font-size: 12.5px; max-width: 380px; line-height: 1.6; margin: 0 auto;">
                         Khởi tạo tình huống ở cột trái để bắt đầu mô phỏng phản ứng đa tầng giữa các AI Agent mang nhân cách, quyền lợi và toan tính riêng.
                     </p>
@@ -4431,7 +5111,7 @@
         const isHidden = card.style.display === 'none';
         card.style.display = isHidden ? 'block' : 'none';
         if (btn) {
-            btn.textContent = isHidden ? '✕ Ẩn Đồ Thị' : '🕸️ Đồ Thị Mạng Lưới';
+            btn.textContent = isHidden ? '✕ Ẩn Đồ Thị' : '🕸️ Đồ thị mạng lưới';
             btn.style.background = isHidden ? 'rgba(245, 158, 11, 0.15)' : 'rgba(56, 189, 248, 0.12)';
             btn.style.color = isHidden ? 'var(--gold-light)' : 'var(--cyan-accent)';
         }

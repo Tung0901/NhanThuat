@@ -27,8 +27,8 @@ from nhan_thuat.runtime.synthesizer import get_provider_configs
 WAR_ROOM_PRESETS: list[dict[str, Any]] = [
     {
         "id": "scenario-layoffs",
-        "title": "Cắt Giảm 30% Nhân Sự Toàn Công Ty",
-        "category": "Tái Cấu Trúc & Khủng Hoảng",
+        "title": "Cắt giảm 30% nhân sự toàn công ty",
+        "category": "Tái cấu trúc & khủng hoảng",
         "badge": "Nguy cơ cao",
         "description": "Hội đồng Quản trị yêu cầu cắt giảm 30% định biên nhân sự trong 45 ngày để thu gọn chi phí sau 2 quý thua lỗ. Thông tin mật bắt đầu rò rỉ ra các trưởng phòng.",
         "icon": "⚡",
@@ -36,8 +36,8 @@ WAR_ROOM_PRESETS: list[dict[str, Any]] = [
     },
     {
         "id": "scenario-sales-leak",
-        "title": "Nghi Vấn Giám Đốc Kinh Doanh Bán Tệp Khách Sang Đối Thủ",
-        "category": "Chống Phản Bội & Gián Điệp",
+        "title": "Nghi vấn giám đốc kinh doanh bán tệp khách sang đối thủ",
+        "category": "Chống phản bội & gián điệp",
         "badge": "Khẩn cấp",
         "description": "Giám đốc Kinh doanh chủ lực phụ trách 65% doanh số có dấu hiệu đàm phán với đối thủ truyền kiếp và chuẩn bị lôi kéo 5 nhân viên kinh doanh giỏi nhất cùng tệp khách hàng VIP ra đi.",
         "icon": "🕵️",
@@ -45,8 +45,8 @@ WAR_ROOM_PRESETS: list[dict[str, Any]] = [
     },
     {
         "id": "scenario-audit-fraud",
-        "title": "Kiểm Toán Nội Bộ Phát Hiện Chênh Lệch Quỹ Mua Hàng",
-        "category": "Pháp Trị & Trừng Phạt",
+        "title": "Kiểm toán nội bộ phát hiện chênh lệch quỹ mua hàng",
+        "category": "Pháp trị & trừng phạt",
         "badge": "Nhạy cảm",
         "description": "Ban kiểm soát phát hiện thất thoát và chênh lệch 12 tỷ đồng tiền hoa hồng ngầm tại Ban Cung ứng & Mua hàng, liên quan mật thiết đến người nhà của một Cổ đông sáng lập.",
         "icon": "⚖️",
@@ -54,8 +54,8 @@ WAR_ROOM_PRESETS: list[dict[str, Any]] = [
     },
     {
         "id": "scenario-power-struggle",
-        "title": "Xung Đột Quyền Lực: CTO Công Thần vs Phó TGĐ Mới",
-        "category": "Tranh Chấp Quyền Bính",
+        "title": "Xung đột quyền lực: CTO công thần vs Phó TGĐ mới",
+        "category": "Tranh chấp quyền bính",
         "badge": "Căng thẳng",
         "description": "Phó Tổng Giám đốc Vận hành mới được tuyển dụng về với mức lương cao đang tìm cách tước quyền phê duyệt nhân sự và ngân sách của Giám đốc Công nghệ kỳ cựu sáng lập công ty.",
         "icon": "⚔️",
@@ -341,11 +341,11 @@ class WarRoomEngine:
                 Persona(
                     id="p_1",
                     name="Trần Thế Dũng",
-                    role="Giám Đốc Khối Vận Hành (COO)",
-                    faction="Phe Cựu Trào / Sáng Lập",
+                    role="Giám đốc khối vận hành (COO)",
+                    faction="Phe cựu trào / sáng lập",
                     core_interest="Bảo vệ đội ngũ thân tín và giữ nguyên định mức ngân sách vận hành",
                     hidden_fear="Bị xem là quản lý yếu kém khi hiệu suất sụt giảm",
-                    stance="Phản kháng thụ động & Kéo dài thời gian",
+                    stance="Phản kháng thụ động & kéo dài thời gian",
                     loyalty_score=68,
                     stress_level=75,
                     influence_score=85,
@@ -354,11 +354,11 @@ class WarRoomEngine:
                 Persona(
                     id="p_2",
                     name="Lê Hoàng Yến",
-                    role="Giám Đốc Nhân Sự (CHRO)",
-                    faction="Ban Chấp Hành / Trung Gian",
+                    role="Giám đốc nhân sự (CHRO)",
+                    faction="Ban chấp hành / trung gian",
                     core_interest="Hoàn thành chỉ tiêu cắt giảm nhưng không vướng rủi ro pháp lý lao động",
                     hidden_fear="Bị nhân viên tẩy chay và trở thành 'tội đồ' hứng búa rìu dư luận",
-                    stance="Thận trọng & Nguyên tắc pháp lý",
+                    stance="Thận trọng & nguyên tắc pháp lý",
                     loyalty_score=80,
                     stress_level=85,
                     influence_score=70,
@@ -367,8 +367,8 @@ class WarRoomEngine:
                 Persona(
                     id="p_3",
                     name="Nguyễn Khắc Minh",
-                    role="Trưởng Phòng Kỹ Thuật Chủ Lực",
-                    faction="Khối Chuyên Môn / Công Nghệ",
+                    role="Trưởng phòng kỹ thuật chủ lực",
+                    faction="Khối chuyên môn / công nghệ",
                     core_interest="Bảo toàn mức lương và các chế độ đãi ngộ cho dàn kỹ sư cứng",
                     hidden_fear="Dự án cốt lõi đổ vỡ do mất nhân sự chủ chốt, sẵn sàng nộp đơn nghỉ tập thể",
                     stance="Đối đầu trực diện nếu chạm vào quyền lợi",
@@ -380,8 +380,8 @@ class WarRoomEngine:
                 Persona(
                     id="p_4",
                     name="Vũ Đức Nam",
-                    role="Giám Đốc Tài Chính (CFO)",
-                    faction="Phái Kỷ Cương / HĐQT",
+                    role="Giám đốc tài chính (CFO)",
+                    faction="Phái kỷ cương / HĐQT",
                     core_interest="Cắt giảm tức thì 30% chi phí cố định để cứu vãn dòng tiền quý tới",
                     hidden_fear="Dòng tiền âm chạm ngưỡng vỡ nợ ngắn hạn trước mắt ngân hàng",
                     stance="Cương quyết thực thi theo con số",
@@ -393,11 +393,11 @@ class WarRoomEngine:
                 Persona(
                     id="p_5",
                     name="Phạm Thanh Hà",
-                    role="Trưởng Nhóm Kinh Doanh Ngôi Sao",
-                    faction="Khối Tiền Tuyến / Cơ Hội",
+                    role="Trưởng nhóm kinh doanh ngôi sao",
+                    faction="Khối tiền tuyến / cơ hội",
                     core_interest="Tận dụng khủng hoảng để đòi chia lại hoa hồng và thăng chức vượt cấp",
                     hidden_fear="Bị xếp vào diện xem xét tinh giản và giảm chỉ tiêu",
-                    stance="Quan sát cơ hội & Ngấm ngầm liên minh",
+                    stance="Quan sát cơ hội & ngấm ngầm liên minh",
                     loyalty_score=50,
                     stress_level=65,
                     influence_score=62,
@@ -410,8 +410,8 @@ class WarRoomEngine:
                 Persona(
                     id="p_1",
                     name="Vũ Mạnh Cường",
-                    role="Giám Đốc Kinh Doanh (CCO)",
-                    faction="Phe Độc Lập / Ngôi Sao Doanh Số",
+                    role="Giám đốc kinh doanh (CCO)",
+                    faction="Phe độc lập / ngôi sao doanh số",
                     core_interest="Tối đa hóa giá trị vị thế cá nhân, chuẩn bị đường lùi sang đối thủ",
                     hidden_fear="Bị phát hiện hành vi tuồn dữ liệu trước khi hoàn tất hợp đồng mới",
                     stance="Bề ngoài phục tùng - Ngấm ngầm phản phúc",
@@ -423,8 +423,8 @@ class WarRoomEngine:
                 Persona(
                     id="p_2",
                     name="Đỗ Phương Thảo",
-                    role="Phó Ban Chăm Sóc Khách Hàng VIP",
-                    faction="Trung Gian / Nằm Vùng",
+                    role="Phó ban chăm sóc khách hàng VIP",
+                    faction="Trung gian / nằm vùng",
                     core_interest="Được Giám đốc CCO cất nhắc nhưng sợ mất công việc ổn định",
                     hidden_fear="Bị kéo vào vụ bê bối pháp lý hoặc bị sa thải đột ngột",
                     stance="Lưỡng lự - Chờ bên nào thắng thế",
@@ -436,11 +436,11 @@ class WarRoomEngine:
                 Persona(
                     id="p_3",
                     name="Hoàng Bá Phúc",
-                    role="Trưởng Ban An Ninh Nội Bộ & IT",
-                    faction="Cận Thần Của Chủ Tịch",
+                    role="Trưởng ban an ninh nội bộ & IT",
+                    faction="Cận thần của chủ tịch",
                     core_interest="Thu thập đủ chứng cứ pháp lý xác thực để trừ khử mầm mống phản loạn",
                     hidden_fear="Hành động hấp tấp làm bứt dây động rừng khiến đối tượng xóa sạch dấu vết",
-                    stance="Rình rập & Thu thập bằng chứng",
+                    stance="Rình rập & thu thập bằng chứng",
                     loyalty_score=95,
                     stress_level=50,
                     influence_score=65,
@@ -449,11 +449,11 @@ class WarRoomEngine:
                 Persona(
                     id="p_4",
                     name="Trần Đình Trọng",
-                    role="Phó Tổng Giám Đốc Phụ Trách Thị Trường",
+                    role="Phó tổng giám đốc phụ trách thị trường",
                     faction="Ban Điều Hành",
                     core_interest="Trám ngay lỗ hổng thị trường nếu CCO rũ áo ra đi",
                     hidden_fear="Doanh số quý này sập hầm kéo sập luôn uy tín điều hành của bản thân",
-                    stance="Chuẩn bị phương án B & Giữ chân nhân viên kinh doanh",
+                    stance="Chuẩn bị phương án B & giữ chân nhân viên kinh doanh",
                     loyalty_score=85,
                     stress_level=75,
                     influence_score=80,
@@ -466,11 +466,11 @@ class WarRoomEngine:
             Persona(
                 id="p_1",
                 name="Nguyễn Văn Khang",
-                role="Trưởng Ban Chiến Lược & Kế Hoạch",
-                faction="Phe Kỹ Trị / Tham Mưu",
+                role="Trưởng ban chiến lược & kế hoạch",
+                faction="Phe kỹ trị / tham mưu",
                 core_interest="Duy trì ảnh hưởng cố vấn và kiểm soát quy trình ra quyết định",
                 hidden_fear="Bị gạt ra rìa khỏi vòng thân cận quyền lực",
-                stance="Phân tích duy lý & Thận trọng",
+                stance="Phân tích duy lý & thận trọng",
                 loyalty_score=78,
                 stress_level=55,
                 influence_score=80,
@@ -479,8 +479,8 @@ class WarRoomEngine:
             Persona(
                 id="p_2",
                 name="Bùi Quốc Toàn",
-                role="Giám Đốc Vận Hành Thực Địa",
-                faction="Phe Công Thần / Khối Hiện Trường",
+                role="Giám đốc vận hành thực địa",
+                faction="Phe công thần / khối hiện trường",
                 core_interest="Quyền tự chủ ngân sách địa phương và bảo vệ đàn em",
                 hidden_fear="Bị thanh tra siết chặt kiểm soát và cắt giảm hạn mức",
                 stance="Kháng cự ngầm mọi chính sách mới",
@@ -492,7 +492,7 @@ class WarRoomEngine:
             Persona(
                 id="p_3",
                 name="Lê Thùy Dung",
-                role="Trưởng Ban Kiểm Soát Tuân Thủ",
+                role="Trưởng ban kiểm soát tuân thủ",
                 faction="Pháp Trị / HĐQT",
                 core_interest="Thiết lập trật tự kỷ cương tuyệt đối không nhân nhượng",
                 hidden_fear="Bị cô lập do quá cứng nhắc hoặc bị qua mặt",
@@ -505,11 +505,11 @@ class WarRoomEngine:
             Persona(
                 id="p_4",
                 name="Tạ Minh Trí",
-                role="Đại Diện Nhóm Quản Lý Trẻ Cấp Tiến",
-                faction="Khối Đổi Mới / Cơ Hội",
+                role="Đại diện nhóm quản lý trẻ cấp tiến",
+                faction="Khối đổi mới / cơ hội",
                 core_interest="Chớp thời cơ khủng hoảng để thế chân các vị trí kỳ cựu",
                 hidden_fear="Bị nhóm cựu trào dập tắt từ trong trứng nước",
-                stance="Cấp tiến & Tích cực thể hiện",
+                stance="Cấp tiến & tích cực thể hiện",
                 loyalty_score=65,
                 stress_level=50,
                 influence_score=58,
@@ -537,10 +537,10 @@ class WarRoomEngine:
             })
 
         stage_titles = {
-            1: "Vòng 1: Thăm Dò & Lan Truyền Tin Đồn (Information Leak & Probing)",
-            2: "Vòng 2: Phân Hóa & Thiết Lập Liên Minh Ngầm (Factional Alignment & Secret Alliances)",
-            3: "Vòng 3: Đỉnh Điểm Đụng Độ & Điểm Gãy Tổ Chức (Climax Confrontation & Breaking Points)",
-            4: "Vòng 4: Tái Cân Bằng Hoặc Đột Phá Hậu Can Thiệp (Post-Intervention Realignment)",
+            1: "Vòng 1: Thăm dò & lan truyền tin đồn (Information Leak & Probing)",
+            2: "Vòng 2: Phân hóa & thiết lập liên minh ngầm (Factional Alignment & Secret Alliances)",
+            3: "Vòng 3: Đỉnh điểm đụng độ & điểm gãy tổ chức (Climax Confrontation & Breaking Points)",
+            4: "Vòng 4: Tái cân bằng hoặc đột phá hậu can thiệp (Post-Intervention Realignment)",
         }
         stage_name = stage_titles.get(next_round_num, f"Vòng {next_round_num}: Biến Động Tiếp Diễn")
 
@@ -1101,7 +1101,7 @@ class WarRoomEngine:
         for f in factions:
             members = [p for p in session.personas if p.faction == f]
             avg_loyalty = sum(p.loyalty_score for p in members) // len(members)
-            risk = "Nguy Cơ Cao (Bất Mãn)" if avg_loyalty < 55 else ("Nguy Cơ Trung Bình (Dao Động)" if avg_loyalty < 75 else "An Toàn (Kiểm Soát Được)")
+            risk = "Nguy cơ cao (bất mãn)" if avg_loyalty < 55 else ("Nguy cơ trung bình (dao động)" if avg_loyalty < 75 else "An toàn (kiểm soát được)")
             faction_matrix.append({
                 "faction": f,
                 "motive": f"Bảo toàn quyền lợi và vị thế của các nhân sự cốt cán thuộc {f}",
@@ -1130,7 +1130,7 @@ class WarRoomEngine:
             "factional_matrix": faction_matrix,
             "actionable_strategies": [
                 {
-                    "name": "Kế Sách 1: Phân Hóa Lực Lượng & Tách Rời Thủ Lĩnh Ngầm",
+                    "name": "Kế sách 1: Phân hóa lực lượng & tách rời thủ lĩnh ngầm",
                     "philosophy": "Pháp Trị (Hàn Phi Tử) - Minh Pháp Thẩm Lệnh",
                     "steps": [
                         f"Gặp gỡ riêng {vulnerable_p.name}, công khai khẳng định ghi nhận công lao trong quá khứ nhưng lập tức phân tán quyền phê duyệt độc quyền.",
@@ -1141,7 +1141,7 @@ class WarRoomEngine:
                     "citation": f"Kế thừa từ tri thức: {citation_unit}",
                 },
                 {
-                    "name": "Kế Sách 2: Ban Ơn Giải Tỏa Áp Lực & Ổn Định Tâm Lý Đám Đông",
+                    "name": "Kế sách 2: Ban ơn giải tỏa áp lực & ổn định tâm lý đám đông",
                     "philosophy": "Nho Gia & Tuân Tử - Thu Phục Nhân Tâm",
                     "steps": [
                         f"Gặp gỡ và tháo gỡ trực tiếp gánh nặng stress cho {stressed_p.name} bằng cách cử thêm trợ lý đặc trách chia sẻ khối lượng công việc.",
@@ -1152,7 +1152,7 @@ class WarRoomEngine:
                     "citation": "NT-LAW-003: Quy luật Vị Thế và Sự An Toàn Tâm Lý",
                 },
                 {
-                    "name": "Kế Sách 3: Tái Cấu Trúc Bàn Cờ - Dụng Người Bất Nghi",
+                    "name": "Kế sách 3: Tái cấu trúc bàn cờ - Dụng người bất nghi",
                     "philosophy": "Đạo Gia - Thuận Tự Nhiên & Dĩ Nhu Chế Cương",
                     "steps": [
                         "Chuyển đổi các xung đột đối đầu trực diện thành cuộc đua hiệu suất minh bạch (KPIs/OKRs định lượng).",

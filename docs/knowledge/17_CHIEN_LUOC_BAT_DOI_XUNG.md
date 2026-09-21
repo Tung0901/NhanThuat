@@ -9,16 +9,11 @@ Nguyên lý học thuật: *"Một số thứ được hưởng lợi từ nhữ
 
 ## 2. Phổ Ba Trạng Thái Sinh Tồn: Dễ Vỡ - Bền Vững - Chống Gãy Vỡ
 
-```
-  ┌────────────────────────┬────────────────────────┬────────────────────────┐
-  │   DỄ VỠ (FRAGILE)      │  BỀN VỮNG (ROBUST)     │ CHỐNG GÃY VỠ (ANTIFRAGILE)│
-  ├────────────────────────┼────────────────────────┼────────────────────────┤
-  │ Sợ biến động & cú sốc  │ Chống chịu được cú sốc │ Hưởng lợi & mạnh lên   │
-  │ Thích sự ổn định giả tạo│ Không thay đổi sau sốc │ từ khủng hoảng & biến động│
-  │ Thiệt hại bất đối xứng │ Cân bằng đối xứng      │ Lợi nhuận bất đối xứng │
-  │ (Mất nhiều, được ít)   │ (Mất bao nhiêu được bấy)│ (Mất ít, được vô hạn) │
-  └────────────────────────┴────────────────────────┴────────────────────────┘
-```
+| Tiêu chí so sánh | Dễ vỡ (Fragile) | Bền vững (Robust) | Chống gãy vỡ (Antifragile) |
+| :--- | :--- | :--- | :--- |
+| **Phản ứng với biến động & cú sốc** | Sợ biến động và cú sốc | Chống chịu được cú sốc | Hưởng lợi và mạnh lên từ khủng hoảng & biến động |
+| **Trạng thái mong muốn** | Thích sự ổn định giả tạo | Không thay đổi sau sốc | Thích nghi và tiến hóa liên tục |
+| **Cấu trúc rủi ro & kết quả** | Thiệt hại bất đối xứng *(Mất nhiều, được ít)* | Cân bằng đối xứng *(Mất bao nhiêu được bấy nhiêu)* | Lợi nhuận bất đối xứng *(Mất ít, được vô hạn)* |
 
 ---
 

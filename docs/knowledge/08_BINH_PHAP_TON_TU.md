@@ -37,13 +37,9 @@ Trước khi bước vào bất kỳ cuộc đàm phán, cạnh tranh thương t
 
 ## 5. Trình Tự Binh Thế 3 Giai Đoạn Trong Thực Chiến Doanh Nghiệp
 
-```
-  ┌─────────────────┐       ┌─────────────────┐       ┌─────────────────┐
-  │   GIAI ĐOẠN 1   │  ──►  │   GIAI ĐOẠN 2   │  ──►  │   GIAI ĐOẠN 3   │
-  │    THỦ THẾ      │       │     LẬP THẾ     │       │    ĐỊNH CỤC     │
-  │ (Bảo Toàn Lực)  │       │ (Gài Đòn Bẩy)   │       │ (Chốt Hạ Thắng) │
-  └─────────────────┘       └─────────────────┘       └─────────────────┘
-```
+| Giai đoạn 1: Thủ thế | ➔ | Giai đoạn 2: Lập thế | ➔ | Giai đoạn 3: Định cục |
+| :--- | :---: | :--- | :---: | :--- |
+| **Bảo toàn lực**<br>Siết dòng tiền, khóa rủi ro hợp đồng, củng cố nội bộ | ➔ | **Gài đòn bẩy**<br>Khoanh vùng tranh chấp, tạo BATNA, tước quyền mặc cả | ➔ | **Chốt hạ thắng**<br>Mở lối thoát danh dự, kết thúc trên thế thượng phong |
 
 1. **GIAI ĐOẠN 1: THỦ THẾ (Bảo Toàn & Kiểm Soát Tổn Thất)**
    - *"Tiên vi bất khả thắng, dĩ đãi địch chi khả thắng":* Trước hết phải làm cho mình ở thế không thể bị đánh bại (siết dòng tiền, khóa rủi ro hợp đồng, củng cố nội bộ), sau đó kiên nhẫn chờ đối phương lộ sơ hở.

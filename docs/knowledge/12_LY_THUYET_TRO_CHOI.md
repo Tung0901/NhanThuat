@@ -19,23 +19,12 @@ Nguyên lý học thuật: *"Không có quyết định tối ưu tuyệt đối
 
 Trong quan hệ hợp tác dài hạn (với nhà cung cấp, đối tác, cổ đông), mô hình mô phỏng máy tính của **Robert Axelrod** chỉ ra chiến lược hợp tác chiến thắng mọi đối thủ:
 
-```
-  ┌────────────────────────┬────────────────────────────────────────────────────────────┐
-  │   NGUYÊN TẮC CHIẾN LƯỢC│                     CÁCH THỰC THI THỰC TẾ                  │
-  ├────────────────────────┼────────────────────────────────────────────────────────────┤
-  │ 1. Lương Thiện (Nice)  │ Luôn mở đầu bằng sự thiện chí và hợp tác, không phản bội   │
-  │                        │ trước trong bất kỳ tình huống nào.                        │
-  ├────────────────────────┼────────────────────────────────────────────────────────────┤
-  │ 2. Phản Pháo (Retaliate│ Ngay khi đối tác có hành vi gian lận hoặc vi phạm hợp đồng,│
-  │                        │ lập tức áp dụng chế tài trừng phạt tương xứng ngay.        │
-  ├────────────────────────┼────────────────────────────────────────────────────────────┤
-  │ 3. Vị Tha (Forgiving)  │ Ngay khi đối tác quay lại hợp tác đúng chuẩn, lập tức dỡ bỏ│
-  │                        │ trừng phạt và hợp tác bình thường, không thù dai tiêu hao. │
-  ├────────────────────────┼────────────────────────────────────────────────────────────┤
-  │ 4. Minh Bạch (Clear)   │ Quy tắc hành xử phải cực kỳ rõ ràng, dễ hiểu để đối phương │
-  │                        │ biết trước chắc chắn hậu quả nếu dám gian lận.             │
-  └────────────────────────┴────────────────────────────────────────────────────────────┘
-```
+| STT | Nguyên tắc chiến lược | Cách thực thi thực tế |
+| :---: | :--- | :--- |
+| 1 | **Lương Thiện** *(Nice)* | Luôn mở đầu bằng sự thiện chí và hợp tác, không phản bội hoặc phá vỡ cam kết trước trong bất kỳ tình huống nào. |
+| 2 | **Phản Pháo** *(Retaliate)* | Ngay khi đối tác có hành vi gian lận hoặc vi phạm hợp đồng, lập tức áp dụng chế tài trừng phạt tương xứng ngay. |
+| 3 | **Vị Tha** *(Forgiving)* | Ngay khi đối tác quay lại hợp tác đúng chuẩn, lập tức dỡ bỏ trừng phạt và hợp tác bình thường, không thù dai tiêu hao. |
+| 4 | **Minh Bạch** *(Clear)* | Quy tắc hành xử phải cực kỳ rõ ràng, dễ hiểu để đối phương biết trước chắc chắn hậu quả nếu dám gian lận. |
 
 ---
 

@@ -9,28 +9,12 @@ Nguyên lý học thuật: *"Đàm phán không phải là một cuộc tranh lu
 
 ## 2. Bộ Vũ Khí Đàm Phán Thực Địa Từng Bước (The Tactical Toolkit)
 
-```
-  ┌────────────────────────┬────────────────────────────────────────────────────────────┐
-  │      CÔNG CỤ FBI       │                   CÁCH THỰC HÀNH TỪNG CÂU                  │
-  ├────────────────────────┼────────────────────────────────────────────────────────────┤
-  │ 1. Soi Gương           │ Lặp lại 1 đến 3 từ quan trọng cuối cùng của đối tác với    │
-  │    (Mirroring)         │ ngữ điệu hơi hỏi nhẹ $\rightarrow$ Kích thích họ tự giải   │
-  │                        │ thích thêm thông tin và bộc lộ động cơ ngầm.               │
-  ├────────────────────────┼────────────────────────────────────────────────────────────┤
-  │ 2. Gắn Nhãn Cảm Xúc    │ Dùng mẫu câu: "Dường như anh đang cảm thấy...", "Có vẻ như │
-  │    (Labeling)          │ rủi ro về tiến độ đang khiến anh lo lắng..." để hóa giải   │
-  │                        │ sự ức chế mà không kích hoạt bản năng tự vệ của họ.        │
-  ├────────────────────────┼────────────────────────────────────────────────────────────┤
-  │ 3. Kiểm Toán Buộc Tội  │ Liệt kê trước toàn bộ những điều tiêu cực nhất mà đối tác   │
-  │    (Accusation Audit)  │ có thể nghĩ về bạn trước khi họ kịp nói ra $\rightarrow$   │
-  │                        │ Triệt tiêu hoàn toàn sức nặng của đòn công kích từ họ.     │
-  ├────────────────────────┼────────────────────────────────────────────────────────────┤
-  │ 4. Hướng Tới Chữ "KHÔNG"│ Thay vì ép đối tác nói "Có" (khiến họ đề phòng), hãy hỏi:  │
-  │    (Aim for "NO")      │ "Anh có phản đối nếu...", "Bỏ qua cơ hội này có phải là ý  │
-  │                        │ kiến tồi không?" $\rightarrow$ Nói "Không" tạo cảm giác an │
-  │                        │ toàn và nắm quyền kiểm soát cho đối phương.                │
-  └────────────────────────┴────────────────────────────────────────────────────────────┘
-```
+| STT | Công cụ đàm phán FBI | Cách thực hành từng câu |
+| :---: | :--- | :--- |
+| 1 | **Soi Gương** *(Mirroring)* | Lặp lại 1 đến 3 từ quan trọng cuối cùng của đối tác với ngữ điệu hỏi nhẹ ➔ Kích thích họ tự giải thích thêm thông tin và bộc lộ động cơ ngầm. |
+| 2 | **Gắn Nhãn Cảm Xúc** *(Labeling)* | Dùng mẫu câu: *"Dường như anh đang cảm thấy..."*, *"Có vẻ như rủi ro về tiến độ đang khiến bên mình lo lắng..."* ➔ Hóa giải sự ức chế mà không kích hoạt bản năng tự vệ của họ. |
+| 3 | **Kiểm Toán Buộc Tội** *(Accusation Audit)* | Liệt kê trước toàn bộ những điều tiêu cực nhất mà đối tác có thể nghĩ về bạn trước khi họ kịp nói ra ➔ Triệt tiêu hoàn toàn sức nặng của đòn công kích từ họ. |
+| 4 | **Hướng Tới Chữ "KHÔNG"** *(Aim for "NO")* | Thay vì ép đối tác nói "Có" (khiến họ đề phòng), hãy hỏi: *"Anh có phản đối nếu..."*, *"Bỏ qua cơ hội này có phải là ý kiến tồi không?"* ➔ Nói "Không" tạo cảm giác an toàn và nắm quyền kiểm soát cho đối phương. |
 
 ---
 

@@ -20,23 +20,12 @@ Nguyên lý học thuật: *"Hành vi của con người trong tổ chức là s
 
 Để giải quyết một điểm nghẽn, người lãnh đạo phải biết can thiệp vào tầng đòn bẩy có tác động mạnh nhất:
 
-```
-  ┌─────────────────────────────────────────────────────────────┬───────────────────────────────┐
-  │                   TẦNG ĐÒN BẨY CAN THIỆP                    │       MỨC ĐỘ TÁC ĐỘNG         │
-  ├─────────────────────────────────────────────────────────────┼───────────────────────────────┤
-  │ 1. Thay đổi Tư duy / Mô hình Nhận thức (Mental Model)       │ 🔴 CỰC ĐẠI (Thay đổi gốc rễ)  │
-  │    (Chuyển từ "đối đầu lợi ích" sang "đồng kiến tạo giá trị")│                               │
-  ├─────────────────────────────────────────────────────────────┼───────────────────────────────┤
-  │ 2. Thay đổi Mục tiêu cốt lõi của Hệ thống (System Goals)   │ 🟠 RẤT CAO (Tái định hình)    │
-  │    (Chuyển từ "tối đa doanh thu ngắn hạn" sang "TCO bền vững)│                               │
-  ├─────────────────────────────────────────────────────────────┼───────────────────────────────┤
-  │ 3. Cấu trúc lại Quyền Lực & Luồng Thông Tin (Information)   │ 🟡 CAO (Tăng cường tự điều hòa│
-  │    (Minh bạch hóa dữ liệu hiệu suất, kiểm toán chéo độc lập)│                               │
-  ├─────────────────────────────────────────────────────────────┼───────────────────────────────┤
-  │ 4. Thay đổi Tham số & Chỉ số Định lượng (Parameters)        │ 🟢 THẤP (Chỉ sửa phần ngọn)   │
-  │    (Tăng lương, siết giờ làm, tăng mức phạt vi phạm)        │                               │
-  └─────────────────────────────────────────────────────────────┴───────────────────────────────┘
-```
+| Tầng đòn bẩy can thiệp | Mức độ tác động | Mục tiêu & cơ chế chuyển dịch |
+| :--- | :---: | :--- |
+| **1. Thay đổi Tư duy / Mô hình Nhận thức** *(Mental Model)* | 🔴 Cực đại *(Thay đổi gốc rễ)* | Chuyển từ "đối đầu lợi ích ngắn hạn" sang "đồng kiến tạo giá trị dài hạn". |
+| **2. Thay đổi Mục tiêu cốt lõi của Hệ thống** *(System Goals)* | 🟠 Rất cao *(Tái định hình)* | Chuyển từ "tối đa hóa doanh thu bằng mọi giá" sang "tối ưu tổng chi phí sở hữu (TCO) và uy tín bền vững". |
+| **3. Cấu trúc lại Quyền lực & Luồng Thông tin** *(Information Flow)* | 🟡 Cao *(Tăng cường tự điều hòa)* | Minh bạch hóa dữ liệu hiệu suất, kiểm toán chéo độc lập, loại bỏ điểm mù thông tin. |
+| **4. Thay đổi Tham số & Chỉ số Định lượng** *(Parameters)* | 🟢 Thấp *(Chỉ sửa phần ngọn)* | Tăng lương, siết giờ làm, tăng mức phạt vi phạm - chỉ hiệu quả tức thời nếu cấu trúc chưa đổi. |
 
 ---
 

@@ -9,32 +9,15 @@ Nguyên lý học thuật: *"Thuyết phục đỉnh cao không bắt đầu khi
 
 ## 2. Bảy Nguyên Tắc Thuyết Phục Cốt Lõi (The 7 Universal Principles of Influence)
 
-```
-  ┌────────────────────────┬────────────────────────────────────────────────────────────┐
-  │  NGUYÊN TẮC HỌC THUẬT  │                   CƠ CHẾ & ỨNG DỤNG QUẢN TRỊ               │
-  ├────────────────────────┼────────────────────────────────────────────────────────────┤
-  │ 1. Đáp Lễ (Reciprocity)│ Con người có xu hướng nội tại không chịu nổi cảm giác nợ   │
-  │                        │ ân tình. Cho đi giá trị cá nhân hóa trước để nhận nhượng bộ│
-  ├────────────────────────┼────────────────────────────────────────────────────────────┤
-  │ 2. Nhất Quán           │ Bản năng duy trì sự nhất quán với hình ảnh bản thân. Khiến │
-  │    (Commitment)        │ đối phương xác nhận các cam kết nhỏ trên giấy trước.      │
-  ├────────────────────────┼────────────────────────────────────────────────────────────┤
-  │ 3. Bằng Chứng Xã Hội   │ Trong trạng thái mơ hồ, con người nhìn vào hành vi người   │
-  │    (Social Proof)      │ khác cùng đẳng cấp để ra quyết định (Case studies tương tự)│
-  ├────────────────────────┼────────────────────────────────────────────────────────────┤
-  │ 4. Uy Quyền            │ Biểu tượng chuyên môn, chứng chỉ độc quyền và phong thái   │
-  │    (Authority)         │ dẫn dắt tạo ra sự phục tùng nhận thức tự động.             │
-  ├────────────────────────┼────────────────────────────────────────────────────────────┤
-  │ 5. Thiện Cảm (Liking)  │ Sự đồng điệu về giá trị, lời khen ngợi chân thành và điểm  │
-  │                        │ chung tạo ra sự cởi mở tối đa trong đàm phán.             │
-  ├────────────────────────┼────────────────────────────────────────────────────────────┤
-  │ 6. Khan Hiếm           │ Nỗi sợ bỏ lỡ (FOMO) kích hoạt phản ứng khẩn cấp. Nhấn mạnh │
-  │    (Scarcity)          │ những gì đối tác sẽ MẤT nếu không hành động ngay hôm nay.  │
-  ├────────────────────────┼────────────────────────────────────────────────────────────┤
-  │ 7. Đồng Nhất (Unity)   │ Khái niệm "Chúng ta thuộc về cùng một nhóm" (Cùng cội nguồn│
-  │                        │ cùng tầm nhìn) phá vỡ hoàn toàn rào cản phòng vệ.         │
-  └────────────────────────┴────────────────────────────────────────────────────────────┘
-```
+| STT | Nguyên tắc học thuật | Cơ chế & ứng dụng quản trị |
+| :---: | :--- | :--- |
+| 1 | **Đáp Lễ** *(Reciprocity)* | Con người có xu hướng nội tại không chịu nổi cảm giác nợ ân tình. Cho đi giá trị cá nhân hóa trước để nhận nhượng bộ. |
+| 2 | **Nhất Quán** *(Commitment)* | Bản năng duy trì sự nhất quán với hình ảnh bản thân. Hướng đối phương xác nhận các cam kết nhỏ trên giấy trước. |
+| 3 | **Bằng Chứng Xã Hội** *(Social Proof)* | Trong trạng thái mơ hồ, con người nhìn vào hành vi người khác cùng đẳng cấp để ra quyết định (Case studies tương tự). |
+| 4 | **Uy Quyền** *(Authority)* | Biểu tượng chuyên môn, chứng chỉ độc quyền và phong thái dẫn dắt tạo ra sự phục tùng nhận thức tự động. |
+| 5 | **Thiện Cảm** *(Liking)* | Sự đồng điệu về giá trị, lời khen ngợi chân thành và điểm chung tạo ra sự cởi mở tối đa trong đàm phán. |
+| 6 | **Khan Hiếm** *(Scarcity)* | Nỗi sợ bỏ lỡ (FOMO) kích hoạt phản ứng khẩn cấp. Nhấn mạnh những gì đối tác sẽ mất nếu không hành động ngay hôm nay. |
+| 7 | **Đồng Nhất** *(Unity)* | Khái niệm "Chúng ta thuộc về cùng một nhóm" (cùng cội nguồn, cùng tầm nhìn) phá vỡ hoàn toàn rào cản phòng vệ. |
 
 ---
 

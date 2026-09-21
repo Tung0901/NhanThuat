@@ -18,29 +18,14 @@ Nguyên lý cốt lõi: *"Con người không ra quyết định bằng logic th
 
 ## 3. Bộ 6 Đòn Bẩy Thuyết Phục & Điều Hướng Hành Vi (Cialdini)
 
-```
-  ┌───────────────────────┬─────────────────────────────────────────────────────────────┐
-  │   ĐÒN BẨY TÂM LÝ      │                     ỨNG DỤNG THỰC TẾ                        │
-  ├───────────────────────┼─────────────────────────────────────────────────────────────┤
-  │ 1. Đáp Lễ             │ Cho đi giá trị nhỏ trước (thông tin, sự tôn trọng, giúp đỡ) │
-  │    (Reciprocity)      │ để tạo cảm giác nợ ân tình, buộc đối phương phải nhượng bộ. │
-  ├───────────────────────┼─────────────────────────────────────────────────────────────┤
-  │ 2. Cam Kết & Nhất Quán│ Khiến đối phương đồng ý với các mệnh đề nhỏ trước, dẫn dắt   │
-  │    (Consistency)      │ họ tự nguyện đồng ý với cam kết lớn vì sợ mang tiếng mâu thuẫn│
-  ├───────────────────────┼─────────────────────────────────────────────────────────────┤
-  │ 3. Bằng Chứng Xã Hội  │ Đưa ra số liệu, các đối tác lớn uy tín tương tự đã tin dùng │
-  │    (Social Proof)     │ để triệt tiêu nỗi sợ rủi ro của khách hàng / đối tác.      │
-  ├───────────────────────┼─────────────────────────────────────────────────────────────┤
-  │ 4. Uy Quyền Chuyên Môn│ Xác lập vị thế dẫn dắt qua phong thái, bằng chứng kiểm định │
-  │    (Authority)        │ và chứng nhận độc quyền trước khi thương thảo giá.          │
-  ├───────────────────────┼─────────────────────────────────────────────────────────────┤
-  │ 5. Thiện Cảm & Đồng Điệu│ Tìm điểm tương đồng, lắng nghe chân thành để phá vỡ thế     │
-  │    (Liking)           │ phòng thủ tâm lý của đối phương ("Hòa mà không tan").      │
-  ├───────────────────────┼─────────────────────────────────────────────────────────────┤
-  │ 6. Khan Hiếm          │ Nhấn mạnh rủi ro bỏ lỡ cơ hội (FOMO) và giới hạn số lượng   │
-  │    (Scarcity)         │ hoặc thời hạn đặc quyền để thúc đẩy hành động nhanh.       │
-  └───────────────────────┴─────────────────────────────────────────────────────────────┘
-```
+| STT | Đòn bẩy tâm lý | Ứng dụng thực tế |
+| :---: | :--- | :--- |
+| 1 | **Đáp Lễ** *(Reciprocity)* | Cho đi giá trị nhỏ trước (thông tin, sự tôn trọng, giúp đỡ) để tạo cảm giác nợ ân tình, buộc đối phương phải nhượng bộ. |
+| 2 | **Cam Kết & Nhất Quán** *(Consistency)* | Khiến đối phương đồng ý với các mệnh đề nhỏ trước, dẫn dắt họ tự nguyện đồng ý với cam kết lớn vì sợ mang tiếng mâu thuẫn. |
+| 3 | **Bằng Chứng Xã Hội** *(Social Proof)* | Đưa ra số liệu, các đối tác lớn uy tín tương tự đã tin dùng để triệt tiêu nỗi sợ rủi ro của khách hàng / đối tác. |
+| 4 | **Uy Quyền Chuyên Môn** *(Authority)* | Xác lập vị thế dẫn dắt qua phong thái, bằng chứng kiểm định và chứng nhận độc quyền trước khi thương thảo giá. |
+| 5 | **Thiện Cảm & Đồng Điệu** *(Liking)* | Tìm điểm tương đồng, lắng nghe chân thành để phá vỡ thế phòng thủ tâm lý của đối phương (*"Hòa mà không tan"*). |
+| 6 | **Khan Hiếm** *(Scarcity)* | Nhấn mạnh rủi ro bỏ lỡ cơ hội (FOMO) và giới hạn số lượng hoặc thời hạn đặc quyền để thúc đẩy hành động nhanh. |
 
 ---
 

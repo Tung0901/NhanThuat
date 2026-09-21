@@ -11,17 +11,12 @@ Nguyên lý cốt lõi: *"Không phải sự việc bên ngoài làm ta xáo tr�
 
 Mọi sự việc trên đời chia làm hai nhóm bất biến:
 
-```
-  ┌─────────────────────────────────┬─────────────────────────────────┐
-  │   TRONG VÒNG KIỂM SOÁT CỦA TA   │    NGOÀI VÒNG KIỂM SOÁT CỦA TA   │
-  │   (Dồn 100% Tâm Lực & Trí Tuệ)  │     (Chấp Nhận, Không Phí Sức)  │
-  ├─────────────────────────────────┼─────────────────────────────────┤
-  │ • Phán đoán, suy nghĩ cá nhân   │ • Hành vi & lời nói của kẻ khác │
-  │ • Quyết định & hành động của ta │ • Biến động thị trường vĩ mô    │
-  │ • Thái độ & cách phản ứng       │ • Kết quả cuối cùng (thắng/thua)│
-  │ • Ranh giới đạo đức & giá trị   │ • Danh tiếng & dư luận xã hội   │
-  └─────────────────────────────────┴─────────────────────────────────┘
-```
+| Trong vòng kiểm soát của ta *(Dồn 100% tâm lực & trí tuệ)* | Ngoài vòng kiểm soát của ta *(Chấp nhận, không phí sức)* |
+| :--- | :--- |
+| • Phán đoán, suy nghĩ cá nhân | • Hành vi & lời nói của kẻ khác |
+| • Quyết định & hành động của ta | • Biến động thị trường vĩ mô |
+| • Thái độ & cách phản ứng | • Kết quả cuối cùng (thắng / thua) |
+| • Ranh giới đạo đức & giá trị | • Danh tiếng & dư luận xã hội |
 
 - **Thực hành Lãnh đạo:** Người lãnh đạo xuất sắc tuyệt đối không mất ngủ hay tức giận vì những biến số ngoài tầm kiểm soát (đối thủ chơi xấu, thị trường sụt giảm). Họ chỉ tập trung 100% sức lực vào: *Mình có thể làm gì tốt nhất lúc này để ứng phó?*
 

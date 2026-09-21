@@ -10,27 +10,16 @@ Nguyên lý cốt lõi: *"Dụng nhân như dụng mộc — Người thợ gi�
 ## 2. Bát Quan Thấu Tâm: 8 Phép Thử Nhìn Thấu Bản Chất Con Người
 Để đánh giá chính xác độ trung thành, dũng khí và tài năng của một nhân sự trước khi trao quyền lớn, cổ nhân dùng 8 phép thử:
 
-```
-  ┌───────────────────────┬─────────────────────────────────────────────────────────────┐
-  │      PHÉP THỬ         │                     MỤC ĐÍCH ĐO LƯỜNG                       │
-  ├───────────────────────┼─────────────────────────────────────────────────────────────┤
-  │ 1. Đặt vào nơi Giàu   │ Quan sát xem họ có giữ được đức khiêm tốn, không hoang phí?│
-  ├───────────────────────┼─────────────────────────────────────────────────────────────┤
-  │ 2. Đặt vào nơi Sang   │ Quan sát xem họ có giữ được lễ nghĩa với người thế yếu?     │
-  ├───────────────────────┼─────────────────────────────────────────────────────────────┤
-  │ 3. Đặt vào nơi Khó    │ Quan sát xem họ có giữ được ý chí kiên định, không nản lòng?│
-  ├───────────────────────┼─────────────────────────────────────────────────────────────┤
-  │ 4. Giao Tiền Bạc      │ Quan sát xem họ có liêm khiết, minh bạch trong từng đồng?  │
-  ├───────────────────────┼─────────────────────────────────────────────────────────────┤
-  │ 5. Đặt vào Nguy Hiểm  │ Quan sát xem họ có dũng khí gánh vác, hay trốn chạy đổ lỗi? │
-  ├───────────────────────┼─────────────────────────────────────────────────────────────┤
-  │ 6. Làm cho Say Rượu   │ Quan sát xem lúc mất kiểm soát có lộ ra bản tính xấu xa?    │
-  ├───────────────────────┼─────────────────────────────────────────────────────────────┤
-  │ 7. Cho Thân Cận       │ Quan sát xem họ có giữ được ranh giới, không lộng quyền?   │
-  ├───────────────────────┼─────────────────────────────────────────────────────────────┤
-  │ 8. Giao Việc Gấp      │ Quan sát năng lực tổ chức, phản xạ linh hoạt và chữ Tín.    │
-  └───────────────────────┴─────────────────────────────────────────────────────────────┘
-```
+| STT | Phép thử | Mục đích đo lường |
+| :---: | :--- | :--- |
+| 1 | **Đặt vào nơi Giàu** | Quan sát xem họ có giữ được đức khiêm tốn, không hoang phí? |
+| 2 | **Đặt vào nơi Sang** | Quan sát xem họ có giữ được lễ nghĩa với người thế yếu? |
+| 3 | **Đặt vào nơi Khó** | Quan sát xem họ có giữ được ý chí kiên định, không nản lòng? |
+| 4 | **Giao Tiền Bạc** | Quan sát xem họ có liêm khiết, minh bạch trong từng đồng? |
+| 5 | **Đặt vào Nguy Hiểm** | Quan sát xem họ có dũng khí gánh vác, hay trốn chạy đổ lỗi? |
+| 6 | **Làm cho Say Rượu** | Quan sát xem lúc mất kiểm soát có lộ ra bản tính xấu xa? |
+| 7 | **Cho Thân Cận** | Quan sát xem họ có giữ được ranh giới, không lộng quyền? |
+| 8 | **Giao Việc Gấp** | Quan sát năng lực tổ chức, phản xạ linh hoạt và chữ Tín. |
 
 ---
 

@@ -5,8 +5,9 @@ God-mode intervention, and strategic reporting.
 """
 
 import pytest
+
 from nhan_thuat.knowledge_engine import KnowledgeEngine
-from nhan_thuat.runtime.war_room import WarRoomEngine, WarRoomSession, Persona
+from nhan_thuat.runtime.war_room import WarRoomEngine
 
 
 @pytest.fixture
@@ -163,8 +164,9 @@ def test_session_not_found(war_room_engine):
 def test_war_room_api_endpoints():
     """Test War Room REST endpoints in BusinessOSGatewayHandler."""
     import json
-    from unittest.mock import MagicMock
     from io import BytesIO
+    from unittest.mock import MagicMock
+
     from backend.app.main import BusinessOSGatewayHandler
 
     handler = BusinessOSGatewayHandler.__new__(BusinessOSGatewayHandler)

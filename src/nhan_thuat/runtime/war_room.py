@@ -10,8 +10,6 @@ Provides multi-round progression, God-mode intervention, and Strategic War Room 
 from __future__ import annotations
 
 import json
-import os
-import random
 import re
 import time
 import uuid
@@ -185,7 +183,7 @@ class WarRoomEngine:
                     "domain": getattr(u, "domain", getattr(u, "primary_domain", "HUMAN_NATURE")),
                     "summary": getattr(u, "summary", "") or getattr(u, "claim", ""),
                 })
-        except Exception:
+        except Exception:  # noqa: BLE001
             # Safe deterministic units
             sample_units = list(self.knowledge_engine.units_by_id.values())[:top_k]
             for u in sample_units:
@@ -230,7 +228,7 @@ class WarRoomEngine:
                     raw_json = raw_json.strip()
                     # Try to parse
                     return json.loads(raw_json)
-            except Exception:
+            except Exception:  # noqa: BLE001, S112
                 continue
         return None
 
@@ -1012,8 +1010,8 @@ class WarRoomEngine:
                 stance = "Thanh minh & Trung thành"
         elif any(w in q_lower for w in ["tại sao", "lý do", "chống đối", "phản kháng", "không nghe", "ai"]):
             answer = (
-                f"Tôi không hề chống đối, tôi chỉ đang làm đúng chức trách được giao. Cách triển khai hiện tại của Ban Lãnh đạo "
-                f"quá nóng vội, đụng chạm trực tiếp đến ranh giới an toàn của các phòng ban. Nếu cứ ép tiến độ, rủi ro vỡ trận là khó tránh."
+                "Tôi không hề chống đối, tôi chỉ đang làm đúng chức trách được giao. Cách triển khai hiện tại của Ban Lãnh đạo "
+                "quá nóng vội, đụng chạm trực tiếp đến ranh giới an toàn của các phòng ban. Nếu cứ ép tiến độ, rủi ro vỡ trận là khó tránh."
             )
             inner_motive = "Đẩy ngược trách nhiệm về quy trình chung, tránh để cá nhân mình bị quy kết là đầu mối chống đối."
             stance = "Phòng thủ nguyên tắc"

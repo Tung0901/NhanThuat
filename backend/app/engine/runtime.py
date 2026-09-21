@@ -8,6 +8,7 @@ import time
 from dataclasses import dataclass, field
 from typing import Any
 
+from backend.app.engine.jev_client import JevClient, JevDecisionResponse
 from backend.app.engine.philosophies.router import PhilosophyRouter
 from nhan_thuat.knowledge_engine import FALLBACK_INSUFFICIENT_KNOWLEDGE, KnowledgeEngine
 
@@ -44,16 +45,27 @@ class BusinessOSRuntimeOrchestrator:
     """
     BusinessOS Runtime Orchestrator (M15/M16 Hardened Core).
     Coordinates Knowledge Engine resolution, Philosophy Router lens composition,
-    and 11-stage cognitive execution pipeline.
+    Jev System One heuristic evaluation, and 11-stage cognitive execution pipeline.
     """
 
     def __init__(
         self,
         knowledge_engine: KnowledgeEngine | None = None,
         philosophy_router: PhilosophyRouter | None = None,
+        jev_client: JevClient | None = None,
     ) -> None:
         self.knowledge_engine = knowledge_engine or KnowledgeEngine()
         self.philosophy_router = philosophy_router or PhilosophyRouter()
+        self.jev_client = jev_client or JevClient()
+
+    def evaluate_system_one(
+        self,
+        prompt: str,
+        options: list[str] | None = None,
+        context: dict[str, Any] | None = None,
+    ) -> JevDecisionResponse:
+        """Execute fast System One heuristic evaluation via TypeSafe Jev API (or calibrated mock)."""
+        return self.jev_client.decide(prompt=prompt, options=options, context=context)
 
     def process_situation(self, scenario_text: str) -> dict[str, Any]:
         """Process any executive situation dynamically using NhanThuat Engine."""
@@ -125,6 +137,12 @@ class BusinessOSRuntimeOrchestrator:
         lens_confidence = routing_result.get("lens_confidence_scores", {}).get(primary_lens, 0.90)
 
         # 3. Decision Rationale & Structured Output
+        # System One fast heuristic signal (TypeSafe Jev AI)
+        jev_decision = self.evaluate_system_one(
+            prompt=f"{request.intent_action}: {request.scenario_type}",
+            context=request.context_stack,
+        )
+
         decision_rationale = (
             f"Executed intent '{request.intent_action}' under scenario '{request.scenario_type}' "
             f"guided by Primary Lens '{primary_lens.upper() if primary_lens else 'NONE'}'."
@@ -136,6 +154,7 @@ class BusinessOSRuntimeOrchestrator:
             "resolved_knowledge_count": len(resolved_units),
             "lenses_applied": [lens["philosophy_id"] for lens in routing_result.get("lenses", [])],
             "execution_status": "COMPLETED",
+            "system_one_decision": jev_decision.to_dict(),
         }
 
         # 4. Build Causal Provenance

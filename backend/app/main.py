@@ -75,12 +75,13 @@ def render_markdown_to_html(text: str) -> str:
     """Small, dependency-free markdown -> HTML renderer for book/unit exports.
 
     Handles the subset used by docs/knowledge books: headings, bold/italic,
-    inline code, links, blockquotes, unordered/ordered lists, tables, rules.
+    inline code, code blocks, links, blockquotes, unordered/ordered lists, tables, rules.
     All content is HTML-escaped before formatting tags are applied.
     """
     lines = text.splitlines()
     html_parts: list[str] = []
-    in_ul = in_ol = in_table = False
+    in_ul = in_ol = in_table = in_code = False
+    code_lines: list[str] = []
 
     def close_lists() -> None:
         nonlocal in_ul, in_ol
@@ -94,11 +95,12 @@ def render_markdown_to_html(text: str) -> str:
     def close_table() -> None:
         nonlocal in_table
         if in_table:
-            html_parts.append("</tbody></table>")
+            html_parts.append("</tbody></table></div>")
             in_table = False
 
     def inline(raw: str) -> str:
         out = html_escape(raw, quote=False)
+        out = re.sub(r"&lt;br\s*/?&gt;", "<br>", out, flags=re.IGNORECASE)
         out = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", out)
         out = re.sub(r"(?<!\*)\*([^*]+)\*(?!\*)", r"<em>\1</em>", out)
         out = re.sub(r"`([^`]+)`", r"<code>\1</code>", out)
@@ -107,13 +109,32 @@ def render_markdown_to_html(text: str) -> str:
 
     for line in lines:
         stripped = line.strip()
+
+        # Handle fenced code block
+        if stripped.startswith("```") or stripped.startswith("~~~"):
+            if in_code:
+                code_text = html_escape("\n".join(code_lines))
+                html_parts.append(f"<pre><code>{code_text}</code></pre>")
+                code_lines = []
+                in_code = False
+            else:
+                close_lists()
+                close_table()
+                in_code = True
+                code_lines = []
+            continue
+
+        if in_code:
+            code_lines.append(line)
+            continue
+
         if stripped.startswith("|") and stripped.endswith("|"):
             cells = [c.strip() for c in stripped.strip("|").split("|")]
             if all(re.fullmatch(r":?-{2,}:?", c) for c in cells):
                 continue
             if not in_table:
                 close_lists()
-                html_parts.append('<table><thead><tr>' + "".join(f"<th>{inline(c)}</th>" for c in cells) + "</tr></thead><tbody>")
+                html_parts.append('<div class="table-responsive"><table><thead><tr>' + "".join(f"<th>{inline(c)}</th>" for c in cells) + "</tr></thead><tbody>")
                 in_table = True
             else:
                 html_parts.append("<tr>" + "".join(f"<td>{inline(c)}</td>" for c in cells) + "</tr>")
@@ -154,6 +175,9 @@ def render_markdown_to_html(text: str) -> str:
         close_lists()
         if stripped:
             html_parts.append(f"<p>{inline(stripped)}</p>")
+    if in_code:
+        code_text = html_escape("\n".join(code_lines))
+        html_parts.append(f"<pre><code>{code_text}</code></pre>")
     close_lists()
     close_table()
     return "\n".join(html_parts)
@@ -420,9 +444,12 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
         h2 {{ color: #1e293b; margin-top: 28px; border-bottom: 1px solid #cbd5e1; padding-bottom: 6px; font-size: 19px; }}
         h3 {{ color: #334155; margin-top: 20px; font-size: 16px; }}
         blockquote {{ background: #f8fafc; border-left: 4px solid #f59e0b; margin: 16px 0; padding: 12px 16px; font-style: italic; color: #334155; }}
-        table {{ border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 13.5px; }}
-        th, td {{ border: 1px solid #cbd5e1; padding: 8px 10px; text-align: left; vertical-align: top; }}
-        th {{ background: #fef3c7; }}
+        .table-responsive {{ width: 100%; overflow-x: auto; margin: 20px 0; border: 1px solid #cbd5e1; border-radius: 8px; box-shadow: 0 2px 8px rgba(15,23,42,0.04); }}
+        table {{ border-collapse: collapse; width: 100%; font-size: 13.5px; line-height: 1.6; background: #ffffff; margin: 0; }}
+        th, td {{ border: 1px solid #e2e8f0; padding: 10px 14px; text-align: left; vertical-align: top; }}
+        th {{ background: #0f172a; color: #f8fafc; font-weight: 600; border-color: #1e293b; font-size: 13px; letter-spacing: 0.01em; }}
+        tr:nth-child(even) td {{ background: #f8fafc; }}
+        tr:hover td {{ background: #f1f5f9; }}
         code {{ background: #f1f5f9; padding: 2px 5px; border-radius: 4px; font-family: monospace; }}
         .header-meta {{ background: #fffbe0; border: 1px solid #fef08a; padding: 12px; border-radius: 8px; font-size: 13px; margin-bottom: 20px; }}
         .print-btn {{ position: fixed; right: 24px; bottom: 24px; background: #f59e0b; color: #0f172a; border: none; padding: 12px 20px; border-radius: 8px; font-weight: 700; cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,0.2); }}

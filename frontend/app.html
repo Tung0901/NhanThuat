@@ -12,25 +12,152 @@
     <!-- DOMPurify for XSS sanitization -->
     <script src="https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.min.js"></script>
     <style>
-        /* Markdown Tables */
-        .bubble-tab-content table {
+        /* Markdown Tables in Modals & Content */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            margin: 16px 0;
+            border-radius: 8px;
+            border: 1px solid var(--border-subtle);
+            background: rgba(14, 14, 20, 0.6);
+        }
+        .bubble-tab-content table, #book-modal-content table, #unit-modal-content table {
             width: 100%;
             border-collapse: collapse;
-            margin: 12px 0;
+            margin: 14px 0;
             font-size: 13px;
-        }
-        .bubble-tab-content th, .bubble-tab-content td {
+            line-height: 1.6;
             border: 1px solid var(--border-subtle);
-            padding: 8px 12px;
-            text-align: left;
+            border-radius: 8px;
+            overflow: hidden;
         }
-        .bubble-tab-content th {
-            background-color: rgba(255, 255, 255, 0.05);
+        .bubble-tab-content th, #book-modal-content th, #unit-modal-content th,
+        .bubble-tab-content td, #book-modal-content td, #unit-modal-content td {
+            border: 1px solid var(--border-subtle);
+            padding: 10px 14px;
+            text-align: left;
+            vertical-align: top;
+        }
+        .bubble-tab-content th, #book-modal-content th, #unit-modal-content th {
+            background: rgba(245, 158, 11, 0.12);
+            color: var(--gold-light);
+            font-weight: 600;
+            font-size: 12.5px;
+            border-bottom: 2px solid rgba(245, 158, 11, 0.35);
+            letter-spacing: 0.02em;
+        }
+        .bubble-tab-content tr:nth-child(even) td, #book-modal-content tr:nth-child(even) td, #unit-modal-content tr:nth-child(even) td {
+            background: rgba(255, 255, 255, 0.025);
+        }
+        .bubble-tab-content tr:hover td, #book-modal-content tr:hover td, #unit-modal-content tr:hover td {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .bubble-tab-content td, #book-modal-content td, #unit-modal-content td {
+            color: rgba(255, 255, 255, 0.88);
+        }
+
+        /* Catalog Domain Filter Tabs & Group Accordion */
+        .catalog-domain-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+            overflow-x: auto;
+            padding-bottom: 6px;
+            scrollbar-width: thin;
+        }
+        .catalog-domain-tab {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--border-subtle);
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--text-secondary);
+            font-size: 12.5px;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+        .catalog-domain-tab:hover {
+            background: rgba(255, 255, 255, 0.08);
             color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.22);
+        }
+        .catalog-domain-tab.active {
+            background: rgba(212, 175, 55, 0.16);
+            color: var(--gold-light);
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 12px var(--gold-glow);
+        }
+        .catalog-tab-badge {
+            font-size: 10.5px;
+            padding: 1px 7px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text-muted);
             font-weight: 600;
         }
-        .bubble-tab-content td {
-            color: rgba(255, 255, 255, 0.85);
+        .catalog-domain-tab.active .catalog-tab-badge {
+            background: rgba(212, 175, 55, 0.28);
+            color: var(--gold-light);
+        }
+        .catalog-group-card {
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            background: var(--bg-surface);
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .catalog-group-card:hover {
+            border-color: rgba(255, 255, 255, 0.18);
+        }
+        .catalog-group-header {
+            padding: 12px 18px;
+            background: rgba(255, 255, 255, 0.02);
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer !important;
+            user-select: none;
+            transition: background 0.2s ease;
+        }
+        .catalog-group-header:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .catalog-group-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gold-light);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .catalog-group-sub {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+        .catalog-group-body {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            padding: 10px 12px;
+        }
+        .catalog-group-body.collapsed {
+            display: none;
+        }
+        .unit-type-pill {
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 7px;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            display: inline-block;
         }
 
         :root {
@@ -2613,6 +2740,35 @@
                             <input type="text" id="knowledge-search-input" placeholder="🔍 Tra cứu theo mã ID hoặc từ khóa..." aria-label="Tìm kiếm tri thức" style="padding: 8px 14px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-subtle); border-radius: 8px; color: #fff; font-size: 12.5px; outline: none; width: 260px;">
                         </div>
                     </div>
+
+                    <!-- Domain Group Filter Tabs -->
+                    <div class="catalog-domain-tabs" id="catalog-domain-tabs" role="tablist" aria-label="Lọc theo miền tri thức">
+                        <button class="catalog-domain-tab active" data-domain="all" onclick="filterCatalogDomain('all', this)" role="tab" aria-selected="true">
+                            <span>Tất cả nhóm</span>
+                            <span class="catalog-tab-badge" id="cat-badge-all">379</span>
+                        </button>
+                        <button class="catalog-domain-tab" data-domain="tri-nhan" onclick="filterCatalogDomain('tri-nhan', this)" role="tab" aria-selected="false">
+                            <span>👁️ Tri nhân</span>
+                            <span class="catalog-tab-badge" id="cat-badge-tri-nhan">…</span>
+                        </button>
+                        <button class="catalog-domain-tab" data-domain="tu-than" onclick="filterCatalogDomain('tu-than', this)" role="tab" aria-selected="false">
+                            <span>🧘 Tu thân</span>
+                            <span class="catalog-tab-badge" id="cat-badge-tu-than">…</span>
+                        </button>
+                        <button class="catalog-domain-tab" data-domain="dung-nhan" onclick="filterCatalogDomain('dung-nhan', this)" role="tab" aria-selected="false">
+                            <span>🎯 Dụng nhân</span>
+                            <span class="catalog-tab-badge" id="cat-badge-dung-nhan">…</span>
+                        </button>
+                        <button class="catalog-domain-tab" data-domain="hop-chung" onclick="filterCatalogDomain('hop-chung', this)" role="tab" aria-selected="false">
+                            <span>🤝 Hợp chúng</span>
+                            <span class="catalog-tab-badge" id="cat-badge-hop-chung">…</span>
+                        </button>
+                        <button class="catalog-domain-tab" data-domain="thanh-su" onclick="filterCatalogDomain('thanh-su', this)" role="tab" aria-selected="false">
+                            <span>⚡ Thành sự</span>
+                            <span class="catalog-tab-badge" id="cat-badge-thanh-su">…</span>
+                        </button>
+                    </div>
+
                     <div id="knowledge-catalog-list" style="display: flex; flex-direction: column; gap: 8px;">
                         <div style="text-align: center; color: var(--text-muted); padding: 30px 0;">Đang nạp kho tri thức...</div>
                     </div>
@@ -4283,10 +4439,110 @@
     });
 
     // --- KNOWLEDGE UNITS CATALOG ---
+    const DOMAIN_CONFIG = {
+        'tri-nhan': {
+            id: 'tri-nhan',
+            title: 'Tri nhân',
+            name: 'Tri nhân: Thấu thị tâm lý & nhận thức',
+            icon: '👁️',
+            desc: 'Nhân cách, bẫy thiên kiến nhận thức, các đòn bẩy tâm lý và phòng thủ thao túng.',
+            order: 1
+        },
+        'tu-than': {
+            id: 'tu-than',
+            title: 'Tu thân',
+            name: 'Tu thân: Nội lực & đạo đức lãnh đạo',
+            icon: '🧘',
+            desc: 'Làm chủ tâm trí, bản lĩnh nghịch cảnh, kỷ luật bản thân và đạo đức người quân tử.',
+            order: 2
+        },
+        'dung-nhan': {
+            id: 'dung-nhan',
+            title: 'Dụng nhân',
+            name: 'Dụng nhân: Tuyển mộ & bố trí hiền tài',
+            icon: '🎯',
+            desc: 'Nghệ thuật thấu tâm, phép thử lòng trung thành, phân quyền và dùng người có tì vết.',
+            order: 3
+        },
+        'hop-chung': {
+            id: 'hop-chung',
+            title: 'Hợp chúng',
+            name: 'Hợp chúng: Xây dựng tổ chức & liên minh',
+            icon: '🤝',
+            desc: 'Kỷ cương pháp gia, cơ chế thưởng phạt, văn hóa sự thật triệt để và liên minh hợp tác.',
+            order: 4
+        },
+        'thanh-su': {
+            id: 'thanh-su',
+            title: 'Thành sự',
+            name: 'Thành sự: Chiến lược & xử lý khủng hoảng',
+            icon: '⚡',
+            desc: 'Binh thế bất đối xứng, lý thuyết trò chơi, điểm đòn bẩy hệ thống và nghệ thuật chốt hạ.',
+            order: 5
+        }
+    };
+
+    const TYPE_CONFIG = {
+        'law': { label: 'Quy luật', color: '#fbbf24', bg: 'rgba(251,191,36,0.14)' },
+        'principle': { label: 'Nguyên tắc', color: '#34d399', bg: 'rgba(52,211,153,0.14)' },
+        'anti-pattern': { label: 'Phản-mẫu', color: '#f87171', bg: 'rgba(248,113,113,0.14)' },
+        'phenomenon': { label: 'Hiện tượng', color: '#38bdf8', bg: 'rgba(56,189,248,0.14)' },
+        'model': { label: 'Mô hình', color: '#c084fc', bg: 'rgba(192,132,252,0.14)' },
+        'strategy': { label: 'Chiến lược', color: '#f59e0b', bg: 'rgba(245,158,11,0.14)' }
+    };
+
     let allKnowledgeUnits = [];
     let filteredUnits = [];
     let catalogRenderLimit = 60;
     const CATALOG_PAGE_SIZE = 60;
+    let selectedCatalogDomain = 'all';
+    let collapsedDomainGroups = {};
+
+    function filterCatalogDomain(domain, btn) {
+        selectedCatalogDomain = domain;
+        const tabs = document.querySelectorAll('.catalog-domain-tab');
+        tabs.forEach(t => {
+            const isActive = t.getAttribute('data-domain') === domain;
+            t.classList.toggle('active', isActive);
+            t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+        applyCatalogFilters();
+    }
+
+    function toggleCatalogGroup(domainId) {
+        collapsedDomainGroups[domainId] = !collapsedDomainGroups[domainId];
+        const body = document.getElementById(`group-body-${domainId}`);
+        const indicator = document.getElementById(`group-indicator-${domainId}`);
+        const cardHeader = document.querySelector(`#group-card-${domainId} .catalog-group-header`);
+        if (body) {
+            body.classList.toggle('collapsed', collapsedDomainGroups[domainId]);
+        }
+        if (indicator) {
+            indicator.textContent = collapsedDomainGroups[domainId] ? 'Mở rộng ▸' : 'Thu gọn ▾';
+        }
+        if (cardHeader) {
+            cardHeader.setAttribute('aria-expanded', !collapsedDomainGroups[domainId]);
+        }
+    }
+
+    function renderUnitCardHtml(u) {
+        const typeInfo = TYPE_CONFIG[u.type] || { label: (u.type || 'Tri thức'), color: '#94a3b8', bg: 'rgba(148,163,184,0.12)' };
+        const draftBadgeHtml = (u.status && u.status !== 'frozen')
+            ? `<span style="font-size: 10px; background: rgba(251,191,36,0.15); color: #fbbf24; padding: 2px 7px; border-radius: 6px; margin-left: 6px;">BẢN NHÁP</span>`
+            : '';
+        return `
+            <div class="catalog-row" role="button" tabindex="0" style="padding: 12px 16px; background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); border-radius: 8px; display: flex; justify-content: space-between; align-items: center; gap: 12px; cursor: pointer; transition: all 0.2s;" onclick="showUnitModal('${escapeHtml(u.id)}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showUnitModal('${escapeHtml(u.id)}')}" aria-label="Xem chi tiết ${escapeHtml(u.id)}">
+                <div style="flex: 1; min-width: 0;">
+                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                        <span class="unit-type-pill" style="color: ${typeInfo.color}; background: ${typeInfo.bg};">${escapeHtml(typeInfo.label)}</span>
+                        <strong style="color: var(--gold-light); font-size: 13.5px;">[${escapeHtml(u.id)}] ${escapeHtml(u.title)}${draftBadgeHtml}</strong>
+                    </div>
+                    <div style="font-size: 12px; color: var(--text-secondary); margin-top: 4px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5;">${escapeHtml(u.summary || '')}</div>
+                </div>
+                <span style="font-size: 11px; background: rgba(255,255,255,0.05); color: var(--text-muted); padding: 3px 8px; border-radius: 6px; white-space: nowrap; flex-shrink: 0;">${escapeHtml(u.primary_domain || u.domain || 'domain')}</span>
+            </div>
+        `;
+    }
 
     async function loadKnowledgeCatalog() {
         const container = document.getElementById('knowledge-catalog-list');
@@ -4299,12 +4555,9 @@
             ]);
             const data = await unitsRes.json();
             if (data.status === 'success' && data.units) {
-                // Books are shown in the bookshelf grid; keep the catalog to knowledge units only.
+                // Filter out books so only knowledge units remain
                 allKnowledgeUnits = data.units.filter(u => !String(u.id || '').startsWith('BOOK-'));
-                filteredUnits = allKnowledgeUnits;
-                catalogRenderLimit = CATALOG_PAGE_SIZE;
-                renderKnowledgeUnits(filteredUnits);
-                updateCatalogCounts();
+                applyCatalogFilters();
             }
             if (statsRes) {
                 const statsData = await statsRes.json();
@@ -4331,38 +4584,119 @@
         const container = document.getElementById('knowledge-catalog-list');
         if (!container) return;
 
-        const visible = units.slice(0, catalogRenderLimit);
-        const draftBadge = (u) => (u.status && u.status !== 'frozen')
-            ? `<span style="font-size: 10px; background: rgba(251,191,36,0.15); color: #fbbf24; padding: 2px 7px; border-radius: 6px; margin-left: 6px;">BẢN NHÁP</span>`
-            : '';
+        if (!units.length) {
+            container.innerHTML = `<div style="text-align: center; color: var(--text-muted); padding: 32px 0;">Không tìm thấy tri thức phù hợp với tiêu chí lọc.</div>`;
+            const wrap = document.getElementById('catalog-load-more-wrap');
+            if (wrap) wrap.style.display = 'none';
+            return;
+        }
 
-        container.innerHTML = visible.length ? visible.map(u => `
-            <div class="catalog-row" role="button" tabindex="0" style="padding: 12px 18px; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 10px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: border-color 0.2s;" onclick="showUnitModal('${escapeHtml(u.id)}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showUnitModal('${escapeHtml(u.id)}')}" aria-label="Xem chi tiết ${escapeHtml(u.id)}">
-                <div>
-                    <strong style="color: var(--gold-light); font-size: 13.5px;">[${escapeHtml(u.id)}] ${escapeHtml(u.title)}${draftBadge(u)}</strong>
-                    <div style="font-size: 11.5px; color: var(--text-secondary); margin-top: 2px;">${escapeHtml(u.summary || '')}</div>
+        if (selectedCatalogDomain === 'all') {
+            // Group by domain into collapsible domain cards
+            const domainOrder = ['tri-nhan', 'tu-than', 'dung-nhan', 'hop-chung', 'thanh-su'];
+            const groupsHtml = [];
+
+            domainOrder.forEach(dId => {
+                const cfg = DOMAIN_CONFIG[dId] || { title: dId, name: dId, icon: '📁', desc: '' };
+                const dUnits = units.filter(u => (u.primary_domain || u.domain) === dId);
+                if (dUnits.length > 0) {
+                    const isCollapsed = !!collapsedDomainGroups[dId];
+                    groupsHtml.push(`
+                        <div class="catalog-group-card" id="group-card-${dId}">
+                            <div class="catalog-group-header" onclick="toggleCatalogGroup('${dId}')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCatalogGroup('${dId}')}" aria-expanded="${!isCollapsed}">
+                                <div class="catalog-group-title">
+                                    <span>${cfg.icon}</span>
+                                    <span>${escapeHtml(cfg.name)}</span>
+                                    <span class="catalog-group-sub">(${dUnits.length} tri thức)</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <span style="font-size: 11.5px; color: var(--gold-light);" id="group-indicator-${dId}">${isCollapsed ? 'Mở rộng ▸' : 'Thu gọn ▾'}</span>
+                                </div>
+                            </div>
+                            <div class="catalog-group-body ${isCollapsed ? 'collapsed' : ''}" id="group-body-${dId}">
+                                ${dUnits.map(renderUnitCardHtml).join('')}
+                            </div>
+                        </div>
+                    `);
+                }
+            });
+
+            const others = units.filter(u => !domainOrder.includes(u.primary_domain || u.domain));
+            if (others.length > 0) {
+                const isCollapsed = !!collapsedDomainGroups['other'];
+                groupsHtml.push(`
+                    <div class="catalog-group-card" id="group-card-other">
+                        <div class="catalog-group-header" onclick="toggleCatalogGroup('other')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCatalogGroup('other')}" aria-expanded="${!isCollapsed}">
+                            <div class="catalog-group-title">
+                                <span>📚</span>
+                                <span>Tri thức mở rộng khác</span>
+                                <span class="catalog-group-sub">(${others.length} tri thức)</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span style="font-size: 11.5px; color: var(--gold-light);" id="group-indicator-other">${isCollapsed ? 'Mở rộng ▸' : 'Thu gọn ▾'}</span>
+                            </div>
+                        </div>
+                        <div class="catalog-group-body ${isCollapsed ? 'collapsed' : ''}" id="group-body-other">
+                            ${others.map(renderUnitCardHtml).join('')}
+                        </div>
+                    </div>
+                `);
+            }
+
+            container.innerHTML = groupsHtml.join('');
+            const wrap = document.getElementById('catalog-load-more-wrap');
+            if (wrap) wrap.style.display = 'none';
+        } else {
+            // Filtered single domain view
+            const cfg = DOMAIN_CONFIG[selectedCatalogDomain] || { name: selectedCatalogDomain, icon: '📁', desc: '' };
+            const visible = units.slice(0, catalogRenderLimit);
+            const headerHtml = `
+                <div style="background: rgba(212, 175, 55, 0.08); border: 1px solid rgba(212, 175, 55, 0.25); border-radius: 10px; padding: 12px 18px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+                    <div>
+                        <strong style="color: var(--gold-light); font-size: 14.5px;">${cfg.icon} ${escapeHtml(cfg.name)}</strong>
+                        <div style="font-size: 12px; color: var(--text-secondary); margin-top: 2px;">${escapeHtml(cfg.desc || '')}</div>
+                    </div>
+                    <span style="font-size: 11.5px; background: rgba(255,255,255,0.06); color: var(--gold-light); padding: 4px 10px; border-radius: 12px; font-weight: 600;">${units.length} tri thức</span>
                 </div>
-                <span style="font-size: 11px; background: rgba(255,255,255,0.05); color: var(--text-muted); padding: 2px 8px; border-radius: 6px; white-space: nowrap;">${escapeHtml(u.primary_domain || u.domain || 'domain')}</span>
-            </div>
-        `).join('') : `<div style="text-align: center; color: var(--text-muted); padding: 24px 0;">Không tìm thấy tri thức phù hợp.</div>`;
+            `;
+            container.innerHTML = headerHtml + visible.map(renderUnitCardHtml).join('');
 
-        const wrap = document.getElementById('catalog-load-more-wrap');
-        const btn = document.getElementById('catalog-load-more-btn');
-        if (wrap) wrap.style.display = units.length > catalogRenderLimit ? 'block' : 'none';
-        if (btn) btn.textContent = `Tải thêm (${Math.max(0, units.length - catalogRenderLimit)} còn lại)`;
+            const wrap = document.getElementById('catalog-load-more-wrap');
+            const btn = document.getElementById('catalog-load-more-btn');
+            if (wrap) wrap.style.display = units.length > catalogRenderLimit ? 'block' : 'none';
+            if (btn) btn.textContent = `Tải thêm (${Math.max(0, units.length - catalogRenderLimit)} còn lại)`;
+        }
     }
 
     function applyCatalogFilters() {
         const term = (document.getElementById('knowledge-search-input')?.value || '').toLowerCase().trim();
         const type = document.getElementById('catalog-type-filter')?.value || '';
-        filteredUnits = allKnowledgeUnits.filter(u => {
+
+        const matchesCriteria = (u, domain) => {
+            const matchesDomain = (domain === 'all') || (u.primary_domain || u.domain) === domain;
             const matchesType = !type || String(u.type || '') === type;
             const matchesTerm = !term ||
                 (u.id && u.id.toLowerCase().includes(term)) ||
                 (u.title && u.title.toLowerCase().includes(term)) ||
                 (u.summary && u.summary.toLowerCase().includes(term));
-            return matchesType && matchesTerm;
-        });
+            return matchesDomain && matchesType && matchesTerm;
+        };
+
+        filteredUnits = allKnowledgeUnits.filter(u => matchesCriteria(u, selectedCatalogDomain));
+
+        // Update badge counts for all domain tabs
+        const allCount = allKnowledgeUnits.filter(u => matchesCriteria(u, 'all')).length;
+        const setBadge = (id, count) => {
+            const el = document.getElementById(id);
+            if (el) el.textContent = count;
+        };
+        setBadge('cat-badge-all', allCount);
+        setBadge('cat-badge-tri-nhan', allKnowledgeUnits.filter(u => matchesCriteria(u, 'tri-nhan')).length);
+        setBadge('cat-badge-tu-than', allKnowledgeUnits.filter(u => matchesCriteria(u, 'tu-than')).length);
+        setBadge('cat-badge-dung-nhan', allKnowledgeUnits.filter(u => matchesCriteria(u, 'dung-nhan')).length);
+        setBadge('cat-badge-hop-chung', allKnowledgeUnits.filter(u => matchesCriteria(u, 'hop-chung')).length);
+        setBadge('cat-badge-thanh-su', allKnowledgeUnits.filter(u => matchesCriteria(u, 'thanh-su')).length);
+
         catalogRenderLimit = CATALOG_PAGE_SIZE;
         renderKnowledgeUnits(filteredUnits);
         updateCatalogCounts();

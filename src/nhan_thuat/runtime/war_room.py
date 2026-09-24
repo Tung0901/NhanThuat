@@ -1162,3 +1162,119 @@ class WarRoomEngine:
                 },
             ],
         }
+
+    def calculate_faction_alliances(self, session: WarRoomSession) -> dict[str, Any]:
+        """War Room 2.0: Compute dynamic factional alliances, cohesion, and betrayal risks."""
+        if not session.personas:
+            return {"status": "empty", "factions": {}, "friction_index": 0.0}
+
+        factions: dict[str, list[Persona]] = {}
+        for p in session.personas:
+            factions.setdefault(p.faction, []).append(p)
+
+        total_influence = sum(p.influence_score for p in session.personas) or 1
+        faction_analysis: dict[str, Any] = {}
+
+        for faction_name, members in factions.items():
+            avg_loyalty = sum(p.loyalty_score for p in members) / len(members)
+            avg_stress = sum(p.stress_level for p in members) / len(members)
+            faction_inf = sum(p.influence_score for p in members)
+            power_share = round((faction_inf / total_influence) * 100, 1)
+
+            # Betrayal risk: proportion of members under heavy stress with low loyalty
+            at_risk = [p for p in members if p.loyalty_score < 55 or p.stress_level > 70]
+            betrayal_risk_pct = round((len(at_risk) / len(members)) * 100, 1)
+
+            # Cohesion score: higher when members have consistent loyalty and low variance
+            cohesion = max(10, min(100, int(avg_loyalty * 0.7 + (100 - avg_stress) * 0.3)))
+
+            faction_analysis[faction_name] = {
+                "member_count": len(members),
+                "members": [p.name for p in members],
+                "power_share_pct": power_share,
+                "average_loyalty": round(avg_loyalty, 1),
+                "average_stress": round(avg_stress, 1),
+                "cohesion_score": cohesion,
+                "betrayal_risk_pct": betrayal_risk_pct,
+                "stance_summary": members[0].stance if members else "Neutral",
+            }
+
+        # Calculate organizational friction index (polarization across factions)
+        cohesions = [f["cohesion_score"] for f in faction_analysis.values()]
+        avg_cohesion = sum(cohesions) / len(cohesions) if cohesions else 50.0
+        friction_index = round(max(0.0, min(1.0, 1.0 - (avg_cohesion / 100.0))), 2)
+
+        return {
+            "status": "success",
+            "session_id": session.session_id,
+            "round": session.current_round,
+            "total_factions": len(factions),
+            "faction_analysis": faction_analysis,
+            "friction_index": friction_index,
+            "dominant_faction": max(faction_analysis.items(), key=lambda x: x[1]["power_share_pct"])[0] if faction_analysis else "None",
+        }
+
+    def deliberate_socratic_debate(
+        self,
+        session: WarRoomSession,
+        dilemma: str,
+        philosophies: list[str] | None = None,
+    ) -> dict[str, Any]:
+        """War Room 2.0: Multi-lens Socratic cross-examination between strategic philosophical schools."""
+        schools = philosophies or ["legalism", "confucian", "taoism", "sunzi"]
+        dilemma_clean = dilemma.strip() or session.scenario
+
+        school_perspectives = {
+            "legalism": {
+                "name": "Pháp Gia (Hàn Phi Tử)",
+                "thesis": "Kỷ cương là gốc rễ. Thiết lập minh bạch Nhị Bỉnh (Thưởng - Phạt) và thẩm định chức trách (Hình Danh).",
+                "critique": "Nho gia quá nhu nhược trông chờ vào đạo đức tự giác; Đạo gia quá buông lỏng dễ dẫn đến hỗn loạn.",
+                "action": "Ban bố lệnh điều tra rõ ràng, đình chỉ quyền lợi của cá nhân vi phạm để răn đe toàn tổ chức.",
+            },
+            "confucian": {
+                "name": "Nho Gia (Khổng Tử)",
+                "thesis": "Nhân tâm là nền móng. Dùng Lễ định phần, lấy Đức cảm hóa và bảo toàn danh dự cho nhân sự công thần.",
+                "critique": "Pháp gia quá hà khắc khiến bề tôi nghi kỵ và tạo phản ngầm; chỉ trị được phần ngọn không trị được lòng người.",
+                "action": "Tổ chức gặp gỡ chân thành, tháo gỡ uẩn ức, ban ân điển trước khi thi hành kỷ luật.",
+            },
+            "taoism": {
+                "name": "Đạo Gia (Lão - Trang)",
+                "thesis": "Thuận tự nhiên & Dĩ nhu chế cương. Tâm Trai để thấy rõ điểm mù của chính người lãnh đạo.",
+                "critique": "Càng cưỡng cầu trấn áp thì phản lực càng lớn. Can thiệp thô bạo sẽ làm vỡ nát hệ thống đang cân bằng mong manh.",
+                "action": "Áp dụng chiến lược lùi một bước để quan sát động thái thật, chuyển hóa thế xung đột thành hợp tác tự nguyện.",
+            },
+            "sunzi": {
+                "name": "Binh Pháp Tôn Tử",
+                "thesis": "Thủ thế - Lập thế - Định cục. Bất chiến tự nhiên thành, khóa chặt đường thoát bất lợi của đối phương.",
+                "critique": "Hành động thiếu tình báo và không tạo phương án thay thế tối ưu (Plan B) là tự đẩy mình vào tử địa.",
+                "action": "Nắm giữ tệp khách và chìa khóa công nghệ trước, lập thế trận bất đối xứng buộc phe chống đối phải quy phục.",
+            },
+        }
+
+        rounds = []
+        for school_key in schools:
+            if school_key in school_perspectives:
+                p = school_perspectives[school_key]
+                rounds.append({
+                    "school": p["name"],
+                    "key": school_key,
+                    "thesis": p["thesis"],
+                    "critique": p["critique"],
+                    "recommended_action": p["action"],
+                })
+
+        synthesis = (
+            f"Về thế trận '{dilemma_clean[:80]}...': Người lãnh đạo tối cao cần vận dụng Cương Nhu Tương Tế. "
+            "Dùng Binh Pháp Tôn Tử để thủ thế khóa chặt rủi ro tài sản; dùng Pháp Gia để xác lập ranh giới kỷ cương; "
+            "dùng Nho Gia để chiêu an nhân tâm số đông; và dùng Đạo Gia để giữ tâm thế điềm tĩnh, không để cảm xúc dẫn dắt."
+        )
+
+        return {
+            "status": "success",
+            "dilemma": dilemma_clean,
+            "session_id": session.session_id,
+            "participating_schools": [school_perspectives[k]["name"] for k in schools if k in school_perspectives],
+            "rounds": rounds,
+            "executive_synthesis": synthesis,
+        }
+

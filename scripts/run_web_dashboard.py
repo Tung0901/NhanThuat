@@ -20,6 +20,20 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
+# Tự động kích hoạt môi trường ảo .venv nếu chạy từ Python hệ thống thiếu thư viện
+try:
+    import yaml  # noqa: F401
+except ImportError:
+    venv_py = (
+        REPO_ROOT / ".venv" / "Scripts" / "python.exe"
+        if os.name == "nt"
+        else REPO_ROOT / ".venv" / "bin" / "python"
+    )
+    if venv_py.exists() and sys.executable != str(venv_py):
+        import subprocess
+        sys.exit(subprocess.call([str(venv_py), str(Path(__file__).resolve()), *sys.argv[1:]]))
+    raise
+
 from backend.app.main import create_app_server
 
 

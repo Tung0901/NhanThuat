@@ -253,6 +253,37 @@ def test_war_room_api_endpoints():
     assert "interrogation" in data
     assert len(data["interrogation"]["answer"]) > 10
 
+    # 7. GET /api/v1/war-room/alliances
+    handler._send_json_response.reset_mock()
+    handler.path = f"/api/v1/war-room/alliances?session_id={session_id}"
+    handler.headers = {}
+    handler.do_GET()
+    handler._send_json_response.assert_called_once()
+    code, data = handler._send_json_response.call_args[0]
+    assert code == 200
+    assert data["status"] == "success"
+    assert "faction_analysis" in data
+    assert "friction_index" in data
+
+    # 8. POST /api/v1/war-room/socratic-debate
+    handler._send_json_response.reset_mock()
+    debate_payload = json.dumps({
+        "session_id": session_id,
+        "dilemma": "Có nên đình chỉ công tác giám đốc kinh doanh ngay lập tức?",
+        "philosophies": ["legalism", "confucian", "taoism", "sunzi"],
+    }).encode("utf-8")
+    handler.path = "/api/v1/war-room/socratic-debate"
+    handler.headers = {"Content-Length": str(len(debate_payload))}
+    handler.rfile = BytesIO(debate_payload)
+    handler.do_POST()
+    handler._send_json_response.assert_called_once()
+    code, data = handler._send_json_response.call_args[0]
+    assert code == 200
+    assert data["status"] == "success"
+    assert "executive_synthesis" in data
+    assert len(data["rounds"]) == 4
+
+
 
 def test_network_graph_and_history(war_room_engine):
     """Test interactive graph computation and psychological trajectory tracking."""

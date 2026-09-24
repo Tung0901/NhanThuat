@@ -167,3 +167,31 @@ def test_program_8_program_9_router_outputs() -> None:
     meta = primary_lens["metadata"]
     assert meta["version"] == "1.1.0"
     assert meta["governance_status"] == "frozen"
+
+
+def test_scenario_routing_sunzi_competition() -> None:
+    router = PhilosophyRouter()
+    result = router.route({
+        "scenario_type": "competition",
+        "intent": "Chiến lược thế trận đàm phán bất chiến tự nhiên thành",
+        "keywords": ["binh pháp", "tôn tử", "thủ thế", "lập thế"],
+    })
+    assert result["primary_philosophy"] == PhilosophyType.SUNZI.value
+    assert result["secondary_philosophy"] == PhilosophyType.LEGALISM.value
+    assert result["primary_engine_data"]["engine_name"] == "Sunzi Art of War Strategic Engine"
+    assert "five_pillars" in result["primary_engine_data"]
+    assert "three_stage_flow" in result["primary_engine_data"]
+
+
+def test_scenario_routing_stoicism_adversity() -> None:
+    router = PhilosophyRouter()
+    result = router.route({
+        "scenario_type": "crisis",
+        "intent": "Đối diện áp lực nghịch cảnh và làm chủ cơn giận",
+        "keywords": ["khắc kỷ", "vòng tròn kiểm soát", "bình tĩnh"],
+    })
+    assert result["primary_philosophy"] == PhilosophyType.STOICISM.value
+    assert result["secondary_philosophy"] == PhilosophyType.TAOISM.value
+    assert result["primary_engine_data"]["engine_name"] == "Stoicism Leadership Engine"
+    assert "dichotomy_of_control" in result["primary_engine_data"]["core_principles"]
+

@@ -16,10 +16,24 @@ if hasattr(sys.stdout, "reconfigure"):
 if hasattr(sys.stderr, "reconfigure"):
     sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
-# Ensure workspace root is in sys.path
 WORKSPACE_ROOT = Path(__file__).resolve().parent.parent
 if str(WORKSPACE_ROOT) not in sys.path:
     sys.path.insert(0, str(WORKSPACE_ROOT))
+
+# Tự động kích hoạt môi trường ảo .venv nếu chạy từ Python hệ thống thiếu thư viện
+try:
+    import requests  # noqa: F401
+except ImportError:
+    import os
+    venv_py = (
+        WORKSPACE_ROOT / ".venv" / "Scripts" / "python.exe"
+        if os.name == "nt"
+        else WORKSPACE_ROOT / ".venv" / "bin" / "python"
+    )
+    if venv_py.exists() and sys.executable != str(venv_py):
+        import subprocess
+        sys.exit(subprocess.call([str(venv_py), str(Path(__file__).resolve()), *sys.argv[1:]]))
+    raise
 
 from modules.business_os.router import BusinessOSActionRouter
 from modules.decider.adapter import JevDecisionAdapter

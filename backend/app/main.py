@@ -32,10 +32,14 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import parse_qs, urlparse
 
+from backend.app.auth import _ACTIVE_SESSIONS, auth_manager
 from backend.app.engine.nhan_thuat_api import diagnose_person_role_fit, diagnose_team_structural_fit, process_nhan_thuat_analysis
 from backend.app.engine.runtime import BusinessOSRuntimeOrchestrator, RuntimeRequestPayload
 from nhan_thuat.council.council_engine import CouncilEngine
 from nhan_thuat.engine.sparring_engine import SparringEngine
+from modules.connectors.webhook_connector import enterprise_connector
+from modules.nhan_thuat.continuous_profiler import continuous_profiler
+from modules.nhan_thuat.service import NhanThuatBehavioralService
 from nhan_thuat.export.executive_brief import ExecutiveBriefExporter
 from nhan_thuat.knowledge_engine import KnowledgeEngine
 from nhan_thuat.packs.department_pack import DepartmentPackRegistry
@@ -59,12 +63,12 @@ council_engine = CouncilEngine(knowledge_engine=knowledge_engine)
 war_room_engine = WarRoomEngine(knowledge_engine=knowledge_engine)
 department_packs = DepartmentPackRegistry()
 brief_exporter = ExecutiveBriefExporter()
+behavioral_service = NhanThuatBehavioralService()
+continuous_profiler.seed_demo_data()
+enterprise_connector.seed_demo_data()
 
 # Execution History Store for Provenance Lookup
 execution_provenance_store: dict[str, dict[str, Any]] = {}
-
-# Temporary In-Memory Authentication Sessions Store
-_ACTIVE_SESSIONS: dict[str, dict[str, Any]] = {}
 
 STATIC_DIR = Path(__file__).resolve().parent / "static"
 DOCS_KNOWLEDGE_DIR = Path(__file__).resolve().parent.parent.parent / "docs" / "knowledge"
@@ -170,7 +174,8 @@ def render_markdown_to_html(text: str) -> str:
             if not in_ol:
                 html_parts.append("<ol>")
                 in_ol = True
-            html_parts.append(f"<li>{inline(re.sub(r'^\d+[.)]\s+', '', stripped))}</li>")
+            li_content = inline(re.sub(r"^\d+[.)]\s+", "", stripped))
+            html_parts.append(f"<li>{li_content}</li>")
             continue
         close_lists()
         if stripped:
@@ -364,11 +369,12 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
         if path == "/api/v1/auth/session":
             auth_header = self.headers.get("Authorization", "")
             token = auth_header.replace("Bearer ", "").strip() if "Bearer " in auth_header else auth_header
-            if token and token in _ACTIVE_SESSIONS:
+            session = auth_manager.get_session(token) if token else None
+            if session:
                 self._send_json_response(200, {
                     "status": "success",
                     "authenticated": True,
-                    "session": _ACTIVE_SESSIONS[token],
+                    "session": session,
                 })
             else:
                 self._send_json_response(401, {
@@ -399,6 +405,50 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
             self._send_json_response(200, {
                 "status": "success",
                 "session": session.to_dict(),
+            })
+            return
+
+        if path == "/api/v1/war-room/alliances":
+            qs = parse_qs(parsed_url.query)
+            session_id = qs.get("session_id", [""])[0]
+            session = war_room_engine.get_session(session_id)
+            if not session:
+                self._send_json_response(404, {
+                    "status": "error",
+                    "message": f"Session '{session_id}' not found.",
+                })
+                return
+            alliances = war_room_engine.calculate_faction_alliances(session)
+            self._send_json_response(200, alliances)
+            return
+
+        # 0d. Continuous Behavioral Profiler & Radar GET: /api/v1/behavioral/radar, /api/v1/behavioral/profile
+        if path == "/api/v1/behavioral/radar":
+            self._send_json_response(200, continuous_profiler.get_team_radar())
+            return
+
+        if path == "/api/v1/behavioral/profile":
+            qs = parse_qs(parsed_url.query)
+            author_id = qs.get("author_id", [""])[0]
+            profile = continuous_profiler.get_profile(author_id)
+            if not profile:
+                self._send_json_response(404, {
+                    "status": "error",
+                    "message": f"Profile for author '{author_id}' not found.",
+                })
+                return
+            self._send_json_response(200, {
+                "status": "success",
+                "profile": profile.to_dict(),
+            })
+            return
+
+        # 0f. Enterprise Connectors Whispers GET: /api/v1/connectors/whispers
+        if path == "/api/v1/connectors/whispers":
+            self._send_json_response(200, {
+                "status": "success",
+                "total": len(enterprise_connector.history),
+                "whispers": [w.to_dict() for w in enterprise_connector.history],
             })
             return
 
@@ -868,40 +918,8 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
             password = str(payload.get("password", "")).strip()
             role_hint = str(payload.get("role", "")).strip().upper()
 
-            # Predefined credentials and quick-login roles
-            accounts = {
-                "admin": {"password": "nhanthuat2026", "name": "Cố Vấn Tối Cao (Admin)", "role": "EXECUTIVE", "avatar": "👑"},
-                "executive": {"password": "123456", "name": "Cố Vấn Điều Hành", "role": "EXECUTIVE", "avatar": "👑"},
-                "advisor": {"password": "123456", "name": "Chuyên Viên Chiến Lược", "role": "ADVISOR", "avatar": "🏛️"},
-                "guest": {"password": "guest", "name": "Khách Mời Trải Nghiệm", "role": "GUEST", "avatar": "👁️"},
-            }
-
-            matched = None
-            if username in accounts and (not password or accounts[username]["password"] == password):
-                matched = accounts[username]
-                user_id = username
-            elif role_hint in ("EXECUTIVE", "ADVISOR", "GUEST"):
-                role_key = role_hint.lower()
-                matched = accounts.get(role_key, accounts["guest"])
-                user_id = role_key
-            elif username:
-                # Flexible temporary login with any identifier
-                matched = {"name": username.capitalize(), "role": "EXECUTIVE", "avatar": "⚡"}
-                user_id = username
-            else:
-                matched = accounts["executive"]
-                user_id = "executive"
-
-            token = f"NT-SESSION-{uuid.uuid4().hex[:16].upper()}"
-            session_data = {
-                "token": token,
-                "user_id": user_id,
-                "display_name": matched["name"],
-                "role": matched["role"],
-                "avatar": matched["avatar"],
-                "logged_in_at": time.time(),
-            }
-            _ACTIVE_SESSIONS[token] = session_data
+            matched, user_id = auth_manager.authenticate(username, password, role_hint)
+            session_data = auth_manager.create_session(matched, user_id)
 
             self._send_json_response(200, {
                 "status": "success",
@@ -913,7 +931,7 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
         if path == "/api/v1/auth/logout":
             auth_header = self.headers.get("Authorization", "")
             token = auth_header.replace("Bearer ", "").strip() if "Bearer " in auth_header else auth_header
-            _ACTIVE_SESSIONS.pop(token, None)
+            auth_manager.revoke_session(token)
             self._send_json_response(200, {
                 "status": "success",
                 "message": "Đã đăng xuất thành công.",
@@ -1057,6 +1075,70 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
                     "status": "error",
                     "message": str(e),
                 })
+            return
+
+        if path == "/api/v1/war-room/socratic-debate":
+            session_id = payload.get("session_id", "")
+            dilemma = payload.get("dilemma", "")
+            philosophies = payload.get("philosophies")
+            session = war_room_engine.get_session(session_id)
+            if not session:
+                self._send_json_response(404, {
+                    "status": "error",
+                    "message": f"Session '{session_id}' not found.",
+                })
+                return
+            debate = war_room_engine.deliberate_socratic_debate(
+                session=session,
+                dilemma=dilemma,
+                philosophies=philosophies,
+            )
+            self._send_json_response(200, debate)
+            return
+
+        # 0e. Continuous Behavioral Stream Analysis POST: /api/v1/behavioral/analyze-stream
+        if path == "/api/v1/behavioral/analyze-stream":
+            content = str(payload.get("content", "")).strip()
+            author_id = str(payload.get("author_id", "EMP-DEFAULT")).strip()
+            clarity = float(payload.get("context_clarity", 0.8))
+            constraints = float(payload.get("context_constraints", 0.7))
+
+            if not content:
+                self._send_json_response(400, {
+                    "status": "error",
+                    "message": "Field 'content' cannot be empty.",
+                })
+                return
+
+            event = behavioral_service.evaluate(content, author_id=author_id)
+            profile = continuous_profiler.ingest_event(
+                event=event,
+                context_clarity=clarity,
+                context_constraints=constraints,
+            )
+            self._send_json_response(200, {
+                "status": "success",
+                "event": event.to_dict(),
+                "profile": profile.to_dict(),
+            })
+            return
+
+        # 0f. Enterprise Connectors Webhook POST: /api/v1/connectors/webhook
+        if path.startswith("/api/v1/connectors/webhook"):
+            parts = path.rstrip("/").split("/")
+            source_hint = parts[-1] if len(parts) >= 5 and parts[-1] != "webhook" else payload.get("source", "generic")
+            raw_payload = payload.get("payload", payload)
+            task_context = payload.get("task_context", "")
+
+            brief = enterprise_connector.process_incoming_webhook(
+                source=source_hint,
+                raw_data=raw_payload,
+                task_context=task_context,
+            )
+            self._send_json_response(200, {
+                "status": "success",
+                "brief": brief.to_dict(),
+            })
             return
 
         # 0d. Executive Brief Export POST: POST /api/v1/export/brief
@@ -1367,7 +1449,7 @@ def create_app_server(host: str = "127.0.0.1", port: int = 8000) -> ThreadingHTT
 
 if __name__ == "__main__":
     import os
-    port = int(os.environ.get("PORT", 8000))
+    port = int(os.environ.get("PORT", "8000"))
     host = os.environ.get("HOST", "0.0.0.0")
     print(f"Starting BusinessOS & NhanThuat Web Dashboard Server on http://{host}:{port}...")
     server = create_app_server(host=host, port=port)

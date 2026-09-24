@@ -26,7 +26,7 @@ dev = [
 where = ["src"]
 
 [tool.pytest.ini_options]
-addopts = "-q"
+addopts = "-q -o cache_dir=.venv/.pytest_cache"
 testpaths = ["tests"]
 pythonpath = ["src", "."]
 

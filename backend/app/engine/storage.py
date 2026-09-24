@@ -93,3 +93,87 @@ class FileStateStorageAdapter(BaseStorageAdapter):
             file_p.unlink()
             return True
         return False
+
+
+class SQLiteStorageAdapter(BaseStorageAdapter):
+    """SQLite-backed Persistence Storage Adapter for Enterprise Execution State."""
+
+    def __init__(self, db_path: Path | str | None = None) -> None:
+        import sqlite3
+        self._sqlite3 = sqlite3
+        if db_path is None:
+            db_dir = Path(__file__).resolve().parent.parent.parent.parent / "docs" / "generated" / "storage_state"
+            db_dir.mkdir(parents=True, exist_ok=True)
+            db_path = db_dir / "nhanthuat_runtime.db"
+        self.db_path = Path(db_path)
+        self.db_path.parent.mkdir(parents=True, exist_ok=True)
+        self._init_db()
+
+    def _get_connection(self):
+        conn = self._sqlite3.connect(str(self.db_path), timeout=10.0)
+        conn.row_factory = self._sqlite3.Row
+        return conn
+
+    def _init_db(self) -> None:
+        with self._get_connection() as conn:
+            conn.execute(
+                """
+                CREATE TABLE IF NOT EXISTS records (
+                    collection TEXT NOT NULL,
+                    key TEXT NOT NULL,
+                    value_json TEXT NOT NULL,
+                    updated_at REAL NOT NULL,
+                    PRIMARY KEY (collection, key)
+                )
+                """
+            )
+            conn.execute(
+                "CREATE INDEX IF NOT EXISTS idx_records_collection ON records(collection)"
+            )
+            conn.commit()
+
+    def get(self, collection: str, key: str) -> dict[str, Any] | None:
+        with self._get_connection() as conn:
+            cursor = conn.execute(
+                "SELECT value_json FROM records WHERE collection = ? AND key = ?",
+                (collection, key),
+            )
+            row = cursor.fetchone()
+            if row:
+                return json.loads(row["value_json"])
+            return None
+
+    def set(self, collection: str, key: str, value: dict[str, Any]) -> None:
+        import time
+        val_str = json.dumps(value, default=str, ensure_ascii=False)
+        now = time.time()
+        with self._get_connection() as conn:
+            conn.execute(
+                """
+                INSERT INTO records (collection, key, value_json, updated_at)
+                VALUES (?, ?, ?, ?)
+                ON CONFLICT(collection, key) DO UPDATE SET
+                    value_json = excluded.value_json,
+                    updated_at = excluded.updated_at
+                """,
+                (collection, key, val_str, now),
+            )
+            conn.commit()
+
+    def list(self, collection: str) -> list[dict[str, Any]]:
+        with self._get_connection() as conn:
+            cursor = conn.execute(
+                "SELECT value_json FROM records WHERE collection = ? ORDER BY updated_at DESC",
+                (collection,),
+            )
+            return [json.loads(row["value_json"]) for row in cursor.fetchall()]
+
+    def delete(self, collection: str, key: str) -> bool:
+        with self._get_connection() as conn:
+            cursor = conn.execute(
+                "DELETE FROM records WHERE collection = ? AND key = ?",
+                (collection, key),
+            )
+            conn.commit()
+            return cursor.rowcount > 0
+

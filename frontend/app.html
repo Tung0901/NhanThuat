@@ -2366,6 +2366,9 @@
         <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Mở menu điều hướng" aria-expanded="false" aria-controls="header-nav" onclick="toggleMobileNav()">☰</button>
 
         <div class="header-actions">
+            <button class="export-btn" id="whisper-inbox-top-btn" onclick="openWhisperModal()" style="background: rgba(16,185,129,0.12); border-color: rgba(16,185,129,0.4); color: #34d399; position: relative;">
+                🤫 Hộp Tin Cơ Mật <span id="whisper-unread-badge" style="background: #ef4444; color: #fff; font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 10px; margin-left: 4px;">2</span>
+            </button>
             <button class="export-btn" id="export-brief-top-btn" onclick="openExecutiveExportModal()">Xuất kịch bản</button>
             <div id="user-profile-widget" class="user-profile-widget"></div>
             <a href="/" class="home-link-btn">Trang chủ</a>
@@ -2381,9 +2384,14 @@
         <button class="workspace-tab-btn" onclick="switchWorkspace('view-sparring', this); closeMobileNav();">Đấu trí</button>
         <button class="workspace-tab-btn" onclick="switchWorkspace('view-diagnostics', this); closeMobileNav();">Chẩn đoán nhân sự</button>
         <button class="workspace-tab-btn" onclick="switchWorkspace('view-codex', this); closeMobileNav();">Tủ sách & tri thức</button>
-        <div style="padding: 12px 14px; border-top: 1px solid var(--border-subtle); margin-top: 6px; display: flex; gap: 8px;">
-            <button class="export-btn" id="export-brief-mobile-btn" style="flex: 1; justify-content: center;" onclick="openExecutiveExportModal(); closeMobileNav();">Xuất kịch bản</button>
-            <a href="/" class="home-link-btn" style="flex: 1; text-align: center; justify-content: center; display: flex; align-items: center;">Trang chủ</a>
+        <div style="padding: 12px 14px; border-top: 1px solid var(--border-subtle); margin-top: 6px; display: flex; flex-direction: column; gap: 8px;">
+            <button class="export-btn" onclick="openWhisperModal(); closeMobileNav();" style="justify-content: center; background: rgba(16,185,129,0.12); border-color: rgba(16,185,129,0.4); color: #34d399;">
+                🤫 Hộp Tin Cơ Mật
+            </button>
+            <div style="display: flex; gap: 8px;">
+                <button class="export-btn" id="export-brief-mobile-btn" style="flex: 1; justify-content: center;" onclick="openExecutiveExportModal(); closeMobileNav();">Xuất kịch bản</button>
+                <a href="/" class="home-link-btn" style="flex: 1; text-align: center; justify-content: center; display: flex; align-items: center;">Trang chủ</a>
+            </div>
         </div>
     </div>
 
@@ -2486,12 +2494,15 @@
                     <p>Ứng dụng Mô hình NT-MODEL-0007, Nguyên tắc NT-PRINCIPLE-0066 & Bẫy đồng nhất NT-ANTI-PATTERN-0011 để lượng hóa ma sát nhận thức và cân bằng cấu trúc tổ chức.</p>
                     
                     <!-- Sub-view Mode Switcher -->
-                    <div style="display: flex; gap: 10px; margin-top: 14px;">
+                    <div style="display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap;">
                         <button class="mode-pill active" id="tab-btn-person-fit" onclick="switchDiagTab('person', this)">
                             👤 1. Cá nhân - Vai trò (Person-Role Fit - NT-MODEL-0007)
                         </button>
                         <button class="mode-pill" id="tab-btn-team-fit" onclick="switchDiagTab('team', this)">
                             👥 2. Khớp Cấu Trúc Đội Ngũ (Team Structural Fit - NT-PRINCIPLE-0066)
+                        </button>
+                        <button class="mode-pill" id="tab-btn-radar-fit" onclick="switchDiagTab('radar', this)">
+                            📡 3. Radar Kiệt Sức & Rời Bỏ (Flight Risk Radar - NT-MODEL-0008 & 0011)
                         </button>
                     </div>
                 </div>
@@ -2699,6 +2710,69 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- SUB-VIEW 3: FLIGHT RISK RADAR & CONTINUOUS PROFILER (EPIC 9) -->
+                <div id="diag-subview-radar" style="display: none;">
+                    <!-- Overview KPI Bar -->
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 20px;">
+                        <div class="diag-card" style="padding: 14px 18px; text-align: center; margin-bottom: 0;">
+                            <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Nhân sự theo dõi</div>
+                            <div id="radar-stat-total" style="font-size: 24px; font-weight: 700; color: #fff; margin-top: 4px;">4</div>
+                        </div>
+                        <div class="diag-card" style="padding: 14px 18px; text-align: center; border-color: rgba(244,63,94,0.3); background: rgba(244,63,94,0.04); margin-bottom: 0;">
+                            <div style="font-size: 11px; color: #fda4af; text-transform: uppercase;">Báo động đỏ (Critical)</div>
+                            <div id="radar-stat-critical" style="font-size: 24px; font-weight: 700; color: var(--rose-accent); margin-top: 4px;">1</div>
+                        </div>
+                        <div class="diag-card" style="padding: 14px 18px; text-align: center; border-color: rgba(245,158,11,0.3); background: rgba(245,158,11,0.04); margin-bottom: 0;">
+                            <div style="font-size: 11px; color: var(--gold-light); text-transform: uppercase;">Cảnh báo cao (Elevated)</div>
+                            <div id="radar-stat-elevated" style="font-size: 24px; font-weight: 700; color: var(--gold-primary); margin-top: 4px;">2</div>
+                        </div>
+                        <div class="diag-card" style="padding: 14px 18px; text-align: center; margin-bottom: 0;">
+                            <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Mô hình vận hành</div>
+                            <div style="font-size: 12.5px; font-weight: 600; color: var(--cyan-accent); margin-top: 8px;">NT-MODEL-0008 & 0011</div>
+                        </div>
+                    </div>
+
+                    <!-- Split Grid: Roster + Ingestion vs Detailed Profile -->
+                    <div style="display: grid; grid-template-columns: 1fr 1.3fr; gap: 20px; align-items: stretch;">
+                        <!-- Left Column: Roster & Stream Ingestion -->
+                        <div style="display: flex; flex-direction: column; gap: 16px;">
+                            <div class="diag-card" style="margin-bottom: 0;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                    <h3 style="font-size: 14px; color: #fff; margin-bottom: 0;">📡 DANH SÁCH GIÁM SÁT TẢI HÀNH VI</h3>
+                                    <button class="export-btn" onclick="loadBehavioralRadar()" style="padding: 4px 10px; font-size: 11px;">Làm mới</button>
+                                </div>
+                                <div id="radar-roster-list" style="display: flex; flex-direction: column; gap: 6px; max-height: 280px; overflow-y: auto; padding-right: 4px;">
+                                    <div style="padding: 16px; text-align: center; color: var(--text-muted); font-size: 12px;">Đang tải danh sách...</div>
+                                </div>
+                            </div>
+
+                            <!-- Stream Ingestion Card -->
+                            <div class="diag-card" style="margin-bottom: 0; background: rgba(20,20,30,0.6);">
+                                <h3 style="font-size: 13.5px; color: var(--gold-light); margin-bottom: 6px;">⚡ NẠP TÍN HIỆU HÀNH VI MỚI</h3>
+                                <p style="font-size: 11.5px; color: var(--text-secondary); margin-bottom: 10px; line-height: 1.5;">
+                                    Nhập phát ngôn hoặc quan sát hành vi mới từ Slack, cuộc họp hoặc email để đánh giá biến thiên rủi ro kiệt sức thời gian thực.
+                                </p>
+                                <label class="form-label" style="font-size: 11px; margin-bottom: 4px;">Mã định danh / Tên nhân sự:</label>
+                                <input type="text" class="diag-input" id="stream-author-input" value="EMP-HA" placeholder="Ví dụ: EMP-LONG hoặc tên nhân sự..." style="padding: 8px 12px; font-size: 12px; margin-bottom: 8px;">
+
+                                <label class="form-label" style="font-size: 11px; margin-bottom: 4px;">Nội dung tín hiệu / Lời thoại:</label>
+                                <textarea id="stream-content-input" class="war-textarea" rows="2" style="font-size: 12px; margin-bottom: 10px;" placeholder="Ví dụ: Nhóm tôi không thể chịu thêm khối lượng này, deadline tuần này là bất khả thi..."></textarea>
+
+                                <button class="send-action-btn" id="stream-submit-btn" onclick="handleStreamIngestion()" style="width: 100%; justify-content: center; padding: 9px 14px; font-size: 12px;">
+                                    🚀 Phân Tích & Cập Nhật Radar
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Deep Detailed View -->
+                        <div id="radar-detail-panel">
+                            <div style="background: rgba(14,14,20,0.85); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 24px; text-align: center; color: var(--text-muted);">
+                                Chọn một nhân sự từ danh sách bên trái để xem hồ sơ chuyên sâu.
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -2855,6 +2929,7 @@
                             Diễn biến tình thế
                         </h3>
                         <div style="display: flex; align-items: center; gap: 8px;">
+                            <button id="war-alliances-toggle-btn" class="persona-meta-pill" onclick="toggleWarAlliancesView()" style="cursor: pointer; background: rgba(245,158,11,0.08); color: var(--gold-light); font-weight: 600; border-color: rgba(245,158,11,0.25);">🤝 Liên minh</button>
                             <button id="war-graph-toggle-btn" class="persona-meta-pill" onclick="toggleWarGraphView()" style="cursor: pointer; background: rgba(56,189,248,0.08); color: var(--cyan-accent); font-weight: 600; border-color: rgba(56,189,248,0.25);">Đồ thị mạng lưới</button>
                             <div id="war-round-badge" class="persona-meta-pill" style="background: rgba(255,255,255,0.08); color: #ffffff; font-weight: 600;">Chưa bắt đầu</div>
                         </div>
@@ -2880,6 +2955,19 @@
                                 <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: var(--gold-primary);"></span> Rỉ tai ngầm</span>
                             </div>
                             <span>Chạm node để thẩm vấn</span>
+                        </div>
+                    </div>
+
+                    <!-- Faction Alliances Analysis Card (War Room 2.0) -->
+                    <div id="war-alliances-card" class="war-graph-card" style="display: none; height: auto; max-height: 420px; overflow-y: auto;">
+                        <div class="war-graph-header">
+                            <div class="war-graph-title" style="color: var(--gold-light);">
+                                🤝 BẢN ĐỒ LIÊN MINH & XUNG ĐỘT PHE PHÁI (WAR ROOM 2.0)
+                            </div>
+                            <button class="export-btn" onclick="loadWarAlliances()" style="padding: 2px 8px; font-size: 10px;">Làm mới</button>
+                        </div>
+                        <div id="war-alliances-content" style="padding: 12px 16px;">
+                            <div style="padding: 16px; text-align: center; color: var(--text-muted); font-size: 12px;">Vui lòng khởi tạo sa bàn để xem liên minh.</div>
                         </div>
                     </div>
 
@@ -2939,6 +3027,20 @@
                             </button>
                             <button id="war-autoplay-btn" class="war-btn-autoplay" onclick="toggleWarRoomAutoPlay()" disabled>
                                 <span>Tự động diễn tiến</span>
+                            </button>
+                        </div>
+
+                        <!-- War Room 2.0: Socratic Debate Action Card -->
+                        <div class="war-card" style="background: linear-gradient(135deg, rgba(212,175,55,0.08), rgba(180,83,9,0.04)); border: 1px solid rgba(212,175,55,0.3); margin-top: 10px;">
+                            <div class="war-label" style="color: var(--gold-light);">
+                                <span>🏛️ TRANH BIỆN SOCRATIC 4 TRIẾT PHÁI</span>
+                                <span style="font-size: 10px; color: var(--gold-light); border: 1px solid rgba(212,175,55,0.4); padding: 1px 6px; border-radius: 10px;">War Room 2.0</span>
+                            </div>
+                            <p style="font-size: 11.5px; color: var(--text-secondary); margin-bottom: 10px; line-height: 1.5;">
+                                Đối chiếu xung đột qua 4 đại trường phái: <strong>Pháp Gia, Nho Gia, Đạo Gia & Binh Gia</strong> để tìm ra bản tổng hòa <em>Cương Nhu Tương Tế</em>.
+                            </p>
+                            <button id="war-socratic-btn" class="war-btn-report" onclick="openSocraticDebateModal()" style="margin-top: 0; background: linear-gradient(135deg, rgba(212,175,55,0.2), rgba(180,83,9,0.3)); border-color: var(--gold-primary);">
+                                ⚡ Khởi động Tranh Biện Socratic
                             </button>
                         </div>
 
@@ -3040,6 +3142,143 @@
                     <button id="interrogate-send-btn" class="war-btn-primary" style="width: auto; padding: 0 16px; height: 38px; flex-shrink: 0;" onclick="sendInterrogationQuestion()">
                         <span>Gửi</span> ➤
                     </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- War Room 2.0 Socratic Debate Modal -->
+    <div class="modal-backdrop" id="socratic-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="socratic-modal-title">
+        <div class="modal-window" style="max-width: 920px; padding: 0; overflow: hidden; border-color: rgba(212, 175, 55, 0.4); box-shadow: 0 20px 60px rgba(0,0,0,0.9), 0 0 30px rgba(212, 175, 55, 0.2);">
+            <div style="padding: 16px 20px; border-bottom: 1px solid var(--border-subtle); background: rgba(212, 175, 55, 0.08); display: flex; align-items: center; justify-content: space-between;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <span style="font-size: 24px;">🏛️</span>
+                    <div>
+                        <div id="socratic-modal-title" style="font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--gold-light);">Đại Hội Đồng Tranh Biện Socratic 4 Triết Phái</div>
+                        <div style="font-size: 11.5px; color: var(--text-secondary);">Đối chiếu biện chứng giữa Pháp Gia, Nho Gia, Đạo Gia và Binh Pháp Tôn Tử</div>
+                    </div>
+                </div>
+                <button class="modal-close-btn" onclick="closeSocraticDebateModal()" style="position: static; margin: 0;">&times;</button>
+            </div>
+
+            <div style="max-height: 80vh; overflow-y: auto; padding: 20px;">
+                <!-- Dilemma Input / Preview -->
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 14px 16px; margin-bottom: 18px;">
+                    <label class="form-label" style="font-size: 11px; margin-bottom: 6px; display: block;">Tình huống / Nghịch lý chiến lược cần tranh biện:</label>
+                    <textarea id="socratic-dilemma-input" class="war-textarea" rows="3" style="font-size: 13px;" placeholder="Nhập tình huống mâu thuẫn cần tranh luận biện chứng..."></textarea>
+                    <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
+                        <button id="socratic-submit-btn" class="send-action-btn" onclick="triggerSocraticDebate()" style="padding: 9px 20px; font-size: 13px;">
+                            ⚡ Triệu Tập Tranh Biện Ngay
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Socratic Results Area -->
+                <div id="socratic-results-area" style="display: none;">
+                    <div style="font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--gold-light); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <span>⚔️</span> GÓC NHÌN & PHẢN BIỆN GIỮA CÁC ĐẠI TRƯỜNG PHÁI
+                    </div>
+
+                    <div id="socratic-rounds-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 14px; margin-bottom: 20px;">
+                        <!-- Populated dynamically -->
+                    </div>
+
+                    <!-- Grand Executive Synthesis -->
+                    <div style="background: linear-gradient(135deg, rgba(212,175,55,0.15), rgba(180,83,9,0.2)); border: 1px solid var(--gold-primary); border-radius: 12px; padding: 18px 20px; box-shadow: 0 0 20px var(--gold-glow);">
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                            <span style="font-size: 20px;">👑</span>
+                            <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--gold-light); margin: 0;">
+                                BẢN TỔNG HÒA CHIẾN LƯỢC: CƯƠNG NHU TƯƠNG TẾ
+                            </h4>
+                        </div>
+                        <div id="socratic-synthesis-content">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enterprise Connectors & Executive Whisper Bot Modal -->
+    <div class="modal-backdrop" id="whisper-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="whisper-modal-title">
+        <div class="modal-window" style="max-width: 900px; padding: 0; overflow: hidden; border-color: rgba(16, 185, 129, 0.4); box-shadow: 0 20px 60px rgba(0,0,0,0.9), 0 0 30px rgba(16, 185, 129, 0.15);">
+            <div style="padding: 16px 20px; border-bottom: 1px solid var(--border-subtle); background: rgba(16, 185, 129, 0.08); display: flex; align-items: center; justify-content: space-between;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <span style="font-size: 24px;">🤫</span>
+                    <div>
+                        <div id="whisper-modal-title" style="font-family: var(--font-display); font-size: 16px; font-weight: 700; color: #34d399;">Hộp Tin Cơ Mật Chỉ Huy (Executive Whisper Inbox)</div>
+                        <div style="font-size: 11.5px; color: var(--text-secondary);">Cố vấn tàng hình thời gian thực — Kết nối Webhook từ Slack, Microsoft Teams, Lark & HRIS</div>
+                    </div>
+                </div>
+                <button class="modal-close-btn" onclick="closeWhisperModal()" style="position: static; margin: 0;">&times;</button>
+            </div>
+
+            <!-- Tab Switcher inside Modal -->
+            <div style="display: flex; border-bottom: 1px solid var(--border-subtle); background: rgba(0,0,0,0.2); padding: 0 20px;">
+                <button id="whisper-tab-btn-feed" class="mode-pill active" onclick="switchWhisperTab('feed')" style="border-radius: 0; border: none; border-bottom: 2px solid var(--emerald-accent); background: transparent; padding: 12px 16px; color: #fff;">
+                    📡 Chỉ Dẫn Bảo Mật (Whisper Feeds)
+                </button>
+                <button id="whisper-tab-btn-sim" class="mode-pill" onclick="switchWhisperTab('sim')" style="border-radius: 0; border: none; background: transparent; padding: 12px 16px; color: var(--text-secondary);">
+                    🔌 Giả Lập Webhook Doanh Nghiệp (Test Connector)
+                </button>
+            </div>
+
+            <div style="max-height: 75vh; overflow-y: auto; padding: 20px;">
+                <!-- VIEW 1: FEEDS LIST -->
+                <div id="whisper-view-feed">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+                        <span style="font-size: 12px; color: var(--text-secondary);">Tất cả thông tri được bảo mật bằng chuẩn xác thực C-Level & Session TTL.</span>
+                        <button class="export-btn" onclick="loadWhisperFeeds()" style="padding: 4px 12px; font-size: 11px;">Làm mới</button>
+                    </div>
+                    <div id="whisper-feed-list">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+
+                <!-- VIEW 2: WEBHOOK SIMULATOR -->
+                <div id="whisper-view-sim" style="display: none;">
+                    <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 16px; margin-bottom: 16px;">
+                        <h4 style="font-size: 14px; color: #fff; margin-bottom: 6px;">Giả lập Tín hiệu từ Nền tảng Doanh nghiệp</h4>
+                        <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 14px;">
+                            Bắn một payload mẫu để kiểm tra cơ chế phân tích hành vi tự động và xuất bản Whisper Brief tức thì.
+                        </p>
+
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px;">
+                            <button type="button" class="persona-meta-pill" onclick="fillWebhookPreset('slack', 'EMP-HA (Product Head)', 'Nhóm chúng tôi không thể gánh thêm tính năng mới này nữa. Áp lực 3 tuần qua đã đẩy cả đội vào kiệt quệ hoàn toàn!')" style="cursor: pointer; font-size: 11px;">
+                                💬 Mẫu Slack: Kiệt sức Product
+                            </button>
+                            <button type="button" class="persona-meta-pill" onclick="fillWebhookPreset('teams', 'EMP-LONG (VP Eng)', 'Nếu Ban Giám Đốc không chuẩn y kiến trúc này, tôi sẽ không chịu trách nhiệm về bất kỳ lỗi nào của hệ thống!')" style="cursor: pointer; font-size: 11px;">
+                                🔷 Mẫu Teams: Bất mãn Kỹ thuật
+                            </button>
+                            <button type="button" class="persona-meta-pill" onclick="fillWebhookPreset('hris', 'EMP-TRANG (CS Lead)', 'Khảo sát eNPS định kỳ: Cảm thấy thiếu không gian lắng nghe và các quyết định thay đổi quá đột ngột.')" style="cursor: pointer; font-size: 11px;">
+                                📊 Mẫu HRIS: Khảo sát nội bộ
+                            </button>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+                            <div>
+                                <label class="form-label" style="font-size: 11px;">Kênh kết nối:</label>
+                                <select id="webhook-source-select" class="diag-input" style="font-size: 12px; margin-bottom: 0;">
+                                    <option value="slack">Slack Webhook (/api/v1/connectors/webhook?channel=slack)</option>
+                                    <option value="teams">Microsoft Teams Webhook</option>
+                                    <option value="lark">Lark / Feishu Webhook</option>
+                                    <option value="hris">HRIS Pulse Webhook</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="form-label" style="font-size: 11px;">Tác giả / Nhân sự:</label>
+                                <input type="text" id="webhook-author-input" class="diag-input" value="EMP-HA" style="font-size: 12px; margin-bottom: 0;">
+                            </div>
+                        </div>
+
+                        <label class="form-label" style="font-size: 11px;">Nội dung tin nhắn / Ghi chú sự kiện:</label>
+                        <textarea id="webhook-text-input" class="war-textarea" rows="3" style="font-size: 12px; margin-bottom: 14px;" placeholder="Nhập nội dung webhook..."></textarea>
+
+                        <button id="webhook-submit-btn" class="send-action-btn" onclick="sendTestWebhook()" style="width: 100%; justify-content: center; padding: 10px; font-size: 13px;">
+                            🚀 Bắn Webhook & Tạo Whisper Brief Mới
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -3569,6 +3808,7 @@
         initAuthGate();
         loadBookshelf();
         initAmbientVideoAndMotion();
+        loadWhisperBadgeCount();
     });
 
     function setAdvisoryMode(mode, btn) {
@@ -3596,13 +3836,15 @@
 
         const personView = document.getElementById('diag-subview-person');
         const teamView = document.getElementById('diag-subview-team');
+        const radarView = document.getElementById('diag-subview-radar');
 
-        if (tabId === 'person') {
-            personView.style.display = 'block';
-            teamView.style.display = 'none';
-        } else {
-            personView.style.display = 'none';
-            teamView.style.display = 'block';
+        if (personView) personView.style.display = (tabId === 'person') ? 'block' : 'none';
+        if (teamView) teamView.style.display = (tabId === 'team') ? 'block' : 'none';
+        if (radarView) {
+            radarView.style.display = (tabId === 'radar') ? 'block' : 'none';
+            if (tabId === 'radar') {
+                loadBehavioralRadar();
+            }
         }
     }
 
@@ -5039,6 +5281,11 @@
             renderNetworkGraph(warRoomSession.network_graph);
         }
 
+        // War Room 2.0: Auto refresh alliances if panel is active
+        if (warAlliancesActive) {
+            loadWarAlliances();
+        }
+
         updateRoundCounters();
     }
 
@@ -5431,6 +5678,16 @@
 
         const svg = document.getElementById('war-network-svg');
         if (svg) svg.innerHTML = '';
+
+        const alliancesCard = document.getElementById('war-alliances-card');
+        if (alliancesCard) alliancesCard.style.display = 'none';
+        warAlliancesActive = false;
+        const alliancesToggleBtn = document.getElementById('war-alliances-toggle-btn');
+        if (alliancesToggleBtn) {
+            alliancesToggleBtn.style.background = 'rgba(245,158,11,0.08)';
+            alliancesToggleBtn.style.borderColor = 'rgba(245,158,11,0.25)';
+            alliancesToggleBtn.style.boxShadow = 'none';
+        }
     }
 
     // --- MIROFISH GRADE ENHANCEMENTS ---
@@ -5917,6 +6174,736 @@
                 btn.innerHTML = prevText;
             }
         }
+    }
+
+    // ========================================================
+    // --- EXECUTIVE WHISPER BOT & WEBHOOK CONNECTORS (EPIC 12) ---
+    // ========================================================
+
+    async function loadWhisperBadgeCount() {
+        try {
+            const res = await fetch('/api/v1/connectors/whispers');
+            const data = await res.json();
+            const whispers = data.whispers || [];
+            const badge = document.getElementById('whisper-unread-badge');
+            if (badge) {
+                badge.textContent = whispers.length;
+                badge.style.display = whispers.length ? 'inline-block' : 'none';
+            }
+        } catch (e) {
+            console.error('Failed to load whispers badge:', e);
+        }
+    }
+
+    async function openWhisperModal() {
+        const backdrop = document.getElementById('whisper-modal-backdrop');
+        if (!backdrop) return;
+        backdrop.style.display = 'flex';
+        switchWhisperTab('feed');
+        await loadWhisperFeeds();
+    }
+
+    function closeWhisperModal() {
+        const backdrop = document.getElementById('whisper-modal-backdrop');
+        if (backdrop) backdrop.style.display = 'none';
+    }
+
+    function switchWhisperTab(tab) {
+        const feedView = document.getElementById('whisper-view-feed');
+        const simView = document.getElementById('whisper-view-sim');
+        const tabFeedBtn = document.getElementById('whisper-tab-btn-feed');
+        const tabSimBtn = document.getElementById('whisper-tab-btn-sim');
+
+        if (tab === 'feed') {
+            if (feedView) feedView.style.display = 'block';
+            if (simView) simView.style.display = 'none';
+            if (tabFeedBtn) {
+                tabFeedBtn.style.borderBottom = '2px solid var(--emerald-accent)';
+                tabFeedBtn.style.color = '#fff';
+            }
+            if (tabSimBtn) {
+                tabSimBtn.style.borderBottom = 'none';
+                tabSimBtn.style.color = 'var(--text-secondary)';
+            }
+        } else {
+            if (feedView) feedView.style.display = 'none';
+            if (simView) simView.style.display = 'block';
+            if (tabFeedBtn) {
+                tabFeedBtn.style.borderBottom = 'none';
+                tabFeedBtn.style.color = 'var(--text-secondary)';
+            }
+            if (tabSimBtn) {
+                tabSimBtn.style.borderBottom = '2px solid var(--emerald-accent)';
+                tabSimBtn.style.color = '#fff';
+            }
+        }
+    }
+
+    async function loadWhisperFeeds() {
+        const listContainer = document.getElementById('whisper-feed-list');
+        const badgeEl = document.getElementById('whisper-unread-badge');
+        if (!listContainer) return;
+
+        listContainer.innerHTML = `
+            <div style="padding: 24px; text-align: center; color: var(--text-secondary); font-size: 13px;">
+                <span class="live-pulse-dot" style="margin-right: 6px;"></span> Đang nạp các thông tri cơ mật...
+            </div>`;
+
+        try {
+            const res = await fetch('/api/v1/connectors/whispers');
+            const data = await res.json();
+            const whispers = data.whispers || [];
+            if (badgeEl) {
+                badgeEl.textContent = whispers.length;
+                badgeEl.style.display = whispers.length ? 'inline-block' : 'none';
+            }
+
+            if (!whispers.length) {
+                listContainer.innerHTML = `
+                    <div class="war-empty-state" style="padding: 30px 16px;">
+                        <div style="font-size: 14px; color: #fff;">Chưa có thông điệp cơ mật nào</div>
+                        <div style="font-size: 12px; color: var(--text-secondary); margin-top: 6px;">
+                            Hệ thống sẽ tự động phát sinh thông tri khi nhận diện nguy cơ qua Webhook (Slack, Teams, HRIS).
+                        </div>
+                    </div>`;
+                return;
+            }
+
+            let html = '';
+            whispers.slice().reverse().forEach(w => {
+                const isCrit = w.urgency_level === 'CRITICAL';
+                const isHigh = w.urgency_level === 'HIGH';
+                const urgencyBadge = isCrit
+                    ? `<span style="background: rgba(244,63,94,0.18); border: 1px solid var(--rose-accent); color: #fda4af; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 10px;">🚨 KHẨN CẤP</span>`
+                    : (isHigh
+                        ? `<span style="background: rgba(245,158,11,0.18); border: 1px solid var(--gold-primary); color: var(--gold-light); font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 10px;">⚠️ CẢNH BÁO CAO</span>`
+                        : `<span style="background: rgba(16,185,129,0.18); border: 1px solid var(--emerald-accent); color: #6ee7b7; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 10px;">TIÊU CHUẨN</span>`);
+
+                const sourceIcons = {
+                    'slack': '💬 Slack',
+                    'teams': '🔷 MS Teams',
+                    'lark': '🕊️ Lark',
+                    'hris': '📊 HRIS'
+                };
+                const srcLabel = sourceIcons[w.source] || w.source;
+
+                html += `
+                    <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 16px; margin-bottom: 12px;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; flex-wrap: wrap; gap: 6px;">
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span style="font-size: 11px; background: rgba(255,255,255,0.06); padding: 2px 8px; border-radius: 6px; color: var(--text-secondary);">${srcLabel}</span>
+                                <span style="font-size: 11px; color: var(--text-muted);">${new Date(w.timestamp * 1000).toLocaleTimeString('vi-VN')}</span>
+                                <span style="font-size: 11.5px; color: var(--gold-light); font-weight: 600;">${escapeHtml(w.author_id)}</span>
+                            </div>
+                            ${urgencyBadge}
+                        </div>
+
+                        <h4 style="font-family: var(--font-display); font-size: 14.5px; font-weight: 600; color: #fff; margin-bottom: 8px; line-height: 1.4;">
+                            ${escapeHtml(w.headline)}
+                        </h4>
+
+                        <div style="font-size: 12.5px; color: rgba(255,255,255,0.85); line-height: 1.5; margin-bottom: 10px;">
+                            ${escapeHtml(w.behavioral_summary)}
+                        </div>
+
+                        <div style="background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.25); border-radius: 8px; padding: 10px 14px; margin-bottom: 10px;">
+                            <strong style="color: var(--gold-light); font-size: 11.5px; display: block; margin-bottom: 4px;">🤫 CHỈ DẪN CAN THIỆP TÀNG HÌNH CHO LÃNH ĐẠO:</strong>
+                            <div style="font-size: 12.5px; color: #fef08a; line-height: 1.5;">
+                                ${escapeHtml(w.recommended_whisper_action)}
+                            </div>
+                        </div>
+
+                        <div style="font-size: 11.5px; color: var(--rose-accent);">
+                            ⚠️ Cảnh báo tải: ${escapeHtml(w.load_risk_warning)}
+                        </div>
+                    </div>
+                `;
+            });
+
+            listContainer.innerHTML = html;
+        } catch (e) {
+            listContainer.innerHTML = `<div style="padding: 16px; color: #f87171; font-size: 13px;">Lỗi tải hộp tin: ${escapeHtml(e.message)}</div>`;
+        }
+    }
+
+    async function sendTestWebhook() {
+        const source = document.getElementById('webhook-source-select').value;
+        const author = document.getElementById('webhook-author-input').value.trim() || 'SLACK-LEAD';
+        const text = document.getElementById('webhook-text-input').value.trim();
+        const btn = document.getElementById('webhook-submit-btn');
+
+        if (!text) {
+            alert('Vui lòng nhập nội dung phát ngôn / tín hiệu webhook.');
+            return;
+        }
+
+        btn.disabled = true;
+        btn.innerHTML = `<span class="live-pulse-dot" style="margin-right: 6px;"></span> Đang xử lý...`;
+
+        try {
+            let payload = {};
+            if (source === 'slack') {
+                payload = { event: { user: author, text: text, channel: 'c-level-radar' } };
+            } else if (source === 'teams') {
+                payload = { from: { id: author }, text: text, conversation: { id: 'teams-general' } };
+            } else {
+                payload = { employee_id: author, notes: text, department: 'Engineering' };
+            }
+
+            const res = await fetch(`/api/v1/connectors/webhook?channel=${encodeURIComponent(source)}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            const data = await res.json();
+            if (data.status !== 'success') throw new Error(data.message || 'Lỗi xử lý webhook.');
+
+            alert('Bắn Webhook thành công! Whisper Bot đã tạo chỉ dẫn hành động mới.');
+            switchWhisperTab('feed');
+            await loadWhisperFeeds();
+        } catch (e) {
+            alert(`Lỗi gửi webhook: ${e.message}`);
+        } finally {
+            btn.disabled = false;
+            btn.innerHTML = `🚀 Bắn Webhook & Tạo Whisper Brief Mới`;
+        }
+    }
+
+    function fillWebhookPreset(source, author, text) {
+        const sSelect = document.getElementById('webhook-source-select');
+        const aInput = document.getElementById('webhook-author-input');
+        const tInput = document.getElementById('webhook-text-input');
+        if (sSelect) sSelect.value = source;
+        if (aInput) aInput.value = author;
+        if (tInput) tInput.value = text;
+    }
+
+
+    // ========================================================
+    // --- FLIGHT RISK RADAR & CONTINUOUS PROFILER (EPIC 9) ---
+    // ========================================================
+
+    let currentRadarData = null;
+    let selectedRadarEmployeeId = null;
+
+    async function loadBehavioralRadar() {
+        const listContainer = document.getElementById('radar-roster-list');
+        if (!listContainer) return;
+
+        listContainer.innerHTML = `
+            <div style="padding: 24px; text-align: center; color: var(--text-secondary); font-size: 13px;">
+                <span class="live-pulse-dot" style="margin-right: 6px;"></span> Đang nạp dữ liệu Radar Giám Sát Hành Vi...
+            </div>`;
+
+        try {
+            const res = await fetch('/api/v1/behavioral/radar');
+            const data = await res.json();
+            currentRadarData = data;
+            renderRadarOverviewUI(data);
+        } catch (e) {
+            listContainer.innerHTML = `<div style="padding: 16px; color: #f87171; font-size: 13px;">Lỗi kết nối Radar: ${escapeHtml(e.message)}</div>`;
+        }
+    }
+
+    function renderRadarOverviewUI(data) {
+        const totalCountEl = document.getElementById('radar-stat-total');
+        const criticalCountEl = document.getElementById('radar-stat-critical');
+        const elevatedCountEl = document.getElementById('radar-stat-elevated');
+        const listContainer = document.getElementById('radar-roster-list');
+
+        const profiles = data.profiles || [];
+        if (totalCountEl) totalCountEl.textContent = profiles.length;
+        if (criticalCountEl) criticalCountEl.textContent = data.critical_flight_risk_count || 0;
+        if (elevatedCountEl) elevatedCountEl.textContent = data.elevated_flight_risk_count || 0;
+
+        if (!profiles.length) {
+            listContainer.innerHTML = `
+                <div class="war-empty-state" style="padding: 30px 16px;">
+                    <div style="font-size: 14px; color: #fff;">Chưa có nhân sự nào trong Radar</div>
+                    <div style="font-size: 12px; color: var(--text-secondary); margin-top: 6px;">
+                        Hãy nhập tín hiệu đầu tiên bằng công cụ nạp tín hiệu bên dưới.
+                    </div>
+                </div>`;
+            return;
+        }
+
+        let html = '';
+        profiles.forEach((p, idx) => {
+            const isCrit = p.flight_risk_level === 'CRITICAL';
+            const isElev = p.flight_risk_level === 'ELEVATED';
+            const riskBadge = isCrit
+                ? `<span style="background: rgba(244,63,94,0.18); border: 1px solid var(--rose-accent); color: #fda4af; font-size: 10.5px; font-weight: 700; padding: 2px 8px; border-radius: 12px; display: inline-flex; align-items: center; gap: 4px;"><span class="live-pulse-dot" style="background: #f43f5e;"></span> BÁO ĐỘNG ĐỎ (${Math.round(p.flight_risk_score * 100)}%)</span>`
+                : (isElev
+                    ? `<span style="background: rgba(245,158,11,0.18); border: 1px solid var(--gold-primary); color: var(--gold-light); font-size: 10.5px; font-weight: 700; padding: 2px 8px; border-radius: 12px;">CẢNH BÁO (${Math.round(p.flight_risk_score * 100)}%)</span>`
+                    : `<span style="background: rgba(16,185,129,0.18); border: 1px solid var(--emerald-accent); color: #6ee7b7; font-size: 10.5px; font-weight: 700; padding: 2px 8px; border-radius: 12px;">AN TOÀN (${Math.round(p.flight_risk_score * 100)}%)</span>`);
+
+            const discColors = {
+                'D': '#f43f5e',
+                'I': '#fbbf24',
+                'S': '#10b981',
+                'C': '#38bdf8'
+            };
+            const dColor = discColors[p.baseline_disc] || 'var(--gold-primary)';
+
+            const isSelected = selectedRadarEmployeeId ? (selectedRadarEmployeeId === p.author_id) : (idx === 0);
+            if (isSelected && !selectedRadarEmployeeId) selectedRadarEmployeeId = p.author_id;
+
+            html += `
+                <div class="radar-person-card" data-author="${escapeHtml(p.author_id)}" onclick="selectRadarEmployee('${escapeHtml(p.author_id)}')" style="cursor: pointer; background: ${isSelected ? 'rgba(212,175,55,0.12)' : 'rgba(255,255,255,0.03)'}; border: 1px solid ${isSelected ? 'var(--gold-primary)' : 'var(--border-subtle)'}; border-radius: 10px; padding: 12px 14px; margin-bottom: 6px; transition: all 0.2s ease;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px;">
+                        <div>
+                            <div style="font-family: var(--font-display); font-size: 13.5px; font-weight: 600; color: #fff;">
+                                ${escapeHtml(p.author_id)}
+                            </div>
+                            <div style="font-size: 11px; color: var(--text-secondary); margin-top: 2px;">
+                                Phong cách: <strong style="color: ${dColor};">DISC: ${p.baseline_disc}</strong> • Mẫu: ${p.sample_count} tín hiệu
+                            </div>
+                        </div>
+                        ${riskBadge}
+                    </div>
+
+                    <div style="display: flex; align-items: center; gap: 8px; font-size: 11px; color: var(--text-muted); margin-top: 6px;">
+                        <span>Áp lực TB: <strong style="color: #fff;">${p.average_stress}/5</strong></span>
+                        <span>•</span>
+                        <span>Tốc độ kiệt sức: <strong style="color: ${p.burnout_velocity > 0.6 ? 'var(--rose-accent)' : 'var(--text-secondary)'};">${p.burnout_velocity}</strong></span>
+                    </div>
+                </div>
+            `;
+        });
+
+        listContainer.innerHTML = html;
+
+        if (selectedRadarEmployeeId) {
+            renderRadarDetailUI(selectedRadarEmployeeId);
+        }
+    }
+
+    function selectRadarEmployee(authorId) {
+        selectedRadarEmployeeId = authorId;
+        document.querySelectorAll('.radar-person-card').forEach(el => {
+            if (el.dataset.author === authorId) {
+                el.style.background = 'rgba(212,175,55,0.12)';
+                el.style.borderColor = 'var(--gold-primary)';
+            } else {
+                el.style.background = 'rgba(255,255,255,0.03)';
+                el.style.borderColor = 'var(--border-subtle)';
+            }
+        });
+        renderRadarDetailUI(authorId);
+    }
+
+    function renderRadarDetailUI(authorId) {
+        const detailContainer = document.getElementById('radar-detail-panel');
+        if (!detailContainer || !currentRadarData) return;
+
+        const p = (currentRadarData.profiles || []).find(item => item.author_id === authorId);
+        if (!p) {
+            detailContainer.innerHTML = `<div style="padding: 20px; color: var(--text-muted);">Không tìm thấy hồ sơ chi tiết.</div>`;
+            return;
+        }
+
+        const underLoad = p.under_load_forecast || {};
+        const contextStr = p.context_strength || {};
+        const interventions = p.recommended_interventions || [];
+
+        const isCrit = p.flight_risk_level === 'CRITICAL';
+        const isElev = p.flight_risk_level === 'ELEVATED';
+        const flightRiskColor = isCrit ? 'var(--rose-accent)' : (isElev ? 'var(--gold-primary)' : 'var(--emerald-accent)');
+
+        let trajectoryBars = '';
+        (p.stress_trajectory || []).forEach(val => {
+            const heightPct = Math.round((val / 5) * 100);
+            const barColor = val >= 4 ? 'var(--rose-accent)' : (val >= 3 ? 'var(--gold-primary)' : 'var(--emerald-accent)');
+            trajectoryBars += `
+                <div style="flex: 1; height: ${heightPct}%; background: ${barColor}; border-radius: 2px 2px 0 0;" title="Stress: ${val}/5"></div>
+            `;
+        });
+
+        let interventionsHtml = '';
+        interventions.forEach(rec => {
+            interventionsHtml += `<li style="margin-bottom: 6px; line-height: 1.5;">${escapeHtml(rec)}</li>`;
+        });
+
+        detailContainer.innerHTML = `
+            <div style="background: rgba(14,14,20,0.85); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 20px; height: 100%; display: flex; flex-direction: column; gap: 14px;">
+                <!-- Header -->
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid var(--border-subtle); padding-bottom: 12px;">
+                    <div>
+                        <h3 style="font-family: var(--font-display); font-size: 17px; color: #fff; margin-bottom: 4px;">
+                            ${escapeHtml(p.author_id)}
+                        </h3>
+                        <div style="font-size: 12px; color: var(--text-secondary);">
+                            Phong cách định hình: <strong style="color: var(--gold-light);">DISC ${p.baseline_disc}</strong> | Tổng mẫu đánh giá: <strong>${p.sample_count}</strong>
+                        </div>
+                    </div>
+
+                    <div style="text-align: right;">
+                        <div style="font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">NGUY CƠ RỜI BỎ</div>
+                        <div style="font-size: 22px; font-weight: 800; color: ${flightRiskColor};">
+                            ${Math.round(p.flight_risk_score * 100)}%
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stress Trajectory & Burnout Velocity -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 10px 12px;">
+                        <div style="font-size: 10.5px; color: var(--text-muted); margin-bottom: 6px;">QUỸ ĐẠO CĂNG THẲNG GẦN ĐÂY</div>
+                        <div style="height: 38px; display: flex; align-items: flex-end; gap: 4px; background: rgba(0,0,0,0.25); padding: 4px; border-radius: 4px;">
+                            ${trajectoryBars}
+                        </div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 10px 12px;">
+                        <div style="font-size: 10.5px; color: var(--text-muted); margin-bottom: 4px;">VẬN TỐC KIỆT SỨC (BURNOUT VELOCITY)</div>
+                        <div style="font-size: 18px; font-weight: 700; color: ${p.burnout_velocity > 0.6 ? 'var(--rose-accent)' : 'var(--text-main)'};">
+                            ${p.burnout_velocity} <span style="font-size: 11px; font-weight: 400; color: var(--text-secondary);">(Độ dốc tải)</span>
+                        </div>
+                        <div style="font-size: 11px; color: ${p.current_burnout_risk ? 'var(--rose-accent)' : 'var(--emerald-accent)'}; margin-top: 2px;">
+                            ${p.current_burnout_risk ? '🚨 Phát hiện cạn kiệt năng lượng' : '🛡️ Vẫn trong ngưỡng kiểm soát'}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Under Load Forecast (NT-MODEL-0008) -->
+                <div style="background: rgba(244,63,94,0.05); border: 1px solid rgba(244,63,94,0.22); border-radius: 10px; padding: 12px 14px;">
+                    <div style="font-family: var(--font-display); font-size: 12.5px; font-weight: 700; color: #fda4af; margin-bottom: 6px;">
+                        ⚡ MÔ HÌNH HÀNH VI DƯỚI TẢI (NT-MODEL-0008)
+                    </div>
+                    <div style="font-size: 12px; color: #ffffff; line-height: 1.5; margin-bottom: 4px;">
+                        <strong>Biểu hiện mặc định:</strong> ${escapeHtml(underLoad.default_tendency || 'Chưa xác định')}
+                    </div>
+                    <div style="font-size: 12px; color: rgba(255,255,255,0.8); line-height: 1.5;">
+                        <strong style="color: var(--rose-accent);">Rủi ro vận hành:</strong> ${escapeHtml(underLoad.operational_risk || 'Không')}
+                    </div>
+                    <div style="font-size: 11.5px; color: var(--gold-light); margin-top: 6px; padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.06);">
+                        <strong>Sách lược phòng vệ:</strong> ${escapeHtml(underLoad.mitigation_strategy || '')}
+                    </div>
+                </div>
+
+                <!-- Situation Strength (NT-MODEL-0011) -->
+                <div style="background: rgba(56,189,248,0.05); border: 1px solid rgba(56,189,248,0.2); border-radius: 10px; padding: 12px 14px;">
+                    <div style="font-family: var(--font-display); font-size: 12.5px; font-weight: 700; color: var(--cyan-accent); margin-bottom: 6px;">
+                        🎯 CƯỜNG ĐỘ BỐI CẢNH TỔ CHỨC (NT-MODEL-0011)
+                    </div>
+                    <div style="display: flex; gap: 14px; font-size: 11.5px; color: var(--text-secondary); margin-bottom: 4px;">
+                        <span>Mức độ bối cảnh: <strong style="color: #fff;">${contextStr.situation_strength || 'MODERATE'}</strong></span>
+                        <span>Quy chế rõ ràng: <strong style="color: #fff;">${Math.round((contextStr.clarity_level || 0.5) * 100)}%</strong></span>
+                        <span>Rào cản hành vi: <strong style="color: #fff;">${Math.round((contextStr.constraints_level || 0.5) * 100)}%</strong></span>
+                    </div>
+                    <div style="font-size: 11.5px; color: rgba(255,255,255,0.85); font-style: italic;">
+                        Nhận định: ${contextStr.dominant_determinant === 'ENVIRONMENT_SITUATION' ? 'Môi trường quy chế kiểm soát hành vi (khó bộc lộ bản tính thật)' : 'Bản tính cá nhân chi phối hành vi (tự do bộc lộ xu hướng tâm lý ngầm)'}
+                    </div>
+                </div>
+
+                <!-- Executive Recommended Actions -->
+                <div style="background: rgba(16,185,129,0.05); border: 1px solid rgba(16,185,129,0.25); border-radius: 10px; padding: 12px 14px; margin-top: auto;">
+                    <div style="font-family: var(--font-display); font-size: 12.5px; font-weight: 700; color: #34d399; margin-bottom: 6px;">
+                        🛡️ CHỈ DẪN CAN THIỆP DÀNH CHO LÃNH ĐẠO:
+                    </div>
+                    <ul style="padding-left: 18px; color: #cbd5e1; font-size: 12px; margin: 0;">
+                        ${interventionsHtml}
+                    </ul>
+                </div>
+            </div>
+        `;
+    }
+
+    async function handleStreamIngestion() {
+        const authorId = document.getElementById('stream-author-input').value.trim();
+        const content = document.getElementById('stream-content-input').value.trim();
+        const btn = document.getElementById('stream-submit-btn');
+
+        if (!content) {
+            alert('Vui lòng nhập nội dung tín hiệu hành vi / phát ngôn.');
+            return;
+        }
+
+        btn.disabled = true;
+        btn.innerHTML = `<span class="live-pulse-dot" style="margin-right: 6px;"></span> Đang phân tích...`;
+
+        try {
+            const res = await fetch('/api/v1/behavioral/analyze-stream', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    author_id: authorId || 'EMP-NEW',
+                    content: content,
+                    context_clarity: 0.6,
+                    context_constraints: 0.5
+                })
+            });
+
+            const data = await res.json();
+            if (data.status !== 'success') throw new Error(data.message || 'Lỗi phân tích tín hiệu.');
+
+            document.getElementById('stream-content-input').value = '';
+            selectedRadarEmployeeId = data.profile.author_id;
+            await loadBehavioralRadar();
+            alert(`Đã nạp thành công tín hiệu cho ${data.profile.author_id}! Điểm rủi ro rời bỏ cập nhật: ${Math.round(data.profile.flight_risk_score * 100)}%`);
+        } catch (e) {
+            alert(`Lỗi: ${e.message}`);
+        } finally {
+            btn.disabled = false;
+            btn.innerHTML = `🚀 Phân Tích & Cập Nhật Radar`;
+        }
+    }
+
+
+    // ========================================================
+    // --- WAR ROOM 2.0: ALLIANCES & SOCRATIC DEBATE ---
+    // ========================================================
+
+    let warAlliancesActive = false;
+
+    function toggleWarAlliancesView() {
+        const card = document.getElementById('war-alliances-card');
+        const btn = document.getElementById('war-alliances-toggle-btn');
+        if (!card) return;
+
+        warAlliancesActive = !warAlliancesActive;
+        if (warAlliancesActive) {
+            card.style.display = 'block';
+            if (btn) {
+                btn.style.background = 'rgba(245,158,11,0.22)';
+                btn.style.borderColor = 'var(--gold-primary)';
+                btn.style.boxShadow = '0 0 10px var(--gold-glow)';
+            }
+            loadWarAlliances();
+        } else {
+            card.style.display = 'none';
+            if (btn) {
+                btn.style.background = 'rgba(245,158,11,0.08)';
+                btn.style.borderColor = 'rgba(245,158,11,0.25)';
+                btn.style.boxShadow = 'none';
+            }
+        }
+    }
+
+    async function loadWarAlliances() {
+        const container = document.getElementById('war-alliances-content');
+        if (!container) return;
+
+        if (!warRoomSession || !warRoomSession.session_id) {
+            container.innerHTML = `
+                <div style="padding: 16px; text-align: center; color: var(--text-muted); font-size: 12px;">
+                    Vui lòng <strong>khởi tạo sa bàn</strong> để tính toán liên minh phe phái.
+                </div>`;
+            return;
+        }
+
+        container.innerHTML = `
+            <div style="padding: 16px; text-align: center; color: var(--text-secondary); font-size: 12px;">
+                <span class="live-pulse-dot" style="margin-right: 6px;"></span> Đang tính toán thị phần quyền lực & rủi ro phản trắc...
+            </div>`;
+
+        try {
+            const res = await fetch(`/api/v1/war-room/alliances?session_id=${encodeURIComponent(warRoomSession.session_id)}`);
+            const data = await res.json();
+            if (data.status !== 'success' || !data.faction_analysis) {
+                container.innerHTML = `<div style="padding: 12px; color: #f87171; font-size: 12px;">Chưa đủ dữ liệu liên minh để tính toán.</div>`;
+                return;
+            }
+
+            renderWarAlliancesUI(data);
+        } catch (e) {
+            container.innerHTML = `<div style="padding: 12px; color: #f87171; font-size: 12px;">Lỗi tải dữ liệu liên minh: ${escapeHtml(e.message)}</div>`;
+        }
+    }
+
+    function renderWarAlliancesUI(data) {
+        const container = document.getElementById('war-alliances-content');
+        if (!container) return;
+
+        const factions = data.faction_analysis || {};
+        const friction = data.friction_index ?? 0.0;
+        const dominant = data.dominant_faction || 'N/A';
+
+        const colors = [
+            { bg: 'rgba(212,175,55,0.85)', border: '#d4af37', label: 'var(--gold-light)' },
+            { bg: 'rgba(56,189,248,0.85)', border: '#38bdf8', label: '#7dd3fc' },
+            { bg: 'rgba(244,63,94,0.85)', border: '#f43f5e', label: '#fda4af' },
+            { bg: 'rgba(16,185,129,0.85)', border: '#10b981', label: '#6ee7b7' },
+            { bg: 'rgba(168,85,247,0.85)', border: '#a855f7', label: '#d8b4fe' }
+        ];
+
+        let powerBarSegments = '';
+        let cardsHtml = '';
+        let cIdx = 0;
+
+        for (const [fName, fInfo] of Object.entries(factions)) {
+            const c = colors[cIdx % colors.length];
+            cIdx++;
+            const share = fInfo.power_share_pct || 0;
+
+            powerBarSegments += `
+                <div style="width: ${share}%; background: ${c.bg}; height: 10px; position: relative; transition: width 0.3s ease;" title="${escapeHtml(fName)}: ${share}%"></div>
+            `;
+
+            const betrayalRisk = fInfo.betrayal_risk_pct || 0;
+            const betrayalColor = betrayalRisk > 40 ? 'var(--rose-accent)' : (betrayalRisk > 20 ? 'var(--gold-primary)' : 'var(--emerald-accent)');
+
+            cardsHtml += `
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 10px 12px; margin-bottom: 8px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                        <div style="font-size: 13px; font-weight: 600; color: ${c.label}; display: flex; align-items: center; gap: 6px;">
+                            <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: ${c.border};"></span>
+                            ${escapeHtml(fName)}
+                        </div>
+                        <span style="font-size: 11px; padding: 2px 7px; border-radius: 10px; background: rgba(255,255,255,0.06); font-weight: 700; color: #fff;">
+                            ${share}% quyền lực
+                        </span>
+                    </div>
+                    <div style="display: flex; gap: 14px; font-size: 11px; color: var(--text-secondary); margin-bottom: 6px;">
+                        <span>Thành viên: <strong style="color: #fff;">${(fInfo.members || []).map(m => escapeHtml(m)).join(', ')}</strong></span>
+                        <span>Gắn kết: <strong style="color: var(--gold-light);">${fInfo.cohesion_score || 0}/100</strong></span>
+                        <span>Nguy cơ phản trắc: <strong style="color: ${betrayalColor};">${betrayalRisk}%</strong></span>
+                    </div>
+                    <div style="font-size: 11px; color: var(--text-muted); font-style: italic;">
+                        Lập trường: "${escapeHtml(fInfo.stance_summary || 'Trung dung quan sát')}"
+                    </div>
+                </div>
+            `;
+        }
+
+        container.innerHTML = `
+            <div style="margin-bottom: 12px;">
+                <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--text-secondary); margin-bottom: 4px;">
+                    <span>Phân Bổ Thị Phần Quyền Lực (Power Share)</span>
+                    <span>Phe áp đảo: <strong style="color: var(--gold-light);">${escapeHtml(dominant)}</strong></span>
+                </div>
+                <div style="display: flex; width: 100%; border-radius: 5px; overflow: hidden; background: rgba(255,255,255,0.05); height: 10px;">
+                    ${powerBarSegments}
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; margin-bottom: 12px;">
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 8px 10px; text-align: center;">
+                    <div style="font-size: 10px; color: var(--text-muted);">SỐ PHE PHÁI</div>
+                    <div style="font-size: 16px; font-weight: 700; color: #fff; margin-top: 2px;">${data.total_factions || 0}</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 8px 10px; text-align: center;">
+                    <div style="font-size: 10px; color: var(--text-muted);">MA SÁT PHÂN CỰC</div>
+                    <div style="font-size: 16px; font-weight: 700; color: ${friction > 0.4 ? 'var(--rose-accent)' : 'var(--emerald-accent)'}; margin-top: 2px;">${friction}</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 8px 10px; text-align: center;">
+                    <div style="font-size: 10px; color: var(--text-muted);">VÒNG TÌNH THẾ</div>
+                    <div style="font-size: 16px; font-weight: 700; color: var(--gold-light); margin-top: 2px;">Vòng ${data.round || 0}</div>
+                </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+                ${cardsHtml}
+            </div>
+        `;
+    }
+
+    function openSocraticDebateModal() {
+        const backdrop = document.getElementById('socratic-modal-backdrop');
+        if (!backdrop) return;
+
+        const input = document.getElementById('socratic-dilemma-input');
+        if (input) {
+            const scenarioInput = document.getElementById('war-scenario-input');
+            input.value = (scenarioInput && scenarioInput.value.trim()) 
+                ? scenarioInput.value.trim() 
+                : "Ban giám đốc đối mặt với mâu thuẫn sâu sắc giữa nhóm công thần muốn bảo toàn đặc quyền và nhóm nhân tài trẻ đòi cải tổ số hóa toàn diện.";
+        }
+
+        backdrop.style.display = 'flex';
+        const resArea = document.getElementById('socratic-results-area');
+        if (resArea) resArea.style.display = 'none';
+    }
+
+    function closeSocraticDebateModal() {
+        const backdrop = document.getElementById('socratic-modal-backdrop');
+        if (backdrop) backdrop.style.display = 'none';
+    }
+
+    async function triggerSocraticDebate() {
+        const input = document.getElementById('socratic-dilemma-input');
+        const resultsArea = document.getElementById('socratic-results-area');
+        const btn = document.getElementById('socratic-submit-btn');
+
+        const dilemma = input ? input.value.trim() : '';
+        if (!dilemma) {
+            alert('Vui lòng nhập tình huống hoặc thế trận cần tranh biện.');
+            return;
+        }
+
+        btn.disabled = true;
+        btn.innerHTML = `<span class="live-pulse-dot" style="margin-right: 6px;"></span> Đang triệu tập 4 triết phái...`;
+
+        try {
+            const res = await fetch('/api/v1/war-room/socratic-debate', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    scenario: dilemma,
+                    session_id: warRoomSession ? warRoomSession.session_id : ''
+                })
+            });
+
+            const data = await res.json();
+            if (data.status !== 'success') throw new Error(data.message || 'Lỗi khi gọi tranh biện.');
+
+            renderSocraticDebateResults(data);
+            if (resultsArea) {
+                resultsArea.style.display = 'block';
+                resultsArea.scrollIntoView({ behavior: 'smooth' });
+            }
+        } catch (e) {
+            alert(`Lỗi tranh biện: ${e.message}`);
+        } finally {
+            btn.disabled = false;
+            btn.innerHTML = `⚡ Triệu Tập Tranh Biện Ngay`;
+        }
+    }
+
+    function renderSocraticDebateResults(data) {
+        const roundsContainer = document.getElementById('socratic-rounds-grid');
+        const synthesisBox = document.getElementById('socratic-synthesis-content');
+        if (!roundsContainer || !synthesisBox) return;
+
+        const rounds = data.rounds || [];
+        let html = '';
+
+        const iconMap = {
+            'legalism': '⚖️',
+            'confucian': '📜',
+            'taoism': '🌊',
+            'sunzi': '⚔️'
+        };
+
+        rounds.forEach(r => {
+            const icon = iconMap[r.key] || '🏛️';
+            html += `
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 8px;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px;">
+                        <div style="font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--gold-light); display: flex; align-items: center; gap: 8px;">
+                            <span>${icon}</span> ${escapeHtml(r.school)}
+                        </div>
+                    </div>
+                    <div style="font-size: 12.5px; line-height: 1.5; color: #ffffff;">
+                        <strong style="color: var(--cyan-accent);">Luận Điểm Cốt Lõi:</strong> ${escapeHtml(r.thesis)}
+                    </div>
+                    <div style="font-size: 12px; line-height: 1.5; color: rgba(255,255,255,0.8); background: rgba(0,0,0,0.25); padding: 8px 10px; border-radius: 6px;">
+                        <strong style="color: var(--rose-accent);">Phản Biện:</strong> ${escapeHtml(r.critique)}
+                    </div>
+                    <div style="font-size: 12.5px; line-height: 1.5; color: #6ee7b7; border-left: 2px solid var(--emerald-accent); padding-left: 8px; margin-top: auto;">
+                        <strong>Hành Động Đề Xuất:</strong> ${escapeHtml(r.recommended_action)}
+                    </div>
+                </div>
+            `;
+        });
+
+        roundsContainer.innerHTML = html;
+
+        synthesisBox.innerHTML = `
+            <div style="font-size: 13.5px; line-height: 1.7; color: #fef08a;">
+                ${formatMarkdownText(data.executive_synthesis || '')}
+            </div>
+        `;
     }
     </script>
 </body>

@@ -10,6 +10,21 @@ SRC = REPO_ROOT / "src"
 if str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
 
+# Tự động kích hoạt môi trường ảo .venv nếu chạy từ Python hệ thống thiếu thư viện
+try:
+    import yaml  # noqa: F401
+except ImportError:
+    import os
+    venv_py = (
+        REPO_ROOT / ".venv" / "Scripts" / "python.exe"
+        if os.name == "nt"
+        else REPO_ROOT / ".venv" / "bin" / "python"
+    )
+    if venv_py.exists() and sys.executable != str(venv_py):
+        import subprocess
+        sys.exit(subprocess.call([str(venv_py), str(Path(__file__).resolve()), *sys.argv[1:]]))
+    raise
+
 from nhan_thuat.validator import validate_repository
 
 

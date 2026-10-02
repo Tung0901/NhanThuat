@@ -2335,10 +2335,7 @@
         </video>
     </div>
     <div class="video-overlay"></div>
-    <div class="cursor-ring-outline" id="cursor-ring"></div>
-    <div id="glass-card" class="glass-cursor-card">
-        <span class="cursor-card-text"><span class="text-white">NHÂN</span> THUẬT</span>
-    </div>
+
 
     <!-- Executive Top Navigation Bar -->
     <header class="exec-header">
@@ -3719,89 +3716,7 @@
             });
         }
 
-        // 2. Signature Cursor Ring & Glass Card Physics Motion (from index.html)
-        const glassCard = document.getElementById('glass-card');
-        const cursorRing = document.getElementById('cursor-ring');
 
-        if (glassCard && cursorRing && window.innerWidth > 768) {
-            let mouseX = window.innerWidth / 2;
-            let mouseY = window.innerHeight / 2;
-            let cardX = mouseX;
-            let cardY = mouseY;
-            let ringX = mouseX;
-            let ringY = mouseY;
-            let isFirstMove = true;
-            let scale = 0;
-            let targetScale = 0;
-            let isHoveringInteractive = false;
-
-            document.addEventListener('mousemove', (e) => {
-                mouseX = e.clientX;
-                mouseY = e.clientY;
-
-                if (isFirstMove) {
-                    cardX = mouseX;
-                    cardY = mouseY;
-                    ringX = mouseX;
-                    ringY = mouseY;
-                    isFirstMove = false;
-                    glassCard.classList.add('active');
-                    cursorRing.classList.add('active');
-                }
-
-                if (!isHoveringInteractive) {
-                    targetScale = 1;
-                }
-            }, { passive: true });
-
-            document.addEventListener('mouseleave', () => {
-                targetScale = 0;
-            });
-
-            document.addEventListener('mouseenter', () => {
-                if (!isHoveringInteractive) {
-                    targetScale = 1;
-                }
-            });
-
-            // Delegate hover detection for interactive elements
-            document.addEventListener('mouseover', (e) => {
-                const target = e.target.closest('button, a, input, textarea, select, .clickable, .tab-btn, .pill-btn, .chip-item, .war-card, .war-preset-chip, .mode-pill, .workspace-tab-btn');
-                if (target) {
-                    isHoveringInteractive = true;
-                    targetScale = 0;
-                    cursorRing.classList.add('expanded');
-                }
-            }, { passive: true });
-
-            document.addEventListener('mouseout', (e) => {
-                const target = e.target.closest('button, a, input, textarea, select, .clickable, .tab-btn, .pill-btn, .chip-item, .war-card, .war-preset-chip, .mode-pill, .workspace-tab-btn');
-                if (target) {
-                    isHoveringInteractive = false;
-                    targetScale = 1;
-                    cursorRing.classList.remove('expanded');
-                }
-            }, { passive: true });
-
-            const updatePhysics = () => {
-                cardX += (mouseX - cardX) * 0.085;
-                cardY += (mouseY - cardY) * 0.085;
-
-                ringX += (mouseX - ringX) * 0.35;
-                ringY += (mouseY - ringY) * 0.35;
-
-                scale += (targetScale - scale) * 0.15;
-
-                const currentRingScale = cursorRing.classList.contains('expanded') ? 1.45 : (scale > 0.1 ? 1 : scale);
-
-                glassCard.style.transform = `translate3d(${cardX}px, ${cardY}px, 0) translate(-50%, -50%) scale(${scale})`;
-                cursorRing.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%) scale(${currentRingScale})`;
-
-                requestAnimationFrame(updatePhysics);
-            };
-
-            updatePhysics();
-        }
     }
 
     document.addEventListener('DOMContentLoaded', () => {

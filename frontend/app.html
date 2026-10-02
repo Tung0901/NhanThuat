@@ -4162,6 +4162,26 @@
                     </div>
                 `;
             }
+            const isScript = s.title.includes('KỊCH BẢN LỜI THOẠI') || s.title.includes('ĐÒN BẨY ĐỊNH CỤC');
+            if (isScript) {
+                return `
+                    <div class="advisory-section-card" style="border-left: 4px solid var(--accent-emerald); background: linear-gradient(135deg, rgba(57,255,20,0.06) 0%, rgba(18,22,20,0.92) 100%); border-top: 1px solid rgba(57,255,20,0.25); border-right: 1px solid rgba(57,255,20,0.12); border-bottom: 1px solid rgba(57,255,20,0.12); padding: 18px 22px;">
+                        <div class="treatise-badge" style="background: rgba(57,255,20,0.16); color: #39FF14; border-color: rgba(57,255,20,0.35);">⚔️ KỊCH BẢN THỰC THI (VERBATIM SCRIPT)</div>
+                        <h4 style="color: #39FF14; font-family: var(--font-serif); font-size: 16px; margin-bottom: 10px;">${escapeHtml(s.title)}</h4>
+                        <div style="font-size: 13.5px; line-height: 1.85; color: rgba(255,255,255,0.95);">${formatMarkdownText(s.body)}</div>
+                    </div>
+                `;
+            }
+            const isBiases = s.title.includes('BẪY TÂM LÝ') || s.title.includes('SAI LẦM CẦN TRÁNH');
+            if (isBiases) {
+                return `
+                    <div class="advisory-section-card" style="border-left: 4px solid var(--rose-accent); background: linear-gradient(135deg, rgba(244,63,94,0.06) 0%, rgba(22,18,20,0.92) 100%); border-top: 1px solid rgba(244,63,94,0.25); padding: 18px 22px;">
+                        <div class="treatise-badge" style="background: rgba(244,63,94,0.16); color: var(--rose-accent); border-color: rgba(244,63,94,0.35);">⚠️ BIỆN CHỨNG PHẢN ĐỀ & BẪY NHẬN THỨC</div>
+                        <h4 style="color: #fca5a5; font-family: var(--font-serif); font-size: 16px; margin-bottom: 10px;">${escapeHtml(s.title)}</h4>
+                        <div style="font-size: 13.5px; line-height: 1.75; color: rgba(255,255,255,0.95);">${formatMarkdownText(s.body)}</div>
+                    </div>
+                `;
+            }
             return `
                 <div class="advisory-section-card">
                     <h4>${escapeHtml(s.title)}</h4>

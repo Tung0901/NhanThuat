@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "philosophy_id": "LENS-BEHAVIORAL-BIASES",
+    "philosophy_name": "Cognitive Biases & Behavioral Economics Lens",
+    "version": "1.0.0",
+    "source_document": "docs/knowledge/09_TAM_LY_HOC_HANH_VI.md",
+    "supported_domains": [
+      "behavioral_economics",
+      "psychology",
+      "negotiation",
+      "decision_making",
+      "risk_management"
+    ],
+    "supported_personas": [
+      "Behavioral Economist",
+      "Decision Auditor",
+      "Executive Sparring Coach"
+    ],
+    "preferred_reasoning_modes": [
+      "Empirical",
+      "Cognitive De-biasing",
+      "Heuristic Mapping"
+    ],
+    "compatible_lenses": [
+      "LENS-BEHAVIORAL",
+      "LENS-GAME-THEORY",
+      "LENS-GUIGUZI",
+      "LENS-SUNZI"
+    ],
+    "incompatible_lenses": [],
+    "confidence_modifier": 1.0,
+    "governance_status": "active",
+    "last_reviewed": "2026-10-02"
+  },
+  "engine_name": "Cognitive Biases & Behavioral Economics Engine",
+  "version": "1.0.0",
+  "description": "Kinh tế học hành vi và Tâm lý học nhận thức: Giải mã 4 bẫy nhận thức trọng tử huyệt (Loss Aversion, Anchoring, Sunk Cost, Framing Effect) và Kỹ nghệ Nudge định hướng hành vi",
+  "primary_biases": {
+    "loss_aversion": {
+      "definition": "Con người sợ mất một thứ gì đó gấp 2-2.5 lần so với niềm vui khi nhận được thứ tương đương.",
+      "application": "Trong đàm phán, đóng khung thông điệp làm nổi bật những gì đối phương SẼ BỊ MẤT nếu từ chối thỏa thuận, thay vì chỉ hứa hẹn những gì họ sẽ nhận được."
+    },
+    "anchoring_bias": {
+      "definition": "Xu hướng phụ thuộc quá mức vào mẩu thông tin đầu tiên nhận được (mỏ neo) khi đưa ra phán quyết.",
+      "application": "Xác lập mỏ neo đầu tiên ở mức kỳ vọng cao nhưng có cơ sở chặt chẽ; hoặc lập tức phá vỡ mỏ neo vô lý của đối phương bằng cách từ chối đàm phán trên thang đo của họ."
+    },
+    "sunk_cost_fallacy": {
+      "definition": "Xu hướng tiếp tục dấn thân vào một quyết định sai lầm chỉ vì đã đầu tư quá nhiều thời gian, công sức hoặc tiền bạc.",
+      "application": "Vạch trần chi phí chìm để giải phóng bản thân; hoặc tận dụng sự gắn kết chi phí chìm của đối phương để củng cố cam kết của họ."
+    },
+    "framing_effect": {
+      "definition": "Cách một thông tin được diễn đạt (khung) quyết định phản ứng cảm xúc của người nghe mạnh hơn chính bản chất thông tin.",
+      "application": "Tái đóng khung vấn đề từ 'chi phí tốn kém' thành 'khoản đầu tư bảo hiểm rủi ro sống còn'."
+    }
+  }
+}

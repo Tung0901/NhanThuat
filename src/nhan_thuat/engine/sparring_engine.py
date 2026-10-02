@@ -17,6 +17,14 @@ from nhan_thuat.storage.models import SparringSession
 def default_route_philosophy(text: str) -> str:
     """Built-in zero-dependency philosophy router for NhanThuat engine."""
     t = text.lower()
+    if any(k in t for k in ["machiavellian", "quân vương", "sư tử", "cáo", "realpolitik", "48 luật", "kính sợ", "phản trắc", "quyền lực"]):
+        return "MACHIAVELLIAN"
+    if any(k in t for k in ["quỷ cốc tử", "tung hoành", "bách hợp", "phi kiềm", "nội kiện", "đàm phán", "thấu tâm"]):
+        return "GUIGUZI"
+    if any(k in t for k in ["trò chơi", "game theory", "nash", "ma trận", "bất cân xứng", "tit for tat", "zero sum"]):
+        return "GAME_THEORY"
+    if any(k in t for k in ["bẫy tâm lý", "loss aversion", "mỏ neo", "anchoring", "chi phí chìm", "sunk cost", "đóng khung"]):
+        return "BEHAVIORAL_BIASES"
     if any(k in t for k in ["hợp đồng", "vi phạm", "tiến độ", "chậm", "phạt", "chế tài", "kỷ luật", "vật tư", "quy trình", "nghĩa vụ"]):
         return "LEGALISM"
     if any(k in t for k in ["giá", "đắt", "báo giá", "chi phí", "từ chối", "khách hàng", "chiết khấu", "thuyết phục", "lập luận"]):
@@ -239,6 +247,51 @@ class SparringEngine:
                 f"- **Sơ hở cốt lõi:** Đồng hóa cái tôi với sự cố khách quan.\n"
                 f"- **Căn cứ tri thức đối trọng:** Áp dụng {primary_unit_str} và nguyên tắc 'Phân định Vòng tròn Kiểm soát'.\n"
                 f"- **Lời thoại lật ngược thế cờ:** *'Hít một hơi thở sâu, tách rời cảm xúc cá nhân khỏi lợi ích cốt lõi của tổ chức. Tập trung 100% vào việc kiểm soát những gì mình làm được: Chuẩn bị phương án B và bảo vệ quyền lợi hợp pháp.'*"
+            )
+        elif lens == "MACHIAVELLIAN":
+            adversarial_text = (
+                "Bạn đang hành xử với sự ngây thơ chính trị đáng báo động! "
+                "Trên bàn cờ quyền lực, lòng tốt không có nanh vuốt sẽ bị xem là sự bạc nhược. "
+                "Đối phương đang thử thách ranh giới chịu đựng của bạn; nếu bạn không thể hiện bản lĩnh của Sư tử và sự tinh khôn của Cáo, "
+                "bạn sẽ lập tức bị tước đoạt toàn bộ quyền kiểm soát cuộc diện."
+            )
+            strategy_text = (
+                f"- **Sơ hở cốt lõi:** Dựa dẫm vào thiện chí thay vì thiết lập thế răn đe không thể đảo ngược.\n"
+                f"- **Căn cứ tri thức đối trọng:** Vận dụng {primary_unit_str} - Quy luật Sư tử & Cáo (Machiavellian Realpolitik).\n"
+                f"- **Lời thoại lật ngược thế cờ:** *'Tôi trân trọng mối quan hệ này, nhưng nguyên tắc và giới hạn quyền uy là điều không thể nhân nhượng. Nếu Quý vị muốn tiếp tục hợp tác, chúng ta tuân thủ đúng luật chơi; nếu không, tôi sẵn sàng kích hoạt ngay phương án thay thế.'*"
+            )
+        elif lens == "GUIGUZI":
+            adversarial_text = (
+                "Bạn đã quá vội vã 'Mở' (Bách) hết ruột gan mà không biết 'Đóng' (Hợp) để trói buộc đối phương! "
+                "Thuật Quỷ Cốc dạy: 'Dò xét tâm can trước khi xuất ngôn'. "
+                "Khi bạn để lộ sự sốt sắng muốn đạt thỏa thuận, đối phương đã lập tức dùng đòn 'Phi Kiềm' để gài bẫy và ép giá bạn tới cùng."
+            )
+            strategy_text = (
+                f"- **Sơ hở cốt lõi:** Để lộ kỳ vọng và áp lực thời gian khiến đối phương nắm đằng chuôi.\n"
+                f"- **Căn cứ tri thức đối trọng:** Kích hoạt {primary_unit_str} (Thuật Bách Hợp & Phi Kiềm Quỷ Cốc Tử).\n"
+                f"- **Lời thoại lật ngược thế cờ:** *'Dường như đây là mức giá tối hậu mà bên anh có thể đưa ra hôm nay. Tôi hoàn toàn hiểu khó khăn của anh. Vậy chúng ta tạm dừng ở đây để anh báo cáo lại với cấp trên, xem họ có chấp nhận rủi ro đình trệ toàn bộ dự án vì 15% này hay không.'*"
+            )
+        elif lens == "GAME_THEORY":
+            adversarial_text = (
+                "Bạn đang chơi một ván cờ có tổng bằng không (Zero-sum) mà không hề tính toán ma trận kết quả (Payoff Matrix)! "
+                "Trong thế trận bất cân xứng thông tin, việc đối phương đe dọa rời đi chỉ là một đòn nghi binh (Bluff). "
+                "Họ đang tính rằng chi phí từ bỏ thỏa thuận (BATNA) của bạn lớn hơn của họ. Nếu bạn nhượng bộ, bạn tự đẩy mình vào điểm cân bằng tồi tệ nhất!"
+            )
+            strategy_text = (
+                f"- **Sơ hở cốt lõi:** Không lượng hóa phương án thay thế tốt nhất (BATNA) và để đối phương 'Bluff' thành công.\n"
+                f"- **Căn cứ tri thức đối trọng:** Áp dụng {primary_unit_str} - Cân bằng Nash & Chiến lược Tit-for-Tat.\n"
+                f"- **Lời thoại lật ngược thế cờ:** *'Nếu buổi làm việc kết thúc ở đây theo ý anh, chi phí tìm nhà cung cấp mới và chậm bàn giao 2 tháng sẽ tiêu tốn của bên anh tối thiểu 1.5 tỷ đồng. Con số đó lớn hơn rất nhiều so với khoản giảm giá 25% mà anh đang yêu cầu. Anh có muốn chúng ta cùng tính toán lại bài toán kinh tế thực tế này không?'*"
+            )
+        elif lens == "BEHAVIORAL_BIASES":
+            adversarial_text = (
+                "Bạn đang bị đối phương đóng khung tâm lý (Framing Trap) và gieo mỏ neo vô lý (Anchoring Effect)! "
+                "Con số đòi giảm giá 25% chỉ là một cái neo cảm tính để ép bạn phải thỏa hiệp ở mức 10-15%. "
+                "Bạn đang phản ứng lại cái neo của họ thay vì kéo họ về khung giá trị thực tế."
+            )
+            strategy_text = (
+                f"- **Sơ hở cốt lõi:** Rơi vào bẫy tâm lý 'Ác cảm mất mát (Loss Aversion)' trước lời đe dọa hủy đàm phán.\n"
+                f"- **Căn cứ tri thức đối trọng:** Áp dụng {primary_unit_str} - Kỹ thuật Tái đóng khung (Reframing) & Bẻ mỏ neo.\n"
+                f"- **Lời thoại lật ngược thế cờ:** *'Tôi không đàm phán dựa trên một con số giảm giá cảm tính không có cơ sở bóc tách khối lượng. Chúng ta hãy đặt bảng chiết tính chi phí và rủi ro lên bàn; giá trị của bên tôi được xây dựng trên sự bảo đảm an toàn, chứ không phải con số để mặc cả chợ trời.'*"
             )
         else:  # Xunzi / Confucian / General
             adversarial_text = (

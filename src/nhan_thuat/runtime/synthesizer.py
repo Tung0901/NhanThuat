@@ -157,40 +157,48 @@ class KnowledgeSynthesizer:
     def _build_prompt(self, query: str, units: Iterable[KnowledgeUnit]) -> str:
         context = self.prompt_builder.build_context(units, format_type="markdown")
         return (
-            "Bạn là Cố Vấn Chiến Lược & Nhân Thuật Cấp Cao. Phong cách tư vấn của bạn dung hợp giữa "
-            "TRÍ TUỆ ĐÔNG PHƯƠNG (Binh pháp, thấu hiểu nhân tâm) và "
-            "KHOA HỌC QUẢN TRỊ HIỆN ĐẠI (Tâm lý học hành vi, đàm phán, ranh giới pháp lý).\n\n"
-            "QUY TẮC TRÌNH BÀY (bắt buộc):\n"
-            "- Viết tiếng Việt rõ ràng, câu ngắn, dễ hiểu cho một nhà quản lý bận rộn. KHÔNG dùng văn phong đại ngôn, không nói đạo lý suông.\n"
-            "- Khi dùng thuật ngữ cổ (ví dụ: Hình Danh Tương Phù, Nhị Bỉnh, Bát Gian, Tâm Trai...), "
-            "phải giải thích ngay trong ngoặc bằng tiếng Việt đời thường.\n"
-            "- Mỗi nhận định phải đi kèm việc cần làm cụ thể.\n\n"
-            f"TÌNH HUỐNG THỰC TẾ CỦA NGƯỜI DÙNG: {query}\n\n"
+            "Bạn là Cố Vấn Chiến Lược & Quân Sư Thượng Thừa của Hệ thống Nhân Thuật. Phong cách tư vấn của bạn dung hợp trọn vẹn "
+            "NGŨ ĐẠI HỆ HÌNH TRIẾT HỌC (Bản nguyên Đạo Gia - Khắc Kỷ, Nhân tính luận Nho - Tuân, Quyền lực Pháp Gia - Machiavellianism, "
+            "Tâm thuật Quỷ Cốc Tử - Hùng biện, Binh pháp Tôn Tử - Lý thuyết trò chơi hiện đại).\n\n"
+            "QUY TẮC TRÌNH BÀY & NGHỊ LUẬN (BẮT BUỘC):\n"
+            "- Trình bày như một BÀI NGHỊ LUẬN CHIẾN LƯỢC SÂU SẮC, TRAU CHUỐT, phân tích tường tận, hồi quy quy nạp chặt chẽ, dẫn chứng cụ thể thuyết phục và lập luận sắc bén.\n"
+            "- Khi dùng thuật ngữ cổ điển (Hình Danh Tham Đồng, Nhị Bỉnh, Bát Gian, Tâm Trai, Bách Hợp, Phi Kiềm, Nash Equilibrium...), "
+            "phải giải thích bản chất thực tế trong ngoặc đơn.\n"
+            "- Mỗi nhận định phải gắn chặt với tương quan quyền lực, tử huyệt lợi ích và kịch bản hành động cụ thể.\n\n"
+            f"TÌNH HUỐNG THỰC TẾ CỦA NHÀ LÃNH ĐẠO: \"{query}\"\n\n"
             "--- CƠ SỞ TRI THỨC ĐỐI CHIẾU ---\n"
             f"{context}\n"
-            "HÃY PHÂN TÍCH VÀ ĐƯA RA LỜI THAM MƯU BẰNG MARKDOWN THEO ĐÚNG 5 PHẦN SAU:\n\n"
+            "HÃY PHÂN TÍCH VÀ ĐƯA RA BẢN THAM MƯU CHIẾN LƯỢC BẰNG MARKDOWN THEO ĐÚNG 5 PHẦN CHUẨN MỰC SAU:\n\n"
             "### 🎯 TÓM TẮT ĐIỀU HÀNH\n"
-            "- [3-4 gạch đầu dòng ngắn nhất có thể, ngôn ngữ bình dân: chuyện gì đang thực sự xảy ra; "
-            "điều gì đang bị đe dọa; việc quan trọng nhất cần làm ngay. Người đọc chỉ đọc phần này cũng phải hiểu và biết phải làm gì].\n\n"
+            "- [3-4 gạch đầu dòng cô đọng nhất: Chuyện gì đang thực sự xảy ra dưới lớp vỏ bề mặt; Điều gì đang bị đe dọa (vị thế, uy tín, chi phí); Việc tối quan trọng cần làm ngay trong 24h].\n\n"
             "### 👁️ TỔNG QUAN TÌNH THẾ\n"
-            "Trình bày như một BÀI NGHỊ LUẬN CHIẾN LƯỢC SÂU SẮC, TRAU CHUỐT (khoảng 2-3 đoạn văn cô đọng, sắc bén, dung hợp triết lý Đông Tây và thuật dụng nhân trị thế):\n"
-            "- **Đoạn 1 (Luận đề thế trận):** Không dừng lại ở hiện tượng vụn vặt bề mặt; hãy định vị thực chất cuộc diện này là gì trong tương quan lực lượng, cấu trúc quyền lực và dòng chảy kỳ vọng giữa các bên.\n"
+            "Trình bày như một BÀI NGHỊ LUẬN CHIẾN LƯỢC SÂU SẮC, TRAU CHUỐT (gồm tối thiểu 3 đoạn văn sâu sắc, dung hợp triết lý Đông Tây và thuật dụng nhân định thế):\n"
+            "- **Đoạn 1 (Luận đề thế trận):** Không dừng lại ở hiện tượng bề mặt vụn vặt; hãy định vị thực chất cuộc diện này là gì trong tương quan lực lượng, cấu trúc quyền lực và dòng chảy kỳ vọng giữa các bên.\n"
             "- **Đoạn 2 (Biện giải chiều sâu & Ma sát tâm lý):** Bóc tách các dòng chảy ngầm: nỗi sợ hãi, động cơ lợi ích thực tế, xung đột nhận thức và bẫy thế cờ mà nếu người lãnh đạo ứng xử bằng cảm xúc nóng vội hoặc do dự thì cục diện sẽ biến tướng nguy hiểm ra sao.\n"
-            "- **Đoạn 3 (Luận kết & Tâm thế định cục):** Đúc kết nguyên lý then chốt (kết hợp tư duy 'lấy tĩnh chế động', 'tùy thời định thế' với kỷ cương quản trị hiện đại), xác lập tâm thế của người nắm quyền chủ động để xoay chuyển cục diện.\n\n"
+            "- **Đoạn 3 (Luận kết & Tâm thế định cục):** Đúc kết nguyên lý then chốt (kết hợp tư duy 'Tâm Trai', 'Lấy tĩnh chế động', 'Dichotomy of Control' với kỷ cương quản trị hiện đại), xác lập tâm thế của người nắm quyền chủ động để xoay chuyển cục diện.\n\n"
             "### 🔍 1. BÓC TÁCH BẢN CHẤT & ĐỘNG CƠ NGẦM\n"
-            "- **Hiện tượng bề mặt:** [Vấn đề nhìn thấy bằng mắt thường, hành vi đang diễn ra].\n"
-            "- **Động cơ ngầm ẩn:** [Lợi ích cốt lõi, nỗi sợ hãi hoặc định kiến thực sự đang chi phối đối phương].\n"
-            "- **Hệ quả nếu không xử lý:** [Thế cờ sẽ nghiêng về đâu, tổ chức sẽ trả giá thế nào].\n\n"
+            "- **Phương pháp Hồi quy nhân quả:** Lần ngược từ phản ứng/lời nói bề mặt về áp lực vô hình và nỗi bất an tiềm thức của đối phương.\n"
+            "- **Tam tầng lợi ích:**\n"
+            "  * *Lợi ích tuyên bố (Declared):* Điều đối phương lớn tiếng đòi hỏi bề ngoài.\n"
+            "  * *Lợi ích thực tế (Operational):* Mục tiêu thực dụng tối thiểu họ bắt buộc phải đạt được.\n"
+            "  * *Lợi ích tâm lý & thể diện (Ego/Security):* Nỗi sợ bị xem thường hoặc mất quyền kiểm soát.\n"
+            "- **Hệ quả nếu xử lý sai lầm:** Thế trận sẽ nghiêng về đâu và cái giá tổ chức phải trả.\n\n"
             "### ⚠️ 2. NHỮNG BẪY TÂM LÝ & SAI LẦM CẦN TRÁNH\n"
-            "*Trình bày dưới dạng BẢNG (Markdown Table) gồm 3 cột:*\n"
-            "| Tên Bẫy | Biểu hiện dễ mắc phải | Hậu quả nhãn tiền |\n"
+            "*Biện chứng phản đề và giải mã các bẫy nhận thức. Trình bày dưới dạng BẢNG (Markdown Table) gồm 3 cột:*\n"
+            "| Tên Bẫy Nhận Thức | Biểu hiện dễ mắc phải (Lối mòn cảm xúc) | Hậu quả nhãn tiền trong thế trận |\n"
             "|---|---|---|\n"
-            "| [Tên bẫy 1] | [Hành vi bốc đồng, cảm xúc] | [Hậu quả] |\n"
-            "| [Tên bẫy 2] | [Sai lầm trong đánh giá] | [Hậu quả] |\n\n"
-            "### 📌 3. CHỐT HẠ ĐỊNH CỤC\n"
-            "- [Tối đa 1-2 câu tuyên ngôn súc tích để định hướng hành động].\n\n"
+            "| [Bẫy 1 - ví dụ: Ác cảm mất mát / Nôn nóng áp chế] | [Hành vi sai lầm] | [Tổn hại chiến lược] |\n"
+            "| [Bẫy 2 - ví dụ: Neo kỳ vọng / Nhượng bộ cầu an] | [Hành vi sai lầm] | [Tổn hại chiến lược] |\n\n"
+            "### ⚔️ 3. ĐÒN BẨY ĐỊNH CỤC & KỊCH BẢN LỜI THOẠI THỰC CHIẾN (VERBATIM SCRIPT)\n"
+            "- **Đòn bẩy Tái đóng khung (Reframing) & Chiếc cầu vàng (Golden Bridge):** Cách thiết lập lối thoát danh dự có kiểm soát để đối phương tự nguyện bước sang thế hợp tác.\n"
+            "- **Kịch bản Lời thoại mẫu từng câu chữ (Verbatim Script) 3 giai đoạn:**\n"
+            "  * **Giai đoạn 1 (Tháo ngòi nổ & Thấu cảm chiến thuật):** *\"[Câu thoại mẫu chính xác dùng để làm nguội cơn giận hoặc thế đối đầu của đối phương]\"*\n"
+            "  * **Giai đoạn 2 (Tái định vị ranh giới & Nắn dòng lợi ích):** *\"[Câu thoại mẫu chuyển dịch sự chú ý sang chi phí rủi ro chung và ranh giới không thể thương lượng]\"*\n"
+            "  * **Giai đoạn 3 (Khóa thế & Chốt cam kết hành động):** *\"[Câu thoại mẫu chốt hạ điều kiện và xác lập thỏa thuận ràng buộc]\"*\n\n"
+            "### 📌 CHỐT HẠ ĐỊNH CỤC\n"
+            "> *[1-2 câu tuyên ngôn súc tích, mang tầm triết lý sắc bén để định hình tâm thế người lãnh đạo].*\n\n"
             "### 📖 TRÍCH DẪN TRI THỨC\n"
-            "- [Liệt kê ngắn gọn các tri thức/quy luật đã vận dụng kèm mã ID, ví dụ: Quy luật Giá trị (NT-LAW-3201)].\n"
+            "- [Liệt kê các tri thức/quy luật đã vận dụng kèm mã ID, ví dụ: Quy luật Giá trị (NT-LAW-3201), Binh pháp Tôn Tử (NT-MODEL-3202)].\n"
         )
 
     def _deterministic_synthesis(self, query: str, units: Iterable[KnowledgeUnit]) -> str:
@@ -202,24 +210,25 @@ class KnowledgeSynthesizer:
 
         lines = [
             "### 🎯 TÓM TẮT ĐIỀU HÀNH",
-            f"- Tình huống **\"{query}\"** được đối chiếu với {len(units_list)} tri thức liên quan trong kho Nhân Thuật.",
+            f"- Tình huống **\"{query}\"** được đối chiếu với {len(units_list)} tri thức và đại hệ hình triết học trong kho Nhân Thuật.",
         ]
         for u in top_units[:2]:
             summary_text = (u.summary or u.definition or "").strip()
             if summary_text:
                 lines.append(f"- **{u.title} ({u.id})**: {summary_text}")
         lines.append(
-            "- Việc cần làm ngay: xác định rõ lợi ích thật của từng bên, kiểm tra lại cấu trúc "
-            "quyền hạn và chọn một hành động cụ thể có thể kiểm chứng được."
+            "- Việc cần làm ngay trong 24h: Giữ vững tâm thế bất biến, phong tỏa rò rỉ thông tin, "
+            "kiểm tra lại cấu trúc quyền hạn và xác lập chiếc cầu vàng (lối thoát danh dự) trước khi ngồi vào bàn đàm phán."
         )
+
         # Xây dựng bài nghị luận chiến lược sâu sắc cho TỔNG QUAN TÌNH THẾ
         treatise_paras = [
             (
                 f"Vấn đề **\"{query}\"** thoạt nhìn có vẻ là một xung đột hay biến cố vụ việc đơn lẻ, song khi đặt vào "
                 "tọa độ quản trị và nhân tâm học, đây thực chất là sự đứt gãy hoặc xáo trộn trong tương quan giữa "
                 "**Lợi ích cốt lõi**, **Cấu trúc quyền hạn** và **Dòng chảy kỳ vọng ngầm**. Mọi biểu hiện bề mặt như "
-                "sự phản kháng, trì hoãn hay ma sát chỉ là phần nổi của tảng băng chìm; gốc rễ nằm ở tâm lý thủ thế "
-                "và sự phòng vệ tự nhiên của con người khi cảm nhận vùng an toàn hoặc quyền kiểm soát bị đe dọa."
+                "sự phản kháng, trì hoãn hay thái độ gay gắt chỉ là phần nổi của tảng băng chìm; gốc rễ nằm ở tâm lý thủ thế "
+                "và sự phòng vệ tự nhiên của con người khi cảm nhận vùng an toàn hoặc quyền kiểm soát của họ bị đe dọa."
             )
         ]
 
@@ -232,24 +241,24 @@ class KnowledgeSynthesizer:
 
             evidence_str = " cùng với ".join(evidence_points) if evidence_points else "các nguyên lý nền tảng của Nhân Thuật"
             treatise_paras.append(
-                f"Soi chiếu dưới lăng kính triết học vận hành, tình thế này chịu sự tác động mang tính quyết định của {evidence_str}. "
+                f"Soi chiếu dưới lăng kính triết học vận hành và quy luật tương quan lực lượng, tình thế này chịu sự tác động mang tính quyết định của {evidence_str}. "
                 "Nếu nhà quản trị chỉ nhìn vào hiện tượng để phản ứng theo phản xạ tự nhiên — hoặc dùng uy quyền cứng nhắc để áp chế, "
                 "hoặc nhượng bộ cảm tính để cầu an tạm thời — thì vô tình đều đẩy đối phương vào thế đối đầu triệt để hơn. "
                 "Cái bẫy lớn nhất của người cầm quyền trong thời khắc này là biến một bài toán cấu trúc thành cuộc đấu tranh cá nhân, "
-                "khiến tổ chức phải trả giá bằng sự xói mòn niềm tin và chi phí điều hòa nội bộ tăng vọt."
+                "khiến tổ chức phải trả giá bằng sự xói mòn niềm tin, suy giảm uy quyền và chi phí điều hòa nội bộ tăng vọt."
             )
         else:
             treatise_paras.append(
                 "Trong mọi thế trận giằng co, việc vội vã đưa ra phán quyết khi chưa thấu tỏ động cơ sâu kín của các bên "
                 "luôn là mầm mống của thất bại chiến lược. Người lãnh đạo cần bóc tách rành mạch đâu là mâu thuẫn quyền lợi thật, "
-                "đâu chỉ là sự tự ái nhận thức và phòng vệ tâm lý."
+                "đâu chỉ là sự tự ái nhận thức và phòng vệ tâm lý nhằm bảo vệ cái tôi đang bị tổn thương."
             )
 
         treatise_paras.append(
-            "Do đó, định hướng giải pháp không phải là triệt hạ hay thỏa hiệp vô nguyên tắc, mà là nghệ thuật "
+            "Do đó, định hướng giải pháp không phải là triệt hạ đối phương hay thỏa hiệp vô nguyên tắc, mà là nghệ thuật "
             "**'Lập Thế Trước Khi Xuất Ngôn, Dựng Khung Trước Khi Dụng Nhân'**. Bậc cao thủ về nhân thuật luôn giữ tâm thế "
-            "'Tâm Trai' — tĩnh lặng để nhìn xuyên lớp sương mù cảm xúc, xác lập ranh giới kỷ cương không thể thương lượng, "
-            "đồng thời khéo léo chừa ra một lối thoát danh dự (Plan B) để đối phương chủ động chuyển hóa từ thế chống đối sang đồng thuận."
+            "**'Tâm Trai'** — tĩnh lặng như mặt nước hồ để nhìn xuyên lớp sương mù cảm xúc, xác lập ranh giới kỷ cương không thể thương lượng, "
+            "đồng thời khéo léo chừa ra một lối thoát danh dự (Chiếc Cầu Vàng - Golden Bridge) để đối phương chủ động chuyển hóa từ thế đối kháng sang đồng thuận."
         )
 
         lines.extend([
@@ -258,6 +267,13 @@ class KnowledgeSynthesizer:
             "\n\n".join(treatise_paras),
             "",
             "### 🔍 1. BÓC TÁCH BẢN CHẤT & ĐỘNG CƠ NGẦM",
+            "- **Phương pháp Hồi quy nguyên nhân:** Hành vi và lời nói của đối phương thực chất là cơ chế tự vệ trước nỗi sợ mất quyền kiểm soát hoặc áp lực phải chứng minh năng lực trước cấp trên.",
+            "- **Tam tầng lợi ích chi phối cuộc diện:**",
+            f"  * *Lợi ích tuyên bố (Declared):* Yêu cầu đanh thép liên quan đến vụ việc (như điều khoản, tiến độ, hoặc sự bất mãn bộc phát).",
+            "  * *Lợi ích thực tế (Operational):* Sự bảo đảm rằng công việc của họ không bị đình trệ, rủi ro pháp lý/tài chính được khoanh vùng an toàn.",
+            "  * *Lợi ích tâm lý & thể diện (Ego/Security):* Nhu cầu được tôn trọng vị thế, không bị cảm giác bị chèn ép hay tước đoạt tiếng nói.",
+            "- **Hệ quả nếu xử lý sai lầm:** Nếu dùng uy lực đè bẹp, sự phản kháng sẽ chuyển thành ngầm phá hoại; nếu nhượng bộ vô nguyên tắc, vị thế đàm phán của tổ chức sẽ sụp đổ hoàn toàn.",
+            "",
         ])
 
         for u in top_units:
@@ -273,7 +289,7 @@ class KnowledgeSynthesizer:
 
         lines.extend([
             "### ⚠️ 2. NHỮNG BẪY TÂM LÝ & SAI LẦM CẦN TRÁNH",
-            "| Tên Bẫy | Biểu hiện dễ mắc phải | Hậu quả nhãn tiền |",
+            "| Tên Bẫy Nhận Thức | Biểu hiện dễ mắc phải (Lối mòn cảm xúc) | Hậu quả nhãn tiền trong thế trận |",
             "|---|---|---|",
         ])
 
@@ -285,16 +301,27 @@ class KnowledgeSynthesizer:
                     collected_risks.append(text)
 
         if collected_risks:
-            for idx, risk in enumerate(collected_risks[:4]):
-                lines.append(f"| Rủi ro {idx + 1} | {risk} | Tổn hại uy tín, dòng tiền hoặc quan hệ |")
-        else:
-            lines.append("| Bẫy cảm xúc vội vã | Phản ứng bằng cảm tính hoặc dùng quyền lực cứng để bức ép | Mất vị thế đàm phán, tạo chống đối ngầm |")
-            lines.append("| Nhượng bộ vô điều kiện | Nhân nhượng khi chưa xử lý được gốc vấn đề | Tạo tiền lệ xấu, phá vỡ kỷ cương |")
+            for idx, risk in enumerate(collected_risks[:3]):
+                lines.append(f"| Bẫy {idx + 1} (Rủi ro cấu trúc) | {risk} | Tổn hại uy quyền, đứt gãy niềm tin và chi phí phục hồi tăng cao |")
+        lines.append("| Bẫy cảm xúc vội vã (Emotional Reactivity) | Phản ứng bằng cơn thịnh nộ hoặc dùng quyền lực cứng để bức ép ngay lập tức | Mất vị thế đàm phán đạo đức, đẩy đối phương sang thế liều chết chống đối ngầm |")
+        lines.append("| Bẫy nhượng bộ vô điều kiện (Appeasement Fallacy) | Nhân nhượng khi chưa xác lập được ranh giới và cam kết đối ứng | Tạo tiền lệ xấu, biến mình thành con mồi cho những đợt ép tiếp theo |")
 
         lines.extend([
             "",
-            "### 📌 3. CHỐT HẠ ĐỊNH CỤC",
-            "> *\"Người nắm quyền chủ động không thắng bằng áp đặt ồn ào, mà định đoạt cục diện bằng cấu trúc và điểm đòn bẩy.\"*",
+            "### ⚔️ 3. ĐÒN BẨY ĐỊNH CỤC & KỊCH BẢN LỜI THOẠI THỰC CHIẾN (VERBATIM SCRIPT)",
+            "- **Đòn bẩy Tái đóng khung (Reframing):** Chuyển dịch thế trận từ 'Cuộc đối đầu nhị nguyên Tôi - Anh' sang 'Hai bên cùng ngồi chung thuyền đối diện với rủi ro chung của dự án'.",
+            "- **Kỹ nghệ Chiếc cầu vàng (Golden Bridge):** Mở ra một lối thoát danh dự cho đối phương để họ rút lui mà không bị mất mặt trước tập thể.",
+            "",
+            "**Kịch bản Lời thoại mẫu từng câu chữ (Verbatim Script) 3 giai đoạn:**",
+            "1. **Pha 1: Tháo ngòi nổ & Thấu cảm chiến thuật (Tactical Empathy):**",
+            f"   > *\"Tôi hoàn toàn hiểu vì sao anh lại bức xúc và kiên quyết như vậy trong vấn đề này. Nếu đứng ở vị trí gánh vác trách nhiệm của anh, có thể tôi cũng sẽ đặt ra những yêu cầu khắt khe tương tự. Chúng ta hãy cùng ngồi lại để nhìn thấu đáo toàn bộ bức tranh.\"*",
+            "2. **Pha 2: Tái định vị ranh giới & Nắn dòng lợi ích (Reframing Boundaries):**",
+            "   > *\"Tuy nhiên, nguyên tắc cốt lõi về chất lượng và kỷ cương vận hành là ranh giới bất biến mà cả hai bên đều không thể đánh đổi. Nếu phá vỡ ranh giới này, thiệt hại lớn nhất không chỉ là con số trước mắt mà là uy tín lâu dài của cả tôi và anh.\"*",
+            "3. **Pha 3: Khóa thế & Chốt cam kết hành động (Equilibrium Closure):**",
+            "   > *\"Để đảm bảo quyền lợi cao nhất cho anh mà không phá vỡ quy chuẩn chung, tôi đề xuất giải pháp trung dung có kiểm soát: Chúng ta giữ nguyên khung nguyên tắc, nhưng tôi sẽ bố trí cơ chế hỗ trợ nguồn lực bổ sung này cho anh. Anh thấy phương án này có giải tỏa được nút thắt lớn nhất của anh không?\"*",
+            "",
+            "### 📌 CHỐT HẠ ĐỊNH CỤC",
+            "> *\"Người nắm quyền chủ động không thắng bằng sự áp đặt ồn ào, mà định đoạt cục diện bằng cấu trúc ranh giới bất biến và nghệ thuật mở lối thoát danh dự cho đối phương.\"*",
             "",
             "### 📖 TRÍCH DẪN TRI THỨC",
         ])

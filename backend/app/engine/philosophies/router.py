@@ -47,17 +47,27 @@ class PhilosophyType(str, Enum):
     STOICISM = "stoicism"
     BEHAVIORAL = "behavioral"
     HUMAN_NATURE = "human_nature"
+    MACHIAVELLIAN = "machiavellian"
+    GUIGUZI = "guiguzi"
+    GAME_THEORY = "game_theory"
+    BEHAVIORAL_BIASES = "behavioral_biases"
 
 
 class PhilosophyRouter:
     """
     BusinessOS Philosophy Lens Router:
-    Routes operational scenarios across 5 Five Philosophy Lenses:
+    Routes operational scenarios across Grand Philosophy Lenses:
     - Rhetoric Lens (LENS-RHETORIC): Customer objections, refutations, argument analysis.
     - Confucian Lens (LENS-CONFUCIAN): Culture building, leadership ethics, noble character evaluation.
     - Legalism Lens (LENS-LEGALISM): Compliance, SOP discipline, reward/punishment (Nhị Bỉnh), anti-flattery (Bát Gian).
     - Taoism Lens (LENS-TAOISM): Crisis handling, negotiation deadlock, breakthrough strategy, adaptability (Tâm Trai).
     - Xunzi Lens (LENS-XUNZI): Training & mentorship (Khuyên Học), behavior correction (Vĩ), role definition (Dùng Lễ Định Phần).
+    - Sunzi Lens (LENS-SUNZI): Competitive strategy, asymmetric advantage, position defense, timing (Kỳ - Chính).
+    - Stoicism Lens (LENS-STOICISM): Adversity resilience, emotional self-mastery, dichotomy of control.
+    - Machiavellian Lens (LENS-MACHIAVELLIAN): Realpolitik, power preservation, lion and fox tactics.
+    - Guiguzi Lens (LENS-GUIGUZI): Tung Hoanh diplomacy, Bai-He opening/closing, Fei-Qian psychological binding.
+    - Game Theory Lens (LENS-GAME-THEORY): Nash equilibrium, information asymmetry, payoff matrices, Tit-for-Tat.
+    - Behavioral Biases Lens (LENS-BEHAVIORAL-BIASES): Loss aversion, anchoring effect, sunk cost fallacy, cognitive framing.
 
     Architectural Constraints Enforced:
     1. Deterministic AI Execution (Target Temp 0.1 preference, structured schemas, fixed seed, validation gates).
@@ -80,7 +90,7 @@ class PhilosophyRouter:
         self._load_all_engines()
 
     def _load_all_engines(self) -> None:
-        """Load all 5 philosophy JSON engines."""
+        """Load all philosophy JSON engines."""
         engine_files = {
             PhilosophyType.RHETORIC: "rhetoric_engine.json",
             PhilosophyType.CONFUCIAN: "confucian_engine.json",
@@ -91,6 +101,10 @@ class PhilosophyRouter:
             PhilosophyType.STOICISM: "stoicism_engine.json",
             PhilosophyType.BEHAVIORAL: "behavioral_engine.json",
             PhilosophyType.HUMAN_NATURE: "human_nature_engine.json",
+            PhilosophyType.MACHIAVELLIAN: "machiavellianism_engine.json",
+            PhilosophyType.GUIGUZI: "guiguzi_engine.json",
+            PhilosophyType.GAME_THEORY: "game_theory_engine.json",
+            PhilosophyType.BEHAVIORAL_BIASES: "behavioral_biases_engine.json",
         }
         for phil_type, filename in engine_files.items():
             file_path = self.engine_dir / filename
@@ -254,6 +268,18 @@ class PhilosophyRouter:
         if any(w in text for w in ["đời sống", "doi song", "hằng ngày", "hang ngay", "đồng hành", "dong hanh", "cuộc sống", "tâm sự", "giúp gì", "ứng dụng", "bình an"]):
             return PhilosophyType.BEHAVIORAL, PhilosophyType.STOICISM, PhilosophyType.HUMAN_NATURE
 
+        if any(w in text for w in ["machiavellian", "quân vương", "quan vuong", "sư tử", "su tu", "loài cáo", "loai cao", "realpolitik", "48 quy luật", "kính sợ", "kinh so", "phản trắc", "phan trac", "quyền lực tuyệt đối"]):
+            return PhilosophyType.MACHIAVELLIAN, PhilosophyType.LEGALISM, PhilosophyType.SUNZI
+
+        if any(w in text for w in ["quỷ cốc tử", "quy coc tu", "tung hoành", "tung hoanh", "bách hợp", "bach hop", "phi kiềm", "phi kiem", "nội kiện", "noi kien", "thấu tâm can", "gài thế"]):
+            return PhilosophyType.GUIGUZI, PhilosophyType.RHETORIC, PhilosophyType.TAOISM
+
+        if any(w in text for w in ["lý thuyết trò chơi", "ly thuyet tro choi", "game theory", "nash", "cân bằng nash", "ma trận lợi ích", "zero sum", "bất cân xứng thông tin", "tit for tat"]):
+            return PhilosophyType.GAME_THEORY, PhilosophyType.SUNZI, PhilosophyType.BEHAVIORAL_BIASES
+
+        if any(w in text for w in ["bẫy tâm lý", "bay tam ly", "loss aversion", "ác cảm mất mát", "ac cam mat mat", "anchoring", "mỏ neo", "mo neo", "sunk cost", "chi phí chìm", "chi phi chim", "framing", "đóng khung"]):
+            return PhilosophyType.BEHAVIORAL_BIASES, PhilosophyType.GAME_THEORY, PhilosophyType.BEHAVIORAL
+
         if any(w in text for w in ["cạnh tranh", "canh tranh", "chiến lược", "chien luoc", "thế trận", "the tran", "binh pháp", "tôn tử", "ton tu", "thủ thế", "lập thế", "định cục", "bất chiến"]):
             return PhilosophyType.SUNZI, PhilosophyType.LEGALISM, PhilosophyType.BEHAVIORAL
 
@@ -284,6 +310,14 @@ class PhilosophyRouter:
             scores[PhilosophyType.BEHAVIORAL] += 3
         if any(w in text for w in ["nhan thuat", "dung nguoi", "nhin nguoi", "bat quan", "human nature"]):
             scores[PhilosophyType.HUMAN_NATURE] += 3
+        if any(w in text for w in ["machiavellian", "quan vuong", "realpolitik", "su tu", "loai cao", "kinh so"]):
+            scores[PhilosophyType.MACHIAVELLIAN] += 3
+        if any(w in text for w in ["quy coc tu", "tung hoanh", "bach hop", "phi kiem", "noi kien"]):
+            scores[PhilosophyType.GUIGUZI] += 3
+        if any(w in text for w in ["game theory", "nash", "tro choi", "payoff", "zero sum", "tit for tat"]):
+            scores[PhilosophyType.GAME_THEORY] += 3
+        if any(w in text for w in ["loss aversion", "anchoring", "sunk cost", "framing", "bay tam ly", "mo neo"]):
+            scores[PhilosophyType.BEHAVIORAL_BIASES] += 3
 
         sorted_lenses = sorted(scores.keys(), key=lambda k: scores[k], reverse=True)
         primary = sorted_lenses[0]

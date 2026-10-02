@@ -822,14 +822,15 @@ def process_nhan_thuat_analysis(scenario_text: str, scenario_type_hint: str = "g
         from nhan_thuat.runtime.synthesizer import KnowledgeSynthesizer
         syn = KnowledgeSynthesizer()
         sparring_prompt = (
-            f"Bạn đang đóng vai trò là một ĐỐI TÁC ĐÀM PHÁN / NHÂN SỰ CỰC KỲ RẮN MẶT, lão luyện, sắc sảo và kiên quyết bảo vệ tối đa quyền lợi của mình trong một phiên thương lượng thực chiến.\n\n"
+            f"Bạn đang đóng vai trò là một ĐỐI TÁC ĐÀM PHÁN / ĐỐI THỦ THƯƠNG LƯỢNG CỰC KỲ RẮN MẶT, lão luyện, sắc sảo và kiên quyết bảo vệ tối đa quyền lợi của mình trong một phiên đối kháng thực chiến đỉnh cao.\n\n"
             f"LỜI THOẠI / LẬP LUẬN CỦA NGƯỜI DÙNG: \"{scenario_text}\"\n\n"
-            f"NHIỆM VỤ CỦA BẠN (TRẢ LỜI BẰNG MARKDOWN CHIA LÀM 2 PHẦN):\n\n"
+            f"NHIỆM VỤ CỦA BẠN (TRẢ LỜI BẰNG MARKDOWN CHIA LÀM 2 PHẦN CHI TIẾT):\n\n"
             f"### ⚔️ 1. ĐỐI ĐÁP PHẢN BIỆN TRỰC DIỆN (LỜI THOẠI ĐỐI KHÁNG)\n"
-            f"(Hãy cất lời thoại với thái độ sắc sảo, tự tin, xoáy thẳng vào điểm yếu hoặc chỗ chưa chặt chẽ trong lời nói của người dùng. Dùng lý lẽ đanh thép để đẩy quả bóng trách nhiệm hoặc bảo vệ mức giá/điều kiện của mình).\n\n"
-            f"### 💡 2. GỢI Ý ĐÒN BẨY HÓA GIẢI (GÓC NHÌN CỐ VẤN NHÂN THUẬT)\n"
-            f"- **Điểm sơ hở trong lập luận vừa rồi:** [Chỉ ra ngắn gọn]\n"
-            f"- **Đòn bẩy Binh pháp / Tâm lý nên dùng ở lượt tiếp theo:** [Đưa ra câu gợi ý đối đáp sắc bén nhất để người dùng lật ngược thế cờ]."
+            f"(Hãy cất lời thoại với thái độ sắc sảo, tự tin, xoáy thẳng vào điểm yếu, sự nôn nóng hoặc chỗ hổng vị thế trong lời nói của người dùng. Dùng lý lẽ đanh thép, bẫy neo giá hoặc chi phí cơ hội để đẩy quả bóng trách nhiệm sang người dùng).\n\n"
+            f"### 💡 2. GỢI Ý ĐÒN BẨY HÓA GIẢI & CHIẾN LƯỢC (GÓC NHÌN CỐ VẤN NHÂN THUẬT)\n"
+            f"- **Tử huyệt trong lập luận vừa rồi:** [Chỉ ra chính xác sai lầm chiến thuật hoặc sự cả nể]\n"
+            f"- **Đòn bẩy Binh pháp / Tâm lý đối trọng:** [Vận dụng Tôn Tử, Quỷ Cốc Tử, Machiavellianism hoặc Game Theory]\n"
+            f"- **Câu thoại lật ngược thế cờ (Verbatim Script):** *\"[Viết nguyên văn câu nói sắc bén nhất để người dùng nói lại ngay lập tức, tước đoạt mỏ neo và giành lại quyền kiểm soát cuộc diện]\"*"
         )
         try:
             generated_text = syn.generate_text(sparring_prompt)

@@ -1,0 +1,54 @@
+{
+  "metadata": {
+    "philosophy_id": "LENS-MACHIAVELLIAN",
+    "philosophy_name": "Machiavellian Realpolitik Lens",
+    "version": "1.0.0",
+    "source_document": "docs/knowledge/17_CHIEN_LUOC_BAT_DOI_XUNG.md",
+    "supported_domains": [
+      "power",
+      "governance",
+      "negotiation",
+      "leadership",
+      "coalition",
+      "crisis"
+    ],
+    "supported_personas": [
+      "Executive Power Strategist",
+      "Board Advisor",
+      "Crisis Negotiator"
+    ],
+    "preferred_reasoning_modes": [
+      "Realpolitik",
+      "Asymmetric",
+      "Ruthless Pragmatism"
+    ],
+    "compatible_lenses": [
+      "LENS-LEGALISM",
+      "LENS-SUNZI",
+      "LENS-GUIGUZI"
+    ],
+    "incompatible_lenses": [],
+    "confidence_modifier": 1.0,
+    "governance_status": "active",
+    "last_reviewed": "2026-10-02"
+  },
+  "engine_name": "Machiavellian Realpolitik Strategic Engine",
+  "version": "1.0.0",
+  "description": "Chủ nghĩa hiện thực chính trị, Sức mạnh Sư tử & Sự giảo hoạt của Cáo, Cán cân Yêu mến vs Kính sợ, và Nghệ thuật kiểm soát quyền lực tuyệt đối",
+  "core_principles": {
+    "lion_and_fox": "Người lãnh đạo phải vừa là Sư tử để làm khiếp sợ loài sói, vừa là Cáo để nhận diện và tránh các cạm bẫy vô hình.",
+    "fear_vs_love": "Được yêu mến phụ thuộc vào ý muốn của người khác; được kính sợ phụ thuộc vào ý chí của nhà lãnh đạo. Bậc minh chủ xây dựng quyền uy trên sự kính sợ nhưng tránh bị thù ghét.",
+    "conceal_intentions": "Ẩn giấu mưu đồ thực sự cho đến thời điểm không thể đảo ngược; hành động dứt khoát và trọn vẹn trong một lần thay vì rỉ rả kéo dài nỗi đau.",
+    "never_outshine_master": "Không bao giờ để lộ sự vượt trội lấn át người nắm quyền tối thượng; luôn để cấp trên cảm thấy vị thế của họ là an toàn."
+  },
+  "governance_rules": [
+    {
+      "trigger": "Đối tác hoặc cấp dưới có dấu hiệu lộng quyền, đe dọa vị thế",
+      "strategic_directive": "Lập tức xác lập ranh giới quyền uy, răn đe không khoan nhượng đối với hành vi vượt rào, song song cô lập nguồn lực của đối phương."
+    },
+    {
+      "trigger": "Tình huống cần tái cấu trúc hoặc áp dụng chế tài đau đớn",
+      "strategic_directive": "Ra đòn nhanh, gọn, dứt điểm một lần duy nhất; ban thưởng nhỏ giọt kéo dài để tạo sự ghi nhớ và tri ân."
+    }
+  ]
+}

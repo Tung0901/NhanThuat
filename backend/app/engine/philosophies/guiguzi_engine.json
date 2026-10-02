@@ -1,0 +1,52 @@
+{
+  "metadata": {
+    "philosophy_id": "LENS-GUIGUZI",
+    "philosophy_name": "Guiguzi Strategic Persuasion Lens",
+    "version": "1.0.0",
+    "source_document": "docs/knowledge/01_THUAT_HUNG_BIEN.md",
+    "supported_domains": [
+      "negotiation",
+      "persuasion",
+      "diplomacy",
+      "coalition",
+      "psychological_warfare"
+    ],
+    "supported_personas": [
+      "Master Diplomat",
+      "Tung Hoanh Strategist",
+      "Executive Sparring Advisor"
+    ],
+    "preferred_reasoning_modes": [
+      "Dialectical",
+      "Elicitation",
+      "Psychological Maneuver"
+    ],
+    "compatible_lenses": [
+      "LENS-SUNZI",
+      "LENS-TAOISM",
+      "LENS-MACHIAVELLIAN",
+      "LENS-BEHAVIORAL"
+    ],
+    "incompatible_lenses": [],
+    "confidence_modifier": 1.0,
+    "governance_status": "active",
+    "last_reviewed": "2026-10-02"
+  },
+  "engine_name": "Guiguzi Tung Hoanh & Persuasion Engine",
+  "version": "1.0.0",
+  "description": "Thuật Tung Hoành Quỷ Cốc Tử: Bách Hợp (Mở và Đóng), Phi Kiềm (Gài thế trói buộc tâm lý), Nội Kiện (Thắt nút mắt xích ngầm) và Nghệ thuật đọc vị thấu tâm can",
+  "trinity_mechanisms": {
+    "bai_he": {
+      "bai_open": "Kỹ thuật Mở: Dùng lời gợi mở, lời khen hoặc câu hỏi trung tính để đối phương dỡ bỏ phòng thủ, trút bỏ tâm can và bộc lộ tử huyệt lợi ích.",
+      "he_close": "Kỹ thuật Đóng: Thu lưới, siết chặt ranh giới, khóa chặt đường lui của đối phương bằng các luận cứ đanh thép và chứng cứ xác thực."
+    },
+    "fei_qian": "Kỹ thuật Phi Kiềm: Dùng đòn bẩy tâm lý (thể diện, lòng tham, nỗi sợ hãi hoặc tham vọng) để gài thế đối phương tự động chui vào kịch bản do ta vạch sẵn.",
+    "nei_jian": "Kỹ thuật Nội Kiện: Nhận diện và thiết lập liên minh ngầm với người có tiếng nói quyết định thực sự đứng sau lưng kẻ đang đối thoại trực diện."
+  },
+  "tactical_flow": [
+    "1. Lắng nghe sâu và quan sát cử chỉ (Thính & Quan).",
+    "2. Khen ngợi thể diện hoặc chạm vào nỗi bất an để dò động cơ thực tế.",
+    "3. Tái định vị thế cờ (Reframing) khiến đối phương nhận ra đòi hỏi của họ tự hại chính họ.",
+    "4. Khóa thế và ban cho đối phương chiếc cầu vàng (lối thoát danh dự)."
+  ]
+}

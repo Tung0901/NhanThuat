@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "philosophy_id": "LENS-GAME-THEORY",
+    "philosophy_name": "Game Theory & Strategic Equilibrium Lens",
+    "version": "1.0.0",
+    "source_document": "docs/knowledge/12_LY_THUYET_TRO_CHOI.md",
+    "supported_domains": [
+      "game_theory",
+      "strategy",
+      "negotiation",
+      "competition",
+      "decision_making"
+    ],
+    "supported_personas": [
+      "Quantitative Strategist",
+      "Game Theory Architect",
+      "Executive Decision Engine"
+    ],
+    "preferred_reasoning_modes": [
+      "Mathematical",
+      "Equilibrium Analysis",
+      "Payoff Matrix Mapping"
+    ],
+    "compatible_lenses": [
+      "LENS-SUNZI",
+      "LENS-MACHIAVELLIAN",
+      "LENS-BEHAVIORAL"
+    ],
+    "incompatible_lenses": [],
+    "confidence_modifier": 1.0,
+    "governance_status": "active",
+    "last_reviewed": "2026-10-02"
+  },
+  "engine_name": "Game Theory Strategic Equilibrium Engine",
+  "version": "1.0.0",
+  "description": "Lý thuyết trò chơi hiện đại, Ma trận lợi ích (Payoff Matrix), Cân bằng Nash, Phân tích Bất cân xứng thông tin và Chiến lược Trả đũa công bằng (Tit-for-Tat)",
+  "foundational_concepts": {
+    "nash_equilibrium": "Trạng thái mà không bên nào có động lực đơn phương thay đổi chiến lược nếu bên kia giữ nguyên quyết định. Định hình thế cờ là dịch chuyển điểm cân bằng Nash sang tọa độ ta mong muốn.",
+    "information_asymmetry": "Kẻ nắm ít thông tin hơn sẽ luôn đưa ra phán đoán sai lầm dựa trên sự phỏng đoán. Bậc thầy chiến lược luôn chủ động tạo ra sương mù thông tin hoặc kiểm chứng sự thật trước khi chốt hợp đồng.",
+    "zero_sum_vs_positive_sum": "Nhận diện xem cuộc chơi là triệt tiêu lẫn nhau hay có thể mở rộng chiếc bánh lợi ích. Trong đàm phán, chuyển đổi từ thế zero-sum sang positive-sum bằng cách trao đổi những giá trị bất đối xứng.",
+    "tit_for_tat": "Chiến lược hợp tác trước, sẵn sàng phản công sòng phẳng khi bị phản bội, nhưng lập tức tha thứ và hợp tác lại khi đối phương quay về kỷ cương."
+  },
+  "analytical_checklist": [
+    "1. Ai là những người chơi thực sự trong ván cờ này?",
+    "2. Không gian hành động của từng người chơi gồm những phương án nào?",
+    "3. Ma trận kết quả (lợi ích vs chi phí) của từng kịch bản ra sao?",
+    "4. Phương án thay thế tốt nhất khi không đạt thỏa thuận (BATNA) của mỗi bên là gì?"
+  ]
+}

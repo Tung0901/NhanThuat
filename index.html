@@ -2631,87 +2631,12 @@
         </div>
     </section>
 
-    <!-- Interactive Script for Knowledge System -->
-    <script>
-        const outputTerminal = document.getElementById('terminal-output');
-        const inputTerminal = document.getElementById('terminal-input');
-        const loginOverlay = document.getElementById('loginOverlay');
-        const authStatus = document.getElementById('authStatus');
-        const loginBtn = document.getElementById('loginBtn');
-        
-        let isLoggedIn = false;
-
-        const engineDataRestricted = {
-            'quyguzu': "> [LỖI]: Module Bãi Hạp yêu cầu quyền Administrator.\n> Vui lòng đăng nhập để mở khóa phân tích đầy đủ.",
-            'machiavelli': "> [LỖI]: Module Quyền Lực & Nỗi Sợ yêu cầu quyền Administrator.\n> Vui lòng đăng nhập để mở khóa phân tích đầy đủ.",
-            'gametheory': "> [LỖI]: Ma trận Nash yêu cầu quyền Administrator.\n> Vui lòng đăng nhập để mở khóa phân tích đầy đủ."
-        };
-
-        const engineDataFull = {
-            'quyguzu': "> Xác thực thành công. Đang nạp hệ tư tưởng Quỷ Cốc Tử...\n> Khởi tạo module Bãi Hạp (Mở/Đóng)...\n\n[PHÂN TÍCH]: Khi đối phương hé lộ (Mở), ta thuận theo để thu thập thông tin. Khi đối phương im lặng (Đóng), ta dùng kế khích tướng để họ bộc lộ sơ hở.\n\nTrạng thái: Sẵn sàng phân tích hành vi mục tiêu.",
-            'machiavelli': "> Xác thực thành công. Đang nạp hệ tư tưởng Machiavelli...\n> Khởi tạo module Quyền Lực & Nỗi Sợ...\n\n[PHÂN TÍCH]: Tốt hơn là bị sợ hãi hay được yêu thương? Tình yêu được ràng buộc bởi lòng biết ơn - thứ dễ dàng bị phá vỡ vì tư lợi. Sự sợ hãi an toàn hơn và dễ kiểm soát hơn.\n\nTrạng thái: Sẵn sàng đo lường rủi ro thao túng.",
-            'gametheory': "> Xác thực thành công. Đang nạp Hội Đồng Cố Vấn Đa Triết Phái...\n> Khởi tạo Ma trận Nash...\n\n[PHÂN TÍCH]: Trò chơi Tổng Không (Zero-sum). Lợi ích của bạn tỷ lệ nghịch với thiệt hại của đối thủ. Không có Win-Win, chỉ có sự tối ưu hóa thiệt hại cho đối thủ.\n\nTrạng thái: Sẵn sàng giả lập kịch bản đàm phán."
-        };
-
-        function toggleLogin() {
-            isLoggedIn = !isLoggedIn;
-            if (isLoggedIn) {
-                authStatus.textContent = "Trạng thái: ADMINISTRATOR (Toàn Quyền)";
-                authStatus.classList.replace('text-yellow-500', 'text-green-500');
-                loginBtn.textContent = "Đăng Xuất";
-                loginOverlay.classList.remove('opacity-100', 'pointer-events-auto');
-                loginOverlay.classList.add('opacity-0', 'pointer-events-none');
-                typeWriter(outputTerminal, "> Quyền Administrator đã được cấp. Toàn bộ Hệ Thống Lõi đã mở khóa.\n> Vui lòng chọn Engine để truy vấn...");
-            } else {
-                authStatus.textContent = "Trạng thái: GUEST (Giới hạn)";
-                authStatus.classList.replace('text-green-500', 'text-yellow-500');
-                loginBtn.textContent = "Đăng Nhập";
-                typeWriter(outputTerminal, "> Đã đăng xuất. Quyền truy cập bị giới hạn.");
-            }
-        }
-
-        function typeWriter(element, text, speed = 15) {
-            element.innerHTML = '';
-            let i = 0;
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i) === '\n' ? '<br>' : text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                }
-            }
-            type();
-        }
-
-        function queryEngine(type) {
-            if (!isLoggedIn) {
-                loginOverlay.classList.remove('opacity-0', 'pointer-events-none');
-                loginOverlay.classList.add('opacity-100', 'pointer-events-auto');
-                inputTerminal.value = `run_engine --module=${type}`;
-                typeWriter(outputTerminal, engineDataRestricted[type]);
-            } else {
-                inputTerminal.value = `run_engine --module=${type}`;
-                typeWriter(outputTerminal, engineDataFull[type]);
-            }
-        }
-
-        inputTerminal.addEventListener('keypress', function (e) {
-            if (e.key === 'Enter') {
-                const query = this.value;
-                if (!isLoggedIn) {
-                    loginOverlay.classList.remove('opacity-0', 'pointer-events-none');
-                    loginOverlay.classList.add('opacity-100', 'pointer-events-auto');
-                    typeWriter(outputTerminal, `> [TỪ CHỐI]: Truy vấn "${query}" yêu cầu quyền Administrator.`);
-                } else {
-                    typeWriter(outputTerminal, `> Đang xử lý truy vấn sâu: "${query}"...\n> [OK]: Đã gửi vào Knowledge Graph. Đang chờ phản hồi từ Core Engine...`);
-                }
-                this.value = '';
-            }
-        });
-    </script>
+    
 
     <!-- Initialize GSAP -->
     <script>
+(() => {
+
         gsap.registerPlugin(ScrollTrigger);
 
         // Hero Animations
@@ -2794,7 +2719,9 @@
                 start: "top 80%",
             }
         });
-    </script>
+    
+})();
+</script>
 
     </div>
 
@@ -2888,8 +2815,8 @@
                     </div>
 
                     <div class="chat-input-bar" id="chat-input-bar">
-                        <input type="text" class="chat-text-input" id="advisory-input" placeholder="Nhập tình huống quản trị hoặc bài toán nhân sự cần tham mưu...">
-                        <button class="send-action-btn" id="advisory-send-btn">Tác chiến ➤</button>
+                        <input type="text" class="chat-text-input" id="dummy-advisory-input" placeholder="Nhập tình huống quản trị hoặc bài toán nhân sự cần tham mưu...">
+                        <button class="send-action-btn" id="dummy-advisory-send-btn">Tác chiến ➤</button>
                     </div>
 
                     <!-- CASE LIBRARY (only visible in Cases mode) -->
@@ -7315,6 +7242,8 @@
     
     <!-- Initialize GSAP -->
     <script>
+(() => {
+
         gsap.registerPlugin(ScrollTrigger);
 
         // Hero Animations
@@ -7397,85 +7326,10 @@
                 start: "top 80%",
             }
         });
-    </script>
-    <!-- Interactive Script for Knowledge System -->
-    <script>
-        const outputTerminal = document.getElementById('terminal-output');
-        const inputTerminal = document.getElementById('terminal-input');
-        const loginOverlay = document.getElementById('loginOverlay');
-        const authStatus = document.getElementById('authStatus');
-        const loginBtn = document.getElementById('loginBtn');
-        
-        let isLoggedIn = false;
-
-        const engineDataRestricted = {
-            'quyguzu': "> [LỖI]: Module Bãi Hạp yêu cầu quyền Administrator.\n> Vui lòng đăng nhập để mở khóa phân tích đầy đủ.",
-            'machiavelli': "> [LỖI]: Module Quyền Lực & Nỗi Sợ yêu cầu quyền Administrator.\n> Vui lòng đăng nhập để mở khóa phân tích đầy đủ.",
-            'gametheory': "> [LỖI]: Ma trận Nash yêu cầu quyền Administrator.\n> Vui lòng đăng nhập để mở khóa phân tích đầy đủ."
-        };
-
-        const engineDataFull = {
-            'quyguzu': "> Xác thực thành công. Đang nạp hệ tư tưởng Quỷ Cốc Tử...\n> Khởi tạo module Bãi Hạp (Mở/Đóng)...\n\n[PHÂN TÍCH]: Khi đối phương hé lộ (Mở), ta thuận theo để thu thập thông tin. Khi đối phương im lặng (Đóng), ta dùng kế khích tướng để họ bộc lộ sơ hở.\n\nTrạng thái: Sẵn sàng phân tích hành vi mục tiêu.",
-            'machiavelli': "> Xác thực thành công. Đang nạp hệ tư tưởng Machiavelli...\n> Khởi tạo module Quyền Lực & Nỗi Sợ...\n\n[PHÂN TÍCH]: Tốt hơn là bị sợ hãi hay được yêu thương? Tình yêu được ràng buộc bởi lòng biết ơn - thứ dễ dàng bị phá vỡ vì tư lợi. Sự sợ hãi an toàn hơn và dễ kiểm soát hơn.\n\nTrạng thái: Sẵn sàng đo lường rủi ro thao túng.",
-            'gametheory': "> Xác thực thành công. Đang nạp Hội Đồng Cố Vấn Đa Triết Phái...\n> Khởi tạo Ma trận Nash...\n\n[PHÂN TÍCH]: Trò chơi Tổng Không (Zero-sum). Lợi ích của bạn tỷ lệ nghịch với thiệt hại của đối thủ. Không có Win-Win, chỉ có sự tối ưu hóa thiệt hại cho đối thủ.\n\nTrạng thái: Sẵn sàng giả lập kịch bản đàm phán."
-        };
-
-        function toggleLogin() {
-            isLoggedIn = !isLoggedIn;
-            if (isLoggedIn) {
-                authStatus.textContent = "Trạng thái: ADMINISTRATOR (Toàn Quyền)";
-                authStatus.classList.replace('text-yellow-500', 'text-green-500');
-                loginBtn.textContent = "Đăng Xuất";
-                loginOverlay.classList.remove('opacity-100', 'pointer-events-auto');
-                loginOverlay.classList.add('opacity-0', 'pointer-events-none');
-                typeWriter(outputTerminal, "> Quyền Administrator đã được cấp. Toàn bộ Hệ Thống Lõi đã mở khóa.\n> Vui lòng chọn Engine để truy vấn...");
-            } else {
-                authStatus.textContent = "Trạng thái: GUEST (Giới hạn)";
-                authStatus.classList.replace('text-green-500', 'text-yellow-500');
-                loginBtn.textContent = "Đăng Nhập";
-                typeWriter(outputTerminal, "> Đã đăng xuất. Quyền truy cập bị giới hạn.");
-            }
-        }
-
-        function typeWriter(element, text, speed = 15) {
-            element.innerHTML = '';
-            let i = 0;
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i) === '\n' ? '<br>' : text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                }
-            }
-            type();
-        }
-
-        function queryEngine(type) {
-            if (!isLoggedIn) {
-                loginOverlay.classList.remove('opacity-0', 'pointer-events-none');
-                loginOverlay.classList.add('opacity-100', 'pointer-events-auto');
-                inputTerminal.value = `run_engine --module=${type}`;
-                typeWriter(outputTerminal, engineDataRestricted[type]);
-            } else {
-                inputTerminal.value = `run_engine --module=${type}`;
-                typeWriter(outputTerminal, engineDataFull[type]);
-            }
-        }
-
-        inputTerminal.addEventListener('keypress', function (e) {
-            if (e.key === 'Enter') {
-                const query = this.value;
-                if (!isLoggedIn) {
-                    loginOverlay.classList.remove('opacity-0', 'pointer-events-none');
-                    loginOverlay.classList.add('opacity-100', 'pointer-events-auto');
-                    typeWriter(outputTerminal, `> [TỪ CHỐI]: Truy vấn "${query}" yêu cầu quyền Administrator.`);
-                } else {
-                    typeWriter(outputTerminal, `> Đang xử lý truy vấn sâu: "${query}"...\n> [OK]: Đã gửi vào Knowledge Graph. Đang chờ phản hồi từ Core Engine...`);
-                }
-                this.value = '';
-            }
-        });
-    </script>
+    
+})();
+</script>
+    
     
     <script>
     function enterApp() {

@@ -46,8 +46,9 @@ def test_deterministic_situation_overview_treatise_depth():
     assert len(overview_content) > 400
 
 
-def test_auth_login_and_session_endpoints():
+def test_auth_login_and_session_endpoints(monkeypatch):
     """Test the temporary authentication endpoints in BusinessOSGatewayHandler."""
+    monkeypatch.setenv("NT_ADMIN_PASSWORD", "nhanthuat2026")
     # 1. Test Login with executive credentials
     _ACTIVE_SESSIONS.clear()
 
@@ -106,15 +107,28 @@ def test_auth_login_and_session_endpoints():
     assert token not in _ACTIVE_SESSIONS
 
 
-def test_auth_quick_login_roles():
-    """Test quick login by role without password."""
+def test_auth_rejects_role_only_login_and_accepts_configured_credentials(monkeypatch):
+    """Identity and role must come from a configured account, never a client hint."""
+    monkeypatch.setenv("NT_EXECUTIVE_PASSWORD", "exec-test-password")
+    monkeypatch.setenv("NT_ADVISOR_PASSWORD", "advisor-test-password")
+    monkeypatch.setenv("NT_GUEST_PASSWORD", "guest-test-password")
     handler = BusinessOSGatewayHandler.__new__(BusinessOSGatewayHandler)
     handler.rfile = MagicMock()
     handler._send_json_response = MagicMock()
     handler.path = "/api/v1/auth/login"
 
-    for role, expected_role in [("EXECUTIVE", "EXECUTIVE"), ("ADVISOR", "ADVISOR"), ("GUEST", "GUEST")]:
-        body = json.dumps({"role": role}).encode("utf-8")
+    body = json.dumps({"role": "EXECUTIVE"}).encode("utf-8")
+    handler.headers = {"Content-Length": str(len(body))}
+    handler.rfile.read = MagicMock(return_value=body)
+    handler.do_POST()
+    assert handler._send_json_response.call_args.args[0] == 401
+
+    for username, password, expected_role in [
+        ("executive", "exec-test-password", "EXECUTIVE"),
+        ("advisor", "advisor-test-password", "ADVISOR"),
+        ("guest", "guest-test-password", "GUEST"),
+    ]:
+        body = json.dumps({"username": username, "password": password}).encode("utf-8")
         handler.headers = {"Content-Length": str(len(body))}
         handler.rfile.read = MagicMock(return_value=body)
         handler.do_POST()

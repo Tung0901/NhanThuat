@@ -3709,6 +3709,9 @@
                 <div class="workspace-eyebrow">Hệ điều hành ra quyết định</div>
                 <h2>Nhìn người. Rõ thế. Quyết định.</h2>
                 <p class="workspace-intro-copy">Đưa một tình huống thật vào Nhân Thuật. Hệ thống sẽ đối chiếu tri thức, bóc tách động lực và chuyển kết quả thành phương án hành động có thể kiểm tra.</p>
+                <figure class="workspace-intro-visual">
+                    <img src="/assets/nhan-thuat-council.png" alt="Bàn tham mưu với bản đồ, hồ sơ và các cố vấn đang phân tích tình thế">
+                </figure>
                 <form class="hero-command-form" onsubmit="submitHeroAdvisory(event)">
                     <input id="hero-advisory-input" class="hero-command-input" type="text" placeholder="Mô tả tình huống quản trị, nhân sự hoặc đàm phán..." aria-label="Tình huống cần tham mưu" autocomplete="off">
                     <button class="hero-command-submit" type="submit">Phân tích tình huống</button>
@@ -4650,7 +4653,7 @@
     <!-- Temporary Login Gate Modal -->
     <div class="login-gate-modal" id="login-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="login-gate-title">
         <div class="login-gate-card">
-            <div class="login-crest">👑</div>
+            <div class="login-crest" aria-hidden="true">NT</div>
             <h2 class="login-gate-title" id="login-gate-title">NHÂN THUẬT OS</h2>
             <p class="login-gate-subtitle">Cổng định danh & xác thực cố vấn chiến lược điều hành</p>
 
@@ -4660,29 +4663,14 @@
                     <input type="text" id="login-username" class="login-input" placeholder="Ví dụ: executive, admin, guest hoặc tên bạn..." required autocomplete="username">
                 </div>
                 <div class="login-field-group">
-                    <label class="login-label" for="login-password">Mật khẩu (Tùy chọn)</label>
-                    <input type="password" id="login-password" class="login-input" placeholder="Mặc định: 123456 (hoặc để trống)" autocomplete="current-password">
+                    <label class="login-label" for="login-password">Mật khẩu</label>
+                    <input type="password" id="login-password" class="login-input" placeholder="Mật khẩu tài khoản" required autocomplete="current-password">
                 </div>
                 <div id="login-error-msg" class="login-error-msg"></div>
                 <button type="submit" class="login-submit-btn" id="login-submit-btn">Xác thực & vào không gian làm việc ➤</button>
             </form>
 
-            <div class="quick-access-divider">Hoặc đăng nhập nhanh 1 chạm</div>
-
-            <div class="quick-access-grid">
-                <button type="button" class="quick-access-btn" onclick="quickLoginAs('executive')">
-                    <span class="emoji">👑</span>
-                    <span>Cố vấn cấp cao</span>
-                </button>
-                <button type="button" class="quick-access-btn" onclick="quickLoginAs('advisor')">
-                    <span class="emoji">🏛️</span>
-                    <span>Chuyên viên</span>
-                </button>
-                <button type="button" class="quick-access-btn" onclick="quickLoginAs('guest')">
-                    <span class="emoji">👁️</span>
-                    <span>Khách mời</span>
-                </button>
-            </div>
+            <p class="login-access-note">Sử dụng tài khoản được cấp để mở không gian làm việc.</p>
         </div>
     </div>
 
@@ -4693,7 +4681,7 @@
 
     function getStoredSession() {
         try {
-            const raw = localStorage.getItem(AUTH_STORAGE_KEY);
+            const raw = sessionStorage.getItem(AUTH_STORAGE_KEY);
             return raw ? JSON.parse(raw) : null;
         } catch (e) {
             return null;
@@ -4703,7 +4691,7 @@
     function saveSession(session) {
         currentUserSession = session;
         try {
-            localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(session));
+            sessionStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(session));
         } catch (e) {}
         updateUserProfileUI(session);
         closeLoginModal();
@@ -4712,7 +4700,7 @@
     function clearSession() {
         currentUserSession = null;
         try {
-            localStorage.removeItem(AUTH_STORAGE_KEY);
+            sessionStorage.removeItem(AUTH_STORAGE_KEY);
         } catch (e) {}
         updateUserProfileUI(null);
         openLoginModal();
@@ -4786,59 +4774,10 @@
                 throw new Error(data.message || 'Xác thực không thành công.');
             }
         } catch (err) {
-            // Fallback for standalone static file execution
-            const lower = username.toLowerCase();
-            const fallbackSession = {
-                token: 'NT-SESSION-LOCAL-' + Date.now(),
-                user_id: lower,
-                display_name: username.charAt(0).toUpperCase() + username.slice(1),
-                role: lower === 'guest' ? 'GUEST' : (lower === 'advisor' ? 'ADVISOR' : 'EXECUTIVE'),
-                avatar: lower === 'guest' ? '👁️' : (lower === 'advisor' ? '🏛️' : '👑'),
-                logged_in_at: Date.now() / 1000
-            };
-            saveSession(fallbackSession);
-        } finally {
-            if (submitBtn) {
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Xác thực & vào không gian làm việc ➤';
+            if (errorEl) {
+                errorEl.textContent = err.message || 'Không thể xác thực tài khoản.';
+                errorEl.style.display = 'block';
             }
-        }
-    }
-
-    async function quickLoginAs(role) {
-        const submitBtn = document.getElementById('login-submit-btn');
-        if (submitBtn) {
-            submitBtn.disabled = true;
-            submitBtn.textContent = '⏳ Đang kết nối…';
-        }
-        try {
-            const res = await fetch('/api/v1/auth/login', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ role: role.toUpperCase() })
-            });
-            const data = await res.json();
-            if (data.status === 'success' && data.session) {
-                saveSession(data.session);
-            } else {
-                throw new Error('Quick login failed');
-            }
-        } catch (e) {
-            // Client fallback
-            const presets = {
-                executive: { display_name: 'Cố vấn điều hành', role: 'EXECUTIVE', avatar: '👑' },
-                advisor: { display_name: 'Chuyên viên chiến lược', role: 'ADVISOR', avatar: '🏛️' },
-                guest: { display_name: 'Khách mời trải nghiệm', role: 'GUEST', avatar: '👁️' }
-            };
-            const p = presets[role] || presets.executive;
-            saveSession({
-                token: 'NT-SESSION-LOCAL-' + Date.now(),
-                user_id: role,
-                display_name: p.display_name,
-                role: p.role,
-                avatar: p.avatar,
-                logged_in_at: Date.now() / 1000
-            });
         } finally {
             if (submitBtn) {
                 submitBtn.disabled = false;
@@ -4861,16 +4800,26 @@
         clearSession();
     }
 
-    function initAuthGate() {
+    async function initAuthGate() {
         const s = getStoredSession();
         if (s) {
-            currentUserSession = s;
-            updateUserProfileUI(s);
-            closeLoginModal();
+            try {
+                const res = await fetch('/api/v1/auth/session', {
+                    headers: { 'Authorization': `Bearer ${s.token}` }
+                });
+                const data = await res.json();
+                if (res.ok && data.authenticated && data.session) {
+                    saveSession(data.session);
+                    return;
+                }
+            } catch (e) {}
+            sessionStorage.removeItem(AUTH_STORAGE_KEY);
+            currentUserSession = null;
+            updateUserProfileUI(null);
         } else {
             updateUserProfileUI(null);
-            closeLoginModal();
         }
+        closeLoginModal();
     }
 
     // --- SCROLL-NATIVE WORKSPACE NAVIGATION ---
@@ -8397,6 +8346,23 @@
     }
     </script>
     <script src="/js/scenario-workspace.js"></script>
+    <script>
+    // Keep interface language restrained while preserving meaningful text content.
+    (() => {
+        const decorativeMarks = /[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}]/gu;
+        const cleanNode = (node) => {
+            if (node.nodeType === Node.TEXT_NODE) {
+                node.nodeValue = node.nodeValue.replace(decorativeMarks, '').replace(/[ \t]{2,}/g, ' ');
+                return;
+            }
+            if (node.nodeType !== Node.ELEMENT_NODE || ['SCRIPT', 'STYLE', 'INPUT', 'TEXTAREA'].includes(node.tagName)) return;
+            node.childNodes.forEach(cleanNode);
+        };
+        cleanNode(document.body);
+        new MutationObserver(records => records.forEach(record => record.addedNodes.forEach(cleanNode)))
+            .observe(document.body, { childList: true, subtree: true });
+    })();
+    </script>
 </body>
 </html>
 

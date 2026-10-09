@@ -21,6 +21,35 @@ body.app-entry {
     color: var(--nt-ink);
 }
 
+.workspace-intro {
+    overflow: hidden;
+}
+
+.workspace-intro::before {
+    background:
+        linear-gradient(90deg, rgba(4, 4, 7, 0.98) 0%, rgba(4, 4, 7, 0.84) 42%, rgba(4, 4, 7, 0.28) 100%),
+        url('/assets/nhan-thuat-council.png') 78% center / cover no-repeat;
+}
+
+.workspace-intro-visual {
+    position: absolute;
+    top: 16%;
+    right: clamp(24px, 6vw, 96px);
+    width: min(42vw, 560px);
+    margin: 0;
+    opacity: 0.32;
+    pointer-events: none;
+    mix-blend-mode: screen;
+}
+
+.workspace-intro-visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid rgba(245, 230, 190, 0.24);
+    filter: saturate(0.74) contrast(1.05);
+}
+
 body.app-entry :is(h1, h2, h3, h4, p, li, button, input, textarea) {
     text-wrap: pretty;
 }
@@ -28,6 +57,26 @@ body.app-entry :is(h1, h2, h3, h4, p, li, button, input, textarea) {
 body.app-entry :is(button, a, input, textarea, select):focus-visible {
     outline: none;
     box-shadow: var(--nt-focus);
+}
+
+.login-crest {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    place-items: center;
+    border: 1px solid var(--nt-line-strong);
+    border-radius: 50%;
+    color: var(--nt-accent-soft);
+    font: 600 14px/1 var(--font-display);
+    letter-spacing: 0.1em;
+}
+
+.login-access-note {
+    margin: 18px 0 0;
+    color: var(--nt-faint);
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: center;
 }
 
 body.home-entry .workspace-section-heading {
@@ -67,6 +116,14 @@ body.home-entry .workspace-section-heading + * {
 }
 
 @media (max-width: 700px) {
+    .workspace-intro-visual {
+        top: auto;
+        right: 18px;
+        bottom: 18%;
+        width: min(74vw, 360px);
+        opacity: 0.18;
+    }
+
     body.home-entry .workspace-section-heading {
         padding-top: 44px;
         padding-inline: 18px;

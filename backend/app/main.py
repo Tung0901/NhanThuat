@@ -33,7 +33,11 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import parse_qs, urlparse
 
-from backend.app.auth import _ACTIVE_SESSIONS, auth_manager
+from dotenv import load_dotenv
+
+load_dotenv()
+
+from backend.app.auth import AuthenticationError, _ACTIVE_SESSIONS, auth_manager
 from backend.app.engine.nhan_thuat_api import diagnose_person_role_fit, diagnose_team_structural_fit, process_nhan_thuat_analysis
 from backend.app.engine.runtime import BusinessOSRuntimeOrchestrator, RuntimeRequestPayload
 from nhan_thuat.council.council_engine import CouncilEngine
@@ -50,9 +54,6 @@ from nhan_thuat.public.v1.contracts import KnowledgeQuery
 from nhan_thuat.runtime.war_room import WarRoomEngine
 from nhan_thuat.storage.db import DatabaseManager
 from salesos_pack.plugin import SalesOSPlugin
-
-from dotenv import load_dotenv
-load_dotenv()
 
 # Global Engine, Plugin & Storage Instances
 runtime_orchestrator = BusinessOSRuntimeOrchestrator()
@@ -1087,7 +1088,15 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
             password = str(payload.get("password", "")).strip()
             role_hint = str(payload.get("role", "")).strip().upper()
 
-            matched, user_id = auth_manager.authenticate(username, password, role_hint)
+            try:
+                matched, user_id = auth_manager.authenticate(username, password, role_hint)
+            except AuthenticationError:
+                self._send_json_response(401, {
+                    "status": "error",
+                    "error_code": "AUTHENTICATION_FAILED",
+                    "message": "Tên đăng nhập hoặc mật khẩu không hợp lệ.",
+                })
+                return
             session_data = auth_manager.create_session(matched, user_id)
 
             self._send_json_response(200, {

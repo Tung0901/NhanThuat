@@ -16,6 +16,10 @@ import time
 from typing import Any
 
 
+class AuthenticationError(ValueError):
+    """Raised when credentials cannot be authenticated."""
+
+
 def hash_password(password: str, salt: bytes | None = None) -> str:
     """Hash password using PBKDF2-HMAC-SHA256 with a cryptographically secure salt."""
     if salt is None:
@@ -46,7 +50,7 @@ def verify_password(stored_hash_or_plain: str, provided_password: str) -> bool:
                 "sha256", provided_password.encode("utf-8"), salt, iterations
             )
             return hmac.compare_digest(expected_derived, actual_derived)
-        except Exception:
+        except (TypeError, ValueError, IndexError):
             return False
 
     # Plaintext fallback for dev / tests using constant-time string comparison
@@ -103,66 +107,52 @@ class AuthManager:
 
     def refresh_accounts(self) -> None:
         """Load configured accounts with environment override capability."""
-        admin_pass = os.environ.get("NT_ADMIN_PASSWORD", "nhanthuat2026")
-        exec_pass = os.environ.get("NT_EXECUTIVE_PASSWORD", "123456")
-        advisor_pass = os.environ.get("NT_ADVISOR_PASSWORD", "123456")
-        guest_pass = os.environ.get("NT_GUEST_PASSWORD", "guest")
+        admin_pass = os.environ.get("NT_ADMIN_PASSWORD", "")
+        exec_pass = os.environ.get("NT_EXECUTIVE_PASSWORD", "")
+        advisor_pass = os.environ.get("NT_ADVISOR_PASSWORD", "")
+        guest_pass = os.environ.get("NT_GUEST_PASSWORD", "")
 
         self.accounts: dict[str, dict[str, Any]] = {
             "admin": {
                 "password": admin_pass,
                 "name": "Cố Vấn Tối Cao (Admin)",
                 "role": "EXECUTIVE",
-                "avatar": "👑",
+                "avatar": "NT",
             },
             "executive": {
                 "password": exec_pass,
                 "name": "Cố Vấn Điều Hành",
                 "role": "EXECUTIVE",
-                "avatar": "👑",
+                "avatar": "CV",
             },
             "advisor": {
                 "password": advisor_pass,
                 "name": "Chuyên Viên Chiến Lược",
                 "role": "ADVISOR",
-                "avatar": "🏛️",
+                "avatar": "TV",
             },
             "guest": {
                 "password": guest_pass,
                 "name": "Khách Mời Trải Nghiệm",
                 "role": "GUEST",
-                "avatar": "👁️",
+                "avatar": "KH",
             },
         }
 
     def authenticate(
         self, username: str, password: str = "", role_hint: str = ""
     ) -> tuple[dict[str, Any], str]:
-        """Authenticate user or fallback to quick role-hint login."""
+        """Authenticate a configured account; never infer identity from user input."""
         self.refresh_accounts()
         username_clean = username.strip().lower()
         role_hint_clean = role_hint.strip().upper()
 
-        matched: dict[str, Any] | None = None
-        user_id = username_clean
-
-        if username_clean in self.accounts and (
-            not password or verify_password(self.accounts[username_clean]["password"], password)
-        ):
-            matched = self.accounts[username_clean]
-            user_id = username_clean
-        elif role_hint_clean in ("EXECUTIVE", "ADVISOR", "GUEST"):
-            role_key = role_hint_clean.lower()
-            matched = self.accounts.get(role_key, self.accounts["guest"])
-            user_id = role_key
-        elif username_clean:
-            matched = {"name": username_clean.capitalize(), "role": "EXECUTIVE", "avatar": "⚡"}
-            user_id = username_clean
-        else:
-            matched = self.accounts["executive"]
-            user_id = "executive"
-
-        return matched, user_id
+        matched = self.accounts.get(username_clean)
+        if not matched or not password or not verify_password(matched["password"], password):
+            raise AuthenticationError("Invalid username or password.")
+        if role_hint_clean and role_hint_clean != str(matched["role"]).upper():
+            raise AuthenticationError("Requested role does not match the account.")
+        return matched, username_clean
 
     def create_session(
         self, matched_user: dict[str, Any], user_id: str, custom_ttl: int | None = None

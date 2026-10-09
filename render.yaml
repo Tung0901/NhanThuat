@@ -11,3 +11,13 @@ services:
         value: "8000"
       - key: GEMINI_API_KEY
         sync: false
+      - key: NT_ADMIN_PASSWORD
+        sync: false
+      - key: NT_EXECUTIVE_PASSWORD
+        sync: false
+      - key: NT_ADVISOR_PASSWORD
+        sync: false
+      - key: NT_GUEST_PASSWORD
+        sync: false
+      - key: NT_SESSION_TTL_SECONDS
+        value: "28800"

@@ -222,22 +222,52 @@ body.home-entry .workspace-section-heading + * {
     border-color: var(--nt-line);
 }
 
-@media (max-width: 700px) {
+@media (max-width: 700px), (max-height: 760px) {
+    .login-gate-modal {
+        align-items: flex-start;
+        overflow-y: auto;
+        padding: 18px;
+    }
+
     .login-gate-card {
         display: block;
         max-width: 430px;
+        margin: auto;
     }
 
     .login-gate-visual {
-        min-height: 190px;
-    }
-
-    .login-gate-visual-caption strong {
-        font-size: 23px;
+        display: none;
     }
 
     .login-gate-content {
-        padding: 30px 24px 28px;
+        padding: 28px 26px 24px;
+    }
+
+    .login-gate-content .login-crest {
+        width: 42px;
+        height: 42px;
+        margin-bottom: 16px;
+    }
+
+    .login-gate-content .login-gate-title {
+        font-size: 26px;
+    }
+
+    .login-gate-content .login-gate-subtitle {
+        margin-bottom: 22px;
+    }
+
+    .login-field-group {
+        gap: 8px;
+        margin-bottom: 14px;
+    }
+
+    .login-gate-content .login-input {
+        padding-block: 12px;
+    }
+
+    .login-gate-content .login-submit-btn {
+        margin-bottom: 10px;
     }
 
     .site-introduction .hero-img {

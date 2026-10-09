@@ -8,7 +8,7 @@ thức; nội dung trong hội thoại chỉ là đầu vào cho quy trình biê
 
 - Phiên bản: `1.0.0` (Nhánh nội dung tiếng Việt, cập nhật 2026-09-14)
 - 31 lĩnh vực tri thức (`NT-DA-0001`..`NT-DA-0031`)
-- 379 knowledge units (85 Quy luật, 135 Nguyên tắc, 45 Mô hình, 61 Phản-mẫu, 52 Hiện tượng hành vi, 1 Chiến lược) — 373 units Frozen, 6 units draft chờ Product Owner duyệt freeze
+- Canonical content inventory: `docs/content-inventory.json` (379 units: 85 Laws, 135 Principles, 45 Models, 61 Anti-patterns, 52 Phenomena, 1 Strategy; 373 Frozen and 6 draft pending Product Owner review)
 - 18 cẩm nang tri thức (`docs/knowledge/*.md`) + 3 hồ sơ thực chiến (`knowledge/cases/*.yaml`)
 - Governance: Frozen Register (`governance/frozen-register.yaml`), validator, CI
 - Kiến trúc 5 Lăng kính Triết học (Hùng Biện, Nho gia, Pháp gia, Đạo gia, Tuân Tử)
@@ -27,6 +27,7 @@ python -m pip install -e ".[dev]"
 python scripts/validate_all.py
 pytest
 ruff check src scripts tests
+python scripts/audit_content_inventory.py --check
 python -m backend.app.main   # khởi chạy web app tại http://localhost:8000
 ```
 

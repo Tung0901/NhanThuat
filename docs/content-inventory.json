@@ -1,0 +1,56 @@
+{
+  "source": "knowledge/",
+  "top_level_domains": 5,
+  "domains": [
+    {
+      "id": "NT-D03",
+      "slug": "dung-nhan",
+      "name": "Dụng Nhân",
+      "status": "draft",
+      "topic_count": 10
+    },
+    {
+      "id": "NT-D04",
+      "slug": "hop-chung",
+      "name": "Hợp Chúng",
+      "status": "draft",
+      "topic_count": 9
+    },
+    {
+      "id": "NT-D05",
+      "slug": "thanh-su",
+      "name": "Thành Sự",
+      "status": "draft",
+      "topic_count": 10
+    },
+    {
+      "id": "NT-D02",
+      "slug": "tri-nhan",
+      "name": "Tri Nhân",
+      "status": "draft",
+      "topic_count": 9
+    },
+    {
+      "id": "NT-D01",
+      "slug": "tu-than",
+      "name": "Tu Thân",
+      "status": "draft",
+      "topic_count": 8
+    }
+  ],
+  "knowledge_units": 379,
+  "units_by_type": {
+    "anti-pattern": 61,
+    "law": 85,
+    "model": 45,
+    "phenomenon": 52,
+    "principle": 135,
+    "strategy": 1
+  },
+  "units_by_status": {
+    "draft": 6,
+    "frozen": 373
+  },
+  "evidence_records": 1,
+  "relations": 449
+}

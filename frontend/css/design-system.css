@@ -1,0 +1,90 @@
+/* Shared visual contract for the scroll-native homepage and embedded workspace. */
+:root {
+    --nt-bg: #08080a;
+    --nt-surface: rgba(17, 17, 21, 0.78);
+    --nt-surface-strong: rgba(24, 24, 29, 0.9);
+    --nt-line: rgba(255, 255, 255, 0.14);
+    --nt-line-strong: rgba(245, 230, 190, 0.46);
+    --nt-ink: #f7f5ef;
+    --nt-muted: rgba(247, 245, 239, 0.66);
+    --nt-faint: rgba(247, 245, 239, 0.44);
+    --nt-accent: #d4af37;
+    --nt-accent-soft: #f5e6be;
+    --nt-radius-sm: 3px;
+    --nt-radius-md: 8px;
+    --nt-content-max: 1280px;
+    --nt-focus: 0 0 0 3px rgba(212, 175, 55, 0.28);
+}
+
+body.app-entry {
+    background: var(--nt-bg);
+    color: var(--nt-ink);
+}
+
+body.app-entry :is(h1, h2, h3, h4, p, li, button, input, textarea) {
+    text-wrap: pretty;
+}
+
+body.app-entry :is(button, a, input, textarea, select):focus-visible {
+    outline: none;
+    box-shadow: var(--nt-focus);
+}
+
+body.home-entry .workspace-section-heading {
+    width: min(var(--nt-content-max), 100%);
+    padding-top: clamp(52px, 6vw, 88px);
+    padding-bottom: 24px;
+}
+
+body.home-entry .workspace-section-heading h2 {
+    max-width: 18ch;
+    font-size: clamp(38px, 4.4vw, 64px);
+    line-height: 1.02;
+}
+
+body.home-entry .workspace-section-heading p {
+    max-width: 60ch;
+    line-height: 1.55;
+}
+
+body.home-entry .workspace-module > :is(.cockpit-layout, .multi-lens-layout, .sparring-layout,
+.diagnostic-container, .codex-container, .war-room-layout),
+body.home-entry #view-council > .workspace-section-heading + div,
+body.home-entry #view-sparring > .workspace-section-heading + div {
+    margin-bottom: clamp(52px, 6vw, 88px) !important;
+}
+
+body.home-entry .workspace-module {
+    background: var(--nt-bg);
+}
+
+body.home-entry .workspace-module:nth-of-type(even) {
+    background: #0b0b0e;
+}
+
+body.home-entry .workspace-section-heading + * {
+    border-color: var(--nt-line);
+}
+
+@media (max-width: 700px) {
+    body.home-entry .workspace-section-heading {
+        padding-top: 44px;
+        padding-inline: 18px;
+    }
+
+    body.home-entry .workspace-section-heading h2 {
+        max-width: 15ch;
+        font-size: clamp(34px, 10vw, 48px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.app-entry *,
+    body.app-entry *::before,
+    body.app-entry *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}

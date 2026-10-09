@@ -4653,24 +4653,33 @@
     <!-- Temporary Login Gate Modal -->
     <div class="login-gate-modal" id="login-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="login-gate-title">
         <div class="login-gate-card">
-            <div class="login-crest" aria-hidden="true">NT</div>
-            <h2 class="login-gate-title" id="login-gate-title">NHÂN THUẬT OS</h2>
-            <p class="login-gate-subtitle">Cổng định danh & xác thực cố vấn chiến lược điều hành</p>
-
-            <form id="login-form" onsubmit="handleFormLogin(event)">
-                <div class="login-field-group">
-                    <label class="login-label" for="login-username">Tên đăng nhập hoặc Mã định danh</label>
-                    <input type="text" id="login-username" class="login-input" placeholder="Ví dụ: executive, admin, guest hoặc tên bạn..." required autocomplete="username">
+            <div class="login-gate-visual">
+                <img src="/assets/nhan-thuat-council.png" alt="Bản đồ chiến lược trên bàn tham mưu">
+                <div class="login-gate-visual-caption">
+                    <span>NHÂN THUẬT / EXECUTIVE STUDIO</span>
+                    <strong>Đọc thế trước khi ra quyết định.</strong>
                 </div>
-                <div class="login-field-group">
-                    <label class="login-label" for="login-password">Mật khẩu</label>
-                    <input type="password" id="login-password" class="login-input" placeholder="Mật khẩu tài khoản" required autocomplete="current-password">
-                </div>
-                <div id="login-error-msg" class="login-error-msg"></div>
-                <button type="submit" class="login-submit-btn" id="login-submit-btn">Xác thực & vào không gian làm việc ➤</button>
-            </form>
+            </div>
+            <div class="login-gate-content">
+                <div class="login-crest" aria-hidden="true">NT</div>
+                <h2 class="login-gate-title" id="login-gate-title">Vào không gian làm việc</h2>
+                <p class="login-gate-subtitle">Đăng nhập để mở hồ sơ, tham mưu và các phiên phân tích của anh.</p>
 
-            <p class="login-access-note">Sử dụng tài khoản được cấp để mở không gian làm việc.</p>
+                <form id="login-form" onsubmit="handleFormLogin(event)">
+                    <div class="login-field-group">
+                        <label class="login-label" for="login-username">Tên đăng nhập</label>
+                        <input type="text" id="login-username" class="login-input" placeholder="admin" required autocomplete="username">
+                    </div>
+                    <div class="login-field-group">
+                        <label class="login-label" for="login-password">Mật khẩu</label>
+                        <input type="password" id="login-password" class="login-input" placeholder="Mật khẩu tài khoản" required autocomplete="current-password">
+                    </div>
+                    <div id="login-error-msg" class="login-error-msg"></div>
+                    <button type="submit" class="login-submit-btn" id="login-submit-btn">Mở không gian làm việc</button>
+                </form>
+
+                <p class="login-access-note">Tài khoản được cấp theo vai trò và phạm vi làm việc.</p>
+            </div>
         </div>
     </div>
 

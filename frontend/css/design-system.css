@@ -21,6 +21,25 @@ body.app-entry {
     color: var(--nt-ink);
 }
 
+.site-introduction .hero-img {
+    opacity: 0.38 !important;
+    object-position: center;
+    filter: saturate(0.72) contrast(1.08);
+}
+
+.site-introduction .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 980px;
+    text-shadow: 0 3px 28px rgba(0, 0, 0, 0.48);
+}
+
+.site-introduction .hero-content p {
+    max-width: 58ch;
+    margin-inline: auto;
+    line-height: 1.55;
+}
+
 .workspace-intro {
     overflow: hidden;
 }
@@ -116,6 +135,10 @@ body.home-entry .workspace-section-heading + * {
 }
 
 @media (max-width: 700px) {
+    .site-introduction .hero-img {
+        opacity: 0.28 !important;
+    }
+
     .workspace-intro-visual {
         top: auto;
         right: 18px;

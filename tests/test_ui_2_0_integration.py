@@ -9,10 +9,10 @@ Verifies:
 
 from __future__ import annotations
 
-import json
+from pathlib import Path
 from unittest.mock import MagicMock
 
-from backend.app.main import BusinessOSGatewayHandler, continuous_profiler, enterprise_connector, war_room_engine
+from backend.app.main import BusinessOSGatewayHandler, war_room_engine
 
 
 def test_frontend_delivery_contains_all_2_0_components():
@@ -45,6 +45,86 @@ def test_frontend_delivery_contains_all_2_0_components():
     assert "socratic-modal-backdrop" in html
     assert "socratic-rounds-grid" in html
     assert "socratic-synthesis-content" in html
+
+
+def test_home_embeds_scroll_native_app_and_legacy_routes_open_app_mode():
+    """Homepage keeps its story and embeds the app; legacy routes open app mode."""
+    handler = BusinessOSGatewayHandler.__new__(BusinessOSGatewayHandler)
+    handler._send_html_response = MagicMock()
+    rendered: dict[str, str] = {}
+
+    for path in ("/", "/index.html", "/app", "/dashboard"):
+        handler._send_html_response.reset_mock()
+        assert handler._handle_static_or_page(path) is True
+        code, html = handler._send_html_response.call_args[0]
+        assert code == 200
+        rendered[path] = html
+
+    assert rendered["/"] == rendered["/index.html"]
+    assert rendered["/app"] == rendered["/dashboard"]
+    assert '<body class="home-entry">' in rendered["/"]
+    assert '<body class="app-entry">' in rendered["/app"]
+
+    for html in rendered.values():
+        assert 'id="landing-page-wrapper"' in html
+        assert 'id="application-start"' in html
+        assert 'id="hero-advisory-input"' in html
+        assert "initScrollNativeWorkspace" in html
+        assert "core-app-wrapper" not in html
+        assert "function enterApp" in html
+        assert 'href="#application-start"' in html
+        assert 'id="knowledge"' not in html
+        assert "terminal-container" not in html
+        assert 'id="terminal-input"' not in html
+        assert 'id="terminal-output"' not in html
+        assert 'id="loginOverlay"' not in html
+        assert 'class="strategy-method"' in html
+        assert "horizontal-scroll-container" not in html
+        assert "horizontal-scroll-wrapper" not in html
+        assert "const horizontalContainer" not in html
+        assert "closing-statement" in html
+        assert 'class="landing-nav"' in html
+        assert 'class="landing-nav-link"' in html
+        assert "mix-blend-difference" not in html
+        assert "--type-ui: 13px" in html
+        assert "--type-body: 15px" in html
+        assert "scroll-margin-top: 56px" in html
+        assert 'id="scenario-workspace"' in html
+        assert 'href="/css/scenario-workspace.css"' in html
+        assert 'src="/js/scenario-workspace.js"' in html
+
+        for image_name in (
+            "behavioral-intelligence.webp",
+            "multi-lens-council.webp",
+            "negotiation-signals.webp",
+            "power-map.webp",
+        ):
+            assert f'/assets/landing/{image_name}' in html
+
+        assert "photo-1507413245164-6160d8298b31" not in html
+        assert "photo-1529699211952-734e80c4d42b" not in html
+        assert "photo-1506544777-64cfbe1142df" not in html
+        assert "photo-1574510005727-414841dc30c1" not in html
+
+    assert "body.home-entry .workspace-module > .cockpit-layout" in rendered["/"]
+    assert "#philosophy .pillar-media" in rendered["/"]
+    assert ".workspace-viewport > #view-war-room { order: 5; }" in rendered["/"]
+    assert ".workspace-viewport > #view-codex { order: 6; }" in rendered["/"]
+    assert rendered["/"].index("Sa bàn tình thế</button>") < rendered["/"].index("Nguồn tham khảo</button>")
+
+
+def test_scenario_workspace_is_single_session_scoped_draft():
+    """Scenario spine stays tab-scoped and keeps inference separate from facts."""
+    script = Path("frontend/js/scenario-workspace.js").read_text(encoding="utf-8")
+    styles = Path("frontend/css/scenario-workspace.css").read_text(encoding="utf-8")
+
+    assert "sessionStorage.getItem(STORAGE_KEY)" in script
+    assert "sessionStorage.setItem(STORAGE_KEY" in script
+    assert "localStorage" not in script
+    assert "engine_inference: 'Kết quả: suy luận của hệ thống'" in script
+    assert "simulation: 'Kết quả: mô phỏng'" in script
+    assert "/api/v1/cases" not in script
+    assert "html.scenario-active .workspace-module" in styles
 
 
 def test_war_room_2_0_alliances_and_debate_api():

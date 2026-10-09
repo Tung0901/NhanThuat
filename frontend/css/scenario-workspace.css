@@ -1,0 +1,215 @@
+.scenario-workspace {
+    position: sticky;
+    top: 56px;
+    z-index: 69;
+    display: none;
+    width: 100%;
+    min-height: 58px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(7, 7, 10, 0.96);
+    color: #fff;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.scenario-workspace.is-active {
+    display: block;
+}
+
+html.scenario-active {
+    scroll-padding-top: 118px;
+}
+
+html.scenario-active .workspace-module {
+    scroll-margin-top: 114px;
+}
+
+.scenario-workspace__inner {
+    width: min(1440px, 100%);
+    min-height: 58px;
+    margin: 0 auto;
+    padding: 8px 20px;
+    display: grid;
+    grid-template-columns: minmax(220px, 1fr) auto auto;
+    align-items: center;
+    gap: 18px;
+}
+
+.scenario-workspace__identity {
+    min-width: 0;
+}
+
+.scenario-workspace__eyebrow {
+    margin-bottom: 2px;
+    color: rgba(245, 230, 190, 0.72);
+    font: 600 11px/1.2 var(--font-display);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.scenario-workspace__epistemic {
+    margin-left: 8px;
+    color: rgba(255, 255, 255, 0.42);
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.scenario-workspace__title {
+    overflow: hidden;
+    color: rgba(255, 255, 255, 0.92);
+    font: 600 14px/1.35 var(--font-sans);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.scenario-workspace__steps {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.scenario-step {
+    min-height: 34px;
+    padding: 0 9px;
+    border: 0;
+    border-bottom: 1px solid transparent;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.52);
+    font: 600 12px/1 var(--font-display);
+    white-space: nowrap;
+    transition: color 160ms ease, border-color 160ms ease;
+}
+
+.scenario-step:hover,
+.scenario-step:focus-visible {
+    color: #fff;
+    border-bottom-color: rgba(255, 255, 255, 0.34);
+    outline: none;
+}
+
+.scenario-step.is-complete {
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.scenario-step.is-current {
+    color: #f5e6be;
+    border-bottom-color: #d4af37;
+}
+
+.scenario-workspace__actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.scenario-workspace__action {
+    min-height: 34px;
+    padding: 0 11px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 2px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.74);
+    font: 600 12px/1 var(--font-display);
+    white-space: nowrap;
+}
+
+.scenario-workspace__action:hover,
+.scenario-workspace__action:focus-visible {
+    border-color: rgba(255, 255, 255, 0.36);
+    color: #fff;
+    outline: none;
+}
+
+.scenario-workspace__action:disabled {
+    opacity: 0.58;
+}
+
+body.workspace-focus-open .scenario-workspace {
+    display: none;
+}
+
+@media (max-width: 1100px) {
+    .scenario-workspace__inner {
+        grid-template-columns: minmax(180px, 1fr) auto;
+    }
+
+    .scenario-workspace__steps {
+        grid-column: 1 / -1;
+        order: 3;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .scenario-workspace__steps::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    html.scenario-active {
+        scroll-padding-top: 108px;
+    }
+
+    html.scenario-active .workspace-module {
+        scroll-margin-top: 106px;
+    }
+
+    .scenario-workspace {
+        top: 52px;
+    }
+
+    .scenario-workspace__inner {
+        min-height: 54px;
+        padding: 7px 14px;
+        gap: 8px 12px;
+    }
+
+    .scenario-workspace__eyebrow {
+        font-size: 10px;
+    }
+
+    .scenario-workspace__epistemic {
+        display: none;
+    }
+
+    .scenario-workspace__title {
+        font-size: 13px;
+    }
+
+    .scenario-workspace__action {
+        min-height: 32px;
+        padding-inline: 9px;
+    }
+
+    .council-query-form {
+        flex-direction: column;
+    }
+
+    .council-query-form .diag-input,
+    .council-query-form .send-action-btn {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .council-query-form .send-action-btn {
+        justify-content: center;
+        min-height: 44px;
+        white-space: normal !important;
+    }
+}
+
+@media (max-width: 520px) {
+    .scenario-workspace__inner {
+        grid-template-columns: minmax(0, 1fr) auto;
+    }
+
+    .scenario-workspace__action--secondary {
+        display: none;
+    }
+
+    .scenario-step {
+        padding-inline: 10px;
+        font-size: 12px;
+    }
+}

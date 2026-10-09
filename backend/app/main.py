@@ -22,6 +22,7 @@ Exposes REST API endpoints for BusinessOS Kernel, SalesOS Plugin, CPQ Quote Gene
 """
 
 import json
+import mimetypes
 import os
 import re
 import time
@@ -73,6 +74,7 @@ execution_provenance_store: dict[str, dict[str, Any]] = {}
 STATIC_DIR = Path(__file__).resolve().parent / "static"
 DOCS_KNOWLEDGE_DIR = Path(__file__).resolve().parent.parent.parent / "docs" / "knowledge"
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
+APP_HTML_FILE = REPO_ROOT / "frontend" / "app.html"
 
 
 def render_markdown_to_html(text: str) -> str:
@@ -261,25 +263,129 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
         self.send_header("Connection", "close")
         self.end_headers()
 
+    def _handle_static_or_page(self, path: str) -> bool:
+        """Serve static UI assets; kept as a small compatibility hook for UI tests."""
+        if path in {"/", "/index.html", "/app", "/dashboard"}:
+            if APP_HTML_FILE.exists():
+                html = APP_HTML_FILE.read_text(encoding="utf-8")
+                if path in {"/", "/index.html"}:
+                    html = html.replace('<body class="app-entry">', '<body class="home-entry">', 1)
+                self._send_html_response(200, html)
+            else:
+                self._send_html_response(404, "<h1>Nhân Thuật application HTML not found</h1>")
+            return True
+
+        return False
+
+    def _handle_get_api(self, path: str, parsed_url: Any) -> bool:
+        """Handle API GET routes shared by do_GET and direct integration tests."""
+        if path == "/api/v1/war-room/alliances":
+            qs = parse_qs(parsed_url.query)
+            session_id = qs.get("session_id", [""])[0]
+            session = war_room_engine.get_session(session_id)
+            if not session:
+                self._send_json_response(404, {
+                    "status": "error",
+                    "message": f"Session '{session_id}' not found.",
+                })
+                return True
+            self._send_json_response(200, war_room_engine.calculate_faction_alliances(session))
+            return True
+
+        if path == "/api/v1/behavioral/radar":
+            self._send_json_response(200, continuous_profiler.get_team_radar())
+            return True
+
+        if path == "/api/v1/connectors/whispers":
+            self._send_json_response(200, {
+                "status": "success",
+                "total": len(enterprise_connector.history),
+                "whispers": [w.to_dict() for w in enterprise_connector.history],
+            })
+            return True
+
+        return False
+
+    def _handle_post_api(self, path: str, payload: dict[str, Any], parsed_url: Any | None = None) -> bool:
+        """Handle API POST routes shared by do_POST and direct integration tests."""
+        if path == "/api/v1/war-room/socratic-debate":
+            session_id = payload.get("session_id", "")
+            dilemma = payload.get("dilemma") or payload.get("scenario", "")
+            philosophies = payload.get("philosophies")
+            session = war_room_engine.get_session(session_id)
+            if not session:
+                self._send_json_response(404, {
+                    "status": "error",
+                    "message": f"Session '{session_id}' not found.",
+                })
+                return True
+            debate = war_room_engine.deliberate_socratic_debate(
+                session=session,
+                dilemma=dilemma,
+                philosophies=philosophies,
+            )
+            self._send_json_response(200, debate)
+            return True
+
+        if path == "/api/v1/behavioral/analyze-stream":
+            content = str(payload.get("content", "")).strip()
+            author_id = str(payload.get("author_id", "EMP-DEFAULT")).strip()
+            clarity = float(payload.get("context_clarity", 0.8))
+            constraints = float(payload.get("context_constraints", 0.7))
+
+            if not content:
+                self._send_json_response(400, {
+                    "status": "error",
+                    "message": "Field 'content' cannot be empty.",
+                })
+                return True
+
+            event = behavioral_service.evaluate(content, author_id=author_id)
+            profile = continuous_profiler.ingest_event(
+                event=event,
+                context_clarity=clarity,
+                context_constraints=constraints,
+            )
+            self._send_json_response(200, {
+                "status": "success",
+                "event": event.to_dict(),
+                "profile": profile.to_dict(),
+            })
+            return True
+
+        if path.startswith("/api/v1/connectors/webhook"):
+            parts = path.rstrip("/").split("/")
+            query_source = ""
+            if parsed_url is not None:
+                query_source = parse_qs(parsed_url.query).get("channel", [""])[0]
+            source_hint = (
+                parts[-1] if len(parts) >= 5 and parts[-1] != "webhook"
+                else payload.get("channel") or payload.get("source") or query_source or "generic"
+            )
+            raw_payload = payload.get("payload", payload)
+            task_context = payload.get("task_context", "")
+
+            brief = enterprise_connector.process_incoming_webhook(
+                source=source_hint,
+                raw_data=raw_payload,
+                task_context=task_context,
+            )
+            brief_dict = brief.to_dict()
+            self._send_json_response(200, {
+                "status": "success",
+                "brief": brief_dict,
+                "whisper_brief": brief_dict,
+            })
+            return True
+
+        return False
+
     def do_GET(self) -> None:
         parsed_url = urlparse(self.path)
         path = parsed_url.path
 
-        # 0. Serve Landing Page, App Dashboard, and Static Assets
-        if path == "/" or path == "/index.html":
-            index_file = Path(__file__).resolve().parent.parent.parent / "index.html"
-            if index_file.exists():
-                self._send_html_response(200, index_file.read_text(encoding="utf-8"))
-            else:
-                self._send_html_response(404, "<h1>Landing HTML static file not found</h1>")
-            return
-
-        if path == "/app" or path == "/dashboard":
-            app_file = Path(__file__).resolve().parent.parent.parent / "frontend" / "app.html"
-            if app_file.exists():
-                self._send_html_response(200, app_file.read_text(encoding="utf-8"))
-            else:
-                self._send_html_response(404, "<h1>App HTML not found</h1>")
+        # 0. Serve the canonical scroll-native app on every legacy page route.
+        if self._handle_static_or_page(path):
             return
 
         if path == "/flower.mp4":
@@ -341,10 +447,20 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
             self.end_headers()
             return
 
-        if path.startswith("/css/") or path.startswith("/js/"):
-            asset_file = Path(__file__).resolve().parent.parent.parent / "frontend" / path.lstrip("/")
-            content_type = "text/css" if path.endswith(".css") else "application/javascript"
-            if asset_file.exists():
+        if path.startswith(("/css/", "/js/", "/assets/")):
+            frontend_dir = (REPO_ROOT / "frontend").resolve()
+            asset_file = (frontend_dir / path.lstrip("/")).resolve()
+            try:
+                asset_file.relative_to(frontend_dir)
+            except ValueError:
+                self.send_response(404)
+                self.send_header("Content-Length", "0")
+                self.send_header("Connection", "close")
+                self.end_headers()
+                return
+
+            content_type = mimetypes.guess_type(asset_file.name)[0] or "application/octet-stream"
+            if asset_file.is_file():
                 data = asset_file.read_bytes()
                 self.send_response(200)
                 self.send_header("Content-Type", content_type)
@@ -936,6 +1052,9 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
                 "status": "success",
                 "message": "Đã đăng xuất thành công.",
             })
+            return
+
+        if self._handle_post_api(path, payload, parsed_url):
             return
 
         # 0a. Sparring Sessions & Messages POST: POST /api/v1/sparring/sessions, POST /api/v1/sparring/messages

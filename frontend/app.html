@@ -6,7 +6,8 @@
     <title>Nhân Thuật | Quản Trị & Thao Lược Con Người</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="/css/scenario-workspace.css" rel="stylesheet">
     <!-- Marked.js for Markdown parsing -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <!-- DOMPurify for XSS sanitization -->
@@ -180,6 +181,9 @@
             --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             --font-display: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+            --type-caption: 12px;
+            --type-ui: 13px;
+            --type-body: 15px;
         }
 
         * {
@@ -352,7 +356,7 @@
 
         .brand-meta h1 {
             font-family: var(--font-serif);
-            font-size: 16.5px;
+            font-size: 17.5px;
             font-weight: 600;
             letter-spacing: -0.01em;
             color: #ffffff;
@@ -361,8 +365,8 @@
 
         .brand-meta span {
             font-family: var(--font-display);
-            font-size: 9.5px;
-            letter-spacing: 0.12em;
+            font-size: 10px;
+            letter-spacing: 0.08em;
             color: rgba(255, 255, 255, 0.55);
             text-transform: uppercase;
             font-weight: 500;
@@ -372,11 +376,11 @@
         .header-nav {
             display: flex;
             align-items: center;
-            gap: 4px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border-subtle);
-            padding: 3px 4px;
-            border-radius: 9999px;
+            gap: 18px;
+            background: transparent;
+            border: 0;
+            padding: 0;
+            border-radius: 0;
             flex-shrink: 0;
             overflow-x: auto;
             scrollbar-width: none;
@@ -392,10 +396,11 @@
             border: none;
             color: var(--text-secondary);
             font-family: var(--font-display);
-            font-size: 12px;
-            font-weight: 500;
-            padding: 6px 14px;
-            border-radius: 9999px;
+            font-size: var(--type-ui);
+            font-weight: 600;
+            padding: 17px 0 15px;
+            border-radius: 0;
+            border-bottom: 1px solid transparent;
             display: flex;
             align-items: center;
             gap: 6px;
@@ -406,14 +411,16 @@
 
         .workspace-tab-btn:hover {
             color: #ffffff;
-            background: rgba(255, 255, 255, 0.06);
+            background: transparent;
+            border-bottom-color: rgba(255, 255, 255, 0.32);
         }
 
         .workspace-tab-btn.active {
             color: #ffffff;
-            background: rgba(255, 255, 255, 0.12);
-            border: 1px solid rgba(255, 255, 255, 0.22);
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+            background: transparent;
+            border: 0;
+            border-bottom: 1px solid var(--gold-primary);
+            box-shadow: none;
             font-weight: 600;
         }
 
@@ -429,9 +436,9 @@
             border: 1px solid var(--border-subtle);
             color: #ffffff;
             font-family: var(--font-display);
-            font-size: 12px;
-            font-weight: 500;
-            padding: 7px 16px;
+            font-size: var(--type-ui);
+            font-weight: 600;
+            padding: 8px 14px;
             border-radius: 9999px;
             display: flex;
             align-items: center;
@@ -451,9 +458,9 @@
             color: var(--text-secondary);
             text-decoration: none;
             font-family: var(--font-display);
-            font-size: 12px;
-            font-weight: 500;
-            padding: 7px 14px;
+            font-size: var(--type-ui);
+            font-weight: 600;
+            padding: 8px 12px;
             border-radius: 9999px;
             border: 1px solid var(--border-subtle);
             white-space: nowrap !important;
@@ -540,10 +547,10 @@
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid var(--border-subtle);
             color: var(--text-secondary);
-            font-size: 12px;
+            font-size: var(--type-ui);
             font-weight: 600;
-            padding: 5px 12px;
-            border-radius: 16px;
+            padding: 7px 11px;
+            border-radius: 3px;
             transition: all 0.2s ease;
         }
 
@@ -566,7 +573,7 @@
 
         .scenario-chip {
             white-space: nowrap;
-            font-size: 11.5px;
+            font-size: 12.5px;
             color: rgba(255, 255, 255, 0.8);
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid var(--border-subtle);
@@ -593,10 +600,10 @@
 
         .message-bubble {
             max-width: 88%;
-            border-radius: 14px;
+            border-radius: 4px;
             padding: 18px 22px;
             line-height: 1.65;
-            font-size: 14px;
+            font-size: var(--type-body);
             animation: fadeIn 0.3s ease;
             user-select: text !important;
         }
@@ -615,9 +622,10 @@
 
         .msg-assistant {
             align-self: flex-start;
-            background: var(--bg-surface-elevated);
-            border: 1px solid var(--border-subtle);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.025);
+            border: 0;
+            border-left: 2px solid rgba(212, 175, 55, 0.56);
+            box-shadow: none;
             width: 100%;
             max-width: 95%;
         }
@@ -636,11 +644,11 @@
             flex: 1;
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid var(--border-subtle);
-            border-radius: 12px;
+            border-radius: 3px;
             padding: 14px 18px;
             color: #ffffff;
             font-family: var(--font-sans);
-            font-size: 14px;
+            font-size: var(--type-body);
             outline: none;
             transition: all 0.2s ease;
         }
@@ -656,13 +664,13 @@
         }
 
         .send-action-btn {
-            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            background: #dfc47f;
             border: none;
             color: #000000;
             font-weight: 700;
             padding: 14px 22px;
-            border-radius: 12px;
-            font-size: 13.5px;
+            border-radius: 3px;
+            font-size: 14px;
             display: flex;
             align-items: center;
             gap: 6px;
@@ -671,7 +679,8 @@
 
         .send-action-btn:hover {
             transform: translateY(-1px);
-            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35);
+            background: #f0d998;
+            box-shadow: none;
         }
 
         /* Result Tabs Inside Assistant Bubble */
@@ -688,7 +697,7 @@
             background: transparent;
             border: 1px solid transparent;
             color: var(--text-secondary);
-            font-size: 12px;
+            font-size: var(--type-ui);
             font-weight: 600;
             padding: 5px 12px;
             border-radius: 6px;
@@ -805,20 +814,17 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid var(--border-subtle);
-            padding: 4px 10px 4px 8px;
-            border-radius: 20px;
+            background: transparent;
+            border: 0;
+            border-left: 1px solid var(--border-subtle);
+            padding: 4px 0 4px 12px;
+            border-radius: 0;
             font-size: 12px;
             transition: all 0.2s ease;
         }
         .user-profile-badge:hover {
-            border-color: rgba(245, 158, 11, 0.4);
-            background: rgba(245, 158, 11, 0.08);
-        }
-        .user-avatar-icon {
-            font-size: 16px;
-            line-height: 1;
+            border-color: rgba(245, 230, 190, 0.42);
+            background: transparent;
         }
         .user-name-text {
             color: #ffffff;
@@ -829,9 +835,9 @@
             font-size: 9.5px;
             font-weight: 700;
             color: var(--gold-primary);
-            background: rgba(245, 158, 11, 0.15);
-            padding: 2px 6px;
-            border-radius: 6px;
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
             text-transform: uppercase;
         }
         .logout-btn {
@@ -1015,6 +1021,63 @@
             margin-top: -10px;
             margin-bottom: 14px;
             display: none;
+        }
+
+        @media (max-width: 560px) {
+            .login-gate-modal {
+                align-items: center;
+                padding: 14px;
+                overflow-y: auto;
+                overflow-x: hidden;
+            }
+            .login-gate-card {
+                width: min(100%, calc(100vw - 28px));
+                max-width: none;
+                padding: 28px 20px;
+                border-radius: 18px;
+                transform: translateY(10px) scale(0.98);
+            }
+            .login-crest {
+                width: 52px;
+                height: 52px;
+                margin-bottom: 14px;
+            }
+            .login-gate-title {
+                font-size: 22px;
+                line-height: 1.15;
+                text-wrap: balance;
+            }
+            .login-gate-subtitle {
+                font-size: 12.5px;
+                margin-bottom: 22px;
+                text-wrap: pretty;
+            }
+            .login-label,
+            .quick-access-divider {
+                letter-spacing: 0.03em;
+            }
+            .login-input {
+                min-width: 0;
+                font-size: 16px;
+                padding: 12px 14px;
+            }
+            .login-submit-btn {
+                min-height: 46px;
+                padding: 12px 14px;
+                font-size: 13px;
+                white-space: normal;
+                line-height: 1.25;
+            }
+            .quick-access-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 8px;
+            }
+            .quick-access-btn {
+                min-width: 0;
+                padding: 10px 6px;
+                font-size: 11px;
+                line-height: 1.25;
+            }
         }
 
         .advisory-copy-btn {
@@ -1409,11 +1472,11 @@
                 justify-content: space-between;
             }
             .brand-meta h1 {
-                font-size: 15px;
+                font-size: 16px;
             }
             .brand-meta span {
-                font-size: 8.5px;
-                letter-spacing: 0.1em;
+                font-size: 9.5px;
+                letter-spacing: 0.06em;
             }
             .brand-crest {
                 width: 30px;
@@ -1467,15 +1530,14 @@
             }
             .chat-text-input {
                 padding: 12px 14px;
-                font-size: 13px;
+                font-size: 15px;
             }
             .send-action-btn {
                 padding: 12px 16px;
-                font-size: 12px;
+                font-size: 13.5px;
                 white-space: nowrap;
             }
             .diagnostic-container, .codex-container {
-{{ ... }}
                 padding: 20px 14px;
                 -webkit-overflow-scrolling: touch;
             }
@@ -2324,9 +2386,1233 @@
                 display: none !important;
             }
         }
+
+        @media (max-width: 560px) {
+            .login-gate-modal.active {
+                padding: 14px !important;
+                overflow-x: hidden !important;
+            }
+            .login-gate-modal.active .login-gate-card {
+                box-sizing: border-box !important;
+                width: calc(100vw - 28px) !important;
+                max-width: calc(100vw - 28px) !important;
+                min-width: 0 !important;
+                margin: 0 !important;
+                padding: 28px 20px !important;
+                transform: none !important;
+            }
+            .login-gate-card *,
+            .login-gate-card *::before,
+            .login-gate-card *::after {
+                box-sizing: border-box !important;
+                min-width: 0 !important;
+            }
+            .login-gate-subtitle {
+                max-width: 100% !important;
+                overflow-wrap: anywhere !important;
+            }
+            .quick-access-divider {
+                gap: 8px !important;
+                white-space: normal !important;
+            }
+            .quick-access-grid {
+                width: 100% !important;
+                grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+            }
+            .quick-access-btn {
+                overflow: hidden !important;
+            }
+        }
+
+        /* Scroll-native application shell */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 60px;
+            background: #050507;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100dvh;
+            height: auto;
+            overflow-x: hidden;
+            overflow-y: auto;
+            display: block;
+            background: #050507;
+        }
+
+        .exec-header {
+            position: sticky;
+            top: 0;
+            height: 56px;
+            z-index: 70;
+            background: rgba(5, 5, 8, 0.9);
+            border-bottom-color: rgba(255, 255, 255, 0.12);
+        }
+
+        .workspace-viewport {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            min-height: 100dvh;
+            overflow: visible;
+            background: transparent;
+        }
+
+        .workspace-module,
+        .workspace-module.active {
+            position: relative;
+            inset: auto;
+            display: flex;
+            width: 100%;
+            min-height: 100dvh;
+            overflow: visible;
+            scroll-margin-top: 56px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(5, 5, 8, 0.74);
+        }
+
+        .workspace-module:nth-of-type(even) {
+            background: rgba(10, 10, 14, 0.82);
+        }
+
+        .workspace-module.is-focused {
+            position: fixed;
+            inset: 56px 0 0;
+            z-index: 60;
+            min-height: 0;
+            height: calc(100dvh - 56px);
+            overflow: auto;
+            background: #07070a;
+        }
+
+        body.workspace-focus-open {
+            overflow: hidden;
+        }
+
+        .workspace-intro {
+            min-height: calc(100dvh - 56px);
+            display: grid;
+            align-content: center;
+            gap: 24px;
+            padding: clamp(72px, 11vw, 150px) clamp(24px, 7vw, 112px);
+            position: relative;
+            isolation: isolate;
+        }
+
+        .workspace-intro::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background:
+                linear-gradient(90deg, rgba(4, 4, 7, 0.94) 0%, rgba(4, 4, 7, 0.68) 58%, rgba(4, 4, 7, 0.2) 100%),
+                radial-gradient(circle at 78% 42%, rgba(212, 175, 55, 0.13), transparent 34%);
+        }
+
+        .workspace-eyebrow {
+            font-family: var(--font-display);
+            font-size: var(--type-ui);
+            font-weight: 600;
+            color: var(--gold-light);
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+        }
+
+        .workspace-intro h2 {
+            max-width: 10ch;
+            font-family: var(--font-serif);
+            font-size: clamp(52px, 8vw, 112px);
+            font-weight: 500;
+            line-height: 0.94;
+            letter-spacing: 0;
+            text-wrap: balance;
+        }
+
+        .workspace-intro-copy {
+            max-width: 62ch;
+            color: rgba(255, 255, 255, 0.72);
+            font-size: clamp(16px, 1.6vw, 20px);
+            line-height: 1.7;
+            text-wrap: pretty;
+        }
+
+        .hero-command-form {
+            width: min(760px, 100%);
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 10px;
+            padding: 8px;
+            background: rgba(8, 8, 12, 0.82);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
+            backdrop-filter: blur(20px);
+        }
+
+        .hero-command-form:focus-within {
+            border-color: rgba(212, 175, 55, 0.68);
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.42), 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .hero-command-input {
+            min-width: 0;
+            padding: 15px 16px;
+            color: #fff;
+            background: transparent;
+            border: 0;
+            outline: 0;
+            font: 500 15px/1.4 var(--font-sans);
+        }
+
+        .hero-command-submit {
+            min-height: 48px;
+            padding: 0 22px;
+            border: 1px solid rgba(245, 230, 190, 0.5);
+            background: #f5e6be;
+            color: #12100a;
+            font: 600 14px/1 var(--font-display);
+            transition: transform 180ms ease, background 180ms ease;
+        }
+
+        .hero-command-submit:hover {
+            background: #fff7df;
+            transform: translateY(-1px);
+        }
+
+        .hero-command-submit:active {
+            transform: translateY(1px);
+        }
+
+        .hero-status-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 22px;
+            color: rgba(255, 255, 255, 0.58);
+            font-size: 12px;
+        }
+
+        .hero-status-row span::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            margin-right: 8px;
+            border-radius: 50%;
+            background: var(--emerald-accent);
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.75);
+        }
+
+        .workspace-section-heading {
+            width: min(1440px, 100%);
+            margin: 0 auto;
+            padding: 64px clamp(20px, 4vw, 64px) 24px;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 20px;
+            align-items: end;
+        }
+
+        .workspace-section-heading h2 {
+            max-width: 18ch;
+            margin-top: 8px;
+            font-family: var(--font-serif);
+            font-size: clamp(34px, 4.2vw, 64px);
+            font-weight: 500;
+            line-height: 1.02;
+            letter-spacing: 0;
+            text-wrap: balance;
+        }
+
+        .workspace-section-heading p {
+            max-width: 62ch;
+            margin-top: 12px;
+            color: var(--text-secondary);
+            font-size: 16px;
+            line-height: 1.65;
+        }
+
+        .workspace-focus-btn {
+            width: 42px;
+            height: 42px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.05);
+            font-size: 20px;
+            transition: background 180ms ease, border-color 180ms ease;
+        }
+
+        .workspace-focus-btn:hover,
+        .workspace-focus-btn:focus-visible {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(245, 230, 190, 0.55);
+            outline: none;
+        }
+
+        .workspace-module > .cockpit-layout,
+        .workspace-module > .multi-lens-layout,
+        .workspace-module > .sparring-layout,
+        .workspace-module > .diagnostic-container,
+        .workspace-module > .codex-container,
+        .workspace-module > .war-room-layout {
+            width: min(1440px, calc(100% - 40px));
+            min-height: 680px;
+            height: min(820px, calc(100dvh - 104px));
+            margin: 0 auto 72px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(8, 8, 12, 0.82);
+            box-shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
+        }
+
+        #view-council > .workspace-section-heading + div,
+        #view-sparring > .workspace-section-heading + div {
+            width: min(1200px, calc(100% - 40px)) !important;
+            min-height: 620px;
+            margin: 0 auto 72px !important;
+            padding: clamp(22px, 3vw, 40px) !important;
+            overflow: auto !important;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(8, 8, 12, 0.82);
+            box-shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
+        }
+
+        .workspace-module.is-focused > .workspace-section-heading {
+            padding-top: 18px;
+            padding-bottom: 14px;
+        }
+
+        .workspace-module.is-focused > .workspace-section-heading h2 {
+            font-size: 30px;
+        }
+
+        .workspace-module.is-focused > .cockpit-layout,
+        .workspace-module.is-focused > .multi-lens-layout,
+        .workspace-module.is-focused > .sparring-layout,
+        .workspace-module.is-focused > .diagnostic-container,
+        .workspace-module.is-focused > .codex-container,
+        .workspace-module.is-focused > .war-room-layout {
+            flex: 1;
+            width: calc(100% - 36px);
+            min-height: 0;
+            height: auto;
+            margin-bottom: 18px;
+        }
+
+        [data-scroll-reveal] {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 700ms ease, transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        [data-scroll-reveal].is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 900px) {
+            .exec-header {
+                height: 52px;
+            }
+
+            .workspace-module,
+            .workspace-module.active {
+                scroll-margin-top: 52px;
+            }
+
+            .workspace-intro {
+                min-height: calc(100dvh - 52px);
+                padding: 72px 22px 56px;
+            }
+
+            .workspace-section-heading {
+                padding-top: 48px;
+            }
+
+            .workspace-module > .cockpit-layout,
+            .workspace-module > .multi-lens-layout,
+            .workspace-module > .sparring-layout,
+            .workspace-module > .diagnostic-container,
+            .workspace-module > .codex-container,
+            .workspace-module > .war-room-layout {
+                width: calc(100% - 24px);
+                min-height: 720px;
+                height: auto;
+                margin-bottom: 48px;
+            }
+
+            .workspace-module.is-focused {
+                top: 52px;
+                height: calc(100dvh - 52px);
+            }
+
+            #view-war-room .war-mobile-floating-bar {
+                display: none;
+            }
+
+            #view-war-room.is-current .war-mobile-floating-bar,
+            #view-war-room.is-focused .war-mobile-floating-bar {
+                display: flex;
+            }
+        }
+
+        @media (min-width: 901px) and (max-width: 1280px) {
+            .exec-header {
+                padding-inline: 14px;
+                gap: 12px;
+            }
+
+            .header-nav {
+                gap: 12px;
+            }
+
+            .brand-meta span {
+                display: none;
+            }
+
+            .workspace-tab-btn {
+                font-size: 12.5px;
+            }
+
+            .header-actions {
+                gap: 6px;
+            }
+
+            .export-btn,
+            .home-link-btn {
+                padding-inline: 10px;
+            }
+        }
+
+        @media (max-width: 620px) {
+            .workspace-intro h2 {
+                font-size: clamp(46px, 16vw, 72px);
+            }
+
+            .hero-command-form {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-command-submit {
+                width: 100%;
+            }
+
+            .workspace-section-heading {
+                grid-template-columns: minmax(0, 1fr) 42px;
+                padding-inline: 18px;
+            }
+
+            .workspace-section-heading h2 {
+                font-size: 34px;
+            }
+
+            .workspace-section-heading p {
+                font-size: 15px;
+            }
+
+            .workspace-module > .cockpit-layout,
+            .workspace-module > .multi-lens-layout,
+            .workspace-module > .sparring-layout,
+            .workspace-module > .diagnostic-container,
+            .workspace-module > .codex-container,
+            .workspace-module > .war-room-layout {
+                width: calc(100% - 16px);
+                min-height: 680px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            [data-scroll-reveal] {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
     </style>
+
+    <!-- Landing-page presentation dependencies. Preflight stays off to protect app controls. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { corePlugins: { preflight: false } };
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style id="landing-page-styles">
+
+
+        body {
+            background-color: #050505;
+            color: #f3f4f6;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .font-serif-vi {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .noise-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0.04;
+            background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+        }
+
+        .glow-overlay {
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 50% 50%, rgba(30, 0, 0, 0.15) 0%, rgba(0,0,0,0) 60%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .text-outline {
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255,255,255,0.2);
+        }
+
+        #philosophy {
+            min-height: auto;
+            padding-block: clamp(72px, 8vw, 112px);
+        }
+
+        #philosophy .section-title {
+            margin: 0 0 clamp(44px, 5vw, 72px);
+            line-height: 1;
+        }
+
+        #philosophy .pillar-grid {
+            column-gap: clamp(48px, 7vw, 96px);
+            row-gap: clamp(56px, 7vw, 88px);
+        }
+
+        #philosophy .pillar-card:nth-child(even) {
+            margin-top: clamp(32px, 4vw, 64px);
+        }
+
+        #philosophy .pillar-media {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 3 / 2;
+            margin-bottom: 20px;
+            overflow: hidden;
+            background: #0a0a0a;
+        }
+
+        #philosophy .pillar-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: saturate(0.78) contrast(1.04);
+            transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1), filter 500ms ease;
+        }
+
+        #philosophy .pillar-card:hover .pillar-image {
+            transform: scale(1.035);
+            filter: saturate(1) contrast(1.02);
+        }
+
+        @media (max-width: 1023px) {
+            #philosophy .pillar-card:nth-child(even) {
+                margin-top: 0;
+            }
+        }
+
+        @media (max-width: 640px) {
+            #philosophy {
+                padding-block: 56px 72px;
+            }
+
+            #philosophy .section-title {
+                margin-bottom: 32px;
+                font-size: 38px;
+            }
+
+            #philosophy .pillar-grid {
+                row-gap: 48px;
+            }
+
+            #philosophy .pillar-media {
+                margin-bottom: 18px;
+            }
+
+            #philosophy .pillar-card h3 {
+                margin-bottom: 10px;
+            }
+
+            #philosophy .pillar-card p {
+                font-size: 16px;
+                line-height: 1.65;
+            }
+        }
+
+        .horizontal-section-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            padding: 2rem;
+        }
+
+        .strategy-method {
+            padding: clamp(80px, 10vw, 144px) 24px;
+            background: #020202;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .strategy-method-inner {
+            width: min(1200px, 100%);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.5fr);
+            gap: clamp(56px, 8vw, 120px);
+            align-items: start;
+        }
+
+        .strategy-method h2 {
+            max-width: 9ch;
+            margin: 12px 0 20px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(48px, 6vw, 82px);
+            font-weight: 600;
+            line-height: 0.96;
+        }
+
+        .strategy-method-copy {
+            max-width: 42ch;
+            color: rgba(255, 255, 255, 0.56);
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .strategy-step-list {
+            border-top: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .strategy-step {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 54px minmax(0, 1fr) 24px;
+            gap: 18px;
+            align-items: start;
+            padding: 26px 0;
+            border: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+            background: transparent;
+            color: inherit;
+            text-align: left;
+            transition: border-color 180ms ease, color 180ms ease;
+        }
+
+        .strategy-step:hover,
+        .strategy-step:focus-visible {
+            border-bottom-color: rgba(212, 175, 55, 0.72);
+            outline: none;
+        }
+
+        .strategy-step-index {
+            color: #b91c1c;
+            font: 700 12px/1.4 'Inter', sans-serif;
+        }
+
+        .strategy-step-title {
+            display: block;
+            margin: 0 0 8px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(28px, 3vw, 38px);
+            line-height: 1;
+        }
+
+        .strategy-step-description {
+            display: block;
+            max-width: 58ch;
+            color: rgba(255, 255, 255, 0.56);
+            font-size: 14px;
+            line-height: 1.65;
+        }
+
+        .strategy-step-arrow {
+            color: rgba(255, 255, 255, 0.46);
+            font-size: 18px;
+            transition: transform 180ms ease, color 180ms ease;
+        }
+
+        .strategy-step:hover .strategy-step-arrow {
+            color: #fff;
+            transform: translate(2px, -2px);
+        }
+
+        .landing-closing {
+            min-height: 58vh;
+            padding: clamp(88px, 11vw, 152px) 24px;
+        }
+
+        .closing-statement {
+            width: min(1120px, 100%);
+            margin: 0 auto 42px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(30px, 5.3vw, 76px);
+            font-weight: 600;
+            line-height: 1.02;
+            text-wrap: balance;
+        }
+
+        .closing-statement span {
+            display: block;
+        }
+
+        @media (max-width: 760px) {
+            .strategy-method-inner {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .strategy-method h2 {
+                max-width: 11ch;
+            }
+
+            .strategy-step {
+                grid-template-columns: 36px minmax(0, 1fr) 18px;
+                gap: 12px;
+                padding: 22px 0;
+            }
+
+            .landing-closing {
+                min-height: auto;
+            }
+        }
+
+
+    </style>
+    <style id="home-app-integration-styles">
+        .site-introduction {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            min-height: 100dvh;
+            overflow-x: clip;
+            background: #050505;
+        }
+
+        body.app-entry .site-introduction {
+            display: none;
+        }
+
+        body.home-entry .workspace-intro {
+            display: none;
+        }
+
+        body.home-entry .exec-header {
+            scroll-margin-top: 0;
+            background: rgba(5, 5, 5, 0.92);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: none;
+        }
+
+        body.home-entry #view-advisory {
+            padding-top: 0;
+        }
+
+        body.home-entry .workspace-viewport {
+            background: #050505;
+        }
+
+        .workspace-viewport > #view-advisory { order: 1; }
+        .workspace-viewport > #view-council { order: 2; }
+        .workspace-viewport > #view-sparring { order: 3; }
+        .workspace-viewport > #view-diagnostics { order: 4; }
+        .workspace-viewport > #view-war-room { order: 5; }
+        .workspace-viewport > #view-codex { order: 6; }
+
+        body.home-entry .workspace-module,
+        body.home-entry .workspace-module.active {
+            min-height: auto;
+            border-bottom-color: rgba(255, 255, 255, 0.08);
+            background: #050505;
+        }
+
+        body.home-entry .workspace-module:nth-of-type(even) {
+            background: #080808;
+        }
+
+        body.home-entry .workspace-section-heading {
+            width: min(1280px, 100%);
+            padding-top: clamp(72px, 9vw, 128px);
+            padding-bottom: 32px;
+        }
+
+        body.home-entry .workspace-section-heading h2 {
+            max-width: 20ch;
+            font-family: 'Cormorant Garamond', var(--font-serif);
+            font-size: clamp(42px, 5vw, 72px);
+            line-height: 1;
+        }
+
+        body.home-entry .workspace-section-heading p {
+            max-width: 68ch;
+            color: rgba(255, 255, 255, 0.58);
+        }
+
+        body.home-entry .workspace-module > .cockpit-layout,
+        body.home-entry .workspace-module > .multi-lens-layout,
+        body.home-entry .workspace-module > .sparring-layout,
+        body.home-entry .workspace-module > .diagnostic-container,
+        body.home-entry .workspace-module > .codex-container,
+        body.home-entry .workspace-module > .war-room-layout {
+            width: min(1280px, calc(100% - 48px));
+            margin-bottom: clamp(72px, 9vw, 128px);
+            border: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 0;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        body.home-entry #view-council > .workspace-section-heading + div,
+        body.home-entry #view-sparring > .workspace-section-heading + div {
+            width: min(1200px, calc(100% - 48px)) !important;
+            margin-bottom: clamp(72px, 9vw, 128px) !important;
+            border: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 0;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        body.home-entry #view-advisory > .cockpit-layout {
+            min-height: 0;
+            height: auto;
+        }
+
+        body.home-entry #view-advisory .cockpit-main {
+            min-height: 0;
+            height: auto;
+            border-right: 0;
+        }
+
+        body.home-entry #view-advisory .chat-feed {
+            flex: 0 0 auto;
+            min-height: 220px;
+        }
+
+        body.home-entry #view-advisory .chat-input-bar {
+            background: rgba(255, 255, 255, 0.018);
+        }
+
+        .advisory-welcome {
+            padding: 24px 26px;
+        }
+
+        .advisory-welcome h3 {
+            margin: 7px 0 10px;
+            font-family: var(--font-serif);
+            font-size: clamp(22px, 2.3vw, 30px);
+            font-weight: 500;
+            line-height: 1.1;
+        }
+
+        .advisory-welcome p {
+            max-width: 76ch;
+            color: rgba(255, 255, 255, 0.68);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        #landing-page-wrapper .landing-nav {
+            position: absolute;
+            inset: 0 0 auto;
+            z-index: 40;
+            min-height: 68px;
+            padding: 14px clamp(20px, 4vw, 56px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(5, 5, 5, 0.62);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+
+        .landing-brand {
+            color: #fff;
+            font-family: 'Cormorant Garamond', var(--font-serif);
+            font-size: 25px;
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .landing-nav-links {
+            display: none;
+            align-items: center;
+            gap: 34px;
+        }
+
+        .landing-nav-link {
+            position: relative;
+            padding: 10px 0 8px;
+            color: rgba(255, 255, 255, 0.72);
+            font-family: var(--font-display);
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1;
+            letter-spacing: 0.04em;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: color 180ms ease;
+        }
+
+        .landing-nav-link::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: 2px;
+            left: 0;
+            height: 1px;
+            background: #f5e6be;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 180ms ease;
+        }
+
+        .landing-nav-link:hover,
+        .landing-nav-link:focus-visible {
+            color: #fff;
+        }
+
+        .landing-nav-link:hover::after,
+        .landing-nav-link:focus-visible::after {
+            transform: scaleX(1);
+        }
+
+        .landing-nav-action {
+            min-height: 40px;
+            padding: 0 18px;
+            border: 1px solid rgba(255, 255, 255, 0.34);
+            border-radius: 2px;
+            background: rgba(5, 5, 5, 0.3);
+            color: #fff;
+            font-family: var(--font-display);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
+        }
+
+        .landing-nav-action:hover,
+        .landing-nav-action:focus-visible {
+            border-color: #fff;
+            background: #fff;
+            color: #050505;
+        }
+
+        @media (min-width: 768px) {
+            .landing-nav-links {
+                display: flex;
+            }
+        }
+
+        #landing-page-wrapper .landing-app-cta {
+            scroll-margin-top: 56px;
+        }
+
+        @media (max-width: 640px) {
+            #landing-page-wrapper .landing-nav {
+                min-height: 60px;
+                padding: 10px 14px;
+                gap: 12px;
+            }
+
+            .landing-brand {
+                font-size: 20px;
+            }
+
+            .landing-nav-action {
+                min-height: 38px;
+                padding: 0 12px;
+                font-size: 12px;
+            }
+
+            .diag-header .mode-pill {
+                flex: 1 1 100%;
+                max-width: 100%;
+                white-space: normal;
+                line-height: 1.4;
+                text-align: left;
+            }
+
+            .war-mobile-tabs {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .war-m-tab {
+                min-width: 0;
+                white-space: normal;
+                line-height: 1.25;
+                overflow-wrap: anywhere;
+            }
+
+            body.home-entry .workspace-section-heading {
+                padding-top: 64px;
+            }
+
+            body.home-entry .workspace-module > .cockpit-layout,
+            body.home-entry .workspace-module > .multi-lens-layout,
+            body.home-entry .workspace-module > .sparring-layout,
+            body.home-entry .workspace-module > .diagnostic-container,
+            body.home-entry .workspace-module > .codex-container,
+            body.home-entry .workspace-module > .war-room-layout {
+                width: calc(100% - 24px);
+                margin-bottom: 72px;
+            }
+
+            body.home-entry #view-council > .workspace-section-heading + div,
+            body.home-entry #view-sparring > .workspace-section-heading + div {
+                width: calc(100% - 24px) !important;
+                margin-bottom: 72px !important;
+            }
+        }
+    </style>
+
 </head>
-<body>
+<body class="app-entry">
+<div id="landing-page-wrapper" class="site-introduction">
+
+    <div class="noise-bg"></div>
+    <div class="glow-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="landing-nav" aria-label="Điều hướng trang giới thiệu">
+        <div class="landing-brand">Nhân Thuật</div>
+        <div class="landing-nav-links">
+            <a href="#application-start" onclick="enterApp(); return false;" class="landing-nav-link">Ứng Dụng</a>
+            <a href="#philosophy" class="landing-nav-link">Triết Lý</a>
+            <a href="#strategy" class="landing-nav-link">Chiến Lược</a>
+        </div>
+        <button id="loginBtn" onclick="enterApp()" class="landing-nav-action">
+            Mở Ứng Dụng
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-[85vh] w-full flex items-center justify-center relative overflow-hidden pt-32 pb-16">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover opacity-20 hero-img" alt="Background">
+        </div>
+
+        <!-- Fix: Wrap both title and description in hero-content to prevent overlapping on scroll -->
+        <div class="hero-content z-10 text-center px-4 w-full max-w-6xl">
+            <h1 class="text-6xl md:text-8xl lg:text-[9rem] font-serif-vi font-bold text-white leading-[1.1] tracking-tight uppercase break-words">
+                NHÂN <span class="text-outline">THUẬT</span>
+            </h1>
+            <p class="mt-8 text-gray-400 max-w-2xl mx-auto text-lg md:text-2xl tracking-wide font-light">
+                Hệ thống kiến trúc hành vi & quản trị con người. Sự kết hợp giữa tâm lý học, lý thuyết trò chơi và triết học mưu lược.
+            </p>
+        </div>
+    </section>
+
+    <!-- Pin Section: The Core Pillars -->
+    <section id="philosophy" class="w-full bg-[#020202] flex flex-col items-center">
+        <div class="container mx-auto px-6 relative max-w-7xl">
+            <h2 class="text-4xl md:text-6xl font-serif-vi font-bold text-center section-title opacity-0 translate-y-10 uppercase">Tham Mưu Điều Hành</h2>
+
+            <div class="pillar-grid grid grid-cols-1 lg:grid-cols-2 relative z-10">
+                <!-- Card 1: Behavioral decision intelligence -->
+                <div class="pillar-card opacity-0 translate-y-20 flex flex-col group cursor-pointer">
+                    <div class="pillar-media rounded-sm">
+                        <img src="/assets/landing/behavioral-intelligence.webp" class="pillar-image" alt="Nhà điều hành phân tích các tín hiệu và nhánh quyết định" loading="lazy" decoding="async">
+                    </div>
+                    <div class="text-xs uppercase tracking-widest text-red-700 font-bold mb-2">01 / Điểm Mù Quyết Định</div>
+                    <h3 class="text-3xl font-serif-vi font-bold mb-4">Phân Tích Thiên Kiến</h3>
+                    <p class="text-gray-400 font-light leading-relaxed text-lg">Nhận diện những tín hiệu bị bỏ qua, thiên kiến đang chi phối và các nhánh hệ quả trước khi đưa ra quyết định.</p>
+                </div>
+
+                <!-- Card 2: Multi-lens advisory council -->
+                <div class="pillar-card opacity-0 translate-y-20 flex flex-col group cursor-pointer">
+                    <div class="pillar-media rounded-sm">
+                        <img src="/assets/landing/multi-lens-council.webp" class="pillar-image" alt="Hội đồng cố vấn phân tích một hồ sơ từ nhiều góc nhìn" loading="lazy" decoding="async">
+                    </div>
+                    <div class="text-xs uppercase tracking-widest text-red-700 font-bold mb-2">02 / Đa Lăng Kính</div>
+                    <h3 class="text-3xl font-serif-vi font-bold mb-4">Hội Đồng Cố Vấn</h3>
+                    <p class="text-gray-400 font-light leading-relaxed text-lg">Đặt cùng một bài toán trước nhiều hệ quy chiếu để làm rõ điểm mù, xung đột lợi ích và vùng đồng thuận.</p>
+                </div>
+
+                <!-- Card 3: Negotiation signal reading -->
+                <div class="pillar-card opacity-0 translate-y-20 flex flex-col group cursor-pointer">
+                    <div class="pillar-media rounded-sm">
+                        <img src="/assets/landing/negotiation-signals.webp" class="pillar-image" alt="Hai nhà quản trị đọc tín hiệu trong một cuộc thương thuyết" loading="lazy" decoding="async">
+                    </div>
+                    <div class="text-xs uppercase tracking-widest text-red-700 font-bold mb-2">03 / Đấu Trí & Thương Thuyết</div>
+                    <h3 class="text-3xl font-serif-vi font-bold mb-4">Đọc Vị Tín Hiệu</h3>
+                    <p class="text-gray-400 font-light leading-relaxed text-lg">Bóc tách động cơ, phản ứng và lợi ích ẩn để thử chiến thuật đối đáp trước khi bước vào cuộc trao đổi thật.</p>
+                </div>
+
+                <!-- Card 4: Organizational power mapping -->
+                <div class="pillar-card opacity-0 translate-y-20 flex flex-col group cursor-pointer">
+                    <div class="pillar-media rounded-sm">
+                        <img src="/assets/landing/power-map.webp" class="pillar-image" alt="Nhóm lãnh đạo phân tích bản đồ ảnh hưởng và liên minh" loading="lazy" decoding="async">
+                    </div>
+                    <div class="text-xs uppercase tracking-widest text-red-700 font-bold mb-2">04 / Sa Bàn Tình Thế</div>
+                    <h3 class="text-3xl font-serif-vi font-bold mb-4">Bản Đồ Quyền Lực</h3>
+                    <p class="text-gray-400 font-light leading-relaxed text-lg">Nhìn rõ liên minh, tuyến ảnh hưởng và điểm gây áp lực để chọn thời điểm cùng phương án can thiệp phù hợp.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Method bridge into the application -->
+    <section id="strategy" class="strategy-method">
+        <div class="strategy-method-inner">
+            <div>
+                <div class="text-xs uppercase tracking-widest text-red-700 font-bold">Phương pháp Nhân Thuật</div>
+                <h2>Từ tín hiệu đến nước đi.</h2>
+                <p class="strategy-method-copy">Một tình huống được đọc theo ba lớp: điều đang diễn ra, những cách lý giải cạnh tranh và thế hành động có thể kiểm chứng.</p>
+            </div>
+            <div class="strategy-step-list" aria-label="Đi tới công cụ tương ứng">
+                <button class="strategy-step" type="button" onclick="switchWorkspace('view-advisory')">
+                    <span class="strategy-step-index">01</span>
+                    <span><span class="strategy-step-title">Đọc vị tình huống</span><span class="strategy-step-description">Bóc tách dữ kiện, động lực và điểm mù đang chi phối quyết định.</span></span>
+                    <span class="strategy-step-arrow" aria-hidden="true">↗</span>
+                </button>
+                <button class="strategy-step" type="button" onclick="switchWorkspace('view-council')">
+                    <span class="strategy-step-index">02</span>
+                    <span><span class="strategy-step-title">Kiểm chứng góc nhìn</span><span class="strategy-step-description">Đặt vấn đề trước nhiều hệ quy chiếu để tìm mâu thuẫn và vùng đồng thuận.</span></span>
+                    <span class="strategy-step-arrow" aria-hidden="true">↗</span>
+                </button>
+                <button class="strategy-step" type="button" onclick="switchWorkspace('view-war-room')">
+                    <span class="strategy-step-index">03</span>
+                    <span><span class="strategy-step-title">Lập thế hành động</span><span class="strategy-step-description">Mô phỏng lực lượng, phản ứng và phương án can thiệp trước khi triển khai.</span></span>
+                    <span class="strategy-step-arrow" aria-hidden="true">↗</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Large Text Reveal / Footer CTA -->
+    <section class="landing-closing bg-[#050505] flex flex-col justify-center items-center relative">
+        <div class="w-full mx-auto text-center z-10">
+            <h2 class="closing-statement text-white split-text">
+                <span>Người không hiểu luật chơi</span>
+                <span>sẽ trở thành quân cờ</span>
+                <span>của người khác.</span>
+            </h2>
+            <button onclick="enterApp()" class="px-10 py-4 bg-white text-black text-sm uppercase tracking-widest font-bold hover:bg-red-700 hover:text-white transition duration-500 rounded-sm">
+                Truy Cập Hệ Thống Lõi
+            </button>
+        </div>
+    </section>
+
+
+
+    <!-- Initialize GSAP -->
+    <script>
+(() => {
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero Animations
+        const tl = gsap.timeline();
+
+        // FIX for overlapping: animate the entire hero-content block instead of separating title and description
+        tl.from(".hero-content", {
+            y: 50,
+            opacity: 0,
+            duration: 1.5,
+            ease: "power4.out",
+            delay: 0.2
+        })
+        .to(".hero-img", {
+            scale: 1.1,
+            duration: 10,
+            ease: "none",
+            repeat: -1,
+            yoyo: true
+        }, 0);
+
+        // Parallax effect on hero - Fixed to move the whole content wrapper together so they don't overlap
+        gsap.to(".hero-content", {
+            y: -100,
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".hero-content",
+                start: "top center",
+                end: "bottom top",
+                scrub: true
+            }
+        });
+
+        // Section Title Reveal
+        gsap.to(".section-title", {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            scrollTrigger: {
+                trigger: "#philosophy",
+                start: "top 70%",
+            }
+        });
+
+        // Pillar Cards Staggering fade in
+        gsap.to(".pillar-card", {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: ".section-title",
+                start: "top 60%",
+            }
+        });
+
+        // Text Reveal (Footer)
+        gsap.from(".split-text", {
+            y: 50,
+            opacity: 0,
+            duration: 1.5,
+            ease: "power4.out",
+            scrollTrigger: {
+                trigger: ".split-text",
+                start: "top 80%",
+            }
+        });
+
+})();
+</script>
+
+    </div>
+
     <!-- Ambient video background matching landing page -->
     <div class="video-container">
         <video autoplay muted playsinline loop preload="auto" id="bg-video">
@@ -2338,8 +3624,8 @@
 
 
     <!-- Executive Top Navigation Bar -->
-    <header class="exec-header">
-        <a href="/" class="header-brand">
+    <header class="exec-header" id="application-start">
+        <a href="#home" class="header-brand" aria-label="Về đầu trang Nhân Thuật">
             <div class="brand-crest">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
@@ -2351,43 +3637,64 @@
             </div>
         </a>
 
-        <nav class="header-nav" id="header-nav">
-            <button class="workspace-tab-btn" onclick="switchWorkspace('view-war-room', this)">Sa bàn tình thế</button>
-            <button class="workspace-tab-btn" onclick="switchWorkspace('view-advisory', this)">Tham mưu</button>
+        <nav class="header-nav" id="header-nav" aria-label="Các không gian Nhân Thuật">
+            <button class="workspace-tab-btn active" onclick="switchWorkspace('view-advisory', this)">Tham mưu</button>
             <button class="workspace-tab-btn" onclick="switchWorkspace('view-council', this)">Hội đồng cố vấn</button>
             <button class="workspace-tab-btn" onclick="switchWorkspace('view-sparring', this)">Đấu trí</button>
             <button class="workspace-tab-btn" onclick="switchWorkspace('view-diagnostics', this)">Chẩn đoán nhân sự</button>
-            <button class="workspace-tab-btn" onclick="switchWorkspace('view-codex', this)">Tủ sách & tri thức</button>
+            <button class="workspace-tab-btn" onclick="switchWorkspace('view-war-room', this)">Sa bàn tình thế</button>
+            <button class="workspace-tab-btn" onclick="switchWorkspace('view-codex', this)">Nguồn tham khảo</button>
         </nav>
 
         <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Mở menu điều hướng" aria-expanded="false" aria-controls="header-nav" onclick="toggleMobileNav()">☰</button>
 
         <div class="header-actions">
             <button class="export-btn" id="whisper-inbox-top-btn" onclick="openWhisperModal()" style="background: rgba(16,185,129,0.12); border-color: rgba(16,185,129,0.4); color: #34d399; position: relative;">
-                🤫 Hộp Tin Cơ Mật <span id="whisper-unread-badge" style="background: #ef4444; color: #fff; font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 10px; margin-left: 4px;">2</span>
+                Hộp tin cơ mật <span id="whisper-unread-badge" style="background: #ef4444; color: #fff; font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 10px; margin-left: 4px;">2</span>
             </button>
             <button class="export-btn" id="export-brief-top-btn" onclick="openExecutiveExportModal()">Xuất kịch bản</button>
             <div id="user-profile-widget" class="user-profile-widget"></div>
-            <a href="/" class="home-link-btn">Trang chủ</a>
+            <a href="#home" class="home-link-btn">Đầu trang</a>
         </div>
     </header>
+
+    <aside class="scenario-workspace" id="scenario-workspace" aria-label="Hồ sơ tình huống đang xử lý" aria-hidden="true">
+        <div class="scenario-workspace__inner">
+            <div class="scenario-workspace__identity">
+                <div class="scenario-workspace__eyebrow"><span data-scenario-meta>Hồ sơ đang xử lý</span><span class="scenario-workspace__epistemic" data-scenario-epistemic></span></div>
+                <div class="scenario-workspace__title" data-scenario-title></div>
+            </div>
+            <div class="scenario-workspace__steps" aria-label="Tiến trình phân tích tình huống">
+                <button type="button" class="scenario-step" data-scenario-step="advisory" data-view-id="view-advisory">Tham mưu</button>
+                <button type="button" class="scenario-step" data-scenario-step="diagnostics" data-view-id="view-diagnostics">Chẩn đoán</button>
+                <button type="button" class="scenario-step" data-scenario-step="council" data-view-id="view-council">Hội đồng</button>
+                <button type="button" class="scenario-step" data-scenario-step="sparring" data-view-id="view-sparring">Đấu trí</button>
+                <button type="button" class="scenario-step" data-scenario-step="warRoom" data-view-id="view-war-room">Sa bàn</button>
+                <button type="button" class="scenario-step" data-scenario-step="references" data-view-id="view-codex">Căn cứ</button>
+            </div>
+            <div class="scenario-workspace__actions">
+                <button type="button" class="scenario-workspace__action scenario-workspace__action--secondary" data-scenario-sync>Đi tới bước hiện tại</button>
+                <button type="button" class="scenario-workspace__action" data-scenario-clear>Hồ sơ mới</button>
+            </div>
+        </div>
+    </aside>
 
     <!-- Mobile Navigation Drawer -->
     <div class="mobile-nav-drawer" id="mobile-nav-drawer" role="navigation" aria-label="Điều hướng di động">
         <div id="mobile-user-profile-widget" style="padding: 10px 14px; border-bottom: 1px solid var(--border-subtle); margin-bottom: 8px;"></div>
-        <button class="workspace-tab-btn" onclick="switchWorkspace('view-war-room', this); closeMobileNav();">Sa bàn tình thế</button>
         <button class="workspace-tab-btn" onclick="switchWorkspace('view-advisory', this); closeMobileNav();">Tham mưu</button>
         <button class="workspace-tab-btn" onclick="switchWorkspace('view-council', this); closeMobileNav();">Hội đồng cố vấn</button>
         <button class="workspace-tab-btn" onclick="switchWorkspace('view-sparring', this); closeMobileNav();">Đấu trí</button>
         <button class="workspace-tab-btn" onclick="switchWorkspace('view-diagnostics', this); closeMobileNav();">Chẩn đoán nhân sự</button>
-        <button class="workspace-tab-btn" onclick="switchWorkspace('view-codex', this); closeMobileNav();">Tủ sách & tri thức</button>
+        <button class="workspace-tab-btn" onclick="switchWorkspace('view-war-room', this); closeMobileNav();">Sa bàn tình thế</button>
+        <button class="workspace-tab-btn" onclick="switchWorkspace('view-codex', this); closeMobileNav();">Nguồn tham khảo</button>
         <div style="padding: 12px 14px; border-top: 1px solid var(--border-subtle); margin-top: 6px; display: flex; flex-direction: column; gap: 8px;">
             <button class="export-btn" onclick="openWhisperModal(); closeMobileNav();" style="justify-content: center; background: rgba(16,185,129,0.12); border-color: rgba(16,185,129,0.4); color: #34d399;">
-                🤫 Hộp Tin Cơ Mật
+                Hộp tin cơ mật
             </button>
             <div style="display: flex; gap: 8px;">
                 <button class="export-btn" id="export-brief-mobile-btn" style="flex: 1; justify-content: center;" onclick="openExecutiveExportModal(); closeMobileNav();">Xuất kịch bản</button>
-                <a href="/" class="home-link-btn" style="flex: 1; text-align: center; justify-content: center; display: flex; align-items: center;">Trang chủ</a>
+                <a href="#home" class="home-link-btn" style="flex: 1; text-align: center; justify-content: center; display: flex; align-items: center;" onclick="closeMobileNav();">Đầu trang</a>
             </div>
         </div>
     </div>
@@ -2397,30 +3704,48 @@
 
         <!-- MODULE 1: THAM MƯU CHIẾN LƯỢC (ADVISORY COCKPIT) -->
         <section id="view-advisory" class="workspace-module active">
+            <div class="workspace-intro" id="home" data-scroll-reveal>
+                <div class="workspace-eyebrow">Hệ điều hành ra quyết định</div>
+                <h2>Nhìn người. Rõ thế. Quyết định.</h2>
+                <p class="workspace-intro-copy">Đưa một tình huống thật vào Nhân Thuật. Hệ thống sẽ đối chiếu tri thức, bóc tách động lực và chuyển kết quả thành phương án hành động có thể kiểm tra.</p>
+                <form class="hero-command-form" onsubmit="submitHeroAdvisory(event)">
+                    <input id="hero-advisory-input" class="hero-command-input" type="text" placeholder="Mô tả tình huống quản trị, nhân sự hoặc đàm phán..." aria-label="Tình huống cần tham mưu" autocomplete="off">
+                    <button class="hero-command-submit" type="submit">Phân tích tình huống</button>
+                </form>
+                <div class="hero-status-row" aria-label="Trạng thái hệ thống">
+                    <span>Kho tri thức sẵn sàng</span>
+                    <span>Phân tích đa lăng kính</span>
+                    <span>Dữ liệu có truy nguyên</span>
+                </div>
+            </div>
+            <div class="workspace-section-heading" data-scroll-reveal>
+                <div>
+                    <div class="workspace-eyebrow">01 / Tham mưu trực tiếp</div>
+                    <h2>Biến tình huống thành quyết định.</h2>
+                    <p>Trao đổi với cố vấn Nhân Thuật, lưu hồ sơ thực chiến và xuất kịch bản điều hành ngay trong cùng một luồng làm việc.</p>
+                </div>
+                <button class="workspace-focus-btn" type="button" onclick="toggleWorkspaceFocus('view-advisory')" aria-label="Mở Tham mưu ở chế độ tập trung" title="Chế độ tập trung">⛶</button>
+            </div>
             <div class="cockpit-layout">
                 <div class="cockpit-main">
                     <div class="mode-toolbar">
                         <div class="mode-pills">
-                            <button class="mode-pill active" onclick="setAdvisoryMode('leadership', this)">💡 Tham mưu điều hành</button>
-                            <button class="mode-pill" onclick="setAdvisoryMode('cases', this)">📋 Tình huống thực chiến</button>
+                            <button class="mode-pill active" onclick="setAdvisoryMode('leadership', this)">Tham mưu điều hành</button>
+                            <button class="mode-pill" onclick="setAdvisoryMode('cases', this)">Tình huống thực chiến</button>
                         </div>
                     </div>
 
                     <div class="chat-feed" id="chat-feed">
-                        <div class="message-bubble msg-assistant">
-                            <h3 style="font-family: var(--font-serif); font-size: 18px; color: var(--gold-light); margin-bottom: 6px;">👑 CỐ VẤN CHIẾN LƯỢC NHÂN THUẬT</h3>
-                            <p style="color: var(--text-secondary); margin-bottom: 10px; font-style: italic; font-size: 14px;">
-                                "Phía sau mọi rắc rối bề mặt luôn là những dòng chảy ngầm của tâm lý và quyền lực."
-                            </p>
-                            <p style="color: rgba(255,255,255,0.85); font-size: 13.5px; line-height: 1.6;">
-                                Chào mừng đến với Trung Tâm Chỉ Huy. Hãy chia sẻ bất kỳ bài toán quản trị, đàm phán hay mâu thuẫn nhân sự nào bạn đang đối mặt. Hệ thống sẽ bóc tách mọi lớp vỏ bọc, đối chiếu kho tàng tri thức và thiết lập định cục bằng những kịch bản sắc bén nhất.
-                            </p>
+                        <div class="message-bubble msg-assistant advisory-welcome">
+                            <div class="workspace-eyebrow">Cố vấn chiến lược</div>
+                            <h3>Phân tích một tình huống đang diễn ra.</h3>
+                            <p>Mô tả bối cảnh, người liên quan và điều khiến anh còn phân vân. Hệ thống sẽ chỉ ra động lực, điểm mù và các phương án có thể kiểm chứng.</p>
                         </div>
                     </div>
 
                     <div class="chat-input-bar" id="chat-input-bar">
                         <input type="text" class="chat-text-input" id="advisory-input" placeholder="Nhập tình huống quản trị hoặc bài toán nhân sự cần tham mưu...">
-                        <button class="send-action-btn" id="advisory-send-btn">Tác chiến ➤</button>
+                        <button class="send-action-btn" id="advisory-send-btn">Phân tích</button>
                     </div>
 
                     <!-- CASE LIBRARY (only visible in Cases mode) -->
@@ -2441,13 +3766,21 @@
 
         <!-- MODULE 2: HỘI ĐỒNG 5 CỐ VẤN (MULTI-LENS COUNCIL) -->
         <section id="view-council" class="workspace-module">
+            <div class="workspace-section-heading" data-scroll-reveal>
+                <div>
+                    <div class="workspace-eyebrow">02 / Hội đồng cố vấn</div>
+                    <h2>Một bài toán, nhiều hệ quy chiếu.</h2>
+                    <p>Đặt cùng một quyết định trước các lăng kính khác nhau để nhìn rõ điểm mù, mâu thuẫn và vùng đồng thuận.</p>
+                </div>
+                <button class="workspace-focus-btn" type="button" onclick="toggleWorkspaceFocus('view-council')" aria-label="Mở Hội đồng cố vấn ở chế độ tập trung" title="Chế độ tập trung">⛶</button>
+            </div>
             <div style="flex: 1; overflow-y: auto; padding: 30px 40px; max-width: 1300px; margin: 0 auto; width: 100%;">
                 <div class="diag-header">
                     <h2>🏛️ HỘI ĐỒNG CỐ VẤN ĐA TRIẾT PHÁI (MULTI-LENS COUNCIL)</h2>
                     <p>Nhập bài toán nan giải để 5 đại trường phái tranh luận: Pháp Gia, Nho Gia, Đạo Gia, Tuân Tử và Binh Pháp Tôn Tử.</p>
                 </div>
 
-                <div style="display: flex; gap: 12px; margin-bottom: 24px;">
+                <div class="council-query-form" style="display: flex; gap: 12px; margin-bottom: 24px;">
                     <input type="text" class="diag-input" id="council-scenario-input" placeholder="Ví dụ: Giám đốc chi nhánh làm ăn có lãi nhưng lập bè cánh riêng, có nên sa thải ngay không?" style="margin-bottom: 0;">
                     <button class="send-action-btn" id="council-deliberate-btn" style="white-space: nowrap; padding: 10px 24px;">Triệu tập hội đồng ⚡</button>
                 </div>
@@ -2460,6 +3793,14 @@
 
         <!-- MODULE 3: PHÒNG ĐẤU TRÍ GIẢ LẬP (SPARRING ARENA) -->
         <section id="view-sparring" class="workspace-module">
+            <div class="workspace-section-heading" data-scroll-reveal>
+                <div>
+                    <div class="workspace-eyebrow">03 / Đấu trí</div>
+                    <h2>Thử quyết định trước khi trả giá.</h2>
+                    <p>Mô phỏng đối kháng để kiểm tra luận điểm, phản ứng và những nước đi có thể xuất hiện từ phía đối diện.</p>
+                </div>
+                <button class="workspace-focus-btn" type="button" onclick="toggleWorkspaceFocus('view-sparring')" aria-label="Mở Đấu trí ở chế độ tập trung" title="Chế độ tập trung">⛶</button>
+            </div>
             <div style="flex: 1; display: flex; flex-direction: column; max-width: 1000px; margin: 0 auto; width: 100%; height: 100%; padding: 20px 30px;">
                 <div style="border-bottom: 1px solid var(--border-subtle); padding-bottom: 14px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center;">
                     <div>
@@ -2485,11 +3826,19 @@
 
         <!-- MODULE 4: CHẨN ĐOÁN NHÂN SỰ & CẤU TRÚC ĐỘI NGŨ (FIT LAB) -->
         <section id="view-diagnostics" class="workspace-module">
+            <div class="workspace-section-heading" data-scroll-reveal>
+                <div>
+                    <div class="workspace-eyebrow">04 / Chẩn đoán tổ chức</div>
+                    <h2>Nhìn cấu trúc phía sau hành vi.</h2>
+                    <p>Đánh giá độ khớp người - vai trò, cấu trúc đội ngũ và tín hiệu kiệt sức hoặc rời bỏ trong cùng một phòng phân tích.</p>
+                </div>
+                <button class="workspace-focus-btn" type="button" onclick="toggleWorkspaceFocus('view-diagnostics')" aria-label="Mở Chẩn đoán ở chế độ tập trung" title="Chế độ tập trung">⛶</button>
+            </div>
             <div class="diagnostic-container">
                 <div class="diag-header">
                     <h2>🧩 PHÒNG CHẨN ĐOÁN TƯƠNG THÍCH NHÂN SỰ & CẤU TRÚC ĐỘI NGŨ</h2>
                     <p>Ứng dụng Mô hình NT-MODEL-0007, Nguyên tắc NT-PRINCIPLE-0066 & Bẫy đồng nhất NT-ANTI-PATTERN-0011 để lượng hóa ma sát nhận thức và cân bằng cấu trúc tổ chức.</p>
-                    
+
                     <!-- Sub-view Mode Switcher -->
                     <div style="display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap;">
                         <button class="mode-pill active" id="tab-btn-person-fit" onclick="switchDiagTab('person', this)">
@@ -2565,7 +3914,7 @@
 
                         <div style="margin-top: 18px; font-size: 13.5px; line-height: 1.7; color: rgba(255,255,255,0.9);">
                             <p id="diag-cost-analysis" style="margin-bottom: 14px; background: rgba(255,255,255,0.03); padding: 12px 16px; border-radius: 8px; border-left: 3px solid var(--gold-primary);"></p>
-                            
+
                             <h4 style="color: var(--gold-light); font-size: 14px; margin-bottom: 6px;">⚠️ Điểm ma sát nhận diện (Friction Points):</h4>
                             <ul id="diag-friction-points" style="padding-left: 20px; margin-bottom: 14px; color: #cbd5e1;"></ul>
 
@@ -2677,7 +4026,7 @@
 
                         <div style="margin-top: 18px; font-size: 13.5px; line-height: 1.7; color: rgba(255,255,255,0.9);">
                             <p id="team-structural-analysis" style="margin-bottom: 16px; background: rgba(255,255,255,0.03); padding: 14px 18px; border-radius: 8px; border-left: 3px solid var(--gold-primary);"></p>
-                            
+
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
                                 <div style="background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.2); border-radius: 10px; padding: 14px;">
                                     <h4 style="color: #f87171; font-size: 13.5px; margin-bottom: 8px;">⚠️ Điểm mù hệ thống (Systemic Blind Spots):</h4>
@@ -2775,19 +4124,27 @@
 
         <!-- MODULE 5: TỦ SÁCH CẨM NANG & KHO TRI THỨC -->
         <section id="view-codex" class="workspace-module">
+            <div class="workspace-section-heading" data-scroll-reveal>
+                <div>
+                    <div class="workspace-eyebrow">06 / Nguồn tham khảo</div>
+                    <h2>Tài liệu đứng sau mỗi phân tích.</h2>
+                    <p>Tra cứu cẩm nang, đơn vị tri thức và mối quan hệ có thể truy nguyên đã được dùng làm nền cho các phương án điều hành.</p>
+                </div>
+                <button class="workspace-focus-btn" type="button" onclick="toggleWorkspaceFocus('view-codex')" aria-label="Mở Tủ sách ở chế độ tập trung" title="Chế độ tập trung">⛶</button>
+            </div>
             <div class="codex-container">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
                     <div>
-                        <h2 style="font-family: var(--font-display); font-size: 22px; color: #ffffff;">📚 TỦ SÁCH ĐIỀU HÀNH & KHO <span id="codex-unit-count">…</span> TRI THỨC</h2>
+                        <h2 style="font-family: var(--font-display); font-size: 22px; color: #ffffff;">TÀI LIỆU THAM KHẢO & KHO <span id="codex-unit-count">…</span> TRI THỨC</h2>
                         <p style="font-size: 12.5px; color: var(--text-secondary);">Trọn bộ <span id="codex-book-count">…</span> cẩm nang tinh hoa và <span id="codex-unit-count-2">…</span> đơn vị tri thức chuẩn hóa qua <span id="codex-domain-count">…</span> miền quản trị.</p>
                     </div>
 
                     <div style="display: flex; gap: 8px; flex-wrap: wrap;">
                         <button class="mode-pill active" onclick="filterBookCat('all', this)">Tất cả (<span id="book-pill-all-count">…</span>)</button>
-                        <button class="mode-pill" onclick="filterBookCat('psychology', this)">🧠 Tâm lý & đàm phán</button>
-                        <button class="mode-pill" onclick="filterBookCat('strategy', this)">⚔️ Chiến lược & Game Theory</button>
-                        <button class="mode-pill" onclick="filterBookCat('leadership', this)">👑 Hệ thống & quản trị</button>
-                        <button class="mode-pill" onclick="filterBookCat('mindset', this)">🏛️ Bản lĩnh & nghịch cảnh</button>
+                        <button class="mode-pill" onclick="filterBookCat('psychology', this)">Tâm lý & đàm phán</button>
+                        <button class="mode-pill" onclick="filterBookCat('strategy', this)">Chiến lược & Game Theory</button>
+                        <button class="mode-pill" onclick="filterBookCat('leadership', this)">Hệ thống & quản trị</button>
+                        <button class="mode-pill" onclick="filterBookCat('mindset', this)">Bản lĩnh & nghịch cảnh</button>
                     </div>
                 </div>
 
@@ -2852,6 +4209,14 @@
 
         <!-- MODULE 6: SA BÀN TÌNH THẾ (WAR ROOM SANDBOX) -->
         <section id="view-war-room" class="workspace-module">
+            <div class="workspace-section-heading" data-scroll-reveal>
+                <div>
+                    <div class="workspace-eyebrow">05 / Sa bàn tình thế</div>
+                    <h2>Đặt các lực lượng lên cùng một bản đồ.</h2>
+                    <p>Theo dõi phe phái, liên minh, ma sát và tranh biện triết học trước khi lựa chọn thế trận hành động.</p>
+                </div>
+                <button class="workspace-focus-btn" type="button" onclick="toggleWorkspaceFocus('view-war-room')" aria-label="Mở Sa bàn ở chế độ tập trung" title="Chế độ tập trung">⛶</button>
+            </div>
             <!-- Mobile Segmented Tabs Navigation -->
             <div class="war-mobile-tabs" id="war-mobile-tabs">
                 <button class="war-m-tab active" id="war-mtab-feed" onclick="switchWarMobileTab('feed', this)">
@@ -2976,7 +4341,7 @@
                         <button class="war-filter-btn" onclick="filterWarFeed('whisper', this)">Rỉ tai hành lang</button>
                         <button class="war-filter-btn" onclick="filterWarFeed('intervention', this)">Chỉ thị lãnh đạo</button>
                     </div>
-                    
+
                     <div id="war-stage-banner" style="display: none; padding: 12px 18px; border-bottom: 1px solid var(--border-subtle); background: rgba(255,255,255,0.02);">
                         <div id="war-stage-title" style="font-family: var(--font-display); font-size: 13px; font-weight: 600; font-weight: 600; color: #ffffff;"></div>
                         <div id="war-stage-desc" style="font-size: 12px; color: var(--text-secondary); margin-top: 4px; line-height: 1.5;"></div>
@@ -3011,7 +4376,7 @@
                                 Giữa các vòng xoay chuyển, lãnh đạo có thể ban hành mệnh lệnh hoặc phát ngôn ngầm để định thế lại cục diện.
                             </p>
                             <textarea id="war-intervention-input" class="war-textarea" rows="3" placeholder="Ví dụ: Chủ tịch họp kín cam kết bảo đảm toàn diện quyền lợi cho nhân sự chủ chốt..."></textarea>
-                            
+
                             <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px;">
                                 <button type="button" class="war-chip-pill" onclick="quickFillWarIntervention('Chủ tịch bí mật gặp gỡ 1-1 từng trưởng bộ phận')">Họp kín 1-1</button>
                                 <button type="button" class="war-chip-pill" onclick="quickFillWarIntervention('Ban hành chỉ thị thanh tra đột xuất toàn diện')">Thanh tra đột xuất</button>
@@ -3371,23 +4736,21 @@
         if (!session) {
             const guestHtml = `
                 <button class="export-btn" style="border-color: rgba(245,158,11,0.5); color: var(--gold-light);" onclick="openLoginModal()">
-                    🔑 Đăng nhập
+                    Đăng nhập
                 </button>`;
             if (desktopWidget) desktopWidget.innerHTML = guestHtml;
             if (mobileWidget) mobileWidget.innerHTML = guestHtml;
             return;
         }
 
-        const avatar = session.avatar || '👑';
         const name = escapeHtml(session.display_name || session.user_id || 'Cố Vấn');
         const role = escapeHtml(session.role || 'EXECUTIVE');
 
         const badgeHtml = `
             <div class="user-profile-badge" title="Tài khoản đang hoạt động">
-                <span class="user-avatar-icon">${avatar}</span>
                 <span class="user-name-text">${name}</span>
                 <span class="user-role-tag">${role}</span>
-                <button class="logout-btn" onclick="handleLogout()" title="Đăng xuất khỏi phiên làm việc">🚪</button>
+                <button class="logout-btn" onclick="handleLogout()" title="Đăng xuất khỏi phiên làm việc">Đăng xuất</button>
             </div>
         `;
 
@@ -3505,18 +4868,24 @@
             closeLoginModal();
         } else {
             updateUserProfileUI(null);
-            openLoginModal();
+            closeLoginModal();
         }
     }
 
-    // --- WORKSPACE TAB SWITCHER ---
-    function switchWorkspace(viewId, btn) {
-        document.querySelectorAll('.workspace-module').forEach(m => m.classList.remove('active'));
-        document.querySelectorAll('.workspace-tab-btn').forEach(b => b.classList.remove('active'));
-        
-        const target = document.getElementById(viewId);
-        if (target) target.classList.add('active');
-        if (btn) btn.classList.add('active');
+    // --- SCROLL-NATIVE WORKSPACE NAVIGATION ---
+    const WORKSPACE_IDS = [
+        'view-advisory',
+        'view-council',
+        'view-sparring',
+        'view-diagnostics',
+        'view-war-room',
+        'view-codex'
+    ];
+    const initializedWorkspaces = new Set();
+
+    function initializeWorkspace(viewId) {
+        if (initializedWorkspaces.has(viewId)) return;
+        initializedWorkspaces.add(viewId);
 
         if (viewId === 'view-codex') {
             loadBookshelf();
@@ -3525,6 +4894,147 @@
         if (viewId === 'view-war-room') {
             initWarRoom();
         }
+    }
+
+    function setActiveWorkspaceNav(viewId) {
+        document.querySelectorAll('.workspace-module').forEach(module => {
+            module.classList.toggle('is-current', module.id === viewId);
+        });
+        document.querySelectorAll('.workspace-tab-btn').forEach(btn => {
+            const handler = btn.getAttribute('onclick') || '';
+            btn.classList.toggle('active', handler.includes(`'${viewId}'`));
+        });
+        initializeWorkspace(viewId);
+    }
+
+    function switchWorkspace(viewId, btn) {
+        const target = document.getElementById(viewId);
+        if (!target) return;
+
+        setActiveWorkspaceNav(viewId);
+        window.NhanThuatScenario?.activateView(viewId);
+        const distance = Math.abs(target.getBoundingClientRect().top);
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduceMotion || distance > window.innerHeight * 2) {
+            const root = document.documentElement;
+            const previousScrollBehavior = root.style.scrollBehavior;
+            root.style.scrollBehavior = 'auto';
+            target.scrollIntoView({ behavior: 'auto', block: 'start' });
+            window.requestAnimationFrame(() => {
+                root.style.scrollBehavior = previousScrollBehavior;
+            });
+        } else {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        if (window.location.hash !== `#${viewId}`) {
+            history.replaceState(null, '', `#${viewId}`);
+        }
+        if (btn) btn.blur();
+    }
+
+    function enterApp() {
+        const application = document.getElementById('application-start');
+        if (!application) return;
+        const applicationTop = window.scrollY + application.getBoundingClientRect().top;
+        const distance = Math.abs(applicationTop - window.scrollY);
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduceMotion || distance > window.innerHeight * 2) {
+            const root = document.documentElement;
+            const previousScrollBehavior = root.style.scrollBehavior;
+            root.style.scrollBehavior = 'auto';
+            window.scrollTo({ top: applicationTop, behavior: 'auto' });
+            window.requestAnimationFrame(() => {
+                root.style.scrollBehavior = previousScrollBehavior;
+            });
+        } else {
+            window.scrollTo({ top: applicationTop, behavior: 'smooth' });
+        }
+        history.replaceState(null, '', '#application-start');
+    }
+
+    function submitHeroAdvisory(event) {
+        event.preventDefault();
+        const heroInput = document.getElementById('hero-advisory-input');
+        const advisoryInput = document.getElementById('advisory-input');
+        const value = heroInput?.value?.trim() || '';
+        if (!value) {
+            heroInput?.focus();
+            return;
+        }
+
+        window.NhanThuatScenario?.start(value, { source: 'hero', workspace: 'advisory' });
+        if (advisoryInput) advisoryInput.value = value;
+        setActiveWorkspaceNav('view-advisory');
+        document.querySelector('#view-advisory .cockpit-layout')?.scrollIntoView({
+            behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+            block: 'center'
+        });
+        window.setTimeout(() => document.getElementById('advisory-send-btn')?.click(), 420);
+    }
+
+    function toggleWorkspaceFocus(viewId) {
+        const target = document.getElementById(viewId);
+        if (!target) return;
+        const shouldOpen = !target.classList.contains('is-focused');
+
+        document.querySelectorAll('.workspace-module.is-focused').forEach(module => {
+            module.classList.remove('is-focused');
+            module.querySelector('.workspace-focus-btn')?.setAttribute('aria-pressed', 'false');
+        });
+
+        target.classList.toggle('is-focused', shouldOpen);
+        document.body.classList.toggle('workspace-focus-open', shouldOpen);
+        const button = target.querySelector('.workspace-focus-btn');
+        if (button) {
+            button.textContent = shouldOpen ? '×' : '⛶';
+            button.setAttribute('aria-pressed', shouldOpen ? 'true' : 'false');
+            button.setAttribute('title', shouldOpen ? 'Thu gọn' : 'Chế độ tập trung');
+        }
+        initializeWorkspace(viewId);
+    }
+
+    function initScrollNativeWorkspace() {
+        const revealItems = document.querySelectorAll('[data-scroll-reveal]');
+        if ('IntersectionObserver' in window) {
+            const revealObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+            revealItems.forEach(item => revealObserver.observe(item));
+
+            const workspaceObserver = new IntersectionObserver(entries => {
+                const visible = entries
+                    .filter(entry => entry.isIntersecting)
+                    .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+                if (visible) setActiveWorkspaceNav(visible.target.id);
+            }, {
+                rootMargin: '-18% 0px -58% 0px',
+                threshold: [0.05, 0.2, 0.45]
+            });
+            WORKSPACE_IDS.forEach(id => {
+                const section = document.getElementById(id);
+                if (section) workspaceObserver.observe(section);
+            });
+        } else {
+            revealItems.forEach(item => item.classList.add('is-visible'));
+        }
+
+        const initialId = window.location.hash.slice(1);
+        if (WORKSPACE_IDS.includes(initialId)) {
+            window.setTimeout(() => switchWorkspace(initialId), 80);
+        } else {
+            setActiveWorkspaceNav('view-advisory');
+        }
+
+        document.addEventListener('keydown', event => {
+            if (event.key !== 'Escape') return;
+            const focused = document.querySelector('.workspace-module.is-focused');
+            if (focused) toggleWorkspaceFocus(focused.id);
+        });
     }
 
     // --- MOBILE NAVIGATION ---
@@ -3665,6 +5175,11 @@
     function analyzeCase(caseId) {
         const c = (window.__caseCache || {})[caseId];
         if (!c) return;
+        window.NhanThuatScenario?.start(c.context_description || c.title, {
+            source: 'case-study',
+            title: c.title,
+            workspace: 'advisory'
+        });
         closeCaseModal();
         setAdvisoryMode('leadership', document.querySelector('.mode-pills .mode-pill'));
         fillScenario(c.context_description || c.title);
@@ -3724,6 +5239,7 @@
         loadBookshelf();
         initAmbientVideoAndMotion();
         loadWhisperBadgeCount();
+        initScrollNativeWorkspace();
     });
 
     function setAdvisoryMode(mode, btn) {
@@ -3807,7 +5323,9 @@
 
         const candidateName = document.getElementById('diag-person-name').value.trim() || 'Nhân sự';
         const targetRole = document.getElementById('diag-role-name').value.trim() || 'Vị trí quản lý';
-        
+        const diagnosticContext = `Đánh giá mức độ phù hợp của ${candidateName} với vai trò ${targetRole}.`;
+        window.NhanThuatScenario?.capture('diagnostics', diagnosticContext, { source: 'person-role-diagnostic' });
+
         const selectedTraits = Array.from(document.querySelectorAll('#diag-traits-group .selectable-tag.selected')).map(el => el.textContent.trim());
         const selectedDemands = Array.from(document.querySelectorAll('#diag-demands-group .selectable-tag.selected')).map(el => el.textContent.trim());
 
@@ -3827,6 +5345,10 @@
             btn.disabled = false;
 
             if (data.status === 'success') {
+                window.NhanThuatScenario?.mark('diagnostics', {
+                    epistemicStatus: 'engine_inference',
+                    sourceModule: 'person-role-diagnostic'
+                });
                 const resCard = document.getElementById('diag-result-card');
                 resCard.style.display = 'block';
 
@@ -3875,6 +5397,8 @@
         const teamName = document.getElementById('team-group-name').value.trim() || 'Ban Điều Hành';
         const teamMission = document.getElementById('team-group-mission').value.trim() || 'Mục tiêu chiến lược';
         const teamTraits = Array.from(document.querySelectorAll('#team-group-traits-group .selectable-tag.selected')).map(el => el.textContent.trim());
+        const teamDiagnosticContext = `Đánh giá ${candName} (${candRole}) trong cấu trúc ${teamName}, mục tiêu ${teamMission}.`;
+        window.NhanThuatScenario?.capture('diagnostics', teamDiagnosticContext, { source: 'team-diagnostic' });
 
         try {
             const res = await fetch('/api/v1/diagnostics/team-structural-fit', {
@@ -3898,6 +5422,10 @@
             btn.disabled = false;
 
             if (data.status === 'success') {
+                window.NhanThuatScenario?.mark('diagnostics', {
+                    epistemicStatus: 'engine_inference',
+                    sourceModule: 'team-diagnostic'
+                });
                 const resCard = document.getElementById('team-diag-result-card');
                 resCard.style.display = 'block';
 
@@ -3962,6 +5490,7 @@
         const text = input.value.trim();
         if (!text) return;
 
+        window.NhanThuatScenario?.capture('advisory', text, { source: 'advisory' });
         input.value = '';
         const feed = document.getElementById('chat-feed');
 
@@ -3994,6 +5523,11 @@
 
             if (data.status === 'success') {
                 botMsg.innerHTML = renderAdvisoryResponseHTML(data, text);
+                window.NhanThuatScenario?.mark('advisory', {
+                    epistemicStatus: 'engine_inference',
+                    correlationId: data.correlation_id || null,
+                    primaryLens: data.philosophy_routing?.primary_philosophy || 'DYNAMIC'
+                });
                 lastBriefPayload = {
                     title: `Bản Tham Mưu: ${text.substring(0, 45)}...`,
                     situation_summary: text,
@@ -4384,6 +5918,7 @@
         const text = input.value.trim();
         if (!text) return;
 
+        window.NhanThuatScenario?.capture('council', text, { source: 'council' });
         const btn = document.getElementById('council-deliberate-btn');
         btn.textContent = "⏳ Hội Đồng Đang Tranh Luận...";
         btn.disabled = true;
@@ -4402,9 +5937,13 @@
             area.style.display = 'block';
 
             if (data.status === 'success' && data.deliberation) {
+                window.NhanThuatScenario?.mark('council', {
+                    epistemicStatus: 'recommendation',
+                    sourceModule: 'council'
+                });
                 const d = data.deliberation;
                 const m = d.decision_matrix || {};
-                
+
                 let pitchesHtml = (d.pitches || []).map(p => `
                     <div class="council-card">
                         <h4>⚖️ ${p.title || p.agent_id}</h4>
@@ -4449,6 +5988,7 @@
         const input = document.getElementById('sparring-input');
         const text = input.value.trim();
         if (!text) return;
+        window.NhanThuatScenario?.capture('sparring', text, { source: 'sparring' });
         input.value = '';
 
         const feed = document.getElementById('sparring-feed');
@@ -4474,6 +6014,11 @@
                 body: JSON.stringify({ session_id: sparringSessionId, message: text })
             });
             const data = await res.json();
+            window.NhanThuatScenario?.mark('sparring', {
+                epistemicStatus: 'simulation',
+                sourceModule: 'sparring',
+                resourceId: sparringSessionId
+            });
             const botMsg = document.createElement('div');
             botMsg.className = 'message-bubble msg-assistant';
             botMsg.innerHTML = `
@@ -4534,8 +6079,8 @@
         const container = document.getElementById('books-grid-container');
         if (!container) return;
 
-        const filtered = selectedBookCategory === 'all' 
-            ? DIGITAL_BOOKS 
+        const filtered = selectedBookCategory === 'all'
+            ? DIGITAL_BOOKS
             : DIGITAL_BOOKS.filter(b => b.cat === selectedBookCategory);
 
         container.innerHTML = filtered.map(b => `
@@ -5080,6 +6625,7 @@
             return;
         }
 
+        window.NhanThuatScenario?.capture('warRoom', scenario, { source: 'war-room' });
         const initBtn = document.getElementById('war-init-btn');
         if (initBtn) {
             initBtn.disabled = true;
@@ -5095,6 +6641,11 @@
             const data = await res.json();
             if (data.status === 'success' && data.session) {
                 warRoomSession = data.session;
+                window.NhanThuatScenario?.mark('warRoom', {
+                    epistemicStatus: 'simulation',
+                    sourceModule: 'war-room',
+                    resourceId: data.session.session_id || null
+                });
                 renderWarRoomSession();
                 // On mobile, immediately focus on feed view
                 switchWarMobileTab('feed');
@@ -5286,7 +6837,7 @@
             const data = await res.json();
             if (data.status === 'success' && data.round) {
                 if (data.session) warRoomSession = data.session;
-                
+
                 // Clear intervention input after sending
                 if (interventionInput) interventionInput.value = '';
 
@@ -5350,11 +6901,11 @@
                 const card = document.createElement('div');
                 card.className = 'war-action-card';
 
-                const loyaltyBadge = act.loyalty_change !== 0 
-                    ? `<span style="font-size: 10px; color: ${act.loyalty_change > 0 ? 'var(--emerald-accent)' : 'var(--rose-accent)'}; font-weight: 600;">${act.loyalty_change > 0 ? '+' : ''}${act.loyalty_change}% TT</span>` 
+                const loyaltyBadge = act.loyalty_change !== 0
+                    ? `<span style="font-size: 10px; color: ${act.loyalty_change > 0 ? 'var(--emerald-accent)' : 'var(--rose-accent)'}; font-weight: 600;">${act.loyalty_change > 0 ? '+' : ''}${act.loyalty_change}% TT</span>`
                     : '';
-                const stressBadge = act.stress_change !== 0 
-                    ? `<span style="font-size: 10px; color: ${act.stress_change > 0 ? 'var(--rose-accent)' : 'var(--emerald-accent)'}; font-weight: 600;">${act.stress_change > 0 ? '+' : ''}${act.stress_change}% Stress</span>` 
+                const stressBadge = act.stress_change !== 0
+                    ? `<span style="font-size: 10px; color: ${act.stress_change > 0 ? 'var(--rose-accent)' : 'var(--emerald-accent)'}; font-weight: 600;">${act.stress_change > 0 ? '+' : ''}${act.stress_change}% Stress</span>`
                     : '';
 
                 card.innerHTML = `
@@ -5553,7 +7104,7 @@
             warRoomAutoPlayTimer = null;
         }
         warRoomSession = null;
-        
+
         const countBadge = document.getElementById('war-persona-count-badge');
         if (countBadge) countBadge.textContent = '0 nhân vật';
 
@@ -5694,8 +7245,8 @@
                 }
 
                 edgesSvg += `
-                    <line x1="${s.x}" y1="${s.y}" x2="${t.x}" y2="${t.y}" 
-                          stroke="${strokeColor}" stroke-width="${strokeWidth}" 
+                    <line x1="${s.x}" y1="${s.y}" x2="${t.x}" y2="${t.y}"
+                          stroke="${strokeColor}" stroke-width="${strokeWidth}"
                           opacity="${opacity}" ${strokeDash}>
                         <title>${escapeHtml(e.label || '')}</title>
                     </line>
@@ -5715,7 +7266,7 @@
 
             nodesSvg += `
                 <g class="graph-node" style="cursor: pointer;" onclick="openInterrogateModal('${n.id}')">
-                    <circle cx="${pos.x}" cy="${pos.y}" r="17" fill="#0f172a" stroke="${glowColor}" stroke-width="2.5" 
+                    <circle cx="${pos.x}" cy="${pos.y}" r="17" fill="#0f172a" stroke="${glowColor}" stroke-width="2.5"
                             style="filter: drop-shadow(0 0 6px ${glowColor});" />
                     <text x="${pos.x}" y="${pos.y + 6}" font-size="15" text-anchor="middle" pointer-events="none">${pos.avatar || '👤'}</text>
                     <text x="${pos.x}" y="${pos.y + 28}" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle" pointer-events="none">${escapeHtml(pos.name.split(' ').slice(-1)[0])}</text>
@@ -5923,7 +7474,7 @@
             const data = await res.json();
             if (data.status === 'success' && data.interrogation) {
                 if (data.session) warRoomSession = data.session;
-                
+
                 if (chatStream) {
                     const agentMsg = document.createElement('div');
                     agentMsg.className = 'interrogate-chat-bubble interrogate-agent-msg';
@@ -6012,6 +7563,7 @@
     // --- CROSS-MODULE SEAMLESS CONNECTORS ---
     function transferScenarioToWarRoom(encodedQuery) {
         const text = decodeURIComponent(encodedQuery);
+        window.NhanThuatScenario?.capture('warRoom', text, { source: 'advisory-transfer' });
         switchWorkspace('view-war-room');
         const input = document.getElementById('war-scenario-input');
         if (input) {
@@ -6026,9 +7578,10 @@
         const roleName = document.getElementById('diag-role-name')?.value?.trim() || 'Vị trí quản lý';
         const verdict = document.getElementById('diag-verdict-text')?.textContent?.trim() || '';
         const friction = document.getElementById('diag-friction-score-text')?.textContent?.trim() || '50%';
-        
+
         const scenario = `Mô phỏng ma sát bổ nhiệm nhân sự ${personName} vào vai trò ${roleName}. Mức độ ma sát thích ứng đo lường: ${friction}. Phán quyết điều hành: ${verdict}. Các phòng ban liên quan bắt đầu xuất hiện toan tính thăm dò và rào cản tâm lý phòng thủ.`;
-        
+
+        window.NhanThuatScenario?.capture('warRoom', scenario, { source: 'diagnostics-transfer' });
         switchWorkspace('view-war-room');
         const input = document.getElementById('war-scenario-input');
         if (input) {
@@ -6044,9 +7597,10 @@
         const teamName = document.getElementById('team-group-name')?.value?.trim() || 'Ban Điều Hành';
         const verdict = document.getElementById('team-verdict-text')?.textContent?.trim() || '';
         const homoRisk = document.getElementById('team-homogeneity-score-text')?.textContent?.trim() || '50%';
-        
+
         const scenario = `Mô phỏng xung đột cấu trúc và bẫy đồng nhất khi bổ nhiệm ${candName} (${candRole}) vào ${teamName}. Nguy cơ bẫy đồng nhất: ${homoRisk}. Phán quyết: ${verdict}. Bàn cờ quyền lực nội bộ bắt đầu rạn nứt, xuất hiện các phe cánh ngầm và phản kháng thụ động.`;
-        
+
+        window.NhanThuatScenario?.capture('warRoom', scenario, { source: 'diagnostics-transfer' });
         switchWorkspace('view-war-room');
         const input = document.getElementById('war-scenario-input');
         if (input) {
@@ -6740,8 +8294,8 @@
         const input = document.getElementById('socratic-dilemma-input');
         if (input) {
             const scenarioInput = document.getElementById('war-scenario-input');
-            input.value = (scenarioInput && scenarioInput.value.trim()) 
-                ? scenarioInput.value.trim() 
+            input.value = (scenarioInput && scenarioInput.value.trim())
+                ? scenarioInput.value.trim()
                 : "Ban giám đốc đối mặt với mâu thuẫn sâu sắc giữa nhóm công thần muốn bảo toàn đặc quyền và nhóm nhân tài trẻ đòi cải tổ số hóa toàn diện.";
         }
 
@@ -6841,6 +8395,7 @@
         `;
     }
     </script>
+    <script src="/js/scenario-workspace.js"></script>
 </body>
 </html>
 

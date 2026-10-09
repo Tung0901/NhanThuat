@@ -167,6 +167,10 @@ class WarRoomEngine:
     def get_session(self, session_id: str) -> WarRoomSession | None:
         return self._sessions.get(session_id)
 
+    def create_session(self, scenario: str, custom_personas: list[dict[str, Any]] | None = None) -> WarRoomSession:
+        """Backward-compatible alias for older UI integration tests."""
+        return self.initialize_session(scenario=scenario, custom_personas=custom_personas)
+
     def _find_relevant_knowledge(self, scenario: str, top_k: int = 4) -> list[dict[str, Any]]:
         """Retrieve top relevant knowledge units matching scenario theme."""
         results = []

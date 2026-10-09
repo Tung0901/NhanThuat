@@ -3,7 +3,7 @@ from backend.app.engine.philosophies.router import PhilosophyRouter, PhilosophyT
 
 def test_philosophy_router_initialization() -> None:
     router = PhilosophyRouter()
-    assert len(router.engines) == 9
+    assert len(router.engines) == 13
     assert PhilosophyType.RHETORIC in router.engines
     assert PhilosophyType.CONFUCIAN in router.engines
     assert PhilosophyType.LEGALISM in router.engines
@@ -13,6 +13,10 @@ def test_philosophy_router_initialization() -> None:
     assert PhilosophyType.STOICISM in router.engines
     assert PhilosophyType.BEHAVIORAL in router.engines
     assert PhilosophyType.HUMAN_NATURE in router.engines
+    assert PhilosophyType.MACHIAVELLIAN in router.engines
+    assert PhilosophyType.GUIGUZI in router.engines
+    assert PhilosophyType.GAME_THEORY in router.engines
+    assert PhilosophyType.BEHAVIORAL_BIASES in router.engines
 
 
 def test_ai_router_corrected_technical_directives() -> None:
@@ -194,4 +198,3 @@ def test_scenario_routing_stoicism_adversity() -> None:
     assert result["secondary_philosophy"] == PhilosophyType.TAOISM.value
     assert result["primary_engine_data"]["engine_name"] == "Stoicism Leadership Engine"
     assert "dichotomy_of_control" in result["primary_engine_data"]["core_principles"]
-

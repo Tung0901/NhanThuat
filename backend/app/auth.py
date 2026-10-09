@@ -178,6 +178,7 @@ class AuthManager:
             "display_name": matched_user["name"],
             "role": matched_user["role"],
             "avatar": matched_user["avatar"],
+            "org_id": os.environ.get("NT_ORG_ID", "default"),
             "logged_in_at": now,
             "expires_at": now + ttl,
         }

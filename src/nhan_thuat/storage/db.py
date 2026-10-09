@@ -6,8 +6,11 @@ Handles session management, message logging, case study records, and default see
 from __future__ import annotations
 
 import json
+import os
+import shutil
 import sqlite3
 import uuid
+from contextlib import contextmanager
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
@@ -24,7 +27,12 @@ class DatabaseManager:
     def __init__(self, db_path: str | Path | None = None) -> None:
         if db_path is None:
             repo_root = Path(__file__).resolve().parent.parent.parent.parent
-            db_path = repo_root / "knowledge" / "nhan_thuat.db"
+            runtime_path = os.getenv("NT_RUNTIME_DB_PATH")
+            db_path = Path(runtime_path) if runtime_path else repo_root / "var" / "nhan_thuat.db"
+            legacy_path = repo_root / "knowledge" / "nhan_thuat.db"
+            if not Path(db_path).exists() and legacy_path.exists():
+                Path(db_path).parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(legacy_path, db_path)
         
         self.db_path = str(db_path)
         self._mem_conn: sqlite3.Connection | None = None
@@ -46,6 +54,16 @@ class DatabaseManager:
     def _close_connection(self, conn: sqlite3.Connection) -> None:
         if self._mem_conn is None:
             conn.close()
+
+    @contextmanager
+    def connection(self):
+        """Yield a configured connection for repositories in this package."""
+        conn = self._get_connection()
+        try:
+            yield conn
+            conn.commit()
+        finally:
+            self._close_connection(conn)
 
     def init_db(self) -> None:
         """Create tables and indexes if they do not exist."""
@@ -95,6 +113,56 @@ class DatabaseManager:
             )
         """)
         cursor.execute("CREATE INDEX IF NOT EXISTS idx_cases_domain ON case_studies(domain)")
+
+        # Live operational records stay separate from historical case studies.
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS case_files (
+                case_id TEXT PRIMARY KEY,
+                schema_version TEXT NOT NULL,
+                revision INTEGER NOT NULL,
+                title TEXT NOT NULL,
+                situation_statement TEXT NOT NULL,
+                objective TEXT NOT NULL,
+                status TEXT NOT NULL,
+                owner_user_id TEXT NOT NULL,
+                org_id TEXT NOT NULL,
+                sensitivity TEXT NOT NULL,
+                domain_tags TEXT NOT NULL,
+                stakeholders TEXT NOT NULL,
+                known_facts TEXT NOT NULL,
+                assumptions TEXT NOT NULL,
+                unknowns TEXT NOT NULL,
+                constraints TEXT NOT NULL,
+                risk_if_wrong TEXT NOT NULL,
+                observation_signals TEXT NOT NULL,
+                created_at TEXT NOT NULL,
+                updated_at TEXT NOT NULL
+            )
+        """)
+        cursor.execute("CREATE INDEX IF NOT EXISTS idx_case_files_owner ON case_files(owner_user_id, updated_at DESC)")
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS case_artifacts (
+                artifact_id TEXT PRIMARY KEY,
+                case_id TEXT NOT NULL,
+                case_revision INTEGER NOT NULL,
+                artifact_type TEXT NOT NULL,
+                source_module TEXT NOT NULL,
+                module_version TEXT NOT NULL,
+                payload_schema_version TEXT NOT NULL,
+                input_hash TEXT NOT NULL,
+                summary TEXT NOT NULL,
+                payload TEXT NOT NULL,
+                knowledge_refs TEXT NOT NULL,
+                provenance TEXT NOT NULL,
+                confidence REAL,
+                limitations TEXT NOT NULL,
+                created_by TEXT NOT NULL,
+                created_at TEXT NOT NULL,
+                stale INTEGER NOT NULL DEFAULT 0,
+                FOREIGN KEY(case_id) REFERENCES case_files(case_id) ON DELETE CASCADE
+            )
+        """)
+        cursor.execute("CREATE INDEX IF NOT EXISTS idx_case_artifacts_case ON case_artifacts(case_id, stale, created_at)")
 
         conn.commit()
         self._close_connection(conn)

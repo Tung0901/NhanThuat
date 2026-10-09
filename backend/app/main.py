@@ -37,6 +37,7 @@ from backend.app.auth import _ACTIVE_SESSIONS, auth_manager
 from backend.app.engine.nhan_thuat_api import diagnose_person_role_fit, diagnose_team_structural_fit, process_nhan_thuat_analysis
 from backend.app.engine.runtime import BusinessOSRuntimeOrchestrator, RuntimeRequestPayload
 from nhan_thuat.council.council_engine import CouncilEngine
+from nhan_thuat.casework import CaseFileRepository, CaseFileService, EpistemicClaim
 from nhan_thuat.engine.sparring_engine import SparringEngine
 from modules.connectors.webhook_connector import enterprise_connector
 from modules.nhan_thuat.continuous_profiler import continuous_profiler
@@ -59,6 +60,7 @@ knowledge_engine = KnowledgeEngine()
 nhan_thuat_public_v1 = KnowledgeEngineAdapterV1(knowledge_engine)
 salesos_plugin = SalesOSPlugin()
 db_manager = DatabaseManager()
+case_file_service = CaseFileService(CaseFileRepository(db_manager))
 sparring_engine = SparringEngine(db_manager=db_manager, knowledge_engine=knowledge_engine)
 council_engine = CouncilEngine(knowledge_engine=knowledge_engine)
 war_room_engine = WarRoomEngine(knowledge_engine=knowledge_engine)
@@ -250,6 +252,21 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
                 self.wfile.flush()
             except Exception:
                 pass
+
+    def _case_file_session(self) -> dict[str, Any] | None:
+        """Require a live bearer session for operational case-file data."""
+        auth_header = self.headers.get("Authorization", "")
+        token = auth_header.replace("Bearer ", "").strip() if "Bearer " in auth_header else ""
+        return auth_manager.get_session(token) if token else None
+
+    def _require_case_file_session(self) -> dict[str, Any] | None:
+        session = self._case_file_session()
+        if session is None:
+            self._send_json_response(401, {
+                "status": "error",
+                "message": "A valid Bearer session is required for operational case files.",
+            })
+        return session
 
     def do_HEAD(self) -> None:
         self.do_GET()
@@ -718,7 +735,43 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
                 self._send_json_response(404, {"status": "error", "message": f"Session '{session_id}' not found."})
             return
 
-        # 4b. Case Studies API: GET /api/v1/cases, GET /api/v1/cases/{case_id}
+        # 4b. Operational CaseFile API. This is intentionally separate from historical CaseStudy.
+        if path == "/api/v1/case-files":
+            session = self._require_case_file_session()
+            if not session:
+                return
+            cases = case_file_service.repository.list(session["user_id"], session.get("org_id", "default"))
+            self._send_json_response(200, {
+                "status": "success",
+                "count": len(cases),
+                "case_files": [case.to_dict() for case in cases],
+            })
+            return
+
+        if path.startswith("/api/v1/case-files/"):
+            session = self._require_case_file_session()
+            if not session:
+                return
+            case_id = path.split("/api/v1/case-files/", 1)[1]
+            if case_id.endswith("/artifacts"):
+                case_id = case_id.removesuffix("/artifacts")
+                case = case_file_service.repository.get(case_id, session["user_id"])
+                if not case or case.org_id != session.get("org_id", "default"):
+                    self._send_json_response(404, {"status": "error", "message": "Case file not found."})
+                    return
+                self._send_json_response(200, {
+                    "status": "success",
+                    "artifacts": [a.to_dict() for a in case_file_service.repository.list_artifacts(case_id)],
+                })
+                return
+            case = case_file_service.repository.get(case_id, session["user_id"])
+            if not case or case.org_id != session.get("org_id", "default"):
+                self._send_json_response(404, {"status": "error", "message": "Case file not found."})
+                return
+            self._send_json_response(200, {"status": "success", "case_file": case.to_dict()})
+            return
+
+        # 4c. Case Studies API: GET /api/v1/cases, GET /api/v1/cases/{case_id}
         if path == "/api/v1/cases":
             domain = (parse_qs(parsed_url.query).get("domain") or [None])[0]
             cases = db_manager.list_case_studies(domain=domain)
@@ -1097,7 +1150,118 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
             self._send_json_response(200, turn_result)
             return
 
-        # 0b. Case Studies POST: POST /api/v1/cases
+        # 0b. Operational CaseFile API: authenticated, owned, revisioned records.
+        if path == "/api/v1/case-files":
+            session = self._require_case_file_session()
+            if not session:
+                return
+            title = str(payload.get("title", "")).strip()
+            situation = str(payload.get("situation_statement", "")).strip()
+            objective = str(payload.get("objective", "")).strip()
+            if not title or not situation or not objective:
+                self._send_json_response(400, {
+                    "status": "error",
+                    "message": "Fields 'title', 'situation_statement', and 'objective' are required.",
+                })
+                return
+
+            def claims(key: str) -> list[EpistemicClaim]:
+                return [
+                    EpistemicClaim(
+                        claim_id=str(item.get("claim_id", f"claim-{index + 1}")),
+                        statement=str(item.get("statement", "")),
+                        status=str(item.get("status", "user_claim")),
+                        source=str(item.get("source", "user")),
+                        confidence=item.get("confidence"),
+                        knowledge_refs=tuple(item.get("knowledge_refs", ())),
+                    )
+                    for index, item in enumerate(payload.get(key, []))
+                ]
+
+            try:
+                case = case_file_service.create(
+                    title=title,
+                    situation_statement=situation,
+                    objective=objective,
+                    owner_user_id=session["user_id"],
+                    org_id=session.get("org_id", "default"),
+                    sensitivity=str(payload.get("sensitivity", "internal")),
+                    domain_tags=list(payload.get("domain_tags", [])),
+                    stakeholders=list(payload.get("stakeholders", [])),
+                    known_facts=claims("known_facts"),
+                    assumptions=claims("assumptions"),
+                    unknowns=list(payload.get("unknowns", [])),
+                    constraints=list(payload.get("constraints", [])),
+                    risk_if_wrong=str(payload.get("risk_if_wrong", "")),
+                    observation_signals=list(payload.get("observation_signals", [])),
+                )
+            except (TypeError, ValueError) as exc:
+                self._send_json_response(400, {"status": "error", "message": str(exc)})
+                return
+            self._send_json_response(201, {"status": "success", "case_file": case.to_dict()})
+            return
+
+        if path.startswith("/api/v1/case-files/") and path.endswith("/revise"):
+            session = self._require_case_file_session()
+            if not session:
+                return
+            case_id = path.split("/api/v1/case-files/", 1)[1].removesuffix("/revise")
+            case = case_file_service.repository.get(case_id, session["user_id"])
+            if not case or case.org_id != session.get("org_id", "default"):
+                self._send_json_response(404, {"status": "error", "message": "Case file not found."})
+                return
+            expected_revision = payload.get("expected_revision")
+            if not isinstance(expected_revision, int):
+                self._send_json_response(400, {"status": "error", "message": "'expected_revision' must be an integer."})
+                return
+            allowed = {
+                key: payload[key]
+                for key in (
+                    "title", "situation_statement", "objective", "status", "sensitivity",
+                    "domain_tags", "stakeholders", "unknowns", "constraints", "risk_if_wrong",
+                    "observation_signals",
+                )
+                if key in payload
+            }
+            revised = case_file_service.revise(case, expected_revision=expected_revision, **allowed)
+            if revised is None:
+                self._send_json_response(409, {"status": "error", "message": "Case revision conflict."})
+                return
+            self._send_json_response(200, {"status": "success", "case_file": revised.to_dict()})
+            return
+
+        if path.startswith("/api/v1/case-files/") and path.endswith("/artifacts"):
+            session = self._require_case_file_session()
+            if not session:
+                return
+            case_id = path.split("/api/v1/case-files/", 1)[1].removesuffix("/artifacts")
+            case = case_file_service.repository.get(case_id, session["user_id"])
+            if not case or case.org_id != session.get("org_id", "default"):
+                self._send_json_response(404, {"status": "error", "message": "Case file not found."})
+                return
+            try:
+                artifact = case_file_service.add_artifact(
+                    case,
+                    artifact_type=str(payload.get("artifact_type", "analysis")),
+                    source_module=str(payload.get("source_module", "unknown")),
+                    module_version=str(payload.get("module_version", "0.0.0")),
+                    payload_schema_version=str(payload.get("payload_schema_version", "artifact.v1")),
+                    input_hash=str(payload.get("input_hash", "")),
+                    summary=str(payload.get("summary", "")),
+                    payload=dict(payload.get("payload", {})),
+                    knowledge_refs=list(payload.get("knowledge_refs", [])),
+                    provenance=dict(payload.get("provenance", {})),
+                    confidence=payload.get("confidence"),
+                    limitations=list(payload.get("limitations", [])),
+                    created_by=session["user_id"],
+                )
+            except (TypeError, ValueError) as exc:
+                self._send_json_response(400, {"status": "error", "message": str(exc)})
+                return
+            self._send_json_response(201, {"status": "success", "artifact": artifact.to_dict()})
+            return
+
+        # 0c. Case Studies POST: POST /api/v1/cases
         if path == "/api/v1/cases":
             domain = payload.get("domain", "GENERAL")
             title = payload.get("title", "")

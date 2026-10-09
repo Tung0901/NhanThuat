@@ -20,3 +20,4 @@ knowledge/nhan_thuat.db
 knowledge/.vector_cache.json
 logs/
 nhan_thuat.db
+var/*.db

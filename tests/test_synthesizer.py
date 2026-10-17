@@ -7,9 +7,33 @@ import pytest
 from nhan_thuat.knowledge_engine import KnowledgeEngine
 from nhan_thuat.models import KnowledgeUnit
 from nhan_thuat.runtime.resolver import KnowledgeResolver
-from nhan_thuat.runtime.synthesizer import DEFAULT_MODEL, KnowledgeSynthesizer
+from nhan_thuat.runtime.synthesizer import (
+    DEFAULT_MODEL,
+    KnowledgeSynthesizer,
+    get_provider_configs,
+    get_provider_summary,
+)
 
-_KEY_ENV = ("GEMINI_API_KEY", "GOOGLE_API_KEY", "OPENAI_API_KEY")
+_KEY_ENV = (
+    "DEEPSEEK_API_KEY",
+    "DEEPSEEK_BASE_URL",
+    "DEEPSEEK_MODEL",
+    "GEMINI_API_KEY",
+    "GOOGLE_API_KEY",
+    "GEMINI_MODEL",
+    "OPENAI_API_KEY",
+    "OPENAI_BASE_URL",
+    "OPENAI_MODEL",
+    "NHAN_THUAT_LLM_MODEL",
+    "NHAN_THUAT_LLM_PROVIDER",
+)
+
+
+@pytest.fixture(autouse=True)
+def isolated_provider_environment(monkeypatch) -> None:
+    """Provider tests must not depend on developer or deployment secrets."""
+    for key in _KEY_ENV:
+        monkeypatch.delenv(key, raising=False)
 
 
 @pytest.fixture(scope="module")
@@ -147,3 +171,43 @@ def test_synthesizer_honors_explicit_model_override(units: list[KnowledgeUnit], 
 
     assert result["mode"] == "llm"
     assert result["audit"]["model"] == "gemini-3.6-flash"
+
+
+def test_deepseek_is_preferred_and_models_are_provider_specific(monkeypatch) -> None:
+    saved = _clear_keys()
+    try:
+        monkeypatch.setenv("DEEPSEEK_API_KEY", "ds-test-key-value")
+        monkeypatch.setenv("DEEPSEEK_MODEL", "deepseek-chat")
+        monkeypatch.setenv("GOOGLE_API_KEY", "google-test-key-value")
+        monkeypatch.setenv("GEMINI_MODEL", "gemini-test-model")
+
+        configs = get_provider_configs()
+
+        assert [config["provider_name"] for config in configs] == [
+            "deepseek", "google-gemini"
+        ]
+        assert configs[0]["model"] == "deepseek-chat"
+        assert configs[1]["model"] == "gemini-test-model"
+    finally:
+        _restore_keys(saved)
+
+
+def test_provider_preference_and_public_summary_never_expose_keys(monkeypatch) -> None:
+    saved = _clear_keys()
+    try:
+        monkeypatch.setenv("DEEPSEEK_API_KEY", "ds-private-secret")
+        monkeypatch.setenv("GOOGLE_API_KEY", "google-private-secret")
+        monkeypatch.setenv("NHAN_THUAT_LLM_PROVIDER", "gemini")
+
+        configs = get_provider_configs()
+        summary = get_provider_summary()
+
+        assert [config["provider_name"] for config in configs] == [
+            "google-gemini", "deepseek"
+        ]
+        assert summary["preferred_provider"] == "gemini"
+        assert summary["configured_providers"] == ["google-gemini", "deepseek"]
+        assert "api_key" not in str(summary).lower()
+        assert "private-secret" not in str(summary)
+    finally:
+        _restore_keys(saved)

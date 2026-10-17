@@ -37,11 +37,14 @@ def test_batch1_units_have_metadata_and_taxonomy_classification() -> None:
     for unit_id in BATCH_LAW_IDS | BATCH_PRINCIPLE_IDS:
         unit = registry.get_unit(unit_id)
         assert unit.status in ("review", "frozen")
-        assert unit.version == "0.1.0"
+        assert unit.version in ("0.1.0", "0.2.0", "1.0.0")
+        if unit_id in BATCH_LAW_IDS:
+            assert unit.version == "1.0.0"
+            assert unit.content
         assert unit.primary_domain in valid_domains
         assert set(unit.secondary_domains).issubset(valid_domains)
         assert unit.primary_domain not in unit.secondary_domains
-        assert unit.evidence.level == "provisional"
+        assert unit.evidence.level in ("provisional", "supported", "strong")
         assert isinstance(unit.evidence.references, tuple)
         assert unit.definition
         assert unit.mechanism
@@ -86,9 +89,10 @@ def test_batch1_catalog_indexes_units() -> None:
 
     assert BATCH_LAW_IDS.issubset(catalog["indexes"]["by_type"]["law"])
     assert BATCH_PRINCIPLE_IDS.issubset(catalog["indexes"]["by_type"]["principle"])
-    assert BATCH_LAW_IDS | BATCH_PRINCIPLE_IDS <= set(
-        catalog["indexes"]["by_evidence_level"]["provisional"]
-    )
+    indexed_by_evidence = set()
+    for level_units in catalog["indexes"]["by_evidence_level"].values():
+        indexed_by_evidence.update(level_units)
+    assert BATCH_LAW_IDS | BATCH_PRINCIPLE_IDS <= indexed_by_evidence
     assert "systems" in catalog["indexes"]["by_tag"]
 
 

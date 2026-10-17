@@ -506,6 +506,86 @@ def generate_actionable_script_details(primary: str, scenario_text: str, matched
                 "Thuận theo tự nhiên, không cưỡng ép những điều chưa chín muồi."
             ]
         }
+    elif primary == "ICHING":
+        return {
+            "position_analysis": (
+                f"Phân tích bối cảnh: \"{scenario_text[:80]}...\". Lăng kính Dịch Học (Kinh Dịch 64 Quẻ) chỉ ra: "
+                "Vạn vật trong doanh nghiệp luôn vận động theo chu kỳ Âm - Dương và quy luật Biến Dịch. "
+                "Cần định vị chính xác vị thế hiện tại thuộc trạng thái nào trong 6 Hào Rồng (Tiềm Long, Hiện Long, Dược Long, Phi Long, hay Kháng Long). "
+                "Tuyệt đối cảnh giác bẫy 'Kháng Long Hữu Hối' - tiến quá đà khi chưa đủ thực lực hoặc cố chấp níu kéo khi chu kỳ đã chuyển dịch thoái trào."
+            ),
+            "step_1_anchor": {
+                "title": "Bước 1: Thẩm Thời Định Thế & Nhận Diện Hào Vị (Chu Kỳ Biến Dịch)",
+                "verbatim": f'"Mọi sự việc đều tuân theo chu kỳ sinh - trưởng - thu - tàng. Sự cố này là dấu hiệu chuyển dịch hào thế, không phải ngẫu nhiên. Chúng ta cần định vị chính xác thực lực đang ở thế Tiềm Long ẩn mình tích lũy hay Dược Long chuẩn bị bứt phá."'
+            },
+            "step_2_deadline_consequence": {
+                "title": "Bước 2: Cùng Tắc Biến - Tái Cấu Trúc Đón Vận Thế Mới",
+                "verbatim": f'"Cùng tắc biến, biến tắc thông, thông tắc cửu. Tiếp tục duy trì cách làm cũ sẽ rơi vào quẻ Bĩ bế tắc. Yêu cầu toàn đội ngũ hoàn tất phương án thích ứng cấu trúc trong 7 ngày để đón đầu thời cuộc mới."'
+            },
+            "step_3_way_out_plan_b": {
+                "title": "Bước 3: Cương Nhu Tương Tế & Bảo Toàn Nguyên Khí (Plan B - Quẻ Thái)",
+                "verbatim": f'"Cương nhu tương tế, trong Dương có Âm, trong Nhu có Cương. Chúng ta vừa chuẩn bị phương án bứt phá, vừa lập chốt chặn phòng thủ vững chắc để dù biến động theo chiều hướng nào thì tổ chức vẫn giữ vững tâm thế tự chủ."'
+            },
+            "draft_official_communication": (
+                f"CHỈ THỊ CỦA CHỦ TỊCH VỀ ĐỊNH VỊ CHU KỲ & CHUYỂN ĐỔI CHIẾN LƯỢC\n"
+                f"-----------------------------------------------------------\n"
+                f"Kính gửi: Toàn thể Cán bộ Quản lý Chiến lược\n\n"
+                f"Căn cứ nhịp độ phát triển thực tế và biến động thị trường:\n"
+                f"1. Xác lập trạng thái vận hành mới: Chuyển dịch từ mở rộng diện rộng sang củng cố chiều sâu nội lực.\n"
+                f"2. Nghiêm cấm hành vi nôn nóng đốt cháy giai đoạn vi phạm nguyên tắc chu kỳ.\n"
+                f"3. Ưu tiên bảo toàn dòng tiền và giữ vững cốt lõi cạnh tranh trong mọi kịch bản.\n\n"
+                f"Chủ Tịch Hội Đồng Quản Trị"
+            ),
+            "financial_and_operational_directives": [
+                "☯️ ĐỊNH VỊ CHU KỲ DOANH NGHIỆP: Đánh giá xem dự án đang ở giai đoạn Truân (sơ khai), Thái (thịnh trị) hay Bĩ (bế tắc) để phân bổ vốn chuẩn xác.",
+                "🛡️ PHÒNG NGỪA KHÁNG LONG HỮU HỐI: Không dồn 100% dòng tiền vào mở rộng khi đà tăng trưởng bộc lộ dấu hiệu quá nhiệt.",
+                "🔄 THIẾT LẬP CƠ CHẾ BIẾN DỊCH: Xây dựng sẵn 02 kịch bản ứng phó nghịch cảnh (Quẻ Biến) để chủ động chuyển thế trong 48h."
+            ],
+            "action_principles": [
+                "Cùng tắc biến, biến tắc thông, thông tắc cửu: Khi gặp bế tắc, chìa khóa là biến đổi tư duy và cấu trúc.",
+                "Kháng Long Hữu Hối: Điểm cực thịnh cũng là mầm mống khởi đầu của suy vi nếu thiếu khiêm cung.",
+                "Cương nhu tương tế: Lãnh đạo tối cao biết nhu hòa đúng lúc và quyết đoán khi thời điểm chín muồi."
+            ]
+        }
+    elif primary == "TIMING":
+        return {
+            "position_analysis": (
+                f"Phân tích bối cảnh: \"{scenario_text[:80]}...\". Lăng kính Thời Thế (Executive Timing) chỉ ra: "
+                "Trong nghệ thuật lãnh đạo, 'Đắc Thời - Thất Thời' quyết định 80% thành bại. "
+                "Phải nhận diện 3 giai đoạn của thế sự: Sơ Thời (manh nha - kiên nhẫn tích lũy), Đương Thời (chín muồi - ra đòn sấm sét dứt khoát), và Mạt Thời (thoái trào - chủ động rút lui an toàn). "
+                "Tình huống hiện tại đòi hỏi hành động chuẩn xác về nhịp độ hơn là chỉ dùng sức mạnh cơ học."
+            ),
+            "step_1_anchor": {
+                "title": "Bước 1: Tri Thời Thức Vụ & Đo Lường Điểm Rơi Cơ Hội",
+                "verbatim": f'"Thành bại của một quyết sách nằm ở thời điểm hành động. Ra đòn quá sớm là manh động tự sát, ra đòn quá trễ là đánh mất thời cơ vàng. Chúng ta cần định lượng chính xác cửa sổ thời gian để hành động."'
+            },
+            "step_2_deadline_consequence": {
+                "title": "Bước 2: Ra Đòn Quyết Đoán Đúng Điểm Chín Muồi (Lôi Động Phong Hành)",
+                "verbatim": f'"Thời cơ chín muồi đã bộc lộ rõ rệt, đây là lúc phải tập trung toàn lực đánh nhanh thắng gọn trong vòng 72 giờ. Mọi sự chần chừ do dự lúc này đều là sự lãng phí cơ hội chiến lược."'
+            },
+            "step_3_way_out_plan_b": {
+                "title": "Bước 3: Thoái Lui Chiến Lược Bảo Toàn Trận Địa (Kim Thiền Thoát Xác)",
+                "verbatim": f'"Nếu nhận thấy thời thế đảo chiều hoặc chi phí bám đuổi vượt ngưỡng an toàn, chúng ta sẽ lập tức kích hoạt phương án rút lui theo trật tự để bảo toàn nguyên khí cho trận đánh tiếp theo."'
+            },
+            "draft_official_communication": (
+                f"CHỈ ĐẠO ĐIỀU HÀNH CAO CẤP: NẮM BẮT CỬA SỔ THỜI GIAN CHIẾN LƯỢC\n"
+                f"-----------------------------------------------------------\n"
+                f"Kính gửi: Các Trưởng Bộ Phận và Chỉ Huy Hiện Trường\n\n"
+                f"Yêu cầu triển khai phương án hành động tập trung trong cửa sổ thời gian 72h tới.\n"
+                f"Tất cả nguồn lực hỗ trợ phải được điều động đồng bộ, tuyệt đối không để chậm nhịp.\n\n"
+                f"Ban Điều Hành Chiến Lược"
+            ),
+            "financial_and_operational_directives": [
+                "⏳ ĐO LƯỜNG CỬA SỔ THỜI GIAN (TIME WINDOW): Xác định chính xác hạn định 72h-14 ngày mà tại đó ưu thế đàm phán thuộc về ta.",
+                "⚡ TẬP TRUNG HỎA LỰC CAO ĐIỂM: Giải ngân nhanh cho các mũi nhọn đột phá khi nhận diện thời điểm chín muồi.",
+                "🚪 THIẾT LẬP ĐƯỜNG RÚT CHIẾN LƯỢC: Xác định ngưỡng cắt lỗ và mốc dừng dự án để tránh đốt tiền trong giai đoạn Mạt Thời."
+            ],
+            "action_principles": [
+                "Quân tử kiến cơ nhi tác, bất tất sĩ nhật: Thấy manh mối thời cơ liền hành động ngay, không chờ hết ngày.",
+                "Thẩm thời định thế: Không bơi ngược dòng nước khi thủy triều đang rút, kiên nhẫn đợi gió đông.",
+                "Tiến thoái hữu độ: Biết tiến như vũ bão và biết thoái như bóng đêm để bảo toàn sinh lực."
+            ]
+        }
     else:  # XUNZI or general
         return {
             "position_analysis": (
@@ -881,6 +961,21 @@ def process_nhan_thuat_analysis(scenario_text: str, scenario_type_hint: str = "g
         "intent": scenario_text,
         "keywords": scenario_text.split(),
     })
+
+    if router_res.get("status") != "success":
+        return {
+            "status": "error",
+            "error_code": router_res.get(
+                "error_code", "INSUFFICIENT_VERIFIED_KNOWLEDGE"
+            ),
+            "message": router_res.get(
+                "message", "No verified philosophy lens supports this scenario."
+            ),
+            "scenario_text": scenario_text,
+            "philosophy_routing": router_res,
+            "matched_knowledge_units": [],
+            "matched_custom_docs": [],
+        }
 
     # 3. Match Knowledge Units
     matched_units = find_relevant_units(scenario_text, orchestrator.knowledge_engine, top_k=3)

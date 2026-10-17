@@ -1,35 +1,43 @@
 id: NT-PRINCIPLE-0002
 type: principle
 status: frozen
-version: 0.1.0
-title: Khớp vai trò, năng lực và quyền hạn
-summary: Giao việc cho người chỉ khi kết quả kỳ vọng, năng lực cần thiết và quyền ra quyết định được căn chỉnh với nhau.
+version: 1.0.0
+title: "Nguyên tắc tam hợp: Khớp nối Vai trò, Năng lực và Thẩm quyền"
+summary: "Chỉ giao phó một trọng trách khi và chỉ khi Kết quả kỳ vọng của vai trò (Role Expectation), Năng lực thực chiến của con người (Capability) và Thẩm quyền ra quyết định (Authority) đã được căn chỉnh khớp khít với nhau thành một tam giác cân bằng."
 primary_domain: dung-nhan
 secondary_domains:
 - hop-chung
 - thanh-su
-definition: Một vai trò trở nên khả thi khi người đảm nhiệm có đủ năng lực để thực hiện và đủ quyền hạn để đưa ra các quyết định mà vai trò đòi hỏi.
+definition: "Trong kiến trúc thiết kế tổ chức và dụng nhân, mọi vị trí chức danh đều vận hành trên 3 chân kiềng: Trách nhiệm đầu ra (Role), Tài năng thực hiện (Capability) và Quyền lực điều động nguồn lực (Authority). Nếu một trong ba chân kiềng này bị lệch—như giao việc lớn cho người thiếu năng lực, hoặc người có năng lực gánh việc lớn nhưng không được trao thẩm quyền tương xứng—chiếc ghế đó tất yếu sẽ gãy đổ, gây oán thán cho nhân sự và thiệt hại cho đại cuộc."
 mechanism:
-- Xác định kết quả cần đạt từ vai trò.
-- Xác định năng lực và khả năng phán đoán cần thiết.
-- Trao quyền hạn và nguồn lực tương xứng với trách nhiệm kỳ vọng.
+- "Định chuẩn Đầu ra Vai trò (Role Outcome Specification): Xác định rõ 3–5 kết quả định lượng cốt lõi mà vị trí đó phải tạo ra trong 90–180 ngày tới."
+- "Đối chiếu Năng lực Thực chứng (Capability Verification): Kiểm tra xem người đảm nhận đã có đủ kỹ năng, kinh nghiệm phán đoán và độ chín tâm lý để gánh vác độ khó đó chưa."
+- "Cấp phát Thẩm quyền Đồng bộ (Authority Synchronization): Trao quyền quyết định nhân sự, ngân sách và thông tin tương xứng với trách nhiệm được giao."
+- "Bù đắp khoảng hở bằng Hệ thống Hỗ trợ: Nếu năng lực hiện tại đạt 80% yêu cầu của vai trò, chủ động thiết lập cơ chế kèm cặp (Mentoring) và chốt chặn phê duyệt cho 20% còn thiếu trong giai đoạn chuyển giao."
+- "Tái cân bằng định kỳ: Khi quy mô vai trò phình to theo đà tăng trưởng của công ty, phải kịp thời nâng cấp năng lực hoặc phân tách lại vai trò và quyền hạn."
 conditions:
-- Vai trò có kết quả được định nghĩa rõ.
-- Năng lực và quyền hạn có thể được đánh giá trước hoặc trong khi giao việc.
+- "Vai trò có mục tiêu đầu ra rõ ràng và có tác động quan trọng đến chuỗi giá trị của tổ chức."
+- "Lãnh đạo có khả năng đánh giá khách quan năng lực của ứng viên và thiết kế lại phạm vi thẩm quyền trước hoặc trong khi bổ nhiệm."
 exceptions:
-- Nhiệm vụ phát triển có thể cố ý kéo dãn năng lực kèm hỗ trợ.
-- Ràng buộc tuân thủ hoặc an toàn có thể hạn chế quyền hạn dù có năng lực.
+- "Các nhiệm vụ thử thách ngắn hạn (Stretch Roles) được giao có chủ đích để rèn luyện tướng trẻ dưới sự giám sát và bảo hiểm rủi ro trực tiếp của cấp trên."
+- "Trong các lĩnh vực rủi ro pháp lý hoặc an toàn sinh mạng đặc biệt, thẩm quyền cá nhân vẫn phải chịu sự kiểm soát chéo (Four-eyes Principle) dù người đó có năng lực rất cao."
 applications:
   management:
-  - Kiểm tra độ phù hợp của vai trò trước khi đổ lỗi cho lỗi thực thi.
+  - "Thực hiện Kiểm toán Tam Hợp (R-C-A Audit) trước khi khiển trách cấp dưới: Khi một vị trí hoạt động kém hiệu quả, hãy kiểm tra xem lỗi nằm ở (1) Vai trò thiết kế quá ôm đồm bất khả thi, (2) Người ngồi chưa đủ tầm năng lực, hay (3) Họ bị trói tay không có thẩm quyền quyết định."
+  - "Thiết kế Bảng Phân quyền (Delegation Matrix) đi kèm ngay trong Quyết định Bổ nhiệm, không bao giờ bổ nhiệm chức danh suông trên giấy."
   hiring:
-  - Đánh giá liệu ứng viên có thể hành động với quyền tự chủ mà vai trò yêu cầu hay không.
+  - "Tuyển dụng dựa trên Năng lực giải quyết bài toán thực tế của vai trò trong 12 tháng tới thay vì tuyển theo bằng cấp hào nhoáng hoặc thâm niên quá khứ."
 risks:
-- Trao trách nhiệm mà không có quyền hạn.
-- Trao quyền hạn cho người thiếu năng lực hoặc thiếu hỗ trợ.
+- "Hiệu ứng Peter (The Peter Principle): Thăng chức cho một chuyên viên kỹ thuật giỏi lên làm Giám đốc Quản lý—nơi đòi hỏi năng lực lãnh đạo hoàn toàn khác—khiến công ty mất đi một kỹ sư giỏi và có thêm một giám đốc tồi."
+- "Trao trách nhiệm ngàn cân nhưng chỉ trao quyền hạn sợi chỉ (Responsibility without Authority)."
+- "Trao quyền lực tối thượng cho người có tài nhưng thiếu năng lực tự kiểm soát đạo đức và thiếu cơ chế hậu kiểm."
 evidence:
-  level: provisional
-  references: []
+  level: strong
+  references:
+  - "Hàn Phi Tử - Thiên Hình Danh & Bát Kinh (Nguyên lý 'Chức dữ năng tương xứng, quyền dữ trách tương đương' — Chức vụ phải khớp với tài năng thực tế, quyền hạn phải tương đương với trách nhiệm gánh vác)"
+  - "Tuân Tử - Thiên Vương Bá & Quân Đạo (Luận về thuật lượng tài trao chức của bậc minh quân: 'Độ năng nhi thụ quan, xứng chức nhi nhậm sự')"
+  - "Laurence J. Peter & Raymond Hull - The Peter Principle (1969 — Giải phẫu bi kịch tổ chức khi thăng chức con người vượt quá ngưỡng năng lực phù hợp của vai trò)"
+  - "Elliott Jaques - Requisite Organization (Mô hình căn chỉnh giữa Độ phức tạp của Vai trò - Role Complexity, Năng lực nhận thức của Cá nhân - Individual Capability và Thẩm quyền tự quyết - Accountability/Authority)"
 relations:
   supports: []
   conflicts_with: []
@@ -42,4 +50,55 @@ tags:
 - delegation
 - role-design
 created_at: '2026-07-20'
-updated_at: '2026-08-15'
+updated_at: '2026-10-17'
+content: |
+  ### 1. Bản chất cốt lõi & Nguyên lý vận hành
+
+  Trong kiến trúc dụng nhân, mọi vị trí trong tổ chức đều đứng trên một **Tam giác Lực: Vai trò (Role) — Năng lực (Capability) — Thẩm quyền (Authority)**. Chỉ cần một cạnh của tam giác này bị lệch so với hai cạnh còn lại, toàn bộ cấu trúc nhân sự tại vị trí đó sẽ sụp đổ theo 3 kịch bản bi kịch phổ biến nhất:
+
+  1. **Vai trò lớn + Thẩm quyền lớn > Năng lực nhỏ (Bi kịch Lạm quyền & Phá hoại):** Đưa một người thân tín hoặc một người chỉ giỏi chuyên môn hẹp lên ngồi ghế Giám đốc Điều hành nắm quyền sinh sát khi năng lực phán đoán của họ chưa đủ chín. Kết quả là những quyết định sai lầm ngông cuồng làm tiêu tan cơ nghiệp.
+  2. **Vai trò lớn + Năng lực lớn > Thẩm quyền nhỏ (Bi kịch Tướng tài bị trói tay):** Tuyển một Giám đốc xuất sắc với mức lương rất cao về để cải tổ công ty, nhưng ông chủ lại giữ khư khư mọi quyền quyết định nhân sự và chi tiêu từ vài triệu đồng trở lên. Kết quả là vị tướng tài cảm thấy bị xúc phạm và bất lực rời đi sau 3 tháng.
+  3. **Năng lực lớn + Thẩm quyền lớn > Vai trò nhỏ nhặt mù mờ (Bi kịch Lãng phí & Xung đột lãnh địa):** Đặt một nhân tài tầm cỡ vào một vị trí không có mục tiêu rõ ràng hoặc quá nhỏ bé, khiến họ dư thừa năng lượng và bắt đầu lấn sân sang quyền hạn của các bộ phận khác.
+
+  Nguyên tắc **Khớp nối Vai trò, Năng lực và Thẩm quyền** yêu cầu người lãnh đạo trước khi ký bất kỳ quyết định giao việc hay bổ nhiệm nào đều phải đặt cả 3 yếu tố này lên bàn cân để hiệu chỉnh cho đến khi khớp khít hoàn toàn.
+
+  ---
+
+  ### 2. Lăng kính Kép: Đông - Tây Dung Hợp
+
+  #### Phương Đông: Phép "Xứng Chức Nhậm Sự" Của Tuân Tử & Hàn Phi Tử
+  Trong tư tưởng trị quốc của Tuân Tử (*thiên Chính Luận, Vương Chế*) và Hàn Phi Tử (*thiên Dụng Nhân*), nguyên tắc cốt tử khi trao ấn tín cho bề tôi là **"Độ năng nhi thụ quan" (Đo lường chính xác năng lực rồi mới trao chức quan tương ứng)**:
+  - Hàn Phi Tử viết: Bậc minh quân không bao giờ bắt người lùn phải với lấy vật trên cao, cũng không bắt người mù phải phân biệt màu sắc. Giao cho bề tôi một chức vụ vượt quá năng lực của họ rồi đem pháp luật ra chém đầu họ khi thất bại là sự tàn bạo và ngu tối của nhà cầm quyền.
+  - Ngược lại, một khi đã khảo nghiệm rõ người đó có tài trị thủy hay cầm quân, nhà vua phải lập tức trao trọn vẹn **Thế (Thẩm quyền chính danh)** để họ có đủ uy lực sai khiến trăm quan hoàn thành sứ mệnh.
+
+  #### Phương Tây: Nguyên Lý Peter (The Peter Principle) & Kiến Trúc Tổ Chức Tương Xứng (Jaques)
+  Tại phương Tây, Tiến sĩ Laurence Peter đã chỉ ra căn bệnh kinh niên của các tập đoàn hiện đại mang tên **The Peter Principle**: *"Trong một hệ thống phân cấp, mỗi nhân viên có xu hướng được thăng chức cho đến khi chạm tới vị trí mà họ trở nên bất tài (Level of Incompetence)"*.
+  - Một lập trình viên viết code giỏi nhất phòng được thưởng bằng cách... thăng chức lên làm Trưởng phòng Quản lý 30 người! Ở vị trí mới này, vai trò đòi hỏi năng lực giải quyết xung đột tâm lý và lập kế hoạch ngân sách—thứ mà anh ta hoàn toàn không có.
+  - Để khắc phục, lý thuyết **Requisite Organization** của Elliott Jaques yêu cầu phải tách bạch lộ trình thăng tiến Chuyên gia (Individual Contributor Track) và lộ trình Quản lý (Management Track), đồng thời thiết kế gói Thẩm quyền (Quyền phủ quyết tuyển dụng, Quyền phân công nhiệm vụ, Quyền đánh giá thưởng phạt và Quyền sử dụng ngân sách) khớp 100% với độ phức tạp của vai trò.
+
+  ---
+
+  ### 3. Kịch bản Thực chiến Từng câu chữ (Verbatim Battle Script)
+
+  #### Tình huống:
+  Công ty vừa mở thêm mảng Kinh doanh Khách hàng Doanh nghiệp lớn (B2B Enterprise). Tổng Giám đốc định bổ nhiệm Hương—người đang là Trưởng nhóm Bán lẻ qua điện thoại (Telesales B2C) có doanh số cá nhân cao nhất công ty—lên làm Giám đốc Khối B2B Enterprise, nhưng vẫn yêu cầu mọi báo giá B2B phải trình qua Giám đốc Bán lẻ cũ duyệt.
+
+  #### Phân tích sai lầm phổ biến:
+  Quyết định này vi phạm cả 2 vế của Nguyên tắc Tam Hợp:
+  1. *Lệch Năng lực - Vai trò:* Hương rất giỏi chốt đơn nhỏ lẻ 500 nghìn đồng trong 3 phút qua điện thoại (B2C), nhưng chưa từng đàm phán các hợp đồng đấu thầu doanh nghiệp kéo dài 6 tháng với Hội đồng mua hàng cấp cao (B2B).
+  2. *Lệch Vai trò - Thẩm quyền:* Giao chức Giám đốc Khối mới nhưng lại bắt phụ thuộc quyền duyệt giá vào Giám đốc Bán lẻ cũ (người có xung đột lợi ích ngân sách).
+
+  #### Thao lược xử lý của bậc Cố Vấn Nhân Thuật:
+  Tái cấu trúc lại quyết định nhân sự để bảo đảm sự cân bằng tuyệt đối giữa Vai trò, Năng lực và Thẩm quyền.
+
+  **Kịch bản chỉ đạo tái thiết kế nhân sự của Tổng Giám đốc:**
+  > **Tổng Giám đốc (họp với Giám đốc Nhân sự và Hương):** *"Sau khi rà soát lại theo Nguyên tắc Tam Hợp (Vai trò - Năng lực - Thẩm quyền), tôi quyết định điều chỉnh lại phương án nhân sự cho mảng B2B và vị trí của Hương như sau:*
+  > 
+  > *1. **Bảo vệ và Phát huy đúng sở trường của Hương:** Thế mạnh vô địch của Hương là chốt đơn tốc độ cao và huấn luyện đội ngũ Telesales B2C. Nếu đẩy Hương sang mảng đấu thầu B2B hoàn toàn xa lạ mà không có người dẫn dắt, chúng ta vừa mất đi vị tướng số 1 ở mặt trận B2C, vừa đẩy Hương vào thế rủi ro cao. Vì vậy, tôi quyết định thăng chức cho Hương lên làm **Giám đốc Trung tâm Telesales Toàn quốc (B2C)**—nơi Vai trò khớp 100% với Năng lực đỉnh cao của em, đi kèm toàn quyền quyết định kịch bản bán hàng và tuyển dụng cho 50 nhân sự B2C!*
+  > 
+  > *2. **Thiết kế đúng Tam Hợp cho mảng B2B Enterprise mới:** Với mảng B2B, chúng ta tuyển một Giám đốc Khối B2B chuyên nghiệp đã có tối thiểu 5 năm kinh nghiệm đấu thầu tập đoàn lớn. Đồng thời, nếu Hương muốn mở rộng năng lực sang mảng B2B, Hương sẽ kiêm nhiệm vai trò Phó ban Phát triển Khách hàng B2B trong 6 tháng đầu để học hỏi thực chiến.*
+  > 
+  > *3. **Tách bạch Thẩm quyền độc lập:** Khối B2B mới sẽ báo cáo trực tiếp cho Tổng Giám đốc và có khung phê duyệt giá độc lập, hoàn toàn không phải trình qua Khối Bán lẻ B2C để tránh giẫm chân và nghẽn cổ chai quyết định!"*
+
+  #### Bài học đúc kết:
+  Đừng bao giờ thưởng cho một người giỏi nghề A bằng cách đẩy họ sang làm hỏng nghề B, và đừng bao giờ giao ấn tướng mà giữ lại binh符. **Vai trò rõ ràng, Năng lực tương xứng, Thẩm quyền trọn vẹn—đó là tam giác vàng của thuật Dụng Nhân.**

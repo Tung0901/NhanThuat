@@ -19,7 +19,7 @@ def council_engine() -> CouncilEngine:
 
 def test_council_engine_members_configuration(council_engine: CouncilEngine) -> None:
     members = council_engine.COUNCIL_MEMBERS
-    assert len(members) == 5
+    assert len(members) == 7
 
     agent_ids = [m.agent_id for m in members]
     assert "LEGALISM" in agent_ids
@@ -27,6 +27,8 @@ def test_council_engine_members_configuration(council_engine: CouncilEngine) -> 
     assert "CONFUCIAN" in agent_ids
     assert "XUNZI" in agent_ids
     assert "SUNZI" in agent_ids
+    assert "ICHING" in agent_ids
+    assert "TIMING" in agent_ids
 
 
 def test_council_deliberation_flow(council_engine: CouncilEngine) -> None:
@@ -37,17 +39,23 @@ def test_council_deliberation_flow(council_engine: CouncilEngine) -> None:
     assert result.scenario_text == scenario
     assert result.total_latency_ms > 0.0
 
-    # 1. Check Stage 1: 5 Pitches
-    assert len(result.pitches) == 5
+    # 1. Check Stage 1: 7 complete pitches
+    assert len(result.pitches) == 7
     pitch_agents = [p.agent_id for p in result.pitches]
     assert "LEGALISM" in pitch_agents
     assert "TAOISM" in pitch_agents
     assert "CONFUCIAN" in pitch_agents
     assert "XUNZI" in pitch_agents
     assert "SUNZI" in pitch_agents
+    assert "ICHING" in pitch_agents
+    assert "TIMING" in pitch_agents
 
     for pitch in result.pitches:
-        assert len(pitch.core_arguments) >= 2
+        assert len(pitch.situation_read) >= 80
+        assert len(pitch.assumptions) >= 2
+        assert len(pitch.core_arguments) >= 4
+        assert len(pitch.recommended_actions) >= 3
+        assert len(pitch.evidence_needed) >= 2
         assert len(pitch.cited_unit_ids) >= 1
         assert len(pitch.risk_warning) > 0
 
@@ -97,7 +105,7 @@ def test_python_sdk_local_inprocess_mode(monkeypatch) -> None:
     # 3. Council Deliberation
     council_res = client.deliberate_council("Nhân sự đình công đòi tăng đơn giá khoán")
     assert council_res["status"] == "success"
-    assert len(council_res["deliberation"]["pitches"]) == 5
+    assert len(council_res["deliberation"]["pitches"]) == 7
 
     # 4. List Case Studies (user-driven library: seed one case first)
     isolated_db.create_case_study(

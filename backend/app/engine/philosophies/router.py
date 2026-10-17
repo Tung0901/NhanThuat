@@ -51,6 +51,8 @@ class PhilosophyType(str, Enum):
     GUIGUZI = "guiguzi"
     GAME_THEORY = "game_theory"
     BEHAVIORAL_BIASES = "behavioral_biases"
+    ICHING = "iching"
+    TIMING = "timing"
 
 
 class PhilosophyRouter:
@@ -68,6 +70,8 @@ class PhilosophyRouter:
     - Guiguzi Lens (LENS-GUIGUZI): Tung Hoanh diplomacy, Bai-He opening/closing, Fei-Qian psychological binding.
     - Game Theory Lens (LENS-GAME-THEORY): Nash equilibrium, information asymmetry, payoff matrices, Tit-for-Tat.
     - Behavioral Biases Lens (LENS-BEHAVIORAL-BIASES): Loss aversion, anchoring effect, sunk cost fallacy, cognitive framing.
+    - I Ching Lens (LENS-ICHING): Dynamic state transitions, 6 dragon stages (Tiem Long to Khang Long), polarity and reversal laws.
+    - Timing Lens (LENS-TIMING): Executive pacing, 3 temporal phases (So Thoi, Duong Thoi, Mat Thoi), intervention windows.
 
     Architectural Constraints Enforced:
     1. Deterministic AI Execution (Target Temp 0.1 preference, structured schemas, fixed seed, validation gates).
@@ -81,6 +85,7 @@ class PhilosophyRouter:
     CANONICAL_SOURCE_REGISTRY: dict[str, str] = CANONICAL_SOURCE_REGISTRY
     VERSION_RESOLUTION_POLICY: dict[str, Any] = VERSION_RESOLUTION_POLICY
     FALLBACK_INSUFFICIENT_KNOWLEDGE: str = FALLBACK_INSUFFICIENT_KNOWLEDGE
+    ROUTABLE_GOVERNANCE_STATUSES: frozenset[str] = frozenset({"active", "approved", "frozen"})
 
     def __init__(self, engine_dir: Path | None = None) -> None:
         if engine_dir is None:
@@ -105,6 +110,8 @@ class PhilosophyRouter:
             PhilosophyType.GUIGUZI: "guiguzi_engine.json",
             PhilosophyType.GAME_THEORY: "game_theory_engine.json",
             PhilosophyType.BEHAVIORAL_BIASES: "behavioral_biases_engine.json",
+            PhilosophyType.ICHING: "iching_engine.json",
+            PhilosophyType.TIMING: "timing_engine.json",
         }
         for phil_type, filename in engine_files.items():
             file_path = self.engine_dir / filename
@@ -122,6 +129,8 @@ class PhilosophyRouter:
             "canonical_source_registry": self.CANONICAL_SOURCE_REGISTRY,
             "version_resolution_policy": self.VERSION_RESOLUTION_POLICY,
             "fallback_insufficient_knowledge": self.FALLBACK_INSUFFICIENT_KNOWLEDGE,
+            "routable_governance_statuses": sorted(self.ROUTABLE_GOVERNANCE_STATUSES),
+            "product_owner_runtime_authorization": "enabled metadata may route provisional lenses",
             "consistency_enforcement": [
                 "Structured input/output schemas",
                 "Deterministic routing rules",
@@ -158,6 +167,32 @@ class PhilosophyRouter:
 
         # 1. Determine Lenses Order (Primary, Secondary, Tertiary)
         primary, secondary, tertiary = self._determine_lens_hierarchy(combined_text, scenario_type)
+
+        selected_lenses = [lens for lens in (primary, secondary, tertiary) if lens is not None]
+        excluded_lenses = [lens for lens in selected_lenses if not self._is_routable(lens)]
+        if primary in excluded_lenses:
+            return {
+                "status": "error",
+                "error_code": self.FALLBACK_INSUFFICIENT_KNOWLEDGE,
+                "message": "The requested philosophy lens is still under review.",
+                "unavailable_lenses": [lens.value for lens in excluded_lenses],
+                "global_ai_temperature": self.GLOBAL_AI_TEMPERATURE,
+                "canonical_sources": self.CANONICAL_SOURCE_REGISTRY,
+            }
+
+        routable_lenses = [lens for lens in selected_lenses if self._is_routable(lens)]
+        if not routable_lenses:
+            return {
+                "status": "error",
+                "error_code": self.FALLBACK_INSUFFICIENT_KNOWLEDGE,
+                "message": "No verified active philosophy lens supports this scenario.",
+                "unavailable_lenses": [lens.value for lens in excluded_lenses],
+                "global_ai_temperature": self.GLOBAL_AI_TEMPERATURE,
+                "canonical_sources": self.CANONICAL_SOURCE_REGISTRY,
+            }
+        primary = routable_lenses[0]
+        secondary = routable_lenses[1] if len(routable_lenses) > 1 else None
+        tertiary = routable_lenses[2] if len(routable_lenses) > 2 else None
 
         # 2. Assign Default Composition Weights
         weights = self._calculate_lens_weights(primary, secondary, tertiary)
@@ -221,7 +256,21 @@ class PhilosophyRouter:
             "conflict_resolution": conflict_result,
             "explanation": explanation,
             "routing_reason": f"Scenario matched primary lens: {primary.value.upper() if primary else 'NONE'}",
+            "excluded_lenses": [lens.value for lens in excluded_lenses],
         }
+
+    def _is_routable(self, philosophy_type: PhilosophyType) -> bool:
+        """Allow reviewed lenses or provisional lenses explicitly enabled by the Product Owner."""
+        metadata = self.engines.get(philosophy_type, {}).get("metadata", {})
+        status = str(metadata.get("governance_status", "")).strip().lower()
+        if status in self.ROUTABLE_GOVERNANCE_STATUSES:
+            return True
+        authorization = metadata.get("runtime_authorization", {})
+        return (
+            status == "ready_for_review"
+            and authorization.get("status") == "enabled"
+            and authorization.get("authorized_by") == "Product Owner"
+        )
 
     def _determine_lens_hierarchy(
         self, text: str, scenario_type: str
@@ -256,6 +305,12 @@ class PhilosophyRouter:
         if st == "governance" or any(w in text for w in ["hinh danh", "phap gia", "ky luat", "sop compliance"]):
             return PhilosophyType.LEGALISM, PhilosophyType.CONFUCIAN, None
 
+        if st in ("iching", "dich_hoc") or any(w in text for w in ["dịch học", "dich hoc", "kinh dịch", "kinh dich", "iching", "i ching", "tiềm long", "tiem long", "phi long", "kháng long", "khang long", "quẻ", "que dich", "biến dịch", "bien dich", "vật cực tất phản", "cương nhu tương tế", "lục hào"]):
+            return PhilosophyType.ICHING, PhilosophyType.SUNZI, PhilosophyType.TAOISM
+
+        if st in ("timing", "thoi_the") or any(w in text for w in ["thời thế", "thoi the", "thời cơ", "thoi co", "thời điểm", "thoi diem", "điểm rơi", "diem roi", "khi nào ra đòn", "khi nao ra don", "nhịp độ", "nhip do", "sơ thời", "đương thời", "mạt thời", "chu kỳ hành động", "cửa sổ cơ hội"]):
+            return PhilosophyType.TIMING, PhilosophyType.SUNZI, PhilosophyType.LEGALISM
+
         if st == "transformation" or any(w in text for w in ["doimoi", "reorganization", "tiêu dao du"]):
             return PhilosophyType.TAOISM, PhilosophyType.XUNZI, None
 
@@ -289,6 +344,12 @@ class PhilosophyRouter:
         if any(w in text for w in ["dụng nhân", "dung nhan", "nhìn người", "nhin nguoi", "tiểu nhân", "tieu nhan", "dụng mộc", "bát quan", "phân quyền", "bảo toàn"]):
             return PhilosophyType.HUMAN_NATURE, PhilosophyType.XUNZI, PhilosophyType.LEGALISM
 
+        if any(w in text for w in ["dịch học", "dich hoc", "kinh dịch", "kinh dich", "iching", "i ching", "tiềm long", "tiem long", "phi long", "kháng long", "khang long", "quẻ", "que dich", "biến dịch", "bien dich", "vật cực tất phản", "cương nhu tương tế", "lục hào"]):
+            return PhilosophyType.ICHING, PhilosophyType.SUNZI, PhilosophyType.TAOISM
+
+        if any(w in text for w in ["thời thế", "thoi the", "thời cơ", "thoi co", "thời điểm", "thoi diem", "điểm rơi", "diem roi", "khi nào ra đòn", "khi nao ra don", "nhịp độ", "nhip do", "sơ thời", "đương thời", "mạt thời", "chu kỳ hành động", "cửa sổ cơ hội"]):
+            return PhilosophyType.TIMING, PhilosophyType.SUNZI, PhilosophyType.LEGALISM
+
         # Keyword Scoring Fallback
         scores = {p: 0 for p in PhilosophyType}
         
@@ -318,6 +379,10 @@ class PhilosophyRouter:
             scores[PhilosophyType.GAME_THEORY] += 3
         if any(w in text for w in ["loss aversion", "anchoring", "sunk cost", "framing", "bay tam ly", "mo neo"]):
             scores[PhilosophyType.BEHAVIORAL_BIASES] += 3
+        if any(w in text for w in ["dich hoc", "kinh dich", "iching", "bien dich", "tiem long", "phi long", "khang long"]):
+            scores[PhilosophyType.ICHING] += 3
+        if any(w in text for w in ["thoi the", "thoi co", "thoi diem", "diem roi", "so thoi", "duong thoi", "mat thoi", "nhip do"]):
+            scores[PhilosophyType.TIMING] += 3
 
         sorted_lenses = sorted(scores.keys(), key=lambda k: scores[k], reverse=True)
         primary = sorted_lenses[0]

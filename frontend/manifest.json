@@ -1,0 +1,44 @@
+{
+  "name": "Nhân Thuật — Executive Studio",
+  "short_name": "Nhân Thuật",
+  "description": "Nền tảng Quản trị & Thao lược Tâm lý Cấp cao — Trợ lý Chiến lược Lãnh đạo BusinessOS",
+  "start_url": "/",
+  "scope": "/",
+  "lang": "vi",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0a0a0c",
+  "theme_color": "#0a0a0c",
+  "categories": ["business", "productivity", "education"],
+  "icons": [
+    {
+      "src": "/assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Tham Mưu Chiến Lược",
+      "url": "/#view-advisory",
+      "description": "Phân tích tình huống cấp bách"
+    },
+    {
+      "name": "Hội Đồng Cố Vấn",
+      "url": "/#view-council",
+      "description": "Tham vấn đa góc nhìn 5 trường phái"
+    },
+    {
+      "name": "Tủ Sách Điều Hành",
+      "url": "/#view-codex",
+      "description": "Tra cứu 19 cẩm nang tinh hoa"
+    }
+  ]
+}

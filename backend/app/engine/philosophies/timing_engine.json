@@ -1,0 +1,68 @@
+{
+  "metadata": {
+    "philosophy_id": "LENS-TIMING",
+    "philosophy_name": "Executive Timing & Cyclical Pacing Lens",
+    "version": "1.1.0",
+    "source_document": "docs/knowledge/23_DICH_HOC_VA_THOI_THE.md",
+    "supported_domains": [
+      "timing",
+      "execution",
+      "crisis",
+      "negotiation",
+      "intervention",
+      "strategy"
+    ],
+    "supported_personas": [
+      "Chief Timing Officer",
+      "Strategic Pacing Advisor",
+      "Crisis Intervention Specialist"
+    ],
+    "preferred_reasoning_modes": [
+      "Temporal",
+      "Rhythmic Pacing",
+      "Intervention Window Analysis"
+    ],
+    "compatible_lenses": [
+      "LENS-SUNZI",
+      "LENS-ICHING",
+      "LENS-LEGALISM",
+      "LENS-TAOISM"
+    ],
+    "incompatible_lenses": [],
+    "confidence_modifier": 0.65,
+    "governance_status": "ready_for_review",
+    "last_reviewed": null,
+    "epistemic_status": "provisional_qualitative_framework",
+    "runtime_authorization": {
+      "status": "enabled",
+      "authorized_by": "Product Owner",
+      "authorized_at": "2026-10-16",
+      "scope": "council_and_router"
+    }
+  },
+  "engine_name": "Executive Timing & Pacing Engine",
+  "version": "1.1.0",
+  "description": "Khung định tính để xem xét nhịp độ can thiệp qua ba pha Sơ Thời, Đương Thời và Mạt Thời; kết luận phải được đối chiếu với dữ liệu thực tế.",
+  "three_temporal_phases": {
+    "phase_1_so_thoi": {
+      "phase_name": "Sơ Thời (Thời cơ chưa chín muồi)",
+      "indicators": "Đối phương đang ở đỉnh điểm hung hăng, thông tin chưa kiểm chứng đầy đủ, liên minh nội bộ của ta chưa thống nhất.",
+      "tactical_protocol": "Tạm hoãn quyết định khó đảo ngược khi dữ liệu còn thiếu; xác minh bằng chứng và giảm ảnh hưởng của cảm xúc trước khi hành động."
+    },
+    "phase_2_duong_thoi": {
+      "phase_name": "Đương Thời (Điểm rơi vàng / Cửa sổ cơ hội)",
+      "indicators": "Bản chất vấn đề đã rõ hơn, bằng chứng chính đã được đối soát và tổ chức có phương án thay thế khả thi.",
+      "tactical_protocol": "Can thiệp trong cửa sổ đã xác định, đặt mốc rà soát rõ ràng và giữ khả năng điều chỉnh nếu giả định nền thay đổi."
+    },
+    "phase_3_mat_thoi": {
+      "phase_name": "Mạt Thời (Thế cục thoái trào / Chu kỳ đã qua)",
+      "indicators": "Mục tiêu ban đầu không còn khả thi, chi phí níu kéo vượt quá giá trị thu hồi (Sunk Cost Trap), dư luận hoặc xu hướng đã đổi chiều.",
+      "tactical_protocol": "Bảo toàn vốn và uy tín; chủ động cắt lỗ chiến thuật; mở đường lui danh dự cho các bên và tái cấu trúc nguồn lực sang chu kỳ mới."
+    }
+  },
+  "pacing_rules": [
+    "Quy tắc 1: Không bao giờ thương thuyết hoặc ra tối hậu thư khi tâm lý đang bị kích động cực độ.",
+    "Quy tắc 2: Giữa lúc giông bão, người bình tĩnh nhất là người nắm quyền định đoạt cục diện.",
+    "Quy tắc 3: Điểm rơi vàng xuất hiện khi đối phương tưởng rằng họ đã nắm chắc phần thắng và bắt đầu lơi lỏng phòng thủ."
+  ]
+}

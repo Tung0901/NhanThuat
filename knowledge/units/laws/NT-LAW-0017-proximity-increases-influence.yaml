@@ -1,35 +1,44 @@
 id: NT-LAW-0017
 type: law
 status: frozen
-version: 0.1.0
-title: Sự gần gũi làm tăng mức độ ảnh hưởng
-summary: Con người dễ bị ảnh hưởng hơn bởi các tín hiệu, con người và hệ quả có sự gần gũi hơn về mặt thời gian, không gian, mối quan hệ hoặc mức độ liên quan được nhận thức.
+version: 1.0.0
+title: "Quy luật độ gần tâm lý quyết định trọng lượng ảnh hưởng"
+summary: "Con người bị chi phối mạnh mẽ hơn gấp bội bởi những con người, tín hiệu và hệ quả có sự gần gũi trực tiếp về mặt thời gian, không gian vật lý, mối quan hệ thân sơ hoặc sự sống động thị giác so với những mục tiêu trừu tượng xa xôi."
 primary_domain: tri-nhan
 secondary_domains:
 - hop-chung
 - thanh-su
-definition: Các tín hiệu gần hơn có xu hướng tạo ra ảnh hưởng mạnh mẽ hơn vì chúng dễ được chú ý, cảm nhận và hành động hơn so với những khái niệm trừu tượng xa xôi.
+definition: "Trong tâm lý học tiến hóa và kinh tế học hành vi, bộ não con người được thiết kế để ưu tiên sinh tồn trước những mối đe dọa hoặc phần thưởng ngay trước mắt (Here and Now). Một lợi ích nhỏ nhưng nhận được ngay hôm nay, một lời nói của người ngồi ngay bên cạnh, hoặc một sự cố nhìn thấy tận mắt sẽ tạo ra lực thúc đẩy hành vi lớn hơn rất nhiều so với một mục tiêu chiến lược vĩ đại nhưng nằm ở 3 năm sau hoặc một chỉ thị văn bản gửi từ trụ sở cách xa hàng ngàn cây số."
 mechanism:
-- Bắt gặp một tín hiệu gần gũi
-- Cảm nhận mức độ cấp thiết cao hơn
-- Coi trọng nó hơn so với những mối bận tâm xa xôi.
+- "Chiết khấu theo khoảng cách (Psychological Distance Discounting): Não bộ tự động giảm trừ trọng số quan trọng của một sự kiện theo 4 chiều khoảng cách: Thời gian (Temporal), Không gian (Spatial), Quan hệ xã hội (Social) và Xác suất (Hypothetical)."
+- "Chiếm quyền ưu tiên của tín hiệu gần: Những yêu cầu trước mắt, tiếng chuông điện thoại, hoặc thái độ của người quản lý trực tiếp ngay tại phòng làm việc lập tức lấn át các mục tiêu dài hạn."
+- "Thiên kiến thân cận (Proximity Bias): Người lãnh đạo có xu hướng đánh giá cao và tin tưởng những nhân sự thường xuyên xuất hiện trong tầm mắt mình hơn những người làm việc âm thầm ở chi nhánh xa."
+- "Rút ngắn khoảng cách nhận thức: Muốn một mục tiêu chiến lược xa xôi có sức nặng hành động, phải kéo nó lại gần bằng cách chia nhỏ thành hệ quả ngay trong ngày hôm nay và đặt tín hiệu nhắc nhở ngay tại điểm thao tác."
+- "Thiết kế đối trọng chống thiên kiến gần: Xây dựng cơ chế đánh giá dựa trên dữ liệu đầu ra khách quan để bảo vệ công bằng cho các đơn vị ở xa trung tâm quyền lực."
 conditions:
-- Các tín hiệu cạnh tranh có mức độ cấp thiết khác nhau
-- Cá nhân thiếu một hệ thống đối trọng mạnh mẽ.
+- "Cá nhân phải lựa chọn phân bổ thời gian và nguồn lực giữa các nhiệm vụ khẩn cấp trước mắt và các mục tiêu quan trọng dài hạn."
+- "Tổ chức hoạt động phân tán qua nhiều địa điểm, chi nhánh hoặc nhiều tầng quản lý trung gian."
+- "Hệ thống thiếu các cơ chế neo buộc mục tiêu dài hạn vào hành động hàng ngày."
 exceptions:
-- Các giá trị hoặc kế hoạch mạnh mẽ có thể nâng cao tầm quan trọng của các mục tiêu xa
-- Khủng hoảng có thể sắp xếp lại thứ tự ưu tiên của sự gần gũi.
+- "Những cá nhân có tầm nhìn chiến lược xuất chúng và kỷ luật tự thân cao có khả năng duy trì trọng số ưu tiên cho các mục tiêu thập kỷ bất chấp cám dỗ ngắn hạn."
+- "Khi một rủi ro ở xa nhưng mang tính chất hủy diệt toàn diện được mô phỏng sống động trước mắt, nó có thể vượt qua thiên kiến khoảng cách."
 applications:
   communication:
-  - Kết nối các mục tiêu dài hạn với các hệ quả trước mắt.
+  - "Cụ thể hóa và kéo gần mục tiêu chiến lược: Thay vì nói 'Năm sau công ty cần giảm 10% tỷ lệ rời bỏ của khách hàng', hãy đưa toàn bộ ban lãnh đạo đến ngồi nghe trực tiếp cuộc gọi của một khách hàng đang bức xúc hủy hợp đồng ngay hôm nay."
   management:
-  - Đặt các tín hiệu then chốt tại nơi các quyết định thực sự diễn ra.
+  - "Đặt tín hiệu điều hướng ngay tại Điểm Quyết Định (Point-of-Decision Prompts): Đặt bảng tiêu chuẩn kiểm tra ngay trên bàn thao tác của công nhân thay vì cất trong tủ hồ sơ phòng Nhân sự."
+  - "Thực hành Quản trị Hiện trường (Gemba Walk): Lãnh đạo định kỳ rời phòng máy lạnh xuống trực tiếp công trường và các chi nhánh xa để xóa bỏ khoảng cách không gian và quyền lực."
 risks:
-- Coi trọng việc khẩn cấp hơn việc quan trọng
-- Thao túng tính nổi bật mà không có thực chất.
+- "Bẫy Khẩn cấp nuốt chửng Quan trọng (The Eisenhower Trap): Cả công ty quay cuồng chữa cháy các việc vặt trước mắt mỗi ngày mà bỏ mặc các dự án nền tảng quyết định sự sống còn."
+- "Thiên vị người ở gần (In-group / Proximity Favoritism): Thăng chức và thưởng lớn cho những kẻ khéo léo hay lượn lờ quanh phòng sếp, làm nản lòng những tướng lĩnh đang trấn giữ biên ải xa xôi."
+- "Bị thao túng bởi những hiệu ứng trình diễn hào nhoáng bề nổi nhưng rỗng tuếch về giá trị dài hạn."
 evidence:
-  level: provisional
-  references: []
+  level: strong
+  references:
+  - "Hàn Phi Tử - Thiên Bát Thuyết & Cô Phẫn (Cảnh báo cạm bẫy của người cầm quyền: Thường dễ bị mê hoặc bởi lời nói ngọt ngào của đám cận thần hầu hạ ngay bên cạnh mỗi ngày mà nghi ngờ những bậc pháp thuật chi sĩ đang làm việc thực chất ở xa)"
+  - "Tôn Tử Binh Pháp - Thiên Tác Chiến & Cửu Địa (Hiểu rõ tâm lý binh sĩ chỉ cảm nhận sâu sắc những hiểm nguy và phần thưởng hiện hữu ngay trước mắt tại chiến trường)"
+  - "Yaacov Trope & Nira Liberman - Construal Level Theory of Psychological Distance (Lý thuyết Mức độ Kiến tạo Nhận thức: Khoảng cách thời gian, không gian và xã hội làm biến đổi hoàn toàn cách con người đánh giá và hành động)"
+  - "George Ainslie - Picoeconomics & Hyperbolic Discounting (Lý thuyết Chiết khấu Hyperbolic trong kinh tế học hành vi: Con người đánh giá một phần thưởng nhỏ ngay hôm nay cao hơn vô lý so với phần thưởng lớn vào năm sau)"
 relations:
   supports:
   - NT-PRINCIPLE-0029
@@ -48,4 +57,59 @@ tags:
 - influence-tactics
 - decision-making
 created_at: '2026-07-20'
-updated_at: '2026-08-15'
+updated_at: '2026-10-17'
+content: |
+  ### 1. Bản chất cốt lõi & Cơ chế tâm lý ngầm
+
+  Tại sao một người biết rõ hút thuốc lá sẽ gây ung thư phổi vào 20 năm sau vẫn châm điếu thuốc ngay lúc này? Tại sao một Giám đốc biết rõ việc đầu tư đào tạo đội ngũ kế cận là sống còn cho công ty vào 3 năm tới, nhưng suốt cả năm không dành nổi 2 giờ mỗi tuần cho việc đó, mà lại dành hàng chục giờ để giải quyết những email sự vụ vụn vặt trước mắt?
+
+  Đó là sự vận hành của **Quy luật Độ gần tâm lý quyết định trọng lượng ảnh hưởng (Proximity Increases Influence)**.
+
+  Trong kinh tế học hành vi và tâm lý học nhận thức (Construal Level Theory của Trope & Liberman), bộ não con người bị chi phối bởi **Khoảng cách Tâm lý (Psychological Distance)** trên 4 trục:
+  1. **Gần về Thời gian (Temporal Proximity):** Việc xảy ra *ngay chiều nay* có sức nặng gấp 100 lần việc xảy ra *vào quý sau*. (Hiện tượng Chiết khấu Hyperbolic).
+  2. **Gần về Không gian (Physical Proximity):** Người ngồi *ngay bàn bên cạnh* hoặc sự cố diễn ra *ngay trước mắt* tác động mạnh hơn gấp bội so với báo cáo bằng chữ gửi từ chi nhánh cách xa 1.000 km.
+  3. **Gần về Quan hệ (Social Proximity):** Nỗi đau hoặc lợi ích của *người trong nhóm thân cận* được cảm nhận sâu sắc hơn nhiều so với một khách hàng vô danh trên bảng thống kê.
+  4. **Gần về Giác quan (Sensory Vividness):** Một hình ảnh/trải nghiệm trực tiếp có sức thuyết phục đè bẹp hàng trăm trang báo cáo số liệu khô khan.
+
+  ---
+
+  ### 2. Lăng kính Kép: Đông - Tây Dung Hợp
+
+  #### Phương Đông: Hiểm Họa "Thân Cận Tắc Nhập" (Hàn Phi Tử) & Nghệ Thuật Hiện Trường
+  Trong cổ học phương Đông, Hàn Phi Tử là người nhìn thấu sự nguy hiểm của "Độ gần vật lý" đối với sự sáng suốt của bậc quân vương:
+  - Trong thiên *Bát Gian*, ông chỉ ra rằng: Những kẻ cận thần, hoạn quan, cung tần mỹ nữ dù không có tài cán trị quốc, nhưng vì họ **ở ngay sát bên cạnh nhà vua mỗi ngày**, nhìn thấy từng nét mặt khi vua vui buồn, nên lời nói bóng gió của họ có sức thấm sâu vào tâm trí nhà vua gấp mười lần tấu chương của vị đại tướng đang đổ máu nơi biên ải xa xôi!
+  - Chính vì quy luật *"Xa mặt cách lòng, gần mặt dễ thao túng"* này, bậc minh quân phương Đông luôn phải tự nhắc mình: Không được vì sự thân cận hàng ngày mà thiên vị kẻ hầu người hạ, cũng không được vì khoảng cách địa lý mà phai nhạt sự tín nhiệm và đãi ngộ đối với những người đang gánh vác việc nặng ở tiền tuyến.
+
+  #### Phương Tây: Thiên Kiến Thân Cận (Proximity Bias) & Quản Trị Gemba
+  Trong quản trị hiện đại (đặc biệt là mô hình làm việc đa chi nhánh hoặc Hybrid), các nghiên cứu của Đại học Stanford và Harvard đã chỉ ra **Proximity Bias (Thiên kiến Thân cận)**: Những nhân viên ngồi gần phòng làm việc của sếp có tỷ lệ được thăng chức cao hơn tới 25–30% so với những nhân viên có cùng năng lực (hoặc giỏi hơn) nhưng làm việc ở chi nhánh xa, đơn giản vì sếp *nhìn thấy* họ mỗi ngày!
+
+  Đồng thời, trong nghệ thuật lãnh đạo thay đổi của Giáo sư John Kotter (*The Heart of Change*), muốn thúc đẩy một tổ chức hành động vì mục tiêu dài hạn, người lãnh đạo không thể dùng bảng tính Excel trừu tượng, mà phải áp dụng nguyên tắc **"See - Feel - Change" (Nhìn tận mắt - Cảm nhận trực tiếp - Thay đổi)**: Đem vấn đề từ xa đặt thẳng lên bàn họp trước mắt mọi người để xóa bỏ khoảng cách tâm lý.
+
+  ---
+
+  ### 3. Kịch bản Thực chiến Từng câu chữ (Verbatim Battle Script)
+
+  #### Tình huống:
+  Đội ngũ Kỹ sư và Quản lý Chất lượng ngồi tại Trụ sở chính (TP.HCM) suốt 3 tháng liền luôn bác bỏ các phản ánh từ Chi nhánh miền Bắc về việc "Bao bì sản phẩm mới rất dễ bị rách và ẩm mốc khi vận chuyển đường đèo miền núi". Đội trụ sở chính nhìn vào báo cáo kiểm nghiệm trong phòng thí nghiệm (đạt chuẩn 99%) và cho rằng: *"Anh em ngoài Bắc làm quá lên để đổ lỗi cho doanh số thấp thôi, số liệu phòng Lab của chúng tôi hoàn hảo mà!"*.
+
+  #### Phân tích sai lầm phổ biến:
+  Tổng Giám đốc tiếp tục gửi thêm các email số liệu qua lại giữa hai miền, hoặc tổ chức họp trực tuyến cãi nhau. Do khoảng cách không gian và giác quan quá xa, đội ngũ ở Trụ sở chính hoàn toàn không cảm nhận được nỗi đau thực tế tại hiện trường.
+
+  #### Thao lược xử lý của bậc Cố Vấn Nhân Thuật:
+  Triệt tiêu khoảng cách tâm lý về 0 bằng cách đưa hiện thực khốc liệt của hiện trường đặt thẳng vào mắt và tay của người ra quyết định.
+
+  **Kịch bản hành động của Tổng Giám đốc:**
+  > *(Sáng thứ Hai, trước khi bắt đầu cuộc họp giao ban tại Trụ sở chính, Tổng Giám đốc cho bê nguyên 5 thùng hàng vừa được vận chuyển thực tế từ kho Lào Cai về, đặt thẳng lên giữa chiếc bàn họp sang trọng và rạch băng dính mở ra: Bên trong là những gói sản phẩm bị bục mép, biến dạng và bốc mùi ẩm mốc).*
+  > 
+  > **Tổng Giám đốc:** *"Hôm nay chúng ta không nhìn lên màn hình máy chiếu nữa. Mời Giám đốc Chất lượng và Kỹ sư trưởng Thiết kế bao bì đứng dậy, cầm tận tay từng gói hàng trong 5 thùng này lên!*
+  > 
+  > *Trong phòng thí nghiệm máy lạnh 22 độ C tại Sài Gòn, bao bì này đạt chuẩn 99%. Nhưng sau 400 cây số đường đèo ẩm ướt lên Tây Bắc, đây chính là thứ mà khách hàng của chúng ta phải cầm trên tay và trả tiền!*
+  > 
+  > *Khi các bạn ngồi cách hiện trường 1.700 cây số, một dòng chữ 'Hàng lỗi 8%' trên bảng Excel chẳng làm ai đau lòng cả. Vì vậy, tôi quyết định hai việc:*
+  > 
+  > *1. Ngay chuyến bay sáng mai, Kỹ sư trưởng Bao bì và Giám đốc Chất lượng sẽ bay ra Hà Nội, ngồi trực tiếp lên xe tải giao hàng đi tuyến Lào Cai - Hà Giang trong 3 ngày cùng anh em giao nhận để tự mắt nhìn xem thùng hàng chịu lực va đập thế nào.*
+  > 
+  > *2. Kể từ quý này, 30% điểm đánh giá KPI của các bộ phận tại Trụ sở chính sẽ được chấm trực tiếp bởi Giám đốc các Chi nhánh vùng miền và điểm số hàng nguyên vẹn tại kho cuối. Chúng ta phải kéo khoảng cách giữa Phòng máy lạnh và Mặt trận về bằng không!"*
+
+  #### Bài học đúc kết:
+  Một trăm trang báo cáo trừu tượng không bằng một lần chạm tay vào hiện trường. **Muốn thay đổi hành vi của con người, hãy kéo hệ quả từ tương lai xa xôi về ngay ngày hôm nay, và đưa sự thật từ nơi khuất mắt đặt thẳng lên trước mặt họ.**

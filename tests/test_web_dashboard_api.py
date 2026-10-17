@@ -76,3 +76,19 @@ def test_knowledge_unit_export_unknown_returns_error() -> None:
 
     assert res["status"] == "error"
     assert res["code"] == 404
+
+
+def test_process_nhan_thuat_analysis_iching_scenario() -> None:
+    scenario = "Gặp thời bế tắc cùng cực chu kỳ suy thoái cần tìm thế biến dịch kinh dịch"
+    res = process_nhan_thuat_analysis(scenario)
+    assert res["status"] == "success"
+    assert res["philosophy_routing"]["primary_philosophy"] == "ICHING"
+    assert "action_script" in res
+
+
+def test_process_nhan_thuat_analysis_timing_scenario() -> None:
+    scenario = "Cần nắm bắt thời cơ thời thế đắc thời ra đòn sấm sét đúng thời điểm chín muồi"
+    res = process_nhan_thuat_analysis(scenario)
+    assert res["status"] == "success"
+    assert res["philosophy_routing"]["primary_philosophy"] == "TIMING"
+    assert "action_script" in res

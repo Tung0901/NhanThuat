@@ -39,6 +39,8 @@ load_dotenv()
 
 from backend.app.auth import AuthenticationError, _ACTIVE_SESSIONS, auth_manager
 from backend.app.engine.nhan_thuat_api import diagnose_person_role_fit, diagnose_team_structural_fit, process_nhan_thuat_analysis
+from backend.app.engine.payment import PAYMENT_UNAVAILABLE_MESSAGE, TIERS, payment_gateway
+from backend.app.engine.philosophies.iching_service import iching_service
 from backend.app.engine.runtime import BusinessOSRuntimeOrchestrator, RuntimeRequestPayload
 from nhan_thuat.council.council_engine import CouncilEngine
 from nhan_thuat.casework import CaseFileRepository, CaseFileService, EpistemicClaim
@@ -255,7 +257,7 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
                 pass
 
     def _case_file_session(self) -> dict[str, Any] | None:
-        """Require a live bearer session for operational case-file data."""
+        """Return the live bearer session used by protected API resources."""
         auth_header = self.headers.get("Authorization", "")
         token = auth_header.replace("Bearer ", "").strip() if "Bearer " in auth_header else ""
         return auth_manager.get_session(token) if token else None
@@ -265,7 +267,7 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
         if session is None:
             self._send_json_response(401, {
                 "status": "error",
-                "message": "A valid Bearer session is required for operational case files.",
+                "message": "A valid Bearer session is required.",
             })
         return session
 
@@ -465,7 +467,12 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
             self.end_headers()
             return
 
-        if path.startswith(("/css/", "/js/", "/assets/")):
+        if path.startswith(("/css/", "/js/", "/assets/")) or path in (
+            "/manifest.json",
+            "/offline.html",
+            "/favicon.ico",
+            "/sw.js",
+        ):
             frontend_dir = (REPO_ROOT / "frontend").resolve()
             asset_file = (frontend_dir / path.lstrip("/")).resolve()
             try:
@@ -478,6 +485,11 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
                 return
 
             content_type = mimetypes.guess_type(asset_file.name)[0] or "application/octet-stream"
+            if content_type.startswith("text/") or content_type in {
+                "application/json",
+                "application/javascript",
+            }:
+                content_type = f"{content_type}; charset=utf-8"
             if asset_file.is_file():
                 data = asset_file.read_bytes()
                 self.send_response(200)
@@ -588,10 +600,13 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
 
         # 1. Health & Version Endpoints
         if path == "/health" or path == "/salesos/health":
+            from nhan_thuat.runtime.synthesizer import get_provider_summary
+
             self._send_json_response(200, {
                 "status": "HEALTHY",
                 "kernel_version": "1.1.0",
                 "knowledge_units_indexed": len(knowledge_engine.units_by_id),
+                "llm": get_provider_summary(),
                 "salesos_plugin": salesos_plugin.health_check(),
             })
             return
@@ -623,21 +638,84 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{html_escape(title)} - NHÂN THUẬT DIGITAL BOOK</title>
     <style>
-        body {{ font-family: 'Plus Jakarta Sans', Arial, sans-serif; margin: 40px auto; max-width: 820px; padding: 0 20px; color: #0f172a; line-height: 1.75; }}
+        body {{ font-family: 'Plus Jakarta Sans', Arial, sans-serif; margin: 40px auto; max-width: 840px; padding: 0 20px; color: #0f172a; line-height: 1.75; background: #ffffff; }}
         h1 {{ color: #0f172a; border-bottom: 3px solid #f59e0b; padding-bottom: 12px; font-size: 24px; }}
         h2 {{ color: #1e293b; margin-top: 28px; border-bottom: 1px solid #cbd5e1; padding-bottom: 6px; font-size: 19px; }}
         h3 {{ color: #334155; margin-top: 20px; font-size: 16px; }}
-        blockquote {{ background: #f8fafc; border-left: 4px solid #f59e0b; margin: 16px 0; padding: 12px 16px; font-style: italic; color: #334155; }}
+        blockquote {{ background: #f8fafc; border-left: 4px solid #f59e0b; margin: 16px 0; padding: 12px 16px; font-style: italic; color: #334155; border-radius: 0 6px 6px 0; }}
         .table-responsive {{ width: 100%; overflow-x: auto; margin: 20px 0; border: 1px solid #cbd5e1; border-radius: 8px; box-shadow: 0 2px 8px rgba(15,23,42,0.04); }}
         table {{ border-collapse: collapse; width: 100%; font-size: 13.5px; line-height: 1.6; background: #ffffff; margin: 0; }}
         th, td {{ border: 1px solid #e2e8f0; padding: 10px 14px; text-align: left; vertical-align: top; }}
         th {{ background: #0f172a; color: #f8fafc; font-weight: 600; border-color: #1e293b; font-size: 13px; letter-spacing: 0.01em; }}
         tr:nth-child(even) td {{ background: #f8fafc; }}
         tr:hover td {{ background: #f1f5f9; }}
-        code {{ background: #f1f5f9; padding: 2px 5px; border-radius: 4px; font-family: monospace; }}
+
+        /* Unified Monospace Pre/Code Block for ASCII Diagrams */
+        pre {{
+            background: #0f172a;
+            color: #f1f5f9;
+            border: 1px solid #1e293b;
+            border-left: 4px solid #f59e0b;
+            border-radius: 8px;
+            padding: 16px 20px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Cascadia Code', 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.45;
+            letter-spacing: 0;
+            font-feature-settings: "liga" 0;
+            margin: 20px 0;
+            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+        }}
+        pre code {{
+            background: transparent !important;
+            padding: 0 !important;
+            border-radius: 0 !important;
+            border: none !important;
+            color: inherit !important;
+            font-family: inherit !important;
+            font-size: inherit !important;
+            line-height: inherit !important;
+            display: block !important;
+            white-space: pre !important;
+        }}
+        :not(pre) > code {{
+            background: #f1f5f9;
+            color: #b45309;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Cascadia Code', monospace;
+            font-size: 0.88em;
+            font-weight: 600;
+            border: 1px solid #e2e8f0;
+        }}
+
         .header-meta {{ background: #fffbe0; border: 1px solid #fef08a; padding: 12px; border-radius: 8px; font-size: 13px; margin-bottom: 20px; }}
-        .print-btn {{ position: fixed; right: 24px; bottom: 24px; background: #f59e0b; color: #0f172a; border: none; padding: 12px 20px; border-radius: 8px; font-weight: 700; cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,0.2); }}
-        @media print {{ .print-btn {{ display: none; }} body {{ margin: 0; }} }}
+        .print-btn {{ position: fixed; right: 24px; bottom: 24px; background: #f59e0b; color: #0f172a; border: none; padding: 12px 20px; border-radius: 8px; font-weight: 700; cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,0.2); transition: transform 0.15s ease; }}
+        .print-btn:hover {{ transform: translateY(-2px); }}
+
+        @media print {{
+            .print-btn {{ display: none; }}
+            body {{ margin: 0; max-width: 100%; color: #000000; }}
+            pre {{
+                background: #f8fafc !important;
+                color: #0f172a !important;
+                border: 1px solid #cbd5e1 !important;
+                border-left: 4px solid #f59e0b !important;
+                box-shadow: none !important;
+                page-break-inside: avoid;
+            }}
+            pre code {{
+                color: #0f172a !important;
+            }}
+            .table-responsive {{
+                box-shadow: none !important;
+                page-break-inside: avoid;
+            }}
+            tr, blockquote {{
+                page-break-inside: avoid;
+            }}
+        }}
     </style>
 </head>
 <body>
@@ -709,6 +787,81 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
                 "status": "success",
                 "total_leads": len(leads_data),
                 "leads": leads_data,
+            })
+            return
+
+        # 4-IChing. 64 Hexagrams API: GET /api/v1/iching/hexagrams and GET /api/v1/iching/hexagrams/{hex_id}
+        if path == "/api/v1/iching/hexagrams":
+            qs = parse_qs(parsed_url.query)
+            palace_filter = qs.get("palace", [""])[0]
+            query_filter = qs.get("q", [""])[0]
+            results = iching_service.list_hexagrams(palace=palace_filter, query=query_filter)
+            self._send_json_response(200, {
+                "status": "success",
+                "total": len(results),
+                "hexagrams": results,
+                "epistemic_status": "unreviewed",
+                "oracle_available": False,
+            })
+            return
+
+        if path.startswith("/api/v1/iching/hexagrams/"):
+            hex_id = path.replace("/api/v1/iching/hexagrams/", "")
+            hexagram = iching_service.get_hexagram(hex_id)
+            if hexagram:
+                self._send_json_response(200, {
+                    "status": "success",
+                    "hexagram": hexagram,
+                    "epistemic_status": "unreviewed",
+                })
+            else:
+                self._send_json_response(404, {
+                    "status": "error",
+                    "message": f"Hexagram '{hex_id}' not found.",
+                })
+            return
+
+        # 4-Payment. Subscription Tiers & Order Status API
+        if path == "/api/v1/payment/tiers":
+            self._send_json_response(200, {
+                "status": "success",
+                "checkout_available": False,
+                "catalog_status": "proposal",
+                "message": PAYMENT_UNAVAILABLE_MESSAGE,
+                "tiers": list(TIERS.values()),
+            })
+            return
+
+        if path.startswith("/api/v1/payment/orders/"):
+            session = self._require_case_file_session()
+            if session is None:
+                return
+            order_id = path.replace("/api/v1/payment/orders/", "")
+            order = payment_gateway.get_order(order_id)
+            if order and order.user_id == session["user_id"]:
+                self._send_json_response(200, {
+                    "status": "success",
+                    "order": order.to_dict(),
+                })
+            else:
+                self._send_json_response(404, {
+                    "status": "error",
+                    "message": f"Order '{order_id}' not found.",
+                })
+            return
+
+        if path == "/api/v1/payment/entitlements":
+            session = self._require_case_file_session()
+            if session is None:
+                return
+            user_id = session["user_id"]
+            tier_id = payment_gateway.get_user_tier(user_id)
+            tier_info = payment_gateway.get_tier(tier_id)
+            self._send_json_response(200, {
+                "status": "success",
+                "user_id": user_id,
+                "tier": tier_info,
+                "subscription_status": "unavailable",
             })
             return
 
@@ -1494,6 +1647,36 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
             self._send_json_response(200, result)
             return
 
+        # 0-IChing. Executive Oracle Casting: POST /api/v1/iching/cast
+        if path == "/api/v1/iching/cast":
+            oracle_result = iching_service.cast_oracle()
+            self._send_json_response(503, oracle_result)
+            return
+
+        # Commercial checkout is quarantined until settlement and storage pass review.
+        if path == "/api/v1/payment/orders":
+            session = self._require_case_file_session()
+            if session is None:
+                return
+            self._send_json_response(503, {
+                "status": "error",
+                "error_code": "CHECKOUT_UNAVAILABLE",
+                "message": PAYMENT_UNAVAILABLE_MESSAGE,
+            })
+            return
+
+        if path == "/api/v1/payment/webhook":
+            self._send_json_response(503, {
+                "status": "error",
+                "error_code": "SETTLEMENT_UNAVAILABLE",
+                "message": PAYMENT_UNAVAILABLE_MESSAGE,
+            })
+            return
+
+        if path == "/api/v1/payment/confirm-demo":
+            self._send_json_response(404, {"status": "error", "message": "Endpoint not found"})
+            return
+
         # 0. Web App Dashboard API Endpoint: POST /api/v1/nhan-thuat/analyze
         if path == "/api/v1/nhan-thuat/analyze":
             scenario_text = payload.get("scenario_text", "")
@@ -1509,13 +1692,36 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
 
             try:
                 result = process_nhan_thuat_analysis(scenario_text, scenario_type_hint)
-                self._send_json_response(200, result)
+                status_code = 422 if result.get("status") == "error" else 200
+                self._send_json_response(status_code, result)
             except Exception as e:
                 self._send_json_response(500, {
                     "status": "INTERNAL_ERROR",
                     "error_code": "ANALYSIS_FAILED",
                     "message": f"Server error: {e!s}"
                 })
+            return
+
+        # 0g. Executive Audio Modes Endpoint: POST /api/v1/audio/extract-modes
+        if path == "/api/v1/audio/extract-modes":
+            from nhan_thuat.audio.speech_normalizer import (
+                clean_markdown_for_speech,
+                extract_speech_modes,
+                split_into_utterance_chunks,
+            )
+            advisory_payload = payload.get("advisory_payload") or payload
+            raw_text = str(payload.get("text") or "")
+            modes = extract_speech_modes(advisory_payload) if isinstance(advisory_payload, dict) else {}
+            if raw_text and not modes.get("full"):
+                modes["full"] = clean_markdown_for_speech(raw_text)
+            target_text = modes.get("full") or raw_text
+            chunks = split_into_utterance_chunks(target_text)
+            self._send_json_response(200, {
+                "status": "success",
+                "modes": modes,
+                "chunks": chunks,
+                "total_chunks": len(chunks),
+            })
             return
 
         # 1. CPQ Quote Generator: POST /api/v1/salesos/cpq/generate-quote

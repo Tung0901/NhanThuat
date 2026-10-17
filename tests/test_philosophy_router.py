@@ -3,7 +3,8 @@ from backend.app.engine.philosophies.router import PhilosophyRouter, PhilosophyT
 
 def test_philosophy_router_initialization() -> None:
     router = PhilosophyRouter()
-    assert len(router.engines) == 13
+    # The catalog includes two provisional lenses authorized by the Product Owner at runtime.
+    assert len(router.engines) == 15
     assert PhilosophyType.RHETORIC in router.engines
     assert PhilosophyType.CONFUCIAN in router.engines
     assert PhilosophyType.LEGALISM in router.engines
@@ -17,6 +18,10 @@ def test_philosophy_router_initialization() -> None:
     assert PhilosophyType.GUIGUZI in router.engines
     assert PhilosophyType.GAME_THEORY in router.engines
     assert PhilosophyType.BEHAVIORAL_BIASES in router.engines
+    assert PhilosophyType.ICHING in router.engines
+    assert PhilosophyType.TIMING in router.engines
+    assert router._is_routable(PhilosophyType.ICHING) is True
+    assert router._is_routable(PhilosophyType.TIMING) is True
 
 
 def test_ai_router_corrected_technical_directives() -> None:
@@ -41,6 +46,7 @@ def test_ai_router_corrected_technical_directives() -> None:
     assert v_policy["resolution_strategy"] == "LATEST_APPROVED_ACTIVE_COMPATIBLE"
     assert v_policy["enforce_pinning"] is True
     assert v_policy["record_provenance_checksum"] is True
+    assert constraints["routable_governance_statuses"] == ["active", "approved", "frozen"]
 
     # 4. Fallback Handling for Unverified Query
     unverified_res = router.route({"scenario_type": "unsupported_unknown", "intent": ""})

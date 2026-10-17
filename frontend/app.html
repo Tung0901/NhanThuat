@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0a0c">
     <title>Nhân Thuật | Quản Trị & Thao Lược Con Người</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/icon-192.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link href="/css/scenario-workspace.css" rel="stylesheet">
+    <link href="/css/executive_audio.css" rel="stylesheet">
     <!-- Marked.js for Markdown parsing -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <!-- DOMPurify for XSS sanitization -->
@@ -55,6 +59,45 @@
         }
         .bubble-tab-content td, #book-modal-content td, #unit-modal-content td {
             color: rgba(255, 255, 255, 0.88);
+        }
+
+        /* Unified Monospace Pre/Code Block for ASCII Diagrams & Box-drawing Art */
+        .bubble-tab-content pre, #book-modal-content pre, #unit-modal-content pre, .treatise-body pre {
+            background: rgba(10, 14, 23, 0.95);
+            border: 1px solid rgba(245, 158, 11, 0.28);
+            border-left: 3px solid var(--gold-primary, #f59e0b);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 16px 0;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Cascadia Code', 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+            font-size: 12.5px;
+            line-height: 1.45;
+            letter-spacing: 0;
+            font-feature-settings: "liga" 0;
+            color: #e2e8f0;
+            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5);
+        }
+        .bubble-tab-content pre code, #book-modal-content pre code, #unit-modal-content pre code, .treatise-body pre code {
+            background: transparent !important;
+            padding: 0 !important;
+            border-radius: 0 !important;
+            border: none !important;
+            color: inherit !important;
+            font-family: inherit !important;
+            font-size: inherit !important;
+            line-height: inherit !important;
+            display: block !important;
+            white-space: pre !important;
+        }
+        .bubble-tab-content :not(pre) > code, #book-modal-content :not(pre) > code, #unit-modal-content :not(pre) > code, .treatise-body :not(pre) > code {
+            background: rgba(245, 158, 11, 0.12);
+            color: var(--gold-light, #fef08a);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Cascadia Code', monospace;
+            font-size: 0.88em;
+            border: 1px solid rgba(245, 158, 11, 0.2);
         }
 
         /* Catalog Domain Filter Tabs & Group Accordion */
@@ -1180,6 +1223,49 @@
             color: var(--text-secondary);
         }
 
+        .council-lens-roster {
+            display: grid;
+            grid-template-columns: repeat(7, minmax(0, 1fr));
+            margin: 0 0 22px;
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .council-lens {
+            min-width: 0;
+            padding: 13px 12px;
+            border-right: 1px solid var(--border-subtle);
+        }
+
+        .council-lens:last-child {
+            border-right: 0;
+        }
+
+        .council-lens-name {
+            display: block;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .council-lens-status {
+            display: block;
+            margin-top: 5px;
+            color: var(--text-muted);
+            font-size: 10px;
+            line-height: 1.3;
+            text-transform: uppercase;
+        }
+
+        .council-lens[data-lens-status="active"] .council-lens-status {
+            color: #78c8a0;
+        }
+
+        .council-lens[data-lens-status="draft"] {
+            background: rgba(255, 255, 255, 0.025);
+        }
+
         .diag-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1380,27 +1466,78 @@
 
         /* Council Grid */
         .council-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 14px;
-            margin: 16px 0;
+            display: block;
+            margin: 12px 0 30px;
+            border-top: 1px solid var(--border-subtle);
         }
 
         .council-card {
-            background: var(--bg-surface);
-            border: 1px solid var(--border-subtle);
-            border-radius: 12px;
-            padding: 16px;
-            font-size: 13px;
+            display: grid;
+            grid-template-columns: minmax(180px, 0.28fr) minmax(0, 1fr);
+            gap: 28px;
+            padding: 26px 0;
+            border-bottom: 1px solid var(--border-subtle);
+            font-size: 14px;
         }
 
         .council-card h4 {
-            font-size: 14px;
+            font-family: var(--font-serif);
+            font-size: 19px;
             color: var(--gold-light);
-            margin-bottom: 6px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
+            line-height: 1.35;
+            margin: 0;
+        }
+
+        .council-agent-id,
+        .council-detail-label {
+            display: block;
+            color: var(--text-muted);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0;
+            text-transform: uppercase;
+        }
+
+        .council-agent-id { margin-bottom: 7px; }
+        .council-detail-label { margin-bottom: 5px; }
+
+        .council-detail {
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .council-detail strong { color: #fff; }
+
+        .council-detail ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        .council-detail li { margin-bottom: 5px; }
+
+        .council-risk {
+            padding-left: 12px;
+            border-left: 2px solid var(--gold-primary);
+        }
+
+        .council-plan-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1px;
+            background: var(--border-subtle);
+            border: 1px solid var(--border-subtle);
+        }
+
+        .council-plan {
+            background: var(--bg-surface-elevated);
+            padding: 18px;
+        }
+
+        .council-plan h4 {
+            margin: 0 0 8px;
+            color: var(--gold-light);
+            font-size: 14px;
         }
 
         /* Mobile navigation drawer */
@@ -3371,6 +3508,25 @@
                 text-align: left;
             }
 
+            .council-lens-roster {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .council-lens,
+            .council-lens:last-child {
+                border-right: 1px solid var(--border-subtle);
+                border-bottom: 1px solid var(--border-subtle);
+            }
+
+            .council-card {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .council-plan-grid {
+                grid-template-columns: 1fr;
+            }
+
             .war-mobile-tabs {
                 display: grid;
                 grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -3405,7 +3561,7 @@
         }
     </style>
 
-    <link href="/css/design-system.css?v=20261009-login2" rel="stylesheet">
+    <link href="/css/design-system.css?v=20261016-login3" rel="stylesheet">
 </head>
 <body class="app-entry">
 <div id="landing-page-wrapper" class="site-introduction">
@@ -3768,7 +3924,7 @@
             </div>
         </section>
 
-        <!-- MODULE 2: HỘI ĐỒNG 5 CỐ VẤN (MULTI-LENS COUNCIL) -->
+        <!-- MODULE 2: HỘI ĐỒNG 7 LĂNG KÍNH -->
         <section id="view-council" class="workspace-module">
             <div class="workspace-section-heading" data-scroll-reveal>
                 <div>
@@ -3780,15 +3936,45 @@
             </div>
             <div style="flex: 1; overflow-y: auto; padding: 30px 40px; max-width: 1300px; margin: 0 auto; width: 100%;">
                 <div class="diag-header">
-                    <h2>🏛️ HỘI ĐỒNG CỐ VẤN ĐA TRIẾT PHÁI (MULTI-LENS COUNCIL)</h2>
-                    <p>Nhập bài toán nan giải để 5 đại trường phái tranh luận: Pháp Gia, Nho Gia, Đạo Gia, Tuân Tử và Binh Pháp Tôn Tử.</p>
+                    <h2>HỘI ĐỒNG 7 LĂNG KÍNH</h2>
+                    <p>Cả bảy lăng kính cùng đọc tình thế, nêu giả định, phản biện và đề xuất hành động có điều kiện kiểm chứng.</p>
                 </div>
 
-                <div class="council-query-form" style="display: flex; gap: 12px; margin-bottom: 24px;">
+                <div class="council-query-form" style="display: flex; gap: 12px; margin-bottom: 16px;">
                     <input type="text" class="diag-input" id="council-scenario-input" placeholder="Ví dụ: Giám đốc chi nhánh làm ăn có lãi nhưng lập bè cánh riêng, có nên sa thải ngay không?" style="margin-bottom: 0;">
-                    <button class="send-action-btn" id="council-deliberate-btn" style="white-space: nowrap; padding: 10px 24px;">Triệu tập hội đồng ⚡</button>
+                    <button class="send-action-btn" id="council-deliberate-btn" style="white-space: nowrap; padding: 10px 24px;">Triệu tập hội đồng</button>
                 </div>
 
+                <div class="council-lens-roster" aria-label="Danh mục bảy lăng kính Hội đồng">
+                    <div class="council-lens" data-council-lens data-lens-status="active">
+                        <span class="council-lens-name">Pháp Gia</span>
+                        <span class="council-lens-status">Đang tham gia</span>
+                    </div>
+                    <div class="council-lens" data-council-lens data-lens-status="active">
+                        <span class="council-lens-name">Nho Gia</span>
+                        <span class="council-lens-status">Đang tham gia</span>
+                    </div>
+                    <div class="council-lens" data-council-lens data-lens-status="active">
+                        <span class="council-lens-name">Đạo Gia</span>
+                        <span class="council-lens-status">Đang tham gia</span>
+                    </div>
+                    <div class="council-lens" data-council-lens data-lens-status="active">
+                        <span class="council-lens-name">Tuân Tử</span>
+                        <span class="council-lens-status">Đang tham gia</span>
+                    </div>
+                    <div class="council-lens" data-council-lens data-lens-status="active">
+                        <span class="council-lens-name">Binh Pháp</span>
+                        <span class="council-lens-status">Đang tham gia</span>
+                    </div>
+                    <div class="council-lens" data-council-lens data-lens-status="active">
+                        <span class="council-lens-name">Dịch Học</span>
+                        <span class="council-lens-status">Đang tham gia</span>
+                    </div>
+                    <div class="council-lens" data-council-lens data-lens-status="active">
+                        <span class="council-lens-name">Thời Thế</span>
+                        <span class="council-lens-status">Đang tham gia</span>
+                    </div>
+                </div>
                 <div id="council-result-area" style="display: none;">
                     <!-- Rendered by formatCouncilDeliberationHTML -->
                 </div>
@@ -3806,23 +3992,81 @@
                 <button class="workspace-focus-btn" type="button" onclick="toggleWorkspaceFocus('view-sparring')" aria-label="Mở Đấu trí ở chế độ tập trung" title="Chế độ tập trung">⛶</button>
             </div>
             <div style="flex: 1; display: flex; flex-direction: column; max-width: 1000px; margin: 0 auto; width: 100%; height: 100%; padding: 20px 30px;">
-                <div style="border-bottom: 1px solid var(--border-subtle); padding-bottom: 14px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center;">
+                <div style="border-bottom: 1px solid var(--border-subtle); padding-bottom: 14px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;">
                     <div>
                         <h2 style="font-family: var(--font-display); font-size: 20px; color: #ffffff;">⚔️ PHÒNG ĐẤU TRÍ & THƯƠNG THUYẾT ĐỐI KHÁNG</h2>
-                        <p style="font-size: 12.5px; color: var(--text-secondary);">Rèn luyện phản xạ đối đáp trước những đối thủ, đối tác và nhân sự rắn mặt nhất.</p>
+                        <p style="font-size: 12.5px; color: var(--text-secondary);">Nhập bối cảnh thực tế và chân dung đối phương để rèn luyện phản xạ đối đáp trước những tình huống căng thẳng nhất.</p>
                     </div>
-                    <button class="export-btn" onclick="startNewSparring()">+ Ván đấu mới</button>
+                    <div style="display: flex; gap: 8px; align-items: center;">
+                        <button type="button" class="export-btn" id="sparring-toggle-setup-btn" onclick="toggleSparringSetup()">⚙️ Thiết lập đối thủ</button>
+                        <button type="button" class="export-btn" onclick="startNewSparring()">+ Ván đấu mới</button>
+                    </div>
+                </div>
+
+                <!-- KHUNG THIẾT LẬP VÁN ĐẤU & ĐỐI THỦ (SPARRING SETUP PANEL) -->
+                <div id="sparring-setup-panel" style="background: rgba(255,255,255,0.025); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 16px 18px; margin-bottom: 16px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 10px;">
+                        <div style="font-size: 12px; font-weight: 700; color: var(--gold-light); text-transform: uppercase; letter-spacing: 0.06em;">
+                            🎯 Thiết lập bối cảnh & Chân dung đối thủ thương lượng
+                        </div>
+                        <button type="button" class="export-btn" style="font-size: 11px; padding: 4px 10px;" onclick="importScenarioToSparring()">📥 Lấy từ Tình thế đang phân tích</button>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr; gap: 10px;">
+                        <div>
+                            <label for="sparring-context-input" style="display: block; font-size: 11.5px; color: var(--text-secondary); margin-bottom: 4px;">Bối cảnh ván đấu & Nút thắt lợi ích (Nhập tình huống thực tế của anh/chị):</label>
+                            <textarea id="sparring-context-input" rows="2" class="chat-text-input" style="width: 100%; resize: vertical; font-size: 13px; line-height: 1.5; padding: 8px 12px;" placeholder="VD: Đối tác phân phối khu vực miền Nam đang nợ 3 tỷ quá hạn 45 ngày nhưng đòi giao thêm lô hàng mới mới chịu thanh toán nợ cũ..."></textarea>
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px;">
+                            <div>
+                                <label for="sparring-lens-select" style="display: block; font-size: 11.5px; color: var(--text-secondary); margin-bottom: 4px;">Chân dung & Phong cách Đối thủ:</label>
+                                <select id="sparring-lens-select" class="chat-text-input" style="width: 100%; font-size: 12.5px; padding: 8px 10px; background: rgba(15, 19, 26, 0.95); color: #ffffff;">
+                                    <option value="auto">🎯 Tự động nhận diện theo bối cảnh (Auto)</option>
+                                    <option value="RHETORIC">🎙️ Khách hàng ép giá & bắt bẻ lý lẽ (Thuật Hùng Biện)</option>
+                                    <option value="LEGALISM">⚖️ Đối tác rắn mặt về hợp đồng & chế tài (Pháp Gia)</option>
+                                    <option value="GAME_THEORY">♟️ Đối thủ nắm đòn bẩy & dọa hủy kèo (Game Theory)</option>
+                                    <option value="GUIGUZI">🦊 Cao thủ thăm dò tâm can & gài bẫy (Quỷ Cốc Tử)</option>
+                                    <option value="MACHIAVELLIAN">🦁 Cổ đông / Sếp gây sức ép quyền lực (Machiavellian)</option>
+                                    <option value="XUNZI">👥 Nhân sự / Tổ đội gai góc đòi yêu sách (Tuân Tử)</option>
+                                    <option value="SUNZI">⚔️ Đối thủ cạnh tranh chèn ép thị phần (Binh Pháp)</option>
+                                    <option value="STOICISM">🏛️ Khủng hoảng & Khiêu khích cảm xúc (Khắc Kỷ)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="sparring-opening-input" style="display: block; font-size: 11.5px; color: var(--text-secondary); margin-bottom: 4px;">Lời mở đầu của Đối thủ (Để trống hệ thống sẽ tự sinh theo bối cảnh):</label>
+                                <input type="text" id="sparring-opening-input" class="chat-text-input" style="width: 100%; font-size: 12.5px; padding: 8px 12px;" placeholder="Nhập câu phủ đầu của đối phương hoặc để trống...">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap;">
+                        <span id="sparring-active-badge" style="font-size: 11.5px; color: var(--text-muted);">💡 Nhập bối cảnh rồi bấm <strong>Khởi tạo Đối thủ</strong>, hoặc chọn nhanh 1 mẫu bên dưới.</span>
+                        <button type="button" class="send-action-btn" style="padding: 8px 16px; font-size: 12.5px;" onclick="launchConfiguredSparring()">⚔️ Khởi tạo Đối thủ & Bắt đầu Ván đấu</button>
+                    </div>
+
+                    <!-- Kịch bản mẫu 1-Click thu gọn ở dưới -->
+                    <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; padding-top: 10px; border-top: 1px dashed rgba(255,255,255,0.08);">
+                        <span style="font-size: 11px; color: var(--text-muted); align-self: center; margin-right: 4px;">Mẫu nhanh:</span>
+                        <button type="button" class="mode-pill" style="font-size: 11px; padding: 3px 9px;" onclick="applySparringPreset('price_squeeze')">💰 Khách hàng ép giá 25%</button>
+                        <button type="button" class="mode-pill" style="font-size: 11px; padding: 3px 9px;" onclick="applySparringPreset('contractor_delay')">⚖️ Nhà thầu đòi ứng vốn</button>
+                        <button type="button" class="mode-pill" style="font-size: 11px; padding: 3px 9px;" onclick="applySparringPreset('monopoly_partner')">♟️ Đối tác dọa cắt hàng</button>
+                        <button type="button" class="mode-pill" style="font-size: 11px; padding: 3px 9px;" onclick="applySparringPreset('key_staff_revolt')">👥 Nhân sự đòi yêu sách</button>
+                        <button type="button" class="mode-pill" style="font-size: 11px; padding: 3px 9px;" onclick="applySparringPreset('board_pressure')">🦁 Cổ đông gây sức ép</button>
+                    </div>
                 </div>
 
                 <div class="chat-feed" id="sparring-feed" style="padding: 10px 0;">
                     <div class="message-bubble msg-assistant">
-                        <strong style="color: var(--gold-light);">🤖 ĐỐI THỦ THƯƠNG LƯỢNG SẮC BÉN:</strong>
+                        <strong style="color: var(--gold-light);">🤖 ĐỐI THỦ THƯƠNG LƯỢNG SẮC BÉN (MẪU MẶC ĐỊNH):</strong>
                         <p style="margin-top: 6px;">"Tôi đã xem báo giá và các điều khoản của công ty anh. Thẳng thắn mà nói, mức giá này quá vô lý so với mặt bằng chung. Nếu anh không giảm ngay 25%, buổi làm việc hôm nay kết thúc ở đây."</p>
+                        <div style="margin-top: 8px; font-size: 11.5px; color: var(--text-muted);">
+                            <em>(Anh/chị có thể phản hồi ngay bên dưới, hoặc nhập <strong>Bối cảnh thực tế của mình</strong> ở khung Thiết lập phía trên rồi bấm <strong>Khởi tạo Đối thủ</strong> để đấu trí đúng bài toán đang gặp).</em>
+                        </div>
                     </div>
                 </div>
 
                 <div class="chat-input-bar" style="background: transparent; border: none; padding: 14px 0 0 0;">
-                    <input type="text" class="chat-text-input" id="sparring-input" placeholder="Nhập câu phản hồi đối kháng của bạn...">
+                    <input type="text" class="chat-text-input" id="sparring-input" placeholder="Nhập lời thoại đối đáp hoặc phương án xử lý của bạn để đấu trí...">
                     <button class="send-action-btn" id="sparring-send-btn">Đối đòn ⚔️</button>
                 </div>
             </div>
@@ -4245,18 +4489,7 @@
                         <span id="war-persona-count-badge" class="persona-meta-pill">0 nhân vật</span>
                     </div>
                     <div class="war-room-col-body">
-                        <!-- Presets Selector -->
-                        <div class="war-card">
-                            <div class="war-label">
-                                <span>Kịch bản mẫu điển hình</span>
-                                <span style="font-size: 10px; color: var(--gold-light);">Mẫu thực chứng</span>
-                            </div>
-                            <div id="war-presets-list" style="display: flex; flex-direction: column; gap: 6px;">
-                                <div style="color: var(--text-muted); font-size: 11.5px;">Đang nạp kịch bản mẫu...</div>
-                            </div>
-                        </div>
-
-                        <!-- Scenario Input -->
+                        <!-- Scenario Input (Placed FIRST at the very top for immediate access) -->
                         <div class="war-card">
                             <div class="war-label">
                                 <span>TÌNH HUỐNG GIẢ LẬP</span>
@@ -4266,6 +4499,17 @@
                             <button id="war-init-btn" class="war-btn-primary" onclick="initWarRoomSimulation()" style="margin-top: 10px;">
                                 Khởi tạo sa bàn mô phỏng
                             </button>
+
+                            <!-- Compact Presets Selector right below input -->
+                            <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed rgba(255,255,255,0.1);">
+                                <div class="war-label" style="margin-bottom: 6px;">
+                                    <span style="font-size: 11px;">Hoặc chọn nhanh kịch bản mẫu</span>
+                                    <span style="font-size: 10px; color: var(--gold-light);">1-Click nạp mẫu</span>
+                                </div>
+                                <div id="war-presets-list" style="display: flex; flex-direction: column; gap: 5px;">
+                                    <div style="color: var(--text-muted); font-size: 11.5px;">Đang nạp kịch bản mẫu...</div>
+                                </div>
+                            </div>
                         </div>
 
                         <!-- Persona Cards Container -->
@@ -4443,7 +4687,7 @@
 
     <!-- Knowledge Unit Modal Inspector -->
     <div class="modal-backdrop" id="unit-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="unit-modal-title">
-        <div class="modal-window">
+        <div class="modal-window" style="max-width: 880px;">
             <button class="modal-close-btn" onclick="closeUnitModal()" aria-label="Đóng cửa sổ tri thức">&times;</button>
             <div id="unit-modal-content">
                 <!-- Dynamically loaded -->
@@ -4766,7 +5010,7 @@
         if (!username) return;
         if (submitBtn) {
             submitBtn.disabled = true;
-            submitBtn.textContent = '⏳ Đang xác thực…';
+            submitBtn.textContent = 'Đang xác thực…';
         }
         if (errorEl) errorEl.style.display = 'none';
 
@@ -4790,7 +5034,7 @@
         } finally {
             if (submitBtn) {
                 submitBtn.disabled = false;
-                submitBtn.textContent = 'Xác thực & vào không gian làm việc ➤';
+                submitBtn.textContent = 'Xác thực và vào không gian làm việc';
             }
         }
     }
@@ -4828,7 +5072,7 @@
         } else {
             updateUserProfileUI(null);
         }
-        closeLoginModal();
+        openLoginModal();
     }
 
     // --- SCROLL-NATIVE WORKSPACE NAVIGATION ---
@@ -5595,6 +5839,7 @@
 
     function renderAdvisoryResponseHTML(data, query) {
         const id = 'resp-' + Math.random().toString(36).substr(2, 9);
+        window.__advisoryStore[id] = { data, query };
         const script = data.action_script || {};
         const syn = data.synthesis_result || {};
         const matched = data.matched_knowledge_units || [];
@@ -5698,7 +5943,17 @@
 
         return `
             <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-subtle); padding-bottom: 10px; margin-bottom: 12px; gap: 8px; flex-wrap: wrap;">
-                <h3 style="font-family: var(--font-serif); font-size: 17px; color: var(--gold-light);">👑 BẢN THAM MƯU CHIẾN LƯỢC ĐIỀU HÀNH</h3>
+                <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                    <h3 style="font-family: var(--font-serif); font-size: 17px; color: var(--gold-light); margin: 0;">👑 BẢN THAM MƯU CHIẾN LƯỢC ĐIỀU HÀNH</h3>
+                    <div style="display: flex; gap: 6px;">
+                        <button class="advisory-audio-btn" onclick="window.NhanThuatAudio.playAdvisory('${id}', 'full')" title="Nghe toàn bộ bản tham mưu">
+                            🎧 Nghe Toàn Bộ
+                        </button>
+                        <button class="advisory-audio-btn secondary" onclick="window.NhanThuatAudio.playAdvisory('${id}', 'verbatim')" title="Chỉ nghe kịch bản lời thoại thực chiến">
+                            💬 Nghe Lời Thoại
+                        </button>
+                    </div>
+                </div>
                 <div style="display: flex; gap: 6px; flex-wrap: wrap;">
                     <span class="advisory-badge" style="background: rgba(245,158,11,0.15); color: var(--gold-primary);">Lăng Kính: ${escapeHtml(routing.primary_philosophy || 'DYNAMIC')}</span>
                     <span class="advisory-badge" style="background: ${isLLM ? 'rgba(16,185,129,0.15)' : 'rgba(255,255,255,0.06)'}; color: ${isLLM ? 'var(--emerald-accent)' : 'var(--text-muted)'};">${modeLabel}</span>
@@ -5759,7 +6014,10 @@
 
             ${glossaryPane}
 
-            <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border-subtle); display: flex; justify-content: flex-end; gap: 8px;">
+            <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border-subtle); display: flex; justify-content: flex-end; gap: 8px; flex-wrap: wrap;">
+                <button class="export-btn" onclick="window.NhanThuatAudio.playAdvisory('${id}', 'summary')" style="font-size: 11.5px; padding: 6px 12px; border-color: rgba(223,196,127,0.4); color: #dfc47f; background: rgba(223,196,127,0.1);">
+                    ⚡ Nghe Tóm Tắt 1 Phút
+                </button>
                 <button class="export-btn" onclick="transferScenarioToWarRoom('${encodeURIComponent(query)}')" style="font-size: 11.5px; padding: 6px 12px; border-color: rgba(56,189,248,0.4); color: var(--cyan-accent); background: rgba(56,189,248,0.1);">
                     ♟️ Đưa Vào Sa bàn mô phỏng tình thế
                 </button>
@@ -5795,16 +6053,21 @@
             if (typeof DOMPurify !== 'undefined') {
                 return DOMPurify.sanitize(raw, { ADD_ATTR: ['target'] });
             }
-            return escapeHtml(md).replace(/\n/g, '<br>');
+            return raw;
         }
-        // Fallback
-        return escapeHtml(md)
-            .replace(/^### (.*?)$/gm, '<h4 style="color: var(--gold-light); margin: 14px 0 6px 0; font-size: 15px;">$1</h4>')
-            .replace(/^## (.*?)$/gm, '<h3 style="color: #fff; margin: 16px 0 8px 0; font-size: 16px;">$1</h3>')
-            .replace(/\*\*([^*]+)\*\*/g, '<strong style="color: #fff;">$1</strong>')
-            .replace(/\*([^*]+)\*/g, '<em style="color: #cbd5e1;">$1</em>')
-            .replace(/\n\n/g, '<p style="margin-bottom: 10px;"></p>')
-            .replace(/\n/g, '<br>');
+        // Fallback for offline / direct rendering
+        let out = escapeHtml(md);
+        // Code blocks: ```...```
+        out = out.replace(/```([\s\S]*?)```/g, (m, code) => `<pre><code>${code.trim()}</code></pre>`);
+        // Inline code: `...`
+        out = out.replace(/`([^`]+)`/g, '<code>$1</code>');
+        out = out.replace(/^### (.*?)$/gm, '<h4 style="color: var(--gold-light); margin: 14px 0 6px 0; font-size: 15px;">$1</h4>');
+        out = out.replace(/^## (.*?)$/gm, '<h3 style="color: #fff; margin: 16px 0 8px 0; font-size: 16px;">$1</h3>');
+        out = out.replace(/\*\*([^*]+)\*\*/g, '<strong style="color: #fff;">$1</strong>');
+        out = out.replace(/\*([^*]+)\*/g, '<em style="color: #cbd5e1;">$1</em>');
+        out = out.replace(/\n\n/g, '<p style="margin-bottom: 10px;"></p>');
+        out = out.replace(/\n/g, '<br>');
+        return out;
     }
 
     // --- EXPORT BRIEF ---
@@ -5879,7 +6142,7 @@
 
         window.NhanThuatScenario?.capture('council', text, { source: 'council' });
         const btn = document.getElementById('council-deliberate-btn');
-        btn.textContent = "⏳ Hội Đồng Đang Tranh Luận...";
+        btn.textContent = "Hội đồng đang phân tích...";
         btn.disabled = true;
 
         try {
@@ -5889,7 +6152,7 @@
                 body: JSON.stringify({ scenario_text: text })
             });
             const data = await res.json();
-            btn.textContent = "Triệu tập hội đồng ⚡";
+            btn.textContent = "Triệu tập hội đồng";
             btn.disabled = false;
 
             const area = document.getElementById('council-result-area');
@@ -5903,38 +6166,76 @@
                 const d = data.deliberation;
                 const m = d.decision_matrix || {};
 
-                let pitchesHtml = (d.pitches || []).map(p => `
-                    <div class="council-card">
-                        <h4>⚖️ ${p.title || p.agent_id}</h4>
-                        <p style="color: #ffffff; margin-bottom: 8px; font-weight: 500;">"${p.stance || ''}"</p>
-                        <p style="color: var(--text-secondary); font-size: 12px;"><strong>Căn cứ:</strong> ${(p.core_arguments || []).join('<br> • ')}</p>
+                const renderList = (items) => {
+                    const rows = (items || []).map(item => `<li>${escapeHtml(item)}</li>`).join('');
+                    return rows ? `<ul>${rows}</ul>` : '<span>Chưa có dữ liệu.</span>';
+                };
+                const renderPlan = (label, plan) => `
+                    <section class="council-plan">
+                        <span class="council-detail-label">${escapeHtml(label)}</span>
+                        <h4>${escapeHtml(plan?.name || label)}</h4>
+                        <p class="council-detail">${escapeHtml(plan?.summary || '')}</p>
+                        <div class="council-detail">${renderList(plan?.action_steps)}</div>
+                    </section>
+                `;
+                const pitchesHtml = (d.pitches || []).map(p => `
+                    <article class="council-card">
+                        <header>
+                            <span class="council-agent-id">${escapeHtml(p.agent_id || 'LENS')}</span>
+                            <h4>${escapeHtml(p.title || p.agent_id)}</h4>
+                        </header>
+                        <div>
+                            <div class="council-detail"><span class="council-detail-label">Đọc tình thế</span>${escapeHtml(p.situation_read || '')}</div>
+                            <div class="council-detail"><span class="council-detail-label">Lập trường</span><strong>${escapeHtml(p.stance || '')}</strong></div>
+                            <div class="council-detail"><span class="council-detail-label">Giả định đang dùng</span>${renderList(p.assumptions)}</div>
+                            <div class="council-detail"><span class="council-detail-label">Lập luận chính</span>${renderList(p.core_arguments)}</div>
+                            <div class="council-detail"><span class="council-detail-label">Hành động đề xuất</span>${renderList(p.recommended_actions)}</div>
+                            <div class="council-detail"><span class="council-detail-label">Bằng chứng cần kiểm</span>${renderList(p.evidence_needed)}</div>
+                            <div class="council-detail council-risk"><span class="council-detail-label">Rủi ro</span>${escapeHtml(p.risk_warning || '')}</div>
+                            <div class="council-detail"><span class="council-detail-label">Độ tin cậy</span>${escapeHtml(p.confidence_note || '')}</div>
+                        </div>
+                    </article>
+                `).join('');
+                const debatesHtml = (d.cross_debates || []).map(item => `
+                    <div class="council-detail">
+                        <span class="council-detail-label">${escapeHtml(item.challenger_id)} phản biện ${escapeHtml(item.target_id)}</span>
+                        <strong>${escapeHtml(item.critique || '')}</strong><br>${escapeHtml(item.counter_recommendation || '')}
                     </div>
                 `).join('');
 
                 area.innerHTML = `
-                    <h3 style="font-family: var(--font-serif); font-size: 20px; color: var(--gold-light); margin-bottom: 14px;">GIAI ĐOẠN 1: 5 LẬP TRƯỜNG TRIẾT HỌC</h3>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 8px;">
+                        <h3 style="font-family: var(--font-serif); font-size: 20px; color: var(--gold-light); margin: 0;">GIAI ĐOẠN 1: BẢY BẢN THAM MƯU</h3>
+                        <button class="advisory-audio-btn" id="council-audio-btn" title="Nghe bảy lăng kính tranh biện và quyết sách hợp nhất">Nghe hội đồng tranh biện</button>
+                    </div>
                     <div class="council-grid">${pitchesHtml}</div>
 
-                    <div style="margin-top: 24px; padding: 20px; background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: 14px;">
-                        <h3 style="font-family: var(--font-serif); font-size: 18px; color: var(--gold-light); margin-bottom: 10px;">GIAI ĐOẠN 2: QUYẾT SÁCH HỢP NHẤT & MA TRẬN ĐỒNG THUẬN</h3>
-                        <div style="padding: 12px 16px; background: rgba(245, 158, 11, 0.08); border-left: 3px solid var(--gold-primary); margin-bottom: 14px;">
-                            <strong>Chiến lược đồng thuận cao nhất: </strong> ${m.highest_consensus || 'Hợp nhất 5 góc nhìn'}
+                    <section style="margin-top: 24px;">
+                        <h3 style="font-family: var(--font-serif); font-size: 18px; color: var(--gold-light); margin-bottom: 14px;">GIAI ĐOẠN 2: PHẢN BIỆN CHÉO</h3>
+                        ${debatesHtml || '<p class="council-detail">Chưa có phản biện chéo.</p>'}
+                    </section>
+
+                    <section style="margin-top: 30px; padding-top: 24px; border-top: 1px solid var(--border-subtle);">
+                        <h3 style="font-family: var(--font-serif); font-size: 18px; color: var(--gold-light); margin-bottom: 10px;">GIAI ĐOẠN 3: QUYẾT SÁCH HỢP NHẤT</h3>
+                        <div style="padding: 12px 16px; border-left: 3px solid var(--gold-primary); margin-bottom: 18px; line-height: 1.7;">
+                            <strong>Đồng thuận cao nhất: </strong> ${escapeHtml(m.highest_consensus || 'Hợp nhất bảy góc nhìn')}
                         </div>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-                            <div style="padding: 14px; background: rgba(255,255,255,0.03); border-radius: 8px; border: 1px solid var(--border-subtle);">
-                                <strong style="color: var(--emerald-accent);">🎯 PLAN A (ƯU TIÊN HÀNH ĐỘNG):</strong>
-                                <p style="font-size: 13px; color: #fff; margin-top: 6px;">${m.plan_a_primary?.summary || JSON.stringify(m.plan_a_primary || {})}</p>
-                            </div>
-                            <div style="padding: 14px; background: rgba(255,255,255,0.03); border-radius: 8px; border: 1px solid var(--border-subtle);">
-                                <strong style="color: var(--cyan-accent);">🛡️ PLAN B (DỰ PHÒNG CHỐNG ĐỔ VỠ):</strong>
-                                <p style="font-size: 13px; color: #fff; margin-top: 6px;">${m.plan_b_fallback?.summary || JSON.stringify(m.plan_b_fallback || {})}</p>
-                            </div>
+                        <div class="council-plan-grid">
+                            ${renderPlan('Phương án A', m.plan_a_primary)}
+                            ${renderPlan('Phương án B', m.plan_b_fallback)}
+                            ${renderPlan('Phương án C', m.plan_c_containment)}
                         </div>
-                    </div>
+                        <div class="council-detail" style="margin-top: 20px;"><span class="council-detail-label">Mâu thuẫn cốt lõi</span>${renderList(m.core_conflicts)}</div>
+                        <div class="council-detail"><span class="council-detail-label">Điều kiện thận trọng</span>${renderList(m.critical_caveats)}</div>
+                        <div class="council-detail"><span class="council-detail-label">Chỉ thị thực thi</span>${renderList(m.execution_directives)}</div>
+                    </section>
                 `;
+                document.getElementById('council-audio-btn')?.addEventListener('click', () => {
+                    if (window.NhanThuatAudio) window.NhanThuatAudio.playCouncil(d);
+                });
             }
         } catch(err) {
-            btn.textContent = "Triệu tập hội đồng ⚡";
+            btn.textContent = "Triệu tập hội đồng";
             btn.disabled = false;
             alert("Lỗi: " + err.message);
         }
@@ -5943,11 +6244,151 @@
     // --- SPARRING LOGIC ---
     let sparringSessionId = null;
 
+    const SPARRING_PRESETS = {
+        price_squeeze: {
+            lens: 'RHETORIC',
+            context: 'Khách hàng B2B đơn hàng 2.5 tỷ đòi giảm giá 25% và giãn công nợ lên 90 ngày, dọa chuyển sang đối thủ cạnh tranh nếu không chốt ngay trong buổi họp hôm nay.',
+            opening: 'Tôi đã xem báo giá và các điều khoản của công ty anh. Thẳng thắn mà nói, mức giá này cao hơn đối thủ 25%. Nếu anh không giảm ngay 25% và cho trả chậm 90 ngày, buổi làm việc hôm nay kết thúc ở đây.'
+        },
+        contractor_delay: {
+            lens: 'LEGALISM',
+            context: 'Nhà thầu phụ thi công hạng mục trọng điểm đang chậm tiến độ 10 ngày nhưng lấy lý do trượt giá vật tư để đòi tạm ứng thêm 30% ngoài hợp đồng, dọa rút quân khỏi công trường.',
+            opening: 'Giá vật tư tăng vọt ngoài dự kiến của chúng tôi rồi. Nếu bên anh không duyệt chi tạm ứng thêm 30% ngay trong chiều nay mà cứ đem hợp đồng ra dọa phạt, sáng mai tôi cho anh em rút toàn bộ máy móc khỏi công trường!'
+        },
+        monopoly_partner: {
+            lens: 'GAME_THEORY',
+            context: 'Nhà cung cấp linh kiện/phân phối chiến lược lợi dụng lúc công ty đang vào mùa cao điểm để đòi tăng giá 18% và ép ký cam kết sản lượng độc quyền.',
+            opening: 'Anh biết rõ hiện tại trên thị trường chỉ có bên tôi đáp ứng kịp tiến độ giao hàng tháng này của anh. Hoặc anh ký phụ lục tăng giá 18% và độc quyền phân phối, hoặc lô hàng tuần tới sẽ được ưu tiên cho đối tác khác.'
+        },
+        key_staff_revolt: {
+            lens: 'XUNZI',
+            context: 'Nhóm 4 nhân sự kỹ thuật/kinh doanh chủ chốt phản ứng gay gắt khi công ty áp dụng quy trình kiểm soát chất lượng (SOP) mới và yêu cầu tăng đơn giá thưởng, dọa nghỉ việc tập thể.',
+            opening: 'Quy trình mới của công ty quá rườm rà, làm anh em tốn gấp đôi thời gian báo cáo. Nếu ban giám đốc không bỏ quy định kiểm tra chéo này và tăng ngay 20% đơn giá thưởng, cả nhóm chúng tôi sẽ nộp đơn nghỉ từ thứ Hai tới.'
+        },
+        board_pressure: {
+            lens: 'GUIGUZI',
+            context: 'Cổ đông lớn / lãnh đạo thượng tầng chất vấn gay gắt về chi phí đầu tư R&D/mở rộng thị trường trong quý vừa qua và muốn cắt giảm 50% ngân sách của bộ phận.',
+            opening: 'Hai quý vừa rồi bộ phận của anh ngốn rất nhiều ngân sách nhưng biên lợi nhuận ròng chưa bật lên như kỳ vọng. Hãy cho tôi một lý do đủ sức nặng trong 3 phút trước khi Hội đồng thông qua quyết định cắt 50% ngân sách và quyền tự chủ của anh.'
+        }
+    };
+
+    function toggleSparringSetup(forceShow) {
+        const panel = document.getElementById('sparring-setup-panel');
+        if (!panel) return;
+        const isHidden = panel.style.display === 'none';
+        const nextShow = typeof forceShow === 'boolean' ? forceShow : isHidden;
+        panel.style.display = nextShow ? 'block' : 'none';
+    }
+
+    function applySparringPreset(presetKey) {
+        const preset = SPARRING_PRESETS[presetKey];
+        if (!preset) return;
+        const ctxEl = document.getElementById('sparring-context-input');
+        const lensEl = document.getElementById('sparring-lens-select');
+        const openEl = document.getElementById('sparring-opening-input');
+        if (ctxEl) ctxEl.value = preset.context;
+        if (lensEl) lensEl.value = preset.lens;
+        if (openEl) openEl.value = preset.opening;
+        launchConfiguredSparring();
+    }
+
+    function importScenarioToSparring() {
+        const ctxEl = document.getElementById('sparring-context-input');
+        if (!ctxEl) return;
+        const scState = window.NhanThuatScenario?.getState?.() || {};
+        const scenarioText =
+            (scState.scenarioText || scState.situation || '').trim() ||
+            (document.getElementById('advisory-input')?.value || '').trim() ||
+            (document.getElementById('hero-advisory-input')?.value || '').trim();
+        if (scenarioText) {
+            ctxEl.value = scenarioText;
+            ctxEl.focus();
+            const badge = document.getElementById('sparring-active-badge');
+            if (badge) {
+                badge.innerHTML = `<span style="color: var(--gold-light);">✅ Đã nạp bối cảnh từ Tình thế đang phân tích. Bấm <strong>Khởi tạo Đối thủ</strong> để bắt đầu!</span>`;
+            }
+        } else {
+            ctxEl.focus();
+            alert('Chưa có nội dung ở ô Tình thế. Anh/chị có thể nhập trực tiếp bối cảnh vào ô bên dưới hoặc chọn một Mẫu nhanh.');
+        }
+    }
+
+    async function launchConfiguredSparring() {
+        const ctxEl = document.getElementById('sparring-context-input');
+        const lensEl = document.getElementById('sparring-lens-select');
+        const openEl = document.getElementById('sparring-opening-input');
+        const feed = document.getElementById('sparring-feed');
+        const badge = document.getElementById('sparring-active-badge');
+
+        const contextText = (ctxEl?.value || '').trim();
+        const selectedLens = lensEl?.value || 'auto';
+        const customOpening = (openEl?.value || '').trim();
+
+        if (!contextText && !customOpening) {
+            ctxEl?.focus();
+            alert('Vui lòng nhập Bối cảnh ván đấu (hoặc chọn một Mẫu nhanh phía trên) để khởi tạo Đối thủ thương lượng.');
+            return;
+        }
+
+        const sessionTitle = (contextText || customOpening).substring(0, 60);
+        if (contextText) {
+            window.NhanThuatScenario?.capture('sparring', contextText, { source: 'sparring-setup' });
+        }
+
+        try {
+            const sRes = await fetch('/api/v1/sparring/sessions', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    title: 'Đấu trí: ' + sessionTitle,
+                    philosophy_lens: selectedLens,
+                    initial_context: contextText || customOpening,
+                    metadata: { opponent_opening: customOpening }
+                })
+            });
+            const sData = await sRes.json();
+            const sess = sData.session || {};
+            sparringSessionId = sess.id || null;
+
+            const meta = sess.metadata || {};
+            const personaLabel = meta.persona_label || `ĐỐI THỦ THƯƠNG LƯỢNG (${selectedLens.toUpperCase()})`;
+            const openingChallenge = meta.opening_challenge || customOpening || contextText;
+
+            feed.innerHTML = `
+                ${contextText ? `
+                <div style="font-size: 12px; color: var(--text-secondary); background: rgba(245,158,11,0.06); border: 1px dashed rgba(245,158,11,0.3); border-radius: 8px; padding: 10px 14px; margin-bottom: 12px;">
+                    <strong style="color: var(--gold-light);">📋 BỐI CẢNH VÁN ĐẤU ĐÃ KHỞI TẠO:</strong> ${escapeHtml(contextText)}
+                </div>` : ''}
+                <div class="message-bubble msg-assistant">
+                    <strong style="color: var(--gold-light);">🤖 ${escapeHtml(personaLabel)}:</strong>
+                    <p style="margin-top: 6px; color: #ffffff; line-height: 1.6;">"${escapeHtml(openingChallenge)}"</p>
+                </div>
+            `;
+
+            if (badge) {
+                badge.innerHTML = `<span style="color: #10b981;">🟢 Phiên đấu đang hoạt động (${escapeHtml(sess.id || 'Active')}) • Lăng kính: <strong>${escapeHtml(meta.resolved_lens || selectedLens)}</strong></span>`;
+            }
+
+            const input = document.getElementById('sparring-input');
+            if (input) input.focus();
+        } catch (e) {
+            alert('Lỗi khởi tạo ván đấu: ' + e.message);
+        }
+    }
+
     async function handleSparringTurn() {
         const input = document.getElementById('sparring-input');
         const text = input.value.trim();
         if (!text) return;
-        window.NhanThuatScenario?.capture('sparring', text, { source: 'sparring' });
+
+        const ctxEl = document.getElementById('sparring-context-input');
+        const lensEl = document.getElementById('sparring-lens-select');
+        const openEl = document.getElementById('sparring-opening-input');
+        const contextText = (ctxEl?.value || '').trim();
+        const selectedLens = lensEl?.value || 'auto';
+        const customOpening = (openEl?.value || '').trim();
+
+        window.NhanThuatScenario?.capture('sparring', contextText || text, { source: 'sparring' });
         input.value = '';
 
         const feed = document.getElementById('sparring-feed');
@@ -5960,7 +6401,12 @@
             const sRes = await fetch('/api/v1/sparring/sessions', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ title: 'Đấu trí: ' + text.substring(0, 30), philosophy_lens: 'auto' })
+                body: JSON.stringify({
+                    title: 'Đấu trí: ' + (contextText || text).substring(0, 40),
+                    philosophy_lens: selectedLens,
+                    initial_context: contextText || undefined,
+                    metadata: customOpening ? { opponent_opening: customOpening } : {}
+                })
             });
             const sData = await sRes.json();
             if (sData.session) sparringSessionId = sData.session.id;
@@ -5970,7 +6416,11 @@
             const res = await fetch('/api/v1/sparring/messages', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ session_id: sparringSessionId, message: text })
+                body: JSON.stringify({
+                    session_id: sparringSessionId,
+                    message: text,
+                    philosophy_lens: selectedLens !== 'auto' ? selectedLens : undefined
+                })
             });
             const data = await res.json();
             window.NhanThuatScenario?.mark('sparring', {
@@ -5978,14 +6428,22 @@
                 sourceModule: 'sparring',
                 resourceId: sparringSessionId
             });
+            const citationsHtml = Array.isArray(data.citations) && data.citations.length
+                ? `<div style="margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; gap: 6px; flex-wrap: wrap; align-items: center;">
+                    <span style="font-size: 11px; color: var(--text-muted);">📚 Căn cứ tri thức:</span>
+                    ${data.citations.map(c => `<span style="font-size: 11px; background: rgba(245,158,11,0.12); color: var(--gold-light); padding: 2px 8px; border-radius: 6px;">${escapeHtml(c.id)} • ${escapeHtml(c.title)}</span>`).join('')}
+                   </div>`
+                : '';
+
             const botMsg = document.createElement('div');
             botMsg.className = 'message-bubble msg-assistant';
             botMsg.innerHTML = `
-                <strong style="color: #ef4444;">🤖 ĐỐI THỦ PHẢN ĐÒN:</strong>
-                <p style="margin: 8px 0; color: #ffffff;">${data.response || 'Tôi chưa thấy lập luận của anh đủ sức thuyết phục.'}</p>
-                <div style="font-size: 12px; color: var(--gold-light); background: rgba(245,158,11,0.08); padding: 8px 12px; border-radius: 6px; margin-top: 8px;">
-                    💡 <strong>Gợi ý đòn bẩy tiếp theo:</strong> Dùng kỹ thuật Soi Gương (Mirroring) và đặt câu hỏi 'Làm sao tôi có thể làm được điều đó?'
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                    <strong style="color: #ef4444;">🤖 ĐỐI THỦ PHẢN ĐÒN & CỐ VẤN CHIẾN LƯỢC:</strong>
+                    <span style="font-size: 11px; background: rgba(239,68,68,0.15); color: #fca5a5; padding: 2px 8px; border-radius: 6px; font-weight: 600;">${escapeHtml(data.philosophy_lens || 'AUTO')}</span>
                 </div>
+                <div style="margin: 8px 0; color: #ffffff; line-height: 1.65;">${formatMarkdownText(data.response || 'Tôi chưa thấy lập luận của anh đủ sức thuyết phục.')}</div>
+                ${citationsHtml}
             `;
             feed.appendChild(botMsg);
             feed.scrollTop = feed.scrollHeight;
@@ -6001,11 +6459,23 @@
 
     function startNewSparring() {
         sparringSessionId = null;
+        toggleSparringSetup(true);
+        const ctxEl = document.getElementById('sparring-context-input');
+        const openEl = document.getElementById('sparring-opening-input');
+        const badge = document.getElementById('sparring-active-badge');
+        if (ctxEl) {
+            ctxEl.value = '';
+            ctxEl.focus();
+        }
+        if (openEl) openEl.value = '';
+        if (badge) {
+            badge.innerHTML = `💡 Hãy nhập <strong>Bối cảnh ván đấu</strong> (hoặc chọn một <strong>Mẫu nhanh</strong>) rồi bấm <strong>Khởi tạo Đối thủ</strong>.`;
+        }
         const feed = document.getElementById('sparring-feed');
         feed.innerHTML = `
             <div class="message-bubble msg-assistant">
-                <strong style="color: var(--gold-light);">🤖 ĐỐI THỦ THƯƠNG LƯỢNG MỚI:</strong>
-                <p style="margin-top: 6px;">"Chào anh. Tôi đại diện cho tập đoàn đối tác. Hôm nay chúng ta cần giải quyết dứt điểm vấn đề hợp đồng và quyền phân phối. Xin mời anh mở lời."</p>
+                <strong style="color: var(--gold-light);">🎯 SẴN SÀNG KHỞI TẠO VÁN ĐẤU MỚI:</strong>
+                <p style="margin-top: 6px;">Hãy nhập bối cảnh thương lượng thực tế của anh/chị ở khung <strong>Thiết lập bối cảnh & Chân dung đối thủ</strong> phía trên (hoặc chọn 1 trong 5 kịch bản mẫu) rồi bấm <strong>"⚔️ Khởi tạo Đối thủ & Bắt đầu Ván đấu"</strong>.</p>
             </div>
         `;
     }
@@ -6019,6 +6489,8 @@
         { file: "08_BINH_PHAP_TON_TU.md", title: "Binh Pháp Tôn Tử: Binh Thế & Định Cục", author: "Tôn Vũ • Binh Gia", cat: "strategy", icon: "⚔️", badge: "THẾ TRẬN", desc: "Nghệ thuật kiến tạo thế trận bất đối xứng, biến hóa theo thời cuộc & bất chiến tự nhiên thành." },
         { file: "12_LY_THUYET_TRO_CHOI.md", title: "Lý Thuyết Trò Chơi (Game Theory)", author: "John Nash & Thomas Schelling", cat: "strategy", icon: "♟️", badge: "GAME THEORY", desc: "Cân bằng Nash, thế lưỡng nan của tù nhân, chiến lược Tit-for-Tat & nghệ thuật ràng buộc chiến lược." },
         { file: "17_CHIEN_LUOC_BAT_DOI_XUNG.md", title: "Chiến Lược Bất Đối Xứng", author: "GS. Nassim Nicholas Taleb", cat: "strategy", icon: "🛡️", badge: "CHỐNG GÃY VỠ", desc: "Khả năng hưởng lợi từ biến động (Antifragile), chiến lược Quả tạ (Barbell) & nguyên tắc Skin in the Game." },
+        { file: "23_DICH_HOC_VA_THOI_THE.md", title: "Dịch Học & Thời Thế Điều Hành", author: "Chu Dịch • Động Lực Học Chu Kỳ", cat: "strategy", icon: "⏳", badge: "THỜI THẾ", desc: "Ba nguyên lý Biến dịch - Bất dịch - Giản dịch, 6 trạng thái tiến thoái quẻ Càn & nhận diện điểm uốn thời cuộc." },
+        { file: "24_KINH_DICH_LUC_THAP_TU_QUE.md", title: "Danh Mục 64 Quẻ Biến Dịch Quản Trị", author: "Chu Dịch • Ma Trận Chuyển Pha", cat: "strategy", icon: "🧭", badge: "64 QUẺ DỊCH", desc: "Khung tham chiếu định tính 64 trạng thái tổ chức, cấu trúc Bát Cung, Thập Nhị Tức Quái & kịch bản chuyển pha." },
         { file: "20_TU_DUY_HE_THONG.md", title: "Tư Duy Hệ Thống & Điểm Đòn Bẩy", author: "Donella Meadows (MIT)", cat: "leadership", icon: "🔄", badge: "HỆ THỐNG", desc: "Cấu trúc dòng chảy - trữ lượng, 12 điểm đòn bẩy can thiệp & hóa giải các bẫy hệ thống doanh nghiệp." },
         { file: "21_NGUYEN_TAC_QUAN_TRI_THUC_THI.md", title: "Nguyên Tắc Quản Trị & Thực Thi", author: "Ray Dalio & Andy Grove", cat: "leadership", icon: "⚡", badge: "HIỆU SUẤT", desc: "Văn hóa sự thật triệt để (Radical Transparency), Idea Meritocracy & đòn bẩy quản lý." },
         { file: "03_HAN_PHI_TU_KNOWLEDGE_PACK.md", title: "Pháp Gia & Quản Trị Hệ Thống", author: "Hàn Phi Tử • Pháp Trị", cat: "leadership", icon: "⚖️", badge: "KỶ CƯƠNG", desc: "Bộ ba Pháp - Thế - Thuật, quy trình Hình danh tham đồng, Nhị bỉnh thưởng phạt & bộ lọc chống Bát gian." },
@@ -6391,13 +6863,22 @@
     document.getElementById('knowledge-search-input')?.addEventListener('input', applyCatalogFilters);
     document.getElementById('catalog-type-filter')?.addEventListener('change', applyCatalogFilters);
 
-    // --- UNIT MODAL INSPECTOR ---
+    // --- UNIT MODAL INSPECTOR (3-TAB ARCHITECTURE) ---
+    function switchUnitModalTab(tabKey) {
+        document.querySelectorAll('.unit-tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.unit-tab-pane').forEach(p => p.style.display = 'none');
+        const btn = document.getElementById(`unit-tab-btn-${tabKey}`);
+        const pane = document.getElementById(`unit-tab-pane-${tabKey}`);
+        if (btn) btn.classList.add('active');
+        if (pane) pane.style.display = 'block';
+    }
+
     async function showUnitModal(unitId) {
         const modal = document.getElementById('unit-modal-backdrop');
         const content = document.getElementById('unit-modal-content');
         lastFocusedElement = document.activeElement;
         modal.classList.add('open');
-        content.innerHTML = `<div style="text-align: center; color: var(--gold-primary); padding: 40px 0;">Đang tải tri thức [${escapeHtml(unitId)}]...</div>`;
+        content.innerHTML = `<div style="text-align: center; color: var(--gold-primary); padding: 40px 0;"><span class="live-pulse-dot" style="margin-right: 8px;"></span>Đang tải tri thức [${escapeHtml(unitId)}]...</div>`;
 
         try {
             const res = await fetch(`/api/v1/knowledge/units/${encodeURIComponent(unitId)}`);
@@ -6405,27 +6886,159 @@
             if (data.status === 'success' && data.unit) {
                 const u = data.unit.raw_data || data.unit;
                 const status = u.status || data.unit.status || '';
+                const version = u.version || '1.0.0';
                 const statusBadge = status && status !== 'frozen'
                     ? `<span style="font-size: 11px; background: rgba(251,191,36,0.15); color: #fbbf24; padding: 2px 8px; border-radius: 6px;">BẢN NHÁP</span>`
-                    : '';
+                    : `<span style="font-size: 11px; background: rgba(16,185,129,0.15); color: #34d399; padding: 2px 8px; border-radius: 6px;">CHUẨN HÓA V${escapeHtml(version)}</span>`;
                 const list = (value) => Array.isArray(value)
-                    ? value.map(item => `<li>${escapeHtml(item)}</li>`).join('')
-                    : `<li>${escapeHtml(value)}</li>`;
+                    ? value.map(item => `<li style="margin-bottom: 6px;">${linkUnitIds(escapeHtml(item))}</li>`).join('')
+                    : `<li style="margin-bottom: 6px;">${linkUnitIds(escapeHtml(value))}</li>`;
+
+                const hasContent = Boolean(u.content && String(u.content).trim().length > 50);
+
+                // Mechanism steps with styled counter
+                const mechanismSteps = Array.isArray(u.mechanism) && u.mechanism.length
+                    ? `<div style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px;">
+                        ${u.mechanism.map((m, idx) => `
+                            <div style="display: flex; gap: 12px; align-items: flex-start; background: rgba(255,255,255,0.025); border: 1px solid var(--border-subtle); padding: 10px 14px; border-radius: 8px;">
+                                <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: rgba(245,158,11,0.2); color: var(--gold-light); font-weight: 700; font-size: 11px; flex-shrink: 0; margin-top: 2px;">${idx + 1}</span>
+                                <div style="font-size: 13px; line-height: 1.6; color: #ffffff;">${linkUnitIds(escapeHtml(m))}</div>
+                            </div>
+                        `).join('')}
+                       </div>`
+                    : '';
+
+                // Applications breakdown by role/domain
+                let appsHtml = '';
+                if (u.applications && typeof u.applications === 'object') {
+                    const roleLabels = {
+                        'leadership': '👑 Thuật Lãnh Đạo (Leadership)',
+                        'management': '⚙️ Quản Trị & Vận Hành (Management)',
+                        'negotiation': '🤝 Đàm Phán & Thương Thuyết (Negotiation)',
+                        'crisis_containment': '🚨 Kiểm Soát Khủng Hoảng (Crisis)',
+                        'review': '🔍 Kiểm Toán & Rà Soát (Audit & Review)',
+                        'coaching': '🧭 Khai Vấn & Đào Tạo (Coaching)',
+                        'structural_design': '🏛️ Thiết Kế Cấu Trúc (Organizational Design)'
+                    };
+                    const roleCards = Object.entries(u.applications).map(([key, items]) => {
+                        const title = roleLabels[key] || `📌 ${escapeHtml(key.replace(/_/g, ' ').toUpperCase())}`;
+                        const itemsList = Array.isArray(items) ? items.map(it => `<li style="margin-bottom: 6px;">${linkUnitIds(escapeHtml(it))}</li>`).join('') : `<li>${linkUnitIds(escapeHtml(items))}</li>`;
+                        return `
+                            <div style="background: rgba(255,255,255,0.025); border-left: 3px solid var(--gold-primary); padding: 12px 14px; border-radius: 0 8px 8px 0; margin-bottom: 10px;">
+                                <strong style="color: var(--gold-light); font-size: 13px; display: block; margin-bottom: 6px;">${title}</strong>
+                                <ul style="padding-left: 18px; margin: 0; font-size: 13px; line-height: 1.6; color: #cbd5e1;">${itemsList}</ul>
+                            </div>
+                        `;
+                    }).join('');
+                    if (roleCards) {
+                        appsHtml = `<h4 style="color: var(--gold-light); margin: 18px 0 8px 0; font-size: 14px;">🎯 Kịch bản tác nghiệp theo vai trò</h4>${roleCards}`;
+                    }
+                }
+
+                // Relations linked tags
+                const renderRelGroup = (label, listIds, color) => {
+                    if (!Array.isArray(listIds) || !listIds.length) return '';
+                    return `
+                        <div style="margin-bottom: 12px;">
+                            <span style="font-size: 11.5px; color: var(--text-muted); display: block; margin-bottom: 6px;">${label}:</span>
+                            <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                                ${listIds.map(id => `<span class="unit-link" style="display: inline-block; padding: 3px 10px; background: rgba(255,255,255,0.05); border: 1px solid ${color}44; border-radius: 6px; font-size: 12px; color: ${color}; cursor: pointer;" onclick="showUnitModal('${escapeHtml(id)}')">${escapeHtml(id)}</span>`).join('')}
+                            </div>
+                        </div>
+                    `;
+                };
+
+                const rels = u.relations || {};
+                const relsHtml = `
+                    ${renderRelGroup('Hỗ trợ củng cố (Supports)', rels.supports, 'var(--emerald-accent)')}
+                    ${renderRelGroup('Phụ thuộc nền tảng (Depends On)', rels.depends_on, 'var(--gold-primary)')}
+                    ${renderRelGroup('Xung đột / Đối nghịch (Conflicts With)', rels.conflicts_with, 'var(--rose-accent)')}
+                    ${renderRelGroup('Áp dụng vào tình thế (Applies To)', rels.applies_to, 'var(--cyan-accent)')}
+                `;
+
+                // References
+                const refsList = (u.evidence && Array.isArray(u.evidence.references) && u.evidence.references.length)
+                    ? u.evidence.references.map(r => `<li style="margin-bottom: 6px;">${escapeHtml(r)}</li>`).join('')
+                    : '<li style="color: var(--text-muted);">Đang cập nhật nguồn thư tịch cổ và nghiên cứu thực nghiệm.</li>';
+
                 content.innerHTML = `
-                    <div style="display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+                    <div style="display: flex; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; align-items: center;">
                         <span style="font-size: 11px; background: rgba(245,158,11,0.15); color: var(--gold-primary); padding: 2px 8px; border-radius: 6px; font-weight: 700;">${escapeHtml((u.type || 'UNIT').toUpperCase())}</span>
                         <span style="font-size: 11px; background: rgba(56,189,248,0.15); color: var(--cyan-accent); padding: 2px 8px; border-radius: 6px;">${escapeHtml(u.primary_domain || u.domain || 'Domain')}</span>
                         <span style="font-size: 11px; background: rgba(16,185,129,0.15); color: var(--emerald-accent); padding: 2px 8px; border-radius: 6px;">${escapeHtml(u.id || unitId)}</span>
                         ${statusBadge}
                     </div>
-                    <h2 id="unit-modal-title" style="font-family: var(--font-serif); font-size: 22px; color: #ffffff; margin-bottom: 14px;">${escapeHtml(u.title)}</h2>
-                    <div style="font-size: 13.5px; line-height: 1.7; color: rgba(255,255,255,0.9);">
-                        ${u.summary ? `<div style="background: rgba(245,158,11,0.06); border-left: 3px solid var(--gold-primary); padding: 10px 14px; border-radius: 0 6px 6px 0; margin-bottom: 14px;"><strong>Tóm lược:</strong> ${escapeHtml(u.summary)}</div>` : ''}
-                        ${u.definition ? `<h4 style="color: var(--gold-light); margin: 12px 0 4px 0;">Định nghĩa bản chất</h4><p>${escapeHtml(u.definition)}</p>` : ''}
-                        ${u.mechanism && u.mechanism.length ? `<h4 style="color: var(--gold-light); margin: 12px 0 4px 0;">Cơ chế chi phối</h4><ul style="padding-left: 20px;">${list(u.mechanism)}</ul>` : ''}
-                        ${u.conditions && u.conditions.length ? `<h4 style="color: var(--cyan-accent); margin: 12px 0 4px 0;">Điều kiện kích hoạt</h4><ul style="padding-left: 20px;">${list(u.conditions)}</ul>` : ''}
-                        ${u.exceptions && u.exceptions.length ? `<h4 style="color: #a5b4fc; margin: 12px 0 4px 0;">Ngoại lệ</h4><ul style="padding-left: 20px;">${list(u.exceptions)}</ul>` : ''}
-                        ${u.risks && u.risks.length ? `<h4 style="color: #f87171; margin: 12px 0 4px 0;">Rủi ro / Điểm mù</h4><ul style="padding-left: 20px; color: #fca5a5;">${list(u.risks)}</ul>` : ''}
+                    <h2 id="unit-modal-title" style="font-family: var(--font-serif); font-size: 23px; color: #ffffff; margin-bottom: 12px; line-height: 1.35;">${escapeHtml(u.title)}</h2>
+
+                    ${u.summary ? `<div style="background: rgba(245,158,11,0.06); border-left: 3px solid var(--gold-primary); padding: 12px 16px; border-radius: 0 8px 8px 0; margin-bottom: 16px; font-size: 13.5px; line-height: 1.6; color: #fef08a;"><strong>Tóm lược điều hành:</strong> ${linkUnitIds(escapeHtml(u.summary))}</div>` : ''}
+
+                    <!-- 3-TAB MODAL NAVIGATION -->
+                    <div style="display: flex; border-bottom: 1px solid var(--border-subtle); margin-bottom: 16px; gap: 8px; background: rgba(0,0,0,0.25); border-radius: 8px; padding: 4px;">
+                        <button id="unit-tab-btn-deepdive" class="mode-pill unit-tab-btn ${hasContent ? 'active' : ''}" onclick="switchUnitModalTab('deepdive')" style="flex: 1; text-align: center; font-size: 12px; padding: 8px 12px; border-radius: 6px;">
+                            🏛️ Chuyên Khảo Lăng Kính Kép ${hasContent ? '<span style="font-size: 9px; background: var(--gold-primary); color: #000; padding: 1px 5px; border-radius: 4px; font-weight: 700; margin-left: 4px;">SÂU</span>' : ''}
+                        </button>
+                        <button id="unit-tab-btn-playbook" class="mode-pill unit-tab-btn ${!hasContent ? 'active' : ''}" onclick="switchUnitModalTab('playbook')" style="flex: 1; text-align: center; font-size: 12px; padding: 8px 12px; border-radius: 6px;">
+                            🧭 Cẩm Nang Thực Thi
+                        </button>
+                        <button id="unit-tab-btn-network" class="mode-pill unit-tab-btn" onclick="switchUnitModalTab('network')" style="flex: 1; text-align: center; font-size: 12px; padding: 8px 12px; border-radius: 6px;">
+                            🕸️ Mạng Lưới & Căn Cứ
+                        </button>
+                    </div>
+
+                    <!-- TAB 2: CHUYÊN KHẢO LĂNG KÍNH KÉP -->
+                    <div id="unit-tab-pane-deepdive" class="unit-tab-pane" style="display: ${hasContent ? 'block' : 'none'}; font-size: 14px; line-height: 1.75; color: rgba(255,255,255,0.92);">
+                        ${hasContent ? `
+                            <div class="unit-deepdive-content" style="background: rgba(255,255,255,0.015); border: 1px solid rgba(245,158,11,0.2); border-radius: 10px; padding: 20px; line-height: 1.8;">
+                                ${formatMarkdownText(u.content)}
+                            </div>
+                        ` : `
+                            <div style="text-align: center; padding: 36px 20px; background: rgba(255,255,255,0.02); border-radius: 10px; border: 1px dashed var(--border-subtle);">
+                                <div style="font-size: 32px; margin-bottom: 10px;">📜</div>
+                                <strong style="color: var(--gold-light); font-size: 14px;">Chuyên khảo đang trong tiến trình nâng cấp Wave</strong>
+                                <p style="font-size: 12.5px; color: var(--text-secondary); max-width: 460px; margin: 8px auto 0; line-height: 1.6;">
+                                    Đơn vị tri thức này đã hoàn tất khung siêu dữ liệu chuẩn. Nội dung phân tích đa tầng (Đông - Tây dung hợp & Kịch bản từng câu chữ) sẽ được hoàn thiện trong các đợt nâng cấp tiếp theo.
+                                </p>
+                            </div>
+                        `}
+                    </div>
+
+                    <!-- TAB 1: CẨM NANG THỰC THI -->
+                    <div id="unit-tab-pane-playbook" class="unit-tab-pane" style="display: ${!hasContent ? 'block' : 'none'}; font-size: 13.5px; line-height: 1.7; color: rgba(255,255,255,0.9);">
+                        ${u.definition ? `
+                            <h4 style="color: var(--gold-light); margin: 0 0 6px 0; font-size: 14px;">Định nghĩa bản chất</h4>
+                            <p style="margin-bottom: 14px; line-height: 1.65; color: #e2e8f0;">${escapeHtml(u.definition)}</p>
+                        ` : ''}
+
+                        ${mechanismSteps ? `
+                            <h4 style="color: var(--gold-light); margin: 16px 0 6px 0; font-size: 14px;">Cơ chế chi phối</h4>
+                            ${mechanismSteps}
+                        ` : ''}
+
+                        ${appsHtml}
+
+                        ${u.risks && u.risks.length ? `
+                            <h4 style="color: #f87171; margin: 18px 0 6px 0; font-size: 14px;">⚠️ Cạm bẫy & Điểm mù thực thi</h4>
+                            <div style="background: rgba(244,63,94,0.05); border: 1px solid rgba(244,63,94,0.25); border-radius: 8px; padding: 12px 16px;">
+                                <ul style="padding-left: 18px; color: #fda4af; margin: 0;">${list(u.risks)}</ul>
+                            </div>
+                        ` : ''}
+                    </div>
+
+                    <!-- TAB 3: MẠNG LƯỚI & CĂN CỨ -->
+                    <div id="unit-tab-pane-network" class="unit-tab-pane" style="display: none; font-size: 13px; line-height: 1.65; color: rgba(255,255,255,0.9);">
+                        <h4 style="color: var(--cyan-accent); margin: 0 0 6px 0; font-size: 14px;">Điều kiện kích hoạt quy luật</h4>
+                        <ul style="padding-left: 18px; margin-bottom: 14px; color: #cbd5e1;">${list(u.conditions || 'Chưa định nghĩa điều kiện biên.')}</ul>
+
+                        <h4 style="color: #a5b4fc; margin: 16px 0 6px 0; font-size: 14px;">Ngoại lệ & Tình huống bẻ gãy</h4>
+                        <ul style="padding-left: 18px; margin-bottom: 16px; color: #cbd5e1;">${list(u.exceptions || 'Không có ngoại lệ đã ghi nhận.')}</ul>
+
+                        <h4 style="color: var(--emerald-accent); margin: 16px 0 6px 0; font-size: 14px;">Tài liệu tham khảo & Bằng chứng học thuật</h4>
+                        <ul style="padding-left: 18px; margin-bottom: 16px; color: #cbd5e1;">${refsList}</ul>
+
+                        <h4 style="color: var(--gold-light); margin: 16px 0 8px 0; font-size: 14px;">Mạng lưới liên kết tri thức (Knowledge Graph)</h4>
+                        <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 12px 16px;">
+                            ${relsHtml || '<div style="color: var(--text-muted);">Đơn vị này chưa có liên kết đồ thị trực tiếp.</div>'}
+                        </div>
                     </div>
                 `;
                 const closeBtn = modal.querySelector('.modal-close-btn');
@@ -6543,13 +7156,10 @@
                         badgeStyle = 'background: rgba(245, 158, 11, 0.2); border: 1px solid rgba(245, 158, 11, 0.45); color: #fef08a;';
                     }
                     return `
-                    <div class="war-preset-chip" onclick="selectWarRoomPreset('${p.id}')">
+                    <div class="war-preset-chip" style="padding: 7px 10px;" title="${escapeHtml(p.description || '')}" onclick="selectWarRoomPreset('${p.id}')">
                         <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; gap: 8px;">
-                            <strong class="preset-title">${escapeHtml(p.title)}</strong>
-                            <span class="persona-meta-pill" style="${badgeStyle} font-size: 10px; font-weight: 600;">${escapeHtml(badge)}</span>
-                        </div>
-                        <div class="preset-desc">
-                            ${escapeHtml(p.description || '')}
+                            <strong class="preset-title" style="font-size: 12px !important;">⚡ ${escapeHtml(p.title)}</strong>
+                            <span class="persona-meta-pill" style="${badgeStyle} font-size: 9.5px; font-weight: 600; flex-shrink: 0;">${escapeHtml(badge)}</span>
                         </div>
                     </div>
                 `}).join('');
@@ -6569,6 +7179,11 @@
         if (input) {
             input.value = preset.default_scenario;
             input.focus();
+            input.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        const statusTag = document.getElementById('war-status-tag');
+        if (statusTag) {
+            statusTag.textContent = 'Đã nạp mẫu — Sẵn sàng chạy';
         }
         document.querySelectorAll('.war-preset-chip').forEach(el => el.classList.remove('active'));
         if (window.event && window.event.currentTarget) {
@@ -8355,6 +8970,7 @@
     }
     </script>
     <script src="/js/scenario-workspace.js"></script>
+    <script src="/js/executive_audio.js"></script>
     <script>
     // Keep interface language restrained while preserving meaningful text content.
     (() => {
@@ -8371,6 +8987,15 @@
         new MutationObserver(records => records.forEach(record => record.addedNodes.forEach(cleanNode)))
             .observe(document.body, { childList: true, subtree: true });
     })();
+    </script>
+    <script>
+    if ('serviceWorker' in navigator && window.isSecureContext) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js').catch(() => {
+                // Online operation does not depend on service-worker registration.
+            });
+        });
+    }
     </script>
 </body>
 </html>

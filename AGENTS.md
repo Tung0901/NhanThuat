@@ -29,6 +29,10 @@ tests, documentation updates, routine fixes, validation, and Git operations.
 
 Routine implementation stays with the main agent.
 
+## Development Protocol
+
+Follow `governance/spec-driven-development.md` (NT-SDD) and activate the `nhanthuat-sdd` skill for new feature development, engine modules, and evidence-based bug fixes (`specs/<feature>/spec.md` -> `plan.md` -> `tasks.md`).
+
 ## Knowledge Architecture Reviewer
 
 Use `.codex/agents/knowledge-architecture-reviewer.toml` for the reviewer

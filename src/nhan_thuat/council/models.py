@@ -11,7 +11,7 @@ from typing import Any
 
 @dataclass
 class CouncilMember:
-    agent_id: str  # 'LEGALISM', 'TAOISM', 'CONFUCIAN', 'XUNZI', 'SUNZI'
+    agent_id: str
     title: str
     school_of_thought: str
     core_focus: str
@@ -24,6 +24,11 @@ class PerspectivePitch:
     title: str
     stance: str
     core_arguments: list[str]
+    situation_read: str = ""
+    assumptions: list[str] = field(default_factory=list)
+    recommended_actions: list[str] = field(default_factory=list)
+    evidence_needed: list[str] = field(default_factory=list)
+    confidence_note: str = ""
     cited_unit_ids: list[str] = field(default_factory=list)
     citations: list[dict[str, str]] = field(default_factory=list)
     risk_warning: str = ""

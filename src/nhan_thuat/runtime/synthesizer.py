@@ -1,10 +1,7 @@
-"""LLM synthesis with a deterministic fallback (capability NHANTHUAT-CAP-002).
+"""LLM synthesis with ordered provider failover and deterministic fallback.
 
-Fallback-first design: if no Google Gemini (AI Studio) API key is configured
-the synthesizer returns the deterministic retrieval flow (context, citations,
-audit). With a key it calls the Gemini OpenAI-compatible endpoint over
-``requests`` and includes an audit record (correlation_id, provider, prompt,
-latency, model).
+DeepSeek is preferred in ``auto`` mode, Gemini can act as fallback, and every
+result records provider/model provenance without exposing credentials.
 """
 
 from __future__ import annotations
@@ -22,6 +19,8 @@ from nhan_thuat.runtime.prompt_builder import PromptBuilder
 
 DEFAULT_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai"
 DEFAULT_MODEL = "gemini-3.6-flash"
+DEFAULT_DEEPSEEK_BASE_URL = "https://api.deepseek.com"
+DEFAULT_DEEPSEEK_MODEL = "deepseek-chat"
 
 
 class ProviderError(RuntimeError):
@@ -38,32 +37,68 @@ def _is_valid_api_key(key: str) -> bool:
 
 
 def get_provider_configs() -> list[dict[str, str]]:
-    configs = []
-    
-    # 1. Deepseek / OpenAI
-    openai_key = os.environ.get("DEEPSEEK_API_KEY", "").strip() or os.environ.get("OPENAI_API_KEY", "").strip()
-    if _is_valid_api_key(openai_key):
-        base_url = os.environ.get("OPENAI_BASE_URL", "https://api.deepseek.com").strip()
-        model = os.environ.get("NHAN_THUAT_LLM_MODEL", "deepseek-chat").strip()
+    configs: list[dict[str, str]] = []
+    shared_model = os.environ.get("NHAN_THUAT_LLM_MODEL", "").strip()
+
+    # OPENAI_* remains a backward-compatible alias for an OpenAI-compatible
+    # DeepSeek deployment. New environments should use DEEPSEEK_* explicitly.
+    deepseek_key = (
+        os.environ.get("DEEPSEEK_API_KEY", "").strip()
+        or os.environ.get("OPENAI_API_KEY", "").strip()
+    )
+    if _is_valid_api_key(deepseek_key):
+        base_url = (
+            os.environ.get("DEEPSEEK_BASE_URL", "").strip()
+            or os.environ.get("OPENAI_BASE_URL", "").strip()
+            or DEFAULT_DEEPSEEK_BASE_URL
+        )
+        model = (
+            os.environ.get("DEEPSEEK_MODEL", "").strip()
+            or shared_model
+            or DEFAULT_DEEPSEEK_MODEL
+        )
         configs.append({
-            "api_key": openai_key,
-            "base_url": base_url,
+            "api_key": deepseek_key,
+            "base_url": base_url.rstrip("/"),
             "model": model,
             "provider_name": "deepseek",
         })
 
-    # 2. Gemini / Google
     google_key = os.environ.get("GOOGLE_API_KEY", "").strip() or os.environ.get("GEMINI_API_KEY", "").strip()
     if _is_valid_api_key(google_key):
-        model = os.environ.get("NHAN_THUAT_LLM_MODEL", "").strip() or os.environ.get("GEMINI_MODEL", "").strip() or DEFAULT_MODEL
+        # A shared model override is kept for single-provider legacy setups. It
+        # must not leak a DeepSeek model name into Gemini when both are present.
+        model = (
+            os.environ.get("GEMINI_MODEL", "").strip()
+            or (shared_model if not _is_valid_api_key(deepseek_key) else "")
+            or DEFAULT_MODEL
+        )
         configs.append({
             "api_key": google_key,
-            "base_url": "https://generativelanguage.googleapis.com/v1beta/openai",
+            "base_url": DEFAULT_BASE_URL,
             "model": model,
             "provider_name": "google-gemini",
         })
-    
+
+    preferred = os.environ.get("NHAN_THUAT_LLM_PROVIDER", "auto").strip().lower()
+    if preferred in {"gemini", "google", "google-gemini"}:
+        configs.sort(key=lambda config: config["provider_name"] != "google-gemini")
+    elif preferred in {"deepseek", "deep-seek"}:
+        configs.sort(key=lambda config: config["provider_name"] != "deepseek")
+
     return configs
+
+
+def get_provider_summary() -> dict[str, Any]:
+    """Return safe provider diagnostics without credentials or secret-bearing URLs."""
+    configs = get_provider_configs()
+    return {
+        "configured": bool(configs),
+        "preferred_provider": os.environ.get("NHAN_THUAT_LLM_PROVIDER", "auto").strip().lower(),
+        "configured_providers": [config["provider_name"] for config in configs],
+        "models": {config["provider_name"]: config["model"] for config in configs},
+        "fallback_mode": "deterministic",
+    }
 
 
 class KnowledgeSynthesizer:
@@ -269,7 +304,7 @@ class KnowledgeSynthesizer:
             "### 🔍 1. BÓC TÁCH BẢN CHẤT & ĐỘNG CƠ NGẦM",
             "- **Phương pháp Hồi quy nguyên nhân:** Hành vi và lời nói của đối phương thực chất là cơ chế tự vệ trước nỗi sợ mất quyền kiểm soát hoặc áp lực phải chứng minh năng lực trước cấp trên.",
             "- **Tam tầng lợi ích chi phối cuộc diện:**",
-            f"  * *Lợi ích tuyên bố (Declared):* Yêu cầu đanh thép liên quan đến vụ việc (như điều khoản, tiến độ, hoặc sự bất mãn bộc phát).",
+            "  * *Lợi ích tuyên bố (Declared):* Yêu cầu đanh thép liên quan đến vụ việc (như điều khoản, tiến độ, hoặc sự bất mãn bộc phát).",
             "  * *Lợi ích thực tế (Operational):* Sự bảo đảm rằng công việc của họ không bị đình trệ, rủi ro pháp lý/tài chính được khoanh vùng an toàn.",
             "  * *Lợi ích tâm lý & thể diện (Ego/Security):* Nhu cầu được tôn trọng vị thế, không bị cảm giác bị chèn ép hay tước đoạt tiếng nói.",
             "- **Hệ quả nếu xử lý sai lầm:** Nếu dùng uy lực đè bẹp, sự phản kháng sẽ chuyển thành ngầm phá hoại; nếu nhượng bộ vô nguyên tắc, vị thế đàm phán của tổ chức sẽ sụp đổ hoàn toàn.",
@@ -314,7 +349,7 @@ class KnowledgeSynthesizer:
             "",
             "**Kịch bản Lời thoại mẫu từng câu chữ (Verbatim Script) 3 giai đoạn:**",
             "1. **Pha 1: Tháo ngòi nổ & Thấu cảm chiến thuật (Tactical Empathy):**",
-            f"   > *\"Tôi hoàn toàn hiểu vì sao anh lại bức xúc và kiên quyết như vậy trong vấn đề này. Nếu đứng ở vị trí gánh vác trách nhiệm của anh, có thể tôi cũng sẽ đặt ra những yêu cầu khắt khe tương tự. Chúng ta hãy cùng ngồi lại để nhìn thấu đáo toàn bộ bức tranh.\"*",
+            "   > *\"Tôi hoàn toàn hiểu vì sao anh lại bức xúc và kiên quyết như vậy trong vấn đề này. Nếu đứng ở vị trí gánh vác trách nhiệm của anh, có thể tôi cũng sẽ đặt ra những yêu cầu khắt khe tương tự. Chúng ta hãy cùng ngồi lại để nhìn thấu đáo toàn bộ bức tranh.\"*",
             "2. **Pha 2: Tái định vị ranh giới & Nắn dòng lợi ích (Reframing Boundaries):**",
             "   > *\"Tuy nhiên, nguyên tắc cốt lõi về chất lượng và kỷ cương vận hành là ranh giới bất biến mà cả hai bên đều không thể đánh đổi. Nếu phá vỡ ranh giới này, thiệt hại lớn nhất không chỉ là con số trước mắt mà là uy tín lâu dài của cả tôi và anh.\"*",
             "3. **Pha 3: Khóa thế & Chốt cam kết hành động (Equilibrium Closure):**",

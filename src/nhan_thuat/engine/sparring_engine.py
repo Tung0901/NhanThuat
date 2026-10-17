@@ -56,6 +56,88 @@ class SparringEngine:
         self.retriever = hybrid_retriever or HybridRetriever(units=list(self.engine.units_by_id.values()))
         self.router = philosophy_router
 
+    def generate_opening_challenge(
+        self,
+        title: str,
+        philosophy_lens: str = "auto",
+        initial_context: str | None = None,
+        custom_opening: str | None = None,
+    ) -> dict[str, str]:
+        """Generate or format the opponent's opening statement and persona label from user context."""
+        if custom_opening and custom_opening.strip():
+            opening_text = custom_opening.strip()
+        else:
+            seed_text = f"{title} {initial_context or ''}".strip()
+            resolved_lens = (
+                default_route_philosophy(seed_text)
+                if philosophy_lens in ("auto", "", None)
+                else philosophy_lens.upper()
+            )
+            ctx_snippet = (initial_context or title or "thương vụ này").strip()
+            if len(ctx_snippet) > 160:
+                ctx_snippet = ctx_snippet[:157] + "..."
+            opening_by_lens = {
+                "RHETORIC": (
+                    f"Về [{ctx_snippet}]: Tôi đã xem kỹ đề xuất của bên anh. Mức giá và điều kiện này cao hơn mặt bằng 20-25%. "
+                    "Nếu anh không đưa ra mức chiết khấu tương xứng ngay hôm nay, chúng tôi sẽ ký với đơn vị khác."
+                ),
+                "LEGALISM": (
+                    f"Về [{ctx_snippet}]: Chúng tôi không chấp nhận giải trình miệng. Nếu bên anh không tạm ứng thêm kinh phí hoặc nới tiến độ bằng văn bản ngay bây giờ, "
+                    "tổ đội sẽ tạm dừng toàn bộ hạng mục từ sáng mai."
+                ),
+                "GAME_THEORY": (
+                    f"Về [{ctx_snippet}]: Anh biết rõ chi phí chuyển đổi nhà cung cấp lúc này lớn thế nào rồi đấy. "
+                    "Quyền định đoạt đang nằm ở phía chúng tôi — hoặc anh chấp nhận điều khoản mới, hoặc toàn bộ chuỗi dự án sẽ đình trệ."
+                ),
+                "GUIGUZI": (
+                    f"Về [{ctx_snippet}]: Tôi thấy bên anh đang rất cần chốt sớm thương vụ này trước hạn báo cáo quý. "
+                    "Hãy nói thẳng đi, giới hạn nhượng bộ tối đa mà anh được phép ký hôm nay là bao nhiêu?"
+                ),
+                "MACHIAVELLIAN": (
+                    f"Về [{ctx_snippet}]: Trong cuộc chơi này, thiện chí không thay thế được vị thế. "
+                    "Phía chúng tôi nắm quyền phủ quyết; anh có 5 phút để chứng minh vì sao phương án của anh không làm tổn hại lợi ích của ban điều hành."
+                ),
+                "XUNZI": (
+                    f"Về [{ctx_snippet}]: Anh em trong đội đã quá tải với quy định mới rồi. Nếu công ty không tăng đơn giá khoán và nới lỏng định mức kiểm tra, "
+                    "nhiều nhân sự chủ chốt sẽ xin nghỉ đồng loạt trong tuần này."
+                ),
+                "SUNZI": (
+                    f"Về [{ctx_snippet}]: Thị phần ngách của bên anh đang bị chúng tôi bao vây từ cả kênh phân phối lẫn giá vốn. "
+                    "Anh định lấy lợi thế gì để giữ chân khách hàng lớn trong quý tới?"
+                ),
+                "STOICISM": (
+                    f"Về [{ctx_snippet}]: Sự cố đã bùng phát và mọi bên đang đổ lỗi trực diện cho quyết định của anh. "
+                    "Ngay tại bàn họp căng thẳng này, anh sẽ phản ứng ra sao trước sức ép đòi kỷ luật ngay lập tức?"
+                ),
+            }
+            opening_text = opening_by_lens.get(
+                resolved_lens,
+                f"Về [{ctx_snippet}]: Đây là bài toán va chạm lợi ích trực diện. Phía chúng tôi giữ nguyên lập trường cứng rắn — xin mời anh đưa ra phương án mở lời.",
+            )
+
+        seed_for_lens = f"{title} {initial_context or ''} {opening_text}".strip()
+        resolved_lens = (
+            default_route_philosophy(seed_for_lens)
+            if philosophy_lens in ("auto", "", None)
+            else philosophy_lens.upper()
+        )
+        persona_labels = {
+            "RHETORIC": "ĐỐI THỦ ÉP GIÁ & BẺ LẬP LUẬN (RHETORIC)",
+            "LEGALISM": "ĐỐI TÁC RẮN MẶT VỀ HỢP ĐỒNG & CHẾ TÀI (LEGALISM)",
+            "GAME_THEORY": "ĐỐI THỦ TÍNH TOÁN VỊ THẾ & ĐÒN BẨY (GAME THEORY)",
+            "GUIGUZI": "CAO THỦ DÒ TÂM & GÀI BẪY ĐÀM PHÁN (GUIGUZI)",
+            "MACHIAVELLIAN": "ĐỐI THỦ QUYỀN LỰC & THỰC DỤNG (MACHIAVELLIAN)",
+            "XUNZI": "NHÂN SỰ / TỔ ĐỘI GAI GÓC ĐÒI YÊU SÁCH (XUNZI)",
+            "SUNZI": "ĐỐI THỦ CẠNH TRANH THẾ TRẬN (SUNZI)",
+            "STOICISM": "SỨC ÉP KHỦNG HOẢNG & KHIÊU KHÍCH TÂM LÝ (STOICISM)",
+            "BEHAVIORAL_BIASES": "ĐỐI THỦ GIEO MỎ NEO & THAO TÚNG TÂM LÝ (BEHAVIORAL)",
+        }
+        return {
+            "resolved_lens": resolved_lens,
+            "persona_label": persona_labels.get(resolved_lens, f"ĐỐI THỦ THƯƠNG THUYẾT ({resolved_lens})"),
+            "opening_challenge": opening_text,
+        }
+
     def start_session(
         self,
         title: str,
@@ -64,10 +146,23 @@ class SparringEngine:
         metadata: dict[str, Any] | None = None,
     ) -> SparringSession:
         """Initialize a new sparring session."""
+        meta = dict(metadata or {})
+        opening_info = self.generate_opening_challenge(
+            title=title,
+            philosophy_lens=philosophy_lens,
+            initial_context=initial_context,
+            custom_opening=meta.get("opponent_opening"),
+        )
+        meta.setdefault("resolved_lens", opening_info["resolved_lens"])
+        meta.setdefault("persona_label", opening_info["persona_label"])
+        meta.setdefault("opening_challenge", opening_info["opening_challenge"])
+        if initial_context:
+            meta.setdefault("initial_context", initial_context)
+
         session = self.db.create_session(
             title=title,
             philosophy_lens=philosophy_lens,
-            metadata=metadata or {},
+            metadata=meta,
         )
         if initial_context:
             self.db.add_message(
@@ -97,6 +192,12 @@ class SparringEngine:
             session = self.start_session(title=user_message[:50], philosophy_lens=override_lens or "auto")
             session_id = session.id
 
+        prior_messages = self.db.list_messages(session_id)
+        context_seeds = [
+            m.content for m in prior_messages if m.role == "system"
+        ]
+        session_context = " | ".join(context_seeds) or str((session.metadata or {}).get("initial_context", ""))
+
         # 1. Save User Message
         user_msg = self.db.add_message(
             session_id=session_id,
@@ -105,21 +206,22 @@ class SparringEngine:
         )
 
         # 2. Determine Philosophy Lens
+        combined_query = f"{session_context} {user_message}".strip()
         active_lens = override_lens or session.philosophy_lens
         if active_lens == "auto":
             if self.router is not None and hasattr(self.router, "route"):
                 route_res = self.router.route({
                     "scenario_type": "general",
-                    "intent": user_message,
-                    "keywords": user_message.split(),
+                    "intent": combined_query,
+                    "keywords": combined_query.split(),
                 })
                 active_lens = route_res.get("primary_philosophy", "LEGALISM").upper()
             else:
-                active_lens = default_route_philosophy(user_message)
+                active_lens = default_route_philosophy(combined_query)
 
         # 3. Hybrid RAG Retrieval for relevant counter-knowledge
         retrieval_res = self.retriever.retrieve(
-            query=user_message,
+            query=combined_query,
             top_k=3,
             expand_relations=True,
         )
@@ -132,6 +234,7 @@ class SparringEngine:
             lens=active_lens,
             units=matched_units,
             related_map=retrieval_res.related_units_map,
+            session_context=session_context,
         )
 
         # 5. Save Assistant Message
@@ -164,6 +267,7 @@ class SparringEngine:
         lens: str,
         units: list[Any],
         related_map: dict[str, Any],
+        session_context: str = "",
     ) -> tuple[str, list[dict[str, str]]]:
         """Synthesize sharp 2-part sparring dialogue with citations."""
         citations = []
@@ -177,8 +281,10 @@ class SparringEngine:
         try:
             from nhan_thuat.runtime.synthesizer import KnowledgeSynthesizer
             syn = KnowledgeSynthesizer()
+            context_block = f"BỐI CẢNH VÁN ĐẤU: \"{session_context}\"\n" if session_context else ""
             prompt = (
                 f"Bạn là một Đối tác đàm phán / Cố vấn cực kỳ RẮN MẶT và SẮC BÉN, đang đại diện cho lăng kính triết học: {lens}.\n"
+                f"{context_block}"
                 f"LỜI THOẠI / CÁCH XỬ LÝ CỦA NGƯỜI DÙNG: \"{user_text}\"\n\n"
                 f"TRI THỨC THAM KHẢO:\n"
             )

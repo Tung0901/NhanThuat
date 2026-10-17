@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "philosophy_id": "LENS-ICHING",
+    "philosophy_name": "I Ching State Transition & Dialectical Cycle Lens",
+    "version": "1.1.0",
+    "source_document": "docs/knowledge/23_DICH_HOC_VA_THOI_THE.md",
+    "supported_domains": [
+      "strategy",
+      "crisis",
+      "transformation",
+      "timing",
+      "cyclical_decision",
+      "leadership"
+    ],
+    "supported_personas": [
+      "Executive Oracle Strategist",
+      "State Transition Master",
+      "Crisis Pivot Advisor"
+    ],
+    "preferred_reasoning_modes": [
+      "Cyclical",
+      "Dynamic Transition",
+      "Dialectical Equilibrium"
+    ],
+    "compatible_lenses": [
+      "LENS-SUNZI",
+      "LENS-TAOISM",
+      "LENS-LEGALISM",
+      "LENS-GUIGUZI"
+    ],
+    "incompatible_lenses": [],
+    "confidence_modifier": 0.65,
+    "governance_status": "ready_for_review",
+    "last_reviewed": null,
+    "epistemic_status": "provisional_qualitative_framework",
+    "runtime_authorization": {
+      "status": "enabled",
+      "authorized_by": "Product Owner",
+      "authorized_at": "2026-10-16",
+      "scope": "council_and_router"
+    }
+  },
+  "engine_name": "I Ching Dynamic State Transition Engine",
+  "version": "1.1.0",
+  "description": "Khung diễn giải định tính về chuyển trạng thái, sử dụng sáu hào quẻ Càn như ẩn dụ quản trị; không phải mô hình toán học, bói toán hoặc công cụ dự báo tất định.",
+  "six_dragon_states": {
+    "hao_1_tiem_long": {
+      "name": "Tiềm Long Vật Dụng (Rồng Lặn Chớ Dùng)",
+      "meaning": "Thời kỳ khởi đầu, nội lực chưa vững. Nên hạn chế bộc lộ tham vọng sớm; ưu tiên tích lũy nội lực và dữ liệu.",
+      "action_directive": "Án binh bất động, quan sát thực địa, củng cố quy trình nội bộ trước khi xuất đầu lộ diện."
+    },
+    "hao_2_hien_long": {
+      "name": "Hiện Long Tại Điền (Rồng Xuất Hiện Trên Đồng)",
+      "meaning": "Đã có thành tựu sơ khởi và bắt đầu được chú ý. Lợi kiến đại nhân: Cần tìm kiếm minh chủ, cố vấn hoặc liên minh hậu thuẫn.",
+      "action_directive": "Chủ động mở rộng quan hệ ngoại giao, tìm kiếm quý nhân tương trợ nhưng giữ thái độ khiêm nhường."
+    },
+    "hao_3_can_can": {
+      "name": "Quân Tử Chung Nhật Càn Càn (Ngày Đêm Thận Trọng)",
+      "meaning": "Giai đoạn tăng trưởng nóng đầy cạm bẫy và sự dòm ngó của đối thủ. Ban ngày làm việc hết mình, ban đêm lo sợ rủi ro để tự sửa mình.",
+      "action_directive": "Siết chặt kiểm soát rủi ro pháp lý, dòng tiền và kỷ cương tổ chức; không được ngủ quên trên chiến thắng."
+    },
+    "hao_4_uyen_duoc": {
+      "name": "Hoặc Dược Tại Uyên (Hoặc Nhảy Lên Hoặc Lặn Sâu)",
+      "meaning": "Đứng trước ngã rẽ chuyển mình (Pivot chiến lược). Đứng trước vực sâu đòi hỏi sự nhạy bén: hoặc bứt phá vượt ngưỡng, hoặc thoái bộ giữ mình.",
+      "action_directive": "Xây dựng phương án dự phòng có thể kiểm chứng; thử nghiệm đòn bẩy quy mô nhỏ trước khi dồn toàn lực."
+    },
+    "hao_5_phi_long": {
+      "name": "Phi Long Tại Thiên (Rồng Bay Trên Trời)",
+      "meaning": "Đỉnh cao phong độ và quyền lực điều hành. Đồng thanh tương ứng, đồng khí tương cầu: quy tụ hiền tài và kiến tạo hệ sinh thái.",
+      "action_directive": "Phân quyền mạch lạc, dùng Đức trị để thu phục nhân tâm và dùng Pháp trị để duy trì thể chế trường tồn."
+    },
+    "hao_6_khang_long": {
+      "name": "Kháng Long Hữu Hối (Rồng Quá Cao Tất Hối Hận)",
+      "meaning": "Cực thịnh tất suy. Quyền lực độc đoán lên đến tột cùng dễ dẫn đến mù quáng và phản trắc.",
+      "action_directive": "Thoái bộ vi tiến; chia sẻ bớt lợi ích cho thuộc cấp; chủ động phân chia quyền lực và chuẩn bị chuyển giao thế hệ."
+    }
+  },
+  "dialectical_laws": {
+    "vat_cuc_tat_phan": "Khi xung đột hoặc áp lực bị đẩy lên đỉnh điểm, đó là thời khắc chuẩn bị xảy ra bước ngoặt đảo chiều lịch sử.",
+    "cuong_nhu_tuong_te": "Lấy mềm buộc chặt, lấy cứng giữ ranh giới; dùng thái độ lịch thiệp nhất để truyền đạt những nguyên tắc sắt đá nhất.",
+    "am_duong_can_bang": "Cân bằng động giữa tính kỷ luật nghiêm minh (Dương) và sự thấu cảm bao dung (Âm)."
+  }
+}

@@ -84,6 +84,7 @@ class KnowledgeUnit:
     tags: tuple[str, ...]
     source_path: Path | None = None
     mechanism: tuple[str, ...] = ()
+    content: str = ""
     raw: dict[str, Any] = field(default_factory=dict, repr=False, compare=False)
 
     @classmethod
@@ -107,6 +108,7 @@ class KnowledgeUnit:
             secondary_domains=tuple(str(domain) for domain in data.get("secondary_domains", [])),
             definition=str(data["definition"]),
             mechanism=tuple(str(step) for step in data.get("mechanism", [])),
+            content=str(data.get("content", "")),
             conditions=tuple(str(condition) for condition in data.get("conditions", [])),
             exceptions=tuple(str(exception) for exception in data.get("exceptions", [])),
             applications=applications,

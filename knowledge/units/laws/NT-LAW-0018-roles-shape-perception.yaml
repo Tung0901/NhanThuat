@@ -1,35 +1,44 @@
 id: NT-LAW-0018
 type: law
 status: frozen
-version: 0.1.0
-title: Vai trò định hình nhận thức
-summary: Con người diễn giải các tình huống thông qua trách nhiệm, động lực, rào cản và bản sắc gắn liền với vai trò của họ.
+version: 1.0.0
+title: "Quy luật vị trí vai trò định hình lăng kính nhận thức"
+summary: "Con người không nhìn thấy thực tại khách quan nguyên bản; họ luôn sàng lọc và diễn giải mọi sự kiện thông qua trách nhiệm, áp lực KPI, quyền lợi và điểm mù gắn liền với chiếc ghế chức vụ mà họ đang ngồi."
 primary_domain: dung-nhan
 secondary_domains:
 - tri-nhan
 - hop-chung
-definition: Một vai trò sẽ sàng lọc những gì một cá nhân chú ý, coi trọng, bỏ qua và bảo vệ vì nó xác định đóng góp kỳ vọng và mức độ ảnh hưởng của họ.
+definition: "Trong xã hội học tổ chức và tâm lý học nhận thức (Định luật Miles: 'Where you stand depends on where you sit'), vị trí chức năng của một cá nhân hoạt động như một thấu kính lọc màu tự động. Khi một người ngồi vào chiếc ghế Tài chính, Pháp chế, Kinh doanh hay Kỹ thuật, hệ thống trách nhiệm và rủi ro đặc thù của vai trò đó sẽ quyết định thông tin nào họ thấy là sống còn, thông tin nào họ coi là thứ yếu, dẫn đến việc cùng một sự kiện nhưng mỗi phòng ban lại nhìn thấy một 'sự thật' hoàn toàn trái ngược nhau."
 mechanism:
-- Đảm nhận một vai trò
-- Trải nghiệm các áp lực đặc thù của vai trò đó
-- Diễn giải các sự kiện thông qua trách nhiệm của vai trò.
+- "Tiếp nhận khuôn mẫu vai trò (Role Internalization): Cá nhân bước vào vị trí chức vụ cùng với bản mô tả công việc, chỉ tiêu đánh giá và các rủi ro bị quy trách nhiệm đặc thù."
+- "Lọc chú ý theo chức năng (Functional Selective Attention): Não bộ tự động phóng đại những tín hiệu đe dọa đến KPI của vai trò mình và làm mờ đi những yếu tố thuộc trách nhiệm của bộ phận khác."
+- "Biến đổi tâm thế khi đổi ghế: Cùng một con người, hôm qua ngồi ghế Trưởng phòng Bán hàng thì quyết liệt đòi nới lỏng tín dụng công nợ; hôm nay được điều chuyển sang ngồi ghế Giám đốc Quản trị Rủi ro liền lập tức trở thành người siết nợ khắt khe nhất."
+- "Xung đột điểm mù vai trò (Role-Induced Blindspot Clash): Các bộ phận quy kết sự khác biệt góc nhìn của nhau là do 'thiếu hiểu biết' hoặc 'cố tình gây khó dễ'."
+- "Tích hợp đa lăng kính: Thiết kế cơ chế luân chuyển vai trò (Job Rotation) và ma trận thẩm định đa diện để ghép các mảnh sự thật cục bộ thành bức tranh toàn cảnh."
 conditions:
-- Vai trò đó đi kèm với các kỳ vọng và hệ quả rõ ràng
-- Cá nhân tự đồng nhất mình với vai trò hoặc phụ thuộc vào vai trò đó.
+- "Tổ chức được chuyên môn hóa thành các phòng ban chức năng riêng biệt với các thước đo hiệu suất khác nhau."
+- "Vai trò đi kèm với các kỳ vọng xã hội, quyền hạn và hệ quả thưởng phạt rõ rệt."
+- "Cá nhân gắn bó đủ lâu hoặc phụ thuộc chặt chẽ vào vị trí chức vụ hiện tại."
 exceptions:
-- Sự tiếp xúc liên chức năng có thể mở rộng nhận thức
-- Các giá trị cá nhân có thể vượt lên trên áp lực từ vai trò.
+- "Những nhà lãnh đạo cấp cao đã trải qua luân chuyển đa chức năng (Cross-functional Leaders) có khả năng tự thoát khỏi chiếc ghế cục bộ để nhìn từ góc độ toàn doanh nghiệp."
+- "Các nhóm đặc nhiệm liên chức năng (Cross-functional Squads) cùng chia sẻ chung một mục tiêu đầu ra duy nhất."
 applications:
   management:
-  - Đặt câu hỏi về những gì vai trò đó làm nổi bật hoặc che khuất.
+  - "Khi nghe báo cáo hoặc lời khuyên từ một chuyên gia hay trưởng bộ phận, luôn tự hỏi: 'Chiếc ghế của người này đang buộc họ phải phóng đại rủi ro nào và che khuất cơ hội nào?'."
+  - "Áp dụng kỹ thuật 'Hoán đổi chiếc ghế' (Role Reversal Exercise) trong các cuộc họp chiến lược: Bắt Giám đốc Kinh doanh trình bày phương án bảo vệ dòng tiền của Kế toán, và bắt Kế toán trình bày phương án giữ chân khách hàng của Kinh doanh."
   collaboration:
-  - Chuyển dịch các vấn đề qua lăng kính của các vai trò khác nhau.
+  - "Thực hiện chương trình Luân chuyển Cán bộ Nguồn (Executive Rotation) qua tối thiểu 2 khối chức năng đối lập (ví dụ: Tiền tuyến Kinh doanh và Hậu phương Vận hành) trước khi bổ nhiệm lên vị trí Phó Tổng Giám đốc."
 risks:
-- Quy kết ý đồ xấu từ những điểm mù do vai trò định hình
-- Thiết kế các vai trò có các tín hiệu hoặc thông điệp mâu thuẫn nhau.
+- "Ngây thơ tin rằng ý kiến của một bộ phận chuyên môn là chân lý toàn diện của cả công ty."
+- "Quy kết góc nhìn thận trọng của bộ phận Kiểm soát/Pháp chế là 'tư duy bàn lùi, phá hoại', hoặc quy kết sự nóng vội của bộ phận Kinh doanh là 'vô kỷ luật'."
+- "Thiết kế một vai trò vừa đá bóng vừa thổi còi (xung đột lợi ích ngay trong cùng một chiếc ghế)."
 evidence:
-  level: provisional
-  references: []
+  level: strong
+  references:
+  - "Hàn Phi Tử - Thiên Bát Thuyết & Nạn Nhất (Phân tích sâu sắc cách vị trí của người giữ kho, người cầm quân và người làm mưu sĩ định hình lời tấu trình của họ lên nhà vua)"
+  - "Rufus E. Miles Jr. - The Origin and Meaning of Miles' Law (Public Administration Review, 1978: 'Where you stand depends on where you sit' — Lập trường của bạn phụ thuộc vào chiếc ghế bạn đang ngồi)"
+  - "Dearborn & Simon - Selective Perception: A Note on the Departmental Identification of Executives (Nghiên cứu kinh điển của Herbert Simon: Khi đọc cùng một hồ sơ tình huống doanh nghiệp, 83% Giám đốc Sales chỉ nhìn thấy vấn đề bán hàng, 80% Giám đốc Tài chính chỉ nhìn thấy vấn đề tài chính)"
+  - "Philip Zimbardo - The Lucifer Effect (Sức mạnh của Vai trò và Ngữ cảnh thể chế trong việc tái định hình hoàn toàn nhận thức và hành vi của cá nhân)"
 relations:
   supports:
   - NT-PRINCIPLE-0031
@@ -48,4 +57,61 @@ tags:
 - role-theory
 - perspective-taking
 created_at: '2026-07-20'
-updated_at: '2026-08-15'
+updated_at: '2026-10-17'
+content: |
+  ### 1. Bản chất cốt lõi & Cơ chế tâm lý ngầm
+
+  Năm 1958, nhà kinh tế học đoạt giải Nobel Herbert Simon cùng cộng sự DeWitt Dearborn đã thực hiện một thí nghiệm kinh điển: Ông đưa cho 23 vị Giám đốc điều hành từ các bộ phận khác nhau (Kinh doanh, Sản xuất, Kế toán, Nhân sự) đọc cùng một bộ hồ sơ dài 10.000 chữ về một công ty thép đang gặp khủng hoảng, và hỏi họ một câu duy nhất: *"Theo bạn, vấn đề nghiêm trọng nhất mà công ty thép này cần giải quyết ngay là gì?"*.
+
+  Kết quả khiến giới khoa học sửng sốt:
+  - **83% các Giám đốc Kinh doanh** khẳng định vấn đề cốt lõi của công ty đó là... khâu bán hàng và tiếp thị!
+  - **80% các Giám đốc Sản xuất** khẳng định vấn đề cốt lõi nằm ở... dây chuyền nhà máy và tổ chức sản xuất!
+  - Còn các Giám đốc Tài chính và Nhân sự thì chỉ nhìn thấy vấn đề ở... bảng cân đối kế toán và quan hệ lao động!
+
+  Cùng một bộ dữ liệu khách quan như nhau, nhưng **chiếc ghế chức vụ (Role) đã biến thành cặp kính màu lọc bỏ mọi thông tin khác, chỉ giữ lại những gì thuộc về chuyên môn và trách nhiệm của chiếc ghế đó.** Trong khoa học chính trị, Rufus Miles đã đúc kết hiện tượng này thành **Định luật Miles (Miles' Law)**: ***"Where you stand depends on where you sit" (Lập trường bạn đứng phụ thuộc vào chiếc ghế bạn đang ngồi).***
+
+  ---
+
+  ### 2. Lăng kính Kép: Đông - Tây Dung Hợp
+
+  #### Phương Đông: Thuật "Thẩm Chức Quan Ngôn" Của Hàn Phi Tử & Nho Gia
+  Trong tư tưởng quản trị phương Đông, các bậc minh quân hiểu rất rõ rằng mỗi chức quan trong triều đình đều mang một "bệnh nghề nghiệp" tất yếu do vị trí của họ tạo ra:
+  - Quan Ngự sử (Thanh tra/Pháp chế) ăn lương để bắt lỗi, nên trong mắt họ ai cũng có dấu hiệu khả nghi; nếu không bắt được lỗi thì họ sợ bị vua chê là vô dụng.
+  - Võ tướng ngoài biên ải được thăng thưởng nhờ chiến công, nên họ luôn có xu hướng phóng đại mối đe dọa từ giặc ngoại xâm để xin thêm quân lương và thúc giục đánh trận.
+  - Quan giữ ngân khố (Bộ Hộ / Tài chính) chịu tội nếu kho trống rỗng, nên bản năng của họ là phản đối mọi khoản chi tiêu lớn.
+
+  Bậc Đế Vương nghe lời tấu trình không bao giờ giận dữ vì thấy Võ tướng hiếu chiến hay Quan giữ kho keo kiệt; ngược lại, họ hiểu rằng **đó là phản ứng tự nhiên của chiếc ghế**, và việc của người đứng đầu là dùng chiếc ghế này làm đối trọng kiểm soát chiếc ghế kia, rồi tự mình quyết định đại cục ở tầng cao nhất.
+
+  #### Phương Tây: Định Luật Miles & Hiện Tượng "Déformation Professionnelle"
+  Trong xã hội học phương Tây, hiện tượng này được gọi là **Déformation Professionnelle (Sự biến dạng nhận thức nghề nghiệp)**: Khi một người cầm cây búa đủ lâu, mọi thứ trên đời trong mắt họ đều biến thành cái đinh.
+  - Rufus Miles phát hiện ra rằng ngay cả những chính trị gia hay giám đốc từng thề thốt giữ một quan điểm A, nhưng ngay tuần đầu tiên được điều chuyển sang làm người đứng đầu Cơ quan B, họ sẽ lập tức đổi giọng sang bảo vệ quyền lợi của Cơ quan B còn quyết liệt hơn cả người tiền nhiệm! Không phải vì họ giả dối, mà vì **áp lực trách nhiệm của chiếc ghế mới đã tái lập trình bộ lọc nhận thức của họ**.
+
+  ---
+
+  ### 3. Kịch bản Thực chiến Từng câu chữ (Verbatim Battle Script)
+
+  #### Tình huống:
+  Công ty đang họp xét duyệt hợp đồng cung cấp thiết bị trị giá 20 tỷ đồng cho một chủ đầu tư bất động sản mới nổi. Giám đốc Pháp chế kiên quyết chặn hợp đồng vì "Chủ đầu tư này không chịu ký bảo lãnh ngân hàng vô điều kiện, rủi ro pháp lý cao". Ngược lại, Giám đốc Kinh doanh đập bàn uất ức: *"Đòi bảo lãnh vô điều kiện thời buổi này thì ma nó ký! Pháp chế chỉ ngồi phòng lạnh vẽ chuyện làm mất hợp đồng nuôi sống cả công ty!"*.
+
+  #### Phân tích sai lầm phổ biến:
+  CEO mắng Pháp chế là "cứng nhắc, cản trở kinh doanh" hoặc mắng Kinh doanh là "bất chấp rủi ro". Cả hai cách đều làm tổn thương sự tận tụy đúng chức trách của mỗi bên.
+
+  #### Thao lược xử lý của bậc Cố Vấn Nhân Thuật:
+  Giải mã công khai quy luật "Chiếc ghế định hình góc nhìn" để hạ nhiệt sự thù địch cá nhân, sau đó dùng bài tập **Hoán đổi vị thế (Perspective Inversion)** để tìm ra phương án cấu trúc rủi ro tối ưu.
+
+  **Kịch bản điều hành của Tổng Giám đốc:**
+  > **Tổng Giám đốc:** *"Hai anh em bình tĩnh ngồi xuống. Tôi rất mừng vì hôm nay cả hai người đều đang làm cực kỳ tốt chức trách của chiếc ghế mình đang ngồi!*
+  > 
+  > *- Nếu Giám đốc Pháp chế mà thấy hợp đồng 20 tỷ không có bảo lãnh vẫn cười tươi ký duyệt, tôi sẽ sa thải Giám đốc Pháp chế ngay lập tức vì chiếc ghế đó sinh ra là để nhìn thấy cái bẫy chết người.*
+  > *- Ngược lại, nếu Giám đốc Kinh doanh thấy rào cản mà buông xuôi bỏ hợp đồng 20 tỷ, tôi cũng sẽ cách chức Giám đốc Kinh doanh vì chiếc ghế đó sinh ra là để săn mồi mang máu về cho công ty.*
+  > 
+  > *Hai bạn không ghét nhau; là hai chiếc ghế của các bạn đang va vào nhau. Bây giờ, trong 10 phút tới, tôi yêu cầu **Đổi Ghế Tại Chỗ**:*
+  > 
+  > *1. Anh Tuấn (Giám đốc Kinh doanh): Bây giờ anh hãy đóng vai là người phải bỏ 20 tỷ tiền túi của gia đình mình ra cho khách hàng này nợ. Nếu không lấy được bảo lãnh ngân hàng, anh sẽ thiết kế cơ chế giao hàng - thu tiền cuốn chiếu như thế nào để nếu khách bùng tiền thì mình chỉ mất tối đa không quá 1 tỷ đồng?*
+  > 
+  > *2. Chị Mai (Giám đốc Pháp chế): Bây giờ chị hãy đóng vai người phải mang về 20 tỷ doanh thu tháng này. Trong trường hợp khách hàng không có bảo lãnh ngân hàng, pháp luật có công cụ tài sản đảm bảo thay thế nào (như giữ quyền sở hữu thiết bị, phong tỏa căn hộ đối ứng, hoặc chia 5 đợt thanh toán trước khi giao) để hợp đồng vẫn ký được ngay chiều nay không?*
+  > 
+  > *Mời hai người dùng trí tuệ của mình giải bài toán của chiếc ghế đối diện!"*
+
+  #### Bài học đúc kết:
+  Đừng bao giờ trách con đại bàng sao không biết bơi như cá, cũng đừng trách người giữ kho sao quá chặt chẽ. **Thấu hiểu lăng kính của từng chiếc ghế giúp người lãnh đạo thoát khỏi sự thiên lệch cục bộ và hợp nhất trí tuệ của toàn bộ máy.**

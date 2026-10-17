@@ -43,19 +43,22 @@ docker compose up --build
 ## Cấu hình LLM synthesis (tùy chọn)
 
 Synthesis hoạt động fallback-first: nếu không có key, hệ thống trả về dòng truy
-xuất tri thức deterministic. Để kích hoạt LLM synthesis, đặt API key Google AI
-Studio (Gemini) vào biến môi trường hoặc file `.env`:
+xuất tri thức deterministic. Production có thể dùng DeepSeek làm provider chính
+và Gemini làm dự phòng. Chỉ cấu hình provider thực sự sử dụng trong biến môi
+trường hoặc file `.env`:
 
 ```bash
-GEMINI_API_KEY="AIzaSy-..."   # tạo miễn phí tại https://aistudio.google.com/apikey
+NHAN_THUAT_LLM_PROVIDER="auto"  # auto ưu tiên DeepSeek rồi mới Gemini
+DEEPSEEK_API_KEY="..."
+DEEPSEEK_MODEL="deepseek-chat"
+GOOGLE_API_KEY="..."           # tùy chọn, provider dự phòng
+GEMINI_MODEL="gemini-3.6-flash"
 ```
 
-Base URL và mô hình mặc định (`https://generativelanguage.googleapis.com/v1beta/openai`,
-`gemini-3.6-flash`) đã được thiết lập sẵn. Chỉ cần đặt khi muốn tùy chỉnh:
+Base URL mặc định đã được thiết lập sẵn. Chỉ đặt khi dùng gateway tương thích:
 
 ```bash
-GEMINI_BASE_URL="https://generativelanguage.googleapis.com/v1beta/openai"
-GEMINI_MODEL="gemini-3.6-flash"
+DEEPSEEK_BASE_URL="https://api.deepseek.com"
 ```
 
 ## Triển khai (Render là chuẩn)
@@ -67,7 +70,9 @@ buildCommand: pip install -r requirements.txt
 startCommand: PYTHONPATH=src python -m backend.app.main
 ```
 
-Đặt secret `GEMINI_API_KEY` trong Render Dashboard → Environment.
+Đặt secret `DEEPSEEK_API_KEY` và, nếu cần failover, `GOOGLE_API_KEY` trong
+Render Dashboard → Environment. Endpoint `/health` chỉ công bố tên
+provider/model đã cấu hình và không trả khóa bí mật.
 Dockerfile và docker-compose dùng cùng entry point (`python -m backend.app.main`).
 
 ## Nguyên tắc

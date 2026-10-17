@@ -296,3 +296,23 @@ def test_main_api_gateway_integration(monkeypatch: pytest.MonkeyPatch) -> None:
     assert "CHỈ ĐẠO THI CÔNG KHẨN CẤP" in brief_md
     assert "NT-LAW-0005" in brief_md
 
+    # 5. Custom Sparring Context & Opening Challenge + Frontend Setup Panel
+    from pathlib import Path
+    custom_sess = app_main.sparring_engine.start_session(
+        title="Đàm phán công nợ đối tác miền Nam",
+        philosophy_lens="GAME_THEORY",
+        initial_context="Đối tác nợ 3 tỷ quá hạn 45 ngày nhưng đòi giao thêm hàng mới.",
+        metadata={"opponent_opening": "Giao thêm lô hàng mới thì tuần sau tôi mới ký lệnh chuyển khoản nợ cũ!"},
+    )
+    assert custom_sess.metadata["resolved_lens"] == "GAME_THEORY"
+    assert "Giao thêm lô hàng mới" in custom_sess.metadata["opening_challenge"]
+    assert "GAME THEORY" in custom_sess.metadata["persona_label"]
+
+    app_html = (Path(__file__).resolve().parents[1] / "frontend" / "app.html").read_text(encoding="utf-8")
+    assert 'id="sparring-setup-panel"' in app_html
+    assert 'id="sparring-context-input"' in app_html
+    assert 'id="sparring-lens-select"' in app_html
+    assert 'id="sparring-opening-input"' in app_html
+    assert "launchConfiguredSparring" in app_html
+
+

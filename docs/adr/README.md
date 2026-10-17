@@ -19,4 +19,4 @@ Frozen content.
 
 ## Records
 
-- ADR-0001..ADR-0017, see individual files in this directory.
+- ADR-0001..ADR-0020, see individual files in this directory.

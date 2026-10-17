@@ -146,7 +146,7 @@
         }
         state = null;
         persist();
-        ['hero-advisory-input', 'advisory-input', 'council-scenario-input', 'sparring-input', 'war-scenario-input']
+        ['hero-advisory-input', 'advisory-input', 'council-scenario-input', 'sparring-context-input', 'sparring-opening-input', 'sparring-input', 'war-scenario-input']
             .forEach(id => {
                 const input = document.getElementById(id);
                 if (input) input.value = '';
@@ -184,6 +184,7 @@
         const values = {
             'advisory-input': state.workspaceInputs.advisory || state.scenarioText,
             'council-scenario-input': state.workspaceInputs.council || state.scenarioText,
+            'sparring-context-input': state.workspaceInputs.sparring || state.scenarioText,
             'sparring-input': state.workspaceInputs.sparring || state.scenarioText,
             'war-scenario-input': state.workspaceInputs.warRoom || state.scenarioText,
         };

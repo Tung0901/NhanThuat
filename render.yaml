@@ -9,6 +9,12 @@ services:
         value: "3.11.0"
       - key: PORT
         value: "8000"
+      - key: NHAN_THUAT_LLM_PROVIDER
+        value: "auto"
+      - key: DEEPSEEK_API_KEY
+        sync: false
+      - key: DEEPSEEK_MODEL
+        value: "deepseek-chat"
       - key: GEMINI_API_KEY
         sync: false
       - key: NT_ADMIN_PASSWORD

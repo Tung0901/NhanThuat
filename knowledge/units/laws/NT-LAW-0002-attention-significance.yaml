@@ -1,36 +1,52 @@
 id: NT-LAW-0002
 type: law
 status: frozen
-version: 0.1.0
-title: Sự chú ý hướng theo tầm quan trọng được nhận thức
-summary: Mọi người có xu hướng dành sự chú ý cho các tín hiệu mà họ nhận thức là có ý nghĩa, khẩn cấp, tốn kém hoặc có liên quan trực tiếp đến cá nhân họ.
+version: 1.0.0
+title: "Quy luật định hướng chú ý theo tầm quan trọng được nhận thức"
+summary: "Bộ não con người phân bổ tài nguyên chú ý hữu hạn theo mức độ quan trọng, tính cấp bách, rủi ro sinh tồn hoặc giá trị vị thế mà cá nhân tự cảm nhận, chứ không phân bổ theo mong muốn chủ quan của người truyền đạt."
 primary_domain: tri-nhan
 secondary_domains:
 - dung-nhan
 - hop-chung
 - thanh-su
-definition: Sự chú ý được phân bổ cho các manh mối mà một người diễn giải là quan trọng đối với sự an toàn, danh tính, phần thưởng, mất mát, nghĩa vụ hoặc cơ hội trong tương lai.
+definition: "Trong môi trường bão hòa tín hiệu, năng lực chú ý là một nguồn tài nguyên nhận thức cực kỳ khan hiếm. Cá nhân không tiếp nhận thông tin thụ động mà liên tục kích hoạt bộ lọc tri giác để ưu tiên hướng sự chú ý vào những tín hiệu đe dọa an toàn, tổn hại danh dự, cơ hội thăng tiến hoặc ràng buộc trách nhiệm cá nhân. Mọi thông điệp dù có giá trị khách quan đến đâu, nếu không liên kết được với hệ thống ý nghĩa chủ quan của người tiếp nhận, đều sẽ bị bộ não xếp vào diện 'tiếng ồn vô hại' và tự động đào thải."
 mechanism:
-- Một manh mối được chú ý trong môi trường hoặc bối cảnh xã hội.
-- Cá nhân đó đánh giá mức độ liên quan, tính khẩn cấp, chi phí hoặc cơ hội.
-- Sự chú ý chuyển dịch về phía manh mối được đánh giá là quan trọng nhất.
+- "Tiếp nhận tín hiệu môi trường: Hàng triệu bit thông tin tràn qua giác quan mỗi giây, kích hoạt hệ thống kích hoạt lưới (Reticular Activating System - RAS)."
+- "Quét lọc liên quan cá nhân: Vô thức đối chiếu thông tin với 4 tử huyệt tri giác: Sinh tồn/An toàn, Danh tính/Vị thế, Mất mát/Trừng phạt, và Cơ hội/Phần thưởng."
+- "Kích hoạt ngưỡng cảm xúc: Tín hiệu chạm vào điểm đau hoặc khao khát sẽ kích hoạt phản ứng hạch hạnh nhân hoặc hệ thống dopamine, mở van năng lượng chú ý."
+- "Tập trung chọn lọc: Não bộ dồn toàn bộ tiêu cự nhận thức vào thông điệp nổi bật, đồng thời ức chế mọi kích thích xung quanh (Inattentional Blindness)."
+- "Chuyển hóa hành động: Trạng thái chú ý duy trì đủ lâu sẽ chuyển hóa thành sự ghi nhớ, suy ngẫm và kích phát quyết định phản ứng."
 conditions:
-- Cá nhân có đủ khả năng để chuyển hướng sự chú ý.
-- Manh mối được chính cá nhân đó nhận thức là có liên quan, chứ không chỉ bởi một người quan sát bên ngoài.
+- "Cá nhân có mức độ tự do nhận thức nhất định, không bị phân tán kiệt quệ bởi các mối đe dọa thể chất tức thì."
+- "Tín hiệu truyền đạt có độ tương phản đủ cao so với mức nhiễu nền của môi trường."
+- "Thông điệp được mã hóa bằng ngôn ngữ và bối cảnh mà người nhận có thể giải mã và quy chiếu về quyền lợi/trách nhiệm của họ."
 exceptions:
-- Thói quen, sự mệt mỏi, quá tải hoặc xao nhãng có thể cản trở sự chú ý.
-- Một manh mối có thể bị bỏ qua khi nó xung đột với danh tính hoặc cam kết trước đó.
+- "Tình trạng quá tải nhận thức cực độ (Cognitive Overload / Sensory Burnout) khiến toàn bộ cơ chế tiếp nhận bị tê liệt, mọi tín hiệu đều bị bỏ qua."
+- "Các phản xạ giật mình vô điều kiện trước âm thanh chát chúa hoặc ánh sáng chớp giật (Bottom-up Attention) lôi kéo sự chú ý trong tích tắc nhưng không duy trì được sự tập trung có ý nghĩa."
+- "Thiên kiến xác nhận cứng nhắc (Confirmation Bias) khiến cá nhân chủ động bịt tai trước những cảnh báo quan trọng nếu chúng đe dọa sự sụp đổ của hệ thống niềm tin cốt lõi."
 applications:
+  leadership:
+  - "Truyền đạt tầm nhìn gắn liền với số phận thuộc cấp: Đừng nói về doanh thu nghìn tỷ của công ty; hãy chỉ cho nhân viên thấy dự án này giúp họ thoát khỏi sự tầm thường, làm chủ công nghệ mới và bảo đảm thu nhập tương lai thế nào."
+  - "Hạn chế lạm phát mệnh lệnh: Nếu cái gì cũng là 'Khẩn cấp / Ưu tiên số 1', thì không có gì được ưu tiên. Chỉ dùng quyền năng khẩn cấp cho những nút thắt sinh tử."
   management:
-  - Định hình các ưu tiên bằng cách làm rõ hậu quả, trách nhiệm sở hữu và thời gian thực hiện.
+  - "Cấu trúc hóa luồng thông tin theo cấp bậc trách nhiệm: Đặt các chỉ số cảnh báo rủi ro (Early Warnings) vào tầm mắt thường xuyên của người chịu trách nhiệm trực tiếp, triệt tiêu sự lãng quên do quán tính."
+  - "Nguyên tắc 'Một trang tóm tắt' (Executive Summary Protocol): Bắt đầu mọi văn bản bằng kết luận và tác động tài chính/rủi ro trực tiếp trước khi trình bày chi tiết kỹ thuật."
   communication:
-  - Bắt đầu bằng lý do tại sao thông điệp đó lại quan trọng đối với người nghe.
+  - "Mở màn bằng lý do người nghe phải lắng nghe: Trong 30 giây đầu tiên, phải trả lời câu hỏi vô thức của khán giả: 'Điều này liên quan gì đến túi tiền, thời gian hoặc sự an toàn của tôi?'"
+  - "Kỹ thuật tạo tương phản tri giác (Contrast Framing): Đặt cảnh báo rủi ro ngay bên cạnh cơ hội đột phá để tối ưu hóa sự tập trung của não bộ."
+  negotiation:
+  - "Điều hướng sự chú ý của đối thủ khỏi lập trường cứng: Kéo sự chú ý của đối tác từ con số đơn giá sang rủi ro gián đoạn nguồn cung hoặc chi phí cơ hội bị đối thủ chiếm mất thị phần."
 risks:
-- Nhầm lẫn giữa sự ồn ào bề nổi với tầm quan trọng thực sự.
-- Giả định rằng người khác cũng chú ý đến những gì người nói cho là quan trọng.
+- "Ảo tưởng thông điệp hiển nhiên (Curse of Knowledge): Người truyền đạt say sưa với nội dung mình cho là quan trọng mà không nhận ra người nghe hoàn toàn thờ ơ vì không thấy liên quan."
+- "Lạm dụng chiêu trò giật gân (Clickbait Trap): Liên tục thổi phồng tính nghiêm trọng để câu kéo sự chú ý nhất thời, làm chai lì lòng tin và hủy hoại uy tín khi đối phương nhận ra sự rỗng tuếch."
+- "Bỏ sót các rủi ro âm ỉ dưới đáy: Quá tập trung vào những biến cố ồn ào bề mặt mà ngó lơ các dòng chảy ngầm nguy hiểm (như sự bất mãn âm thầm của nhân sự cốt cán)."
 evidence:
   level: provisional
-  references: []
+  references:
+  - "Quỷ Cốc Tử - Thiên Bổ Gia & Phản Ứng (Thuật khơi gợi sự chú ý: 'Muốn khép phải mở, muốn nâng phải hạ, lấy điều họ khao khát mà mở lời')"
+  - "Hàn Phi Tử - Thiên Nan Ngôn (Sự khó khăn của việc dâng lời: Lời nói không lọt tai bậc vua chúa không phải vì thiếu lý lẽ, mà vì không chạm trúng điều vua đang lo sợ hay mong cầu)"
+  - "Herbert Simon - Administrative Behavior (1947 - Khái niệm Nền kinh tế của sự chú ý: Thông tin dồi dào dẫn đến sự khan hiếm của sự chú ý)"
+  - "Daniel Kahneman - Attention and Effort (1973 - Năng lực chú ý có hạn và cơ chế phân bổ tài nguyên của não bộ)"
 relations:
   supports:
   - NT-PRINCIPLE-0003
@@ -42,9 +58,69 @@ tags:
 - relevance
 - communication
 - priority
-- attention-allocation
-- perceived-significance
 - cognitive-bias
-- communication-strategy
+- information-filtering
+- leadership-communication
+- quy-coc-tu
+- herbert-simon
 created_at: '2026-07-20'
-updated_at: '2026-08-15'
+updated_at: '2026-10-16'
+content: |
+  ### 1. Bản chất cốt lõi & Cơ chế tâm lý ngầm
+
+  Trong kỷ nguyên bùng nổ thông tin, tài nguyên quý giá nhất của một nhà lãnh đạo không phải là thông tin hay quyền lực hành chính, mà chính là **Sự Chú Ý (Attention Capital)**. Herbert Simon—chủ nhân giải Nobel Kinh tế năm 1978—đã đúc kết một chân lý sâu sắc: *"Sự dồi dào của thông tin sẽ tạo ra sự khan hiếm của sự chú ý"*.
+
+  Một sai lầm phổ biến của những nhà quản lý non kinh nghiệm là tin rằng: *"Chỉ cần tôi gửi một email quan trọng hoặc ban hành một văn bản chỉ đạo, toàn bộ nhân viên sẽ đọc kỹ và tuân thủ"*. Trên thực tế, bộ não của mỗi con người là một cỗ máy bảo tồn năng lượng nghiêm ngặt. Để không bị phát điên trước hàng nghìn thông báo, email và cuộc họp mỗi ngày, não bộ tự động kích hoạt **Cơ chế Lọc Chọn Lọc (Selective Filtering Mechanism)**. 
+
+  Cơ chế này hoạt động dựa trên một thuật toán sinh học tàn nhẫn:
+  - Tín hiệu nào **chạm đến sự sống còn, danh dự, tiền bạc hoặc rủi ro pháp lý cá nhân** $\rightarrow$ Não bộ lập tức bơm chất dẫn truyền thần kinh (Norepinephrine, Dopamine) để mở toang cánh cửa chú ý.
+  - Tín hiệu nào **chung chung, trừu tượng, mang tính giáo điều hoặc nói về thành tích của người khác** $\rightarrow$ Não bộ tự động xếp vào loại "tiếng ồn nền" (Background Noise) và xóa sổ khỏi bộ nhớ đệm chỉ sau vài giây.
+
+  Do đó, một thông điệp không thể thu hút sự chú ý không phải vì nó dở, mà vì nó **thất bại trong việc chứng minh tính liên đới sinh tử đối với người nhận**.
+
+  ---
+
+  ### 2. Lăng kính Kép: Đông - Tây Dung Hợp
+
+  #### Phương Đông: Thuật Thuyết Phục & Khai Thấu Lòng Người (Quỷ Cốc Tử & Hàn Phi Tử)
+  Trong thuật Tung Hoành gia của Quỷ Cốc Tử, thiên *Phản Ứng* và *Nội Kiền* chỉ ra: Muốn người khác lắng nghe và làm theo mưu kế của mình, trước hết phải *"Thính kỳ âm, tri kỳ tình"* (Lắng nghe âm thanh để biết tình cảm sâu kín của họ). Nếu đối phương đang lo sợ bị phế truất, đem đạo đức nhân nghĩa ra giảng giải là tự chuốc lấy cái chết; nếu họ đang khao khát lập chiến công, đem bài học an phận thủ thường ra khuyên can là biến mình thành kẻ ngáng đường.
+
+  Hàn Phi Tử trong thiên *Nan Ngôn* (Những nỗi khó khăn của việc dâng lời) cay đắng tổng kết: Cái khó của việc thuyết phục không nằm ở chỗ tri thức của ta có uyên bác hay không, tài hùng biện có sắc bén hay không, mà là ở chỗ: **Ta có thấu suốt được cái tâm mà người nghe đang hướng sự chú ý vào hay không**. Kẻ thuyết khách đại tài không khoe khoang sự hiểu biết của mình, mà biến lời nói của mình thành chiếc gương soi rọi đúng nỗi sợ hãi hoặc tham vọng lớn nhất mà đối phương đang ngày đêm trăn trở.
+
+  #### Phương Tây: Kinh tế học Chú ý & Tâm lý học Tri giác (Cognitive Psychology)
+  Tâm lý học hiện đại chỉ ra hiện tượng **"Mù do không chú ý" (Inattentional Blindness)** qua thí nghiệm kinh điển "Chú khỉ đột vô hình" của Chabris & Simons: Khi con người được yêu cầu tập trung cao độ đếm số đường chuyền bóng của đội áo trắng, hơn 50% số người hoàn toàn không nhìn thấy một người mặc bộ đồ khỉ gorilla bước vào giữa khung hình, đấm ngực rồi đi ra!
+
+  Điều này chứng minh: **Con người chỉ nhìn thấy những gì họ đang chủ động tìm kiếm**. Nếu bạn không giúp nhân viên hoặc đối tác định hình trước *"Họ cần tìm kiếm điều gì để bảo vệ lợi ích của họ"*, thì ngay cả khi bạn đặt một cơ hội vàng hay một quả bom nổ chậm ngay trước mắt, họ vẫn sẽ hoàn toàn mù lòa lướt qua.
+
+  ---
+
+  ### 3. Kịch bản Thực chiến Từng câu chữ (Verbatim Battle Script)
+
+  #### Tình huống:
+  Giám đốc Quản lý Dự án (PM) cần báo cáo khẩn cấp với Tổng Giám đốc (CEO) về một nguy cơ chậm tiến độ nghiêm trọng tại dự án trọng điểm trị giá 500 tỷ đồng do nhà thầu cơ điện MEP đang có dấu hiệu vỡ nợ. Tuy nhiên, CEO đang cực kỳ bận rộn, chuẩn bị tiếp đoàn khách quốc tế và thường xuyên gạt phắt các cuộc họp nội bộ dài dòng.
+
+  #### Phân tích sai lầm kinh điển:
+  PM nhắn tin hoặc gửi báo cáo 30 trang với tiêu đề: *"Báo cáo tiến độ tuần dự án X và tình hình thi công gói thầu MEP"*. CEO liếc qua tiêu đề, thấy giống như 50 cái báo cáo tuần nhàm chán khác, lập tức quẳng sang một bên: *"Để tuần sau họp giao ban rồi báo cáo"*. Khi cuộc họp giao ban diễn ra, nhà thầu đã rút sạch máy móc, dự án vỡ trận, công ty bị phạt hợp đồng 50 tỷ đồng.
+
+  #### Thao lược xử lý của bậc Cố Vấn Nhân Thuật:
+  Kích hoạt Quy luật định hướng chú ý bằng cách bẻ khóa trực tiếp vào **Tử huyệt Sinh tồn & Rủi ro cá nhân** của CEO trong đúng 15 giây đầu tiên.
+
+  **Kịch bản tiếp cận trực tiếp tại cửa thang máy:**
+  > **PM:** *(Tông giọng DJ đêm khuya trầm tĩnh, đứng nghiêm túc, không cầm xấp giấy dày cộm)*  
+  > *"Thưa anh, em chỉ xin đúng 20 giây trước khi anh bước vào phòng họp VIP:  
+  >  
+  > Nếu chúng ta không kích hoạt quyền thay thế nhà thầu phụ MEP trước 17h chiều nay, **công ty chúng ta sẽ đối diện với nguy cơ bị Tập đoàn Y kích hoạt điều khoản phạt 45 tỷ đồng vi phạm tiến độ bàn giao vào tháng 12 tới, và uy tín niêm yết cổ phiếu quý IV của anh sẽ bị ảnh hưởng trực tiếp.**  
+  >  
+  > Em đã chuẩn bị sẵn phương án điều chuyển đội ngũ dự phòng B với chi phí không đổi, chỉ cần 3 phút anh ký phê duyệt biên bản phong tỏa bảo lãnh ngân hàng. Em đứng chờ anh ở đây hay mang vào phòng thư ký của anh ngay bây giờ?"*
+
+  #### Giải phẫu tâm lý đòn bẩy:
+  - **Tước bỏ tiếng ồn:** Không nói về kỹ thuật cáp điện hay khối lượng mét ống thông gió.
+  - **Gắn nhãn tổn thất sinh tử:** Con số 45 tỷ phạt + Uy tín kế hoạch IPO/niêm yết của cá nhân CEO.
+  - **Giải pháp có sẵn:** Không mang vấn đề đến bắt sếp nghĩ; mang giải pháp trọn gói và chỉ xin một quyết định hành động dứt khoát.
+  - **Kết quả:** CEO ngay lập tức dừng chân, sự chú ý bị khóa chặt 100%, vấn đề được giải quyết trong 3 phút thay vì chờ đợi bản báo cáo 30 trang bị phủ bụi.
+
+  ---
+
+  ### 4. Bài học đúc kết & Nguyên tắc hành động bất biến
+
+  > *"Muốn điều khiển hành vi của một người, trước hết phải làm chủ tâm trí họ. Muốn làm chủ tâm trí họ, trước hết phải chiếm lĩnh được sự chú ý của họ. Và chiếc chìa khóa duy nhất mở toang cánh cửa chú ý chính là: Điều bạn nói có liên quan gì đến sự an nguy và khát vọng sâu kín nhất của chính cuộc đời họ hay không."*

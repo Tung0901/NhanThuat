@@ -207,8 +207,41 @@ class ExecutiveBriefExporter:
         .step-title {{ font-weight: 700; color: #1e3a8a; margin-bottom: 6px; font-size: 14px; }}
         .step-verbatim {{ font-size: 14px; color: #1e293b; font-style: italic; line-height: 1.6; }}
         .directives-box {{ background: #f0fdf4; border: 1px solid #bbf7d0; padding: 16px 20px; border-radius: 12px; color: #166534; }}
+        pre {{
+            background: #0f172a;
+            color: #f1f5f9;
+            border: 1px solid #1e293b;
+            border-left: 4px solid #f59e0b;
+            border-radius: 8px;
+            padding: 14px 18px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Cascadia Code', 'JetBrains Mono', 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.45;
+            letter-spacing: 0;
+            margin: 16px 0;
+        }}
+        pre code {{
+            background: transparent !important;
+            padding: 0 !important;
+            border-radius: 0 !important;
+            color: inherit !important;
+            display: block !important;
+            white-space: pre !important;
+        }}
+        :not(pre) > code {{
+            background: #f1f5f9;
+            color: #b45309;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.88em;
+            font-weight: 600;
+        }}
         @media print {{
             body {{ margin: 20px; max-width: 100%; font-size: 12pt; }}
+            pre {{ background: #f8fafc !important; color: #0f172a !important; border: 1px solid #cbd5e1 !important; page-break-inside: avoid; }}
+            pre code {{ color: #0f172a !important; }}
             .no-print {{ display: none; }}
         }}
     </style>
@@ -282,6 +315,7 @@ class ExecutiveBriefExporter:
     <style>
         body {{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 40px auto; max-width: 900px; color: #0f172a; line-height: 1.6; }}
         h1 {{ border-bottom: 2px solid #f59e0b; padding-bottom: 10px; font-size: 24px; }}
+        code {{ background: #f1f5f9; color: #b45309; padding: 2px 6px; border-radius: 4px; font-family: 'Consolas', monospace; font-size: 0.9em; }}
     </style>
 </head>
 <body>

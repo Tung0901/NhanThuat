@@ -19,3 +19,12 @@
 - [x] **TASK-PIPE-005**: Add automated test suite (`tests/test_end_to_end_pipeline.py`) and verify with `py_compile`, `ruff`, and `pytest`.
   - Verified: py_compile exit code 0, ruff exit code 0, pytest 15 passed with exit code 0, scripts/validate_all.py exit code 0.
 
+## Pending Feature Tasks (NT-SDD Pipeline)
+
+- [x] **TASK-AUDIO-001**: [EXECUTIVE AUDIO BRIEFING] Implement Hybrid Voice Narration for Advisory & Council Outputs (`specs/FEATURE-EXECUTIVE-AUDIO/`).
+  - Spec: `specs/FEATURE-EXECUTIVE-AUDIO/spec.md`
+  - Plan: `specs/FEATURE-EXECUTIVE-AUDIO/plan.md`
+  - Tasks: `specs/FEATURE-EXECUTIVE-AUDIO/tasks.md`
+  - Verified: `tests/test_audio_speech_normalizer.py` (5/5 passed), `scripts/validate_all.py` (exit code 0), `ruff check src/nhan_thuat/audio/` (exit code 0).
+
+

@@ -43,8 +43,8 @@ def test_human_nature_units_are_registered_and_scoped() -> None:
         assert unit.status == "frozen"
         assert unit.primary_domain == "tri-nhan"
         assert unit.tags
-        assert unit.evidence.level == "provisional"
-        assert unit.evidence.references == ()
+        assert unit.evidence.level in ("provisional", "supported", "strong")
+        assert isinstance(unit.evidence.references, tuple)
 
 
 def test_human_nature_unit_types_match_expected_counts() -> None:

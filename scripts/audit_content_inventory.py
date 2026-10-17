@@ -50,10 +50,11 @@ def main() -> int:
     encoded = json.dumps(inventory, ensure_ascii=False, indent=2) + "\n"
     if args.write:
         output.write_text(encoded, encoding="utf-8")
-    if args.check:
-        if not output.exists() or json.loads(output.read_text(encoding="utf-8")) != inventory:
-            print(f"Content inventory is stale: {output}", file=sys.stderr)
-            return 1
+    if args.check and (
+        not output.exists() or json.loads(output.read_text(encoding="utf-8")) != inventory
+    ):
+        print(f"Content inventory is stale: {output}", file=sys.stderr)
+        return 1
     print(encoded, end="")
     return 0
 

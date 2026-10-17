@@ -1,37 +1,44 @@
 id: NT-LAW-0007
 type: law
 status: frozen
-version: 0.1.0
-title: Năng lực giới hạn sự ủy quyền
-summary: Sự ủy quyền chỉ thành công trong phạm vi năng lực, khả năng phán đoán, thẩm quyền và sự hỗ trợ sẵn có dành cho người nhận trách nhiệm.
+version: 1.0.0
+title: "Quy luật năng lực giới hạn biên độ ủy quyền"
+summary: "Sự ủy quyền chỉ thành công trong phạm vi năng lực thực chất, khả năng phán đoán tình huống, thẩm quyền tương xứng và hệ thống hỗ trợ sẵn có dành cho người nhận trọng trách."
 primary_domain: dung-nhan
 secondary_domains:
 - thanh-su
 - hop-chung
-definition: Trách nhiệm không thể được chuyển giao một cách hiệu quả vượt quá khả năng hiện tại hoặc khả năng được hỗ trợ của người nhận trong việc thấu hiểu, quyết định và hành động.
+definition: "Trong nghệ thuật dụng nhân, trách nhiệm không thể được chuyển giao một cách hiệu quả nếu độ phức tạp của nhiệm vụ vượt quá năng lực phán đoán hiện tại và nguồn lực hỗ trợ của người được giao phó. Giao một trọng trách quá sức mà không kèm theo hành lang hướng dẫn hay thẩm quyền thực chất không phải là trao quyền (Empowerment), mà là sự thoái thác trách nhiệm của người lãnh đạo và đẩy thuộc cấp vào chỗ bại vong."
 mechanism:
-- Giao phó trách nhiệm
-- So sánh khả năng phán đoán được yêu cầu với năng lực sẵn có
-- Hiệu suất công việc sẽ phụ thuộc vào khoảng cách hoặc mức độ phù hợp này.
+- "Định lượng độ khó nhiệm vụ: Xác định mức độ phức tạp của quyết định, rủi ro tài chính và kỹ năng điều phối mà vai trò đòi hỏi."
+- "Thẩm định năng lực thực chiến: Đối chiếu yêu cầu công việc với kinh nghiệm đã được kiểm chứng (Track Record) và độ chín chắn trong phán đoán của nhân sự."
+- "Căn chỉnh biên độ thẩm quyền: Cấp phát quyền tự quyết, ngân sách và công cụ kiểm soát tương ứng với mức độ trưởng thành của người nhận việc."
+- "Thiết lập lưới an toàn hỗ trợ: Bổ sung cơ chế kèm cặp (Coaching), mốc kiểm tra trung gian (Checkpoints) tại những vùng năng lực nhân sự còn yếu."
+- "Co giãn biên độ theo kết quả: Mở rộng dần quyền tự chủ khi nhân sự chứng minh được năng lực hoàn thành xuất sắc, hoặc thu hẹp tức thì khi xuất hiện dấu hiệu quá tải phán đoán."
 conditions:
-- Công việc đòi hỏi quyền sở hữu thực chất
-- Năng lực và thẩm quyền ảnh hưởng trực tiếp đến kết quả.
+- "Nhiệm vụ đòi hỏi quyền làm chủ thực chất và khả năng tự ra quyết định trước các biến số phát sinh."
+- "Sai lầm trong phán đoán của người được ủy quyền có tác động trực tiếp đến thành bại của dự án hoặc uy tín tổ chức."
+- "Lãnh đạo có khả năng quan sát và đánh giá khách quan năng lực thực tế của cấp dưới."
 exceptions:
-- Các nhiệm vụ thử thách có thể hiệu quả nếu có sự hỗ trợ sát sao
-- Tình huống khủng hoảng có thể đòi hỏi sự ủy quyền không hoàn hảo.
+- "Các bài toán rèn luyện thử thách (Stretch Assignments) được thiết kế có chủ đích trong môi trường rủi ro được kiểm soát chặt chẽ và có người kèm cặp sát sao."
+- "Tình huống nguy cấp trên chiến trường khi tướng chỉ huy buộc phải ủy quyền khẩn cấp cho người tại chỗ dù năng lực chưa hoàn hảo để giữ nhịp phản ứng."
 applications:
   management:
-  - Ủy quyền kết quả
-  - thẩm quyền
-  - và sự hỗ trợ đi kèm với nhau.
+  - "Ủy quyền theo bộ tam hoàn chỉnh: Giao Kết quả kỳ vọng (Outcome) phải đi liền với Thẩm quyền quyết định (Authority) và Nguồn lực hỗ trợ (Support)."
+  - "Áp dụng Lãnh đạo theo Tình huống (Situational Leadership): Nhân sự mới cần chỉ dẫn chi tiết cầm tay chỉ việc; nhân sự lão luyện cần trao mục tiêu và giải phóng không gian tự chủ."
   hiring:
-  - Kiểm tra xem các yêu cầu của vai trò có vượt quá khả năng phán đoán hiện tại hay không.
+  - "Kiểm tra năng lực phán đoán dưới áp lực thực tế thông qua bài tập tình huống thay vì chỉ tin vào bằng cấp hay lời tự giới thiệu trong phỏng vấn."
 risks:
-- Ủy quyền đổ lỗi thay vì ủy quyền thẩm quyền
-- Đánh giá thấp tiềm năng phát triển.
+- "Ủy quyền đổ lỗi (Abdication disguised as Delegation): Quăng việc khó cho cấp dưới tự bơi, khi thất bại thì đem cấp dưới ra làm vật tế thần."
+- "Bảo hộ quá mức (Over-protection): Đánh giá thấp tiềm năng trưởng thành của nhân tài, ôm đồm mọi quyết định khiến đội ngũ mãi mãi phụ thuộc."
+- "Trao thanh kiếm sắc cho đứa trẻ chưa đủ sức cầm: Trao quyền lực lớn cho người chưa đủ bản lĩnh và đạo đức, dẫn đến lạm quyền và phá vỡ tổ chức."
 evidence:
-  level: provisional
-  references: []
+  level: supported
+  references:
+  - "Tôn Tử Binh Pháp - Thiên Quân Tranh & Cửu Biến (Nguyên tắc 'Tướng năng nhi quân bất ngự giả thắng' — Tướng có đủ năng lực thực chiến thì vua không can thiệp từ xa ắt thắng; nhưng trước đó phải xét kỹ Ngũ Sự: Trí, Tín, Nhân, Dũng, Nghiêm)"
+  - "Gia Cát Lượng - Tướng Uyển (Luận về Bát Quan khảo sát năng lực tướng lĩnh và bài học đau đớn khi giao nhầm trọng trách trấn thủ Nhai Đình cho Mã谡 — người giỏi lý thuyết suông nhưng thiếu năng lực thực chiến)"
+  - "Elliott Jaques - Requisite Organization (Học thuyết Time-Span of Discretion: Năng lực nhận thức của mỗi cá nhân có một tầm nhìn thời gian giới hạn, giao việc vượt quá tầng nhận thức sẽ gây sụp đổ)"
+  - "Paul Hersey & Ken Blanchard - Management of Organizational Behavior (Mô hình Lãnh đạo Tình huống SLII: Căn chỉnh mức độ ủy quyền theo Năng lực và Sự cam kết của nhân viên)"
 relations:
   supports:
   - NT-PRINCIPLE-0002
@@ -48,4 +55,59 @@ tags:
 - accountability
 - leadership-support
 created_at: '2026-07-20'
-updated_at: '2026-08-15'
+updated_at: '2026-10-17'
+content: |
+  ### 1. Bản chất cốt lõi & Cơ chế tâm lý ngầm
+
+  Trong quản trị hiện đại, từ khóa "Trao quyền" (Empowerment / Delegation) thường bị biến thành một giáo điều sáo rỗng. Nhiều nhà lãnh đạo đọc sách quản trị nửa vời liền vội vã tuyên bố: *"Tôi trao quyền hoàn toàn cho anh em tự quyết, cứ làm đi, tôi tin tưởng các bạn!"*. Nhưng chỉ vài tháng sau, dự án vỡ trận, ngân sách thất thoát, khách hàng khiếu nại, và người lãnh đạo đó quay sang kết luận cay đắng: *"Nhân viên công ty này không ai chịu nổi nhiệt, giao việc là hỏng!"*.
+
+  Dưới lăng kính của Nhân Thuật, sai lầm đó không nằm ở người nhân viên, mà nằm ở việc người lãnh đạo đã vi phạm **Quy luật Năng lực giới hạn biên độ ủy quyền**.
+
+  Cần phân biệt rạch ròi giữa hai khái niệm:
+  - **Ủy quyền thao lược (Strategic Delegation):** Là quá trình chuyển giao trách nhiệm có tính toán dựa trên việc đo lường chính xác **Độ chín năng lực (Task-Relevant Maturity)** của người nhận việc, đi kèm với khung ranh giới và cơ chế kiểm soát tương ứng.
+  - **Bỏ mặc trách nhiệm (Abdication):** Là việc quăng một mục tiêu vượt quá tầm vóc phán đoán cho cấp dưới mà không có công cụ, không có huấn luyện và không có chốt chặn rủi ro.
+
+  Khi một nhân sự bị giao nhiệm vụ vượt quá "Trần nhận thức và phán đoán" hiện tại của họ mà thiếu sự nâng đỡ, não bộ của họ sẽ rơi vào trạng thái tê liệt lo âu: Họ hoặc sẽ che giấu sai lầm cho đến khi khủng hoảng nổ tung, hoặc sẽ làm liều theo bản năng để rồi gây họa lớn.
+
+  ---
+
+  ### 2. Lăng kính Kép: Đông - Tây Dung Hợp
+
+  #### Phương Đông: Bi Kịch Mã谡 Mất Nhai Đình & Phép Lượng Tài Của Gia Cát Lượng
+  Lịch sử quân sự phương Đông đã khắc ghi một bài học đắt giá bậc nhất về quy luật này: **Sự kiện Gia Cát Lượng chém Mã谡 sau thảm bại Nhai Đình**.
+  - Lưu Bị trước lúc lâm chung tại thành Bạch Đế đã căn dặn Gia Cát Lượng: *"Mã谡 lời nói quá thực chất (ngôn quá kỳ thực), không thể giao trọng trách lớn, thừa tướng hãy xét kỹ"*.
+  - Mã谡 là một mưu sĩ cực kỳ thông minh khi ngồi trong trướng bàn luận binh thư chiến lược (năng lực tham mưu lý thuyết), nhưng lại hoàn toàn chưa từng độc lập cầm quân đánh trận thực địa (thiếu năng lực chỉ huy hiện trường). Khi Gia Cát Lượng giao phó yết hầu Nhai Đình—mắt xích sinh tử của toàn bộ chiến dịch Bắc phạt—cho Mã谡, ông đã ủy quyền vượt quá biên độ năng lực thực chiến của thuộc cấp. Mã谡 đóng quân trên đỉnh núi tuyệt lộ, dẫn đến đại quân Thục Hán tan vỡ. Khi khóc chém Mã谡, Gia Cát Lượng đã tự xin giáng 3 cấp vì hiểu rõ: **Người chịu trách nhiệm cho sự thất bại của một quyết định ủy quyền sai lầm chính là người đã trao ấn kiếm.**
+
+  #### Phương Tây: Học Thuyết Tầm Nhìn Thời Gian (Elliott Jaques) & Độ Chín Công Việc (Andy Grove)
+  Tại phương Tây, nhà tâm lý học tổ chức Elliott Jaques qua công trình *Requisite Organization* đã chứng minh rằng năng lực xử lý độ phức tạp của con người được đo bằng **Time-Span of Discretion (Biên độ thời gian tự quyết tối đa)**:
+  - Có những người xử lý cực kỳ xuất sắc các công việc có chu kỳ hoàn thành trong 1 tuần đến 3 tháng (Quản lý vận hành), nhưng nếu đẩy họ lên vị trí đòi hỏi phán đoán chiến lược 3 năm (Giám đốc điều hành), họ sẽ hoàn toàn mất phương hướng.
+  - Cựu CEO Intel Andy Grove trong cuốn *High Output Management* cũng khẳng định: Không có chuyện một nhân viên "giỏi toàn diện" hay "kém toàn diện". Một kỹ sư trưởng có thể có độ chín **Rất Cao** ở mảng thiết kế phần cứng, nhưng lại có độ chín **Rất Thấp** khi mới chuyển sang quản lý ngân sách thương mại. Do đó, biên độ ủy quyền phải được thiết kế riêng cho từng nhiệm vụ cụ thể.
+
+  ---
+
+  ### 3. Kịch bản Thực chiến Từng câu chữ (Verbatim Battle Script)
+
+  #### Tình huống:
+  Công ty vừa thăng chức cho Kiên—một Trưởng nhóm Kỹ thuật xuất sắc nhất công ty—lên làm Giám đốc Dự án Chuyển đổi số trị giá 15 tỷ đồng với khách hàng tập đoàn lớn. Kiên đề nghị Tổng Giám đốc: *"Anh cứ giao toàn quyền cho em, em tự đàm phán hợp đồng và điều phối luôn với Ban Giám đốc bên khách hàng, anh không cần tham gia đâu"*.
+
+  #### Phân tích sai lầm phổ biến:
+  Tổng Giám đốc vì quý mến và muốn khích lệ tinh thần Kiên nên gật đầu giao khoán trắng 100%. Kết quả: Kiên rất giỏi kỹ thuật nhưng hoàn toàn ngây thơ về chính trị doanh nghiệp và điều khoản phạt hợp đồng, bị khách hàng gài điều khoản nghiệm thu bất lợi khiến công ty lỗ nặng 4 tỷ đồng.
+
+  #### Thao lược xử lý của bậc Cố Vấn Nhân Thuật:
+  Bảo vệ lòng nhiệt huyết của nhân tài, nhưng thiết lập biên độ ủy quyền phân tầng (Tiered Delegation Boundaries) khớp chính xác với năng lực thực tế của Kiên.
+
+  **Kịch bản đối thoại của Tổng Giám đốc với Kiên:**
+  > **Tổng Giám đốc:** *"Kiên này, anh đánh giá cực kỳ cao tinh thần dám nhận lãnh trách nhiệm của em. Đó là tố chất của một tướng lĩnh thực thụ.*
+  > 
+  > *Tuy nhiên, nguyên tắc dụng nhân của anh là: **Trao quyền phải đi liền với thiết giáp bảo vệ**. Dự án 15 tỷ này có hai mặt trận hoàn toàn khác nhau:*
+  > 
+  > *1. **Mặt trận Kiến trúc Kỹ thuật & Điều phối Đội ngũ Lập trình:** Ở mặt trận này, năng lực của em là số 1 công ty. Anh trao cho em **100% quyền tự quyết (Mức ủy quyền cấp 4)**. Em toàn quyền quyết định công nghệ, phân bổ nhân sự và nghiệm thu module mà không cần hỏi ý kiến anh.*
+  > 
+  > *2. **Mặt trận Thương thảo Hợp đồng, Điều khoản Phạt và Xử lý Chính trị với HĐQT Khách hàng:** Đây là lần đầu tiên em bước vào trận địa thương mại cấp tập đoàn. Ở mặt trận này, anh áp dụng **Cơ chế Ủy quyền có Hộ tống (Mức ủy quyền cấp 2)** trong 60 ngày đầu:*
+  > *- Mọi biên bản làm việc về phạm vi công việc (Scope of Work) và điều khoản thanh toán, em là người chủ trì soạn thảo, nhưng bắt buộc phải qua Giám đốc Pháp chế và anh rà soát chốt chặn trước khi gửi cho khách hàng.*
+  > *- Trong 3 buổi họp đầu tiên với Phó Tổng Giám đốc bên khách hàng, anh sẽ ngồi cạnh em: Em là người cầm trịch trình bày, còn anh sẽ quan sát thế trận và đỡ đòn khi họ tung các chiêu ép giá thương mại.*
+  > 
+  > *Sau 2 tháng, khi em đã nắm vững toàn bộ các cạm bẫy hợp đồng, anh sẽ rút lui hoàn toàn để em độc lập thống lĩnh. Anh muốn em thắng trận đầu tiên một cách trọn vẹn, chứ không bao giờ đẩy tướng trẻ ra chiến trường mà thiếu giáp trụ."*
+
+  #### Bài học đúc kết:
+  Ủy quyền không phải là công tắc Bật/Tắt (0% hoặc 100%). **Bậc thầy dụng nhân điều chỉnh biên độ ủy quyền như người thả diều: Khi gió thuận và cánh diều vững thì nới dây cho bay cao; khi bão nổi và diều chao đảo thì phải thu dây giữ trụ.**

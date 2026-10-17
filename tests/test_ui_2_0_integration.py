@@ -46,6 +46,12 @@ def test_frontend_delivery_contains_all_2_0_components():
     assert "socratic-rounds-grid" in html
     assert "socratic-synthesis-content" in html
 
+    # 4. Primary scenario inputs appear BEFORE sample preset lists (no deep scrolling required)
+    assert html.index('id="war-scenario-input"') < html.index('id="war-presets-list"')
+    assert html.index('id="sparring-context-input"') < html.index("applySparringPreset")
+    assert html.index('id="council-scenario-input"') < html.index('class="council-lens-roster"')
+
+
 
 def test_home_embeds_scroll_native_app_and_legacy_routes_open_app_mode():
     """Homepage keeps its story and embeds the app; legacy routes open app mode."""

@@ -1,46 +1,121 @@
 id: NT-PRINCIPLE-0001
 type: principle
 status: frozen
-version: 0.1.0
-title: Làm rõ lợi ích trước khi thiết kế hành động
-summary: Trước khi lựa chọn động lực, lập luận hoặc can thiệp, hãy xác định những lợi ích mà mỗi người tin rằng họ đang bảo vệ hoặc gia tăng.
+version: 1.0.0
+title: "Làm rõ lợi ích trước khi thiết kế hành động"
+summary: "Trước khi lựa chọn động lực, xây dựng lập luận đàm phán hoặc can thiệp quản trị, hãy giải mã chính xác những lợi ích mà đối phương tin rằng họ đang bảo vệ hoặc gia tăng."
 primary_domain: tri-nhan
+domain_area: NT-DA-0002
 secondary_domains:
 - dung-nhan
 - thanh-su
-definition: Thiết kế hành động hiệu quả bắt đầu bằng việc làm rõ lợi ích được nhận thức, vì hành vi thường đi theo những gì con người tin sẽ bảo vệ hoặc cải thiện vị thế của mình.
+- hop-chung
+definition: "Nguyên tắc chỉ đạo hành động căn bản trong Tri Nhân và Thành Sự: Mọi nỗ lực can thiệp hành vi hay thuyết phục người khác sẽ thất bại nếu nhà lãnh đạo chỉ dựa vào chức danh, mệnh lệnh áp đặt hoặc giả định chủ quan. Thiết kế hành động hiệu quả đòi hỏi phải giải mã được hệ thống lợi ích ngầm mà chủ thể đang bám giữ, bao gồm cả lợi ích hữu hình lẫn lợi ích vô hình (thể diện, sự an toàn, tự chủ, giảm thiểu rủi ro cá nhân)."
 mechanism:
-- Xác định chủ thể hành động và bối cảnh ra quyết định.
-- Hỏi xem chủ thể nhận thức được lợi ích, mất mát, rủi ro, bản sắc hay nghĩa vụ nào.
-- Thiết kế hành động xoay quanh lợi ích được nhận thức thay vì chỉ dựa vào lập trường đã công bố.
+- "Nhận diện chủ thể then chốt: Xác định chính xác ai là người có quyền phủ quyết (Veto player) hoặc người thực thi nắm quyền làm chậm trễ tiến độ."
+- "Tách rời Lập trường và Lợi ích: Lắng nghe yêu cầu bề nổi (Position) nhưng truy vấn động cơ sâu kín (Underlying Interests) phía sau."
+- "Lập bản đồ động lực 4 trục: Khảo sát Lợi ích kinh tế, An toàn vị thế, Danh dự/Thể diện, và Trách nhiệm giải trình rủi ro."
+- "Kiểm thử giả thuyết lợi ích: Đưa ra các câu hỏi tình huống hoặc tín hiệu thăm dò nhỏ để xác nhận xem đối phương thực sự sợ điều gì nhất và thèm muốn điều gì nhất."
+- "Thiết kế giải pháp đôi bên cùng có lợi (Integrative Architecture): Tạo lập cấu trúc hành động trong đó việc hoàn thành mục tiêu chung là con đường ngắn nhất để đối phương thỏa mãn lợi ích riêng của họ."
 conditions:
-- Chủ thể có quyền lựa chọn thực chất.
-- Người quan sát có thể thu thập đủ bối cảnh để suy đoán lợi ích một cách có trách nhiệm.
+- "Chủ thể có quyền lựa chọn thực tế trong việc thực thi, trì hoãn hoặc từ chối hành động."
+- "Người thiết kế hành động có đủ kênh thông tin để thu thập bối cảnh và thấu hiểu áp lực thực tế của đối phương."
 exceptions:
-- Hành động khẩn cấp có thể cần quyết định tạm thời trước khi lập bản đồ lợi ích đầy đủ.
-- Cưỡng ép, thông tin sai lệch hoặc phản xạ có thể khiến việc phân tích lợi ích không trọn vẹn.
+- "Tình huống khủng hoảng sinh tử hoặc mệnh lệnh chiến trường đòi hỏi kỷ luật sắt phải được thực thi ngay lập tức trước khi phân tích lợi ích."
+- "Đối tượng hành động bị thao túng tâm lý cực đoan hoặc mất năng lực nhận thức hành vi duy lý."
 applications:
+  leadership:
+    - "Giao phó trọng trách mới: Luôn trả lời cho nhân sự câu hỏi 'Tại sao nhiệm vụ này là bệ phóng cho sự nghiệp của bạn?' trước khi giao chỉ tiêu định lượng."
+    - "Thuyết phục nhân sự kiêu ngạo: Tìm ra điểm yếu về nhu cầu được khẳng định vị thế chuyên môn để gắn họ vào bài toán khó nhất của công ty."
   negotiation:
-  - Tách biệt lập trường đã công bố khỏi lợi ích nền tảng.
-  management:
-  - Căn chỉnh động lực với những gì thành viên trong nhóm thực sự coi trọng và lo ngại.
+    - "Phá vỡ thế bế tắc về đơn giá: Khi đối tác kiên quyết không giảm giá, hãy khám phá xem họ đang chịu áp lực gì từ nội bộ (áp lực biên lợi nhuận, chi phí dòng tiền hay giữ thể diện trước đối thủ) để đề xuất các nhượng bộ phi tiền tệ."
+    - "Đàm phán hợp đồng cung ứng: Bù đắp việc giảm đơn giá bằng cam kết khối lượng dài hạn hoặc điều khoản thanh toán nhanh trong 7 ngày."
+  crisis_containment:
+    - "Hòa giải xung đột phòng ban: Tìm điểm giao thoa lợi ích giữa hai trưởng bộ phận thù địch thay vì tổ chức đối chất đúng sai thuần túy."
 risks:
-- Gán ghép lợi ích của bản thân lên người khác.
-- Coi lợi ích thuần túy là tài chính hoặc thuần túy duy lý.
+- "Gán ghép lợi ích chủ quan của bản thân lên người khác, ngộ nhận rằng điều mình thích thì người khác cũng coi trọng."
+- "Đánh giá thấp nhu cầu bảo vệ thể diện và lòng tự tôn, chỉ chăm chăm dùng tiền bạc để giải quyết vấn đề."
+- "Bị đối phương phát hiện ý đồ thăm dò quá lộ liễu, gây cảm giác thao túng tâm lý và mất lòng tin."
 evidence:
-  level: provisional
-  references: []
+  level: strong
+  references:
+  - "Roger Fisher, William Ury & Bruce Patton - Getting to Yes: Negotiating Agreement Without Giving In (Phương pháp đàm phán Harvard - Phân biệt Position vs Interest)"
+  - "Quỷ Cốc Tử - Thiên Mưu Thiên & Thấu Thiên (Thuật dò xét tâm can, xét lợi hại để định kế sách dùng người)"
+  - "Chris Voss - Never Split the Difference (Chiến thuật Tactical Empathy và săn tìm Black Swans trong đàm phán con tin)"
 relations:
-  supports: []
+  supports:
+  - NT-MODEL-0022
+  - NT-MODEL-0023
   conflicts_with: []
   depends_on:
   - NT-LAW-0001
   applies_to: []
 tags:
-- interests
+- principle
+- interest-mapping
 - action-design
 - negotiation
-- motivation
-- perceived-interests
+- tactical-empathy
+- conflict-resolution
 created_at: '2026-07-20'
-updated_at: '2026-08-15'
+updated_at: '2026-10-16'
+content: |
+  ### 1. Bản chất cốt lõi & Nguyên lý vận hành
+
+  Nguyên tắc **"Làm rõ lợi ích trước khi thiết kế hành động"** là kim chỉ nam hàng đầu trong mọi hoạt động lãnh đạo, quản trị và đàm phán. Bản chất của nguyên tắc này dựa trên một tiền đề tâm lý học vững chắc: **Con người không chống lại sự thay đổi; họ chỉ chống lại việc bị tước đoạt lợi ích hoặc bị đẩy vào thế rủi ro bất an.**
+
+  Trong thực tế, khi một đề xuất, một chính sách hoặc một bản kế hoạch bị phản đối dữ dội, đa phần các nhà quản lý thường phản ứng bằng hai cách sai lầm:
+  1. *Dùng quyền lực áp đặt:* Ép buộc cấp dưới phải thi hành bằng kỷ luật. Kết quả là nhận lại sự tuân thủ bề ngoài nhưng phá hoại ngầm bên trong.
+  2. *Dùng lý lẽ tranh biện:* Cố gắng chứng minh luận điểm của mình là "đúng đắn", "khoa học", "vì sự phát triển chung". Nhưng khi đối phương cảm thấy lợi ích của họ bị đe dọa, mọi lý lẽ đúng đắn nhất đều biến thành âm thanh chói tai.
+
+  Thiết kế hành động khôn ngoan là nghệ thuật **đi đường vòng qua tâm lý**. Trước khi soạn thảo văn bản, trước khi bước vào phòng họp, người lãnh đạo phải tự trả lời 3 câu hỏi trắc nghiệm lợi ích:
+  - *Đối phương thực sự sợ mất điều gì nhất nếu làm theo đề xuất này?* (Mất quyền tự quyết? Bị tăng khối lượng công việc? Mất uy tín trước sếp lớn? Rủi ro bị quy trách nhiệm?)
+  - *Đối phương khao khát đạt được điều gì nhất trong hoàn cảnh hiện tại?* (Sự an toàn? Thời gian? Tiền bạc? Cơ hội thăng tiến? Lời khen ngợi công khai?)
+  - *Làm thế nào để cấu trúc lại hành động sao cho việc họ đạt được mục tiêu của ta cũng chính là cách tốt nhất để họ bảo vệ lợi ích của họ?*
+
+  ---
+
+  ### 2. Lăng kính Kép: Đông - Tây Dung Hợp
+
+  #### Phương Đông: Thuật Thấu Tâm & Bãi Hạp (Quỷ Cốc Tử)
+  Trong thuật du thuyết và mưu lược cổ điển phương Đông, Quỷ Cốc Tử dành trọn chương *Mưu Thiên* để giảng giải: Muốn thuyết phục một người, trước hết phải hiểu rõ tâm tính và cái "Lợi" mà họ tôn sùng. Đối với kẻ tham tiền thì lấy tài lợi dẫn dụ; đối với kẻ ham danh thì lấy danh vị ngợi khen; đối với bậc dũng cảm thì lấy khí phách khích lệ; đối với người cẩn trọng thì lấy điều an nguy phân tích.
+
+  Quỷ Cốc Tử gọi đây là phép *"Lượng quyền trắc tình"* (Đo lường quyền thế, dò xét tâm tình). Bậc mưu lược không bao giờ mang một bài thuyết trình áp dụng cho mọi đối tượng. Họ thay đổi hình tướng thông điệp sao cho trùng khớp với chiếc ổ khóa lợi ích của người đối diện.
+
+  #### Phương Tây: Trường phái Đàm phán Harvard (Getting to Yes)
+  Tại Viện Đàm phán Harvard (PON), Roger Fisher và William Ury đã hệ thống hóa nguyên tắc này thành trụ cột nổi tiếng nhất của nghệ thuật thương thuyết hiện đại: **Focus on Interests, Not Positions** (Tập trung vào lợi ích nền tảng, đừng tranh cãi về lập trường bề mặt).
+  - **Lập trường (Position):** Là cái mà đối phương tuyên bố họ muốn (Ví dụ: *"Tôi muốn tăng ngân sách thêm 20%", "Tôi không đồng ý lùi hạn chót"*).
+  - **Lợi ích (Interest):** Là lý do thực sự tại sao họ lại đòi hỏi điều đó (Ví dụ: *"Họ sợ bị ban giám đốc khiển trách nếu dự án chậm trễ", "Họ cần tiền để thuê thêm chuyên gia gỡ khó"*).
+
+  Khi ta lao vào tranh cãi về lập trường, cuộc đàm phán biến thành cuộc chiến của cái tôi và rơi vào bế tắc nhị nguyên (Thắng - Thua). Nhưng khi ta chuyển hướng sang giải quyết lợi ích ngầm, không gian sáng tạo giải pháp sẽ mở rộng gấp mười lần.
+
+  ---
+
+  ### 3. Kịch bản Thực chiến Từng câu chữ (Verbatim Battle Script)
+
+  #### Tình huống:
+  Giám đốc Sản xuất (CPO) từ chối kế hoạch tung sản phẩm mới của Giám đốc Tiếp thị (CMO) vào quý 4, lấy lý do: dây chuyền đang quá tải, tiêu chuẩn chất lượng chưa đạt, cần lùi lại 3 tháng. Hai bên tranh cãi nảy lửa trong cuộc họp điều hành.
+
+  #### Phân tích lợi ích ngầm:
+  - **Lập trường của CPO:** *"Không được ra mắt vào tháng 11, phải lùi sang năm sau."*
+  - **Lợi ích ngầm thực sự của CPO:** CPO sợ sản phẩm bị lỗi trong đợt cao điểm bán hàng, nếu tỷ lệ đổi trả cao thì CPO sẽ bị cắt thưởng cuối năm và mang tiếng với Hội đồng Quản trị.
+  - **Lợi ích của CMO:** Cần số liệu doanh số quý 4 để đạt KPI năm và đón đầu mùa mua sắm lễ tết.
+
+  #### Thao lược hòa giải của Tổng Giám Đốc (CEO):
+
+  > **CEO (quay sang CPO):** *"Anh hiểu nỗi lo của chú. Nếu tung ra ồ ạt 50.000 sản phẩm mà lỗi tỷ lệ 2%, người đứng mũi chịu sào trước HĐQT chính là chú và khối nhà máy. Chú đang bảo vệ uy tín thương hiệu của công ty và an toàn cho toàn bộ dây chuyền sản xuất."*
+  > 
+  > *(Thừa nhận và xoa dịu nỗi sợ mất mát và trách nhiệm của CPO)*
+  > 
+  > **CPO:** *"Đúng như vậy anh, bọn em không thể gánh rủi ro này nếu Marketing cứ ép tiến độ."*
+  > 
+  > **CEO (thiết kế cấu trúc hành động mới):** *"Bây giờ chúng ta dung hòa hai lợi ích:
+  > Thứ nhất: Kế hoạch truyền thông của CMO vẫn chạy đúng hẹn vào tháng 11 để hứng trọn mùa mua sắm. Nhưng ta không bán đại trà 50.000 bản, mà mở bán đợt 1 giới hạn đúng 3.000 bản 'Founder Edition' cho khách hàng VIP đặt trước.
+  > Thứ hai: Số lượng 3.000 bản này sẽ do đích thân đội ngũ kỹ sư tinh nhuệ nhất của chú trực tiếp kiểm tra thủ công từng chiếc một tại xưởng.
+  > Thứ ba: Về mặt chỉ tiêu trách nhiệm, anh ký quyết định miễn trừ hoàn toàn KPI tỷ lệ lỗi cho khối sản xuất đối với đợt mở bán thử nghiệm này, và ghi nhận thành tích đổi mới sáng tạo cho phòng của chú nếu dự án cán đích.
+  > Chú thấy phương án này có bảo đảm an toàn cho khối sản xuất chưa?"*
+  > 
+  > **CPO:** *"Nếu làm quy mô 3.000 chiếc và có bảo đảm trách nhiệm thì xưởng của em xử lý được ngay trong 3 tuần tới."*
+
+  #### Bài học đúc kết:
+  Khi một cánh cửa hành động bị đóng chặt, **đừng cố phá cửa bằng búa tạ của quyền lực. Hãy tìm chiếc chìa khóa lợi ích ngầm để đối phương tự giác mở then cài.**

@@ -3,12 +3,14 @@ type: law
 status: frozen
 version: 1.0.0
 title: Định luật Entropy trong Khủng hoảng
-summary: Trong bối cảnh khủng hoảng, sự thiếu hụt thông tin và độ trễ trong phản hồi sẽ liên tục khuếch đại mức độ nghiêm trọng nếu không có sự can thiệp kịp thời để cắt đứt chuỗi phản ứng.
+summary: Trong bối cảnh khủng hoảng, sự thiếu hụt thông tin và độ trễ trong phản hồi sẽ liên tục khuếch
+  đại mức độ nghiêm trọng nếu không có sự can thiệp kịp thời để cắt đứt chuỗi phản ứng.
 primary_domain: thanh-su
 domain_area: NT-DA-0021
 secondary_domains:
 - hop-chung
-definition: Khủng hoảng không phải là một trạng thái tĩnh mà là một chuỗi các phản ứng dây chuyền liên tục; do đó, đòi hỏi các hành động can thiệp chủ động để phá vỡ chuỗi liên kết này.
+definition: Khủng hoảng không phải là một trạng thái tĩnh mà là một chuỗi các phản ứng dây chuyền liên
+  tục; do đó, đòi hỏi các hành động can thiệp chủ động để phá vỡ chuỗi liên kết này.
 mechanism:
 - Nhận diện và định vị các điểm đứt gãy thông tin.
 - Khoanh vùng và phân lập khu vực xảy ra khủng hoảng.
@@ -25,7 +27,15 @@ risks:
 - Trì hoãn phản ứng do rơi vào trạng thái tê liệt phân tích.
 evidence:
   level: supported
-  references: []
+  references:
+  - '[Nghiên cứu thực nghiệm] Weick, K. E. (1993). The collapse of sensemaking in organizations: The Mann
+    Gulch disaster. Administrative Science Quarterly, 38(4), 628-652 (Sự tan rã cấu trúc nhận thức khi
+    khủng hoảng thiếu phản hồi).'
+  - '[Nguồn cổ điển] Tôn Vũ — Tôn Tử Binh Pháp, thiên Binh Thế & Cửu Biến (Quản trị nhịp độ và cắt đứt
+    hiệu ứng dây chuyền khi biến cố phát sinh).'
+  - '[Sách phổ thông] Perrow, C. (1984). Normal Accidents: Living with High-Risk Technologies. Basic Books
+    (Cơ chế khuếch đại sự cố trong hệ thống liên kết chặt).'
+  - '[Suy luận biên tập] Quy trình phân lập sự cố và thiết lập nhịp thông tin trong vận hành doanh nghiệp.'
 relations:
   supports: []
   conflicts_with: []
@@ -40,3 +50,23 @@ tags:
 - chain-reaction
 created_at: '2026-08-12'
 updated_at: '2026-08-15'
+content: "### 1. Cơ chế Khuếch đại Độ nhiễu trong Khủng hoảng\n**Định luật Entropy trong Khủng hoảng**\
+  \ (`NT-LAW-2101`) chỉ ra rằng trong các hệ thống tổ chức có độ liên kết chặt (tightly coupled systems),\
+  \ khoảng trống thông tin và độ trễ chỉ huy không giữ nguyên trạng thái tĩnh mà thường kích hoạt các\
+  \ phản ứng suy đoán, tự vệ cục bộ và lan truyền sự cố sang các bộ phận lân cận.\n\n### 2. Điều kiện\
+  \ áp dụng & Ngoại lệ\n- **Điều kiện áp dụng:**\n  - Các sự cố vận hành, thanh khoản, an ninh dữ liệu\
+  \ hoặc truyền thông có tốc độ lan truyền nhanh và liên quan đến nhiều bên phụ thuộc lẫn nhau.\n  - Kênh\
+  \ thông tin chính thức bị gián đoạn khiến các đơn vị cơ sở tự hành động theo tin đồn hoặc giả định cục\
+  \ bộ.\n- **Ngoại lệ:**\n  - Các sự cố kỹ thuật đã được phân lập vật lý hoặc có cầu chì ngắt tự động\
+  \ (circuit breakers) tách biệt hoàn toàn khỏi hệ thống chính.\n  - Những biến động diễn tiến chậm, có\
+  \ dữ liệu quan trắc đầy đủ; trong trường hợp này việc can thiệp vội vã có thể gây nhiễu nhiều hơn việc\
+  \ quan sát thêm.\n\n### 3. Mức bất định & Rủi ro diễn giải sai\n- **Mức bất định:** Trung bình - Cao.\
+  \ Tốc độ gia tăng độ hỗn loạn phụ thuộc lớn vào cấu trúc phân quyền sẵn có và mức độ tập dượt quy trình\
+  \ ứng phó sự cố trước đó (Weick, 1993).\n- **Rủi ro diễn giải sai:**\n  - Đồng nhất việc phản ứng kịp\
+  \ thời với việc ra lệnh chuyên quyền thiếu kiểm chứng, dẫn đến sửa sai chỗ này nhưng làm vỡ cấu trúc\
+  \ chỗ khác.\n  - Hoang mang phóng đại các sự cố cục bộ nhỏ thành khủng hoảng toàn diện làm kiệt sức\
+  \ đội ngũ.\n\n### 4. Nguồn truy nguyên & Đối chiếu Đông - Tây\n- **Nguồn truy nguyên:** Nghiên cứu thực\
+  \ địa về sự sụp đổ kiến tạo ý nghĩa trong thảm họa Mann Gulch của Karl Weick (1993) và lý thuyết tai\
+  \ nạn hệ thống của Charles Perrow (1984).\n- **Đối chiếu cổ điển `[Nguồn cổ điển]`:** Tôn Tử Binh Pháp\
+  \ (thiên *Binh Thế*) phân biệt giữa *loạn* sinh ra từ *trị* khi có phân định bộ ngũ, hiệu lệnh rõ ràng\
+  \ với sự hỗn loạn dây chuyền khi đứt gãy thông tin chỉ huy.\n"

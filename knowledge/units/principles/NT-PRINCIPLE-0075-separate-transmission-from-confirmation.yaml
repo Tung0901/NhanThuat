@@ -27,7 +27,7 @@ risks:
 - Xác nhận hình thức 'anh hiểu chưa' tạo câu trả lời máy móc.
 - Bỏ qua xác nhận trong giao tiếp bằng văn bản quan trọng.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

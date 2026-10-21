@@ -27,7 +27,7 @@ risks:
 - Người ra quyết định quá tải dẫn tới bỏ qua toàn bộ thông tin.
 - Tăng thu thập dữ liệu làm vấn đề nhiễu trầm trọng hơn.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

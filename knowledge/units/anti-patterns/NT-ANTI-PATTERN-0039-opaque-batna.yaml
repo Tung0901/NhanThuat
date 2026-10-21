@@ -27,7 +27,7 @@ risks:
 - Nhượng bộ quá mức do thiếu mốc so sánh.
 - Bị đối phương chi phối hoàn toàn nhịp và phạm vi đàm phán.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

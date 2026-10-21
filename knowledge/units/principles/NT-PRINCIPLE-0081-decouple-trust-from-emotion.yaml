@@ -28,7 +28,7 @@ risks:
 - Nghi ngờ quá mức dựa trên cảm xúc tiêu cực làm xói mòn quan hệ.
 - Dùng cơ chế bảo đảm thay thế hoàn toàn cho việc xây dựng tin cậy thực chất.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

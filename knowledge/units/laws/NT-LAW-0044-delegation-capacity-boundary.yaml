@@ -27,7 +27,7 @@ risks:
 - Bỏ sót công việc quan trọng khi danh sách ủy quyền vượt năng lực theo dõi.
 - Quá tải ngầm dẫn tới kiệt sức ở cả người giao lẫn người nhận.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

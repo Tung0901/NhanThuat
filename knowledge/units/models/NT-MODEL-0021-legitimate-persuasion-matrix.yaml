@@ -27,7 +27,7 @@ risks:
 - Đánh giá thấp áp lực ngầm từ bất đối xứng quyền lực.
 - Minh bạch hình thức nhưng vẫn giới hạn lựa chọn thực chất.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

@@ -18,7 +18,7 @@ applications:
 risks:
 - Nhầm lẫn giữa an toàn tâm lý với việc thiếu các tiêu chuẩn hiệu suất.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0018-01
 relations:

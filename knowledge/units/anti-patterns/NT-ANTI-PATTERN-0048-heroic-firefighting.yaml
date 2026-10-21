@@ -23,7 +23,7 @@ applications:
 risks:
 - Làm mất động lực của nhân sự chủ chốt khi không ghi nhận đúng mức nỗ lực xử lý khủng hoảng thực sự.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0017-01
 relations:

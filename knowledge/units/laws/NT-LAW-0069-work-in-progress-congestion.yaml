@@ -18,7 +18,7 @@ applications:
 risks:
 - Thiết lập giới hạn WIP quá thấp dẫn đến việc nhân viên bị nhàn rỗi.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0017-01
 relations:

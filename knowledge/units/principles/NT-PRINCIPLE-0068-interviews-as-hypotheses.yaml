@@ -27,7 +27,7 @@ risks:
 - Ứng viên luyện tập trả lời làm giảm giá trị kiểm định.
 - Quá nhiều giả thuyết làm buổi phỏng vấn phân tán.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

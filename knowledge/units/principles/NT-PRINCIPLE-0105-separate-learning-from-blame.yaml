@@ -18,7 +18,7 @@ applications:
 risks:
 - Không xử lý tình trạng năng lực cá nhân yếu lặp lại.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0018-01
 relations:

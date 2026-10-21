@@ -22,7 +22,7 @@ applications:
 risks:
 - Trả lương thấp cho nhân viên dưới cái mác bảo vệ động lực nội tại.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0009-01
 relations:

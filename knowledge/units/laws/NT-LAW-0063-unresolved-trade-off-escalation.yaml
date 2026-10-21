@@ -18,7 +18,7 @@ applications:
 risks:
 - Coi các xung đột tài nguyên mang tính cấu trúc như những bất đồng về tính cách cá nhân.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0011-01
 relations:

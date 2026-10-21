@@ -18,7 +18,7 @@ applications:
 risks:
 - Bảo vệ khách hàng quá mức đến mức khiến công ty phải đối mặt với lạm dụng hoàn tiền gian lận.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0020-01
 relations:

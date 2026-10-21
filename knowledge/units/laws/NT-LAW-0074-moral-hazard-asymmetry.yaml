@@ -18,7 +18,7 @@ applications:
 risks:
 - Yêu cầu nhân viên không có quyền ra quyết định phải cùng chịu trách nhiệm thực tế.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0020-01
 relations:

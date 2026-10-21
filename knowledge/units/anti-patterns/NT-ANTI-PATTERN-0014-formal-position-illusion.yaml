@@ -18,7 +18,7 @@ applications:
 risks:
 - Áp dụng sai Ảo tưởng Vị trí Chính thức dẫn đến hiệu suất không đạt tối ưu.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

@@ -27,7 +27,7 @@ risks:
 - Bị nhận diện là hai mặt gây mất nhất quán.
 - Sử dụng thích ứng như công cụ thao túng theo từng đối tượng.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

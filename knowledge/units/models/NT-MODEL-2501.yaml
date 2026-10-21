@@ -23,7 +23,7 @@ applications:
 risks:
 - Dồn toàn bộ 100% nguồn lực vào H1 khiến tổ chức mất khả năng thích ứng trong tương lai.
 evidence:
-  level: supported
+  level: provisional
   references: []
 relations:
   supports: []

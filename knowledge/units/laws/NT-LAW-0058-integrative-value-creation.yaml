@@ -27,7 +27,7 @@ risks:
 - Tối ưu tổng giá trị nhưng phân bổ bất công gây xói mòn quan hệ.
 - Nhầm nhượng bộ một chiều là kiến tạo giá trị.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

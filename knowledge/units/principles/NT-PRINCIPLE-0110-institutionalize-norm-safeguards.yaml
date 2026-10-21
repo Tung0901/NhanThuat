@@ -18,7 +18,7 @@ applications:
 risks:
 - Kiệt sức vì khảo sát quá nhiều (survey fatigue).
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0019-01
 relations:

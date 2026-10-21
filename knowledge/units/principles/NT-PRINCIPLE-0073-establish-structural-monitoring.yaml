@@ -27,7 +27,7 @@ risks:
 - Chỉ số giám sát bị tối ưu hình thức thay vì phản ánh thực chất.
 - Cảnh báo quá nhiều làm mất độ nhạy của cơ chế.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

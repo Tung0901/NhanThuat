@@ -27,7 +27,7 @@ risks:
 - Khác biệt không được điều phối biến thành xung đột tiêu hao.
 - Tiêu chuẩn nhóm thấp làm đa dạng trở thành bất đồng vô hiệu.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

@@ -27,7 +27,7 @@ risks:
 - Tự củng cố văn hóa độc canh, khó thích ứng khi môi trường thay đổi.
 - Bỏ lỡ nhân tài khác khuôn mẫu nhưng phù hợp công việc.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

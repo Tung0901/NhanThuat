@@ -3,11 +3,15 @@ type: principle
 status: frozen
 version: 0.2.0
 title: Giảm thiểu quyền lực vai trò
-summary: Giảm sự phụ thuộc vào quyền lực gắn với chức danh bằng cách chuyển ảnh hưởng sang năng lực, cấu trúc và tiêu chí khách quan. Quyền lực vị trí càng ít bị dùng làm công cụ, tổ chức càng giảm rủi ro điểm mù và đề kháng giả tạo.
+summary: Giảm sự phụ thuộc vào quyền lực gắn với chức danh bằng cách chuyển ảnh hưởng sang năng lực, cấu
+  trúc và tiêu chí khách quan. Quyền lực vị trí càng ít bị dùng làm công cụ, tổ chức càng giảm rủi ro
+  điểm mù và đề kháng giả tạo.
 primary_domain: dung-nhan
 secondary_domains:
 - tri-nhan
-definition: Giảm thiểu quyền lực vai trò là nguyên tắc thiết kế tổ chức nhằm hạn chế việc dùng vị trí chức danh làm nguồn tác động chính; thay vào đó, ảnh hưởng được dựa trên năng lực đã chứng minh, luận cứ và cơ chế ra quyết định minh bạch.
+definition: Giảm thiểu quyền lực vai trò là nguyên tắc thiết kế tổ chức nhằm hạn chế việc dùng vị trí
+  chức danh làm nguồn tác động chính; thay vào đó, ảnh hưởng được dựa trên năng lực đã chứng minh, luận
+  cứ và cơ chế ra quyết định minh bạch.
 conditions:
 - Tổ chức có phân cấp chức danh nhưng công việc đòi hỏi phán đoán chuyên môn.
 - Tồn tại cơ chế ghi nhận đóng góp ngoài thứ bậc.
@@ -29,7 +33,14 @@ risks:
 evidence:
   level: supported
   references:
-  - EV-REQ-0001-01
+  - '[Nghiên cứu thực nghiệm] Edmondson, A. (1999). Psychological safety and learning behavior in work
+    teams. Administrative Science Quarterly, 44(2), 350-383 (Tác động của chênh lệch quyền lực lên sự
+    cởi mở thông tin và học hỏi nhóm).'
+  - '[Nghiên cứu thực nghiệm] French, J. R., & Raven, B. (1959). The bases of social power. In D. Cartwright
+    (Ed.), Studies in Social Power (pp. 150-167). University of Michigan Press.'
+  - '[Nguồn cổ điển] Tư Mã Quang — Tư Trị Thông Giám (Điển tích Đường Thái Tông chủ động tiết chế uy quyền
+    thiên tử để mở đường can gián cho Ngụy Trưng).'
+  - '[Suy luận biên tập] Thiết kế quy tắc phát biểu và trọng số chuyên môn trong hội đồng.'
 relations:
   supports: []
   conflicts_with: []
@@ -50,3 +61,25 @@ mechanism:
 - Chuyển trọng số đánh giá sang luận cứ, dữ liệu và năng lực đã chứng minh.
 - Thiết kế cơ chế để người ít quyền vẫn có kênh ảnh hưởng hợp pháp.
 - Định kỳ rà soát xem quyền hạn thực tế có vượt quá nhu cầu công việc hay không.
+content: "### 1. Cơ chế Chuyển dịch từ Quyền lực Chức danh sang Thẩm quyền Chuyên môn\n**Giảm thiểu quyền\
+  \ lực vai trò** (`NT-PRINCIPLE-0063`) là nguyên tắc thiết kế tương tác quản trị nhằm hạn chế việc dùng\
+  \ cấp bậc hành chính (legitimate/coercive power theo French & Raven, 1959) làm căn cứ kết luận trong\
+  \ các bài toán chuyên môn. Khi người đứng đầu sớm áp đặt ý kiến bằng vị thế, cấp dưới thường điều chỉnh\
+  \ phát biểu theo hướng thuận chiều để giảm rủi ro cá nhân, làm mất nguồn dữ liệu thực địa.\n\n### 2.\
+  \ Điều kiện áp dụng & Ngoại lệ\n- **Điều kiện áp dụng:**\n  - Các quyết định kỹ thuật, kiến trúc sản\
+  \ phẩm, chẩn đoán nguyên nhân gốc rễ (post-mortem) hoặc đánh giá rủi ro đầu tư — nơi chất lượng thông\
+  \ tin quan trọng hơn tốc độ tuân lệnh.\n  - Đội ngũ có đủ năng lực chuyên môn và thiện chí hợp tác để\
+  \ đóng góp ý kiến có căn cứ.\n- **Ngoại lệ:**\n  - Tình huống ứng cứu khẩn cấp đòi hỏi chuỗi chỉ huy\
+  \ tập trung một đầu mối để hành động tức thời.\n  - Các quyết định thuộc thẩm quyền chịu trách nhiệm\
+  \ pháp lý cá nhân không thể ủy quyền của người đại diện theo pháp luật.\n\n### 3. Mức bất định & Rủi\
+  \ ro diễn giải sai\n- **Mức bất định:** Trung bình. Hiệu quả của việc giảm sử dụng quyền lực vai trò\
+  \ phụ thuộc vào văn hóa khoảng cách quyền lực (power distance) của tổ chức và mức độ rõ ràng của tiêu\
+  \ chí ra quyết định.\n- **Rủi ro diễn giải sai:**\n  - Đánh đồng việc tiết chế quyền lực chức danh với\
+  \ việc buông lỏng trách nhiệm chốt quyết định cuối cùng, dẫn đến thảo luận kéo dài không có người chịu\
+  \ trách nhiệm.\n  - Tạo khoảng trống quyền lực hình thức khiến các nhóm lợi ích ngầm không chính thức\
+  \ thao túng cuộc họp.\n\n### 4. Nguồn truy nguyên & Đối chiếu Đông - Tây\n- **Nguồn truy nguyên:** Phân\
+  \ loại nguồn quyền lực xã hội của French & Raven (1959) và nghiên cứu thực nghiệm về an toàn tâm lý\
+  \ trong nhóm làm việc của Amy Edmondson (1999).\n- **Đối chiếu cổ điển `[Nguồn cổ điển]`:** *Tư Trị\
+  \ Thông Giám* ghi lại việc Đường Thái Tông nhận thức rõ uy thế của bậc quân vương dễ khiến quần thần\
+  \ im lặng giữ thân, do đó phải chủ động hạ thấp sắc mặt và thiết lập cơ chế bảo vệ người nói thẳng (*Kiêm\
+  \ thính tắc minh*).\n"

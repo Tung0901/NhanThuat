@@ -18,7 +18,7 @@ applications:
 risks:
 - Dùng giám sát trực quan để công khai chỉ trích những nhân viên làm việc chậm.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0017-01
 relations:

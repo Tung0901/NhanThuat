@@ -18,7 +18,7 @@ applications:
 risks:
 - Xử lý các cáo buộc sai ẩn danh nhắm vào đồng nghiệp vô tội.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0020-01
 relations:

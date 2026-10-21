@@ -18,7 +18,7 @@ applications:
 risks:
 - Giảm động lực ngắn hạn khi hoãn thưởng quá xa về tương lai.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0009-01
 relations:

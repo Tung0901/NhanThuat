@@ -28,7 +28,7 @@ risks:
 - Coi thất bại là vấn đề quan điểm khiến lỗi hệ thống không được sửa.
 - Dùng học hỏi từ thất bại để né tránh trách nhiệm cá nhân rõ ràng.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

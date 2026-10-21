@@ -23,7 +23,7 @@ applications:
 risks:
 - Chuyển sang Giai đoạn 3 trước khi mối đe dọa về mặt cảm xúc được vô hiệu hóa hoàn toàn.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0011-01
 relations:

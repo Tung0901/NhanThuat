@@ -18,7 +18,7 @@ applications:
 risks:
 - Bàn giao mã nguồn chưa hoàn thiện dưới áp lực của nhịp độ.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0017-01
 relations:

@@ -27,7 +27,7 @@ risks:
 - Quan hệ đối tác dài hạn bị phá vỡ.
 - Xung đột leo thang khi bên bị ép tìm cách phục hồi thế cân bằng.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

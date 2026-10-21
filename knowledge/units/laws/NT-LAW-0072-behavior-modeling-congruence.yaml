@@ -18,7 +18,7 @@ applications:
 risks:
 - Giả định rằng các tuyên bố giá trị bằng văn bản có thể tạo ra văn hóa mà không cần đến hành vi làm gương của người lãnh đạo.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0019-01
 relations:

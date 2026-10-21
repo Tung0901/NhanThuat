@@ -18,7 +18,7 @@ applications:
 risks:
 - Buộc nhân viên cấp thấp phải trực tiếp giải quyết tranh chấp với cấp trên quá khắt khe.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0011-01
 relations:

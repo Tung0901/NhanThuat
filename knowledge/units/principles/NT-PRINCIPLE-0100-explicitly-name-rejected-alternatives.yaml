@@ -18,7 +18,7 @@ applications:
 risks:
 - Việc nêu tên các phương án bị bác bỏ gây ra ma sát chính trị.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0016-01
 relations:

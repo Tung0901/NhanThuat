@@ -24,7 +24,7 @@ applications:
 risks:
 - Nhầm lẫn giữa miền Phức tạp và Rối ren, dẫn đến việc lạm dụng phân tích cho các hệ thống phi tuyến tính
 evidence:
-  level: supported
+  level: provisional
   references: []
 relations:
   supports: []

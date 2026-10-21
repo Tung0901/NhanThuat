@@ -27,7 +27,7 @@ risks:
 - Đánh giá cấu trúc cứng nhắc bỏ lỡ khả năng thích ứng của con người.
 - Coi độ khớp cấu trúc là yếu tố duy nhất thay vì cân nhắc tổng thể.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

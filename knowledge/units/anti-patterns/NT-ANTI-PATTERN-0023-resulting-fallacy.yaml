@@ -18,7 +18,7 @@ applications:
 risks:
 - Áp dụng sai hoặc không kiểm soát được Ngụy biện Dựa trên Kết quả dẫn đến đánh giá hiệu suất kém tối ưu.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

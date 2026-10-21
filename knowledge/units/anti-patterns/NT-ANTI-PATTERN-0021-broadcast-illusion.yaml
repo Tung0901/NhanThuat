@@ -18,7 +18,7 @@ applications:
 risks:
 - Áp dụng sai hoặc không nhận diện được Ảo tưởng truyền phát dẫn đến hiệu suất giao tiếp và vận hành không đạt tối ưu.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

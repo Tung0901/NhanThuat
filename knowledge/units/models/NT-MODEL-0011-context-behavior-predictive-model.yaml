@@ -27,7 +27,7 @@ risks:
 - Bỏ qua biến động tình huống khiến dự báo sai lệch.
 - Dùng mô hình để ngụy biện cho việc ép con người vào môi trường xấu.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

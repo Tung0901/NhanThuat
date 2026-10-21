@@ -22,7 +22,7 @@ applications:
 risks:
 - Tạo ra điểm nghẽn đơn lẻ (Single Point of Failure), gây rủi ro gián đoạn vận hành nghiêm trọng khi nhân sự nghỉ việc.
 evidence:
-  level: supported
+  level: provisional
   references: []
 relations:
   supports: []

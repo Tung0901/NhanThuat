@@ -18,7 +18,7 @@ applications:
 risks:
 - Tích lũy quá nhiều danh sách kiểm tra quá khắt khe làm nghẽn tốc độ thực thi.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0018-01
 relations:

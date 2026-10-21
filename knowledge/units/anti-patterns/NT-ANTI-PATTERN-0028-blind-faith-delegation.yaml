@@ -18,7 +18,7 @@ applications:
 risks:
 - Khắc phục sai Ủy quyền mù quáng có thể dẫn đến hành vi quản lý vi mô quá mức, làm triệt tiêu sự chủ động của nhân sự.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

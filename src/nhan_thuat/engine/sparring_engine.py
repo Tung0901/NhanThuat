@@ -144,6 +144,7 @@ class SparringEngine:
         philosophy_lens: str = "auto",
         initial_context: str | None = None,
         metadata: dict[str, Any] | None = None,
+        owner_id: str = "system",
     ) -> SparringSession:
         """Initialize a new sparring session."""
         meta = dict(metadata or {})
@@ -163,6 +164,7 @@ class SparringEngine:
             title=title,
             philosophy_lens=philosophy_lens,
             metadata=meta,
+            owner_id=owner_id,
         )
         if initial_context:
             self.db.add_message(
@@ -178,6 +180,7 @@ class SparringEngine:
         session_id: str,
         user_message: str,
         override_lens: str | None = None,
+        owner_id: str = "system",
     ) -> dict[str, Any]:
         """
         Process a single sparring turn:
@@ -189,7 +192,11 @@ class SparringEngine:
         session = self.db.get_session(session_id)
         if not session:
             # Auto-create session if not exists
-            session = self.start_session(title=user_message[:50], philosophy_lens=override_lens or "auto")
+            session = self.start_session(
+                title=user_message[:50],
+                philosophy_lens=override_lens or "auto",
+                owner_id=owner_id,
+            )
             session_id = session.id
 
         prior_messages = self.db.list_messages(session_id)

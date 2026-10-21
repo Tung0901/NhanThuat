@@ -18,7 +18,7 @@ applications:
 risks:
 - Thay đổi quy tắc khuyến khích quá thường xuyên gây bất ổn cho nhân viên.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0009-01
 relations:

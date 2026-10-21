@@ -22,7 +22,7 @@ applications:
 risks:
 - Để giai đoạn sụp đổ vượt khỏi tầm kiểm soát dẫn đến tổn thất nghiêm trọng không thể phục hồi
 evidence:
-  level: supported
+  level: provisional
   references: []
 relations:
   supports: []

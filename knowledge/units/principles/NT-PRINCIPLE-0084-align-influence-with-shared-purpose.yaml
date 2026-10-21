@@ -27,7 +27,7 @@ risks:
 - Mục đích chung mơ hồ không đủ để dẫn dắt hành động.
 - Áp đặt định nghĩa mục đích chung theo quan điểm một bên.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

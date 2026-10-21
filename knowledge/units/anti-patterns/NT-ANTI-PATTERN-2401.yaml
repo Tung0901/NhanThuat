@@ -22,7 +22,7 @@ applications:
 risks:
 - Nguy cơ sụp đổ hoặc đình trệ toàn bộ hệ thống ngay lập tức khi nhân sự chủ chốt rời đi hoặc gặp sự cố.
 evidence:
-  level: supported
+  level: provisional
   references: []
 relations:
   supports: []

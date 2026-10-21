@@ -27,7 +27,7 @@ risks:
 - Gây quá tải thông tin khiến khung giá trị không còn hữu ích.
 - Đối phương khai thác thông tin minh bạch để chiếm lợi thế.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

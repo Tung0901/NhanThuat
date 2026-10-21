@@ -18,7 +18,7 @@ applications:
 risks:
 - Áp dụng sai hoặc không nhận diện được Ảo tưởng quyền lực dẫn đến hiệu suất tổ chức không đạt mức tối ưu.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

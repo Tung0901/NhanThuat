@@ -27,7 +27,7 @@ risks:
 - Bên có thông tin lợi dụng bất đối xứng để trục lợi.
 - Đàm phán kéo dài do chi phí xác minh cao.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

@@ -3,12 +3,14 @@ type: phenomenon
 status: draft
 version: 1.0.0
 title: Hiệu ứng Chim mồi (Decoy Effect)
-summary: Khách hàng sẽ thay đổi ưu tiên giữa hai lựa chọn khi xuất hiện một lựa chọn thứ ba hoàn toàn bất đối xứng.
+summary: Khách hàng sẽ thay đổi ưu tiên giữa hai lựa chọn khi xuất hiện một lựa chọn thứ ba hoàn toàn
+  bất đối xứng.
 primary_domain: dung-nhan
 domain_area: NT-DA-0027
 secondary_domains:
 - thanh-su
-definition: Lựa chọn mồi nhử không được thiết kế để bán, mà được thiết kế để làm cho một trong các lựa chọn khác trở nên hấp dẫn hơn hẳn.
+definition: Lựa chọn mồi nhử không được thiết kế để bán, mà được thiết kế để làm cho một trong các lựa
+  chọn khác trở nên hấp dẫn hơn hẳn.
 conditions:
 - Lựa chọn chim mồi phải rõ ràng kém hơn lựa chọn mục tiêu trên một khía cạnh, nhưng giá tương đương.
 exceptions:
@@ -21,7 +23,15 @@ risks:
 evidence:
   level: strong
   references:
-  - Dan Ariely, Predictably Irrational (2008)
+  - '[Nghiên cứu thực nghiệm] Huber, J., Payne, J. W., & Puto, C. (1982). Adding asymmetrically dominated
+    alternatives: Violations of regularity and the similarity hypothesis. Journal of Consumer Research,
+    9(1), 90-98 (Nghiên cứu gốc về hiệu ứng ưu thế bất đối xứng).'
+  - '[Nghiên cứu thực nghiệm] Frederick, S., Lee, L., & Baskin, E. (2014). The limits of attraction. Journal
+    of Marketing Research, 51(4), 487-507 (Điều kiện giới hạn của hiệu ứng chim mồi đối với trải nghiệm
+    phi định lượng).'
+  - '[Sách phổ thông] Ariely, D. (2008). Predictably Irrational: The Hidden Forces That Shape Our Decisions.
+    HarperCollins.'
+  - '[Suy luận biên tập] Quy tắc đạo đức và giới hạn áp dụng kiến trúc lựa chọn trong định giá.'
 relations:
   supports: []
   conflicts_with: []
@@ -38,3 +48,26 @@ mechanism:
 - Lựa chọn mồi làm nổi bật ưu thế của một trong hai lựa chọn gốc.
 - Người tiêu dùng chuyển ưu tiên sang lựa chọn được mồi làm nổi bật.
 - Quyết định thay đổi trong khi giá trị thực của các lựa chọn không đổi.
+content: "### 1. Cơ chế Ưu thế Bất đối xứng trong Kiến trúc Lựa chọn\n**Hiệu ứng Chim mồi (Decoy Effect\
+  \ / Asymmetric Dominance Effect)** (`NT-PHENOMENON-4102`), được chứng minh thực nghiệm bởi Huber, Payne\
+  \ & Puto (1982), xảy ra khi người ra quyết định đang phân vân giữa hai phương án có sự đánh đổi khó\
+  \ so sánh (ví dụ: Phương án A rẻ nhưng ít tính năng; Phương án B đắt nhưng nhiều tính năng). Sự xuất\
+  \ hiện của Phương án C (chim mồi) — bị Phương án B áp đảo hoàn toàn nhưng chỉ bị Phương án A áp đảo\
+  \ một phần — cung cấp một điểm tựa so sánh dễ dàng, làm tăng xác suất người mua chọn Phương án B.\n\n\
+  ### 2. Điều kiện áp dụng & Ngoại lệ\n- **Điều kiện áp dụng:**\n  - Các thuộc tính của sản phẩm/gói dịch\
+  \ vụ được biểu diễn bằng con số định lượng rõ ràng (dung lượng, số lượng giấy phép, mức giá) đặt cạnh\
+  \ nhau trên cùng bảng so sánh.\n  - Người mua chưa có sẵn hàm ưu tiên cố định trước khi xem bảng giá.\n\
+  - **Ngoại lệ:**\n  - Khi các thuộc tính mang tính cảm tính, hình ảnh hoặc trải nghiệm khó quy đổi định\
+  \ lượng trực tiếp (Frederick, Lee & Baskin, 2014 chứng minh hiệu ứng suy yếu mạnh hoặc biến mất trong\
+  \ các bối cảnh này).\n  - Người mua chuyên nghiệp đã xác định trước ngân sách trần cứng hoặc nhu cầu\
+  \ kỹ thuật tối thiểu.\n\n### 3. Mức bất định & Rủi ro diễn giải sai\n- **Mức bất định:** Trung bình.\
+  \ Hiệu ứng mang tính xác suất thống kê trên tập mẫu lớn, không đảm bảo dịch chuyển lựa chọn của từng\
+  \ cá nhân đơn lẻ.\n- **Rủi ro diễn giải sai:**\n  - Thiết kế phương án chim mồi quá lộ liễu hoặc vô\
+  \ lý khiến khách hàng cảm thấy bị thao túng và mất thiện cảm với thương hiệu.\n  - Lạm dụng thủ thuật\
+  \ trình bày phương án trong báo cáo tham mưu nội bộ để dẫn dắt cấp trên chọn phương án định sẵn thay\
+  \ vì phân tích trung thực các đánh đổi.\n\n### 4. Nguồn truy nguyên & Đối chiếu Đông - Tây\n- **Nguồn\
+  \ truy nguyên:** Bài báo nền tảng của Huber, Payne & Puto (1982), nghiên cứu kiểm chứng giới hạn của\
+  \ Frederick et al. (2014) và sách phổ biến khoa học của Dan Ariely (2008).\n- **Đối chiếu cổ điển `[Nguồn\
+  \ cổ điển]`:** Nghệ thuật thiết lập phương án so sánh trong *Chiến Quốc Sách* và *Quỷ Cốc Tử* (phép\
+  \ đặt thượng sách - trung sách - hạ sách) cho thấy việc trình bày một phương án đối chiếu giúp người\
+  \ nghe nhận rõ ưu thế tương đối của phương án trọng tâm.\n"

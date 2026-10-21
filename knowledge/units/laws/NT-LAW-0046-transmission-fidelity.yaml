@@ -27,7 +27,7 @@ risks:
 - Tin xấu bị làm mềm dẫn tới phản ứng chậm với khủng hoảng.
 - Trách nhiệm không truy được nguồn gốc khi sai lệch tích lũy.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

@@ -22,7 +22,7 @@ applications:
 risks:
 - Đánh giá sai mức độ sẵn sàng của nhân viên và giao Cấp độ 4 quá sớm.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0013-01
 relations:

@@ -28,7 +28,7 @@ risks:
 - Xung đột quan hệ gia tăng do kiệt sức.
 - Mặc định kém được duy trì vì không còn năng lực đánh giá lại.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

@@ -27,7 +27,7 @@ risks:
 - Vòng lặp kín bị bỏ qua trong giao tiếp văn bản quan trọng.
 - Quá tải phản hồi làm chậm các kênh thông tin đơn giản.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

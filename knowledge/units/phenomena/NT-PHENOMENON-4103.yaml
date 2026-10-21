@@ -3,12 +3,14 @@ type: phenomenon
 status: draft
 version: 1.0.0
 title: Hiệu ứng Ảo tưởng Sự thật (Illusory Truth Effect)
-summary: Con người có xu hướng tin một thông tin là sự thật chỉ vì họ đã nghe nó lặp đi lặp lại nhiều lần.
+summary: Con người có xu hướng tin một thông tin là sự thật chỉ vì họ đã nghe nó lặp đi lặp lại nhiều
+  lần.
 primary_domain: hop-chung
 domain_area: NT-DA-0026
 secondary_domains:
 - tri-nhan
-definition: Sự lặp lại liên tục làm tăng tính lưu loát nhận thức (cognitive fluency), khiến não bộ tốn ít năng lượng hơn để xử lý thông tin, từ đó mặc định gán cho nó mác "đáng tin".
+definition: Sự lặp lại liên tục làm tăng tính lưu loát nhận thức (cognitive fluency), khiến não bộ tốn
+  ít năng lượng hơn để xử lý thông tin, từ đó mặc định gán cho nó mác "đáng tin".
 conditions:
 - Thông tin được lặp lại một cách tinh tế và nhất quán.
 exceptions:
@@ -21,7 +23,14 @@ risks:
 evidence:
   level: strong
   references:
-  - Hasher, Goldstein, and Toppino (1977)
+  - '[Nghiên cứu thực nghiệm] Hasher, L., Goldstein, D., & Toppino, T. (1977). Frequency and the conference
+    of referential validity. Journal of Verbal Learning and Verbal Behavior, 16(1), 107-112 (Thực nghiệm
+    gốc về tần suất lặp và độ tin cậy).'
+  - '[Nghiên cứu thực nghiệm] Fazio, L. K., Brashier, N. M., Payne, B. K., & Marsh, E. J. (2015). Knowledge
+    does not protect against illusory truth. Journal of Experimental Psychology: General, 144(5), 993-1002.'
+  - '[Nguồn cổ điển] Chiến Quốc Sách — Tần Sách (Điển tích Tăng Sâm giết người và Lưỡi câu truyền miệng:
+    ''Tam nhân thành hổ'').'
+  - '[Suy luận biên tập] Cơ chế kiểm chứng chéo nguồn tin độc lập trong quản trị.'
 relations:
   supports: []
   conflicts_with: []
@@ -39,3 +48,27 @@ mechanism:
 - Não bộ tiêu tốn ít năng lượng hơn và gán cảm giác quen thuộc.
 - Cảm giác quen thuộc được diễn giải thành tín hiệu đáng tin.
 - Niềm tin vào thông tin tăng lên bất kể tính xác thực của nội dung.
+content: "### 1. Cơ chế Lưu loát Nhận thức và Ảo giác Đáng tin\n**Hiệu ứng Ảo tưởng Sự thật (Illusory\
+  \ Truth Effect)** (`NT-PHENOMENON-4103`), được xác lập thực nghiệm bởi Hasher, Goldstein & Toppino (1977),\
+  \ chỉ ra rằng khi một mệnh đề được lặp lại qua nhiều lần tiếp xúc, não bộ xử lý mệnh đề đó nhanh và\
+  \ ít tốn nỗ lực hơn (processing fluency). Hệ thống nhận thức thường quy gán nhầm cảm giác quen thuộc\
+  \ và trôi chảy này thành tín hiệu của tính xác thực, ngay cả khi người nghe vốn có kiến thức nền liên\
+  \ quan (Fazio et al., 2015).\n\n### 2. Điều kiện áp dụng & Ngoại lệ\n- **Điều kiện áp dụng:**\n  - Môi\
+  \ trường thông tin nhiễu loạn, người tiếp nhận bị quá tải nhận thức hoặc không có thời gian đối chiếu\
+  \ dữ liệu gốc tại thời điểm nghe.\n  - Cùng một nhận định được lặp lại qua nhiều kênh trung gian có\
+  \ vẻ độc lập nhưng thực chất bắt nguồn từ một nguồn tin ban đầu.\n- **Ngoại lệ:**\n  - Khi người tiếp\
+  \ nhận đang ở chế độ kiểm toán bằng chứng chủ động (active verification) với dữ liệu đối chứng trực\
+  \ tiếp ngay trước mặt.\n  - Khi nguồn phát thông tin đã bị xác nhận là có xung đột lợi ích trực tiếp\
+  \ và người nghe được cảnh báo ngay tại thời điểm mã hóa thông tin.\n\n### 3. Mức bất định & Rủi ro diễn\
+  \ giải sai\n- **Mức bất định:** Thấp - Trung bình. Hiệu ứng lặp lại làm dịch chuyển điểm đánh giá độ\
+  \ tin cậy trung bình trên diện rộng, nhưng mức độ chuyển hóa thành hành động thực tế còn phụ thuộc vào\
+  \ chi phí và rủi ro của hành động đó.\n- **Rủi ro diễn giải sai:**\n  - Trong quản trị nội bộ, nhầm\
+  \ lẫn một nhận định được nhiều phòng ban nhắc lại nhiều lần là dữ liệu đã kiểm chứng (trong khi đó chỉ\
+  \ là sự lặp lại của một giả định ban đầu chưa ai đo lường).\n  - Sử dụng sự lặp lại khẩu hiệu để thay\
+  \ thế cho việc giải quyết các bất cập thực tế trong vận hành.\n\n### 4. Nguồn truy nguyên & Đối chiếu\
+  \ Đông - Tây\n- **Nguồn truy nguyên:** Thực nghiệm tâm lý học nhận thức của Hasher, Goldstein & Toppino\
+  \ (1977) và nghiên cứu mở rộng của Fazio et al. (2015).\n- **Đối chiếu cổ điển `[Nguồn cổ điển]`:**\
+  \ *Chiến Quốc Sách* ghi lại hai điển tích kinh điển là *Tăng Sâm giết người* (mẹ Tăng Sâm ban đầu không\
+  \ tin, nhưng đến người thứ ba báo tin thì hoảng sợ bỏ khung cửi chạy) và *Tam nhân thành hổ* (Bàng Thông\
+  \ tâu với Ngụy Vương về việc ba người cùng nói có hổ ngoài chợ), phản ánh chính xác cơ chế tần suất\
+  \ lặp lại làm biến dạng phán đoán xác thực.\n"

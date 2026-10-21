@@ -23,7 +23,7 @@ applications:
 risks:
 - Giao quyền cho kẻ độc tài mà thiếu các cơ chế tham vấn cần thiết.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0013-01
 relations:

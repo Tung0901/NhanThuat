@@ -22,7 +22,7 @@ risks:
 - Quyết định sai lầm gây thiệt hại về tài chính và chiến lược do bỏ qua dữ liệu trọng yếu.
 - Phá vỡ tinh thần làm việc của nhân sự phân tích dữ liệu (data teams) khi kết quả của họ bị gạt bỏ bởi "cảm giác" của lãnh đạo.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

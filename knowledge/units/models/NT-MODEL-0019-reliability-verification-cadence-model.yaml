@@ -27,7 +27,7 @@ risks:
 - Duy trì nhịp kiểm tra dày đặc làm xói mòn quan hệ tin cậy.
 - Dữ liệu lịch sử bị đọc sai dẫn tới nhịp độ không phù hợp.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

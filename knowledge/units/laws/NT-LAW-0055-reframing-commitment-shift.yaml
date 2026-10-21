@@ -28,7 +28,7 @@ risks:
 - Thay khung liên tục làm xói mòn ổn định ưu tiên.
 - Khung mới không được củng cố bằng hành động thực tế sẽ mất hiệu lực.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

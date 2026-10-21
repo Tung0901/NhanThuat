@@ -28,7 +28,7 @@ risks:
 - Duy trì kiểm tra dày đặc làm chi phí phối hợp vượt lợi ích.
 - Bảo đảm hình thức không được kiểm định định kỳ sẽ mất giá trị.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

@@ -27,7 +27,7 @@ risks:
 - Ranh giới không rõ khiến sai phạm xảy ra không ai chịu trách nhiệm.
 - Trao tự do hình thức nhưng vẫn can thiệp từng bước.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

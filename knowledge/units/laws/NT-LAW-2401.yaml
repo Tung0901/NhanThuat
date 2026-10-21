@@ -22,7 +22,7 @@ applications:
 risks:
 - Sự dư thừa không hợp lý dẫn đến lãng phí nguồn lực và giảm năng lực cạnh tranh
 evidence:
-  level: supported
+  level: provisional
   references: []
 relations:
   supports: []

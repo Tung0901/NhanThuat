@@ -23,7 +23,7 @@ applications:
 risks:
 - Phân loại nhầm các khoản đầu tư rủi ro cao hợp pháp thành hành vi bóc lột trục lợi.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0020-01
 relations:

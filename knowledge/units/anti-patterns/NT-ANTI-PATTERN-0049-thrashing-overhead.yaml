@@ -23,7 +23,7 @@ applications:
 risks:
 - Từ chối điều chỉnh hướng đi khi có thông tin bất ngờ mang tính thảm họa xảy ra.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0017-01
 relations:

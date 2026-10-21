@@ -18,7 +18,7 @@ applications:
 risks:
 - Tạo ra các kiểm tra phần mềm cứng nhắc chặn cả các phá lệ khẩn cấp hợp lệ.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0020-01
 relations:

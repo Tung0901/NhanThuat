@@ -18,7 +18,7 @@ applications:
 risks:
 - Làm mờ trách nhiệm giải trình cá nhân do quá nhấn mạnh vào các chỉ số nhóm.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0009-01
 relations:

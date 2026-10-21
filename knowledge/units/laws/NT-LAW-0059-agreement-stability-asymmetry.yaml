@@ -27,7 +27,7 @@ risks:
 - Thỏa thuận có lợi trước mắt nhưng bất ổn về dài hạn do bất đối xứng.
 - Bên yếu thế chịu toàn bộ rủi ro điều chỉnh khi thị trường thay đổi.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

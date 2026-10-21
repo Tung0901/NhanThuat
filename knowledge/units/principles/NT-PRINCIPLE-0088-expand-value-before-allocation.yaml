@@ -28,7 +28,7 @@ risks:
 - Mở rộng giá trị nhưng phân bổ bất công gây xói mòn quan hệ.
 - Tối ưu tổng giá trị làm phức tạp thỏa thuận khó thực thi.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

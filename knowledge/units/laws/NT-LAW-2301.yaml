@@ -22,7 +22,7 @@ applications:
 risks:
 - Bị thao túng và giới hạn quyết định bởi mỏ neo do đối phương thiết lập
 evidence:
-  level: supported
+  level: provisional
   references: []
 relations:
   supports: []

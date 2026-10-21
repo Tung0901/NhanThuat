@@ -18,7 +18,7 @@ applications:
 risks:
 - Biến họp ngắn thành các buổi báo cáo hành chính giá trị thấp.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0017-01
 relations:

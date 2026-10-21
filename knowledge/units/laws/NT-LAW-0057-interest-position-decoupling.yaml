@@ -27,7 +27,7 @@ risks:
 - Suy đoán sai lợi ích thật dẫn tới đề xuất lệch hướng.
 - Khai mở lợi ích nhưng bị đối phương khai thác đơn phương.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

@@ -25,7 +25,6 @@ import json
 import mimetypes
 import os
 import re
-import time
 import uuid
 from html import escape as html_escape
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -37,17 +36,21 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from backend.app.auth import AuthenticationError, _ACTIVE_SESSIONS, auth_manager
-from backend.app.engine.nhan_thuat_api import diagnose_person_role_fit, diagnose_team_structural_fit, process_nhan_thuat_analysis
+from backend.app.auth import _ACTIVE_SESSIONS, AuthenticationError, auth_manager  # noqa: F401
+from backend.app.engine.nhan_thuat_api import (
+    diagnose_person_role_fit,
+    diagnose_team_structural_fit,
+    process_nhan_thuat_analysis,
+)
 from backend.app.engine.payment import PAYMENT_UNAVAILABLE_MESSAGE, TIERS, payment_gateway
 from backend.app.engine.philosophies.iching_service import iching_service
 from backend.app.engine.runtime import BusinessOSRuntimeOrchestrator, RuntimeRequestPayload
-from nhan_thuat.council.council_engine import CouncilEngine
-from nhan_thuat.casework import CaseFileRepository, CaseFileService, EpistemicClaim
-from nhan_thuat.engine.sparring_engine import SparringEngine
 from modules.connectors.webhook_connector import enterprise_connector
 from modules.nhan_thuat.continuous_profiler import continuous_profiler
 from modules.nhan_thuat.service import NhanThuatBehavioralService
+from nhan_thuat.casework import CaseFileRepository, CaseFileService, EpistemicClaim
+from nhan_thuat.council.council_engine import CouncilEngine
+from nhan_thuat.engine.sparring_engine import SparringEngine
 from nhan_thuat.export.executive_brief import ExecutiveBriefExporter
 from nhan_thuat.knowledge_engine import KnowledgeEngine
 from nhan_thuat.packs.department_pack import DepartmentPackRegistry
@@ -122,7 +125,7 @@ def render_markdown_to_html(text: str) -> str:
         stripped = line.strip()
 
         # Handle fenced code block
-        if stripped.startswith("```") or stripped.startswith("~~~"):
+        if stripped.startswith(("```", "~~~")):
             if in_code:
                 code_text = html_escape("\n".join(code_lines))
                 html_parts.append(f"<pre><code>{code_text}</code></pre>")
@@ -238,7 +241,7 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
             self.wfile.write(response_bytes)
             try:
                 self.wfile.flush()
-            except Exception:
+            except Exception:  # noqa: BLE001, S110
                 pass
 
     def _send_html_response(self, status_code: int, html_content: str) -> None:
@@ -253,7 +256,7 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
             self.wfile.write(encoded)
             try:
                 self.wfile.flush()
-            except Exception:
+            except Exception:  # noqa: BLE001, S110
                 pass
 
     def _case_file_session(self) -> dict[str, Any] | None:
@@ -270,6 +273,19 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
                 "message": "A valid Bearer session is required.",
             })
         return session
+
+    def _is_sparring_admin(self, auth_session: dict[str, Any]) -> bool:
+        """Return True only when the authenticated user is the explicit admin account/role."""
+        user_id = str(auth_session.get("user_id", "")).strip().lower()
+        role = str(auth_session.get("role", "")).strip().upper()
+        return user_id == "admin" or role == "ADMIN"
+
+    def _can_access_sparring_session(self, sparring_session: Any, auth_session: dict[str, Any]) -> bool:
+        """Verify that the authenticated user owns the sparring session or is an authorized admin."""
+        if self._is_sparring_admin(auth_session):
+            return True
+        user_id = str(auth_session.get("user_id", "")).strip()
+        return bool(user_id and getattr(sparring_session, "owner_id", "") == user_id)
 
     def do_HEAD(self) -> None:
         self.do_GET()
@@ -435,10 +451,10 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
                                 self.wfile.write(f.read(content_length))
                                 try:
                                     self.wfile.flush()
-                                except Exception:
+                                except Exception:  # noqa: BLE001, S110
                                     pass
                         return
-                    except Exception:
+                    except Exception:  # noqa: BLE001, S110
                         pass
 
                 self.send_response(200)
@@ -452,7 +468,7 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
                         self.wfile.write(f.read())
                         try:
                             self.wfile.flush()
-                        except Exception:
+                        except Exception:  # noqa: BLE001, S110
                             pass
             else:
                 self.send_response(404)
@@ -502,7 +518,7 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
                     self.wfile.write(data)
                     try:
                         self.wfile.flush()
-                    except Exception:
+                    except Exception:  # noqa: BLE001, S110
                         pass
             else:
                 self.send_response(404)
@@ -867,7 +883,13 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
 
         # 4a. Sparring Sessions & Messages API: GET /api/v1/sparring/sessions, GET /api/v1/sparring/sessions/{session_id}
         if path == "/api/v1/sparring/sessions":
-            sessions = db_manager.list_sessions()
+            auth_session = self._require_case_file_session()
+            if auth_session is None:
+                return
+            if self._is_sparring_admin(auth_session):
+                sessions = db_manager.list_sessions()
+            else:
+                sessions = db_manager.list_sessions(owner_id=auth_session["user_id"])
             self._send_json_response(200, {
                 "status": "success",
                 "count": len(sessions),
@@ -876,17 +898,56 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
             return
 
         if path.startswith("/api/v1/sparring/sessions/"):
-            session_id = path.split("/api/v1/sparring/sessions/")[1]
-            session = db_manager.get_session(session_id)
-            if session:
+            auth_session = self._require_case_file_session()
+            if auth_session is None:
+                return
+            tail = path.split("/api/v1/sparring/sessions/", 1)[1]
+            if tail.endswith("/export"):
+                session_id = tail.removesuffix("/export").strip("/")
+                fmt = (parse_qs(parsed_url.query).get("format") or ["html"])[0].lower()
+                session = db_manager.get_session(session_id)
+                if not session:
+                    self._send_json_response(404, {"status": "error", "message": f"Session '{session_id}' not found."})
+                    return
+                if not self._can_access_sparring_session(session, auth_session):
+                    self._send_json_response(403, {
+                        "status": "error",
+                        "error_code": "FORBIDDEN",
+                        "message": "Forbidden: You do not have permission to access this sparring session.",
+                    })
+                    return
                 messages = db_manager.list_messages(session_id)
-                self._send_json_response(200, {
-                    "status": "success",
-                    "session": session.to_dict(),
-                    "messages": [m.to_dict() for m in messages],
-                })
-            else:
+                rendered = brief_exporter.export_sparring_session(session, messages, format=fmt)
+                if fmt == "html":
+                    self._send_html_response(200, rendered)
+                else:
+                    self._send_json_response(200, {
+                        "status": "success",
+                        "session_id": session_id,
+                        "format": fmt,
+                        "content": rendered,
+                        "document": rendered,
+                    })
+                return
+
+            session_id = tail
+            session = db_manager.get_session(session_id)
+            if not session:
                 self._send_json_response(404, {"status": "error", "message": f"Session '{session_id}' not found."})
+                return
+            if not self._can_access_sparring_session(session, auth_session):
+                self._send_json_response(403, {
+                    "status": "error",
+                    "error_code": "FORBIDDEN",
+                    "message": "Forbidden: You do not have permission to access this sparring session.",
+                })
+                return
+            messages = db_manager.list_messages(session_id)
+            self._send_json_response(200, {
+                "status": "success",
+                "session": session.to_dict(),
+                "messages": [m.to_dict() for m in messages],
+            })
             return
 
         # 4b. Operational CaseFile API. This is intentionally separate from historical CaseStudy.
@@ -1052,7 +1113,7 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
                                 unit_dict["raw_data"]["content"] = generated
                             else:
                                 unit_dict["content"] = generated
-                    except Exception as e:
+                    except Exception as e:  # noqa: BLE001
                         print(f"[ERROR] Auto-generate content failed for {unit_id}: {e}")
 
                 self._send_json_response(200, {"status": "success", "unit": unit_dict})
@@ -1274,6 +1335,9 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
 
         # 0a. Sparring Sessions & Messages POST: POST /api/v1/sparring/sessions, POST /api/v1/sparring/messages
         if path == "/api/v1/sparring/sessions":
+            auth_session = self._require_case_file_session()
+            if auth_session is None:
+                return
             title = payload.get("title", "Phiên Đấu Trí Điều Hành")
             lens = payload.get("philosophy_lens", "auto")
             initial_context = payload.get("context") or payload.get("initial_context")
@@ -1283,6 +1347,7 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
                 philosophy_lens=lens,
                 initial_context=initial_context,
                 metadata=metadata,
+                owner_id=auth_session["user_id"],
             )
             self._send_json_response(201, {
                 "status": "success",
@@ -1291,6 +1356,9 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
             return
 
         if path == "/api/v1/sparring/messages":
+            auth_session = self._require_case_file_session()
+            if auth_session is None:
+                return
             session_id = payload.get("session_id")
             message = payload.get("message") or payload.get("content", "")
             lens = payload.get("philosophy_lens")
@@ -1300,14 +1368,34 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
                     "message": "Field 'message' or 'content' is required.",
                 })
                 return
-            if not session_id:
-                session = sparring_engine.start_session(title=message[:50], philosophy_lens=lens or "auto")
+            if session_id:
+                existing_session = db_manager.get_session(session_id)
+                if not existing_session:
+                    self._send_json_response(404, {
+                        "status": "error",
+                        "message": f"Session '{session_id}' not found.",
+                    })
+                    return
+                if not self._can_access_sparring_session(existing_session, auth_session):
+                    self._send_json_response(403, {
+                        "status": "error",
+                        "error_code": "FORBIDDEN",
+                        "message": "Forbidden: You do not have permission to write to this sparring session.",
+                    })
+                    return
+            else:
+                session = sparring_engine.start_session(
+                    title=message[:50],
+                    philosophy_lens=lens or "auto",
+                    owner_id=auth_session["user_id"],
+                )
                 session_id = session.id
-            
+
             turn_result = sparring_engine.process_turn(
                 session_id=session_id,
                 user_message=message,
                 override_lens=lens,
+                owner_id=auth_session["user_id"],
             )
             self._send_json_response(200, turn_result)
             return
@@ -1475,7 +1563,7 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
                     "round": round_result.to_dict(),
                     "session": session.to_dict() if session else None,
                 })
-            except Exception as e:
+            except Exception as e:  # noqa: BLE001
                 self._send_json_response(400, {
                     "status": "error",
                     "message": str(e),
@@ -1492,7 +1580,7 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
                     "report": report,
                     "session": session.to_dict() if session else None,
                 })
-            except Exception as e:
+            except Exception as e:  # noqa: BLE001
                 self._send_json_response(400, {
                     "status": "error",
                     "message": str(e),
@@ -1515,7 +1603,7 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
                     "interrogation": interrogation,
                     "session": session.to_dict() if session else None,
                 })
-            except Exception as e:
+            except Exception as e:  # noqa: BLE001
                 self._send_json_response(400, {
                     "status": "error",
                     "message": str(e),
@@ -1694,7 +1782,7 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
                 result = process_nhan_thuat_analysis(scenario_text, scenario_type_hint)
                 status_code = 422 if result.get("status") == "error" else 200
                 self._send_json_response(status_code, result)
-            except Exception as e:
+            except Exception as e:  # noqa: BLE001
                 self._send_json_response(500, {
                     "status": "INTERNAL_ERROR",
                     "error_code": "ANALYSIS_FAILED",

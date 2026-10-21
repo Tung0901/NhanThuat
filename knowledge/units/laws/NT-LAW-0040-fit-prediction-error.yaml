@@ -27,7 +27,7 @@ risks:
 - Đánh giá quá tự tin vào khả năng đọc người.
 - Bỏ qua chi phí thời gian để một người thích ứng với vai trò.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

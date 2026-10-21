@@ -23,7 +23,7 @@ applications:
 risks:
 - Bỏ qua việc kỷ luật hành vi lơ là nghiêm trọng lặp đi lặp lại.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0018-01
 relations:

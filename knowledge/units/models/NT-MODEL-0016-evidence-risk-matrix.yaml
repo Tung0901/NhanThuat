@@ -27,7 +27,7 @@ risks:
 - Áp dụng máy móc ma trận cho tình huống đặc thù.
 - Trì hoãn vô hạn các quyết định ở vùng cần thêm bằng chứng.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

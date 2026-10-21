@@ -18,7 +18,7 @@ applications:
 risks:
 - Quy định quá chi tiết quyền quyết định đến mức tạo ra các rào cản phòng ban cứng nhắc.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0013-01
 relations:

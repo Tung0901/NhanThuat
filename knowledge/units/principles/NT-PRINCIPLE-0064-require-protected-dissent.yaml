@@ -27,7 +27,7 @@ risks:
 - Người phản biện bị cô lập ngầm dù không có hình thức trừng phạt.
 - Phản biện vô trách nhiệm làm chậm mọi quyết định.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

@@ -23,7 +23,7 @@ risks:
 - Đạt được những thỏa thuận dưới mức tối ưu (sub-optimal agreements).
 - Phá vỡ các mối quan hệ đối tác chiến lược lâu dài.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

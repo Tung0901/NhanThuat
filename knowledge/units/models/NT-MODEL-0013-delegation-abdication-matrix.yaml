@@ -27,7 +27,7 @@ risks:
 - Trao tự chủ không kèm hỗ trợ dẫn tới thất bại rồi siết quyền.
 - Coi ma trận là công cụ chấm điểm cá nhân thay vì chẩn đoán cấu trúc.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

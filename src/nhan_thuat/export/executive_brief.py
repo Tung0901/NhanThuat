@@ -7,6 +7,7 @@ for board decisions, sparring transcripts, and department case studies.
 from __future__ import annotations
 
 from datetime import UTC, datetime
+from html import escape as html_escape
 from typing import Any
 
 from nhan_thuat.storage.models import CaseStudy, SparringMessage, SparringSession
@@ -76,25 +77,55 @@ class ExecutiveBriefExporter:
         if format.lower() == "html":
             return self._render_sparring_html(session, messages)
 
+        safe_title = html_escape(str(session.title or ""), quote=True)
+        safe_id = html_escape(str(session.id or ""), quote=True)
+        safe_lens = html_escape(str(session.philosophy_lens or ""), quote=True)
+        safe_created = html_escape(str(session.created_at or ""), quote=True)
+        safe_status = html_escape(str(session.status or "").upper(), quote=True)
+
         lines = [
-            f"# BIÊN BẢN ĐẤU TRÍ ĐIỀU HÀNH - {session.title.upper()}",
-            f"- **Mã phiên:** `{session.id}`",
-            f"- **Lăng kính triết học:** `{session.philosophy_lens}`",
-            f"- **Thời gian khởi tạo:** {session.created_at}",
-            f"- **Trạng thái:** `{session.status.upper()}`",
+            f"# BIÊN BẢN ĐẤU TRÍ ĐIỀU HÀNH - {safe_title}",
+            f"- **Mã phiên:** `{safe_id}`",
+            f"- **Lăng kính triết học:** `{safe_lens}`",
+            f"- **Thời gian khởi tạo:** {safe_created}",
+            f"- **Trạng thái:** `{safe_status}`",
             "",
+        ]
+
+        meta = getattr(session, "metadata", {}) or {}
+        if isinstance(meta, dict):
+            opp_name = html_escape(
+                str(meta.get("opponent_name") or meta.get("persona_label") or ""), quote=True
+            )
+            opp_role = html_escape(str(meta.get("opponent_role", "")), quote=True)
+            opp_pers = html_escape(str(meta.get("opponent_personality", "")), quote=True)
+            opp_lev = html_escape(
+                str(meta.get("opponent_leverage") or meta.get("opening_challenge") or ""),
+                quote=True,
+            )
+            if opp_name or opp_role or opp_pers or opp_lev:
+                lines.append(
+                    f"- **Hồ sơ đối thủ:** {opp_name or 'Đối thủ giả định'} ({opp_role or 'Không rõ vai trò'}) "
+                    f"| Tính cách: {opp_pers or 'Thận trọng'} | Đòn bẩy: {opp_lev or 'Chưa xác định'}"
+                )
+                lines.append("")
+
+        lines.extend([
             "---",
             "",
             "## DIỄN BIẾN PHIÊN ĐỐI THOẠI PHẢN BIỆN",
             "",
-        ]
+        ])
 
         for i, msg in enumerate(messages, 1):
             role_badge = "👔 CHỦ TỊCH / NGƯỜI DÙNG" if msg.role == "user" else ("⚔️ CỐ VẤN ĐẤU TRÍ NHÂN THUẬT" if msg.role == "assistant" else "⚙️ HỆ THỐNG")
-            lines.append(f"### Lượt #{i} • {role_badge} ({msg.created_at})")
-            lines.append(msg.content)
+            safe_msg_created = html_escape(str(msg.created_at or ""), quote=True)
+            safe_msg_content = html_escape(str(msg.content or ""), quote=True)
+            lines.append(f"### Lượt #{i} • {role_badge} ({safe_msg_created})")
+            lines.append(safe_msg_content)
             if msg.matched_unit_ids:
-                lines.append(f"\n*Căn cứ tri thức viện dẫn: {', '.join(msg.matched_unit_ids)}*")
+                safe_units = ", ".join(html_escape(str(uid), quote=True) for uid in msg.matched_unit_ids)
+                lines.append(f"\n*Căn cứ tri thức viện dẫn: {safe_units}*")
             lines.append("\n---\n")
 
         return "\n".join(lines)
@@ -295,33 +326,77 @@ class ExecutiveBriefExporter:
             bg = "#f8fafc" if is_user else "#0f172a"
             color = "#0f172a" if is_user else "#ffffff"
             border = "#e2e8f0" if is_user else "#f59e0b"
-            role_text = "👔 CHỦ TỊCH / NGƯỜI DÙNG" if is_user else "⚔️ CỐ VẤN ĐẤU TRÍ NHÂN THUẬT"
-            
+            role_text = (
+                "👔 CHỦ TỊCH / NGƯỜI DÙNG"
+                if is_user
+                else ("⚔️ CỐ VẤN ĐẤU TRÍ NHÂN THUẬT" if msg.role == "assistant" else "⚙️ HỆ THỐNG")
+            )
+            safe_msg_created = html_escape(str(msg.created_at or ""), quote=True)
+            safe_msg_content = html_escape(str(msg.content or ""), quote=True)
+            safe_units_html = ""
+            if msg.matched_unit_ids:
+                escaped_units = ", ".join(html_escape(str(uid), quote=True) for uid in msg.matched_unit_ids)
+                safe_units_html = (
+                    f"<div style='margin-top:10px; font-size:11px; color:#94a3b8;'>"
+                    f"Tri thức viện dẫn: {escaped_units}</div>"
+                )
+
             msgs_html += f"""
             <div style="background:{bg}; color:{color}; border:1px solid {border}; border-radius:12px; padding:16px 20px; margin-bottom:16px;">
                 <div style="font-size:12px; font-weight:700; color:{'#64748b' if is_user else '#fbbf24'}; margin-bottom:8px;">
-                    Lượt #{i} • {role_text} ({msg.created_at})
+                    Lượt #{i} • {role_text} ({safe_msg_created})
                 </div>
-                <div style="font-size:14px; line-height:1.6; white-space:pre-wrap;">{msg.content}</div>
-                {f"<div style='margin-top:10px; font-size:11px; color:#94a3b8;'>Tri thức viện dẫn: {', '.join(msg.matched_unit_ids)}</div>" if msg.matched_unit_ids else ""}
+                <div style="font-size:14px; line-height:1.6; white-space:pre-wrap;">{safe_msg_content}</div>
+                {safe_units_html}
             </div>
             """
+
+        meta = getattr(session, "metadata", {}) or {}
+        opp_name = (
+            html_escape(str(meta.get("opponent_name") or meta.get("persona_label") or ""), quote=True)
+            if isinstance(meta, dict)
+            else ""
+        )
+        opp_role = html_escape(str(meta.get("opponent_role", "")), quote=True) if isinstance(meta, dict) else ""
+        opp_pers = html_escape(str(meta.get("opponent_personality", "")), quote=True) if isinstance(meta, dict) else ""
+        opp_lev = (
+            html_escape(str(meta.get("opponent_leverage") or meta.get("opening_challenge") or ""), quote=True)
+            if isinstance(meta, dict)
+            else ""
+        )
+        opp_banner = ""
+        if opp_name or opp_role or opp_pers or opp_lev:
+            opp_banner = f"""
+            <div style="background:#fffbeb; border:1px solid #fde68a; border-left:4px solid #f59e0b; border-radius:8px; padding:12px 16px; margin-bottom:20px; font-size:13px; color:#78350f;">
+                <strong>🎯 HỒ SƠ ĐỐI THỦ ĐẤU TRÍ:</strong> {opp_name or 'Đối thủ giả định'} ({opp_role or 'Không rõ vai trò'})<br>
+                <span>• <strong>Tính cách / Phản xạ:</strong> {opp_pers or 'Thận trọng, thực dụng'} | <strong>Con bài tẩy / Thế kẹt:</strong> {opp_lev or 'Chưa xác định'}</span>
+            </div>
+            """
+
+        safe_title = html_escape(str(session.title or ""), quote=True)
+        safe_id = html_escape(str(session.id or ""), quote=True)
+        safe_lens = html_escape(str(session.philosophy_lens or ""), quote=True)
+        safe_created = html_escape(str(session.created_at or ""), quote=True)
 
         return f"""<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>BIÊN BẢN ĐẤU TRÍ - {session.title}</title>
+    <title>BIÊN BẢN ĐẤU TRÍ - {safe_title}</title>
     <style>
-        body {{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 40px auto; max-width: 900px; color: #0f172a; line-height: 1.6; }}
+        body {{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 40px auto; max-width: 900px; padding: 0 20px; color: #0f172a; line-height: 1.6; }}
         h1 {{ border-bottom: 2px solid #f59e0b; padding-bottom: 10px; font-size: 24px; }}
         code {{ background: #f1f5f9; color: #b45309; padding: 2px 6px; border-radius: 4px; font-family: 'Consolas', monospace; font-size: 0.9em; }}
+        .print-btn {{ position: fixed; right: 24px; bottom: 24px; background: #f59e0b; color: #0f172a; border: none; padding: 12px 20px; border-radius: 8px; font-weight: 700; cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,0.2); }}
+        @media print {{ .print-btn {{ display: none; }} body {{ margin: 0; max-width: 100%; }} }}
     </style>
 </head>
 <body>
-    <h1>BIÊN BẢN ĐẤU TRÍ ĐIỀU HÀNH: {session.title}</h1>
-    <p style="color:#64748b; font-size:13px;">Mã phiên: <code>{session.id}</code> • Lăng kính: <strong>{session.philosophy_lens}</strong> • Khởi tạo: {session.created_at}</p>
+    <h1>BIÊN BẢN ĐẤU TRÍ ĐIỀU HÀNH: {safe_title}</h1>
+    <p style="color:#64748b; font-size:13px;">Mã phiên: <code>{safe_id}</code> • Lăng kính: <strong>{safe_lens}</strong> • Khởi tạo: {safe_created}</p>
+    {opp_banner}
     <hr style="border:none; border-top:1px solid #e2e8f0; margin:20px 0;">
     {msgs_html}
+    <button class="print-btn" onclick="window.print()">In / Lưu PDF</button>
 </body>
 </html>"""

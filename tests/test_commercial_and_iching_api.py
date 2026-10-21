@@ -221,3 +221,51 @@ def test_tier_naming_and_claims_are_not_superlative():
             assert "15 Lăng Kính" not in feat
             assert "7 Thành Viên" not in feat
 
+
+def test_sparring_export_and_executive_workflow_ui(commercial_api):
+    request, _, _ = commercial_api
+    code, s_data = request(
+        "POST",
+        "/api/v1/sparring/sessions",
+        {
+            "title": "Đấu trí: Đàm phán đơn giá nhà thầu",
+            "philosophy_lens": "LEGALISM",
+            "initial_context": "Nhà thầu phụ chậm tiến độ 10 ngày đòi tạm ứng thêm 30%.",
+        },
+        authenticated=True,
+    )
+    assert code == 201
+    session_id = s_data["session"]["id"]
+
+    code, _ = request(
+        "POST",
+        "/api/v1/sparring/messages",
+        {
+            "session_id": session_id,
+            "message": "Chúng tôi chỉ giải ngân khi nghiệm thu xong mốc kỹ thuật giai đoạn 1.",
+        },
+        authenticated=True,
+    )
+    assert code == 200
+
+    code, exp_md = request(
+        "GET",
+        f"/api/v1/sparring/sessions/{session_id}/export?format=markdown",
+        authenticated=True,
+    )
+    assert code == 200
+    assert exp_md["status"] == "success"
+    assert "BIÊN BẢN ĐẤU TRÍ" in exp_md["document"]
+
+    html = Path("frontend/app.html").read_text(encoding="utf-8")
+    assert "sparring-export-btn" in html
+    assert "exportCurrentSparringSession" in html
+    assert "iching-matrix-section" in html
+    assert "loadIChingHexagrams" in html
+    assert "transferAdvisoryToSparring" in html
+    assert "transferCouncilToSparring" in html
+    assert "transferCouncilToWarRoom" in html
+    assert "addCustomDiagTag" in html
+    assert "stream-role-input" in html
+    assert "stream-clarity-select" in html
+    assert "stream-constraints-select" in html

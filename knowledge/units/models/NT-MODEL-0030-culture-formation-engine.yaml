@@ -23,7 +23,7 @@ applications:
 risks:
 - Chỉ tập trung vào Biểu trưng mà phớt lờ vai trò Hành vi của Lãnh đạo.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0019-01
 relations:

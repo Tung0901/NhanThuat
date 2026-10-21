@@ -18,7 +18,7 @@ applications:
 risks:
 - Không sử dụng quyền lực khi sự tuân thủ được yêu cầu về mặt pháp lý.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0013-01
 relations:

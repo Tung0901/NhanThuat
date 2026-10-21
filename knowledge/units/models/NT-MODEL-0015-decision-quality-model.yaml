@@ -27,7 +27,7 @@ risks:
 - Bỏ qua thành phần thực thi khiến quyết định đúng không được triển khai.
 - Dùng điểm số để hợp thức hóa quyết định đã định trước.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

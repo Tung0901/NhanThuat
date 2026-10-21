@@ -23,7 +23,7 @@ applications:
 risks:
 - Thiết lập các bài học sai lệch do dựa trên tập mẫu dữ liệu quá nhỏ.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0018-01
 relations:

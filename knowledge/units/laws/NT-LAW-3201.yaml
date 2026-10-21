@@ -3,12 +3,14 @@ type: law
 status: draft
 version: 1.0.0
 title: Quy luật Giá trị Cảm nhận
-summary: Khách hàng không mua giá trị thực tế của sản phẩm, họ mua giá trị cảm nhận và sự giải tỏa cảm xúc mà sản phẩm mang lại.
+summary: Khách hàng không mua giá trị thực tế của sản phẩm, họ mua giá trị cảm nhận và sự giải tỏa cảm
+  xúc mà sản phẩm mang lại.
 primary_domain: thanh-su
 domain_area: NT-DA-0031
 secondary_domains:
 - tri-nhan
-definition: Định giá của não bộ không dựa trên chi phí cấu thành sản phẩm, mà dựa trên bối cảnh so sánh, câu chuyện thương hiệu và kỳ vọng về cảm xúc.
+definition: Định giá của não bộ không dựa trên chi phí cấu thành sản phẩm, mà dựa trên bối cảnh so sánh,
+  câu chuyện thương hiệu và kỳ vọng về cảm xúc.
 conditions:
 - Khi thông tin về giá trị thực tế bị thiếu hoặc khó đánh giá.
 - Khi sản phẩm gắn liền với nhu cầu thể hiện bản thân hoặc giảm thiểu rủi ro tâm lý.
@@ -20,10 +22,17 @@ applications:
 risks:
 - Thổi phồng giá trị cảm nhận quá mức dẫn đến khủng hoảng niềm tin khi trải nghiệm thực tế kém.
 evidence:
-  level: strong
+  level: supported
   references:
-  - Rory Sutherland, Alchemy (2019)
-  - Richard Thaler, Misbehaving (2015)
+  - '[Nghiên cứu thực nghiệm] Plassmann, H., O''Doherty, J., Shiv, B., & Rangel, A. (2008). Marketing
+    actions can modulate neural representations of experienced pleasantness. PNAS, 105(3), 1050-1054 (Thực
+    nghiệm fMRI về định giá và cảm nhận).'
+  - '[Nghiên cứu thực nghiệm] Thaler, R. H. (1985). Mental accounting and consumer choice. Marketing Science,
+    4(3), 199-214 (Cơ chế lợi ích giao dịch và giá tham chiếu).'
+  - '[Sách phổ thông] Sutherland, R. (2019). Alchemy: The Dark Art and Curious Science of Creating Magic
+    in Brands, Business, and Life. William Morrow.'
+  - '[Suy luận biên tập] Phân tích biên giới giữa định vị giá trị cảm nhận và rủi ro đứt gãy kỳ vọng sau
+    mua trong thương mại B2B/B2C.'
 relations:
   supports: []
   conflicts_with: []
@@ -41,3 +50,26 @@ mechanism:
 - Giá trị cảm nhận cao hoặc thấp được hình thành trước khi xem chi tiết.
 - Giá trị cảm nhận dẫn dắt hành vi mua và mức sẵn sàng chi trả.
 - Yếu tố cấu thành thực tế chỉ tác động đến quyết định ở mức thứ yếu.
+content: "### 1. Cơ chế Hình thành Giá trị Cảm nhận\n**Quy luật Giá trị Cảm nhận** (`NT-LAW-3201`) phản\
+  \ ánh hiện tượng người mua đánh giá sản phẩm thông qua khung tham chiếu bối cảnh, tín hiệu uy tín và\
+  \ mức giải tỏa lo âu hơn là chỉ cộng dồn chi phí sản xuất vật lý. Trong kinh tế học hành vi, Richard\
+  \ Thaler (1985) phân tách tổng hữu dụng thành *hữu dụng thu nhận* (acquisition utility) và *hữu dụng\
+  \ giao dịch* (transaction utility): mức sẵn sàng chi trả phụ thuộc mạnh vào điểm neo tham chiếu mà bối\
+  \ cảnh giao dịch thiết lập.\n\n### 2. Điều kiện áp dụng & Ngoại lệ\n- **Điều kiện áp dụng:**\n  - Giao\
+  \ dịch có độ bất đối xứng thông tin cao hoặc chất lượng khó kiểm định ngay trước khi sử dụng (dịch vụ\
+  \ tư vấn, phần mềm doanh nghiệp, sản phẩm trải nghiệm).\n  - Người mua chịu áp lực trách nhiệm giải\
+  \ trình trước tập thể và cần tín hiệu giảm rủi ro tâm lý.\n- **Ngoại lệ:**\n  - Hàng hóa tiêu chuẩn\
+  \ hóa (commodity) có thông số kỹ thuật minh bạch, mua sắm qua đấu thầu định lượng hoặc hợp đồng kỳ hạn.\n\
+  \  - Bối cảnh người mua có quy trình kiểm thử kỹ thuật độc lập (blind testing) tách rời thương hiệu\
+  \ khỏi hiệu năng thực tế.\n\n### 3. Mức bất định & Rủi ro diễn giải sai\n- **Mức bất định:** Trung bình\
+  \ (phụ thuộc vào độ trưởng thành thông tin của thị trường và tần suất lặp lại giao dịch). Hiệu ứng bối\
+  \ cảnh mạnh ở lần mua đầu nhưng suy giảm nhanh ở các chu kỳ gia hạn nếu hiệu năng vận hành thực tế không\
+  \ đáp ứng kỳ vọng.\n- **Rủi ro diễn giải sai:**\n  - Nhầm lẫn quy luật này thành lời khuyên coi nhẹ\
+  \ chất lượng cốt lõi để tập trung vào hình thức bề ngoài.\n  - Áp dụng định giá cảm xúc vào nhóm khách\
+  \ hàng kỹ thuật chuyên sâu khiến đối tác nghi ngờ tính minh bạch.\n\n### 4. Nguồn truy nguyên & Đối\
+  \ chiếu Đông - Tây\n- **Nguồn truy nguyên:** Kết hợp thực nghiệm thần kinh học tiêu dùng (Plassmann\
+  \ et al., 2008), lý thuyết kế toán tâm lý (Thaler, 1985) và quan sát thực hành định vị của Rory Sutherland\
+  \ (2019).\n- **Đối chiếu cổ điển `[Nguồn cổ điển]`:** Chiến Quốc Sách (tích *Sở vương hiếu tế yêu* và\
+  \ tích *Bá Nhạc xem ngựa*) chỉ ra rằng giá trị trao đổi trên thị trường biến thiên theo tín hiệu thẩm\
+  \ định của người có uy tín và bối cảnh khan hiếm, nhưng về dài hạn vẫn phải chịu sự kiểm chứng của công\
+  \ năng thực tế (*Hàn Phi Tử — Công Danh*).\n"

@@ -9,6 +9,7 @@ from typing import Any
 import yaml
 
 SUPPORTED_SUFFIXES = {".yaml", ".yml", ".json"}
+_YAML_SAFE_LOADER = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
 
 
 class LoadError(ValueError):
@@ -21,7 +22,11 @@ def load_document(path: str | Path) -> dict[str, Any]:
         raise LoadError(f"Unsupported file type: {source}")
     try:
         with source.open(encoding="utf-8") as stream:
-            data = json.load(stream) if source.suffix.lower() == ".json" else yaml.safe_load(stream)
+            data = (
+                json.load(stream)
+                if source.suffix.lower() == ".json"
+                else yaml.load(stream, Loader=_YAML_SAFE_LOADER)
+            )
     except (OSError, json.JSONDecodeError, yaml.YAMLError) as exc:
         raise LoadError(f"Cannot load {source}: {exc}") from exc
     if not isinstance(data, dict):

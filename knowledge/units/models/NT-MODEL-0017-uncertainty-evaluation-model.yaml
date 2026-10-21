@@ -27,7 +27,7 @@ risks:
 - Bỏ qua vùng mơ hồ khiến các bên hiểu khác nhau về cùng mục tiêu.
 - Phân tích quá mức các vấn đề chỉ có thể thăm dò.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

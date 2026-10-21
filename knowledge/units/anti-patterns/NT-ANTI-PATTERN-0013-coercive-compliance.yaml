@@ -3,11 +3,13 @@ type: anti-pattern
 status: frozen
 version: 0.2.0
 title: Sự tuân thủ cưỡng ép
-summary: Tổ chức đạt được sự tuân thủ bề mặt bằng áp lực và chế tài thay vì đồng thuận thực chất. Con người làm theo để tránh hậu quả, không phải vì hiểu và tin vào mục tiêu.
+summary: Tổ chức đạt được sự tuân thủ bề mặt bằng áp lực và chế tài thay vì đồng thuận thực chất. Con
+  người làm theo để tránh hậu quả, không phải vì hiểu và tin vào mục tiêu.
 primary_domain: dung-nhan
 secondary_domains:
 - tri-nhan
-definition: Sự tuân thủ cưỡng ép là phản-mẫu quản trị trong đó hành vi tuân thủ được tạo ra chủ yếu bằng đe dọa, trừng phạt hoặc áp lực quyền lực, dẫn đến tuân thủ hình thức và phản kháng ngầm.
+definition: Sự tuân thủ cưỡng ép là phản-mẫu quản trị trong đó hành vi tuân thủ được tạo ra chủ yếu bằng
+  đe dọa, trừng phạt hoặc áp lực quyền lực, dẫn đến tuân thủ hình thức và phản kháng ngầm.
 conditions:
 - Quan hệ quyền lực bất đối xứng rõ rệt.
 - Mục tiêu thay đổi đòi hỏi mức tự nguyện nhất định để duy trì.
@@ -30,7 +32,15 @@ risks:
 evidence:
   level: supported
   references:
-  - EV-REQ-0001-01
+  - '[Nghiên cứu thực nghiệm] Kelman, H. C. (1958). Compliance, identification, and internalization: Three
+    processes of attitude change. Journal of Conflict Resolution, 2(1), 51-60 (Phân biệt tuân thủ bề mặt
+    do chế tài với đồng nhất hóa và nội tâm hóa).'
+  - '[Nghiên cứu thực nghiệm] Deci, E. L., Koestner, R., & Ryan, R. M. (1999). A meta-analytic review
+    of experiments examining the effects of extrinsic rewards on intrinsic motivation. Psychological Bulletin,
+    125(6), 627-668.'
+  - '[Nguồn cổ điển] Luận Ngữ — Vi Chính (Khổng Tử phân biệt hiệu quả của ''Đạo chi dĩ chính, tề chi dĩ
+    hình'' với ''Đạo chi dĩ đức, tề chi dĩ lễ'').'
+  - '[Suy luận biên tập] Chỉ số nhận diện tuân thủ đối phó và cơ chế chuyển dịch sang cam kết.'
 relations:
   supports: []
   conflicts_with: []
@@ -51,3 +61,25 @@ mechanism:
 - Nhân sự điều chỉnh hành vi bề mặt để tránh hậu quả.
 - Cam kết nội tâm không được hình thành, thậm chí suy giảm.
 - Khi áp lực giảm hoặc người quản lý rời đi, hành vi quay lại hoặc phản kháng.
+content: "### 1. Cơ chế Phân tách giữa Phục tùng Bề mặt và Cam kết Nội tâm\n**Sự tuân thủ cưỡng ép** (`NT-ANTI-PATTERN-0013`)\
+  \ phản ánh trạng thái mà Herbert Kelman (1958) định nghĩa là *compliance* (chấp hành chỉ để tránh hình\
+  \ phạt hoặc nhận phần thưởng tức thời) thay vì *internalization* (nội tâm hóa mục tiêu vì hiểu rõ giá\
+  \ trị và tính hợp lý). Khi quản lý dùng đe dọa làm công cụ điều hành chủ đạo, nhân sự có xu hướng tối\
+  \ ưu hóa việc tránh lỗi trên giấy tờ, che giấu số liệu xấu và ngừng chủ động xử lý các vấn đề ngoài\
+  \ phạm vi bị giám sát trực tiếp.\n\n### 2. Điều kiện áp dụng & Ngoại lệ\n- **Điều kiện áp dụng:**\n\
+  \  - Các công việc đòi hỏi sự chủ động giải quyết vấn đề, chất lượng dịch vụ tinh tế hoặc chia sẻ thông\
+  \ tin trung thực từ tuyến đầu.\n  - Khi chi phí giám sát 100% hành vi của nhân viên là bất khả thi hoặc\
+  \ quá tốn kém.\n- **Ngoại lệ:**\n  - Các quy tắc an toàn lao động tối thiểu, bảo mật thông tin cốt lõi\
+  \ hoặc tuân thủ pháp luật bắt buộc — nơi chế tài nghiêm minh là ranh giới bảo vệ bắt buộc.\n  - Tình\
+  \ huống khẩn cấp ngắn hạn cần lập lại trật tự tức thời trước khi giải thích nguyên nhân sâu xa.\n\n\
+  ### 3. Mức bất định & Rủi ro diễn giải sai\n- **Mức bất định:** Thấp - Trung bình. Các phân tích tổng\
+  \ hợp của Lý thuyết Tự quyết (Deci, Koestner & Ryan, 1999) nhất quán chỉ ra rằng kiểm soát cưỡng ép\
+  \ kéo dài làm suy giảm động lực nội tại, dù tốc độ bộc lộ sự suy giảm phụ thuộc vào điều kiện thị trường\
+  \ lao động và khả năng luân chuyển của nhân sự.\n- **Rủi ro diễn giải sai:**\n  - Nhầm lẫn việc tránh\
+  \ cưỡng ép độc đoán với việc xóa bỏ kỷ luật, tiêu chuẩn đầu ra và trách nhiệm giải trình.\n  - Cho rằng\
+  \ mọi nhân sự đều tự giác như nhau mà không cần khung đánh giá minh bạch kèm theo.\n\n### 4. Nguồn truy\
+  \ nguyên & Đối chiếu Đông - Tây\n- **Nguồn truy nguyên:** Mô hình ba cấp độ thay đổi thái độ của Herbert\
+  \ Kelman (1958) và Lý thuyết Tự quyết (Self-Determination Theory) của Deci & Ryan (1999).\n- **Đối chiếu\
+  \ cổ điển `[Nguồn cổ điển]`:** *Luận Ngữ* (*Vi Chính*) chỉ rõ: dùng mệnh lệnh và hình phạt đơn thuần\
+  \ thì người dưới chỉ tìm cách tránh tội mà không có lòng tự trọng (*dân miễn nhi vô sỉ*); kết hợp chuẩn\
+  \ mực minh bạch với sự thuyết phục và tôn trọng mới tạo ra sự tự giác bền vững (*hữu sỉ thả cách*).\n"

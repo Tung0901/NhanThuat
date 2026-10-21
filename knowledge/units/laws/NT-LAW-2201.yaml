@@ -22,7 +22,7 @@ applications:
 risks:
 - Xung đột ngầm và kéo dài giữa hệ thống quyền lực chính thức và phi chính thức.
 evidence:
-  level: supported
+  level: provisional
   references: []
 relations:
   supports: []

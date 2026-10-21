@@ -23,7 +23,7 @@ applications:
 risks:
 - Kiểm soát ngôn từ tranh luận quá mức đến mức dập tắt nhiệt huyết.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0011-01
 relations:

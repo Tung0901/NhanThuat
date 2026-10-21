@@ -27,7 +27,7 @@ risks:
 - Hợp pháp hóa hình thức che giấu nguồn gốc quyền lực thực tế.
 - Nhầm sự im lặng trong cuộc họp là đồng thuận tập thể.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

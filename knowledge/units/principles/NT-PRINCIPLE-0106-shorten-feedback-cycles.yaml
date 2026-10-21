@@ -18,7 +18,7 @@ applications:
 risks:
 - Phát hành nguyên mẫu chưa trau chuốt làm tổn hại danh tiếng thương hiệu.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0018-01
 relations:

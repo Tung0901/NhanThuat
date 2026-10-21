@@ -23,7 +23,7 @@ applications:
 risks:
 - Làm giảm động lực của các sáng kiến phát triển bền vững thực chất.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0020-01
 relations:

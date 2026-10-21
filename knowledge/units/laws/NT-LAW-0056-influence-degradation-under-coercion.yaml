@@ -28,7 +28,7 @@ risks:
 - Phản kháng ngầm tích tụ đến khi bùng phát khó kiểm soát.
 - Phụ thuộc kiểm soát liên tục làm chi phí quản lý tăng vô hạn.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

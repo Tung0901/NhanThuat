@@ -27,7 +27,7 @@ risks:
 - Định giá bất định hình thức không gắn với ngân sách thực.
 - Dùng bất định làm cái cớ cho mọi thất bại.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

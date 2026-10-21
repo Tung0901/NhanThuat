@@ -18,7 +18,7 @@ applications:
 risks:
 - Để các sai lầm thảm khốc xảy ra vì né tránh việc phủ quyết.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0013-01
 relations:

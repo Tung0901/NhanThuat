@@ -18,7 +18,7 @@ applications:
 risks:
 - Kỳ vọng lãnh đạo luôn luôn hoàn hảo.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0019-01
 relations:

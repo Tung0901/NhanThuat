@@ -27,7 +27,7 @@ risks:
 - Quan liêu hóa quy trình phê duyệt làm tê liệt khả năng quyết định.
 - Bảo vệ che đậy hành vi sai trái của người có quyền.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

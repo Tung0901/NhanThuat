@@ -18,7 +18,7 @@ applications:
 risks:
 - Đặt ngưỡng leo thang quá thấp khiến cấp điều hành bị quá tải.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0013-01
 relations:

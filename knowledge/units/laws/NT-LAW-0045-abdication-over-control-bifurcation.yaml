@@ -27,7 +27,7 @@ risks:
 - Buông bỏ trách nhiệm núp dưới danh nghĩa trao quyền.
 - Chu kỳ lặp lại giữa hai cực gây bất ổn vận hành kéo dài.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

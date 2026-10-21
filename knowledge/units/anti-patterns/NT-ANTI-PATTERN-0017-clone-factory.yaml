@@ -18,7 +18,7 @@ applications:
 risks:
 - Áp dụng sai hoặc xử lý không đúng Nhà máy rập khuôn dẫn đến hiệu suất kém tối ưu.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

@@ -23,7 +23,7 @@ applications:
 risks:
 - Chẩn đoán sai năng lực kém của nhân viên thành lỗi sai cấu trúc trong ma trận khuyến khích.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0009-01
 relations:

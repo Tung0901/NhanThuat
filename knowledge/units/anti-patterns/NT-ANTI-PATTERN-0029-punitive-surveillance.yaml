@@ -27,7 +27,7 @@ risks:
 - Nhân sự giỏi rời bỏ môi trường kiểm soát vi mô.
 - Dữ liệu giám sát bị bóp méo khiến lãnh đạo ra quyết định sai.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

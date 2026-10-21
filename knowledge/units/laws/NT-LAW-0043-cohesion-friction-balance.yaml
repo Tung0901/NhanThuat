@@ -27,7 +27,7 @@ risks:
 - Xung đột quan hệ núp dưới danh nghĩa phản biện thẳng thắn.
 - Ma sát bị triệt tiêu sau một vài xung đột gay gắt.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

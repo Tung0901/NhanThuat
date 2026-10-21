@@ -18,7 +18,7 @@ applications:
 risks:
 - Khắc phục sai Sự khẩn cấp giả tạo có thể dẫn đến tâm lý chủ quan và phản ứng chậm chạp trước các rủi ro thực sự.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

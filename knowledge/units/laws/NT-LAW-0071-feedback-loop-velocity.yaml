@@ -18,7 +18,7 @@ applications:
 risks:
 - Phản ứng thái quá trước những nhiễu loạn ngắn hạn trong các vòng lặp phản hồi nhanh.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0018-01
 relations:

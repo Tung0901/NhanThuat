@@ -27,7 +27,7 @@ risks:
 - Bộc lộ vùng giá trị riêng trong quan hệ thiếu tin cậy.
 - Tối ưu từng vùng mà bỏ qua tính tổng thể của thỏa thuận.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

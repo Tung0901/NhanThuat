@@ -27,7 +27,7 @@ risks:
 - Điều chỉnh khung thiếu nguyên tắc dẫn tới thao túng nhận thức.
 - Hiểu sai im lặng là đồng thuận trong khi thực tế là đề kháng ngầm.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

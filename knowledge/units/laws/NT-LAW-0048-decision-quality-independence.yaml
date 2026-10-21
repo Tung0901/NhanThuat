@@ -27,7 +27,7 @@ risks:
 - Tưởng thưởng quyết định tùy tiện gặp may và lặp lại nó ở quy mô lớn.
 - Học hỏi sai lệch khiến tổ chức không cải thiện được năng lực ra quyết định.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

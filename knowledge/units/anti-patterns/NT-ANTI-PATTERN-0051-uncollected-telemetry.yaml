@@ -23,7 +23,7 @@ applications:
 risks:
 - Thu thập vô số dữ liệu đo lường vô giá trị.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0018-01
 relations:

@@ -27,7 +27,7 @@ risks:
 - Đánh giá thấp tốc độ lan truyền của hành vi tiêu cực phát sinh.
 - Nhầm mẫu phát sinh nhất thời là đặc điểm cố định của nhóm.
 evidence:
-  level: supported
+  level: provisional
   references:
   - EV-REQ-0001-01
 relations:

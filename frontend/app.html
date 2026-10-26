@@ -3559,6 +3559,239 @@
                 margin-bottom: 72px !important;
             }
         }
+
+        /* --- REUSABLE EXECUTIVE WORKBENCH & I-CHING MATRIX CLASSES --- */
+        .text-gold-light { color: var(--gold-light); }
+        .status-text-success { color: #10b981; }
+        .status-text-gold { color: var(--gold-light); }
+        .sparring-context-banner {
+            font-size: 12px;
+            color: var(--text-secondary);
+            background: rgba(245, 158, 11, 0.06);
+            border: 1px dashed rgba(245, 158, 11, 0.3);
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-bottom: 12px;
+        }
+        .sparring-opening-text {
+            margin-top: 6px;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        .sparring-citations-row {
+            margin-top: 10px;
+            padding-top: 8px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .sparring-citations-label {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+        .sparring-citation-chip {
+            font-size: 11px;
+            background: rgba(245, 158, 11, 0.12);
+            color: var(--gold-light);
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+        .sparring-reply-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+        .sparring-reply-title { color: #ef4444; }
+        .sparring-reply-lens {
+            font-size: 11px;
+            background: rgba(239, 68, 68, 0.15);
+            color: #fca5a5;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        .sparring-reply-body {
+            margin: 8px 0;
+            color: #ffffff;
+            line-height: 1.65;
+        }
+        .custom-tag-add-row {
+            display: flex;
+            gap: 6px;
+            margin-top: 10px;
+        }
+        .custom-tag-input {
+            margin-bottom: 0 !important;
+            padding: 6px 10px !important;
+            font-size: 12px !important;
+        }
+        .custom-tag-btn {
+            padding: 6px 10px !important;
+            font-size: 11.5px !important;
+            white-space: nowrap;
+        }
+        .iching-matrix-section {
+            margin-top: 36px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-subtle);
+        }
+        .iching-matrix-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .iching-matrix-title {
+            font-family: var(--font-display);
+            font-size: 18px;
+            color: var(--gold-light);
+            margin-bottom: 4px;
+        }
+        .iching-matrix-subtitle {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+        .iching-search-input {
+            padding: 8px 14px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 12.5px;
+            outline: none;
+            width: 260px;
+        }
+        .iching-search-input:focus {
+            border-color: var(--gold-primary);
+        }
+        .iching-palace-tabs {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 14px;
+        }
+        .iching-detail-drawer {
+            display: none;
+            background: rgba(245, 158, 11, 0.06);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+        }
+        .iching-hexagrams-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 10px;
+            max-height: 380px;
+            overflow-y: auto;
+            padding-right: 4px;
+        }
+        .iching-hex-card {
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            padding: 10px 12px;
+            transition: border-color 0.2s ease, background 0.2s ease;
+        }
+        .iching-hex-card:hover {
+            border-color: var(--gold-primary);
+            background: rgba(245, 158, 11, 0.08);
+        }
+        .iching-hex-card-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+        }
+        .iching-hex-symbol {
+            font-size: 18px;
+            color: var(--gold-light);
+            line-height: 1;
+        }
+        .iching-hex-meta {
+            font-size: 10px;
+            color: var(--text-muted);
+            font-weight: 700;
+        }
+        .iching-hex-title {
+            font-size: 12.5px;
+            color: #ffffff;
+            display: block;
+            margin-bottom: 3px;
+        }
+        .iching-hex-desc {
+            font-size: 11px;
+            color: var(--text-secondary);
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .iching-state-box {
+            grid-column: 1 / -1;
+            text-align: center;
+            color: var(--text-muted);
+            padding: 20px 14px;
+            font-size: 12px;
+            border: 1px dashed var(--border-subtle);
+            border-radius: 8px;
+        }
+        .iching-state-error {
+            color: #fda4af;
+            border-color: rgba(244, 63, 94, 0.35);
+            background: rgba(244, 63, 94, 0.05);
+        }
+        .iching-drawer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 10px;
+        }
+        .iching-drawer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 12px;
+            font-size: 12.5px;
+            line-height: 1.6;
+        }
+        .iching-drawer-box-state {
+            background: rgba(255, 255, 255, 0.025);
+            border-left: 3px solid var(--cyan-accent);
+            padding: 10px 12px;
+            border-radius: 0 8px 8px 0;
+        }
+        .iching-drawer-box-warn {
+            background: rgba(244, 63, 94, 0.06);
+            border-left: 3px solid var(--rose-accent);
+            padding: 10px 12px;
+            border-radius: 0 8px 8px 0;
+        }
+        .iching-drawer-box-action {
+            margin-top: 12px;
+            background: rgba(16, 185, 129, 0.06);
+            border-left: 3px solid var(--emerald-accent);
+            padding: 10px 14px;
+            border-radius: 0 8px 8px 0;
+            font-size: 12.5px;
+        }
+        @media (max-width: 640px) {
+            .iching-search-input {
+                width: 100%;
+            }
+            .iching-hexagrams-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 
     <link href="/css/design-system.css?v=20261016-login3" rel="stylesheet">
@@ -3997,8 +4230,9 @@
                         <h2 style="font-family: var(--font-display); font-size: 20px; color: #ffffff;">⚔️ PHÒNG ĐẤU TRÍ & THƯƠNG THUYẾT ĐỐI KHÁNG</h2>
                         <p style="font-size: 12.5px; color: var(--text-secondary);">Nhập bối cảnh thực tế và chân dung đối phương để rèn luyện phản xạ đối đáp trước những tình huống căng thẳng nhất.</p>
                     </div>
-                    <div style="display: flex; gap: 8px; align-items: center;">
+                    <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
                         <button type="button" class="export-btn" id="sparring-toggle-setup-btn" onclick="toggleSparringSetup()">⚙️ Thiết lập đối thủ</button>
+                        <button type="button" class="export-btn" id="sparring-export-btn" onclick="exportCurrentSparringSession()">📥 Xuất biên bản</button>
                         <button type="button" class="export-btn" onclick="startNewSparring()">+ Ván đấu mới</button>
                     </div>
                 </div>
@@ -4110,7 +4344,7 @@
                             <label class="form-label">Họ tên nhân sự / Ứng viên:</label>
                             <input type="text" class="diag-input" id="diag-person-name" value="Nguyễn Hoàng Long" placeholder="Nhập họ tên...">
 
-                            <label class="form-label">Chọn các thiên hướng tính cách tiềm ẩn mặc định:</label>
+                            <label class="form-label">Chọn hoặc thêm các thiên hướng tính cách tiềm ẩn mặc định:</label>
                             <div class="tags-selector-group" id="diag-traits-group">
                                 <span class="selectable-tag selected" onclick="toggleTag(this)">Tự do sáng tạo</span>
                                 <span class="selectable-tag selected" onclick="toggleTag(this)">Thích tự chủ cao</span>
@@ -4121,15 +4355,19 @@
                                 <span class="selectable-tag" onclick="toggleTag(this)">Hướng nội chuyên môn</span>
                                 <span class="selectable-tag" onclick="toggleTag(this)">Tham vọng quyền lực</span>
                             </div>
+                            <div class="custom-tag-add-row">
+                                <input type="text" class="diag-input custom-tag-input" id="custom-person-trait-input" placeholder="Nhập thiên hướng riêng của nhân sự..." onkeydown="if(event.key==='Enter'){event.preventDefault();addCustomDiagTag('diag-traits-group','custom-person-trait-input');}">
+                                <button type="button" class="export-btn custom-tag-btn" onclick="addCustomDiagTag('diag-traits-group','custom-person-trait-input')">+ Thêm</button>
+                            </div>
                         </div>
 
                         <!-- Right: Role Demands -->
                         <div class="diag-card">
-                            <h3>🎯 KỲ VỌNG VAI TRÒ (ROLE DEMANDS)</h3>
+                            <h3>KỲ VỌNG VAI TRÒ (ROLE DEMANDS)</h3>
                             <label class="form-label">Vị trí đảm nhiệm:</label>
                             <input type="text" class="diag-input" id="diag-role-name" value="Giám Đốc Vận Hành (COO)" placeholder="Nhập chức danh...">
 
-                            <label class="form-label">Chọn các yêu cầu hành vi then chốt của vị trí:</label>
+                            <label class="form-label">Chọn hoặc thêm các yêu cầu hành vi then chốt của vị trí:</label>
                             <div class="tags-selector-group" id="diag-demands-group">
                                 <span class="selectable-tag selected" onclick="toggleTag(this)">Tuân thủ quy trình nghiêm ngặt</span>
                                 <span class="selectable-tag selected" onclick="toggleTag(this)">Giám sát số liệu chi tiết</span>
@@ -4138,10 +4376,14 @@
                                 <span class="selectable-tag" onclick="toggleTag(this)">Sa thải / Kỷ luật nhân sự</span>
                                 <span class="selectable-tag" onclick="toggleTag(this)">Lãnh đạo truyền cảm hứng</span>
                             </div>
+                            <div class="custom-tag-add-row">
+                                <input type="text" class="diag-input custom-tag-input" id="custom-role-demand-input" placeholder="Nhập yêu cầu đặc thù của vị trí..." onkeydown="if(event.key==='Enter'){event.preventDefault();addCustomDiagTag('diag-demands-group','custom-role-demand-input');}">
+                                <button type="button" class="export-btn custom-tag-btn" onclick="addCustomDiagTag('diag-demands-group','custom-role-demand-input')">+ Thêm</button>
+                            </div>
                         </div>
                     </div>
 
-                    <button class="diag-cta-btn" id="run-diagnostic-btn">🚀 Chẩn đoán ma sát nhận thức & đưa ra phán quyết</button>
+                    <button class="diag-cta-btn" id="run-diagnostic-btn">Chẩn đoán ma sát nhận thức & đưa ra phán quyết</button>
 
                     <!-- Diagnostic Results Area -->
                     <div class="diag-result-card" id="diag-result-card">
@@ -4163,20 +4405,20 @@
                         <div style="margin-top: 18px; font-size: 13.5px; line-height: 1.7; color: rgba(255,255,255,0.9);">
                             <p id="diag-cost-analysis" style="margin-bottom: 14px; background: rgba(255,255,255,0.03); padding: 12px 16px; border-radius: 8px; border-left: 3px solid var(--gold-primary);"></p>
 
-                            <h4 style="color: var(--gold-light); font-size: 14px; margin-bottom: 6px;">⚠️ Điểm ma sát nhận diện (Friction Points):</h4>
+                            <h4 style="color: var(--gold-light); font-size: 14px; margin-bottom: 6px;">Điểm ma sát nhận diện (Friction Points):</h4>
                             <ul id="diag-friction-points" style="padding-left: 20px; margin-bottom: 14px; color: #cbd5e1;"></ul>
 
-                            <h4 style="color: var(--emerald-accent); font-size: 14px; margin-bottom: 6px;">🛡️ Chiến lược bù đắp môi trường (Compensatory Strategies):</h4>
+                            <h4 style="color: var(--emerald-accent); font-size: 14px; margin-bottom: 6px;">Chiến lược bù đắp môi trường (Compensatory Strategies):</h4>
                             <ul id="diag-compensatory-list" style="padding-left: 20px; margin-bottom: 16px; color: #cbd5e1;"></ul>
 
                             <div style="padding: 12px 16px; background: rgba(245, 158, 11, 0.08); border-radius: 8px; border: 1px solid rgba(245, 158, 11, 0.2);">
-                                <strong style="color: var(--gold-light);">📌 Phán Quyết Điều Hành: </strong>
+                                <strong style="color: var(--gold-light);">Phán Quyết Điều Hành: </strong>
                                 <span id="diag-verdict-text" style="color: #ffffff; font-weight: 600;"></span>
                             </div>
 
                             <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border-subtle); display: flex; justify-content: flex-end;">
                                 <button class="war-btn-step" id="diag-person-to-war-btn" onclick="transferPersonDiagToWarRoom()" style="width: auto; padding: 8px 16px; font-size: 12px;">
-                                    ♟️ Đưa nhân sự này vào sa bàn mô phỏng
+                                    Đưa nhân sự này vào sa bàn mô phỏng
                                 </button>
                             </div>
                         </div>
@@ -4188,7 +4430,7 @@
                     <div class="diag-grid">
                         <!-- Left: Incoming Candidate/Member -->
                         <div class="diag-card">
-                            <h3>👤 NHÂN SỰ DỰ KIẾN BỔ NHIỆM</h3>
+                            <h3>NHÂN SỰ DỰ KIẾN BỔ NHIỆM</h3>
                             <label class="form-label">Họ tên nhân sự:</label>
                             <input type="text" class="diag-input" id="team-cand-name" value="Trần Đình Trí" placeholder="Họ tên nhân sự...">
 
@@ -4205,12 +4447,16 @@
                                 <span class="selectable-tag" onclick="toggleTag(this)">Ngại xung đột trực diện</span>
                                 <span class="selectable-tag" onclick="toggleTag(this)">Tự do sáng tạo</span>
                             </div>
+                            <div class="custom-tag-add-row">
+                                <input type="text" class="diag-input custom-tag-input" id="custom-cand-trait-input" placeholder="Thêm thiên hướng ứng viên..." onkeydown="if(event.key==='Enter'){event.preventDefault();addCustomDiagTag('team-cand-traits-group','custom-cand-trait-input');}">
+                                <button type="button" class="export-btn custom-tag-btn" onclick="addCustomDiagTag('team-cand-traits-group','custom-cand-trait-input')">+ Thêm</button>
+                            </div>
                         </div>
 
                         <!-- Right: Target Team Context -->
                         <div class="diag-card">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                                <h3>🏛️ ĐỘI NGŨ TIẾP NHẬN (TARGET TEAM)</h3>
+                                <h3>ĐỘI NGŨ TIẾP NHẬN (TARGET TEAM)</h3>
                                 <div style="display: flex; gap: 4px;">
                                     <button class="mode-pill" style="font-size: 10.5px; padding: 2px 8px;" onclick="applyTeamPreset('board')">Ban C-Level</button>
                                     <button class="mode-pill" style="font-size: 10.5px; padding: 2px 8px;" onclick="applyTeamPreset('tech')">Tech Core</button>
@@ -4232,6 +4478,10 @@
                                 <span class="selectable-tag" onclick="toggleTag(this)">Quyết đoán áp đặt</span>
                                 <span class="selectable-tag" onclick="toggleTag(this)">Tư duy cơ hội bứt phá</span>
                                 <span class="selectable-tag" onclick="toggleTag(this)">Thích tự do sáng tạo</span>
+                            </div>
+                            <div class="custom-tag-add-row">
+                                <input type="text" class="diag-input custom-tag-input" id="custom-team-trait-input" placeholder="Thêm đặc tính hiện có của đội ngũ..." onkeydown="if(event.key==='Enter'){event.preventDefault();addCustomDiagTag('team-group-traits-group','custom-team-trait-input');}">
+                                <button type="button" class="export-btn custom-tag-btn" onclick="addCustomDiagTag('team-group-traits-group','custom-team-trait-input')">+ Thêm</button>
                             </div>
                         </div>
                     </div>
@@ -4341,16 +4591,43 @@
                                 </div>
                             </div>
 
-                            <!-- Stream Ingestion Card -->
+                            <!-- Stream Ingestion & Custom Employee Registration Card -->
                             <div class="diag-card" style="margin-bottom: 0; background: rgba(20,20,30,0.6);">
-                                <h3 style="font-size: 13.5px; color: var(--gold-light); margin-bottom: 6px;">⚡ NẠP TÍN HIỆU HÀNH VI MỚI</h3>
+                                <h3 style="font-size: 13.5px; color: var(--gold-light); margin-bottom: 6px;">⚡ THÊM NHÂN SỰ MỚI / NẠP TÍN HIỆU HÀNH VI</h3>
                                 <p style="font-size: 11.5px; color: var(--text-secondary); margin-bottom: 10px; line-height: 1.5;">
-                                    Nhập phát ngôn hoặc quan sát hành vi mới từ Slack, cuộc họp hoặc email để đánh giá biến thiên rủi ro kiệt sức thời gian thực.
+                                    Nhập tên nhân sự mới (hoặc chọn nhân sự đang theo dõi) kèm phát ngôn thực tế từ cuộc họp, Slack, email để định hình hồ sơ DISC & rủi ro rời bỏ.
                                 </p>
-                                <label class="form-label" style="font-size: 11px; margin-bottom: 4px;">Mã định danh / Tên nhân sự:</label>
-                                <input type="text" class="diag-input" id="stream-author-input" value="EMP-HA" placeholder="Ví dụ: EMP-LONG hoặc tên nhân sự..." style="padding: 8px 12px; font-size: 12px; margin-bottom: 8px;">
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px;">
+                                    <div>
+                                        <label class="form-label" style="font-size: 11px; margin-bottom: 4px;">Mã / Họ tên nhân sự:</label>
+                                        <input type="text" class="diag-input" id="stream-author-input" value="EMP-HA (Trần Thu Hà - Head of Product)" placeholder="VD: Nguyễn Văn A..." style="padding: 8px 10px; font-size: 12px; margin-bottom: 0;">
+                                    </div>
+                                    <div>
+                                        <label class="form-label" style="font-size: 11px; margin-bottom: 4px;">Chức danh / Bộ phận (tùy chọn):</label>
+                                        <input type="text" class="diag-input" id="stream-role-input" value="" placeholder="VD: Giám đốc Kinh doanh..." style="padding: 8px 10px; font-size: 12px; margin-bottom: 0;">
+                                    </div>
+                                </div>
 
-                                <label class="form-label" style="font-size: 11px; margin-bottom: 4px;">Nội dung tín hiệu / Lời thoại:</label>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px;">
+                                    <div>
+                                        <label class="form-label" style="font-size: 11px; margin-bottom: 4px;">Độ rõ quy chế (Clarity):</label>
+                                        <select id="stream-clarity-select" class="diag-input" style="padding: 7px 10px; font-size: 11.5px; margin-bottom: 0; background: rgba(15,19,26,0.95); color: #fff;">
+                                            <option value="0.85">Rõ ràng cao (85% - KPIs & SOP chuẩn)</option>
+                                            <option value="0.6" selected>Trung bình (60% - Đang chuyển giao)</option>
+                                            <option value="0.3">Mơ hồ (30% - Thiếu định hướng)</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="form-label" style="font-size: 11px; margin-bottom: 4px;">Rào cản kiểm soát (Constraints):</label>
+                                        <select id="stream-constraints-select" class="diag-input" style="padding: 7px 10px; font-size: 11.5px; margin-bottom: 0; background: rgba(15,19,26,0.95); color: #fff;">
+                                            <option value="0.8">Chặt chẽ (80% - Kỷ luật Pháp gia)</option>
+                                            <option value="0.5" selected>Linh hoạt (50% - Tự chủ vừa phải)</option>
+                                            <option value="0.25">Tự do cao (25% - Ít rào chắn)</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <label class="form-label" style="font-size: 11px; margin-bottom: 4px;">Nội dung tín hiệu / Phát ngôn thực tế:</label>
                                 <textarea id="stream-content-input" class="war-textarea" rows="2" style="font-size: 12px; margin-bottom: 10px;" placeholder="Ví dụ: Nhóm tôi không thể chịu thêm khối lượng này, deadline tuần này là bất khả thi..."></textarea>
 
                                 <button class="send-action-btn" id="stream-submit-btn" onclick="handleStreamIngestion()" style="width: 100%; justify-content: center; padding: 9px 14px; font-size: 12px;">
@@ -4398,6 +4675,41 @@
 
                 <div class="books-grid" id="books-grid-container">
                     <!-- Populated dynamically from DIGITAL_BOOKS + API -->
+                </div>
+
+                <!-- BỘ TRA CỨU TƯƠNG TÁC 64 QUẺ BIẾN DỊCH & BÁT CUNG QUẢN TRỊ -->
+                <div id="iching-matrix-section" class="iching-matrix-section">
+                    <div class="iching-matrix-header">
+                        <div>
+                            <h3 class="iching-matrix-title">
+                                MA TRẬN 64 QUẺ BIẾN DỊCH &amp; 8 CUNG QUẢN TRỊ (<span id="iching-count-badge">64</span> QUẺ)
+                            </h3>
+                            <p class="iching-matrix-subtitle">
+                                Khung tham chiếu định tính 64 trạng thái chuyển pha tổ chức và thời thế hành động theo Bát Cung Chu Dịch.
+                            </p>
+                        </div>
+                        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+                            <input type="text" id="iching-search-input" class="iching-search-input" placeholder="Tìm quẻ theo tên, tình thế, từ khóa..." aria-label="Tìm kiếm 64 quẻ" oninput="filterIChingHexagrams()">
+                        </div>
+                    </div>
+
+                    <div id="iching-palace-tabs" class="iching-palace-tabs">
+                        <button type="button" class="mode-pill iching-palace-pill active" data-palace="" onclick="selectIChingPalace('', this)">Tất cả 64 Quẻ</button>
+                        <button type="button" class="mode-pill iching-palace-pill" data-palace="Càn" onclick="selectIChingPalace('Càn', this)">☰ Cung Càn (Kim)</button>
+                        <button type="button" class="mode-pill iching-palace-pill" data-palace="Khôn" onclick="selectIChingPalace('Khôn', this)">☷ Cung Khôn (Thổ)</button>
+                        <button type="button" class="mode-pill iching-palace-pill" data-palace="Khảm" onclick="selectIChingPalace('Khảm', this)">☵ Cung Khảm (Thủy)</button>
+                        <button type="button" class="mode-pill iching-palace-pill" data-palace="Ly" onclick="selectIChingPalace('Ly', this)">☲ Cung Ly (Hỏa)</button>
+                        <button type="button" class="mode-pill iching-palace-pill" data-palace="Chấn" onclick="selectIChingPalace('Chấn', this)">☳ Cung Chấn (Mộc)</button>
+                        <button type="button" class="mode-pill iching-palace-pill" data-palace="Tốn" onclick="selectIChingPalace('Tốn', this)">☴ Cung Tốn (Mộc)</button>
+                        <button type="button" class="mode-pill iching-palace-pill" data-palace="Cấn" onclick="selectIChingPalace('Cấn', this)">☶ Cung Cấn (Thổ)</button>
+                        <button type="button" class="mode-pill iching-palace-pill" data-palace="Đoài" onclick="selectIChingPalace('Đoài', this)">☱ Cung Đoài (Kim)</button>
+                    </div>
+
+                    <div id="iching-detail-drawer" class="iching-detail-drawer"></div>
+
+                    <div id="iching-hexagrams-grid" class="iching-hexagrams-grid">
+                        <div class="iching-state-box iching-state-loading" data-state="loading">Đang tải Ma trận 64 Quẻ Biến Dịch...</div>
+                    </div>
                 </div>
 
                 <div style="margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border-subtle);">
@@ -4941,6 +5253,15 @@
         }
     }
 
+    function getAuthHeaders(extra = {}) {
+        const s = currentUserSession || getStoredSession();
+        const headers = { ...extra };
+        if (s && s.token) {
+            headers['Authorization'] = `Bearer ${s.token}`;
+        }
+        return headers;
+    }
+
     function saveSession(session) {
         currentUserSession = session;
         try {
@@ -5093,6 +5414,7 @@
         if (viewId === 'view-codex') {
             loadBookshelf();
             loadKnowledgeCatalog();
+            loadIChingHexagrams();
         }
         if (viewId === 'view-war-room') {
             initWarRoom();
@@ -5440,6 +5762,7 @@
     document.addEventListener('DOMContentLoaded', () => {
         initAuthGate();
         loadBookshelf();
+        loadIChingHexagrams();
         initAmbientVideoAndMotion();
         loadWhisperBadgeCount();
         initScrollNativeWorkspace();
@@ -5484,6 +5807,32 @@
 
     function toggleTag(el) {
         el.classList.toggle('selected');
+    }
+
+    function addCustomDiagTag(groupId, inputId) {
+        const group = document.getElementById(groupId);
+        const input = document.getElementById(inputId);
+        if (!group || !input) return;
+        const val = input.value.trim();
+        if (!val) {
+            input.focus();
+            return;
+        }
+        const existing = Array.from(group.querySelectorAll('.selectable-tag')).find(
+            el => el.textContent.trim().toLowerCase() === val.toLowerCase()
+        );
+        if (existing) {
+            existing.classList.add('selected');
+            input.value = '';
+            return;
+        }
+        const tag = document.createElement('span');
+        tag.className = 'selectable-tag selected';
+        tag.textContent = val;
+        tag.onclick = function() { toggleTag(this); };
+        group.appendChild(tag);
+        input.value = '';
+        input.focus();
     }
 
     // Team Presets
@@ -6018,6 +6367,9 @@
                 <button class="export-btn" onclick="window.NhanThuatAudio.playAdvisory('${id}', 'summary')" style="font-size: 11.5px; padding: 6px 12px; border-color: rgba(223,196,127,0.4); color: #dfc47f; background: rgba(223,196,127,0.1);">
                     ⚡ Nghe Tóm Tắt 1 Phút
                 </button>
+                <button class="export-btn" onclick="transferAdvisoryToSparring('${encodeURIComponent(query)}')" style="font-size: 11.5px; padding: 6px 12px; border-color: rgba(239,68,68,0.45); color: #fca5a5; background: rgba(239,68,68,0.12);">
+                    ⚔️ Đem vào Phòng Đấu Trí
+                </button>
                 <button class="export-btn" onclick="transferScenarioToWarRoom('${encodeURIComponent(query)}')" style="font-size: 11.5px; padding: 6px 12px; border-color: rgba(56,189,248,0.4); color: var(--cyan-accent); background: rgba(56,189,248,0.1);">
                     ♟️ Đưa Vào Sa bàn mô phỏng tình thế
                 </button>
@@ -6135,6 +6487,7 @@
     }
 
     // --- COUNCIL DELIBERATION ---
+    window.lastCouncilDeliberation = null;
     document.getElementById('council-deliberate-btn').addEventListener('click', async () => {
         const input = document.getElementById('council-scenario-input');
         const text = input.value.trim();
@@ -6164,6 +6517,7 @@
                     sourceModule: 'council'
                 });
                 const d = data.deliberation;
+                window.lastCouncilDeliberation = { scenario_text: text, deliberation: d };
                 const m = d.decision_matrix || {};
 
                 const renderList = (items) => {
@@ -6228,6 +6582,15 @@
                         <div class="council-detail" style="margin-top: 20px;"><span class="council-detail-label">Mâu thuẫn cốt lõi</span>${renderList(m.core_conflicts)}</div>
                         <div class="council-detail"><span class="council-detail-label">Điều kiện thận trọng</span>${renderList(m.critical_caveats)}</div>
                         <div class="council-detail"><span class="council-detail-label">Chỉ thị thực thi</span>${renderList(m.execution_directives)}</div>
+
+                        <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border-subtle); display: flex; justify-content: flex-end; gap: 10px; flex-wrap: wrap;">
+                            <button class="export-btn" onclick="transferCouncilToSparring()" style="font-size: 12px; padding: 8px 16px; border-color: rgba(239,68,68,0.45); color: #fca5a5; background: rgba(239,68,68,0.12);">
+                                ⚔️ Đem Phương án này vào Phòng Đấu Trí
+                            </button>
+                            <button class="export-btn" onclick="transferCouncilToWarRoom()" style="font-size: 12px; padding: 8px 16px; border-color: rgba(56,189,248,0.45); color: var(--cyan-accent); background: rgba(56,189,248,0.12);">
+                                ♟️ Đưa Quyết sách vào Sa Bàn Tình Thế
+                            </button>
+                        </div>
                     </section>
                 `;
                 document.getElementById('council-audio-btn')?.addEventListener('click', () => {
@@ -6338,7 +6701,7 @@
         try {
             const sRes = await fetch('/api/v1/sparring/sessions', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: getAuthHeaders({ 'Content-Type': 'application/json' }),
                 body: JSON.stringify({
                     title: 'Đấu trí: ' + sessionTitle,
                     philosophy_lens: selectedLens,
@@ -6346,7 +6709,15 @@
                     metadata: { opponent_opening: customOpening }
                 })
             });
+            if (sRes.status === 401) {
+                openLoginModal();
+                alert('Vui lòng đăng nhập để khởi tạo và bảo mật phiên đấu trí.');
+                return;
+            }
             const sData = await sRes.json();
+            if (!sRes.ok) {
+                throw new Error(sData.message || 'Không thể khởi tạo phiên đấu trí.');
+            }
             const sess = sData.session || {};
             sparringSessionId = sess.id || null;
 
@@ -6356,17 +6727,17 @@
 
             feed.innerHTML = `
                 ${contextText ? `
-                <div style="font-size: 12px; color: var(--text-secondary); background: rgba(245,158,11,0.06); border: 1px dashed rgba(245,158,11,0.3); border-radius: 8px; padding: 10px 14px; margin-bottom: 12px;">
-                    <strong style="color: var(--gold-light);">📋 BỐI CẢNH VÁN ĐẤU ĐÃ KHỞI TẠO:</strong> ${escapeHtml(contextText)}
+                <div class="sparring-context-banner">
+                    <strong class="text-gold-light">BỐI CẢNH VÁN ĐẤU ĐÃ KHỞI TẠO:</strong> ${escapeHtml(contextText)}
                 </div>` : ''}
                 <div class="message-bubble msg-assistant">
-                    <strong style="color: var(--gold-light);">🤖 ${escapeHtml(personaLabel)}:</strong>
-                    <p style="margin-top: 6px; color: #ffffff; line-height: 1.6;">"${escapeHtml(openingChallenge)}"</p>
+                    <strong class="text-gold-light">${escapeHtml(personaLabel)}:</strong>
+                    <p class="sparring-opening-text">"${escapeHtml(openingChallenge)}"</p>
                 </div>
             `;
 
             if (badge) {
-                badge.innerHTML = `<span style="color: #10b981;">🟢 Phiên đấu đang hoạt động (${escapeHtml(sess.id || 'Active')}) • Lăng kính: <strong>${escapeHtml(meta.resolved_lens || selectedLens)}</strong></span>`;
+                badge.innerHTML = `<span class="status-text-success">Phiên đấu đang hoạt động (${escapeHtml(sess.id || 'Active')}) • Lăng kính: <strong>${escapeHtml(meta.resolved_lens || selectedLens)}</strong></span>`;
             }
 
             const input = document.getElementById('sparring-input');
@@ -6400,7 +6771,7 @@
         if (!sparringSessionId) {
             const sRes = await fetch('/api/v1/sparring/sessions', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: getAuthHeaders({ 'Content-Type': 'application/json' }),
                 body: JSON.stringify({
                     title: 'Đấu trí: ' + (contextText || text).substring(0, 40),
                     philosophy_lens: selectedLens,
@@ -6408,6 +6779,11 @@
                     metadata: customOpening ? { opponent_opening: customOpening } : {}
                 })
             });
+            if (sRes.status === 401) {
+                openLoginModal();
+                alert('Vui lòng đăng nhập để thực hiện phiên đấu trí.');
+                return;
+            }
             const sData = await sRes.json();
             if (sData.session) sparringSessionId = sData.session.id;
         }
@@ -6415,34 +6791,42 @@
         try {
             const res = await fetch('/api/v1/sparring/messages', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: getAuthHeaders({ 'Content-Type': 'application/json' }),
                 body: JSON.stringify({
                     session_id: sparringSessionId,
                     message: text,
                     philosophy_lens: selectedLens !== 'auto' ? selectedLens : undefined
                 })
             });
+            if (res.status === 401) {
+                openLoginModal();
+                alert('Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại.');
+                return;
+            }
             const data = await res.json();
+            if (!res.ok) {
+                throw new Error(data.message || 'Không thể gửi lượt đấu.');
+            }
             window.NhanThuatScenario?.mark('sparring', {
                 epistemicStatus: 'simulation',
                 sourceModule: 'sparring',
                 resourceId: sparringSessionId
             });
             const citationsHtml = Array.isArray(data.citations) && data.citations.length
-                ? `<div style="margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; gap: 6px; flex-wrap: wrap; align-items: center;">
-                    <span style="font-size: 11px; color: var(--text-muted);">📚 Căn cứ tri thức:</span>
-                    ${data.citations.map(c => `<span style="font-size: 11px; background: rgba(245,158,11,0.12); color: var(--gold-light); padding: 2px 8px; border-radius: 6px;">${escapeHtml(c.id)} • ${escapeHtml(c.title)}</span>`).join('')}
+                ? `<div class="sparring-citations-row">
+                    <span class="sparring-citations-label">Căn cứ tri thức:</span>
+                    ${data.citations.map(c => `<span class="sparring-citation-chip">${escapeHtml(c.id)} • ${escapeHtml(c.title)}</span>`).join('')}
                    </div>`
                 : '';
 
             const botMsg = document.createElement('div');
             botMsg.className = 'message-bubble msg-assistant';
             botMsg.innerHTML = `
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                    <strong style="color: #ef4444;">🤖 ĐỐI THỦ PHẢN ĐÒN & CỐ VẤN CHIẾN LƯỢC:</strong>
-                    <span style="font-size: 11px; background: rgba(239,68,68,0.15); color: #fca5a5; padding: 2px 8px; border-radius: 6px; font-weight: 600;">${escapeHtml(data.philosophy_lens || 'AUTO')}</span>
+                <div class="sparring-reply-header">
+                    <strong class="sparring-reply-title">ĐỐI THỦ PHẢN ĐÒN & CỐ VẤN CHIẾN LƯỢC:</strong>
+                    <span class="sparring-reply-lens">${escapeHtml(data.philosophy_lens || 'AUTO')}</span>
                 </div>
-                <div style="margin: 8px 0; color: #ffffff; line-height: 1.65;">${formatMarkdownText(data.response || 'Tôi chưa thấy lập luận của anh đủ sức thuyết phục.')}</div>
+                <div class="sparring-reply-body">${formatMarkdownText(data.data ? data.data.response : (data.response || 'Tôi chưa thấy lập luận của anh đủ sức thuyết phục.'))}</div>
                 ${citationsHtml}
             `;
             feed.appendChild(botMsg);
@@ -6469,15 +6853,42 @@
         }
         if (openEl) openEl.value = '';
         if (badge) {
-            badge.innerHTML = `💡 Hãy nhập <strong>Bối cảnh ván đấu</strong> (hoặc chọn một <strong>Mẫu nhanh</strong>) rồi bấm <strong>Khởi tạo Đối thủ</strong>.`;
+            badge.innerHTML = `Hãy nhập <strong>Bối cảnh ván đấu</strong> (hoặc chọn một <strong>Mẫu nhanh</strong>) rồi bấm <strong>Khởi tạo Đối thủ</strong>.`;
         }
         const feed = document.getElementById('sparring-feed');
         feed.innerHTML = `
             <div class="message-bubble msg-assistant">
-                <strong style="color: var(--gold-light);">🎯 SẴN SÀNG KHỞI TẠO VÁN ĐẤU MỚI:</strong>
-                <p style="margin-top: 6px;">Hãy nhập bối cảnh thương lượng thực tế của anh/chị ở khung <strong>Thiết lập bối cảnh & Chân dung đối thủ</strong> phía trên (hoặc chọn 1 trong 5 kịch bản mẫu) rồi bấm <strong>"⚔️ Khởi tạo Đối thủ & Bắt đầu Ván đấu"</strong>.</p>
+                <strong class="text-gold-light">SẴN SÀNG KHỞI TẠO VÁN ĐẤU MỚI:</strong>
+                <p class="sparring-opening-text">Hãy nhập bối cảnh thương lượng thực tế của anh/chị ở khung <strong>Thiết lập bối cảnh & Chân dung đối thủ</strong> phía trên (hoặc chọn 1 trong 5 kịch bản mẫu) rồi bấm <strong>"Khởi tạo Đối thủ & Bắt đầu Ván đấu"</strong>.</p>
             </div>
         `;
+    }
+
+    async function exportCurrentSparringSession() {
+        if (!sparringSessionId) {
+            alert('Chưa có phiên đấu trí nào đang hoạt động để xuất biên bản. Hãy bấm "Khởi tạo Đối thủ" hoặc gửi lượt đấu trước.');
+            return;
+        }
+        try {
+            const res = await fetch(`/api/v1/sparring/sessions/${encodeURIComponent(sparringSessionId)}/export?format=html`, {
+                headers: getAuthHeaders()
+            });
+            if (res.status === 401) {
+                openLoginModal();
+                alert('Vui lòng đăng nhập để xuất biên bản đấu trí.');
+                return;
+            }
+            if (!res.ok) {
+                const errData = await res.json().catch(() => ({}));
+                throw new Error(errData.message || `Lỗi xuất biên bản (${res.status})`);
+            }
+            const htmlDoc = await res.text();
+            const blob = new Blob([htmlDoc], { type: 'text/html; charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            window.open(url, '_blank');
+        } catch (e) {
+            alert('Lỗi xuất biên bản: ' + e.message);
+        }
     }
 
     // --- BOOKS & CODEX DATA ---
@@ -6505,6 +6916,123 @@
     ];
 
     let selectedBookCategory = 'all';
+    let allIChingHexagrams = [];
+    let selectedIChingPalace = 'all';
+
+    async function loadIChingHexagrams(forceReload = false) {
+        const grid = document.getElementById('iching-hexagrams-grid');
+        if (!grid) return;
+        if (!forceReload && allIChingHexagrams.length > 0) {
+            filterIChingHexagrams();
+            return;
+        }
+        grid.innerHTML = `<div class="iching-state-box iching-state-loading" data-state="loading">Đang tải Ma trận 64 Quẻ Biến Dịch...</div>`;
+        try {
+            const res = await fetch('/api/v1/iching/hexagrams');
+            if (!res.ok) {
+                throw new Error(`HTTP ${res.status}`);
+            }
+            const data = await res.json();
+            if (data.status === 'success' && Array.isArray(data.hexagrams)) {
+                allIChingHexagrams = data.hexagrams;
+                filterIChingHexagrams();
+            } else {
+                throw new Error(data.message || 'Dữ liệu danh mục 64 quẻ không hợp lệ.');
+            }
+        } catch (e) {
+            grid.innerHTML = `<div class="iching-state-box iching-state-error" data-state="error">Không thể tải danh mục 64 quẻ: ${escapeHtml(e.message || 'Lỗi kết nối')}</div>`;
+        }
+    }
+
+    function selectIChingPalace(palace, btn) {
+        selectedIChingPalace = palace || 'all';
+        const pills = document.querySelectorAll('.iching-palace-pill');
+        pills.forEach(p => p.classList.remove('active'));
+        if (btn && btn.classList) {
+            btn.classList.add('active');
+        } else {
+            const targetVal = palace || '';
+            pills.forEach(p => {
+                if ((p.getAttribute('data-palace') || '') === targetVal) {
+                    p.classList.add('active');
+                }
+            });
+        }
+        filterIChingHexagrams();
+    }
+
+    function filterIChingHexagrams() {
+        const grid = document.getElementById('iching-hexagrams-grid');
+        if (!grid) return;
+        const query = (document.getElementById('iching-search-input')?.value || '').trim().toLowerCase();
+        const activePalace = (!selectedIChingPalace || selectedIChingPalace === 'all') ? '' : selectedIChingPalace;
+        const filtered = allIChingHexagrams.filter(h => {
+            const matchPalace = !activePalace || String(h.palace || '').includes(activePalace);
+            if (!matchPalace) return false;
+            if (!query) return true;
+            const hay = `${h.number} ${h.name || ''} ${h.pinyin || ''} ${h.palace || ''} ${h.nature || ''} ${h.corporate_state || ''} ${h.strategic_warning || ''}`.toLowerCase();
+            return hay.includes(query);
+        });
+
+        const countBadge = document.getElementById('iching-count-badge');
+        if (countBadge) {
+            countBadge.textContent = String(filtered.length);
+        }
+
+        if (!filtered.length) {
+            grid.innerHTML = `<div class="iching-state-box iching-state-empty" data-state="empty">Không tìm thấy quẻ phù hợp với từ khóa hoặc cung đã chọn.</div>`;
+            return;
+        }
+
+        grid.innerHTML = filtered.map(h => `
+            <div class="iching-hex-card" data-hex-number="${Number(h.number)}" onclick="showIChingHexagramDetail(${Number(h.number)})">
+                <div class="iching-hex-card-head">
+                    <span class="iching-hex-symbol">${escapeHtml(h.symbol || '☰')}</span>
+                    <span class="iching-hex-meta">#${h.number} • ${escapeHtml(h.palace || '')}</span>
+                </div>
+                <strong class="iching-hex-title">${escapeHtml(h.name)}</strong>
+                <div class="iching-hex-desc">${escapeHtml(h.corporate_state || '')}</div>
+            </div>
+        `).join('');
+    }
+
+    function showIChingHexagramDetail(num) {
+        const drawer = document.getElementById('iching-detail-drawer');
+        if (!drawer) return;
+        const h = allIChingHexagrams.find(item => Number(item.number) === Number(num));
+        if (!h) return;
+        const actions = Array.isArray(h.action_script)
+            ? h.action_script.map(a => `<li style="margin-bottom: 6px;">${escapeHtml(a)}</li>`).join('')
+            : '';
+        drawer.style.display = 'block';
+        drawer.innerHTML = `
+            <div class="iching-drawer-header">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <span style="font-size: 32px; color: var(--gold-primary); line-height: 1;">${escapeHtml(h.symbol || '☰')}</span>
+                    <div>
+                        <div style="font-size: 11px; color: var(--gold-light); font-weight: 700; text-transform: uppercase;">Quẻ số ${h.number} • ${escapeHtml(h.palace || '')} • ${escapeHtml(h.nature || '')}</div>
+                        <h4 style="font-family: var(--font-serif); font-size: 18px; color: #ffffff; margin: 2px 0 0 0;">${escapeHtml(h.name)} (${escapeHtml(h.pinyin || '')})</h4>
+                    </div>
+                </div>
+                <button type="button" class="mode-pill" onclick="document.getElementById('iching-detail-drawer').style.display='none'" style="font-size: 11px; padding: 4px 10px;">✕ Đóng</button>
+            </div>
+            <div class="iching-drawer-grid">
+                <div class="iching-drawer-box-state">
+                    <strong style="color: var(--cyan-accent); display: block; margin-bottom: 4px;">Trạng thái Tổ chức &amp; Thời thế:</strong>
+                    <div style="color: #e2e8f0;">${escapeHtml(h.corporate_state || '')}</div>
+                </div>
+                <div class="iching-drawer-box-warn">
+                    <strong style="color: #fda4af; display: block; margin-bottom: 4px;">Cảnh báo Chiến lược (Điểm mù):</strong>
+                    <div style="color: #fecdd3;">${escapeHtml(h.strategic_warning || '')}</div>
+                </div>
+            </div>
+            ${actions ? `
+            <div class="iching-drawer-box-action">
+                <strong style="color: #34d399; display: block; margin-bottom: 6px;">Kịch bản Hành động Chuyển Pha (3 Bước):</strong>
+                <ul style="margin: 0; padding-left: 18px; color: #e2e8f0; line-height: 1.6;">${actions}</ul>
+            </div>` : ''}
+        `;
+    }
 
     function loadBookshelf() {
         const container = document.getElementById('books-grid-container');
@@ -8147,6 +8675,73 @@
         initWarRoomSimulation();
     }
 
+    function transferAdvisoryToSparring(encodedQuery) {
+        const text = decodeURIComponent(encodedQuery);
+        window.NhanThuatScenario?.capture('sparring', text, { source: 'advisory-transfer' });
+        switchWorkspace('view-sparring');
+        toggleSparringSetup(true);
+        const ctxEl = document.getElementById('sparring-context-input');
+        if (ctxEl) {
+            ctxEl.value = text;
+            ctxEl.focus();
+        }
+        const badge = document.getElementById('sparring-active-badge');
+        if (badge) {
+            badge.innerHTML = `<span class="status-text-gold">Đã nạp bối cảnh từ Phòng Tham Mưu. Vui lòng kiểm tra/chỉnh sửa cấu hình và bấm <strong>Khởi tạo Đối thủ</strong> để xác nhận bắt đầu.</span>`;
+        }
+    }
+
+    function transferCouncilToSparring() {
+        const state = window.lastCouncilDeliberation || {};
+        const scenario = state.scenario_text || document.getElementById('council-scenario-input')?.value?.trim() || '';
+        const m = state.deliberation?.decision_matrix || {};
+        const planSummary = m.plan_a_primary?.summary || m.highest_consensus || '';
+        const combined = planSummary
+            ? `${scenario}\n[Phương án Hội đồng khuyến nghị: ${planSummary}]`
+            : scenario;
+        if (!combined) {
+            alert('Chưa có kịch bản Hội đồng để chuyển sang Phòng Đấu Trí.');
+            return;
+        }
+        window.NhanThuatScenario?.capture('sparring', combined, { source: 'council-transfer' });
+        switchWorkspace('view-sparring');
+        toggleSparringSetup(true);
+        const ctxEl = document.getElementById('sparring-context-input');
+        if (ctxEl) {
+            ctxEl.value = combined;
+            ctxEl.focus();
+        }
+        const badge = document.getElementById('sparring-active-badge');
+        if (badge) {
+            badge.innerHTML = `<span class="status-text-gold">Đã nạp bối cảnh &amp; phương án từ Hội Đồng. Vui lòng xem lại, chỉnh sửa (nếu cần) và bấm <strong>Khởi tạo Đối thủ</strong> để xác nhận bắt đầu.</span>`;
+        }
+    }
+
+    function transferCouncilToWarRoom() {
+        const state = window.lastCouncilDeliberation || {};
+        const scenario = state.scenario_text || document.getElementById('council-scenario-input')?.value?.trim() || '';
+        const m = state.deliberation?.decision_matrix || {};
+        const consensus = m.highest_consensus || m.plan_a_primary?.summary || '';
+        const combined = consensus
+            ? `${scenario}\n[Quyết sách Hội đồng: ${consensus}]`
+            : scenario;
+        if (!combined) {
+            alert('Chưa có kịch bản Hội đồng để chuyển sang Sa Bàn Tình Thế.');
+            return;
+        }
+        window.NhanThuatScenario?.capture('warRoom', combined, { source: 'council-transfer' });
+        switchWorkspace('view-war-room');
+        const input = document.getElementById('war-scenario-input');
+        if (input) {
+            input.value = combined;
+            input.focus();
+        }
+        const warBadge = document.getElementById('war-status-badge');
+        if (warBadge) {
+            warBadge.textContent = 'CHỜ XÁC NHẬN KHỞI TẠO';
+        }
+    }
+
     function transferPersonDiagToWarRoom() {
         const personName = document.getElementById('diag-person-name')?.value?.trim() || 'Nhân sự';
         const roleName = document.getElementById('diag-role-name')?.value?.trim() || 'Vị trí quản lý';
@@ -8673,14 +9268,22 @@
     }
 
     async function handleStreamIngestion() {
-        const authorId = document.getElementById('stream-author-input').value.trim();
-        const content = document.getElementById('stream-content-input').value.trim();
+        const rawAuthorId = document.getElementById('stream-author-input')?.value?.trim() || '';
+        const roleDept = document.getElementById('stream-role-input')?.value?.trim() || '';
+        const content = document.getElementById('stream-content-input')?.value?.trim() || '';
+        const clarity = parseFloat(document.getElementById('stream-clarity-select')?.value || '0.6');
+        const constraints = parseFloat(document.getElementById('stream-constraints-select')?.value || '0.5');
         const btn = document.getElementById('stream-submit-btn');
 
         if (!content) {
             alert('Vui lòng nhập nội dung tín hiệu hành vi / phát ngôn.');
             return;
         }
+
+        const baseAuthor = rawAuthorId || 'EMP-NEW';
+        const resolvedAuthorId = (roleDept && !baseAuthor.includes(roleDept))
+            ? `${baseAuthor} (${roleDept})`
+            : baseAuthor;
 
         btn.disabled = true;
         btn.innerHTML = `<span class="live-pulse-dot" style="margin-right: 6px;"></span> Đang phân tích...`;
@@ -8690,10 +9293,10 @@
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    author_id: authorId || 'EMP-NEW',
+                    author_id: resolvedAuthorId,
                     content: content,
-                    context_clarity: 0.6,
-                    context_constraints: 0.5
+                    context_clarity: isNaN(clarity) ? 0.6 : clarity,
+                    context_constraints: isNaN(constraints) ? 0.5 : constraints
                 })
             });
 

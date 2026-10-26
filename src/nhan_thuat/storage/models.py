@@ -34,6 +34,7 @@ class SparringSession:
     status: str = "active"  # 'active', 'completed', 'archived'
     summary: str = ""
     metadata: dict[str, Any] = field(default_factory=dict)
+    owner_id: str = "system"
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -42,6 +43,7 @@ class SparringSession:
     def from_row(cls, row: dict[str, Any] | tuple[Any, ...]) -> SparringSession:
         if isinstance(row, dict):
             meta = _safe_json_loads(row.get("metadata", {}), {})
+            raw_owner = row.get("owner_id") or (meta.get("owner_id") if isinstance(meta, dict) else None) or "system"
             return cls(
                 id=str(row["id"]),
                 title=str(row["title"]),
@@ -50,9 +52,15 @@ class SparringSession:
                 status=str(row.get("status", "active")),
                 summary=str(row.get("summary", "")),
                 metadata=meta,
+                owner_id=str(raw_owner),
             )
-        # Tuple format: (id, title, philosophy_lens, created_at, status, summary, metadata)
+        # Tuple format: (id, title, philosophy_lens, created_at, status, summary, metadata[, owner_id])
         meta = _safe_json_loads(row[6], {}) if len(row) > 6 and row[6] else {}
+        raw_owner = (
+            row[7]
+            if len(row) > 7 and row[7]
+            else (meta.get("owner_id") if isinstance(meta, dict) and meta.get("owner_id") else "system")
+        )
         return cls(
             id=str(row[0]),
             title=str(row[1]),
@@ -61,6 +69,7 @@ class SparringSession:
             status=str(row[4]) if len(row) > 4 else "active",
             summary=str(row[5]) if len(row) > 5 else "",
             metadata=meta,
+            owner_id=str(raw_owner),
         )
 
 

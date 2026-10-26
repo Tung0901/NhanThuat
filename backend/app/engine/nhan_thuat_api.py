@@ -84,7 +84,7 @@ def check_context_ambiguity(scenario_text: str) -> tuple[bool, str]:
     return False, ""
 
 
-def generate_actionable_script_details(primary: str, scenario_text: str, matched_units: list = None) -> dict[str, Any]:
+def generate_actionable_script_details(primary: str, scenario_text: str, matched_units: list | None = None) -> dict[str, Any]:
     """Generates Senior Executive Co-Pilot Strategic Analysis, 3-step verbatim dialogue, draft communications, and financial/operational directives."""
     # 1. Try to generate dynamically via LLM
     try:
@@ -111,7 +111,7 @@ def generate_actionable_script_details(primary: str, scenario_text: str, matched
             "}"
         )
         return syn.generate_json(prompt)
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001
         print(f"[NhanThuatAPI] LLM script generation failed, using fallback: {e}")
 
     few_shots = get_dialogue_few_shots().get("templates", {})
@@ -130,37 +130,37 @@ def generate_actionable_script_details(primary: str, scenario_text: str, matched
             "step_1_anchor": {
                 "title": "Bước 1: Chuẩn hóa Tiêu chuẩn & Thấu suốt Thiên hướng Cá nhân (NT-MODEL-0007)",
                 "verbatim": (
-                    f'"Chào [Tên Nhân sự/Ứng viên], tổ chức đánh giá rất cao thế mạnh và những đóng góp thực chất của bạn. '
-                    f'Tuy nhiên, khi đối chiếu trực tiếp với yêu cầu của vai trò trong giai đoạn này, chúng ta cần một sự chuẩn hóa rõ ràng '
-                    f'về mặt hành vi, trách nhiệm và tiêu chuẩn bàn giao kết quả (Hình Danh Tham Đồng). Chúng ta hãy cùng ngồi lại để định vị chính xác kỳ vọng hai bên."'
+                    '"Chào [Tên Nhân sự/Ứng viên], tổ chức đánh giá rất cao thế mạnh và những đóng góp thực chất của bạn. '
+                    'Tuy nhiên, khi đối chiếu trực tiếp với yêu cầu của vai trò trong giai đoạn này, chúng ta cần một sự chuẩn hóa rõ ràng '
+                    'về mặt hành vi, trách nhiệm và tiêu chuẩn bàn giao kết quả (Hình Danh Tham Đồng). Chúng ta hãy cùng ngồi lại để định vị chính xác kỳ vọng hai bên."'
                 )
             },
             "step_2_deadline_consequence": {
                 "title": "Bước 2: Đo lường Ma sát Thích ứng & Thiết lập Cơ chế Kiểm định (30-60 Ngày)",
                 "verbatim": (
-                    f'"Trong 30 ngày tới, tôi sẽ thiết lập 3 chỉ số hành vi then chốt cho vị trí này. '
-                    f'Nếu bạn cảm thấy áp lực tự điều chỉnh quá lớn hoặc vai trò không phát huy được giá trị tốt nhất của bạn, '
-                    f'tổ chức sẽ thẳng thắn thảo luận để tái cấu trúc phạm vi nhiệm vụ hoặc chuyển dịch sang vai trò phù hợp hơn, thay vì để sự ma sát kéo dài ảnh hưởng tới toàn đội ngũ."'
+                    '"Trong 30 ngày tới, tôi sẽ thiết lập 3 chỉ số hành vi then chốt cho vị trí này. '
+                    'Nếu bạn cảm thấy áp lực tự điều chỉnh quá lớn hoặc vai trò không phát huy được giá trị tốt nhất của bạn, '
+                    'tổ chức sẽ thẳng thắn thảo luận để tái cấu trúc phạm vi nhiệm vụ hoặc chuyển dịch sang vai trò phù hợp hơn, thay vì để sự ma sát kéo dài ảnh hưởng tới toàn đội ngũ."'
                 )
             },
             "step_3_way_out_plan_b": {
                 "title": "Bước 3: Mở Đường Hỗ trợ Môi trường & Kế hoạch Dự phòng Bố trí (Plan B)",
                 "verbatim": (
-                    f'"Tổ chức sẵn sàng cung cấp các điểm tựa hỗ trợ: phân bổ người phối hợp bù trừ điểm khuyết và trao quyền chủ động trong vùng thế mạnh. '
-                    f'Nhưng nếu sau thời gian thử thách, sự lệch pha vai trò vẫn gây tổn hại tới tiến độ chung, tôi sẽ chủ động kích hoạt phương án tái bố trí '
-                    f'hoặc tạo điều kiện để bạn chuyển giao trong êm đẹp trên tinh thần tôn trọng tối đa."'
+                    '"Tổ chức sẵn sàng cung cấp các điểm tựa hỗ trợ: phân bổ người phối hợp bù trừ điểm khuyết và trao quyền chủ động trong vùng thế mạnh. '
+                    'Nhưng nếu sau thời gian thử thách, sự lệch pha vai trò vẫn gây tổn hại tới tiến độ chung, tôi sẽ chủ động kích hoạt phương án tái bố trí '
+                    'hoặc tạo điều kiện để bạn chuyển giao trong êm đẹp trên tinh thần tôn trọng tối đa."'
                 )
             },
             "draft_official_communication": (
-                f"THÔNG BÁO VỀ VIỆC THỐNG NHẤT TIÊU CHUẨN VAI TRÒ & LỘ TRÌNH ĐÁNH GIÁ\n"
-                f"------------------------------------------------------------------\n"
-                f"Kính gửi: [Họ và Tên Nhân Sự / Ứng Viên]\n\n"
-                f"Căn cứ Định hướng Tái cơ cấu & Chuẩn hóa Năng lực Doanh nghiệp.\n"
-                f"Ban Điều Hành xin gửi bản Thỏa thuận Tiêu chuẩn Vai trò (Role Expectation Framework):\n"
-                f"1. Xác định 3 kết quả then chốt (Key Deliverables) và hành vi chuẩn mực được kỳ vọng.\n"
-                f"2. Áp dụng cơ chế đánh giá định kỳ 15 ngày để đo lường mức độ tương thích thực tế.\n"
-                f"3. Doanh nghiệp cam kết hỗ trợ tối đa về nguồn lực và môi trường để nhân sự bứt phá.\n\n"
-                f"Trân trọng,\n[Ban Lãnh Đạo / Ban Nhân Sự]"
+                "THÔNG BÁO VỀ VIỆC THỐNG NHẤT TIÊU CHUẨN VAI TRÒ & LỘ TRÌNH ĐÁNH GIÁ\n"
+                "------------------------------------------------------------------\n"
+                "Kính gửi: [Họ và Tên Nhân Sự / Ứng Viên]\n\n"
+                "Căn cứ Định hướng Tái cơ cấu & Chuẩn hóa Năng lực Doanh nghiệp.\n"
+                "Ban Điều Hành xin gửi bản Thỏa thuận Tiêu chuẩn Vai trò (Role Expectation Framework):\n"
+                "1. Xác định 3 kết quả then chốt (Key Deliverables) và hành vi chuẩn mực được kỳ vọng.\n"
+                "2. Áp dụng cơ chế đánh giá định kỳ 15 ngày để đo lường mức độ tương thích thực tế.\n"
+                "3. Doanh nghiệp cam kết hỗ trợ tối đa về nguồn lực và môi trường để nhân sự bứt phá.\n\n"
+                "Trân trọng,\n[Ban Lãnh Đạo / Ban Nhân Sự]"
             ),
             "financial_and_operational_directives": [
                 "👥 THIẾT KẾ LẠI VAI TRÒ (JOB REDESIGN): Bổ sung nhân sự hỗ trợ hành chính/vận hành để giải phóng thời gian cho nhân sự tập trung vào vùng thế mạnh chuyên môn.",
@@ -187,36 +187,36 @@ def generate_actionable_script_details(primary: str, scenario_text: str, matched
             "step_1_anchor": {
                 "title": "Bước 1: Tách Biệt Tài Năng Khỏi Kỷ Cương (Hình Danh Tương Phù)",
                 "verbatim": (
-                    f'"[Tên Cá nhân/Đại diện], tổ chức luôn ghi nhận đầy đủ năng lực và thành tích cá nhân của bạn. '
-                    f'Tuy nhiên, kỷ luật tổ chức và sự đoàn kết nội bộ là lằn ranh đỏ không thể thương lượng. '
-                    f'Mọi đóng góp dù lớn đến đâu đều phải nằm trong khuôn khổ văn hóa chung. Không ai được phép đứng trên lợi ích tập thể."'
+                    '"[Tên Cá nhân/Đại diện], tổ chức luôn ghi nhận đầy đủ năng lực và thành tích cá nhân của bạn. '
+                    'Tuy nhiên, kỷ luật tổ chức và sự đoàn kết nội bộ là lằn ranh đỏ không thể thương lượng. '
+                    'Mọi đóng góp dù lớn đến đâu đều phải nằm trong khuôn khổ văn hóa chung. Không ai được phép đứng trên lợi ích tập thể."'
                 )
             },
             "step_2_deadline_consequence": {
                 "title": "Bước 2: Thu Hẹp Phạm Vi Ảnh Hưởng & Thiết Lập Thế Cân Bằng (Counter-balance)",
                 "verbatim": (
-                    f'"Tôi yêu cầu mọi bất đồng phải được đưa ra thảo luận công khai, minh bạch trong cuộc họp giao ban sáng mai. '
-                    f'Sau ngày hôm nay, bất kỳ hành vi lôi kéo bè phái hoặc gây chia rẽ nào bị phát hiện sẽ bị xem là cố tình phá hoại tổ chức, '
-                    f'và tôi sẽ kích hoạt điều khoản đình chỉ chức vụ ngay lập tức mà không cần thêm cảnh cáo."'
+                    '"Tôi yêu cầu mọi bất đồng phải được đưa ra thảo luận công khai, minh bạch trong cuộc họp giao ban sáng mai. '
+                    'Sau ngày hôm nay, bất kỳ hành vi lôi kéo bè phái hoặc gây chia rẽ nào bị phát hiện sẽ bị xem là cố tình phá hoại tổ chức, '
+                    'và tôi sẽ kích hoạt điều khoản đình chỉ chức vụ ngay lập tức mà không cần thêm cảnh cáo."'
                 )
             },
             "step_3_way_out_plan_b": {
                 "title": "Bước 3: Mở Đường Hội Nhập 'Hòa Nhi Bất Đồng' & Chuẩn Bị Thay Thế (Plan B)",
                 "verbatim": (
-                    f'"Nếu bạn thực sự muốn cùng doanh nghiệp đi xa, hãy tập trung 100% năng lượng vào mục tiêu chung và hỗ trợ đồng đội. '
-                    f'Cánh cửa ghi nhận và đãi ngộ xứng đáng luôn rộng mở. Nhưng nếu bạn tiếp tục giữ thái độ bất hợp tác, '
-                    f'tôi đã chuẩn bị sẵn phương án phân quyền và chuyển giao công việc cho đội ngũ kế cận trong 24 giờ."'
+                    '"Nếu bạn thực sự muốn cùng doanh nghiệp đi xa, hãy tập trung 100% năng lượng vào mục tiêu chung và hỗ trợ đồng đội. '
+                    'Cánh cửa ghi nhận và đãi ngộ xứng đáng luôn rộng mở. Nhưng nếu bạn tiếp tục giữ thái độ bất hợp tác, '
+                    'tôi đã chuẩn bị sẵn phương án phân quyền và chuyển giao công việc cho đội ngũ kế cận trong 24 giờ."'
                 )
             },
             "draft_official_communication": (
-                f"CHỈ ĐẠO CỦA CHỦ TỊCH / TỔNG GIÁM ĐỐC VỀ KỶ CƯƠNG & ĐOÀN KẾT NỘI BỘ\n"
-                f"-------------------------------------------------------------------\n"
-                f"Kính gửi: Toàn thể Cán bộ Quản lý và Đội ngũ Nhân sự\n\n"
-                f"Để bảo đảm sức mạnh vận hành thống nhất trong giai đoạn chiến lược mới, Ban Điều Hành chỉ đạo:\n"
-                f"1. Kiên quyết duy trì nguyên tắc 'Hòa nhi bất đồng' - Tự do tranh biện giải pháp, nhưng tuyệt đối thống nhất hành động.\n"
-                f"2. Nghiêm cấm mọi hành vi chia rẽ, bài xích cá nhân hoặc bè phái cục bộ làm suy yếu sức mạnh tổ chức.\n"
-                f"3. Cán bộ quản lý vi phạm kỷ luật văn hóa sẽ bị đình chỉ nhiệm vụ để thanh tra độc lập.\n\n"
-                f"[Chủ Tịch Hội Đồng Quản Trị / Ban Điều Hành]"
+                "CHỈ ĐẠO CỦA CHỦ TỊCH / TỔNG GIÁM ĐỐC VỀ KỶ CƯƠNG & ĐOÀN KẾT NỘI BỘ\n"
+                "-------------------------------------------------------------------\n"
+                "Kính gửi: Toàn thể Cán bộ Quản lý và Đội ngũ Nhân sự\n\n"
+                "Để bảo đảm sức mạnh vận hành thống nhất trong giai đoạn chiến lược mới, Ban Điều Hành chỉ đạo:\n"
+                "1. Kiên quyết duy trì nguyên tắc 'Hòa nhi bất đồng' - Tự do tranh biện giải pháp, nhưng tuyệt đối thống nhất hành động.\n"
+                "2. Nghiêm cấm mọi hành vi chia rẽ, bài xích cá nhân hoặc bè phái cục bộ làm suy yếu sức mạnh tổ chức.\n"
+                "3. Cán bộ quản lý vi phạm kỷ luật văn hóa sẽ bị đình chỉ nhiệm vụ để thanh tra độc lập.\n\n"
+                "[Chủ Tịch Hội Đồng Quản Trị / Ban Điều Hành]"
             ),
             "financial_and_operational_directives": [
                 "⚖️ PHÂN QUYỀN ĐỐI TRỌNG (COUNTER-BALANCE): Chia tách quyền hạn ký duyệt tài chính và nhân sự của bộ phận có nguy cơ bè phái để tránh thao túng cục bộ.",
@@ -402,23 +402,23 @@ def generate_actionable_script_details(primary: str, scenario_text: str, matched
             ),
             "step_1_anchor": {
                 "title": "Bước 1: Khẳng định Quy chế & Ranh giới Trách nhiệm (Hình Danh Tham Đồng)",
-                "verbatim": f'"Chúng ta giải quyết tình huống này dựa trên căn cứ quy chuẩn và kết quả thực tế, không dựa trên cảm tính hay lời biện bạch cá nhân."'
+                "verbatim": '"Chúng ta giải quyết tình huống này dựa trên căn cứ quy chuẩn và kết quả thực tế, không dựa trên cảm tính hay lời biện bạch cá nhân."'
             },
             "step_2_deadline_consequence": {
                 "title": "Bước 2: Ấn định Thời hạn Khắc phục & Chế tài Ràng buộc",
-                "verbatim": f'"Yêu cầu các bên liên quan hoàn thành phương án khắc phục trước thời hạn ấn định. Mọi vi phạm cam kết sẽ chịu chế tài quy chế rõ ràng."'
+                "verbatim": '"Yêu cầu các bên liên quan hoàn thành phương án khắc phục trước thời hạn ấn định. Mọi vi phạm cam kết sẽ chịu chế tài quy chế rõ ràng."'
             },
             "step_3_way_out_plan_b": {
                 "title": "Bước 3: Mở Cơ chế Phục hồi & Chuẩn bị Kế hoạch Dự phòng (Plan B)",
-                "verbatim": f'"Những nỗ lực khắc phục kịp thời sẽ được ghi nhận và bảo lưu quyền lợi. Ngược lại, kế hoạch dự phòng độc lập sẽ kích hoạt ngay để đảm bảo an toàn hệ thống."'
+                "verbatim": '"Những nỗ lực khắc phục kịp thời sẽ được ghi nhận và bảo lưu quyền lợi. Ngược lại, kế hoạch dự phòng độc lập sẽ kích hoạt ngay để đảm bảo an toàn hệ thống."'
             },
             "draft_official_communication": (
-                f"THÔNG BÁO CHỈ ĐẠO XỬ LÝ VÀ CHUẨN HÓA QUY TRÌNH\n"
-                f"----------------------------------------------\n"
-                f"Kính gửi: Các Đơn Vị và Cá Nhân Liên Quan\n\n"
-                f"Nội dung: Chỉ đạo giải quyết dứt điểm sự việc theo đúng quy chuẩn kỷ luật và mục tiêu điều hành.\n"
-                f"Thời hạn báo cáo hoàn tất: Trước 17h00 ngày quy định.\n\n"
-                f"Ban Điều Hành"
+                "THÔNG BÁO CHỈ ĐẠO XỬ LÝ VÀ CHUẨN HÓA QUY TRÌNH\n"
+                "----------------------------------------------\n"
+                "Kính gửi: Các Đơn Vị và Cá Nhân Liên Quan\n\n"
+                "Nội dung: Chỉ đạo giải quyết dứt điểm sự việc theo đúng quy chuẩn kỷ luật và mục tiêu điều hành.\n"
+                "Thời hạn báo cáo hoàn tất: Trước 17h00 ngày quy định.\n\n"
+                "Ban Điều Hành"
             ),
             "financial_and_operational_directives": [
                 "⚖️ SIẾT CHẶT KỶ CƯƠNG: Tạm khóa các quyền duyệt đặc cách cho đến khi khắc phục xong sự cố.",
@@ -440,23 +440,23 @@ def generate_actionable_script_details(primary: str, scenario_text: str, matched
             ),
             "step_1_anchor": {
                 "title": "Bước 1: Lấy Đại Cuộc Làm Trọng & Lắng Nghe Thấu Đáo",
-                "verbatim": f'"Mục tiêu cao nhất của chúng ta là sự hưng thịnh và bền vững của tập thể. Mọi cá nhân đều xứng đáng được lắng nghe trên tinh thần chân thành."'
+                "verbatim": '"Mục tiêu cao nhất của chúng ta là sự hưng thịnh và bền vững của tập thể. Mọi cá nhân đều xứng đáng được lắng nghe trên tinh thần chân thành."'
             },
             "step_2_deadline_consequence": {
                 "title": "Bước 2: Chuẩn Hóa Lễ Nghĩa & Khơi Gợi Trách Nhiệm Tự Giác",
-                "verbatim": f'"Tôi tin tưởng vào danh dự và lương tri nghề nghiệp của các bạn. Hãy hành động xứng đáng với vị thế và sự tin cậy mà tổ chức trao gửi."'
+                "verbatim": '"Tôi tin tưởng vào danh dự và lương tri nghề nghiệp của các bạn. Hãy hành động xứng đáng với vị thế và sự tin cậy mà tổ chức trao gửi."'
             },
             "step_3_way_out_plan_b": {
                 "title": "Bước 3: Mở Đường Cho Sự Hoàn Lương & Đãi Ngộ Người Có Đức",
-                "verbatim": f'"Tổ chức luôn trân trọng những người biết vì đại cuộc. Những cống hiến âm thầm sẽ được đền đáp xứng đáng bằng cả sự nghiệp lâu dài."'
+                "verbatim": '"Tổ chức luôn trân trọng những người biết vì đại cuộc. Những cống hiến âm thầm sẽ được đền đáp xứng đáng bằng cả sự nghiệp lâu dài."'
             },
             "draft_official_communication": (
-                f"THƯ NGỎ CỦA NGƯỜI ĐỨNG ĐẦU VỀ TINH THẦN ĐỒNG LÒNG VÌ ĐẠI CUỘC\n"
-                f"----------------------------------------------------------\n"
-                f"Gửi toàn thể Đội ngũ Cộng sự,\n\n"
-                f"Sức mạnh của chúng ta nằm ở sự đồng tâm hiệp lực và niềm tin lẫn nhau.\n"
-                f"Mỗi thử thách là dịp để chúng ta tôi luyện bản lĩnh và khẳng định văn hóa cốt lõi.\n\n"
-                f"Người Đứng Đầu Tổ Chức"
+                "THƯ NGỎ CỦA NGƯỜI ĐỨNG ĐẦU VỀ TINH THẦN ĐỒNG LÒNG VÌ ĐẠI CUỘC\n"
+                "----------------------------------------------------------\n"
+                "Gửi toàn thể Đội ngũ Cộng sự,\n\n"
+                "Sức mạnh của chúng ta nằm ở sự đồng tâm hiệp lực và niềm tin lẫn nhau.\n"
+                "Mỗi thử thách là dịp để chúng ta tôi luyện bản lĩnh và khẳng định văn hóa cốt lõi.\n\n"
+                "Người Đứng Đầu Tổ Chức"
             ),
             "financial_and_operational_directives": [
                 "👑 CHĂM LO PHÚC LỢI CỐT LÕI: Đảm bảo quyền lợi xứng đáng cho những nhân sự cống hiến bền bỉ.",
@@ -478,22 +478,22 @@ def generate_actionable_script_details(primary: str, scenario_text: str, matched
             ),
             "step_1_anchor": {
                 "title": "Bước 1: Lấy Tĩnh Chế Động & Tách Khỏi Cơn Lốc Cảm Xúc (Tâm Trai)",
-                "verbatim": f'"Lúc này càng nóng vội càng dễ sập bẫy định kiến. Chúng ta lùi lại một bước để nhìn thấu toàn cảnh dòng chảy sự việc."'
+                "verbatim": '"Lúc này càng nóng vội càng dễ sập bẫy định kiến. Chúng ta lùi lại một bước để nhìn thấu toàn cảnh dòng chảy sự việc."'
             },
             "step_2_deadline_consequence": {
                 "title": "Bước 2: Thuận Thế Điều Hướng & Biến Bất Lợi Thành Cơ Hội (Dụng Vô Dụng)",
-                "verbatim": f'"Không đối đầu trực diện với lực cản. Hãy nương theo đà của đối phương để chuyển hướng năng lượng về phía có lợi cho chúng ta."'
+                "verbatim": '"Không đối đầu trực diện với lực cản. Hãy nương theo đà của đối phương để chuyển hướng năng lượng về phía có lợi cho chúng ta."'
             },
             "step_3_way_out_plan_b": {
                 "title": "Bước 3: Giải Quyết Trong Êm Đẹp Tự Nhiên (Vô Vi Nhi Vô Bất Vi)",
-                "verbatim": f'"Khi mọi nút thắt tự bộc lộ, sự việc sẽ tự tìm về trạng thái cân bằng mới mà không cần hao tổn quá nhiều sức lực."'
+                "verbatim": '"Khi mọi nút thắt tự bộc lộ, sự việc sẽ tự tìm về trạng thái cân bằng mới mà không cần hao tổn quá nhiều sức lực."'
             },
             "draft_official_communication": (
-                f"THÔNG ĐIỆP ĐIỀU HÀNH: GIỮ VỮNG TÂM THẾ TRONG BIẾN ĐỘNG\n"
-                f"--------------------------------------------------\n"
-                f"Kính gửi: Các Lãnh Đạo Đơn Vị\n\n"
-                f"Yêu cầu giữ vững sự bình tĩnh, duy trì vận hành ổn định và không phát ngôn khi chưa có dữ liệu kiểm chứng.\n\n"
-                f"Ban Cố Vấn Chiến Lược"
+                "THÔNG ĐIỆP ĐIỀU HÀNH: GIỮ VỮNG TÂM THẾ TRONG BIẾN ĐỘNG\n"
+                "--------------------------------------------------\n"
+                "Kính gửi: Các Lãnh Đạo Đơn Vị\n\n"
+                "Yêu cầu giữ vững sự bình tĩnh, duy trì vận hành ổn định và không phát ngôn khi chưa có dữ liệu kiểm chứng.\n\n"
+                "Ban Cố Vấn Chiến Lược"
             ),
             "financial_and_operational_directives": [
                 "🧘 TẠM DỪNG QUYẾT ĐỊNH VỘI VÃ: Không ký duyệt các điều chỉnh chính sách lớn khi cảm xúc các bên đang căng thẳng.",
@@ -516,25 +516,25 @@ def generate_actionable_script_details(primary: str, scenario_text: str, matched
             ),
             "step_1_anchor": {
                 "title": "Bước 1: Thẩm Thời Định Thế & Nhận Diện Hào Vị (Chu Kỳ Biến Dịch)",
-                "verbatim": f'"Mọi sự việc đều tuân theo chu kỳ sinh - trưởng - thu - tàng. Sự cố này là dấu hiệu chuyển dịch hào thế, không phải ngẫu nhiên. Chúng ta cần định vị chính xác thực lực đang ở thế Tiềm Long ẩn mình tích lũy hay Dược Long chuẩn bị bứt phá."'
+                "verbatim": '"Mọi sự việc đều tuân theo chu kỳ sinh - trưởng - thu - tàng. Sự cố này là dấu hiệu chuyển dịch hào thế, không phải ngẫu nhiên. Chúng ta cần định vị chính xác thực lực đang ở thế Tiềm Long ẩn mình tích lũy hay Dược Long chuẩn bị bứt phá."'
             },
             "step_2_deadline_consequence": {
                 "title": "Bước 2: Cùng Tắc Biến - Tái Cấu Trúc Đón Vận Thế Mới",
-                "verbatim": f'"Cùng tắc biến, biến tắc thông, thông tắc cửu. Tiếp tục duy trì cách làm cũ sẽ rơi vào quẻ Bĩ bế tắc. Yêu cầu toàn đội ngũ hoàn tất phương án thích ứng cấu trúc trong 7 ngày để đón đầu thời cuộc mới."'
+                "verbatim": '"Cùng tắc biến, biến tắc thông, thông tắc cửu. Tiếp tục duy trì cách làm cũ sẽ rơi vào quẻ Bĩ bế tắc. Yêu cầu toàn đội ngũ hoàn tất phương án thích ứng cấu trúc trong 7 ngày để đón đầu thời cuộc mới."'
             },
             "step_3_way_out_plan_b": {
                 "title": "Bước 3: Cương Nhu Tương Tế & Bảo Toàn Nguyên Khí (Plan B - Quẻ Thái)",
-                "verbatim": f'"Cương nhu tương tế, trong Dương có Âm, trong Nhu có Cương. Chúng ta vừa chuẩn bị phương án bứt phá, vừa lập chốt chặn phòng thủ vững chắc để dù biến động theo chiều hướng nào thì tổ chức vẫn giữ vững tâm thế tự chủ."'
+                "verbatim": '"Cương nhu tương tế, trong Dương có Âm, trong Nhu có Cương. Chúng ta vừa chuẩn bị phương án bứt phá, vừa lập chốt chặn phòng thủ vững chắc để dù biến động theo chiều hướng nào thì tổ chức vẫn giữ vững tâm thế tự chủ."'
             },
             "draft_official_communication": (
-                f"CHỈ THỊ CỦA CHỦ TỊCH VỀ ĐỊNH VỊ CHU KỲ & CHUYỂN ĐỔI CHIẾN LƯỢC\n"
-                f"-----------------------------------------------------------\n"
-                f"Kính gửi: Toàn thể Cán bộ Quản lý Chiến lược\n\n"
-                f"Căn cứ nhịp độ phát triển thực tế và biến động thị trường:\n"
-                f"1. Xác lập trạng thái vận hành mới: Chuyển dịch từ mở rộng diện rộng sang củng cố chiều sâu nội lực.\n"
-                f"2. Nghiêm cấm hành vi nôn nóng đốt cháy giai đoạn vi phạm nguyên tắc chu kỳ.\n"
-                f"3. Ưu tiên bảo toàn dòng tiền và giữ vững cốt lõi cạnh tranh trong mọi kịch bản.\n\n"
-                f"Chủ Tịch Hội Đồng Quản Trị"
+                "CHỈ THỊ CỦA CHỦ TỊCH VỀ ĐỊNH VỊ CHU KỲ & CHUYỂN ĐỔI CHIẾN LƯỢC\n"
+                "-----------------------------------------------------------\n"
+                "Kính gửi: Toàn thể Cán bộ Quản lý Chiến lược\n\n"
+                "Căn cứ nhịp độ phát triển thực tế và biến động thị trường:\n"
+                "1. Xác lập trạng thái vận hành mới: Chuyển dịch từ mở rộng diện rộng sang củng cố chiều sâu nội lực.\n"
+                "2. Nghiêm cấm hành vi nôn nóng đốt cháy giai đoạn vi phạm nguyên tắc chu kỳ.\n"
+                "3. Ưu tiên bảo toàn dòng tiền và giữ vững cốt lõi cạnh tranh trong mọi kịch bản.\n\n"
+                "Chủ Tịch Hội Đồng Quản Trị"
             ),
             "financial_and_operational_directives": [
                 "☯️ ĐỊNH VỊ CHU KỲ DOANH NGHIỆP: Đánh giá xem dự án đang ở giai đoạn Truân (sơ khai), Thái (thịnh trị) hay Bĩ (bế tắc) để phân bổ vốn chuẩn xác.",
@@ -557,23 +557,23 @@ def generate_actionable_script_details(primary: str, scenario_text: str, matched
             ),
             "step_1_anchor": {
                 "title": "Bước 1: Tri Thời Thức Vụ & Đo Lường Điểm Rơi Cơ Hội",
-                "verbatim": f'"Thành bại của một quyết sách nằm ở thời điểm hành động. Ra đòn quá sớm là manh động tự sát, ra đòn quá trễ là đánh mất thời cơ vàng. Chúng ta cần định lượng chính xác cửa sổ thời gian để hành động."'
+                "verbatim": '"Thành bại của một quyết sách nằm ở thời điểm hành động. Ra đòn quá sớm là manh động tự sát, ra đòn quá trễ là đánh mất thời cơ vàng. Chúng ta cần định lượng chính xác cửa sổ thời gian để hành động."'
             },
             "step_2_deadline_consequence": {
                 "title": "Bước 2: Ra Đòn Quyết Đoán Đúng Điểm Chín Muồi (Lôi Động Phong Hành)",
-                "verbatim": f'"Thời cơ chín muồi đã bộc lộ rõ rệt, đây là lúc phải tập trung toàn lực đánh nhanh thắng gọn trong vòng 72 giờ. Mọi sự chần chừ do dự lúc này đều là sự lãng phí cơ hội chiến lược."'
+                "verbatim": '"Thời cơ chín muồi đã bộc lộ rõ rệt, đây là lúc phải tập trung toàn lực đánh nhanh thắng gọn trong vòng 72 giờ. Mọi sự chần chừ do dự lúc này đều là sự lãng phí cơ hội chiến lược."'
             },
             "step_3_way_out_plan_b": {
                 "title": "Bước 3: Thoái Lui Chiến Lược Bảo Toàn Trận Địa (Kim Thiền Thoát Xác)",
-                "verbatim": f'"Nếu nhận thấy thời thế đảo chiều hoặc chi phí bám đuổi vượt ngưỡng an toàn, chúng ta sẽ lập tức kích hoạt phương án rút lui theo trật tự để bảo toàn nguyên khí cho trận đánh tiếp theo."'
+                "verbatim": '"Nếu nhận thấy thời thế đảo chiều hoặc chi phí bám đuổi vượt ngưỡng an toàn, chúng ta sẽ lập tức kích hoạt phương án rút lui theo trật tự để bảo toàn nguyên khí cho trận đánh tiếp theo."'
             },
             "draft_official_communication": (
-                f"CHỈ ĐẠO ĐIỀU HÀNH CAO CẤP: NẮM BẮT CỬA SỔ THỜI GIAN CHIẾN LƯỢC\n"
-                f"-----------------------------------------------------------\n"
-                f"Kính gửi: Các Trưởng Bộ Phận và Chỉ Huy Hiện Trường\n\n"
-                f"Yêu cầu triển khai phương án hành động tập trung trong cửa sổ thời gian 72h tới.\n"
-                f"Tất cả nguồn lực hỗ trợ phải được điều động đồng bộ, tuyệt đối không để chậm nhịp.\n\n"
-                f"Ban Điều Hành Chiến Lược"
+                "CHỈ ĐẠO ĐIỀU HÀNH CAO CẤP: NẮM BẮT CỬA SỔ THỜI GIAN CHIẾN LƯỢC\n"
+                "-----------------------------------------------------------\n"
+                "Kính gửi: Các Trưởng Bộ Phận và Chỉ Huy Hiện Trường\n\n"
+                "Yêu cầu triển khai phương án hành động tập trung trong cửa sổ thời gian 72h tới.\n"
+                "Tất cả nguồn lực hỗ trợ phải được điều động đồng bộ, tuyệt đối không để chậm nhịp.\n\n"
+                "Ban Điều Hành Chiến Lược"
             ),
             "financial_and_operational_directives": [
                 "⏳ ĐO LƯỜNG CỬA SỔ THỜI GIAN (TIME WINDOW): Xác định chính xác hạn định 72h-14 ngày mà tại đó ưu thế đàm phán thuộc về ta.",
@@ -596,22 +596,22 @@ def generate_actionable_script_details(primary: str, scenario_text: str, matched
             ),
             "step_1_anchor": {
                 "title": "Bước 1: Xác Lập Khung Quy Chuẩn Rèn Nắn (Dùng Lễ Định Phần)",
-                "verbatim": f'"Mọi vị trí đều cần được rèn giũa để đạt chuẩn mực cao nhất. Sự cố hôm nay là cơ hội để chúng ta uốn nắn lại quy trình."'
+                "verbatim": '"Mọi vị trí đều cần được rèn giũa để đạt chuẩn mực cao nhất. Sự cố hôm nay là cơ hội để chúng ta uốn nắn lại quy trình."'
             },
             "step_2_deadline_consequence": {
                 "title": "Bước 2: Thiết Lập Lộ Trình Huấn Luyện & Sát Hạch Bắt Buộc",
-                "verbatim": f'"Yêu cầu tham gia đợt sát hạch nâng chuẩn trong 7 ngày tới. Nhân sự vượt qua thử thách sẽ được trao thêm quyền hạn mới."'
+                "verbatim": '"Yêu cầu tham gia đợt sát hạch nâng chuẩn trong 7 ngày tới. Nhân sự vượt qua thử thách sẽ được trao thêm quyền hạn mới."'
             },
             "step_3_way_out_plan_b": {
                 "title": "Bước 3: Công Nhận Sự Chuyển Hóa & Bồi Dưỡng Lâu Dài",
-                "verbatim": f'"Tổ chức luôn trân quý những cộng sự có ý chí cầu tiến và sẵn sàng uốn nắn bản thân vì tiêu chuẩn hoàn hảo."'
+                "verbatim": '"Tổ chức luôn trân quý những cộng sự có ý chí cầu tiến và sẵn sàng uốn nắn bản thân vì tiêu chuẩn hoàn hảo."'
             },
             "draft_official_communication": (
-                f"KẾ HOẠCH NÂNG CHUẨN NĂNG LỰC & KỶ LUẬT THỰC THI\n"
-                f"----------------------------------------------\n"
-                f"Gửi: Toàn thể Cán bộ Đơn vị\n\n"
-                f"Khởi động chương trình sát hạch quy chuẩn và nâng tầm kỹ năng chuyên môn.\n\n"
-                f"Ban Đào Tạo & Quản Trị Hiệu Năng"
+                "KẾ HOẠCH NÂNG CHUẨN NĂNG LỰC & KỶ LUẬT THỰC THI\n"
+                "----------------------------------------------\n"
+                "Gửi: Toàn thể Cán bộ Đơn vị\n\n"
+                "Khởi động chương trình sát hạch quy chuẩn và nâng tầm kỹ năng chuyên môn.\n\n"
+                "Ban Đào Tạo & Quản Trị Hiệu Năng"
             ),
             "financial_and_operational_directives": [
                 "📖 MENTORSHIP BẮT BUỘC: Ghép cặp nhân sự còn non với cán bộ kỳ cựu để rèn nắn thực chiến.",
@@ -635,7 +635,7 @@ def diagnose_person_role_fit(payload: dict[str, Any]) -> dict[str, Any]:
     target_role = payload.get("target_role", "").strip() or "Vị trí quản lý"
     raw_traits = payload.get("traits", [])
     raw_demands = payload.get("role_demands", [])
-    context = payload.get("context", "")
+    _context = payload.get("context", "")
 
     # Normalize traits and demands
     traits = [t.strip() for t in raw_traits if t.strip()] if isinstance(raw_traits, list) else [s.strip() for s in str(raw_traits).split(",") if s.strip()]
@@ -677,7 +677,7 @@ def diagnose_person_role_fit(payload: dict[str, Any]) -> dict[str, Any]:
             {"id": "NT-LAW-0034", "title": "Quy luật ma sát nhận thức", "domain": "tri-nhan"}
         ]
         return result
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001
         print(f"[NhanThuatAPI] LLM fit diagnosis failed, using fallback: {e}")
 
     # Trait vs Demand friction heuristic
@@ -806,7 +806,7 @@ def diagnose_team_structural_fit(payload: dict[str, Any]) -> dict[str, Any]:
             {"id": "NT-MODEL-0012", "title": "Đường cong gắn kết - ma sát", "domain": "hop-chung"}
         ]
         return result
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001
         print(f"[NhanThuatAPI] LLM team structural fit failed, using fallback: {e}")
 
     # 2. Deterministic Heuristic Analysis
@@ -914,7 +914,8 @@ def process_nhan_thuat_analysis(scenario_text: str, scenario_type_hint: str = "g
         )
         try:
             generated_text = syn.generate_text(sparring_prompt)
-            from nhan_thuat.runtime.synthesizer import provider_name as _provider_name, _model as _synth_model
+            from nhan_thuat.runtime.synthesizer import _model as _synth_model
+            from nhan_thuat.runtime.synthesizer import provider_name as _provider_name
             return {
                 "status": "success",
                 "scenario_text": scenario_text,
@@ -937,7 +938,7 @@ def process_nhan_thuat_analysis(scenario_text: str, scenario_type_hint: str = "g
                 },
                 "correlation_id": f"CORR-SPAR-{uuid.uuid4().hex[:8].upper()}",
             }
-        except Exception:
+        except Exception:  # noqa: BLE001, S110
             pass  # fall through to standard synthesis
 
     # 1. Determine scenario type

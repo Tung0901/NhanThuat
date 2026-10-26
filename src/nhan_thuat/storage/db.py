@@ -33,7 +33,7 @@ class DatabaseManager:
             if not Path(db_path).exists() and legacy_path.exists():
                 Path(db_path).parent.mkdir(parents=True, exist_ok=True)
                 shutil.copy2(legacy_path, db_path)
-        
+
         self.db_path = str(db_path)
         self._mem_conn: sqlite3.Connection | None = None
         if self.db_path == ":memory:":
@@ -41,7 +41,7 @@ class DatabaseManager:
             self._mem_conn.row_factory = sqlite3.Row
         else:
             Path(self.db_path).parent.mkdir(parents=True, exist_ok=True)
-            
+
         self.init_db()
 
     def _get_connection(self) -> sqlite3.Connection:
@@ -79,10 +79,16 @@ class DatabaseManager:
                 created_at TEXT NOT NULL,
                 status TEXT DEFAULT 'active',
                 summary TEXT DEFAULT '',
-                metadata TEXT DEFAULT '{}'
+                metadata TEXT DEFAULT '{}',
+                owner_id TEXT NOT NULL DEFAULT 'system'
             )
         """)
+        cursor.execute("PRAGMA table_info(sparring_sessions)")
+        existing_cols = {str(r[1]) for r in cursor.fetchall()}
+        if "owner_id" not in existing_cols:
+            cursor.execute("ALTER TABLE sparring_sessions ADD COLUMN owner_id TEXT NOT NULL DEFAULT 'system'")
         cursor.execute("CREATE INDEX IF NOT EXISTS idx_sessions_created ON sparring_sessions(created_at DESC)")
+        cursor.execute("CREATE INDEX IF NOT EXISTS idx_sessions_owner ON sparring_sessions(owner_id, created_at DESC)")
 
         # 2. Sparring Messages
         cursor.execute("""
@@ -168,17 +174,25 @@ class DatabaseManager:
         self._close_connection(conn)
 
     # --- Sparring Sessions CRUD ---
-    def create_session(self, title: str, philosophy_lens: str = "auto", metadata: dict[str, Any] | None = None) -> SparringSession:
+    def create_session(
+        self,
+        title: str,
+        philosophy_lens: str = "auto",
+        metadata: dict[str, Any] | None = None,
+        owner_id: str = "system",
+    ) -> SparringSession:
         conn = self._get_connection()
         cursor = conn.cursor()
         session_id = f"SPAR-SESS-{uuid.uuid4().hex[:8].upper()}"
         now = datetime.now(UTC).replace(tzinfo=None).isoformat()
-        meta_str = json.dumps(metadata or {}, ensure_ascii=False)
+        meta_dict = dict(metadata or {})
+        resolved_owner = str(owner_id or meta_dict.get("owner_id") or "system").strip() or "system"
+        meta_str = json.dumps(meta_dict, ensure_ascii=False)
 
         cursor.execute("""
-            INSERT INTO sparring_sessions (id, title, philosophy_lens, created_at, status, summary, metadata)
-            VALUES (?, ?, ?, ?, ?, ?, ?)
-        """, (session_id, title, philosophy_lens, now, "active", "", meta_str))
+            INSERT INTO sparring_sessions (id, title, philosophy_lens, created_at, status, summary, metadata, owner_id)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        """, (session_id, title, philosophy_lens, now, "active", "", meta_str, resolved_owner))
         conn.commit()
         self._close_connection(conn)
 
@@ -189,7 +203,8 @@ class DatabaseManager:
             created_at=now,
             status="active",
             summary="",
-            metadata=metadata or {},
+            metadata=meta_dict,
+            owner_id=resolved_owner,
         )
 
     def get_session(self, session_id: str) -> SparringSession | None:
@@ -200,10 +215,16 @@ class DatabaseManager:
         self._close_connection(conn)
         return SparringSession.from_row(dict(row)) if row else None
 
-    def list_sessions(self, limit: int = 50) -> list[SparringSession]:
+    def list_sessions(self, limit: int = 50, owner_id: str | None = None) -> list[SparringSession]:
         conn = self._get_connection()
         cursor = conn.cursor()
-        cursor.execute("SELECT * FROM sparring_sessions ORDER BY created_at DESC LIMIT ?", (limit,))
+        if owner_id is not None:
+            cursor.execute(
+                "SELECT * FROM sparring_sessions WHERE owner_id = ? ORDER BY created_at DESC LIMIT ?",
+                (owner_id, limit),
+            )
+        else:
+            cursor.execute("SELECT * FROM sparring_sessions ORDER BY created_at DESC LIMIT ?", (limit,))
         rows = cursor.fetchall()
         self._close_connection(conn)
         return [SparringSession.from_row(dict(r)) for r in rows]

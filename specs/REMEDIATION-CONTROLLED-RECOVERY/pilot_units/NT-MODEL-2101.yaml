@@ -1,0 +1,132 @@
+unit_id: NT-MODEL-2101
+base_commit: 27a34bc
+canonical_path: knowledge/units/models/NT-MODEL-2101.yaml
+current_version: 1.0.0
+proposed_version: 1.1.0
+status: ready_for_review
+governance_note: Proposal artifact only. Do not apply to canonical until Product Owner
+  approves CR-2026-10-19-KNOWLEDGE-CONTENT-V1 (Decision B).
+evidence_before:
+  level: provisional
+  references: []
+evidence_proposed:
+  level: provisional
+  references:
+  - '[Review/Meta-analysis] Bundy, J., Pfarrer, M. D., Short, C. E., & Coombs, W.
+    T. (2017). Crises and crisis management: Integration, interpretation, and research
+    development. Journal of Management, 43(6), 1661-1692 (Khung tổng quan tích hợp
+    các giai đoạn quản trị khủng hoảng).'
+  - '[Popular Synthesis] Coombs, W. T. (2014). Ongoing Crisis Communication: Planning,
+    Managing, and Responding. SAGE Publications (Lý thuyết truyền thông khủng hoảng
+    theo tình huống - SCCT).'
+  - '[Classical Analogy] Tôn Vũ — Tôn Tử Binh Pháp, thiên Cửu Biến (Nguyên tắc phòng
+    bị và xử lý biến cố đa diện).'
+  - '[Editorial Inference] Khung điều phối ba trục Khoanh vùng - Truyền thông - Khắc
+    phục trong vận hành sự cố.'
+rationale: 'Giữ mức evidence: provisional trung thực vì mô hình Tam giác là khung
+  biên tập tổng hợp (editorial synthesis) chưa có kiểm chứng thực nghiệm trực tiếp
+  độc lập; chuẩn hóa 4 nguồn tham chiếu theo 7 nhãn học thuật và loại bỏ cụm từ tuyệt
+  đối hóa áp dụng cho mọi khủng hoảng.'
+impact: Bảo đảm tính trung thực học thuật, định hình ranh giới áp dụng rõ ràng cho
+  mô hình điều phối khủng hoảng.
+source_classification:
+  review_meta_analysis:
+  - Bundy et al. (2017)
+  popular_synthesis:
+  - Coombs (2014)
+  classical_analogy:
+  - Tôn Tử Binh Pháp (Cửu Biến)
+  editorial_inference:
+  - Khung điều phối ba trục Khoanh vùng - Truyền thông - Khắc phục
+proposed_unit:
+  id: NT-MODEL-2101
+  type: model
+  status: frozen
+  version: 1.1.0
+  title: Tam Giác Ứng Phó Khủng Hoảng
+  summary: 'Mô hình ba trụ cột phối hợp song song để đánh giá và xử lý biến cố tổ
+    chức: Khoanh vùng, Truyền thông và Khắc phục.'
+  primary_domain: thanh-su
+  domain_area: NT-DA-0021
+  secondary_domains:
+  - dung-nhan
+  definition: Khung tư duy chiến lược giúp đội ngũ lãnh đạo phân bổ nguồn lực cân
+    đối trên ba mặt trận khi đối mặt với khủng hoảng tổ chức.
+  mechanism:
+  - 'Khoanh vùng: Thiết lập hàng rào ngăn sự cố lan rộng sang các cấu phần lân cận.'
+  - 'Truyền thông: Cung cấp thông tin đã xác minh cho các bên liên quan để bảo toàn
+    sự tin cậy.'
+  - 'Khắc phục: Sửa chữa nguyên nhân gốc rễ và khôi phục hoạt động bền vững.'
+  conditions:
+  - Áp dụng cho các biến cố tổ chức và sự cố vận hành có nguy cơ lan tỏa đa chiều
+    (kỹ thuật, danh tiếng, pháp lý).
+  - Tổ chức có khả năng phân tách vai trò giữa nhóm kỹ thuật xử lý hiện trường và
+    nhóm điều phối thông tin.
+  exceptions:
+  - Các lỗi kỹ thuật nội bộ nhỏ được khắc phục tự động trước khi ảnh hưởng đến bên
+    ngoài.
+  - Các vụ việc điều tra pháp lý hoặc an ninh đang trong giai đoạn bảo mật bắt buộc
+    theo luật định.
+  applications:
+    management:
+    - Định tuyến và điều phối đội đặc nhiệm xử lý sự cố đa chức năng
+  risks:
+  - Quá tập trung vào kỹ thuật khoanh vùng mà chậm trễ truyền thông gây mất uy tín.
+  - Hứa hẹn khắc phục vượt quá khả năng thực tế làm trầm trọng thêm khủng hoảng niềm
+    tin.
+  evidence:
+    level: provisional
+    references:
+    - '[Review/Meta-analysis] Bundy, J., Pfarrer, M. D., Short, C. E., & Coombs, W.
+      T. (2017). Crises and crisis management: Integration, interpretation, and research
+      development. Journal of Management, 43(6), 1661-1692 (Khung tổng quan tích hợp
+      các giai đoạn quản trị khủng hoảng).'
+    - '[Popular Synthesis] Coombs, W. T. (2014). Ongoing Crisis Communication: Planning,
+      Managing, and Responding. SAGE Publications (Lý thuyết truyền thông khủng hoảng
+      theo tình huống - SCCT).'
+    - '[Classical Analogy] Tôn Vũ — Tôn Tử Binh Pháp, thiên Cửu Biến (Nguyên tắc phòng
+      bị và xử lý biến cố đa diện).'
+    - '[Editorial Inference] Khung điều phối ba trục Khoanh vùng - Truyền thông -
+      Khắc phục trong vận hành sự cố.'
+  relations:
+    supports: []
+    conflicts_with: []
+    depends_on: []
+    applies_to: []
+  tags:
+  - framework
+  - response
+  - crisis-response
+  - containment
+  - communication
+  - correction
+  created_at: '2026-08-15'
+  updated_at: '2026-09-14'
+  content: "### 1. Cấu trúc Ba Trụ cột Điều phối Sự cố\n**Tam Giác Ứng Phó Khủng Hoảng**\
+    \ (`NT-MODEL-2101`) cung cấp mô hình phân bổ nguồn lực song song trên ba mặt trận\
+    \ khi xảy ra biến cố tổ chức: (1) *Khoanh vùng kỹ thuật/vận hành* để chặn đà lan\
+    \ rộng của thiệt hại, (2) *Truyền thông có kiểm chứng* để duy trì sự tin cậy với\
+    \ các bên liên quan, và (3) *Khắc phục căn nguyên* để phục hồi hoạt động bền vững.\n\
+    \n### 2. Điều kiện áp dụng & Ngoại lệ\n- **Điều kiện áp dụng:**\n  - Sự cố vận\
+    \ hành, gián đoạn dịch vụ, khủng hoảng uy tín hoặc vi phạm tuân thủ có tác động\
+    \ đồng thời lên cả hệ thống nội bộ lẫn khách hàng/đối tác bên ngoài.\n  - Tổ chức\
+    \ có khả năng phân tách vai trò giữa nhóm xử lý kỹ thuật trực tiếp và nhóm điều\
+    \ phối thông tin.\n- **Ngoại lệ:**\n  - Các lỗi kỹ thuật nội bộ nhỏ được xử lý\
+    \ tự động trước khi ảnh hưởng đến người dùng cuối; việc kích hoạt truyền thông\
+    \ diện rộng trong trường hợp này là không cần thiết.\n  - Các cuộc điều tra pháp\
+    \ lý hoặc an ninh mạng đang trong giai đoạn bảo mật theo yêu cầu của cơ quan chức\
+    \ năng (cần giới hạn phạm vi công bố thông tin).\n\n### 3. Mức bất định & Rủi\
+    \ ro diễn giải sai\n- **Mức bất định:** Trung bình. Trong giai đoạn đầu của sự\
+    \ cố, dữ liệu nguyên nhân gốc rễ thường chưa đầy đủ; do đó trụ cột truyền thông\
+    \ phải nêu rõ những gì đã xác minh và những gì đang tiếp tục kiểm tra thay vì\
+    \ cam kết tuyệt đối quá sớm.\n- **Rủi ro diễn giải sai:**\n  - Xem truyền thông\
+    \ khủng hoảng là việc che giấu sự cố hoặc hứa hẹn vượt khả năng khắc phục thực\
+    \ tế, dẫn đến mất uy tín kép khi sự thật được phơi bày.\n  - Dồn toàn bộ nhân\
+    \ sự kỹ thuật sang trả lời báo cáo khiến tiến độ khoanh vùng và sửa lỗi bị đình\
+    \ trệ.\n\n### 4. Nguồn truy nguyên & Đối chiếu Đông - Tây\n- **Nguồn truy nguyên:**\
+    \ Tổng hợp nghiên cứu quản trị khủng hoảng của Bundy et al. (2017) và Lý thuyết\
+    \ Truyền thông Khủng hoảng theo Tình huống (SCCT) của W. Timothy Coombs (2014).\n\
+    - **Đối chiếu cổ điển `[Classical Analogy]`:** Tôn Tử Binh Pháp và tư tưởng trị\
+    \ thủy cổ đại đều nhấn mạnh nguyên tắc vừa đắp đê ngăn dòng chảy tràn lan (khoanh\
+    \ vùng), vừa ổn định lòng người (truyền thông), vừa khơi thông dòng chính (khắc\
+    \ phục gốc rễ).\n"

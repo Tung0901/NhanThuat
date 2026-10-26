@@ -1,0 +1,131 @@
+unit_id: NT-ANTI-PATTERN-0012
+base_commit: 27a34bc
+canonical_path: knowledge/units/anti-patterns/NT-ANTI-PATTERN-0012-charismatic-trap.yaml
+current_version: 0.2.0
+proposed_version: 1.0.0
+status: ready_for_review
+governance_note: Proposal artifact only. Do not apply to canonical until Product Owner
+  approves CR-2026-10-19-KNOWLEDGE-CONTENT-V1 (Decision B).
+evidence_before:
+  level: supported
+  references:
+  - EV-REQ-0001-01
+evidence_proposed:
+  level: supported
+  references:
+  - '[Academic Monograph] Khurana, R. (2002). Searching for a Corporate Savior: The
+    Irrational Quest for Charismatic CEOs. Princeton University Press (Chuyên khảo
+    học thuật phân tích rủi ro phụ thuộc vào CEO có sức hút cá nhân).'
+  - '[Review/Meta-analysis] House, R. J., & Howell, J. M. (1992). Personality and
+    charismatic leadership. The Leadership Quarterly, 3(2), 81-108 (Phân tích lý thuyết
+    và tổng quan lãnh đạo có sức hút định hướng xã hội hóa vs cá nhân hóa).'
+  - '[Classical Analogy] Hàn Phi Tử — Thiên Thập Quá & Bát Gian (Cảnh báo rủi ro hệ
+    thống khi sự vận hành đặt lên uy vọng cá nhân thay vì pháp độ và cơ chế kiểm soát).'
+  - '[Editorial Inference] Thiết kế cơ chế phản biện thể chế và kế nhiệm giảm phụ
+    thuộc cá nhân.'
+rationale: 'Phân loại chính xác nguồn tham chiếu: chuyển Khurana (2002) sang [Academic
+  Monograph] và House & Howell (1992) sang [Review/Meta-analysis]; thay thế placeholder
+  EV-REQ-0001-01 bằng bằng chứng thực chất.'
+impact: Hoàn thiện cơ sở lý luận về bẫy sức hút cá nhân, đề xuất tăng version 0.2.0
+  -> 1.0.0 sau khi PO duyệt.
+source_classification:
+  academic_monograph:
+  - Khurana (2002)
+  review_meta_analysis:
+  - House & Howell (1992)
+  classical_analogy:
+  - Hàn Phi Tử (Thập Quá & Bát Gian)
+  editorial_inference:
+  - Cơ chế phản biện thể chế và kế nhiệm
+proposed_unit:
+  id: NT-ANTI-PATTERN-0012
+  type: anti-pattern
+  status: frozen
+  version: 1.0.0
+  title: Bẫy sức hút cá nhân
+  summary: Tổ chức phụ thuộc quá mức vào sức hút và phán đoán cảm tính của một lãnh
+    đạo trung tâm, dẫn đến sự xói mòn của quy trình kiểm soát độc lập.
+  primary_domain: dung-nhan
+  domain_area: NT-DA-0011
+  secondary_domains:
+  - tu-than
+  definition: Xu hướng tập thể quy gán mọi thành công cho tài năng xuất chúng của
+    một cá nhân và nới lỏng các hàng rào kiểm soát rủi ro thể chế.
+  mechanism:
+  - Lãnh đạo có sức hút tạo dựng niềm tin mạnh mẽ ban đầu qua các thành tích nổi bật.
+  - Tập thể và hội đồng quản trị giảm tần suất chất vấn và kiểm tra chéo các quyết
+    định.
+  - Ý kiến phản biện bị cô lập hoặc xem là thiếu trung thành.
+  - Sai lầm chiến lược tích tụ trong bóng tối cho đến khi bùng phát thành khủng hoảng
+    hệ thống.
+  conditions:
+  - Tổ chức vừa trải qua khủng hoảng hoặc tăng trưởng nóng nhờ một cá nhân dẫn dắt.
+  - Hội đồng quản trị hoặc ban kiểm soát thiếu tính độc lập về thông tin và chuyên
+    môn.
+  exceptions:
+  - Khi sức hút truyền cảm hứng đi kèm với quy trình phản biện bắt buộc và đội ngũ
+    kế cận có quyền phủ quyết kỹ thuật.
+  - Giai đoạn khởi nghiệp rất sớm khi cấu trúc quy trình chưa kịp hình thành, với
+    điều kiện sớm thể chế hóa.
+  applications:
+    management:
+    - Thiết lập hội đồng cố vấn độc lập và quy định bắt buộc phải có thẩm định kỹ
+      thuật trước khi thông qua quyết định lớn
+  risks:
+  - Cực đoan hóa thành việc bài xích những nhà lãnh đạo có khả năng truyền cảm hứng.
+  - Áp đặt bộ máy quan liêu cứng nhắc làm triệt tiêu tính quyết đoán cần thiết.
+  evidence:
+    level: supported
+    references:
+    - '[Academic Monograph] Khurana, R. (2002). Searching for a Corporate Savior:
+      The Irrational Quest for Charismatic CEOs. Princeton University Press (Chuyên
+      khảo học thuật phân tích rủi ro phụ thuộc vào CEO có sức hút cá nhân).'
+    - '[Review/Meta-analysis] House, R. J., & Howell, J. M. (1992). Personality and
+      charismatic leadership. The Leadership Quarterly, 3(2), 81-108 (Phân tích lý
+      thuyết và tổng quan lãnh đạo có sức hút định hướng xã hội hóa vs cá nhân hóa).'
+    - '[Classical Analogy] Hàn Phi Tử — Thiên Thập Quá & Bát Gian (Cảnh báo rủi ro
+      hệ thống khi sự vận hành đặt lên uy vọng cá nhân thay vì pháp độ và cơ chế kiểm
+      soát).'
+    - '[Editorial Inference] Thiết kế cơ chế phản biện thể chế và kế nhiệm giảm phụ
+      thuộc cá nhân.'
+  relations:
+    supports: []
+    conflicts_with: []
+    depends_on: []
+    applies_to: []
+  tags:
+  - anti-pattern
+  - leadership
+  - charisma
+  - governance-failure
+  created_at: '2026-08-15'
+  updated_at: '2026-09-14'
+  content: "### 1. Cơ chế Thay thế Thể chế bằng Hào quang Cá nhân\n**Bẫy sức hút cá\
+    \ nhân** (`NT-ANTI-PATTERN-0012`) xuất hiện khi tổ chức đặt niềm tin quá mức vào\
+    \ sự tự tin, khả năng hùng biện và thành tích quá khứ của một cá nhân trung tâm,\
+    \ dẫn đến việc nới lỏng các hàng rào kiểm chứng độc lập, hội đồng thẩm định và\
+    \ quy trình kế nhiệm (Khurana, 2002). House & Howell (1992) phân biệt rõ giữa\
+    \ lãnh đạo có sức hút gắn với thể chế chung (socialized charisma) và lãnh đạo\
+    \ tập trung quyền lực vào cái tôi cá nhân (personalized charisma) — nhóm thứ hai\
+    \ làm gia tăng rủi ro điểm mù chiến lược.\n\n### 2. Điều kiện áp dụng & Ngoại\
+    \ lệ\n- **Điều kiện áp dụng:**\n  - Tổ chức vừa trải qua khủng hoảng hoặc tăng\
+    \ trưởng nóng nhờ một cá nhân dẫn dắt, khiến tập thể hình thành tâm lý quy gán\
+    \ thành công cho một người.\n  - Hội đồng quản trị hoặc ban kiểm soát thiếu tính\
+    \ độc lập về thông tin và chuyên môn.\n- **Ngoại lệ:**\n  - Khi sức hút truyền\
+    \ cảm hứng của người đứng đầu đi kèm với quy trình phản biện bắt buộc, phân quyền\
+    \ rõ ràng và đội ngũ kế cận đủ thẩm quyền phủ quyết kỹ thuật.\n  - Giai đoạn khởi\
+    \ nghiệp rất sớm hoặc ứng cứu ngắn hạn khi cấu trúc quy trình chưa kịp hình thành,\
+    \ miễn là sớm chuyển giao sang cơ chế thể chế hóa.\n\n### 3. Mức bất định & Rủi\
+    \ ro diễn giải sai\n- **Mức bất định:** Trung bình. Sức hút cá nhân không tất\
+    \ yếu dẫn đến sụp đổ nếu tổ chức chủ động xây dựng cơ chế kiểm soát đối trọng;\
+    \ rủi ro chỉ trở thành hiện thực khi hào quang cá nhân làm tê liệt kênh báo động\
+    \ sớm.\n- **Rủi ro diễn giải sai:**\n  - Cực đoan hóa thành việc bài xích những\
+    \ nhà lãnh đạo có khả năng truyền cảm hứng và tầm nhìn mạnh mẽ.\n  - Áp đặt bộ\
+    \ máy quan liêu cứng nhắc làm triệt tiêu tính quyết đoán cần thiết của người đứng\
+    \ đầu.\n\n### 4. Nguồn truy nguyên & Đối chiếu Đông - Tây\n- **Nguồn truy nguyên:**\
+    \ Nghiên cứu định lượng và lịch sử doanh nghiệp của Rakesh Khurana (2002) tại\
+    \ Harvard cùng phân tích tâm lý lãnh đạo của House & Howell (1992).\n- **Đối chiếu\
+    \ cổ điển `[Classical Analogy]`:** Pháp gia (*Hàn Phi Tử — Nan Thế*) chỉ rõ bậc\
+    \ hiền tài trăm năm mới xuất hiện một người, trong khi việc trị nước và vận hành\
+    \ tổ chức diễn ra hàng ngày; vì vậy không thể lấy sự kỳ vọng vào một cá nhân phi\
+    \ thường để thay thế cho chuẩn mực quy chế (*Pháp*) và cơ chế kiểm chứng (*Thuật*).\n"

@@ -1,0 +1,1785 @@
+{
+  "artifact_id": "AUDIT-ARTIFACT-FROZEN-RESTORE-177",
+  "base_commit": "27a34bcd840713df1817517066b4cf1a9b1623a3",
+  "base_commit_short": "27a34bc",
+  "pre_restore_source_tree": "d28c7ee6451127122238336d91018cd89dc3d67e",
+  "total_frozen_units_restored": 177,
+  "generated_at": "2026-10-20T09:18:58.354583+00:00",
+  "immutable": true,
+  "description": "Immutable audit log recording pre-restore and post-restore SHA-256 for all 177 Frozen canonical units restored to base commit 27a34bc.",
+  "entries": [
+    {
+      "id": "NT-ANTI-PATTERN-0012",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0012-charismatic-trap.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "a4f7b836bc27984b4d8fceb0254dcf9a925a0874b06479a5d3bca26d0a68b692",
+      "base_sha256": "117eeaf3ee85e833c3d0ef76b189438d873f0148847a8e4bb69097280fc99871",
+      "current_canonical_sha256": "117eeaf3ee85e833c3d0ef76b189438d873f0148847a8e4bb69097280fc99871",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0013",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0013-coercive-compliance.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "68d6ceea5f6043663f9b7930fd102ba174002517d9133e3ec5105ce6ce9d3abb",
+      "base_sha256": "b68255bb24395f1da8bab7afa8a24a7a7648709e42d8eb97767b6ff91086d216",
+      "current_canonical_sha256": "b68255bb24395f1da8bab7afa8a24a7a7648709e42d8eb97767b6ff91086d216",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0014",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0014-formal-position-illusion.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "2de09d0df8ffe7e96327787ab798b36a4ba5c002b1b44b9af55409f706990412",
+      "base_sha256": "4aed4e4f8cdb11dae066a11ee676f0310d1285d6b849ad2d635f58f21c55f4df",
+      "current_canonical_sha256": "4aed4e4f8cdb11dae066a11ee676f0310d1285d6b849ad2d635f58f21c55f4df",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0015",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0015-culture-fit-trap.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "d04b286924f630145fb18ddd377370670da43e6ba1fc24e4f0afc939debd1432",
+      "base_sha256": "b77e3928ace523439aac77df072dacaa44f5777305833ecf151f3f6c26101056",
+      "current_canonical_sha256": "b77e3928ace523439aac77df072dacaa44f5777305833ecf151f3f6c26101056",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0016",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0016-intuition-fallacy.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "a27b9ec390f09e5c136c3baf8ce8b4af53659edbc94ca5e13d4bb3a29bd10f8c",
+      "base_sha256": "f867a54914b06365dcd0a6387fc58397c0877bf6740b0b43d61be5ce27c59b49",
+      "current_canonical_sha256": "f867a54914b06365dcd0a6387fc58397c0877bf6740b0b43d61be5ce27c59b49",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0017",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0017-clone-factory.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "8d045ed7b9544679b89df79b67bfb08cccffe9054b50bf5ce9b88648c68b28df",
+      "base_sha256": "0f445b9bf43b98d599170d5f9a81871d7666bf6af90c91b288209ff3127114a7",
+      "current_canonical_sha256": "0f445b9bf43b98d599170d5f9a81871d7666bf6af90c91b288209ff3127114a7",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0018",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0018-siloed-team.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "f3cd6ce8020bad9c04b598ef4d19aade5ce542223d2e82c0f9e382e72e722025",
+      "base_sha256": "4f980feef9a6ba78b26d3f6274d44ca6f249212378e0ade643845df6dd310d1b",
+      "current_canonical_sha256": "4f980feef9a6ba78b26d3f6274d44ca6f249212378e0ade643845df6dd310d1b",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0019",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0019-abdication-trap.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "40225fa61af8a966e491f99564f9bd550927fb305d885f189d5885e9cbfb1aaf",
+      "base_sha256": "c1400e224600516cd7a01d53311f82e0c3ee6540b6dddd0cf9aec911a8fed0f2",
+      "current_canonical_sha256": "c1400e224600516cd7a01d53311f82e0c3ee6540b6dddd0cf9aec911a8fed0f2",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0020",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0020-authority-mirage.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "876c2e31b8d41421998d90ad4a85c5c45580ff9abd7427b4e92cba7ff523affb",
+      "base_sha256": "9e72a7b454c44dc471f36b6f075da4e000ab2c5e3433b06711d2b244571c107d",
+      "current_canonical_sha256": "9e72a7b454c44dc471f36b6f075da4e000ab2c5e3433b06711d2b244571c107d",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0021",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0021-broadcast-illusion.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "a662cf63c27efa585fff43c663bac0e26d5de539ae57986d1baa279e60c24177",
+      "base_sha256": "c8eb02bfbc577aca34a17224aef57a3eebeeefde525ac55a5fcd00d6f48fdabc",
+      "current_canonical_sha256": "c8eb02bfbc577aca34a17224aef57a3eebeeefde525ac55a5fcd00d6f48fdabc",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0022",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0022-jargon-obfuscation.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "1c36866f318eb46235b32dc6bd2279c020ba903c7d8de8ddf432a32e6d4c6398",
+      "base_sha256": "396a27724b5175a30d114fbae07bd1589cf4fd2e20951dd2743d22a37c733564",
+      "current_canonical_sha256": "396a27724b5175a30d114fbae07bd1589cf4fd2e20951dd2743d22a37c733564",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0023",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0023-resulting-fallacy.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "359b9f692148ed7e730650e5b3f83bce6b357f233a6f7d305f523e0688ab07aa",
+      "base_sha256": "8bc8e126b439412e9091732ae4be72bde60a8c8256992e23c740fbbfdca3e240",
+      "current_canonical_sha256": "8bc8e126b439412e9091732ae4be72bde60a8c8256992e23c740fbbfdca3e240",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0024",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0024-analysis-paralysis.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "7533793aa0bcaa2c7c1bbb7176e69587674b5823b67854258f1bc545c42e7bd4",
+      "base_sha256": "ab6b5e6e39eb5059be1d3b9a3f0d227538a11dddc3a294f4f4b86f75af42daf7",
+      "current_canonical_sha256": "ab6b5e6e39eb5059be1d3b9a3f0d227538a11dddc3a294f4f4b86f75af42daf7",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0025",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0025-hippo-bias.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "03b9b4ade7324c098f1ab84d7fb9ed40a215b944ef49904f58c425259231a362",
+      "base_sha256": "a9236488c1f73361247a00267743e4e1192aadec04b226b68dc36d5b1ec2c945",
+      "current_canonical_sha256": "a9236488c1f73361247a00267743e4e1192aadec04b226b68dc36d5b1ec2c945",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0026",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0026-sunk-cost-trap.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "83eb2816e139af995817deda9592ab19a26922a72c25135984df95d2ad20445e",
+      "base_sha256": "e9c21955b18752e75bfd3b52a81cf794a4faf7b0774ecf38b9f5f3665c831faa",
+      "current_canonical_sha256": "e9c21955b18752e75bfd3b52a81cf794a4faf7b0774ecf38b9f5f3665c831faa",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0027",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0027-false-urgency.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "109553de2300b3b9fb6e01bd17475dbb566ff47401e77912a034cbcda5a2f340",
+      "base_sha256": "be99bc4210ab12da43c31c72d289038e829cf4bc79b11f4aad530d905195b3bf",
+      "current_canonical_sha256": "be99bc4210ab12da43c31c72d289038e829cf4bc79b11f4aad530d905195b3bf",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0028",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0028-blind-faith-delegation.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "f73a52b39bb33ef1bac271363e95af5c00c39d07a26ada4709436c1f397dafe5",
+      "base_sha256": "1bf2958f45468b7e5a5ca76f91f0a668f61e7217b00ab4fbcc70b4f1c33d1050",
+      "current_canonical_sha256": "1bf2958f45468b7e5a5ca76f91f0a668f61e7217b00ab4fbcc70b4f1c33d1050",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0029",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0029-punitive-surveillance.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "fec5feb0003b791cb83d7fa57e1330818e2ab4fcab330a3072eec19cb541a2ac",
+      "base_sha256": "29afe67381bf14cf6cab32b59647c40543edca52fc6dd4d541b08bb3275b137f",
+      "current_canonical_sha256": "29afe67381bf14cf6cab32b59647c40543edca52fc6dd4d541b08bb3275b137f",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0030",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0030-transactional-cynicism.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "298d753b762771ddc09d0f24d97dff537d783ac6bb2c3ad22d98aa346fbf8ac4",
+      "base_sha256": "bacc39d2858460175e2fdffedd4cfd2f729d92decc8b4e30050565cd36dab3d0",
+      "current_canonical_sha256": "bacc39d2858460175e2fdffedd4cfd2f729d92decc8b4e30050565cd36dab3d0",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0031",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0031-breach-concealment.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "0e270b62457e9cda5fef78de436d4df30271ec886150df7bc6613ce0d3a337f7",
+      "base_sha256": "0f560662edb3726bc395013bf9ddcd00cd98df99430b668a98046f568339fa9f",
+      "current_canonical_sha256": "0f560662edb3726bc395013bf9ddcd00cd98df99430b668a98046f568339fa9f",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0032",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0032-manipulative-framing.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "8817100934a4323b296747b0410d2fb5e6c4b2ace20d8bdf429d055962ef8b3d",
+      "base_sha256": "321faffb847ae850eee4d401b96ed0f76467c7efa08d32ce525467c2964f0bcb",
+      "current_canonical_sha256": "321faffb847ae850eee4d401b96ed0f76467c7efa08d32ce525467c2964f0bcb",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0033",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0033-positional-forcing.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "a22c74383c0620b81f97f4ea0d4af5e7807dc45a05ac7804090c8a84f1bbe758",
+      "base_sha256": "52b666dd61ea341bddcaa53e9bde1b043d70b8b3ae3ce50ec116f9bef1bcd888",
+      "current_canonical_sha256": "52b666dd61ea341bddcaa53e9bde1b043d70b8b3ae3ce50ec116f9bef1bcd888",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0034",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0034-echo-chamber-persuasion.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "b37f7c75003dd6614356b15ff17b17306924cad46ad4a308e167502b31d8af14",
+      "base_sha256": "66cba697d1d66185f08ce155e169252919cb4fcf255d0de9acb1eacf534c8ad3",
+      "current_canonical_sha256": "66cba697d1d66185f08ce155e169252919cb4fcf255d0de9acb1eacf534c8ad3",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0035",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0035-covert-lobbying.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "4b883fb01abc82f3b591d99e6787cc4f1ca0f36a8e333f0070489302ec9af48c",
+      "base_sha256": "029c3962559a71bef1456fb46c139b3e817627f44eece0897048391642aa89b5",
+      "current_canonical_sha256": "029c3962559a71bef1456fb46c139b3e817627f44eece0897048391642aa89b5",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0036",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0036-positional-bargaining-lock.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "cfdd010ac8851fec21a7977c7363bdcda5f1c1157aec005570dd51f9f1f34f75",
+      "base_sha256": "a505bc91f72f3c42edd6e7a87a054e250199fcce93717191d406fcec33b3c2b0",
+      "current_canonical_sha256": "a505bc91f72f3c42edd6e7a87a054e250199fcce93717191d406fcec33b3c2b0",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0037",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0037-zero-sum-fallacy.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "b9365665a97aa6b24ff4a81f911cab472cdcf41f7424250ce67ea697ed56882c",
+      "base_sha256": "515cbd906e048efd5bfd810ad1398676b76b695048c5ad165024f22d47d77c17",
+      "current_canonical_sha256": "515cbd906e048efd5bfd810ad1398676b76b695048c5ad165024f22d47d77c17",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0038",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0038-coerced-concession.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "72b518df2970a2ad6d91797ab9c32d3e3e0f4f7b66a82d24daa7dcf53d0eac48",
+      "base_sha256": "3fbf257ff489c13b508640040f4bba4c131a3b1ae281366f4dfa98716226335b",
+      "current_canonical_sha256": "3fbf257ff489c13b508640040f4bba4c131a3b1ae281366f4dfa98716226335b",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0039",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0039-opaque-batna.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "c8c3842469410bb54e5090d78fb436c1fa99ca3534880ed2797908515dfd574e",
+      "base_sha256": "627ed0931b9bbb2494a15ae14abffca19cdf227a6b912549cf1329bba4baf7a5",
+      "current_canonical_sha256": "627ed0931b9bbb2494a15ae14abffca19cdf227a6b912549cf1329bba4baf7a5",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0040",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0040-cobra-effect-gaming.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "41e11a2e5687f4ccd9b0ff4b356a9c6d399174e72d2f6a5548a8f41f5c83ce6f",
+      "base_sha256": "fb5e9fead528147b3681497ee9b41c5a39403528cb1e209d44160bb81f64f15d",
+      "current_canonical_sha256": "fb5e9fead528147b3681497ee9b41c5a39403528cb1e209d44160bb81f64f15d",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0041",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0041-over-justification-trap.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "8c66777e125c3d0a2e9ca7aab331dfd2a40cbc3dd39d0421b864764123b2c75a",
+      "base_sha256": "cafc09e80cafede6b416b55f5b56ca1a66852467e5e524722d503a16d96a6dcb",
+      "current_canonical_sha256": "cafc09e80cafede6b416b55f5b56ca1a66852467e5e524722d503a16d96a6dcb",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0042",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0042-artificial-harmony.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "d95932b7a1d842c634f7c02af0134b28ea1ee0cc77ed1235cc9e6d37afe809bb",
+      "base_sha256": "1b9a2b84166d1c2e289f8c0410a9f820ddaac08da5ab415126b13fd04a85c475",
+      "current_canonical_sha256": "1b9a2b84166d1c2e289f8c0410a9f820ddaac08da5ab415126b13fd04a85c475",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0043",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0043-personalization-spillover.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "5fa449049fd44f737a66fd05b1f8c2dc4f6158c39163772e3bfc90bca974a494",
+      "base_sha256": "d3e2894f84c6d3e8e9189e2dfa568c957f76a5fe44a405d01a41dbe166c7fa12",
+      "current_canonical_sha256": "d3e2894f84c6d3e8e9189e2dfa568c957f76a5fe44a405d01a41dbe166c7fa12",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0044",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0044-micromanagement-trap.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "33286fc6e4b5e9fea1a1d9aab39a8742a87b9c0a58525238cf4e16ea084de0d1",
+      "base_sha256": "9a3e5d9507f8264b39cc12c7ab68a8393d6c9e8dee11b189f709567704fe251e",
+      "current_canonical_sha256": "9a3e5d9507f8264b39cc12c7ab68a8393d6c9e8dee11b189f709567704fe251e",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0045",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0045-authority-vacuum.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "d2559b8b77ed3efe4c33cc0d2a69627241e4410f8271149305f7e648f3c046c9",
+      "base_sha256": "1da395c82b95ef6f41158a64b4bd07ab18c2d16a82a5c074eddbb01d6b62d729",
+      "current_canonical_sha256": "1da395c82b95ef6f41158a64b4bd07ab18c2d16a82a5c074eddbb01d6b62d729",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0046",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0046-everything-is-a-priority-fallacy.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "10d27d5a9fb35038b09713c92428d7984186d560895610edc2a450c7019dd691",
+      "base_sha256": "d0b5a7117ec761f8ca87cfd25ce0b1ab621ed342c3e246e4559a505fffec4deb",
+      "current_canonical_sha256": "d0b5a7117ec761f8ca87cfd25ce0b1ab621ed342c3e246e4559a505fffec4deb",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0047",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0047-strategic-drift.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "85c6814715925c7ebc7e62e4ab00fd100a34a043a3c9502394c4376a99d5ba4b",
+      "base_sha256": "d5c74fb84f6755e8a40da3ca0872f5db4488e594b0e9b3a3efe10cf8607b55a2",
+      "current_canonical_sha256": "d5c74fb84f6755e8a40da3ca0872f5db4488e594b0e9b3a3efe10cf8607b55a2",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0048",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0048-heroic-firefighting.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "e46620ad065356ef238d037b9f7e05a826d6498e81f617c8d93decbc75103950",
+      "base_sha256": "a4f93e74de3e3226a915d06a5d5208c0dadc003b7332a97e1c733e059c8a4611",
+      "current_canonical_sha256": "a4f93e74de3e3226a915d06a5d5208c0dadc003b7332a97e1c733e059c8a4611",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0049",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0049-thrashing-overhead.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "4861549ab007601657239de0f046705e9c6bccd7fa797890a85effbb9e035527",
+      "base_sha256": "49b4fbed0a072ceea4055c73d709fec3936e82623078e58a3f32be1472c6dd94",
+      "current_canonical_sha256": "49b4fbed0a072ceea4055c73d709fec3936e82623078e58a3f32be1472c6dd94",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0050",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0050-blame-culture-suppression.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "23f90f2b362d34aff5f413a875e7390681a22844b0822fc42e4717710438a02b",
+      "base_sha256": "8995b9b602d13b8c0385e454b0b411b4a0b13783de603aea8a50a018ffc0dc3c",
+      "current_canonical_sha256": "8995b9b602d13b8c0385e454b0b411b4a0b13783de603aea8a50a018ffc0dc3c",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0051",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0051-uncollected-telemetry.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "9b219bb69164c2527a60c67521bd3ea0d955f4e74b41b9097019e7f5ebb28aac",
+      "base_sha256": "f673bf38ddc699458f7551aed36319a513b36ad968c0ec410b494ac2598b671a",
+      "current_canonical_sha256": "f673bf38ddc699458f7551aed36319a513b36ad968c0ec410b494ac2598b671a",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0052",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0052-hypocrisy-gap.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "9fc5f014b5531d0949af3965feff9421357932f0b16624463d0afd7b0c524bc3",
+      "base_sha256": "a10c961edd22c67faa2b19a12c11903fe7c1a91701b8929530538680390628ec",
+      "current_canonical_sha256": "a10c961edd22c67faa2b19a12c11903fe7c1a91701b8929530538680390628ec",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0053",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0053-toxic-star-tolerance.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "5ff89f963140bd16ecde78ec303fb2181dd3fcbbc300acab58b0cc9eb2b96303",
+      "base_sha256": "6360261df07904f408ddf63dde6691e32e120559c4f6f7e1d7a8edc353e7e664",
+      "current_canonical_sha256": "6360261df07904f408ddf63dde6691e32e120559c4f6f7e1d7a8edc353e7e664",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0054",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0054-moral-hazard-extraction.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "28f5bc7dbe94a3d5f1f02b6ba02cec5bd0249dfd08802fff2fbee0e812f29fce",
+      "base_sha256": "1d7fdfcc6d28c8d162bd9901d5ffbc4945bcf27d8202ad6db3bbb08012f58c27",
+      "current_canonical_sha256": "1d7fdfcc6d28c8d162bd9901d5ffbc4945bcf27d8202ad6db3bbb08012f58c27",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-0055",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0055-ethical-whitewashing.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "b6fff9af8187f1ae76825144b826b41b32544f233c8f45cb5785f3c064da002f",
+      "base_sha256": "2535e42208802c6f5e1b11bb387420453c6659a1b346a0dd08b62a1db7288b59",
+      "current_canonical_sha256": "2535e42208802c6f5e1b11bb387420453c6659a1b346a0dd08b62a1db7288b59",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-2101",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-2101.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "b0f82fb77cd3cdd62cfcba67924555ced04947804ca95874fc555f16a230db5f",
+      "base_sha256": "cbd706de16d84192d65c908bc39cf8317ecc88a9d2fa3bb50c06b7542e7fcc13",
+      "current_canonical_sha256": "cbd706de16d84192d65c908bc39cf8317ecc88a9d2fa3bb50c06b7542e7fcc13",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-2201",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-2201.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "d76eca80c94c1e35484065fc392ddbe461a55c8df82863d9fb1644618acdd6e1",
+      "base_sha256": "42b98259e825ad0d4a29454cd88ae71a9b0366ade6f8a00dd0c845764ac02a83",
+      "current_canonical_sha256": "42b98259e825ad0d4a29454cd88ae71a9b0366ade6f8a00dd0c845764ac02a83",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-2301",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-2301.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "dc256e70ca86e77a337fa13e6d9628fb9b415035d2ac163e16fbab690d3abfd1",
+      "base_sha256": "3090928a028f5ab3d3566acee4dc5e9b787c9e9fb5828e1bfd1b0ca2649c451e",
+      "current_canonical_sha256": "3090928a028f5ab3d3566acee4dc5e9b787c9e9fb5828e1bfd1b0ca2649c451e",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-2401",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-2401.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "529d68f2748459f936a001b5e029698b01ea1de5245773b75be32c3c891943df",
+      "base_sha256": "96b4e9c1a9f9c901641b3682f3a91f9ef6bc9cf0e2dc11d930c502d443f68af4",
+      "current_canonical_sha256": "96b4e9c1a9f9c901641b3682f3a91f9ef6bc9cf0e2dc11d930c502d443f68af4",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-ANTI-PATTERN-2501",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-2501.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "293b9de628bac6dfaa31f261c2c4b2b6d9986a570a87c90bde31133bf470a0a8",
+      "base_sha256": "71ccb6db1fba62af9c9acb69a47d5d8e1005fd512ad4a6feb02fb6d541a82cac",
+      "current_canonical_sha256": "71ccb6db1fba62af9c9acb69a47d5d8e1005fd512ad4a6feb02fb6d541a82cac",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0037",
+      "path": "knowledge/units/laws/NT-LAW-0037-legitimacy-authorization.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "02778ea7902241d4e0b237bec905b244182b16210bfea61296238a6000de3f78",
+      "base_sha256": "c4d4fd01956e1677f478db690ca9c61b1a22856e001935896f521b97b4b06d21",
+      "current_canonical_sha256": "c4d4fd01956e1677f478db690ca9c61b1a22856e001935896f521b97b4b06d21",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0038",
+      "path": "knowledge/units/laws/NT-LAW-0038-role-power-degradation.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "fe2fa201162add1d4631a6ddb6415e47400c368404de1aaff24755536692b5dc",
+      "base_sha256": "6bab699d3540a20ca96fba727640a8d65d46ba545861342ed672a9a8f2e9b5f0",
+      "current_canonical_sha256": "6bab699d3540a20ca96fba727640a8d65d46ba545861342ed672a9a8f2e9b5f0",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0039",
+      "path": "knowledge/units/laws/NT-LAW-0039-dissent-suppression-blindness.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "158fa2eee7da99ba1b850d499ef60e6a36b412c863d31ea258e2dac2839098d9",
+      "base_sha256": "9cc1c6f3342a601f5567c444dbd8eda748fda75368149699c858a1fb378cbc62",
+      "current_canonical_sha256": "9cc1c6f3342a601f5567c444dbd8eda748fda75368149699c858a1fb378cbc62",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0040",
+      "path": "knowledge/units/laws/NT-LAW-0040-fit-prediction-error.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "ebce5efa9cc959eeb183450879178180ca97de3dd46bccd346a3a14e8e4a0f60",
+      "base_sha256": "5cc96c48a857400c55c58ebf4a28c24f44c8cb8cb961563480c015b1cd58489c",
+      "current_canonical_sha256": "5cc96c48a857400c55c58ebf4a28c24f44c8cb8cb961563480c015b1cd58489c",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0041",
+      "path": "knowledge/units/laws/NT-LAW-0041-selection-bias-homogeneity.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "9487a8fee0ba9e7dea69790ef714d2aedcb9afd7c69d77e46793baa70e97f3f8",
+      "base_sha256": "0cabff9ec1e66ab7c0befd0229deb4a7c89d1123460b7283648276693cabe2ab",
+      "current_canonical_sha256": "0cabff9ec1e66ab7c0befd0229deb4a7c89d1123460b7283648276693cabe2ab",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0042",
+      "path": "knowledge/units/laws/NT-LAW-0042-cognitive-diversity-performance.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "7a25258d69854ce0bb19fd4d4ef8532f2e5c4dd3592996ed52fcbb7114ea87e0",
+      "base_sha256": "de6fc5f23c790db0b7b0040336145cbdb69a3262221f37dfe2a32f4469c2eac0",
+      "current_canonical_sha256": "de6fc5f23c790db0b7b0040336145cbdb69a3262221f37dfe2a32f4469c2eac0",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0043",
+      "path": "knowledge/units/laws/NT-LAW-0043-cohesion-friction-balance.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "81f36929345d34aafece7a2ae5ca9720c5079c1cf2557c57ea022eb032d1aa1f",
+      "base_sha256": "8389fee3bc726fc609a164d8593fe29693f57b97ad1808e01f252b65d0efa6a1",
+      "current_canonical_sha256": "8389fee3bc726fc609a164d8593fe29693f57b97ad1808e01f252b65d0efa6a1",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0044",
+      "path": "knowledge/units/laws/NT-LAW-0044-delegation-capacity-boundary.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "76e2c195c4ea00a20d6792b0aa10270ab0f8941267cfdb529a438b4a100656d5",
+      "base_sha256": "99ee185c0c2d1034db53ee13aa21be154ec3917aed29135c1eb68c7e2d4e2116",
+      "current_canonical_sha256": "99ee185c0c2d1034db53ee13aa21be154ec3917aed29135c1eb68c7e2d4e2116",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0045",
+      "path": "knowledge/units/laws/NT-LAW-0045-abdication-over-control-bifurcation.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "c4b2b3cbbcf534af65f80bdf0f9ed4ba71801d561be1e53a2f6371d29708be65",
+      "base_sha256": "037ec1d6a9f98291d1aa1f2cd161b958d045e92b3588fe500a2c7f4a96ccb9e5",
+      "current_canonical_sha256": "037ec1d6a9f98291d1aa1f2cd161b958d045e92b3588fe500a2c7f4a96ccb9e5",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0046",
+      "path": "knowledge/units/laws/NT-LAW-0046-transmission-fidelity.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "d2b16a6c99f9b4e803a169e78bbd3fc2e669e0ac72c8d07cb5ef55ebeb8ff7de",
+      "base_sha256": "4538a22123d79a4a701e11f6c4c300078d922eb47663375ee1c9f6e59864f720",
+      "current_canonical_sha256": "4538a22123d79a4a701e11f6c4c300078d922eb47663375ee1c9f6e59864f720",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0047",
+      "path": "knowledge/units/laws/NT-LAW-0047-signal-noise-asymmetry.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "42802e1fc36e5ea2b92c0eec7bb1d250cebf9854d077c7f380978794b08a81ba",
+      "base_sha256": "819ed2edbf691f41a1b82c369c25799dfb5c478cc3e051cb0f29f283cf5921a5",
+      "current_canonical_sha256": "819ed2edbf691f41a1b82c369c25799dfb5c478cc3e051cb0f29f283cf5921a5",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0048",
+      "path": "knowledge/units/laws/NT-LAW-0048-decision-quality-independence.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "8613ad19eb277f18bb89fb217df5336f547960a47b6cccf388782cfe533079b8",
+      "base_sha256": "ddf16e3bb7a5c1f062a953a29f631c06c0ba41de59d7ff30312860fe0ee7dd54",
+      "current_canonical_sha256": "ddf16e3bb7a5c1f062a953a29f631c06c0ba41de59d7ff30312860fe0ee7dd54",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0049",
+      "path": "knowledge/units/laws/NT-LAW-0049-information-asymmetry-discounting.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "de760f898c96b313b124f715bd44880823a9e4d37152421a2457ed784f42694f",
+      "base_sha256": "6f2d82d0ff3935fc90bce9d502d8105351551f4cda279bed6ff1ec2f6db24aa7",
+      "current_canonical_sha256": "6f2d82d0ff3935fc90bce9d502d8105351551f4cda279bed6ff1ec2f6db24aa7",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0050",
+      "path": "knowledge/units/laws/NT-LAW-0050-cognitive-load-exhaustion.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "2cc551fa4137c52f4f268898250e92a2cc3b42746ba0c8765cc1e832fedbe6b0",
+      "base_sha256": "07fe75cae95af572764c1d198a2a0758933d2b3e8e3fd4cf929a0ed25478e072",
+      "current_canonical_sha256": "07fe75cae95af572764c1d198a2a0758933d2b3e8e3fd4cf929a0ed25478e072",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0051",
+      "path": "knowledge/units/laws/NT-LAW-0051-predictability-foundational-trust.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "6954b8de2214fc364e0011236e201ed2f0f6747540667093986c3c8c6119e073",
+      "base_sha256": "cda5d9b062dae8067aef2b3cac83ec8ad602536135b4a9e3e2c1f6c93f095ee4",
+      "current_canonical_sha256": "cda5d9b062dae8067aef2b3cac83ec8ad602536135b4a9e3e2c1f6c93f095ee4",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0052",
+      "path": "knowledge/units/laws/NT-LAW-0052-verification-cost-reduction.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "ed88f3f8a6b718255f8286250bd11c047023f0c07116a9942f4f30022386b794",
+      "base_sha256": "dc6cc75a2460e7d9674e9b41e59c4626b8923eaffda91e480330ab92b809266a",
+      "current_canonical_sha256": "dc6cc75a2460e7d9674e9b41e59c4626b8923eaffda91e480330ab92b809266a",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0053",
+      "path": "knowledge/units/laws/NT-LAW-0053-vulnerability-reciprocity.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "e255dcf060df22f766beccc6a5694aa4a4878e24a3c2edc94e7bda008094d5f5",
+      "base_sha256": "6fc1989c41ccade7418ec1937db28c33c17a1fc949d7a0305bdb5dff5e7765ee",
+      "current_canonical_sha256": "6fc1989c41ccade7418ec1937db28c33c17a1fc949d7a0305bdb5dff5e7765ee",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0054",
+      "path": "knowledge/units/laws/NT-LAW-0054-frame-alignment-reception.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "a159857e6cc36c9d065971bb35807d3750cff49c8b873d3e27c9319828bcd9a2",
+      "base_sha256": "4eaada65c388fb8fa28ccb7d985797289b315a98ac3be75c0fbd43a0363e2af2",
+      "current_canonical_sha256": "4eaada65c388fb8fa28ccb7d985797289b315a98ac3be75c0fbd43a0363e2af2",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0055",
+      "path": "knowledge/units/laws/NT-LAW-0055-reframing-commitment-shift.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "4a867f1c940d51f7877523f30bc82d77bcabcea984f5b19d6895b92402be1931",
+      "base_sha256": "65e791882cb46e7e6cf55d7146c21bd84d49f7e350491c50a27ef10f4f364700",
+      "current_canonical_sha256": "65e791882cb46e7e6cf55d7146c21bd84d49f7e350491c50a27ef10f4f364700",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0056",
+      "path": "knowledge/units/laws/NT-LAW-0056-influence-degradation-under-coercion.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "67e5b7d1a67a89913ca4319463e095f9f4daaf747ab28a8d97c7b505aa0f1b64",
+      "base_sha256": "d63da11bbd079ee0922b98fd3f583ac74cd055962ba08e97cf8d160f590fff4e",
+      "current_canonical_sha256": "d63da11bbd079ee0922b98fd3f583ac74cd055962ba08e97cf8d160f590fff4e",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0057",
+      "path": "knowledge/units/laws/NT-LAW-0057-interest-position-decoupling.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "46473041808ed203999c5617a9a0ac6ff9d55836019b2ebc5fd7bbb99002f1ef",
+      "base_sha256": "4f0da16b7c834d1df18cb38b4b824147888abfc48a781c84e5942887a4592ef3",
+      "current_canonical_sha256": "4f0da16b7c834d1df18cb38b4b824147888abfc48a781c84e5942887a4592ef3",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0058",
+      "path": "knowledge/units/laws/NT-LAW-0058-integrative-value-creation.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "3856d297211a1a926396afa0e1a7c073491764634a18970e6bed3797aba26c8b",
+      "base_sha256": "bac47672642a273ebe9e35605e23ec0b38f2c3008eb3ba9f435a683eaeb560eb",
+      "current_canonical_sha256": "bac47672642a273ebe9e35605e23ec0b38f2c3008eb3ba9f435a683eaeb560eb",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0059",
+      "path": "knowledge/units/laws/NT-LAW-0059-agreement-stability-asymmetry.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "8b7fe86d8e02480e64b29dc0c6556ff63f1bc6c6d33f00b45a5fa35a1d137967",
+      "base_sha256": "0f820d6cec42252286a8a13b5ca91f0d9abb15891fceab852fe46213c29f8263",
+      "current_canonical_sha256": "0f820d6cec42252286a8a13b5ca91f0d9abb15891fceab852fe46213c29f8263",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0060",
+      "path": "knowledge/units/laws/NT-LAW-0060-incentive-signal-distortion.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "233188385652862c0984eb38d726ed9c5af8c4f0010f30664743ed0cfd4bebb5",
+      "base_sha256": "d07322a060c365030f488fd07c4793a335b8a9463f6f60d496fb7d7ad6bd953a",
+      "current_canonical_sha256": "d07322a060c365030f488fd07c4793a335b8a9463f6f60d496fb7d7ad6bd953a",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0061",
+      "path": "knowledge/units/laws/NT-LAW-0061-extrinsic-motivation-crowding.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "44d23e888ca89d38cf684133d6cb292aae7bf0ca91bb26170b1054fb22a9dd60",
+      "base_sha256": "6517852c51f0c1a95d34d92b9f41eb360f63014b6e3585208a658462de948c16",
+      "current_canonical_sha256": "6517852c51f0c1a95d34d92b9f41eb360f63014b6e3585208a658462de948c16",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0062",
+      "path": "knowledge/units/laws/NT-LAW-0062-task-vs-relationship-conflict-divergence.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "fb620d8b15d776df2bcbbce04c454a347a436198afcde33135d1e291d867fc8f",
+      "base_sha256": "78b1fd62a3a4247fe6c65611d8fe51326c5554abce75777ca482c839cbf45442",
+      "current_canonical_sha256": "78b1fd62a3a4247fe6c65611d8fe51326c5554abce75777ca482c839cbf45442",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0063",
+      "path": "knowledge/units/laws/NT-LAW-0063-unresolved-trade-off-escalation.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "18a3e43f18c532f5d70736d138aeb8c5503116a872527ca42ee95ef442ee4777",
+      "base_sha256": "c638991282389dab037d709979e55e8a84dec35a757f84f0f0aefd18a2f1c91d",
+      "current_canonical_sha256": "c638991282389dab037d709979e55e8a84dec35a757f84f0f0aefd18a2f1c91d",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0064",
+      "path": "knowledge/units/laws/NT-LAW-0064-decision-right-boundaries.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "38d7822aa9f99aa1f37a7da92b126b1b832dfbe378d246ca84fe179499d62e95",
+      "base_sha256": "6fef5ecb5e8bb4a160658b6617cc857404b5aaacf451d002bc2142c974d97f41",
+      "current_canonical_sha256": "6fef5ecb5e8bb4a160658b6617cc857404b5aaacf451d002bc2142c974d97f41",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0065",
+      "path": "knowledge/units/laws/NT-LAW-0065-positional-power-degradation.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "8edf948f6ff7c433d7d9ad7eed0c943dd5dc8e1f2a896a4bb9eed317d2066829",
+      "base_sha256": "c3ccaaf5a5f5c43e29d958f997cae13f193641a45bd812b64e410f89a603f8d5",
+      "current_canonical_sha256": "c3ccaaf5a5f5c43e29d958f997cae13f193641a45bd812b64e410f89a603f8d5",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0066",
+      "path": "knowledge/units/laws/NT-LAW-0066-resource-allocation-primacy.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "f1b12eb39bcd8fe39f08436c3844b7a2ea685366b9d06667c9db313094554789",
+      "base_sha256": "ec821024dac4afc4b81496ac4453b1676f1ffcf4d72bb897d54c981bd676e639",
+      "current_canonical_sha256": "ec821024dac4afc4b81496ac4453b1676f1ffcf4d72bb897d54c981bd676e639",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0067",
+      "path": "knowledge/units/laws/NT-LAW-0067-strategic-trade-off-inevitability.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "601065f369fcf7fc0496efd7eb8404c08e23a094c0f0d064300e65f19ad6182d",
+      "base_sha256": "dfeb4fd93360662ff9cc8e8b510d989d1e0fb3466b8c690e7ad6c34b3701ac31",
+      "current_canonical_sha256": "dfeb4fd93360662ff9cc8e8b510d989d1e0fb3466b8c690e7ad6c34b3701ac31",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0068",
+      "path": "knowledge/units/laws/NT-LAW-0068-execution-cadence-momentum.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "6358b5edff7a23bde8f28f32da600ece13dec66bbc5b868533c48f9cfb643434",
+      "base_sha256": "c56eded54fb60b354a79c284be2c0759ba20d5d5094bf59a9cdcfee303961736",
+      "current_canonical_sha256": "c56eded54fb60b354a79c284be2c0759ba20d5d5094bf59a9cdcfee303961736",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0069",
+      "path": "knowledge/units/laws/NT-LAW-0069-work-in-progress-congestion.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "ce5006e6ee1951e9f861e51d96b284a639eaf15feed3589889715184f8f9a044",
+      "base_sha256": "837778c37e3a7a8b0bf48605aed61b94600dd35fd2c6d1e6f159a89a982b227b",
+      "current_canonical_sha256": "837778c37e3a7a8b0bf48605aed61b94600dd35fd2c6d1e6f159a89a982b227b",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0070",
+      "path": "knowledge/units/laws/NT-LAW-0070-learning-safety-dependency.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "3cca3944982cf5e055d038111c900fed45221febd2988180c4d24e30d99f3a14",
+      "base_sha256": "e761ddb924b1e4e3a72f93db76e42f9348faf455c1175d8f78f1670dfeee5852",
+      "current_canonical_sha256": "e761ddb924b1e4e3a72f93db76e42f9348faf455c1175d8f78f1670dfeee5852",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0071",
+      "path": "knowledge/units/laws/NT-LAW-0071-feedback-loop-velocity.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "bec9d04c5b5bc393bdf4fd1804d9b7d975fe937bcca9cd584921f9039ce9ba58",
+      "base_sha256": "25cb3e26be133ef3024fb1b1bac206136fe36f4bff38aee985d3226ce80a1e16",
+      "current_canonical_sha256": "25cb3e26be133ef3024fb1b1bac206136fe36f4bff38aee985d3226ce80a1e16",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0072",
+      "path": "knowledge/units/laws/NT-LAW-0072-behavior-modeling-congruence.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "8c8a67230e29bf68d1af29e6f0621ed9830eaed10c6c348279d90a46f950ac78",
+      "base_sha256": "6f4a609619edc026dcab9dcac82cee68c8830927db407688cfcc83bd3d537c07",
+      "current_canonical_sha256": "6f4a609619edc026dcab9dcac82cee68c8830927db407688cfcc83bd3d537c07",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0073",
+      "path": "knowledge/units/laws/NT-LAW-0073-cultural-artifact-reinforcement.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "89c43c5fa16000320c866bdd286cadcb99f9a316eafcc2461e4b5c56aede0dea",
+      "base_sha256": "6a78f3cb97bed1372572b3ca544ca87f7d90b17a198dad21370ea8d64671b07c",
+      "current_canonical_sha256": "6a78f3cb97bed1372572b3ca544ca87f7d90b17a198dad21370ea8d64671b07c",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0074",
+      "path": "knowledge/units/laws/NT-LAW-0074-moral-hazard-asymmetry.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "a41b417c40fb20624b98d3fc4db2c4d77b0507d2e62796efd983ba1bbcf284b6",
+      "base_sha256": "e06f0f03ce97294a8d3084da5174b752628564baa5311e1674707668e41af2f0",
+      "current_canonical_sha256": "e06f0f03ce97294a8d3084da5174b752628564baa5311e1674707668e41af2f0",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-0075",
+      "path": "knowledge/units/laws/NT-LAW-0075-ethical-slippery-slope.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "319a25905a90222ebf59ae12b13821f0d11038186a4ab5587ed4fe760042ef4a",
+      "base_sha256": "511239fcda70acbb56ab93ccee39426ff6b47054772acab838efe55864981c42",
+      "current_canonical_sha256": "511239fcda70acbb56ab93ccee39426ff6b47054772acab838efe55864981c42",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-2101",
+      "path": "knowledge/units/laws/NT-LAW-2101.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "a875b8f3a141e4dd27aac88990fc152aa4fe07fcd4e1192fecef902498872725",
+      "base_sha256": "3b2f1e4e655d73aca6922e90b8ce8000cdd3b46fd32f4ebae64f8c7903d8d68c",
+      "current_canonical_sha256": "3b2f1e4e655d73aca6922e90b8ce8000cdd3b46fd32f4ebae64f8c7903d8d68c",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-2201",
+      "path": "knowledge/units/laws/NT-LAW-2201.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "e22eecc958335256e13d2bbe1e0891822f1d478868333ef2dc8193b83a3b65b3",
+      "base_sha256": "f1db7799c9ad7f95164a4d411160952cacf38473b13c78b8a8a08f0fcda4593c",
+      "current_canonical_sha256": "f1db7799c9ad7f95164a4d411160952cacf38473b13c78b8a8a08f0fcda4593c",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-2301",
+      "path": "knowledge/units/laws/NT-LAW-2301.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "4bdfa41ee482763b99a8e154e4a2b25cc5ac81ea9f283f3359fe37fc2b78e170",
+      "base_sha256": "e2bfbf80bbb0d5e4b9d351ade3dc779455a34bfb0a8e8c5ec5bf151827dd2d7a",
+      "current_canonical_sha256": "e2bfbf80bbb0d5e4b9d351ade3dc779455a34bfb0a8e8c5ec5bf151827dd2d7a",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-2401",
+      "path": "knowledge/units/laws/NT-LAW-2401.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "373991bdcf4bd162fbca98f7552ba218e9b9d1e25f9bd3a089a2c7486e0b6053",
+      "base_sha256": "b448c67e2996888822ccd6ee5422da61ecb04a3d987bfa04c0c9ab095c3fb52d",
+      "current_canonical_sha256": "b448c67e2996888822ccd6ee5422da61ecb04a3d987bfa04c0c9ab095c3fb52d",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-LAW-2501",
+      "path": "knowledge/units/laws/NT-LAW-2501.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "e50a3b265b456df1e3acef5fa8039e5ff83622b185ee6220161dfe300bbd1f92",
+      "base_sha256": "6ffc674afa94f3d569aa4ba06297e787f9cfe48c0bc7831a82cbe453199186ed",
+      "current_canonical_sha256": "6ffc674afa94f3d569aa4ba06297e787f9cfe48c0bc7831a82cbe453199186ed",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-MODEL-0009",
+      "path": "knowledge/units/models/NT-MODEL-0009-emergent-interaction-model.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "8696d3fd73ddb6dad5a22c4da8b0ddef3d3c0a3e4c3fc6ba609b342444affdfa",
+      "base_sha256": "6514ee43f79a2978514c9f5f41bec1c72525166bbacd36a0c77d814fb3a5658e",
+      "current_canonical_sha256": "6514ee43f79a2978514c9f5f41bec1c72525166bbacd36a0c77d814fb3a5658e",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-MODEL-0010",
+      "path": "knowledge/units/models/NT-MODEL-0010-ethical-safeguard-matrix.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "338034172f06fa8785b30e7dca545b7d494125e839ca516256f7db8fd2cc501f",
+      "base_sha256": "b54977e321babd08866d54b0186a8360ec55bce898c508b048cf1dcff2db3dbe",
+      "current_canonical_sha256": "b54977e321babd08866d54b0186a8360ec55bce898c508b048cf1dcff2db3dbe",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-MODEL-0011",
+      "path": "knowledge/units/models/NT-MODEL-0011-context-behavior-predictive-model.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "0e0470132fed32eaec0bdbe5d2ffeaf51dc61dafee5a40c861a82c2201c5ed3e",
+      "base_sha256": "607630d9d5dd017aeeb6818311cd47e4ad661676ca546b141c26d6a5e9bae880",
+      "current_canonical_sha256": "607630d9d5dd017aeeb6818311cd47e4ad661676ca546b141c26d6a5e9bae880",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-MODEL-0012",
+      "path": "knowledge/units/models/NT-MODEL-0012-cohesion-friction-curve.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "08c8bf64a3bfe3482dcd763400e80df3ef3885f91ca2fbdc68223755ce1cde5a",
+      "base_sha256": "971e735012f0ef9240a86dff0df250e71e48119faa092d07b39b3455c1e36dfd",
+      "current_canonical_sha256": "971e735012f0ef9240a86dff0df250e71e48119faa092d07b39b3455c1e36dfd",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-MODEL-0013",
+      "path": "knowledge/units/models/NT-MODEL-0013-delegation-abdication-matrix.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "f33906b096e96636be65049719bb6c11432d2230668646fee747f9f582e3703f",
+      "base_sha256": "b4c1f0ba58402395d426274838333a4c8989f78ce2ba5895df00c3fbdd3356eb",
+      "current_canonical_sha256": "b4c1f0ba58402395d426274838333a4c8989f78ce2ba5895df00c3fbdd3356eb",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-MODEL-0014",
+      "path": "knowledge/units/models/NT-MODEL-0014-closed-loop-transmission-model.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "f9f47500abdbf81df8e3c27c745693492df4880e137455e8c21d8b9c0f8d3cee",
+      "base_sha256": "5ed6c3039d7f230445c5997e45cba471b5afe7aa2562831c3637f7842e4d9a43",
+      "current_canonical_sha256": "5ed6c3039d7f230445c5997e45cba471b5afe7aa2562831c3637f7842e4d9a43",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-MODEL-0015",
+      "path": "knowledge/units/models/NT-MODEL-0015-decision-quality-model.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "5265d913c926033526ff2bf5491ad529aeebcf8c3e117e7e5075566d612f4ccc",
+      "base_sha256": "aedaca3cd0a500f96396d7869f334515ba06d8ec656fa39aeb2b729a2ceaef70",
+      "current_canonical_sha256": "aedaca3cd0a500f96396d7869f334515ba06d8ec656fa39aeb2b729a2ceaef70",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-MODEL-0016",
+      "path": "knowledge/units/models/NT-MODEL-0016-evidence-risk-matrix.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "945ec4f92caeb0c4bdb0787828cb9ac3ae10fed4bc90a5fe6a20bfeffb4fabef",
+      "base_sha256": "93503699df2207b6b2564efd7b141688d38b2e44962e4a998952879f8dee31f2",
+      "current_canonical_sha256": "93503699df2207b6b2564efd7b141688d38b2e44962e4a998952879f8dee31f2",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-MODEL-0017",
+      "path": "knowledge/units/models/NT-MODEL-0017-uncertainty-evaluation-model.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "b6f9f277723a66af422a5555eca9bd2522f436ec4275a983432c3ed18cb18090",
+      "base_sha256": "c12aece3ac69ec346ea10e31e785f8fc9cb2c98d88f87c7f67a9d8b3c7fcc997",
+      "current_canonical_sha256": "c12aece3ac69ec346ea10e31e785f8fc9cb2c98d88f87c7f67a9d8b3c7fcc997",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-MODEL-0018",
+      "path": "knowledge/units/models/NT-MODEL-0018-structural-trust-matrix.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "0fbb6909b9b1cc090c86b3a913b84c84ca72478319aa367dd35fa453b9b9e03f",
+      "base_sha256": "e50b9aedbf4c97cd18ecaf73e3fb45b0a99ebd4a84c746ea27c6b3d8e30d050e",
+      "current_canonical_sha256": "e50b9aedbf4c97cd18ecaf73e3fb45b0a99ebd4a84c746ea27c6b3d8e30d050e",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-MODEL-0019",
+      "path": "knowledge/units/models/NT-MODEL-0019-reliability-verification-cadence-model.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "629c1db7300531e8324a9df94544d478a078d2bf9c881c485fb168a07ad1c3cc",
+      "base_sha256": "846cab6c9bede72f85822acbeb3bb80225c3d339c8d14d41b6dd1566cc07ba1e",
+      "current_canonical_sha256": "846cab6c9bede72f85822acbeb3bb80225c3d339c8d14d41b6dd1566cc07ba1e",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-MODEL-0020",
+      "path": "knowledge/units/models/NT-MODEL-0020-influence-bridge-pipeline.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "e18a3fef17a837acfd631663000af91d7a9a54526ecc0e1edd845de27655be23",
+      "base_sha256": "bfaf5e53e953df6dae757812c890ecbf3daf1b6277b3f774dbeaaa8c91eb29d0",
+      "current_canonical_sha256": "bfaf5e53e953df6dae757812c890ecbf3daf1b6277b3f774dbeaaa8c91eb29d0",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-MODEL-0021",
+      "path": "knowledge/units/models/NT-MODEL-0021-legitimate-persuasion-matrix.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "0b8bcff1af7ccbb626fdf59707c633eaa8dc54f1d22e50ab976da43baec9448b",
+      "base_sha256": "f60c5ec85f612f435c4952f50052bd5b2fd63201b9f1d16696876cd79ed099f2",
+      "current_canonical_sha256": "f60c5ec85f612f435c4952f50052bd5b2fd63201b9f1d16696876cd79ed099f2",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-MODEL-0022",
+      "path": "knowledge/units/models/NT-MODEL-0022-negotiation-flow-pipeline.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "fcf2854053dcb99450ad53173f1922e32ae6a001c014ff715c5f980228c8b8a8",
+      "base_sha256": "449ec33237b9b91231a17fcec0e08be03960102fea04610fde03276d3b8eeb47",
+      "current_canonical_sha256": "449ec33237b9b91231a17fcec0e08be03960102fea04610fde03276d3b8eeb47",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-MODEL-0023",
+      "path": "knowledge/units/models/NT-MODEL-0023-value-creation-allocation-matrix.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "d25e3553635350921aee87d4289dd7daa398f0510bec016dfa64dea654a9eb9e",
+      "base_sha256": "4973246c997e2788dadfacc2aa1524f847ef5c8230bc90916b4abf12bfd3c553",
+      "current_canonical_sha256": "4973246c997e2788dadfacc2aa1524f847ef5c8230bc90916b4abf12bfd3c553",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-MODEL-0024",
+      "path": "knowledge/units/models/NT-MODEL-0024-incentive-alignment-matrix.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "aafc1f213a89e7dd7af03a3680391f43eb7eb44c2a7a1934c98669ae7a7adb3c",
+      "base_sha256": "09afebe43790b83f99afabf636b9262f451825dcd0daab8cf795f91ee0e4ec3c",
+      "current_canonical_sha256": "09afebe43790b83f99afabf636b9262f451825dcd0daab8cf795f91ee0e4ec3c",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-MODEL-0025",
+      "path": "knowledge/units/models/NT-MODEL-0025-conflict-de-escalation-pipeline.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "3c5a2ee04510aae76bca9d331a0d7a9cf97462e00ac531d1659bc09665490a6a",
+      "base_sha256": "6b68440bbf41712d522a9c5776662c60da319a0355bb56ce609049180432f71c",
+      "current_canonical_sha256": "6b68440bbf41712d522a9c5776662c60da319a0355bb56ce609049180432f71c",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-MODEL-0026",
+      "path": "knowledge/units/models/NT-MODEL-0026-authority-allocation-framework.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "cec2f9d1a64688d5ebe7480dc70f7f912cdf6197d48280f8ee68cf2178f494b8",
+      "base_sha256": "9cc333108f2ec42831657250db756ccc922a07e72355dae5d7a17adf6de60769",
+      "current_canonical_sha256": "9cc333108f2ec42831657250db756ccc922a07e72355dae5d7a17adf6de60769",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-MODEL-0027",
+      "path": "knowledge/units/models/NT-MODEL-0027-strategic-trade-off-matrix.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "9d36daddfe9ccf71dd4a4851672f603c3c6f61f37967c26a9aa7f49c7d7102ab",
+      "base_sha256": "d37f3cf8b825cdbf5147db628acfc28554f734dd0c2acb2cbf2456d6e3df04d3",
+      "current_canonical_sha256": "d37f3cf8b825cdbf5147db628acfc28554f734dd0c2acb2cbf2456d6e3df04d3",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-MODEL-0028",
+      "path": "knowledge/units/models/NT-MODEL-0028-execution-cadence-loop.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "16d8c24466fb80b8d75a8df7629a92d07565b71b63c7c24bd92f4c6f0f7bf07e",
+      "base_sha256": "82401d5ab77a73ed33e77f964301d18601f53745ddf222742a65a1fe817b0f28",
+      "current_canonical_sha256": "82401d5ab77a73ed33e77f964301d18601f53745ddf222742a65a1fe817b0f28",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-MODEL-0029",
+      "path": "knowledge/units/models/NT-MODEL-0029-organizational-learning-loop.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "76218a3b9268d5bd82590697d3ebf38b961f1913ce68fc9ccf4f93b2cad2aa95",
+      "base_sha256": "e5f7c59fe4d5a15769fcf988e0e34ad72398c7d58a4bc527498cccfc48e4571c",
+      "current_canonical_sha256": "e5f7c59fe4d5a15769fcf988e0e34ad72398c7d58a4bc527498cccfc48e4571c",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-MODEL-0030",
+      "path": "knowledge/units/models/NT-MODEL-0030-culture-formation-engine.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "bff48881c9533c781416cb8bc30a53df98c6ece2dd28c194e151a6c7530c5dff",
+      "base_sha256": "c86ac80d93bda8cea80d7920909b8cf412a451152d3f0912e3513f122e6a4e19",
+      "current_canonical_sha256": "c86ac80d93bda8cea80d7920909b8cf412a451152d3f0912e3513f122e6a4e19",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-MODEL-0031",
+      "path": "knowledge/units/models/NT-MODEL-0031-ethical-safeguard-matrix.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "9ab64acd6b3c8702ece59d0dc1bd8fe3e83a3d539bac847e3a86dbccf8ea3d55",
+      "base_sha256": "030139a143f9a4e75175b4d9e108ec7cbdeac0031fb3d032537b1efaee415e24",
+      "current_canonical_sha256": "030139a143f9a4e75175b4d9e108ec7cbdeac0031fb3d032537b1efaee415e24",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-MODEL-2101",
+      "path": "knowledge/units/models/NT-MODEL-2101.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "23156d4482471a6e4511081671cf6177b75034df33da508d5601355b642c94be",
+      "base_sha256": "23f174a051822cf84e1c92810b1e20056a9b9688d176f1994bff8b8dba7cfee9",
+      "current_canonical_sha256": "23f174a051822cf84e1c92810b1e20056a9b9688d176f1994bff8b8dba7cfee9",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-MODEL-2201",
+      "path": "knowledge/units/models/NT-MODEL-2201.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "1a4c849886edbc8a721126b2ce3a8c37c38a260eb7ca17c3d7b7ceed7bdc7cbd",
+      "base_sha256": "5f01ece8f7e690b1662e7cb1198c5834fce237caa71a04fa5a391b719ecb9c4c",
+      "current_canonical_sha256": "5f01ece8f7e690b1662e7cb1198c5834fce237caa71a04fa5a391b719ecb9c4c",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-MODEL-2301",
+      "path": "knowledge/units/models/NT-MODEL-2301.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "530247dc8ccc4251920ee917b32dc1facac96bf27136634f58389f6d0b233e51",
+      "base_sha256": "3f7dbe2942837985d94b7e50e43d416bad425cab0249f1bbc6c059174cbf9dc6",
+      "current_canonical_sha256": "3f7dbe2942837985d94b7e50e43d416bad425cab0249f1bbc6c059174cbf9dc6",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-MODEL-2401",
+      "path": "knowledge/units/models/NT-MODEL-2401.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "9361a00a61a3ca60d6bf0ea2c96f16c1aa797e07d93662f65deb0570b6d52e10",
+      "base_sha256": "d54c2ffc64535c88f459385fcd1d50ac50181f7bf318d69b82fcbd816736ac7a",
+      "current_canonical_sha256": "d54c2ffc64535c88f459385fcd1d50ac50181f7bf318d69b82fcbd816736ac7a",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-MODEL-2501",
+      "path": "knowledge/units/models/NT-MODEL-2501.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "e51f4e08898a8a302571c95012bc49b9c0e4f89346f12d5cff7f5a35ba68daf4",
+      "base_sha256": "0e1968cc72f527c7895372b9fd22fdac4c3703713d17268415d8446578936102",
+      "current_canonical_sha256": "0e1968cc72f527c7895372b9fd22fdac4c3703713d17268415d8446578936102",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0063",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0063-minimize-role-power.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "4325ad8b748fe48bc7ff332abcedb341308da837a8be4d54c00afc5a120e1a92",
+      "base_sha256": "69328ea07c7c4ba5c16abb4fa5323c365e3f33bb61674bde67facf393795eeeb",
+      "current_canonical_sha256": "69328ea07c7c4ba5c16abb4fa5323c365e3f33bb61674bde67facf393795eeeb",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0064",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0064-require-protected-dissent.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "1c93720acde52df000f80021fd68af56cc22f17f7893f45fae6703c44ee61d5e",
+      "base_sha256": "29d9001f831839ce9c8f826d23597a1574679b6893a4b65b514066b6ea2010fe",
+      "current_canonical_sha256": "29d9001f831839ce9c8f826d23597a1574679b6893a4b65b514066b6ea2010fe",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0065",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0065-adapt-style-without-value-drift.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "e5992f2e90a7bde699f95b8f07b46ff0b5fed7748e843e0d9829e01282cc87eb",
+      "base_sha256": "5cc2b6ba76ff80183bb4e7bb81cfd2bbbb208b45f34b878bb5eeeeb6b38a931f",
+      "current_canonical_sha256": "5cc2b6ba76ff80183bb4e7bb81cfd2bbbb208b45f34b878bb5eeeeb6b38a931f",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0066",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0066-select-for-structural-fit.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "a9881092840b8d4d58d55b1af6e04af43b0e106ed73807356f2f92961485cbb8",
+      "base_sha256": "5f4b2c6e8910099c2d0577e443d1525c339ee87929135ab684cffa8923fb1130",
+      "current_canonical_sha256": "5f4b2c6e8910099c2d0577e443d1525c339ee87929135ab684cffa8923fb1130",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0067",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0067-standardize-evaluation.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "0b7eed68fdbc5654465803dcff3abe702a88fadeec289c354426753d6657faf8",
+      "base_sha256": "0b07f6254e506feaede45c07719c15887003447d9774c845e785fd078d95a3d4",
+      "current_canonical_sha256": "0b07f6254e506feaede45c07719c15887003447d9774c845e785fd078d95a3d4",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0068",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0068-interviews-as-hypotheses.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "254c183b57d1474763e08a266cba7047193012a4624970ced5d3a2a32c83477b",
+      "base_sha256": "7623c1c9ec062902a165afd423def13bdfc3bb42740cf35ff53e3ccd3970e62c",
+      "current_canonical_sha256": "7623c1c9ec062902a165afd423def13bdfc3bb42740cf35ff53e3ccd3970e62c",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0069",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0069-design-for-cognitive-diversity.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "0d4dbe30b71f90cfa758105bc60dfc868111eb51c94ec12e09b79e5db2c38cc5",
+      "base_sha256": "7244e1128d16acfba5bcc48aa83742c78765c54ed0f8656e52789653702d9351",
+      "current_canonical_sha256": "7244e1128d16acfba5bcc48aa83742c78765c54ed0f8656e52789653702d9351",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0070",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0070-establish-boundaries-via-purpose.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "f1d7ffb930483f1f36a8295f13b94b4077270c82f044f6894d61a06975e6316f",
+      "base_sha256": "8191d71355034aeedd5e83a56dea418fd072bef31a54988682802fb5e84af87b",
+      "current_canonical_sha256": "8191d71355034aeedd5e83a56dea418fd072bef31a54988682802fb5e84af87b",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0071",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0071-force-interdependence.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "b310658dc373c98184f7868a0ff4c0615b44efc77ec11c25406ecfba18f0b961",
+      "base_sha256": "9216d27b6a27f1bea64286517684aa560e1610e0faf4e5542a3cfc5fe2df2695",
+      "current_canonical_sha256": "9216d27b6a27f1bea64286517684aa560e1610e0faf4e5542a3cfc5fe2df2695",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0072",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0072-delegate-boundaries-not-tasks.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "6c54803a3acb26680de823768bb5f7649eb5733e8b8ad7762ee7d5d1075e2d13",
+      "base_sha256": "e48e0a89dc5420055b5a4fc3e07fe263e04529c1abfa0818bb621cff448259c8",
+      "current_canonical_sha256": "e48e0a89dc5420055b5a4fc3e07fe263e04529c1abfa0818bb621cff448259c8",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0073",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0073-establish-structural-monitoring.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "04689dd32a11a3aa43ccb17a668afb732526dc89375f70dbb83804f620b4c5d2",
+      "base_sha256": "8a94e8d3151e8c96ec2350906ce01dc45e5215a73528e0ca94e5cd89258b1633",
+      "current_canonical_sha256": "8a94e8d3151e8c96ec2350906ce01dc45e5215a73528e0ca94e5cd89258b1633",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0074",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0074-calibrate-to-proven-competence.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "6c8fe1db28952a1ee212c1ee06379d5f0a77e16542bdb6113b977ca1936e0564",
+      "base_sha256": "07489eaa171a10b680c5154c65bd228c0ac0acae6d10487f77c3cb31534493de",
+      "current_canonical_sha256": "07489eaa171a10b680c5154c65bd228c0ac0acae6d10487f77c3cb31534493de",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0075",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0075-separate-transmission-from-confirmation.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "9a59e5e7591fd27c9c82aa7f4de5da3c187993a54f8d8bd66e46f8441c41446b",
+      "base_sha256": "1247f9f0f60acbe0814b132f0d12fc2491327520b8b19b9c0d867c875a249fcb",
+      "current_canonical_sha256": "1247f9f0f60acbe0814b132f0d12fc2491327520b8b19b9c0d867c875a249fcb",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0076",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0076-distinguish-failure-from-disagreement.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "3c33316a93555631b32f31a635bc06fd1732f04e11c2097a1ac1031b3156da0a",
+      "base_sha256": "9aa0591778cc26b97e41dacbee54975ae4a81ba2e89912c8f3f6f2473e0a33e8",
+      "current_canonical_sha256": "9aa0591778cc26b97e41dacbee54975ae4a81ba2e89912c8f3f6f2473e0a33e8",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0077",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0077-decouple-communication-from-influence.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "21e8ccba45e0237b85421cffc35390daf7dfc47f4d65bfc52f0ac3356f1505e5",
+      "base_sha256": "c0a1d60b15b7d8349992b83380c3e3ed8fa8dc8540e88f0b8b676af484de6084",
+      "current_canonical_sha256": "c0a1d60b15b7d8349992b83380c3e3ed8fa8dc8540e88f0b8b676af484de6084",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0078",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0078-evaluate-decisions-by-process-not-outcome.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "2dfea09a2d9755adff267c18f0e37618614799dd046e90b23fecf169074c99e9",
+      "base_sha256": "0ae5a591fa24d5b45fe62cac81383378a8a97b31bc8389044d3a974b85b558ac",
+      "current_canonical_sha256": "0ae5a591fa24d5b45fe62cac81383378a8a97b31bc8389044d3a974b85b558ac",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0079",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0079-bound-and-price-uncertainty.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "b1fabd7d99e360b23c43bb592cd100e7c0aba2e3ac73a69cef97cad1444f3fcb",
+      "base_sha256": "100ccf9a737871efe8c9b80ccfa891f62a6c21bb9d830e8c74d4f89054dbfd61",
+      "current_canonical_sha256": "100ccf9a737871efe8c9b80ccfa891f62a6c21bb9d830e8c74d4f89054dbfd61",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0080",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0080-make-opportunity-costs-explicit.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "6fbb5aaef5ced14c2153ed2cef5197efd14453e6f4cc88a75b7839b45e7d3c04",
+      "base_sha256": "39c31557b14122e6d0babc1f634368ce8aeede6b1ad2712caf85efa0ecd5e677",
+      "current_canonical_sha256": "39c31557b14122e6d0babc1f634368ce8aeede6b1ad2712caf85efa0ecd5e677",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0081",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0081-decouple-trust-from-emotion.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "50ca26635a9cc7f65fb1559ea9b5755953825c7846f09abcfe88e7e67335c1f8",
+      "base_sha256": "8661b4e317649ce7fb0904bc545723a1a52d0b396f93c01dacfc3c74ef3c09f4",
+      "current_canonical_sha256": "8661b4e317649ce7fb0904bc545723a1a52d0b396f93c01dacfc3c74ef3c09f4",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0082",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0082-establish-structural-verification-boundaries.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "b0fe7a7aa6a2c8b8d052ea55ae92d51f62ca8869c53e30ce43c71d9ef5049f44",
+      "base_sha256": "00e2884e6af8449f2ede48723a3c8b80f100de8efed3a9ff70d7021bf44f2dc7",
+      "current_canonical_sha256": "00e2884e6af8449f2ede48723a3c8b80f100de8efed3a9ff70d7021bf44f2dc7",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0083",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0083-optimize-coordination-costs-via-reliability.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "e7e86891f5c03503c06289ff2268af074cd01cc1d8eb358b1c9609855501d849",
+      "base_sha256": "b6a645028d4e40fb10c58c4d1a937d0d55359253d8958e598afc79b38915488f",
+      "current_canonical_sha256": "b6a645028d4e40fb10c58c4d1a937d0d55359253d8958e598afc79b38915488f",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0084",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0084-align-influence-with-shared-purpose.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "6455e2d983ce19dbe6093b4b0f351cc4e886b007b3ed3114dcdfa7908fd06d4c",
+      "base_sha256": "cddb7b5293759d46bcb336c887481ea0a7dd82a584cdfb1dbc1f6179203b2ddd",
+      "current_canonical_sha256": "cddb7b5293759d46bcb336c887481ea0a7dd82a584cdfb1dbc1f6179203b2ddd",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0085",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0085-decouple-influence-from-positional-power.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "a5dcc4754c17830c09e53c31d9e28b5dd7db50a9c327f7e1eb3713390f06f7e6",
+      "base_sha256": "39fb5bf7b0621f58fed94d993b4529e8bd4eac5b6e2d69ec371de48d606f7fa8",
+      "current_canonical_sha256": "39fb5bf7b0621f58fed94d993b4529e8bd4eac5b6e2d69ec371de48d606f7fa8",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0086",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0086-design-transparent-value-frames.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "f85232c345ecddf96975427ec8c426cb2cf4b580cc86b53f44e7686bdc9f18da",
+      "base_sha256": "7d9db5e37bd44c279390bc7b8ce69f4defe540a46172deef51e5f3d67b894fe0",
+      "current_canonical_sha256": "7d9db5e37bd44c279390bc7b8ce69f4defe540a46172deef51e5f3d67b894fe0",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0087",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0087-focus-on-underlying-interests.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "0e203f742884bfcb04924399e9bf4bbddd5410d01bb044e9a5db9c87d957b15d",
+      "base_sha256": "1fdc66979a88596e3d36860f1f656e95245ebacd5e9ae456a6e4fb2532aba255",
+      "current_canonical_sha256": "1fdc66979a88596e3d36860f1f656e95245ebacd5e9ae456a6e4fb2532aba255",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0088",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0088-expand-value-before-allocation.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "6efbc34700ed6e1fac614064c0a0f4f4c1d0abf87cea9c37ba375abaf77a5a31",
+      "base_sha256": "30d422871bf462476428cd30a3d27d05837536466f5d385b1f0138023b082657",
+      "current_canonical_sha256": "30d422871bf462476428cd30a3d27d05837536466f5d385b1f0138023b082657",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0089",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0089-anchor-agreements-in-objective-criteria.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "babadbb6a533476897ce4b5b1ea9bcea4a77b95d5e9af26fb17ed1042132c6d8",
+      "base_sha256": "d20c31b831046ecb3c8df0d2d3c1aa787ed7f81fc6443d9abde7554c418560d8",
+      "current_canonical_sha256": "d20c31b831046ecb3c8df0d2d3c1aa787ed7f81fc6443d9abde7554c418560d8",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0090",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0090-align-incentives-with-system-purpose.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "695f623dcd2bf992fe713e7c982c5a550794f9d333702fae5105e66a664db4f1",
+      "base_sha256": "9aa5176b88267510ea267096f31f5757f1349e1ec96572894d3c541dfa3f415b",
+      "current_canonical_sha256": "9aa5176b88267510ea267096f31f5757f1349e1ec96572894d3c541dfa3f415b",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0091",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0091-audit-extrinsic-payoffs-regularly.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "b47c9e4887b149d2f522b440914accae5745df8afda369e193c2d8440bf8c003",
+      "base_sha256": "7e94c8bf4b68a1df9bd02bb1a703d9ef98748ce676836fe55b20ddde5833ae7c",
+      "current_canonical_sha256": "7e94c8bf4b68a1df9bd02bb1a703d9ef98748ce676836fe55b20ddde5833ae7c",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0092",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0092-balance-short-term-metrics-with-long-term-alignment.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "1988e1764e5b96599c053c3dda757e4cf70830089e95f53a8b827f5553740803",
+      "base_sha256": "8478190a72f5612ffa3ebc53753b48d47511914800619a5b3b8199852d896ea5",
+      "current_canonical_sha256": "8478190a72f5612ffa3ebc53753b48d47511914800619a5b3b8199852d896ea5",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0093",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0093-depersonalize-task-disagreement.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "c9f4bcf0eb651ea22ee4ab9536c39922a399d1576b31a69ce89bd37ed0ab23a3",
+      "base_sha256": "07e2fbb8cfbc4cd344591cb5ff1d2c4db70d4d35ceb27b1405eb2b1cd1bbe171",
+      "current_canonical_sha256": "07e2fbb8cfbc4cd344591cb5ff1d2c4db70d4d35ceb27b1405eb2b1cd1bbe171",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0094",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0094-intervene-at-the-lowest-structural-level.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "e95273eb5331865781ba616d48580267a2345bf28633f09789a3062531fd8a4c",
+      "base_sha256": "dea019524a168dc679d3c8ffbaae9bdb402cd628fef5d0859639cc8d87561143",
+      "current_canonical_sha256": "dea019524a168dc679d3c8ffbaae9bdb402cd628fef5d0859639cc8d87561143",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0095",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0095-protect-constructive-friction.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "45a782eb94e04a306260bbce31bf85b43eeaba9056434c78351188aea081e037",
+      "base_sha256": "35dbda09131dd7162cd8dbfb141b9241b426c15e3b29e2b9f98a2ae166c520e3",
+      "current_canonical_sha256": "35dbda09131dd7162cd8dbfb141b9241b426c15e3b29e2b9f98a2ae166c520e3",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0096",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0096-match-authority-with-accountability.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "ed5abb8d75d7850d794980809cf30f11b3c8068cb47cb48c6ca064e353aa2fd2",
+      "base_sha256": "ab33dd166547bfec893944fee2f67a72eed08eeadd3fee19d0990a00d35f55c5",
+      "current_canonical_sha256": "ab33dd166547bfec893944fee2f67a72eed08eeadd3fee19d0990a00d35f55c5",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0097",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0097-define-clear-escalation-triggers.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "10fbe81889b0b1e9103c6fe7a091edaa7e7826bf0c92157a2ced4410c4017b88",
+      "base_sha256": "f69a8e3199ad5ec8a1c7e8a4dbb905a24c2f3bece5dcc7678d9fa711dbef6847",
+      "current_canonical_sha256": "f69a8e3199ad5ec8a1c7e8a4dbb905a24c2f3bece5dcc7678d9fa711dbef6847",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0098",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0098-minimize-positional-override.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "3b58e998e396bcfe4519abd33ff7d20a4e4eb459f4ee208c776a7c0b3aa7c93d",
+      "base_sha256": "562efdfb6be0cb114d6aed51ad3d8af27eab0cab4a52d053b9e7545f76cb4216",
+      "current_canonical_sha256": "562efdfb6be0cb114d6aed51ad3d8af27eab0cab4a52d053b9e7545f76cb4216",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0099",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0099-focus-resources-on-critical-bottlenecks.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "06d24e37e919a10562a8e16d2f67d726bb6ce881629f9a29e8bcb01c6899857e",
+      "base_sha256": "3a1a09105cb715f3bc878e5232f2030be1efef32ead47d971ec735232c2100a6",
+      "current_canonical_sha256": "3a1a09105cb715f3bc878e5232f2030be1efef32ead47d971ec735232c2100a6",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0100",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0100-explicitly-name-rejected-alternatives.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "af7e18c3930386f389c7032a1833994b4fd31b7432bdd625c909b4b6a6e9aec4",
+      "base_sha256": "93a2080eda8bb8ea0f40bef90a1b0983acd629086ddaf0dc4162e3659eaac9ab",
+      "current_canonical_sha256": "93a2080eda8bb8ea0f40bef90a1b0983acd629086ddaf0dc4162e3659eaac9ab",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0101",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0101-align-strategy-with-organizational-capabilities.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "71f614175abfe0325358ea8c3df37f38aac44e3072c8c5a27b4c9f50c4f394c4",
+      "base_sha256": "ea7cf81892657c2cffdf263bf83c9175c37aea2ce211072f7b0333d8f869ee6e",
+      "current_canonical_sha256": "ea7cf81892657c2cffdf263bf83c9175c37aea2ce211072f7b0333d8f869ee6e",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0102",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0102-limit-work-in-progress.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "a29bdc651b43e9cf44748dfd3c4a5fb21ccede1c7c686bf96a9ef153c81a1861",
+      "base_sha256": "7de74bdba8b652537b67ab68470ca5b2fcfb4774f20d9c13ef259c779ca8abc7",
+      "current_canonical_sha256": "7de74bdba8b652537b67ab68470ca5b2fcfb4774f20d9c13ef259c779ca8abc7",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0103",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0103-establish-predictable-execution-rhythms.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "eb75ee19a2d4358d8ff17648cbbf800a9b2828c20d4f5a3ae93f330867d6ce79",
+      "base_sha256": "df537be14883b40411f0216fcb1c7831afb38a7e06392e0467c00761fbedb2e7",
+      "current_canonical_sha256": "df537be14883b40411f0216fcb1c7831afb38a7e06392e0467c00761fbedb2e7",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0104",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0104-make-bottlenecks-instantly-visible.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "a1cd34b7ccd97337cc27ea36cc48c86720aa750d76c3f41103355c1c304d1429",
+      "base_sha256": "e65c7eee114a801314e02bfce285bd440e49ee2b975456b8e91d0389fca0325e",
+      "current_canonical_sha256": "e65c7eee114a801314e02bfce285bd440e49ee2b975456b8e91d0389fca0325e",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0105",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0105-separate-learning-from-blame.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "6465e3e7777b7d805cb26d1f5d54e348f7400a7aa042977f3326f7e54ad5d393",
+      "base_sha256": "b078430b97ecba9033a0ea8ac7dd1587505c109dadd04bcf14511b836c425fdf",
+      "current_canonical_sha256": "b078430b97ecba9033a0ea8ac7dd1587505c109dadd04bcf14511b836c425fdf",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0106",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0106-shorten-feedback-cycles.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "a55e3044e40a2649497c1f702d4ac46795c19104136f20ac9c7281ee67a9ff11",
+      "base_sha256": "d3646e4be54c34bf8b9e299d07e94aa67b7bf12a7ab4b042d57d182ad4713c98",
+      "current_canonical_sha256": "d3646e4be54c34bf8b9e299d07e94aa67b7bf12a7ab4b042d57d182ad4713c98",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0107",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0107-institutionalize-post-mortem-insights.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "3c0df7366fc00cd9a840591ea1c663ed77d2379de4fd7742e8c8ca538e3117e4",
+      "base_sha256": "6dacbf87ab86ed89d5d4e2ee73d590d127b26482bdb108e1987cfebcfba17fc8",
+      "current_canonical_sha256": "6dacbf87ab86ed89d5d4e2ee73d590d127b26482bdb108e1987cfebcfba17fc8",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0108",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0108-model-desired-culture-at-leadership-level.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "f13a8725dbc1d0fb4033573cf042f8cc420096111ffac80a9123ee42058face6",
+      "base_sha256": "d5dab89cf64d0614fdc53830ec68ad62e8de4a9254483804d8f56ec4e5d85308",
+      "current_canonical_sha256": "d5dab89cf64d0614fdc53830ec68ad62e8de4a9254483804d8f56ec4e5d85308",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0109",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0109-align-rewards-with-stated-values.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "465b640a145a8c587f5a50089738c93f8dfe15b13b7609bf6184d3cf35aebc35",
+      "base_sha256": "c814863824181e41471e4db5662ea90848e19705df5cf79563065d1c4112b6cf",
+      "current_canonical_sha256": "c814863824181e41471e4db5662ea90848e19705df5cf79563065d1c4112b6cf",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0110",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0110-institutionalize-norm-safeguards.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "388e625bc50c645edd7fe75a11e51426c15827bd0566e8ffd585eb53a2760613",
+      "base_sha256": "d2f66ea3ec9631a522010b1c12964b50871f25146cb835da6cabd27b046341fd",
+      "current_canonical_sha256": "d2f66ea3ec9631a522010b1c12964b50871f25146cb835da6cabd27b046341fd",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0111",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0111-embed-ethical-safeguards-into-automated-systems.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "8e82da552cb276ada539b0c3a68ac1c4f48a957579094bcb91e307f1ce4c8d33",
+      "base_sha256": "69820e92d5ea5cb8eded486a6c4c3a1223fe56aa3285e62852c7be5433892aa0",
+      "current_canonical_sha256": "69820e92d5ea5cb8eded486a6c4c3a1223fe56aa3285e62852c7be5433892aa0",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0112",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0112-enforce-asymmetric-risk-protection.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "5be09b62ad51e1266711fd6f7ede850741a4609a4e9f7e7229a049e6c1b09e02",
+      "base_sha256": "125bdb046557bbae61b4eab2df658c4558208c2b0012ff3ebf1be7bd3a83d9e3",
+      "current_canonical_sha256": "125bdb046557bbae61b4eab2df658c4558208c2b0012ff3ebf1be7bd3a83d9e3",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-0113",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0113-protect-whistleblowers-instantly.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "a565af3920fc154ce9dbab48215484e551d11fa28f761a4134cb3ad018b4d3b9",
+      "base_sha256": "71ea2893eb2d9bee5f8c2677cded6680b8933e5c844a8f6636b75648e6878569",
+      "current_canonical_sha256": "71ea2893eb2d9bee5f8c2677cded6680b8933e5c844a8f6636b75648e6878569",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-2101",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-2101.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "e5c57b211119a560b0d6a248f26c6052c8f98d4ba20de90ff2962dcef3a18dda",
+      "base_sha256": "b906c57058f0cfa901c4a25bff9ecad09c759c75c914fcc4583b018ca3ee019d",
+      "current_canonical_sha256": "b906c57058f0cfa901c4a25bff9ecad09c759c75c914fcc4583b018ca3ee019d",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-2201",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-2201.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "510b3701398e9bf1588d093a7d6cac40aff3ff88d0725daca790c98459d0158f",
+      "base_sha256": "4fc6891be35754c8dc09c1e46713b8790561ec2a6674502477bc21ececdc00ba",
+      "current_canonical_sha256": "4fc6891be35754c8dc09c1e46713b8790561ec2a6674502477bc21ececdc00ba",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-2301",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-2301.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "b4703c9acccc6371d3dc4aa486d47ebdcb23a3893dfbfba015137c76dfae940c",
+      "base_sha256": "697b1150c44088ebb31463b0e8e05647ab47f6bd2e9b73ca63aa08fda79f132b",
+      "current_canonical_sha256": "697b1150c44088ebb31463b0e8e05647ab47f6bd2e9b73ca63aa08fda79f132b",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-2401",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-2401.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "e669491ccc00f18c81e00dc628786cb1105e3789df1023a3d6920adc079065e9",
+      "base_sha256": "fc33719dac72944cfae41b6ad605420654c9411e5e6b0bea8542d82c6bdafd9a",
+      "current_canonical_sha256": "fc33719dac72944cfae41b6ad605420654c9411e5e6b0bea8542d82c6bdafd9a",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    },
+    {
+      "id": "NT-PRINCIPLE-2501",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-2501.yaml",
+      "governance_status": "frozen",
+      "pre_restore_sha256": "67b0a6e7edffc5072e42471788b5078a977f4898912cd03dcc798f8b0b958b25",
+      "base_sha256": "a262438676fe16b3bb6391308cd893fd37a60a79d2826d80dd771281be9e73a8",
+      "current_canonical_sha256": "a262438676fe16b3bb6391308cd893fd37a60a79d2826d80dd771281be9e73a8",
+      "action": "restored_to_base_selective",
+      "verified_clean": true
+    }
+  ],
+  "pre_restore_git_tag": "evidence/pre-restore-177-frozen",
+  "pre_restore_commit": "cb6a5ee15b6f3199239c9af08a038d5a1dc26eae",
+  "git_reachability_verified": true
+}

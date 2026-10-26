@@ -1,0 +1,103 @@
+{
+  "incident_id": "INCIDENT-TEST-SAFETY-20261021-001",
+  "title": "Test-Safety Incident: Direct Execution of Fault-Injection on Production Repository D:\\NhanThuat",
+  "recorded_at": "2026-10-22T02:55:00+00:00",
+  "status": "RESOLVED_VERIFIED",
+  "severity": "HIGH",
+  "summary": "During the controlled recovery remediation cycle, test_durable_transaction_journal_and_fault_injection_rollback was executed against the primary repository root D:\\NhanThuat with PID 21968 instead of being fully isolated within a temporary fixture repository. Although the rollback mechanism executed successfully and reversed all file replacements, .apply_journal_21968.json remained on disk in the working tree.",
+  "journal_evidence": {
+    "evidence_type": "RECONSTRUCTED_STRUCTURED_TELEMETRY",
+    "note": "Reconstructed structured record of the ephemeral transaction journal captured from test runner state and working tree inspection prior to cleanup. Original ephemeral file was safely unlinked.",
+    "file_name": ".apply_journal_21968.json",
+    "sha256": "19e247cd3cd8e98743effc1cf8752c8102aa67398834ae1083b0109599ed6048",
+    "transaction_id": "TXN-APPLY-20261021070339-21968",
+    "recorded_state": "ROLLED_BACK",
+    "po_approval_id": "PO-TEST-FAULT-INJECTION-ROLLBACK",
+    "base_commit": "27a34bcd840713df1817517066b4cf1a9b1623a3",
+    "created_at": "2026-10-21T07:03:39.255279+00:00",
+    "updated_at": "2026-10-21T07:03:39.339546+00:00",
+    "entries": [
+      {
+        "canonical_path": "knowledge/units/laws/NT-LAW-2101.yaml",
+        "sha256_base": "3b2f1e4e655d73aca6922e90b8ce8000cdd3b46fd32f4ebae64f8c7903d8d68c",
+        "status": "restored"
+      },
+      {
+        "canonical_path": "knowledge/units/models/NT-MODEL-2101.yaml",
+        "sha256_base": "23f174a051822cf84e1c92810b1e20056a9b9688d176f1994bff8b8dba7cfee9",
+        "status": "staged"
+      },
+      {
+        "canonical_path": "knowledge/units/models/NT-MODEL-2201.yaml",
+        "sha256_base": "5f01ece8f7e690b1662e7cb1198c5834fce237caa71a04fa5a391b719ecb9c4c",
+        "status": "staged"
+      },
+      {
+        "canonical_path": "knowledge/units/principles/NT-PRINCIPLE-0063-minimize-role-power.yaml",
+        "sha256_base": "69328ea07c7c4ba5c16abb4fa5323c365e3f33bb61674bde67facf393795eeeb",
+        "status": "staged"
+      },
+      {
+        "canonical_path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0012-charismatic-trap.yaml",
+        "sha256_base": "117eeaf3ee85e833c3d0ef76b189438d873f0148847a8e4bb69097280fc99871",
+        "status": "staged"
+      },
+      {
+        "canonical_path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0013-coercive-compliance.yaml",
+        "sha256_base": "b68255bb24395f1da8bab7afa8a24a7a7648709e42d8eb97767b6ff91086d216",
+        "status": "staged"
+      }
+    ]
+  },
+  "canonical_frozen_units_verification": [
+    {
+      "unit_id": "NT-LAW-2101",
+      "path": "knowledge/units/laws/NT-LAW-2101.yaml",
+      "expected_base_sha256": "3b2f1e4e655d73aca6922e90b8ce8000cdd3b46fd32f4ebae64f8c7903d8d68c",
+      "verified_disk_sha256": "3b2f1e4e655d73aca6922e90b8ce8000cdd3b46fd32f4ebae64f8c7903d8d68c",
+      "match": true
+    },
+    {
+      "unit_id": "NT-MODEL-2101",
+      "path": "knowledge/units/models/NT-MODEL-2101.yaml",
+      "expected_base_sha256": "23f174a051822cf84e1c92810b1e20056a9b9688d176f1994bff8b8dba7cfee9",
+      "verified_disk_sha256": "23f174a051822cf84e1c92810b1e20056a9b9688d176f1994bff8b8dba7cfee9",
+      "match": true
+    },
+    {
+      "unit_id": "NT-MODEL-2201",
+      "path": "knowledge/units/models/NT-MODEL-2201.yaml",
+      "expected_base_sha256": "5f01ece8f7e690b1662e7cb1198c5834fce237caa71a04fa5a391b719ecb9c4c",
+      "verified_disk_sha256": "5f01ece8f7e690b1662e7cb1198c5834fce237caa71a04fa5a391b719ecb9c4c",
+      "match": true
+    },
+    {
+      "unit_id": "NT-PRINCIPLE-0063",
+      "path": "knowledge/units/principles/NT-PRINCIPLE-0063-minimize-role-power.yaml",
+      "expected_base_sha256": "69328ea07c7c4ba5c16abb4fa5323c365e3f33bb61674bde67facf393795eeeb",
+      "verified_disk_sha256": "69328ea07c7c4ba5c16abb4fa5323c365e3f33bb61674bde67facf393795eeeb",
+      "match": true
+    },
+    {
+      "unit_id": "NT-ANTI-PATTERN-0012",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0012-charismatic-trap.yaml",
+      "expected_base_sha256": "117eeaf3ee85e833c3d0ef76b189438d873f0148847a8e4bb69097280fc99871",
+      "verified_disk_sha256": "117eeaf3ee85e833c3d0ef76b189438d873f0148847a8e4bb69097280fc99871",
+      "match": true
+    },
+    {
+      "unit_id": "NT-ANTI-PATTERN-0013",
+      "path": "knowledge/units/anti-patterns/NT-ANTI-PATTERN-0013-coercive-compliance.yaml",
+      "expected_base_sha256": "b68255bb24395f1da8bab7afa8a24a7a7648709e42d8eb97767b6ff91086d216",
+      "verified_disk_sha256": "b68255bb24395f1da8bab7afa8a24a7a7648709e42d8eb97767b6ff91086d216",
+      "match": true
+    }
+  ],
+  "remediation_actions": [
+    "Preserved verified structured metadata, reconstructed incident telemetry, and SHA-256 cryptographic snapshot in this audit artifact; the leftover ephemeral file was safely unlinked.",
+    "Verified all 6 canonical Frozen units retain 100% hash parity with base commit 27a34bcd840713df1817517066b4cf1a9b1623a3.",
+    "Enforced Product Owner Promotion Workflow guard: strictly forbids live modification (dry_run=False) outside an isolated Git worktree, replacing machine-dependent path checks with portable workflow boundaries.",
+    "Moved all write, fault-injection, and crash-recovery tests into isolated temporary fixture repositories in tmp_path.",
+    "Safely unlinked temporary .apply_journal_21968.json from working tree."
+  ]
+}

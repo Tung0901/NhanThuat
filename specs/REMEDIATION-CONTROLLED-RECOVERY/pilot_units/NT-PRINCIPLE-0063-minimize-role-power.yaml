@@ -1,0 +1,130 @@
+unit_id: NT-PRINCIPLE-0063
+base_commit: 27a34bc
+canonical_path: knowledge/units/principles/NT-PRINCIPLE-0063-minimize-role-power.yaml
+current_version: 0.2.0
+proposed_version: 1.0.0
+status: ready_for_review
+governance_note: Proposal artifact only. Do not apply to canonical until Product Owner
+  approves CR-2026-10-19-KNOWLEDGE-CONTENT-V1 (Decision B).
+evidence_before:
+  level: supported
+  references:
+  - EV-REQ-0001-01
+evidence_proposed:
+  level: supported
+  references:
+  - '[Empirical Study] Edmondson, A. (1999). Psychological safety and learning behavior
+    in work teams. Administrative Science Quarterly, 44(2), 350-383 (Nghiên cứu thực
+    nghiệm về an toàn tâm lý và hành vi học hỏi trong nhóm).'
+  - '[Theoretical Model] French, J. R., & Raven, B. (1959). The bases of social power.
+    In D. Cartwright (Ed.), Studies in Social Power (pp. 150-167). University of Michigan
+    Press.'
+  - '[Classical Analogy] Tư Mã Quang — Tư Trị Thông Giám (Điển tích Đường Thái Tông
+    chủ động tiết chế uy quyền thiên tử để mở đường can gián cho Ngụy Trưng).'
+  - '[Editorial Inference] Thiết kế quy tắc phát biểu và trọng số chuyên môn trong
+    hội đồng thẩm định.'
+rationale: Thay thế mã placeholder EV-REQ-0001-01 bằng 4 nguồn phân loại chính xác,
+  bổ sung nghiên cứu thực nghiệm của Edmondson (1999) về an toàn tâm lý và lý thuyết
+  quyền lực xã hội của French & Raven (1959).
+impact: Nâng cao độ tin cậy khoa học của nguyên tắc tiết chế quyền lực vị trí, đề
+  xuất tăng version 0.2.0 -> 1.0.0 sau khi PO duyệt.
+source_classification:
+  empirical_study:
+  - Edmondson (1999)
+  theoretical_model:
+  - French & Raven (1959)
+  classical_analogy:
+  - Tư Trị Thông Giám (Đường Thái Tông & Ngụy Trưng)
+  editorial_inference:
+  - Quy tắc phát biểu và trọng số chuyên môn
+proposed_unit:
+  id: NT-PRINCIPLE-0063
+  type: principle
+  status: frozen
+  version: 1.0.0
+  title: Giảm thiểu quyền lực vai trò
+  summary: Tiết chế việc sử dụng quyền lực vị trí trong các cuộc thảo luận chuyên
+    môn để bảo vệ luồng thông tin phản biện chân thực từ tuyến đầu.
+  primary_domain: dung-nhan
+  domain_area: NT-DA-0011
+  secondary_domains:
+  - tu-than
+  definition: Nguyên tắc quản trị tương tác nhằm hạn chế tối đa sự can thiệp của cấp
+    bậc hành chính vào quá trình tranh luận kỹ thuật và phân tích dữ liệu thực tế.
+  mechanism:
+  - Người chủ trì cuộc họp phát biểu sau cùng để tránh tạo hiệu ứng mỏ neo quyền lực.
+  - Cấp dưới được bảo đảm quyền nêu các dữ liệu trái chiều mà không chịu rủi ro quy
+    kết cá nhân.
+  - Quyết định dựa trên trọng số bằng chứng và luận cứ logic thay vì cấp bậc người
+    phát biểu.
+  conditions:
+  - Các quyết định kỹ thuật, kiến trúc sản phẩm, chẩn đoán nguyên nhân gốc rễ (post-mortem)
+    hoặc đánh giá rủi ro đầu tư.
+  - Đội ngũ có đủ năng lực chuyên môn và thiện chí hợp tác để đóng góp ý kiến có căn
+    cứ.
+  exceptions:
+  - Tình huống ứng cứu khẩn cấp đòi hỏi chuỗi chỉ huy tập trung một đầu mối để hành
+    động tức thời.
+  - Các quyết định thuộc thẩm quyền chịu trách nhiệm pháp lý cá nhân không thể ủy
+    quyền của người đại diện theo pháp luật.
+  applications:
+    management:
+    - Quy định người có quyền lực cao nhất phát biểu cuối cùng trong các phiên phản
+      biện chuyên môn
+  risks:
+  - Đánh đồng việc tiết chế quyền lực chức danh với việc buông lỏng trách nhiệm chốt
+    quyết định cuối cùng.
+  - Tạo khoảng trống quyền lực hình thức khiến các nhóm lợi ích ngầm thao túng cuộc
+    họp.
+  evidence:
+    level: supported
+    references:
+    - '[Empirical Study] Edmondson, A. (1999). Psychological safety and learning behavior
+      in work teams. Administrative Science Quarterly, 44(2), 350-383 (Nghiên cứu
+      thực nghiệm về an toàn tâm lý và hành vi học hỏi trong nhóm).'
+    - '[Theoretical Model] French, J. R., & Raven, B. (1959). The bases of social
+      power. In D. Cartwright (Ed.), Studies in Social Power (pp. 150-167). University
+      of Michigan Press.'
+    - '[Classical Analogy] Tư Mã Quang — Tư Trị Thông Giám (Điển tích Đường Thái Tông
+      chủ động tiết chế uy quyền thiên tử để mở đường can gián cho Ngụy Trưng).'
+    - '[Editorial Inference] Thiết kế quy tắc phát biểu và trọng số chuyên môn trong
+      hội đồng thẩm định.'
+  relations:
+    supports: []
+    conflicts_with: []
+    depends_on: []
+    applies_to: []
+  tags:
+  - leadership
+  - authority
+  - role-power
+  - dissent
+  created_at: '2026-08-15'
+  updated_at: '2026-09-14'
+  content: "### 1. Cơ chế Chuyển dịch từ Quyền lực Chức danh sang Thẩm quyền Chuyên\
+    \ môn\n**Giảm thiểu quyền lực vai trò** (`NT-PRINCIPLE-0063`) là nguyên tắc thiết\
+    \ kế tương tác quản trị nhằm hạn chế việc dùng cấp bậc hành chính (legitimate/coercive\
+    \ power theo French & Raven, 1959) làm căn cứ kết luận trong các bài toán chuyên\
+    \ môn. Khi người đứng đầu sớm áp đặt ý kiến bằng vị thế, cấp dưới thường điều\
+    \ chỉnh phát biểu theo hướng thuận chiều để giảm rủi ro cá nhân, làm mất nguồn\
+    \ dữ liệu thực địa.\n\n### 2. Điều kiện áp dụng & Ngoại lệ\n- **Điều kiện áp dụng:**\n\
+    \  - Các quyết định kỹ thuật, kiến trúc sản phẩm, chẩn đoán nguyên nhân gốc rễ\
+    \ (post-mortem) hoặc đánh giá rủi ro đầu tư — nơi chất lượng thông tin quan trọng\
+    \ hơn tốc độ tuân lệnh.\n  - Đội ngũ có đủ năng lực chuyên môn và thiện chí hợp\
+    \ tác để đóng góp ý kiến có căn cứ.\n- **Ngoại lệ:**\n  - Tình huống ứng cứu khẩn\
+    \ cấp đòi hỏi chuỗi chỉ huy tập trung một đầu mối để hành động tức thời.\n  -\
+    \ Các quyết định thuộc thẩm quyền chịu trách nhiệm pháp lý cá nhân không thể ủy\
+    \ quyền của người đại diện theo pháp luật.\n\n### 3. Mức bất định & Rủi ro diễn\
+    \ giải sai\n- **Mức bất định:** Trung bình. Hiệu quả của việc giảm sử dụng quyền\
+    \ lực vai trò phụ thuộc vào văn hóa khoảng cách quyền lực (power distance) của\
+    \ tổ chức và mức độ rõ ràng của tiêu chí ra quyết định.\n- **Rủi ro diễn giải\
+    \ sai:**\n  - Đánh đồng việc tiết chế quyền lực chức danh với việc buông lỏng\
+    \ trách nhiệm chốt quyết định cuối cùng, dẫn đến thảo luận kéo dài không có người\
+    \ chịu trách nhiệm.\n  - Tạo khoảng trống quyền lực hình thức khiến các nhóm lợi\
+    \ ích ngầm không chính thức thao túng cuộc họp.\n\n### 4. Nguồn truy nguyên &\
+    \ Đối chiếu Đông - Tây\n- **Nguồn truy nguyên:** Phân loại nguồn quyền lực xã\
+    \ hội của French & Raven (1959) và nghiên cứu thực nghiệm về an toàn tâm lý trong\
+    \ nhóm làm việc của Amy Edmondson (1999).\n- **Đối chiếu cổ điển `[Classical Analogy]`:**\
+    \ *Tư Trị Thông Giám* ghi lại việc Đường Thái Tông nhận thức rõ uy thế của bậc\
+    \ quân vương dễ khiến quần thần im lặng giữ thân, do đó phải chủ động hạ thấp\
+    \ sắc mặt và thiết lập cơ chế bảo vệ người nói thẳng (*Kiêm thính tắc minh*).\n"

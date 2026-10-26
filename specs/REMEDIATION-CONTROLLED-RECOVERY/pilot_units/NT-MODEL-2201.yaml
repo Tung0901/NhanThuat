@@ -1,0 +1,132 @@
+unit_id: NT-MODEL-2201
+base_commit: 27a34bc
+canonical_path: knowledge/units/models/NT-MODEL-2201.yaml
+current_version: 1.0.0
+proposed_version: 1.1.0
+status: ready_for_review
+governance_note: Proposal artifact only. Do not apply to canonical until Product Owner
+  approves CR-2026-10-19-KNOWLEDGE-CONTENT-V1 (Decision B).
+evidence_before:
+  level: supported
+  references: []
+evidence_proposed:
+  level: supported
+  references:
+  - '[Theoretical Model] French, J. R., & Raven, B. (1959). The bases of social power.
+    In D. Cartwright (Ed.), Studies in Social Power (pp. 150-167). University of Michigan
+    Press (Mô hình lý thuyết 5 nguồn quyền lực xã hội).'
+  - '[Review/Meta-analysis] Podsakoff, P. M., & Schriesheim, C. A. (1985). Field studies
+    of French and Raven''s bases of power: Critique, reanalysis, and suggestions for
+    future research. Psychological Bulletin, 97(3), 387-411 (Phân tích tổng quan và
+    đánh giá lại các nghiên cứu thực địa).'
+  - '[Classical Analogy] Hàn Phi Tử — Thiên Nhị Bính & Bát Kinh (Phân tích quyền thưởng
+    phạt cùng uy thế vị trí và giới hạn khi thiếu thực tài).'
+  - '[Editorial Inference] Ứng dụng chẩn đoán cơ cấu quyền lực của nhà quản lý trong
+    tổ chức.'
+rationale: Chuẩn hóa phân loại nguồn tham chiếu sang [Theoretical Model] cho French
+  & Raven và [Review/Meta-analysis] cho Podsakoff & Schriesheim; bổ sung phân tích
+  sâu về tương quan bền vững giữa quyền lực tham chiếu/chuyên gia so với quyền lực
+  cưỡng chế.
+impact: Làm rõ cơ chế tác động của từng nguồn quyền lực trong bối cảnh quản trị doanh
+  nghiệp hiện đại.
+source_classification:
+  theoretical_model:
+  - French & Raven (1959)
+  review_meta_analysis:
+  - Podsakoff & Schriesheim (1985)
+  classical_analogy:
+  - Hàn Phi Tử (Nhị Bính & Bát Kinh)
+  editorial_inference:
+  - Khung chẩn đoán cơ cấu quyền lực
+proposed_unit:
+  id: NT-MODEL-2201
+  type: model
+  status: frozen
+  version: 1.1.0
+  title: Ma Trận Quyền Lực
+  summary: 'Mô hình phân loại các nguồn quyền lực tổ chức thành hai nhóm chính: quyền
+    lực vị trí và quyền lực cá nhân.'
+  primary_domain: thanh-su
+  domain_area: NT-DA-0022
+  secondary_domains:
+  - dung-nhan
+  definition: Khung phân tích giúp nhận diện và đo lường các nguồn lực tạo nên sức
+    ảnh hưởng thực tế của một chủ thể trong hệ thống xã hội hoặc tổ chức.
+  mechanism:
+  - Chủ thể nắm giữ hoặc phát triển các nguồn lực (vị trí, chuyên môn, mối quan hệ,
+    uy tín cá nhân).
+  - Các nguồn lực này tạo ra mức độ phục tùng hoặc cam kết khác nhau từ cấp dưới.
+  - Quyền lực vị trí tạo ra sự tuân thủ bề ngoài; quyền lực cá nhân tạo ra sự đồng
+    thuận nội tâm.
+  - Sự phối hợp cân bằng giữa các nguồn lực quyết định hiệu quả lãnh đạo bền vững.
+  conditions:
+  - Chẩn đoán nguyên nhân vì sao chỉ đạo chiến lược không đi vào thực tế (do thiếu
+    thẩm quyền chính thức hay thiếu uy tín chuyên môn).
+  - Thiết kế lộ trình phát triển năng lực lãnh đạo cho quản lý cấp trung và chuyên
+    gia đầu ngành.
+  exceptions:
+  - Môi trường vận hành có quy định an toàn sinh mạng hoặc kỷ luật quân sự nghiêm
+    ngặt — nơi quyền lực hợp pháp theo vị trí phải được ưu tiên tuân thủ tức thời
+    tại hiện trường.
+  applications:
+    management:
+    - Đánh giá cơ cấu quyền lực thực tế của ban lãnh đạo và chuyên gia
+  risks:
+  - Lạm dụng quyền lực cưỡng chế tạo ra sự chống đối ngầm và suy thoái văn hóa.
+  - Ảo tưởng về quyền lực vị trí khi bước ra khỏi ranh giới bổ nhiệm chính thức.
+  evidence:
+    level: supported
+    references:
+    - '[Theoretical Model] French, J. R., & Raven, B. (1959). The bases of social
+      power. In D. Cartwright (Ed.), Studies in Social Power (pp. 150-167). University
+      of Michigan Press (Mô hình lý thuyết 5 nguồn quyền lực xã hội).'
+    - '[Review/Meta-analysis] Podsakoff, P. M., & Schriesheim, C. A. (1985). Field
+      studies of French and Raven''s bases of power: Critique, reanalysis, and suggestions
+      for future research. Psychological Bulletin, 97(3), 387-411 (Phân tích tổng
+      quan và đánh giá lại các nghiên cứu thực địa).'
+    - '[Classical Analogy] Hàn Phi Tử — Thiên Nhị Bính & Bát Kinh (Phân tích quyền
+      thưởng phạt cùng uy thế vị trí và giới hạn khi thiếu thực tài).'
+    - '[Editorial Inference] Ứng dụng chẩn đoán cơ cấu quyền lực của nhà quản lý trong
+      tổ chức.'
+  relations:
+    supports: []
+    conflicts_with: []
+    depends_on: []
+    applies_to: []
+  tags:
+  - framework
+  - power
+  - power-dynamics
+  - influence
+  - legitimacy
+  created_at: '2026-08-15'
+  updated_at: '2026-09-14'
+  content: "### 1. Cấu trúc Năm Nguồn Quyền lực Tổ chức\n**Ma Trận Quyền Lực** (`NT-MODEL-2201`)\
+    \ chuẩn hóa phân loại kinh điển của French & Raven (1959) gồm hai nhóm nguồn lực\
+    \ tác động:\n1. *Quyền lực gắn với vị trí (Positional Power)*: Quyền lực hợp pháp\
+    \ (Legitimate), Quyền lực tưởng thưởng (Reward), Quyền lực cưỡng chế (Coercive).\n\
+    2. *Quyền lực gắn với cá nhân (Personal Power)*: Quyền lực chuyên gia (Expert),\
+    \ Quyền lực tham chiếu/uy tín (Referent).\n\nCác phân tích tổng hợp thực địa (Podsakoff\
+    \ & Schriesheim, 1985) cho thấy quyền lực chuyên gia và tham chiếu có tương quan\
+    \ dương bền vững hơn với sự gắn kết nội tâm, trong khi lạm dụng quyền lực cưỡng\
+    \ chế thường chỉ tạo ra sự phục tùng ngắn hạn kèm chi phí giám sát cao.\n\n###\
+    \ 2. Điều kiện áp dụng & Ngoại lệ\n- **Điều kiện áp dụng:**\n  - Chẩn đoán nguyên\
+    \ nhân vì sao một chỉ đạo chiến lược không đi vào thực tế (do thiếu thẩm quyền\
+    \ chính thức hay thiếu uy tín chuyên môn).\n  - Thiết kế lộ trình phát triển năng\
+    \ lực lãnh đạo cho quản lý cấp trung và chuyên gia đầu ngành.\n- **Ngoại lệ:**\n\
+    \  - Các môi trường vận hành có quy định an toàn sinh mạng hoặc kỷ luật quân sự\
+    \ nghiêm ngặt — nơi quyền lực hợp pháp theo vị trí phải được ưu tiên tuân thủ\
+    \ tức thời tại hiện trường.\n\n### 3. Mức bất định & Rủi ro diễn giải sai\n- **Mức\
+    \ bất định:** Thấp - Trung bình. Dù phân loại 5 nguồn quyền lực có nền tảng thực\
+    \ nghiệm rộng, hiệu quả tương đối của từng nguồn lực vẫn biến thiên theo văn hóa\
+    \ tổ chức, giai đoạn trưởng thành của nhân sự và mức độ khủng hoảng.\n- **Rủi\
+    \ ro diễn giải sai:**\n  - Phủ nhận hoàn toàn vai trò của quyền lực vị trí và\
+    \ chế tài hợp pháp, khiến tổ chức thiếu ranh giới kỷ luật đối với các hành vi\
+    \ vi phạm chuẩn mực.\n  - Nhầm lẫn sức hút bề nổi nhất thời với quyền lực tham\
+    \ chiếu bền vững dựa trên sự chính trực.\n\n### 4. Nguồn truy nguyên & Đối chiếu\
+    \ Đông - Tây\n- **Nguồn truy nguyên:** Mô hình 5 nguồn quyền lực của French &\
+    \ Raven (1959) và tổng quan phê bình thực nghiệm của Podsakoff & Schriesheim (1985).\n\
+    - **Đối chiếu cổ điển `[Classical Analogy]`:** Hàn Phi Tử phân định rõ *Thế* (vị\
+    \ trí), *Pháp* (quy tắc thưởng phạt công minh) và *Thuật* (năng lực thẩm định),\
+    \ đồng thời Tuân Tử (*Vương Chế*) bổ sung rằng nếu chỉ có *Thế* và *Hình* mà thiếu\
+    \ *Đức/Tín* (tương ứng Referent Power) thì chỉ giữ được sự phục tùng bề mặt.\n"

@@ -1,0 +1,124 @@
+unit_id: NT-LAW-2101
+base_commit: 27a34bc
+canonical_path: knowledge/units/laws/NT-LAW-2101.yaml
+current_version: 1.0.0
+proposed_version: 1.1.0
+status: ready_for_review
+governance_note: Proposal artifact only. Do not apply to canonical until Product Owner
+  approves CR-2026-10-19-KNOWLEDGE-CONTENT-V1 (Decision B).
+evidence_before:
+  level: supported
+  references: []
+evidence_proposed:
+  level: supported
+  references:
+  - '[Empirical Study] Weick, K. E. (1993). The collapse of sensemaking in organizations:
+    The Mann Gulch disaster. Administrative Science Quarterly, 38(4), 628-652 (Nghiên
+    cứu thực địa về sự đứt gãy nhận thức trong thảm họa Mann Gulch).'
+  - '[Academic Monograph] Perrow, C. (1984). Normal Accidents: Living with High-Risk
+    Technologies. Basic Books (Cơ chế khuếch đại sự cố trong hệ thống liên kết chặt).'
+  - '[Classical Analogy] Tôn Vũ — Tôn Tử Binh Pháp, thiên Binh Thế & Cửu Biến (Quản
+    trị nhịp độ và ngăn chặn phản ứng dây chuyền khi biến cố phát sinh).'
+  - '[Editorial Inference] Quy trình phân lập sự cố và thiết lập nhịp thông tin trong
+    vận hành doanh nghiệp.'
+rationale: Nâng cấp chiều sâu học thuật, thay thế danh mục tham chiếu rỗng bằng 4
+  nguồn được phân loại theo 7 chuẩn học thuật, bổ sung điều kiện áp dụng, ngoại lệ,
+  mức bất định và rủi ro diễn giải sai mà không tuyệt đối hóa quy luật.
+impact: Cung cấp bằng chứng thực chất, làm rõ cơ chế tương tác trong hệ thống liên
+  kết chặt mà không thay đổi taxonomy hay schema.
+source_classification:
+  empirical_study:
+  - Weick (1993)
+  academic_monograph:
+  - Perrow (1984)
+  classical_analogy:
+  - Tôn Tử Binh Pháp (Binh Thế & Cửu Biến)
+  editorial_inference:
+  - Khung phân lập sự cố và nhịp thông tin
+proposed_unit:
+  id: NT-LAW-2101
+  type: law
+  status: frozen
+  version: 1.1.0
+  title: Định luật Entropy trong Khủng hoảng
+  summary: Trong các hệ thống tổ chức liên kết chặt, khoảng trống thông tin và độ
+    trễ phản ứng thường làm gia tăng độ hỗn loạn nhanh chóng nếu thiếu các ranh giới
+    ngăn cách.
+  primary_domain: thanh-su
+  domain_area: NT-DA-0021
+  secondary_domains:
+  - dung-nhan
+  definition: Khủng hoảng không duy trì trạng thái tĩnh; nếu không được khoanh vùng
+    và xử lý chủ động, mức độ hỗn loạn (entropy) của hệ thống có xu hướng tăng dần
+    theo thời gian.
+  mechanism:
+  - Sự cố khởi phát tạo ra nhiễu loạn cục bộ.
+  - Thiếu kiểm soát khiến nhiễu loạn lan truyền sang các bộ phận liên đới.
+  - Mức độ hỗn loạn tăng dần làm suy giảm năng lực tự điều chỉnh.
+  - Hệ thống mất trật tự và khả năng điều hành bình thường.
+  - Cần can thiệp phân lập và tái thiết lập trật tự từ bên ngoài.
+  conditions:
+  - Các sự cố vận hành, kỹ thuật hoặc truyền thông có tốc độ lan truyền nhanh và liên
+    quan đến các bên phụ thuộc lẫn nhau.
+  - Kênh thông tin chính thức bị gián đoạn khiến các bộ phận cơ sở hành động theo
+    giả định cục bộ.
+  exceptions:
+  - Các hệ thống có cơ chế phân lập tự động (circuit breaker) hoặc phân rã module
+    độc lập.
+  - Biến cố diễn tiến chậm, nơi việc quan sát thêm mang lại dữ liệu giá trị hơn là
+    phản ứng hấp tấp.
+  applications:
+    management:
+    - Thiết lập quy trình khoanh vùng sự cố tức thì trong 60 phút đầu
+  risks:
+  - Can thiệp vội vã thiếu dữ liệu làm phá vỡ thêm cấu trúc hệ thống.
+  - Phóng đại sự cố nhỏ thành khủng hoảng toàn diện gây hoang mang nội bộ.
+  evidence:
+    level: supported
+    references:
+    - '[Empirical Study] Weick, K. E. (1993). The collapse of sensemaking in organizations:
+      The Mann Gulch disaster. Administrative Science Quarterly, 38(4), 628-652 (Nghiên
+      cứu thực địa về sự đứt gãy nhận thức trong thảm họa Mann Gulch).'
+    - '[Academic Monograph] Perrow, C. (1984). Normal Accidents: Living with High-Risk
+      Technologies. Basic Books (Cơ chế khuếch đại sự cố trong hệ thống liên kết chặt).'
+    - '[Classical Analogy] Tôn Vũ — Tôn Tử Binh Pháp, thiên Binh Thế & Cửu Biến (Quản
+      trị nhịp độ và ngăn chặn phản ứng dây chuyền khi biến cố phát sinh).'
+    - '[Editorial Inference] Quy trình phân lập sự cố và thiết lập nhịp thông tin
+      trong vận hành doanh nghiệp.'
+  relations:
+    supports: []
+    conflicts_with: []
+    depends_on: []
+    applies_to: []
+  tags:
+  - crisis-dynamics
+  - entropy
+  - system-stability
+  created_at: '2026-08-15'
+  updated_at: '2026-09-14'
+  content: "### 1. Cơ chế Khuếch đại Độ nhiễu trong Khủng hoảng\n**Định luật Entropy\
+    \ trong Khủng hoảng** (`NT-LAW-2101`) chỉ ra rằng trong các hệ thống tổ chức có\
+    \ độ liên kết chặt (tightly coupled systems), khoảng trống thông tin và độ trễ\
+    \ chỉ huy không giữ nguyên trạng thái tĩnh mà thường kích hoạt các phản ứng suy\
+    \ đoán, tự vệ cục bộ và lan truyền sự cố sang các bộ phận lân cận.\n\n### 2. Điều\
+    \ kiện áp dụng & Ngoại lệ\n- **Điều kiện áp dụng:**\n  - Các sự cố vận hành, thanh\
+    \ khoản, an ninh dữ liệu hoặc truyền thông có tốc độ lan truyền nhanh và liên\
+    \ quan đến nhiều bên phụ thuộc lẫn nhau.\n  - Kênh thông tin chính thức bị gián\
+    \ đoạn khiến các đơn vị cơ sở tự hành động theo tin đồn hoặc giả định cục bộ.\n\
+    - **Ngoại lệ:**\n  - Các sự cố kỹ thuật đã được phân lập vật lý hoặc có cầu chì\
+    \ ngắt tự động (circuit breakers) tách biệt hoàn toàn khỏi hệ thống chính.\n \
+    \ - Những biến động diễn tiến chậm, có dữ liệu quan trắc đầy đủ; trong trường\
+    \ hợp này việc can thiệp vội vã có thể gây nhiễu nhiều hơn việc quan sát thêm.\n\
+    \n### 3. Mức bất định & Rủi ro diễn giải sai\n- **Mức bất định:** Trung bình -\
+    \ Cao. Tốc độ gia tăng độ hỗn loạn phụ thuộc lớn vào cấu trúc phân quyền sẵn có\
+    \ và mức độ tập dượt quy trình ứng phó sự cố trước đó (Weick, 1993).\n- **Rủi\
+    \ ro diễn giải sai:**\n  - Đồng nhất việc phản ứng kịp thời với việc ra lệnh chuyên\
+    \ quyền thiếu kiểm chứng, dẫn đến sửa sai chỗ này nhưng làm vỡ cấu trúc chỗ khác.\n\
+    \  - Hoang mang phóng đại các sự cố cục bộ nhỏ thành khủng hoảng toàn diện làm\
+    \ kiệt sức đội ngũ.\n\n### 4. Nguồn truy nguyên & Đối chiếu Đông - Tây\n- **Nguồn\
+    \ truy nguyên:** Nghiên cứu thực địa về sự sụp đổ kiến tạo ý nghĩa trong thảm\
+    \ họa Mann Gulch của Karl Weick (1993) và lý thuyết tai nạn hệ thống của Charles\
+    \ Perrow (1984).\n- **Đối chiếu cổ điển `[Classical Analogy]`:** Tôn Tử Binh Pháp\
+    \ (thiên *Binh Thế*) phân biệt giữa *loạn* sinh ra từ *trị* khi có phân định bộ\
+    \ ngũ, hiệu lệnh rõ ràng với sự hỗn loạn dây chuyền khi đứt gãy thông tin chỉ\
+    \ huy.\n"

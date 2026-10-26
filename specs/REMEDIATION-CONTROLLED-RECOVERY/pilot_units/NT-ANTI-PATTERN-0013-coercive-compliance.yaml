@@ -1,0 +1,131 @@
+unit_id: NT-ANTI-PATTERN-0013
+base_commit: 27a34bc
+canonical_path: knowledge/units/anti-patterns/NT-ANTI-PATTERN-0013-coercive-compliance.yaml
+current_version: 0.2.0
+proposed_version: 1.0.0
+status: ready_for_review
+governance_note: Proposal artifact only. Do not apply to canonical until Product Owner
+  approves CR-2026-10-19-KNOWLEDGE-CONTENT-V1 (Decision B).
+evidence_before:
+  level: supported
+  references:
+  - EV-REQ-0001-01
+evidence_proposed:
+  level: supported
+  references:
+  - '[Theoretical Model] Kelman, H. C. (1958). Compliance, identification, and internalization:
+    Three processes of attitude change. Journal of Conflict Resolution, 2(1), 51-60
+    (Mô hình lý thuyết ba tiến trình thay đổi thái độ).'
+  - '[Review/Meta-analysis] Deci, E. L., Koestner, R., & Ryan, R. M. (1999). A meta-analytic
+    review of experiments examining the effects of extrinsic rewards on intrinsic
+    motivation. Psychological Bulletin, 125(6), 627-668 (Phân tích tổng hợp thực nghiệm
+    về tác động của chế tài và phần thưởng ngoại tại lên động lực nội tại).'
+  - '[Classical Analogy] Luận Ngữ — Vi Chính (Khổng Tử phân biệt hiệu quả giữa mệnh
+    lệnh hình phạt với đạo đức lễ nghi).'
+  - '[Editorial Inference] Chỉ số nhận diện tuân thủ đối phó và cơ chế chuyển dịch
+    sang cam kết tự nguyện.'
+rationale: Chuẩn hóa phân loại nguồn sang [Theoretical Model] cho Kelman (1958) và
+  [Review/Meta-analysis] cho Deci et al. (1999); thay thế placeholder EV-REQ-0001-01
+  bằng các nghiên cứu thực chất về động lực nội tại.
+impact: Làm rõ cơ chế suy thoái động lực và sự đối phó khi lạm dụng mệnh lệnh cưỡng
+  chế, đề xuất tăng version 0.2.0 -> 1.0.0 sau khi PO duyệt.
+source_classification:
+  theoretical_model:
+  - Kelman (1958)
+  review_meta_analysis:
+  - Deci et al. (1999)
+  classical_analogy:
+  - Luận Ngữ (Vi Chính)
+  editorial_inference:
+  - Chỉ số nhận diện tuân thủ đối phó
+proposed_unit:
+  id: NT-ANTI-PATTERN-0013
+  type: anti-pattern
+  status: frozen
+  version: 1.0.0
+  title: Sự tuân thủ cưỡng ép
+  summary: Quản lý bằng đe dọa và trừng phạt tạo ra sự phục tùng bề mặt nhưng triệt
+    tiêu động lực nội tại và sự trung thực của thông tin.
+  primary_domain: dung-nhan
+  domain_area: NT-DA-0011
+  secondary_domains:
+  - tu-than
+  definition: Hành vi lãnh đạo dựa trên quyền lực cưỡng chế khiến cấp dưới hành động
+    chỉ để tránh né hình phạt thay vì hướng đến mục tiêu chung.
+  mechanism:
+  - Quản lý áp đặt mệnh lệnh kèm chế tài trừng phạt nặng nề.
+  - Cấp dưới chỉ làm vừa đủ để không bị phạt và che giấu mọi sai sót phát sinh.
+  - Mất dần tính chủ động và sáng tạo trong công việc.
+  - Thông tin trung thực bị chặn lại ở các cấp dưới do tâm lý sợ hãi.
+  - Hiệu suất tổng thể giảm sút dù bề ngoài vẫn duy trì kỷ luật nghiêm ngặt.
+  conditions:
+  - Công việc đòi hỏi sự chủ động giải quyết vấn đề, chất lượng dịch vụ tinh tế hoặc
+    chia sẻ thông tin trung thực.
+  - Chi phí giám sát toàn diện hành vi là bất khả thi hoặc quá tốn kém.
+  exceptions:
+  - Quy tắc an toàn lao động tối thiểu, bảo mật cốt lõi hoặc tuân thủ pháp luật bắt
+    buộc.
+  - Tình huống khẩn cấp ngắn hạn cần lập lại trật tự tức thời trước khi giải thích
+    nguyên nhân.
+  applications:
+    management:
+    - Chuyển dịch cơ chế quản lý từ phạt vi phạm sang thưởng đóng góp và đối thoại
+      cởi mở
+  risks:
+  - Xóa bỏ ranh giới kỷ luật và tiêu chuẩn đầu ra dưới danh nghĩa tránh cưỡng ép.
+  - Mất khả năng xử lý dứt điểm các hành vi cố tình vi phạm chuẩn mực đạo đức.
+  evidence:
+    level: supported
+    references:
+    - '[Theoretical Model] Kelman, H. C. (1958). Compliance, identification, and internalization:
+      Three processes of attitude change. Journal of Conflict Resolution, 2(1), 51-60
+      (Mô hình lý thuyết ba tiến trình thay đổi thái độ).'
+    - '[Review/Meta-analysis] Deci, E. L., Koestner, R., & Ryan, R. M. (1999). A meta-analytic
+      review of experiments examining the effects of extrinsic rewards on intrinsic
+      motivation. Psychological Bulletin, 125(6), 627-668 (Phân tích tổng hợp thực
+      nghiệm về tác động của chế tài và phần thưởng ngoại tại lên động lực nội tại).'
+    - '[Classical Analogy] Luận Ngữ — Vi Chính (Khổng Tử phân biệt hiệu quả giữa mệnh
+      lệnh hình phạt với đạo đức lễ nghi).'
+    - '[Editorial Inference] Chỉ số nhận diện tuân thủ đối phó và cơ chế chuyển dịch
+      sang cam kết tự nguyện.'
+  relations:
+    supports: []
+    conflicts_with: []
+    depends_on: []
+    applies_to: []
+  tags:
+  - anti-pattern
+  - coercion
+  - compliance
+  - motivation-crowding
+  created_at: '2026-08-15'
+  updated_at: '2026-09-14'
+  content: "### 1. Cơ chế Phân tách giữa Phục tùng Bề mặt và Cam kết Nội tâm\n**Sự\
+    \ tuân thủ cưỡng ép** (`NT-ANTI-PATTERN-0013`) phản ánh trạng thái mà Herbert\
+    \ Kelman (1958) định nghĩa là *compliance* (chấp hành chỉ để tránh hình phạt hoặc\
+    \ nhận phần thưởng tức thời) thay vì *internalization* (nội tâm hóa mục tiêu vì\
+    \ hiểu rõ giá trị và tính hợp lý). Khi quản lý dùng đe dọa làm công cụ điều hành\
+    \ chủ đạo, nhân sự có xu hướng tối ưu hóa việc tránh lỗi trên giấy tờ, che giấu\
+    \ số liệu xấu và ngừng chủ động xử lý các vấn đề ngoài phạm vi bị giám sát trực\
+    \ tiếp.\n\n### 2. Điều kiện áp dụng & Ngoại lệ\n- **Điều kiện áp dụng:**\n  -\
+    \ Các công việc đòi hỏi sự chủ động giải quyết vấn đề, chất lượng dịch vụ tinh\
+    \ tế hoặc chia sẻ thông tin trung thực từ tuyến đầu.\n  - Khi chi phí giám sát\
+    \ 100% hành vi của nhân viên là bất khả thi hoặc quá tốn kém.\n- **Ngoại lệ:**\n\
+    \  - Các quy tắc an toàn lao động tối thiểu, bảo mật thông tin cốt lõi hoặc tuân\
+    \ thủ pháp luật bắt buộc — nơi chế tài nghiêm minh là ranh giới bảo vệ bắt buộc.\n\
+    \  - Tình huống khẩn cấp ngắn hạn cần lập lại trật tự tức thời trước khi giải\
+    \ thích nguyên nhân sâu xa.\n\n### 3. Mức bất định & Rủi ro diễn giải sai\n- **Mức\
+    \ bất định:** Thấp - Trung bình. Các phân tích tổng hợp của Lý thuyết Tự quyết\
+    \ (Deci, Koestner & Ryan, 1999) nhất quán chỉ ra rằng kiểm soát cưỡng ép kéo dài\
+    \ làm suy giảm động lực nội tại, dù tốc độ bộc lộ sự suy giảm phụ thuộc vào điều\
+    \ kiện thị trường lao động và khả năng luân chuyển của nhân sự.\n- **Rủi ro diễn\
+    \ giải sai:**\n  - Nhầm lẫn việc tránh cưỡng ép độc đoán với việc xóa bỏ kỷ luật,\
+    \ tiêu chuẩn đầu ra và trách nhiệm giải trình.\n  - Cho rằng mọi nhân sự đều tự\
+    \ giác như nhau mà không cần khung đánh giá minh bạch kèm theo.\n\n### 4. Nguồn\
+    \ truy nguyên & Đối chiếu Đông - Tây\n- **Nguồn truy nguyên:** Mô hình ba cấp\
+    \ độ thay đổi thái độ của Herbert Kelman (1958) và Lý thuyết Tự quyết (Self-Determination\
+    \ Theory) của Deci & Ryan (1999).\n- **Đối chiếu cổ điển `[Classical Analogy]`:**\
+    \ *Luận Ngữ* (*Vi Chính*) chỉ rõ: dùng mệnh lệnh và hình phạt đơn thuần thì người\
+    \ dưới chỉ tìm cách tránh tội mà không có lòng tự trọng (*dân miễn nhi vô sỉ*);\
+    \ kết hợp chuẩn mực minh bạch với sự thuyết phục và tôn trọng mới tạo ra sự tự\
+    \ giác bền vững (*hữu sỉ thả cách*).\n"

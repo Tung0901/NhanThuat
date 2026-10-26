@@ -3,12 +3,14 @@ type: phenomenon
 status: draft
 version: 1.0.0
 title: Hiệu ứng Hàng hiệu (Veblen Effect)
-summary: Nghịch lý của nhu cầu khi một sản phẩm càng có giá cao, khao khát sở hữu nó càng lớn do tác động của việc phô trương địa vị xã hội.
+summary: Nghịch lý của nhu cầu khi một sản phẩm càng có giá cao, khao khát sở hữu nó càng lớn do tác động
+  của việc phô trương địa vị xã hội.
 primary_domain: thanh-su
 domain_area: NT-DA-0031
 secondary_domains:
 - tri-nhan
-definition: Khách hàng sẵn sàng chi trả mức giá phi lý cho một sản phẩm không phải vì chất lượng vượt trội, mà vì mức giá đó chứng minh đẳng cấp của người sở hữu.
+definition: Khách hàng sẵn sàng chi trả mức giá phi lý cho một sản phẩm không phải vì chất lượng vượt
+  trội, mà vì mức giá đó chứng minh đẳng cấp của người sở hữu.
 conditions:
 - Sản phẩm phải có tính độc quyền hoặc số lượng giới hạn.
 exceptions:
@@ -19,9 +21,15 @@ applications:
 risks:
 - Giảm giá sẽ làm mất tính độc quyền.
 evidence:
-  level: strong
+  level: supported
   references:
-  - Thorstein Veblen, The Theory of the Leisure Class (1899)
+  - '[Classical Analogy] Veblen, T. (1899). The Theory of the Leisure Class: An Economic Study of Institutions.
+    Macmillan (Khái niệm tiêu dùng phô trương — Conspicuous Consumption).'
+  - '[Theoretical Model] Bagwell, L. S., & Bernheim, B. D. (1996). Veblen effects in a theory of
+    conspicuous consumption. American Economic Review, 86(3), 349-373.'
+  - '[Empirical Study] Nelissen, R. M., & Meijers, M. H. (2011). Social benefits of luxury brands
+    as costly signals of wealth and status. Evolution and Human Behavior, 32(5), 343-355.'
+  - '[Editorial Inference] Phân tích biên giới của định giá tín hiệu địa vị trong thị trường cao cấp.'
 relations:
   supports: []
   conflicts_with: []
@@ -38,3 +46,26 @@ mechanism:
 - Khao khát sở hữu tăng theo mức giá thay vì giảm theo quy luật cầu thông thường.
 - Việc sở hữu trở thành phương tiện phô trương vị thế xã hội.
 - Nhu cầu tiếp tục tăng khi sản phẩm càng đắt và càng khó tiếp cận.
+content: "### 1. Cơ chế Tín hiệu Đắt giá và Địa vị Xã hội\n**Hiệu ứng Hàng hiệu (Veblen Effect)** (`NT-PHENOMENON-4101`),\
+  \ khởi nguồn từ phân tích xã hội học kinh tế của Thorstein Veblen (1899) và được mô hình hóa bởi Bagwell\
+  \ & Bernheim (1996), mô tả hiện tượng trong một số phân khúc đặc thù, mức giá cao đóng vai trò như một\
+  \ *tín hiệu đắt giá* (costly signal) khó làm giả về nguồn lực hoặc vị thế của người sở hữu. Khi mức\
+  \ giá giảm hoặc độ phổ cập tăng quá rộng, giá trị tín hiệu vị thế suy giảm khiến sức cầu từ nhóm khách\
+  \ hàng tìm kiếm sự khác biệt đi xuống.\n\n### 2. Điều kiện áp dụng & Ngoại lệ\n- **Điều kiện áp dụng:**\n\
+  \  - Sản phẩm/dịch vụ được tiêu dùng công khai (visible consumption), gắn với biểu tượng địa vị xã hội\
+  \ và có giới hạn cung ứng đáng tin cậy.\n  - Nhóm khách hàng mục tiêu đặt trọng số cao vào sự phân tầng\
+  \ vị thế hơn là tối ưu hóa chi phí trên mỗi đơn vị công năng.\n- **Ngoại lệ:**\n  - Hàng hóa tiêu dùng\
+  \ nội bộ không mang tính biểu trưng xã hội hoặc mua sắm công nghiệp dựa trên bảng tính hoàn vốn (ROI).\n\
+  \  - Các nền văn hóa hoặc giai đoạn xã hội đề cao sự tiết kiệm, tối giản (inconspicuous consumption)\
+  \ hoặc nhạy cảm cao với việc phô trương tài sản.\n\n### 3. Mức bất định & Rủi ro diễn giải sai\n- **Mức\
+  \ bất định:** Trung bình - Cao. Hiệu ứng Veblen chỉ xuất hiện trong một dải giá và tập khách hàng hẹp;\
+  \ ngoài dải này, quy luật cầu thông thường (giá tăng làm giảm lượng cầu) vẫn giữ vai trò chi phối.\n\
+  - **Rủi ro diễn giải sai:**\n  - Ngộ nhận rằng chỉ cần tăng giá cao bất kỳ sản phẩm nào cũng sẽ tự động\
+  \ kích thích nhu cầu, bỏ qua nền tảng di sản thương hiệu, độ khan hiếm thực và chuẩn mực thẩm mỹ.\n\
+  \  - Khuyến mãi giảm giá tràn lan cho dòng sản phẩm định vị cao cấp, làm xói mòn lòng tin của nhóm khách\
+  \ hàng trung thành.\n\n### 4. Nguồn truy nguyên & Đối chiếu Đông - Tây\n- **Nguồn truy nguyên:** Tác\
+  \ phẩm cổ điển của Thorstein Veblen (1899), mô hình cân bằng tín hiệu của Bagwell & Bernheim (1996)\
+  \ và thực nghiệm tâm lý học tiến hóa của Nelissen & Meijers (2011).\n- **Đối chiếu cổ điển `[Nguồn cổ\
+  \ điển]`:** *Quản Tử* (thiên *Thừa Mã* và *Khinh Trọng*) cùng *Hàn Phi Tử* từng phân tích tâm lý chuộng\
+  \ vật hiếm, ngọc quý của tầng lớp quyền quý và cảnh báo nhà quản trị phải phân biệt rõ giữa giá trị\
+  \ sử dụng thực tế với giá trị biểu trưng do sự khan hiếm tạo nên.\n"

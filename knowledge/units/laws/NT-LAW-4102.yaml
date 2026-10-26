@@ -3,12 +3,12 @@ type: law
 status: draft
 version: 1.0.0
 title: Quy luật Ngại Mất Mát (Loss Aversion)
-summary: Đau đớn tâm lý do mất đi một thứ gì đó luôn lớn gấp đôi so với niềm vui có được một thứ tương đương.
+summary: Tâm lý trước một khoản tổn thất tiềm năng thường có cường độ phản ứng mạnh hơn so với một khoản thu lợi tương đương trong cùng điểm tham chiếu, với biên độ thực nghiệm điển hình dao động quanh 1.5 đến 2.5 lần tùy bối cảnh.
 primary_domain: tu-than
 domain_area: NT-DA-0027
 secondary_domains:
 - tri-nhan
-definition: Quyết định của con người thường thiên vị cực lớn vào việc tránh rủi ro mất mát thay vì tìm kiếm lợi ích, do cơ chế tiến hóa sinh tồn của não bộ.
+definition: Quyết định của con người thường có xu hướng tránh rủi ro mất mát nhiều hơn tìm kiếm lợi ích tương đương khi điểm tham chiếu được xác lập rõ ràng.
 conditions:
 - Khi phải đưa ra lựa chọn giữa các phương án mang rủi ro rõ ràng.
 exceptions:
@@ -21,7 +21,15 @@ risks:
 evidence:
   level: strong
   references:
-  - Kahneman & Tversky, Prospect Theory (1979)
+  - '[Empirical Study] Kahneman, D., & Tversky, A. (1979). Prospect Theory: An Analysis of Decision
+    under Risk. Econometrica, 47(2), 263-291 (Hàm giá trị bất đối xứng giữa vùng lãi và vùng lỗ).'
+  - '[Empirical Study] Walasek, L., & Stewart, N. (2015). How to make loss aversion disappear and
+    reverse. Journal of Experimental Psychology: General, 144(1), 7-11 (Điều kiện biên làm suy giảm hoặc
+    đảo chiều hệ số ngại mất mát).'
+  - '[Classical Analogy] Tôn Vũ — Tôn Tử Binh Pháp, thiên Cửu Địa (Phân tích tâm lý sĩ tốt khi rơi vào thế
+    tử địa so với tán địa).'
+  - '[Editorial Inference] Khung hiệu chỉnh thiên kiến phòng thủ trong quyết định phân bổ vốn và cắt lỗ
+    dự án.'
 relations:
   supports: []
   conflicts_with: []
@@ -38,3 +46,26 @@ mechanism:
 - Chủ thể nghiêng về tránh mất mát ngay cả khi đánh đổi lợi ích ròng.
 - Quyết định bị chi phối bởi khung mất mát thay vì giá trị khách quan.
 - Hành vi kinh tế và tổ chức phản ánh mức chiết khấu tâm lý bất đối xứng này.
+content: "### 1. Cơ chế Bất đối xứng giữa Lợi ích và Tổn thất\n**Quy luật Ngại Mất Mát (Loss Aversion)**\
+  \ (`NT-LAW-4102`) mô tả xu hướng xác suất trong đó một khoản tổn thất tiềm năng tạo ra cường độ phản\
+  \ ứng tâm lý lớn hơn so với một khoản thu lợi tương đương tính từ cùng điểm tham chiếu (Kahneman & Tversky,\
+  \ 1979). Hệ quả quản trị là cá nhân và ủy ban thường trì hoãn dừng các dự án kém hiệu quả (để tránh\
+  \ hiện thực hóa khoản lỗ) hoặc từ chối các khoản đầu tư có kỳ vọng dương nhưng biến động ngắn hạn.\n\
+  \n### 2. Điều kiện áp dụng & Ngoại lệ\n- **Điều kiện áp dụng:**\n  - Quyết định được đóng khung quanh\
+  \ một điểm tham chiếu hiện trạng (status quo) rõ rệt như ngân sách năm trước, biên lợi nhuận hiện hữu\
+  \ hoặc quyền hạn đang nắm giữ.\n  - Cơ chế đánh giá nhân sự phạt nặng sai sót hữu hình hơn là chi phí\
+  \ cơ hội vô hình.\n- **Ngoại lệ:**\n  - Khi quy mô tiền cược nhỏ so với tổng tài sản hoặc khi phạm vi\
+  \ giá trị khả dĩ của lợi ích rộng hơn nhiều so với tổn thất (Walasek & Stewart, 2015).\n  - Những nhà\
+  \ vận hành chuyên nghiệp giao dịch theo quy tắc định lượng tự động (algorithmic / rule-based stop-loss).\n\
+  \n### 3. Mức bất định & Rủi ro diễn giải sai\n- **Mức bất định:** Hệ số ngại mất mát không phải hằng\
+  \ số cố định cho mọi cá nhân hay văn hóa; các nghiên cứu lặp lại cho thấy hệ số này dao động mạnh theo\
+  \ cách trình bày thông tin, kinh nghiệm chuyên môn và trạng thái tâm lý.\n- **Rủi ro diễn giải sai:**\n\
+  \  - Giả định cứng nhắc rằng con người lúc nào cũng sợ rủi ro; thực tế trong vùng tổn thất sâu, chủ\
+  \ thể lại có xu hướng tìm kiếm rủi ro cao (risk-seeking in the domain of losses) để gỡ gạc.\n  - Lạm\
+  \ dụng thông điệp đe dọa mất mát trong quản trị nội bộ gây co cụm phòng thủ và triệt tiêu sáng kiến.\n\
+  \n### 4. Nguồn truy nguyên & Đối chiếu Đông - Tây\n- **Nguồn truy nguyên:** Lý thuyết Triển vọng (Kahneman\
+  \ & Tversky, 1979) kết hợp nghiên cứu thực nghiệm hiện đại về giới hạn điều kiện của Loss Aversion (Walasek\
+  \ & Stewart, 2015).\n- **Đối chiếu cổ điển `[Classical Analogy]`:** Tôn Tử Binh Pháp (thiên *Cửu Địa*) phân\
+  \ biệt rõ hành vi của con người khi còn đường lui (dễ dao động để bảo toàn cái đang có) với khi rơi\
+  \ vào *tử địa* (chuyển sang liều lĩnh tìm đường sống), tương ứng với sự đảo chiều khẩu vị rủi ro ở vùng\
+  \ tổn thất của Lý thuyết Triển vọng.\n"

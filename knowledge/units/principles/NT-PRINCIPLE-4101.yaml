@@ -3,12 +3,13 @@ type: principle
 status: draft
 version: 1.0.0
 title: Nguyên tắc Giảm Tải trọng Nhận thức (Cognitive Load Reduction)
-summary: Đơn giản hóa quá trình tư duy và ra quyết định để giúp con người tiếp thu thông tin và thực thi tốt hơn.
+summary: Đơn giản hóa quá trình tư duy và ra quyết định để giúp con người tiếp thu thông tin và thực thi
+  tốt hơn.
 primary_domain: hop-chung
 domain_area: NT-DA-0026
 secondary_domains:
 - thanh-su
-definition: Bộ nhớ làm việc của con người rất giới hạn. Mọi tác vụ yêu cầu trí nhớ hoặc phân tích sâu đều làm tăng tải trọng, gây ra trì hoãn hoặc sai sót.
+definition: Các tác vụ đòi hỏi đồng thời việc ghi nhớ nhiều dữ kiện và phân tích logic thường làm gia tăng tải trọng nhận thức, dẫn đến nguy cơ chậm trễ hoặc sai sót nếu thiếu cấu trúc tối ưu.
 conditions:
 - Quá trình chuyển giao thông tin, đào tạo hoặc thiết kế sản phẩm/giao diện.
 exceptions:
@@ -21,7 +22,13 @@ risks:
 evidence:
   level: strong
   references:
-  - John Sweller, Cognitive Load Theory (1988)
+  - '[Academic Monograph] Sweller, J. (1988). Cognitive load during problem solving: Effects on learning.
+    Cognitive Science, 12(2), 257-285 (Phân loại tải nhận thức nội tại, ngoại lai và kiến tạo).'
+  - '[Review/Meta-analysis] Cowan, N. (2001). The magical number 4 in short-term memory: A reconsideration
+    of mental storage capacity. Behavioral and Brain Sciences, 24(1), 87-114.'
+  - '[Classical Analogy] Hàn Phi Tử — Thiên Dụ Lão & Thuyết Nan (Nguyên lý giản lược quy tắc thực thi để trăm
+    họ và thuộc cấp dễ hiểu, dễ tuân hành).'
+  - '[Editorial Inference] Thiết kế quy trình phê duyệt và bảng điều khiển giảm tải ngoại lai.'
 relations:
   supports: []
   conflicts_with: []
@@ -38,3 +45,24 @@ mechanism:
 - Dùng mặc định hợp lý và trực quan hóa để giảm ghi nhớ.
 - Chia nhỏ tác vụ phức tạp thành các bước đơn giản hơn.
 - Kiểm tra tác động lên tốc độ và độ chính xác của quyết định.
+content: "### 1. Cơ chế Tối ưu Hóa Bộ nhớ Làm việc\n**Nguyên tắc Giảm Tải trọng Nhận thức (Cognitive Load\
+  \ Reduction)** (`NT-PRINCIPLE-4101`) dựa trên giới hạn dung lượng của bộ nhớ làm việc (Cowan, 2001)\
+  \ và Lý thuyết Tải nhận thức của John Sweller (1988). Lý thuyết này tách bạch ba loại tải: *tải nội\
+  \ tại* (độ phức tạp vốn có của bài toán), *tải ngoại lai* (nhiễu do cách trình bày, thủ tục rườm rà)\
+  \ và *tải kiến tạo* (nỗ lực tư duy để hình thành cấu trúc hiểu biết sâu). Mục tiêu của nguyên tắc là\
+  \ cắt giảm tải ngoại lai chứ không phải xóa bỏ tư duy phân tích.\n\n### 2. Điều kiện áp dụng & Ngoại\
+  \ lệ\n- **Điều kiện áp dụng:**\n  - Thiết kế quy trình vận hành chuẩn (SOP), giao diện hệ thống điều\
+  \ hành, báo cáo giao ban hoặc hướng dẫn xử lý sự cố dưới áp lực thời gian.\n  - Khi người thực thi mới\
+  \ tiếp cận quy trình hoặc phải xử lý đồng thời nhiều luồng thông tin.\n- **Ngoại lệ:**\n  - Các phiên\
+  \ thẩm định chiến lược, kiểm toán rủi ro hoặc nghiên cứu chuyên sâu — nơi việc tạo độ trễ nhận thức\
+  \ có chủ đích (desirable difficulties) là cần thiết để kích hoạt tư duy phản biện.\n  - Nhóm chuyên\
+  \ gia đã tự động hóa kỹ năng (expertise reversal effect): hướng dẫn chia nhỏ quá chi tiết lại gây vướng\
+  \ víu và làm giảm hiệu suất của họ.\n\n### 3. Mức bất định & Rủi ro diễn giải sai\n- **Mức bất định:**\
+  \ Thấp đối với tác vụ thao tác chuẩn hóa; Trung bình đối với tác vụ ra quyết định phức hợp vì ngưỡng\
+  \ quá tải phụ thuộc vào kinh nghiệm nền của từng cá nhân.\n- **Rủi ro diễn giải sai:**\n  - Đơn giản\
+  \ hóa quá mức các bài toán phức tạp thành khẩu hiệu nhị phân, làm ẩn đi các biến số rủi ro trọng yếu.\n\
+  \  - Biến quy trình thành danh sách đánh dấu máy móc khiến nhân sự ngừng đặt câu hỏi khi bối cảnh thực\
+  \ tế đã thay đổi.\n\n### 4. Nguồn truy nguyên & Đối chiếu Đông - Tây\n- **Nguồn truy nguyên:** Thực\
+  \ nghiệm tâm lý học nhận thức của John Sweller (1988) và Nelson Cowan (2001).\n- **Đối chiếu cổ điển\
+  \ `[Classical Analogy]`:** Pháp gia (*Hàn Phi Tử*, *Thương Quân Thư*) nhấn mạnh pháp lệnh ban ra phải rõ\
+  \ ràng, giản ước và nhất quán để người thực thi không bị rối loạn bởi các quy định chồng chéo.\n"

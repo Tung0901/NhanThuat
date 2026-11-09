@@ -214,7 +214,7 @@
             --gold-primary: #d4af37;
             --gold-light: #f5e6be;
             --gold-glow: rgba(212, 175, 55, 0.16);
-            --accent-emerald: #39FF14;
+            --accent-emerald: #10b981;
             --cyan-accent: #38bdf8;
             --emerald-accent: #10b981;
             --rose-accent: #f43f5e;
@@ -337,10 +337,10 @@
             font-size: 0.82rem;
             font-weight: 600;
             letter-spacing: 0.08em;
-            color: #39FF14;
+            color: var(--gold-light);
             text-transform: uppercase;
             white-space: nowrap;
-            text-shadow: 0 0 8px rgba(57, 255, 20, 0.45);
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.35);
         }
         .cursor-card-text .text-white {
             color: #ffffff;
@@ -1211,9 +1211,10 @@
         }
 
         .diag-header h2 {
-            font-family: var(--font-display);
-            font-size: 26px;
-            font-weight: 700;
+            font-family: var(--font-serif);
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 0.01em;
             color: #ffffff;
             margin-bottom: 6px;
         }
@@ -1437,7 +1438,9 @@
         }
 
         .modal-window {
-            background: var(--bg-surface);
+            background: rgba(12, 12, 18, 0.92);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
             border: 1px solid var(--border-subtle);
             border-radius: 20px;
             width: 90%;
@@ -1446,7 +1449,7 @@
             overflow-y: auto;
             padding: 30px;
             position: relative;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+            box-shadow: 0 28px 75px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.05);
         }
 
         .modal-close-btn {
@@ -3011,8 +3014,8 @@
             position: fixed;
             top: 0; left: 0; width: 100vw; height: 100vh;
             pointer-events: none;
-            z-index: 50;
-            opacity: 0.04;
+            z-index: 4;
+            opacity: 0.042;
             background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
         }
 
@@ -3022,8 +3025,8 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle at 50% 50%, rgba(30, 0, 0, 0.15) 0%, rgba(0,0,0,0) 60%);
-            z-index: -1;
+            background: radial-gradient(circle at 50% 50%, rgba(35, 12, 12, 0.22) 0%, rgba(212, 175, 55, 0.035) 45%, rgba(0,0,0,0) 70%);
+            z-index: 2;
             pointer-events: none;
         }
 
@@ -3277,7 +3280,7 @@
         }
 
         body.home-entry .workspace-viewport {
-            background: #050505;
+            background: transparent;
         }
 
         .workspace-viewport > #view-advisory { order: 1; }
@@ -3291,11 +3294,15 @@
         body.home-entry .workspace-module.active {
             min-height: auto;
             border-bottom-color: rgba(255, 255, 255, 0.08);
-            background: #050505;
+            background: rgba(5, 5, 8, 0.74);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
         }
 
         body.home-entry .workspace-module:nth-of-type(even) {
-            background: #080808;
+            background: rgba(10, 10, 14, 0.82);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
         }
 
         body.home-entry .workspace-section-heading {
@@ -3647,8 +3654,10 @@
             gap: 10px;
         }
         .iching-matrix-title {
-            font-family: var(--font-display);
-            font-size: 18px;
+            font-family: var(--font-serif);
+            font-size: 19px;
+            font-weight: 600;
+            letter-spacing: 0.01em;
             color: var(--gold-light);
             margin-bottom: 4px;
         }
@@ -3683,11 +3692,263 @@
             padding: 16px 20px;
             margin-bottom: 16px;
         }
+        .iching-view-tabs {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 14px;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 10px;
+        }
+        .iching-view-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            cursor: pointer !important;
+            transition: all 0.2s ease;
+        }
+        .iching-view-pill:hover {
+            color: #ffffff;
+            border-color: rgba(245, 158, 11, 0.4);
+            background: rgba(245, 158, 11, 0.08);
+        }
+        .iching-view-pill.active {
+            color: #ffffff;
+            background: rgba(245, 158, 11, 0.2);
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 12px rgba(245, 158, 11, 0.2);
+        }
+        .iching-matrix-board-container {
+            overflow-x: auto;
+            background: rgba(10, 14, 23, 0.7);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+        .iching-matrix-table {
+            border-collapse: separate;
+            border-spacing: 5px;
+            width: 100%;
+            min-width: 820px;
+        }
+        .iching-matrix-table th {
+            font-size: 11px;
+            text-align: center;
+            padding: 8px 4px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-subtle);
+            border-radius: 6px;
+            color: var(--gold-light);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .iching-matrix-cell {
+            cursor: pointer !important;
+            padding: 8px 6px;
+            text-align: center;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.18s ease;
+            position: relative;
+        }
+        .iching-matrix-cell:hover {
+            background: rgba(245, 158, 11, 0.16) !important;
+            border-color: var(--gold-primary) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+            z-index: 2;
+        }
+        .iching-matrix-cell-num {
+            font-size: 10px;
+            color: var(--text-muted);
+            display: block;
+            margin-bottom: 2px;
+        }
+        .iching-matrix-cell-sym {
+            font-size: 18px;
+            color: var(--gold-primary);
+            line-height: 1;
+            display: block;
+            margin-bottom: 3px;
+        }
+        .iching-matrix-cell-name {
+            font-size: 11px;
+            font-weight: 600;
+            color: #ffffff;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 95px;
+            margin: 0 auto 3px auto;
+        }
+        .iching-stance-pill {
+            font-size: 9px;
+            padding: 1px 6px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            display: inline-block;
+        }
+        .stance-tien { background: rgba(16, 185, 129, 0.18); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+        .stance-thoi { background: rgba(244, 63, 94, 0.18); color: #fda4af; border: 1px solid rgba(244, 63, 94, 0.3); }
+        .stance-thu { background: rgba(56, 189, 248, 0.18); color: #7dd3fc; border: 1px solid rgba(56, 189, 248, 0.3); }
+        .stance-bien { background: rgba(168, 85, 247, 0.18); color: #d8b4fe; border: 1px solid rgba(168, 85, 247, 0.3); }
+
+        .iching-sovereign-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .iching-sovereign-card {
+            cursor: pointer !important;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            padding: 12px 14px;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+        .iching-sovereign-card:hover {
+            border-color: var(--gold-primary);
+            background: rgba(245, 158, 11, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .iching-diag-filter-bar {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 14px;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid var(--border-subtle);
+        }
+        .iching-diag-tag-pill {
+            cursor: pointer !important;
+            padding: 5px 12px;
+            font-size: 11.5px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            transition: all 0.2s ease;
+        }
+        .iching-diag-tag-pill:hover {
+            color: #fff;
+            border-color: var(--cyan-accent);
+        }
+        .iching-diag-tag-pill.active {
+            background: rgba(56, 189, 248, 0.18);
+            border-color: var(--cyan-accent);
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .iching-hex-svg-wrap {
+            display: inline-flex;
+            align-items: center;
+        }
+        .iching-hex-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 6px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 10.5px;
+            color: var(--text-muted);
+        }
+
+        /* 4-Tab Inspector Modal for I Ching */
+        .iching-modal-window {
+            max-width: 960px !important;
+            padding: 0 !important;
+            overflow: hidden !important;
+            border-color: rgba(245, 158, 11, 0.35) !important;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.85), 0 0 30px rgba(245, 158, 11, 0.15) !important;
+        }
+        .iching-modal-header {
+            padding: 16px 22px;
+            background: rgba(245, 158, 11, 0.08);
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .iching-modal-tabs {
+            display: flex;
+            gap: 4px;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 4px 18px;
+            border-bottom: 1px solid var(--border-subtle);
+            overflow-x: auto;
+        }
+        .iching-modal-tab-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 12.5px;
+            padding: 8px 14px;
+            border-radius: 6px;
+            cursor: pointer !important;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+        .iching-modal-tab-btn:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .iching-modal-tab-btn.active {
+            color: var(--gold-light);
+            background: rgba(245, 158, 11, 0.15);
+            font-weight: 700;
+        }
+        .iching-modal-body {
+            padding: 22px;
+            max-height: 68vh;
+            overflow-y: auto;
+        }
+        .iching-line-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 10px 14px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-subtle);
+            margin-bottom: 8px;
+            transition: all 0.2s ease;
+            cursor: pointer !important;
+        }
+        .iching-line-row:hover {
+            background: rgba(245, 158, 11, 0.08);
+            border-color: rgba(245, 158, 11, 0.3);
+        }
+        .iching-line-row.moving {
+            border-color: #f43f5e;
+            background: rgba(244, 63, 94, 0.12);
+        }
+
         .iching-hexagrams-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
             gap: 10px;
-            max-height: 380px;
+            max-height: 520px;
             overflow-y: auto;
             padding-right: 4px;
         }
@@ -3797,10 +4058,18 @@
     <link href="/css/design-system.css?v=20261016-login3" rel="stylesheet">
 </head>
 <body class="app-entry">
-<div id="landing-page-wrapper" class="site-introduction">
-
-    <div class="noise-bg"></div>
+    <!-- Global ambient video & sensory background system -->
+    <div class="video-container">
+        <video autoplay muted playsinline loop preload="auto" id="bg-video">
+            <source src="/flower.mp4" type="video/mp4">
+            <source src="https://api.getlayers.ai/storage/v1/object/public/public/assets/loopstack-f8c64439bf/flower.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="video-overlay"></div>
     <div class="glow-overlay"></div>
+    <div class="noise-bg"></div>
+
+<div id="landing-page-wrapper" class="site-introduction">
 
     <!-- Navigation -->
     <nav class="landing-nav" aria-label="Điều hướng trang giới thiệu">
@@ -4003,14 +4272,7 @@
 
     </div>
 
-    <!-- Ambient video background matching landing page -->
-    <div class="video-container">
-        <video autoplay muted playsinline loop preload="auto" id="bg-video">
-            <source src="/flower.mp4" type="video/mp4">
-            <source src="https://api.getlayers.ai/storage/v1/object/public/public/assets/loopstack-f8c64439bf/flower.mp4" type="video/mp4">
-        </video>
-    </div>
-    <div class="video-overlay"></div>
+
 
 
     <!-- Executive Top Navigation Bar -->
@@ -4144,7 +4406,7 @@
                     <!-- CASE LIBRARY (only visible in Cases mode) -->
                     <div id="cases-library-view" style="display: none; flex-direction: column; flex: 1; min-height: 0;">
                         <div style="padding: 20px 28px 16px; border-bottom: 1px solid var(--border-subtle);">
-                            <h3 style="font-family: var(--font-serif); font-size: 19px; color: var(--gold-light);">📂 THƯ VIỆN HỒ SƠ THỰC CHIẾN</h3>
+                            <h3 style="font-family: var(--font-serif); font-size: 19px; color: var(--gold-light); letter-spacing: 0.02em;">THƯ VIỆN HỒ SƠ THỰC CHIẾN</h3>
                             <p style="font-size: 12.5px; color: var(--text-secondary); margin-top: 4px;">
                                 Những ca khó sau khi phân tích và <strong>Xuất kịch bản</strong> sẽ được lưu tự động vào đây để tra cứu lại.
                             </p>
@@ -4227,7 +4489,7 @@
             <div style="flex: 1; display: flex; flex-direction: column; max-width: 1000px; margin: 0 auto; width: 100%; height: 100%; padding: 20px 30px;">
                 <div style="border-bottom: 1px solid var(--border-subtle); padding-bottom: 14px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;">
                     <div>
-                        <h2 style="font-family: var(--font-display); font-size: 20px; color: #ffffff;">⚔️ PHÒNG ĐẤU TRÍ & THƯƠNG THUYẾT ĐỐI KHÁNG</h2>
+                        <h2 style="font-family: var(--font-serif); font-size: 21px; font-weight: 600; color: #ffffff; letter-spacing: 0.01em;">PHÒNG ĐẤU TRÍ & THƯƠNG THUYẾT ĐỐI KHÁNG</h2>
                         <p style="font-size: 12.5px; color: var(--text-secondary);">Nhập bối cảnh thực tế và chân dung đối phương để rèn luyện phản xạ đối đáp trước những tình huống căng thẳng nhất.</p>
                     </div>
                     <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
@@ -4318,7 +4580,7 @@
             </div>
             <div class="diagnostic-container">
                 <div class="diag-header">
-                    <h2>🧩 PHÒNG CHẨN ĐOÁN TƯƠNG THÍCH NHÂN SỰ & CẤU TRÚC ĐỘI NGŨ</h2>
+                    <h2 style="font-family: var(--font-serif); font-size: 21px; font-weight: 600; color: #ffffff; letter-spacing: 0.01em;">PHÒNG CHẨN ĐOÁN TƯƠNG THÍCH NHÂN SỰ & CẤU TRÚC ĐỘI NGŨ</h2>
                     <p>Ứng dụng Mô hình NT-MODEL-0007, Nguyên tắc NT-PRINCIPLE-0066 & Bẫy đồng nhất NT-ANTI-PATTERN-0011 để lượng hóa ma sát nhận thức và cân bằng cấu trúc tổ chức.</p>
 
                     <!-- Sub-view Mode Switcher -->
@@ -4340,7 +4602,7 @@
                     <div class="diag-grid">
                         <!-- Left: Person Dispositions -->
                         <div class="diag-card">
-                            <h3>👤 THIÊN HƯỚNG CÁ NHÂN (DEFAULT TRAITS)</h3>
+                            <h3 style="font-family: var(--font-display); font-size: 13.5px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gold-light);">THIÊN HƯỚNG CÁ NHÂN (DEFAULT TRAITS)</h3>
                             <label class="form-label">Họ tên nhân sự / Ứng viên:</label>
                             <input type="text" class="diag-input" id="diag-person-name" value="Nguyễn Hoàng Long" placeholder="Nhập họ tên...">
 
@@ -4583,7 +4845,7 @@
                         <div style="display: flex; flex-direction: column; gap: 16px;">
                             <div class="diag-card" style="margin-bottom: 0;">
                                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                                    <h3 style="font-size: 14px; color: #fff; margin-bottom: 0;">📡 DANH SÁCH GIÁM SÁT TẢI HÀNH VI</h3>
+                                    <h3 style="font-family: var(--font-display); font-size: 13.5px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0;">DANH SÁCH GIÁM SÁT TẢI HÀNH VI</h3>
                                     <button class="export-btn" onclick="loadBehavioralRadar()" style="padding: 4px 10px; font-size: 11px;">Làm mới</button>
                                 </div>
                                 <div id="radar-roster-list" style="display: flex; flex-direction: column; gap: 6px; max-height: 280px; overflow-y: auto; padding-right: 4px;">
@@ -4593,7 +4855,7 @@
 
                             <!-- Stream Ingestion & Custom Employee Registration Card -->
                             <div class="diag-card" style="margin-bottom: 0; background: rgba(20,20,30,0.6);">
-                                <h3 style="font-size: 13.5px; color: var(--gold-light); margin-bottom: 6px;">⚡ THÊM NHÂN SỰ MỚI / NẠP TÍN HIỆU HÀNH VI</h3>
+                                <h3 style="font-family: var(--font-display); font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 6px;">THÊM NHÂN SỰ MỚI / NẠP TÍN HIỆU HÀNH VI</h3>
                                 <p style="font-size: 11.5px; color: var(--text-secondary); margin-bottom: 10px; line-height: 1.5;">
                                     Nhập tên nhân sự mới (hoặc chọn nhân sự đang theo dõi) kèm phát ngôn thực tế từ cuộc họp, Slack, email để định hình hồ sơ DISC & rủi ro rời bỏ.
                                 </p>
@@ -4660,7 +4922,7 @@
             <div class="codex-container">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
                     <div>
-                        <h2 style="font-family: var(--font-display); font-size: 22px; color: #ffffff;">TÀI LIỆU THAM KHẢO & KHO <span id="codex-unit-count">…</span> TRI THỨC</h2>
+                        <h2 style="font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: #ffffff; letter-spacing: 0.01em;">TÀI LIỆU THAM KHẢO & KHO <span id="codex-unit-count">…</span> TRI THỨC</h2>
                         <p style="font-size: 12.5px; color: var(--text-secondary);">Trọn bộ <span id="codex-book-count">…</span> cẩm nang tinh hoa và <span id="codex-unit-count-2">…</span> đơn vị tri thức chuẩn hóa qua <span id="codex-domain-count">…</span> miền quản trị.</p>
                     </div>
 
@@ -4677,7 +4939,7 @@
                     <!-- Populated dynamically from DIGITAL_BOOKS + API -->
                 </div>
 
-                <!-- BỘ TRA CỨU TƯƠNG TÁC 64 QUẺ BIẾN DỊCH & BÁT CUNG QUẢN TRỊ -->
+                <!-- BỘ TRA CỨU TƯƠNG TÁC 64 QUẺ BIẾN DỊCH & BÁT CUNG QUẢN TRỊ 2.0 -->
                 <div id="iching-matrix-section" class="iching-matrix-section">
                     <div class="iching-matrix-header">
                         <div>
@@ -4693,22 +4955,83 @@
                         </div>
                     </div>
 
-                    <div id="iching-palace-tabs" class="iching-palace-tabs">
-                        <button type="button" class="mode-pill iching-palace-pill active" data-palace="" onclick="selectIChingPalace('', this)">Tất cả 64 Quẻ</button>
-                        <button type="button" class="mode-pill iching-palace-pill" data-palace="Càn" onclick="selectIChingPalace('Càn', this)">☰ Cung Càn (Kim)</button>
-                        <button type="button" class="mode-pill iching-palace-pill" data-palace="Khôn" onclick="selectIChingPalace('Khôn', this)">☷ Cung Khôn (Thổ)</button>
-                        <button type="button" class="mode-pill iching-palace-pill" data-palace="Khảm" onclick="selectIChingPalace('Khảm', this)">☵ Cung Khảm (Thủy)</button>
-                        <button type="button" class="mode-pill iching-palace-pill" data-palace="Ly" onclick="selectIChingPalace('Ly', this)">☲ Cung Ly (Hỏa)</button>
-                        <button type="button" class="mode-pill iching-palace-pill" data-palace="Chấn" onclick="selectIChingPalace('Chấn', this)">☳ Cung Chấn (Mộc)</button>
-                        <button type="button" class="mode-pill iching-palace-pill" data-palace="Tốn" onclick="selectIChingPalace('Tốn', this)">☴ Cung Tốn (Mộc)</button>
-                        <button type="button" class="mode-pill iching-palace-pill" data-palace="Cấn" onclick="selectIChingPalace('Cấn', this)">☶ Cung Cấn (Thổ)</button>
-                        <button type="button" class="mode-pill iching-palace-pill" data-palace="Đoài" onclick="selectIChingPalace('Đoài', this)">☱ Cung Đoài (Kim)</button>
+                    <!-- 4 View Mode Switcher -->
+                    <div class="iching-view-tabs" role="tablist" aria-label="Chế độ xem Ma trận Quẻ Dịch">
+                        <button type="button" class="iching-view-pill active" data-iching-view="matrix_8x8" onclick="switchIChingView('matrix_8x8', this)">
+                            <span>⊞ Bàn Cờ Ma Trận 8x8</span>
+                        </button>
+                        <button type="button" class="iching-view-pill" data-iching-view="sovereign_12" onclick="switchIChingView('sovereign_12', this)">
+                            <span>∿ 12 Quẻ Tiêu Trưởng</span>
+                        </button>
+                        <button type="button" class="iching-view-pill" data-iching-view="cards_grid" onclick="switchIChingView('cards_grid', this)">
+                            <span>☰ Lưới Thẻ Lục Hào</span>
+                        </button>
+                        <button type="button" class="iching-view-pill" data-iching-view="diagnostics" onclick="switchIChingView('diagnostics', this)">
+                            <span>🩺 Chẩn Đoán Tình Thế</span>
+                        </button>
                     </div>
 
+                    <!-- Compatibility Drawer for Quick View and Automated Tests -->
                     <div id="iching-detail-drawer" class="iching-detail-drawer"></div>
 
-                    <div id="iching-hexagrams-grid" class="iching-hexagrams-grid">
-                        <div class="iching-state-box iching-state-loading" data-state="loading">Đang tải Ma trận 64 Quẻ Biến Dịch...</div>
+                    <!-- View 1: 8x8 Matrix Coordinates Board -->
+                    <div id="iching-view-matrix" class="iching-view-panel" style="display: block;">
+                        <div class="iching-matrix-board-container">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; font-size: 11px; color: var(--text-muted); flex-wrap: wrap; gap: 6px;">
+                                <span>Trục Dọc (Hàng): <strong style="color: var(--gold-light);">Ngoại Quái (Thiên Thời / Môi Trường Ngoài)</strong></span>
+                                <span>Trục Ngang (Cột): <strong style="color: var(--cyan-accent);">Nội Quái (Địa Lợi / Nội Lực Tổ Chức)</strong></span>
+                            </div>
+                            <div id="iching-matrix-table-wrap">
+                                <div class="iching-state-box iching-state-loading">Đang kiến tạo Bàn Cờ Ma Trận 8x8...</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- View 2: 12 Sovereign Hexagrams Timeline -->
+                    <div id="iching-view-sovereign" class="iching-view-panel" style="display: none;">
+                        <div style="margin-bottom: 12px; font-size: 12px; color: var(--gold-light);">
+                            <strong>Chu kỳ 12 Quẻ Tiêu Trưởng (Thập Nhị Tức Quái):</strong> Nhịp sinh học phản ánh sự thăng trầm của Dương khí (minh bạch, kỷ cương, nguồn lực) và Âm khí (trì trệ, lợi ích nhóm, mầm họa) trong tổ chức.
+                        </div>
+                        <div id="iching-sovereign-grid" class="iching-sovereign-grid">
+                            <div class="iching-state-box iching-state-loading">Đang tải Chu kỳ 12 Tức Quái...</div>
+                        </div>
+                    </div>
+
+                    <!-- View 3: Cards Grid View with Palace Filters -->
+                    <div id="iching-view-cards" class="iching-view-panel" style="display: none;">
+                        <div id="iching-palace-tabs" class="iching-palace-tabs">
+                            <button type="button" class="mode-pill iching-palace-pill active" data-palace="" onclick="selectIChingPalace('', this)">Tất cả 64 Quẻ</button>
+                            <button type="button" class="mode-pill iching-palace-pill" data-palace="Càn" onclick="selectIChingPalace('Càn', this)">☰ Cung Càn (Kim)</button>
+                            <button type="button" class="mode-pill iching-palace-pill" data-palace="Khôn" onclick="selectIChingPalace('Khôn', this)">☷ Cung Khôn (Thổ)</button>
+                            <button type="button" class="mode-pill iching-palace-pill" data-palace="Khảm" onclick="selectIChingPalace('Khảm', this)">☵ Cung Khảm (Thủy)</button>
+                            <button type="button" class="mode-pill iching-palace-pill" data-palace="Ly" onclick="selectIChingPalace('Ly', this)">☲ Cung Ly (Hỏa)</button>
+                            <button type="button" class="mode-pill iching-palace-pill" data-palace="Chấn" onclick="selectIChingPalace('Chấn', this)">☳ Cung Chấn (Mộc)</button>
+                            <button type="button" class="mode-pill iching-palace-pill" data-palace="Tốn" onclick="selectIChingPalace('Tốn', this)">☴ Cung Tốn (Mộc)</button>
+                            <button type="button" class="mode-pill iching-palace-pill" data-palace="Cấn" onclick="selectIChingPalace('Cấn', this)">☶ Cung Cấn (Thổ)</button>
+                            <button type="button" class="mode-pill iching-palace-pill" data-palace="Đoài" onclick="selectIChingPalace('Đoài', this)">☱ Cung Đoài (Kim)</button>
+                        </div>
+                        <div id="iching-hexagrams-grid" class="iching-hexagrams-grid">
+                            <div class="iching-state-box iching-state-loading" data-state="loading">Đang tải Ma trận 64 Quẻ Biến Dịch...</div>
+                        </div>
+                    </div>
+
+                    <!-- View 4: Executive Phase Diagnostics -->
+                    <div id="iching-view-diagnostics" class="iching-view-panel" style="display: none;">
+                        <div class="iching-diag-filter-bar">
+                            <span style="font-size: 11px; color: var(--gold-light); font-weight: 700; width: 100%;">CHỌN TRIỆU CHỨNG TỔ CHỨC ĐỂ ĐỊNH VỊ THỜI THẾ:</span>
+                            <button type="button" class="iching-diag-tag-pill active" data-diag-tag="" onclick="selectDiagnosticSymptom('', this)">Tất cả triệu chứng</button>
+                            <button type="button" class="iching-diag-tag-pill" data-diag-tag="khởi_nghiệp_sơ_khai" onclick="selectDiagnosticSymptom('khởi_nghiệp_sơ_khai', this)">🚀 Khởi nghiệp / Tung SP mới</button>
+                            <button type="button" class="iching-diag-tag-pill" data-diag-tag="đội_ngũ_non_trẻ" onclick="selectDiagnosticSymptom('đội_ngũ_non_trẻ', this)">🌱 Đội ngũ non trẻ / Mơ hồ</button>
+                            <button type="button" class="iching-diag-tag-pill" data-diag-tag="bất_đồng_cổ_đông" onclick="selectDiagnosticSymptom('bất_đồng_cổ_đông', this)">⚔️ Xung đột nội bộ / Bất đồng</button>
+                            <button type="button" class="iching-diag-tag-pill" data-diag-tag="dòng_tiền_nghẽn" onclick="selectDiagnosticSymptom('dòng_tiền_nghẽn', this)">💸 Dòng tiền nghẽn / Khủng hoảng</button>
+                            <button type="button" class="iching-diag-tag-pill" data-diag-tag="lãnh_đạo" onclick="selectDiagnosticSymptom('lãnh_đạo', this)">👑 Quyền lực / Bẫy độc tài</button>
+                            <button type="button" class="iching-diag-tag-pill" data-diag-tag="siết_chặt_pháp_chế" onclick="selectDiagnosticSymptom('siết_chặt_pháp_chế', this)">⚖️ Siết kỷ luật / Tái cấu trúc</button>
+                            <button type="button" class="iching-diag-tag-pill" data-diag-tag="thăng_tiến_bền_bỉ" onclick="selectDiagnosticSymptom('thăng_tiến_bền_bỉ', this)">📈 Tăng trưởng bền bỉ / Bành trướng</button>
+                            <button type="button" class="iching-diag-tag-pill" data-diag-tag="chủ_động_rút_lui" onclick="selectDiagnosticSymptom('chủ_động_rút_lui', this)">🛡️ Rút lui bảo toàn / Ngủ đông</button>
+                        </div>
+                        <div id="iching-diagnostics-results-grid" class="iching-hexagrams-grid">
+                            <!-- Populated dynamically -->
+                        </div>
                     </div>
                 </div>
 
@@ -5023,6 +5346,38 @@
             <button class="modal-close-btn" onclick="closeCaseModal()" aria-label="Đóng hồ sơ thực chiến">&times;</button>
             <div id="case-modal-content">
                 <!-- Dynamically loaded -->
+            </div>
+        </div>
+    </div>
+
+    <!-- I Ching 64 Hexagrams Strategic Inspector Modal -->
+    <div class="modal-backdrop" id="hexagram-inspector-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="iching-modal-title">
+        <div class="modal-window iching-modal-window">
+            <div class="iching-modal-header">
+                <div style="display: flex; align-items: center; gap: 14px;">
+                    <span id="iching-modal-symbol" style="font-size: 34px; color: var(--gold-primary); line-height: 1;">䷀</span>
+                    <div>
+                        <div id="iching-modal-eyebrow" style="font-size: 11px; color: var(--gold-light); font-weight: 700; text-transform: uppercase;">QUẺ SỐ 1 • CÀN (KIM)</div>
+                        <h2 id="iching-modal-title" style="font-family: var(--font-serif); font-size: 20px; color: #ffffff; margin: 2px 0 0 0;">Thuần Càn (Qian)</h2>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <span id="iching-modal-stance" class="iching-stance-pill stance-tien">TIẾN</span>
+                    <button class="modal-close-btn" onclick="closeIChingModal()" aria-label="Đóng bảng phân tích quẻ" style="position: static; margin: 0;">&times;</button>
+                </div>
+            </div>
+
+            <!-- Modal Sub-Tabs -->
+            <div class="iching-modal-tabs" role="tablist">
+                <button type="button" class="iching-modal-tab-btn active" data-tab="overview" onclick="switchIChingModalTab('overview', this)">1. Thời Thế & Cảnh Báo</button>
+                <button type="button" class="iching-modal-tab-btn" data-tab="lines" onclick="switchIChingModalTab('lines', this)">2. Lục Hào & Biến Đổi</button>
+                <button type="button" class="iching-modal-tab-btn" data-tab="transitions" onclick="switchIChingModalTab('transitions', this)">3. Hệ Tứ Quái Phản Chiếu</button>
+                <button type="button" class="iching-modal-tab-btn" data-tab="knowledge" onclick="switchIChingModalTab('knowledge', this)">4. Tri Thức & Case Study</button>
+            </div>
+
+            <!-- Modal Content Body -->
+            <div class="iching-modal-body" id="iching-modal-body">
+                <!-- Dynamically rendered based on active tab -->
             </div>
         </div>
     </div>
@@ -6253,8 +6608,8 @@
             if (isScript) {
                 return `
                     <div class="advisory-section-card" style="border-left: 4px solid var(--accent-emerald); background: linear-gradient(135deg, rgba(57,255,20,0.06) 0%, rgba(18,22,20,0.92) 100%); border-top: 1px solid rgba(57,255,20,0.25); border-right: 1px solid rgba(57,255,20,0.12); border-bottom: 1px solid rgba(57,255,20,0.12); padding: 18px 22px;">
-                        <div class="treatise-badge" style="background: rgba(57,255,20,0.16); color: #39FF14; border-color: rgba(57,255,20,0.35);">⚔️ KỊCH BẢN THỰC THI (VERBATIM SCRIPT)</div>
-                        <h4 style="color: #39FF14; font-family: var(--font-serif); font-size: 16px; margin-bottom: 10px;">${escapeHtml(s.title)}</h4>
+                        <div class="treatise-badge" style="background: rgba(16,185,129,0.16); color: var(--emerald-accent); border-color: rgba(16,185,129,0.35);">KỊCH BẢN THỰC THI (VERBATIM SCRIPT)</div>
+                        <h4 style="color: var(--emerald-accent); font-family: var(--font-serif); font-size: 16px; margin-bottom: 10px;">${escapeHtml(s.title)}</h4>
                         <div style="font-size: 13.5px; line-height: 1.85; color: rgba(255,255,255,0.95);">${formatMarkdownText(s.body)}</div>
                     </div>
                 `;
@@ -6293,7 +6648,7 @@
         return `
             <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-subtle); padding-bottom: 10px; margin-bottom: 12px; gap: 8px; flex-wrap: wrap;">
                 <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-                    <h3 style="font-family: var(--font-serif); font-size: 17px; color: var(--gold-light); margin: 0;">👑 BẢN THAM MƯU CHIẾN LƯỢC ĐIỀU HÀNH</h3>
+                    <h3 style="font-family: var(--font-serif); font-size: 17px; color: var(--gold-light); letter-spacing: 0.02em; margin: 0;">BẢN THAM MƯU CHIẾN LƯỢC ĐIỀU HÀNH</h3>
                     <div style="display: flex; gap: 6px;">
                         <button class="advisory-audio-btn" onclick="window.NhanThuatAudio.playAdvisory('${id}', 'full')" title="Nghe toàn bộ bản tham mưu">
                             🎧 Nghe Toàn Bộ
@@ -6966,12 +7321,476 @@
     let selectedBookCategory = 'all';
     let allIChingHexagrams = [];
     let selectedIChingPalace = 'all';
+    let currentIChingView = 'matrix_8x8';
+    let currentModalHexagram = null;
+    let currentModalActiveTab = 'overview';
+    let currentMovingLines = [];
+    let selectedDiagTag = '';
+
+    const ICHING_TRIGRAMS_ORDER = ['Càn', 'Đoài', 'Ly', 'Chấn', 'Tốn', 'Khảm', 'Cấn', 'Khôn'];
+
+    function renderHexagramSvg(pattern, width = 40, height = 30, movingSet = null) {
+        if (!pattern || pattern.length !== 6) pattern = '111111';
+        const w = width;
+        const h = height;
+        const lineH = Math.max(2, Math.floor(h / 9));
+        const gap = (h - (lineH * 6)) / 5;
+        let rects = '';
+
+        for (let i = 5; i >= 0; i--) {
+            const lineNo = i + 1;
+            const y = (5 - i) * (lineH + gap);
+            const isYang = pattern[i] === '1';
+            const isMoving = movingSet && movingSet.has(lineNo);
+            const fillColor = isMoving ? '#f43f5e' : (isYang ? 'var(--gold-primary, #d4af37)' : 'rgba(255,255,255,0.75)');
+
+            if (isYang) {
+                rects += `<rect x="2" y="${y.toFixed(1)}" width="${w - 4}" height="${lineH}" rx="${lineH/2}" fill="${fillColor}" />`;
+            } else {
+                const segW = (w - 8) / 2;
+                rects += `<rect x="2" y="${y.toFixed(1)}" width="${segW.toFixed(1)}" height="${lineH}" rx="${lineH/2}" fill="${fillColor}" />`;
+                rects += `<rect x="${(w - segW - 2).toFixed(1)}" y="${y.toFixed(1)}" width="${segW.toFixed(1)}" height="${lineH}" rx="${lineH/2}" fill="${fillColor}" />`;
+            }
+        }
+        return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;">${rects}</svg>`;
+    }
+
+    function switchIChingView(viewMode, btn) {
+        currentIChingView = viewMode;
+        const pills = document.querySelectorAll('.iching-view-pill');
+        pills.forEach(p => p.classList.remove('active'));
+        if (btn && btn.classList) {
+            btn.classList.add('active');
+        } else {
+            pills.forEach(p => {
+                if (p.getAttribute('data-iching-view') === viewMode) p.classList.add('active');
+            });
+        }
+
+        const views = {
+            'matrix_8x8': document.getElementById('iching-view-matrix'),
+            'sovereign_12': document.getElementById('iching-view-sovereign'),
+            'cards_grid': document.getElementById('iching-view-cards'),
+            'diagnostics': document.getElementById('iching-view-diagnostics'),
+        };
+
+        for (const [key, el] of Object.entries(views)) {
+            if (el) el.style.display = (key === viewMode) ? 'block' : 'none';
+        }
+
+        if (viewMode === 'matrix_8x8') renderIChingMatrix8x8();
+        else if (viewMode === 'sovereign_12') renderIChingSovereignTimeline();
+        else if (viewMode === 'cards_grid') filterIChingHexagrams();
+        else if (viewMode === 'diagnostics') renderIChingDiagnostics();
+    }
+
+    function renderIChingMatrix8x8() {
+        const wrap = document.getElementById('iching-matrix-table-wrap');
+        if (!wrap || !allIChingHexagrams.length) return;
+
+        let tableHtml = `<table class="iching-matrix-table">
+            <thead>
+                <tr>
+                    <th style="background: rgba(0,0,0,0.5); width: 100px;">Ngoại \\ Nội</th>
+                    ${ICHING_TRIGRAMS_ORDER.map(t => `<th class="iching-trig-head">☲ ${escapeHtml(t)}</th>`).join('')}
+                </tr>
+            </thead>
+            <tbody>`;
+
+        for (const upper of ICHING_TRIGRAMS_ORDER) {
+            tableHtml += `<tr>
+                <th class="iching-trig-head" style="text-align: left; padding: 6px 10px;">☰ ${escapeHtml(upper)}</th>`;
+            for (const lower of ICHING_TRIGRAMS_ORDER) {
+                const h = allIChingHexagrams.find(item => 
+                    item.upper_trigram?.name === upper && item.lower_trigram?.name === lower
+                );
+                if (h) {
+                    const stanceClass = h.strategic_stance === 'Tiến' ? 'stance-tien' :
+                                       h.strategic_stance === 'Thoái' ? 'stance-thoi' :
+                                       h.strategic_stance === 'Thủ' ? 'stance-thu' : 'stance-bien';
+                    tableHtml += `
+                    <td class="iching-matrix-cell" onclick="openIChingModal(${h.number})" title="${escapeHtml(h.name)}: ${escapeHtml(h.corporate_state || '')}">
+                        <span class="iching-matrix-cell-num">#${h.number}</span>
+                        <span class="iching-matrix-cell-sym">${escapeHtml(h.symbol || '☰')}</span>
+                        <strong class="iching-matrix-cell-name">${escapeHtml(h.name)}</strong>
+                        <span class="iching-stance-pill ${stanceClass}">${escapeHtml(h.strategic_stance || 'Biến')}</span>
+                    </td>`;
+                } else {
+                    tableHtml += `<td class="iching-matrix-cell" style="opacity: 0.3;">-</td>`;
+                }
+            }
+            tableHtml += `</tr>`;
+        }
+        tableHtml += `</tbody></table>`;
+        wrap.innerHTML = tableHtml;
+    }
+
+    function renderIChingSovereignTimeline() {
+        const grid = document.getElementById('iching-sovereign-grid');
+        if (!grid || !allIChingHexagrams.length) return;
+
+        const sovereigns = allIChingHexagrams.filter(h => h.twelve_sovereign?.is_sovereign);
+        sovereigns.sort((a, b) => (a.twelve_sovereign?.phase_order || 99) - (b.twelve_sovereign?.phase_order || 99));
+
+        grid.innerHTML = sovereigns.map(s => {
+            const svgMarkup = renderHexagramSvg(s.binary_pattern, 36, 28);
+            const stanceClass = s.strategic_stance === 'Tiến' ? 'stance-tien' :
+                               s.strategic_stance === 'Thoái' ? 'stance-thoi' :
+                               s.strategic_stance === 'Thủ' ? 'stance-thu' : 'stance-bien';
+            return `
+            <div class="iching-sovereign-card" onclick="openIChingModal(${s.number})">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-size: 10.5px; background: rgba(245,158,11,0.18); color: var(--gold-light); padding: 2px 8px; border-radius: 10px; font-weight: 700;">
+                        PHA ${s.twelve_sovereign?.phase_order || ''}: ${escapeHtml(s.twelve_sovereign?.phase_name || '')}
+                    </span>
+                    <span class="iching-stance-pill ${stanceClass}">${escapeHtml(s.strategic_stance || 'Biến')}</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                    <span class="iching-hex-svg-wrap">${svgMarkup}</span>
+                    <div>
+                        <div style="font-size: 10.5px; color: var(--text-muted);">#${s.number} • ${escapeHtml(s.twelve_sovereign?.energy_ratio || '')}</div>
+                        <strong style="font-size: 14px; color: #fff;">${escapeHtml(s.name)}</strong>
+                    </div>
+                </div>
+                <div style="font-size: 11.5px; color: var(--text-secondary); line-height: 1.45; margin-bottom: 8px;">
+                    ${escapeHtml(s.corporate_state || '')}
+                </div>
+                <div style="font-size: 11px; color: var(--cyan-accent); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 6px;">
+                    👉 ${escapeHtml(s.action_script || '')}
+                </div>
+            </div>`;
+        }).join('');
+    }
+
+    function selectDiagnosticSymptom(tag, btn) {
+        selectedDiagTag = tag;
+        document.querySelectorAll('.iching-diag-tag-pill').forEach(p => p.classList.remove('active'));
+        if (btn) btn.classList.add('active');
+        renderIChingDiagnostics();
+    }
+
+    function renderIChingDiagnostics() {
+        const grid = document.getElementById('iching-diagnostics-results-grid');
+        if (!grid || !allIChingHexagrams.length) return;
+
+        let filtered = allIChingHexagrams;
+        if (selectedDiagTag) {
+            filtered = allIChingHexagrams.filter(h => 
+                Array.isArray(h.diagnostic_tags) && h.diagnostic_tags.includes(selectedDiagTag)
+            );
+        }
+
+        if (!filtered.length) {
+            grid.innerHTML = `<div class="iching-state-box iching-state-empty">Không tìm thấy quẻ chẩn đoán phù hợp với triệu chứng này.</div>`;
+            return;
+        }
+
+        grid.innerHTML = filtered.map(h => {
+            const svgMarkup = (typeof renderHexagramSvg === 'function')
+                ? renderHexagramSvg(h.binary_pattern, 36, 28)
+                : `<span class="iching-hex-symbol">${escapeHtml(h.symbol || '☰')}</span>`;
+            const stanceClass = h.strategic_stance === 'Tiến' ? 'stance-tien' :
+                               h.strategic_stance === 'Thoái' ? 'stance-thoi' :
+                               h.strategic_stance === 'Thủ' ? 'stance-thu' : 'stance-bien';
+            return `
+            <div class="iching-hex-card" onclick="openIChingModal(${h.number})">
+                <div class="iching-hex-card-head">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span class="iching-hex-svg-wrap">${svgMarkup}</span>
+                        <div>
+                            <span class="iching-hex-meta">#${h.number} • ${escapeHtml(h.palace || '')}</span>
+                            <strong class="iching-hex-title" style="margin: 0;">${escapeHtml(h.name)}</strong>
+                        </div>
+                    </div>
+                    <span class="iching-stance-pill ${stanceClass}">${escapeHtml(h.strategic_stance || 'Biến')}</span>
+                </div>
+                <div class="iching-hex-desc"><strong>Triệu chứng:</strong> ${escapeHtml(h.corporate_state || '')}</div>
+                <div style="font-size: 11px; color: #fda4af; margin-bottom: 6px;"><strong>Điểm mù:</strong> ${escapeHtml(h.strategic_warning || '')}</div>
+                <div class="iching-hex-footer">
+                    <span>${escapeHtml(h.upper_trigram?.nature || '')} / ${escapeHtml(h.lower_trigram?.nature || '')}</span>
+                    <span style="color: var(--cyan-accent); font-weight: 600;">Xem đơn thuốc quản trị &rarr;</span>
+                </div>
+            </div>`;
+        }).join('');
+    }
+
+    function openIChingModal(num) {
+        const modal = document.getElementById('hexagram-inspector-modal-backdrop');
+        if (!modal) return;
+        const h = allIChingHexagrams.find(item => Number(item.number) === Number(num));
+        if (!h) return;
+
+        currentModalHexagram = h;
+        currentModalActiveTab = 'overview';
+        currentMovingLines = [];
+
+        document.getElementById('iching-modal-symbol').textContent = h.symbol || '☰';
+        document.getElementById('iching-modal-eyebrow').textContent = `QUẺ SỐ ${h.number} • ${h.palace || ''} (${h.element || ''}) • ${h.nature || ''}`;
+        document.getElementById('iching-modal-title').textContent = `${h.name} (${h.pinyin || ''})`;
+        
+        const stanceEl = document.getElementById('iching-modal-stance');
+        if (stanceEl) {
+            const stanceClass = h.strategic_stance === 'Tiến' ? 'stance-tien' :
+                               h.strategic_stance === 'Thoái' ? 'stance-thoi' :
+                               h.strategic_stance === 'Thủ' ? 'stance-thu' : 'stance-bien';
+            stanceEl.className = `iching-stance-pill ${stanceClass}`;
+            stanceEl.textContent = `TƯ THẾ: ${(h.strategic_stance || 'BIẾN').toUpperCase()}`;
+        }
+
+        const tabBtns = document.querySelectorAll('.iching-modal-tab-btn');
+        tabBtns.forEach(b => b.classList.remove('active'));
+        if (tabBtns[0]) tabBtns[0].classList.add('active');
+
+        renderIChingModalTabBody();
+        modal.classList.add('open');
+    }
+
+    function closeIChingModal() {
+        const modal = document.getElementById('hexagram-inspector-modal-backdrop');
+        if (modal) modal.classList.remove('open');
+    }
+
+    function switchIChingModalTab(tabId, btn) {
+        currentModalActiveTab = tabId;
+        document.querySelectorAll('.iching-modal-tab-btn').forEach(b => b.classList.remove('active'));
+        if (btn) btn.classList.add('active');
+        renderIChingModalTabBody();
+    }
+
+    function renderIChingModalTabBody() {
+        const body = document.getElementById('iching-modal-body');
+        const h = currentModalHexagram;
+        if (!body || !h) return;
+
+        if (currentModalActiveTab === 'overview') {
+            body.innerHTML = `
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+                    <div style="background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 10px; padding: 16px;">
+                        <strong style="color: var(--cyan-accent); display: block; margin-bottom: 6px; font-size: 13px;">🧭 Trạng Thái Tổ Chức &amp; Thời Thế:</strong>
+                        <div style="color: #e2e8f0; line-height: 1.6; font-size: 13px;">${escapeHtml(h.corporate_state || '')}</div>
+                    </div>
+                    <div style="background: rgba(244, 63, 94, 0.08); border: 1px solid rgba(244, 63, 94, 0.25); border-radius: 10px; padding: 16px;">
+                        <strong style="color: #fda4af; display: block; margin-bottom: 6px; font-size: 13px;">⚠️ Cảnh Báo Chiến Lược (Điểm Mù):</strong>
+                        <div style="color: #fecdd3; line-height: 1.6; font-size: 13px;">${escapeHtml(h.strategic_warning || '')}</div>
+                    </div>
+                </div>
+
+                <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 10px; padding: 16px; margin-bottom: 16px;">
+                    <strong style="color: #34d399; display: block; margin-bottom: 6px; font-size: 13px;">⚡ Kịch Bản Hành Động Chuyển Pha:</strong>
+                    <div style="color: #e2e8f0; line-height: 1.6; font-size: 13px;">${escapeHtml(h.action_script || '')}</div>
+                </div>
+
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 200px; background: rgba(255,255,255,0.025); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 12px;">
+                        <span style="font-size: 11px; color: var(--text-muted); display: block;">Ngoại Quái (Thiên Thời):</span>
+                        <strong style="font-size: 13px; color: var(--gold-light);">${escapeHtml(h.upper_trigram?.name || '')} (${escapeHtml(h.upper_trigram?.nature || '')} • ${escapeHtml(h.upper_trigram?.element || '')})</strong>
+                    </div>
+                    <div style="flex: 1; min-width: 200px; background: rgba(255,255,255,0.025); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 12px;">
+                        <span style="font-size: 11px; color: var(--text-muted); display: block;">Nội Quái (Địa Lợi):</span>
+                        <strong style="font-size: 13px; color: var(--cyan-accent);">${escapeHtml(h.lower_trigram?.name || '')} (${escapeHtml(h.lower_trigram?.nature || '')} • ${escapeHtml(h.lower_trigram?.element || '')})</strong>
+                    </div>
+                    ${h.twelve_sovereign?.is_sovereign ? `
+                    <div style="flex: 1; min-width: 200px; background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.3); border-radius: 8px; padding: 12px;">
+                        <span style="font-size: 11px; color: var(--gold-primary); display: block;">Chu kỳ 12 Tức Quái:</span>
+                        <strong style="font-size: 13px; color: #fff;">Pha ${h.twelve_sovereign.phase_order}: ${escapeHtml(h.twelve_sovereign.phase_name)} (${escapeHtml(h.twelve_sovereign.energy_ratio)})</strong>
+                    </div>` : ''}
+                </div>
+            `;
+        } else if (currentModalActiveTab === 'lines') {
+            const movingSet = new Set(currentMovingLines);
+            const linesList = Array.isArray(h.six_lines) ? h.six_lines : [];
+            // Render from top (Line 6) to bottom (Line 1)
+            const sortedLines = [...linesList].sort((a, b) => b.line - a.line);
+
+            body.innerHTML = `
+                <div style="margin-bottom: 14px; font-size: 12px; color: var(--text-secondary); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+                    <span>👉 Click vào từng Hào bên dưới để mô phỏng <strong>Hào Động</strong> &amp; tính toán <strong>Quẻ Biến</strong> tương ứng:</span>
+                    <button type="button" class="mode-pill" onclick="resetModalMovingLines()" style="font-size: 10.5px; padding: 2px 8px;">🔄 Đặt lại Hào gốc</button>
+                </div>
+
+                <div id="iching-lines-simulator-box" style="margin-bottom: 16px;">
+                    ${sortedLines.map(line => {
+                        const isMoving = movingSet.has(line.line);
+                        const isYang = line.type === 'yang';
+                        const currentSymbol = isMoving ? (isYang ? '-- -- (Động Âm)' : '─── (Động Dương)') : (isYang ? '─────── (Dương)' : '──   ── (Âm)');
+                        return `
+                        <div class="iching-line-row ${isMoving ? 'moving' : ''}" onclick="toggleIChingModalLine(${line.line})">
+                            <div style="width: 70px; font-weight: 700; font-size: 12.5px; color: ${isMoving ? '#f43f5e' : (isYang ? 'var(--gold-primary)' : '#94a3b8')};">
+                                ${escapeHtml(line.name)} ${isMoving ? '⚡' : ''}
+                            </div>
+                            <div style="width: 140px; font-family: monospace; font-size: 13px; color: ${isMoving ? '#f43f5e' : '#fff'};">
+                                ${currentSymbol}
+                            </div>
+                            <div style="flex: 1;">
+                                <div style="font-size: 11px; color: var(--gold-light); font-weight: 600;">${escapeHtml(line.org_role)}</div>
+                                <div style="font-size: 12px; color: #cbd5e1; line-height: 1.4;">${escapeHtml(line.action)}</div>
+                            </div>
+                        </div>`;
+                    }).join('')}
+                </div>
+
+                <div id="iching-transformation-preview" style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 16px;">
+                    <!-- Live transition preview will render here -->
+                </div>
+            `;
+            updateModalTransformationPreview();
+        } else if (currentModalActiveTab === 'transitions') {
+            const nNum = h.nuclear_hex_number;
+            const oNum = h.opposite_hex_number;
+            const iNum = h.inverted_hex_number;
+
+            const nHex = allIChingHexagrams.find(item => Number(item.number) === Number(nNum));
+            const oHex = allIChingHexagrams.find(item => Number(item.number) === Number(oNum));
+            const iHex = allIChingHexagrams.find(item => Number(item.number) === Number(iNum));
+
+            body.innerHTML = `
+                <div style="margin-bottom: 14px; font-size: 12px; color: var(--gold-light);">
+                    <strong>Hệ Tứ Quái Phản Chiếu:</strong> Nhìn toàn diện 4 chiều kích của một tình thế chiến lược để phòng ngừa điểm mù và lường trước kịch bản của đối thủ.
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px;">
+                    <!-- Quẻ Gốc -->
+                    <div style="background: rgba(245,158,11,0.08); border: 1px solid var(--gold-primary); border-radius: 10px; padding: 14px;">
+                        <span style="font-size: 10.5px; color: var(--gold-primary); font-weight: 700; display: block; margin-bottom: 4px;">1. QUẺ GỐC (HIỆN TẠI)</span>
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                            <span style="font-size: 24px; color: var(--gold-primary);">${escapeHtml(h.symbol || '')}</span>
+                            <strong style="font-size: 14px; color: #fff;">#${h.number} ${escapeHtml(h.name)}</strong>
+                        </div>
+                        <div style="font-size: 11.5px; color: var(--text-secondary); line-height: 1.45;">${escapeHtml(h.corporate_state || '')}</div>
+                    </div>
+
+                    <!-- Quẻ Hỗ -->
+                    <div style="cursor: pointer; background: rgba(56, 189, 248, 0.06); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 10px; padding: 14px;" onclick="openIChingModal(${nNum})">
+                        <span style="font-size: 10.5px; color: var(--cyan-accent); font-weight: 700; display: block; margin-bottom: 4px;">2. QUẺ HỖ (NGUY CƠ NGẦM)</span>
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                            <span style="font-size: 24px; color: var(--cyan-accent);">${escapeHtml(nHex?.symbol || '')}</span>
+                            <strong style="font-size: 14px; color: #fff;">#${nNum} ${escapeHtml(nHex?.name || '')}</strong>
+                        </div>
+                        <div style="font-size: 11.5px; color: var(--text-secondary); line-height: 1.45;">${escapeHtml(nHex?.corporate_state || '')}</div>
+                        <span style="font-size: 10.5px; color: var(--cyan-accent); display: block; margin-top: 6px;">Xem quẻ này &rarr;</span>
+                    </div>
+
+                    <!-- Quẻ Thác -->
+                    <div style="cursor: pointer; background: rgba(244, 63, 94, 0.06); border: 1px solid rgba(244, 63, 94, 0.25); border-radius: 10px; padding: 14px;" onclick="openIChingModal(${oNum})">
+                        <span style="font-size: 10.5px; color: #fda4af; font-weight: 700; display: block; margin-bottom: 4px;">3. QUẺ THÁC (NGHỊCH CẢNH ĐỐI LẬP)</span>
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                            <span style="font-size: 24px; color: #fda4af;">${escapeHtml(oHex?.symbol || '')}</span>
+                            <strong style="font-size: 14px; color: #fff;">#${oNum} ${escapeHtml(oHex?.name || '')}</strong>
+                        </div>
+                        <div style="font-size: 11.5px; color: var(--text-secondary); line-height: 1.45;">${escapeHtml(oHex?.corporate_state || '')}</div>
+                        <span style="font-size: 10.5px; color: #fda4af; display: block; margin-top: 6px;">Xem quẻ này &rarr;</span>
+                    </div>
+
+                    <!-- Quẻ Tung -->
+                    <div style="cursor: pointer; background: rgba(168, 85, 247, 0.06); border: 1px solid rgba(168, 85, 247, 0.25); border-radius: 10px; padding: 14px;" onclick="openIChingModal(${iNum})">
+                        <span style="font-size: 10.5px; color: #d8b4fe; font-weight: 700; display: block; margin-bottom: 4px;">4. QUẺ TUNG (GÓC NHÌN ĐỐI THỦ)</span>
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                            <span style="font-size: 24px; color: #d8b4fe;">${escapeHtml(iHex?.symbol || '')}</span>
+                            <strong style="font-size: 14px; color: #fff;">#${iNum} ${escapeHtml(iHex?.name || '')}</strong>
+                        </div>
+                        <div style="font-size: 11.5px; color: var(--text-secondary); line-height: 1.45;">${escapeHtml(iHex?.corporate_state || '')}</div>
+                        <span style="font-size: 10.5px; color: #d8b4fe; display: block; margin-top: 6px;">Xem quẻ này &rarr;</span>
+                    </div>
+                </div>
+            `;
+        } else if (currentModalActiveTab === 'knowledge') {
+            const units = Array.isArray(h.related_knowledge_units) ? h.related_knowledge_units : [];
+            body.innerHTML = `
+                <div style="margin-bottom: 14px; font-size: 12px; color: var(--text-secondary);">
+                    Các Đơn Vị Tri Thức Chuẩn Hóa và Quy Luật Quản Trị liên quan trực tiếp đến bối cảnh của <strong>Quẻ ${escapeHtml(h.name)}</strong>:
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 18px;">
+                    ${units.length ? units.map(uid => `
+                    <div style="cursor: pointer; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 12px 14px; display: flex; justify-content: space-between; align-items: center;" onclick="openUnitModal('${escapeHtml(uid)}')">
+                        <div>
+                            <span style="font-size: 11px; background: rgba(245,158,11,0.18); color: var(--gold-primary); padding: 2px 7px; border-radius: 6px; font-weight: 700;">${escapeHtml(uid)}</span>
+                            <strong style="font-size: 13px; color: #fff; margin-left: 8px;">Đơn vị tri thức chiếu ứng trong kho Nhân Thuật</strong>
+                        </div>
+                        <span style="font-size: 12px; color: var(--cyan-accent);">Mở xem hồ sơ &rarr;</span>
+                    </div>`).join('') : '<div style="color: var(--text-muted); font-size: 12px;">Đang liên kết dữ liệu tri thức...</div>'}
+                </div>
+
+                <div style="background: rgba(245,158,11,0.06); border: 1px solid rgba(245,158,11,0.25); border-radius: 8px; padding: 14px;">
+                    <strong style="color: var(--gold-light); font-size: 12.5px; display: block; margin-bottom: 4px;">📂 Hồ Sơ Thực Chiến (Case Archives) Gợi Ý:</strong>
+                    <p style="font-size: 12px; color: var(--text-secondary); margin: 0; line-height: 1.5;">
+                        Quý vị có thể tham khảo thêm các tình huống tương đương trong <strong>Kho Thực Chiến Dự Án</strong> (Cẩm nang số 06 &amp; 07) hoặc khởi tạo phiên <strong>Đấu Trí Sparring</strong> để luyện tập xử lý tình thế này.
+                    </p>
+                </div>
+            `;
+        }
+    }
+
+    function toggleIChingModalLine(lineNo) {
+        const idx = currentMovingLines.indexOf(lineNo);
+        if (idx === -1) {
+            currentMovingLines.push(lineNo);
+        } else {
+            currentMovingLines.splice(idx, 1);
+        }
+        renderIChingModalTabBody();
+    }
+
+    function resetModalMovingLines() {
+        currentMovingLines = [];
+        renderIChingModalTabBody();
+    }
+
+    function updateModalTransformationPreview() {
+        const previewEl = document.getElementById('iching-transformation-preview');
+        const h = currentModalHexagram;
+        if (!previewEl || !h) return;
+
+        if (!currentMovingLines.length) {
+            previewEl.innerHTML = `
+                <div style="font-size: 12.5px; color: var(--text-muted); text-align: center; padding: 10px;">
+                    Chưa có Hào nào được chọn biến động. Click vào một trong các Hào ở trên để xem kịch bản chuyển pha.
+                </div>`;
+            return;
+        }
+
+        // Calculate transformed binary pattern
+        const patternArr = (h.binary_pattern || '111111').split('');
+        for (const lineNo of currentMovingLines) {
+            const bitIdx = lineNo - 1;
+            patternArr[bitIdx] = (patternArr[bitIdx] === '1') ? '0' : '1';
+        }
+        const newPattern = patternArr.join('');
+        const transformedHex = allIChingHexagrams.find(item => item.binary_pattern === newPattern);
+
+        const movingLabels = currentMovingLines.sort((a,b)=>a-b).map(l => `Hào ${l}`).join(', ');
+
+        if (transformedHex) {
+            const transformedSvg = renderHexagramSvg(transformedHex.binary_pattern, 36, 28);
+            previewEl.innerHTML = `
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px;">
+                    <div>
+                        <span style="font-size: 11px; color: #f43f5e; font-weight: 700; text-transform: uppercase;">BIẾN ĐỘNG TẠI: ${escapeHtml(movingLabels)}</span>
+                        <h4 style="font-size: 16px; color: #fff; margin: 2px 0 0 0;">Chuyển Pha Sang Quẻ: #${transformedHex.number} ${escapeHtml(transformedHex.name)}</h4>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span class="iching-hex-svg-wrap">${transformedSvg}</span>
+                        <button type="button" class="mode-pill" onclick="openIChingModal(${transformedHex.number})" style="font-size: 11px; padding: 4px 10px; border-color: var(--cyan-accent); color: var(--cyan-accent);">Khám Phá Quẻ Biến &rarr;</button>
+                    </div>
+                </div>
+                <div style="font-size: 12.5px; color: #e2e8f0; line-height: 1.5; margin-bottom: 6px;">
+                    <strong>Trạng thái thời thế mới:</strong> ${escapeHtml(transformedHex.corporate_state || '')}
+                </div>
+                <div style="font-size: 12px; color: #34d399; line-height: 1.5;">
+                    <strong>Chiến lược can thiệp đề xuất:</strong> ${escapeHtml(transformedHex.action_script || '')}
+                </div>
+            `;
+        }
+    }
 
     async function loadIChingHexagrams(forceReload = false) {
         const grid = document.getElementById('iching-hexagrams-grid');
         if (!grid) return;
         if (!forceReload && allIChingHexagrams.length > 0) {
+            if (typeof renderIChingMatrix8x8 === 'function') renderIChingMatrix8x8();
+            if (typeof renderIChingSovereignTimeline === 'function') renderIChingSovereignTimeline();
             filterIChingHexagrams();
+            if (typeof renderIChingDiagnostics === 'function') renderIChingDiagnostics();
             return;
         }
         grid.innerHTML = `<div class="iching-state-box iching-state-loading" data-state="loading">Đang tải Ma trận 64 Quẻ Biến Dịch...</div>`;
@@ -6983,7 +7802,10 @@
             const data = await res.json();
             if (data.status === 'success' && Array.isArray(data.hexagrams)) {
                 allIChingHexagrams = data.hexagrams;
+                if (typeof renderIChingMatrix8x8 === 'function') renderIChingMatrix8x8();
+                if (typeof renderIChingSovereignTimeline === 'function') renderIChingSovereignTimeline();
                 filterIChingHexagrams();
+                if (typeof renderIChingDiagnostics === 'function') renderIChingDiagnostics();
             } else {
                 throw new Error(data.message || 'Dữ liệu danh mục 64 quẻ không hợp lệ.');
             }
@@ -7032,54 +7854,76 @@
             return;
         }
 
-        grid.innerHTML = filtered.map(h => `
+        grid.innerHTML = filtered.map(h => {
+            const stanceClass = h.strategic_stance === 'Tiến' ? 'stance-tien' :
+                               h.strategic_stance === 'Thoái' ? 'stance-thoi' :
+                               h.strategic_stance === 'Thủ' ? 'stance-thu' : 'stance-bien';
+            const svgMarkup = (typeof renderHexagramSvg === 'function')
+                ? renderHexagramSvg(h.binary_pattern, 36, 28)
+                : `<span class="iching-hex-symbol">${escapeHtml(h.symbol || '☰')}</span>`;
+            return `
             <div class="iching-hex-card" data-hex-number="${Number(h.number)}" onclick="showIChingHexagramDetail(${Number(h.number)})">
                 <div class="iching-hex-card-head">
-                    <span class="iching-hex-symbol">${escapeHtml(h.symbol || '☰')}</span>
-                    <span class="iching-hex-meta">#${h.number} • ${escapeHtml(h.palace || '')}</span>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span class="iching-hex-svg-wrap">${svgMarkup}</span>
+                        <div>
+                            <span class="iching-hex-meta">#${h.number} • ${escapeHtml(h.palace || '')}</span>
+                            <strong class="iching-hex-title" style="margin: 0;">${escapeHtml(h.name)}</strong>
+                        </div>
+                    </div>
+                    <span class="iching-stance-pill ${stanceClass}">${escapeHtml(h.strategic_stance || 'Biến')}</span>
                 </div>
-                <strong class="iching-hex-title">${escapeHtml(h.name)}</strong>
                 <div class="iching-hex-desc">${escapeHtml(h.corporate_state || '')}</div>
-            </div>
-        `).join('');
+                <div class="iching-hex-footer">
+                    <span>${escapeHtml(h.upper_trigram?.nature || '')} / ${escapeHtml(h.lower_trigram?.nature || '')}</span>
+                    <span style="color: var(--cyan-accent); font-weight: 600;">Xem chi tiết &rarr;</span>
+                </div>
+            </div>`;
+        }).join('');
     }
 
     function showIChingHexagramDetail(num) {
         const drawer = document.getElementById('iching-detail-drawer');
-        if (!drawer) return;
         const h = allIChingHexagrams.find(item => Number(item.number) === Number(num));
-        if (!h) return;
-        const actions = Array.isArray(h.action_script)
-            ? h.action_script.map(a => `<li style="margin-bottom: 6px;">${escapeHtml(a)}</li>`).join('')
-            : '';
-        drawer.style.display = 'block';
-        drawer.innerHTML = `
-            <div class="iching-drawer-header">
-                <div style="display: flex; align-items: center; gap: 12px;">
-                    <span style="font-size: 32px; color: var(--gold-primary); line-height: 1;">${escapeHtml(h.symbol || '☰')}</span>
-                    <div>
-                        <div style="font-size: 11px; color: var(--gold-light); font-weight: 700; text-transform: uppercase;">Quẻ số ${h.number} • ${escapeHtml(h.palace || '')} • ${escapeHtml(h.nature || '')}</div>
-                        <h4 style="font-family: var(--font-serif); font-size: 18px; color: #ffffff; margin: 2px 0 0 0;">${escapeHtml(h.name)} (${escapeHtml(h.pinyin || '')})</h4>
+        if (drawer && h) {
+            const actions = Array.isArray(h.action_script)
+                ? h.action_script.map(a => `<li style="margin-bottom: 6px;">${escapeHtml(a)}</li>`).join('')
+                : (typeof h.action_script === 'string' && h.action_script ? `<li>${escapeHtml(h.action_script)}</li>` : '');
+            drawer.style.display = 'block';
+            drawer.innerHTML = `
+                <div class="iching-drawer-header">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <span style="font-size: 32px; color: var(--gold-primary); line-height: 1;">${escapeHtml(h.symbol || '☰')}</span>
+                        <div>
+                            <div style="font-size: 11px; color: var(--gold-light); font-weight: 700; text-transform: uppercase;">Quẻ số ${h.number} • ${escapeHtml(h.palace || '')} • ${escapeHtml(h.nature || '')}</div>
+                            <h4 style="font-family: var(--font-serif); font-size: 18px; color: #ffffff; margin: 2px 0 0 0;">${escapeHtml(h.name)} (${escapeHtml(h.pinyin || '')})</h4>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 8px; align-items: center;">
+                        <button type="button" class="mode-pill" onclick="openIChingModal(${h.number})" style="font-size: 11px; padding: 4px 10px; background: rgba(245,158,11,0.2); border-color: var(--gold-primary); color: #fff;">⛶ Mở Modal Toàn Diện</button>
+                        <button type="button" class="mode-pill" onclick="document.getElementById('iching-detail-drawer').style.display='none'" style="font-size: 11px; padding: 4px 10px;">✕ Đóng</button>
                     </div>
                 </div>
-                <button type="button" class="mode-pill" onclick="document.getElementById('iching-detail-drawer').style.display='none'" style="font-size: 11px; padding: 4px 10px;">✕ Đóng</button>
-            </div>
-            <div class="iching-drawer-grid">
-                <div class="iching-drawer-box-state">
-                    <strong style="color: var(--cyan-accent); display: block; margin-bottom: 4px;">Trạng thái Tổ chức &amp; Thời thế:</strong>
-                    <div style="color: #e2e8f0;">${escapeHtml(h.corporate_state || '')}</div>
+                <div class="iching-drawer-grid">
+                    <div class="iching-drawer-box-state">
+                        <strong style="color: var(--cyan-accent); display: block; margin-bottom: 4px;">Trạng thái Tổ chức &amp; Thời thế:</strong>
+                        <div style="color: #e2e8f0;">${escapeHtml(h.corporate_state || '')}</div>
+                    </div>
+                    <div class="iching-drawer-box-warn">
+                        <strong style="color: #fda4af; display: block; margin-bottom: 4px;">Cảnh báo Chiến lược (Điểm mù):</strong>
+                        <div style="color: #fecdd3;">${escapeHtml(h.strategic_warning || '')}</div>
+                    </div>
                 </div>
-                <div class="iching-drawer-box-warn">
-                    <strong style="color: #fda4af; display: block; margin-bottom: 4px;">Cảnh báo Chiến lược (Điểm mù):</strong>
-                    <div style="color: #fecdd3;">${escapeHtml(h.strategic_warning || '')}</div>
-                </div>
-            </div>
-            ${actions ? `
-            <div class="iching-drawer-box-action">
-                <strong style="color: #34d399; display: block; margin-bottom: 6px;">Kịch bản Hành động Chuyển Pha (3 Bước):</strong>
-                <ul style="margin: 0; padding-left: 18px; color: #e2e8f0; line-height: 1.6;">${actions}</ul>
-            </div>` : ''}
-        `;
+                ${actions ? `
+                <div class="iching-drawer-box-action">
+                    <strong style="color: #34d399; display: block; margin-bottom: 6px;">Kịch bản Hành động Chuyển Pha:</strong>
+                    <ul style="margin: 0; padding-left: 18px; color: #e2e8f0; line-height: 1.6;">${actions}</ul>
+                </div>` : ''}
+            `;
+        }
+        if (typeof openIChingModal === 'function' && typeof document !== 'undefined' && document.getElementById('hexagram-inspector-modal-backdrop')) {
+            openIChingModal(num);
+        }
     }
 
     function loadBookshelf() {

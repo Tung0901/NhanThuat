@@ -807,11 +807,37 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
             return
 
         # 4-IChing. 64 Hexagrams API: GET /api/v1/iching/hexagrams and GET /api/v1/iching/hexagrams/{hex_id}
+        if path == "/api/v1/iching/matrix-8x8":
+            matrix_data = iching_service.get_matrix_8x8()
+            self._send_json_response(200, {
+                "status": "success",
+                "epistemic_status": "unreviewed",
+                **matrix_data,
+            })
+            return
+
+        if path == "/api/v1/iching/sovereign":
+            sovereign_hexs = iching_service.get_sovereign_hexagrams()
+            self._send_json_response(200, {
+                "status": "success",
+                "total": len(sovereign_hexs),
+                "sovereign_hexagrams": sovereign_hexs,
+                "epistemic_status": "unreviewed",
+            })
+            return
+
         if path == "/api/v1/iching/hexagrams":
             qs = parse_qs(parsed_url.query)
             palace_filter = qs.get("palace", [""])[0]
             query_filter = qs.get("q", [""])[0]
-            results = iching_service.list_hexagrams(palace=palace_filter, query=query_filter)
+            stance_filter = qs.get("stance", [""])[0]
+            tag_filter = qs.get("tag", [""])[0]
+            results = iching_service.list_hexagrams(
+                palace=palace_filter,
+                query=query_filter,
+                stance=stance_filter,
+                tag=tag_filter,
+            )
             self._send_json_response(200, {
                 "status": "success",
                 "total": len(results),
@@ -1801,6 +1827,14 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
         if path == "/api/v1/iching/cast":
             oracle_result = iching_service.cast_oracle()
             self._send_json_response(503, oracle_result)
+            return
+
+        if path == "/api/v1/iching/simulate-transition":
+            hex_ref = payload.get("hexagram", 1)
+            moving_lines = payload.get("moving_lines", [])
+            sim_res = iching_service.simulate_transition(hex_ref, moving_lines)
+            status_code = 200 if sim_res.get("status") == "success" else 400
+            self._send_json_response(status_code, sim_res)
             return
 
         # Commercial checkout is quarantined until settlement and storage pass review.

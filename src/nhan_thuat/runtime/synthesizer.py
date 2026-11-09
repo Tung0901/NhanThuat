@@ -198,7 +198,7 @@ class KnowledgeSynthesizer:
             "NGŨ ĐẠI HỆ HÌNH TRIẾT HỌC (Bản nguyên Đạo Gia - Khắc Kỷ, Nhân tính luận Nho - Tuân, Quyền lực Pháp Gia - Machiavellianism, "
             "Tâm thuật Quỷ Cốc Tử - Hùng biện, Binh pháp Tôn Tử - Lý thuyết trò chơi hiện đại).\n\n"
             "QUY TẮC TRÌNH BÀY & NGHỊ LUẬN (BẮT BUỘC):\n"
-            "- Trình bày như một BÀI NGHỊ LUẬN CHIẾN LƯỢC SÂU SẮC, TOÀN DIỆN, phân tích tường tận mọi tầng nấc, hồi quy quy nạp chặt chẽ, dẫn chứng cụ thể thuyết phục và lập luận sắc bén.\n"
+            "- Trình bày như một BÀI NGHỊ LUẬN CHIẾN LƯỢC SÂU SẮC, TRAU CHUỐT, TOÀN DIỆN, phân tích tường tận mọi tầng nấc, hồi quy quy nạp chặt chẽ, dẫn chứng cụ thể thuyết phục và lập luận sắc bén.\n"
             "- KHÔNG GIỚI HẠN ĐỘ DÀI: Khai phóng toàn diện luận cứ, phân tích cặn kẽ thế trận và đưa ra chỉ đạo hành động chi tiết. Tuyệt đối không viết tóm tắt qua loa hay cắt xén nội dung.\n"
             "- Khi dùng thuật ngữ cổ điển (Hình Danh Tham Đồng, Nhị Bỉnh, Bát Gian, Tâm Trai, Bách Hợp, Phi Kiềm, Nash Equilibrium...), "
             "phải giải thích bản chất thực tế trong ngoặc đơn.\n"

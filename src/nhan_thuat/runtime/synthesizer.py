@@ -9,7 +9,7 @@ from __future__ import annotations
 import os
 import time
 import uuid
-from collections.abc import Iterable
+from collections.abc import Iterable, Iterator
 from typing import Any
 
 import requests
@@ -21,6 +21,8 @@ DEFAULT_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai"
 DEFAULT_MODEL = "gemini-3.6-flash"
 DEFAULT_DEEPSEEK_BASE_URL = "https://api.deepseek.com"
 DEFAULT_DEEPSEEK_MODEL = "deepseek-chat"
+DEFAULT_MAX_OUTPUT_TOKENS = int(os.environ.get("AI_MAX_OUTPUT_TOKENS", "8192"))
+DEFAULT_REQUEST_TIMEOUT = int(os.environ.get("AI_REQUEST_TIMEOUT", "120"))
 
 
 class ProviderError(RuntimeError):
@@ -104,9 +106,9 @@ def get_provider_summary() -> dict[str, Any]:
 class KnowledgeSynthesizer:
     """Produces a synthesis for a query and its retrieved knowledge units."""
 
-    def __init__(self, prompt_builder: PromptBuilder | None = None, timeout: int = 60) -> None:
+    def __init__(self, prompt_builder: PromptBuilder | None = None, timeout: int | None = None) -> None:
         self.prompt_builder = prompt_builder or PromptBuilder()
-        self.timeout = timeout
+        self.timeout = int(os.environ.get("AI_REQUEST_TIMEOUT", str(DEFAULT_REQUEST_TIMEOUT))) if timeout is None else timeout
 
     @property
     def provider_configured(self) -> bool:
@@ -196,7 +198,8 @@ class KnowledgeSynthesizer:
             "NGŨ ĐẠI HỆ HÌNH TRIẾT HỌC (Bản nguyên Đạo Gia - Khắc Kỷ, Nhân tính luận Nho - Tuân, Quyền lực Pháp Gia - Machiavellianism, "
             "Tâm thuật Quỷ Cốc Tử - Hùng biện, Binh pháp Tôn Tử - Lý thuyết trò chơi hiện đại).\n\n"
             "QUY TẮC TRÌNH BÀY & NGHỊ LUẬN (BẮT BUỘC):\n"
-            "- Trình bày như một BÀI NGHỊ LUẬN CHIẾN LƯỢC SÂU SẮC, TRAU CHUỐT, phân tích tường tận, hồi quy quy nạp chặt chẽ, dẫn chứng cụ thể thuyết phục và lập luận sắc bén.\n"
+            "- Trình bày như một BÀI NGHỊ LUẬN CHIẾN LƯỢC SÂU SẮC, TOÀN DIỆN, phân tích tường tận mọi tầng nấc, hồi quy quy nạp chặt chẽ, dẫn chứng cụ thể thuyết phục và lập luận sắc bén.\n"
+            "- KHÔNG GIỚI HẠN ĐỘ DÀI: Khai phóng toàn diện luận cứ, phân tích cặn kẽ thế trận và đưa ra chỉ đạo hành động chi tiết. Tuyệt đối không viết tóm tắt qua loa hay cắt xén nội dung.\n"
             "- Khi dùng thuật ngữ cổ điển (Hình Danh Tham Đồng, Nhị Bỉnh, Bát Gian, Tâm Trai, Bách Hợp, Phi Kiềm, Nash Equilibrium...), "
             "phải giải thích bản chất thực tế trong ngoặc đơn.\n"
             "- Mỗi nhận định phải gắn chặt với tương quan quyền lực, tử huyệt lợi ích và kịch bản hành động cụ thể.\n\n"
@@ -205,12 +208,12 @@ class KnowledgeSynthesizer:
             f"{context}\n"
             "HÃY PHÂN TÍCH VÀ ĐƯA RA BẢN THAM MƯU CHIẾN LƯỢC BẰNG MARKDOWN THEO ĐÚNG 5 PHẦN CHUẨN MỰC SAU:\n\n"
             "### 🎯 TÓM TẮT ĐIỀU HÀNH\n"
-            "- [3-4 gạch đầu dòng cô đọng nhất: Chuyện gì đang thực sự xảy ra dưới lớp vỏ bề mặt; Điều gì đang bị đe dọa (vị thế, uy tín, chi phí); Việc tối quan trọng cần làm ngay trong 24h].\n\n"
+            "- [Các luận điểm then chốt nhất: Chuyện gì đang thực sự xảy ra dưới lớp vỏ bề mặt; Điều gì đang bị đe dọa (vị thế, uy tín, chi phí); Việc tối quan trọng cần làm ngay trong 24h].\n\n"
             "### 👁️ TỔNG QUAN TÌNH THẾ\n"
-            "Trình bày như một BÀI NGHỊ LUẬN CHIẾN LƯỢC SÂU SẮC, TRAU CHUỐT (gồm tối thiểu 3 đoạn văn sâu sắc, dung hợp triết lý Đông Tây và thuật dụng nhân định thế):\n"
-            "- **Đoạn 1 (Luận đề thế trận):** Không dừng lại ở hiện tượng bề mặt vụn vặt; hãy định vị thực chất cuộc diện này là gì trong tương quan lực lượng, cấu trúc quyền lực và dòng chảy kỳ vọng giữa các bên.\n"
-            "- **Đoạn 2 (Biện giải chiều sâu & Ma sát tâm lý):** Bóc tách các dòng chảy ngầm: nỗi sợ hãi, động cơ lợi ích thực tế, xung đột nhận thức và bẫy thế cờ mà nếu người lãnh đạo ứng xử bằng cảm xúc nóng vội hoặc do dự thì cục diện sẽ biến tướng nguy hiểm ra sao.\n"
-            "- **Đoạn 3 (Luận kết & Tâm thế định cục):** Đúc kết nguyên lý then chốt (kết hợp tư duy 'Tâm Trai', 'Lấy tĩnh chế động', 'Dichotomy of Control' với kỷ cương quản trị hiện đại), xác lập tâm thế của người nắm quyền chủ động để xoay chuyển cục diện.\n\n"
+            "Trình bày như một BÀI NGHỊ LUẬN CHIẾN LƯỢC TOÀN DIỆN, ĐÀO SÂU MỌI TẦNG NẤC (không hạn chế số đoạn, dung hợp triết lý Đông Tây và thuật dụng nhân định thế):\n"
+            "- **Luận đề thế trận:** Không dừng lại ở hiện tượng bề mặt vụn vặt; hãy định vị thực chất cuộc diện này là gì trong tương quan lực lượng, cấu trúc quyền lực và dòng chảy kỳ vọng giữa các bên.\n"
+            "- **Biện giải chiều sâu & Ma sát tâm lý:** Bóc tách các dòng chảy ngầm: nỗi sợ hãi, động cơ lợi ích thực tế, xung đột nhận thức và bẫy thế cờ mà nếu người lãnh đạo ứng xử bằng cảm xúc nóng vội hoặc do dự thì cục diện sẽ biến tướng nguy hiểm ra sao.\n"
+            "- **Luận kết & Tâm thế định cục:** Đúc kết nguyên lý then chốt (kết hợp tư duy 'Tâm Trai', 'Lấy tĩnh chế động', 'Dichotomy of Control' với kỷ cương quản trị hiện đại), xác lập tâm thế của người nắm quyền chủ động để xoay chuyển cục diện.\n\n"
             "### 🔍 1. BÓC TÁCH BẢN CHẤT & ĐỘNG CƠ NGẦM\n"
             "- **Phương pháp Hồi quy nhân quả:** Lần ngược từ phản ứng/lời nói bề mặt về áp lực vô hình và nỗi bất an tiềm thức của đối phương.\n"
             "- **Tam tầng lợi ích:**\n"
@@ -231,7 +234,7 @@ class KnowledgeSynthesizer:
             "  * **Giai đoạn 2 (Tái định vị ranh giới & Nắn dòng lợi ích):** *\"[Câu thoại mẫu chuyển dịch sự chú ý sang chi phí rủi ro chung và ranh giới không thể thương lượng]\"*\n"
             "  * **Giai đoạn 3 (Khóa thế & Chốt cam kết hành động):** *\"[Câu thoại mẫu chốt hạ điều kiện và xác lập thỏa thuận ràng buộc]\"*\n\n"
             "### 📌 CHỐT HẠ ĐỊNH CỤC\n"
-            "> *[1-2 câu tuyên ngôn súc tích, mang tầm triết lý sắc bén để định hình tâm thế người lãnh đạo].*\n\n"
+            "> *[Tuyên ngôn đúc kết súc tích nhưng sâu sắc, mang tầm triết lý sắc bén để định hình tâm thế người lãnh đạo].*\n\n"
             "### 📖 TRÍCH DẪN TRI THỨC\n"
             "- [Liệt kê các tri thức/quy luật đã vận dụng kèm mã ID, ví dụ: Quy luật Giá trị (NT-LAW-3201), Binh pháp Tôn Tử (NT-MODEL-3202)].\n"
         )
@@ -366,7 +369,7 @@ class KnowledgeSynthesizer:
 
         return "\n".join(lines)
 
-    def generate_text(self, prompt: str) -> str:
+    def generate_text(self, prompt: str, max_tokens: int | None = None) -> str:
         """Call providers with failover and return just the text."""
         configs = get_provider_configs()
         if not configs:
@@ -375,13 +378,13 @@ class KnowledgeSynthesizer:
         errors = []
         for config in configs:
             try:
-                return self._call_provider(prompt, config)
+                return self._call_provider(prompt, config, max_tokens=max_tokens)
             except Exception as e:  # noqa: BLE001 - failover across any provider failure
                 errors.append(f"{config['provider_name']}: {e}")
 
         raise ProviderError(f"All providers failed: {' | '.join(errors)}")
 
-    def generate_json(self, prompt: str) -> dict[str, Any]:
+    def generate_json(self, prompt: str, max_tokens: int | None = None) -> dict[str, Any]:
         """Call providers and force JSON return, parsing it safely."""
         configs = get_provider_configs()
         if not configs:
@@ -391,7 +394,7 @@ class KnowledgeSynthesizer:
         for config in configs:
             try:
                 json_prompt = prompt + "\n\nCRITICAL: You MUST return ONLY valid JSON. Do not wrap it in markdown block quotes like ```json ... ```. Just return the raw JSON object."
-                text = self._call_provider(json_prompt, config)
+                text = self._call_provider(json_prompt, config, max_tokens=max_tokens)
 
                 # Cleanup common markdown code block wrapping if LLM ignores instruction
                 text = text.strip()
@@ -409,23 +412,98 @@ class KnowledgeSynthesizer:
 
         raise ProviderError(f"All providers failed JSON generation: {' | '.join(errors)}")
 
-    def _call_provider(self, prompt: str, config: dict[str, str]) -> str:
+    def generate_stream(self, prompt: str, max_tokens: int | None = None) -> Iterator[str]:
+        """Yield chunks of text from the configured provider using Server-Sent Events stream."""
+        configs = get_provider_configs()
+        if not configs:
+            raise ProviderError("No LLM provider configured for streaming.")
+
+        tokens = max_tokens if max_tokens is not None else int(os.environ.get("AI_MAX_OUTPUT_TOKENS", "8192"))
+        errors: list[str] = []
+
+        for config in configs:
+            try:
+                payload: dict[str, Any] = {
+                    "model": config["model"],
+                    "messages": [
+                        {"role": "system", "content": "Bạn là một chuyên gia phân tích tri thức."},
+                        {"role": "user", "content": prompt},
+                    ],
+                    "temperature": 0.4,
+                    "stream": True,
+                }
+                if tokens > 0:
+                    payload["max_tokens"] = tokens
+
+                response = requests.post(
+                    f"{config['base_url']}/chat/completions",
+                    headers={"Authorization": f"Bearer {config['api_key']}"},
+                    json=payload,
+                    timeout=self.timeout,
+                    stream=True,
+                )
+                response.raise_for_status()
+
+                import json
+                for line in response.iter_lines():
+                    if not line:
+                        continue
+                    decoded = line.decode("utf-8") if isinstance(line, bytes) else line
+                    if decoded.startswith("data: "):
+                        data_str = decoded[6:].strip()
+                        if data_str == "[DONE]":
+                            break
+                        try:
+                            chunk_obj = json.loads(data_str)
+                            delta = chunk_obj.get("choices", [{}])[0].get("delta", {})
+                            content = delta.get("content", "")
+                            if content:
+                                yield content
+                        except json.JSONDecodeError:
+                            continue
+                return
+            except Exception as e:  # noqa: BLE001
+                errors.append(f"{config['provider_name']}: {e}")
+
+        raise ProviderError(f"All providers failed streaming: {' | '.join(errors)}")
+
+    def _call_provider(self, prompt: str, config: dict[str, str], max_tokens: int | None = None) -> str:
+        tokens = max_tokens if max_tokens is not None else int(os.environ.get("AI_MAX_OUTPUT_TOKENS", "8192"))
+        payload: dict[str, Any] = {
+            "model": config["model"],
+            "messages": [
+                {"role": "system", "content": "Bạn là một chuyên gia phân tích tri thức."},
+                {"role": "user", "content": prompt},
+            ],
+            "temperature": 0.4,
+        }
+        if tokens > 0:
+            payload["max_tokens"] = tokens
+
         response = requests.post(
             f"{config['base_url']}/chat/completions",
             headers={"Authorization": f"Bearer {config['api_key']}"},
-            json={
-                "model": config["model"],
-                "messages": [
-                    {"role": "system", "content": "Bạn là một chuyên gia phân tích tri thức."},
-                    {"role": "user", "content": prompt},
-                ],
-                "temperature": 0.4,
-            },
+            json=payload,
             timeout=self.timeout,
         )
         try:
             response.raise_for_status()
         except requests.exceptions.HTTPError as e:
+            # If provider fails specifically on max_tokens parameter, retry once without it
+            if response.status_code == 400 and "max_tokens" in payload:
+                payload.pop("max_tokens", None)
+                try:
+                    retry_resp = requests.post(
+                        f"{config['base_url']}/chat/completions",
+                        headers={"Authorization": f"Bearer {config['api_key']}"},
+                        json=payload,
+                        timeout=self.timeout,
+                    )
+                    retry_resp.raise_for_status()
+                    payload_json = retry_resp.json()
+                    return payload_json["choices"][0]["message"]["content"]
+                except Exception:  # noqa: BLE001, S110
+                    pass
             raise ProviderError(f"{e} - Response: {response.text}") from e
-        payload = response.json()
-        return payload["choices"][0]["message"]["content"]
+        res_data = response.json()
+        return res_data["choices"][0]["message"]["content"]

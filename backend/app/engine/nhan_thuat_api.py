@@ -904,13 +904,15 @@ def process_nhan_thuat_analysis(scenario_text: str, scenario_type_hint: str = "g
         sparring_prompt = (
             f"Bạn đang đóng vai trò là một ĐỐI TÁC ĐÀM PHÁN / ĐỐI THỦ THƯƠNG LƯỢNG CỰC KỲ RẮN MẶT, lão luyện, sắc sảo và kiên quyết bảo vệ tối đa quyền lợi của mình trong một phiên đối kháng thực chiến đỉnh cao.\n\n"
             f"LỜI THOẠI / LẬP LUẬN CỦA NGƯỜI DÙNG: \"{scenario_text}\"\n\n"
+            f"QUY TẮC PHẢN HỒI: Khai phóng toàn diện lập luận, bóc tách tâm lý đa tầng, không giới hạn độ dài hay số câu.\n\n"
             f"NHIỆM VỤ CỦA BẠN (TRẢ LỜI BẰNG MARKDOWN CHIA LÀM 2 PHẦN CHI TIẾT):\n\n"
             f"### ⚔️ 1. ĐỐI ĐÁP PHẢN BIỆN TRỰC DIỆN (LỜI THOẠI ĐỐI KHÁNG)\n"
-            f"(Hãy cất lời thoại với thái độ sắc sảo, tự tin, xoáy thẳng vào điểm yếu, sự nôn nóng hoặc chỗ hổng vị thế trong lời nói của người dùng. Dùng lý lẽ đanh thép, bẫy neo giá hoặc chi phí cơ hội để đẩy quả bóng trách nhiệm sang người dùng).\n\n"
+            f"(Hãy cất lời thoại với thái độ sắc sảo, tự tin, xoáy thẳng vào điểm yếu, sự nôn nóng hoặc chỗ hổng vị thế trong lời nói của người dùng. Dùng lý lẽ đanh thép, bẫy neo giá hoặc chi phí cơ hội để đẩy quả bóng trách nhiệm sang người dùng. Triển khai lập luận mạch lạc, đanh thép, không hạn chế độ dài).\n\n"
             f"### 💡 2. GỢI Ý ĐÒN BẨY HÓA GIẢI & CHIẾN LƯỢC (GÓC NHÌN CỐ VẤN NHÂN THUẬT)\n"
-            f"- **Tử huyệt trong lập luận vừa rồi:** [Chỉ ra chính xác sai lầm chiến thuật hoặc sự cả nể]\n"
-            f"- **Đòn bẩy Binh pháp / Tâm lý đối trọng:** [Vận dụng Tôn Tử, Quỷ Cốc Tử, Machiavellianism hoặc Game Theory]\n"
-            f"- **Câu thoại lật ngược thế cờ (Verbatim Script):** *\"[Viết nguyên văn câu nói sắc bén nhất để người dùng nói lại ngay lập tức, tước đoạt mỏ neo và giành lại quyền kiểm soát cuộc diện]\"*"
+            f"- **Tử huyệt trong lập luận vừa rồi:** [Phân tích thấu đáo sai lầm chiến thuật, sự cả nể hoặc điểm mù nhận thức]\n"
+            f"- **Đòn bẩy Binh pháp / Tâm lý đối trọng:** [Vận dụng và giải thích tường tận nguyên lý Tôn Tử, Quỷ Cốc Tử, Machiavellianism hoặc Game Theory]\n"
+            f"- **Câu thoại lật ngược thế cờ (Verbatim Script):** *\"[Viết nguyên văn câu nói sắc bén nhất để người dùng nói lại ngay lập tức, tước đoạt mỏ neo và giành lại quyền kiểm soát cuộc diện]\"*\n"
+            f"- **Chiến lược kiểm soát thế trận tiếp theo:** [Chỉ thị tác chiến nếu đối phương tiếp tục gây sức ép]"
         )
         try:
             generated_text = syn.generate_text(sparring_prompt)

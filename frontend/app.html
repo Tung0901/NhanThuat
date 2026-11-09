@@ -6789,7 +6789,24 @@
         }
 
         try {
-            const res = await fetch('/api/v1/sparring/messages', {
+            const botMsg = document.createElement('div');
+            botMsg.className = 'message-bubble msg-assistant';
+            botMsg.innerHTML = `
+                <div class="sparring-reply-header">
+                    <strong class="sparring-reply-title">ĐỐI THỦ PHẢN ĐÒN & CỐ VẤN CHIẾN LƯỢC:</strong>
+                    <span class="sparring-reply-lens">${escapeHtml(selectedLens || 'AUTO')}</span>
+                </div>
+                <div class="sparring-reply-body"><span style="color: var(--gold-light); font-style: italic; opacity: 0.8;">Đang bóc tách tử huyệt thế trận...</span></div>
+                <div class="sparring-citations-container"></div>
+            `;
+            feed.appendChild(botMsg);
+            feed.scrollTop = feed.scrollHeight;
+
+            const streamBody = botMsg.querySelector('.sparring-reply-body');
+            const citationsContainer = botMsg.querySelector('.sparring-citations-container');
+            const lensBadge = botMsg.querySelector('.sparring-reply-lens');
+
+            const res = await fetch('/api/v1/sparring/stream', {
                 method: 'POST',
                 headers: getAuthHeaders({ 'Content-Type': 'application/json' }),
                 body: JSON.stringify({
@@ -6799,38 +6816,69 @@
                 })
             });
             if (res.status === 401) {
+                botMsg.remove();
                 openLoginModal();
                 alert('Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại.');
                 return;
             }
-            const data = await res.json();
             if (!res.ok) {
-                throw new Error(data.message || 'Không thể gửi lượt đấu.');
+                botMsg.remove();
+                throw new Error('Lỗi kết nối máy chủ (' + res.status + ')');
             }
+
+            const reader = res.body.getReader();
+            const decoder = new TextDecoder('utf-8');
+            let buffer = '';
+            let accumulatedContent = '';
+
+            while (true) {
+                const { done, value } = await reader.read();
+                if (done) break;
+                buffer += decoder.decode(value, { stream: true });
+                const lines = buffer.split('\n');
+                buffer = lines.pop();
+
+                for (const line of lines) {
+                    const trimmed = line.trim();
+                    if (!trimmed || !trimmed.startsWith('data: ')) continue;
+                    const dataStr = trimmed.slice(6).trim();
+                    if (dataStr === '[DONE]') break;
+
+                    try {
+                        const parsed = JSON.parse(dataStr);
+                        if (parsed.type === 'meta') {
+                            if (parsed.philosophy_lens && lensBadge) {
+                                lensBadge.textContent = parsed.philosophy_lens;
+                            }
+                            if (Array.isArray(parsed.citations) && parsed.citations.length && citationsContainer) {
+                                citationsContainer.innerHTML = `
+                                    <div class="sparring-citations-row">
+                                        <span class="sparring-citations-label">Căn cứ tri thức:</span>
+                                        ${parsed.citations.map(c => `<span class="sparring-citation-chip">${escapeHtml(c.id)} • ${escapeHtml(c.title)}</span>`).join('')}
+                                    </div>`;
+                            }
+                        } else if (parsed.type === 'content') {
+                            accumulatedContent += parsed.chunk;
+                            streamBody.innerHTML = formatMarkdownText(accumulatedContent);
+                            feed.scrollTop = feed.scrollHeight;
+                        } else if (parsed.type === 'error') {
+                            streamBody.innerHTML += `<div style="color: #ef4444; font-size: 12px; margin-top: 8px;">⚠️ ${escapeHtml(parsed.message)}</div>`;
+                        }
+                    } catch (err) {
+                        // ignore chunk parse errors
+                    }
+                }
+            }
+
+            if (!accumulatedContent) {
+                streamBody.innerHTML = 'Tôi chưa thấy lập luận của anh đủ sức thuyết phục.';
+            }
+
             window.NhanThuatScenario?.mark('sparring', {
                 epistemicStatus: 'simulation',
                 sourceModule: 'sparring',
                 resourceId: sparringSessionId
             });
-            const citationsHtml = Array.isArray(data.citations) && data.citations.length
-                ? `<div class="sparring-citations-row">
-                    <span class="sparring-citations-label">Căn cứ tri thức:</span>
-                    ${data.citations.map(c => `<span class="sparring-citation-chip">${escapeHtml(c.id)} • ${escapeHtml(c.title)}</span>`).join('')}
-                   </div>`
-                : '';
-
-            const botMsg = document.createElement('div');
-            botMsg.className = 'message-bubble msg-assistant';
-            botMsg.innerHTML = `
-                <div class="sparring-reply-header">
-                    <strong class="sparring-reply-title">ĐỐI THỦ PHẢN ĐÒN & CỐ VẤN CHIẾN LƯỢC:</strong>
-                    <span class="sparring-reply-lens">${escapeHtml(data.philosophy_lens || 'AUTO')}</span>
-                </div>
-                <div class="sparring-reply-body">${formatMarkdownText(data.data ? data.data.response : (data.response || 'Tôi chưa thấy lập luận của anh đủ sức thuyết phục.'))}</div>
-                ${citationsHtml}
-            `;
-            feed.appendChild(botMsg);
-            feed.scrollTop = feed.scrollHeight;
         } catch(e) {
             alert("Lỗi đấu trí: " + e.message);
         }

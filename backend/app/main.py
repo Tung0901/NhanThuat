@@ -1400,6 +1400,68 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
             self._send_json_response(200, turn_result)
             return
 
+        if path == "/api/v1/sparring/stream":
+            auth_session = self._require_case_file_session()
+            if auth_session is None:
+                return
+            session_id = payload.get("session_id")
+            message = payload.get("message") or payload.get("content", "")
+            lens = payload.get("philosophy_lens")
+            if not message:
+                self._send_json_response(400, {
+                    "status": "error",
+                    "message": "Field 'message' or 'content' is required.",
+                })
+                return
+            if session_id:
+                existing_session = db_manager.get_session(session_id)
+                if not existing_session:
+                    self._send_json_response(404, {
+                        "status": "error",
+                        "message": f"Session '{session_id}' not found.",
+                    })
+                    return
+                if not self._can_access_sparring_session(existing_session, auth_session):
+                    self._send_json_response(403, {
+                        "status": "error",
+                        "error_code": "FORBIDDEN",
+                        "message": "Forbidden: You do not have permission to write to this sparring session.",
+                    })
+                    return
+            else:
+                session = sparring_engine.start_session(
+                    title=message[:50],
+                    philosophy_lens=lens or "auto",
+                    owner_id=auth_session["user_id"],
+                )
+                session_id = session.id
+
+            self.send_response(200)
+            self.send_header("Content-Type", "text/event-stream; charset=utf-8")
+            self.send_header("Cache-Control", "no-cache")
+            self.send_header("Connection", "keep-alive")
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.end_headers()
+
+            try:
+                for event in sparring_engine.process_turn_stream(
+                    session_id=session_id,
+                    user_message=message,
+                    override_lens=lens,
+                    owner_id=auth_session["user_id"],
+                ):
+                    chunk_bytes = f"data: {json.dumps(event, ensure_ascii=False)}\n\n".encode()
+                    self.wfile.write(chunk_bytes)
+                    self.wfile.flush()
+                self.wfile.write(b"data: [DONE]\n\n")
+                self.wfile.flush()
+            except Exception as stream_err:  # noqa: BLE001
+                err_bytes = f"data: {json.dumps({'type': 'error', 'message': str(stream_err)}, ensure_ascii=False)}\n\n".encode()
+                self.wfile.write(err_bytes)
+                self.wfile.flush()
+            return
+
+
         # 0b. Operational CaseFile API: authenticated, owned, revisioned records.
         if path == "/api/v1/case-files":
             session = self._require_case_file_session()

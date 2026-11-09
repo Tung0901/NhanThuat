@@ -268,6 +268,129 @@ class SparringEngine:
             "latency_ms": retrieval_res.total_latency_ms,
         }
 
+    def process_turn_stream(
+        self,
+        session_id: str,
+        user_message: str,
+        override_lens: str | None = None,
+        owner_id: str | None = None,
+    ) -> Any:
+        """Process turn and yield chunks in real time, saving assistant message at end."""
+        session = self.db.get_session(session_id)
+        if not session:
+            raise ValueError(f"Session '{session_id}' not found.")
+        if owner_id and getattr(session, "owner_id", None) and session.owner_id != owner_id:
+            raise PermissionError(f"User '{owner_id}' cannot access session owned by '{session.owner_id}'.")
+
+        prior_messages = self.db.list_messages(session_id)
+        context_seeds = [
+            m.content for m in prior_messages if m.role == "system"
+        ]
+        session_context = " | ".join(context_seeds) or str((getattr(session, "metadata", None) or {}).get("initial_context", ""))
+        self.db.add_message(
+            session_id=session_id,
+            role="user",
+            content=user_message,
+        )
+
+        combined_query = f"{session_context} {user_message}".strip()
+        active_lens = override_lens or session.philosophy_lens
+        if active_lens == "auto":
+            if self.router is not None and hasattr(self.router, "route"):
+                route_res = self.router.route({
+                    "scenario_type": "general",
+                    "intent": combined_query,
+                    "keywords": combined_query.split(),
+                })
+                active_lens = route_res.get("primary_philosophy", "LEGALISM").upper()
+            else:
+                active_lens = default_route_philosophy(combined_query)
+
+        retrieval_res = self.retriever.retrieve(
+            query=combined_query,
+            top_k=3,
+            expand_relations=True,
+        )
+        matched_units = retrieval_res.primary_units
+        matched_unit_ids = [getattr(u, "id", getattr(u, "unit_id", "")) for u in matched_units]
+
+        citations = []
+        for u in matched_units:
+            uid = getattr(u, "id", getattr(u, "unit_id", ""))
+            raw = u.raw if hasattr(u, "raw") and u.raw else getattr(u, "raw_data", {})
+            title = str(getattr(u, "title", raw.get("title", uid)))
+            domain = str(getattr(u, "primary_domain", getattr(u, "domain", raw.get("primary_domain", ""))))
+            citations.append({"id": uid, "title": title, "domain": domain})
+
+        yield {
+            "type": "meta",
+            "session_id": session_id,
+            "philosophy_lens": active_lens,
+            "citations": citations,
+            "matched_unit_ids": matched_unit_ids,
+        }
+
+        from nhan_thuat.runtime.synthesizer import KnowledgeSynthesizer
+        syn = KnowledgeSynthesizer()
+        context_block = f"BỐI CẢNH VÁN ĐẤU: \"{session_context}\"\n" if session_context else ""
+        prompt = (
+            f"Bạn là một Đối tác đàm phán / Cố vấn cực kỳ RẮN MẶT và SẮC BÉN, đang đại diện cho lăng kính triết học: {active_lens}.\n"
+            f"{context_block}"
+            f"LỜI THOẠI / CÁCH XỬ LÝ CỦA NGƯỜI DÙNG: \"{user_message}\"\n\n"
+            f"TRI THỨC THAM KHẢO:\n"
+        )
+        for c in citations:
+            prompt += f"- [{c['id']}] {c['title']} ({c['domain']})\n"
+        prompt += (
+            "\nNHIỆM VỤ (TRẢ LỜI ĐÚNG 2 PHẦN BẰNG MARKDOWN, KHÔNG THÊM GÌ KHÁC):\n\n"
+            f"### ⚔️ 1. ĐỐI ĐÁP PHẢN BIỆN TRỰC DIỆN ({active_lens} LENS)\n"
+            "[Đóng vai đối thủ hoặc cố vấn gai góc, lão luyện. Phản biện đanh thép, bóc tách triệt để sự cả nể, ngây thơ, sơ hở vị thế hoặc bẫy tâm lý trong cách xử lý của người dùng. Khai triển lập luận sắc sảo, đánh trúng tử huyệt, phân tích rõ cái giá phải trả và thế trận bất lợi mà người dùng đang tự đẩy mình vào. Không giới hạn số câu hay độ dài, hãy phản biện sâu sắc và toàn diện.]\n\n"
+            f"### 💡 2. GỢI Ý ĐÒN BẨY HÓA GIẢI & CHIẾN LƯỢC\n"
+            "- **Sơ hở cốt lõi & Điểm mù tâm lý:** [Phân tích chi tiết chỗ hổng vị thế, bẫy nhận thức và nguyên nhân sâu xa khiến người dùng bị nắm thóp]\n"
+            "- **Căn cứ tri thức đối trọng:** [Vận dụng và giải thích sâu nguyên tắc tri thức tham khảo để làm đòn bẩy phản công]\n"
+            "- **Lời thoại lật ngược thế cờ (Verbatim Scripts):** [Cung cấp các kịch bản đối thoại sắc lẹm nguyên văn từng câu chữ để người dùng có thể nói lại ngay với đối phương, tước đoạt mỏ neo và giành lại hoàn toàn quyền chủ động thế trận]\n"
+            "- **Kịch bản ứng phó dự phòng (Plan B Contingency):** [Chỉ đạo hành động nếu đối phương tiếp tục leo thang hoặc từ chối thỏa hiệp]"
+        )
+
+        full_chunks = []
+        if syn.provider_configured:
+            try:
+                for chunk in syn.generate_stream(prompt):
+                    full_chunks.append(chunk)
+                    yield {"type": "content", "chunk": chunk}
+            except Exception as stream_err:  # noqa: BLE001
+                print(f"[SparringEngine] Stream failed, using fallback: {stream_err}")
+
+        if not full_chunks:
+            fb_text, _ = self._generate_sparring_response(
+                user_text=user_message,
+                lens=active_lens,
+                units=matched_units,
+                related_map=retrieval_res.related_units_map,
+                session_context=session_context,
+            )
+            full_chunks.append(fb_text)
+            yield {"type": "content", "chunk": fb_text}
+
+        full_response = "".join(full_chunks)
+        assistant_msg = self.db.add_message(
+            session_id=session_id,
+            role="assistant",
+            content=full_response,
+            matched_unit_ids=matched_unit_ids,
+            metadata={
+                "philosophy_lens": active_lens,
+                "latency_ms": retrieval_res.total_latency_ms,
+            },
+        )
+        yield {
+            "type": "done",
+            "session_id": session_id,
+            "assistant_message_id": assistant_msg.id,
+            "philosophy_lens": active_lens,
+            "citations": citations,
+        }
+
     def _generate_sparring_response(
         self,
         user_text: str,
@@ -301,11 +424,12 @@ class SparringEngine:
             prompt += (
                 "\nNHIỆM VỤ (TRẢ LỜI ĐÚNG 2 PHẦN BẰNG MARKDOWN, KHÔNG THÊM GÌ KHÁC):\n\n"
                 f"### ⚔️ 1. ĐỐI ĐÁP PHẢN BIỆN TRỰC DIỆN ({lens} LENS)\n"
-                "[Đóng vai đối thủ hoặc cố vấn gai góc. Phản biện thẳng thừng, chỉ ra sự cả nể, ngây thơ hoặc sai lầm trong cách xử lý của người dùng. Không dông dài, đánh trúng tim đen. Tối đa 4 câu.]\n\n"
+                "[Đóng vai đối thủ hoặc cố vấn gai góc, lão luyện. Phản biện đanh thép, bóc tách triệt để sự cả nể, ngây thơ, sơ hở vị thế hoặc bẫy tâm lý trong cách xử lý của người dùng. Khai triển lập luận sắc sảo, đánh trúng tử huyệt, phân tích rõ cái giá phải trả và thế trận bất lợi mà người dùng đang tự đẩy mình vào. Không giới hạn số câu hay độ dài, hãy phản biện sâu sắc và toàn diện.]\n\n"
                 f"### 💡 2. GỢI Ý ĐÒN BẨY HÓA GIẢI & CHIẾN LƯỢC\n"
-                "- **Sơ hở cốt lõi:** [1 câu]\n"
-                "- **Căn cứ tri thức đối trọng:** [Nhắc đến 1 nguyên tắc trong tri thức tham khảo]\n"
-                "- **Lời thoại lật ngược thế cờ:** *[Viết nguyên văn 1 câu nói sắc lẹm để người dùng nói lại với đối phương, giành lại quyền chủ động]*"
+                "- **Sơ hở cốt lõi & Điểm mù tâm lý:** [Phân tích chi tiết chỗ hổng vị thế, bẫy nhận thức và nguyên nhân sâu xa khiến người dùng bị nắm thóp]\n"
+                "- **Căn cứ tri thức đối trọng:** [Vận dụng và giải thích sâu nguyên tắc tri thức tham khảo để làm đòn bẩy phản công]\n"
+                "- **Lời thoại lật ngược thế cờ (Verbatim Scripts):** [Cung cấp các kịch bản đối thoại sắc lẹm nguyên văn từng câu chữ để người dùng có thể nói lại ngay với đối phương, tước đoạt mỏ neo và giành lại hoàn toàn quyền chủ động thế trận]\n"
+                "- **Kịch bản ứng phó dự phòng (Plan B Contingency):** [Chỉ đạo hành động nếu đối phương tiếp tục leo thang hoặc từ chối thỏa hiệp]"
             )
             full_response = syn.generate_text(prompt)
             return full_response, citations

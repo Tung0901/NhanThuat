@@ -10,6 +10,7 @@ Provides multi-round progression, God-mode intervention, and Strategic War Room 
 from __future__ import annotations
 
 import json
+import os
 import re
 import time
 import uuid
@@ -205,6 +206,9 @@ class WarRoomEngine:
         if not configs:
             return None
 
+        timeout = int(os.environ.get("AI_REQUEST_TIMEOUT", "120"))
+        max_tokens = int(os.environ.get("AI_MAX_OUTPUT_TOKENS", "8192"))
+
         for cfg in configs:
             try:
                 base_url = cfg["base_url"].rstrip("/")
@@ -222,7 +226,12 @@ class WarRoomEngine:
                     "temperature": 0.4,
                     "response_format": {"type": "json_object"} if "deepseek" in cfg["model"].lower() or "gemini" in cfg["model"].lower() or "gpt" in cfg["model"].lower() else None,
                 }
-                resp = requests.post(endpoint, headers=headers, json=body, timeout=25)
+                if max_tokens > 0:
+                    body["max_tokens"] = max_tokens
+                resp = requests.post(endpoint, headers=headers, json=body, timeout=timeout)
+                if resp.status_code == 400 and "max_tokens" in body:
+                    body.pop("max_tokens", None)
+                    resp = requests.post(endpoint, headers=headers, json=body, timeout=timeout)
                 if resp.status_code == 200:
                     data = resp.json()
                     content = data.get("choices", [{}])[0].get("message", {}).get("content", "")

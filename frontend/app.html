@@ -707,23 +707,30 @@
         }
 
         .send-action-btn {
-            background: #dfc47f;
-            border: none;
-            color: #000000;
-            font-weight: 700;
-            padding: 14px 22px;
-            border-radius: 3px;
-            font-size: 14px;
+            background: linear-gradient(180deg, rgba(212, 175, 55, 0.24) 0%, rgba(180, 140, 30, 0.10) 100%), #0c0d12;
+            border: 1px solid rgba(212, 175, 55, 0.45);
+            color: #f5e6be;
+            font-family: var(--font-display);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 12px 22px;
+            border-radius: 6px;
             display: flex;
             align-items: center;
-            gap: 6px;
-            transition: all 0.2s ease;
+            gap: 8px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 0 16px rgba(212, 175, 55, 0.10);
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .send-action-btn:hover {
+            background: linear-gradient(180deg, rgba(212, 175, 55, 0.35) 0%, rgba(180, 140, 30, 0.18) 100%), #121319;
+            border-color: rgba(212, 175, 55, 0.7);
+            color: #ffffff;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.55), 0 0 24px rgba(212, 175, 55, 0.22);
             transform: translateY(-1px);
-            background: #f0d998;
-            box-shadow: none;
         }
 
         /* Result Tabs Inside Assistant Bubble */
@@ -996,22 +1003,28 @@
         }
         .login-submit-btn {
             width: 100%;
-            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-            color: #000000;
-            border: none;
-            border-radius: 10px;
+            background: linear-gradient(180deg, rgba(212, 175, 55, 0.26) 0%, rgba(180, 140, 30, 0.12) 100%), #0c0d12;
+            border: 1px solid rgba(212, 175, 55, 0.48);
+            color: #f5e6be;
+            font-family: var(--font-display);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            border-radius: 6px;
             padding: 13px;
-            font-size: 14px;
-            font-weight: 700;
-            font-family: var(--font-sans);
             cursor: pointer !important;
-            transition: all 0.2s ease;
-            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.12);
             margin-bottom: 20px;
         }
+
         .login-submit-btn:hover {
+            background: linear-gradient(180deg, rgba(212, 175, 55, 0.38) 0%, rgba(180, 140, 30, 0.20) 100%), #121319;
+            border-color: rgba(212, 175, 55, 0.75);
+            color: #ffffff;
+            box-shadow: 0 8px 26px rgba(0, 0, 0, 0.6), 0 0 24px rgba(212, 175, 55, 0.25);
             transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.45);
         }
         .quick-access-divider {
             display: flex;
@@ -1275,16 +1288,59 @@
         }
 
         .diag-card {
-            background: var(--bg-surface);
-            border: 1px solid var(--border-subtle);
-            border-radius: 16px;
-            padding: 24px;
+            background: rgba(10, 11, 16, 0.74);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid rgba(212, 175, 55, 0.24);
+            border-radius: 12px;
+            padding: 26px 28px;
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
+            position: relative;
+        }
+
+        .diag-card-head {
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .diag-card-eyebrow {
+            font-family: var(--font-display);
+            font-size: 10.5px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: rgba(245, 230, 190, 0.65);
+            margin-bottom: 4px;
+        }
+
+        .diag-card-title {
+            font-family: var(--font-serif);
+            font-size: 17px;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+            color: #ffffff;
+            margin: 0;
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .diag-card-sub {
+            font-family: var(--font-display);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.42);
         }
 
         .diag-card h3 {
-            font-family: var(--font-display);
-            font-size: 16px;
+            font-family: var(--font-serif);
+            font-size: 17px;
             font-weight: 600;
+            letter-spacing: 0.01em;
             color: var(--gold-light);
             margin-bottom: 16px;
             display: flex;
@@ -1293,82 +1349,241 @@
         }
 
         .form-label {
-            font-size: 12.5px;
+            font-family: var(--font-display);
+            font-size: 11px;
             font-weight: 600;
-            color: var(--text-secondary);
-            margin-bottom: 6px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.55);
+            margin-bottom: 8px;
             display: block;
         }
 
         .diag-input {
             width: 100%;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid var(--border-subtle);
-            border-radius: 8px;
-            padding: 10px 14px;
+            background: rgba(6, 7, 10, 0.68);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 6px;
+            padding: 12px 16px;
             color: #ffffff;
             font-family: var(--font-sans);
             font-size: 13.5px;
-            margin-bottom: 14px;
+            margin-bottom: 16px;
             outline: none;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .diag-input:focus {
-            border-color: var(--gold-primary);
+            border-color: rgba(212, 175, 55, 0.55);
+            background: rgba(10, 11, 16, 0.90);
+            box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.12), 0 0 16px rgba(212, 175, 55, 0.08);
         }
 
         .tags-selector-group {
             display: flex;
             flex-wrap: wrap;
             gap: 7px;
-            margin-bottom: 14px;
+            margin-bottom: 16px;
         }
 
         .selectable-tag {
-            font-size: 11.5px;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid var(--border-subtle);
-            color: var(--text-secondary);
-            padding: 5px 11px;
-            border-radius: 12px;
-            transition: all 0.15s ease;
+            font-family: var(--font-sans);
+            font-size: 12px;
+            font-weight: 450;
+            background: rgba(255, 255, 255, 0.035);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: rgba(255, 255, 255, 0.72);
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+            user-select: none;
+        }
+
+        .selectable-tag:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(255, 255, 255, 0.20);
+            color: #ffffff;
+            transform: translateY(-1px);
         }
 
         .selectable-tag.selected {
-            background: rgba(245, 158, 11, 0.15);
-            border-color: var(--gold-primary);
+            background: rgba(212, 175, 55, 0.12);
+            border-color: rgba(212, 175, 55, 0.42);
+            color: #f5e6be;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25), inset 0 0 12px rgba(212, 175, 55, 0.08);
+        }
+
+        .custom-tag-add-row {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .custom-tag-input {
+            margin-bottom: 0 !important;
+            padding: 10px 14px !important;
+            font-size: 12.5px !important;
+        }
+
+        .custom-tag-btn {
+            padding: 10px 18px !important;
+            font-size: 12px !important;
+            font-family: var(--font-display) !important;
+            font-weight: 600 !important;
+            letter-spacing: 0.04em !important;
+            border-radius: 6px !important;
+            background: rgba(212, 175, 55, 0.09) !important;
+            border: 1px solid rgba(212, 175, 55, 0.28) !important;
+            color: var(--gold-light) !important;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .custom-tag-btn:hover {
+            background: rgba(212, 175, 55, 0.18) !important;
+            border-color: rgba(212, 175, 55, 0.55) !important;
+            color: #ffffff !important;
+        }
+
+        .diag-tabs-bar {
+            display: inline-flex;
+            background: rgba(10, 10, 16, 0.72);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            padding: 4px;
+            gap: 4px;
+            margin-top: 18px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .diag-header .mode-pill.diag-tab-btn {
+            background: transparent;
+            border: 1px solid transparent;
+            border-radius: 6px;
+            color: rgba(255, 255, 255, 0.65);
+            font-family: var(--font-display);
+            font-size: 12.5px;
+            font-weight: 500;
+            padding: 8px 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            white-space: nowrap;
+        }
+
+        .diag-header .mode-pill.diag-tab-btn:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .diag-header .mode-pill.diag-tab-btn.active {
+            background: rgba(212, 175, 55, 0.12);
+            border-color: rgba(212, 175, 55, 0.35);
             color: var(--gold-light);
             font-weight: 600;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+        }
+
+        .diag-tab-title {
+            letter-spacing: 0.02em;
+        }
+
+        .diag-tab-badge {
+            font-family: 'Consolas', 'Cascadia Code', monospace;
+            font-size: 10px;
+            letter-spacing: 0.04em;
+            color: rgba(245, 230, 190, 0.75);
+            background: rgba(255, 255, 255, 0.06);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .diag-cta-row {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin: 28px 0 0 0;
         }
 
         .diag-cta-btn {
-            width: 100%;
-            background: linear-gradient(135deg, #f59e0b 0%, #b45309 100%);
-            border: none;
-            color: #000000;
-            font-weight: 700;
-            font-size: 15px;
-            padding: 14px;
-            border-radius: 12px;
-            display: flex;
+            width: auto;
+            min-width: 380px;
+            max-width: 520px;
+            background: linear-gradient(180deg, rgba(212, 175, 55, 0.22) 0%, rgba(180, 140, 30, 0.08) 100%), #0c0d12;
+            border: 1px solid rgba(212, 175, 55, 0.45);
+            color: #f5e6be;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            padding: 15px 32px;
+            border-radius: 8px;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.25);
-            transition: transform 0.2s ease;
+            gap: 10px;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 0 24px rgba(212, 175, 55, 0.12);
+            cursor: pointer !important;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .diag-cta-btn:hover {
-            transform: translateY(-2px);
+            background: linear-gradient(180deg, rgba(212, 175, 55, 0.34) 0%, rgba(180, 140, 30, 0.16) 100%), #121319;
+            border-color: rgba(212, 175, 55, 0.7);
+            color: #ffffff;
+            box-shadow: 0 16px 44px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 0 32px rgba(212, 175, 55, 0.24);
+            transform: translateY(-1px);
+        }
+
+        .diag-cta-btn--team {
+            background: linear-gradient(180deg, rgba(16, 185, 129, 0.22) 0%, rgba(4, 120, 87, 0.08) 100%), #0c0d12;
+            border-color: rgba(16, 185, 129, 0.45);
+            color: #a7f3d0;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 0 24px rgba(16, 185, 129, 0.12);
+        }
+
+        .diag-cta-btn--team:hover {
+            background: linear-gradient(180deg, rgba(16, 185, 129, 0.34) 0%, rgba(4, 120, 87, 0.16) 100%), #121319;
+            border-color: rgba(16, 185, 129, 0.7);
+            color: #ffffff;
+            box-shadow: 0 16px 44px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 0 32px rgba(16, 185, 129, 0.24);
+            transform: translateY(-1px);
         }
 
         .diag-result-card {
-            background: var(--bg-surface-elevated);
-            border: 1px solid var(--border-subtle);
-            border-radius: 16px;
-            padding: 26px;
-            margin-top: 24px;
+            background: rgba(10, 11, 16, 0.88);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid rgba(212, 175, 55, 0.28);
+            border-radius: 12px;
+            padding: 28px;
+            margin-top: 28px;
             display: none;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+        }
+
+        @keyframes diagSpin {
+            to { transform: rotate(360deg); }
+        }
+
+        .diag-spinner {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            border-top-color: currentColor;
+            border-radius: 50%;
+            animation: diagSpin 0.75s linear infinite;
         }
 
         .friction-gauge-container {
@@ -4553,7 +4768,7 @@
 
                 <div class="chat-feed" id="sparring-feed" style="padding: 10px 0;">
                     <div class="message-bubble msg-assistant">
-                        <strong style="color: var(--gold-light);">🤖 ĐỐI THỦ THƯƠNG LƯỢNG SẮC BÉN (MẪU MẶC ĐỊNH):</strong>
+                        <strong style="color: var(--gold-light);">ĐỐI THỦ THƯƠNG LƯỢNG SẮC BÉN (MẪU MẶC ĐỊNH):</strong>
                         <p style="margin-top: 6px;">"Tôi đã xem báo giá và các điều khoản của công ty anh. Thẳng thắn mà nói, mức giá này quá vô lý so với mặt bằng chung. Nếu anh không giảm ngay 25%, buổi làm việc hôm nay kết thúc ở đây."</p>
                         <div style="margin-top: 8px; font-size: 11.5px; color: var(--text-muted);">
                             <em>(Anh/chị có thể phản hồi ngay bên dưới, hoặc nhập <strong>Bối cảnh thực tế của mình</strong> ở khung Thiết lập phía trên rồi bấm <strong>Khởi tạo Đối thủ</strong> để đấu trí đúng bài toán đang gặp).</em>
@@ -4563,7 +4778,7 @@
 
                 <div class="chat-input-bar" style="background: transparent; border: none; padding: 14px 0 0 0;">
                     <input type="text" class="chat-text-input" id="sparring-input" placeholder="Nhập lời thoại đối đáp hoặc phương án xử lý của bạn để đấu trí...">
-                    <button class="send-action-btn" id="sparring-send-btn">Đối đòn ⚔️</button>
+                    <button class="send-action-btn" id="sparring-send-btn">Đối đòn</button>
                 </div>
             </div>
         </section>
@@ -4584,15 +4799,18 @@
                     <p>Ứng dụng Mô hình NT-MODEL-0007, Nguyên tắc NT-PRINCIPLE-0066 & Bẫy đồng nhất NT-ANTI-PATTERN-0011 để lượng hóa ma sát nhận thức và cân bằng cấu trúc tổ chức.</p>
 
                     <!-- Sub-view Mode Switcher -->
-                    <div style="display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap;">
-                        <button class="mode-pill active" id="tab-btn-person-fit" onclick="switchDiagTab('person', this)">
-                            👤 1. Cá nhân - Vai trò (Person-Role Fit - NT-MODEL-0007)
+                    <div class="diag-tabs-bar" role="tablist">
+                        <button class="mode-pill diag-tab-btn active" id="tab-btn-person-fit" onclick="switchDiagTab('person', this)" role="tab" aria-selected="true">
+                            <span class="diag-tab-title">Cá Nhân &amp; Vai Trò</span>
+                            <span class="diag-tab-badge">NT-MODEL-0007</span>
                         </button>
-                        <button class="mode-pill" id="tab-btn-team-fit" onclick="switchDiagTab('team', this)">
-                            👥 2. Khớp Cấu Trúc Đội Ngũ (Team Structural Fit - NT-PRINCIPLE-0066)
+                        <button class="mode-pill diag-tab-btn" id="tab-btn-team-fit" onclick="switchDiagTab('team', this)" role="tab" aria-selected="false">
+                            <span class="diag-tab-title">Cấu Trúc Đội Ngũ</span>
+                            <span class="diag-tab-badge">NT-PRINCIPLE-0066</span>
                         </button>
-                        <button class="mode-pill" id="tab-btn-radar-fit" onclick="switchDiagTab('radar', this)">
-                            📡 3. Radar Kiệt Sức & Rời Bỏ (Flight Risk Radar - NT-MODEL-0008 & 0011)
+                        <button class="mode-pill diag-tab-btn" id="tab-btn-radar-fit" onclick="switchDiagTab('radar', this)" role="tab" aria-selected="false">
+                            <span class="diag-tab-title">Radar Tải &amp; Rời Bỏ</span>
+                            <span class="diag-tab-badge">NT-MODEL-0008</span>
                         </button>
                     </div>
                 </div>
@@ -4602,8 +4820,11 @@
                     <div class="diag-grid">
                         <!-- Left: Person Dispositions -->
                         <div class="diag-card">
-                            <h3 style="font-family: var(--font-display); font-size: 13.5px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gold-light);">THIÊN HƯỚNG CÁ NHÂN (DEFAULT TRAITS)</h3>
-                            <label class="form-label">Họ tên nhân sự / Ứng viên:</label>
+                            <div class="diag-card-head">
+                                <div class="diag-card-eyebrow">Hồ sơ tính cách</div>
+                                <h3 class="diag-card-title">Thiên Hướng Khởi Điểm <span class="diag-card-sub">Default Traits</span></h3>
+                            </div>
+                            <label class="form-label">Họ tên nhân sự / Ứng viên</label>
                             <input type="text" class="diag-input" id="diag-person-name" value="Nguyễn Hoàng Long" placeholder="Nhập họ tên...">
 
                             <label class="form-label">Chọn hoặc thêm các thiên hướng tính cách tiềm ẩn mặc định:</label>
@@ -4625,8 +4846,11 @@
 
                         <!-- Right: Role Demands -->
                         <div class="diag-card">
-                            <h3>KỲ VỌNG VAI TRÒ (ROLE DEMANDS)</h3>
-                            <label class="form-label">Vị trí đảm nhiệm:</label>
+                            <div class="diag-card-head">
+                                <div class="diag-card-eyebrow">Tiêu chuẩn đảm nhiệm</div>
+                                <h3 class="diag-card-title">Kỳ Vọng Vai Trò <span class="diag-card-sub">Role Demands</span></h3>
+                            </div>
+                            <label class="form-label">Vị trí đảm nhiệm</label>
                             <input type="text" class="diag-input" id="diag-role-name" value="Giám Đốc Vận Hành (COO)" placeholder="Nhập chức danh...">
 
                             <label class="form-label">Chọn hoặc thêm các yêu cầu hành vi then chốt của vị trí:</label>
@@ -4645,7 +4869,15 @@
                         </div>
                     </div>
 
-                    <button class="diag-cta-btn" id="run-diagnostic-btn">Chẩn đoán ma sát nhận thức & đưa ra phán quyết</button>
+                    <div class="diag-cta-row">
+                        <button class="diag-cta-btn" id="run-diagnostic-btn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            <span>Chẩn đoán ma sát nhận thức &amp; đưa ra phán quyết</span>
+                        </button>
+                    </div>
 
                     <!-- Diagnostic Results Area -->
                     <div class="diag-result-card" id="diag-result-card">
@@ -4692,8 +4924,11 @@
                     <div class="diag-grid">
                         <!-- Left: Incoming Candidate/Member -->
                         <div class="diag-card">
-                            <h3>NHÂN SỰ DỰ KIẾN BỔ NHIỆM</h3>
-                            <label class="form-label">Họ tên nhân sự:</label>
+                            <div class="diag-card-head">
+                                <div class="diag-card-eyebrow">Hồ sơ ứng viên</div>
+                                <h3 class="diag-card-title">Nhân Sự Dự Kiến Bổ Nhiệm <span class="diag-card-sub">Candidate</span></h3>
+                            </div>
+                            <label class="form-label">Họ tên nhân sự</label>
                             <input type="text" class="diag-input" id="team-cand-name" value="Trần Đình Trí" placeholder="Họ tên nhân sự...">
 
                             <label class="form-label">Vai trò dự kiến đảm nhiệm:</label>
@@ -4717,8 +4952,11 @@
 
                         <!-- Right: Target Team Context -->
                         <div class="diag-card">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                                <h3>ĐỘI NGŨ TIẾP NHẬN (TARGET TEAM)</h3>
+                            <div class="diag-card-head" style="display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <div class="diag-card-eyebrow">Hiện trạng bộ máy</div>
+                                    <h3 class="diag-card-title">ĐỘI NGŨ TIẾP NHẬN (TARGET TEAM)</h3>
+                                </div>
                                 <div style="display: flex; gap: 4px;">
                                     <button class="mode-pill" style="font-size: 10.5px; padding: 2px 8px;" onclick="applyTeamPreset('board')">Ban C-Level</button>
                                     <button class="mode-pill" style="font-size: 10.5px; padding: 2px 8px;" onclick="applyTeamPreset('tech')">Tech Core</button>
@@ -4748,9 +4986,17 @@
                         </div>
                     </div>
 
-                    <button class="diag-cta-btn" id="run-team-diagnostic-btn" style="background: linear-gradient(135deg, #10b981 0%, #047857 100%); box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);">
-                        🔬 Chẩn Đoán Khớp Cấu Trúc & Quét Bẫy Đồng Nhất (NT-PRINCIPLE-0066)
-                    </button>
+                    <div class="diag-cta-row">
+                        <button class="diag-cta-btn diag-cta-btn--team" id="run-team-diagnostic-btn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                            <span>Chẩn Đoán Khớp Cấu Trúc &amp; Quét Bẫy Đồng Nhất</span>
+                        </button>
+                    </div>
 
                     <!-- Team Diagnostic Results Area -->
                     <div class="diag-result-card" id="team-diag-result-card">
@@ -4810,7 +5056,7 @@
 
                             <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border-subtle); display: flex; justify-content: flex-end;">
                                 <button class="war-btn-step" id="diag-team-to-war-btn" onclick="transferTeamDiagToWarRoom()" style="width: auto; padding: 8px 16px; font-size: 12px;">
-                                    ♟️ Đưa Đội Ngũ Này Vào Sa bàn mô phỏng tình thế
+                                    Đưa Đội Ngũ Này Vào Sa Bàn Mô Phỏng
                                 </button>
                             </div>
                         </div>
@@ -4893,7 +5139,7 @@
                                 <textarea id="stream-content-input" class="war-textarea" rows="2" style="font-size: 12px; margin-bottom: 10px;" placeholder="Ví dụ: Nhóm tôi không thể chịu thêm khối lượng này, deadline tuần này là bất khả thi..."></textarea>
 
                                 <button class="send-action-btn" id="stream-submit-btn" onclick="handleStreamIngestion()" style="width: 100%; justify-content: center; padding: 9px 14px; font-size: 12px;">
-                                    🚀 Phân Tích & Cập Nhật Radar
+                                    Phân Tích & Cập Nhật Radar
                                 </button>
                             </div>
                         </div>
@@ -5553,7 +5799,7 @@
                         <textarea id="webhook-text-input" class="war-textarea" rows="3" style="font-size: 12px; margin-bottom: 14px;" placeholder="Nhập nội dung webhook..."></textarea>
 
                         <button id="webhook-submit-btn" class="send-action-btn" onclick="sendTestWebhook()" style="width: 100%; justify-content: center; padding: 10px; font-size: 13px;">
-                            🚀 Bắn Webhook & Tạo Whisper Brief Mới
+                            Kích Hoạt Webhook & Khởi Tạo Brief
                         </button>
                     </div>
                 </div>
@@ -6143,8 +6389,14 @@
 
     // --- DIAGNOSTIC LAB: TAB SWITCHER & LOGIC ---
     function switchDiagTab(tabId, btn) {
-        document.querySelectorAll('.diag-header .mode-pill').forEach(p => p.classList.remove('active'));
-        if (btn) btn.classList.add('active');
+        document.querySelectorAll('.diag-header .mode-pill').forEach(p => {
+            p.classList.remove('active');
+            p.setAttribute('aria-selected', 'false');
+        });
+        if (btn) {
+            btn.classList.add('active');
+            btn.setAttribute('aria-selected', 'true');
+        }
 
         const personView = document.getElementById('diag-subview-person');
         const teamView = document.getElementById('diag-subview-team');
@@ -6225,7 +6477,7 @@
     // Person-Role Fit Handler
     document.getElementById('run-diagnostic-btn').addEventListener('click', async () => {
         const btn = document.getElementById('run-diagnostic-btn');
-        btn.textContent = "⏳ Đang Chẩn Đoán & Tính Toán Ma Sát...";
+        btn.innerHTML = '<span class="diag-spinner"></span><span>Đang chẩn đoán &amp; tính toán ma sát...</span>';
         btn.disabled = true;
 
         const candidateName = document.getElementById('diag-person-name').value.trim() || 'Nhân sự';
@@ -6248,7 +6500,7 @@
                 })
             });
             const data = await res.json();
-            btn.textContent = "🚀 Chẩn đoán ma sát nhận thức & đưa ra phán quyết";
+            btn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>Chẩn đoán ma sát nhận thức &amp; đưa ra phán quyết</span>';
             btn.disabled = false;
 
             if (data.status === 'success') {
@@ -6285,7 +6537,7 @@
                 alert("Lỗi chẩn đoán: " + (data.message || "Không thể phân tích"));
             }
         } catch(err) {
-            btn.textContent = "🚀 Chẩn đoán ma sát nhận thức & đưa ra phán quyết";
+            btn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>Chẩn đoán ma sát nhận thức &amp; đưa ra phán quyết</span>';
             btn.disabled = false;
             alert("Lỗi kết nối máy chủ: " + err.message);
         }
@@ -6294,7 +6546,7 @@
     // Team Structural Fit Handler (NT-PRINCIPLE-0066)
     document.getElementById('run-team-diagnostic-btn').addEventListener('click', async () => {
         const btn = document.getElementById('run-team-diagnostic-btn');
-        btn.textContent = "⏳ Đang Phân Tích Khớp Cấu Trúc & Quét Bẫy Đồng Nhất...";
+        btn.innerHTML = '<span class="diag-spinner"></span><span>Đang phân tích khớp cấu trúc...</span>';
         btn.disabled = true;
 
         const candName = document.getElementById('team-cand-name').value.trim() || 'Nhân sự mới';
@@ -6325,7 +6577,7 @@
                 })
             });
             const data = await res.json();
-            btn.textContent = "🔬 Chẩn Đoán Khớp Cấu Trúc & Quét Bẫy Đồng Nhất (NT-PRINCIPLE-0066)";
+            btn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg><span>Chẩn Đoán Khớp Cấu Trúc &amp; Quét Bẫy Đồng Nhất</span>';
             btn.disabled = false;
 
             if (data.status === 'success') {
@@ -6383,7 +6635,7 @@
                 alert("Lỗi chẩn đoán cấu trúc: " + (data.message || "Không thể phân tích"));
             }
         } catch(err) {
-            btn.textContent = "🔬 Chẩn Đoán Khớp Cấu Trúc & Quét Bẫy Đồng Nhất (NT-PRINCIPLE-0066)";
+            btn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg><span>Chẩn Đoán Khớp Cấu Trúc &amp; Quét Bẫy Đồng Nhất</span>';
             btn.disabled = false;
             alert("Lỗi kết nối máy chủ: " + err.message);
         }
@@ -6549,7 +6801,7 @@
         const matched = data.matched_knowledge_units || [];
         const routing = data.philosophy_routing || {};
         const isLLM = syn.mode === 'llm';
-        const modeLabel = isLLM ? '🤖 AI tư vấn' : '🛡️ Chế độ dự phòng';
+        const modeLabel = isLLM ? 'Tham Vấn Tổng Hợp' : 'Quy Tắc Dự Phòng';
         const allText = JSON.stringify(data);
         const glossary = detectGlossaryTerms(allText);
 
@@ -9122,7 +9374,7 @@
                     <div style="font-size: 42px; opacity: 0.8;">♟️</div>
                     <div style="font-family: var(--font-display); font-size: 16px; font-weight: 700; color: #ffffff;">Thao trường giả lập sa bàn</div>
                     <p style="font-size: 12.5px; max-width: 380px; line-height: 1.6; margin: 0 auto;">
-                        Khởi tạo tình huống ở cột trái để bắt đầu mô phỏng phản ứng đa tầng giữa các AI Agent mang nhân cách, quyền lợi và toan tính riêng.
+                        Khởi tạo tình huống ở cột trái để bắt đầu mô phỏng phản ứng đa tầng giữa các thực thể tác nhân mang nhân cách, quyền lợi và toan tính riêng.
                     </p>
                 </div>
             `;
@@ -9916,7 +10168,7 @@
             alert(`Lỗi gửi webhook: ${e.message}`);
         } finally {
             btn.disabled = false;
-            btn.innerHTML = `🚀 Bắn Webhook & Tạo Whisper Brief Mới`;
+            btn.innerHTML = `Kích Hoạt Webhook & Khởi Tạo Brief`;
         }
     }
 
@@ -10203,7 +10455,7 @@
             alert(`Lỗi: ${e.message}`);
         } finally {
             btn.disabled = false;
-            btn.innerHTML = `🚀 Phân Tích & Cập Nhật Radar`;
+            btn.innerHTML = `Phân Tích & Cập Nhật Radar`;
         }
     }
 

@@ -1,0 +1,1040 @@
+{
+  "version": "1.0.0",
+  "total": 30,
+  "dossiers": [
+    {
+      "id": "NT-CASE-0001",
+      "title": "Bi Kịch Cổ Phần 50-50: Khi Hai Nhà Sáng Lập Tự Khóa Chết Doanh Nghiệp",
+      "category": "internal_power",
+      "category_label": "Quyền Lực Nội Bộ & Cổ Đông",
+      "industry": "Công nghệ & Phân phối B2B",
+      "scale": "Doanh thu 180 tỷ/năm • 120 nhân sự",
+      "keywords": [
+        "cổ đông",
+        "sáng lập",
+        "50-50",
+        "chia quyền",
+        "bế tắc",
+        "đồng sáng lập",
+        "biểu quyết"
+      ],
+      "power_map": "CEO nắm sản phẩm và vận hành nội bộ; Co-founder (CMO) nắm đại lý phân phối và quan hệ ngân hàng. Cả hai giữ đúng 50% cổ phần có quyền biểu quyết, không có cơ chế người phán quyết cuối cùng (Tie-breaker).",
+      "fatal_mistake": "Ngây thơ tin vào tình anh em thuở khởi nghiệp, thiết kế cấu trúc quyền lực đối xứng tuyệt đối (50-50) dẫn đến tê liệt quyết định khi gọi vốn vòng mới (Vi phạm NT-PRINCIPLE-0066 & NT-ANTI-PATTERN-0011).",
+      "quantified_damage": {
+        "financial_vnd": "24.500.000.000 ₫",
+        "time_lost": "14 tháng đóng băng chiến lược",
+        "personnel_impact": "Mất 4 Trưởng phòng chủ chốt, quỹ đầu tư rút cam kết giải ngân 1.5 triệu USD"
+      },
+      "surgical_strike": [
+        "Bước 1 (Khóa van pháp lý): Kích hoạt ngay điều khoản Shotgun Clause (Mua đứt hoặc Bán đứt) trong Thỏa thuận cổ đông thay vì họp hành tranh cãi vô tận.",
+        "Bước 2 (Phân hóa hậu phương): Làm việc kín với nhóm đại lý cốt lõi và ngân hàng để chuyển hợp đồng từ phụ thuộc cá nhân Co-founder sang pháp nhân công ty.",
+        "Bước 3 (Định cục một ngôi): Tái cấu trúc tỷ lệ biểu quyết về 51-49 hoặc thiết lập Cổ phần ưu đãi biểu quyết cho người chịu trách nhiệm sinh tử cuối cùng."
+      ],
+      "kairos_rhythm": "Án binh 7 ngày để kiểm toán toàn bộ hợp đồng đại lý và dòng tiền mặt, sau đó đặt phương án Mua/Bán lên bàn với thời hạn quyết định đúng 48 giờ.",
+      "cited_units": [
+        "NT-PRINCIPLE-0066",
+        "NT-ANTI-PATTERN-0011",
+        "NT-LAW-0005"
+      ]
+    },
+    {
+      "id": "NT-CASE-0002",
+      "title": "Phó Tướng Cậy Công Tạo Phản: Đòn Rút Củi Đáy Nồi Trước Giờ Tối Hậu Thư",
+      "category": "internal_power",
+      "category_label": "Quyền Lực Nội Bộ & Cổ Đông",
+      "industry": "Chuỗi Bán Lẻ & FMCG",
+      "scale": "Doanh thu 420 tỷ/năm • 350 nhân sự",
+      "keywords": [
+        "phó tướng",
+        "giám đốc kinh doanh",
+        "công thần",
+        "tạo phản",
+        "kéo quân",
+        "khách hàng ruột",
+        "sa thải"
+      ],
+      "power_map": "Giám đốc Kinh doanh (CCO) nắm 65% doanh số toàn công ty, tự tuyển dụng toàn bộ 5 Trưởng vùng và độc quyền giữ liên lạc với 20 đại lý cấp 1, bắt đầu đòi tăng thưởng vượt khung và dọa nghỉ đồng loạt vào đúng quý cao điểm Tết.",
+      "fatal_mistake": "Trao độc quyền thông tin khách hàng và quyền nhân sự tuyệt đối cho một cá nhân mà không cài cơ chế chia tách quyền lực (Thế chân vạc) và kiểm soát chéo.",
+      "quantified_damage": {
+        "financial_vnd": "18.200.000.000 ₫",
+        "time_lost": "6 tháng sụt giảm 40% doanh số miền Nam",
+        "personnel_impact": "12 nhân viên kinh doanh nòng cốt bị kéo sang đối thủ cạnh tranh trực tiếp"
+      },
+      "surgical_strike": [
+        "Bước 1 (Vỗ về chiến thuật - Hư tĩnh): Tạm thời chấp thuận xem xét đề xuất của CCO để đối phương mất cảnh giác, tuyệt đối không tranh cãi trực diện lúc chưa có phương án thay thế.",
+        "Bước 2 (Chia cắt địa bàn): Thành lập bộ phận Chăm sóc Khách hàng Trọng điểm (Key Account Care) trực thuộc CEO dưới danh nghĩa 'nâng chuẩn dịch vụ VIP' để thu hồi toàn bộ dữ liệu gốc của 20 đại lý trong 21 ngày.",
+        "Bước 3 (Trảm tướng giữ quân): Làm việc riêng với 2 Trưởng vùng có năng lực nhất, trao quyền Giám đốc vùng độc lập kèm cơ chế thưởng trực tiếp, sau đó miễn nhiệm CCO trong 1 buổi sáng và khóa toàn bộ quyền truy cập CRM."
+      ],
+      "kairos_rhythm": "Nhẫn nhịn tuyệt đối trong 21 ngày thu thập dữ liệu đại lý; khi đã nắm 80% đầu mối khách hàng, ra quyết định nhân sự chớp nhoáng trong vòng 2 giờ.",
+      "cited_units": [
+        "NT-MODEL-0007",
+        "NT-LAW-0034",
+        "NT-ANTI-PATTERN-0001"
+      ]
+    },
+    {
+      "id": "NT-CASE-0003",
+      "title": "Thâu Tóm Ngược Từ Nhà Đầu Tư Chiến Lược: Chiếc Bẫy Cam Kết KPI Bất Khả Thi",
+      "category": "internal_power",
+      "category_label": "Quyền Lực Nội Bộ & Cổ Đông",
+      "industry": "Sản xuất Công nghiệp & Vật liệu",
+      "scale": "Vốn điều lệ 300 tỷ • 500 nhân sự",
+      "keywords": [
+        "nhà đầu tư",
+        "thâu tóm",
+        "cổ đông ngoại",
+        "KPI",
+        "pha loãng",
+        "mất quyền kiểm soát",
+        "hợp đồng đầu tư"
+      ],
+      "power_map": "Chủ tịch sáng lập cần vốn mở rộng nhà máy số 2 nên ký điều khoản Ratchet (Điều chỉnh tỷ lệ sở hữu nếu không đạt EBITDA). Nhà đầu tư nắm quyền phủ quyết ngân sách vận hành (Veto Right).",
+      "fatal_mistake": "Ký cam kết lợi nhuận cứng (EBITDA) nhưng lại trao quyền phê duyệt chi phí маркеting và mua sắm nguyên liệu cho đại diện Nhà đầu tư — tự trói tay mình trước khi bước vào đường đua.",
+      "quantified_damage": {
+        "financial_vnd": "65.000.000.000 ₫",
+        "time_lost": "24 tháng tranh chấp pháp lý tại VIAC",
+        "personnel_impact": "Nhà sáng lập bị pha loãng từ 55% xuống 28%, mất ghế Tổng Giám đốc"
+      },
+      "surgical_strike": [
+        "Bước 1 (Lập hồ sơ vi phạm nghĩa vụ phối hợp): Ghi nhận toàn bộ các lần đại diện Nhà đầu tư trì hoãn phê duyệt ngân sách làm ảnh hưởng trực tiếp đến tiến độ kinh doanh.",
+        "Bước 2 (Khóa quyền điều hành thực tế): Giữ chặt con dấu pháp nhân, quyền bổ nhiệm Kế toán trưởng và quan hệ với các nhà cung ứng chiến lược.",
+        "Bước 3 (Đàm phán tái cơ cấu nợ): Dùng nguồn tín dụng ngân hàng thương mại để mua lại (Buy-back) phần cổ phần ưu đãi của quỹ trước thời điểm chốt kiểm toán năm."
+      ],
+      "kairos_rhythm": "Không đợi đến kỳ kiểm toán cuối năm; phản công ngay tại quý 3 khi phát hiện động thái cố tình ngâm ngân sách của cổ đông ngoại.",
+      "cited_units": [
+        "NT-LAW-0005",
+        "NT-PRINCIPLE-0067",
+        "NT-ANTI-PATTERN-0011"
+      ]
+    },
+    {
+      "id": "NT-CASE-0004",
+      "title": "Cú Đâm Sau Lưng Của Đội Ngũ R&D: Sao Chép Lõi Công Nghệ Lập Công Ty Sân Sau",
+      "category": "internal_power",
+      "category_label": "Quyền Lực Nội Bộ & Cổ Đông",
+      "industry": "Phần mềm Doanh nghiệp & AI",
+      "scale": "Doanh thu 95 tỷ/năm • 85 kỹ sư",
+      "keywords": [
+        "R&D",
+        "CTO",
+        "công nghệ",
+        "sân sau",
+        "đánh cắp mã nguồn",
+        "bảo mật",
+        "nhân sự cốt lõi"
+      ],
+      "power_map": "CTO và 4 kỹ sư trưởng nắm toàn bộ kiến trúc hệ thống, không viết tài liệu kỹ thuật đầy đủ, âm thầm lập công ty riêng chào bán giải pháp tương tự với giá rẻ hơn 40%.",
+      "fatal_mistake": "Quản trị bằng niềm tin cảm tính, bỏ qua kiểm toán mã nguồn (Code Audit) và không phân mảnh quyền truy cập kho dữ liệu lõi (Single Point of Knowledge Failure).",
+      "quantified_damage": {
+        "financial_vnd": "14.800.000.000 ₫",
+        "time_lost": "9 tháng xây dựng lại đội ngũ kỹ thuật",
+        "personnel_impact": "Đánh mất 3 hợp đồng khách hàng lớn trị giá 9 tỷ đồng"
+      },
+      "surgical_strike": [
+        "Bước 1 (Thu thập bằng chứng số bí mật): Thuê đơn vị pháp y kỹ thuật số độc lập trích xuất nhật ký truy cập (Access Logs) và vi phạm NDA dưới sự chứng kiến của Thừa phát lại.",
+        "Bước 2 (Cài cắm lớp kế cận): Đưa đội ngũ kiểm thử và kiến trúc sư độc lập vào rà soát, đóng gói toàn bộ hệ thống CI/CD và khóa khóa bảo mật (Master Keys).",
+        "Bước 3 (Tối hậu thư hình sự & dân sự): Đặt hồ sơ vi phạm sở hữu trí tuệ lên bàn, buộc ký cam kết bồi thường và chấm dứt hoạt động công ty sân sau trong vòng 24 giờ."
+      ],
+      "kairos_rhythm": "Tuyệt đối bí mật trong 14 ngày thu thập vi bằng; không đánh động cho đến khi đã đổi xong toàn bộ quyền quản trị máy chủ gốc.",
+      "cited_units": [
+        "NT-ANTI-PATTERN-0001",
+        "NT-MODEL-0008",
+        "NT-LAW-0034"
+      ]
+    },
+    {
+      "id": "NT-CASE-0005",
+      "title": "Xung Đột Giữa Công Thần Khai Quốc Và Tướng Tài Mới Tuyển Từ Tập Đoàn Lớn",
+      "category": "internal_power",
+      "category_label": "Quyền Lực Nội Bộ & Cổ Đông",
+      "industry": "Dược phẩm & Thiết bị Y tế",
+      "scale": "Doanh thu 600 tỷ/năm • 450 nhân sự",
+      "keywords": [
+        "công thần",
+        "nhân sự mới",
+        "COO",
+        "ma sát",
+        "tẩy chay",
+        "văn hóa",
+        "quy trình"
+      ],
+      "power_map": "CEO tuyển COO từ tập đoàn đa quốc gia về chuẩn hóa quy trình ERP. Nhóm 6 Giám đốc bộ phận kỳ cựu (đi lên từ thuở công ty nhỏ) ngấm ngầm bất hợp tác, giữ thông tin để làm COO mới thất bại.",
+      "fatal_mistake": "Đưa tướng mới về làm 'cách mạng toàn diện' ngay lập tức trên lãnh địa của nhóm công thần mà không phân định ranh giới quyền hạn (Lễ định phần) và thiếu lộ trình chuyển pha.",
+      "quantified_damage": {
+        "financial_vnd": "8.900.000.000 ₫",
+        "time_lost": "8 tháng đình trệ dự án chuyển đổi số",
+        "personnel_impact": "COO mới xin nghỉ sau 5 tháng, chi phí tuyển dụng và đền bù mất 1.8 tỷ"
+      },
+      "surgical_strike": [
+        "Bước 1 (Khoanh vùng chiến trường thử nghiệm): Không cho COO mới đụng vào toàn bộ hệ thống cũ ngay; giao trọn quyền 1 mảng kinh doanh mới để chứng minh năng lực bằng con số thực.",
+        "Bước 2 (Gắn lợi ích công thần vào hệ thống mới): Thiết kế lại cơ chế thưởng của nhóm kỳ cựu dựa trên mức độ chuẩn hóa dữ liệu và bàn giao quy trình.",
+        "Bước 3 (Răn đe có chọn lọc): Xử lý kỷ luật công khai 1 trường hợp cố tình giấu số liệu làm chậm đơn hàng để xác lập uy quyền thực thi cho bộ máy mới."
+      ],
+      "kairos_rhythm": "90 ngày đầu chỉ quan sát và thắng gọn ở 1 dự án nhỏ; tháng thứ 4 mới mở rộng quy chuẩn ra toàn tập đoàn.",
+      "cited_units": [
+        "NT-MODEL-0007",
+        "NT-PRINCIPLE-0066",
+        "NT-LAW-0042"
+      ]
+    },
+    {
+      "id": "NT-CASE-0006",
+      "title": "Bẫy Đồng Nhất Trong Ban Điều Hành: Khi 5 Phó Tổng Cùng Gật Đầu Đưa Công Ty Vào Chỗ Chết",
+      "category": "internal_power",
+      "category_label": "Quyền Lực Nội Bộ & Cổ Đông",
+      "industry": "Bất động sản & Nghỉ dưỡng",
+      "scale": "Tổng tài sản 1.500 tỷ • 280 nhân sự",
+      "keywords": [
+        "bẫy đồng nhất",
+        "groupthink",
+        "ban điều hành",
+        "đầu tư sai",
+        "điểm mù",
+        "phản biện"
+      ],
+      "power_map": "Chủ tịch có cá tính áp đảo, xung quanh là 5 Phó Tổng Giám đốc đều xuất thân từ bộ phận bán hàng, ưa mạo hiểm, luôn đồng thuận mở rộng quỹ đất bằng đòn bẩy nợ ngắn hạn.",
+      "fatal_mistake": "Tuyển dụng và đề bạt những người có cùng mẫu hình nhận thức với lãnh đạo (Homogeneity Trap - NT-ANTI-PATTERN-0011), triệt tiêu hoàn toàn tiếng nói phản biện tài chính và quản trị rủi ro.",
+      "quantified_damage": {
+        "financial_vnd": "140.000.000.000 ₫",
+        "time_lost": "3 năm cơ cấu lại nợ trái phiếu và ngân hàng",
+        "personnel_impact": "Cắt giảm 60% nhân sự toàn hệ thống để sinh tồn"
+      },
+      "surgical_strike": [
+        "Bước 1 (Bổ nhiệm vai trò Phản biện Định chế - Red Team): Đưa Giám đốc Quản trị Rủi ro & Pháp chế có quyền phủ quyết kỹ thuật độc lập vào mọi quyết định đầu tư trên 20 tỷ.",
+        "Bước 2 (Tách cuộc họp thẩm định): Cấm Chủ tịch phát biểu quan điểm trước trong các phiên họp duyệt dự án để tránh hiệu ứng mỏ neo tâm lý.",
+        "Bước 3 (Bắt buộc kịch bản bi quan): Mọi tờ trình đầu tư chỉ được thông qua khi trả lời được câu hỏi: 'Nếu thanh khoản thị trường đóng băng 18 tháng, dòng tiền trả lãi lấy từ đâu?'."
+      ],
+      "kairos_rhythm": "Cài đặt chốt chặn phản biện ngay khi thị trường đang hưng phấn nhất (Quẻ Càn hào Thượng Cửu - Kháng long hữu hối).",
+      "cited_units": [
+        "NT-ANTI-PATTERN-0011",
+        "NT-LAW-0042",
+        "NT-PRINCIPLE-0066"
+      ]
+    },
+    {
+      "id": "NT-CASE-0007",
+      "title": "Cuộc Chuyển Giao Thế Hệ Đẫm Nước Mắt: Thế Tử Tiếp Quản Và Sự Phản Kháng Ngầm Của Cận Thần",
+      "category": "internal_power",
+      "category_label": "Quyền Lực Nội Bộ & Cổ Đông",
+      "industry": "Sản xuất Nhựa & Bao bì Xuất khẩu",
+      "scale": "Doanh thu 850 tỷ/năm • 700 công nhân viên",
+      "keywords": [
+        "kế nghiệp",
+        "gia đình",
+        "F2",
+        "chuyển giao",
+        "cận thần",
+        "cũ mới",
+        "uy tín"
+      ],
+      "power_map": "Chủ tịch sáng lập (62 tuổi) rút lui, giao ghế Tổng Giám đốc cho con trai đi du học về (28 tuổi). Dàn Giám đốc nhà máy và Kế toán trưởng gắn bó 20 năm bề ngoài vâng dạ nhưng thực tế vô hiệu hóa mọi chỉ đạo của CEO trẻ.",
+      "fatal_mistake": "Trao danh vị (Danh) nhưng không trao thực quyền kiểm soát dòng tiền và nhân sự (Thực), đồng thời người cha vẫn can thiệp trực tiếp khi cấp dưới vượt cấp báo cáo.",
+      "quantified_damage": {
+        "financial_vnd": "19.500.000.000 ₫",
+        "time_lost": "18 tháng hỗn loạn hai luồng mệnh lệnh",
+        "personnel_impact": "Trễ 11 lô hàng xuất khẩu châu Âu do đùn đẩy trách nhiệm giữa các khối"
+      },
+      "surgical_strike": [
+        "Bước 1 (Chặn đứng kênh báo cáo vượt cấp): Chủ tịch tuyên bố công khai nguyên tắc 'Một cửa duy nhất' — mọi báo cáo gửi thẳng cho Chủ tịch mà không qua CEO sẽ bị trả lại ngay lập tức.",
+        "Bước 2 (Lập chiến công đầu bằng bài toán đau nhất): CEO trẻ không sửa quy trình vụn vặt mà trực tiếp giải quyết bài toán giảm tỷ lệ phế phẩm nhà máy từ 6.5% xuống 3.2%, dùng tiền tiết kiệm đó thưởng nóng cho quản đốc.",
+        "Bước 3 (An trí công thần): Chuyển 2 vị trí cận thần lớn tuổi nhất lên Hội đồng Cố vấn với đãi ngộ danh예 cao nhưng rút khỏi quyền điều hành trực tiếp hàng ngày."
+      ],
+      "kairos_rhythm": "6 tháng đầu đi cùng Chủ tịch để nắm mạch ngầm; tháng thứ 7 cắt đứt luồng báo cáo kép và xác lập kỷ luật một đầu mối.",
+      "cited_units": [
+        "NT-MODEL-0007",
+        "NT-LAW-0005",
+        "NT-PRINCIPLE-0067"
+      ]
+    },
+    {
+      "id": "NT-CASE-0008",
+      "title": "Liên Minh Ma Quỷ Giữa Mua Hàng Và Kho Vận: Giải Phẫu Đường Dây Rút Ruột 3 Năm Không Bị Phát Hiện",
+      "category": "internal_power",
+      "category_label": "Quyền Lực Nội Bộ & Cổ Đông",
+      "industry": "Chuỗi Nhà Hàng & Thực Phẩm (F&B)",
+      "scale": "45 cửa hàng • Doanh thu 520 tỷ/năm",
+      "keywords": [
+        "mua hàng",
+        "thu mua",
+        "tham ô",
+        "rút ruột",
+        "thông đồng",
+        "kiểm soát nội bộ",
+        "hoa hồng"
+      ],
+      "power_map": "Trưởng phòng Thu mua và Trưởng bộ phận Kho trung tâm là chỗ thân tình, cùng thông đồng với 3 nhà cung cấp thực phẩm tươi sống để kê khống hao hụt và nhận chiết khấu ngầm 8%.",
+      "fatal_mistake": "Đạo đức hóa quản trị ('tin tưởng người nhà') thay vì thiết kế cơ chế bất khả thông đồng: Để bộ phận chọn nhà cung cấp, bộ phận nghiệm thu số lượng và bộ phận duyệt thanh toán nằm chung một nhóm lợi ích.",
+      "quantified_damage": {
+        "financial_vnd": "27.600.000.000 ₫",
+        "time_lost": "36 tháng thất thoát biên lợi nhuận ròng",
+        "personnel_impact": "Khởi tố 2 cá nhân, thay máu toàn bộ phòng Mua hàng và Kho"
+      },
+      "surgical_strike": [
+        "Bước 1 (Đấu thầu mù & Khảo giá độc lập): Cử nhóm kiểm soát độc lập đóng giả khách hàng mới lấy báo giá thị trường thực tế để lập hồ sơ chênh lệch giá.",
+        "Bước 2 (Luân chuyển chéo bất ngờ): Phát lệnh điều chuyển vị trí kiểm kho và kiểm toán định kỳ vào sáng thứ Hai đầu tháng mà không báo trước.",
+        "Bước 3 (Phân hóa tội trạng - Tù nhân tiến thoái lưỡng nan): Làm việc riêng từng người trong cùng một thời điểm ở hai phòng khác nhau, ai khai báo và khắc phục trước được miễn truy cứu hình sự."
+      ],
+      "kairos_rhythm": "Âm thầm đối chiếu hóa đơn 60 ngày; khi ra đòn phải tách biệt hai đối tượng trong cùng một giờ để chặn khả năng thông cung.",
+      "cited_units": [
+        "NT-ANTI-PATTERN-0002",
+        "NT-LAW-0005",
+        "NT-PRINCIPLE-0067"
+      ]
+    },
+    {
+      "id": "NT-CASE-0009",
+      "title": "Đế Chế Tự Trị Của Giám Đốc Chi Nhánh: Khi Tỉnh Xa Không Nghe Lệnh Triều Đình",
+      "category": "internal_power",
+      "category_label": "Quyền Lực Nội Bộ & Cổ Đông",
+      "industry": "Vận tải Logistics & Kho bãi",
+      "scale": "12 chi nhánh toàn quốc • 650 nhân sự",
+      "keywords": [
+        "chi nhánh",
+        "phân quyền",
+        "tự trị",
+        "chống lệnh",
+        "báo cáo láo",
+        "địa phương"
+      ],
+      "power_map": "Giám đốc chi nhánh miền Trung nắm toàn bộ quan hệ cảng biển, đội xe địa phương và khách hàng khu vực; thường xuyên báo cáo lỗ giả tạo để giữ lại dòng tiền và từ chối áp dụng phần mềm điều vận tập trung của Hội sở.",
+      "fatal_mistake": "Phân quyền vận hành nhưng không nắm giữ 3 mạch máu: Tài khoản ngân hàng tập trung (Cash Pooling), Hệ thống điều độ đơn hàng (Central Dispatch) và Quyền bổ nhiệm Kế toán chi nhánh.",
+      "quantified_damage": {
+        "financial_vnd": "11.400.000.000 ₫",
+        "time_lost": "12 tháng lệch số liệu tồn kho và công nợ",
+        "personnel_impact": "Mất khả năng điều phối xe liên vùng trong mùa cao điểm"
+      },
+      "surgical_strike": [
+        "Bước 1 (Thu quyền tài chính về Trung ương): Chuyển toàn bộ tài khoản thu chi của chi nhánh về tài khoản định danh tự động quét số dư (Zero-Balance Account) về Hội sở cuối mỗi ngày.",
+        "Bước 2 (Bổ nhiệm Kế toán trưởng ngành dọc): Kế toán chi nhánh do Giám đốc Tài chính Tập đoàn bổ nhiệm, trả lương và đánh giá, độc lập hoàn toàn với Giám đốc chi nhánh.",
+        "Bước 3 (Cắt nhỏ địa bàn): Chia vùng miền Trung thành Bắc Trung Bộ và Nam Trung Bộ để tạo thế cạnh tranh hiệu suất trực tiếp giữa 2 Giám đốc vùng."
+      ],
+      "kairos_rhythm": "Khóa mạch tài chính và kế toán trước 30 ngày rồi mới ban hành quyết định chia tách vùng địa lý.",
+      "cited_units": [
+        "NT-LAW-0005",
+        "NT-MODEL-0009",
+        "NT-PRINCIPLE-0066"
+      ]
+    },
+    {
+      "id": "NT-CASE-0010",
+      "title": "Cơn Ác Mộng Tuyển Nhầm Ngôi Sao: Đặt Kẻ Săn Mồi Độc Lập Vào Ghế Quản Trị Hệ Thống",
+      "category": "internal_power",
+      "category_label": "Quyền Lực Nội Bộ & Cổ Đông",
+      "industry": "Tài chính & Bảo hiểm Doanh nghiệp",
+      "scale": "Doanh thu 310 tỷ/năm • 200 nhân sự",
+      "keywords": [
+        "bổ nhiệm sai",
+        "ngôi sao",
+        "sales giỏi",
+        "quản lý kém",
+        "ma sát nhận thức",
+        "nghỉ việc"
+      ],
+      "power_map": "Đề bạt Best Seller số 1 công ty (mang về 30% doanh số cá nhân, tính cách tự do, ghét giấy tờ, cực kỳ hiếu thắng) lên làm Phó Tổng Giám đốc Vận hành phụ trách 120 nhân sự và quy trình tuân thủ.",
+      "fatal_mistake": "Nhầm lẫn giữa Năng lực Chuyên môn Cá nhân và Năng lực Kiến tạo Hệ thống (Vi phạm nghiêm trọng NT-MODEL-0007: Person-Role Fit) — vừa mất một chiến binh bán hàng xuất sắc, vừa có một nhà quản lý thảm họa.",
+      "quantified_damage": {
+        "financial_vnd": "9.300.000.000 ₫",
+        "time_lost": "7 tháng rối loạn vận hành nội bộ",
+        "personnel_impact": "18 nhân viên vận hành xin nghỉ vì áp lực cảm tính, bản thân ngôi sao cũng kiệt sức rời công ty"
+      },
+      "surgical_strike": [
+        "Bước 1 (Đo lường ma sát nhận thức trước bổ nhiệm): Đánh giá chỉ số Cognitive Friction — nếu lệch pha trên 65%, tuyệt đối không giao ghế vận hành quy trình.",
+        "Bước 2 (Thiết kế ngạch đãi ngộ Chuyên gia Độc lập - Dual Career Track): Phong hàm 'Giám đốc Phát triển Khách hàng Chiến lược' với thu nhập tương đương Phó Tổng nhưng không phải quản lý hành chính.",
+        "Bước 3 (Cơ chế cặp bài trùng bù trừ): Ghép 1 Quản lý Vận hành chi tiết đi kèm hỗ trợ hậu cần để ngôi sao tập trung 100% thời gian săn hợp đồng lớn."
+      ],
+      "kairos_rhythm": "Can thiệp tái định vị vai trò ngay trong 30 ngày đầu khi xuất hiện dấu hiệu kiệt sức nhận thức và xung đột quy trình.",
+      "cited_units": [
+        "NT-MODEL-0007",
+        "NT-ANTI-PATTERN-0002",
+        "NT-LAW-0034"
+      ]
+    },
+    {
+      "id": "NT-CASE-0011",
+      "title": "Đêm Trắng Tại Đại Công Trường: Hóa Giải 200 Công Nhân Đình Công Chặn Cổng Trước Ngày Bàn Giao",
+      "category": "field_crisis",
+      "category_label": "Khủng Hoảng Hiện Trường & Dự Án",
+      "industry": "Xây dựng Công nghiệp & Hạ tầng",
+      "scale": "Gói thầu 450 tỷ • 200 công nhân hiện trường",
+      "keywords": [
+        "đình công",
+        "công trường",
+        "công nhân",
+        "chặn cổng",
+        "trễ lương",
+        "thầu phụ",
+        "bạo động"
+      ],
+      "power_map": "Nhà thầu phụ cốt thép bị hụt dòng tiền nên nợ lương công nhân 2 tháng. 200 công nhân kéo ra chặn cổng công trường lúc 6h sáng, không cho xe bê tông của Tổng thầu vào đổ sàn, trong khi hạn phạt hợp đồng của Chủ đầu tư là 500 triệu/ngày.",
+      "fatal_mistake": "Cử quản lý an ninh ra đôi co, dọa gọi công an khi đám đông đang bị kích động thần kinh (Hạch hạnh nhân bùng nổ), khiến đám đông càng đoàn kết chống đối quyết liệt hơn.",
+      "quantified_damage": {
+        "financial_vnd": "6.800.000.000 ₫",
+        "time_lost": "9 ngày tê liệt toàn bộ mặt bằng thi công",
+        "personnel_impact": "Hư hỏng 180m3 bê tông thương phẩm, bị Chủ đầu tư phạt vi phạm tiến độ"
+      },
+      "surgical_strike": [
+        "Bước 1 (Hạ nhiệt hạch hạnh nhân - FBI Tactical Empathy): Giám đốc Dự án trực tiếp xuống hiện trường, dùng giọng trầm tĩnh xác nhận ngay: 'Anh em làm việc dưới nắng mưa 2 tháng chưa nhận được đồng lương nào gửi về cho vợ con là hoàn toàn bất công. Tôi ở đây để bảo vệ tiền công của anh em'.",
+        "Bước 2 (Chia tách thủ lĩnh khỏi đám đông): Mời 5 tổ trưởng đại diện vào phòng họp có điều hòa, nước uống để lập danh sách chấm công thực tế, đồng thời yêu cầu mở cổng cho xe bê tông vào để giữ an toàn kết cấu công trình.",
+        "Bước 3 (Cưỡng chế tài chính thầu phụ): Phong tỏa ngay khoản tiền thanh toán đợt 4 và tiền bảo lãnh của thầu phụ; Tổng thầu chi trả trực tiếp 70% lương tận tay từng công nhân theo danh sách ký nhận và cấn trừ thẳng vào công nợ thầu phụ."
+      ],
+      "kairos_rhythm": "Hạ nhiệt đám đông trong 15 phút đầu tiên; tách tổ trưởng vào bàn đàm phán trong 30 phút tiếp theo; giải ngân trực tiếp trước 14h00 chiều cùng ngày.",
+      "cited_units": [
+        "NT-LAW-0005",
+        "NT-ANTI-PATTERN-0002",
+        "NT-MODEL-0008"
+      ]
+    },
+    {
+      "id": "NT-CASE-0012",
+      "title": "Nhà Thầu Phụ Độc Quyền Găm Tiến Độ Đòi Tăng Giá 30% Giữa Đường Găng Dự Án",
+      "category": "field_crisis",
+      "category_label": "Khủng Hoảng Hiện Trường & Dự Án",
+      "industry": "Cơ điện (MEP) & Tòa nhà Thương mại",
+      "scale": "Giá trị hợp đồng 85 tỷ • Tiến độ 12 tháng",
+      "keywords": [
+        "thầu phụ",
+        "ép giá",
+        "chậm tiến độ",
+        "đường găng",
+        "vật tư",
+        "phạt hợp đồng",
+        "schelling"
+      ],
+      "power_map": "Nhà thầu phụ lắp đặt hệ thống lạnh trung tâm (Chiller) thấy dự án còn 45 ngày là phải nghiệm thu PCCC nên cố tình rút bớt thợ, viện cớ giá đồng và thiết bị tăng để đòi ký phụ lục tăng giá 25%, nếu không sẽ dừng thi công.",
+      "fatal_mistake": "Phụ thuộc 100% vào một nhà thầu duy nhất cho toàn bộ các tầng mà không có đơn vị dự phòng (Plan B) và giải ngân tạm ứng quá sớm khiến tỷ lệ tiền giữ lại thấp hơn chi phí chuyển đổi.",
+      "quantified_damage": {
+        "financial_vnd": "12.400.000.000 ₫",
+        "time_lost": "45 ngày trễ hạn khai trương trung tâm thương mại",
+        "personnel_impact": "Phải chấp nhận nhượng bộ bồi thêm 9 tỷ đồng trong thế bị ép cổ"
+      },
+      "surgical_strike": [
+        "Bước 1 (Chốt sự kiện pháp lý tại hiện trường): Không tranh cãi qua điện thoại; lập ngay Biên bản hiện trường có chữ ký Tư vấn giám sát và hình ảnh ghi nhận số lượng công nhân thực tế thiếu hụt so với biểu đồ nhân lực.",
+        "Bước 2 (Chuẩn bị lực lượng thay thế ngầm): Trong vòng 48 giờ, ký thỏa thuận nguyên tắc với nhà thầu MEP dự phòng B sẵn sàng tiếp quản thi công phần việc còn lại.",
+        "Bước 3 (Ra tối hậu thư Schelling có mốc giờ tử): Phát thông báo pháp lý: 'Đúng 17h00 ngày mai, nếu không đủ 45 thợ có mặt tại công trường, hợp đồng tự động chấm dứt một phần, bảo lãnh thực hiện hợp đồng 8.5 tỷ bị thu hồi ngay lập tức và đơn vị B sẽ vào mặt bằng từ 07h00 sáng hôm sau, mọi chi phí chênh lệch trừ vào quyết toán'."
+      ],
+      "kairos_rhythm": "Âm thầm chốt xong nhà thầu B trong 48 giờ trước khi tung tối hậu thư; thời hạn Schelling chỉ cho phép đúng 24 giờ để đối phương không kịp trở tay.",
+      "cited_units": [
+        "NT-LAW-0005",
+        "NT-PRINCIPLE-0067",
+        "NT-MODEL-0009"
+      ]
+    },
+    {
+      "id": "NT-CASE-0013",
+      "title": "Đứt Gãy Chuỗi Cung Ứng Vật Tư Chiến Lược: Cuộc Đua Giành Nguồn Hàng Khi Thị Trường Khan Hiếm",
+      "category": "field_crisis",
+      "category_label": "Khủng Hoảng Hiện Trường & Dự Án",
+      "industry": "Hạ tầng Giao thông & Cầu đường",
+      "scale": "Dự án 1.200 tỷ • 3 mũi thi công liên tục",
+      "keywords": [
+        "vật tư",
+        "cung ứng",
+        "khan hiếm",
+        "nhà cung cấp",
+        "trễ hàng",
+        "thép",
+        "bê tông"
+      ],
+      "power_map": "Đợt biến động giá thép và khan hiếm cát san lấp khiến nhà cung cấp ưu tiên giao hàng cho các dự án trả tiền mặt giá cao bên ngoài, bỏ mặc hợp đồng đã ký với công trường ta.",
+      "fatal_mistake": "Chỉ dùng nhân viên mua hàng gọi điện thúc giục cảm tính ('Anh cố gắng giúp bên em') mà không kích hoạt đòn bẩy chế tài kết hợp cơ chế thanh toán linh hoạt theo Định lý Động lực Nhà cung cấp (NT-LAW-0005).",
+      "quantified_damage": {
+        "financial_vnd": "15.600.000.000 ₫",
+        "time_lost": "28 ngày máy móc và 150 công nhân nằm chờ vật tư",
+        "personnel_impact": "Chi phí thuê cẩu tháp và dàn giáo đốt không 380 triệu/ngày"
+      },
+      "surgical_strike": [
+        "Bước 1 (Định lượng thiệt hại ngưng trệ): Lập bảng tính chi phí máy chờ và nhân công chờ (380 triệu/ngày) gửi trực tiếp cho Tổng Giám đốc nhà cung cấp kèm thông báo phong tỏa khoản nợ 12 tỷ đang giữ.",
+        "Bước 2 (Tái cấu trúc động lực thanh toán): Đề xuất cơ chế 'Giao lô nào - Giải ngân trực tiếp trong 4 giờ lô đó' cho phần khối lượng vượt tiến độ để biến dự án của ta thành khách hàng có dòng tiền nhanh nhất của họ.",
+        "Bước 3 (Đa dạng hóa nguồn cung 70-30): Luôn duy trì 2 nhà cung cấp song song theo tỷ lệ 70% - 30%; bên nào trễ hẹn lập tức cắt 20% sản lượng chuyển sang bên kia ngay trong tuần."
+      ],
+      "kairos_rhythm": "Ngay khi trễ chuyến hàng thứ 2 liên tiếp (trong vòng 24 giờ), lập tức nâng cấp đàm phán lên cấp CEO và khóa van công nợ.",
+      "cited_units": [
+        "NT-LAW-0005",
+        "NT-MODEL-0004",
+        "NT-PRINCIPLE-0067"
+      ]
+    },
+    {
+      "id": "NT-CASE-0014",
+      "title": "Tranh Chấp Mặt Bằng Thi Công Giữa Hai Nhà Thầu: Khi Hiện Trường Biến Thành Bãi Chiến Trường",
+      "category": "field_crisis",
+      "category_label": "Khủng Hoảng Hiện Trường & Dự Án",
+      "industry": "Tổng thầu Xây dựng & Nội thất Cao cấp",
+      "scale": "Tòa nhà 35 tầng • 8 nhà thầu cùng thi công",
+      "keywords": [
+        "mặt bằng",
+        "tranh chấp",
+        "nhà thầu",
+        "xung đột",
+        "tiến độ",
+        "đổ lỗi",
+        "phối hợp"
+      ],
+      "power_map": "Nhà thầu Xây dựng hoàn thiện và Nhà thầu Cơ điện (MEP) đổ lỗi cho nhau: Bên xây dựng tự ý xây bít hộp kỹ thuật khi MEP chưa nghiệm thu ống; bên MEP đục phá tường vừa trát xong, dẫn đến xô xát giữa hai đội thợ.",
+      "fatal_mistake": "Thiếu phân định ranh giới bàn giao mặt bằng bằng văn bản (Lễ định phần) và đánh giá tiến độ rời rạc từng nhà thầu thay vì ràng buộc chéo.",
+      "quantified_damage": {
+        "financial_vnd": "4.200.000.000 ₫",
+        "time_lost": "21 ngày làm lại phần hoàn thiện ở 8 tầng điển hình",
+        "personnel_impact": "2 tổ đội thợ bỏ công trường, mất an toàn lao động"
+      },
+      "surgical_strike": [
+        "Bước 1 (Thiết lập Phiếu Bàn Giao Mặt Bằng Liên Đới): Không có chữ ký nhận mặt bằng của thầu sau thì thầu trước không được tính khối lượng thanh toán đợt đó.",
+        "Bước 2 (Cơ chế phạt chéo tức thì): Bên nào tự ý thi công đè hoặc phá hoại hạng mục đã nghiệm thu sẽ bị trừ gấp 3 lần chi phí sửa chữa trực tiếp vào kỳ thanh toán gần nhất để trả cho bên bị thiệt hại.",
+        "Bước 3 (Giao ban hiện trường 15 phút đứng): Đúng 07h30 mỗi sáng, Chỉ huy trưởng của cả 2 nhà thầu phải ký xác nhận tọa độ thi công trong ngày ngay tại tầng xung đột."
+      ],
+      "kairos_rhythm": "Khóa ngay thanh toán của cả hai bên trong 48 giờ cho đến khi ký xong biên bản phân định trách nhiệm và cam kết phối hợp.",
+      "cited_units": [
+        "NT-MODEL-0009",
+        "NT-PRINCIPLE-0066",
+        "NT-LAW-0005"
+      ]
+    },
+    {
+      "id": "NT-CASE-0015",
+      "title": "Báo Cáo Láo Về Tiến Độ & Chất Lượng: Căn Bệnh Giấu Lỗi Cho Đến Ngày Nổ Tung",
+      "category": "field_crisis",
+      "category_label": "Khủng Hoảng Hiện Trường & Dự Án",
+      "industry": "Năng lượng Tái tạo & Điện gió",
+      "scale": "Dự án 2.100 tỷ • Thi công xa đất liền",
+      "keywords": [
+        "báo cáo láo",
+        "giấu lỗi",
+        "chất lượng",
+        "nghiệm thu",
+        "sự cố kỹ thuật",
+        "sợ trách nhiệm"
+      ],
+      "power_map": "Ban chỉ huy công trường phát hiện độ lệch móng trụ vượt sai số cho phép nhưng sợ bị Ban Giám đốc kỷ luật và cắt thưởng nên thông đồng với giám sát nội bộ làm đẹp số liệu báo cáo suốt 2 tháng.",
+      "fatal_mistake": "Xây dựng văn hóa 'Trừng phạt người báo tin dữ' (Truth Under Threat - NT-ANTI-PATTERN-0001), khiến cấp dưới chọn cách giấu nhẹm rủi ro nhỏ cho đến khi thành thảm họa không thể cứu vãn.",
+      "quantified_damage": {
+        "financial_vnd": "48.000.000.000 ₫",
+        "time_lost": "5 tháng gia cố lại toàn bộ hệ móng trụ",
+        "personnel_impact": "Mất mốc hòa lưới điện ưu đãi (FIT), thiệt hại doanh thu dài hạn hàng trăm tỷ"
+      },
+      "surgical_strike": [
+        "Bước 1 (Thiết lập Quy tắc Ân xá 24 Giờ Vàng): Bất kỳ lỗi kỹ thuật nào được tự giác báo cáo trung thực trong vòng 24 giờ kể từ khi phát sinh sẽ được miễn kỷ luật cá nhân và tập trung 100% nguồn lực để xử lý.",
+        "Bước 2 (Kiểm toán chéo độc lập bằng thiết bị số): Dữ liệu đo đạc trắc đạc và nghiệm thu phải được đẩy thẳng từ máy đo hiện trường lên Cloud về Hội sở theo thời gian thực, không qua chỉnh sửa thủ công.",
+        "Bước 3 (Chế tài sinh tử với hành vi che giấu): Sai sót kỹ thuật có thể được đào tạo lại, nhưng hành vi làm giả số liệu báo cáo bị sa thải ngay lập tức và khởi kiện bồi thường thiệt hại."
+      ],
+      "kairos_rhythm": "Tách bạch hoàn toàn giữa 'Lỗi kỹ thuật do quá tải/khách quan' và 'Tội cố tình gian dối che giấu' ngay trong quy chế điều hành.",
+      "cited_units": [
+        "NT-ANTI-PATTERN-0001",
+        "NT-ANTI-PATTERN-0002",
+        "NT-PRINCIPLE-0067"
+      ]
+    },
+    {
+      "id": "NT-CASE-0016",
+      "title": "Khủng Hoảng Tai Nạn Hiện Trường & Đám Đông Bao Vây: Nghệ Thuật Kiểm Soát Tâm Lý Giờ Đầu Tiên",
+      "category": "field_crisis",
+      "category_label": "Khủng Hoảng Hiện Trường & Dự Án",
+      "industry": "Khai khoáng & Xây dựng Ngầm",
+      "scale": "Công trường 400 lao động",
+      "keywords": [
+        "tai nạn",
+        "an toàn lao động",
+        "khủng hoảng",
+        "báo chí",
+        "người nhà",
+        "hiện trường"
+      ],
+      "power_map": "Sự cố sập giàn giáo cục bộ làm 2 công nhân bị thương nặng. Người nhà công nhân và người dân địa phương kéo đến vây kín cổng dự án, livestream mạng xã hội, trong khi Chỉ huy trưởng hoảng loạn tắt máy trốn tránh.",
+      "fatal_mistake": "Trốn tránh xuất hiện trong 'Giờ Vàng đầu tiên' và phát ngôn phòng vệ vô cảm, biến một sự cố an toàn lao động thành khủng hoảng đạo đức và hình sự hóa.",
+      "quantified_damage": {
+        "financial_vnd": "9.500.000.000 ₫",
+        "time_lost": "40 ngày đình chỉ thi công toàn dự án để thanh tra",
+        "personnel_impact": "Khủng hoảng thương hiệu chủ đầu tư trên toàn mặt báo"
+      },
+      "surgical_strike": [
+        "Bước 1 (Hiện diện tức thì & Đặt tính mạng lên tối thượng): Lãnh đạo cao nhất có mặt tại bệnh viện và hiện trường trong 30 phút, chi trả toàn bộ viện phí tốt nhất mà chưa bàn đến lỗi thuộc về ai.",
+        "Bước 2 (Kiểm toán buộc tội - Accusation Audit): Chủ động phát ngôn nhận trách nhiệm quản lý mặt bằng trước gia đình nạn nhân và cơ quan chức năng, tuyệt đối không đổ lỗi cho công nhân bất cẩn trước truyền thông.",
+        "Bước 3 (Phong tỏa hiện trường theo chuẩn pháp lý): Thiết lập vành đai an toàn, cung cấp thông tin minh bạch một đầu mối duy nhất mỗi 4 giờ để dập tắt tin đồn thất thiệt."
+      ],
+      "kairos_rhythm": "30 phút đầu tiên quyết định 90% cục diện: Phải xuất hiện trực tiếp trước gia đình nạn nhân trước khi đám đông bị kích động.",
+      "cited_units": [
+        "NT-MODEL-0002",
+        "NT-ANTI-PATTERN-0001",
+        "NT-LAW-0034"
+      ]
+    },
+    {
+      "id": "NT-CASE-0017",
+      "title": "Tư Vấn Giám Sát Hạch Sách Ngâm Hồ Sơ Nghiệm Thu: Đòn Bẩy Hóa Giải Thế Kẹp Cổ",
+      "category": "field_crisis",
+      "category_label": "Khủng Hoảng Hiện Trường & Dự Án",
+      "industry": "Xây dựng Dân dụng & Công nghiệp",
+      "scale": "Gói thầu 220 tỷ",
+      "keywords": [
+        "tư vấn giám sát",
+        "nghiệm thu",
+        "ngâm hồ sơ",
+        "vòi vĩnh",
+        "hồ sơ thanh toán",
+        "chủ đầu tư"
+      ],
+      "power_map": "Trưởng đoàn Tư vấn giám sát (TVGS) của Chủ đầu tư liên tục bắt lỗi câu chữ nhỏ nhặt, trả hồ sơ nghiệm thu 4 lần để ngầm gây sức ép đòi chi phí bôi trơn, làm nhà thầu bị kẹt 35 tỷ tiền thanh toán giai đoạn.",
+      "fatal_mistake": "Để nhân viên làm hồ sơ âm thầm chịu đựng hoặc thỏa hiệp chi tiền ngầm (tạo tiền lệ bị vòi vĩnh ngày càng lớn ở các đợt sau - Accidental Conditioning NT-ANTI-PATTERN-0003).",
+      "quantified_damage": {
+        "financial_vnd": "5.400.000.000 ₫",
+        "time_lost": "75 ngày chậm giải ngân dòng tiền thi công",
+        "personnel_impact": "Lãi vay ngân hàng đội thêm 820 triệu đồng, kiệt sức bộ phận QS"
+      },
+      "surgical_strike": [
+        "Bước 1 (Chuẩn hóa danh mục lỗi một lần duy nhất): Dùng kỹ thuật câu hỏi hiệu chỉnh gửi văn bản chính thức đồng kính gửi Chủ đầu tư: 'Đề nghị TVGS liệt kê toàn bộ các điểm cần bổ sung trong 1 văn bản tổng hợp duy nhất trước ngày X để nhà thầu hoàn thiện dứt điểm'.",
+        "Bước 2 (Gắn trách nhiệm chậm tiến độ lên vai TVGS): Trong báo cáo tuần gửi Chủ đầu tư, ghi rõ bằng số liệu: 'Hạng mục A đã hoàn thành 100% tại hiện trường từ ngày Y, đang chờ chữ ký TVGS 18 ngày làm ảnh hưởng đến tiến độ triển khai hạng mục tiếp theo'.",
+        "Bước 3 (Mở hội nghị nghiệm thu 3 bên trực tiếp): Mời đại diện Ban Quản lý dự án của Chủ đầu tư xuống nghiệm thu trực tiếp tại hiện trường cùng TVGS để triệt tiêu khoảng tối hành chính."
+      ],
+      "kairos_rhythm": "Không để hồ sơ bị trả quá lần thứ 2; ngay lần thứ 2 phải đưa toàn bộ lịch sử giao nhận lên bàn Chủ đầu tư bằng số liệu ngày giờ cụ thể.",
+      "cited_units": [
+        "NT-ANTI-PATTERN-0003",
+        "NT-PRINCIPLE-0067",
+        "NT-LAW-0005"
+      ]
+    },
+    {
+      "id": "NT-CASE-0018",
+      "title": "Đội Quân Thợ Khoán Bỏ Trốn Sau Khi Nhận Tạm Ứng: Lỗ Hổng Quản Trị Khoán Việc",
+      "category": "field_crisis",
+      "category_label": "Khủng Hoảng Hiện Trường & Dự Án",
+      "industry": "Hoàn thiện Nội thất & Cơ khí",
+      "scale": "Gói thầu 32 tỷ • 80 công nhân thời vụ",
+      "keywords": [
+        "tổ đội",
+        "cai thầu",
+        "tạm ứng",
+        "bỏ trốn",
+        "khoán việc",
+        "vỡ tiến độ"
+      ],
+      "power_map": "Cai thầu nhận tạm ứng 40% giá trị gói nhân công trước kỳ nghỉ lễ, sau lễ không đưa quân quay lại công trường mà mang quân đi nhận dự án khác trả giá cao hơn.",
+      "fatal_mistake": "Giải ngân tạm ứng vượt quá giá trị khối lượng thực tế đã thực hiện trên mặt bằng, biến mình từ chủ nợ thành con nợ đi van xin cai thầu quay lại.",
+      "quantified_damage": {
+        "financial_vnd": "2.800.000.000 ₫",
+        "time_lost": "25 ngày tìm đội thợ mới với đơn giá cao hơn 35%",
+        "personnel_impact": "Mất trắng 1.1 tỷ tiền tạm ứng vượt khối lượng"
+      },
+      "surgical_strike": [
+        "Bước 1 (Nguyên tắc Tạm ứng Ngược): Tuyệt đối không tạm ứng tiền mặt cục lớn cho cai thầu; chỉ ứng tiền ăn theo tuần và thanh toán theo khối lượng nghiệm thu thực tế từng tuần (luôn giữ lại 15% bảo hành).",
+        "Bước 2 (Nắm danh sách gốc của thợ): Ban chỉ huy công trường phải nắm hồ sơ căn cước và số điện thoại của từng công nhân trong tổ đội để khi cai thầu có vấn đề, có thể ký hợp đồng trực tiếp giữ quân ở lại làm tiếp.",
+        "Bước 3 (Hồ sơ vi phạm pháp lý): Thiết lập hợp đồng giao khoán có điều khoản phong tỏa công cụ dụng cụ tại công trường nếu tự ý bỏ ngang."
+      ],
+      "kairos_rhythm": "Kiểm soát chặt các mốc 7 ngày trước Tết và các kỳ nghỉ lễ dài ngày — tuyệt đối không giải ngân vượt 80% khối lượng thực làm.",
+      "cited_units": [
+        "NT-LAW-0005",
+        "NT-MODEL-0004",
+        "NT-ANTI-PATTERN-0003"
+      ]
+    },
+    {
+      "id": "NT-CASE-0019",
+      "title": "Cú Sốc Thay Đổi Thiết Kế Liên Tục Từ Chủ Đầu Tư: Biến Phát Sinh Thành Lợi Nhuận Thay Vì Bẫy Lỗ",
+      "category": "field_crisis",
+      "category_label": "Khủng Hoảng Hiện Trường & Dự Án",
+      "industry": "Thiết kế & Thi công Trọn gói (Design & Build)",
+      "scale": "Dự án 150 tỷ",
+      "keywords": [
+        "phát sinh",
+        "thay đổi thiết kế",
+        "chủ đầu tư",
+        "variation order",
+        "VO",
+        "lỗ công trình"
+      ],
+      "power_map": "Chủ đầu tư liên tục chỉ đạo miệng tại công trường yêu cầu đập đi sửa lại thiết kế, hứa hẹn 'cứ làm đi anh duyệt phát sinh sau'. Đến khi quyết toán, bộ phận kiểm toán của Chủ đầu tư từ chối thanh toán 18 tỷ tiền phát sinh vì không có phê duyệt dự toán trước khi làm.",
+      "fatal_mistake": "Thi công theo lệnh miệng cảm tính để lấy lòng Chủ đầu tư mà không chốt Chi phí & Thời gian phát sinh (Variation Order - VO) bằng văn bản trước khi búa đập vào tường.",
+      "quantified_damage": {
+        "financial_vnd": "18.000.000.000 ₫",
+        "time_lost": "6 tháng tranh chấp hồ sơ quyết toán",
+        "personnel_impact": "Dự án từ lãi dự kiến 12 tỷ thành lỗ ròng 6 tỷ"
+      },
+      "surgical_strike": [
+        "Bước 1 (Kỷ luật Không Lệnh Viết - Không Thi Công): Thiết lập biểu mẫu 'Phiếu Yêu Cầu Thay Đổi Nhanh' ngay trên điện thoại/iPad tại công trường: ghi rõ 3 dòng (Chi phí tăng thêm + Số ngày cộng thêm vào tiến độ + Chữ ký người yêu cầu).",
+        "Bước 2 (Kỹ thuật Nói Không bằng Câu hỏi Hiệu chỉnh FBI): 'Thưa anh, đội ngũ rất sẵn sàng điều chỉnh ngay theo ý anh, nhưng việc này sẽ làm chậm ngày bàn giao 10 ngày và phát sinh 800 triệu. Anh muốn em ưu tiên giữ đúng ngày khai trương hay ưu tiên phương án sửa đổi này ạ?'.",
+        "Bước 3 (Tách rạch ròi gói phát sinh): Mọi hạng mục VO phải được nghiệm thu và thanh toán ngay trong kỳ thanh toán tháng phát sinh, không dồn về cuối dự án."
+      ],
+      "kairos_rhythm": "Chốt chữ ký xác nhận phát sinh ngay tại thời điểm Chủ đầu tư đang cao hứng muốn thay đổi (trong vòng 2 giờ sau buổi đi thị sát).",
+      "cited_units": [
+        "NT-PRINCIPLE-0067",
+        "NT-LAW-0005",
+        "NT-MODEL-0003"
+      ]
+    },
+    {
+      "id": "NT-CASE-0020",
+      "title": "Bão Lũ Đánh Sập Tiến Độ Hiện Trường: Kích Hoạt Điều Khoản Bất Khả Kháng Để Cứu Vãn Tài Chính",
+      "category": "field_crisis",
+      "category_label": "Khủng Hoảng Hiện Trường & Dự Án",
+      "industry": "Thi công Khu công nghiệp & Cảng biển",
+      "scale": "Dự án 680 tỷ",
+      "keywords": [
+        "bất khả kháng",
+        "thiên tai",
+        "bão lũ",
+        "phạt tiến độ",
+        "bảo hiểm công trình",
+        "hiện trường"
+      ],
+      "power_map": "Mưa bão lịch sử kéo dài 20 ngày làm ngập toàn bộ hố móng. Ban chỉ huy chỉ lo bơm nước cứu công trường mà quên gửi Thông báo Sự kiện Bất khả kháng trong thời hạn 7 ngày theo hợp đồng FIDIC. Sau đó Chủ đầu tư vẫn phạt chậm tiến độ 20 ngày.",
+      "fatal_mistake": "Mải mê xử lý kỹ thuật thuần túy tại hiện trường mà bỏ quên Trục Pháp Lý Hợp Đồng trong 7 ngày vàng đầu tiên.",
+      "quantified_damage": {
+        "financial_vnd": "10.200.000.000 ₫",
+        "time_lost": "20 ngày tiến độ không được gia hạn hợp pháp",
+        "personnel_impact": "Mất quyền đòi bồi thường bảo hiểm công trình 4.2 tỷ do lập hồ sơ muộn"
+      },
+      "surgical_strike": [
+        "Bước 1 (Kích hoạt song song Kỹ thuật & Pháp lý trong 24h đầu): Ngay khi bão đổ bộ, bộ phận Hợp đồng lập tức phát Thông báo Bất khả kháng kèm số liệu khí tượng thủy văn chính thức gửi Chủ đầu tư và Công ty Bảo hiểm.",
+        "Bước 2 (Ghi hình nhật ký hiện trường định lượng): Quay video, chụp ảnh định vị GPS có dấu thời gian mỗi 6 giờ về mực nước và tình trạng ngưng trệ khách quan.",
+        "Bước 3 (Đàm phán gia hạn tiến độ - EOT): Nộp hồ sơ yêu cầu gia hạn thời gian hoàn thành (Extension of Time) ngay khi nước rút, khóa chặt quyền miễn phạt hợp đồng."
+      ],
+      "kairos_rhythm": "Văn bản Thông báo Bất khả kháng phải được gửi đi trong vòng 48 giờ kể từ khi sự kiện bắt đầu, tuyệt đối không chờ sự cố kết thúc mới báo.",
+      "cited_units": [
+        "NT-PRINCIPLE-0067",
+        "NT-LAW-0005",
+        "NT-MODEL-0003"
+      ]
+    },
+    {
+      "id": "NT-CASE-0021",
+      "title": "Đàm Phán Thu Hồi 45 Tỷ Nợ Khó Đòi: Khi Con Nợ Trơ Lì Đe Dọa Cho Công Ty Phá Sản",
+      "category": "high_stakes_negotiation",
+      "category_label": "Đàm Phán Sinh Tử & Thu Nợ",
+      "industry": "Phân phối Thép & Vật liệu Xây dựng",
+      "scale": "Khoản nợ 45 tỷ • Quá hạn 11 tháng",
+      "keywords": [
+        "thu hồi nợ",
+        "nợ xấu",
+        "công nợ",
+        "phá sản",
+        "đàm phán",
+        "cấn trừ tài sản",
+        "kiện tụng"
+      ],
+      "power_map": "Chủ đầu tư nợ 45 tỷ tiền thép đã 11 tháng. Khi ta đòi gắt, đối phương thách thức: 'Giờ tiền mặt không có, các ông muốn kiện ra tòa cho công ty tôi phá sản thì cứ kiện, lúc đó ngân hàng ưu tiên thu trước, các ông chẳng còn đồng nào'.",
+      "fatal_mistake": "Rơi vào bẫy tranh cãi pháp lý đơn thuần (kiện ra tòa mất 2 năm và đứng sau ngân hàng có tài sản thế chấp), trong khi bỏ qua các tài sản thanh khoản và điểm sợ hãi cá nhân của chủ doanh nghiệp nợ.",
+      "quantified_damage": {
+        "financial_vnd": "45.000.000.000 ₫",
+        "time_lost": "11 tháng mất thanh khoản dòng vốn lưu động",
+        "personnel_impact": "Doanh nghiệp cung ứng đứng trước nguy cơ vỡ nợ dây chuyền với ngân hàng"
+      },
+      "surgical_strike": [
+        "Bước 1 (Điều tra dòng tiền thực & Điểm huyệt uy tín): Xác minh con nợ đang chuẩn bị mở bán 1 dự án mới rất cần uy tín truyền thông và giấy xác nhận không tranh chấp để ngân hàng tài trợ.",
+        "Bước 2 (Mở đường thoát bằng Cấn trừ Tài sản Chiết khấu sâu): Không đòi tiền mặt 100% (vì họ không có thật); đề xuất ngay phương án: Trả 15 tỷ tiền mặt trong 3 đợt + Cấn trừ 30 tỷ bằng 8 căn shophouse sạch pháp lý với giá chiết khấu 28% so với giá thị trường.",
+        "Bước 3 (Đặt hạn chót Schelling trước ngày mở bán): Nếu không ký công chứng sang tên 8 căn shophouse trước 16h00 thứ Sáu, đơn yêu cầu mở thủ tục phá sản và thông cáo báo chí về tình trạng mất khả năng thanh toán sẽ được gửi đồng loạt tới ngân hàng tài trợ dự án mới."
+      ],
+      "kairos_rhythm": "Ra đòn đúng 10 ngày trước lễ công bố mở bán dự án mới của con nợ — thời điểm họ sợ tiếng xấu gấp 10 lần sợ mất tài sản.",
+      "cited_units": [
+        "NT-LAW-0005",
+        "NT-MODEL-0002",
+        "NT-PRINCIPLE-0067"
+      ]
+    },
+    {
+      "id": "NT-CASE-0022",
+      "title": "Khách Hàng Lớn Nhất Ép Giảm Giá 25% Hoặc Cắt Hợp Đồng: Nghệ Thuật Phá Thế Độc Quyền Mua",
+      "category": "high_stakes_negotiation",
+      "category_label": "Đàm Phán Sinh Tử & Thu Nợ",
+      "industry": "Sản xuất Linh kiện & Gia công Xuất khẩu (OEM)",
+      "scale": "Hợp đồng 250 tỷ/năm (chiếm 55% doanh thu nhà máy)",
+      "keywords": [
+        "ép giá",
+        "khách hàng lớn",
+        "giảm giá",
+        "cắt hợp đồng",
+        "đàm phán giá",
+        "FBI",
+        "biên lợi nhuận"
+      ],
+      "power_map": "Giám đốc Mua hàng của tập đoàn khách hàng biết họ chiếm 55% sản lượng nhà máy của ta nên ra tối hậu thư: 'Năm tới phải giảm giá 25% và kéo dài công nợ từ 45 ngày lên 90 ngày, nếu không chúng tôi chuyển toàn bộ đơn hàng sang nhà máy khác'.",
+      "fatal_mistake": "Hoảng sợ nhượng bộ giảm giá ngay 15% hoặc chia đôi sự khác biệt (Vi phạm nguyên tắc FBI Never Split the Difference), làm bay sạch toàn bộ lợi nhuận ròng của nhà máy.",
+      "quantified_damage": {
+        "financial_vnd": "37.500.000.000 ₫",
+        "time_lost": "1 năm làm không công nuôi bộ máy",
+        "personnel_impact": "Không còn ngân sách bảo trì máy móc và thưởng nhân viên"
+      },
+      "surgical_strike": [
+        "Bước 1 (Gắn nhãn cảm xúc & Câu hỏi Hiệu chỉnh FBI): Hạ giọng điềm tĩnh: 'Có vẻ như ban lãnh đạo tập đoàn đang đặt áp lực cắt giảm chi phí rất lớn lên vai anh trong năm tới. Nhưng làm thế nào chúng tôi có thể giảm 25% khi giá nguyên liệu đầu vào tăng 8% mà vẫn đảm bảo tỷ lệ lỗi 0.01% cho dây chuyền của anh?'.",
+        "Bước 2 (Bóc tách chi phí chuyển đổi ngầm của đối phương): Nhắc khéo bằng số liệu: Nếu họ chuyển sang nhà máy mới, họ sẽ mất tối thiểu 6 tháng làm khuôn mẫu (Tooling), phê duyệt chất lượng (Qualification) và rủi ro đứt hàng mùa cao điểm trị giá hàng triệu USD.",
+        "Bước 3 (Đánh đổi có điều kiện - Trade-offs): Tuyệt đối không giảm giá vô điều kiện. Đưa ra gói lựa chọn: 'Giảm 6% nếu tăng sản lượng cam kết thêm 30% và thanh toán sớm trong 15 ngày; hoặc giảm 12% nếu lược bỏ 3 công đoạn đóng gói phụ'."
+      ],
+      "kairos_rhythm": "Không trả lời bảng giá ngay tại bàn họp; im lặng 72 giờ để Giám đốc Mua hàng tự cảm nhận áp lực thời gian chốt nhà cung ứng năm mới.",
+      "cited_units": [
+        "NT-LAW-0005",
+        "NT-MODEL-0004",
+        "NT-ANTI-PATTERN-0003"
+      ]
+    },
+    {
+      "id": "NT-CASE-0023",
+      "title": "Xử Lý Khủng Hoảng Truyền Thông Tẩy Chay: Phản Đòn Bằng Kỹ Thuật Kiểm Toán Buộc Tội",
+      "category": "high_stakes_negotiation",
+      "category_label": "Đàm Phán Sinh Tử & Thu Nợ",
+      "industry": "Chuỗi Thực phẩm & Bán lẻ Tiêu dùng",
+      "scale": "Hệ thống 120 điểm bán • 1.200 nhân sự",
+      "keywords": [
+        "khủng hoảng truyền thông",
+        "tẩy chay",
+        "mạng xã hội",
+        "xin lỗi",
+        "báo chí",
+        "uy tín thương hiệu"
+      ],
+      "power_map": "Một clip khách hàng phát hiện lỗi vệ sinh tại 1 cửa hàng lan truyền với 2 triệu lượt xem trong 6 giờ. Dư luận phẫn nộ kêu gọi tẩy chay toàn chuỗi, các đối tác trung tâm thương mại dọa đóng cửa gian hàng.",
+      "fatal_mistake": "Ra thông cáo báo chí kiểu luật sư tự vệ ('Chúng tôi có đầy đủ giấy phép an toàn thực phẩm, đang nghi ngờ có đối thủ chơi xấu và sẽ nhờ cơ quan công an làm rõ'), đổ thêm dầu vào lửa phẫn nộ của công chúng.",
+      "quantified_damage": {
+        "financial_vnd": "52.000.000.000 ₫",
+        "time_lost": "4 tháng doanh số toàn hệ thống sụt giảm 65%",
+        "personnel_impact": "Đóng cửa vĩnh viễn 22 cửa hàng thua lỗ"
+      },
+      "surgical_strike": [
+        "Bước 1 (Kiểm toán buộc tội - Accusation Audit trong 2 giờ đầu): CEO xuất hiện trực tiếp, tự nói hết những lời chỉ trích nặng nề nhất mà công chúng đang nghĩ: 'Quý vị hoàn toàn có quyền giận dữ và thất vọng. Không có bất kỳ lý do nào có thể biện minh cho sự cẩu thả này tại cửa hàng X'.",
+        "Bước 2 (Hành động chịu đau định lượng được): Đóng cửa ngay lập tức cửa hàng vi phạm và toàn bộ 12 cửa hàng cùng khu vực trong 72 giờ để tổng thanh tra độc lập; công bố quỹ bồi thường và kiểm tra sức khỏe toàn diện cho khách hàng.",
+        "Bước 3 (Mở toang hậu trường - Radical Transparency): Lắp đặt hệ thống camera trực tiếp tại khu chế biến cho khách hàng giám sát công khai, biến khủng hoảng thành tiêu chuẩn mới của ngành."
+      ],
+      "kairos_rhythm": "Thông điệp nhận lỗi trực diện phải phát ra trong vòng 180 phút đầu tiên trước khi làn sóng phẫn nộ chuyển thành chiến dịch tẩy chay có tổ chức.",
+      "cited_units": [
+        "NT-MODEL-0002",
+        "NT-ANTI-PATTERN-0001",
+        "NT-LAW-0034"
+      ]
+    },
+    {
+      "id": "NT-CASE-0024",
+      "title": "Bàn Cờ M&A Với Cá Mập Ngoại: Khi Đối Tác Giả Vờ Mua Để Khai Thác Bí Mật Kinh Doanh",
+      "category": "high_stakes_negotiation",
+      "category_label": "Đàm Phán Sinh Tử & Thu Nợ",
+      "industry": "Dược phẩm & Phân phối Y tế",
+      "scale": "Định giá thương vụ 500 tỷ",
+      "keywords": [
+        "M&A",
+        "mua bán sáp nhập",
+        "thẩm định",
+        "due diligence",
+        "lộ bí mật",
+        "định giá",
+        "cá mập"
+      ],
+      "power_map": "Một tập đoàn ngoại ký biên bản ghi nhớ (MOU) mua lại 70% công ty với mức giá rất hấp dẫn, sau đó cử đoàn 15 chuyên gia vào thẩm định chi tiết (Due Diligence) suốt 5 tháng, đòi xem toàn bộ danh sách khách hàng, giá vốn từng mặt hàng và hợp đồng nhân sự chủ chốt, rồi đột ngột hủy thương vụ.",
+      "fatal_mistake": "Mở toang toàn bộ dữ liệu sinh tử của doanh nghiệp ngay từ vòng thẩm định đầu tiên mà không có cơ chế Phòng dữ liệu phân tầng (Staged Data Room) và Tiền đặt cọc không hoàn lại (Break-up Fee).",
+      "quantified_damage": {
+        "financial_vnd": "31.000.000.000 ₫",
+        "time_lost": "8 tháng ban lãnh đạo sao nhãng điều hành để phục vụ thẩm định",
+        "personnel_impact": "6 tháng sau, tập đoàn ngoại tự mở chi nhánh tại Việt Nam và câu kéo đúng tệp khách hàng VIP vừa thẩm định"
+      },
+      "surgical_strike": [
+        "Bước 1 (Thiết kế Data Room 3 Lớp Khóa): Lớp 1 chỉ có số liệu tổng hợp đã kiểm toán; Lớp 2 (cấu trúc chi phí) chỉ mở khi ký Term Sheet có ràng buộc; Lớp 3 (danh tính khách hàng gốc và công thức lõi) chỉ mở sau khi bên mua đã ký quỹ 10% giá trị thương vụ vào tài khoản phong tỏa (Escrow Account).",
+        "Bước 2 (Áp dụng Phí Phá Vỡ Thương Vụ - Reverse Break-up Fee): Nếu kết quả kiểm toán đúng như công bố mà bên mua đơn phương rút lui, khoản cọc 10% (50 tỷ) tự động thuộc về bên bán.",
+        "Bước 3 (Mã hóa danh tính nhân sự & khách hàng): Trong suốt quá trình DD, toàn bộ tên khách hàng và nhân sự chủ chốt chỉ hiển thị dưới dạng mã số ẩn danh (Customer_001, KeyPerson_A)."
+      ],
+      "kairos_rhythm": "Không có tiền ký quỹ Escrow và điều khoản Break-up Fee thì tuyệt đối không mở dữ liệu Lớp 3, dù mức giá chào mua cao đến đâu.",
+      "cited_units": [
+        "NT-LAW-0005",
+        "NT-PRINCIPLE-0067",
+        "NT-ANTI-PATTERN-0003"
+      ]
+    },
+    {
+      "id": "NT-CASE-0025",
+      "title": "Đàm Phán Gia Hạn Mặt Bằng Vàng: Hóa Giải Đòn Tăng Giá Thuê 80% Khi Đã Đầu Tư Chìm 15 Tỷ",
+      "category": "high_stakes_negotiation",
+      "category_label": "Đàm Phán Sinh Tử & Thu Nợ",
+      "industry": "Y tế Tư nhân & Thẩm mỹ viện / Nhà hàng Lớn",
+      "scale": "Chi phí đầu tư cơ sở vật chất (CAPEX) 15 tỷ",
+      "keywords": [
+        "mặt bằng",
+        "thuê nhà",
+        "tăng giá thuê",
+        "chi phí chìm",
+        "chủ nhà",
+        "đàm phán"
+      ],
+      "power_map": "Phòng khám đa khoa đã bỏ ra 15 tỷ xây dựng cơ sở vật chất gắn liền với tòa nhà. Khi hết hạn hợp đồng 5 năm đầu, chủ tòa nhà biết phòng khám không thể dọn đi dễ dàng nên ép tăng giá thuê 80% cho chu kỳ mới.",
+      "fatal_mistake": "Để rơi vào bẫy Chi phí chìm (Sunk Cost Trap) mà không cài trần tăng giá (Cap Rate) ngay từ đầu, và bắt đầu đàm phán gia hạn quá muộn (khi chỉ còn 2 tháng là hết hợp đồng).",
+      "quantified_damage": {
+        "financial_vnd": "14.400.000.000 ₫",
+        "time_lost": "5 năm gánh chi phí thuê vượt ngưỡng chịu đựng",
+        "personnel_impact": "Biên lợi nhuận sụt giảm từ 22% xuống còn 6%"
+      },
+      "surgical_strike": [
+        "Bước 1 (Tạo phương án thay thế khả tín - BATNA thật): Trước khi hết hạn 9 tháng, âm thầm khảo sát tòa nhà đối diện cách 200m, dựng phương án di dời và cho đội thiết kế đến đo đạc công khai để chủ nhà hiện tại nhìn thấy ta sẵn sàng dứt áo ra đi.",
+        "Bước 2 (Định lượng cái giá của mặt bằng trống cho chủ nhà): Phân tích rõ cho chủ nhà: Nếu phòng khám rút đi, tòa nhà sẽ phải đập bỏ kết cấu y tế đặc thù (tốn 2 tỷ), mất tối thiểu 6–9 tháng trống mặt bằng (mất 5.4 tỷ tiền thuê) và phí môi giới khách mới.",
+        "Bước 3 (Chốt thỏa thuận dài hạn có biên độ cố định): Đề xuất trả trước 1 năm tiền thuê đổi lấy mức tăng chỉ 10% và khóa trần tăng giá không quá 8% cho chu kỳ 5 năm tiếp theo."
+      ],
+      "kairos_rhythm": "Khởi động đàm phán gia hạn trước đúng 9–12 tháng khi ta còn dư thời gian chuyển địa điểm — tuyệt đối không để đến 60 ngày cuối.",
+      "cited_units": [
+        "NT-LAW-0005",
+        "NT-MODEL-0003",
+        "NT-PRINCIPLE-0067"
+      ]
+    },
+    {
+      "id": "NT-CASE-0026",
+      "title": "Đấu Trí Với Ngân Hàng Khi Đến Hạn Đáo Hạn: Chuyển Thế Bị Thu Hồi Nợ Thành Cơ Cấu Vốn Mới",
+      "category": "high_stakes_negotiation",
+      "category_label": "Đàm Phán Sinh Tử & Thu Nợ",
+      "industry": "Sản xuất Nông nghiệp Công nghệ cao & Chế biến",
+      "scale": "Dư nợ tín dụng 180 tỷ",
+      "keywords": [
+        "ngân hàng",
+        "đáo hạn",
+        "tín dụng",
+        "nợ quá hạn",
+        "tài sản thế chấp",
+        "dòng tiền"
+      ],
+      "power_map": "Doanh nghiệp bị chậm tiền hàng xuất khẩu 4 tháng đúng lúc khoản vay 180 tỷ đến hạn tất toán. Ngân hàng dọa chuyển nhóm nợ xấu (Nhóm 3) và phát mãi nhà máy thế chấp.",
+      "fatal_mistake": "Cắt đứt liên lạc, né tránh cuộc gọi của Giám đốc Ngân hàng vì sợ bị đòi nợ — hành vi khiến ngân hàng đánh giá doanh nghiệp mất thiện chí và kích hoạt ngay quy trình thu hồi nợ cưỡng chế.",
+      "quantified_damage": {
+        "financial_vnd": "55.000.000.000 ₫",
+        "time_lost": "2 năm mất sạch hạn mức tín dụng tại mọi ngân hàng do nhảy nhóm CIC",
+        "personnel_impact": "Nhà máy hoạt động cầm chừng 30% công suất vì đứt vốn lưu động"
+      },
+      "surgical_strike": [
+        "Bước 1 (Minh bạch chủ động trước hạn 45 ngày): Chủ tịch trực tiếp mang bộ hồ sơ dòng tiền thật và các L/C xuất khẩu đang chờ về gặp Giám đốc Ngân hàng trước khi khoản vay quá hạn.",
+        "Bước 2 (Hiểu nỗi sợ thực sự của Ngân hàng): Ngân hàng không muốn lấy nhà máy (vì thanh lý cực kỳ phức tạp và làm tăng tỷ lệ nợ xấu nội bảng của chính Giám đốc chi nhánh). Thứ họ cần là hồ sơ hợp lệ để trình Hội sở cơ cấu lại kỳ hạn trả nợ.",
+        "Bước 3 (Cam kết dòng tiền phong tỏa): Chuyển toàn bộ dòng tiền thu từ 3 hợp đồng xuất khẩu lớn nhất chảy thẳng về tài khoản chuyên thu tại ngân hàng để tự động trích trả lãi hàng tháng và gốc theo lộ trình 12 tháng mới."
+      ],
+      "kairos_rhythm": "Gặp ngân hàng trước hạn 45 ngày là đối tác chiến lược; gặp sau khi đã quá hạn 1 ngày là con nợ bị xử lý.",
+      "cited_units": [
+        "NT-MODEL-0002",
+        "NT-LAW-0005",
+        "NT-ANTI-PATTERN-0001"
+      ]
+    },
+    {
+      "id": "NT-CASE-0027",
+      "title": "Giải Cứu Hợp Đồng Chiến Lược Bị Đối Thủ Phá Giá Phút Chót Bằng Đòn Tái Định Khung Rủi Ro",
+      "category": "high_stakes_negotiation",
+      "category_label": "Đàm Phán Sinh Tử & Thu Nợ",
+      "industry": "Giải pháp Công nghệ & Tích hợp Hệ thống (SI)",
+      "scale": "Gói thầu 65 tỷ",
+      "keywords": [
+        "đấu thầu",
+        "phá giá",
+        "đối thủ",
+        "bán hàng B2B",
+        "tái định khung",
+        "chủ đầu tư"
+      ],
+      "power_map": "Sau 4 tháng tư vấn kỹ thuật chuyên sâu cho Chủ đầu tư, đến vòng chốt giá cuối cùng, một đối thủ nhảy vào chào mức giá thấp hơn 30% (chấp nhận lỗ để giành thị phần) khiến Hội đồng mua sắm nghiêng hẳn về phía đối thủ.",
+      "fatal_mistake": "Lao vào cuộc chiến hạ giá đuổi theo đối thủ hoặc nói xấu đối thủ một cách cảm tính trước mặt khách hàng.",
+      "quantified_damage": {
+        "financial_vnd": "19.500.000.000 ₫",
+        "time_lost": "4 tháng chi phí пре-sales và kỹ thuật đổ sông đổ biển",
+        "personnel_impact": "Mất khách hàng đầu ngành mang tính biểu tượng"
+      },
+      "surgical_strike": [
+        "Bước 1 (Tái định khung từ 'Giá mua' sang 'Chi phí thất bại của người ký duyệt'): Gặp riêng người chịu trách nhiệm vận hành cuối cùng của khách hàng, đặt câu hỏi hiệu chỉnh: 'Nếu hệ thống này ngưng trệ 48 giờ trong dịp cao điểm, thiệt hại của tập đoàn là 30 tỷ và trách nhiệm thuộc về ban dự án. Khoản tiết kiệm 15 tỷ ban đầu có bù đắp được rủi ro sự nghiệp đó cho anh không?'.",
+        "Bước 2 (Cài tiêu chuẩn nghiệm thu SLA kèm phạt tiền mặt): Đề xuất đưa vào hợp đồng điều khoản cam kết SLA 99.99% có bảo lãnh ngân hàng đối ứng — điều mà đối thủ phá giá cắt giảm cấu hình không bao giờ dám ký.",
+        "Bước 3 (Tách gói thầu thành Giai đoạn Lõi & Giai đoạn Mở rộng): Hạ giá khởi điểm bằng cách tách phần tính năng nâng cao sang Giai đoạn 2 để giúp Hội đồng mua sắm giải trình được mức ngân sách năm nay."
+      ],
+      "kairos_rhythm": "Tung đòn tái định khung rủi ro cá nhân đúng 48 giờ trước phiên họp chốt nhà thầu cuối cùng của Hội đồng.",
+      "cited_units": [
+        "NT-MODEL-0002",
+        "NT-LAW-0005",
+        "NT-PRINCIPLE-0067"
+      ]
+    },
+    {
+      "id": "NT-CASE-0028",
+      "title": "Hóa Giải Cuộc Tấn Công Của Nhóm Cổ Đông Nhỏ Lẻ Liên Kết Đòi Phủ Quyết Tại Đại Hội Cổ Đông",
+      "category": "high_stakes_negotiation",
+      "category_label": "Đàm Phán Sinh Tử & Thu Nợ",
+      "industry": "Công ty Cổ phần Đại chúng / Sản xuất",
+      "scale": "Vốn hóa 900 tỷ • 140 cổ đông",
+      "keywords": [
+        "đại hội cổ đông",
+        "cổ đông nhỏ",
+        "phủ quyết",
+        "chia cổ tức",
+        "liên minh",
+        "biểu quyết"
+      ],
+      "power_map": "Nhóm 8 cổ đông bên ngoài gom đủ 36% cổ phần (vượt ngưỡng phủ quyết 35%), liên kết đòi chia hết lợi nhuận bằng tiền mặt thay vì giữ lại tái đầu tư dây chuyền mới, đe dọa làm bất thành Đại hội cổ đông thường niên.",
+      "fatal_mistake": "Đối đầu toàn diện với cả khối 36% như một khối thống nhất trên nghị trường, thay vì nhìn ra động cơ tài chính khác nhau của từng thành viên trong liên minh đó.",
+      "quantified_damage": {
+        "financial_vnd": "42.000.000.000 ₫",
+        "time_lost": "12 tháng chậm đầu tư dây chuyền tự động hóa",
+        "personnel_impact": "Cổ phiếu bị bán tháo do tin đồn lục đục nội bộ"
+      },
+      "surgical_strike": [
+        "Bước 1 (Giải phẫu động cơ từng mắt xích trong liên minh): Phân loại 8 cổ đông — phát hiện 2 cổ đông nắm 9% thực chất chỉ cần dòng tiền mặt ngắn hạn để trả nợ cá nhân, không có ý định thâu tóm công ty.",
+        "Bước 2 (Bẻ gãy liên minh bằng phương án lai - Hybrid Dividend): Đàm phán riêng trước đại hội 5 ngày, đưa ra phương án chia cổ tức kết hợp (10% tiền mặt giải ngân ngay trong 30 ngày + 15% cổ phiếu thưởng) và hỗ trợ thu xếp đối tác mua lại một phần cổ phiếu cho 2 cổ đông đang cần tiền.",
+        "Bước 3 (Đập tan khối phủ quyết): Khi 2 cổ đông (9%) quay sang ủng hộ, tỷ lệ phản đối tụt xuống còn 27% (dưới ngưỡng phủ quyết 35%), nghị quyết đầu tư được thông qua áp đảo tại Đại hội."
+      ],
+      "kairos_rhythm": "Mọi cuộc đàm phán phân hóa liên minh phải hoàn tất 72 giờ trước giờ khai mạc Đại hội cổ đông; lên hội trường chỉ là thủ tục bấm nút.",
+      "cited_units": [
+        "NT-LAW-0005",
+        "NT-MODEL-0009",
+        "NT-PRINCIPLE-0066"
+      ]
+    },
+    {
+      "id": "NT-CASE-0029",
+      "title": "Đàm Phán Giữ Chân Siêu Nhân Sự Khi Đối Thủ Trả Lương Gấp Đôi: Đòn Đánh Vào Bản Sắc & Quyền Tự Chủ",
+      "category": "high_stakes_negotiation",
+      "category_label": "Đàm Phán Sinh Tử & Thu Nợ",
+      "industry": "Công nghệ Tài chính (Fintech) & Thương mại Điện tử",
+      "scale": "Giữ chân Giám đốc Sản phẩm (CPO) nắm dự án sống còn",
+      "keywords": [
+        "giữ chân nhân tài",
+        "tăng lương",
+        "nhảy việc",
+        "đối thủ câu người",
+        "ESOP",
+        "đãi ngộ"
+      ],
+      "power_map": "Đối thủ cạnh tranh vừa gọi vốn thành công nên tung Offer lương cứng gấp đôi để kéo CPO của ta ngay trước thềm ra mắt sản phẩm chiến lược 3 tháng. Công ty ta không thể tăng lương cứng gấp đôi vì sẽ phá vỡ toàn bộ khung lương nội bộ.",
+      "fatal_mistake": "Hoặc nổi giận quy chụp nhân sự 'vô ơn, chạy theo đồng tiền' (Load-blind moralizing), hoặc cuống cuồng tăng lương cứng theo đối thủ tạo tiền lệ tống tiền cho toàn bộ nhân sự khác.",
+      "quantified_damage": {
+        "financial_vnd": "16.000.000.000 ₫",
+        "time_lost": "6 tháng trễ hẹn ra mắt sản phẩm chiến lược",
+        "personnel_impact": "Mất lợi thế người đi đầu thị trường vào tay đối thủ"
+      },
+      "surgical_strike": [
+        "Bước 1 (Tách tiền mặt ngắn hạn khỏi Giá trị Sự nghiệp dài hạn): Trò chuyện riêng 1-1 không phán xét, giúp CPO nhìn thấu cấu trúc bên kia: Đối thủ trả lương gấp đôi vì họ đang mua ngắn hạn để lấy bí quyết, sau 12 tháng khi hệ thống chạy ổn định và áp lực cắt giảm chi phí từ quỹ đầu tư ập xuống, người lương cao nhất sẽ bị thanh lý đầu tiên.",
+        "Bước 2 (Tái thiết kế quyền tự chủ & Cổ phần gắn kết - Golden Handcuffs): Không tăng lương cứng gấp đôi, nhưng trao quyền Giám đốc Điều hành mảng sản phẩm mới (Spin-off Unit) kèm gói ESOP 5% định giá theo kết quả kinh doanh 3 năm (trị giá kỳ vọng gấp 4 lần phần chênh lệch lương).",
+        "Bước 3 (Song hành cài người kế cận): Đồng thời bổ nhiệm ngay 2 Phó phòng Sản phẩm nắm vững từng phân hệ để không bao giờ rơi vào thế bị động một người lần thứ hai."
+      ],
+      "kairos_rhythm": "Gặp gỡ trực tiếp trong vòng 12 giờ kể từ khi nhận tín hiệu xin nghỉ, trước khi nhân sự đặt bút ký chính thức với bên kia.",
+      "cited_units": [
+        "NT-MODEL-0001",
+        "NT-MODEL-0004",
+        "NT-MODEL-0005"
+      ]
+    },
+    {
+      "id": "NT-CASE-0030",
+      "title": "Cuộc Thương Lượng Giải Thể Liên Doanh Không Đổ Máu: Nghệ Thuật Mở Đường Lui Vàng Cho Đối Thủ",
+      "category": "high_stakes_negotiation",
+      "category_label": "Đàm Phán Sinh Tử & Thu Nợ",
+      "industry": "Giáo dục & Đào tạo Quốc tế",
+      "scale": "Hệ thống 15 trung tâm • Doanh thu 260 tỷ/năm",
+      "keywords": [
+        "liên doanh",
+        "chia tách",
+        "giải thể",
+        "nhượng bộ",
+        "mở đường lui",
+        "thương hiệu"
+      ],
+      "power_map": "Hai tập đoàn lập liên doanh giáo dục được 4 năm thì triết lý vận hành xung đột gay gắt. Nếu kéo nhau ra tòa án hoặc trọng tài tranh chấp thương hiệu, phụ huynh sẽ hoang mang rút học phí hàng loạt làm sụp đổ toàn bộ 15 trung tâm trong 30 ngày.",
+      "fatal_mistake": "Cố dồn đối tác vào chân tường để giành phần thắng tuyệt đối 100%, quên mất quy luật Binh pháp: 'Cùng khấu vật truy' (Giặc cùng đường chớ đuổi sát, phải chừa lối thoát thì họ mới không liều chết phá nát nồi cơm chung).",
+      "quantified_damage": {
+        "financial_vnd": "75.000.000.000 ₫",
+        "time_lost": "18 tháng kiện tụng làm tê liệt tuyển sinh",
+        "personnel_impact": "Hơn 3.000 học viên rút học phí nếu nổ ra khủng hoảng công khai"
+      },
+      "surgical_strike": [
+        "Bước 1 (Khoanh vùng tài sản nhạy cảm với niềm tin công chúng): Ký ngay Thỏa thuận Bảo mật & Giữ nguyên trạng vận hành (Standstill Agreement) trong 60 ngày đàm phán — bên nào rò rỉ thông tin gây rút học phí sẽ chịu phạt 20 tỷ.",
+        "Bước 2 (Cơ chế 'Một người chia bánh - Một người chọn phần'): Để giải quyết bế tắc định giá, áp dụng công thức công bằng tuyệt đối: Bên A được quyền định giá 15 trung tâm và thương hiệu thành 2 gói tương đương; Bên B được quyền chọn trước gói mình muốn nhận.",
+        "Bước 3 (Xây cầu vàng cho đối phương rút lui trong danh dự): Tổ chức lễ công bố 'Tái cấu trúc chiến lược để mỗi bên tập trung vào phân khúc thế mạnh riêng', giữ trọn thể diện cho đối tác trước truyền thông và thị trường."
+      ],
+      "kairos_rhythm": "Khóa thỏa thuận bảo mật truyền thông ở Giờ thứ 1; hoàn tất chia tách tài sản trong 30 ngày mùa thấp điểm tuyển sinh.",
+      "cited_units": [
+        "NT-LAW-0005",
+        "NT-MODEL-0002",
+        "NT-PRINCIPLE-0066"
+      ]
+    }
+  ]
+}

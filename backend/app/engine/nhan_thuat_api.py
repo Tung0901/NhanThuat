@@ -626,6 +626,278 @@ def generate_actionable_script_details(primary: str, scenario_text: str, matched
         }
 
 
+
+def compute_executive_metrics(
+    scenario_text: str,
+    mode: str = "advisory",
+    friction_score: int | None = None,
+    homogeneity_score: int | None = None,
+) -> dict[str, Any]:
+    """
+    Computes quantitative Executive Kairos Timing, Power Leverage, Tactical Silence Window,
+    and Financial Cost of Inaction (VNĐ) for real-world decision making.
+    """
+    text_lower = (scenario_text or "").lower()
+
+    if mode == "person_fit":
+        f_score = friction_score if friction_score is not None else 55
+        kairos_score = max(25, 100 - f_score)
+        leverage_score = 72 if f_score < 65 else 48
+        switching_cost_pct = 25 if f_score < 60 else 45
+        if f_score >= 65:
+            cost_num = 480_000_000
+            cost_str = "480.000.000 ₫"
+            kairos_posture = "TÁI THIẾT KẾ VAI TRÒ — KHÔNG BỔ NHIỆM ÉP BUỘC"
+            silence_window = "Quan sát thử thách thực địa 14 ngày trước khi trao ấn tín chính thức"
+            leverage_pos = "Rủi ro phụ thuộc cá nhân cao — Cần chuẩn bị phương án nhân sự dự phòng"
+            breakdown = (
+                f"Với chỉ số ma sát nhận thức {f_score}%, nếu cố đặt nhân sự vào vị trí lệch pha trong 90 ngày: "
+                "Ước tính tiêu tốn ~180 triệu chi phí tuyển dụng/đào tạo lại + ~300 triệu thiệt hại do trễ quyết định vận hành và sụt giảm sĩ khí đội ngũ."
+            )
+        elif f_score >= 40:
+            cost_num = 210_000_000
+            cost_str = "210.000.000 ₫"
+            kairos_posture = "BỔ NHIỆM CÓ KIỂM SOÁT — CÀI CƠ CHẾ BÙ TRỪ"
+            silence_window = "Thiết lập nhịp rà soát KPI định lượng mỗi 7 ngày trong tháng đầu"
+            leverage_pos = "Tổ chức nắm thế chủ động nếu khóa rõ ranh giới quyền hạn (Lễ định phần)"
+            breakdown = (
+                f"Ma sát thích ứng ở ngưỡng {f_score}%: Nếu không thiết lập trợ lý/quy trình bù trừ trong 30 ngày đầu, "
+                "hao tổn năng lượng tự điều chỉnh sẽ làm giảm ~25% hiệu suất thực thi (tương đương ~210 triệu chi phí cơ hội)."
+            )
+        else:
+            cost_num = 65_000_000
+            cost_str = "65.000.000 ₫"
+            kairos_posture = "XUẤT KÍCH TRAO QUYỀN — TỐI ĐA HÓA ĐỘT PHÁ"
+            silence_window = "Trao quyền tự chủ ngay trong 48 giờ kèm mục tiêu đầu ra rõ ràng"
+            leverage_pos = "Tương thích cấu trúc cao — Đòn bẩy hiệu suất thuận chiều"
+            breakdown = (
+                "Độ tương thích cao; chi phí ma sát thấp (~65 triệu chi phí hội nhập ban đầu). "
+                "Nên giải phóng quyền tự chủ để thu hoạch kết quả sớm."
+            )
+        return {
+            "kairos_score": kairos_score,
+            "kairos_posture": kairos_posture,
+            "silence_window": silence_window,
+            "leverage_score": leverage_score,
+            "leverage_position": leverage_pos,
+            "switching_cost_pct": switching_cost_pct,
+            "cost_of_inaction_vnd": cost_str,
+            "cost_of_inaction_numeric": cost_num,
+            "cost_breakdown": breakdown,
+        }
+
+    if mode == "team_fit":
+        h_score = homogeneity_score if homogeneity_score is not None else 50
+        kairos_score = max(30, 100 - int(h_score * 0.7))
+        leverage_score = 78 if h_score < 50 else 42
+        switching_cost_pct = 30 if h_score < 60 else 55
+        if h_score >= 70:
+            cost_num = 850_000_000
+            cost_str = "850.000.000 ₫"
+            kairos_posture = "PHÁ BẪY ĐỒNG NHẤT — CÀI NGƯỜI PHẢN BIỆN"
+            silence_window = "Đình chỉ phê duyệt các dự án lớn trong 72h để thẩm định chéo độc lập"
+            leverage_pos = "Nguy cơ tư duy tập thể (Groupthink) làm mù điểm rủi ro chiến lược"
+            breakdown = (
+                f"Nguy cơ bẫy đồng nhất ở mức báo động ({h_score}%): Khi cả ban điều hành có cùng điểm mù nhận thức, "
+                "xác suất duyệt sai dự án hoặc bỏ sót rủi ro hợp đồng tăng gấp 2.4 lần (ước tính thiệt hại ~850 triệu - 2.5 tỷ trong 1 quý)."
+            )
+        else:
+            cost_num = 290_000_000
+            cost_str = "290.000.000 ₫"
+            kairos_posture = "ĐỊNH PHẦN RANH GIỚI — KÍCH HOẠT TƯƠNG THUỘC"
+            silence_window = "Chốt quy chế phối hợp chéo trong 7 ngày đầu nhận việc"
+            leverage_pos = "Đa dạng nhận thức tốt — Cần khóa quy tắc phân xử để tránh va chạm quyền lực"
+            breakdown = (
+                "Chi phí điều phối giao tiếp giai đoạn đầu ước tính ~290 triệu nếu không phân định rõ ranh giới KPI liên đới giữa nhân sự mới và đội ngũ cũ."
+            )
+        return {
+            "kairos_score": kairos_score,
+            "kairos_posture": kairos_posture,
+            "silence_window": silence_window,
+            "leverage_score": leverage_score,
+            "leverage_position": leverage_pos,
+            "switching_cost_pct": switching_cost_pct,
+            "cost_of_inaction_vnd": cost_str,
+            "cost_of_inaction_numeric": cost_num,
+            "cost_breakdown": breakdown,
+        }
+
+    # General Advisory Mode heuristics
+    if any(k in text_lower for k in ["đình công", "bạo động", "tai nạn", "tẩy chay", "khủng hoảng"]):
+        return {
+            "kairos_score": 92,
+            "kairos_posture": "CAN THIỆP TỨC THÌ TRONG GIỜ VÀNG ĐẦU TIÊN",
+            "silence_window": "Tuyệt đối không im lặng trốn tránh; xuất hiện trực tiếp trong 30–60 phút đầu để hạ nhiệt hạch hạnh nhân",
+            "leverage_score": 64,
+            "leverage_position": "Đòn bẩy nằm ở việc tách thủ lĩnh khỏi đám đông và kiểm toán buộc tội (Accusation Audit)",
+            "switching_cost_pct": 40,
+            "cost_of_inaction_vnd": "1.250.000.000 ₫",
+            "cost_of_inaction_numeric": 1_250_000_000,
+            "cost_breakdown": "Mỗi 24 giờ chậm trễ hoặc phản ứng tự vệ cảm tính tại hiện trường làm thiệt hại ~350–450 triệu tiền ngưng trệ máy móc, phạt hợp đồng và tổn thất thương hiệu.",
+        }
+    if any(k in text_lower for k in ["thầu phụ", "nhà cung cấp", "chậm tiến độ", "vật tư", "nghiệm thu", "công trường"]):
+        return {
+            "kairos_score": 84,
+            "kairos_posture": "KHÓA ĐÒN BẨY DÒNG TIỀN — RA TỐI HẬU THƯ SCHELLING",
+            "silence_window": "Án binh 24h để chốt xong đơn vị dự phòng B và lập biên bản hiện trường trước khi phát tối hậu thư 18h00",
+            "leverage_score": 78,
+            "leverage_position": "Chủ động hoàn toàn nếu nắm giữ tiền bảo lãnh thực hiện hợp đồng + khoản thanh toán kỳ trước",
+            "switching_cost_pct": 18,
+            "cost_of_inaction_vnd": "680.000.000 ₫",
+            "cost_of_inaction_numeric": 680_000_000,
+            "cost_breakdown": "Nếu chỉ nhắc nhở miệng mà không khóa công nợ và ấn định mốc phạt tự động, dự án sẽ trượt tiến độ thêm 14–21 ngày (tương đương ~680 triệu chi phí nhân công/máy chờ và phạt chủ đầu tư).",
+        }
+    if any(k in text_lower for k in ["phó tướng", "công thần", "tạo phản", "cổ đông", "thâu tóm", "sân sau", "rút ruột", "sa thải"]):
+        return {
+            "kairos_score": 76,
+            "kairos_posture": "HƯ TĨNH CHE MẮT — RÚT CỦI ĐÁY NỒI TRƯỚC KHI TRẢM",
+            "silence_window": "Im lặng chiến thuật 14–21 ngày để thu hồi dữ liệu khách hàng gốc, khóa quyền CRM và cài người kế cận",
+            "leverage_score": 68,
+            "leverage_position": "Chuyển từ thế bị phụ thuộc cá nhân sang thế chân vạc kiểm soát chéo",
+            "switching_cost_pct": 32,
+            "cost_of_inaction_vnd": "1.850.000.000 ₫",
+            "cost_of_inaction_numeric": 1_850_000_000,
+            "cost_breakdown": "Nóng vội sa thải khi chưa thu hồi tệp khách hàng hoặc chần chừ dung dưỡng sẽ làm mất 30–40% doanh thu vùng (ước tính ~1.85 tỷ đồng) vào tay đối thủ.",
+        }
+    if any(k in text_lower for k in ["ép giá", "đàm phán", "thu nợ", "công nợ", "mặt bằng", "ngân hàng", "báo giá", "đắt"]):
+        return {
+            "kairos_score": 80,
+            "kairos_posture": "THẤU CẢM CHIẾN THUẬT FBI — ĐÁNH ĐỔI CÓ ĐIỀU KIỆN",
+            "silence_window": "Ngừng phản hồi giá ngay tại bàn họp; im lặng 4 giây sau câu hỏi hiệu chỉnh hoặc chờ 48h để đối phương lộ áp lực thời gian",
+            "leverage_score": 74,
+            "leverage_position": "Nắm ưu thế nhờ chi phí chuyển đổi (Switching Cost) của đối phương cao hơn mức họ đang hù dọa",
+            "switching_cost_pct": 28,
+            "cost_of_inaction_vnd": "540.000.000 ₫",
+            "cost_of_inaction_numeric": 540_000_000,
+            "cost_breakdown": "Nhượng bộ giảm giá vô điều kiện hoặc chia đôi sự khác biệt sẽ bào mòn trực tiếp ~540 triệu lợi nhuận ròng và tạo tiền lệ bị ép giá ở các kỳ tiếp theo.",
+        }
+
+    return {
+        "kairos_score": 75,
+        "kairos_posture": "THẨM THỜI ĐỊNH THẾ — KHÓA CHẶT ĐÒN BẨY TRƯỚC KHI XUẤT CHIÊU",
+        "silence_window": "Dừng nhịp 12h–24h để thu thập đủ 3 nguồn dữ liệu độc lập (Kiểm chứng tam nguyên) trước khi ra phán quyết",
+        "leverage_score": 70,
+        "leverage_position": "Chủ động thiết lập quy chuẩn đánh giá (Lễ định phần) và chế tài thực thi (Hình - Danh)",
+        "switching_cost_pct": 22,
+        "cost_of_inaction_vnd": "350.000.000 ₫",
+        "cost_of_inaction_numeric": 350_000_000,
+        "cost_breakdown": "Chần chừ không xử lý dứt điểm ma sát vận hành trong 30 ngày tới ước tính gây thất thoát ~350 triệu đồng chi phí nhân sự và cơ hội thị trường.",
+    }
+
+
+def generate_consigliere_brief(scenario_text: str, primary_philosophy: str) -> dict[str, Any]:
+    """
+    Generates the unfiltered Realpolitik 'Executive Consigliere' (Quân Sư Thân Tín Hậu Trường) brief:
+    1. Shadow Motive Dissection (Bóc trần toan tính ngầm)
+    2. Opponent Breaking Point (Tử huyệt / Nỗi sợ thực sự của đối phương)
+    3. Three-Step Checkmate (Kế sách 3 bước rút củi đáy nồi)
+    4. Confidential Whisper (Lời dặn mật cho Chủ tịch)
+    """
+    text_lower = (scenario_text or "").lower()
+
+    if any(k in text_lower for k in ["phó tướng", "công thần", "giám đốc kinh doanh", "sa thải", "tạo phản", "kéo quân", "nhảy việc"]):
+        return {
+            "persona_title": "MẬT THẤT QUÂN SƯ • GIẢI PHẪU QUYỀN LỰC NGẦM",
+            "shadow_motive_dissection": (
+                "Đừng nghe những lời than phiền về quy trình hay đãi ngộ. Bản chất thực sự là nhân sự này đã tích lũy đủ 'con tin' "
+                "(dữ liệu khách hàng VIP và lòng trung thành cá nhân của cấp dưới) nên đang phép thử giới hạn chịu đựng của Chủ tịch. "
+                "Nếu nhượng bộ lúc này, quyền điều hành thực tế sẽ chuyển sang tay họ."
+            ),
+            "opponent_breaking_point": (
+                "Tử huyệt của họ nằm ở: (1) Sợ bị mất nguồn thu nhập đột ngột khi bàn đạp bên ngoài chưa hoàn tất 100%, "
+                "và (2) Cấp dưới đi theo họ vì lợi ích trước mắt chứ chưa chắc dám đánh đổi sự ổn định nếu công ty mở đường thăng tiến trực tiếp."
+            ),
+            "three_step_checkmate": [
+                "Bước 1 (Vỗ về tạo sương mù - 7 ngày): Tuyệt đối không lộ vẻ bất mãn; khen ngợi đóng góp và lấy lý do 'chuẩn bị nâng cấp hệ thống chăm sóc VIP' để yêu cầu đồng bộ toàn bộ hồ sơ khách hàng lên hệ thống chung.",
+                "Bước 2 (Chia cắt rễ cây - 14 ngày): Gặp riêng 2 cấp dưới giỏi nhất của họ, trao quyền quản lý trực tiếp một phần địa bàn với cơ chế thưởng nóng để triệt tiêu nguy cơ rút quân dây chuyền.",
+                "Bước 3 (Đoạt ấn trong 2 giờ): Khi đã nắm 85% đầu mối khách hàng và nhân sự kế cận, ra quyết định miễn nhiệm/chuyển giao trong đúng 1 buổi sáng, khóa quyền truy cập dữ liệu trước khi thông báo công khai."
+            ],
+            "whisper_warning": "Thưa Chủ tịch: Khi chưa nắm được danh sách khách hàng gốc và chưa khóa tài khoản dữ liệu, tuyệt đối không được nổi giận hay đánh tiếng cảnh cáo."
+        }
+
+    if any(k in text_lower for k in ["thầu phụ", "nhà cung cấp", "chậm tiến độ", "vật tư", "công trường", "đình công", "nghiệm thu"]):
+        return {
+            "persona_title": "MẬT THẤT QUÂN SƯ • TÁC CHIẾN HIỆN TRƯỜNG & CHẾ TÀI",
+            "shadow_motive_dissection": (
+                "Đối phương chậm trễ không phải vì 'khó khăn khách quan' như họ trình bày, mà vì họ đang ưu tiên nguồn lực cho một chủ đầu tư khác "
+                "có chế tài phạt gắt hơn hoặc trả tiền mặt nhanh hơn. Họ đánh cược rằng ta đang sợ vỡ tiến độ nên không dám thay ngựa giữa dòng."
+            ),
+            "opponent_breaking_point": (
+                "Tử huyệt của nhà thầu/nhà cung ứng là: (1) Khoản tiền bảo lãnh và tiền thanh toán đợt trước đang nằm trong tay ta, "
+                "và (2) Nỗi sợ bị đưa đơn vị dự phòng B vào làm thay rồi cấn trừ chi phí chênh lệch gấp đôi vào công nợ của họ."
+            ),
+            "three_step_checkmate": [
+                "Bước 1 (Chốt chứng cứ chết tại hiện trường): Dừng ngay việc gọi điện năn nỉ. Cử kỹ thuật lập Biên bản xác nhận sự kiện chậm trễ có ảnh chụp thời gian thực và chữ ký giám sát.",
+                "Bước 2 (Dựng sẵn ngựa thay thế): Âm thầm làm việc với nhà thầu phụ/nhà cung cấp B, cho người của đơn vị B xuất hiện khảo sát ngay tại công trường để đối phương nhìn thấy sự thật.",
+                "Bước 3 (Tối hậu thư Schelling 24 giờ): Phát văn bản ấn định mốc 17h00 ngày mai; quá giờ không đủ quân và vật tư thì lệnh phong tỏa bảo lãnh và bàn giao mặt bằng cho đơn vị B tự động kích hoạt."
+            ],
+            "whisper_warning": "Thưa Chủ tịch: Lời đe dọa chỉ có sức nặng ngàn cân khi đơn vị dự phòng B đã ký nháy sẵn sàng vào sân."
+        }
+
+    return {
+        "persona_title": "MẬT THẤT QUÂN SƯ • GIẢI PHẪU TOAN TÍNH & ĐÒN BẨY",
+        "shadow_motive_dissection": (
+            "Đằng sau lập luận bề nổi của đối phương là phép thử về Chi phí chuyển đổi (Switching Cost) và Độ lì tâm lý của ta. "
+            "Họ đang đẩy quả bóng áp lực thời gian sang phía ta để buộc ta tự hạ chuẩn hoặc nhượng bộ vô căn cứ."
+        ),
+        "opponent_breaking_point": (
+            "Điểm yếu cốt tử của đối phương là họ cũng đang chịu áp lực KPI thời hạn và chi phí cơ hội nếu cuộc đàm phán này đổ vỡ. "
+            "Ai giữ được nhịp thở điềm tĩnh và lộ ra phương án thay thế khả tín (BATNA) trước, người đó làm chủ bàn cờ."
+        ),
+        "three_step_checkmate": [
+            "Bước 1 (Tắt phản xạ giải thích): Dùng kỹ thuật Soi gương (Mirroring) và Gắn nhãn cảm xúc (Labeling) của FBI để buộc đối phương phải nói hết bài tẩy và nỗi sợ ngầm.",
+            "Bước 2 (Khóa mỏ neo bằng Câu hỏi Hiệu chỉnh): Đặt câu hỏi 'Làm thế nào chúng tôi có thể đáp ứng điều đó khi điều kiện X chưa được đảm bảo?' để đẩy ngược bài toán khó về phía họ.",
+            "Bước 3 (Ra điều kiện đánh đổi cứng - Hình Danh): Mọi sự nhượng bộ của ta phải đổi lấy một cam kết định lượng bằng tiền mặt, tiến độ hoặc tài sản bảo đảm ngay lập tức."
+        ],
+        "whisper_warning": "Thưa Chủ tịch: Trong ván cờ quyền lực, người nào vội vã muốn kết thúc cuộc đàm phán trước luôn là người phải trả giá đắt nhất."
+    }
+
+
+def evaluate_sparring_tactical_audit(user_text: str) -> dict[str, Any]:
+    """
+    Analyzes the user's sparring statement and returns a quantitative Tactical Strike Audit.
+    """
+    t_lower = (user_text or "").lower().strip()
+    words_count = len(t_lower.split())
+
+    has_calibrated_q = any(q in t_lower for q in ["làm thế nào", "bằng cách nào", "điều gì khiến", "nếu không", "căn cứ vào đâu"])
+    has_leverage = any(k in t_lower for k in ["hợp đồng", "chế tài", "biên bản", "bảo lãnh", "hạn chót", "18h", "24h", "48h", "phương án b", "tạm dừng", "cấn trừ"])
+    has_weakness = any(w in t_lower for w in ["xin", "mong anh", "thông cảm", "cố gắng giúp", "giảm ngay", "chấp nhận hết", "tùy anh"])
+
+    score = 58
+    if has_calibrated_q:
+        score += 18
+    if has_leverage:
+        score += 20
+    if words_count >= 12 and not has_weakness:
+        score += 5
+    if has_weakness:
+        score -= 28
+    score = max(20, min(96, score))
+
+    if score >= 75:
+        rating = "THƯỢNG PHONG • ÁP CHẾ ĐÒN BẨY"
+        vulnerability = "Đòn đánh đã có tính ràng buộc cao; lưu ý giữ nhịp im lặng 4 giây sau khi phát ngôn để áp lực ngấm vào đối phương."
+    elif score >= 50:
+        rating = "GIẰNG CO • CHƯA KHÓA TỬ HUYỆT"
+        vulnerability = "Lập luận hợp lý nhưng còn thiếu mốc thời hạn dứt điểm (Schelling Deadline) hoặc chưa gắn kèm chế tài tự động nếu đối phương trì hoãn."
+    else:
+        rating = "HỞ SƯỜN • NHƯỢNG BỘ SỚM"
+        vulnerability = "Ngôn từ đang để lộ sự nôn nóng hoặc xin xỏ thiện chí cảm tính, dễ bị đối phương ép thêm bước nữa."
+
+    upgrade = (
+        '"Có vẻ như anh đang chịu áp lực rất lớn về chỉ tiêu kỳ này. Nhưng làm thế nào chúng tôi có thể điều chỉnh điều khoản đó '
+        'khi khối lượng cam kết và tiền bảo lãnh thanh toán trước 17h00 ngày mai vẫn chưa được xác lập bằng biên bản?"'
+    )
+
+    return {
+        "dominance_score": score,
+        "posture_rating": rating,
+        "detected_vulnerability": vulnerability,
+        "counter_strike_upgrade": upgrade,
+    }
+
+
 def diagnose_person_role_fit(payload: dict[str, Any]) -> dict[str, Any]:
     """
     Evaluates alignment between personal default traits and role behavioral expectations
@@ -676,6 +948,11 @@ def diagnose_person_role_fit(payload: dict[str, Any]) -> dict[str, Any]:
             {"id": "NT-PRINCIPLE-0067", "title": "Chuẩn hóa đánh giá", "domain": "tri-nhan"},
             {"id": "NT-LAW-0034", "title": "Quy luật ma sát nhận thức", "domain": "tri-nhan"}
         ]
+        result["executive_metrics"] = compute_executive_metrics(
+            f"{candidate_name} {target_role}",
+            mode="person_fit",
+            friction_score=int(result.get("friction_score", 55)),
+        )
         return result
     except Exception as e:  # noqa: BLE001
         print(f"[NhanThuatAPI] LLM fit diagnosis failed, using fallback: {e}")
@@ -731,6 +1008,11 @@ def diagnose_person_role_fit(payload: dict[str, Any]) -> dict[str, Any]:
         ],
         "placement_verdict": (
             "BỔ NHIỆM CÓ ĐIỀU KIỆN KÈM HỖ TRỢ MÔI TRƯỜNG" if friction_score <= 65 else "CÂN NHẮC TÁI THIẾT KẾ VAI TRÒ HOẶC CHỌN ỨNG VIÊN BÙ TRỪ"
+        ),
+        "executive_metrics": compute_executive_metrics(
+            f"{candidate_name} {target_role}",
+            mode="person_fit",
+            friction_score=friction_score,
         ),
         "cited_units": [
             {"id": "NT-MODEL-0007", "title": "Mô hình tương thích cá nhân - vai trò", "domain": "tri-nhan"},
@@ -805,6 +1087,11 @@ def diagnose_team_structural_fit(payload: dict[str, Any]) -> dict[str, Any]:
             {"id": "NT-LAW-0042", "title": "Quy luật đa dạng nhận thức", "domain": "hop-chung"},
             {"id": "NT-MODEL-0012", "title": "Đường cong gắn kết - ma sát", "domain": "hop-chung"}
         ]
+        result["executive_metrics"] = compute_executive_metrics(
+            f"{candidate_name} {team_name}",
+            mode="team_fit",
+            homogeneity_score=int(result.get("homogeneity_risk_score", 50)),
+        )
         return result
     except Exception as e:  # noqa: BLE001
         print(f"[NhanThuatAPI] LLM team structural fit failed, using fallback: {e}")
@@ -880,6 +1167,11 @@ def diagnose_team_structural_fit(payload: dict[str, Any]) -> dict[str, Any]:
         "systemic_blind_spots": blind_spots,
         "structural_directives": structural_directives,
         "composition_verdict": composition_verdict,
+        "executive_metrics": compute_executive_metrics(
+            f"{candidate_name} {team_name}",
+            mode="team_fit",
+            homogeneity_score=homogeneity_risk_score,
+        ),
         "cited_units": [
             {"id": "NT-PRINCIPLE-0066", "title": "Tuyển chọn theo sự khớp cấu trúc", "domain": "tri-nhan"},
             {"id": "NT-MODEL-0009", "title": "Mô hình tương tác phát sinh", "domain": "tri-nhan"},
@@ -890,7 +1182,7 @@ def diagnose_team_structural_fit(payload: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def process_nhan_thuat_analysis(scenario_text: str, scenario_type_hint: str = "general") -> dict[str, Any]:
+def process_nhan_thuat_analysis(scenario_text: str, scenario_type_hint: str = "general", consigliere_mode: bool = False) -> dict[str, Any]:
     orchestrator = get_orchestrator()
     text_lower = scenario_text.lower()
 
@@ -938,6 +1230,7 @@ def process_nhan_thuat_analysis(scenario_text: str, scenario_type_hint: str = "g
                         "correlation_id": f"CORR-SPAR-{uuid.uuid4().hex[:8].upper()}"
                     }
                 },
+                "tactical_audit": evaluate_sparring_tactical_audit(scenario_text),
                 "correlation_id": f"CORR-SPAR-{uuid.uuid4().hex[:8].upper()}",
             }
         except Exception:  # noqa: BLE001, S110
@@ -1031,6 +1324,19 @@ def process_nhan_thuat_analysis(scenario_text: str, scenario_type_hint: str = "g
         "matched_knowledge_units": matched_units_payload,
         "matched_custom_docs": [],
         "action_script": action_script,
+        "executive_metrics": compute_executive_metrics(scenario_text, mode="advisory"),
+        "consigliere_mode": bool(consigliere_mode),
+        "consigliere_brief": generate_consigliere_brief(scenario_text, primary_phil),
+        "matched_cases": _match_living_dossiers_safe(scenario_text, top_k=2),
+        "tactical_audit": evaluate_sparring_tactical_audit(scenario_text),
         "synthesis_result": synthesis_result,  # This contains mode, synthesis, citations, audit
         "correlation_id": correlation_id,
     }
+
+
+def _match_living_dossiers_safe(scenario_text: str, top_k: int = 2) -> list[dict[str, Any]]:
+    try:
+        from backend.app.engine.cases_service import cases_service
+        return cases_service.match_relevant_dossiers(scenario_text, top_k=top_k)
+    except Exception:  # noqa: BLE001
+        return []

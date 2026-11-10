@@ -37,9 +37,11 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from backend.app.auth import _ACTIVE_SESSIONS, AuthenticationError, auth_manager  # noqa: F401
+from backend.app.engine.cases_service import cases_service
 from backend.app.engine.nhan_thuat_api import (
     diagnose_person_role_fit,
     diagnose_team_structural_fit,
+    evaluate_sparring_tactical_audit,
     process_nhan_thuat_analysis,
 )
 from backend.app.engine.payment import PAYMENT_UNAVAILABLE_MESSAGE, TIERS, payment_gateway
@@ -1012,6 +1014,27 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
             self._send_json_response(200, {"status": "success", "case_file": case.to_dict()})
             return
 
+        # 4c-0. Living Case Dossiers API: GET /api/v1/cases/dossiers, GET /api/v1/cases/dossiers/{case_id}
+        if path == "/api/v1/cases/dossiers":
+            qs = parse_qs(parsed_url.query)
+            category = (qs.get("category") or [None])[0]
+            query = (qs.get("q") or qs.get("query") or [None])[0]
+            res = cases_service.list_dossiers(category=category, query=query)
+            self._send_json_response(200, res)
+            return
+
+        if path.startswith("/api/v1/cases/dossiers/"):
+            dossier_id = path.split("/api/v1/cases/dossiers/", 1)[1].strip("/")
+            dossier = cases_service.get_dossier(dossier_id)
+            if dossier:
+                self._send_json_response(200, {"status": "success", "dossier": dossier})
+            else:
+                self._send_json_response(
+                    404,
+                    {"status": "error", "message": f"Living case dossier '{dossier_id}' not found."},
+                )
+            return
+
         # 4c. Case Studies API: GET /api/v1/cases, GET /api/v1/cases/{case_id}
         if path == "/api/v1/cases":
             domain = (parse_qs(parsed_url.query).get("domain") or [None])[0]
@@ -1423,6 +1446,8 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
                 override_lens=lens,
                 owner_id=auth_session["user_id"],
             )
+            if isinstance(turn_result, dict):
+                turn_result["tactical_audit"] = evaluate_sparring_tactical_audit(message)
             self._send_json_response(200, turn_result)
             return
 
@@ -1865,6 +1890,7 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
         if path == "/api/v1/nhan-thuat/analyze":
             scenario_text = payload.get("scenario_text", "")
             scenario_type_hint = payload.get("scenario_type") or payload.get("scenario_type_hint") or "general"
+            consigliere_mode = bool(payload.get("consigliere_mode", False))
 
             if not scenario_text:
                 self._send_json_response(400, {
@@ -1875,7 +1901,11 @@ class BusinessOSGatewayHandler(BaseHTTPRequestHandler):
                 return
 
             try:
-                result = process_nhan_thuat_analysis(scenario_text, scenario_type_hint)
+                result = process_nhan_thuat_analysis(
+                    scenario_text,
+                    scenario_type_hint,
+                    consigliere_mode=consigliere_mode,
+                )
                 status_code = 422 if result.get("status") == "error" else 200
                 self._send_json_response(status_code, result)
             except Exception as e:  # noqa: BLE001

@@ -191,7 +191,7 @@ def test_sparring_tactical_strike_analyzer():
 
 
 def test_frontend_consigliere_and_dossiers_dom_elements():
-    """Verify frontend/app.html contains all Executive Consigliere, Kairos Cockpit, and Living Dossiers UI elements."""
+    """Verify frontend/app.html contains all Executive Consigliere, Kairos Cockpit, Living Dossiers, and Reorganized Codex elements."""
     html = Path("frontend/app.html").read_text(encoding="utf-8")
     assert 'id="consigliere-mode-toggle"' in html
     assert 'id="consigliere-presets-bar"' in html
@@ -200,3 +200,12 @@ def test_frontend_consigliere_and_dossiers_dom_elements():
     assert "renderExecutiveMetricsHTML" in html
     assert "renderConsigliereBriefHTML" in html
     assert "renderClientTacticalAudit" in html
+    assert 'id="codex-subnav-bar"' in html
+    assert 'id="codex-panel-overview"' in html
+    assert 'id="codex-panel-books"' in html
+    assert 'id="codex-panel-iching"' in html
+    assert 'id="codex-panel-dossiers"' in html
+    assert 'id="codex-panel-catalog"' in html
+    assert 'id="codex-global-search-input"' in html
+    assert "switchCodexSubView" in html
+    assert "handleCodexGlobalSearch" in html

@@ -1604,6 +1604,155 @@
             transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
+        /* MODULE 5: BOOKS & CODEX - EXECUTIVE REDESIGN */
+        .codex-subnav-bar {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            padding: 8px 10px;
+            background: rgba(14, 15, 23, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            margin-bottom: 24px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+        }
+        .codex-subnav-bar::-webkit-scrollbar { display: none; }
+
+        .codex-subnav-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 16px;
+            background: transparent;
+            border: 1px solid transparent;
+            border-radius: 10px;
+            color: var(--text-secondary);
+            font-family: var(--font-display);
+            font-size: 12.5px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            cursor: pointer;
+            transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+            white-space: nowrap;
+        }
+        .codex-subnav-pill:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        .codex-subnav-pill.active {
+            background: rgba(212, 175, 55, 0.14);
+            border-color: rgba(212, 175, 55, 0.45);
+            color: var(--gold-light);
+            box-shadow: 0 4px 16px rgba(212, 175, 55, 0.15);
+        }
+        .codex-subnav-pill .subnav-pill-badge {
+            padding: 2px 7px;
+            border-radius: 8px;
+            font-size: 10.5px;
+            font-weight: 700;
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text-muted);
+        }
+        .codex-subnav-pill.active .subnav-pill-badge {
+            background: rgba(212, 175, 55, 0.25);
+            color: #ffffff;
+        }
+
+        /* CODEX EXECUTIVE BENTO CARDS */
+        .codex-bento-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 18px;
+            margin-bottom: 24px;
+        }
+        .codex-bento-card {
+            background: linear-gradient(145deg, rgba(18, 19, 28, 0.85) 0%, rgba(12, 13, 19, 0.95) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 14px;
+            padding: 22px 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .codex-bento-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.45), transparent);
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+        .codex-bento-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(212, 175, 55, 0.38);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+        }
+        .codex-bento-card:hover::before {
+            opacity: 1;
+        }
+        .codex-bento-eyebrow {
+            font-family: var(--font-display);
+            font-size: 10.5px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--gold-primary);
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .codex-bento-title {
+            font-family: var(--font-serif);
+            font-size: 19px;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 0 0 8px 0;
+            line-height: 1.35;
+        }
+        .codex-bento-desc {
+            font-size: 12.5px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+        .codex-bento-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--gold-light);
+            transition: transform 0.2s ease;
+        }
+        .codex-bento-card:hover .codex-bento-action {
+            transform: translateX(4px);
+            color: #ffffff;
+        }
+
+        /* CODEX PANELS */
+        .codex-panel {
+            display: none;
+            animation: codexPanelFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .codex-panel.active {
+            display: block;
+        }
+        @keyframes codexPanelFadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         /* MODULE 5: BOOKS & CODEX */
         .codex-container {
             flex: 1;
@@ -5402,27 +5551,162 @@
                 <button class="workspace-focus-btn" type="button" onclick="toggleWorkspaceFocus('view-codex')" aria-label="Mở Tủ sách ở chế độ tập trung" title="Chế độ tập trung">⛶</button>
             </div>
             <div class="codex-container">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
-                    <div>
-                        <h2 style="font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: #ffffff; letter-spacing: 0.01em;">TÀI LIỆU THAM KHẢO & KHO <span id="codex-unit-count">…</span> TRI THỨC</h2>
-                        <p style="font-size: 12.5px; color: var(--text-secondary);">Trọn bộ <span id="codex-book-count">…</span> cẩm nang tinh hoa và <span id="codex-unit-count-2">…</span> đơn vị tri thức chuẩn hóa qua <span id="codex-domain-count">…</span> miền quản trị.</p>
+                <!-- CODEX SUB-NAVIGATION BAR (BỘ ĐIỀU HƯỚNG 4 PHÂN KHU TRI THỨC) -->
+                <div class="codex-subnav-bar" id="codex-subnav-bar" role="tablist" aria-label="Phân khu Kho Tri Thức">
+                    <button type="button" class="codex-subnav-pill active" data-subview="overview" onclick="switchCodexSubView('overview', this)" role="tab" aria-selected="true">
+                        <span class="subnav-pill-icon">✦</span>
+                        <span>Tổng Quan Kho</span>
+                        <span class="subnav-pill-badge">4 Trụ Cột</span>
+                    </button>
+                    <button type="button" class="codex-subnav-pill" data-subview="books" onclick="switchCodexSubView('books', this)" role="tab" aria-selected="false">
+                        <span class="subnav-pill-icon">📚</span>
+                        <span>Tủ Sách Cẩm Nang</span>
+                        <span class="subnav-pill-badge" id="codex-subnav-books-badge">14</span>
+                    </button>
+                    <button type="button" class="codex-subnav-pill" data-subview="iching" onclick="switchCodexSubView('iching', this)" role="tab" aria-selected="false">
+                        <span class="subnav-pill-icon">☯</span>
+                        <span>64 Quẻ Biến Dịch</span>
+                        <span class="subnav-pill-badge">64</span>
+                    </button>
+                    <button type="button" class="codex-subnav-pill" data-subview="dossiers" onclick="switchCodexSubView('dossiers', this)" role="tab" aria-selected="false">
+                        <span class="subnav-pill-icon">📁</span>
+                        <span>30 Án Điển Sống</span>
+                        <span class="subnav-pill-badge">30</span>
+                    </button>
+                    <button type="button" class="codex-subnav-pill" data-subview="catalog" onclick="switchCodexSubView('catalog', this)" role="tab" aria-selected="false">
+                        <span class="subnav-pill-icon">📜</span>
+                        <span>379 Đơn Vị Tri Thức</span>
+                        <span class="subnav-pill-badge" id="codex-subnav-catalog-badge">379</span>
+                    </button>
+                    <button type="button" class="codex-subnav-pill" data-subview="stream" onclick="switchCodexSubView('stream', this)" role="tab" aria-selected="false" title="Hiển thị liên tục cả 4 phân khu">
+                        <span class="subnav-pill-icon">≡</span>
+                        <span>Dòng Chảy Toàn Kho</span>
+                    </button>
+                </div>
+
+                <!-- PHÂN KHU 0: TỔNG QUAN KHO TRI THỨC (EXECUTIVE BENTO HUB) -->
+                <div id="codex-panel-overview" class="codex-panel active" style="display: block;">
+                    <div style="background: linear-gradient(145deg, rgba(14,15,23,0.85), rgba(10,11,18,0.92)); border: 1px solid rgba(212,175,55,0.22); border-radius: 14px; padding: 24px 28px; margin-bottom: 24px; position: relative;">
+                        <div class="workspace-eyebrow" style="margin-bottom: 6px;">Hệ Thống Dữ Liệu Lõi &amp; Căn Cứ Điều Hành</div>
+                        <h2 style="font-family: var(--font-serif); font-size: 23px; color: #ffffff; margin: 0 0 8px 0; letter-spacing: 0.01em;">
+                            BẢN ĐỒ 4 TRỤ CỘT TRI THỨC NHÂN THUẬT
+                        </h2>
+                        <p style="font-size: 13px; color: var(--text-secondary); max-width: 820px; line-height: 1.6; margin-bottom: 18px;">
+                            Kho lưu trữ tích hợp toàn diện: từ văn bản cẩm nang kinh điển, ma trận định vị thời thế Chu Dịch, 30 hồ sơ án điển giải phẫu có định lượng thiệt hại bằng VNĐ, đến bản đồ bản thể 379 tiên đề quản trị có thể truy nguyên nguồn gốc.
+                        </p>
+
+                        <!-- SPOTLIGHT SEARCH ACROSS ALL 4 REPOSITORIES -->
+                        <div style="position: relative; max-width: 720px;">
+                            <input type="text" id="codex-global-search-input" class="chat-text-input" 
+                                   placeholder="🔍 Tra cứu đồng bộ toàn bộ kho (VD: MEP, cổ đông 50-50, Chris Voss, Thuần Càn, NT-LAW-0001)..." 
+                                   style="width: 100%; font-size: 13px; padding: 11px 16px; border-radius: 10px; background: rgba(0,0,0,0.45); border: 1px solid rgba(212,175,55,0.32); color: #fff;"
+                                   oninput="handleCodexGlobalSearch(this.value)">
+                        </div>
+                        <div id="codex-global-search-results" style="display: none; margin-top: 14px; background: rgba(8,9,14,0.96); border: 1px solid rgba(212,175,55,0.3); border-radius: 12px; padding: 18px; max-height: 480px; overflow-y: auto;"></div>
                     </div>
 
-                    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                        <button class="mode-pill active" onclick="filterBookCat('all', this)">Tất cả (<span id="book-pill-all-count">…</span>)</button>
-                        <button class="mode-pill" onclick="filterBookCat('psychology', this)">Tâm lý & đàm phán</button>
-                        <button class="mode-pill" onclick="filterBookCat('strategy', this)">Chiến lược & Game Theory</button>
-                        <button class="mode-pill" onclick="filterBookCat('leadership', this)">Hệ thống & quản trị</button>
-                        <button class="mode-pill" onclick="filterBookCat('mindset', this)">Bản lĩnh & nghịch cảnh</button>
+                    <!-- 4 EXECUTIVE BENTO CARDS -->
+                    <div class="codex-bento-grid" id="codex-bento-grid">
+                        <div class="codex-bento-card" onclick="switchCodexSubView('books')">
+                            <div>
+                                <div class="codex-bento-eyebrow">
+                                    <span>Trụ cột 01 • Cẩm nang điều hành</span>
+                                    <span style="color: var(--gold-light);">14 Tác phẩm</span>
+                                </div>
+                                <h3 class="codex-bento-title">TỦ SÁCH CẨM NANG TINH HOA</h3>
+                                <p class="codex-bento-desc">
+                                    Trọn bộ 14 cẩm nang văn bản toàn diện: Tâm lý &amp; Đàm phán, Chiến lược &amp; Binh pháp, Quản trị tổ chức và Rèn luyện bản lĩnh nghịch cảnh. Hỗ trợ đọc trực tiếp và xuất PDF.
+                                </p>
+                            </div>
+                            <div class="codex-bento-action">
+                                <span>Mở Tủ Sách Cẩm Nang (14)</span>
+                                <span>&rarr;</span>
+                            </div>
+                        </div>
+
+                        <div class="codex-bento-card" onclick="switchCodexSubView('iching')">
+                            <div>
+                                <div class="codex-bento-eyebrow">
+                                    <span style="color: var(--cyan-accent);">Trụ cột 02 • Chu Dịch ứng dụng</span>
+                                    <span style="color: var(--cyan-accent);">64 Quẻ • 8 Cung</span>
+                                </div>
+                                <h3 class="codex-bento-title">MA TRẬN 64 QUẺ BIẾN DỊCH</h3>
+                                <p class="codex-bento-desc">
+                                    Bàn cờ tọa độ 8x8 kết hợp Chu kỳ 12 Quẻ Tiêu Trưởng và Bộ lọc chẩn đoán chuyển pha tổ chức. Định vị chính xác thiên thời và điểm rơi hành động (Tiến / Thoái / Thủ / Biến).
+                                </p>
+                            </div>
+                            <div class="codex-bento-action" style="color: var(--cyan-accent);">
+                                <span>Vào Bàn Cờ Ma Trận 8x8</span>
+                                <span>&rarr;</span>
+                            </div>
+                        </div>
+
+                        <div class="codex-bento-card" onclick="switchCodexSubView('dossiers')">
+                            <div>
+                                <div class="codex-bento-eyebrow">
+                                    <span style="color: #fda4af;">Trụ cột 03 • Thực nghiệm &amp; Định lượng</span>
+                                    <span style="color: #fda4af;">30 Hồ sơ sống</span>
+                                </div>
+                                <h3 class="codex-bento-title">30 ÁN ĐIỂN GIẢI PHẪU SỐNG</h3>
+                                <p class="codex-bento-desc">
+                                    30 ván cờ thực tế tại doanh nghiệp Việt Nam: Tranh chấp quyền lực nội bộ, Khủng hoảng hiện trường công trường, Đàm phán sinh tử. Định lượng thiệt hại VNĐ và kịch bản can thiệp 3 bước.
+                                </p>
+                            </div>
+                            <div class="codex-bento-action" style="color: #fda4af;">
+                                <span>Khám phá 30 Án Điển Thực Chiến</span>
+                                <span>&rarr;</span>
+                            </div>
+                        </div>
+
+                        <div class="codex-bento-card" onclick="switchCodexSubView('catalog')">
+                            <div>
+                                <div class="codex-bento-eyebrow">
+                                    <span style="color: #6ee7b7;">Trụ cột 04 • Hệ tiên đề Nhân Thuật</span>
+                                    <span style="color: #6ee7b7;">379 Đơn vị tri thức</span>
+                                </div>
+                                <h3 class="codex-bento-title">BẢN ĐỒ BẢN THỂ 379 TRI THỨC</h3>
+                                <p class="codex-bento-desc">
+                                    Mạng lưới tri thức khoa học hành vi và triết học phương Đông chuẩn hóa qua 5 miền: Tri nhân, Tu thân, Dụng nhân, Hợp chúng, Thành sự với đầy đủ quan hệ phả hệ và bằng chứng kiểm nghiệm.
+                                </p>
+                            </div>
+                            <div class="codex-bento-action" style="color: #6ee7b7;">
+                                <span>Tra cứu 379 Đơn Vị Tri Thức</span>
+                                <span>&rarr;</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="books-grid" id="books-grid-container">
-                    <!-- Populated dynamically from DIGITAL_BOOKS + API -->
+                <!-- PHÂN KHU 1: TỦ SÁCH CẨM NANG -->
+                <div id="codex-panel-books" class="codex-panel" style="display: none;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
+                        <div>
+                            <div class="workspace-eyebrow" style="margin-bottom: 4px;">Trụ cột 01 • Cẩm nang điều hành</div>
+                            <h2 style="font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: #ffffff; letter-spacing: 0.01em; margin: 0 0 4px 0;">
+                                TỦ SÁCH CẨM NANG TINH HOA (<span id="codex-book-count">14</span> TÁC PHẨM)
+                            </h2>
+                            <p style="font-size: 12.5px; color: var(--text-secondary); margin: 0;">Trọn bộ cẩm nang chuyên sâu về tâm lý, chiến lược, hệ thống và bản lĩnh nghịch cảnh.</p>
+                        </div>
+
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+                            <input type="text" id="books-search-input" class="chat-text-input" placeholder="🔍 Tìm tên sách, tác giả..." style="max-width: 240px; font-size: 12px; padding: 7px 12px;" oninput="filterBooksSearch(this.value)">
+                            <button class="mode-pill active" onclick="filterBookCat('all', this)">Tất cả (<span id="book-pill-all-count">…</span>)</button>
+                            <button class="mode-pill" onclick="filterBookCat('psychology', this)">Tâm lý &amp; đàm phán</button>
+                            <button class="mode-pill" onclick="filterBookCat('strategy', this)">Chiến lược &amp; Game Theory</button>
+                            <button class="mode-pill" onclick="filterBookCat('leadership', this)">Hệ thống &amp; quản trị</button>
+                            <button class="mode-pill" onclick="filterBookCat('mindset', this)">Bản lĩnh &amp; nghịch cảnh</button>
+                        </div>
+                    </div>
+
+                    <div class="books-grid" id="books-grid-container">
+                        <!-- Populated dynamically from DIGITAL_BOOKS + API -->
+                    </div>
                 </div>
 
-                <!-- BỘ TRA CỨU TƯƠNG TÁC 64 QUẺ BIẾN DỊCH & BÁT CUNG QUẢN TRỊ 2.0 -->
-                <div id="iching-matrix-section" class="iching-matrix-section">
+                <!-- PHÂN KHU 2: MA TRẬN 64 QUẺ BIẾN DỊCH -->
+                <div id="codex-panel-iching" class="codex-panel" style="display: none;">
+                    <!-- BỘ TRA CỨU TƯƠNG TÁC 64 QUẺ BIẾN DỊCH & BÁT CUNG QUẢN TRỊ 2.0 -->
+                    <div id="iching-matrix-section" class="iching-matrix-section">
                     <div class="iching-matrix-header">
                         <div>
                             <h3 class="iching-matrix-title">
@@ -5517,28 +5801,41 @@
                     </div>
                 </div>
 
-                <!-- KHO 30 ÁN ĐIỂN GIẢI PHẪU SỐNG TRONG CODEX -->
-                <div id="codex-living-dossiers-block" style="margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--border-subtle);">
+                </div><!-- /#codex-panel-iching -->
+
+                <!-- PHÂN KHU 3: HỒ SƠ 30 ÁN ĐIỂN GIẢI PHẪU SỐNG -->
+                <div id="codex-panel-dossiers" class="codex-panel" style="display: none;">
+                    <div id="codex-living-dossiers-block" style="margin-top: 0; padding-top: 0; border-top: none;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 14px; flex-wrap: wrap; gap: 10px;">
                         <div>
                             <div class="workspace-eyebrow" style="margin-bottom: 4px;">Dẫn chứng thực nghiệm &amp; Trả giá định lượng</div>
                             <h3 style="font-family: var(--font-serif); font-size: 19px; color: var(--gold-light); margin: 0;">HỒ SƠ 30 ÁN ĐIỂN GIẢI PHẪU SỐNG (LIVING CASE DOSSIERS)</h3>
                         </div>
-                        <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+                            <input type="text" id="codex-dossiers-search-input" class="chat-text-input" placeholder="🔍 Tìm kiếm án điển (VD: MEP, cổ đông, thu nợ, 45 tỷ)..." style="max-width: 280px; font-size: 12px; padding: 7px 12px;" oninput="filterCodexDossiersUI()">
                             <button type="button" class="mode-pill active" onclick="selectCodexDossierCategory('all', this)">Tất cả (30)</button>
                             <button type="button" class="mode-pill" onclick="selectCodexDossierCategory('internal_power', this)">Quyền lực nội bộ (10)</button>
                             <button type="button" class="mode-pill" onclick="selectCodexDossierCategory('field_crisis', this)">Hiện trường &amp; Dự án (10)</button>
                             <button type="button" class="mode-pill" onclick="selectCodexDossierCategory('high_stakes_negotiation', this)">Đàm phán &amp; Thu nợ (10)</button>
                         </div>
                     </div>
-                    <div id="codex-dossiers-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; max-height: 520px; overflow-y: auto; padding-right: 4px;">
+                    <div id="codex-dossiers-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 14px;">
                         <div style="color: var(--text-muted); font-size: 12.5px; padding: 16px;">Đang nạp 30 án điển thực chiến...</div>
                     </div>
                 </div>
 
-                <div style="margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border-subtle);">
+                </div><!-- /#codex-living-dossiers-block -->
+                </div><!-- /#codex-panel-dossiers -->
+
+                <!-- PHÂN KHU 4: BẢN ĐỒ BẢN THỂ 379 ĐƠN VỊ TRI THỨC -->
+                <div id="codex-panel-catalog" class="codex-panel" style="display: none;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 10px;">
-                        <h3 style="font-family: var(--font-display); font-size: 18px; color: var(--gold-light);">HỆ THỐNG <span id="catalog-unit-count">…</span> ĐƠN VỊ TRI THỨC (CATALOG)</h3>
+                        <div>
+                            <div class="workspace-eyebrow" style="margin-bottom: 4px;">Trụ cột 04 • Hệ tiên đề Nhân Thuật</div>
+                            <h2 style="font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: #ffffff; letter-spacing: 0.01em; margin: 0;">
+                                HỆ THỐNG <span id="catalog-unit-count">…</span> ĐƠN VỊ TRI THỨC (CATALOG)
+                            </h2>
+                        </div>
                         <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
                             <select id="catalog-type-filter" aria-label="Lọc theo loại tri thức" style="padding: 8px 12px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-subtle); border-radius: 8px; color: #fff; font-size: 12.5px; outline: none;">
                                 <option value="">Tất cả loại</option>
@@ -5587,8 +5884,8 @@
                     <div id="catalog-load-more-wrap" style="display: none; text-align: center; margin-top: 14px;">
                         <button class="export-btn" id="catalog-load-more-btn" style="justify-content: center; padding: 10px 22px;">Tải thêm tri thức</button>
                     </div>
-                </div>
-            </div>
+                </div><!-- /#codex-panel-catalog -->
+            </div><!-- /.codex-container -->
         </section>
 
         <!-- MODULE 6: SA BÀN TÌNH THẾ (WAR ROOM SANDBOX) -->
@@ -6651,15 +6948,12 @@
     }
 
     async function selectCodexDossierCategory(cat, btn) {
+        window.__activeCodexDossierCategory = cat || 'all';
         if (btn && btn.parentElement) {
             btn.parentElement.querySelectorAll('.mode-pill').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
         }
-        const grid = document.getElementById('codex-dossiers-grid');
-        if (!grid) return;
-        const all = await fetchLivingDossiers();
-        const filtered = (cat && cat !== 'all') ? all.filter(d => d.category === cat) : all;
-        grid.innerHTML = renderDossierCardsList(filtered);
+        await filterCodexDossiersUI();
     }
 
     async function openDossierModal(caseId) {
@@ -8767,9 +9061,13 @@
         const container = document.getElementById('books-grid-container');
         if (!container) return;
 
-        const filtered = selectedBookCategory === 'all'
+        const bq = (document.getElementById('books-search-input')?.value || '').trim().toLowerCase();
+        let filtered = selectedBookCategory === 'all'
             ? DIGITAL_BOOKS
             : DIGITAL_BOOKS.filter(b => b.cat === selectedBookCategory);
+        if (bq) {
+            filtered = filtered.filter(b => `${b.title} ${b.author} ${b.desc} ${b.badge || ''}`.toLowerCase().includes(bq));
+        }
 
         container.innerHTML = filtered.map(b => `
             <div class="book-card">
@@ -8800,6 +9098,191 @@
         btn.parentElement.querySelectorAll('.mode-pill').forEach(p => p.classList.remove('active'));
         btn.classList.add('active');
         loadBookshelf();
+    }
+
+
+    // --- CODEX EXECUTIVE SUB-NAVIGATION & SPOTLIGHT SEARCH ---
+    window.activeCodexSubView = 'overview';
+    window.__activeCodexDossierCategory = 'all';
+
+    function switchCodexSubView(viewName, btn) {
+        window.activeCodexSubView = viewName;
+        const subnav = document.getElementById('codex-subnav-bar');
+        if (subnav) {
+            subnav.querySelectorAll('.codex-subnav-pill').forEach(p => {
+                const isTarget = p.getAttribute('data-subview') === viewName || p === btn;
+                p.classList.toggle('active', isTarget);
+                p.setAttribute('aria-selected', isTarget ? 'true' : 'false');
+            });
+        }
+
+        const overview = document.getElementById('codex-panel-overview');
+        const books = document.getElementById('codex-panel-books');
+        const iching = document.getElementById('codex-panel-iching');
+        const dossiers = document.getElementById('codex-panel-dossiers');
+        const catalog = document.getElementById('codex-panel-catalog');
+
+        if (viewName === 'stream') {
+            if (overview) overview.style.display = 'none';
+            if (books) books.style.display = 'block';
+            if (iching) iching.style.display = 'block';
+            if (dossiers) dossiers.style.display = 'block';
+            if (catalog) catalog.style.display = 'block';
+        } else {
+            if (overview) overview.style.display = (viewName === 'overview') ? 'block' : 'none';
+            if (books) books.style.display = (viewName === 'books') ? 'block' : 'none';
+            if (iching) iching.style.display = (viewName === 'iching') ? 'block' : 'none';
+            if (dossiers) dossiers.style.display = (viewName === 'dossiers') ? 'block' : 'none';
+            if (catalog) catalog.style.display = (viewName === 'catalog') ? 'block' : 'none';
+        }
+
+        // Trigger loaders
+        if (viewName === 'books' || viewName === 'stream') loadBookshelf();
+        if (viewName === 'iching' || viewName === 'stream') loadIChingHexagrams();
+        if (viewName === 'dossiers' || viewName === 'stream') selectCodexDossierCategory('all');
+        if (viewName === 'catalog' || viewName === 'stream') loadKnowledgeCatalog();
+    }
+
+    function filterBooksSearch(val) {
+        loadBookshelf();
+    }
+
+    async function filterCodexDossiersUI() {
+        const grid = document.getElementById('codex-dossiers-grid');
+        if (!grid) return;
+        const all = await fetchLivingDossiers();
+        const cat = window.__activeCodexDossierCategory || 'all';
+        const q = (document.getElementById('codex-dossiers-search-input')?.value || '').trim().toLowerCase();
+        const filtered = all.filter(d => {
+            if (cat !== 'all' && d.category !== cat) return false;
+            if (!q) return true;
+            const hay = `${d.id} ${d.title} ${d.industry} ${d.power_map} ${d.fatal_mistake} ${(d.keywords || []).join(' ')}`.toLowerCase();
+            return hay.includes(q);
+        });
+        grid.innerHTML = renderDossierCardsList(filtered);
+    }
+
+    function handleCodexGlobalSearch(query) {
+        const q = (query || '').trim().toLowerCase();
+        const resultsContainer = document.getElementById('codex-global-search-results');
+        const bentoGrid = document.getElementById('codex-bento-grid');
+        if (!resultsContainer || !bentoGrid) return;
+
+        if (!q) {
+            resultsContainer.style.display = 'none';
+            resultsContainer.innerHTML = '';
+            bentoGrid.style.display = 'grid';
+            return;
+        }
+
+        bentoGrid.style.display = 'none';
+        resultsContainer.style.display = 'block';
+
+        const matchedBooks = (typeof DIGITAL_BOOKS !== 'undefined' ? DIGITAL_BOOKS : []).filter(b => {
+            return `${b.title} ${b.author} ${b.desc}`.toLowerCase().includes(q);
+        }).slice(0, 4);
+
+        const matchedHex = (typeof allIChingHexagrams !== 'undefined' ? allIChingHexagrams : []).filter(h => {
+            return `${h.number} ${h.name} ${h.pinyin} ${h.corporate_state} ${h.strategic_warning}`.toLowerCase().includes(q);
+        }).slice(0, 4);
+
+        const matchedDossiers = (window.__livingDossiersCache || []).filter(d => {
+            return `${d.id} ${d.title} ${d.industry} ${d.fatal_mistake} ${(d.keywords || []).join(' ')}`.toLowerCase().includes(q);
+        }).slice(0, 4);
+
+        const matchedUnits = (typeof allKnowledgeUnits !== 'undefined' ? allKnowledgeUnits : []).filter(u => {
+            return `${u.id} ${u.name || u.title || ''} ${u.summary || ''}`.toLowerCase().includes(q);
+        }).slice(0, 6);
+
+        const totalMatches = matchedBooks.length + matchedHex.length + matchedDossiers.length + matchedUnits.length;
+
+        if (totalMatches === 0) {
+            resultsContainer.innerHTML = `
+                <div style="text-align: center; color: var(--text-muted); padding: 32px 10px;">
+                    Không tìm thấy dữ liệu phù hợp với từ khóa "<strong>${escapeHtml(query)}</strong>" trên toàn bộ 4 phân khu.
+                </div>
+            `;
+            return;
+        }
+
+        let out = `
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 10px;">
+                <strong style="color: var(--gold-light); font-size: 13px;">KẾT QUẢ TÌM NHANH CHO "${escapeHtml(query)}" (${totalMatches} kết quả)</strong>
+                <button type="button" class="export-btn" style="padding: 4px 10px; font-size: 11px;" onclick="document.getElementById('codex-global-search-input').value=''; handleCodexGlobalSearch('');">Đóng kết quả ✕</button>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 14px;">
+        `;
+
+        if (matchedBooks.length) {
+            out += `
+                <div>
+                    <div style="font-size: 11px; text-transform: uppercase; color: var(--gold-primary); font-weight: 700; margin-bottom: 6px;">📚 Tủ Sách Cẩm Nang (${matchedBooks.length}):</div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px;">
+                        ${matchedBooks.map(b => `
+                            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 10px 12px; cursor: pointer;" onclick="openBookModal('${escapeHtml(b.file)}', '${escapeHtml(b.title).replace(/'/g, "\'")}')">
+                                <strong style="color: #fff; font-size: 12px; display: block;">${b.icon} ${escapeHtml(b.title)}</strong>
+                                <div style="font-size: 11px; color: var(--gold-light);">${escapeHtml(b.author)}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        if (matchedHex.length) {
+            out += `
+                <div>
+                    <div style="font-size: 11px; text-transform: uppercase; color: var(--cyan-accent); font-weight: 700; margin-bottom: 6px;">☯ 64 Quẻ Biến Dịch (${matchedHex.length}):</div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px;">
+                        ${matchedHex.map(h => `
+                            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 10px 12px; cursor: pointer;" onclick="switchCodexSubView('iching'); showIChingHexagramDetail(${Number(h.number)});">
+                                <strong style="color: #fff; font-size: 12px; display: block;">#${h.number} • ${escapeHtml(h.name)}</strong>
+                                <div style="font-size: 11px; color: var(--text-secondary); line-height: 1.4;">${escapeHtml(h.corporate_state || '')}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        if (matchedDossiers.length) {
+            out += `
+                <div>
+                    <div style="font-size: 11px; text-transform: uppercase; color: #fda4af; font-weight: 700; margin-bottom: 6px;">📁 30 Án Điển Sống (${matchedDossiers.length}):</div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 8px;">
+                        ${matchedDossiers.map(d => `
+                            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(244,63,94,0.2); border-radius: 8px; padding: 10px 12px; cursor: pointer;" onclick="openDossierModal('${escapeHtml(d.id)}')">
+                                <div style="display: flex; justify-content: space-between; font-size: 10.5px; margin-bottom: 4px;">
+                                    <span style="color: var(--gold-light);">${escapeHtml(d.id)}</span>
+                                    <span style="color: #fda4af;">${escapeHtml(d.quantified_damage?.financial_vnd || '')}</span>
+                                </div>
+                                <strong style="color: #fff; font-size: 12px; display: block;">${escapeHtml(d.title)}</strong>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        if (matchedUnits.length) {
+            out += `
+                <div>
+                    <div style="font-size: 11px; text-transform: uppercase; color: #6ee7b7; font-weight: 700; margin-bottom: 6px;">📜 379 Đơn Vị Tri Thức (${matchedUnits.length}):</div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 8px;">
+                        ${matchedUnits.map(u => `
+                            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 10px 12px; cursor: pointer;" onclick="showUnitModal('${escapeHtml(u.id)}')">
+                                <span style="font-size: 10px; color: var(--gold-primary); font-family: var(--font-display);">${escapeHtml(u.id)}</span>
+                                <strong style="color: #fff; font-size: 12px; display: block; margin-top: 2px;">${escapeHtml(u.name || u.title || '')}</strong>
+                                <div style="font-size: 11px; color: var(--text-muted); line-height: 1.4; margin-top: 4px;">${escapeHtml((u.summary || '').slice(0, 80))}…</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        out += `</div>`;
+        resultsContainer.innerHTML = out;
     }
 
     // --- DIGITAL BOOK READER ---
